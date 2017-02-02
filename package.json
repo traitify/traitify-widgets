@@ -1,7 +1,7 @@
 {
   "name": "traitify-widgets",
-  "version": "5.0.0",
-  "description": "Ready-to-go Preact starter project powered by webpack.",
+  "version": "0.0.0",
+  "description": "Traitiy Widgets",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
     "start": "serve build -s -c 1",
@@ -13,12 +13,12 @@
     "lint": "eslint {src,test}"
   },
   "keywords": [
-    "preact",
-    "boilerplate",
-    "webpack"
+    "traitify",
+    "personality",
+    "widgets"
   ],
   "license": "MIT",
-  "author": "Jason Miller <jason@developit.ca>",
+  "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel": "^6.5.2",
@@ -51,8 +51,8 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.1",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
+    "sass-loader": "^4.1.1",
+    "node-sass": "^4.5.0",
     "mkdirp": "^0.5.1",
     "mocha": "^3.0.0",
     "ncp": "^2.0.0",
@@ -67,14 +67,12 @@
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "v8-lazy-parse-webpack-plugin": "^0.3.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
     "preact": "^6.0.0",
     "preact-compat": "^3.0.0",
-    "preact-router": "^2.0.0",
     "promise-polyfill": "^6.0.2",
     "proptypes": "^0.14.3",
     "serve": "^3.1.0"

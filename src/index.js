@@ -10,12 +10,12 @@ var Traitify = TraitifyClient || {};
 let root;
 
 Traitify.ui = class UI {
-	constructor (){
-		this.options = {};
-		return this;
-	}
+  constructor (){
+    this.options = {};
+    return this;
+  }
 
-  static component () {
+  static component (){
     return new this();
   }
 
@@ -31,12 +31,12 @@ Traitify.ui = class UI {
     this.startChain(options)
   }
 
-  static assessmentId (assessmentid){
-    return this.startChain({assessmentId})
+  static assessmentId (assessmentId){
+    return this.startChain({assessmentId: assessmentId})
   }
 
   static target (target){
-    return this.startChain({target})
+    return this.startChain({target: target})
   }
 
   assessmentId (assessmentId){
@@ -45,11 +45,11 @@ Traitify.ui = class UI {
   }
 
   target (target){
-    this.options.assessmentId = target;
+    this.options.target = target;
     return this;
   }
 
-  render (componentName) {
+  render (componentName){
     let Main = require("./components/main").default;
 
     // If target is not a node use query selector to find the target node
@@ -57,8 +57,8 @@ Traitify.ui = class UI {
       this.options.target = document.querySelector(this.options.target || ".tf-widgets")
     }
 
-		this.options.componentName = componentName
-		console.log(this.options)
+    this.options.componentName = componentName
+
     root = render(<Main {...this.options} />, this.options.target, root);
     return this;
   }

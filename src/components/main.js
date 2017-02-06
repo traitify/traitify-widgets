@@ -1,8 +1,10 @@
 import { h, Component } from "preact";
 
+import Dimensions from "./results/dimensions";
 import SlideDeck from "./slidedeck/index";
 
 let components = {
+  Dimensions,
   SlideDeck
 }
 
@@ -42,14 +44,20 @@ export default class Main extends Component {
   }
 
   render() {
-    if(this.props.componentName){
-      return React.createElement(components[this.props.componentName], this.state);
-    }else{
-      return (
-        <div>
-          <SlideDeck {...this.state} />
-        </div>
-      )
+    var language = "en"
+    var translations = {
+      en: {
+        potential_benefits: "Potential Benefits",
+        potential_pitfalls: "Potential Pitfalls",
+        show_less: "Show Less",
+        show_more: "Show More"
+      }
     }
+
+    var component = components[this.props.componentName || "Dimensions"];
+    var props = this.state;
+    props.translate = (key) => translations[language][key];
+
+    return h(component, props);
   }
 }

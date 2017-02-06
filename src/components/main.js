@@ -52,9 +52,10 @@ export default class Main extends Component {
       }
     }
 
-    var component = components[this.props.componentName || SlideDeck];
+    var component = components[this.props.componentName || "SlideDeck"];
     var props = this.state;
     props.translate = (key) => translations[language][key];
-    return React.createElement(component, props);
+
+    return h(component, props);
   }
 }

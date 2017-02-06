@@ -97,12 +97,11 @@ export default class slideDeck extends Component {
               {this.currentSlide().caption}
             </div>
             <div class={style.progressContainer}>
-              <div class={style.progress} style={{width: `${this.completion()}%`}}>
-              </div>
+              <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
           {this.loadedSlides().map((slide)=>{
-            return <Slide slide={slide} key={slide.id}/>
+            return <Slide slide={slide} key={slide.id} />
           })}
         </div>
         <div class={style.responseContainer}>

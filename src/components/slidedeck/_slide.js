@@ -19,8 +19,7 @@ export default class slideDeck extends Component {
   }
   render() {
     return (
-      <div class={`${style.slide} ${this.className()}`} style={this.style()}>
-      </div>
+      <div class={`${style.slide} ${this.className()}`} style={this.style()} />
     )
   }
 }

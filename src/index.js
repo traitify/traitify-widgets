@@ -2,20 +2,27 @@
 // import "isomorphic-fetch";
 import { h, render } from "preact";
 import "./style";
-let App = require("./components/app").default;
-var Traitify = {};
+import TraitifyClient from "traitify-js-browser-client";
+
+let Main = require("./components/main").default;
+var Traitify = TraitifyClient || {};
 
 let root;
 
 Traitify.ui = class UI {
-  static component () {
+  constructor (){
+    this.options = {};
+    return this;
+  }
+
+  static component (){
     return new this();
   }
 
   static startChain(options){
     let widgets = this.component();
     Object.keys(options).forEach((key)=>{
-      widgets[key] = options[key]
+      widgets.options[key] = options[key]
     })
     return widgets;
   }
@@ -24,40 +31,40 @@ Traitify.ui = class UI {
     this.startChain(options)
   }
 
-  static assessmentId (assessmentid){
-    return this.startChain({assessmentId})
+  static assessmentId (assessmentId){
+    return this.startChain({assessmentId: assessmentId})
   }
 
   static target (target){
-    return this.startChain({target})
+    return this.startChain({target: target})
   }
 
   assessmentId (assessmentId){
-    this.assessmentId = assessmentId;
+    this.options.assessmentId = assessmentId;
     return this;
   }
 
   target (target){
-    this.assessmentId = target;
+    this.options.target = target;
     return this;
   }
 
-  render () {
-    let App = require("./components/app").default;
+  render (componentName){
+    let Main = require("./components/main").default;
 
     // If target is not a node use query selector to find the target node
-    if(typeof this.target == "string"){
-      this.target = document.querySelector(this.target || ".tf-widgets")
-    }else{
-      this.target = target
+    if(typeof this.options.target == "string"){
+      this.options.target = document.querySelector(this.options.target || ".tf-widgets")
     }
 
-    root = render(<App />, this.target, root);
+    this.options.componentName = componentName
+
+    root = render(<Main {...this.options} />, this.options.target, root);
     return this;
   }
 
   refresh () {
-    this.load(this.target)
+    this.load(this.options.target)
     return this;
   }
 }
@@ -69,7 +76,7 @@ if(window.TraitifyDevInitialize == true){
 
   // require("preact/devtools");   // turn this on if you want to enable React DevTools!
   // set up HMR:
-  module.hot.accept("./components/app", () => requestAnimationFrame(window.developmentLoad.reload()) );
+  module.hot.accept("./components/main", () => requestAnimationFrame(window.developmentLoad.reload()) );
 
   InitJS()
 }

@@ -1,11 +1,12 @@
 import { h, Component } from "preact";
 
-import Dimensions from "./results/dimensions";
+import I18n from "../lib/i18n";
 import SlideDeck from "./slidedeck/index";
+import Results from "./results";
 
 let components = {
-  Dimensions,
-  SlideDeck
+  SlideDeck,
+  Results
 }
 
 export default class Main extends Component {
@@ -20,6 +21,9 @@ export default class Main extends Component {
       com.setState(newState);
     }
     this.state.fetch = this.fetch.bind(this);
+
+    this.i18n = new I18n;
+    this.state.translate = (key) => com.i18n.translate(key);
 
     return this;
   }
@@ -38,26 +42,15 @@ export default class Main extends Component {
   fetch (){
     let com = this;
     Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,types`).then((data)=>{
+      com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.setState(com.state);
     })
   }
 
   render() {
-    var language = "en"
-    var translations = {
-      en: {
-        potential_benefits: "Potential Benefits",
-        potential_pitfalls: "Potential Pitfalls",
-        show_less: "Show Less",
-        show_more: "Show More"
-      }
-    }
+    var component = components[this.props.componentName || "SlideDeck"];
 
-    var component = components[this.props.componentName || "Dimensions"];
-    var props = this.state;
-    props.translate = (key) => translations[language][key];
-
-    return h(component, props);
+    return h(component, this.state);
   }
 }

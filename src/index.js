@@ -64,7 +64,7 @@ Traitify.ui = class UI {
   }
 
   refresh () {
-    this.load(this.options.target)
+    this.render()
     return this;
   }
 }
@@ -76,7 +76,8 @@ if(window.TraitifyDevInitialize == true){
 
   // require("preact/devtools");   // turn this on if you want to enable React DevTools!
   // set up HMR:
-  module.hot.accept("./components/main", () => requestAnimationFrame(window.developmentLoad.reload()) );
-
+  if(typeof module != "undefined" && module.hot){
+    module.hot.accept("./components/main", () => requestAnimationFrame(window.developmentLoad.refresh()) );
+  }
   InitJS()
 }

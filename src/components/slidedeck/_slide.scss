@@ -1,0 +1,21 @@
+.slide{
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  &.invisible{
+    left: 0%;
+    display: none;
+  }
+  &.leftSlide{
+    left: 0%;
+  }
+  &.middleSlide{
+    -webkit-transition: left .3s; /* Safari */
+    transition: left .3s;
+    left: 0%;
+  }
+  &.rightSlide{
+    left: 100%;
+  }
+  background-size: cover;
+}

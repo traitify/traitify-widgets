@@ -2,10 +2,11 @@ import { h, Component } from "preact";
 
 import Dimensions from "./results/dimensions";
 import SlideDeck from "./slidedeck/index";
-
+import Default from "./default"
 let components = {
   Dimensions,
-  SlideDeck
+  SlideDeck,
+  Default
 }
 
 export default class Main extends Component {
@@ -54,7 +55,7 @@ export default class Main extends Component {
       }
     }
 
-    var component = components[this.props.componentName || "Dimensions"];
+    var component = components[this.props.componentName || "Default"];
     var props = this.state;
     props.translate = (key) => translations[language][key];
 

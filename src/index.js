@@ -28,7 +28,7 @@ Traitify.ui = class UI {
   }
 
   static render (options){
-    this.startChain(options)
+    return this.startChain(options).render()
   }
 
   static assessmentId (assessmentId){

@@ -52,8 +52,15 @@ export default class slideDeck extends Component {
   }
 
   answerSlide(value){
+    var lastSlide = this.props.assessment.slides.lastAnswer
     this.props.assessment.slides.answers = this.props.assessment.slides.answers || {};
-    this.props.assessment.slides.answers[this.currentSlide().id] = value;
+    this.props.assessment.slides.answers[this.currentSlide().id] = {
+      value: value,
+      timeTaken: new Date() - lastSlide
+    }
+    sessionStorage.setItem('slides', JSON.stringify(this.props.assessment.slides.answers))
+    this.props.assessment.slides.lastAnswer = new Date()
+    this.props.setState(this.props)
     this.nextSlide()
   }
 
@@ -76,9 +83,33 @@ export default class slideDeck extends Component {
   componentWillUpdate(nextProps){
     if(nextProps.assessment.slides && nextProps.assessment.slides.length != 0){
       let slides = nextProps.assessment.slides.filter((s)=>{ return s.orientation })
+
+      // Initialize Widget because data is now here
       if(slides.length == 0){
         nextProps.assessment.slides[0].orientation = "middle"
         nextProps.assessment.slides[1].orientation = "right"
+
+        // TODO: Make this acctually work!
+        var answers = {};
+        if(sessionStorage.getItem('slides')){
+          try{
+            answers = JSON.parse(sessionStorage.getItem('slides'))
+          }catch(e){
+          }
+        }
+
+        nextProps.assessment.slides.lastAnswer = new Date();
+        nextProps.assessment.slides.answers = answers;
+
+        nextProps.assessment.slides.forEach((slide, index)=>{
+          if(answers[slide.id]){
+            (nextProps.assessment.slides[index] || {}).orientation = "left"
+            nextProps.assessment.slides[index + 1].orientation = "middle"
+            nextProps.assessment.slides[index + 2].orientation = "right"
+          }
+        })
+
+        nextProps.setState(nextProps)
       }
     }
   }

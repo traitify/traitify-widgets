@@ -2,11 +2,13 @@ import { h, Component } from "preact";
 
 import I18n from "../lib/i18n";
 import SlideDeck from "./slidedeck/index";
+import Default from "./default"
 import Results from "./results";
 
 let components = {
   SlideDeck,
-  Results
+  Results,
+  Default
 }
 
 export default class Main extends Component {
@@ -49,7 +51,7 @@ export default class Main extends Component {
   }
 
   render() {
-    var component = components[this.props.componentName || "SlideDeck"];
+    var component = components[this.props.componentName || "Default"];
 
     return h(component, this.state);
   }

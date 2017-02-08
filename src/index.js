@@ -11,18 +11,21 @@ class Traitify {
     this.options.publicKey = key;
     return this;
   }
+  static setImagePack(pack){
+    this.options.imagePack = pack;
+    return this;
+  }
   static get(url) {
-    if(url.indexOf("?") != -1){
-      url += `&authorization=${this.options.publicKey}`
-    }else{
-      url += `?authorization=${this.options.publicKey}`
-    }
+    url += (url.indexOf("?") == -1) ? "?" : "&"
+    url += `authorization=${this.options.publicKey}`
+    if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
 
     return Qwest.get(`${this.host}/v1${url}`)
   }
 }
 Traitify.options = {}
-Traitify.host = 'https://api.traitify.com'
+// Traitify.host = "https://api.traitify.com"
+Traitify.host = "http://api.stag.awse.traitify.com"
 
 let root;
 Traitify.ui = class UI {
@@ -37,7 +40,7 @@ Traitify.ui = class UI {
 
   static startChain(options){
     let widgets = this.component();
-    Object.keys(options).forEach((key)=>{
+    Object.keys(options || {}).forEach((key)=>{
       widgets.options[key] = options[key]
     })
     return widgets;

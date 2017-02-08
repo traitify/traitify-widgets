@@ -4,11 +4,12 @@ import PersonalityTypes from "./personality-types";
 
 export default class Results extends Component {
   render() {
-    if(!this.props.assessment) { return <div /> }
+    var assessment = this.props.assessment || {}
+    if(!assessment.personality_types) { return <div /> }
 
-    if(this.props.assessment.assessment_type == "type_based") {
-      console.warn("Assessment Type not supported yet");
+    if(assessment.assessment_type == "type_based") {
       // return <PersonalityTypes {...this.props} />
+      console.warn("Assessment Type not supported yet");
       return <div />
     } else {
       return <Dimensions {...this.props} />

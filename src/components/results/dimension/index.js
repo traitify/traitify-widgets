@@ -23,7 +23,7 @@ export default class Dimension extends Component {
         <h4 class={style.title}>
           {dimension.name} <img src="https://cdn.traitify.com/assets/images/info-circle.png" alt={dimension.name} title={dimension.name} />
         </h4>
-        <p class={style.desc}>{dimension.description}</p>
+        <p class={style.description}>{dimension.description}</p>
         {this.state.showContent &&
           <div class={style.content} style={`background: ${Color(dimension.color).darken(0.2).hex()}`}>
             <div class={style.detail}>

@@ -2,13 +2,29 @@
 // import "isomorphic-fetch";
 import { h, render } from "preact";
 import "./style";
-import TraitifyClient from "traitify-js-browser-client";
+import Qwest from "qwest";
+Qwest.setDefaultOptions({dataType: 'json', responseType: 'json', cache:true});
 
 let Main = require("./components/main").default;
-var Traitify = TraitifyClient || {};
+class Traitify {
+  static setPublicKey(key){
+    this.options.publicKey = key;
+    return this;
+  }
+  static get(url) {
+    if(url.indexOf("?") != -1){
+      url += `&authorization=${this.options.publicKey}`
+    }else{
+      url += `?authorization=${this.options.publicKey}`
+    }
+
+    return Qwest.get(`${this.host}/v1${url}`)
+  }
+}
+Traitify.options = {}
+Traitify.host = 'https://api.traitify.com'
 
 let root;
-
 Traitify.ui = class UI {
   constructor (){
     this.options = {};

@@ -64,7 +64,6 @@ export default class slideDeck extends Component {
   nextSlide(){
     let slides = this.props.assessment.slides;
     let i = this.currentIndex()
-    console.log(i)
     slides[i].orientation = "left"
     slides[i + 1].orientation = "middle"
     slides[i + 2].orientation = "right"

@@ -1,14 +1,20 @@
 import { h, Component } from "preact";
 
-import Dimensions from "./results/dimensions";
+import Results from "./results/index";
 import SlideDeck from "./slidedeck/index";
 
 export default class Default extends Component {
+  shouldLoadSlideDeck (){
+    return (this.props.assessment.slides || []).length != 0
+  }
   render() {
     return (
       <div>
-        <SlideDeck {...this.props} />
-        <Dimensions {...this.props} />
+        {this.shouldLoadSlideDeck() ?(
+          <SlideDeck {...this.props} />
+        ):(
+          <Results {...this.props} />
+        )}
       </div>
     )
   }

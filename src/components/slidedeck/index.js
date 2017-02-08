@@ -90,11 +90,12 @@ export default class slideDeck extends Component {
         nextProps.assessment.slides[1].orientation = "right"
 
         // TODO: Make this acctually work!
-        var answers;
-        try{
-          answers = JSON.parse(sessionStorage.getItem('slides'))
-        }catch(e){
-          answers = {}
+        var answers = {};
+        if(sessionStorage.getItem('slides')){
+          try{
+            answers = JSON.parse(sessionStorage.getItem('slides'))
+          }catch(e){
+          }
         }
 
         nextProps.assessment.slides.lastAnswer = new Date();

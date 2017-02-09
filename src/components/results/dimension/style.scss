@@ -141,7 +141,7 @@
 @media (min-width: $breakPoint3) {
   .dimension {
     .title, .description {
-      margin-right: 190px;
+      margin-right: 80px;
     }
     .description {
       @include rems(18);
@@ -157,6 +157,9 @@
 
 @media (min-width: $breakPoint4) {
   .dimension {
+    .title, .description {
+      margin-right: 170px;
+    }
     .details {
       margin: 0 60px;
       .content {

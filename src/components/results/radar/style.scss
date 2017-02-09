@@ -1,0 +1,12 @@
+@import "~style/helpers";
+
+.radar {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+@media (max-width: $breakPoint3) {
+  .radar {
+    display: none;
+  }
+}

@@ -120,6 +120,9 @@
       padding-top: 40px;
       text-align: left;
     }
+    .description {
+      @include rems(17);
+    }
     .details .content {
       padding-left: 40px;
     }
@@ -127,6 +130,7 @@
       display: inline-block;
       vertical-align: top;
       width: 50%;
+      @include rems(17);
       ul {
         padding: 10px 0;
         margin-left: 45px;
@@ -139,13 +143,22 @@
     .title, .description {
       margin-right: 190px;
     }
+    .description {
+      @include rems(18);
+    }
+    .score {
+      @include rems(28);
+    }
+    .title {
+      @include rems(28);
+    }
   }
 }
 
 @media (min-width: $breakPoint4) {
   .dimension {
     .details {
-      margin: 0 130px;
+      margin: 0 60px;
       .content {
         padding-left: 0px;
         border-bottom-left-radius: 25px;
@@ -153,7 +166,30 @@
       }
     }
     .detail {
-      width: 33%;
+      width: 38%;
+      &:first-of-type {
+        margin-left: calc(28%/2);
+      }
+      h5 {
+        @include rems(20);
+      }
+    }
+    .title {
+      @include rems(34);
+    }
+    .description {
+      @include rems(19);
+    }
+  }
+}
+
+@media (min-width: $breakPoint5) {
+  .dimension {
+    .details {
+      margin: 0 130px;
+    }
+    .detail {
+      width: 35%;
       &:first-of-type {
         margin-left: calc(33%/2);
       }

@@ -22,8 +22,6 @@ export default class Radar extends Component {
     var options = {
       legend: { display: false },
       scale: {
-        angleLines: { display: false },
-        gridLines: { display: false },
         ticks: {
           fontSize: 10,
           min: -1, // Because 0

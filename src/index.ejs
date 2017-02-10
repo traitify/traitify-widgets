@@ -5,19 +5,19 @@
   <title>Traitify Widgets</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 </head>
-<script src='/taco.js'></script>
-<script>
-  Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
-  Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
-    window.developmentLoad = Traitify
-      .ui
-      .assessmentId(assessment.id)
-      .allowFullScreen(true)
-      .target("#widgets").render()
-  })
-</script>
 <body>
-  <div id="widgets" style="width: 800px; height:600px;">
+  <div id="widgets">
   </div>
+  <script src='/taco.js'></script>
+  <script>
+    Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
+    Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
+      window.developmentLoad = Traitify
+        .ui
+        .assessmentId(assessment.id)
+        .allowFullScreen(true)
+        .target("#widgets").render()
+    })
+  </script>
 </body>
 </html>

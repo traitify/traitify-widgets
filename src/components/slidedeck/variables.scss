@@ -6,6 +6,7 @@ $progressBar: rgba(65,182,85, .8);
 $captionBackground: rgba(0,0,0, .5);
 $rWidth: 16px;
 $rHeight: 9px;
+$minHeight: 600px;
 @mixin deck-height($width){
   height: ($width / $rWidth) * $rHeight;
 }

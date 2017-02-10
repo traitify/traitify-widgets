@@ -11,7 +11,8 @@
     "taco":"node taco.js",
     "test": "npm run -s lint && npm run -s test:karma",
     "test:karma": "karma start test/karma.conf.js --single-run",
-    "lint": "eslint {src,test}"
+    "lint": "eslint {src,test}",
+    "serve": "serve build"
   },
   "keywords": [
     "traitify",

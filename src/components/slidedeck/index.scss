@@ -1,11 +1,18 @@
 @import "./variables";
 
-.widgetContainer{
+.widgetContainer{  
+  padding: 0;
+  margin: 0;
+  background: #FAFAFA;
+  font-weight: 400;
+  color: #444;
+
   height: 100%;
   width: 100%;
   position: relative;
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
+  min-height: $minHeight;
 
   .fullScreen{
     .fullScreenBorder{
@@ -125,6 +132,7 @@
   .slideContainer{
     position: relative;
     height: 100%;
+    min-height: $minHeight;
     overflow: hidden;
     .captionContainer{
       width: 100%;

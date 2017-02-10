@@ -18,7 +18,6 @@ export default class Default extends Component {
     if(this.shouldLoadResults()){
       widget = <Results {...this.props} />
     }
-
     return widget;
   }
 }

@@ -151,7 +151,7 @@ export default class slideDeck extends Component {
   }
 
   shouldAllowNext(){
-    if(this.currentIndex() >= this.loadedSlides().length  - 2){
+    if(this.currentIndex() >= this.loadedSlides().length  - 2 && this.currentIndex() < this.slides().length - 2){
       this.setReady(false)
     }else{
       this.setReady(true)

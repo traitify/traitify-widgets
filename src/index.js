@@ -2,8 +2,8 @@
 // import "isomorphic-fetch";
 import { h, render } from "preact";
 import "./style";
-import Qwest from "qwest";
-Qwest.setDefaultOptions({dataType: 'json', responseType: 'json', cache:true});
+require('es6-promise').polyfill()
+require('fetch-ie8')
 
 let Main = require("./components/main").default;
 class Traitify {
@@ -12,23 +12,41 @@ class Traitify {
     return this;
   }
   static request(method, url, params) {
-    if(url.indexOf("?") != -1){
-      url += `&authorization=${this.options.publicKey}`
-    }else{
-      url += `?authorization=${this.options.publicKey}`
-    }
+    return new Promise((resolve, reject)=>{
+      if(url.indexOf("?") != -1){
+        url += `&authorization=${this.options.publicKey}`
+      }else{
+        url += `?authorization=${this.options.publicKey}`
+      }
 
-    return Qwest[method](`${this.host}/v1${url}`, params)
+      var myInit = {
+        method: method,
+        mode: 'cors',
+        cache: 'default'
+      };
+
+      if(params){
+        myInit.body = JSON.stringify(params);
+      }
+
+      var myRequest = new Request(`${this.host}/v1${url}`, myInit);
+
+      fetch(myRequest).then((response)=>{
+        response.json().then((data)=>{
+          resolve(data);
+        })
+      })
+    })
   }
 
   static get(url) {
-    return this.request('get', url)
+    return this.request('GET', url)
   }
   static post(url, params) {
-    return this.request('post', url, params)
+    return this.request('POST', url, params)
   }
   static put(url, params) {
-    return this.request('put', url, params)
+    return this.request('PUT', url, params)
   }
 }
 Traitify.options = {}
@@ -105,10 +123,5 @@ window.Traitify = Traitify;
 
 if(window.TraitifyDevInitialize == true){
 
-  // require("preact/devtools");   // turn this on if you want to enable React DevTools!
-  // set up HMR:
-  if(typeof module != "undefined" && module.hot){
-    module.hot.accept("./components/main", () => requestAnimationFrame(window.developmentLoad.refresh()) );
-  }
   InitJS()
 }

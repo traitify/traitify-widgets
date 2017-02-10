@@ -15,10 +15,10 @@
 <script>
   function InitJS(test){
     Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
-    Traitify.post("/assessments", {deck_id: "career-deck"}).then((assessment)=>{
+    Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
       window.developmentLoad = Traitify
         .ui
-        .assessmentId(assessment.response.id)
+        .assessmentId(assessment.id)
         .allowFullScreen(true)
         .target("#widgets").render()
     })
@@ -28,7 +28,7 @@
 <body>
   Traitify Preact Widgets
 
-  <div id="widgets" style="width:100%;height:100%;">
+  <div id="widgets" style="width:400px;height:300px;">
   </div>
 </body>
 </html>

@@ -1,58 +1,57 @@
-// import "promise-polyfill";
-// import "isomorphic-fetch";
 import { h, render } from "preact";
 import "./style";
-require('es6-promise').polyfill()
-require('fetch-ie8')
+require("es6-promise").polyfill()
+require("fetch-ie8")
 
 let Main = require("./components/main").default;
 class Traitify {
-  static setPublicKey(key){
-    this.options.publicKey = key;
-    return this;
-  }
-  static request(method, url, params) {
+  static request(method, path, params) {
     return new Promise((resolve, reject)=>{
+      var url = `${options.host}/v1${path}`
       url += (url.indexOf("?") == -1) ? "?" : "&"
       url += `authorization=${this.options.publicKey}`
       if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
 
-      var myInit = {
+      var options = {
         method: method,
-        mode: 'cors',
-        cache: 'default'
+        mode: "cors",
+        cache: "default"
       };
 
-      if(params){
-        myInit.body = JSON.stringify(params);
-      }
+      if(params) { options.body = JSON.stringify(params); }
 
-      var myRequest = new Request(`${this.host}/v1${url}`, myInit);
+      var request = new Request(url, options);
 
-      fetch(myRequest).then((response)=>{
+      fetch(request).then((response)=>{
         response.json().then((data)=>{
           resolve(data);
         })
       })
     })
   }
+  static setHost(host){
+    this.options.host = host;
+    return this;
+  }
   static setImagePack(pack){
     this.options.imagePack = pack;
     return this;
   }
-  static get(url) {
-    return this.request('GET', url)
+  static setPublicKey(key){
+    this.options.publicKey = key;
+    return this;
   }
-  static post(url, params) {
-    return this.request('POST', url, params)
+  static get(path) {
+    return this.request("GET", path)
   }
-  static put(url, params) {
-    return this.request('PUT', url, params)
+  static post(path, params) {
+    return this.request("POST", path, params)
+  }
+  static put(path, params) {
+    return this.request("PUT", path, params)
   }
 }
-Traitify.options = {}
-// Traitify.host = "https://api.traitify.com"
-Traitify.host = "http://api.traitify.com"
+Traitify.options = { host: "http://api.traitify.com" }
 
 let root;
 Traitify.ui = class UI {
@@ -122,8 +121,3 @@ Traitify.ui = class UI {
 
 // Export Traitify
 window.Traitify = Traitify;
-
-if(window.TraitifyDevInitialize == true){
-
-  InitJS()
-}

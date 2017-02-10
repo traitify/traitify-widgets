@@ -12,35 +12,44 @@ export default class Dimension extends Component {
     context.setState({showContent: !context.state.showContent});
   }
   render() {
-    var dimension = this.props.dimension;
+    var type = this.props.personalityType.personality_type;
+    var color = `#${type.badge.color_1}`;
+    var benefits = [];
+    var pitfalls = [];
+    type.details.forEach(function(detail) {
+      if(detail.title == "Benefits") benefits.push(detail.body)
+      if(detail.title == "Pitfalls") pitfalls.push(detail.body)
+    });
     return (
-      <li class={style.dimension} style={`background: ${dimension.color}`}>
-        <a class={style.trigger} onClick={this.trigger.bind(null, this)} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")} &nbsp;-</a>
-        <p class={style.icon}>
-          <img src={dimension.icon} alt={dimension.name} />
-        </p>
-        <p class={style.score}>{dimension.score}</p>
-        <h4 class={style.title}>
-          {dimension.name} <img src="https://cdn.traitify.com/assets/images/info-circle.png" alt={dimension.name} title={dimension.name} />
-        </h4>
-        <p class={style.desc}>{dimension.description}</p>
+      <li class={style.dimension}>
+        <div class={style.content} style={`background: ${color}`}>
+          <a class={style.trigger} onClick={this.trigger.bind(null, this)} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a>
+          <p class={style.icon}>
+            <img src={type.badge.image_medium} alt={type.name} />
+          </p>
+          <p class={style.score}>{this.props.personalityType.score} - {type.level}</p>
+          <h4 class={style.title}>{type.name}</h4>
+          <p class={style.description}>{type.description}</p>
+        </div>
         {this.state.showContent &&
-          <div class={style.content} style={`background: ${Color(dimension.color).darken(0.2).hex()}`}>
-            <div class={style.detail}>
-              <h5 class={style.benefits}>{this.props.translate("potential_benefits")}</h5>
-              <ul>
-                {dimension.benefits.map(function(benefit) {
-                  return <li>{benefit}</li>
-                })}
-              </ul>
-            </div>
-            <div class={style.detail}>
-              <h5 class={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h5>
-              <ul>
-                {dimension.pitfalls.map(function(pitfall) {
-                  return <li>{pitfall}</li>
-                })}
-              </ul>
+          <div class={style.details}>
+            <div class={style.content} style={`background: ${Color(color).darken(0.2).hex()}`}>
+              <div class={style.detail}>
+                <h5 class={style.benefits}>{this.props.translate("potential_benefits")}</h5>
+                <ul>
+                  {benefits.map(function(benefit) {
+                    return <li>{benefit}</li>
+                  })}
+                </ul>
+              </div>
+              <div class={style.detail}>
+                <h5 class={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h5>
+                <ul>
+                  {pitfalls.map(function(pitfall) {
+                    return <li>{pitfall}</li>
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         }

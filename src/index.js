@@ -13,11 +13,9 @@ class Traitify {
   }
   static request(method, url, params) {
     return new Promise((resolve, reject)=>{
-      if(url.indexOf("?") != -1){
-        url += `&authorization=${this.options.publicKey}`
-      }else{
-        url += `?authorization=${this.options.publicKey}`
-      }
+      url += (url.indexOf("?") == -1) ? "?" : "&"
+      url += `authorization=${this.options.publicKey}`
+      if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
 
       var myInit = {
         method: method,
@@ -38,7 +36,10 @@ class Traitify {
       })
     })
   }
-
+  static setImagePack(pack){
+    this.options.imagePack = pack;
+    return this;
+  }
   static get(url) {
     return this.request('GET', url)
   }
@@ -50,7 +51,8 @@ class Traitify {
   }
 }
 Traitify.options = {}
-Traitify.host = 'https://api.traitify.com'
+// Traitify.host = "https://api.traitify.com"
+Traitify.host = "http://api.traitify.com"
 
 let root;
 Traitify.ui = class UI {
@@ -65,7 +67,7 @@ Traitify.ui = class UI {
 
   static startChain(options){
     let widgets = this.component();
-    Object.keys(options).forEach((key)=>{
+    Object.keys(options || {}).forEach((key)=>{
       widgets.options[key] = options[key]
     })
     return widgets;

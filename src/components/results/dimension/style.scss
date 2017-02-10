@@ -1,22 +1,21 @@
 @import "~style/helpers";
 
 .dimension {
+  max-width: 1500px;
+  margin: 0 auto;
   text-align: left;
   color: white;
   margin-bottom: 20px;
-  padding: 0 20px;
-  &:after {
-    clear: both;
-    content: " ";
-    display: table;
-  }
   &:last-of-type {
     margin-bottom: 0;
   }
   .content {
-    clear: both;
-    margin: 0 -20px;
-    padding-top: 10px;
+    padding: 0 20px;
+    &:after {
+      clear: both;
+      content: " ";
+      display: table;
+    }
   }
   .trigger {
     color: white;
@@ -40,25 +39,34 @@
   .score {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-top: 10px;
     @include rems(26);
   }
   .title {
     text-align: center;
     font-weight: normal;
-    margin: -10px 0;
+    margin: 0;
     @include rems(24);
     img {
       vertical-align: sub;
     }
   }
-  .desc {
+  .description {
     text-align: left;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+  .details {
+    clear: both;
+    margin: 0 -20px;
+    .content {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
   .detail {
-    padding: 20px;
+    padding: 0 20px;
     h5 {
+      margin: 0;
       line-height: 35px;
       font-weight: normal;
       @include rems(18);
@@ -73,8 +81,11 @@
     }
     ul {
       list-style: none;
-      margin: -18px 0 30px 45px;
-      padding: 0;
+      padding: 20px 0;
+      margin: 0;
+    }
+    li {
+      margin-top: 5px;
     }
     .benefits:before {
       background: url("https://cdn.traitify.com/assets/images/thumbs_up.svg") no-repeat left center;
@@ -85,16 +96,12 @@
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: $breakPoint2) {
   .dimension {
-    .content {
-      border: 1px solid white;
-      border-width: 0 50px;
-    }
     .icon {
       float: left;
       width: 140px;
-      margin-top: -10px;
+      margin-top: 5px;
       margin-bottom: 0;
       img {
         width: 100%;
@@ -104,19 +111,88 @@
       float: left;
       clear: both;
       width: 140px;
+      margin-top: 10px;
+    }
+    .title, .description {
+      margin-left: 190px;
     }
     .title {
-      margin-left: 170px;
       padding-top: 40px;
       text-align: left;
     }
-    .desc {
-      margin-left: 170px;
+    .description {
       @include rems(17);
     }
+    .details .content {
+      padding-left: 40px;
+    }
     .detail {
-      width: 33%;
       display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      @include rems(17);
+      ul {
+        padding: 10px 0;
+        margin-left: 45px;
+      }
+    }
+  }
+}
+@media (min-width: $breakPoint3) {
+  .dimension {
+    .title, .description {
+      margin-right: 80px;
+    }
+    .description {
+      @include rems(18);
+    }
+    .score {
+      @include rems(28);
+    }
+    .title {
+      @include rems(28);
+    }
+  }
+}
+
+@media (min-width: $breakPoint4) {
+  .dimension {
+    .title, .description {
+      margin-right: 170px;
+    }
+    .details {
+      margin: 0 60px;
+      .content {
+        padding-left: 0px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+    }
+    .detail {
+      width: 38%;
+      &:first-of-type {
+        margin-left: calc(28%/2);
+      }
+      h5 {
+        @include rems(20);
+      }
+    }
+    .title {
+      @include rems(34);
+    }
+    .description {
+      @include rems(19);
+    }
+  }
+}
+
+@media (min-width: $breakPoint5) {
+  .dimension {
+    .details {
+      margin: 0 130px;
+    }
+    .detail {
+      width: 35%;
       &:first-of-type {
         margin-left: calc(33%/2);
       }

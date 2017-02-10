@@ -16,7 +16,13 @@ export default class Main extends Component {
     super();
 
     let com = this;
-    let state = {};
+    let state = {
+      assessment: {
+        personality_traits: [],
+        personality_types: [],
+        slides: []
+      }
+    };
 
     this.state = state;
     this.state.setState = function(newState){
@@ -45,7 +51,7 @@ export default class Main extends Component {
     let com = this;
     Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,types`).then((data)=>{
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
-      com.state.assessment = data.response;
+      com.state.assessment = data;
       com.setState(com.state);
     })
   }

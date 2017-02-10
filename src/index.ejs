@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% for (var chunk in htmlWebpackPlugin.files.css) { %>
-    <link rel="preload" href="<%= htmlWebpackPlugin.files.css[chunk] %>"  as="style">
-  <% } %>
-  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" as="script">
-  <% } %>
   <meta charset="utf-8">
   <title>Traitify Widgets</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="manifest" href="./manifest.json">
 </head>
-<script>
-  function InitJS(test){
-    window.developmentLoad = Traitify
-      .setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
-      .ui
-      // .assessmentId("e898c67e-32c3-4394-b011-187dd12c06ba")
-      .assessmentId("8875d8ca-5f33-4ceb-9a83-6c945367076a")
-      .target("#widgets").render()
-  }
-  window.TraitifyDevInitialize = true
-</script>
 <body>
   <div id="widgets">
   </div>
+  <script src='/taco.js'></script>
+  <script>
+    Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
+    Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
+      window.developmentLoad = Traitify
+        .ui
+        .assessmentId(assessment.id)
+        .allowFullScreen(true)
+        .target("#widgets").render()
+    })
+  </script>
 </body>
 </html>

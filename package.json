@@ -8,9 +8,11 @@
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "prebuild": "mkdirp build",
+    "taco":"node taco.js",
     "test": "npm run -s lint && npm run -s test:karma",
     "test:karma": "karma start test/karma.conf.js --single-run",
-    "lint": "eslint {src,test}"
+    "lint": "eslint {src,test}",
+    "serve": "serve build"
   },
   "keywords": [
     "traitify",
@@ -69,11 +71,12 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "v8-lazy-parse-webpack-plugin": "^0.3.0",
-    "webpack": "1.14.0",
+    "webpack": "^1.14.0",
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
     "color": "^1.0.3",
+    "fetch-ie8": "^1.4.3",
     "preact": "^7.1.0",
     "preact-compat": "^3.0.0",
     "promise-polyfill": "^6.0.2",

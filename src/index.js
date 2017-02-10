@@ -2,8 +2,8 @@
 // import "isomorphic-fetch";
 import { h, render } from "preact";
 import "./style";
-import Qwest from "qwest";
-Qwest.setDefaultOptions({dataType: 'json', responseType: 'json', cache:true});
+require('es6-promise').polyfill()
+require('fetch-ie8')
 
 let Main = require("./components/main").default;
 class Traitify {
@@ -11,21 +11,48 @@ class Traitify {
     this.options.publicKey = key;
     return this;
   }
+  static request(method, url, params) {
+    return new Promise((resolve, reject)=>{
+      url += (url.indexOf("?") == -1) ? "?" : "&"
+      url += `authorization=${this.options.publicKey}`
+      if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
+
+      var myInit = {
+        method: method,
+        mode: 'cors',
+        cache: 'default'
+      };
+
+      if(params){
+        myInit.body = JSON.stringify(params);
+      }
+
+      var myRequest = new Request(`${this.host}/v1${url}`, myInit);
+
+      fetch(myRequest).then((response)=>{
+        response.json().then((data)=>{
+          resolve(data);
+        })
+      })
+    })
+  }
   static setImagePack(pack){
     this.options.imagePack = pack;
     return this;
   }
   static get(url) {
-    url += (url.indexOf("?") == -1) ? "?" : "&"
-    url += `authorization=${this.options.publicKey}`
-    if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
-
-    return Qwest.get(`${this.host}/v1${url}`)
+    return this.request('GET', url)
+  }
+  static post(url, params) {
+    return this.request('POST', url, params)
+  }
+  static put(url, params) {
+    return this.request('PUT', url, params)
   }
 }
 Traitify.options = {}
 // Traitify.host = "https://api.traitify.com"
-Traitify.host = "http://api.stag.awse.traitify.com"
+Traitify.host = "http://api.traitify.com"
 
 let root;
 Traitify.ui = class UI {
@@ -63,6 +90,11 @@ Traitify.ui = class UI {
     return this;
   }
 
+  allowFullScreen (value){
+    this.options.allowFullScreen = value;
+    return this;
+  }
+
   target (target){
     this.options.target = target;
     return this;
@@ -93,10 +125,5 @@ window.Traitify = Traitify;
 
 if(window.TraitifyDevInitialize == true){
 
-  // require("preact/devtools");   // turn this on if you want to enable React DevTools!
-  // set up HMR:
-  if(typeof module != "undefined" && module.hot){
-    module.hot.accept("./components/main", () => requestAnimationFrame(window.developmentLoad.refresh()) );
-  }
   InitJS()
 }

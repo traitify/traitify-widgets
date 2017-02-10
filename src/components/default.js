@@ -7,15 +7,17 @@ export default class Default extends Component {
   shouldLoadSlideDeck (){
     return (this.props.assessment.slides || []).length != 0
   }
+  shouldLoadResults (){
+    return (this.props.assessment.personality_types || []).length != 0
+  }
   render() {
-    return (
-      <div>
-        {this.shouldLoadSlideDeck() ?(
-          <SlideDeck {...this.props} />
-        ):(
-          <Results {...this.props} />
-        )}
-      </div>
-    )
+    var widget = <div></div>;
+    if(this.shouldLoadSlideDeck()){
+      widget =  <SlideDeck {...this.props} />
+    }
+    if(this.shouldLoadResults()){
+      widget = <Results {...this.props} />
+    }
+    return widget;
   }
 }

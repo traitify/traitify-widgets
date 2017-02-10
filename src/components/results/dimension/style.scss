@@ -4,68 +4,58 @@
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
   color: #444;
-  
-  max-width: 1500px;
+
+  max-width: $breakPoint5;
   margin: 0 auto;
   text-align: left;
   color: white;
   margin-bottom: 20px;
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-  .content {
-    padding: 0 20px;
-    &:after {
-      clear: both;
-      content: " ";
-      display: table;
-    }
-  }
+  &:last-of-type { margin-bottom: 0; }
   .trigger {
     color: white;
     text-decoration: none;
     display: inline-block;
     float: right;
-    padding: 10px 0 5px;
+    padding: 10px 20px 5px;
     i {
       font-size: 26px;
       vertical-align: middle;
     }
   }
-  .icon {
+  .main {
+    &:after {
+      clear: both;
+      content: " ";
+      display: table;
+    }
+    .content {
+      color: #333;
+      padding: 20px 20px 30px;
+      h4 {
+        margin: 0;
+        font-weight: normal;
+        text-align: center;
+        @include rems(24);
+      }
+    }
+  }
+  .side {
     clear: both;
     text-align: center;
-    img {
+    .icon img {
       width: 50%;
       max-width: 220px;
     }
-  }
-  .score {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 10px;
-    @include rems(26);
-  }
-  .title {
-    text-align: center;
-    font-weight: normal;
-    margin: 0;
-    @include rems(24);
-    img {
-      vertical-align: sub;
+    .score {
+      font-weight: bold;
+      margin-top: 10px;
+      @include rems(26);
     }
-  }
-  .description {
-    text-align: left;
-    padding-bottom: 30px;
   }
   .details {
     clear: both;
     margin: 0 -20px;
-    .content {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
+    .content { padding: 20px; }
   }
   .detail {
     padding: 0 20px;
@@ -102,30 +92,20 @@
 
 @media (min-width: $breakPoint2) {
   .dimension {
-    .icon {
+    .side {
       float: left;
-      width: 140px;
-      margin-top: 5px;
-      margin-bottom: 0;
-      img {
-        width: 100%;
+      width: 130px;
+      margin: 5px 20px 0;
+      .icon {
+        margin-bottom: 10px;
+        img { width: 100%; }
       }
     }
-    .score {
-      float: left;
-      clear: both;
-      width: 140px;
-      margin-top: 10px;
-    }
-    .title, .description {
-      margin-left: 190px;
-    }
-    .title {
+    .main .content {
+      margin-left: 170px;
       padding-top: 40px;
       text-align: left;
-    }
-    .description {
-      @include rems(17);
+      p { @include rems(17); }
     }
     .details .content {
       padding-left: 40px;
@@ -142,27 +122,24 @@
     }
   }
 }
+
 @media (min-width: $breakPoint3) {
   .dimension {
-    .title, .description {
-      margin-right: 80px;
+    .main .content {
+      padding-right: 80px;
+      h4 { @include rems(28); }
+      p { @include rems(18); }
     }
-    .description {
-      @include rems(18);
-    }
-    .score {
-      @include rems(28);
-    }
-    .title {
-      @include rems(28);
-    }
+    .score { @include rems(28); }
   }
 }
 
 @media (min-width: $breakPoint4) {
   .dimension {
-    .title, .description {
-      margin-right: 170px;
+    .main .content {
+      padding-right: 170px;
+      h4 { @include rems(34); }
+      p { @include rems(19); }
     }
     .details {
       margin: 0 60px;
@@ -174,32 +151,18 @@
     }
     .detail {
       width: 38%;
-      &:first-of-type {
-        margin-left: calc(28%/2);
-      }
-      h5 {
-        @include rems(20);
-      }
-    }
-    .title {
-      @include rems(34);
-    }
-    .description {
-      @include rems(19);
+      &:first-of-type { margin-left: calc(28%/2); }
+      h5 { @include rems(20); }
     }
   }
 }
 
 @media (min-width: $breakPoint5) {
   .dimension {
-    .details {
-      margin: 0 130px;
-    }
+    .details { margin: 0 130px; }
     .detail {
       width: 35%;
-      &:first-of-type {
-        margin-left: calc(33%/2);
-      }
+      &:first-of-type { margin-left: calc(33%/2); }
     }
   }
 }

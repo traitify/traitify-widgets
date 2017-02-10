@@ -303,9 +303,9 @@ export default class slideDeck extends Component {
             </a>
           </div>
         </div>
-        {this.props.allowFullScreen ? (
+        {this.props.allowFullScreen && (
           <div class={style.fullScreen} onClick={this.handleFullScreen.bind(this)}><div class={style.fullScreenBorder} /></div>
-        ):""}
+        )}
       </div>
     )
   }

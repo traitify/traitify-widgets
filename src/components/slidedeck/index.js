@@ -40,7 +40,7 @@ export default class slideDeck extends Component {
   }
 
   imageService(slide){
-    return `https://images.stag.awse.traitify.com/v1/images/${slide.id}?width=${this.screen().width}&height=${this.screen().height}&retina=true`
+    return slide.image_desktop
   }
 
   prefetchSlides(i){

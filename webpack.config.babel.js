@@ -95,13 +95,6 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(ENV)
     }),
-    new HtmlWebpackPlugin({
-      template: "./index.ejs",
-      minify: { collapseWhitespace: true }
-    }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: "async"
-    }),
     new CopyWebpackPlugin([
       { from: "./manifest.json", to: "./" }
     ])

@@ -7,7 +7,7 @@ let Main = require("./components/main").default;
 class Traitify {
   static request(method, path, params) {
     return new Promise((resolve, reject)=>{
-      var url = `${options.host}/v1${path}`
+      var url = `${this.options.host}/v1${path}`
       url += (url.indexOf("?") == -1) ? "?" : "&"
       url += `authorization=${this.options.publicKey}`
       if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`

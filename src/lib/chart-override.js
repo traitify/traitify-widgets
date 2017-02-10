@@ -1,6 +1,6 @@
-import * as Charts from "chart.js";
+import Chart from "chart.js";
 
-var Chart = Charts.Chart
+var imageSize = 75;
 var helpers = Chart.helpers;
 var globalDefaults = Chart.defaults.global;
 var constructor = Chart.scaleService.getScaleConstructor("radialLinear")
@@ -29,7 +29,6 @@ var defaultConfig = {
   }
 };
 
-// Methods taken from RadialLinearScale
 function getValueCount(scale) {
   return !scale.options.lineArc ? scale.chart.data.labels.length : 0;
 }
@@ -58,10 +57,10 @@ function measureLabelSize(ctx, fontSize, label, angle) {
   }
   if(helpers.isObject(label)) {
     var width = ctx.measureText(label.text).width;
-    var height = label.text ? fontSize : 0;
+    var height = label.text ? fontSize * 2 : 0;
     return {
-      w: width > 50 ? width : 50,
-      h: (angle == 0 || angle == 180) ? height + 55: height
+      w: width > imageSize ? width : imageSize,
+      h: (angle == 0 || angle == 180) ? height + imageSize : height
     };
   }
 
@@ -101,7 +100,7 @@ function fitWithPointLabels(scale) {
   };
   var furthestAngles = {};
   var i;
-  var textSize;
+  var labelSize;
   var pointPosition;
 
   scale.ctx.font = plFont.font;
@@ -109,16 +108,15 @@ function fitWithPointLabels(scale) {
 
   var valueCount = getValueCount(scale);
   for (i = 0; i < valueCount; i++) {
-    // Add quarter circle to make degree 0 mean top of circle
     var angleRadians = scale.getIndexAngle(i);
     var angle = helpers.toDegrees(angleRadians) % 360;
 
     pointPosition = scale.getPointPosition(i, largestPossibleRadius);
-    textSize = measureLabelSize(scale.ctx, plFont.size, scale.pointLabels[i] || '', angle);
-    scale._pointLabelSizes[i] = textSize;
+    labelSize = measureLabelSize(scale.ctx, plFont.size, scale.pointLabels[i] || "", angle);
+    scale._pointLabelSizes[i] = labelSize;
 
-    var hLimits = determineLimits(angle, pointPosition.x, textSize.w, 0, 180);
-    var vLimits = determineLimits(angle, pointPosition.y, textSize.h, 90, 270);
+    var hLimits = determineLimits(angle, pointPosition.x, labelSize.w, 0, 180);
+    var vLimits = determineLimits(angle, pointPosition.y, labelSize.h, 90, 270);
 
     if (hLimits.start < furthestLimits.l) {
       furthestLimits.l = hLimits.start;
@@ -175,8 +173,8 @@ function fillLabel(ctx, label, position, fontSize, angle) {
     if(label.image) {
       var textWidth = ctx.measureText(label.text).width;
       var img = new Image;
-      var width = 50;
-      var height = 50;
+      var width = imageSize;
+      var height = imageSize;
       img.src = label.image;
       if(angle == 0) {
         ctx.drawImage(img, x - width/2, y, width, height);
@@ -197,11 +195,11 @@ function fillLabel(ctx, label, position, fontSize, angle) {
   }
 }
 
-function adjustPointPositionForLabelHeight(angle, textSize, position) {
+function adjustPointPositionForLabelHeight(angle, labelSize, position) {
   if (angle === 90 || angle === 270) {
-    position.y -= (textSize.h / 2);
+    position.y -= (labelSize.h / 2);
   } else if (angle > 270 || angle < 90) {
-    position.y -= textSize.h;
+    position.y -= labelSize.h;
   }
 }
 

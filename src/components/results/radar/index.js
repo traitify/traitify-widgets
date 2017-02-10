@@ -23,14 +23,17 @@ export default class Radar extends Component {
       data.datasets[0].data.push(type.score);
     });
 
+    var max = this.props.assessment.personality_types[0].score > 10 ? 100 : 10;
+    var stepSize = max == 10 ? 5 : 10;
     var options = {
       legend: { display: false },
       scale: {
         ticks: {
           fontSize: 10,
           min: 0,
-          max: 10,
-          stepSize: 5
+          max: max,
+          showLabelBackdrop: false,
+          stepSize: stepSize
         },
         pointLabels: { fontSize: 16 }
       },

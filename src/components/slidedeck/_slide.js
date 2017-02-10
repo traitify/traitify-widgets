@@ -3,7 +3,9 @@ import style from "./_slide.scss";
 
 export default class slideDeck extends Component {
   className (){
-    if(this.props.slide.orientation == "left"){
+    if(this.props.slide.orientation == "invisible"){
+      return style.invisible;
+    }else if(this.props.slide.orientation == "left"){
       return style.leftSlide;
     }else if(this.props.slide.orientation == "middle"){
       return style.middleSlide;
@@ -13,7 +15,7 @@ export default class slideDeck extends Component {
   }
   style(){
     return {
-      backgroundImage: `url(${this.props.slide.image_desktop_retina})`,
+      backgroundImage: `url(${this.props.slide.image})`,
       backgroundPosition: `${this.props.slide.focus_x}% ${this.props.slide.focus_y}%`
     }
   }

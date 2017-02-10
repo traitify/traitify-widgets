@@ -16,7 +16,13 @@ export default class Main extends Component {
     super();
 
     let com = this;
-    let state = {};
+    let state = {
+      assessment: {
+        personality_traits: [],
+        personality_types: [],
+        slides: []
+      }
+    };
 
     this.state = state;
     this.state.setState = function(newState){

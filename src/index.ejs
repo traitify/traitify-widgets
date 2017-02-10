@@ -14,18 +14,21 @@
 </head>
 <script>
   function InitJS(test){
-    window.developmentLoad = Traitify
-      .setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
-      .ui
-      .assessmentId("e898c67e-32c3-4394-b011-187dd12c06ba")
-      .target("#widgets").render("SlideDeck")
+    Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
+    Traitify.post("/assessments", {deck_id: "career-deck"}).then((assessment)=>{
+      window.developmentLoad = Traitify
+        .ui
+        .assessmentId(assessment.response.id)
+        .allowFullScreen(true)
+        .target("#widgets").render()
+    })
   }
   window.TraitifyDevInitialize = true
 </script>
 <body>
   Traitify Preact Widgets
 
-  <div id="widgets">
+  <div id="widgets" style="width:100%;height:100%;">
   </div>
 </body>
 </html>

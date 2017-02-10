@@ -11,14 +11,24 @@ class Traitify {
     this.options.publicKey = key;
     return this;
   }
-  static get(url) {
+  static request(method, url, params) {
     if(url.indexOf("?") != -1){
       url += `&authorization=${this.options.publicKey}`
     }else{
       url += `?authorization=${this.options.publicKey}`
     }
 
-    return Qwest.get(`${this.host}/v1${url}`)
+    return Qwest[method](`${this.host}/v1${url}`, params)
+  }
+
+  static get(url) {
+    return this.request('get', url)
+  }
+  static post(url, params) {
+    return this.request('post', url, params)
+  }
+  static put(url, params) {
+    return this.request('put', url, params)
   }
 }
 Traitify.options = {}
@@ -57,6 +67,11 @@ Traitify.ui = class UI {
 
   assessmentId (assessmentId){
     this.options.assessmentId = assessmentId;
+    return this;
+  }
+
+  allowFullScreen (value){
+    this.options.allowFullScreen = value;
     return this;
   }
 

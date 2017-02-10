@@ -1,10 +1,12 @@
+@import './variables';
+
 .slide{
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 100%;
   &.invisible{
     left: 0%;
-    display: none;
+    display: none !important;
   }
   &.leftSlide{
     left: 0%;

@@ -10,13 +10,16 @@
     <script src="/build/taco.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
-      Traitify.setHost("https://api.traitify.com")
-      Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
+      Traitify.setHost("https://api.stag.awse.traitify.com")
+      Traitify.post("/assessments", {deck_id: "big-five-classic-pilot"}).then(function(assessment){
       window.developmentLoad = Traitify
         .ui
         .assessmentId(assessment.id)
         .allowFullScreen(true)
-        .target("#widgets").render()
+        .on('SlideDeck.Finished', function(){
+          alert("FINISHED")
+        })
+        .target("#widgets").render("SlideDeck")
       })
     </script>
   </body>

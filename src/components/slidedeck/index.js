@@ -136,17 +136,28 @@ export default class slideDeck extends Component {
         response: answer.value
       }
     })
+
     Traitify.put(`/assessments/${this.props.assessmentId}/slides`, postData).then((response)=>{
+      if(this.props.callbacks['slidedeck.finished']){
+        com.props.callbacks['slidedeck.finished'].forEach((callback)=>{
+          callback.apply(com, response)
+        })
+      }
+      
       com.props.fetch()
     })
   }
 
   componentDidMount(){
-    this.initialize()
+    if(this.slides()){
+      this.initialize()
+    }
   }
 
   componentWillReceiveProps(){
-    this.initialize()
+    if(this.slides()){
+      this.initialize()
+    }
     this.shouldAllowNext()
   }
 
@@ -166,7 +177,7 @@ export default class slideDeck extends Component {
   }
 
   initialize(){
-    if(this.props.assessment.slides.initialized){
+    if(!this.props.assessment.slides || this.props.assessment.slides.length == 0 || this.props.assessment.slides.initialized){
       return false;
     }
 
@@ -266,6 +277,9 @@ export default class slideDeck extends Component {
   }
 
   render() {
+    if(!this.slides()){
+      return <span />
+    }
     var coverVisible = [style.cover]
     if(!this.isReady())
       coverVisible.push(style.visible)

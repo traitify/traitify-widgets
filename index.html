@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Traitify Widgets</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+  </head>
+  <body>
+    <div id="widgets"></div>
+    <script src="/build/taco.js"></script>
+    <script>
+      Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
+      Traitify.setHost("https://api.traitify.com")
+      Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
+      window.developmentLoad = Traitify
+        .ui
+        .assessmentId(assessment.id)
+        .allowFullScreen(true)
+        .target("#widgets").render()
+      })
+    </script>
+  </body>
+</html>

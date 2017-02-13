@@ -4,7 +4,7 @@
 ```
 <script src="https://cdn-prod.traitify.com/js/v2/traitify.js"></script>
 <script>
-Traitify.setHost('your host url')
+Traitify.setHost('your host url');
 Traitify.setPublicKey('your public key');
 
 assessment = Traitify.ui.assessmentId('an assessment id you have generated via a server side client');

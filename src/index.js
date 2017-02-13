@@ -12,8 +12,13 @@ class Traitify {
       url += `authorization=${this.options.publicKey}`
       if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
 
+      let headers = new Headers({
+        "Content-Type": "application/json"
+      })
+
       var options = {
         method: method,
+        headers: headers,
         mode: "cors",
         cache: "default"
       };
@@ -56,7 +61,7 @@ Traitify.options = { host: "http://api.traitify.com" }
 let root;
 Traitify.ui = class UI {
   constructor (){
-    this.options = {};
+    this.options = {callbacks:{}};
     return this;
   }
 
@@ -99,6 +104,12 @@ Traitify.ui = class UI {
     return this;
   }
 
+  on (key, callback){
+    this.options.callbacks[key] = this.options.callbacks[key.toLowerCase()] || []
+    this.options.callbacks[key].push(callback)
+    return this;
+  }
+
   render (componentName){
     let Main = require("./components/main").default;
 
@@ -118,6 +129,7 @@ Traitify.ui = class UI {
     return this;
   }
 }
+
 
 // Export Traitify
 window.Traitify = Traitify;

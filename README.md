@@ -20,6 +20,17 @@ assessment.on("SlideDeck.Finished", function(){
 })
 ```
 
+## Rendering Just the SlideDeck or Just the Results
+### SlideDeck
+```
+assessment.render("SlideDeck"); // Just the SlideDeck
+```
+
+### Results
+```
+assessment.render("Results"); // Just the Results
+```
+
 ## Setup
 
 ```sh

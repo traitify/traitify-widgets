@@ -1,5 +1,14 @@
 # Traitify Widgets
 
+## Initializing The Library
+```
+Traitify.setHost('your host url')
+        .setPublicKey('your public key');
+
+Traitify.ui.assessmentId('an assessment id you have generated via a server side client')
+           .render();
+```
+
 ## Setup
 
 ```sh

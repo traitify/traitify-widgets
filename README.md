@@ -18,6 +18,7 @@ assessment.render();
 assessment.on("SlideDeck.Finished", function(){
   console.log("finished")
 })
+assessment.render()
 ```
 
 ## Rendering Just the SlideDeck or Just the Results

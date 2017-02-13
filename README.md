@@ -5,8 +5,15 @@
 Traitify.setHost('your host url')
         .setPublicKey('your public key');
 
-Traitify.ui.assessmentId('an assessment id you have generated via a server side client')
-           .render();
+assessment = Traitify.ui.assessmentId('an assessment id you have generated via a server side client')
+assessment.render();
+```
+
+## Events
+```
+assessment.on("SlideDeck.Finished", function(){
+  console.log("finished")
+})
 ```
 
 ## Setup

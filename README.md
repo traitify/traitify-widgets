@@ -15,10 +15,13 @@ assessment.render();
 
 ## Events
 ```
+// Event handlers must be set before the render command, or they will not be called.
 assessment.on("SlideDeck.Finished", function(){
   console.log("finished");
 })
-assessment.render(); // Must render after adding event callbacks so that the events are passed to the widget set
+
+// Must render after adding event callbacks so that the events are passed to the widget set
+assessment.render();
 ```
 
 ## Rendering Just the SlideDeck or Just the Results

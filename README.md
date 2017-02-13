@@ -1,5 +1,25 @@
 # Traitify Widgets
 
+## Initializing The Library
+```
+<script src="https://cdn-prod.traitify.com/js/v2/traitify.js"></script>
+<script>
+Traitify.setHost('your host url')
+        .setPublicKey('your public key');
+
+assessment = Traitify.ui.assessmentId('an assessment id you have generated via a server side client')
+assessment.target("#the-id-of-the-target-you-wish-to-render-to")
+assessment.render();
+</script>
+```
+
+## Events
+```
+assessment.on("SlideDeck.Finished", function(){
+  console.log("finished")
+})
+```
+
 ## Setup
 
 ```sh

@@ -5,4 +5,4 @@
 /coverage
 /.idea
 yarn.lock
-.vscode
+/.vscode

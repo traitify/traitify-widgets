@@ -8,9 +8,11 @@ export default class Results extends Component {
     if(!assessment.personality_types) return <div />
 
     if(assessment.assessment_type == "TYPE_BASED") {
-      return <PersonalityTypes {...this.props} />
+      // return <PersonalityTypes {...this.props} />
+      console.warn("Assessment Type not supported yet");
+      return <div />;
     } else {
-      return <Dimensions {...this.props} />
+      return <Dimensions {...this.props} />;
     }
   }
 }

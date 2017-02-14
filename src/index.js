@@ -14,7 +14,7 @@ class Traitify {
 
       let headers = new Headers({
         "Content-Type": "application/json"
-      })
+      });
 
       var options = {
         method: method,
@@ -56,53 +56,24 @@ class Traitify {
     return this.request("PUT", path, params);
   }
 }
-Traitify.options = { host: "http://api.traitify.com" }
+Traitify.options = { host: "http://api.traitify.com" };
 
 let root;
 Traitify.ui = class UI {
-  constructor (){
-    this.options = {callbacks:{}};
-    return this;
+  constructor (options){
+    this.options = options || {};
+    this.options.callbacks = this.options.callbacks || {};
   }
-  static component(){
-    return new this();
-  }
-  static startChain(options){
-    let widgets = this.component();
-    Object.keys(options || {}).forEach((key)=>{
-      widgets.options[key] = options[key];
-    })
-    return widgets;
-  }
-  static assessmentId(assessmentId){
-    return this.startChain({assessmentId: assessmentId});
-  }
-  static allowFullScreen(value){
-    this.options.allowFullScreen = value;
-    return this;
-  }
-  static target(target){
-    return this.startChain({target: target});
+  static component(options){
+    return new this(options);
   }
   static on(key, callback){
-    var widgets = this.startChain();
+    var widgets = this.component();
     widgets.on(key, callback);
     return widgets;
   }
   static render(options){
-    return this.startChain(options).render();
-  }
-  assessmentId(assessmentId){
-    this.options.assessmentId = assessmentId;
-    return this;
-  }
-  allowFullScreen(value){
-    this.options.allowFullScreen = value;
-    return this;
-  }
-  target(target){
-    this.options.target = target;
-    return this;
+    return this.component(options).render();
   }
   on(key, callback){
     var key = key.toLowerCase();
@@ -131,6 +102,18 @@ Traitify.ui = class UI {
   }
 }
 
+var defaultOptions = ["allowFullScreen", "assessmentId", "target"];
+defaultOptions.forEach(function(option) {
+  Traitify.ui[option] = function(value) {
+    var options = {};
+    options[option] = value;
+    return this.component(options);
+  };
+  Traitify.ui.prototype[option] = function(value) {
+    this.options[option] = value;
+    return this;
+  };
+});
 
 // Export Traitify
 window.Traitify = Traitify;

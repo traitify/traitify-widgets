@@ -22,12 +22,9 @@ describe("", () => {
     scratch = null;
   });
 
-
   describe("routing", () => {
     it("should render the homepage", () => {
-      options = {
-        
-      }
+      options = {};
       render(<Default {...options} />, scratch);
 
       expect(scratch.innerHTML).to.contain("Home");

@@ -121,7 +121,7 @@ Traitify.ui = class UI {
     if(typeof this.options.target == "string"){
       this.options.target = document.querySelector(this.options.target || ".tf-widgets");
     }else{
-      raise "Traitify.ui.target('#example-target') not set!"
+      throw "Traitify.ui.target('#example-target') not set!";
     }
 
     this.options.componentName = componentName;

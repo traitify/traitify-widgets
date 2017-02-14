@@ -8,11 +8,10 @@
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "prebuild": "mkdirp build",
-    "taco":"node taco.js",
     "test": "npm run -s lint && npm run -s test:karma",
     "test:karma": "karma start test/karma.conf.js --single-run",
     "lint": "eslint {src,test}",
-    "serve": "serve "
+    "serve": "serve ."
   },
   "keywords": [
     "traitify",

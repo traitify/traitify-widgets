@@ -7,19 +7,15 @@
   </head>
   <body>
     <div id="widgets"></div>
-    <script src="/build/taco.js"></script>
+    <script src="/build/bundle.js"></script>
     <script>
-      Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a")
-      Traitify.setHost("https://api.traitify.com")
-      Traitify.post("/assessments", {deck_id: "big-five-classic-pilot"}).then(function(assessment){
-      window.developmentLoad = Traitify
-        .ui
-        .assessmentId(assessment.id)
-        .allowFullScreen(true)
-        .on('SlideDeck.Finished', function(){
-          alert("FINISHED")
-        })
-        .target("#widgets").render("SlideDeck")
+      Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
+      Traitify.setHost("https://api.traitify.com");
+      Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
+        var assessment = Traitify.ui.assessmentId(assessment.id);
+        assessment.allowFullScreen(true);
+        assessment.target("#widgets");
+        assessment.render();
       })
     </script>
   </body>

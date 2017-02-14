@@ -1,11 +1,11 @@
 import { h, render, rerender } from "preact";
 import { route } from "preact-router";
-import App from "components/app";
+import Default from "components/default";
 import "style";
 
 /*global sinon,expect*/
 
-describe("App", () => {
+describe("", () => {
   let scratch;
 
   before( () => {
@@ -25,7 +25,10 @@ describe("App", () => {
 
   describe("routing", () => {
     it("should render the homepage", () => {
-      render(<App />, scratch);
+      options = {
+        
+      }
+      render(<Default {...options} />, scratch);
 
       expect(scratch.innerHTML).to.contain("Home");
     });

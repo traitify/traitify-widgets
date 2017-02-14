@@ -4,20 +4,24 @@
 ```
 <script src="https://cdn-prod.traitify.com/js/v2/traitify.js"></script>
 <script>
-Traitify.setHost('your host url')
-        .setPublicKey('your public key');
+Traitify.setHost('your host url');
+Traitify.setPublicKey('your public key');
 
-assessment = Traitify.ui.assessmentId('an assessment id you have generated via a server side client')
-assessment.target("#the-id-of-the-target-you-wish-to-render-to")
+assessment = Traitify.ui.assessmentId('an assessment id you have generated via a server side client');
+assessment.target("#the-id-of-the-target-you-wish-to-render-to");
 assessment.render();
 </script>
 ```
 
 ## Events
 ```
+// Event handlers must be set before the render command, or they will not be called.
 assessment.on("SlideDeck.Finished", function(){
-  console.log("finished")
+  console.log("finished");
 })
+
+// Must render after adding event callbacks so that the events are passed to the widget set
+assessment.render();
 ```
 
 ## Rendering Just the SlideDeck or Just the Results

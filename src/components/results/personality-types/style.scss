@@ -1,1 +1,99 @@
 @import "~style/helpers";
+
+%grid {
+  @extend %cf;
+  margin: 0 ($gutter/2)*-1;
+}
+%mob-cont {
+  text-align: left;
+  @include cols(12);
+}
+.wrapper {
+  @extend %cf;
+  max-width: 35.5em;
+  width: 100%;
+  margin: auto;
+  padding: $gutter/2;
+  @include mq(s) {
+    max-width: 48em;
+  }
+  @include mq(m) {
+    max-width: 60em;
+  }
+  @include mq(l) {
+    max-width: 71.25em;
+  }
+  @include mq(xl) {
+    max-width: 80em;
+  }
+}
+.row {
+  @extend %grid;
+}
+
+html {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+// Trait Styles
+.trait {
+  margin-bottom: 16px;
+}
+.traitBar {
+  height: 5px;
+}
+.traitContent {
+  @extend %cf;
+  padding: 10px 15px 12px 10px;
+}
+.traitScore {
+  float: right;
+  margin: 0 0 0 20px;
+  @include rems(19);
+  @include mq(m) {
+    @include rems(22);
+  }
+}
+.traitIcon {
+  float: left;
+  margin: 5px 12px 0 0;
+  max-width: 65px;
+  @include mq(m) {
+    margin-right: 20px;
+  }
+}
+.traitName {
+  font-weight: normal;
+  margin: 0 0 3px;
+  @include rems(19);
+  @include mq(m) {
+    display: inline-block;
+    margin-top: 16px;
+    @include rems(22);
+  }
+}
+.traitDescription {
+  margin: 0;
+  overflow: hidden;
+  @include rems(15);
+  @include mq(m) {
+    display: inline-block;
+    overflow: initial;
+    margin-left: 5px;
+    @include rems(17);
+    &:before {
+      content: "- ";
+      display: inline-block;
+    }
+  }
+}

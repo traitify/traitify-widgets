@@ -25,15 +25,39 @@ export default class PersonalityTypes extends Component {
     ]
     var context = this;
     return (
-      <section class={style.tiles}>
-        <div class={style.tile}>
-          <h4 class={style.title}>Tap the personalities to learn about each one</h4>
-          <h4 class={style.title}>Hover over the personalities to learn about each one</h4>
-        </div>
-        {personalityTypes.map(function(personalityType, i) {
-          return <PersonalityType personalityType={personalityType} index={i} {...context.props} />
-        })}
-      </section>
+			<div class={style.wrapper}>
+				<div class={style.row}>
+					<section class={style.tiles}>
+						<div class={style.tile}>
+							<h4 class={style.title}>Tap the personalities to learn about each one</h4>
+							<h4 class={style.title}>Hover over the personalities to learn about each one</h4>
+						</div>
+						{personalityTypes.map(function(personalityType, i) {
+							return <PersonalityType personalityType={personalityType} index={i} {...context.props} />
+						})}
+
+						<div class={style.trait} style="background: #fff3ed;">
+							<div class={style.traitBar} style="width: 98%; background: #f66c0f;"></div>
+							<div class={style.traitContent}>
+								<div class={style.traitScore}>98%</div>
+								<img src='//placehold.it/100x100' alt='Type Name icon' class={style.traitIcon} />
+								<h3 class={style.traitName}>Trait Name</h3>
+								<p class={style.traitDescription}>has a real sense of what is practical and workable</p>
+							</div>
+						</div>
+						<div class={style.trait} style="background: #e7fefa;">
+							<div class={style.traitBar} style="width: 85%; background: #00e5bc;"></div>
+							<div class={style.traitContent}>
+								<div class={style.traitScore}>85%</div>
+								<img src='//placehold.it/100x100' alt='Type Name icon' class={style.traitIcon} />
+								<h3 class={style.traitName}>Trait Name</h3>
+								<p class={style.traitDescription}>prefers what is known and routine</p>
+							</div>
+						</div>
+
+					</section>
+				</div>
+			</div>
     );
   }
 }

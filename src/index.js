@@ -7,10 +7,10 @@ let Main = require("./components/main").default;
 class Traitify {
   static request(method, path, params) {
     return new Promise((resolve, reject)=>{
-      var url = `${this.options.host}/v1${path}`
-      url += (url.indexOf("?") == -1) ? "?" : "&"
-      url += `authorization=${this.options.publicKey}`
-      if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`
+      var url = `${this.options.host}/v1${path}`;
+      url += (url.indexOf("?") == -1) ? "?" : "&";
+      url += `authorization=${this.options.publicKey}`;
+      if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`;
 
       let headers = new Headers({
         "Content-Type": "application/json"
@@ -23,7 +23,7 @@ class Traitify {
         cache: "default"
       };
 
-      if(params) { options.body = JSON.stringify(params); }
+      if(params) options.body = JSON.stringify(params);
 
       var request = new Request(url, options);
 
@@ -46,14 +46,14 @@ class Traitify {
     this.options.publicKey = key;
     return this;
   }
-  static get(path) {
-    return this.request("GET", path)
+  static get(path){
+    return this.request("GET", path);
   }
-  static post(path, params) {
-    return this.request("POST", path, params)
+  static post(path, params){
+    return this.request("POST", path, params);
   }
-  static put(path, params) {
-    return this.request("PUT", path, params)
+  static put(path, params){
+    return this.request("PUT", path, params);
   }
 }
 Traitify.options = { host: "http://api.traitify.com" }
@@ -64,68 +64,69 @@ Traitify.ui = class UI {
     this.options = {callbacks:{}};
     return this;
   }
-
-  static component (){
+  static component(){
     return new this();
   }
-
   static startChain(options){
     let widgets = this.component();
     Object.keys(options || {}).forEach((key)=>{
-      widgets.options[key] = options[key]
+      widgets.options[key] = options[key];
     })
     return widgets;
   }
-
-  static render (options){
-    return this.startChain(options).render()
+  static assessmentId(assessmentId){
+    return this.startChain({assessmentId: assessmentId});
   }
-
-  static assessmentId (assessmentId){
-    return this.startChain({assessmentId: assessmentId})
-  }
-
-  static target (target){
-    return this.startChain({target: target})
-  }
-
-  assessmentId (assessmentId){
-    this.options.assessmentId = assessmentId;
-    return this;
-  }
-
-  allowFullScreen (value){
+  static allowFullScreen(value){
     this.options.allowFullScreen = value;
     return this;
   }
-
-  target (target){
+  static target(target){
+    return this.startChain({target: target});
+  }
+  static on(key, callback){
+    var widgets = this.startChain();
+    widgets.on(key, callback);
+    return widgets;
+  }
+  static render(options){
+    return this.startChain(options).render();
+  }
+  assessmentId(assessmentId){
+    this.options.assessmentId = assessmentId;
+    return this;
+  }
+  allowFullScreen(value){
+    this.options.allowFullScreen = value;
+    return this;
+  }
+  target(target){
     this.options.target = target;
     return this;
   }
-
-  on (key, callback){
-    this.options.callbacks[key] = this.options.callbacks[key.toLowerCase()] || []
-    this.options.callbacks[key].push(callback)
+  on(key, callback){
+    var key = key.toLowerCase();
+    this.options.callbacks[key] = this.options.callbacks[key] || [];
+    this.options.callbacks[key].push(callback);
     return this;
   }
-
-  render (componentName){
+  refresh(){
+    this.render();
+    return this;
+  }
+  render(componentName){
     let Main = require("./components/main").default;
 
     // If target is not a node use query selector to find the target node
     if(typeof this.options.target == "string"){
-      this.options.target = document.querySelector(this.options.target || ".tf-widgets")
+      this.options.target = document.querySelector(this.options.target || ".tf-widgets");
+    }else{
+      raise "Traitify.ui.target('#example-target') not set!"
     }
 
-    this.options.componentName = componentName
+    this.options.componentName = componentName;
 
     root = render(<Main {...this.options} />, this.options.target, root);
-    return this;
-  }
-
-  refresh () {
-    this.render()
     return this;
   }
 }

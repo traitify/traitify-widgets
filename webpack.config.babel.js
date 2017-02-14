@@ -90,7 +90,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin("style.css", {
       allChunks: true,
-      disable: ENV!=="production"
+      disable: true
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(ENV)

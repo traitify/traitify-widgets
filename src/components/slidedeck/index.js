@@ -9,11 +9,9 @@ export default class slideDeck extends Component {
 
     return this;
   }
-
   onComplete(){
-    this.props.fetch()
+    this.props.fetch();
   }
-
   screen(){
     var width = window.innerWidth
     || document.documentElement.clientWidth
@@ -24,35 +22,30 @@ export default class slideDeck extends Component {
 
     return {
       width,
-      height,
-      ratio: width / height
+      height
     }
   }
-
   currentWidth(){
     let part = this.screen().width * 1.5;
     return Math.round(part * .01) * 10;
   }
-
   currentHeight(){
-    let part = this.screen().height * 1.5
+    let part = this.screen().height * 1.5;
     return Math.round(part * .01) * 10;
   }
-
   imageService(slide){
-    return slide.image_desktop
+    return slide.image_desktop;
   }
-
   prefetchSlides(i){
     if(i != this.slides().length){
       let com = this;
-      let img = document.createElement("img")
-      img.src = this.imageService(this.props.assessment.slides[i])
+      let img = document.createElement("img");
+      img.src = this.imageService(this.props.assessment.slides[i]);
       img.onload = ()=>{
         if(i >= com.currentIndex() + 2){
           setTimeout(()=>{
-            this.props.ready = true
-            this.props.setState(this.props)
+            this.props.ready = true;
+            this.props.setState(this.props);
           }, 600)
         }
         com.props.assessment.slides[i].loaded = true;
@@ -61,73 +54,66 @@ export default class slideDeck extends Component {
       }
     }
   }
-
   slides(){
-    let slides = (this.props.assessment.slides || [])
+    let slides = (this.props.assessment.slides || []);
     slides = slides.map((slide)=>{
       slide.image = this.imageService(slide);
       return slide;
     })
     return slides;
   }
-
   loadedSlides(){
-    let slides = this.slides()
+    let slides = this.slides();
 
     let loadedSlides = slides.filter((slide)=>{
       return slide.loaded;
     })
-    let com = this;
 
     return loadedSlides;
   }
-
   currentSlide(){
     return this.slides().filter((slide)=>{
       return slide.orientation == "middle";
     })[0] || {}
   }
-
   answerSlide(value, e){
     e.preventDefault();
 
-    var lastSlide = this.props.assessment.slides.lastAnswer
+    var lastSlide = this.props.assessment.slides.lastAnswer;
     this.props.assessment.slides.answers = this.props.assessment.slides.answers || {};
     this.props.assessment.slides.answers[this.currentSlide().id] = {
       value: value,
       timeTaken: new Date() - lastSlide
     }
     sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.props.assessment.slides.answers))
-    this.props.assessment.slides.lastAnswer = new Date()
-    this.props.setState(this.props)
+    this.props.assessment.slides.lastAnswer = new Date();
+    this.props.setState(this.props);
+
     if(this.isComplete()){
-      this.finish()
+      this.finish();
     }else{
-      this.nextSlide()
+      this.nextSlide();
     }
   }
-
   currentIndex(){
-    return this.slides().map((slide)=>{ return slide.id }).indexOf(this.currentSlide().id)
+    return this.slides().map((slide)=>{ return slide.id }).indexOf(this.currentSlide().id);
   }
-
   nextSlide(){
     let slides = this.props.assessment.slides;
-    let i = this.currentIndex()
-    slides[i].orientation = "left"
-    slides[i + 1].orientation = "middle"
+    let i = this.currentIndex();
+    slides[i].orientation = "left";
+    slides[i + 1].orientation = "middle";
     if(slides[i + 2]){
-      slides[i + 2].orientation = "right"
+      slides[i + 2].orientation = "right";
     }
     if(i > 0){
-      slides[i - 1].orientation = "invisible"
+      slides[i - 1].orientation = "invisible";
     }
-    this.props.setState(this.props)
+    this.props.setState(this.props);
   }
-
   finish(){
     let com = this;
-    let answers = this.props.assessment.slides.answers
+    let answers = this.props.assessment.slides.answers;
     let postData = Object.keys(answers).map((answerKey)=>{
       let answer = answers[answerKey];
       return {
@@ -147,35 +133,30 @@ export default class slideDeck extends Component {
       com.props.fetch()
     })
   }
-
   componentDidMount(){
     if(this.slides()){
       this.initialize()
     }
   }
-
   componentWillReceiveProps(){
     if(this.slides()){
       this.initialize()
     }
     this.shouldAllowNext()
   }
-
   shouldAllowNext(){
     if(this.currentIndex() >= this.loadedSlides().length  - 2 && this.currentIndex() < this.slides().length - 2){
-      this.setReady(false)
+      this.setReady(false);
     }else{
-      this.setReady(true)
+      this.setReady(true);
     }
   }
-
   setReady(value){
     if(this.props.ready != value){
-      this.props.ready = value
-      this.props.setState(this.props)
+      this.props.ready = value;
+      this.props.setState(this.props);
     }
   }
-
   initialize(){
     if(!this.props.assessment.slides || this.props.assessment.slides.length == 0 || this.props.assessment.slides.initialized){
       return false;
@@ -183,19 +164,19 @@ export default class slideDeck extends Component {
 
     var com = this;
     if(this.props.assessment.slides && this.props.assessment.slides.length != 0){
-      let slides = this.props.assessment.slides.filter((s)=>{ return s.orientation })
+      let slides = this.props.assessment.slides.filter((s)=>{ return s.orientation });
       // Initialize Widget because data is now here
       if(slides.length == 0){
         if(this.isComplete()){
-          this.finish()
+          this.finish();
           return this.props;
         }
-        this.props.assessment.slides[0].orientation = "middle"
-        this.props.assessment.slides[1].orientation = "right"
+        this.props.assessment.slides[0].orientation = "middle";
+        this.props.assessment.slides[1].orientation = "right";
         var answers = {};
         if(sessionStorage.getItem(`slides-${this.props.assessmentId}`)){
           try{
-            answers = JSON.parse(sessionStorage.getItem(`slides-${this.props.assessmentId}`))
+            answers = JSON.parse(sessionStorage.getItem(`slides-${this.props.assessmentId}`));
           }catch(e){
           }
         }
@@ -205,53 +186,49 @@ export default class slideDeck extends Component {
 
         this.props.assessment.slides.forEach((slide, index)=>{
           if(answers[slide.id]){
-            let si = props.assessment.slides[index - 1]
-            let sl = props.assessment.slides[index]
-            let sm = props.assessment.slides[index + 1]
-            let sr = props.assessment.slides[index + 2]
+            let si = props.assessment.slides[index - 1];
+            let sl = props.assessment.slides[index];
+            let sm = props.assessment.slides[index + 1];
+            let sr = props.assessment.slides[index + 2];
             if(si)
-              si.orientation = "invisible"
+              si.orientation = "invisible";
             if(sl)
-              sl.orientation = "left"
+              sl.orientation = "left";
             if(sm)
-              sm.orientation = "middle"
+              sm.orientation = "middle";
             if(sr)
-              sr.orientation = "right"
+              sr.orientation = "right";
           }
         })
 
-        this.props.assessment.slides.initialized = true
+        this.props.assessment.slides.initialized = true;
 
-        this.props.setState(this.props)
+        this.props.setState(this.props);
         // Detach into thread
         setTimeout(()=>{
-          com.prefetchSlides(com.currentIndex())
+          com.prefetchSlides(com.currentIndex());
         }, 0)
       }
     }
   }
-
   completion(){
-    return this.currentIndex() / this.slides().length * 100
+    return this.currentIndex() / this.slides().length * 100;
   }
-
   isComplete(){
     if(((this.props.assessment || {}).slides || {}).answers){
-      return this.slides().length == Object.keys(this.props.assessment.slides.answers).length
+      return this.slides().length == Object.keys(this.props.assessment.slides.answers).length;
     }else{
       return false;
     }
   }
-
   isReady(){
-    return this.props.ready
+    return this.props.ready;
   }
-
   handleFullScreen(){
-    var i = this.container
+    var i = this.container;
     if(this.props.isFullScreen){
-      this.props.isFullScreen = false
-      this.props.setState(this.props)
+      this.props.isFullScreen = false;
+      this.props.setState(this.props);
       if (document.exitFullscreen) {
       	document.exitFullscreen();
       } else if (document.webkitExitFullscreen) {
@@ -262,8 +239,8 @@ export default class slideDeck extends Component {
       	document.msExitFullscreen();
       }
     }else{
-      this.props.isFullScreen = true
-      this.props.setState(this.props)
+      this.props.isFullScreen = true;
+      this.props.setState(this.props);
       if (i.requestFullscreen) {
       	i.requestFullscreen();
       } else if (i.webkitRequestFullscreen) {
@@ -275,14 +252,13 @@ export default class slideDeck extends Component {
       }
     }
   }
-
   render() {
     if(!this.slides()){
       return <span />
     }
     var coverVisible = [style.cover]
     if(!this.isReady())
-      coverVisible.push(style.visible)
+      coverVisible.push(style.visible);
 
     return (
       <div class={style.widgetContainer} ref={(container) => { this.container = container; }}>

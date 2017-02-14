@@ -11,12 +11,20 @@
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
-      Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
-        var assessment = Traitify.ui.assessmentId(assessment.id);
-        assessment.allowFullScreen(true);
-        assessment.target("#widgets");
-        assessment.render();
-      })
+      var useCompleted = true;
+
+      window.widget = Traitify.ui.target("#widgets");
+      var loadAssessment = function(assessment) {
+        widget.assessmentId(assessment.id);
+        widget.allowFullScreen(true);
+        widget.render();
+      }
+
+      if(useCompleted) {
+        loadAssessment({ id: "23803fab-abde-49ff-8983-174d56efedc9" })
+      } else {
+        Traitify.post("/assessments", {deck_id: "career-deck"}).then(loadAssessment);
+      }
     </script>
   </body>
 </html>

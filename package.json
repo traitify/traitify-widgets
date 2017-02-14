@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Traitiy Widgets",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
+    "dev": "webpack --watch & serve .",
     "start": "serve build -s -c 1",
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack -p --progress",

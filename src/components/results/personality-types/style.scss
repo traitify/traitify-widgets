@@ -58,10 +58,71 @@ h4 {
   }
 }
 
+// Blend
+.blend {
+  @extend %cf;
+  margin: 0 auto;
+  text-align: center;
+  @include cols(12);
+}
+.blendImage {
+  width: 140px;
+  height: 140px;
+  padding: 15px;
+  display: inline-block;
+  @include border-radius(50%);
+  @include mq(m) {
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+  }
+  @include mq(xl) {
+    width: 250px;
+    height: 250px;
+  }
+  &:nth-of-type(2) {
+    margin-left: -20px;
+    @include mq(m) {
+      margin-left: -35px;
+    }
+  }
+  img {
+    width: 95%;
+    height: 95%;
+  }
+}
+.blendName {
+  font-weight: normal;
+  margin-bottom: 0;
+  @include rems(20);
+  @include mq(m) {
+    @include rems(24);
+  }
+  @include mq(xl) {
+    @include rems(28);
+  }
+}
+.blendDescription {
+  margin-bottom: 80px;
+  @include rems(15);
+  @include mq(m) {
+    width: 70%;
+    margin: 16px auto 80px;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    width: 60%;
+    @include rems(20);
+  }
+}
+
 // Trait Styles
 .trait {
   @extend %cf;
   margin-bottom: 16px;
+  @include mq(xl) {
+    margin-bottom: 20px;
+  }
 }
 .traitBar {
   height: 5px;
@@ -136,7 +197,7 @@ h4 {
   display: inline-block;
   min-width: 155px;
   padding: 6px 25px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
   text-align: center;
   border: 0;
   cursor: pointer;
@@ -163,6 +224,9 @@ h4 {
     @include mq(m) {
       padding-bottom: 16px;
       @include rems(17);
+    }
+    @include mq(xl) {
+      @include rems(18);
     }
   }
   li {

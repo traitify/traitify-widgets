@@ -36,6 +36,19 @@ export default class PersonalityTypes extends Component {
 							return <PersonalityType personalityType={personalityType} index={i} {...context.props} />
 						})}
 
+						<h4>Personality Blend</h4>
+						<div class={style.blend}>
+							<div class={style.blendImage} style="border: 3px solid #a75bd8; background-color: rgba(167, 91, 216, 0.085);">
+								<img src="//placehold.it/300x300" />
+							</div>
+							<div class={style.blendImage} style="border: 3px solid #17AEE7; background-color: rgba(23, 174, 231, 0.085);">
+								<img src="//placehold.it/300x300" />
+							</div>
+
+							<h3 class={style.blendName}>Visionary/Analyzer</h3>
+							<p class={style.blendDescription}>Consectetur sunt vero consequuntur ut at? Sapiente laborum sequi culpa iste aliquid. Fugit dicta cumque ad pariatur sunt aperiam Enim esse iure illum perspiciatis et officiis Assumenda odit veritatis modi. Consectetur sunt vero consequuntur ut at? Sapiente laborum sequi culpa iste aliquid. Fugit dicta cumque ad pariatur sunt aperiam Enim esse iure illum perspiciatis et officiis Assumenda odit veritatis modi.</p>
+						</div>
+
 						<h4>Personality Traits (Measured on a scale of 0% to 100%)</h4>
 						<div class={style.trait} style="background: #fff3ed;">
 							<div class={style.traitBar} style="width: 98%; background: #f66c0f;"></div>

@@ -36,13 +36,15 @@ export default class PersonalityTypes extends Component {
 							return <PersonalityType personalityType={personalityType} index={i} {...context.props} />
 						})}
 
+						<h4>Personality Traits (Measured on a scale of 0% to 100%)</h4>
 						<div class={style.trait} style="background: #fff3ed;">
 							<div class={style.traitBar} style="width: 98%; background: #f66c0f;"></div>
 							<div class={style.traitContent}>
 								<div class={style.traitScore}>98%</div>
 								<img src='//placehold.it/100x100' alt='Type Name icon' class={style.traitIcon} />
-								<h3 class={style.traitName}>Trait Name</h3>
-								<p class={style.traitDescription}>has a real sense of what is practical and workable</p>
+								<h3 class={style.traitName}>Trait Name
+								<span class={style.traitDescription}>feeling compelled, by a strong impulse, to act or behave in a certain way, which is usually repetitive</span>
+								</h3>
 							</div>
 						</div>
 						<div class={style.trait} style="background: #e7fefa;">
@@ -50,9 +52,34 @@ export default class PersonalityTypes extends Component {
 							<div class={style.traitContent}>
 								<div class={style.traitScore}>85%</div>
 								<img src='//placehold.it/100x100' alt='Type Name icon' class={style.traitIcon} />
-								<h3 class={style.traitName}>Trait Name</h3>
-								<p class={style.traitDescription}>prefers what is known and routine</p>
+								<h3 class={style.traitName}>Trait Name
+								<span class={style.traitDescription}>prefers what is known and routine</span>
+								</h3>
 							</div>
+						</div>
+
+						<p class={style.center}>
+							<a href="#" class={style.moreTraits}>View More Traits</a>
+						</p>
+
+						<div class={style.complements}>
+							<h4>Complements</h4>
+							<p>Lorem obcaecati nesciunt architecto recusandae eum quisquam. Eligendi ducimus tenetur illo dolore dolorum! Sed perferendis qui provident exercitationem natus voluptas molestias a Incidunt assumenda totam cumque itaque ipsam numquam!</p>
+						</div>
+
+						<div class={style.conflicts}>
+							<h4>Conflicts</h4>
+							<p>Lorem obcaecati nesciunt architecto recusandae eum quisquam. Eligendi ducimus tenetur illo dolore dolorum! Sed perferendis qui provident exercitationem natus voluptas molestias a Incidunt assumenda totam cumque itaque ipsam numquam!</p>
+						</div>
+
+						<div class={style.environment}>
+							<h4>Best Work Environment</h4>
+							<ul>
+								<li>Allows for independent study and peer collaboration</li>
+								<li>Is fast-paced</li>
+								<li>Offers clear opportunities for career advancement</li>
+								<li>Requires an academic speciality</li>
+							</ul>
 						</div>
 
 					</section>

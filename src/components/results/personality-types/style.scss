@@ -44,13 +44,30 @@ body {
   font-weight: 400;
   color: #333;
 }
+.center {
+  text-align: center;
+}
+h4 {
+  font-weight: normal;
+  @include rems(18);
+  @include mq(m) {
+    @include rems(20);
+  }
+  @include mq(xl) {
+    @include rems(22);
+  }
+}
 
 // Trait Styles
 .trait {
+  @extend %cf;
   margin-bottom: 16px;
 }
 .traitBar {
   height: 5px;
+  @include mq(xl) {
+    height: 7px;
+  }
 }
 .traitContent {
   @extend %cf;
@@ -61,7 +78,12 @@ body {
   margin: 0 0 0 20px;
   @include rems(19);
   @include mq(m) {
-    @include rems(22);
+    margin: 18px 0 0 30px;
+    @include rems(21);
+  }
+  @include mq(xl) {
+    margin-right: 10px;
+    @include rems(24);
   }
 }
 .traitIcon {
@@ -69,7 +91,10 @@ body {
   margin: 5px 12px 0 0;
   max-width: 65px;
   @include mq(m) {
-    margin-right: 20px;
+    margin-right: 16px;
+  }
+  @include mq(xl) {
+    margin-left: 10px;
   }
 }
 .traitName {
@@ -77,23 +102,89 @@ body {
   margin: 0 0 3px;
   @include rems(19);
   @include mq(m) {
-    display: inline-block;
-    margin-top: 16px;
-    @include rems(22);
+    margin-top: 18px;
+    margin-bottom: 10px;
+    @include rems(21);
+  }
+  @include mq(xl) {
+    @include rems(24);
   }
 }
 .traitDescription {
   margin: 0;
   overflow: hidden;
+  display: block;
   @include rems(15);
   @include mq(m) {
-    display: inline-block;
+    display: inline;
     overflow: initial;
     margin-left: 5px;
     @include rems(17);
     &:before {
-      content: "- ";
+      content: "-";
+      margin-right: 5px;
       display: inline-block;
     }
+  }
+  @include mq(xl) {
+    @include rems(19);
+  }
+}
+.moreTraits {
+  color: $black;
+  background: $gray;
+  display: inline-block;
+  min-width: 155px;
+  padding: 6px 25px;
+  margin: 0 auto;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  @include rems(22);
+  &:hover {
+    background: $gray-hover;
+  }
+}
+
+// Complements, Conflicts, Best Work Environment
+.complements, .conflicts, .environment {
+  border-top: 1px solid $border;
+  @include cols(12);
+  @include mq(m) {
+    border-bottom: 1px solid $border;
+    @include cols(6);
+  }
+  h4 {
+    margin-bottom: 0;
+  }
+  p, li {
+    @include rems(15);
+    @include mq(m) {
+      padding-bottom: 16px;
+      @include rems(17);
+    }
+  }
+  li {
+    @include mq(m) {
+      padding-bottom: 8px;
+    }
+  }
+  ul {
+    padding-left: 20px;
+  }
+}
+.conflicts {
+  @include mq(m) {
+    border-left: 1px solid $border;
+  }
+}
+.environment {
+  @include mq(m) {
+    border: 0;
+    @include push(3);
+  }
+  @include mq(xl) {
+    @include push(4);
   }
 }

@@ -3,35 +3,8 @@ import Slide from "./_slide";
 import style from "./index.scss";
 
 export default class slideDeck extends Component {
-  constructor(){
-    super();
-    this.state = {};
-
-    return this;
-  }
   onComplete(){
     this.props.fetch();
-  }
-  screen(){
-    var width = window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
-    var height = window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight;
-
-    return {
-      width,
-      height
-    }
-  }
-  currentWidth(){
-    let part = this.screen().width * 1.5;
-    return Math.round(part * .01) * 10;
-  }
-  currentHeight(){
-    let part = this.screen().height * 1.5;
-    return Math.round(part * .01) * 10;
   }
   imageService(slide){
     return slide.image_desktop;
@@ -129,7 +102,7 @@ export default class slideDeck extends Component {
           callback.apply(com, response)
         })
       }
-      
+
       com.props.fetch()
     })
   }
@@ -230,25 +203,25 @@ export default class slideDeck extends Component {
       this.props.isFullScreen = false;
       this.props.setState(this.props);
       if (document.exitFullscreen) {
-      	document.exitFullscreen();
+        document.exitFullscreen();
       } else if (document.webkitExitFullscreen) {
-      	document.webkitExitFullscreen();
+        document.webkitExitFullscreen();
       } else if (document.mozCancelFullScreen) {
-      	document.mozCancelFullScreen();
+        document.mozCancelFullScreen();
       } else if (document.msExitFullscreen) {
-      	document.msExitFullscreen();
+        document.msExitFullscreen();
       }
     }else{
       this.props.isFullScreen = true;
       this.props.setState(this.props);
       if (i.requestFullscreen) {
-      	i.requestFullscreen();
+        i.requestFullscreen();
       } else if (i.webkitRequestFullscreen) {
-      	i.webkitRequestFullscreen();
+        i.webkitRequestFullscreen();
       } else if (i.mozRequestFullScreen) {
-      	i.mozRequestFullScreen();
+        i.mozRequestFullScreen();
       } else if (i.msRequestFullscreen) {
-      	i.msRequestFullscreen();
+        i.msRequestFullscreen();
       }
     }
   }

@@ -11,12 +11,29 @@
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
-      Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
-        var assessment = Traitify.ui.assessmentId(assessment.id);
-        assessment.allowFullScreen(true);
-        assessment.target("#widgets");
-        assessment.render();
-      })
+      var useExisting = true;
+      var useDimensional = true;
+
+      window.widget = Traitify.ui.target("#widgets");
+      var loadAssessment = function(assessment) {
+        widget.assessmentId(assessment.id);
+        widget.allowFullScreen(true);
+        widget.render();
+      }
+
+      if(useDimensional) {
+        var deckID = "big-five-classic";
+        var assessmentID = "e952dadc-acd5-4bbe-91d3-56839cf92d1a";
+      } else {
+        var deckID = "career-deck";
+        var assessmentID = "23803fab-abde-49ff-8983-174d56efedc9";
+      }
+
+      if(useExisting) {
+        loadAssessment({ id: assessmentID });
+      } else {
+        Traitify.post("/assessments", { deck_id: deckID }).then(loadAssessment);
+      }
     </script>
   </body>
 </html>

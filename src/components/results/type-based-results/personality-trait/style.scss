@@ -1,6 +1,5 @@
 @import "~style/helpers";
 
-// Trait Styles
 .trait {
   @extend %cf;
   margin-bottom: 16px;
@@ -8,17 +7,17 @@
     margin-bottom: 20px;
   }
 }
-.traitBar {
+.bar {
   height: 5px;
   @include mq(xl) {
     height: 7px;
   }
 }
-.traitContent {
+.content {
   @extend %cf;
   padding: 10px 15px 12px 10px;
 }
-.traitScore {
+.score {
   float: right;
   margin: 0 0 0 20px;
   @include rems(19);
@@ -31,7 +30,7 @@
     @include rems(24);
   }
 }
-.traitIcon {
+.icon {
   float: left;
   margin: 5px 12px 0 0;
   max-width: 65px;
@@ -42,7 +41,7 @@
     margin-left: 10px;
   }
 }
-.traitName {
+.name {
   font-weight: normal;
   margin: 0 0 3px;
   @include rems(19);
@@ -55,7 +54,7 @@
     @include rems(24);
   }
 }
-.traitDescription {
+.description {
   margin: 0;
   overflow: hidden;
   display: block;

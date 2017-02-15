@@ -5,7 +5,7 @@ import style from "./style";
 export default class Dimension extends Component {
   constructor(props) {
     super(props);
-    this.state = {showContent: props.index == 0}
+    this.state = {showContent: props.index == 0};
   }
   trigger(context, e) {
     e.preventDefault();
@@ -16,8 +16,8 @@ export default class Dimension extends Component {
     var benefits = [];
     var pitfalls = [];
     type.details.forEach(function(detail) {
-      if(detail.title == "Benefits") benefits.push(detail.body)
-      if(detail.title == "Pitfalls") pitfalls.push(detail.body)
+      if(detail.title == "Benefits") benefits.push(detail.body);
+      if(detail.title == "Pitfalls") pitfalls.push(detail.body);
     });
     var color = `#${type.badge.color_1}`;
     var color2 = `#${type.badge.color_2}`;

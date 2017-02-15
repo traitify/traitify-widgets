@@ -1,0 +1,28 @@
+@import "~style/helpers";
+
+.image {
+  width: 140px;
+  height: 140px;
+  padding: 15px;
+  display: inline-block;
+  @include border-radius(50%);
+  @include mq(m) {
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+  }
+  @include mq(xl) {
+    width: 250px;
+    height: 250px;
+  }
+  &:nth-of-type(2) {
+    margin-left: -20px;
+    @include mq(m) {
+      margin-left: -35px;
+    }
+  }
+  img {
+    width: 95%;
+    height: 95%;
+  }
+}

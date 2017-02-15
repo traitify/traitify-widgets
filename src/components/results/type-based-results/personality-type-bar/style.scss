@@ -1,0 +1,21 @@
+@import "~style/helpers";
+
+.bar {
+  position: absolute;
+  bottom: 0;
+  float: left;
+  height: 50%;
+  background-color: $gray;
+  border: 1px solid $white;
+  border-width: 0 3px;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: $white;
+  @include rems(32);
+}

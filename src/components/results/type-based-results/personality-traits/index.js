@@ -3,7 +3,7 @@ import style from "./style";
 
 import PersonalityTrait from "../personality-trait";
 
-export default class PersonalityTypes extends Component {
+export default class PersonalityTraits extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);

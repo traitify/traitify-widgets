@@ -49,7 +49,7 @@ export default class Main extends Component {
 
   fetch (){
     let com = this;
-    Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,types`).then((data)=>{
+    Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,types,traits`).then((data)=>{
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.setState(com.state);

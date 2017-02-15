@@ -11,9 +11,9 @@ export default class Default extends Component {
     return (this.props.assessment.personality_types || []).length != 0
   }
   render() {
-    var widget = <div></div>;
+    var widget = <div />;
     if(this.shouldLoadSlideDeck()){
-      widget =  <SlideDeck {...this.props} />
+      widget = <SlideDeck {...this.props} />
     }
     if(this.shouldLoadResults()){
       widget = <Results {...this.props} />

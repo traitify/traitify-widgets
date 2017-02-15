@@ -1,16 +1,17 @@
 import { h, Component } from "preact";
-import Dimensions from "./dimensions";
-import PersonalityTypes from "./personality-types";
+import TypeBasedResults from "./type-based-results";
+import DimensionBasedResults from "./dimension-based-results";
 
 export default class Results extends Component {
   render() {
     var assessment = this.props.assessment || {}
     if(!assessment.personality_types) return <div />
 
+    console.log(assessment)
     if(assessment.assessment_type == "TYPE_BASED") {
-      return <PersonalityTypes {...this.props} />
+      return <TypeBasedResults {...this.props} />
     } else {
-      return <Dimensions {...this.props} />
+      return <DimensionBasedResults {...this.props} />
     }
   }
 }

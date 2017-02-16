@@ -102,7 +102,7 @@ Traitify.ui = class UI {
   }
 }
 
-var defaultOptions = ["allowFullScreen", "assessmentId", "target"];
+var defaultOptions = ["allowFullScreen", "assessmentId", "target", "locale"];
 defaultOptions.forEach(function(option) {
   Traitify.ui[option] = function(value) {
     var options = {};

@@ -266,10 +266,10 @@ export default class slideDeck extends Component {
         <div class={style.responseContainer}>
           <div class={style.buttons}>
             <a class={style.me} onClick={this.answerSlide.bind(this, true)} href="#">
-              Me
+              {this.props.i18n.t("me")}
             </a>
             <a class={style.notMe} onClick={this.answerSlide.bind(this, false)} href="#">
-              Not Me
+              {this.props.i18n.t("not_me")}
             </a>
           </div>
         </div>

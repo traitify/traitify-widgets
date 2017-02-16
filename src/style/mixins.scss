@@ -43,6 +43,12 @@
   }
 }
 
+@mixin mqc($width) {
+  @media (min-width: $width/16*1em) {
+    @content;
+  }
+}
+
 @mixin border-radius($radius: 5px) {
   border-radius: $radius;
 }

@@ -1,21 +1,92 @@
 @import "~style/helpers";
 
 .bar {
-  position: absolute;
-  bottom: 0;
-  float: left;
-  height: 50%;
-  background-color: $gray;
-  border: 1px solid $white;
-  border-width: 0 3px;
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 300px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $border;
+  @include mq(m) {
+    height: 400px;
+  }
+  @include mq(xl) {
+    height: 600px;
+  }
+  &:hover, &.active {
+    cursor: pointer;
+    .barScore {
+      background: $black !important;
+    }
+    .barLabel {
+      background: $black;
+      color: $white;
+      img {
+        filter: grayscale(100%) brightness(300%);
+      }
+    }
+  }
 }
-
-.text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.barScore {
+  margin: 0 3px;
+  display: block;
+  padding-top: 10px;
   text-align: center;
   color: $white;
-  @include rems(32);
+  @include rems(19);
+  @include mq(m) {
+    @include rems(28);
+  }
+  @include mq(xl) {
+    @include rems(36);
+  }
+}
+.barLabel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  display: block;
+  color: $black;
+  text-align: center;
+  margin-top: 10px;
+  @include rems(16);
+  @include mq(m) {
+    @include rems(18);
+  }
+  @include mq(xl) {
+    @include rems(20);
+  }
+  img {
+    display: block;
+    width: 35px;
+    margin: 10px auto 0;
+    @include mq(m) {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    @include mq(xl) {
+      margin-top: 20px;
+      width: 75px;
+    }
+  }
+  i {
+    display: block;
+    width: 110px;
+    margin-top: 50px;
+    margin-left: -55px;
+    margin-bottom: 10px;
+    text-align: right;
+    font-style: normal;
+    transform: rotate(-65deg);
+    @include mqc(414) {
+      margin-left: -48px;
+    }
+    @include mq(m) {
+      margin: 0 0 10px;
+      width: auto;
+      text-align: center;
+      transform: rotate(0);
+    }
+  }
 }

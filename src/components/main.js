@@ -32,7 +32,7 @@ export default class Main extends Component {
 
     this.i18n = new I18n;
     this.state.translate = (key) => com.i18n.translate(key);
-
+    this.state.triggerCallback = this.triggerCallback.bind(this)
     return this;
   }
 
@@ -47,9 +47,19 @@ export default class Main extends Component {
     })
   }
 
+  triggerCallback(klass, key, options){
+    let com = this;
+    if(this.state.callbacks[`${klass}.${key}`]){
+      com.state.callbacks[`${klass}.${key}`].forEach((callback)=>{
+        callback.apply(com, [options]);
+      })
+    }
+  }
+
   fetch (){
     let com = this;
     Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,types`).then((data)=>{
+      com.triggerCallback('main', 'fetch', false);
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.setState(com.state);

@@ -11,29 +11,32 @@
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
-      var useExisting = true;
-      var useDimensional = true;
 
-      window.widget = Traitify.ui.target("#widgets");
-      var loadAssessment = function(assessment) {
-        widget.assessmentId(assessment.id);
-        widget.allowFullScreen(true);
-        widget.render();
+      initDeck = function(){
+        var assessment = Traitify.ui.assessmentId(localStorage.getItem('assessment-id'));
+        assessment.allowFullScreen(true);
+        assessment.target("#widgets");
+        assessment.render();
       }
-
-      if(useDimensional) {
-        var deckID = "big-five-classic";
-        var assessmentID = "e952dadc-acd5-4bbe-91d3-56839cf92d1a";
-      } else {
-        var deckID = "career-deck";
-        var assessmentID = "23803fab-abde-49ff-8983-174d56efedc9";
+      
+      createAssessment = function(){
+        Traitify.post("/assessments", {deck_id: document.querySelector('#deck-name').value, locale_key: 'en-us'}).then(function(assessment){
+          localStorage.setItem('assessment-id', assessment.id)
+          initDeck();
+        })
       }
-
-      if(useExisting) {
-        loadAssessment({ id: assessmentID });
-      } else {
-        Traitify.post("/assessments", { deck_id: deckID }).then(loadAssessment);
+      
+      if(localStorage.getItem("assessment-id")){
+        initDeck()
       }
     </script>
+
+
+    <select id="deck-name">
+      <option value='career-deck'>Career Deck</option>
+      <option value='big-five-classic-pilot'>The Big Five</option>
+    </select>
+
+    <button onclick='createAssessment()'>New Assessment</button>
   </body>
 </html>

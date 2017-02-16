@@ -20,7 +20,7 @@
       }
       
       createAssessment = function(){
-        Traitify.post("/assessments", {deck_id: document.querySelector('#deck-name').value, locale_key: 'en-us'}).then(function(assessment){
+        Traitify.post("/assessments", {deck_id: document.querySelector('#deck-name').value, locale_key: 'es-us'}).then(function(assessment){
           localStorage.setItem('assessment-id', assessment.id)
           initDeck();
         })
@@ -34,7 +34,7 @@
 
     <select id="deck-name">
       <option value='career-deck'>Career Deck</option>
-      <option value='big-five-classic-pilot'>The Big Five</option>
+      <option value='big-five-classic'>The Big Five</option>
     </select>
 
     <button onclick='createAssessment()'>New Assessment</button>

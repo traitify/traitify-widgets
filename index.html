@@ -11,12 +11,32 @@
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
-      Traitify.post("/assessments", {deck_id: "career-deck"}).then(function(assessment){
-        var assessment = Traitify.ui.assessmentId(assessment.id);
+
+      initDeck = function(){
+        var assessment = Traitify.ui.assessmentId(localStorage.getItem('assessment-id'));
         assessment.allowFullScreen(true);
         assessment.target("#widgets");
         assessment.render();
-      })
+      }
+      
+      createAssessment = function(){
+        Traitify.post("/assessments", {deck_id: document.querySelector('#deck-name').value, locale_key: 'en-us'}).then(function(assessment){
+          localStorage.setItem('assessment-id', assessment.id)
+          initDeck();
+        })
+      }
+      
+      if(localStorage.getItem("assessment-id")){
+        initDeck()
+      }
     </script>
+
+
+    <select id="deck-name">
+      <option value='career-deck'>Career Deck</option>
+      <option value='big-five-classic-pilot'>The Big Five</option>
+    </select>
+
+    <button onclick='createAssessment()'>New Assessment</button>
   </body>
 </html>

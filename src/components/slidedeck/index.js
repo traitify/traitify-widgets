@@ -47,6 +47,8 @@ export default class slideDeck extends Component {
             this.props.ready = true;
             this.props.setState(this.props);
           }, 600)
+        }else{
+          com.triggerCallback('prefetchSlides');
         }
         com.props.assessment.slides[i].loaded = true;
         com.props.setState(com.props);
@@ -76,8 +78,14 @@ export default class slideDeck extends Component {
       return slide.orientation == "middle";
     })[0] || {}
   }
+  triggerCallback(key, options){
+    this.props.triggerCallback("slidedeck", key, options)
+  }
   answerSlide(value, e){
     e.preventDefault();
+    let key = value ? "me" : "notme";
+    this.triggerCallback(key);
+    this.triggerCallback('answerSlide', value);
 
     var lastSlide = this.props.assessment.slides.lastAnswer;
     this.props.assessment.slides.answers = this.props.assessment.slides.answers || {};
@@ -124,11 +132,7 @@ export default class slideDeck extends Component {
     })
 
     Traitify.put(`/assessments/${this.props.assessmentId}/slides`, postData).then((response)=>{
-      if(this.props.callbacks['slidedeck.finished']){
-        com.props.callbacks['slidedeck.finished'].forEach((callback)=>{
-          callback.apply(com, response)
-        })
-      }
+      com.triggerCallback("finished", response)
       
       com.props.fetch()
     })
@@ -153,6 +157,7 @@ export default class slideDeck extends Component {
   }
   setReady(value){
     if(this.props.ready != value){
+      this.triggerCallback('isReady', this.props.ready);
       this.props.ready = value;
       this.props.setState(this.props);
     }
@@ -208,6 +213,7 @@ export default class slideDeck extends Component {
         setTimeout(()=>{
           com.prefetchSlides(com.currentIndex());
         }, 0)
+        this.triggerCallback('initialized');
       }
     }
   }
@@ -238,6 +244,7 @@ export default class slideDeck extends Component {
       } else if (document.msExitFullscreen) {
       	document.msExitFullscreen();
       }
+      this.triggerCallback('fullscreen', false);
     }else{
       this.props.isFullScreen = true;
       this.props.setState(this.props);
@@ -250,6 +257,7 @@ export default class slideDeck extends Component {
       } else if (i.msRequestFullscreen) {
       	i.msRequestFullscreen();
       }
+      this.triggerCallback('fullscreen', true);
     }
   }
   render() {

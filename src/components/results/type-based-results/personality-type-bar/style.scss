@@ -48,6 +48,9 @@
   top: 100%;
   display: block;
   color: $black;
+  &.selected{
+    color: white;
+  }
   text-align: center;
   margin-top: 10px;
   @include rems(16);

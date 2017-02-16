@@ -13,15 +13,13 @@
   @include mq(xl) {
     height: 600px;
   }
-  &:hover, &.active {
+  &:hover, &.selected {
     cursor: pointer;
-    .barScore {
-      background: $black !important;
-    }
     .barLabel {
       background: $black;
       color: $white;
       img {
+        -webkit-filter: grayscale(100%) brightness(300%);
         filter: grayscale(100%) brightness(300%);
       }
     }
@@ -38,6 +36,7 @@
     @include rems(28);
   }
   @include mq(xl) {
+    margin: 0 6px;
     @include rems(36);
   }
 }
@@ -48,16 +47,14 @@
   top: 100%;
   display: block;
   color: $black;
-  &.selected{
-    color: white;
-  }
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 3px 0;
   @include rems(16);
   @include mq(m) {
     @include rems(18);
   }
   @include mq(xl) {
+    margin: 10px 6px 0;
     @include rems(20);
   }
   img {

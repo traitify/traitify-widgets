@@ -1,0 +1,12 @@
+@import "~style/helpers";
+
+.slide {
+  width: 100%;
+  padding: 20px 40px;
+  @include rems(15);
+  @include border-radius(5px);
+}
+.slideTitle {
+  margin-right: 5px;
+  @include rems(18);
+}

@@ -10,14 +10,12 @@ export default class PersonalityTypeBar extends Component {
 		return this
 	}
 
-  handleColor(key, value){
+  handleColor(key, value) {
 		let index = this.props.index
-    let props = this.props.assessment.personality_types.map((type, i)=>{
+    let props = this.props.assessment.personality_types.map((type, i) => {
       type.personality_type[key] = i == index ? true : false;
-
       return type
     })
-
     this.props.setState(props);
 	}
 

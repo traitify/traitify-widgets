@@ -12,18 +12,6 @@
   &:last-of-type {
     margin-bottom: 0;
   }
-  .trigger {
-    color: $black;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    float: right;
-    padding: 10px 20px 5px;
-    i {
-      font-size: 26px;
-      vertical-align: middle;
-    }
-  }
   .lowerTrigger {
     color: $black;
     background: $gray;
@@ -45,7 +33,7 @@
       padding: 20px 20px 30px;
       @include mq(m) {
         margin-left: 170px;
-        padding-top: 40px;
+        padding-top: 20px;
         text-align: left;
       }
       @include mq(l) {
@@ -86,14 +74,15 @@
   .side {
     clear: both;
     text-align: center;
+    padding-top: 10px;
     @include mq(m) {
       float: left;
       width: 130px;
-      margin: 5px 20px 0;
+      margin: 20px 20px 0;
     }
     @include mq(l) {
       width: 160px;
-      margin: 5px 60px 0 20px;
+      margin: 20px 60px 0 20px;
     }
     .icon {
       margin: 0;

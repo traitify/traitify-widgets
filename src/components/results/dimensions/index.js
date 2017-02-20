@@ -4,15 +4,6 @@ import Radar from "../radar";
 import style from "./style";
 
 export default class Dimensions extends Component {
-  componentWillMount() {
-    if(Traitify.options.imagePack != "white") {
-      Traitify.setImagePack("white");
-      var com = this;
-      this.setState(this.state, ()=>{
-          com.props.fetch();
-      })
-    }
-  }
   render() {
     var props = this.props;
     return (

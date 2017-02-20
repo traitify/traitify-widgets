@@ -1,14 +1,25 @@
 @import "~style/helpers";
 
 .complements, .conflicts, .environment {
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  background: $white;
   border-top: 1px solid $border;
   @include cols(12);
   @include mq(m) {
-    border-bottom: 1px solid $border;
     @include cols(6);
   }
   h4 {
+    font-weight: normal;
     margin-bottom: 0;
+    @include rems(17);
+    @include mq(m) {
+      @include rems(19);
+    }
+    @include mq(xxl) {
+      @include rems(21);
+    }
   }
   p, li {
     @include rems(15);
@@ -18,6 +29,9 @@
     }
     @include mq(xl) {
       @include rems(18);
+    }
+    @include mq(xxl) {
+      @include rems(19);
     }
   }
   li {
@@ -36,10 +50,14 @@
 }
 .environment {
   @include mq(m) {
-    border: 0;
-    @include push(3);
+    clear: both;
+    border-top: 1px solid $border;;
+    @include cols(12);
   }
-  @include mq(xl) {
-    @include push(4);
+  h4, ul {
+    @include mq(m) {
+      width: 50%;
+      margin: 20px 0 20px 35%;
+    }
   }
 }

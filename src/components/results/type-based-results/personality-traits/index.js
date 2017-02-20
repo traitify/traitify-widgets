@@ -17,7 +17,7 @@ export default class PersonalityTraits extends Component {
     var traits = this.props.assessment.personality_traits;
     if(!this.state.showMore) { traits = traits.slice(0, 8); }
     return (
-      <div>
+      <div class={style.traits}>
         {traits.map(function(trait) {
           return <PersonalityTrait trait={trait} />;
         })}

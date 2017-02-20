@@ -12,9 +12,12 @@ export default class PersonalityTypeSlide extends Component {
 		var result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
 		return result;
 	}
-	highlightType(desc) {
-		var typeName = desc.replace(/'([^']+)'/, '<span class="slideTitle">$1</span>');
-		return typeName;
+	highlightType(desc,typeColor) {
+		return desc.split("'").map((item, index) => {
+			item = index == 1 ? (<span class={style.slideTitle} style={`color: ${typeColor}`}>{item}</span>) : `${item}`
+
+			return item;
+		})
 	}
   render() {
 		var type = this.props.type.personality_type;
@@ -24,7 +27,7 @@ export default class PersonalityTypeSlide extends Component {
 
 		return (
 			<li class={style.slide} style={`background: ${this.convertHex(color,8.5)};`}>
-				{this.highlightType(typeDescription)}
+				{this.highlightType(typeDescription,color)}
 			</li>
 		);
 	}

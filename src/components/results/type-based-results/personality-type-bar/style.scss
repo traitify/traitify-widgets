@@ -15,14 +15,6 @@
   }
   &:hover, &.selected {
     cursor: pointer;
-    .barLabel {
-      background: $black;
-      color: $white;
-      img {
-        -webkit-filter: grayscale(100%) brightness(300%);
-        filter: grayscale(100%) brightness(300%);
-      }
-    }
   }
 }
 .barScore {
@@ -38,6 +30,10 @@
   @include mq(xl) {
     margin: 0 6px;
     @include rems(36);
+  }
+  @include mq(xxl) {
+    margin: 0 6px;
+    @include rems(40);
   }
 }
 .barLabel {

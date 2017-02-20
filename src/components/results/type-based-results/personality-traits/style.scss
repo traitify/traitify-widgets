@@ -1,12 +1,19 @@
 @import "~style/helpers";
 
+.traits {
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  background: $white;
+  margin-bottom: 40px;
+}
 .showMore {
   color: $black;
   background: $gray;
   display: inline-block;
   min-width: 155px;
   padding: 6px 25px;
-  margin: 0 auto 80px;
+  margin: 0 auto;
   text-align: center;
   border: 0;
   cursor: pointer;

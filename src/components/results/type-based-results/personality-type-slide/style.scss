@@ -5,8 +5,29 @@
   padding: 20px 40px;
   @include rems(15);
   @include border-radius(5px);
+  @include mq(m) {
+    padding: 20px 60px;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    @include rems(21);
+  }
+  @include mq(xxl) {
+    padding: 20px 80px;
+    @include rems(22);
+  }
 }
 .slideTitle {
   margin-right: 5px;
+  font-weight: bold;
   @include rems(18);
+  @include mq(m) {
+    @include rems(19);
+  }
+  @include mq(xl) {
+    @include rems(24);
+  }
+  @include mq(xxl) {
+    @include rems(28);
+  }
 }

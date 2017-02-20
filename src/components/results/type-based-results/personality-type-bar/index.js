@@ -19,6 +19,15 @@ export default class PersonalityTypeBar extends Component {
     this.props.setState(props);
 	}
 
+	convertHex(hex,opacity) {
+		hex = hex.replace('#','');
+		var r = parseInt(hex.substring(0,2), 16);
+		var g = parseInt(hex.substring(2,4), 16);
+		var b = parseInt(hex.substring(4,6), 16);
+		var result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
+		return result;
+	}
+
 	render() {
 		var type = this.props.type.personality_type;
 		var typeTitle = `${type.name}`;
@@ -28,7 +37,7 @@ export default class PersonalityTypeBar extends Component {
 		var spanStyle = ''
 
 		if(type.hover || type.clicked){
-			spanStyle = `background-color: ${color}`;
+			spanStyle = `background-color: ${this.convertHex(color,8.5)};`;
 		}
 		return (
 			<li class={`${style.bar} ${type.clicked == true ? style.selected :'' }`} onMouseOver={this.handleColor.bind(this, 'hover', true)} onMouseOver={this.handleColor.bind(this, 'hover', false)} onClick={this.handleColor.bind(this, 'clicked', true)}>

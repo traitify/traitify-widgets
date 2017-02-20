@@ -6,7 +6,6 @@ export default class Radar extends Component {
   constructor(props) {
     super(props);
     this.updateDimensions = this.updateDimensions.bind(this);
-    this.tooSmall = this.tooSmall.bind(this);
     this.createChart = this.createChart.bind(this);
     this.updateChart = this.updateChart.bind(this);
     this.destroyChart = this.destroyChart.bind(this);
@@ -19,11 +18,9 @@ export default class Radar extends Component {
   }
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
-    if(this.tooSmall()) { return; }
     this.createChart();
   }
   componentDidUpdate() {
-    if(this.tooSmall()) { return this.destroyChart(); }
     this.updateChart();
   }
   updateDimensions() {
@@ -31,9 +28,6 @@ export default class Radar extends Component {
       || document.documentElement.clientWidth
       || document.body.clientWidth;
     this.setState({ width: width });
-  }
-  tooSmall() {
-    return this.state.width < 960;
   }
   createChart() {
     var data = {
@@ -87,7 +81,7 @@ export default class Radar extends Component {
   render() {
     return (
       <div class={style.radar}>
-        <canvas ref={(canvas) => { this.canvas = canvas; }} width="500" height="200" />
+        <canvas ref={(canvas) => { this.canvas = canvas; }} width="700" height="700" class={style.radarContainer} />
       </div>
     );
   }

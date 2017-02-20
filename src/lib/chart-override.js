@@ -1,6 +1,6 @@
 import Chart from "chart.js";
 
-var imageSize = 75;
+var imageSize = 65;
 var helpers = Chart.helpers;
 var globalDefaults = Chart.defaults.global;
 var constructor = Chart.scaleService.getScaleConstructor("radialLinear")
@@ -173,9 +173,12 @@ function fillLabel(ctx, label, position, fontSize, angle) {
     if(label.image) {
       var textWidth = ctx.measureText(label.text).width;
       var img = new Image;
-      var width = imageSize;
-      var height = imageSize;
+
+      let i = 500 / ctx.canvas.parentElement.clientHeight;
+      var width = imageSize / i;
+      var height = imageSize / i;
       img.src = label.image;
+
       if(angle == 0) {
         ctx.drawImage(img, x - width/2, y, width, height);
         y = y + height;

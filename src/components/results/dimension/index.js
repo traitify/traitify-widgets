@@ -31,7 +31,6 @@ export default class Dimension extends Component {
     return (
       <li class={style.dimension} style={`border-top: 5px solid ${color};`}>
         <div class={style.main} style={`background: ${this.convertHex(color,8.5)};`}>
-          <a class={style.trigger} style={`color: ${color};`} onClick={this.trigger.bind(null, this)} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a>
           <div class={style.side}>
             <p class={style.icon}>
               <img src={type.badge.image_medium} alt={type.name} />

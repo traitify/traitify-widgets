@@ -1,69 +1,163 @@
 @import "~style/helpers";
 
 .dimension {
+  @extend %cf;
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
-  color: #444;
-
+  color: #333;
   max-width: $breakPoint5;
   margin: 0 auto;
   text-align: left;
-  color: white;
   margin-bottom: 20px;
-  &:last-of-type { margin-bottom: 0; }
-  .trigger {
-    color: white;
-    text-decoration: none;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  .lowerTrigger {
+    color: $black;
+    background: $gray;
     display: inline-block;
-    float: right;
-    padding: 10px 20px 5px;
-    i {
-      font-size: 26px;
-      vertical-align: middle;
-    }
+    min-width: 155px;
+    padding: 6px 25px;
+    margin: 12px auto 0;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    @include rems(20);
+    @include border-radius(5px);
   }
   .main {
-    &:after {
-      clear: both;
-      content: " ";
-      display: table;
-    }
+    @extend %cf;
     .content {
       color: #333;
       padding: 20px 20px 30px;
+      @include mq(m) {
+        margin-left: 170px;
+        padding-top: 20px;
+        text-align: left;
+      }
+      @include mq(l) {
+        padding-right: 80px;
+      }
+      @include mq(xl) {
+        padding-right: 170px;
+      }
       h4 {
-        margin: 0;
+        margin: 10px 0 0;
         font-weight: normal;
         text-align: center;
-        @include rems(24);
+        @include rems(26);
+        @include mq(m) {
+          text-align: left;
+        }
+        @include mq(l) {
+          @include rems(28);
+        }
+        @include mq(xl) {
+          @include rems(34);
+        }
+      }
+      p {
+        @include mq(m) {
+          @include rems(17);
+        }
+        @include mq(l) {
+          overflow: hidden;
+          @include rems(18);
+        }
+        @include mq(xl) {
+          @include rems(19);
+        }
       }
     }
   }
   .side {
     clear: both;
     text-align: center;
+    padding-top: 10px;
+    @include mq(m) {
+      float: left;
+      width: 130px;
+      margin: 20px 20px 0;
+    }
+    @include mq(l) {
+      width: 160px;
+      margin: 20px 60px 0 20px;
+    }
+    .icon {
+      margin: 0;
+      @include mq(m) {
+        margin-bottom: 10px;
+      }
+    }
     .icon img {
       width: 50%;
       max-width: 220px;
+      @include mq(m) {
+        width: 100%;
+      }
     }
     .score {
       font-weight: bold;
-      margin-top: 10px;
+      margin: 0;
       @include rems(26);
+      @include mq(l) {
+        @include rems(28);
+      }
     }
   }
   .details {
     clear: both;
-    margin: 0 -20px;
-    .content { padding: 20px; }
+    margin: 0;
+    @include mq(xl) {
+      margin: 0 60px;
+    }
+    @include mq(xxxl) {
+      margin: 0 130px;
+    }
+    .content {
+      padding: 20px;
+      @include mq(m) {
+        padding-left: 40px;
+      }
+      @include mq(xl) {
+        padding-left: 0;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+    }
   }
   .detail {
     padding: 0 20px;
+    @include mq(m) {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      @include rems(17);
+    }
+    @include mq(xl) {
+      width: 38%;
+      &:first-of-type {
+        margin-left: calc(28%/2);
+      }
+    }
+    @include mq(xxxl) {
+      width: 35%;
+      &:first-of-type {
+        margin-left: calc(33%/2);
+      }
+    }
     h5 {
       margin: 0;
       line-height: 35px;
       font-weight: normal;
       @include rems(18);
+      @include mq(xl) {
+        @include rems(20);
+      }
+      &:last-of-type {
+        margin-top: 20px;
+      }
       &:before {
         content: " ";
         display: inline-block;
@@ -74,9 +168,12 @@
       }
     }
     ul {
-      list-style: none;
-      padding: 20px 0;
-      margin: 0;
+      padding: 10px 0;
+      margin: 0 0 0 25px;
+      @include mq(m) {
+        padding: 10px 0 20px;
+        margin-left: 65px;
+      }
     }
     li {
       margin-top: 5px;
@@ -86,83 +183,6 @@
     }
     .pitfalls:before {
       background: url("https://cdn.traitify.com/assets/images/thumbs_down.svg") no-repeat left center;
-    }
-  }
-}
-
-@media (min-width: $breakPoint2) {
-  .dimension {
-    .side {
-      float: left;
-      width: 130px;
-      margin: 5px 20px 0;
-      .icon {
-        margin-bottom: 10px;
-        img { width: 100%; }
-      }
-    }
-    .main .content {
-      margin-left: 170px;
-      padding-top: 40px;
-      text-align: left;
-      p { @include rems(17); }
-    }
-    .details .content {
-      padding-left: 40px;
-    }
-    .detail {
-      display: inline-block;
-      vertical-align: top;
-      width: 50%;
-      @include rems(17);
-      ul {
-        padding: 10px 0;
-        margin-left: 45px;
-      }
-    }
-  }
-}
-
-@media (min-width: $breakPoint3) {
-  .dimension {
-    .main .content {
-      padding-right: 80px;
-      h4 { @include rems(28); }
-      p { @include rems(18); }
-    }
-    .score { @include rems(28); }
-  }
-}
-
-@media (min-width: $breakPoint4) {
-  .dimension {
-    .main .content {
-      padding-right: 170px;
-      h4 { @include rems(34); }
-      p { @include rems(19); }
-    }
-    .details {
-      margin: 0 60px;
-      .content {
-        padding-left: 0px;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-      }
-    }
-    .detail {
-      width: 38%;
-      &:first-of-type { margin-left: calc(28%/2); }
-      h5 { @include rems(20); }
-    }
-  }
-}
-
-@media (min-width: $breakPoint5) {
-  .dimension {
-    .details { margin: 0 130px; }
-    .detail {
-      width: 35%;
-      &:first-of-type { margin-left: calc(33%/2); }
     }
   }
 }

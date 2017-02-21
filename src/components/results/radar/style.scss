@@ -5,11 +5,12 @@
   font-weight: 400;
   color: #444;
 
-  padding: 20px 0;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-@media (max-width: $breakPoint3) {
-  .radar { display: none; }
+  padding: 20px 10px;
+  text-align: center;
+  .radarContainer{
+    width: 100% !important;
+    height: auto;
+    max-width: 500px;
+    margin: 0px auto;
+  }
 }

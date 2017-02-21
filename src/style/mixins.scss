@@ -1,5 +1,228 @@
-@mixin rems($px-size) {
-  $rem-size: $px-size / $font-size;
-  font-size: $px-size + px;
-  font-size: $rem-size + rem;
+//     Mixins and helpers
+@mixin mq($breakpoint) {
+  @if $breakpoint == xxxxl {
+    @media (min-width: 120em) { @content ; } //1920
+  }
+  @else if $breakpoint == xxxl-2 {
+    @media (min-width: 105em) { @content ; } //1680
+  }
+  @else if $breakpoint == xxxl {
+    @media (min-width: 90em) { @content ; } //1440
+  }
+  @else if $breakpoint == xxl {
+    @media (min-width: 80em) { @content ; } //1280
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: 71.25em) { @content ; } //1140
+  }
+  @else if $breakpoint == l-2 {
+    @media (min-width: 64em) { @content ; } //1024
+  }
+  @else if $breakpoint == l {
+    @media (min-width: 60em) { @content ; } //960
+  }
+  @else if $breakpoint == m {
+    @media (min-width: 48em) { @content ; } //768
+  }
+  @else if $breakpoint == s {
+    @media (min-width: 35.5em) { @content ; } //568
+  }
+  @else if $breakpoint == xs {
+    @media (min-width: 30em) { @content ; } //480
+  }
+  @else if $breakpoint == 2x {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      @content;
+    } //retina
+  }
+}
+
+@mixin mqc($width) {
+  @media (min-width: $width/16*1em) {
+    @content;
+  }
+}
+
+@mixin border-radius($radius: 5px) {
+  border-radius: $radius;
+}
+
+@mixin border-radius-ind($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+  border-bottom-left-radius: $bottomleft;
+  border-bottom-right-radius: $bottomright;
+  border-top-left-radius: $topleft;
+  border-top-right-radius: $topright;
+}
+
+@mixin box-shadow($shadow: 1px 1px 2px rgba(0,0,0,0.25)) {
+  box-shadow: $shadow;
+}
+
+@mixin inner-shadow-lt($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.5) {
+  box-shadow: inset $x $y $blur $spread rgba(255, 255, 255, $alpha);
+}
+
+@mixin inner-shadow-drk($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.5) {
+  box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin opacity($opacity: 0.5) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity*100);
+}
+
+@mixin rems($px-size) { 
+  $rem-size: $px-size / $font-size; 
+  font-size: $px-size + px; 
+  font-size: $rem-size + rem; 
+}
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+@mixin prop($property, $values) {
+  $px : ();
+  $rem: ();
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+    @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 16 + rem));
+      }
+      @if $unit == "rem" {
+        $px : append($px,  ($val * 16 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+@function rem($val) {
+  @return #{$val / 16}rem;
+}
+
+/*     Grid components     */
+@mixin cols($i: 12, $total: 12) {
+  float: left;
+  padding: 0 $gutter/2;
+  width: ($i / $total) * 100%;
+}
+@mixin push($i: 12, $total: 12) {
+  position: relative;
+  left: ($i / $total) * 100%;
+}
+@mixin pull($i: 12, $total: 12) {
+  position: relative;
+  left: ($i / $total) * -100%;
+}
+
+@mixin gradient($startColor: #555, $endColor: #333) {
+  background: $endColor;
+  background-image: linear-gradient(to bottom, $startColor, $endColor); // Standard, IE10
+  background-repeat: repeat-x;
+}
+
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+  transition: $what $length $easing;
+}
+
+@mixin mar($mt: 0, $mr: 0, $mb: 0, $ml: 0) { 
+  $mtv: $mt / $font-size;
+  $mrv: $mr / $font-size;
+  $mbv: $mb / $font-size;
+  $mlv: $ml / $font-size;
+  margin: $mt + px $mr + px $mb + px $ml + px;
+  margin: $mtv + rem $mrv + rem $mbv + rem $mlv + rem;
+}
+
+@mixin pad($pt: 0, $pr: 0, $pb: 0, $pl: 0) { 
+  $ptv: $pt / $font-size;
+  $prv: $pr / $font-size;
+  $pbv: $pb / $font-size;
+  $plv: $pl / $font-size;
+  padding: $pt + px $pr + px $pb + px $pl + px;
+  padding: $ptv + rem $prv + rem $pbv + rem $plv + rem;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// MICRO CLEARFIX HACK
+%cf {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+%fl {
+  float: left;
+}
+%fr {
+  float: right;
+}
+%cb {
+  clear: both;
+}
+%center {
+  text-align: center;
+}
+%uc {
+  text-transform: uppercase;
+}
+%nt {
+  text-transform: none;
+}
+%hide-sm {
+  display: none;
+}
+%hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.center {
+  @extend %center;
+}
+.clear {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

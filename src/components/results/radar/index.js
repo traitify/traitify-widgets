@@ -10,24 +10,37 @@ export default class Radar extends Component {
     this.updateChart = this.updateChart.bind(this);
     this.destroyChart = this.destroyChart.bind(this);
   }
-  componentWillMount() {
-    this.updateDimensions();
-  }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
   }
   componentDidMount() {
+    let com = this;
     window.addEventListener("resize", this.updateDimensions);
-    this.createChart();
+    
+    let count = 0;
+    this.types().forEach((pt)=>{
+      let image = new Image()
+      image.src = pt.personality_type.badge.image_small
+      image.onload = function(){
+        count = count + 1;
+        if(count == com.types().length){
+          com.createChart();
+          com.updateDimensions();
+        }
+      }
+    })
   }
   componentDidUpdate() {
     this.updateChart();
   }
   updateDimensions() {
-    var width = window.innerWidth
+    var width = (this.canvasContainer || {}).clientWidth
       || document.documentElement.clientWidth
       || document.body.clientWidth;
     this.setState({ width: width });
+  }
+  types (){
+    return this.props.assessment.personality_types
   }
   createChart() {
     var data = {
@@ -41,7 +54,7 @@ export default class Radar extends Component {
         pointBorderColor: "#42b0db"
       }]
     };
-    this.props.assessment.personality_types.forEach(function(type) {
+    this.types().forEach(function(type) {
       data.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
@@ -81,7 +94,9 @@ export default class Radar extends Component {
   render() {
     return (
       <div class={style.radar}>
-        <canvas ref={(canvas) => { this.canvas = canvas; }} width="700" height="700" class={style.radarContainer} />
+        <div class={style.radarContainer}  ref={(canvasContainer) => { this.canvasContainer = canvasContainer; }}>
+          <canvas ref={(canvas) => { this.canvas = canvas; }} width="700" height="700" />
+        </div>
       </div>
     );
   }

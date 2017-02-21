@@ -173,8 +173,8 @@ function fillLabel(ctx, label, position, fontSize, angle) {
     if(label.image) {
       var textWidth = ctx.measureText(label.text).width;
       var img = new Image;
-
-      let i = 500 / ctx.canvas.parentElement.clientHeight;
+      let pE = ctx.canvas.parentElement;
+      let i = 500 / (pE.clientHeight || pE.height);
       var width = imageSize / i;
       var height = imageSize / i;
       img.src = label.image;

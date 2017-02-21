@@ -13,17 +13,17 @@ export default class PersonalityTypeBarChart extends Component {
     })
 
     this.props.setState(props);
-	}
+  }
 
   render() {
     let com = this;
     var types = this.props.assessment.personality_types;
     return (
-			<ul class={style.chart} onMouseLeave={this.handleMouseLeave.bind(this)}>
-				{types.map(function(type, index) {
-					return <PersonalityTypeBar {...com.props} type={type} index={index} length={types.length} />;
-				})}
-			</ul>
+      <ul class={style.chart} onMouseLeave={this.handleMouseLeave.bind(this)}>
+        {types.map(function(type, index) {
+          return <PersonalityTypeBar {...com.props} type={type} index={index} length={types.length} />;
+        })}
+      </ul>
     );
   }
 }

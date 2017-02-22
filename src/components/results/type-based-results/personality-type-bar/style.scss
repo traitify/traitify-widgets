@@ -17,7 +17,7 @@
     cursor: pointer;
   }
 }
-.barScore {
+.score {
   margin: 0 3px;
   display: block;
   padding-top: 10px;
@@ -36,7 +36,7 @@
     @include rems(40);
   }
 }
-.barLabel {
+.label {
   position: absolute;
   left: 0;
   right: 0;

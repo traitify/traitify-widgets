@@ -5,12 +5,13 @@ import PersonalityTypeSlide from "../personality-type-slide";
 
 export default class PersonalityTypeSlider extends Component {
   render() {
-    var types = this.props.assessment.personality_types;
+    var props = this.props;
+
     return (
       <div>
         <ul class={style.slider}>
-          {types.map(function(type, index) {
-            return <PersonalityTypeSlide type={type} index={index} length={types.length} />;
+          {props.assessment.personality_types.map(function(type) {
+            return <PersonalityTypeSlide {...props} type={type} />;
           })}
         </ul>
       </div>

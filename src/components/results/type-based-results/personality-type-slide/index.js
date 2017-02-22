@@ -1,33 +1,35 @@
 import { h, Component } from "preact";
+import Color from "color-helpers";
 import style from "./style";
 
-import PersonalityTypes from "../personality-types";
-
 export default class PersonalityTypeSlide extends Component {
-  convertHex(hex,opacity) {
-    hex = hex.replace('#','');
-    var r = parseInt(hex.substring(0,2), 16);
-    var g = parseInt(hex.substring(2,4), 16);
-    var b = parseInt(hex.substring(4,6), 16);
-    var result = 'rgba('+r+','+g+','+b+','+opacity/100+')';
-    return result;
-  }
-  highlightType(desc,typeColor) {
-    return desc.split("'").map((item, index) => {
-      item = index == 1 ? (<span class={style.slideTitle} style={`color: ${typeColor}`}>{item}</span>) : `${item}`
+  position() {
+    if(!this.props.activeType) { return "none"; }
+    var id = this.props.type.personality_type.id;
+    var activeID = this.props.activeType.personality_type.id;
+    if(id == activeID) { return "middle"; }
 
-      return item;
-    })
+    var ids = this.props.assessment.personality_types.map((type) => { return type.personality_type.id; });
+    var index = ids.indexOf(id);
+    var activeIndex = ids.indexOf(activeID);
+
+    if(index == activeIndex - 1) { return "left"; }
+    if(index == activeIndex + 1) { return "right"; }
+    return "none";
   }
   render() {
+    var position = this.position();
+    if(position == "none") { return <div />; }
+
     var type = this.props.type.personality_type;
-    var typeTitle = `${type.name}`;
-    var typeDescription = `${type.description}`;
     var color = `#${type.badge.color_1}`;
+    var name = type.description.split("'")[1];
+    var description = type.description.split("'").splice(2).join("'");
 
     return (
-      <li class={style.slide} style={`background: ${this.convertHex(color,8.5)};`}>
-        {this.highlightType(typeDescription,color)}
+      <li class={`${style.slide} ${style[position]}`} style={`background: ${Color.rgba(color, 8.5)};`}>
+        <span class={style.title} style={`color: ${color}`}>{name}</span>
+        {description}
       </li>
     );
   }

@@ -1,10 +1,6 @@
 @import "~style/helpers";
 
 .slide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
   padding: 20px 40px;
   @include rems(15);
   @include border-radius(5px);
@@ -16,13 +12,6 @@
   @include mq(xxl) {
     padding: 20px 80px;
     @include rems(22);
-  }
-  &.left { left: -100%; }
-  &.right { left: 100%; }
-  &.middle {
-    -webkit-transition: left .3s; /* Safari */
-    transition: left .3s;
-    left: 0%;
   }
 }
 .title {

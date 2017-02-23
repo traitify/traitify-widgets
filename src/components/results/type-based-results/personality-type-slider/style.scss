@@ -2,12 +2,21 @@
 
 .slider {
   position: relative;
-  height: 200px;
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
   color: #333;
   background: $white;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
 }
+.back, .next {
+  position: absolute;
+  top: 35px;
+  width: 50px;
+  img { width: 100%; }
+}
+.back { left: 20px; }
+.next { right: 20px; }

@@ -5,16 +5,11 @@ import style from "./style";
 export default class PersonalityTypeSlide extends Component {
   position() {
     if(!this.props.activeType) { return "none"; }
+
     var id = this.props.type.personality_type.id;
     var activeID = this.props.activeType.personality_type.id;
     if(id == activeID) { return "middle"; }
 
-    var ids = this.props.assessment.personality_types.map((type) => { return type.personality_type.id; });
-    var index = ids.indexOf(id);
-    var activeIndex = ids.indexOf(activeID);
-
-    if(index == activeIndex - 1) { return "left"; }
-    if(index == activeIndex + 1) { return "right"; }
     return "none";
   }
   render() {

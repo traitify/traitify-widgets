@@ -15,8 +15,16 @@
 .back, .next {
   position: absolute;
   top: 30px;
-  width: 50px;
+  width: 30px;
   img { width: 100%; }
 }
-.back { left: 20px; }
-.next { right: 20px; }
+.back { left: 0; }
+.next { right: 0; }
+
+@include mq(m) {
+  .back { left: 20px; }
+  .next { right: 20px; }
+}
+@include mq(xxl) {
+  .back, .next { width: 50px; }
+}

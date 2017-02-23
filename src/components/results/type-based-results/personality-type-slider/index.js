@@ -26,7 +26,7 @@ export default class PersonalityTypeSlider extends Component {
       <div class={style.slider}>
         {backType && (
           <a class={style.back} href="#" onClick={this.setActive.bind(null, backType)}>
-            <img src="http://placehold.it/50/000000" alt="Back" />
+            <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
           </a>
         )}
         <ul>
@@ -36,7 +36,7 @@ export default class PersonalityTypeSlider extends Component {
         </ul>
         {nextType && (
           <a class={style.next} href="#" onClick={this.setActive.bind(null, nextType)}>
-            <img src="http://placehold.it/50/000000" alt="Next" />
+            <img src="https://cdn.traitify.com/assets/images/arrow_right.svg" alt="Next" />
           </a>
         )}
       </div>

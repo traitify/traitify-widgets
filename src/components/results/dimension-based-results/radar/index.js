@@ -3,7 +3,46 @@ import Chart from "chart-override";
 import style from "./style";
 
 export default class Radar extends Component {
+  constructor(props) {
+    super(props);
+    this.updateDimensions = this.updateDimensions.bind(this);
+    this.createChart = this.createChart.bind(this);
+    this.updateChart = this.updateChart.bind(this);
+    this.destroyChart = this.destroyChart.bind(this);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
   componentDidMount() {
+    let com = this;
+    window.addEventListener("resize", this.updateDimensions);
+    
+    let count = 0;
+    this.types().forEach((pt)=>{
+      let image = new Image()
+      image.src = pt.personality_type.badge.image_small
+      image.onload = function(){
+        count = count + 1;
+        if(count == com.types().length){
+          com.createChart();
+          com.updateDimensions();
+        }
+      }
+    })
+  }
+  componentDidUpdate() {
+    this.updateChart();
+  }
+  updateDimensions() {
+    var width = (this.canvasContainer || {}).clientWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+    this.setState({ width: width });
+  }
+  types (){
+    return this.props.assessment.personality_types
+  }
+  createChart() {
     var data = {
       labels: [],
       labelImages: [],
@@ -14,8 +53,8 @@ export default class Radar extends Component {
         pointBackgroundColor: "#42b0db",
         pointBorderColor: "#42b0db"
       }]
-    }
-    this.props.assessment.personality_types.forEach(function(type) {
+    };
+    this.types().forEach(function(type) {
       data.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
@@ -24,29 +63,40 @@ export default class Radar extends Component {
     });
 
     var max = this.props.assessment.personality_types[0].score > 10 ? 100 : 10;
-    var stepSize = max == 10 ? 5 : 10;
     var options = {
       legend: { display: false },
+      responsive: false,
       scale: {
         ticks: {
           fontSize: 10,
           min: 0,
           max: max,
           showLabelBackdrop: false,
-          stepSize: stepSize
+          stepSize: max / 2
         },
         pointLabels: { fontSize: 16 }
       },
       tooltips: { enabled: false }
-    }
+    };
 
     var ctx = this.canvas.getContext("2d");
-    var chart = new Chart(ctx, { type: "radar", data: data, options: options });
+    this.chart = new Chart(ctx, { type: "radar", data: data, options: options });
+  }
+  updateChart() {
+    if(!this.chart) { return this.createChart(); }
+    this.chart.resize();
+  }
+  destroyChart() {
+    if(!this.chart) { return; }
+    this.chart.destroy();
+    delete this.chart;
   }
   render() {
     return (
       <div class={style.radar}>
-        <canvas ref={(canvas) => { this.canvas = canvas; }} width="500" height="200" />
+        <div class={style.radarContainer}  ref={(canvasContainer) => { this.canvasContainer = canvasContainer; }}>
+          <canvas ref={(canvas) => { this.canvas = canvas; }} width="700" height="700" />
+        </div>
       </div>
     );
   }

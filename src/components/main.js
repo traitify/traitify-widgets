@@ -32,7 +32,8 @@ export default class Main extends Component {
 
     this.i18n = new I18n;
     this.state.translate = (key) => com.i18n.translate(key);
-
+    this.state.i18n = this.i18n;
+    this.state.triggerCallback = this.triggerCallback.bind(this)
     return this;
   }
 
@@ -42,14 +43,28 @@ export default class Main extends Component {
       com.state[key] = com.props[key];
     })
     com.state.assessment = {};
+    if(com.props.locale){
+      com.i18n.locale = com.props.locale;
+    }
     this.setState(this.state, ()=>{
         com.fetch();
     })
   }
 
+  triggerCallback(klass, key, options){
+    let com = this;
+
+    if(this.state.callbacks[`${klass}.${key}`]){
+      com.state.callbacks[`${klass}.${key}`].forEach((callback)=>{
+        callback.apply(com, [options]);
+      })
+    }
+  }
+
   fetch (){
     let com = this;
-    Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits`).then((data)=>{
+    Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
+      com.triggerCallback("main", "fetch", false);
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.setState(com.state);

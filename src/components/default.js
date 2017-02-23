@@ -13,10 +13,10 @@ export default class Default extends Component {
   render() {
     var widget = <div />;
     if(this.shouldLoadSlideDeck()){
-      widget = <SlideDeck {...this.props} />
+      widget = <SlideDeck {...this.props} />;
     }
     if(this.shouldLoadResults()){
-      widget = <Results {...this.props} />
+      widget = <Results {...this.props} />;
     }
     return widget;
   }

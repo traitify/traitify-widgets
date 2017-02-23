@@ -52,7 +52,7 @@ module.exports = {
         test: /\.(scss|css)$/,
         include: [path.resolve(__dirname, "src/components")],
         loader: ExtractTextPlugin.extract("style?singleton", [
-          `css-loader?modules&importLoaders=1&sourceMap=${CSS_MAPS}`,
+          `css-loader?modules&importLoaders=1&sourceMap=${CSS_MAPS}&localIdentName=traitify--[folder]--[local]`,
           "postcss-loader",
           `sass-loader?sourceMap=${CSS_MAPS}`
         ].join("!"))

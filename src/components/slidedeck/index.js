@@ -163,10 +163,10 @@ export default class slideDeck extends Component {
 
         this.props.assessment.slides.forEach((slide, index)=>{
           if(answers[slide.id]){
-            let si = props.assessment.slides[index - 1];
-            let sl = props.assessment.slides[index];
-            let sm = props.assessment.slides[index + 1];
-            let sr = props.assessment.slides[index + 2];
+            let si = this.props.assessment.slides[index - 1];
+            let sl = this.props.assessment.slides[index];
+            let sm = this.props.assessment.slides[index + 1];
+            let sr = this.props.assessment.slides[index + 2];
             if(si)
               si.orientation = "invisible";
             if(sl)

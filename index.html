@@ -13,30 +13,29 @@
       Traitify.setHost("https://api.traitify.com");
 
       initDeck = function(){
-        var assessment = Traitify.ui.assessmentId(localStorage.getItem('assessment-id'));
+        var assessment = Traitify.ui.assessmentId(localStorage.getItem("assessment-id"));
         assessment.allowFullScreen(true);
         assessment.target("#widgets");
         assessment.render();
       }
-      
+
       createAssessment = function(){
-        Traitify.post("/assessments", {deck_id: document.querySelector('#deck-name').value, locale_key: 'es-us'}).then(function(assessment){
-          localStorage.setItem('assessment-id', assessment.id)
+        Traitify.post("/assessments", {deck_id: document.querySelector("#deck-name").value, locale_key: "en-us"}).then(function(assessment){
+          localStorage.setItem("assessment-id", assessment.id);
           initDeck();
         })
       }
-      
+
       if(localStorage.getItem("assessment-id")){
-        initDeck()
+        initDeck();
       }
     </script>
 
-
     <select id="deck-name">
-      <option value='career-deck'>Career Deck</option>
-      <option value='big-five-classic'>The Big Five</option>
+      <option value="career-deck">Career Deck</option>
+      <option value="big-five-classic">The Big Five</option>
     </select>
 
-    <button onclick='createAssessment()'>New Assessment</button>
+    <button onclick="createAssessment()">New Assessment</button>
   </body>
 </html>

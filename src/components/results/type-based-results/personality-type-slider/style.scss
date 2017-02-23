@@ -1,0 +1,51 @@
+@import "~style/helpers";
+
+.slider {
+  position: relative;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  background: $white;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+.back, .next {
+  position: absolute;
+  top: 80px;
+  width: 30px;
+  @include mq(m) {
+    top: 50px;
+  }
+  @include mq(xl) {
+    top: 55px;
+  }
+  @include mq(xxl) {
+    top: 40px;
+    width: 50px;
+  }
+  @include mq(xxxl) {
+    top: 25px;
+  }
+  img { width: 100%; }
+}
+.back {
+  left: 0;
+  @include mq(m) {
+    left: 10px;
+  }
+  @include mq(xxl) {
+    left: 15px;
+  }
+}
+.next {
+  right: 0;
+  @include mq(m) {
+    right: 10px;
+  }
+  @include mq(xxl) {
+    right: 15px;
+  }
+}

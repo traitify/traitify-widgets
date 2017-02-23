@@ -53,7 +53,7 @@ export default class Main extends Component {
 
   triggerCallback(klass, key, options){
     let com = this;
-    
+
     if(this.state.callbacks[`${klass}.${key}`]){
       com.state.callbacks[`${klass}.${key}`].forEach((callback)=>{
         callback.apply(com, [options]);
@@ -63,8 +63,8 @@ export default class Main extends Component {
 
   fetch (){
     let com = this;
-    Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,types&locale_key=${com.i18n.locale}`).then((data)=>{
-      com.triggerCallback('main', 'fetch', false);
+    Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
+      com.triggerCallback("main", "fetch", false);
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.setState(com.state);

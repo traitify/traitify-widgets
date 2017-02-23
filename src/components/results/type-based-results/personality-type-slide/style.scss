@@ -6,7 +6,20 @@
   @include border-radius(5px);
   @include mq(m) {
     padding: 20px 60px;
+    min-height: 168px;
     @include rems(17);
+  }
+  @include mq(l) {
+    min-height: 145px;
+  }
+  @include mq(xl) {
+    min-height: 170px;
+  }
+  @include mq(xxl) {
+    min-height: 182px;
+  }
+  @include mq(xxxl) {
+    min-height: 148px;
   }
   @include mq(xl) { @include rems(21); }
   @include mq(xxl) {

@@ -5,7 +5,7 @@ import style from "./style";
 export default class PersonalityTrait extends Component {
   render() {
     var trait = this.props.trait.personality_trait;
-    var score = Math.round(this.props.trait.score);
+    var score = Math.round(this.props.trait.score/2 + 50);
     var type = trait.personality_type;
     var color = `#${type.badge.color_1}`;
     return (

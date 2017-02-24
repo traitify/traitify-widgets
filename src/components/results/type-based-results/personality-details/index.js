@@ -12,7 +12,7 @@ export default class PersonalityDetails extends Component {
     conflict = conflict && conflict.body;
     var environments = personality.environments || [];
     return (
-      <div>
+      <div class={style.details}>
         {complement && (
           <div class={style.complements}>
             <h4>Complements</h4>

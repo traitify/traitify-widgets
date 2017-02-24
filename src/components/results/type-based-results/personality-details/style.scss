@@ -1,5 +1,8 @@
 @import "~style/helpers";
 
+.details {
+  @extend %cf;
+}
 .complements, .conflicts, .environment {
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
@@ -43,15 +46,15 @@
     padding-left: 20px;
   }
 }
-.conflicts {
+.complements {
   @include mq(m) {
-    border-left: 1px solid $border;
+    border-right: 1px solid $border;
   }
 }
 .environment {
   @include mq(m) {
     clear: both;
-    border-top: 1px solid $border;;
+    border-top: 1px solid $border;
     @include cols(12);
   }
   h4, ul {

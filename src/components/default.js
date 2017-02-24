@@ -4,18 +4,18 @@ import Results from "./results/index";
 import SlideDeck from "./slidedeck/index";
 
 export default class Default extends Component {
-  shouldLoadSlideDeck (){
+  shouldLoadSlideDeck () {
     return (this.props.assessment.slides || []).length != 0
   }
-  shouldLoadResults (){
+  shouldLoadResults () {
     return (this.props.assessment.personality_types || []).length != 0
   }
   render() {
     var widget = <div />;
-    if(this.shouldLoadSlideDeck()){
+    if(this.shouldLoadSlideDeck()) {
       widget = <SlideDeck {...this.props} />;
     }
-    if(this.shouldLoadResults()){
+    if(this.shouldLoadResults()) {
       widget = <Results {...this.props} />;
     }
     return widget;

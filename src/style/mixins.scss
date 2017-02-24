@@ -127,6 +127,7 @@
   float: left;
   padding: 0 $gutter/2;
   width: ($i / $total) * 100%;
+  box-sizing: border-box;
 }
 @mixin push($i: 12, $total: 12) {
   position: relative;

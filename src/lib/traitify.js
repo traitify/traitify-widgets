@@ -1,57 +1,31 @@
-require("es6-promise").polyfill();
-require("fetch-ie8");
+import Traitify from "traitify-js-browser-client";
 
-export default class Traitify {
-  static setHost(host) {
-    this.options.host = host;
-    return this;
-  }
-  static setImagePack(pack) {
-    this.options.imagePack = pack;
-    return this;
-  }
-  static setPublicKey(key) {
-    this.options.publicKey = key;
-    return this;
-  }
-  static request(method, path, params) {
-    return new Promise((resolve, reject)=>{
-      var url = `${this.options.host}/v1${path}`;
-      url += (url.indexOf("?") == -1) ? "?" : "&";
-      url += `authorization=${this.options.publicKey}`;
-      if(this.options.imagePack) url += `&image_pack=${this.options.imagePack}`;
-
-      let headers = new Headers({
-        "Content-Type": "application/json"
-      });
-
-      var options = {
-        method: method,
-        headers: headers,
-        mode: "cors",
-        cache: "default"
-      };
-
-      if(params) options.body = JSON.stringify(params);
-
-      var request = new Request(url, options);
-
-      fetch(request).then((response)=>{
-        response.json().then((data)=>{
-          resolve(data);
-        })
-      })
-    })
-  }
-  static get(path) {
-    return this.request("GET", path);
-  }
-  static post(path, params) {
-    return this.request("POST", path, params);
-  }
-  static put(path, params) {
-    return this.request("PUT", path, params);
-  }
+Traitify.setImagePack = function(pack){
+  this.imagePack = pack;
+  return this;
 }
 
-Traitify.options = { host: "http://api.traitify.com" };
+Traitify.request = function(method, path, params){
+    let url = path;
+    url += (url.indexOf("?") == -1) ? "?" : "&";
+    url += `authorization=${this.publicKey}`;
+    if(this.imagePack) url += `&image_pack=${this.imagePack}`;
+    return Traitify.ajax(method, url, function(){}, params);
+}
+
+Traitify.get = function(path) {
+  return this.request("GET", path);
+}
+
+Traitify.post = function(path, params){
+  return this.request("POST", path, params);
+}
+
+Traitify.put = function(path, params) {
+    let method = this.oldIE ? 'POST' : 'PUT'
+    return this.request(method, path, params);
+}
+
+Traitify.host =  "http://api.traitify.com";
+
+export default Traitify;

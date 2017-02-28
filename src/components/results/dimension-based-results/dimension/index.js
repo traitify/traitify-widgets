@@ -6,6 +6,7 @@ export default class Dimension extends Component {
   constructor(props) {
     super(props);
     this.state = {showContent: props.index == 0};
+    this.trigger = this.trigger.bind(this);
   }
   trigger(context, e) {
     e.preventDefault();
@@ -33,7 +34,7 @@ export default class Dimension extends Component {
           <div class={style.content}>
             <h4 class={style.title}>{type.name}</h4>
             <p class={style.description}>{type.description}</p>
-            <p class={style.center}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger.bind(null, this)} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
+            <p class={style.center}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>
         {this.state.showContent &&

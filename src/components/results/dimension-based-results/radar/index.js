@@ -16,7 +16,7 @@ export default class Radar extends Component {
   componentDidMount() {
     let com = this;
     window.addEventListener("resize", this.updateDimensions);
-    
+
     let count = 0;
     this.types().forEach((pt)=>{
       let image = new Image()

@@ -21,9 +21,11 @@ export default class PersonalityTraits extends Component {
         {traits.map(function(trait) {
           return <PersonalityTrait trait={trait} />;
         })}
-        <p class={style.center}>
-          <a href="#" class={style.showMore} onClick={this.onClick}>View More Traits</a>
-        </p>
+        {!this.state.showMore &&
+          <p class={style.center}>
+            <a href="#" class={style.showMore} onClick={this.onClick}>View More Traits</a>
+          </p>
+        }
       </div>
     );
   }

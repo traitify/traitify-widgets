@@ -30,7 +30,7 @@ export default class slideDeck extends Component {
       )
     }else{
       return (
-        <div class={`${style.slide} ${this.className()}`}>
+        <div class={`${style.slide} ${style.slideIE} ${this.className()}`}>
           <img src={this.props.slide.image} key={this.id} />
         </div>
       )

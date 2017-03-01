@@ -20,5 +20,12 @@
   &.rightSlide{
     left: 100%;
   }
+  &.slideIE{
+    overflow: hidden;
+    img{
+      position:absolute;
+      width: 100%;
+    }
+  }
   background-size: cover;
 }

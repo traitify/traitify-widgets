@@ -242,7 +242,6 @@ export default class slideDeck extends Component {
     if(!this.isReady()){
       coverVisible.push(style.visible);
     }
-    console.log(this.isReady())
 
     return (
       <div class={style.widgetContainer} ref={(container) => { this.container = container; }}>

@@ -29,7 +29,10 @@
   @include mq(xxxl) {
     top: 25px;
   }
-  img { width: 100%; }
+  img {
+    width: 100%;
+    border: 0;
+  }
 }
 .back {
   left: 0;

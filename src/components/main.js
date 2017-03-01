@@ -25,6 +25,7 @@ export default class Main extends Component {
     };
 
     this.state = state;
+
     this.state.setState = function(newState){
       com.setState(newState);
     }

@@ -3,6 +3,9 @@ import style from "./_slide.scss";
 
 export default class slideDeck extends Component {
   className (){
+    if(Traitify.oldIE){
+      return style.middleSlide;
+    }
     if(this.props.slide.orientation == "invisible"){
       return style.invisible;
     }else if(this.props.slide.orientation == "left"){
@@ -21,7 +24,7 @@ export default class slideDeck extends Component {
   }
   render() {
     return (
-      <div class={`${style.slide} ${this.className()}`} style={this.style()} />
+      <div class={`${style.slide} ${this.className()}`} style={this.style()} key={this.id} />
     )
   }
 }

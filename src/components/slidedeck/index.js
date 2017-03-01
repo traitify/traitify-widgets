@@ -15,16 +15,14 @@ export default class slideDeck extends Component {
       let img = document.createElement("img");
       img.src = this.imageService(this.props.assessment.slides[i]);
       img.onload = ()=>{
-        if(i >= com.currentIndex() + 2){
+        if(i >= com.currentIndex() + 2 && !com.props.ready){
           setTimeout(()=>{
-            this.props.ready = true;
-            this.props.setState(this.props);
-          }, 600)
-        }else{
-          com.triggerCallback('prefetchSlides');
+            com.setReady(true)
+          }, 100)
         }
+        
         com.props.assessment.slides[i].loaded = true;
-        com.props.setState(com.props);
+        com.triggerCallback('prefetchSlides');
         com.prefetchSlides(i + 1);
       }
     }
@@ -236,6 +234,7 @@ export default class slideDeck extends Component {
     if(!this.slides()){
       return <span />
     }
+    
     var coverVisible = [style.cover]
     if(!this.isReady())
       coverVisible.push(style.visible);
@@ -259,9 +258,14 @@ export default class slideDeck extends Component {
               <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
-          {this.loadedSlides().map((slide)=>{
-            return <Slide slide={slide} key={slide.id} />
-          })}
+          
+          { Traitify.oldIE ? (
+            <Slide slide={this.currentSlide()} key={'slide'} />
+          ):
+            this.loadedSlides().map((slide, index)=>{
+              return <Slide slide={slide} key={index} />
+            })
+          }
         </div>
         <div class={style.responseContainer}>
           <div class={style.buttons}>

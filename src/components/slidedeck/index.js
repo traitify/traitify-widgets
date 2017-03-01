@@ -15,13 +15,14 @@ export default class slideDeck extends Component {
       let img = document.createElement("img");
       img.src = this.imageService(this.props.assessment.slides[i]);
       img.onload = ()=>{
-        if(i >= com.currentIndex() + 2 && !com.props.ready){
+        if(i >= com.currentIndex() + 2){
           setTimeout(()=>{
             com.setReady(true)
-          }, 100)
+          }, 1000)
         }
         
         com.props.assessment.slides[i].loaded = true;
+        com.props.setState(com.props);
         com.triggerCallback('prefetchSlides');
         com.prefetchSlides(i + 1);
       }
@@ -179,10 +180,12 @@ export default class slideDeck extends Component {
         this.props.assessment.slides.initialized = true;
 
         this.props.setState(this.props);
+        
         // Detach into thread
         setTimeout(()=>{
           com.prefetchSlides(com.currentIndex());
         }, 0)
+
         this.triggerCallback('initialized');
       }
     }
@@ -236,8 +239,10 @@ export default class slideDeck extends Component {
     }
     
     var coverVisible = [style.cover]
-    if(!this.isReady())
+    if(!this.isReady()){
       coverVisible.push(style.visible);
+    }
+    console.log(this.isReady())
 
     return (
       <div class={style.widgetContainer} ref={(container) => { this.container = container; }}>
@@ -258,14 +263,11 @@ export default class slideDeck extends Component {
               <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
-          
-          { Traitify.oldIE ? (
+          {Traitify.oldIE?(
             <Slide slide={this.currentSlide()} key={'slide'} />
-          ):
-            this.loadedSlides().map((slide, index)=>{
-              return <Slide slide={slide} key={index} />
-            })
-          }
+          ):this.loadedSlides().map((slide, index)=>{
+            return <Slide slide={slide} key={index} />
+          })}
         </div>
         <div class={style.responseContainer}>
           <div class={style.buttons}>

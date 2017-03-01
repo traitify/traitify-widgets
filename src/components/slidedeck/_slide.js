@@ -22,9 +22,18 @@ export default class slideDeck extends Component {
       backgroundPosition: `${this.props.slide.focus_x}% ${this.props.slide.focus_y}%`
     }
   }
+
   render() {
-    return (
-      <div class={`${style.slide} ${this.className()}`} style={this.style()} key={this.id} />
-    )
+    if(!Traitify.oldIE){
+      return (
+        <div class={`${style.slide} ${this.className()}`} style={this.style()} key={this.id} />
+      )
+    }else{
+      return (
+        <div class={`${style.slide} ${this.className()}`}>
+          <img src={this.props.slide.image} key={this.id} />
+        </div>
+      )
+    }
   }
 }

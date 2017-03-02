@@ -1,17 +1,17 @@
 @import "./variables";
+@import "../../style/variables";
 
 .widgetContainer{
-  padding: 0;
-  margin: 0;
-  background: #FAFAFA;
   font-weight: 400;
-  color: #444;
-
   height: 100%;
   width: 100%;
-  position: relative;
+  padding: 0;
+  margin: 0;
+  background: $white;
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-  font-weight: 400;
+  color: #333;
+
+  position: relative;
   min-height: $minHeight;
 
   .fullScreen{
@@ -155,6 +155,7 @@
         background-color: $progressBar;
       }
       .caption{
+        letter-spacing: 1px;
         text-align: center;
         width: 100%;
         position: absolute;

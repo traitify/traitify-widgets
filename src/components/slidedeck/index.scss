@@ -15,9 +15,9 @@
   min-height: $minHeight;
 
   .fullScreen{
-    background-image: url('https://cdn.traitify.com/traitify-cdn/assets/images/js/full-screen-icon-large.png');
+    background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png');
     &.fullScreenSmall{
-      background-image: url('https://cdn.traitify.com/traitify-cdn/assets/images/js/full-screen-icon-small.png');
+      background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-small.png');
     }
     background-size: 100% 100%;
     -webkit-transition: opacity .2s; /* Safari */

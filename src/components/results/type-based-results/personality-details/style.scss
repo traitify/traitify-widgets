@@ -4,10 +4,15 @@
   @extend %cf;
 }
 .complements, .conflicts, .environment {
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
-  color: #333;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   background: $white;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  color: #333;
+  
   border-top: 1px solid $border;
   @include cols(12);
   @include mq(m) {

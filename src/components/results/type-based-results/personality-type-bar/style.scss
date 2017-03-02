@@ -15,6 +15,9 @@
   }
   &:hover, &.selected {
     cursor: pointer;
+    .score {
+      height: 100% !important;
+    }
   }
 }
 .score {
@@ -23,6 +26,7 @@
   padding-top: 10px;
   text-align: center;
   color: $white;
+  transition: height 0.5s;
   @include rems(19);
   @include mq(m) {
     @include rems(28);
@@ -40,18 +44,20 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 100%;
+  bottom: -143px;
   display: block;
   color: $black;
   text-align: center;
-  margin: 10px 3px 0;
+  margin: 0 3px 0;
   @include border-radius(5px);
   @include rems(15);
   @include mq(m) {
+    bottom: -118px;
     @include rems(18);
   }
   @include mq(xl) {
-    margin: 10px 6px 0;
+    bottom: -146px;
+    margin: 0 6px 0;
     @include rems(20);
   }
   img {

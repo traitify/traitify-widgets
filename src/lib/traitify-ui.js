@@ -31,8 +31,6 @@ export default class TraitifyUI {
     // If target is not a node use query selector to find the target node
     if(typeof this.options.target == "string") {
       this.options.target = document.querySelector(this.options.target || ".tf-widgets");
-    } else {
-      throw "Traitify.ui.target('#example-target') not set!";
     }
 
     this.options.componentName = componentName;

@@ -7,25 +7,23 @@ export default class slideDeck extends Component {
     this.props.fetch();
   }
   imageService(slide){
-    return slide.image_desktop;
+    return slide ? slide.image_desktop : null;
   }
   prefetchSlides(i){
     if(i != this.slides().length){
       let com = this;
       let img = document.createElement("img");
-      img.src = this.imageService(this.props.assessment.slides[i]);
-      img.onload = ()=>{
-        if(i >= com.currentIndex() + 2){
-          setTimeout(()=>{
-            this.props.ready = true;
-            this.props.setState(this.props);
-          }, 600)
-        }else{
+      if(this.imageService(this.props.assessment.slides[i])){
+        img.src = this.imageService(this.props.assessment.slides[i]);
+        img.onload = ()=>{
+          if(i >= com.currentIndex() + 2){
+            com.setReady(true)
+          }
+          com.props.assessment.slides[i].loaded = true;
+          com.props.setState(com.props);
           com.triggerCallback('prefetchSlides');
+          com.prefetchSlides(i + 1);
         }
-        com.props.assessment.slides[i].loaded = true;
-        com.props.setState(com.props);
-        com.prefetchSlides(i + 1);
       }
     }
   }
@@ -60,14 +58,13 @@ export default class slideDeck extends Component {
     this.triggerCallback(key);
     this.triggerCallback('answerSlide', value);
 
-    var lastSlide = this.props.assessment.slides.lastAnswer;
-    this.props.assessment.slides.answers = this.props.assessment.slides.answers || {};
-    this.props.assessment.slides.answers[this.currentSlide().id] = {
-      value: value,
-      timeTaken: new Date() - lastSlide
-    }
-    sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.props.assessment.slides.answers))
-    this.props.assessment.slides.lastAnswer = new Date();
+    var lastSlide = this.props.assessment.lastSlideAnswer;
+    let slide = this.currentSlide();
+    slide.response = value;
+    slide.time_taken = Date.now() - lastSlide;
+
+    sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()))
+    this.props.assessment.lastSlideAnswer = Date.now();
     this.props.setState(this.props);
 
     if(this.isComplete()){
@@ -94,17 +91,15 @@ export default class slideDeck extends Component {
   }
   finish(){
     let com = this;
-    let answers = this.props.assessment.slides.answers;
-    let postData = Object.keys(answers).map((answerKey)=>{
-      let answer = answers[answerKey];
+    let answers = this.slides().map((slide)=>{ 
       return {
-        id: answerKey,
-        time_taken: answer.timeTaken,
-        response: answer.value
+        id: slide.id,
+        time_taken: slide.time_taken,
+        response: slide.response
       }
-    })
+    });
 
-    Traitify.put(`/assessments/${this.props.assessmentId}/slides`, postData).then((response)=>{
+    Traitify.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
       com.triggerCallback("finished", response)
       com.props.fetch()
     })
@@ -121,10 +116,10 @@ export default class slideDeck extends Component {
     this.shouldAllowNext()
   }
   shouldAllowNext(){
-    if(this.currentIndex() >= this.loadedSlides().length  - 2 && this.currentIndex() < this.slides().length - 2){
-      this.setReady(false);
-    }else{
+    if(this.currentIndex() <= this.loadedSlides().length  - 2 || this.currentIndex() > this.slides().length - 2){
       this.setReady(true);
+    }else{
+      this.setReady(false);
     }
   }
   setReady(value){
@@ -144,13 +139,10 @@ export default class slideDeck extends Component {
       let slides = this.props.assessment.slides.filter((s)=>{ return s.orientation });
       // Initialize Widget because data is now here
       if(slides.length == 0){
-        if(this.isComplete()){
-          this.finish();
-          return this.props;
-        }
+
         this.props.assessment.slides[0].orientation = "middle";
         this.props.assessment.slides[1].orientation = "right";
-        var answers = {};
+        var answers = [];
         if(sessionStorage.getItem(`slides-${this.props.assessmentId}`)){
           try{
             answers = JSON.parse(sessionStorage.getItem(`slides-${this.props.assessmentId}`));
@@ -158,11 +150,14 @@ export default class slideDeck extends Component {
           }
         }
 
-        this.props.assessment.slides.lastAnswer = new Date();
-        this.props.assessment.slides.answers = answers;
+        this.answers(answers || []);
+
+        this.props.assessment.lastSlideAnswer = Date.now();
 
         this.props.assessment.slides.forEach((slide, index)=>{
-          if(answers[slide.id]){
+          if(com.answer(slide.id)){
+            slide.response = com.answer(slide.id).response;
+            slide.time_taken = slide.time_taken || 0;
             let si = this.props.assessment.slides[index - 1];
             let sl = this.props.assessment.slides[index];
             let sm = this.props.assessment.slides[index + 1];
@@ -179,22 +174,76 @@ export default class slideDeck extends Component {
         })
 
         this.props.assessment.slides.initialized = true;
+        this.props.assessment.slides = this.props.assessment.slides.map((slide, index)=>{
+          if(index < com.currentIndex()){
+            slide.loaded = true
+          }
+          
+          return slide;
+        })
 
         this.props.setState(this.props);
+
+        
+
         // Detach into thread
         setTimeout(()=>{
-          com.prefetchSlides(com.currentIndex());
+          com.prefetchSlides(this.currentIndex());
         }, 0)
+
         this.triggerCallback('initialized');
+        if(this.isComplete()){
+          this.finish();
+          return this.props;
+        }
       }
     }
   }
   completion(){
     return this.currentIndex() / this.slides().length * 100;
   }
+  answers(answers){
+    if(answers){
+      var newAnswers = {};
+      
+      answers.forEach((answer)=>{
+        newAnswers[answer.id] = answer;
+      })
+
+      this.props.assessment.slides.map((slide)=>{
+        if(newAnswers[slide.id]){
+          slide.response = newAnswers[slide.id].response;
+          slide.time_taken = newAnswers[slide.id].timeTaken;
+        }
+        return slide;
+      })
+
+      this.props.setState(this.props);
+    }else{
+      return this.props.assessment.slides
+        .filter((slide)=>{ 
+          return slide.response != null;
+        })
+        .map((slide)=>{
+          return {
+            id: slide.id,
+            response: slide.response,
+            timeTaken: slide.time_taken
+          };
+        }) || [];
+    }
+  }
+  answer(slideId){
+    if(!slideId){
+      return null;
+    }
+    return this.answers().filter((answer)=>{
+      return answer.id == slideId;
+    })[0]
+  }
   isComplete(){
-    if(((this.props.assessment || {}).slides || {}).answers){
-      return this.slides().length == Object.keys(this.props.assessment.slides.answers).length;
+    if((this.props.assessment || {}).slides){
+      return this.slides().length == this.answers().length;
     }else{
       return false;
     }
@@ -236,9 +285,11 @@ export default class slideDeck extends Component {
     if(!this.slides()){
       return <span />
     }
+    
     var coverVisible = [style.cover]
-    if(!this.isReady())
+    if(!this.isReady()){
       coverVisible.push(style.visible);
+    }
 
     return (
       <div class={style.widgetContainer} ref={(container) => { this.container = container; }}>
@@ -259,8 +310,10 @@ export default class slideDeck extends Component {
               <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
-          {this.loadedSlides().map((slide)=>{
-            return <Slide slide={slide} key={slide.id} />
+          {Traitify.oldIE?(
+            <Slide slide={this.currentSlide()} key={'slide'} />
+          ):this.loadedSlides().map((slide, index)=>{
+            return <Slide slide={slide} key={index} />
           })}
         </div>
         <div class={style.responseContainer}>

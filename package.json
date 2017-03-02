@@ -77,10 +77,10 @@
     "color": "^1.0.3",
     "fetch-ie8": "^1.4.3",
     "preact": "^7.1.0",
-    "preact-compat": "^3.0.0",
-    "promise-polyfill": "^6.0.2",
     "proptypes": "^0.14.3",
+    "quarked": "0.0.1",
     "qwest": "^4.4.5",
-    "serve": "^3.1.0"
+    "serve": "^3.1.0",
+    "traitify-js-browser-client": "^1.0.2"
   }
 }

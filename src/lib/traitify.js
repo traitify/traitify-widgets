@@ -1,5 +1,10 @@
 import Traitify from "traitify-js-browser-client";
-
+if(!window.console || !window.console.log){
+  window.console = {
+    log: ()=>{},
+    warn: ()=>{}
+  }
+}
 Traitify.setImagePack = function(pack){
   this.imagePack = pack;
   return this;

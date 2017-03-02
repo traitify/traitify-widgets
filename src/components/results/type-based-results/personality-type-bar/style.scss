@@ -15,6 +15,9 @@
   }
   &:hover, &.selected {
     cursor: pointer;
+    .score {
+      height: 100% !important;
+    }
   }
 }
 .score {
@@ -23,6 +26,7 @@
   padding-top: 10px;
   text-align: center;
   color: $white;
+  transition: height 0.5s;
   @include rems(19);
   @include mq(m) {
     @include rems(28);

@@ -15,18 +15,26 @@
   min-height: $minHeight;
 
   .fullScreen{
-    .fullScreenBorder{
-      border: 2px dashed #fff;
-      width:100%;
-      height: 100%;
+    background-image: url('https://s3.amazonaws.com/traitify-cdn/assets/images/js/full-screen-icon-large.png');
+    &.fullScreenSmall{
+      background-image: url('https://s3.amazonaws.com/traitify-cdn/assets/images/js/full-screen-icon-small.png');
     }
-    width: 30px;
-    height: 25px;
+    background-size: 100% 100%;
+    -webkit-transition: opacity .2s; /* Safari */
+    transition: opacity .2s;
+    opacity: .9;
+    &:hover{
+      opacity: 1;
+    }
+
+    padding: 3px;
+    border-radius: 3px;
+    width: 63px;
+    height: 63px;
     position: absolute;
     z-index: 3;
     right: 30px;
-    bottom: 30px;
-    background-color: rgba(0,0,0, .8);
+    bottom: 25px;
     cursor: pointer;
   }
   .cover{

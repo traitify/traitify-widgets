@@ -21,8 +21,8 @@
 
       createAssessment = function(){
         Traitify.post("/assessments", {deck_id: document.querySelector("#deck-name").value, locale_key: "en-us"}).then(function(assessment){
-          localStorage.setItem("assessment-id", assessment.id)
-          initDeck()
+          localStorage.setItem("assessment-id", assessment.id);
+          initDeck();
         })
       }
 

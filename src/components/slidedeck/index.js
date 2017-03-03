@@ -50,7 +50,7 @@ export default class slideDeck extends Component {
     })[0] || {}
   }
   triggerCallback(key, options){
-    this.props.triggerCallback("slidedeck", key, options)
+    this.props.triggerCallback("slidedeck", key, options);
   }
   answerSlide(value, e){
     e.preventDefault();
@@ -63,7 +63,7 @@ export default class slideDeck extends Component {
     slide.response = value;
     slide.time_taken = Date.now() - lastSlide;
 
-    sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()))
+    sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()));
     this.props.assessment.lastSlideAnswer = Date.now();
     this.props.setState(this.props);
 
@@ -100,20 +100,20 @@ export default class slideDeck extends Component {
     });
 
     Traitify.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
-      com.triggerCallback("finished", response)
-      com.props.fetch()
+      com.triggerCallback("finished", response);
+      com.props.fetch();
     })
   }
   componentDidMount(){
     if(this.slides()){
-      this.initialize()
+      this.initialize();
     }
   }
   componentWillReceiveProps(){
     if(this.slides()){
-      this.initialize()
+      this.initialize();
     }
-    this.shouldAllowNext()
+    this.shouldAllowNext();
   }
   shouldAllowNext(){
     if(this.currentIndex() <= this.loadedSlides().length  - 2 || this.currentIndex() > this.slides().length - 2){
@@ -176,7 +176,7 @@ export default class slideDeck extends Component {
         this.props.assessment.slides.initialized = true;
         this.props.assessment.slides = this.props.assessment.slides.map((slide, index)=>{
           if(index < com.currentIndex()){
-            slide.loaded = true
+            slide.loaded = true;
           }
           
           return slide;
@@ -286,7 +286,7 @@ export default class slideDeck extends Component {
       return <span />
     }
     
-    var coverVisible = [style.cover]
+    var coverVisible = [style.cover];
     if(!this.isReady()){
       coverVisible.push(style.visible);
     }
@@ -327,7 +327,7 @@ export default class slideDeck extends Component {
           </div>
         </div>
         {this.props.allowFullScreen && (
-          <div class={style.fullScreen} onClick={this.handleFullScreen.bind(this)}><div class={style.fullScreenBorder} /></div>
+          <div class={[style.fullScreen, this.props.isFullScreen ? style.fullScreenSmall : ''].join(" ") } onClick={this.handleFullScreen.bind(this)}></div>
         )}
       </div>
     )

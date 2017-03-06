@@ -74,7 +74,11 @@ export default class Main extends Component {
 
   render() {
     var component = components[this.props.componentName || "Default"];
-
-    return h(component, this.state);
+    return (
+      <div>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" />
+        {h(component, this.state)}
+      </div>
+    )
   }
 }

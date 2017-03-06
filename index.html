@@ -16,6 +16,7 @@
         var assessment = Traitify.ui.assessmentId(localStorage.getItem("assessment-id"));
         assessment.allowFullScreen(true);
         assessment.target("#widgets");
+        assessment.perspective("firstPerson")
         assessment.render();
       }
 

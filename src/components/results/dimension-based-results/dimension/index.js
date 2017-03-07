@@ -8,9 +8,9 @@ export default class Dimension extends Component {
     this.state = {showContent: props.index == 0};
     this.trigger = this.trigger.bind(this);
   }
-  trigger(context, e) {
+  trigger(e) {
     e.preventDefault();
-    context.setState({showContent: !context.state.showContent});
+    this.setState({showContent: !this.state.showContent});
   }
   render() {
     var type = this.props.personalityType.personality_type;

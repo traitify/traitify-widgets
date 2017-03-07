@@ -8,9 +8,9 @@ export default class Dimension extends Component {
     this.state = {showContent: props.index == 0};
     this.trigger = this.trigger.bind(this);
   }
-  trigger(context, e) {
+  trigger(e) {
     e.preventDefault();
-    context.setState({showContent: !context.state.showContent});
+    this.setState({showContent: !this.state.showContent});
   }
   render() {
     var type = this.props.personalityType.personality_type;
@@ -22,6 +22,13 @@ export default class Dimension extends Component {
     });
     var color = `#${type.badge.color_1}`;
     var color2 = `#${type.badge.color_2}`;
+    var description;
+    if(this.props.perspective) {
+      var perspective = `${this.props.perspective.replace("Person", "")}_person_description`;
+      description = type.details.find(detail => detail.title == perspective);
+      description = description && description.body;
+    }
+    description = description || type.description;
     return (
       <li class={style.dimension} style={`border-top: 5px solid ${color};`}>
         <div class={style.main} style={`background: ${Color.rgba(color, 8.5)};`}>
@@ -33,7 +40,7 @@ export default class Dimension extends Component {
           </div>
           <div class={style.content}>
             <h4 class={style.title}>{type.name}</h4>
-            <p class={style.description}>{type.description}</p>
+            <p class={style.description}>{description}</p>
             <p class={style.center}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>

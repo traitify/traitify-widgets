@@ -227,3 +227,16 @@
   position: absolute;
   width: 1px;
 }
+
+%widgetContainer{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+  *{
+    box-sizing: border-box;
+  }
+}

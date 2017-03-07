@@ -1,10 +1,6 @@
 @import "~style/helpers";
 
 .dimensions {
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-  font-weight: 400;
-  color: #333;
-  background: $white;
+  @extend %widgetContainer;
   list-style: none;
-  padding: 0;
 }

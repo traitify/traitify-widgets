@@ -1,15 +1,9 @@
 @import "./variables";
 @import "../../style/variables";
+@import "../../style/helpers";
 
 .widgetContainer{
-  font-weight: 400;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: $white;
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-  color: #333;
+  @extend %widgetContainer;
 
   position: relative;
   min-height: $minHeight;
@@ -22,19 +16,20 @@
     background-size: 100% 100%;
     -webkit-transition: opacity .2s; /* Safari */
     transition: opacity .2s;
-    opacity: .9;
     &:hover{
       opacity: 1;
     }
 
     padding: 3px;
     border-radius: 3px;
-    width: 63px;
-    height: 63px;
+    width: 40px;
+    height: 40px;
+    opacity: .5;
+    bottom: 36px;
+
     position: absolute;
     z-index: 3;
     right: 30px;
-    bottom: 25px;
     cursor: pointer;
   }
   .cover{

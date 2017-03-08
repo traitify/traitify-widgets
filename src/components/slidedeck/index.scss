@@ -107,6 +107,8 @@
       line-height: 57px;
       border-radius: 3px;
       .me, .notMe{
+        transition: none;
+        -webkit-transition: none;
         cursor: pointer;
         -webkit-touch-callout: none;
         -webkit-user-select: none;

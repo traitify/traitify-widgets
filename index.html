@@ -17,7 +17,13 @@
         assessment.allowFullScreen(true);
         assessment.target("#widgets");
         assessment.perspective("firstPerson")
-        assessment.render();
+        widget = assessment.render()
+        widget.then(function(com){
+          console.log(com)
+        })
+        widget.catch(function(error){
+          console.log(error)
+        });
       }
 
       createAssessment = function(){

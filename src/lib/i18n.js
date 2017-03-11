@@ -8,7 +8,8 @@ export default class I18n {
       show_more: "Show More",
       me: "Me",
       not_me: "Not Me"
-    }
+    };
+    
     this["es-us"] = {
       potential_benefits: "Beneficios Potenciales",
       potential_pitfalls: "Peligros Potenciales",
@@ -16,7 +17,7 @@ export default class I18n {
       show_more: "Mostrar Más",
       me: "Yo",
       not_me: "Yo No"
-    }
+    };
 
     this["fr-ca"] = {
       potential_benefits: "Des bénéfices potentiels",
@@ -25,7 +26,7 @@ export default class I18n {
       show_more: "Montre Plus",
       me: "Moi",
       not_me: "Pas Moi"
-    }
+    };
 
     return this;
   }

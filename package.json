@@ -81,6 +81,9 @@
     "quarked": "0.0.1",
     "qwest": "^4.4.5",
     "serve": "^3.1.0",
-    "traitify-js-browser-client": "^1.0.2"
+    "shuffle-array": "^1.0.1",
+    "traitify-js-browser-client": "^1.0.2",
+    "uuid": "^3.0.1",
+    "xhr-mock": "^1.7.0"
   }
 }

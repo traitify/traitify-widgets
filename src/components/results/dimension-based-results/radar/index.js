@@ -19,31 +19,31 @@ export default class Radar extends Component {
 
     let count = 0;
     this.types().forEach((pt)=>{
-      let image = new Image()
-      image.src = pt.personality_type.badge.image_small
+      let image = new Image();
+      image.src = pt.personality_type.badge.image_small;
       image.onload = function(){
         count = count + 1;
-        if(count == com.types().length){
+        if (count == com.types().length){
           com.createChart();
           com.updateDimensions();
         }
-      }
-    })
+      };
+    });
+
+    this.props.triggerCallback("radar", "initialized", this);
   }
   componentDidUpdate() {
     this.updateChart();
   }
   updateDimensions() {
-    var width = (this.canvasContainer || {}).clientWidth
-      || document.documentElement.clientWidth
-      || document.body.clientWidth;
-    this.setState({ width: width });
+    let width = (this.canvasContainer || {}).clientWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    this.setState({ width });
   }
   types (){
-    return this.props.assessment.personality_types
+    return this.props.assessment.personality_types;
   }
   createChart() {
-    var data = {
+    let data = {
       labels: [],
       labelImages: [],
       datasets: [{
@@ -54,7 +54,7 @@ export default class Radar extends Component {
         pointBorderColor: "#42b0db"
       }]
     };
-    this.types().forEach(function(type) {
+    this.types().forEach((type)=>{
       data.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
@@ -62,15 +62,15 @@ export default class Radar extends Component {
       data.datasets[0].data.push(type.score);
     });
 
-    var max = this.props.assessment.personality_types[0].score > 10 ? 100 : 10;
-    var options = {
+    let max = this.props.assessment.personality_types[0].score > 10 ? 100 : 10;
+    let options = {
       legend: { display: false },
       responsive: false,
       scale: {
         ticks: {
           fontSize: 10,
           min: 0,
-          max: max,
+          max,
           showLabelBackdrop: false,
           stepSize: max / 2
         },
@@ -79,15 +79,15 @@ export default class Radar extends Component {
       tooltips: { enabled: false }
     };
 
-    var ctx = this.canvas.getContext("2d");
-    this.chart = new Chart(ctx, { type: "radar", data: data, options: options });
+    let ctx = this.canvas.getContext("2d");
+    this.chart = new Chart(ctx, { type: "radar", data, options });
   }
   updateChart() {
-    if(!this.chart) { return this.createChart(); }
+    if (!this.chart) return this.createChart();
     this.chart.resize();
   }
   destroyChart() {
-    if(!this.chart) { return; }
+    if (!this.chart) return;
     this.chart.destroy();
     delete this.chart;
   }

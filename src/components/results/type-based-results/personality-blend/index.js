@@ -4,9 +4,13 @@ import style from "./style";
 import PersonalityBadge from "../personality-badge";
 
 export default class PersonalityBlend extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("personalityblend", "initialized", this);
+  }
   render() {
-    var blend = this.props.assessment.personality_blend;
-    if(!blend) { return <div />; }
+    let blend = this.props.assessment.personality_blend;
+    if (!blend) return <div />;
+    
     return (
       <div class={style.blend}>
         <PersonalityBadge type={blend.personality_type_1} />

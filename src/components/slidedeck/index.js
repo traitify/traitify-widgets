@@ -56,7 +56,7 @@ export default class slideDeck extends Component {
     e.preventDefault();
     let key = value ? "me" : "notme";
     this.triggerCallback(key, this);
-    this.triggerCallback('answerSlide', this, value);
+    this.triggerCallback('answerslide', this, value);
 
     let lastSlide = this.props.assessment.lastSlideAnswer;
     let slide = this.currentSlide();

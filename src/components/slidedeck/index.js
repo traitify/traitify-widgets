@@ -10,20 +10,20 @@ export default class slideDeck extends Component {
     return slide ? slide.image_desktop : null;
   }
   prefetchSlides(i){
-    if(i != this.slides().length){
+    if (i != this.slides().length){
       let com = this;
       let img = document.createElement("img");
-      if(this.imageService(this.props.assessment.slides[i])){
+      if (this.imageService(this.props.assessment.slides[i])){
         img.src = this.imageService(this.props.assessment.slides[i]);
         img.onload = ()=>{
-          if(i >= com.currentIndex() + 2){
-            com.setReady(true)
+          if (i >= com.currentIndex() + 2){
+            com.setReady(true);
           }
           com.props.assessment.slides[i].loaded = true;
           com.props.setState(com.props);
-          com.triggerCallback('prefetchSlides');
+          com.triggerCallback('prefetchSlides', this);
           com.prefetchSlides(i + 1);
-        }
+        };
       }
     }
   }
@@ -32,7 +32,7 @@ export default class slideDeck extends Component {
     slides = slides.map((slide)=>{
       slide.image = this.imageService(slide);
       return slide;
-    })
+    });
     return slides;
   }
   loadedSlides(){
@@ -40,25 +40,25 @@ export default class slideDeck extends Component {
 
     let loadedSlides = slides.filter((slide)=>{
       return slide.loaded;
-    })
+    });
 
     return loadedSlides;
   }
   currentSlide(){
     return this.slides().filter((slide)=>{
       return slide.orientation == "middle";
-    })[0] || {}
+    })[0] || {};
   }
-  triggerCallback(key, options){
-    this.props.triggerCallback("slidedeck", key, options);
+  triggerCallback(key, context, options){
+    this.props.triggerCallback("slidedeck", key, context, options);
   }
   answerSlide(value, e){
     e.preventDefault();
     let key = value ? "me" : "notme";
-    this.triggerCallback(key);
-    this.triggerCallback('answerSlide', value);
+    this.triggerCallback(key, this);
+    this.triggerCallback('answerSlide', this, value);
 
-    var lastSlide = this.props.assessment.lastSlideAnswer;
+    let lastSlide = this.props.assessment.lastSlideAnswer;
     let slide = this.currentSlide();
     slide.response = value;
     slide.time_taken = Date.now() - lastSlide;
@@ -67,86 +67,86 @@ export default class slideDeck extends Component {
     this.props.assessment.lastSlideAnswer = Date.now();
     this.props.setState(this.props);
 
-    if(this.isComplete()){
+    if (this.isComplete()){
       this.finish();
-    }else{
+    } else {
       this.nextSlide();
     }
   }
   currentIndex(){
-    return this.slides().map((slide)=>{ return slide.id }).indexOf(this.currentSlide().id);
+    return this.slides().map((slide)=>{ return slide.id; }).indexOf(this.currentSlide().id);
   }
   nextSlide(){
     let slides = this.props.assessment.slides;
     let i = this.currentIndex();
     slides[i].orientation = "left";
     slides[i + 1].orientation = "middle";
-    if(slides[i + 2]){
+    if (slides[i + 2]){
       slides[i + 2].orientation = "right";
     }
-    if(i > 0){
+    if (i > 0){
       slides[i - 1].orientation = "invisible";
     }
     this.props.setState(this.props);
   }
   finish(){
     let com = this;
-    let answers = this.slides().map((slide)=>{ 
+    let answers = this.slides().map((slide)=>{
       return {
         id: slide.id,
         time_taken: slide.time_taken,
         response: slide.response
-      }
+      };
     });
 
-    Traitify.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
-      com.triggerCallback("finished", response);
+    window.Traitify.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
+      com.triggerCallback("finished", this, response);
       com.props.fetch();
-    })
+    });
   }
   componentDidMount(){
-    if(this.slides()){
+    if (this.slides()){
       this.initialize();
     }
   }
   componentWillReceiveProps(){
-    if(this.slides()){
+    if (this.slides()){
       this.initialize();
     }
     this.shouldAllowNext();
   }
   shouldAllowNext(){
-    if(this.currentIndex() <= this.loadedSlides().length  - 2 || this.currentIndex() > this.slides().length - 2){
+    if (this.currentIndex() <= this.loadedSlides().length  - 2 || this.currentIndex() > this.slides().length - 2){
       this.setReady(true);
-    }else{
+    } else {
       this.setReady(false);
     }
   }
   setReady(value){
-    if(this.props.ready != value){
-      this.triggerCallback('isReady', this.props.ready);
+    if (this.props.ready != value){
+      this.triggerCallback('isReady', this, this.props.ready);
       this.props.ready = value;
       this.props.setState(this.props);
     }
   }
   initialize(){
-    if(!this.props.assessment.slides || this.props.assessment.slides.length == 0 || this.props.assessment.slides.initialized){
+    if (!this.props.assessment.slides || this.props.assessment.slides.length == 0 || this.props.assessment.slides.initialized){
       return false;
     }
 
-    var com = this;
-    if(this.props.assessment.slides && this.props.assessment.slides.length != 0){
-      let slides = this.props.assessment.slides.filter((s)=>{ return s.orientation });
+    let com = this;
+    if (this.props.assessment.slides && this.props.assessment.slides.length != 0){
+      let slides = this.props.assessment.slides.filter((s)=>{ return s.orientation; });
       // Initialize Widget because data is now here
-      if(slides.length == 0){
-
+      if (slides.length == 0){
         this.props.assessment.slides[0].orientation = "middle";
         this.props.assessment.slides[1].orientation = "right";
-        var answers = [];
-        if(sessionStorage.getItem(`slides-${this.props.assessmentId}`)){
-          try{
+        let answers = [];
+        if (sessionStorage.getItem(`slides-${this.props.assessmentId}`)){
+          try {
             answers = JSON.parse(sessionStorage.getItem(`slides-${this.props.assessmentId}`));
-          }catch(e){
+          } catch (e){
+            console.log(`Answers JSON.parse error ${e}`);
           }
         }
 
@@ -155,32 +155,32 @@ export default class slideDeck extends Component {
         this.props.assessment.lastSlideAnswer = Date.now();
 
         this.props.assessment.slides.forEach((slide, index)=>{
-          if(com.answer(slide.id)){
+          if (com.answer(slide.id)){
             slide.response = com.answer(slide.id).response;
             slide.time_taken = slide.time_taken || 0;
             let si = this.props.assessment.slides[index - 1];
             let sl = this.props.assessment.slides[index];
             let sm = this.props.assessment.slides[index + 1];
             let sr = this.props.assessment.slides[index + 2];
-            if(si)
+            if (si)
               si.orientation = "invisible";
-            if(sl)
+            if (sl)
               sl.orientation = "left";
-            if(sm)
+            if (sm)
               sm.orientation = "middle";
-            if(sr)
+            if (sr)
               sr.orientation = "right";
           }
-        })
+        });
 
         this.props.assessment.slides.initialized = true;
         this.props.assessment.slides = this.props.assessment.slides.map((slide, index)=>{
-          if(index < com.currentIndex()){
+          if (index < com.currentIndex()){
             slide.loaded = true;
           }
           
           return slide;
-        })
+        });
 
         this.props.setState(this.props);
 
@@ -189,10 +189,10 @@ export default class slideDeck extends Component {
         // Detach into thread
         setTimeout(()=>{
           com.prefetchSlides(this.currentIndex());
-        }, 0)
+        }, 0);
 
-        this.triggerCallback('initialized');
-        if(this.isComplete()){
+        this.triggerCallback('initialized', this);
+        if (this.isComplete()){
           this.finish();
           return this.props;
         }
@@ -203,25 +203,25 @@ export default class slideDeck extends Component {
     return this.currentIndex() / this.slides().length * 100;
   }
   answers(answers){
-    if(answers){
-      var newAnswers = {};
+    if (answers){
+      let newAnswers = {};
       
       answers.forEach((answer)=>{
         newAnswers[answer.id] = answer;
-      })
+      });
 
       this.props.assessment.slides.map((slide)=>{
-        if(newAnswers[slide.id]){
+        if (newAnswers[slide.id]){
           slide.response = newAnswers[slide.id].response;
           slide.time_taken = newAnswers[slide.id].timeTaken;
         }
         return slide;
-      })
+      });
 
       this.props.setState(this.props);
-    }else{
+    } else {
       return this.props.assessment.slides
-        .filter((slide)=>{ 
+        .filter((slide)=>{
           return slide.response != null;
         })
         .map((slide)=>{
@@ -234,60 +234,60 @@ export default class slideDeck extends Component {
     }
   }
   answer(slideId){
-    if(!slideId){
+    if (!slideId){
       return null;
     }
     return this.answers().filter((answer)=>{
       return answer.id == slideId;
-    })[0]
+    })[0];
   }
   isComplete(){
-    if((this.props.assessment || {}).slides){
-      return this.slides().length == this.answers().length;
-    }else{
-      return false;
+    let value = false;
+    if ((this.props.assessment || {}).slides){
+      value = this.slides().length == this.answers().length;
     }
+    return value;
   }
   isReady(){
     return this.props.ready;
   }
   handleFullScreen(){
-    var i = this.container;
-    if(this.props.isFullScreen){
+    let i = this.container;
+    if (this.props.isFullScreen){
       this.props.isFullScreen = false;
       this.props.setState(this.props);
-      if (document.exitFullscreen) {
+      if (document.exitFullscreen){
         document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
+      } else if (document.webkitExitFullscreen){
         document.webkitExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
+      } else if (document.mozCancelFullScreen){
         document.mozCancelFullScreen();
-      } else if (document.msExitFullscreen) {
+      } else if (document.msExitFullscreen){
         document.msExitFullscreen();
       }
-      this.triggerCallback('fullscreen', false);
-    }else{
+      this.triggerCallback('fullscreen', this, false);
+    } else {
       this.props.isFullScreen = true;
       this.props.setState(this.props);
       if (i.requestFullscreen) {
         i.requestFullscreen();
-      } else if (i.webkitRequestFullscreen) {
+      } else if (i.webkitRequestFullscreen){
         i.webkitRequestFullscreen();
-      } else if (i.mozRequestFullScreen) {
+      } else if (i.mozRequestFullScreen){
         i.mozRequestFullScreen();
-      } else if (i.msRequestFullscreen) {
+      } else if (i.msRequestFullscreen){
         i.msRequestFullscreen();
       }
-      this.triggerCallback('fullscreen', true);
+      this.triggerCallback('fullscreen', this, true);
     }
   }
   render() {
-    if(!this.slides()){
-      return <span />
+    if (!this.slides()){
+      return <span />;
     }
     
-    var coverVisible = [style.cover];
-    if(!this.isReady()){
+    let coverVisible = [style.cover];
+    if (!this.isReady()){
       coverVisible.push(style.visible);
     }
 
@@ -310,10 +310,10 @@ export default class slideDeck extends Component {
               <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
-          {Traitify.oldIE?(
+          {window.Traitify.oldIE?(
             <Slide slide={this.currentSlide()} key={'slide'} />
           ):this.loadedSlides().map((slide, index)=>{
-            return <Slide slide={slide} key={index} />
+            return <Slide slide={slide} key={index} />;
           })}
         </div>
         <div class={style.responseContainer}>
@@ -330,6 +330,6 @@ export default class slideDeck extends Component {
           <div class={[style.fullScreen, this.props.isFullScreen ? style.fullScreenSmall : ''].join(" ") } onClick={this.handleFullScreen.bind(this)}></div>
         )}
       </div>
-    )
+    );
   }
 }

@@ -3,6 +3,9 @@ import Dimensions from "./dimensions";
 import Radar from "./radar";
 
 export default class DimensionBasedResults extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("dimensionbasedresults", "initialized", this);
+  }
   render() {
     return (
       <section>

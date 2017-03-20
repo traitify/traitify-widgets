@@ -3,11 +3,14 @@ import Color from "color-helpers";
 import style from "./style";
 
 export default class PersonalityTrait extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("personalitytrait", "initialized", this);
+  }
   render() {
-    var trait = this.props.trait.personality_trait;
-    var score = Math.round(this.props.trait.score/2 + 50);
-    var type = trait.personality_type;
-    var color = `#${type.badge.color_1}`;
+    let trait = this.props.trait.personality_trait;
+    let score = Math.round(this.props.trait.score/2 + 50);
+    let type = trait.personality_type;
+    let color = `#${type.badge.color_1}`;
     return (
       <div class={style.trait} style={`border: 3px solid #${color}; background: ${Color.rgba(color, 8.5)};`}>
         <div class={style.bar} style={`width: ${score}%; background: ${color};`} />

@@ -2,15 +2,18 @@ import { h, Component } from "preact";
 import style from "./style";
 
 export default class PersonalityDetails extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("personalitydetails", "initialized", this);
+  }
   render() {
-    var personality = this.props.assessment.personality_blend;
+    let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
-    var details = personality.details;
-    var complement = details.find(d => d.title == "Complement");
+    let details = personality.details;
+    let complement = details.find(d => d.title == "Complement");
     complement = complement && complement.body;
-    var conflict = details.find(d => d.title == "Conflict");
+    let conflict = details.find(d => d.title == "Conflict");
     conflict = conflict && conflict.body;
-    var environments = personality.environments || [];
+    let environments = personality.environments || [];
     return (
       <div class={style.details}>
         {complement && (

@@ -1,115 +1,41 @@
-import { h, render, rerender } from "preact";
-import Default from "../../src/components/default";
-let Traitify = require("traitify").default;
-Traitify.ui = require("traitify-ui").default;
-window.Traitify = Traitify;
 require("polyfills");
 import Factories from "../support/factories";
-import Mocks from "../support/mocks";
-import simulateEvent from "simulate-event";
+import "../steps/slide-deck";
+/*global sinon,expect,StepTest*/
 
-Mocks.Traitify = Traitify;
-Mocks.setup();
+/*eslint-disable prefer-arrow-callback*/
+StepTest.test("Slidedeck Should Initialize")
+        .step("Setup Scratch")
+        .step("Load Traitify UI with SlideDeck assessment id")
+        .step("Mock Slides")
+        .step("Set scratch as Target")
+        .step("Render and Wait for SlideDeck to Initialize")
+        .expect("SlideDeck should be Ready", function(){
+          expect(this.scratch.innerHTML).to.contain("Not Me");
+        });
 
-/*global sinon,expect*/
+StepTest.test("Click Me Event")
+        .step("Initialize SlideDeck")
+        .step("Listen for", "slidedeck.me")
+        .step("Click", ".traitify--slidedeck--me")
+        .expect("Slide Deck to have Clicked Me", function(){
+          expect(this["slidedeck.me"]).to.eql(true);
+        });
+  
+StepTest.test("Click Not Me Event")
+        .step("Initialize SlideDeck")
+        .step("Listen for", "slidedeck.notMe")
+        .step("Click", ".traitify--slidedeck--notMe")
+        .expect("Slide Deck to have Clicked Not Me", function(){
+          expect(this["slidedeck.notMe"]).to.eql(true);
+        });
 
-describe("", () => {
-  let scratch;
+StepTest.test("Answer Slide Event")
+        .step("Initialize SlideDeck")
+        .step("Listen for", "slidedeck.AnswerSlide")
+        .step("Click", ".traitify--slidedeck--notMe")
+        .expect("Slide Deck to have Clicked Not Me", function(){
+          expect(this["slidedeck.AnswerSlide"]).to.eql(true);
+        });
 
-  before(() => {
-    scratch = document.createElement("div");
-    (document.body || document.documentElement).appendChild(scratch);
-    Mocks.mock("slides");
-  });
-
-  beforeEach(() => {
-    scratch.innerHTML = "";
-  });
-
-  after(() => {
-    scratch.parentNode.removeChild(scratch);
-    scratch = null;
-  });
-
-  it("Preact should render the Default Component", () => {
-    let options = Factories.Props.Main();
-
-    render(<Default {...options} />, scratch);
-
-    expect(scratch.innerHTML).to.contain("Not Me");
-  });
-
-  it("Traitify should render the Default Component", (done) => {
-    let test = Traitify.ui.assessmentId("test");
-    test.target(scratch);
-    test.on("slidedeck.initialized", ()=>{
-      expect(scratch.innerHTML).to.contain("Not Me");
-      done();
-    });
-    test.render();
-  });
-
-  it("Click Me", (done) => {
-    let test = Traitify.ui.assessmentId("test");
-    test.target(scratch);
-    test.on("slidedeck.me", ()=>{
-      expect(true).to.eql(true);
-      done();
-    });
-
-    test.on("slidedeck.initialized", ()=>{
-      let me = scratch.querySelector(".traitify--slidedeck--me");
-      simulateEvent.simulate(me, 'click');
-    });
-
-    test.render();
-  });
-
-  it("Click Not Me", (done) => {
-    let test = Traitify.ui.assessmentId("test");
-    test.target(scratch);
-    test.on("slidedeck.notMe", ()=>{
-      expect(true).to.eql(true);
-      done();
-    });
-
-    test.on("slidedeck.initialized", ()=>{
-      let me = scratch.querySelector(".traitify--slidedeck--notMe");
-      simulateEvent.simulate(me, 'click');
-    });
-
-    test.render();
-  });
-
-  it("Click Not Me", (done) => {
-    let test = Traitify.ui.assessmentId("test");
-    test.target(scratch);
-    test.on("slidedeck.notMe", ()=>{
-      expect(true).to.eql(true);
-      done();
-    });
-
-    test.on("slidedeck.initialized", ()=>{
-      let me = scratch.querySelector(".traitify--slidedeck--notMe");
-      simulateEvent.simulate(me, 'click');
-    });
-
-    test.render();
-  });
-
-  it("Answer Slide", (done) => {
-    let test = Traitify.ui.assessmentId("test");
-    test.target(scratch);
-    test.on("slidedeck.answerslide", ()=>{
-      expect(true).to.eql(true);
-      done();
-    });
-
-    test.on("slidedeck.initialized", ()=>{
-      let me = scratch.querySelector(".traitify--slidedeck--me");
-      simulateEvent.simulate(me, 'click');
-    });
-
-    test.render();
-  });
-});
+/*eslint-enable prefer-arrow-callback*/

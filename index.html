@@ -14,16 +14,12 @@
 
       initDeck = function(){
         var assessment = Traitify.ui.assessmentId(localStorage.getItem("assessment-id"));
-        assessment.allowFullScreen(true);
         assessment.target("#widgets");
         assessment.perspective("firstPerson")
-        assessment.on("SlideDeck.answerSlide", ()=>{
-          console.log("WORKING")
+        assessment.on("personalitytypes.initialized", (me)=>{
+          window.me = me;
         })
         widget = assessment.render()
-        widget.then(function(com){
-          console.log(com)
-        })
         widget.catch(function(error){
           console.log(error)
         });

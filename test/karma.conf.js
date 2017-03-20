@@ -11,8 +11,8 @@ webpack.module.loaders.push({
 module.exports = function(config) {
   config.set({
     basePath: "../",
-    frameworks: ["mocha", "chai-sinon"],
-    reporters: ["mocha", "coverage"],
+    frameworks: ["step-test", "chai-sinon"],
+    //reporters: ["mocha", "coverage"],
     coverageReporter: {
       reporters: [
         {
@@ -26,9 +26,12 @@ module.exports = function(config) {
       ]
     },
 
+    singleRun: true,
+
     browsers: ["PhantomJS"],
 
     files: [
+      "test/support/prerun.js",
       "test/browser/**/*.js"
     ],
 

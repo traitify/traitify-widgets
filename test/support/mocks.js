@@ -2,15 +2,15 @@ import RequestMock from "./request-mock";
 import Factories from "./factories";
 
 RequestMock.addMock("slides", (options)=>{
-  return (cb)=>{
-    return cb({slides: Factories.Data.Slides()});
-  };
+  if (options.path.indexOf("slides") != -1){
+    return {slides: Factories.Data.Slides()};
+  }
 });
 
 RequestMock.addMock("results", (options)=>{
-  return (cb)=>{
-    return cb({personality_types: [], slides: []});
-  };
+  if (options.path.indexOf("results") != -1){
+    return Factories.Data.Assessment().results();
+  }
 });
 
 export default RequestMock;

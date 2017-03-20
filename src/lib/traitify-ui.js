@@ -34,6 +34,7 @@ export default class TraitifyUI {
   }
   render(componentName) {
     let lib = this;
+    lib.options.client = this.constructor.client;
     return new Promise((resolve, reject)=>{
       try {
         // If target is not a node use query selector to find the target node

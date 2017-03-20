@@ -1,40 +1,21 @@
+require("polyfills");
 import { h, render, rerender } from "preact";
 import Default from "../../src/components/default";
-let Traitify = require("traitify").default;
-Traitify.ui = require("traitify-ui").default;
-window.Traitify = Traitify;
-require("polyfills");
-import Factories from "../support/factories";
-import Mocks from "../support/mocks";
+
 import simulateEvent from "simulate-event";
+import "../steps/results";
 
-Mocks.Traitify = Traitify;
+/*global sinon,expect,StepTest*/
 
-/*global sinon,expect*/
+/*eslint-disable prefer-arrow-callback*/
+StepTest.test("Results Should Initialize")
+        .step("Setup Scratch")
+        .step("Load Traitify UI with Results assessment id")
+        .step("Mock Results")
+        .step("Set scratch as Target")
+        .step("Render and Wait for Results to Initialize")
+        .expect("SlideDeck should be Ready", function(){
+          expect(this.scratch.innerHTML).to.contain("traitify--personality-badge--image");
+        });
 
-describe("", () => {
-  let scratch;
-
-  before(() => {
-    scratch = document.createElement("div");
-    (document.body || document.documentElement).appendChild(scratch);
-    Mocks.mock("slides");
-  });
-
-  beforeEach(() => {
-    scratch.innerHTML = "";
-  });
-
-  after(() => {
-    scratch.parentNode.removeChild(scratch);
-    scratch = null;
-  });
-
-  it("Answer Slide", (done) => {
-    Mocks.mock();
-    let test = Traitify.ui.assessmentId("test");
-    test.target(scratch);
-
-    test.render();
-  });
-});
+/*eslint-enable prefer-arrow-callback*/

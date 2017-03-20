@@ -4,6 +4,8 @@ import I18n from "../lib/i18n";
 import SlideDeck from "./slidedeck/index";
 import Default from "./default";
 import Results from "./results";
+import Mocks from "../../test/support/mocks";
+window.Mocks = Mocks;
 
 let components = {
   SlideDeck,
@@ -68,11 +70,13 @@ export default class Main extends Component {
 
   fetch (){
     let com = this;
-    window.Traitify.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
-      com.triggerCallback("main", "fetch", this, false);
+    this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
+      com.triggerCallback("main", "fetch", com);
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.setState(com.state);
+    }).catch((error)=>{
+      console.warn(error);
     });
   }
 

@@ -310,7 +310,7 @@ export default class slideDeck extends Component {
               <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
-          {window.Traitify.oldIE?(
+          {this.props.client.oldIE?(
             <Slide slide={this.currentSlide()} key={'slide'} />
           ):this.loadedSlides().map((slide, index)=>{
             return <Slide slide={slide} key={index} />;

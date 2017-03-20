@@ -1,31 +1,42 @@
+import Promise from 'promise-polyfill';
+if (!window.Promise){
+  window.Promise = Promise;
+}
+let setup = function(){
+  let mocks = this;
+  this.Traitify.request = function(method, path, params){
+    return new Promise((resolve, reject)=>{
+      let options = {method, path, params};
 
-let klass = {
+      let cb = mocks.cbs.filter((_cb)=>{
+        return _cb(options);
+      })[0];
+      
+      resolve(cb(options));
+    });
+  };
+};
+
+let Mocks = {
   cbs: [],
   mocks: {},
   addMock: (name, mock)=>{
-    klass.mocks[name] = mock;
+    Mocks.mocks[name] = mock;
   },
   mock: (name)=>{
-    klass.cbs.push(klass.mocks[name]);
+    Mocks.cbs.push(Mocks.mocks[name]);
+    return Mocks;
   },
   unMock: (name)=>{
-    klass.cbs = klass.cbs.filter((cb)=>{
-      return cb != klass.mocks[name];
+    Mocks.cbs = Mocks.cbs.filter((cb)=>{
+      return cb != Mocks.mocks[name];
     });
   },
+  reset:()=>{
+    Mocks.cbs = [];
+  },
   Traitify: {},
-  setup: ()=>{
-    klass.Traitify.request = function(method, path, params){
-      let options = {method, path, params};
-      let cb = klass.currentCbs.filter((_cb)=>{
-        return _cb(options);
-      })[0];
-
-      return {
-        then: cb(options)
-      };
-    };
-  }
+  setup
 };
 
-export default klass;
+export default Mocks;

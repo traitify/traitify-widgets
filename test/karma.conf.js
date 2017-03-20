@@ -12,7 +12,7 @@ module.exports = function(config) {
   config.set({
     basePath: "../",
     frameworks: ["step-test", "chai-sinon"],
-    //reporters: ["mocha", "coverage"],
+    //reporters: ["coverage"],
     coverageReporter: {
       reporters: [
         {
@@ -36,7 +36,7 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      "test/**/*.js": ["webpack"],
+      "test/**/*.js": ["webpack", "coverage"],
       "src/**/*.js": ["webpack"],
       "**/*.js": ["sourcemap"]
     },

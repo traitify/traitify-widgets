@@ -5,6 +5,9 @@ import "../steps/slide-deck";
 
 /*eslint-disable prefer-arrow-callback*/
 StepTest.test("Slidedeck Should Initialize")
+        .tag("slidedeck")
+        .tag("event")
+        .tag("initialize")
         .step("Setup Scratch")
         .step("Load Traitify UI with SlideDeck assessment id")
         .step("Mock Slides")
@@ -15,6 +18,9 @@ StepTest.test("Slidedeck Should Initialize")
         });
 
 StepTest.test("Click Me Event")
+        .tag("slidedeck")
+        .tag("event")
+        .tag("me")
         .step("Initialize SlideDeck")
         .step("Listen for", "slidedeck.me")
         .step("Click", ".traitify--slidedeck--me")
@@ -23,6 +29,9 @@ StepTest.test("Click Me Event")
         });
   
 StepTest.test("Click Not Me Event")
+        .tag("slidedeck")
+        .tag("event")
+        .tag("not me")
         .step("Initialize SlideDeck")
         .step("Listen for", "slidedeck.notMe")
         .step("Click", ".traitify--slidedeck--notMe")
@@ -31,6 +40,9 @@ StepTest.test("Click Not Me Event")
         });
 
 StepTest.test("Answer Slide Event")
+        .tag("slidedeck")
+        .tag("event")
+        .tag("answer slide")
         .step("Initialize SlideDeck")
         .step("Listen for", "slidedeck.AnswerSlide")
         .step("Click", ".traitify--slidedeck--notMe")

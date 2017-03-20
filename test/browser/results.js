@@ -9,6 +9,7 @@ import "../steps/results";
 
 /*eslint-disable prefer-arrow-callback*/
 StepTest.test("Results Should Initialize")
+        .tag("results")
         .step("Setup Scratch")
         .step("Load Traitify UI with Results assessment id")
         .step("Mock Results")

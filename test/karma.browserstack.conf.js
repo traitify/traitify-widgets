@@ -26,7 +26,9 @@ module.exports = function(config) {
       ]
     },
 
-    singleRun: false,
+    browserNoActivityTimeout: 100000,
+    browserDisconnectTolerance: 2,
+    singleRun: true,
 
     browserStack: {
       username: 'carsonwright2',
@@ -42,6 +44,34 @@ module.exports = function(config) {
         os: 'OS X',
         os_version: 'Mountain Lion'
       },
+      bs_safari_mac: {
+        base: 'BrowserStack',
+        browser: 'safari',
+        browser_version: '6.2',
+        os: 'OS X',
+        os_version: 'Mountain Lion'
+      },
+       bs_ie9_windows: {
+        base: 'BrowserStack',
+        browser: 'ie',
+        browser_version: '9.0',
+        os: 'Windows',
+        os_version: '7'
+      },
+      bs_ie10_windows: {
+        base: 'BrowserStack',
+        browser: 'ie',
+        browser_version: '10.0',
+        os: 'Windows',
+        os_version: '7'
+      },
+      bs_ie11_windows: {
+        base: 'BrowserStack',
+        browser: 'ie',
+        browser_version: '11.0',
+        os: 'Windows',
+        os_version: '7'
+      },
       bs_iphone5: {
         base: 'BrowserStack',
         device: 'iPhone 5',
@@ -50,7 +80,14 @@ module.exports = function(config) {
       }
     },
 
-    browsers: ['bs_firefox_mac', 'bs_iphone5'],
+    browsers: [
+      'bs_firefox_mac', 
+      'bs_safari_mac', 
+      'bs_ie9_windows', 
+      'bs_ie10_windows', 
+      'bs_ie11_windows', 
+      'bs_iphone5'
+    ],
 
     files: [
       "test/support/prerun.js",

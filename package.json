@@ -86,6 +86,7 @@
     "faker": "^4.1.0",
     "fetch-ie8": "^1.4.3",
     "preact": "^7.1.0",
+    "promise-polyfill": "^6.0.2",
     "proptypes": "^0.14.3",
     "quarked": "0.0.1",
     "qwest": "^4.4.5",

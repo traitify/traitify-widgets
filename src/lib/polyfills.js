@@ -1,6 +1,6 @@
 if (!Array.prototype.find) {
   Object.defineProperty(Array.prototype, 'find', {
-    value: (predicate)=>{
+    value: function(predicate){ // eslint-disable-line object-shorthand
      // 1. Let O be ? ToObject(this value).
       if (this == null) {
         throw new TypeError('"this" is null or not defined');

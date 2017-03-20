@@ -3,9 +3,6 @@ import Color from "color-helpers";
 import style from "./style";
 
 export default class PersonalityTrait extends Component {
-  componentDidMount(){
-    this.props.triggerCallback("personalitytrait", "initialized", this);
-  }
   render() {
     let trait = this.props.trait.personality_trait;
     let score = Math.round(this.props.trait.score/2 + 50);

@@ -3,9 +3,6 @@ import Color from "color-helpers";
 import style from "./style";
 
 export default class PersonalityBadge extends Component {
-  componentDidMount(){
-    this.props.triggerCallback("personalitybadge", "initialized", this);
-  }
   render() {
     let color = `#${this.props.type.badge.color_1}`;
     return (

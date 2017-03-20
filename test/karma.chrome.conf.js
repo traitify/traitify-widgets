@@ -12,7 +12,6 @@ module.exports = function(config) {
   config.set({
     basePath: "../",
     frameworks: ["step-test", "chai-sinon"],
-    //reporters: ["coverage"],
     coverageReporter: {
       reporters: [
         {
@@ -26,9 +25,9 @@ module.exports = function(config) {
       ]
     },
 
-    singleRun: true,
+    singleRun: false,
 
-    browsers: ["PhantomJS"],
+    browsers: ["Chrome"],
 
     files: [
       "test/support/prerun.js",
@@ -36,7 +35,7 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      "test/**/*.js": ["webpack", "coverage"],
+      "test/**/*.js": ["webpack"],
       "src/**/*.js": ["webpack"],
       "**/*.js": ["sourcemap"]
     },

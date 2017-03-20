@@ -56,7 +56,7 @@ export default class slideDeck extends Component {
     e.preventDefault();
     let key = value ? "me" : "notme";
     this.triggerCallback(key, this);
-    this.triggerCallback('answerSlide', this, value);
+    this.triggerCallback('answerslide', this, value);
 
     let lastSlide = this.props.assessment.lastSlideAnswer;
     let slide = this.currentSlide();
@@ -310,7 +310,7 @@ export default class slideDeck extends Component {
               <div class={style.progress} style={{width: `${this.completion()}%`}} />
             </div>
           </div>
-          {window.Traitify.oldIE?(
+          {this.props.client.oldIE?(
             <Slide slide={this.currentSlide()} key={'slide'} />
           ):this.loadedSlides().map((slide, index)=>{
             return <Slide slide={slide} key={index} />;

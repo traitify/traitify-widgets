@@ -3,6 +3,9 @@ import TypeBasedResults from "./type-based-results";
 import DimensionBasedResults from "./dimension-based-results";
 
 export default class Results extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("results", "initialized", this);
+  }
   render() {
     let assessment = this.props.assessment || {};
     if (!assessment.personality_types) return <div />;

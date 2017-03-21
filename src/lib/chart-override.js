@@ -287,14 +287,14 @@ function numberOrZero(param) {
 
 // Updated to show 0 and allow images
 let LinearRadialWithImagesScale = constructor.extend({
-  fit: ()=>{
+  fit: function(){
     if (this.options.lineArc) {
       fit(this);
     } else {
       fitWithPointLabels(this);
     }
   },
-  draw: ()=>{
+  draw: function(){
     let me = this;
     let opts = me.options;
     let gridLineOpts = opts.gridLines;

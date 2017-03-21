@@ -1,4 +1,3 @@
-require("polyfills");
 import Factories from "../support/factories";
 import "../steps/slide-deck";
 /*global sinon,expect,StepTest*/

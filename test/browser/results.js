@@ -1,4 +1,3 @@
-require("polyfills");
 import { h, render, rerender } from "preact";
 import Default from "../../src/components/default";
 

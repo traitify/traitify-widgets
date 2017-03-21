@@ -2,10 +2,6 @@ import { h, render } from "preact";
 import Main from "../components/main";
 import Promise from 'promise-polyfill';
 
-if (!window.Promise){
-  window.Promise = Promise;
-}
-
 export default class TraitifyUI {
   constructor (options) {
     this.options = options || {};

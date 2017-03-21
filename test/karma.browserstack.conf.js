@@ -51,12 +51,19 @@ module.exports = function(config) {
         os: 'OS X',
         os_version: 'Mountain Lion'
       },
-       bs_ie9_windows: {
+      bs_ie9_windows: {
         base: 'BrowserStack',
         browser: 'ie',
         browser_version: '9.0',
         os: 'Windows',
         os_version: '7'
+      },
+      bs_edge_windows: {
+        base: 'BrowserStack',
+        browser: 'edge',
+        browser_version: '13.0',
+        os: 'Windows',
+        os_version: '10'
       },
       bs_ie10_windows: {
         base: 'BrowserStack',
@@ -86,6 +93,7 @@ module.exports = function(config) {
       'bs_ie9_windows', 
       'bs_ie10_windows', 
       'bs_ie11_windows', 
+      'bs_edge_windows', 
       'bs_iphone5'
     ],
 

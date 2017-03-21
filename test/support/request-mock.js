@@ -1,7 +1,5 @@
 import Promise from 'promise-polyfill';
-if (!window.Promise){
-  window.Promise = Promise;
-}
+
 let setup = function(){
   let mocks = this;
   this.Traitify.request = function(method, path, params){

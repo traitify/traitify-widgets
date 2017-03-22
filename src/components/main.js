@@ -4,8 +4,6 @@ import I18n from "../lib/i18n";
 import SlideDeck from "./slidedeck/index";
 import Default from "./default";
 import Results from "./results";
-import Mocks from "../../test/support/mocks";
-window.Mocks = Mocks;
 
 let components = {
   SlideDeck,

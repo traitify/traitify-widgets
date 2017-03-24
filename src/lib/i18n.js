@@ -32,14 +32,8 @@ export default class I18n {
 
     return this;
   }
-  setLocale(locale = "") {
-    let l = new this()
-
-    if(l[locale.downcase()]){
-      this.locale = locale.downcase();
-    }else{
-      this.locale = "en-us";
-    }
+  setLocale(locale) {
+    this.locale = locale
   }
   translate(key) {
     return this[this.locale][key];

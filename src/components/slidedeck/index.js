@@ -62,7 +62,7 @@ export default class slideDeck extends Component {
     slide.response = value;
     slide.time_taken = Date.now() - this.lastSlideAnswered;
     sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()));
-    this.lastSlidePlayed = Date.now();
+    this.lastSlideAnswered = Date.now();
     this.props.setState(this.props);
 
     if (this.isComplete()){
@@ -90,7 +90,7 @@ export default class slideDeck extends Component {
   finish(){
     let com = this;
     let answers = this.slides().map((slide)=>{
-      let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 123;
+      let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 12345;
       return {
         id: slide.id,
         time_taken: time_taken,

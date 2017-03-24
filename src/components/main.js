@@ -44,6 +44,7 @@ export default class Main extends Component {
       com.state[key] = com.props[key];
     });
     com.state.assessment = {};
+    
     if (com.props.locale){
       com.i18n.locale = com.props.locale;
     }

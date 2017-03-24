@@ -1,6 +1,7 @@
 import { h, render } from "preact";
 import Main from "../components/main";
 import Promise from 'promise-polyfill';
+import i18n from './i18n';
 
 export default class TraitifyUI {
   constructor (options) {
@@ -28,6 +29,22 @@ export default class TraitifyUI {
     this.render();
     return this;
   }
+  locale(locale = ""){
+    let l = new i18n();
+    
+    if(l[locale.toLowerCase()]){
+      this.options.locale = locale.toLowerCase();
+    }else{
+      this.options.locale = "en-us";
+    }
+
+    return this;
+  }
+  static locale(value){
+    let options = {};
+    options.locale = value;
+    return this.component(options);
+  };
   render(componentName) {
     let lib = this;
     lib.options.client = this.constructor.client;
@@ -58,7 +75,7 @@ export default class TraitifyUI {
   }
 }
 
-let defaultOptions = ["allowFullScreen", "assessmentId", "perspective", "target", "locale"];
+let defaultOptions = ["allowFullScreen", "assessmentId", "perspective", "target"];
 defaultOptions.forEach((option)=>{
   TraitifyUI[option] = function(value){
     let options = {};

@@ -7,19 +7,23 @@ export default class PersonalityTypeBar extends Component {
     super();
     this.setActive = this.setActive.bind(this);
   }
+  componentDidMount(){
+    this.props.triggerCallback("personalitytypebar", "initialized", this);
+  }
   setActive() {
+    this.props.triggerCallback("personalitytypebar", "changeType", this, this.props.type);
     this.props.setState({ activeType: this.props.type });
   }
   render() {
-    var type = this.props.type.personality_type;
-    var title = type.name;
-    var icon = type.badge.image_medium;
-    var color = `#${type.badge.color_1}`;
-    var score = Math.round(this.props.type.score);
+    let type = this.props.type.personality_type;
+    let title = type.name;
+    let icon = type.badge.image_medium;
+    let color = `#${type.badge.color_1}`;
+    let score = Math.round(this.props.type.score);
 
-    var active = false;
-    var activeType = this.props.activeType;
-    if(activeType) {
+    let active = false;
+    let activeType = this.props.activeType;
+    if (activeType){
       active = type.id == activeType.personality_type.id;
     }
 

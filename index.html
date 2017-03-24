@@ -7,17 +7,22 @@
   </head>
   <body>
     <div id="widgets"></div>
-    <script src="/build/bundle.js"></script>
+    <script src="/build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
       initDeck = function(){
         var assessment = Traitify.ui.assessmentId(localStorage.getItem("assessment-id"));
-        assessment.allowFullScreen(true);
         assessment.target("#widgets");
         assessment.perspective("firstPerson")
-        assessment.render();
+        assessment.on("personalitytypes.initialized", (me)=>{
+          window.me = me;
+        })
+        widget = assessment.render()
+        widget.catch(function(error){
+          console.log(error)
+        });
       }
 
       createAssessment = function(){

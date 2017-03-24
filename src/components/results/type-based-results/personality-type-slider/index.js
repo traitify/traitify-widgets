@@ -8,18 +8,23 @@ export default class PersonalityTypeSlider extends Component {
     super();
     this.setActive = this.setActive.bind(this);
   }
+  componentDidMount(){
+    this.props.triggerCallback("personalitytypeslider", "initialized", this);
+  }
   setActive(type, e) {
-    e.preventDefault()
+    e.preventDefault();
+    this.props.triggerCallback("personalitytypeslider", "changeType", this, type);
     this.props.setState({ activeType: type });
   }
   render() {
-    var props = this.props;
-    if(props.activeType) {
-      var id = props.activeType.personality_type.id;
-      var ids = props.assessment.personality_types.map((type) => { return type.personality_type.id; });
-      var index = ids.indexOf(id);
-      var backType = props.assessment.personality_types[index - 1];
-      var nextType = props.assessment.personality_types[index + 1];
+    let props = this.props;
+    let id, ids, index, backType, nextType;
+    if (props.activeType){
+      id = props.activeType.personality_type.id;
+      ids = props.assessment.personality_types.map((type) => { return type.personality_type.id; });
+      index = ids.indexOf(id);
+      backType = props.assessment.personality_types[index - 1];
+      nextType = props.assessment.personality_types[index + 1];
     }
 
     return (
@@ -30,7 +35,7 @@ export default class PersonalityTypeSlider extends Component {
           </a>
         )}
         <ul>
-          {props.assessment.personality_types.map(function(type) {
+          {props.assessment.personality_types.map((type)=>{
             return <PersonalityTypeSlide {...props} type={type} />;
           })}
         </ul>

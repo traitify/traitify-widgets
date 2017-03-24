@@ -1,12 +1,12 @@
 import Chart from "chart.js";
 
-var imageSize = 65;
-var helpers = Chart.helpers;
-var globalDefaults = Chart.defaults.global;
-var constructor = Chart.scaleService.getScaleConstructor("radialLinear")
-helpers.isObject = function(obj) { return Object.prototype.toString.call(obj) === "[object Object]"; }
+let imageSize = 65;
+let helpers = Chart.helpers;
+let globalDefaults = Chart.defaults.global;
+let constructor = Chart.scaleService.getScaleConstructor("radialLinear");
+helpers.isObject = function(obj) { return Object.prototype.toString.call(obj) === "[object Object]"; };
 
-var defaultConfig = {
+let defaultConfig = {
   display: true,
   animate: true,
   lineArc: false,
@@ -25,7 +25,7 @@ var defaultConfig = {
   },
   pointLabels: {
     fontSize: 10,
-    callback: function(label) { return label; }
+    callback: (label)=>{ return label; }
   }
 };
 
@@ -34,17 +34,17 @@ function getValueCount(scale) {
 }
 
 function getPointLabelFontOptions(scale) {
-  var pointLabelOptions = scale.options.pointLabels;
-  var fontSize = helpers.getValueOrDefault(pointLabelOptions.fontSize, globalDefaults.defaultFontSize);
-  var fontStyle = helpers.getValueOrDefault(pointLabelOptions.fontStyle, globalDefaults.defaultFontStyle);
-  var fontFamily = helpers.getValueOrDefault(pointLabelOptions.fontFamily, globalDefaults.defaultFontFamily);
-  var font = helpers.fontString(fontSize, fontStyle, fontFamily);
+  let pointLabelOptions = scale.options.pointLabels;
+  let fontSize = helpers.getValueOrDefault(pointLabelOptions.fontSize, globalDefaults.defaultFontSize);
+  let fontStyle = helpers.getValueOrDefault(pointLabelOptions.fontStyle, globalDefaults.defaultFontStyle);
+  let fontFamily = helpers.getValueOrDefault(pointLabelOptions.fontFamily, globalDefaults.defaultFontFamily);
+  let font = helpers.fontString(fontSize, fontStyle, fontFamily);
 
   return {
     size: fontSize,
     style: fontStyle,
     family: fontFamily,
-    font: font
+    font
   };
 }
 
@@ -55,9 +55,9 @@ function measureLabelSize(ctx, fontSize, label, angle) {
       h: (label.length * fontSize) + ((label.length - 1) * 1.5 * fontSize)
     };
   }
-  if(helpers.isObject(label)) {
-    var width = ctx.measureText(label.text).width;
-    var height = label.text ? fontSize * 2 : 0;
+  if (helpers.isObject(label)){
+    let width = ctx.measureText(label.text).width;
+    let height = label.text ? fontSize * 2 : 0;
     return {
       w: width > imageSize ? width : imageSize,
       h: (angle == 0 || angle == 180) ? height + imageSize : height
@@ -90,33 +90,33 @@ function determineLimits(angle, pos, size, min, max) {
 }
 
 function fitWithPointLabels(scale) {
-  var plFont = getPointLabelFontOptions(scale);
-  var largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
-  var furthestLimits = {
+  let plFont = getPointLabelFontOptions(scale);
+  let largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
+  let furthestLimits = {
     l: scale.width,
     r: 0,
     t: scale.height,
     b: 0
   };
-  var furthestAngles = {};
-  var i;
-  var labelSize;
-  var pointPosition;
+  let furthestAngles = {};
+  let i;
+  let labelSize;
+  let pointPosition;
 
   scale.ctx.font = plFont.font;
   scale._pointLabelSizes = [];
 
-  var valueCount = getValueCount(scale);
+  let valueCount = getValueCount(scale);
   for (i = 0; i < valueCount; i++) {
-    var angleRadians = scale.getIndexAngle(i);
-    var angle = helpers.toDegrees(angleRadians) % 360;
+    let angleRadians = scale.getIndexAngle(i);
+    let angle = helpers.toDegrees(angleRadians) % 360;
 
     pointPosition = scale.getPointPosition(i, largestPossibleRadius);
     labelSize = measureLabelSize(scale.ctx, plFont.size, scale.pointLabels[i] || "", angle);
     scale._pointLabelSizes[i] = labelSize;
 
-    var hLimits = determineLimits(angle, pointPosition.x, labelSize.w, 0, 180);
-    var vLimits = determineLimits(angle, pointPosition.y, labelSize.h, 90, 270);
+    let hLimits = determineLimits(angle, pointPosition.x, labelSize.w, 0, 180);
+    let vLimits = determineLimits(angle, pointPosition.y, labelSize.h, 90, 270);
 
     if (hLimits.start < furthestLimits.l) {
       furthestLimits.l = hLimits.start;
@@ -143,7 +143,7 @@ function fitWithPointLabels(scale) {
 }
 
 function fit(scale) {
-  var largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
+  let largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
   scale.drawingArea = Math.round(largestPossibleRadius);
   scale.setCenterPoint(0, 0, 0, 0);
 }
@@ -159,38 +159,38 @@ function getTextAlignForAngle(angle) {
 }
 
 function fillLabel(ctx, label, position, fontSize, angle) {
-  var x = position.x;
-  var y = position.y;
+  let x = position.x;
+  let y = position.y;
 
-  if(helpers.isArray(label)) {
-    var spacing = 1.5 * fontSize;
+  if (helpers.isArray(label)) {
+    let spacing = 1.5 * fontSize;
 
-    for (var i = 0; i < label.length; ++i) {
+    for (let i = 0; i < label.length; ++i) {
       ctx.fillText(label[i], x, y);
       y += spacing;
     }
-  } else if(helpers.isObject(label)) {
-    if(label.image) {
-      var textWidth = ctx.measureText(label.text).width;
-      var img = new Image;
+  } else if (helpers.isObject(label)) {
+    if (label.image) {
+      let textWidth = ctx.measureText(label.text).width;
+      let img = new Image;
       let pE = ctx.canvas.parentElement;
       let i = 500 / (pE.clientHeight || pE.height);
-      var width = imageSize / i;
-      var height = imageSize / i;
+      let width = imageSize / i;
+      let height = imageSize / i;
       img.src = label.image;
 
-      if(angle == 0) {
+      if (angle == 0) {
         ctx.drawImage(img, x - width/2, y, width, height);
         y = y + height;
-      } else if(angle < 180) {
+      } else if (angle < 180) {
         ctx.drawImage(img, x + (textWidth - width)/2, y - height, width, height);
-      } else if(angle == 180) {
+      } else if (angle == 180) {
         ctx.drawImage(img, x - width/2, y + fontSize, width, height);
-      } else if(angle > 180) {
+      } else if (angle > 180) {
         ctx.drawImage(img, x - (textWidth + width)/2, y - height, width, height);
       }
     }
-    if(label.text) {
+    if (label.text) {
       ctx.fillText(label.text, x, y);
     }
   } else {
@@ -207,25 +207,25 @@ function adjustPointPositionForLabelHeight(angle, labelSize, position) {
 }
 
 function drawPointLabels(scale) {
-  var ctx = scale.ctx;
-  var getValueOrDefault = helpers.getValueOrDefault;
-  var opts = scale.options;
-  var angleLineOpts = opts.angleLines;
-  var pointLabelOpts = opts.pointLabels;
+  let ctx = scale.ctx;
+  let getValueOrDefault = helpers.getValueOrDefault;
+  let opts = scale.options;
+  let angleLineOpts = opts.angleLines;
+  let pointLabelOpts = opts.pointLabels;
 
   ctx.lineWidth = angleLineOpts.lineWidth;
   ctx.strokeStyle = angleLineOpts.color;
 
-  var outerDistance = scale.getDistanceFromCenterForValue(opts.reverse ? scale.min : scale.max);
+  let outerDistance = scale.getDistanceFromCenterForValue(opts.reverse ? scale.min : scale.max);
 
   // Point Label Font
-  var plFont = getPointLabelFontOptions(scale);
+  let plFont = getPointLabelFontOptions(scale);
 
   ctx.textBaseline = 'top';
 
-  for (var i = getValueCount(scale) - 1; i >= 0; i--) {
+  for (let i = getValueCount(scale) - 1; i >= 0; i--) {
     if (angleLineOpts.display) {
-      var outerPosition = scale.getPointPosition(i, outerDistance);
+      let outerPosition = scale.getPointPosition(i, outerDistance);
       ctx.beginPath();
       ctx.moveTo(scale.xCenter, scale.yCenter);
       ctx.lineTo(outerPosition.x, outerPosition.y);
@@ -233,15 +233,15 @@ function drawPointLabels(scale) {
       ctx.closePath();
     }
     // Extra 3px out for some label spacing
-    var pointLabelPosition = scale.getPointPosition(i, outerDistance + 5);
+    let pointLabelPosition = scale.getPointPosition(i, outerDistance + 5);
 
     // Keep this in loop since we may support array properties here
-    var pointLabelFontColor = getValueOrDefault(pointLabelOpts.fontColor, globalDefaults.defaultFontColor);
+    let pointLabelFontColor = getValueOrDefault(pointLabelOpts.fontColor, globalDefaults.defaultFontColor);
     ctx.font = plFont.font;
     ctx.fillStyle = pointLabelFontColor;
 
-    var angleRadians = scale.getIndexAngle(i);
-    var angle = helpers.toDegrees(angleRadians);
+    let angleRadians = scale.getIndexAngle(i);
+    let angle = helpers.toDegrees(angleRadians);
     ctx.textAlign = getTextAlignForAngle(angle);
     adjustPointPositionForLabelHeight(angle, scale._pointLabelSizes[i], pointLabelPosition);
     fillLabel(ctx, scale.pointLabels[i] || '', pointLabelPosition, plFont.size, angle);
@@ -249,7 +249,7 @@ function drawPointLabels(scale) {
 }
 
 function drawRadiusLine(scale, gridLineOpts, radius, index) {
-  var ctx = scale.ctx;
+  let ctx = scale.ctx;
   ctx.strokeStyle = helpers.getValueAtIndexOrDefault(gridLineOpts.color, index - 1);
   ctx.lineWidth = helpers.getValueAtIndexOrDefault(gridLineOpts.lineWidth, index - 1);
 
@@ -261,17 +261,17 @@ function drawRadiusLine(scale, gridLineOpts, radius, index) {
     ctx.stroke();
   } else {
     // Draw straight lines connecting each index
-    var valueCount = getValueCount(scale);
+    let valueCount = getValueCount(scale);
 
     if (valueCount === 0) {
       return;
     }
 
     ctx.beginPath();
-    var pointPosition = scale.getPointPosition(0, radius);
+    let pointPosition = scale.getPointPosition(0, radius);
     ctx.moveTo(pointPosition.x, pointPosition.y);
 
-    for (var i = 1; i < valueCount; i++) {
+    for (let i = 1; i < valueCount; i++) {
       pointPosition = scale.getPointPosition(i, radius);
       ctx.lineTo(pointPosition.x, pointPosition.y);
     }
@@ -286,33 +286,33 @@ function numberOrZero(param) {
 }
 
 // Updated to show 0 and allow images
-var LinearRadialWithImagesScale = constructor.extend({
-  fit: function() {
+let LinearRadialWithImagesScale = constructor.extend({
+  fit: function(){
     if (this.options.lineArc) {
       fit(this);
     } else {
       fitWithPointLabels(this);
     }
   },
-  draw: function() {
-    var me = this;
-    var opts = me.options;
-    var gridLineOpts = opts.gridLines;
-    var tickOpts = opts.ticks;
-    var getValueOrDefault = helpers.getValueOrDefault;
+  draw: function(){
+    let me = this;
+    let opts = me.options;
+    let gridLineOpts = opts.gridLines;
+    let tickOpts = opts.ticks;
+    let getValueOrDefault = helpers.getValueOrDefault;
 
     if (opts.display) {
-      var ctx = me.ctx;
+      let ctx = me.ctx;
 
       // Tick Font
-      var tickFontSize = getValueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
-      var tickFontStyle = getValueOrDefault(tickOpts.fontStyle, globalDefaults.defaultFontStyle);
-      var tickFontFamily = getValueOrDefault(tickOpts.fontFamily, globalDefaults.defaultFontFamily);
-      var tickLabelFont = helpers.fontString(tickFontSize, tickFontStyle, tickFontFamily);
+      let tickFontSize = getValueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
+      let tickFontStyle = getValueOrDefault(tickOpts.fontStyle, globalDefaults.defaultFontStyle);
+      let tickFontFamily = getValueOrDefault(tickOpts.fontFamily, globalDefaults.defaultFontFamily);
+      let tickLabelFont = helpers.fontString(tickFontSize, tickFontStyle, tickFontFamily);
 
-      helpers.each(me.ticks, function(label, index) {
-        var yCenterOffset = me.getDistanceFromCenterForValue(me.ticksAsNumbers[index]);
-        var yHeight = me.yCenter - yCenterOffset;
+      me.ticks.forEach((label, index)=>{
+        let yCenterOffset = me.getDistanceFromCenterForValue(me.ticksAsNumbers[index]);
+        let yHeight = me.yCenter - yCenterOffset;
 
         // Draw circular lines around the scale
         if (gridLineOpts.display && index !== 0) {
@@ -320,11 +320,11 @@ var LinearRadialWithImagesScale = constructor.extend({
         }
 
         if (tickOpts.display) {
-          var tickFontColor = getValueOrDefault(tickOpts.fontColor, globalDefaults.defaultFontColor);
+          let tickFontColor = getValueOrDefault(tickOpts.fontColor, globalDefaults.defaultFontColor);
           ctx.font = tickLabelFont;
 
           if (tickOpts.showLabelBackdrop) {
-            var labelWidth = ctx.measureText(label).width;
+            let labelWidth = ctx.measureText(label).width;
             ctx.fillStyle = tickOpts.backdropColor;
             ctx.fillRect(
               me.xCenter - labelWidth / 2 - tickOpts.backdropPaddingX,

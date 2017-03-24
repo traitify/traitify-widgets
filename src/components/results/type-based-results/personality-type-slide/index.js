@@ -3,23 +3,26 @@ import Color from "color-helpers";
 import style from "./style";
 
 export default class PersonalityTypeSlide extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("personalitytypeslide", "initialized", this);
+  }
   position() {
-    if(!this.props.activeType) { return "none"; }
+    if (!this.props.activeType) return "none";
 
-    var id = this.props.type.personality_type.id;
-    var activeID = this.props.activeType.personality_type.id;
-    if(id == activeID) { return "middle"; }
+    let id = this.props.type.personality_type.id;
+    let activeID = this.props.activeType.personality_type.id;
+    if (id == activeID) return "middle";
 
     return "none";
   }
   render() {
-    var position = this.position();
-    if(position == "none") { return <div />; }
+    let position = this.position();
+    if (position == "none") return <div />;
 
-    var type = this.props.type.personality_type;
-    var color = `#${type.badge.color_1}`;
-    var name = type.description.split("'")[1];
-    var description = type.description.split("'").splice(2).join("'");
+    let type = this.props.type.personality_type;
+    let color = `#${type.badge.color_1}`;
+    let name = type.description.split("'")[1];
+    let description = type.description.split("'").splice(2).join("'");
 
     return (
       <li class={`${style.slide} ${style[position]}`} style={`background: ${Color.rgba(color, 8.5)};`}>

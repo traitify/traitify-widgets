@@ -1,3 +1,3 @@
-window.Traitify = require("traitify").default;
-window.Traitify.ui = require("traitify-ui").default;
-require("polyfills")
+import Traitify from "traitify";
+window.Traitify = Traitify;
+export default Traitify;

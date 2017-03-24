@@ -10,21 +10,26 @@ export default class Dimension extends Component {
   }
   trigger(e) {
     e.preventDefault();
+    
+    this.props.triggerCallback("dimension", "showContent", this, this.props.personalityType.personality_type);
     this.setState({showContent: !this.state.showContent});
   }
+  componentDidMount(){
+    this.props.triggerCallback("dimension", "initialized", this);
+  }
   render() {
-    var type = this.props.personalityType.personality_type;
-    var benefits = [];
-    var pitfalls = [];
-    type.details.forEach(function(detail) {
-      if(detail.title == "Benefits") benefits.push(detail.body);
-      if(detail.title == "Pitfalls") pitfalls.push(detail.body);
+    let type = this.props.personalityType.personality_type;
+    let benefits = [];
+    let pitfalls = [];
+    type.details.forEach((detail)=>{
+      if (detail.title == "Benefits") benefits.push(detail.body);
+      if (detail.title == "Pitfalls") pitfalls.push(detail.body);
     });
-    var color = `#${type.badge.color_1}`;
-    var color2 = `#${type.badge.color_2}`;
-    var description;
-    if(this.props.perspective) {
-      var perspective = `${this.props.perspective.replace("Person", "")}_person_description`;
+    let color = `#${type.badge.color_1}`;
+    let color2 = `#${type.badge.color_2}`;
+    let description;
+    if (this.props.perspective){
+      let perspective = `${this.props.perspective.replace("Person", "")}_person_description`;
       description = type.details.find(detail => detail.title == perspective);
       description = description && description.body;
     }
@@ -50,7 +55,7 @@ export default class Dimension extends Component {
               <div class={style.detail}>
                 <h5 class={style.benefits}>{this.props.translate("potential_benefits")}</h5>
                 <ul>
-                  {benefits.map(function(benefit) {
+                  {benefits.map((benefit)=>{
                     return <li>{benefit}</li>;
                   })}
                 </ul>
@@ -58,7 +63,7 @@ export default class Dimension extends Component {
               <div class={style.detail}>
                 <h5 class={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h5>
                 <ul>
-                  {pitfalls.map(function(pitfall) {
+                  {pitfalls.map((pitfall)=>{
                     return <li>{pitfall}</li>;
                   })}
                 </ul>

@@ -4,6 +4,9 @@ import PersonalityTypeBarChart from "../personality-type-bar-chart";
 import PersonalityTypeSlider from "../personality-type-slider";
 
 export default class PersonalityTypes extends Component {
+  componentDidMount(){
+    this.props.triggerCallback("personalitytypes", "initialized", this);
+  }
   render() {
     return (
       <div>

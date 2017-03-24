@@ -58,13 +58,11 @@ export default class slideDeck extends Component {
     this.triggerCallback(key, this);
     this.triggerCallback('answerslide', this, value);
 
-    let lastSlide = this.props.assessment.lastSlideAnswer;
     let slide = this.currentSlide();
     slide.response = value;
-    slide.time_taken = Date.now() - lastSlide;
-
+    slide.time_taken = Date.now() - this.lastSlideAnswered;
     sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()));
-    this.props.assessment.lastSlideAnswer = Date.now();
+    this.lastSlidePlayed = Date.now();
     this.props.setState(this.props);
 
     if (this.isComplete()){
@@ -105,6 +103,7 @@ export default class slideDeck extends Component {
     });
   }
   componentDidMount(){
+    this.lastSlideAnswered = Date.now();
     if (this.slides()){
       this.initialize();
     }
@@ -151,13 +150,12 @@ export default class slideDeck extends Component {
         }
 
         this.answers(answers || []);
-
-        this.props.assessment.lastSlideAnswer = Date.now();
+        this.lastSlideAnswered = Date.now();
 
         this.props.assessment.slides.forEach((slide, index)=>{
           if (com.answer(slide.id)){
             slide.response = com.answer(slide.id).response;
-            slide.time_taken = slide.time_taken || 0;
+            slide.time_taken = slide.time_taken;
             let si = this.props.assessment.slides[index - 1];
             let sl = this.props.assessment.slides[index];
             let sm = this.props.assessment.slides[index + 1];
@@ -213,7 +211,7 @@ export default class slideDeck extends Component {
       this.props.assessment.slides.map((slide)=>{
         if (newAnswers[slide.id]){
           slide.response = newAnswers[slide.id].response;
-          slide.time_taken = newAnswers[slide.id].timeTaken;
+          slide.time_taken = newAnswers[slide.id].time_taken;
         }
         return slide;
       });
@@ -228,7 +226,7 @@ export default class slideDeck extends Component {
           return {
             id: slide.id,
             response: slide.response,
-            timeTaken: slide.time_taken
+            time_taken: slide.time_taken
           };
         }) || [];
     }

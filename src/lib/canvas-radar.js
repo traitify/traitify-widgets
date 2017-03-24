@@ -82,7 +82,6 @@ export default class NewRadar extends Component {
 
   // TODO: Remove this and pass in data correctly initially
   tempReformatData() {
-    console.log(this.data)
     let dataLabels = this.data.labels;
     let dataValues = this.data.datasets[0].data;
     let formattedData = []
@@ -148,7 +147,6 @@ export default class NewRadar extends Component {
 
   renderData() {
     let data = this.formattedData
-    console.log(data)
 
     let ctx = this.context
     let dataColor = this.dataColor

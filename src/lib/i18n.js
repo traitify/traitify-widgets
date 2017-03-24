@@ -33,7 +33,7 @@ export default class I18n {
     return this;
   }
   setLocale(locale) {
-    this.locale = locale
+    this.locale = locale;
   }
   translate(key) {
     return this[this.locale][key];

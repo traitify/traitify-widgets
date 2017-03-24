@@ -90,9 +90,10 @@ export default class slideDeck extends Component {
   finish(){
     let com = this;
     let answers = this.slides().map((slide)=>{
+      let time_taken = typeof slide.time_taken "number" && slide.time_taken > 0 ? slide.time_taken : 123;
       return {
         id: slide.id,
-        time_taken: slide.time_taken,
+        time_taken: time_taken,
         response: slide.response
       };
     });

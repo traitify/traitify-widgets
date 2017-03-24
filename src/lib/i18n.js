@@ -28,10 +28,18 @@ export default class I18n {
       not_me: "Pas Moi"
     };
 
+    this["fr-us"] = Object.assign({}, this["fr-ca"]); // copy canadian french to us french
+
     return this;
   }
-  setLocale(locale) {
-    this.locale = locale;
+  setLocale(locale = "") {
+    let l = new this()
+
+    if(l[locale.downcase()]){
+      this.locale = locale.downcase();
+    }else{
+      this.locale = "en-us";
+    }
   }
   translate(key) {
     return this[this.locale][key];

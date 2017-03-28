@@ -13,10 +13,10 @@
       Traitify.setHost("https://api.traitify.com");
 
       initDeck = function(){
-        var assessment = Traitify.ui.assessmentId(localStorage.getItem("assessment-id"));
+        var assessment = Traitify.ui.locale("fr-ca").assessmentId(localStorage.getItem("assessment-id"));
         assessment.target("#widgets");
         assessment.perspective("firstPerson")
-        assessment.on("personalitytypes.initialized", (me)=>{
+        assessment.on("personalitytypes.initialized", function(me){
           window.me = me;
         })
         widget = assessment.render()

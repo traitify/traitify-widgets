@@ -28,7 +28,7 @@ export default class I18n {
       not_me: "Pas Moi"
     };
 
-    this["fr-us"] = Object.assign({}, this["fr-ca"]); // copy canadian french to us french
+    this["fr-us"] = this["fr-ca"]
 
     return this;
   }

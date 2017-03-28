@@ -28,7 +28,7 @@ export default class I18n {
       not_me: "Pas Moi"
     };
 
-    this["fr-us"] = this["fr-ca"]
+    this["fr-us"] = this["fr-ca"];
 
     return this;
   }

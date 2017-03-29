@@ -302,6 +302,7 @@ export default class slideDeck extends Component {
     let i = this.imageLoadAttempts.length - 1;
     this.imageLoadAttempts[i] = 0;
     this.prefetchSlides(i);
+    this.props.setState(this.props);
   }
   render() {
     if (!this.slides()){

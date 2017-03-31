@@ -17,16 +17,19 @@ export default class NewRadar extends Component {
     // Data Method
     this.renderData = this.renderData.bind(this)
     this.renderDataPoints = this.renderDataPoints.bind(this)
-    this.loadIcon = this.loadIcon.bind(this)
+    // this.loadIcon = this.loadIcon.bind(this)
     this.renderDataLabel = this.renderDataLabel.bind(this)
     this.renderDataName = this.renderDataName.bind(this)
     this.renderDataImage = this.renderDataImage.bind(this)
 
     this.resize = this.resize.bind(this)
     this.wordWrap = this.wordWrap.bind(this)
+    this.leftTextBound = 0
+    this.rightTextBound = 0
 
     // TODO: Remove later
     this.tempReformatData = this.tempReformatData.bind(this)
+    this.endingDebugging = this.endingDebugging.bind(this)
 
     // Variables for graphing
     // this.canvasWidth = this.context.canvas.clientWidth
@@ -40,6 +43,8 @@ export default class NewRadar extends Component {
     }else{
       this.radius = this.canvasWidth / 3.1;
     }
+    // this.context.canvas.width = 800
+    // this.context.canvas.height = 700
 
     // Variables for context
     this.graphStrokeStyle = "#555555"
@@ -93,31 +98,51 @@ export default class NewRadar extends Component {
       formattedData.push({name: name, image: image, value: value})
     }
 
+    // var tempFormattedData = [
+    //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Openness", value:6},
+    //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Agreeableness", value:6},
+    //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Extraversion", value:6},
+    //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Emotional Stability", value:6},
+    //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Conscientiousness", value:6},
+    // ]
+    // this.formattedData = tempFormattedData
+
     this.formattedData = formattedData
   }
 
-  //TODO: Make more robust
+  // TODO: Make more robust
+  // TODO: Add aspectRatio awareness here
   resize() {
     var canvas = this.context.canvas;
     var container = canvas.parentNode;
     var newWidth = container.clientWidth
+    var aspectRatio = canvas.width / canvas.height
     this.context.canvas.style.width = newWidth + "px"
-    this.context.canvas.style.height = newWidth + "px"
+    this.context.canvas.style.height = (newWidth / aspectRatio) + "px"
   }
 
   drawRadarGraph() {
     this.drawGraphStructure()
     this.renderData()
+    this.endingDebugging()
+  }
+  endingDebugging() {
+    // console.log("Ending")
+    // console.log(this.leftTextBound)
+    // console.log(this.rightTextBound)
   }
 
   drawGraphStructure() {
+    let ctx = this.context
+    ctx.font = "18px arial"
+
     for (var i = 0; i <= this.numberInnerLines; i++){
-      this.drawPolygon(this.radius * (i/(this.numberInnerLines+1)))
+      this.drawPolygon(this.radius * (i/(this.numberInnerLines+1)), i)
     }
-    this.drawPolygon(this.radius, true)
+    this.drawPolygon(this.radius, this.numberInnerLines + 1)
   }
 
-  drawPolygon(radius, outerMost = false) {
+  drawPolygon(radius, step) {
     let ctx = this.context
     let xCenter = this.xCenter
     let yCenter = this.yCenter
@@ -134,8 +159,14 @@ export default class NewRadar extends Component {
       let x = this.xCenter + radius * -Math.cos(angle);
       let y = this.yCenter + radius * -Math.sin(angle);
 
+      // TODO: Put this value text in a function or somewhere that makes more sense
+      if (i == 0) {
+        ctx.fillText(this.maxValue * (step / (this.numberInnerLines + 1)), x + 5, y + 20)
+      }
+      // **********
+
       ctx.lineTo(x, y);
-      if (drawInnerLines && outerMost && i != 0) {
+      if (drawInnerLines && step == this.numberInnerLines + 1 && i != 0) {
         ctx.lineTo(xCenter,yCenter);
         ctx.moveTo(x, y);
       }
@@ -185,7 +216,6 @@ export default class NewRadar extends Component {
     this.renderDataPoints(dataPoints);
   }
 
-  // FINISHED
   renderDataPoints(dataPoints) {
     let ctx = this.context
     ctx.fillStyle = this.dataColor
@@ -202,25 +232,11 @@ export default class NewRadar extends Component {
     })
   }
 
-  checkDataPointCollision = function(e) {
-    document.removeEventListener('mousemove', checkDataPointCollision, false);
-    x = e.layerX
-    y = e.layerY
-
-    dataPoints.map(function(dataPoint) {
-      dx = x - dataPoint.x
-      dy = y - dataPoint.y
-      if ((dx*dx+dy*dy) <= 9){
-        console.log("Inside")
-        console.log(dataPoint.name)
-      }
-    })
-  }
-
   // Axis Image Rendering Functions
   renderDataLabel(name, image, angle) {
     this.renderDataImage(name, image, angle)
   }
+
   renderDataName(name, x, y) {
     let ctx = this.context
     ctx.font = this.labelFont
@@ -230,18 +246,45 @@ export default class NewRadar extends Component {
 
     // TODO: This is hardcoded to check if the text is near the edges
     // and cause a word wrap if so
-    if ((x < 62 || x > 638) ){
+    var textLength = ctx.measureText(name).width
+
+    // TODO: Get this code for adjusting canvas size based on text length and position working better
+    var halfTextLength  = textLength / 2
+    var leftTextBound = x - halfTextLength
+    var rightTextBound = x + halfTextLength
+    if (rightTextBound > this.rightTextBound) {
+      this.rightTextBound = rightTextBound
+    }
+    if (leftTextBound < this.leftTextBound) {
+      this.leftTextBound = leftTextBound
+    }
+    //*******************************************
+
+    // TODO: Fix this mess of conditions for weird edge cases on text length and position
+    if ((x < 120 || x > 688) ){
       var lines = this.wordWrap(name)
-      for (var i = 0; i < lines.length; i++){
-        ctx.fillText(lines[i], x, y + (i * 22))
+      if (lines.length > 1) {
+        for (var i = 0; i < lines.length; i++){
+          ctx.fillText(lines[i], x, y + (i * 22))
+        }
+      } else if (textLength > 145 && x < 120) {
+        ctx.fillText(name, x - 20, y)
+      } else if (textLength > 145 && x > 688) {
+        ctx.fillText(name, x + 20, y)
+      } else {
+        ctx.fillText(name, x, y)
       }
     } else {
       ctx.fillText(name, x, y)
     }
+    //*******************************************
   }
+
   renderDataImage(name, image, angle) {
+    let ctx = this.context
     let me = this
-    this.loadIcon(image, function() {
+    var img = new Image()
+    img.onload = function() {
       let ctx = me.context
       let img = new Image;
       img.src = image
@@ -275,13 +318,10 @@ export default class NewRadar extends Component {
       x = x + img_w / 2
       y = y + img_h
       me.renderDataName(name, x, y)
-    })
+    }
+    img.src = image
   }
-  loadIcon(src, callback) {
-    var sprite = new Image();
-    sprite.onload = callback;
-    sprite.src = src;
-  }
+
   wordWrap(text) {
     var words = text.split(" ");
     var lines = []
@@ -296,15 +336,54 @@ export default class NewRadar extends Component {
 
     lines.push(currentLine)
     return lines;
-
   }
 }
 //============================================
 //============================================
-//============================================
-//============================================
-//============================================
-//==================================
+// renderDataImage(name, image, angle) {
+  //   let me = this
+  //   this.loadIcon(image, function() {
+  //     let ctx = me.context
+  //     let img = new Image;
+  //     img.src = image
+  //     var xCenter = me.xCenter
+  //     var yCenter = me.yCenter
+  //     var radius = me.radius
+  //     var img_w = img.width
+  //     var img_h = img.height
+  //     var img_diagonal = Math.sqrt((Math.pow(img_w, 2) + Math.pow(img_h, 2)))
+  //
+  //     // TODO: Fix this ratio
+  //     let x = (xCenter - img_w / 2) + (radius + (img_diagonal / 2) * 1.10) * -Math.cos(angle);
+  //     let y = (yCenter - img_h / 2) + (radius + (img_diagonal / 2) * 1.10) * -Math.sin(angle);
+  //     ctx.drawImage(img, x, y)
+  //
+  //     // TODO: Remove enscribing of icons
+  //     // ctx.beginPath()
+  //     // ctx.arc(x + img_w / 2, y + img_h / 2, img_diagonal/2, 0, 2*Math.PI, false)
+  //     // ctx.closePath()
+  //     // ctx.stroke()
+  //
+  //     // TODO: Remove enscribing of icon
+  //     // ctx.beginPath()
+  //     // ctx.lineTo(x, y)
+  //     // ctx.lineTo(x + img_w, y)
+  //     // ctx.lineTo(x + img_w, y + img_h)
+  //     // ctx.lineTo(x, y + img_h)
+  //     // ctx.closePath()
+  //     // ctx.stroke()
+  //
+  //     x = x + img_w / 2
+  //     y = y + img_h
+  //     me.renderDataName(name, x, y)
+  //   })
+  // }
+  // loadIcon(src, callback) {
+  //   var sprite = new Image();
+  //   sprite.onload = callback;
+  //   sprite.src = src;
+  // }
+
 
 
   // console.log("Angle")
@@ -353,3 +432,19 @@ export default class NewRadar extends Component {
   // }
   // console.log(image.width)
   // console.log(angle)
+
+  // checkDataPointCollision = function(e) {
+  //   document.removeEventListener('mousemove', checkDataPointCollision, false);
+  //   x = e.layerX
+  //   y = e.layerY
+  //
+  //   dataPoints.map(function(dataPoint) {
+  //     dx = x - dataPoint.x
+  //     dy = y - dataPoint.y
+  //     if ((dx*dx+dy*dy) <= 9){
+  //       console.log("Inside")
+  //       console.log(dataPoint.name)
+  //     }
+  //   })
+  // }
+  //

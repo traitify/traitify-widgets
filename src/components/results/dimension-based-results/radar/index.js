@@ -95,7 +95,7 @@ export default class Radar extends Component {
     return (
       <div class={style.radar}>
         <div class={style.radarContainer}  ref={(canvasContainer) => { this.canvasContainer = canvasContainer; }}>
-          <canvas ref={(canvas) => { this.canvas = canvas; }} width="700" height="700" />
+          <canvas ref={(canvas) => { this.canvas = canvas; }} width="810" height="700" />
         </div>
       </div>
     );

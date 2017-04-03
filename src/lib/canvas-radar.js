@@ -283,11 +283,10 @@ export default class NewRadar extends Component {
   renderDataImage(name, image, angle) {
     let ctx = this.context
     let me = this
-    var img = new Image()
+    let img = new Image()
+    img.src = image
     img.onload = function() {
       let ctx = me.context
-      let img = new Image;
-      img.src = image
       var xCenter = me.xCenter
       var yCenter = me.yCenter
       var radius = me.radius
@@ -319,7 +318,6 @@ export default class NewRadar extends Component {
       y = y + img_h
       me.renderDataName(name, x, y)
     }
-    img.src = image
   }
 
   wordWrap(text) {

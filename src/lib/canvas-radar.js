@@ -29,7 +29,6 @@ export default class NewRadar extends Component {
 
     // TODO: Remove later
     this.tempReformatData = this.tempReformatData.bind(this)
-    this.endingDebugging = this.endingDebugging.bind(this)
 
     // Variables for graphing
     // this.canvasWidth = this.context.canvas.clientWidth
@@ -98,6 +97,7 @@ export default class NewRadar extends Component {
       formattedData.push({name: name, image: image, value: value})
     }
 
+    // TODO: Remove this block for debugging test data and order of data or make debugging a config option
     // var tempFormattedData = [
     //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Openness", value:6},
     //   {image:"https://cdn.traitify.com/badges/3995296b-6e2e-4559-be41-5dbdfbcaf6ad_small", name:"Agreeableness", value:6},
@@ -124,12 +124,6 @@ export default class NewRadar extends Component {
   drawRadarGraph() {
     this.drawGraphStructure()
     this.renderData()
-    this.endingDebugging()
-  }
-  endingDebugging() {
-    // console.log("Ending")
-    // console.log(this.leftTextBound)
-    // console.log(this.rightTextBound)
   }
 
   drawGraphStructure() {
@@ -260,16 +254,17 @@ export default class NewRadar extends Component {
     }
     //*******************************************
 
-    // TODO: Fix this mess of conditions for weird edge cases on text length and position
-    if ((x < 120 || x > 688) ){
+    // TODO: Fix this mess of conditions for weird edge cases on text length and position.
+    // Find better way to calculate x value using text width
+    if ((x < 150 || x > 680) ){
       var lines = this.wordWrap(name)
       if (lines.length > 1) {
         for (var i = 0; i < lines.length; i++){
           ctx.fillText(lines[i], x, y + (i * 22))
         }
-      } else if (textLength > 145 && x < 120) {
+      } else if (textLength > 145 && x < 150) {
         ctx.fillText(name, x - 20, y)
-      } else if (textLength > 145 && x > 688) {
+      } else if (textLength > 145 && x > 680) {
         ctx.fillText(name, x + 20, y)
       } else {
         ctx.fillText(name, x, y)
@@ -277,7 +272,7 @@ export default class NewRadar extends Component {
     } else {
       ctx.fillText(name, x, y)
     }
-    //*******************************************
+   //*******************************************
   }
 
   renderDataImage(name, image, angle) {
@@ -336,113 +331,3 @@ export default class NewRadar extends Component {
     return lines;
   }
 }
-//============================================
-//============================================
-// renderDataImage(name, image, angle) {
-  //   let me = this
-  //   this.loadIcon(image, function() {
-  //     let ctx = me.context
-  //     let img = new Image;
-  //     img.src = image
-  //     var xCenter = me.xCenter
-  //     var yCenter = me.yCenter
-  //     var radius = me.radius
-  //     var img_w = img.width
-  //     var img_h = img.height
-  //     var img_diagonal = Math.sqrt((Math.pow(img_w, 2) + Math.pow(img_h, 2)))
-  //
-  //     // TODO: Fix this ratio
-  //     let x = (xCenter - img_w / 2) + (radius + (img_diagonal / 2) * 1.10) * -Math.cos(angle);
-  //     let y = (yCenter - img_h / 2) + (radius + (img_diagonal / 2) * 1.10) * -Math.sin(angle);
-  //     ctx.drawImage(img, x, y)
-  //
-  //     // TODO: Remove enscribing of icons
-  //     // ctx.beginPath()
-  //     // ctx.arc(x + img_w / 2, y + img_h / 2, img_diagonal/2, 0, 2*Math.PI, false)
-  //     // ctx.closePath()
-  //     // ctx.stroke()
-  //
-  //     // TODO: Remove enscribing of icon
-  //     // ctx.beginPath()
-  //     // ctx.lineTo(x, y)
-  //     // ctx.lineTo(x + img_w, y)
-  //     // ctx.lineTo(x + img_w, y + img_h)
-  //     // ctx.lineTo(x, y + img_h)
-  //     // ctx.closePath()
-  //     // ctx.stroke()
-  //
-  //     x = x + img_w / 2
-  //     y = y + img_h
-  //     me.renderDataName(name, x, y)
-  //   })
-  // }
-  // loadIcon(src, callback) {
-  //   var sprite = new Image();
-  //   sprite.onload = callback;
-  //   sprite.src = src;
-  // }
-
-
-
-  // console.log("Angle")
-  // console.log(angle)
-  // degrees0 = 0
-  // degrees90 = 1/2 * Math.PI
-  // degrees180 = Math.PI
-  // degrees270 = 3/2 * Math.PI
-  // degrees360 = 2 * Math.PI
-  // angle = angle / (2 * Math.PI)
-  //
-  // console.log(angle)
-  // console.log(degrees90)
-  // console.log(degrees180)
-  // console.log(degrees270)
-  // console.log(degrees360)
-  //
-  // switch(angle){
-  //   case (angle > degrees0 && angle < degrees90):
-  //     console.log("1st Quadrant")
-  //     break;
-  //   case (angle == degrees90):
-  //     console.log("90 Degrees")
-  //     break;
-  //   case (angle > degrees90 && angle < degrees180):
-  //     console.log("2nd Quadrant")
-  //     break;
-  //   case (angle == degrees180):
-  //     console.log("180 Degrees")
-  //     break;
-  //   case angle > Math.PI && angle < 3/2 * Math.PI:
-  //     console.log("Third Quadrant")
-  //     break;
-  //   case angle == degrees270:
-  //     console.log("270 Degrees")
-  //     break;
-  //   case angle > 3/2 * Math.PI && angle < 2 * Math.PI:
-  //     console.log("Fourth Quadrant")
-  //     break;
-  //   case angle == degrees360:
-  //     console.log("360 Degrees")
-  //     break;
-  //   default:
-  //     console.log("Unknown Quadrant")
-  //     break;
-  // }
-  // console.log(image.width)
-  // console.log(angle)
-
-  // checkDataPointCollision = function(e) {
-  //   document.removeEventListener('mousemove', checkDataPointCollision, false);
-  //   x = e.layerX
-  //   y = e.layerY
-  //
-  //   dataPoints.map(function(dataPoint) {
-  //     dx = x - dataPoint.x
-  //     dy = y - dataPoint.y
-  //     if ((dx*dx+dy*dy) <= 9){
-  //       console.log("Inside")
-  //       console.log(dataPoint.name)
-  //     }
-  //   })
-  // }
-  //

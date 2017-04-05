@@ -5,6 +5,7 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import ReplacePlugin from "replace-bundle-webpack-plugin";
 import path from "path";
 import ScriptExtHtmlWebpackPlugin from "script-ext-html-webpack-plugin";
+import git from 'git-rev-sync';
 const ENV = process.env.NODE_ENV || "development";
 const CSS_MAPS = ENV!=="production";
 
@@ -79,6 +80,9 @@ module.exports = {
   ],
 
   plugins: ([
+    new webpack.DefinePlugin({
+      __VERSION__: JSON.stringify(git.long())
+    }),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin("style.css", {
       allChunks: true,

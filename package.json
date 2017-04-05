@@ -85,6 +85,7 @@
     "color": "^1.0.3",
     "faker": "^4.1.0",
     "fetch-ie8": "^1.4.3",
+    "git-rev-sync": "^1.9.0",
     "preact": "^7.1.0",
     "promise-polyfill": "^6.0.2",
     "proptypes": "^0.14.3",

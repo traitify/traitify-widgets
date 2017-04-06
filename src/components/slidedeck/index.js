@@ -3,6 +3,11 @@ import Slide from "./_slide";
 import style from "./index.scss";
 
 export default class slideDeck extends Component {
+  constructor(props){
+    super(props);
+    this.imageLoadAttempts = [];
+    return this;
+  }
   onComplete(){
     this.props.fetch();
   }
@@ -10,6 +15,7 @@ export default class slideDeck extends Component {
     return slide ? slide.image_desktop : null;
   }
   prefetchSlides(i){
+
     if (i != this.slides().length){
       let com = this;
       let img = document.createElement("img");
@@ -24,6 +30,17 @@ export default class slideDeck extends Component {
           com.triggerCallback('prefetchSlides', this);
           com.prefetchSlides(i + 1);
         };
+        img.onerror = ()=>{
+          com.imageLoadAttempts[i] = com.imageLoadAttempts[i] || 0;
+          com.imageLoadAttempts[i] += 1;
+          if(com.imageLoadAttempts[i] < 30){
+            setTimeout(()=>{
+              com.prefetchSlides(i);
+            }, 2000)
+          }else{
+            com.props.setState(com.props)
+          }
+        }
       }
     }
   }
@@ -280,6 +297,13 @@ export default class slideDeck extends Component {
       this.triggerCallback('fullscreen', this, true);
     }
   }
+  retry(e){
+    e.preventDefault();
+    let i = this.imageLoadAttempts.length - 1;
+    this.imageLoadAttempts[i] = 0;
+    this.prefetchSlides(i);
+    this.props.setState(this.props);
+  }
   render() {
     if (!this.slides()){
       return <span />;
@@ -294,10 +318,21 @@ export default class slideDeck extends Component {
       <div class={style.widgetContainer} ref={(container) => { this.container = container; }}>
         <div class={coverVisible.join(" ")}>
           <div class={style.loading}>
-            <div class={style.symbol}>
-              <i />
-              <i />
-            </div>
+            {this.imageLoadAttempts[this.imageLoadAttempts.length - 1] >= 30 ? (
+              <div class={style.retry}>
+                <div class={style.label}>
+                  Unable to load more slides at this time.
+                </div>
+                <a href="#" class={style.link} onClick={this.retry.bind(this)}>
+                  Click Here to Try Again
+                </a>
+              </div>
+            ):(
+              <div class={style.symbol}>
+                <i />
+                <i />
+              </div>
+            )}
           </div>
         </div>
         <div class={style.slideContainer}>

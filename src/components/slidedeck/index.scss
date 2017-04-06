@@ -53,6 +53,21 @@
       width: 100%;
       display: inline-block;
       line-height: 500px;
+      .retry{
+        position: relative;
+        text-align: center;
+        margin-top: 1em;
+        .label{
+          margin-top: -1.5em;
+          position: absolute;
+          width: 100%;
+          text-align: center;
+        }
+        .link{
+          position: relative;
+          z-index: 1;
+        }
+      }
       .symbol{
         position: relative;
         width: 30px;

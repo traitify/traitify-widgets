@@ -15,7 +15,7 @@
       initDeck = function(){
         var assessment = Traitify.ui.locale("fr-ca").assessmentId(localStorage.getItem("assessment-id"));
         assessment.target("#widgets");
-        assessment.perspective("firstPerson")
+        assessment.perspective("thirdPerson")
         assessment.on("personalitytypes.initialized", function(me){
           window.me = me;
         })

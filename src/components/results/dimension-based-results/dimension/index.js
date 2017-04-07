@@ -10,7 +10,7 @@ export default class Dimension extends Component {
   }
   trigger(e) {
     e.preventDefault();
-    
+
     this.props.triggerCallback("dimension", "showContent", this, this.props.personalityType.personality_type);
     this.setState({showContent: !this.state.showContent});
   }
@@ -27,13 +27,9 @@ export default class Dimension extends Component {
     });
     let color = `#${type.badge.color_1}`;
     let color2 = `#${type.badge.color_2}`;
-    let description;
-    if (this.props.perspective){
-      let perspective = `${this.props.perspective.replace("Person", "")}_person_description`;
-      description = type.details.find(detail => detail.title == perspective);
-      description = description && description.body;
-    }
-    description = description || type.description;
+    let perspective = `${(this.props.perspective || 'firstPerson').replace("Person", "")}_person_description`;
+    let description = type.details.find(detail => detail.title == perspective);
+    description = (description && description.body) || type.description;
     return (
       <li class={style.dimension} style={`border-top: 5px solid ${color};`}>
         <div class={style.main} style={`background: ${Color.rgba(color, 8.5)};`}>

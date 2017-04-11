@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
   </head>
   <body>
-    <div id="widgets"></div>
+    <div id="slide-deck"></div>
+    <div id="blend"></div>
+    <div id="traits"></div>
     <script src="/build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
       initDeck = function(){
-        var assessment = Traitify.ui.locale("fr-ca").assessmentId(localStorage.getItem("assessment-id"));
-        assessment.target("#widgets");
-        assessment.perspective("thirdPerson")
+        var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
+        assessment.targets({
+          "SlideDeck": "#slide-deck",
+          "PersonalityBlend": "#blend",
+          "PersonalityTraits": "#traits"
+        });
+        assessment.perspective("thirdPerson");
         assessment.on("personalitytypes.initialized", function(me){
           window.me = me;
         })

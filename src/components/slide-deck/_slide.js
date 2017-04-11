@@ -1,7 +1,7 @@
 import { h, Component } from "preact";
 import style from "./_slide.scss";
 
-export default class slideDeck extends Component {
+export default class Slide extends Component {
   className (){
     if (window.Traitify.oldIE) return style.middleSlide;
     let position;
@@ -25,7 +25,7 @@ export default class slideDeck extends Component {
   }
   render() {
     let tag;
-    
+
     if (!window.Traitify.oldIE){
       tag = (
         <div class={`${style.slide} ${this.className()}`} style={this.style()} key={this.id} />

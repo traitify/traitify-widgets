@@ -5,14 +5,25 @@ import PersonalityTypeBar from "../personality-type-bar";
 
 export default class PersonalityTypeBarChart extends Component {
   componentDidMount(){
-    this.props.triggerCallback("personalitytypebarchart", "initialized", this);
+    this.props.triggerCallback("PersonalityTypeBarChart", "initialized", this);
   }
   componentWillMount() {
-    if (!this.props.activeType){
-      this.props.setState({ activeType: this.props.assessment.personality_types[0] });
+    activate();
+  }
+  componentWillUpdate() {
+    activate();
+  }
+  activate() {
+    if (this.props.resultsReady()){
+      let type = this.props.assessment.personality_types[0];
+      if (!this.props.activeType && type){
+        this.props.setState({ activeType: type });
+      }
     }
   }
   render() {
+    if (!this.props.resultsReady()) return <div />;
+
     let props = this.props;
 
     return (

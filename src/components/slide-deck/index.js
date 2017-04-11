@@ -2,7 +2,7 @@ import { h, Component } from "preact";
 import Slide from "./_slide";
 import style from "./index.scss";
 
-export default class slideDeck extends Component {
+export default class SlideDeck extends Component {
   constructor(props){
     super(props);
     this.imageLoadAttempts = [];
@@ -15,7 +15,6 @@ export default class slideDeck extends Component {
     return slide ? slide.image_desktop : null;
   }
   prefetchSlides(i){
-
     if (i != this.slides().length){
       let com = this;
       let img = document.createElement("img");
@@ -194,13 +193,13 @@ export default class slideDeck extends Component {
           if (index < com.currentIndex()){
             slide.loaded = true;
           }
-          
+
           return slide;
         });
 
         this.props.setState(this.props);
 
-        
+
 
         // Detach into thread
         setTimeout(()=>{
@@ -221,7 +220,7 @@ export default class slideDeck extends Component {
   answers(answers){
     if (answers){
       let newAnswers = {};
-      
+
       answers.forEach((answer)=>{
         newAnswers[answer.id] = answer;
       });
@@ -305,10 +304,8 @@ export default class slideDeck extends Component {
     this.props.setState(this.props);
   }
   render() {
-    if (!this.slides()){
-      return <span />;
-    }
-    
+    if (this.slides().length == 0) return <span />;
+
     let coverVisible = [style.cover];
     if (!this.isReady()){
       coverVisible.push(style.visible);

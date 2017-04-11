@@ -3,9 +3,11 @@ import style from "./style";
 
 export default class PersonalityDetails extends Component {
   componentDidMount(){
-    this.props.triggerCallback("personalitydetails", "initialized", this);
+    this.props.triggerCallback("PersonalityDetails", "initialized", this);
   }
   render() {
+    if (!this.props.resultsReady()) return <div />;
+
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
     let details = personality.details;

@@ -11,11 +11,11 @@ export default class Dimension extends Component {
   trigger(e) {
     e.preventDefault();
 
-    this.props.triggerCallback("dimension", "showContent", this, this.props.personalityType.personality_type);
+    this.props.triggerCallback("Dimension", "showContent", this, this.props.personalityType.personality_type);
     this.setState({showContent: !this.state.showContent});
   }
   componentDidMount(){
-    this.props.triggerCallback("dimension", "initialized", this);
+    this.props.triggerCallback("Dimension", "initialized", this);
   }
   render() {
     let type = this.props.personalityType.personality_type;

@@ -30,7 +30,7 @@ export default class Radar extends Component {
       };
     });
 
-    this.props.triggerCallback("radar", "initialized", this);
+    this.props.triggerCallback("Radar", "initialized", this);
   }
   componentDidUpdate() {
     this.updateChart();
@@ -92,6 +92,8 @@ export default class Radar extends Component {
     delete this.chart;
   }
   render() {
+    if (!this.props.resultsReady()) return <div />;
+
     return (
       <div class={style.radar}>
         <div class={style.radarContainer}  ref={(canvasContainer) => { this.canvasContainer = canvasContainer; }}>

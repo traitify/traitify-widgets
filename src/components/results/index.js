@@ -9,7 +9,7 @@ export default class Results extends Component {
   }
   render() {
     let results;
-    if (assessment.assessment_type == "TYPE_BASED"){
+    if (this.props.assessment.assessment_type == "TYPE_BASED"){
       results = <TypeBasedResults {...this.props} />;
     } else {
       results = <DimensionBasedResults {...this.props} />;

@@ -8,7 +8,7 @@
   <body>
     <div id="slide-deck"></div>
     <div id="blend"></div>
-    <div id="traits"></div>
+    <div id="types"></div>
     <script src="/build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
@@ -19,11 +19,14 @@
         assessment.targets({
           "SlideDeck": "#slide-deck",
           "PersonalityBlend": "#blend",
-          "PersonalityTraits": "#traits"
+          "PersonalityTypes": "#types"
         });
         assessment.perspective("thirdPerson");
-        assessment.on("personalitytypes.initialized", function(me){
-          window.me = me;
+        assessment.on("personalitytypes.initialized", function(){
+          console.log("personalitytypes!")
+        })
+        assessment.on("PersonalityTypes.initialized", function(){
+          console.log("PersonalityTypes!")
         })
         widget = assessment.render()
         widget.catch(function(error){

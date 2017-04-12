@@ -53,7 +53,6 @@ export default class TraitifyUI {
       try {
         if (lib.options.target){
           lib.options.targets[componentName || "Default"] = lib.options.target;
-          delete lib.options.target;
         }
 
         if (Object.keys(lib.options.targets).length == 0){

@@ -8,10 +8,10 @@ export default class PersonalityTypeBarChart extends Component {
     this.props.triggerCallback("PersonalityTypeBarChart", "initialized", this);
   }
   componentWillMount() {
-    activate();
+    this.activate();
   }
   componentWillUpdate() {
-    activate();
+    this.activate();
   }
   activate() {
     if (this.props.resultsReady()){

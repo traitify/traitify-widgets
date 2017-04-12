@@ -48,11 +48,12 @@ export default class Main extends Component {
     this.props.renderPromise.resolve(this);
   }
 
-  triggerCallback(klass, key, context, options){
+  triggerCallback(klass, action, context, options){
     let com = this;
+    let key = `${klass}.${action}`.toLowerCase();
 
-    if (this.state.callbacks[`${klass}.${key}`]){
-      com.state.callbacks[`${klass}.${key}`].forEach((callback)=>{
+    if (this.state.callbacks[key]){
+      com.state.callbacks[key].forEach((callback)=>{
         callback.apply(com, [context, options]);
       });
     }

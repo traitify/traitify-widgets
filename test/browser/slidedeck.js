@@ -1,5 +1,3 @@
-import Factories from "../support/factories";
-import "../steps/slide-deck";
 /*global sinon,expect,StepTest*/
 
 /*eslint-disable prefer-arrow-callback*/

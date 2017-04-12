@@ -115,7 +115,7 @@ export default class slideDeck extends Component {
       };
     });
 
-    window.Traitify.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
+    this.props.client.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
       com.triggerCallback("finished", this, response);
       com.props.fetch();
     });
@@ -345,9 +345,9 @@ export default class slideDeck extends Component {
             </div>
           </div>
           {this.props.client.oldIE?(
-            <Slide slide={this.currentSlide()} key={'slide'} />
+            <Slide slide={this.currentSlide()} key={'slide'} client={this.props.client} />
           ):this.loadedSlides().map((slide, index)=>{
-            return <Slide slide={slide} key={index} />;
+            return <Slide slide={slide} key={index} client={this.props.client} />;
           })}
         </div>
         <div class={style.responseContainer}>

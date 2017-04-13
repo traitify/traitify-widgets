@@ -1,11 +1,12 @@
 import { h, render } from "preact";
 import Main from "../components/main";
 import Promise from 'promise-polyfill';
-import i18n from './i18n';
+import I18n from './i18n';
 
 export default class TraitifyUI {
   constructor (options) {
     this.options = options || {};
+    this.options.targets = {};
     this.options.callbacks = this.options.callbacks || {};
   }
   static component(options) {
@@ -30,8 +31,8 @@ export default class TraitifyUI {
     return this;
   }
   locale(locale = ""){
-    let l = new i18n();
-    
+    let l = new I18n();
+
     if(l[locale.toLowerCase()]){
       this.options.locale = locale.toLowerCase();
     }else{
@@ -50,24 +51,25 @@ export default class TraitifyUI {
     lib.options.client = this.constructor.client;
     return new Promise((resolve, reject)=>{
       try {
-        // If target is not a node use query selector to find the target node
-        if (typeof lib.options.target == "string"){
-          lib.options.target = document.querySelector(lib.options.target || ".tf-widgets");
-        }
-
-        lib.options.componentName = componentName;
-        lib.options.renderPromise = {
-          resolve,
-          reject
-        };
-
         if (lib.options.target){
-          let target = lib.target;
-          while (target.firstChild) target.removeChild(target.firstChild);
-          render(<Main {...lib.options} />, lib.options.target);
-        } else {
-          reject("Your target element could either not be selected or was not provided");
+          lib.options.targets[componentName || "Default"] = lib.options.target;
         }
+
+        if (Object.keys(lib.options.targets).length == 0){
+          return reject("Your target element could either not be selected or was not provided");
+        }
+
+        lib.options.renderPromise = { resolve, reject };
+
+        Object.keys(lib.options.targets).forEach(function(name){
+          if (typeof lib.options.targets[name] == "string"){
+            lib.options.targets[name] = document.querySelector(lib.options.targets[name]);
+          }
+
+          let target = lib.options.targets[name];
+          while (target.firstChild) target.removeChild(target.firstChild);
+          render(<Main componentName={name} {...lib.options} />, target);
+        });
       } catch (error){
         reject(error);
       }
@@ -75,7 +77,7 @@ export default class TraitifyUI {
   }
 }
 
-let defaultOptions = ["allowFullScreen", "assessmentId", "perspective", "target"];
+let defaultOptions = ["allowFullScreen", "assessmentId", "perspective", "target", "targets"];
 defaultOptions.forEach((option)=>{
   TraitifyUI[option] = function(value){
     let options = {};

@@ -8,10 +8,10 @@ export default class PersonalityTypeBar extends Component {
     this.setActive = this.setActive.bind(this);
   }
   componentDidMount(){
-    this.props.triggerCallback("personalitytypebar", "initialized", this);
+    this.props.triggerCallback("PersonalityTypeBar", "initialized", this);
   }
   setActive() {
-    this.props.triggerCallback("personalitytypebar", "changeType", this, this.props.type);
+    this.props.triggerCallback("PersonalityTypeBar", "changeType", this, this.props.type);
     this.props.setState({ activeType: this.props.type });
   }
   render() {

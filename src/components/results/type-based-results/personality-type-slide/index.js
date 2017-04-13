@@ -4,7 +4,7 @@ import style from "./style";
 
 export default class PersonalityTypeSlide extends Component {
   componentDidMount(){
-    this.props.triggerCallback("personalitytypeslide", "initialized", this);
+    this.props.triggerCallback("PersonalityTypeSlide", "initialized", this);
   }
   position() {
     if (!this.props.activeType) return "none";

@@ -11,6 +11,9 @@ export default class PersonalityDetails extends Component {
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
     let details = personality.details;
+
+    if (!details) return <div />;
+
     let complement = details.find(d => d.title == "Complement");
     complement = complement && complement.body;
     let conflict = details.find(d => d.title == "Conflict");

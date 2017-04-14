@@ -44,7 +44,7 @@ export default class Main extends Component {
       com.state[key] = com.props[key];
     });
     com.state.assessment = {};
-    
+
     if (com.props.locale){
       com.i18n.locale = com.props.locale;
     }
@@ -71,9 +71,9 @@ export default class Main extends Component {
     let com = this;
     let storeKey = `results-${com.state.assessmentId}-${com.i18n.locale}`;
     let setData = function(data) {
-      com.triggerCallback("Main", "fetch", com);
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
+      com.triggerCallback("Main", "fetch", com);
       com.setState(com.state);
     }
 

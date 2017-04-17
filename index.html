@@ -7,8 +7,7 @@
   </head>
   <body>
     <div id="slide-deck"></div>
-    <div id="blend"></div>
-    <div id="types"></div>
+    <div id="results"></div>
     <script src="/build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
@@ -18,8 +17,7 @@
         var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
         assessment.targets({
           "SlideDeck": "#slide-deck",
-          "PersonalityBlend": "#blend",
-          "PersonalityTypes": "#types"
+          "Results": "#results"
         });
         assessment.perspective("thirdPerson");
         assessment.on("personalitytypes.initialized", function(){
@@ -48,6 +46,7 @@
 
     <select id="deck-name">
       <option value="career-deck">Career Deck</option>
+      <option value="persuasion">Persuasion</option>
       <option value="big-five-classic">The Big Five</option>
     </select>
 

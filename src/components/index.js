@@ -9,6 +9,7 @@ export PersonalityBlend from "./results/type-based-results/personality-blend";
 export PersonalityDetails from "./results/type-based-results/personality-details";
 export PersonalityTrait from "./results/type-based-results/personality-trait";
 export PersonalityTraits from "./results/type-based-results/personality-traits";
+export PersonalityType from "./results/type-based-results/personality-type";
 export PersonalityTypeBarChart from "./results/type-based-results/personality-type-bar-chart";
 export PersonalityTypeBar from "./results/type-based-results/personality-type-bar";
 export PersonalityTypeSlide from "./results/type-based-results/personality-type-slide";

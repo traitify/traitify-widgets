@@ -48,8 +48,9 @@ export default class Main extends Component {
     if (com.props.locale){
       com.i18n.locale = com.props.locale;
     }
+
     this.setState(this.state, ()=>{
-      com.fetch();
+      com.state.fetch();
     });
   }
 
@@ -69,7 +70,8 @@ export default class Main extends Component {
 
   fetch (){
     let com = this;
-    this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
+
+     this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
       com.triggerCallback("main", "fetch", com);
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;

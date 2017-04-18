@@ -35,8 +35,11 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      "test/**/*.js": ["webpack"],
-      "src/**/*.js": ["webpack"],
+      "test/browser/**/*.js": ["webpack"],
+      "test/steps/**/*.js": ["webpack"],
+      "test/support/**/*.js": ["webpack"],
+      "test/tests/**/*.js": ["webpack"],
+      "src/lib/*.js": ["webpack"],
       "**/*.js": ["sourcemap"]
     },
 

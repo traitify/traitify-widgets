@@ -287,14 +287,14 @@ function numberOrZero(param) {
 
 // Updated to show 0 and allow images
 let LinearRadialWithImagesScale = constructor.extend({
-  fit: function(){
+  fit: function(){ // eslint-disable-line object-shorthand
     if (this.options.lineArc) {
       fit(this);
     } else {
       fitWithPointLabels(this);
     }
   },
-  draw: function(){
+  draw: function(){ // eslint-disable-line object-shorthand
     let me = this;
     let opts = me.options;
     let gridLineOpts = opts.gridLines;

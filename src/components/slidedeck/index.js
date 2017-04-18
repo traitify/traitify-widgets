@@ -8,9 +8,6 @@ export default class slideDeck extends Component {
     this.imageLoadAttempts = [];
     return this;
   }
-  onComplete(){
-    this.props.fetch();
-  }
   imageService(slide){
     return slide ? slide.image_desktop : null;
   }
@@ -33,14 +30,14 @@ export default class slideDeck extends Component {
         img.onerror = ()=>{
           com.imageLoadAttempts[i] = com.imageLoadAttempts[i] || 0;
           com.imageLoadAttempts[i] += 1;
-          if(com.imageLoadAttempts[i] < 30){
+          if (com.imageLoadAttempts[i] < 30){
             setTimeout(()=>{
               com.prefetchSlides(i);
-            }, 2000)
-          }else{
-            com.props.setState(com.props)
+            }, 2000);
+          } else {
+            com.props.setState(com.props);
           }
-        }
+        };
       }
     }
   }
@@ -110,7 +107,7 @@ export default class slideDeck extends Component {
       let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 12345;
       return {
         id: slide.id,
-        time_taken: time_taken,
+        time_taken,
         response: slide.response
       };
     });

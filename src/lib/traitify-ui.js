@@ -9,6 +9,13 @@ export default class TraitifyUI {
     this.options.callbacks = this.options.callbacks || {};
   }
   static component(options) {
+    if(!this.client.testMode){
+      let com = this;
+      this.client.testMode = true;
+      setTimeout(()=>{
+        com.client.Test();
+      }, 0)
+    }
     return new this(options);
   }
   static on(key, callback) {
@@ -32,9 +39,9 @@ export default class TraitifyUI {
   locale(locale = ""){
     let l = new i18n();
     
-    if(l[locale.toLowerCase()]){
+    if (l[locale.toLowerCase()]){
       this.options.locale = locale.toLowerCase();
-    }else{
+    } else {
       this.options.locale = "en-us";
     }
 
@@ -44,7 +51,7 @@ export default class TraitifyUI {
     let options = {};
     options.locale = value;
     return this.component(options);
-  };
+  }
   render(componentName) {
     let lib = this;
     lib.options.client = this.constructor.client;

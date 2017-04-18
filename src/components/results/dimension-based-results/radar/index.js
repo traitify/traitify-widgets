@@ -1,6 +1,6 @@
 import { h, Component } from "preact";
-import Chart from "chart-override";
 import style from "./style";
+import Chart from "canvas-radar";
 
 export default class Radar extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ export default class Radar extends Component {
       };
     });
 
-    this.props.triggerCallback("radar", "initialized", this);
+    this.props.triggerCallback("Radar", "initialized", this);
   }
   componentDidUpdate() {
     this.updateChart();
@@ -79,8 +79,8 @@ export default class Radar extends Component {
       tooltips: { enabled: false }
     };
 
-    let ctx = this.canvas.getContext("2d");
-    this.chart = new Chart(ctx, { type: "radar", data, options });
+    var ctx = this.canvas.getContext("2d");
+    this.chart = new Chart(ctx, data);
   }
   updateChart() {
     if (!this.chart) return this.createChart();
@@ -92,10 +92,12 @@ export default class Radar extends Component {
     delete this.chart;
   }
   render() {
+    if (!this.props.resultsReady()) return <div />;
+
     return (
       <div class={style.radar}>
         <div class={style.radarContainer}  ref={(canvasContainer) => { this.canvasContainer = canvasContainer; }}>
-          <canvas ref={(canvas) => { this.canvas = canvas; }} width="700" height="700" />
+          <canvas ref={(canvas) => { this.canvas = canvas; }} width="820" height="700" />
         </div>
       </div>
     );

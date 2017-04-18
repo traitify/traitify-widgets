@@ -5,7 +5,7 @@ import PersonalityTypeSlider from "../personality-type-slider";
 
 export default class PersonalityTypes extends Component {
   componentDidMount(){
-    this.props.triggerCallback("personalitytypes", "initialized", this);
+    this.props.triggerCallback("PersonalityTypes", "initialized", this);
   }
   render() {
     return (

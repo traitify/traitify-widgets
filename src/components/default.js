@@ -1,7 +1,7 @@
 import { h, Component } from "preact";
 
-import Results from "./results/index";
-import SlideDeck from "./slidedeck/index";
+import Results from "./results";
+import SlideDeck from "./slide-deck";
 
 export default class Default extends Component {
   shouldLoadSlideDeck () {

@@ -9,14 +9,16 @@ export default class PersonalityTypeSlider extends Component {
     this.setActive = this.setActive.bind(this);
   }
   componentDidMount(){
-    this.props.triggerCallback("personalitytypeslider", "initialized", this);
+    this.props.triggerCallback("PersonalityTypeSlider", "initialized", this);
   }
   setActive(type, e) {
     e.preventDefault();
-    this.props.triggerCallback("personalitytypeslider", "changeType", this, type);
+    this.props.triggerCallback("PersonalityTypeSlider", "changeType", this, type);
     this.props.setState({ activeType: type });
   }
   render() {
+    if (!this.props.resultsReady()) return <div />;
+
     let props = this.props;
     let id, ids, index, backType, nextType;
     if (props.activeType){

@@ -1,15 +1,7 @@
 import { h, Component } from "preact";
 
 import I18n from "../lib/i18n";
-import SlideDeck from "./slidedeck/index";
-import Default from "./default";
-import Results from "./results";
-
-let components = {
-  SlideDeck,
-  Results,
-  Default
-};
+import * as Components from "./index.js"
 
 export default class Main extends Component {
   constructor(){
@@ -25,12 +17,11 @@ export default class Main extends Component {
     };
 
     this.state = state;
-
     this.state.setState = function(newState){
       com.setState(newState);
     };
     this.state.fetch = this.fetch.bind(this);
-
+    this.state.resultsReady = this.resultsReady.bind(this);
     this.i18n = new I18n;
     this.state.translate = (key) => com.i18n.translate(key);
     this.state.i18n = this.i18n;
@@ -44,7 +35,7 @@ export default class Main extends Component {
       com.state[key] = com.props[key];
     });
     com.state.assessment = {};
-    
+
     if (com.props.locale){
       com.i18n.locale = com.props.locale;
     }
@@ -58,11 +49,12 @@ export default class Main extends Component {
     this.props.renderPromise.resolve(this);
   }
 
-  triggerCallback(klass, key, context, options){
+  triggerCallback(klass, action, context, options){
     let com = this;
+    let key = `${klass}.${action}`.toLowerCase();
 
-    if (this.state.callbacks[`${klass}.${key}`]){
-      com.state.callbacks[`${klass}.${key}`].forEach((callback)=>{
+    if (this.state.callbacks[key]){
+      com.state.callbacks[key].forEach((callback)=>{
         callback.apply(com, [context, options]);
       });
     }
@@ -70,27 +62,48 @@ export default class Main extends Component {
 
   fetch (){
     let com = this;
+<<<<<<< HEAD
 
      this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
       com.triggerCallback("main", "fetch", com);
+=======
+    let storeKey = `results-${com.state.assessmentId}-${com.i18n.locale}`;
+    let setData = function(data) {
+>>>>>>> 07c2bb0525055deb205523bb644e146cd1d823db
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
+      com.triggerCallback("Main", "fetch", com);
       com.setState(com.state);
-    }).catch((error)=>{
-      console.warn(error);
-    });
+    }
+
+    if (sessionStorage.getItem(storeKey)){
+      setData(JSON.parse(sessionStorage.getItem(storeKey)));
+    } else {
+      this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
+        if (data.personality_types.length > 0){
+          sessionStorage.setItem(storeKey, JSON.stringify(data));
+        }
+        setData(data);
+      }).catch((error)=>{
+        console.warn(error);
+      });
+    }
+  }
+
+  resultsReady() {
+    let assessment = this.state.assessment || {};
+    assessment.personality_types = assessment.personality_types || [];
+    return assessment.personality_types.length > 0;
   }
 
   render() {
-    let component = components[this.props.componentName || "Default"];
+    let component = Components[this.props.componentName || "Default"];
     let link = document.createElement("style");
     link.rel = "stylesheet";
     link.type = "text/css";
     link.href = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";
     document.body.appendChild(link);
 
-    return (
-        h(component, this.state)
-    );
+    return h(component, this.state);
   }
 }

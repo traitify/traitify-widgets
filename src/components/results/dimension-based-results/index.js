@@ -4,7 +4,7 @@ import Radar from "./radar";
 
 export default class DimensionBasedResults extends Component {
   componentDidMount(){
-    this.props.triggerCallback("dimensionbasedresults", "initialized", this);
+    this.props.triggerCallback("DimensionBasedResults", "initialized", this);
   }
   render() {
     return (

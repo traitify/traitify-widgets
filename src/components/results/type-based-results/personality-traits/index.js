@@ -9,16 +9,18 @@ export default class PersonalityTraits extends Component {
     this.onClick = this.onClick.bind(this);
   }
   componentDidMount(){
-    this.props.triggerCallback("personalitytraits", "initialized", this);
+    this.props.triggerCallback("PersonalityTraits", "initialized", this);
   }
   onClick(e) {
     e.preventDefault();
-    this.props.triggerCallback("personalitytraits", "showMore", this);
+    this.props.triggerCallback("PersonalityTraits", "showMore", this);
 
     this.setState({ showMore: true });
     return false;
   }
   render() {
+    if (!this.props.resultsReady()) return <div />;
+
     let traits = this.props.assessment.personality_traits;
     if (!this.state.showMore) traits = traits.slice(0, 8);
     return (

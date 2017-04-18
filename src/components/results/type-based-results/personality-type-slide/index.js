@@ -4,7 +4,7 @@ import style from "./style";
 
 export default class PersonalityTypeSlide extends Component {
   componentDidMount(){
-    this.props.triggerCallback("personalitytypeslide", "initialized", this);
+    this.props.triggerCallback("PersonalityTypeSlide", "initialized", this);
   }
   position() {
     if (!this.props.activeType) return "none";
@@ -21,8 +21,14 @@ export default class PersonalityTypeSlide extends Component {
 
     let type = this.props.type.personality_type;
     let color = `#${type.badge.color_1}`;
-    let name = type.description.split("'")[1];
-    let description = type.description.split("'").splice(2).join("'");
+    let name, description;
+    if (type.description[0] == "'") {
+      name = type.description.split("'")[1];
+      description = type.description.split("'").splice(2).join("'");
+    } else {
+      name = type.name;
+      description = `- ${type.description}`;
+    }
 
     return (
       <li class={`${style.slide} ${style[position]}`} style={`background: ${Color.rgba(color, 8.5)};`}>

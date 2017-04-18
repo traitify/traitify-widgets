@@ -5,17 +5,16 @@ import Chart from "canvas-radar";
 export default class Radar extends Component {
   constructor(props) {
     super(props);
-    this.updateDimensions = this.updateDimensions.bind(this);
     this.createChart = this.createChart.bind(this);
     this.updateChart = this.updateChart.bind(this);
     this.destroyChart = this.destroyChart.bind(this);
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions);
+    window.removeEventListener("resize", this.updateChart);
   }
   componentDidMount() {
     let com = this;
-    window.addEventListener("resize", this.updateDimensions);
+    window.addEventListener("resize", this.updateChart);
 
     let count = 0;
     this.types().forEach((pt)=>{
@@ -24,8 +23,7 @@ export default class Radar extends Component {
       image.onload = function(){
         count = count + 1;
         if (count == com.types().length){
-          com.createChart();
-          com.updateDimensions();
+          com.updateChart();
         }
       };
     });
@@ -34,10 +32,6 @@ export default class Radar extends Component {
   }
   componentDidUpdate() {
     this.updateChart();
-  }
-  updateDimensions() {
-    let width = (this.canvasContainer || {}).clientWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    this.setState({ width });
   }
   types (){
     return this.props.assessment.personality_types;
@@ -81,6 +75,7 @@ export default class Radar extends Component {
 
     var ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, data);
+    this.chart.resize();
   }
   updateChart() {
     if (!this.chart) return this.createChart();
@@ -96,7 +91,7 @@ export default class Radar extends Component {
 
     return (
       <div class={style.radar}>
-        <div class={style.radarContainer}  ref={(canvasContainer) => { this.canvasContainer = canvasContainer; }}>
+        <div class={style.radarContainer}>
           <canvas ref={(canvas) => { this.canvas = canvas; }} width="820" height="700" />
         </div>
       </div>

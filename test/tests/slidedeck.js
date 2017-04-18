@@ -19,7 +19,7 @@ function Init(){
           .tag("me")
           .step("Initialize SlideDeck")
           .step("Listen for", "slidedeck.me")
-          .step("Click", ".traitify--slidedeck--me")
+          .step("Click", ".traitify--slide-deck--me")
           .expect("Slide Deck to have Clicked Me", function(){
             this.ok(this["slidedeck.me"] == true);
           });
@@ -30,7 +30,7 @@ function Init(){
           .tag("not me")
           .step("Initialize SlideDeck")
           .step("Listen for", "slidedeck.notMe")
-          .step("Click", ".traitify--slidedeck--notMe")
+          .step("Click", ".traitify--slide-deck--notMe")
           .expect("Slide Deck to have Clicked Not Me", function(){
             this.ok(this["slidedeck.notMe"] == true);
           });
@@ -41,7 +41,7 @@ function Init(){
           .tag("answer slide")
           .step("Initialize SlideDeck")
           .step("Listen for", "slidedeck.AnswerSlide")
-          .step("Click", ".traitify--slidedeck--notMe")
+          .step("Click", ".traitify--slide-deck--notMe")
           .expect("Slide Deck to have Clicked Not Me", function(){
             this.ok(this["slidedeck.AnswerSlide"] == true);
           });

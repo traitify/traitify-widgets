@@ -62,14 +62,9 @@ export default class Main extends Component {
 
   fetch (){
     let com = this;
-<<<<<<< HEAD
 
-     this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
-      com.triggerCallback("main", "fetch", com);
-=======
     let storeKey = `results-${com.state.assessmentId}-${com.i18n.locale}`;
     let setData = function(data) {
->>>>>>> 07c2bb0525055deb205523bb644e146cd1d823db
       com.i18n.locale || com.i18n.setLocale(data.locale_key);
       com.state.assessment = data;
       com.triggerCallback("Main", "fetch", com);
@@ -80,7 +75,7 @@ export default class Main extends Component {
       setData(JSON.parse(sessionStorage.getItem(storeKey)));
     } else {
       this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
-        if (data.personality_types.length > 0){
+        if (data && data.personality_types && data.personality_types.length > 0){
           sessionStorage.setItem(storeKey, JSON.stringify(data));
         }
         setData(data);

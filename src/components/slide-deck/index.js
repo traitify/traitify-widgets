@@ -8,9 +8,6 @@ export default class SlideDeck extends Component {
     this.imageLoadAttempts = [];
     return this;
   }
-  onComplete(){
-    this.props.fetch();
-  }
   imageService(slide){
     return slide ? slide.image_desktop : null;
   }
@@ -32,14 +29,14 @@ export default class SlideDeck extends Component {
         img.onerror = ()=>{
           com.imageLoadAttempts[i] = com.imageLoadAttempts[i] || 0;
           com.imageLoadAttempts[i] += 1;
-          if(com.imageLoadAttempts[i] < 30){
+          if (com.imageLoadAttempts[i] < 30){
             setTimeout(()=>{
               com.prefetchSlides(i);
-            }, 2000)
-          }else{
-            com.props.setState(com.props)
+            }, 2000);
+          } else {
+            com.props.setState(com.props);
           }
-        }
+        };
       }
     }
   }
@@ -109,12 +106,12 @@ export default class SlideDeck extends Component {
       let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 12345;
       return {
         id: slide.id,
-        time_taken: time_taken,
+        time_taken,
         response: slide.response
       };
     });
 
-    window.Traitify.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
+    this.props.client.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
       com.triggerCallback("finished", this, response);
       com.props.fetch();
     });
@@ -342,9 +339,9 @@ export default class SlideDeck extends Component {
             </div>
           </div>
           {this.props.client.oldIE?(
-            <Slide slide={this.currentSlide()} key={'slide'} />
+            <Slide slide={this.currentSlide()} key={'slide'} client={this.props.client} />
           ):this.loadedSlides().map((slide, index)=>{
-            return <Slide slide={slide} key={index} />;
+            return <Slide slide={slide} key={index} client={this.props.client} />;
           })}
         </div>
         <div class={style.responseContainer}>

@@ -1,13 +1,15 @@
 import shuffle from "shuffle-array";
-import uuidV1 from "uuid/v1";
 import i18n from "../../src/lib/i18n";
-import faker from 'faker';
 
 let captions = [
   "Using a Microscope",
   "Media Production",
   "Swimming"
 ];
+
+function uuidV1(){
+  return `034234-234234-234234-${Date.now()}`
+}
 
 class Data {
   constructor(){
@@ -43,17 +45,19 @@ class Data {
       this.personality_types[1].personality_type
     );
     this.personality_traits = Data.PersonalityTraits();
+    this.slides = [];
     this.completed_at = Date.now();
+
     return this;
   }
 
   static PersonalityTrait(){
     return {
-      definition: faker.lorem.words(),
-      description: faker.lorem.words(),
+      definition: `abcdefg ${Date.now()}`,
+      description: `abcdefg ${Date.now()}`,
       id: uuidV1(),
       personality_type: Data.PersonalityType(),
-      name: faker.lorem.words().split(" ")[0]
+      name: `abcdefg ${Date.now()}`.split(" ")[0]
     };
   }
   static PersonalityTraits(){
@@ -65,7 +69,7 @@ class Data {
   }
   static PersonalityType(){
     let id = uuidV1();
-    let words = faker.lorem.words();
+    let words = `abcdefg ${Date.now()}`
 
     return {
       id,
@@ -76,7 +80,7 @@ class Data {
         image_medium: "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150",
         image_large: "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150",
         font_color:"",
-        color_1: faker.internet.color().replace("#", ""),
+        color_1: "438838",
         color_2:"",
         color_3:""
       },
@@ -102,7 +106,7 @@ class Data {
     type2 = type2 || Data.PersonalityType();
     return {
       name: `${type1.name}/${type1.name}`,
-      description: faker.lorem.paragraph(),
+      description: `abcdefg ${Date.now()} hijklmnop`,
       details:[],
       environments:[],
       famous_people:[],

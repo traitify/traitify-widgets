@@ -41,3 +41,9 @@ if (!Array.prototype.find) {
     }
   });
 }
+if (!window.console || !window.console.log){
+  window.console = {
+    log: ()=>{},
+    warn: ()=>{}
+  };
+}

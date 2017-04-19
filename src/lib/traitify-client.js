@@ -11,6 +11,8 @@ class Traitify{
     url += (url.indexOf("?") == -1) ? "?" : "&";
     url += `authorization=${this.publicKey}`;
     if (this.imagePack) url += `&image_pack=${this.imagePack}`;
+    TraitifyLib.host = this.host;
+    TraitifyLib.version = "v1";
     return TraitifyLib.ajax(method, url, ()=>{}, params);
   }
 
@@ -32,9 +34,10 @@ class Traitify{
     TraitifyLib.setPublicKey(key);
   }
   static setHost (host){
-    TraitifyLib.host = host;
+    this.host = host;
   }
 }
-TraitifyLib.host =  "http://api.traitify.com";
+TraitifyLib.host = "";
+Traitify.host =  "https://api.traitify.com";
 
 export default Traitify;

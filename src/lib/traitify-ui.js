@@ -2,6 +2,7 @@ import { h, render } from "preact";
 import Main from "../components/main";
 import Promise from 'promise-polyfill';
 import I18n from './i18n';
+import Error from "../error-handler";
 
 export default class TraitifyUI {
   constructor (options) {
@@ -66,6 +67,7 @@ export default class TraitifyUI {
           return reject("Your target element could either not be selected or was not provided");
         }
 
+        ceaou;        
         lib.options.renderPromise = { resolve, reject };
 
         Object.keys(lib.options.targets).forEach(function(name){
@@ -78,6 +80,10 @@ export default class TraitifyUI {
           render(<Main componentName={name} {...lib.options} />, target);
         });
       } catch (error){
+        let err = new Error()
+        err.type = error.name;
+        err.message = error.message;
+        err.notify();
         reject(error);
       }
     });

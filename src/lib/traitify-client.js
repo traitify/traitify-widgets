@@ -6,13 +6,17 @@ class Traitify{
     return this;
   }
 
+  static setVersion (version){
+    this.version = version;
+  }
+
   static request (method, path, params){
     let url = path;
     url += (url.indexOf("?") == -1) ? "?" : "&";
     url += `authorization=${this.publicKey}`;
     if (this.imagePack) url += `&image_pack=${this.imagePack}`;
     TraitifyLib.host = this.host;
-    TraitifyLib.version = "v1";
+    TraitifyLib.version = this.version;
     return TraitifyLib.ajax(method, url, ()=>{}, params);
   }
 
@@ -37,6 +41,7 @@ class Traitify{
     this.host = host;
   }
 }
+Traitify.version = "v1";
 TraitifyLib.host = "";
 Traitify.host =  "https://api.traitify.com";
 

@@ -67,7 +67,6 @@ export default class TraitifyUI {
           return reject("Your target element could either not be selected or was not provided");
         }
 
-        ceaou;        
         lib.options.renderPromise = { resolve, reject };
 
         Object.keys(lib.options.targets).forEach(function(name){

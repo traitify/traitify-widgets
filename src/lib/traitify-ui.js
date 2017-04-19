@@ -79,7 +79,7 @@ export default class TraitifyUI {
           render(<Main componentName={name} {...lib.options} />, target);
         });
       } catch (error){
-        let err = new Error()
+        let err = new Error();
         err.type = error.name;
         err.message = error.message;
         err.notify();

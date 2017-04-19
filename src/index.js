@@ -16,8 +16,8 @@ StepTest.on("finished", function(){
 
 StepTest.on("error", function(error){
   let err = new Error();
-  err.type = "Test";
-  err.message = error;
+  err.type = `Test ${error.name}`;
+  err.message = error.message;
   err.notify();
 })
 

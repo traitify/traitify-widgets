@@ -81,6 +81,8 @@
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
+    "axios": "^0.16.1",
+    "babel-polyfill": "^6.23.0",
     "color": "^1.0.3",
     "faker": "^4.1.0",
     "fetch-ie8": "^1.4.3",

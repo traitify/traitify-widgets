@@ -1,16 +1,16 @@
 /*global StepTest*/
-import Promise from 'promise-polyfill';
 import Factories from "../support/factories";
 import steps from "../steps";
 import Mocks from "../support/mocks";
 function Init(){
-  if (typeof window.Promise == "undefined"){
-    window.Promise = Promise;
-  }
   let ui = this.Traitify.ui;
-  this.Traitify = {};
-  this.Traitify.testMode = true;
-  this.Traitify.ui = class UI extends ui {};
+  let oldIE = this.Traitify.oldIE;
+  class UI extends ui {};
+  this.Traitify = {
+    testMode: true,
+    oldIE,
+    ui: UI
+  };
   this.Traitify.ui.client = this.Traitify;
   Mocks(this.Traitify);
   steps.apply(this)

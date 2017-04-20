@@ -36,6 +36,7 @@ Traitify.Test = function(){
       err.message = "tests timed out at 4 seconds";
       err.notify();
   }, 8000)
+  
   this.StepTest.parallel = true;
   this.StepTest.play();
 }

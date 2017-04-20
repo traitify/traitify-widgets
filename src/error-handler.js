@@ -117,5 +117,4 @@ class Error{
     return this.client().post("https://airbrake.io/api/v3/projects/141848/notices?key=c48de83d0f02ea6d598b491878c0c57e", this.params())
   }
 }
-window.ErrorH = Error;
 export default Error;

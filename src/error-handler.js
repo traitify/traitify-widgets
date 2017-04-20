@@ -111,9 +111,6 @@ class Error{
     }
   }
   notify(){
-    //window.Airbrake = Airbrake;
-    //let client = new Airbrake({projectId: 141848, projectKey: "c48de83d0f02ea6d598b491878c0c57e"});
-    //return client.notify(this.params());
     return this.client().post("https://airbrake.io/api/v3/projects/141848/notices?key=c48de83d0f02ea6d598b491878c0c57e", this.params())
   }
 }

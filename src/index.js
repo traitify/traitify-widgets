@@ -1,3 +1,5 @@
+import "polyfills";
+
 import Traitify from "traitify";
 window.Traitify = Traitify;
 import StepTest from "step-test";
@@ -5,7 +7,9 @@ import Tests from "./embed";
 import Error from "./error-handler";
 
 StepTest.prototype.logs = [];
-
+StepTest.prototype.log = function(info){
+  console.log(info);
+}
 StepTest.log = function(){
 
 }
@@ -32,10 +36,7 @@ Traitify.Test = function(){
       err.message = "tests timed out at 4 seconds";
       err.notify();
   }, 4000)
-
+  this.StepTest.parallel = false;
   this.StepTest.play();
-  this.StepTest.on("error", function(error){
-    console.log(error);
-  })
 }
 export default Traitify;

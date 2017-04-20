@@ -1,19 +1,8 @@
-import TraitifyLib from "traitify-js-browser-client";
-
+import Client from "client";
 class Error{
-  constructor(){
-    this.client = this.constructor.client;
-    
-    if(!this.client.XHR.prototype.oldSetRequestHeader){
-      this.client.XHR.prototype.oldSetRequestHeader = TraitifyLib.XHR.prototype.setRequestHeader
-      
-      this.client.XHR.prototype.setRequestHeader = function(key, value){
-        if(key != "Authorization"){
-          this.oldSetRequestHeader(key, value)
-        }
-      }
-    }
-  } 
+  client(){
+    return new Client()
+  }
   browser(){
     let nVer = navigator.appVersion;
     let nAgt = navigator.userAgent;
@@ -108,24 +97,25 @@ class Error{
     }
   }
   hostHas(env){
-    return window.location.host.indexOf(env) !== -1
+    return window.location.host.indexOf(env) !== -1;
   }
   env(){
     if (this.hostHas("lvh.me:3000")){
-      return "development"
+      return "development";
     } else if (this.hostHas("stag.traitify.com")){
       return "staging";
     } else if (this.hostHas("traitify.com")){
-      return "production"
+      return "production";
     } else {
-      return "Client"
+      return "Client";
     }
   }
   notify(){
-    this.client.host = "https://airbrake.io";
-    this.client.version = "api";
-    return this.client.ajax("POST", "/v3/projects/141848/notices?key=c48de83d0f02ea6d598b491878c0c57e", null, this.params())
+    //window.Airbrake = Airbrake;
+    //let client = new Airbrake({projectId: 141848, projectKey: "c48de83d0f02ea6d598b491878c0c57e"});
+    //return client.notify(this.params());
+    return this.client().post("https://airbrake.io/api/v3/projects/141848/notices?key=c48de83d0f02ea6d598b491878c0c57e", this.params())
   }
 }
-Error.client = TraitifyLib;
+window.ErrorH = Error;
 export default Error;

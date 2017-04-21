@@ -13,7 +13,7 @@
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
-      initDeck = function(){
+      function initDeck (){
         var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
         assessment.targets({
           "SlideDeck": "#slide-deck",
@@ -32,9 +32,13 @@
         });
       }
 
-      createAssessment = function(){
+      function createAssessment(){
         Traitify.post("/assessments", {deck_id: document.querySelector("#deck-name").value, locale_key: "en-us"}).then(function(assessment){
-          localStorage.setItem("assessment-id", assessment.id);
+          try{
+            localStorage.setItem("assessment-id", assessment.id);
+          }catch(error){
+            console.log(error);
+          }
           initDeck();
         })
       }

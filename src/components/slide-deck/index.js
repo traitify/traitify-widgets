@@ -74,7 +74,11 @@ export default class SlideDeck extends Component {
     let slide = this.currentSlide();
     slide.response = value;
     slide.time_taken = Date.now() - this.lastSlideAnswered;
-    sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()));
+    try{
+      sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.answers()));
+    }catch(error){
+      console.log(error);
+    }
     this.lastSlideAnswered = Date.now();
     this.props.setState(this.props);
 

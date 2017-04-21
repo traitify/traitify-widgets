@@ -76,7 +76,11 @@ export default class Main extends Component {
     } else {
       this.props.client.get(`/assessments/${com.state.assessmentId}?data=slides,blend,types,traits&locale_key=${com.i18n.locale}`).then((data)=>{
         if (data && data.personality_types && data.personality_types.length > 0){
-          sessionStorage.setItem(storeKey, JSON.stringify(data));
+          try{
+            sessionStorage.setItem(storeKey, JSON.stringify(data));
+          }catch(error){
+            console.log(error);
+          }
         }
         setData(data);
       }).catch((error)=>{

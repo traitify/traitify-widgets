@@ -8,12 +8,10 @@ export default class Results extends Component {
     this.props.triggerCallback("Results", "initialized", this);
   }
   render() {
-    let results;
-    if (this.props.assessment.assessment_type == "TYPE_BASED"){
-      results = <TypeBasedResults {...this.props} />;
-    } else {
-      results = <DimensionBasedResults {...this.props} />;
-    }
-    return results;
+    return (this.props.assessment.assessment_type == "TYPE_BASED") ? (
+      <TypeBasedResults {...this.props} />
+    ) : (
+      <DimensionBasedResults {...this.props} />
+    );
   }
 }

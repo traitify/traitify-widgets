@@ -1,7 +1,6 @@
 import { h, Component } from "preact";
 
-import PersonalityBlend from "./personality-blend";
-import PersonalityType from "./personality-type";
+import PersonalityBase from "./personality-base";
 import PersonalityTypes from "./personality-types";
 import PersonalityTraits from "./personality-traits";
 import PersonalityDetails from "./personality-details";
@@ -12,11 +11,7 @@ export default class TypeBasedResults extends Component {
 
     return (
       <section>
-        {this.props.assessment.personality_blend ? (
-          <PersonalityBlend {...this.props} />
-        ) : (
-          <PersonalityType {...this.props} />
-        )}
+        <PersonalityBase {...this.props} />
         <PersonalityTypes {...this.props} />
         <PersonalityTraits {...this.props} />
         <PersonalityDetails {...this.props} />

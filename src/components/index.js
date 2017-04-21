@@ -5,6 +5,7 @@ export Slide from "./slide-deck/_slide";
 
 export TypeBasedResults from "./results/type-based-results";
 export PersonalityBadge from "./results/type-based-results/personality-badge";
+export PersonalityBase from "./results/type-based-results/personality-base";
 export PersonalityBlend from "./results/type-based-results/personality-blend";
 export PersonalityDetails from "./results/type-based-results/personality-details";
 export PersonalityTrait from "./results/type-based-results/personality-trait";

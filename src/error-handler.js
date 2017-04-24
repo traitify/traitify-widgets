@@ -1,5 +1,14 @@
 import Client from "client";
-class Error{
+import Airbrake from "airbrake";
+
+class ErrorHandler extends Airbrake {
+  constructor(){
+    super();
+    this.host = "https://airbrake.io";
+    this.projectId = "141848";
+    this.projectKey = "c48de83d0f02ea6d598b491878c0c57e";
+    return this;
+  }
   client(){
     return new Client()
   }
@@ -88,7 +97,8 @@ class Error{
         "language": "Javascript",
         "environment": this.env(),
         "version": Traitify.__version__,
-        "url:": window.location.href
+        "url:": window.location.href,
+        "browser": this.browser()
       },
       "session": {
         "publicKey": Traitify.publicKey,
@@ -110,8 +120,6 @@ class Error{
       return "Client";
     }
   }
-  notify(){
-    return this.client().post("https://airbrake.io/api/v3/projects/141848/notices?key=c48de83d0f02ea6d598b491878c0c57e", this.params())
-  }
 }
-export default Error;
+window.ErrorHandler = ErrorHandler;
+export default ErrorHandler;

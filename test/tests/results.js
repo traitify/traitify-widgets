@@ -1,6 +1,7 @@
 /*global sinon,expect,StepTest*/
 /*eslint-disable prefer-arrow-callback*/
 function Init(){
+
   this.test("Results Should Initialize")
       .tag("results")
       .step("Setup Scratch")

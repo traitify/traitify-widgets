@@ -21,10 +21,8 @@
   @include mq(xxxl) {
     min-height: 148px;
   }
-  @include mq(xl) { @include rems(21); }
   @include mq(xxl) {
     padding: 20px 80px;
-    @include rems(22);
   }
 }
 .title {
@@ -33,5 +31,4 @@
   @include rems(18);
   @include mq(m) { @include rems(19); }
   @include mq(xl) { @include rems(24); }
-  @include mq(xxl) { @include rems(28); }
 }

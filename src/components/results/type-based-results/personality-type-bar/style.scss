@@ -55,7 +55,6 @@
   @include mq(xl) {
     bottom: -146px;
     margin: 0 6px 0;
-    @include rems(20);
   }
   img {
     display: block;

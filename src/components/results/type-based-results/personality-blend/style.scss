@@ -23,6 +23,7 @@
   }
   @include mq(xl) {
     width: 60%;
+    @include rems(19);
   }
   @include mq(xxl) {
     width: 50%;

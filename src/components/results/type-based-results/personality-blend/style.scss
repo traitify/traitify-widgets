@@ -33,6 +33,5 @@
   }
   @include mq(xxl) {
     width: 50%;
-    @include rems(22);
   }
 }

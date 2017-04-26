@@ -12,12 +12,6 @@
   @include mq(m) {
     @include rems(24);
   }
-  @include mq(xl) {
-    @include rems(28);
-  }
-  @include mq(xxl) {
-    @include rems(32);
-  }
 }
 .description {
   margin-bottom: 80px;
@@ -29,7 +23,6 @@
   }
   @include mq(xl) {
     width: 60%;
-    @include rems(20);
   }
   @include mq(xxl) {
     width: 50%;

@@ -8,10 +8,7 @@
   padding-bottom: 10px;
   border-bottom: 2px solid $border;
   @include mq(m) {
-    height: 400px;
-  }
-  @include mq(xl) {
-    height: 640px;
+    height: 375px;
   }
   &:hover, &.selected {
     cursor: pointer;

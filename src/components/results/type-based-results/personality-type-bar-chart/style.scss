@@ -8,9 +8,6 @@
   height: 300px;
   margin: 0 auto 190px;
   @include mq(m) {
-    height: 400px;
-  }
-  @include mq(xl) {
-    height: 640px;
+    height: 350px;
   }
 }

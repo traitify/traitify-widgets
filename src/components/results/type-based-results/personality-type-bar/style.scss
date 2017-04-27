@@ -8,10 +8,7 @@
   padding-bottom: 10px;
   border-bottom: 2px solid $border;
   @include mq(m) {
-    height: 400px;
-  }
-  @include mq(xl) {
-    height: 640px;
+    height: 375px;
   }
   &:hover, &.selected {
     cursor: pointer;
@@ -58,7 +55,6 @@
   @include mq(xl) {
     bottom: -146px;
     margin: 0 6px 0;
-    @include rems(20);
   }
   img {
     display: block;

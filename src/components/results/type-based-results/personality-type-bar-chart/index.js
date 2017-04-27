@@ -21,6 +21,13 @@ export default class PersonalityTypeBarChart extends Component {
       }
     }
   }
+  maxScore() {
+    return this.props.assessment.personality_types[0].score;
+  }
+  barHeight(type) {
+    let score = (100 - (this.maxScore() - type.score)) - 5;
+    return score > 0 ? score : 0;
+  }
   render() {
     if (!this.props.resultsReady()) return <div />;
 
@@ -29,7 +36,7 @@ export default class PersonalityTypeBarChart extends Component {
     return (
       <ul class={style.chart}>
         {this.props.assessment.personality_types.map((type)=>{
-          return <PersonalityTypeBar {...props} type={type} />;
+          return <PersonalityTypeBar {...props} type={type} barHeight={this.barHeight(type)} />;
         })}
       </ul>
     );

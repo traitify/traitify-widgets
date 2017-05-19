@@ -13,26 +13,24 @@ export default class PersonalityTraits extends Component {
   }
   onClick(e) {
     e.preventDefault();
-    this.props.triggerCallback("PersonalityTraits", "showMore", this);
-
-    this.setState({ showMore: true });
-    return false;
+    let callback = this.state.showMore ? "showLess" : "showMore";
+    this.props.triggerCallback("PersonalityTraits", callback, this);
+    this.setState({ showMore: !this.state.showMore });
   }
   render() {
     if (!this.props.resultsReady()) return <div />;
 
     let traits = this.props.assessment.personality_traits;
+    let text = this.props.translate(this.state.showMore ? "show_less" : "show_more");
     if (!this.state.showMore) traits = traits.slice(0, 8);
     return (
       <div class={style.traits}>
         {traits.map((trait)=>{
           return <PersonalityTrait trait={trait} />;
         })}
-        {!this.state.showMore &&
-          <p class={style.center}>
-            <a href="#" class={style.showMore} onClick={this.onClick}>View More Traits</a>
-          </p>
-        }
+        <p class={style.center}>
+          <a href="#" class={style.toggle} onClick={this.onClick}>{text}</a>
+        </p>
       </div>
     );
   }

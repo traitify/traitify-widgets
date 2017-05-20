@@ -89,7 +89,7 @@ export default class TraitifyUI {
   }
 }
 
-let defaultOptions = ["allowFullScreen", "assessmentId", "perspective", "target", "targets"];
+let defaultOptions = ["allowBack", "allowFullScreen", "assessmentId", "perspective", "target", "targets"];
 defaultOptions.forEach((option)=>{
   TraitifyUI[option] = function(value){
     let options = {};

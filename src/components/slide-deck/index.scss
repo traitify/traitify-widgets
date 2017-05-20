@@ -8,6 +8,30 @@
   position: relative;
   min-height: $minHeight;
 
+  .back{
+    background-color: $progressBar;
+    background-size: 100% 100%;
+    -webkit-transition: opacity .2s; /* Safari */
+    transition: opacity .2s;
+    &:hover{
+      opacity: 1;
+    }
+
+    position: absolute;
+    left: 30px;
+    bottom: 36px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 3px;
+    opacity: 0.7;
+    z-index: 3;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
   .fullScreen{
     background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png');
     &.fullScreenSmall{

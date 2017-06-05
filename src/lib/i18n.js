@@ -9,7 +9,6 @@ export default class I18n {
       me: "Me",
       not_me: "Not Me"
     };
-    
     this["es-us"] = {
       potential_benefits: "Beneficios Potenciales",
       potential_pitfalls: "Peligros Potenciales",
@@ -18,7 +17,6 @@ export default class I18n {
       me: "Yo",
       not_me: "Yo No"
     };
-
     this["fr-ca"] = {
       potential_benefits: "Des bénéfices potentiels",
       potential_pitfalls: "Les pièges potentiels",
@@ -26,6 +24,14 @@ export default class I18n {
       show_more: "Montre Plus",
       me: "Moi",
       not_me: "Pas Moi"
+    };
+    this["no-no"] = {
+      potential_benefits: "Potensielle fordeler",
+      potential_pitfalls: "Potensielle fallgruver",
+      show_less: "Vis mindre",
+      show_more: "Vis mer",
+      me: "Meg",
+      not_me: "Ikke meg"
     };
 
     this["fr-us"] = this["fr-ca"];

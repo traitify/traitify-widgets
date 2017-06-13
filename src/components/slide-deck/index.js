@@ -91,6 +91,21 @@ export default class SlideDeck extends Component {
   currentIndex(){
     return this.slides().map((slide)=>{ return slide.id; }).indexOf(this.currentSlide().id);
   }
+  backSlide(){
+    this.triggerCallback("backslide", this);
+    let slides = this.props.assessment.slides;
+    let i = this.currentIndex();
+    slides[i].orientation = "right";
+    slides[i - 1].orientation = "middle";
+    if (slides[i - 2]){
+      slides[i - 2].orientation = "left";
+    }
+    if (i > 0){
+      slides[i + 1].orientation = "invisible";
+    }
+    this.lastSlideAnswered = Date.now();
+    this.props.setState(this.props);
+  }
   nextSlide(){
     let slides = this.props.assessment.slides;
     let i = this.currentIndex();
@@ -261,6 +276,9 @@ export default class SlideDeck extends Component {
       return answer.id == slideId;
     })[0];
   }
+  isBackSlide(){
+    return this.currentIndex() > 0;
+  }
   isComplete(){
     let value = false;
     if ((this.props.assessment || {}).slides){
@@ -270,6 +288,10 @@ export default class SlideDeck extends Component {
   }
   isReady(){
     return this.props.ready;
+  }
+  handleBack(e){
+    e.preventDefault();
+    this.backSlide();
   }
   handleFullScreen(){
     let i = this.container;
@@ -362,6 +384,11 @@ export default class SlideDeck extends Component {
             </a>
           </div>
         </div>
+        {this.props.allowBack && this.isBackSlide() && (
+          <a class={style.back} onClick={this.handleBack.bind(this)} href="#">
+            <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
+          </a>
+        )}
         {this.props.allowFullScreen && (
           <div class={[style.fullScreen, this.props.isFullScreen ? style.fullScreenSmall : ''].join(" ") } onClick={this.handleFullScreen.bind(this)}></div>
         )}

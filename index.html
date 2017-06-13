@@ -19,6 +19,8 @@
           "SlideDeck": "#slide-deck",
           "Results": "#results"
         });
+        assessment.allowBack(true);
+        assessment.allowFullScreen(true);
         assessment.perspective("thirdPerson");
         assessment.on("personalitytypes.initialized", function(){
           console.log("personalitytypes!")

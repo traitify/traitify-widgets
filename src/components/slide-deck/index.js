@@ -120,20 +120,24 @@ export default class SlideDeck extends Component {
     this.props.setState(this.props);
   }
   finish(){
-    let com = this;
-    let answers = this.slides().map((slide)=>{
-      let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 12345;
-      return {
-        id: slide.id,
-        time_taken,
-        response: slide.response
-      };
-    });
+    if(!this._finished){
+      this._finished = true;
+      
+      let com = this;
+      let answers = this.slides().map((slide)=>{
+        let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 12345;
+        return {
+          id: slide.id,
+          time_taken,
+          response: slide.response
+        };
+      });
 
-    this.props.client.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
-      com.triggerCallback("finished", this, response);
-      com.props.fetch();
-    });
+      this.props.client.put(`/assessments/${this.props.assessmentId}/slides`, answers).then((response)=>{
+        com.triggerCallback("finished", this, response);
+        com.props.fetch();
+      });
+    }
   }
   componentDidMount(){
     this.lastSlideAnswered = Date.now();

@@ -25,8 +25,11 @@
         assessment.on("personalitytypes.initialized", function(){
           console.log("personalitytypes!")
         })
+        assessment.on("SlideDeck.Finished", function(){
+          console.log("FINISHED!!!!")
+        })
         assessment.on("PersonalityTypes.initialized", function(){
-          console.log("PersonalityTypes!")
+          console.log("PersonalityTypes Going!!!!!")
         })
         widget = assessment.render()
         widget.catch(function(error){

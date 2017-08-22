@@ -97,7 +97,7 @@ export default class Main extends Component {
 
   render() {
     let component = Components[this.props.componentName || "Default"];
-    let link = document.createElement("style");
+    let link = document.createElement("link");
     link.rel = "stylesheet";
     link.type = "text/css";
     link.href = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";

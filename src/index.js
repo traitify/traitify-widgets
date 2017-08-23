@@ -45,7 +45,7 @@ Traitify.StepTest = StepTest;
 Traitify.Test = function(){
   this.StepTest.Traitify = Traitify;
   Tests.apply(this.StepTest);
-  
+
   this.StepTest.play();
 }
 export default Traitify;

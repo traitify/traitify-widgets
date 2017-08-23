@@ -4,10 +4,9 @@ import autoprefixer from "autoprefixer";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import ReplacePlugin from "replace-bundle-webpack-plugin";
 import path from "path";
-import ScriptExtHtmlWebpackPlugin from "script-ext-html-webpack-plugin";
-import git from 'git-rev-sync';
+import git from "git-rev-sync";
 const ENV = process.env.NODE_ENV || "development";
-const CSS_MAPS = ENV!=="production";
+const CSS_MAPS = ENV !== "production";
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -20,8 +19,8 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ["", ".jsx", ".js", ".json", ".scss"],
-    modulesDirectories: [
+    extensions: [".jsx", ".js", ".json", ".scss"],
+    modules: [
       path.resolve(__dirname, "src/lib"),
       path.resolve(__dirname, "node_modules"),
       "node_modules"
@@ -32,41 +31,49 @@ module.exports = {
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: "pre",
         test: /\.jsx?$/,
         exclude: path.resolve(__dirname, "src"),
-        loader: "source-map"
-      }
-    ],
-    loaders: [
+        loader: "source-map-loader"
+      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel"
-      },
-      {
-        // Transform our own .(scss|css) files with PostCSS and CSS-modules
-        test: /\.(scss|css)$/,
-        include: [path.resolve(__dirname, "src/components")],
-        loader: ExtractTextPlugin.extract("style?singleton", [
-          `css-loader?modules&importLoaders=1&sourceMap=${CSS_MAPS}&localIdentName=traitify--[folder]--[local]`,
-          "postcss-loader",
-          `sass-loader?sourceMap=${CSS_MAPS}`
-        ].join("!"))
+        loader: "babel-loader"
       },
       {
         test: /\.(scss|css)$/,
-        exclude: [path.resolve(__dirname, "src/components")],
-        loader: ExtractTextPlugin.extract("style?singleton", [
-          `css?sourceMap=${CSS_MAPS}`,
-          `postcss`,
-          `sass?sourceMap=${CSS_MAPS}`
-        ].join("!"))
-      },
-      {
-        test: /\.json$/,
-        loader: "json"
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options:  {
+                modules: true,
+                importLoaders: true,
+                sourceMap: CSS_MAPS,
+                localIdentName: "traitify--[folder]--[local]"
+              }
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                sourceMap: CSS_MAPS,
+                plugins: function() {
+                  return [autoprefixer({ browsers: "last 2 versions" })]
+                }
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: CSS_MAPS
+              }
+            }
+          ]
+        })
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
@@ -75,15 +82,11 @@ module.exports = {
     ]
   },
 
-  postcss: () => [
-    autoprefixer({ browsers: "last 2 versions" })
-  ],
-
   plugins: ([
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(git.long())
     }),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin("style.css", {
       allChunks: true,
       disable: true
@@ -115,8 +118,7 @@ module.exports = {
 
     // strip out babel-helper invariant checks
     new ReplacePlugin([{
-      // this is actually the property name https://github.com/kimhou/replace-bundle-webpack-plugin/issues/1
-      partten: /throw\s+(new\s+)?[a-zA-Z]+Error\s*\(/g,
+      pattern: /throw\s+(new\s+)?[a-zA-Z]+Error\s*\(/g,
       replacement: () => "return;("
     }])
   ] : []),

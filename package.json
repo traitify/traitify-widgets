@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "description": "Traitiy Widgets",
   "scripts": {
-    "dev": "webpack --watch & serve .",
-    "start": "serve build -s -c 1",
+    "dev": "webpack-dev-server",
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "prebuild": "mkdirp build",
@@ -12,8 +11,7 @@
     "test:karma": "karma start test/karma.conf.js --single-run",
     "test:karma:live": "karma start test/karma.chrome.conf.js",
     "test:karma:browserstack": "karma start test/karma.browserstack.conf.js",
-    "lint": "eslint {src,test}",
-    "serve": "serve ."
+    "lint": "eslint {src,test}"
   },
   "keywords": [
     "traitify",
@@ -40,7 +38,6 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.5",
     "eslint": "^4.5.0",
-    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
@@ -92,7 +89,6 @@
     "proptypes": "^1.1.0",
     "quarked": "0.0.2",
     "qwest": "^4.4.5",
-    "serve": "^6.0.6",
     "shuffle-array": "^1.0.1",
     "traitify-js-browser-client": "^1.0.2",
     "uuid": "^3.0.1",

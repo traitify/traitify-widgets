@@ -1,7 +1,5 @@
 import webpack from "webpack";
-import ExtractTextPlugin from "extract-text-webpack-plugin";
 import autoprefixer from "autoprefixer";
-import CopyWebpackPlugin from "copy-webpack-plugin";
 import ReplacePlugin from "replace-bundle-webpack-plugin";
 import path from "path";
 import git from "git-rev-sync";
@@ -45,35 +43,40 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader",
-              options:  {
-                modules: true,
-                importLoaders: true,
-                sourceMap: CSS_MAPS,
-                localIdentName: "traitify--[folder]--[local]"
-              }
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: CSS_MAPS,
-                plugins: function() {
-                  return [autoprefixer({ browsers: "last 2 versions" })]
-                }
-              }
-            },
-            {
-              loader: "sass-loader",
-              options: {
-                sourceMap: CSS_MAPS
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              sourceMap: CSS_MAPS,
+              singleton: true
+            }
+          },
+          {
+            loader: "css-loader",
+            options:  {
+              sourceMap: CSS_MAPS,
+              modules: true,
+              importLoaders: 2,
+              localIdentName: "traitify--[folder]--[local]"
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: CSS_MAPS,
+              plugins: function() {
+                return [autoprefixer({ browsers: "last 2 versions" })]
               }
             }
-          ]
-        })
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: CSS_MAPS
+            }
+          }
+        ]
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
@@ -87,16 +90,9 @@ module.exports = {
       __VERSION__: JSON.stringify(git.long())
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractTextPlugin("style.css", {
-      allChunks: true,
-      disable: true
-    }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(ENV)
-    }),
-    new CopyWebpackPlugin([
-      { from: "./manifest.json", to: "./" }
-    ])
+    })
   ]).concat(ENV==="production" ? [
     new webpack.optimize.UglifyJsPlugin({
       output: {
@@ -135,4 +131,7 @@ module.exports = {
   },
 
   devtool: ENV==="production" ? "source-map" : "cheap-module-eval-source-map",
+  devServer: {
+    publicPath: "/build/"
+  }
 };

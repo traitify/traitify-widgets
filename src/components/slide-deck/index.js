@@ -122,7 +122,7 @@ export default class SlideDeck extends Component {
   finish(){
     if(!this._finished){
       this._finished = true;
-      
+
       let com = this;
       let answers = this.slides().map((slide)=>{
         let time_taken = typeof slide.time_taken == "number" && slide.time_taken > 0 ? slide.time_taken : 12345;

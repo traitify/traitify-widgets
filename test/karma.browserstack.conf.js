@@ -2,12 +2,6 @@ require("babel-register");
 var webpack = require("../webpack.config.babel.js");
 var path = require("path");
 
-webpack.module.loaders.push({
-  test: /\.jsx?$/,
-  loader: "isparta",
-  include: path.resolve(__dirname, "../src")
-});
-
 module.exports = function(config) {
   config.set({
     basePath: "../",
@@ -88,12 +82,12 @@ module.exports = function(config) {
     },
 
     browsers: [
-      'bs_firefox_mac', 
-      'bs_safari_mac', 
-      'bs_ie9_windows', 
-      'bs_ie10_windows', 
-      'bs_ie11_windows', 
-      'bs_edge_windows', 
+      'bs_firefox_mac',
+      'bs_safari_mac',
+      'bs_ie9_windows',
+      'bs_ie10_windows',
+      'bs_ie11_windows',
+      'bs_edge_windows',
       'bs_iphone5'
     ],
 

@@ -97,11 +97,15 @@ export default class Main extends Component {
 
   render() {
     let component = Components[this.props.componentName || "Default"];
-    let link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.type = "text/css";
-    link.href = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";
-    document.body.appendChild(link);
+    let fontURL = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";
+    let font = document.querySelector(`link[href='${fontURL}']`);
+    if(!font) {
+      font = document.createElement("link");
+      font.rel = "stylesheet";
+      font.type = "text/css";
+      font.href = fontURL;
+      document.body.appendChild(font);
+    }
 
     return h(component, this.state);
   }

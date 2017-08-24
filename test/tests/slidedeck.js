@@ -23,7 +23,7 @@ function Init(){
       .expect("Slide Deck to have Clicked Me", function(){
         this.ok(this["slidedeck.me"] == true);
       });
-    
+
   this.test("Click Not Me Event")
       .tag("SlideDeck")
       .tag("event")

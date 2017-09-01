@@ -92,7 +92,6 @@ module.exports = function(config) {
     ],
 
     files: [
-      "test/support/prerun.js",
       "test/browser/**/*.js"
     ],
 

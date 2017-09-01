@@ -3,19 +3,19 @@ class Client {
     return new Promise((resolve, reject)=>{
       let {method, url, params} = options;
       let xhr = new XMLHttpRequest();
-      
+
       if(typeof xhr.withCredentials != "undefined" && !Traitify.oldIE){
         // XHR for Chrome/Firefox/Opera/Safari.
         xhr.open(method, url, true);
       } else if (typeof XDomainRequest !== "undefined"){
-        
+
         // XDomainRequest for IE.
         xhr = new XDomainRequest();
         xhr.open(method, url, true);
       }else{
           reject("CORS is Not Supported By This Browser")
       }
-      
+
 
       if(xhr.setRequestHeader){
         xhr.setRequestHeader("Content-type", "application/json")

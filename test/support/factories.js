@@ -37,7 +37,6 @@ class Data {
     return this;
   }
 
-  
   results(){
     this.personality_types = Data.PersonalityTypes();
     this.personality_blend = Data.PersonalityBlend(

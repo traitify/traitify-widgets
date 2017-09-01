@@ -7,6 +7,6 @@ function Init(){
   Traitify.ui.client = Traitify;
   Traitify.__version__ = __VERSION__;
   Traitify.Init = Init;
-  return Traitify; 
+  return Traitify;
 }
 export default Init();

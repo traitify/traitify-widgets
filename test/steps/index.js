@@ -1,11 +1,11 @@
 import global from "./global";
 import results from "./results";
-import slidedeck from "./slidedeck";
+import slideDeck from "./slide-deck";
 
-function Init(){
-  global.apply(this)
-  results.apply(this)
-  slidedeck.apply(this)
+function Init(client){
+  global(client);
+  results(client);
+  slideDeck(client);
 }
 
 export default Init;

@@ -8,7 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "prebuild": "mkdirp build",
     "test": "npm run -s lint && npm run -s test:karma",
-    "test:karma": "karma start test/karma.conf.js --single-run",
+    "test:karma": "karma start test/karma.conf.js",
     "test:karma:live": "karma start test/karma.chrome.conf.js",
     "test:karma:browserstack": "karma start test/karma.browserstack.conf.js",
     "lint": "eslint {src,test}"

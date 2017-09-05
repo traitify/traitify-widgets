@@ -24,20 +24,14 @@ module.exports = function(config) {
     browsers: ["Chrome"],
 
     files: [
-      "test/support/prerun.js",
       "test/browser/**/*.js"
     ],
 
     preprocessors: {
-      "test/browser/**/*.js": ["webpack"],
-      "test/steps/**/*.js": ["webpack"],
-      "test/support/**/*.js": ["webpack"],
-      "test/tests/**/*.js": ["webpack"],
-      "src/lib/*.js": ["webpack"],
+      "test/**/*.js": ["webpack", "coverage"],
       "**/*.js": ["sourcemap"]
     },
 
-    webpack: webpack,
-    webpackMiddleware: { noInfo: true }
+    webpack: webpack
   });
 };

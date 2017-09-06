@@ -1,21 +1,21 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 
 import Results from "./results";
 import SlideDeck from "./slide-deck";
 
-export default class Default extends Component {
-  shouldLoadSlideDeck () {
-    return (this.props.assessment.slides || []).length != 0;
+export default class Default extends Component{
+  shouldLoadSlideDeck(){
+    return (this.props.assessment.slides || []).length !== 0;
   }
-  shouldLoadResults () {
-    return (this.props.assessment.personality_types || []).length != 0;
+  shouldLoadResults(){
+    return (this.props.assessment.personality_types || []).length !== 0;
   }
-  render() {
+  render(){
     let widget = <div />;
-    if (this.shouldLoadSlideDeck()){
+    if(this.shouldLoadSlideDeck()){
       widget = <SlideDeck {...this.props} />;
     }
-    if (this.shouldLoadResults()){
+    if(this.shouldLoadResults()){
       widget = <Results {...this.props} />;
     }
     return widget;

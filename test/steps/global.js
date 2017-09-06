@@ -3,7 +3,7 @@ import simulateEvent from "simulate-event";
 function Init(client){
   client.step("Setup Scratch", function(){
     this.scratch = document.createElement("div");
-    if (this.constructor.display){
+    if(this.constructor.display){
       document.body.appendChild(this.scratch);
     }
   });
@@ -13,15 +13,15 @@ function Init(client){
   });
 
   client.step("Click", function(target){
-    this.logs[this.logs.length - 1] += ` ${target}`
+    this.logs[this.logs.length - 1] += ` ${target}`;
     let item = this.scratch.querySelector(target);
     simulateEvent.simulate(item, "click");
   });
 
   client.step("Listen for", function(target){
     let s = this;
-    this.logs[this.logs.length - 1] += ` ${target}`
-    this.widget.on(target, function(){
+    this.logs[this.logs.length - 1] += ` ${target}`;
+    this.widget.on(target, ()=>{
       s[target] = true;
     });
   });

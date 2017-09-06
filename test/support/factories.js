@@ -1,4 +1,3 @@
-import shuffle from "shuffle-array";
 import i18n from "../../src/lib/i18n";
 
 let captions = [
@@ -8,10 +7,10 @@ let captions = [
 ];
 
 function uuidV1(){
-  return `034234-234234-234234-${Date.now()}`
+  return `034234-234234-234234-${Date.now()}`;
 }
 
-class Data {
+class Data{
   constructor(){
     this.personality_traits = [];
     this.personality_types = [];
@@ -61,14 +60,14 @@ class Data {
   }
   static PersonalityTraits(){
     let traits = [];
-    for (let i=10; i!=0; i--){
+    for(let i=10; i!==0; i--){
       traits.push({personality_trait: Data.PersonalityTrait(), score: i * 10});
     }
     return traits;
   }
   static PersonalityType(){
     let id = uuidV1();
-    let words = `abcdefg ${Date.now()}`
+    let words = `abcdefg ${Date.now()}`;
 
     return {
       id,
@@ -94,7 +93,7 @@ class Data {
 
   static PersonalityTypes(){
     let types = [];
-    for (let i=10; i!=0; i--){
+    for(let i=10; i!==0; i--){
       types.push({personality_type: Data.PersonalityType(), score: i * 10});
     }
     return types;
@@ -132,7 +131,7 @@ class Data {
   }
   static Slides(){
     let slides = [];
-    for (let i=40; i != 0; i--){
+    for(let i=40; i !== 0; i--){
       slides.push(Data.Slide());
     }
     return slides;
@@ -142,7 +141,7 @@ class Data {
     return new Data();
   }
 }
-class Props {
+class Props{
   static i18n(){
     return new i18n;
   }

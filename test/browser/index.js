@@ -1,3 +1,4 @@
+/*global StepTest*/
 import "polyfills";
 import Traitify from "traitify";
 import Setup from "../support/setup";

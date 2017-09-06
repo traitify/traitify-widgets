@@ -1,22 +1,22 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import style from "./style";
 
-export default class PersonalityDetails extends Component {
+export default class PersonalityDetails extends Component{
   componentDidMount(){
     this.props.triggerCallback("PersonalityDetails", "initialized", this);
   }
-  render() {
-    if (!this.props.resultsReady()) return <div />;
+  render(){
+    if(!this.props.resultsReady()) return <div />;
 
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
     let details = personality.details;
 
-    if (!details) return <div />;
+    if(!details) return <div />;
 
-    let complement = details.find(d => d.title == "Complement");
+    let complement = details.find(d=>d.title === "Complement");
     complement = complement && complement.body;
-    let conflict = details.find(d => d.title == "Conflict");
+    let conflict = details.find(d=>d.title === "Conflict");
     conflict = conflict && conflict.body;
     let environments = personality.environments || [];
     return (
@@ -37,7 +37,7 @@ export default class PersonalityDetails extends Component {
           <div class={style.environment}>
             <h4>Best Work Environment</h4>
             <ul>
-              {environments.map(environment => {
+              {environments.map(environment=>{
                 return <li>{environment.name}</li>;
               })}
             </ul>

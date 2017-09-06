@@ -1,7 +1,7 @@
 function Init(client){
   client.step("Render and Wait for Results to Initialize", function(){
     let s = this.defer();
-    this.widget.on("results.initialized", function(){
+    this.widget.on("results.initialized", ()=>{
       s.resolve();
     }).render();
   });

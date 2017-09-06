@@ -1,14 +1,14 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import style from "./style";
 
 import PersonalityBadge from "../personality-badge";
 
-export default class PersonalityType extends Component {
+export default class PersonalityType extends Component{
   componentDidMount(){
     this.props.triggerCallback("PersonalityType", "initialized", this);
   }
-  render() {
-    if (!this.props.resultsReady()) return <div />;
+  render(){
+    if(!this.props.resultsReady()) return <div />;
 
     let type = this.props.assessment.personality_types[0].personality_type;
 

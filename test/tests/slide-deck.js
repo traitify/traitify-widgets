@@ -8,7 +8,7 @@ function Init(client){
     .step("Set scratch as Target")
     .step("Render and Wait for SlideDeck to Initialize")
     .expect("SlideDeck should be Ready", function(){
-      this.ok(this.scratch.innerHTML.indexOf("Not Me") != -1);
+      this.ok(this.scratch.innerHTML.indexOf("Not Me") !== -1);
     });
 
   client.test("Click Me Event")
@@ -19,7 +19,7 @@ function Init(client){
     .step("Listen for", "slidedeck.me")
     .step("Click", ".traitify--slide-deck--me")
     .expect("Slide Deck to have Clicked Me", function(){
-      this.ok(this["slidedeck.me"] == true);
+      this.ok(this["slidedeck.me"] === true);
     });
 
   client.test("Click Not Me Event")
@@ -30,7 +30,7 @@ function Init(client){
     .step("Listen for", "slidedeck.notMe")
     .step("Click", ".traitify--slide-deck--notMe")
     .expect("Slide Deck to have Clicked Not Me", function(){
-      this.ok(this["slidedeck.notMe"] == true);
+      this.ok(this["slidedeck.notMe"] === true);
     });
 
   client.test("Answer Slide Event")
@@ -41,7 +41,7 @@ function Init(client){
     .step("Listen for", "slidedeck.AnswerSlide")
     .step("Click", ".traitify--slide-deck--notMe")
     .expect("Slide Deck to have Clicked Not Me", function(){
-      this.ok(this["slidedeck.AnswerSlide"] == true);
+      this.ok(this["slidedeck.AnswerSlide"] === true);
     });
 }
 

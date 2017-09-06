@@ -1,7 +1,7 @@
 function Init(client){
   client.step("Render and Wait for SlideDeck to Initialize", function(){
     let s = this.defer();
-    this.widget.on("slidedeck.initialized", function(){
+    this.widget.on("slidedeck.initialized", ()=>{
       s.resolve();
     }).render();
   });

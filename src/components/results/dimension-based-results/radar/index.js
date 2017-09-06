@@ -1,18 +1,18 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import style from "./style";
 import Chart from "canvas-radar";
 
-export default class Radar extends Component {
-  constructor(props) {
+export default class Radar extends Component{
+  constructor(props){
     super(props);
     this.createChart = this.createChart.bind(this);
     this.updateChart = this.updateChart.bind(this);
     this.destroyChart = this.destroyChart.bind(this);
   }
-  componentWillUnmount() {
+  componentWillUnmount(){
     window.removeEventListener("resize", this.updateChart);
   }
-  componentDidMount() {
+  componentDidMount(){
     let com = this;
     window.addEventListener("resize", this.updateChart);
 
@@ -22,7 +22,7 @@ export default class Radar extends Component {
       image.src = pt.personality_type.badge.image_small;
       image.onload = function(){
         count = count + 1;
-        if (count == com.types().length){
+        if(count === com.types().length){
           com.updateChart();
         }
       };
@@ -30,13 +30,13 @@ export default class Radar extends Component {
 
     this.props.triggerCallback("Radar", "initialized", this);
   }
-  componentDidUpdate() {
+  componentDidUpdate(){
     this.updateChart();
   }
-  types (){
+  types(){
     return this.props.assessment.personality_types;
   }
-  createChart() {
+  createChart(){
     let data = {
       labels: [],
       labelImages: [],
@@ -56,43 +56,26 @@ export default class Radar extends Component {
       data.datasets[0].data.push(type.score);
     });
 
-    let max = this.props.assessment.personality_types[0].score > 10 ? 100 : 10;
-    let options = {
-      legend: { display: false },
-      responsive: false,
-      scale: {
-        ticks: {
-          fontSize: 10,
-          min: 0,
-          max,
-          showLabelBackdrop: false,
-          stepSize: max / 2
-        },
-        pointLabels: { fontSize: 16 }
-      },
-      tooltips: { enabled: false }
-    };
-
-    var ctx = this.canvas.getContext("2d");
+    let ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, data);
     this.chart.resize();
   }
-  updateChart() {
-    if (!this.chart) return this.createChart();
+  updateChart(){
+    if(!this.chart) return this.createChart();
     this.chart.resize();
   }
-  destroyChart() {
-    if (!this.chart) return;
+  destroyChart(){
+    if(!this.chart) return;
     this.chart.destroy();
     delete this.chart;
   }
-  render() {
-    if (!this.props.resultsReady()) return <div />;
+  render(){
+    if(!this.props.resultsReady()) return <div />;
 
     return (
       <div class={style.radar}>
         <div class={style.radarContainer}>
-          <canvas ref={(canvas) => { this.canvas = canvas; }} width="820" height="700" />
+          <canvas ref={(canvas)=>{ this.canvas = canvas; }} width="820" height="700" />
         </div>
       </div>
     );

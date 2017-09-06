@@ -1,31 +1,31 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import Color from "color-helpers";
 import style from "./style";
 
-export default class PersonalityTypeSlide extends Component {
+export default class PersonalityTypeSlide extends Component{
   componentDidMount(){
     this.props.triggerCallback("PersonalityTypeSlide", "initialized", this);
   }
-  position() {
-    if (!this.props.activeType) return "none";
+  position(){
+    if(!this.props.activeType) return "none";
 
     let id = this.props.type.personality_type.id;
     let activeID = this.props.activeType.personality_type.id;
-    if (id == activeID) return "middle";
+    if(id === activeID) return "middle";
 
     return "none";
   }
-  render() {
+  render(){
     let position = this.position();
-    if (position == "none") return <div />;
+    if(position === "none") return <div />;
 
     let type = this.props.type.personality_type;
     let color = `#${type.badge.color_1}`;
     let name, description;
-    if (type.description[0] == "'") {
+    if(type.description[0] === "'"){
       name = type.description.split("'")[1];
       description = type.description.split("'").splice(2).join("'");
-    } else {
+    }else{
       name = type.name;
       description = `- ${type.description}`;
     }

@@ -1,40 +1,40 @@
-import { h, render } from "preact";
+import {h, render} from "preact";
 import Main from "../components/main";
-import Promise from 'promise-polyfill';
-import I18n from './i18n';
+import Promise from "promise-polyfill";
+import I18n from "./i18n";
 import Error from "../error-handler";
 
-export default class TraitifyUI {
-  constructor (options) {
+export default class TraitifyUI{
+  constructor(options){
     this.options = options || {};
     this.options.targets = {};
     this.options.callbacks = this.options.callbacks || {};
   }
-  static component(options) {
+  static component(options){
     if(!this.client.testMode){
       let com = this;
       this.client.testMode = true;
       setTimeout(()=>{
         com.client.Test();
-      }, 0)
+      }, 0);
     }
     return new this(options);
   }
-  static on(key, callback) {
+  static on(key, callback){
     let widgets = this.component();
     widgets.on(key, callback);
     return widgets;
   }
-  static render(options) {
+  static render(options){
     return this.component(options).render();
   }
-  on(key, callback) {
+  on(key, callback){
     key = key.toLowerCase();
     this.options.callbacks[key] = this.options.callbacks[key] || [];
     this.options.callbacks[key].push(callback);
     return this;
   }
-  refresh() {
+  refresh(){
     this.render();
     return this;
   }
@@ -43,7 +43,7 @@ export default class TraitifyUI {
 
     if(l[locale.toLowerCase()]){
       this.options.locale = locale.toLowerCase();
-    } else {
+    }else{
       this.options.locale = "en-us";
     }
 
@@ -54,31 +54,31 @@ export default class TraitifyUI {
     options.locale = value;
     return this.component(options);
   }
-  render(componentName) {
+  render(componentName){
     let lib = this;
     lib.options.client = this.constructor.client;
     return new Promise((resolve, reject)=>{
-      try {
-        if (lib.options.target){
+      try{
+        if(lib.options.target){
           lib.options.targets[componentName || "Default"] = lib.options.target;
         }
 
-        if (Object.keys(lib.options.targets).length == 0){
+        if(Object.keys(lib.options.targets).length === 0){
           return reject("Your target element could either not be selected or was not provided");
         }
 
-        lib.options.renderPromise = { resolve, reject };
+        lib.options.renderPromise = {resolve, reject};
 
-        Object.keys(lib.options.targets).forEach(function(name){
-          if (typeof lib.options.targets[name] == "string"){
+        Object.keys(lib.options.targets).forEach(name=>{
+          if(typeof lib.options.targets[name] == "string"){
             lib.options.targets[name] = document.querySelector(lib.options.targets[name]);
           }
 
           let target = lib.options.targets[name];
-          while (target.firstChild) target.removeChild(target.firstChild);
+          while(target.firstChild) target.removeChild(target.firstChild);
           render(<Main componentName={name} {...lib.options} />, target);
         });
-      } catch (error){
+      }catch(error){
         let err = new Error();
         err.type = error.name;
         err.message = error.message;

@@ -1,20 +1,20 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import Color from "color-helpers";
 import style from "./style";
 
-export default class PersonalityTypeBar extends Component {
-  constructor() {
+export default class PersonalityTypeBar extends Component{
+  constructor(){
     super();
     this.setActive = this.setActive.bind(this);
   }
   componentDidMount(){
     this.props.triggerCallback("PersonalityTypeBar", "initialized", this);
   }
-  setActive() {
+  setActive(){
     this.props.triggerCallback("PersonalityTypeBar", "changeType", this, this.props.type);
-    this.props.setState({ activeType: this.props.type });
+    this.props.setState({activeType: this.props.type});
   }
-  render() {
+  render(){
     let type = this.props.type.personality_type;
     let title = type.name;
     let icon = type.badge.image_medium;
@@ -24,8 +24,8 @@ export default class PersonalityTypeBar extends Component {
 
     let active = false;
     let activeType = this.props.activeType;
-    if (activeType){
-      active = type.id == activeType.personality_type.id;
+    if(activeType){
+      active = type.id === activeType.personality_type.id;
     }
 
     return (

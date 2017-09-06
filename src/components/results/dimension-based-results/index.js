@@ -1,12 +1,12 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import Dimensions from "./dimensions";
 import Radar from "./radar";
 
-export default class DimensionBasedResults extends Component {
+export default class DimensionBasedResults extends Component{
   componentDidMount(){
     this.props.triggerCallback("DimensionBasedResults", "initialized", this);
   }
-  render() {
+  render(){
     return (
       <section>
         <Radar {...this.props} />

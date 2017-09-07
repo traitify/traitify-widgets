@@ -1,6 +1,6 @@
 import {h, Component} from "preact";
 import style from "./style";
-import Chart from "canvas-radar";
+import Chart from "canvas-radar-chart";
 
 export default class Radar extends Component{
   constructor(props){
@@ -22,37 +22,22 @@ export default class Radar extends Component{
   createChart(){
     if(!this.props.resultsReady()) return;
 
-    let data = {
+    let options = {
       labels: [],
-      labelImages: [],
-      datasets: [{
-        data: [],
-        fill: false,
-        borderColor: "#42b0db",
-        pointBackgroundColor: "#42b0db",
-        pointBorderColor: "#42b0db"
-      }]
+      data: [{values: []}]
     };
 
     let types = this.props.assessment.personality_types;
-    let loading = types.length;
     types.forEach((type)=>{
-      data.labels.push({
+      options.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
       });
-      data.datasets[0].data.push(type.score);
-
-      let image = new Image();
-      image.src = type.personality_type.badge.image_small;
-      image.onload = ()=>{
-        loading = loading - 1;
-        if(loading === 0) this.updateChart();
-      };
+      options.data[0].values.push(type.score);
     });
 
     let ctx = this.canvas.getContext("2d");
-    this.chart = new Chart(ctx, data);
+    this.chart = new Chart(ctx, options);
     this.chart.resize();
     this.props.triggerCallback("Radar", "initialized", this);
   }

@@ -13,30 +13,15 @@ export default class Radar extends Component{
     window.removeEventListener("resize", this.updateChart);
   }
   componentDidMount(){
-    let com = this;
     window.addEventListener("resize", this.updateChart);
-
-    let count = 0;
-    this.types().forEach((pt)=>{
-      let image = new Image();
-      image.src = pt.personality_type.badge.image_small;
-      image.onload = function(){
-        count = count + 1;
-        if(count === com.types().length){
-          com.updateChart();
-        }
-      };
-    });
-
-    this.props.triggerCallback("Radar", "initialized", this);
+    this.updateChart();
   }
   componentDidUpdate(){
     this.updateChart();
   }
-  types(){
-    return this.props.assessment.personality_types;
-  }
   createChart(){
+    if(!this.props.resultsReady()) return;
+
     let data = {
       labels: [],
       labelImages: [],
@@ -48,17 +33,28 @@ export default class Radar extends Component{
         pointBorderColor: "#42b0db"
       }]
     };
-    this.types().forEach((type)=>{
+
+    let types = this.props.assessment.personality_types;
+    let loading = types.length;
+    types.forEach((type)=>{
       data.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
       });
       data.datasets[0].data.push(type.score);
+
+      let image = new Image();
+      image.src = type.personality_type.badge.image_small;
+      image.onload = ()=>{
+        loading = loading - 1;
+        if(loading === 0) this.updateChart();
+      };
     });
 
     let ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, data);
     this.chart.resize();
+    this.props.triggerCallback("Radar", "initialized", this);
   }
   updateChart(){
     if(!this.chart) return this.createChart();

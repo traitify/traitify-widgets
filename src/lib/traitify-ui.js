@@ -1,8 +1,9 @@
 import {h, render} from "preact";
+import Error from "../error-handler";
+import I18n from "./i18n";
 import Main from "../components/main";
 import Promise from "promise-polyfill";
-import I18n from "./i18n";
-import Error from "../error-handler";
+import TraitifyState from "./traitify-state";
 
 export default class TraitifyUI{
   constructor(options){
@@ -12,10 +13,9 @@ export default class TraitifyUI{
   }
   static component(options){
     if(!this.client.testMode){
-      let com = this;
       this.client.testMode = true;
       setTimeout(()=>{
-        com.client.Test();
+        this.client.Test();
       }, 0);
     }
     return new this(options);
@@ -55,28 +55,29 @@ export default class TraitifyUI{
     return this.component(options);
   }
   render(componentName){
-    let lib = this;
-    lib.options.client = this.constructor.client;
+    let shared = new TraitifyState(this.constructor.client);
+    shared.setup(this.options);
+
     return new Promise((resolve, reject)=>{
       try{
-        if(lib.options.target){
-          lib.options.targets[componentName || "Default"] = lib.options.target;
+        if(this.options.target){
+          this.options.targets[componentName || "Default"] = this.options.target;
         }
 
-        if(Object.keys(lib.options.targets).length === 0){
+        if(Object.keys(this.options.targets).length === 0){
           return reject("Your target element could either not be selected or was not provided");
         }
 
-        lib.options.renderPromise = {resolve, reject};
+        let promise = {resolve, reject};
 
-        Object.keys(lib.options.targets).forEach(name=>{
-          if(typeof lib.options.targets[name] == "string"){
-            lib.options.targets[name] = document.querySelector(lib.options.targets[name]);
+        Object.keys(this.options.targets).forEach(name=>{
+          if(typeof this.options.targets[name] == "string"){
+            this.options.targets[name] = document.querySelector(this.options.targets[name]);
           }
 
-          let target = lib.options.targets[name];
+          let target = this.options.targets[name];
           while(target.firstChild) target.removeChild(target.firstChild);
-          render(<Main componentName={name} {...lib.options} />, target);
+          render(<Main componentName={name} shared={shared} promise={promise} />, target);
         });
       }catch(error){
         let err = new Error();

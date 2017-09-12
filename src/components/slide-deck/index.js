@@ -342,6 +342,7 @@ export default class SlideDeck extends Component{
   }
   render(){
     if(this.slides().length === 0) return <span />;
+    if(this.isComplete()) return <span />;
 
     let coverVisible = [style.cover];
     if(!this.isReady()){

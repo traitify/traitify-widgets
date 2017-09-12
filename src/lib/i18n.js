@@ -39,7 +39,7 @@ export default class I18n{
     return this;
   }
   setLocale(locale){
-    this.locale = locale;
+    this.locale = locale.toLowerCase();
   }
   translate(key){
     return this[this.locale][key];

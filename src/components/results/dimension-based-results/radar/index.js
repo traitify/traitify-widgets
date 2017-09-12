@@ -1,6 +1,6 @@
 import {h, Component} from "preact";
 import style from "./style";
-import Chart from "canvas-radar";
+import Chart from "canvas-radar-chart";
 
 export default class Radar extends Component{
   constructor(props){
@@ -13,52 +13,33 @@ export default class Radar extends Component{
     window.removeEventListener("resize", this.updateChart);
   }
   componentDidMount(){
-    let com = this;
     window.addEventListener("resize", this.updateChart);
-
-    let count = 0;
-    this.types().forEach((pt)=>{
-      let image = new Image();
-      image.src = pt.personality_type.badge.image_small;
-      image.onload = function(){
-        count = count + 1;
-        if(count === com.types().length){
-          com.updateChart();
-        }
-      };
-    });
-
-    this.props.triggerCallback("Radar", "initialized", this);
+    this.updateChart();
   }
   componentDidUpdate(){
     this.updateChart();
   }
-  types(){
-    return this.props.assessment.personality_types;
-  }
   createChart(){
-    let data = {
+    if(!this.props.resultsReady()) return;
+
+    let options = {
       labels: [],
-      labelImages: [],
-      datasets: [{
-        data: [],
-        fill: false,
-        borderColor: "#42b0db",
-        pointBackgroundColor: "#42b0db",
-        pointBorderColor: "#42b0db"
-      }]
+      data: [{values: []}]
     };
-    this.types().forEach((type)=>{
-      data.labels.push({
+
+    let types = this.props.assessment.personality_types;
+    types.forEach((type)=>{
+      options.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
       });
-      data.datasets[0].data.push(type.score);
+      options.data[0].values.push(type.score);
     });
 
     let ctx = this.canvas.getContext("2d");
-    this.chart = new Chart(ctx, data);
+    this.chart = new Chart(ctx, options);
     this.chart.resize();
+    this.props.triggerCallback("Radar", "initialized", this);
   }
   updateChart(){
     if(!this.chart) return this.createChart();

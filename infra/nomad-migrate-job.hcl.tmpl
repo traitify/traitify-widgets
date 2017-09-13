@@ -1,0 +1,60 @@
+# run our rails app
+job "traitify-widgets-{{ env "CHEF_ENV" }}-migrate" {
+  datacenters = ["awse"]
+  type = "batch"
+  # for some reason, we are not able to use this further down in the job
+  #meta {
+  #    app_name = "traitify-widgets"
+  #}
+
+  #constraint {
+  #  attribute = "${node.class}"
+  #  value = "orgs-stag"
+  #}
+  constraint {
+    attribute = "${meta.role}"
+    value     = "fileserve"
+  }
+  constraint {
+    attribute = "${meta.env}"
+    value     = "{{ env "CHEF_ENV" }}"
+  }
+  
+  # set our update policy
+  update {
+    max_parallel     = 1
+    health_check     = "task_states"
+    min_healthy_time = "5s"
+    healthy_deadline = "15m"
+    auto_revert      = false
+    #canary           = 1
+    #stagger          = "30s"
+  }
+
+  group "migrate" {
+    # set our restart policy
+    restart {
+      interval = "1m"
+      attempts = 2
+      delay    = "15s"
+      mode     = "fail"
+    }
+    count = 1
+
+    task "traitify-widgets-migrate" {
+      # our image setup
+      driver = "exec"
+      config {
+        command = "true"
+      } 
+      resources {
+        cpu    = 20
+        memory = 10
+      }
+    }
+  }
+}
+
+
+
+

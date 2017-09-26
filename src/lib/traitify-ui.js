@@ -7,18 +7,19 @@ import TraitifyState from "./traitify-state";
 
 export default class TraitifyUI{
   constructor(options){
-    this.options = options || {};
-    this.options.targets = {};
-    this.options.callbacks = this.options.callbacks || {};
+    this.options = Object.assign({}, this.constructor.options, options);
+    if(!this.options.testsDisabled){ this.constructor.startTests(); }
   }
   static component(options){
-    if(!this.client.testMode){
-      this.client.testMode = true;
-      setTimeout(()=>{
-        this.client.Test();
-      }, 0);
-    }
     return new this(options);
+  }
+  static disableTests(){
+    this.options.testsDisabled = true;
+  }
+  static locale(value){
+    let options = {};
+    options.locale = value;
+    return this.component(options);
   }
   static on(key, callback){
     let widgets = this.component();
@@ -27,6 +28,22 @@ export default class TraitifyUI{
   }
   static render(options){
     return this.component(options).render();
+  }
+  static startTests(){
+    if(this.client.testMode){ return; }
+    this.client.testMode = true;
+    setTimeout(this.client.Test, 0);
+  }
+  locale(locale = ""){
+    let i18n = new I18n();
+
+    if(i18n[locale.toLowerCase()]){
+      this.options.locale = locale.toLowerCase();
+    }else{
+      this.options.locale = "en-us";
+    }
+
+    return this;
   }
   on(key, callback){
     key = key.toLowerCase();
@@ -37,22 +54,6 @@ export default class TraitifyUI{
   refresh(){
     this.render();
     return this;
-  }
-  locale(locale = ""){
-    let l = new I18n();
-
-    if(l[locale.toLowerCase()]){
-      this.options.locale = locale.toLowerCase();
-    }else{
-      this.options.locale = "en-us";
-    }
-
-    return this;
-  }
-  static locale(value){
-    let options = {};
-    options.locale = value;
-    return this.component(options);
   }
   render(componentName){
     let shared = new TraitifyState(this.constructor.client);
@@ -102,3 +103,8 @@ defaultOptions.forEach((option)=>{
     return this;
   };
 });
+
+TraitifyUI.options = {
+  callbacks: {},
+  targets: {}
+};

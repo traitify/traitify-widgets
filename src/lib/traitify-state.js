@@ -71,5 +71,11 @@ export default class TraitifyState{
         callback.apply(this, [context, options]);
       });
     }
+
+    if(this.state.callbacks.all){
+      this.state.callbacks.all.forEach((callback)=>{
+        callback.apply(this, [klass, action, context, options]);
+      });
+    }
   }
 }

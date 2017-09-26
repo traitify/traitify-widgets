@@ -18,11 +18,18 @@ function Init(client){
     simulateEvent.simulate(item, "click");
   });
 
+  client.step("Listen for all", function(){
+    let step = this;
+    this.widget.on("all", (klass, action)=>{
+      step[`${klass}.${action}`] = true;
+    });
+  });
+
   client.step("Listen for", function(target){
-    let s = this;
+    let step = this;
     this.logs[this.logs.length - 1] += ` ${target}`;
     this.widget.on(target, ()=>{
-      s[target] = true;
+      step[target] = true;
     });
   });
 }

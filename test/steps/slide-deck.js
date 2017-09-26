@@ -1,19 +1,21 @@
 function Init(client){
-  client.step("Render and Wait for SlideDeck to Initialize", function(){
-    let s = this.defer();
-    this.widget.on("slidedeck.initialized", ()=>{
-      s.resolve();
+  client.step("Render and Wait for SlideDeck to be Ready", function(){
+    let step = this.defer();
+    let resolved = false;
+    this.widget.on("SlideDeck.isReady", (state, ready)=>{
+      if(resolved || !ready){ return; }
+      resolved = true;
+      step.resolve();
     }).render();
   });
 
-  client.step("Initialize SlideDeck", [
+  client.step("Setup SlideDeck", [
     "Setup Scratch",
-    "Load Traitify UI with SlideDeck assessment id",
-    "Set scratch as Target",
-    "Render and Wait for SlideDeck to Initialize"
+    "Load Traitify UI with SlideDeck assessment ID",
+    "Set scratch as Target"
   ]);
 
-  client.step("Load Traitify UI with SlideDeck assessment id", function(){
+  client.step("Load Traitify UI with SlideDeck assessment ID", function(){
     this.widget = this.constructor.Traitify.ui.assessmentId("slidedeck");
   });
 }

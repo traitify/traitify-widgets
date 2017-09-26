@@ -234,10 +234,9 @@ export default class SlideDeck extends Component{
       }else if(this.container.msRequestFullscreen){
         this.container.msRequestFullscreen();
       }
-      this.props.isFullScreen = !fullscreen;
-      this.props.setState(this.props);
-      this.triggerCallback("fullscreen", this, !fullscreen);
     }
+    this.props.setState({isFullScreen: !fullscreen});
+    this.triggerCallback("fullscreen", this, !fullscreen);
   }
   retry(e){
     e.preventDefault();

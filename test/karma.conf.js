@@ -24,6 +24,7 @@ module.exports = function(config) {
     browsers: ["PhantomJS"],
 
     files: [
+      "node_modules/babel-polyfill/dist/polyfill.js",
       "test/browser/**/*.js"
     ],
 

@@ -1,5 +1,4 @@
 /*global Traitify*/
-import Client from "client";
 import Airbrake from "airbrake";
 
 class ErrorHandler extends Airbrake{
@@ -8,10 +7,6 @@ class ErrorHandler extends Airbrake{
     this.host = "https://airbrake.io";
     this.projectId = "141848";
     this.projectKey = "c48de83d0f02ea6d598b491878c0c57e";
-    return this;
-  }
-  client(){
-    return new Client();
   }
   browser(){
     let nAgt = navigator.userAgent;
@@ -123,5 +118,4 @@ class ErrorHandler extends Airbrake{
     }
   }
 }
-window.ErrorHandler = ErrorHandler;
 export default ErrorHandler;

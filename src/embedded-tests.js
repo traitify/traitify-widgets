@@ -19,34 +19,33 @@ class EmbeddedTest extends StepTest{
     this.on("finished", function(){
       clearTimeout(this.timeout);
     });
-    return this;
+  }
+  static load(){
+    if(this.loaded){ return; }
+    this.loaded = true;
+
+    Setup(this);
+    Results(this);
+    SlideDeck(this);
   }
 }
 
-EmbeddedTest.prototype.logs = [];
-EmbeddedTest.prototype.log = function(){};
 EmbeddedTest.log = function(){};
+EmbeddedTest.simpleLog = function(){}; // console.log;
 
-EmbeddedTest.on("finished", function(){
-  clearTimeout(this.timeout);
+EmbeddedTest.on("test.assertion.passed", ({name, message})=>{
+  EmbeddedTest.simpleLog(name, message);
 });
 
-EmbeddedTest.on("error", error=>{
+EmbeddedTest.on("test.assertion.failed", ({name, message})=>{
+  EmbeddedTest.simpleLog(name, message);
+});
+
+EmbeddedTest.on("error", (error)=>{
   let err = new ErrorHandler();
   err.type = `Test ${error.name}`;
   err.message = error.message;
   err.notify();
 });
-
-EmbeddedTest.load = function(){
-  if(!this.loaded){
-    this.loaded = true;
-
-    Setup(this);
-  }
-
-  Results(this);
-  SlideDeck(this);
-};
 
 export default EmbeddedTest;

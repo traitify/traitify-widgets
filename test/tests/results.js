@@ -1,5 +1,5 @@
-function Init(client){
-  client.test("Results Should Initialize")
+function Init(stepTest){
+  stepTest.test("Results Should Initialize")
     .tag("results")
     .step("Setup Scratch")
     .step("Load Traitify UI with Results assessment id")

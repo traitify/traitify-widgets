@@ -12,7 +12,7 @@
   margin: 0;
   background: $white;
   color: #333;
-  
+
   border-top: 1px solid $border;
   @include cols(12);
   @include mq(m) {

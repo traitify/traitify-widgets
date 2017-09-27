@@ -1,15 +1,15 @@
 import Mocks from "./mocks";
 import Steps from "../steps";
 
-function Setup(client){
-  let ui = client.Traitify.ui;
-  let oldIE = client.Traitify.oldIE;
+function Setup(stepTest){
+  let ui = stepTest.Traitify.ui;
+  let oldIE = stepTest.Traitify.oldIE;
   class UI extends ui{}
-  client.Traitify = {testMode: true, oldIE, ui: UI};
-  client.Traitify.ui.client = client.Traitify;
-  client.parallel = true;
-  Mocks(client.Traitify);
-  Steps(client);
+  stepTest.Traitify = {testMode: true, oldIE, ui: UI};
+  stepTest.Traitify.ui.client = stepTest.Traitify;
+  stepTest.parallel = true;
+  Mocks(stepTest.Traitify);
+  Steps(stepTest);
 }
 
 export default Setup;

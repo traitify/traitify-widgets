@@ -1,5 +1,5 @@
-function Init(client){
-  client.test("SlideDeck Should Initialize")
+function Init(stepTest){
+  stepTest.test("SlideDeck Should Initialize")
     .tag("SlideDeck")
     .tag("event")
     .tag("initialize")
@@ -10,7 +10,7 @@ function Init(client){
       this.ok(this["SlideDeck.initialized"] === true);
     });
 
-  client.test("Click Me Event")
+  stepTest.test("Click Me Event")
     .tag("SlideDeck")
     .tag("event")
     .tag("me")
@@ -22,7 +22,7 @@ function Init(client){
       this.ok(this["SlideDeck.me"] === true);
     });
 
-  client.test("Click Not Me Event")
+  stepTest.test("Click Not Me Event")
     .tag("SlideDeck")
     .tag("event")
     .tag("not me")
@@ -34,7 +34,7 @@ function Init(client){
       this.ok(this["SlideDeck.notMe"] === true);
     });
 
-  client.test("Update Slide Event")
+  stepTest.test("Update Slide Event")
     .tag("SlideDeck")
     .tag("event")
     .tag("update slide")

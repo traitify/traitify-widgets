@@ -34,7 +34,7 @@ export default class PersonalityDetails extends Component{
           </div>
         )}
         {environments[0] && (
-          <div class={style.environment}>
+          <div class={style.environments}>
             <h4>Best Work Environment</h4>
             <ul>
               {environments.map(environment=>{

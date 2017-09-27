@@ -2,12 +2,13 @@ import {h, render} from "preact";
 import Error from "../error-handler";
 import I18n from "./i18n";
 import Main from "../components/main";
-import Promise from "promise-polyfill";
 import TraitifyState from "./traitify-state";
 
 export default class TraitifyUI{
   constructor(options){
     this.options = Object.assign({}, this.constructor.options, options);
+    this.options.callbacks = Object.assign({}, this.options.callbacks);
+    this.options.targets = Object.assign({}, this.options.targets);
     if(!this.options.testsDisabled){ this.constructor.startTests(); }
   }
   static component(options){
@@ -32,7 +33,7 @@ export default class TraitifyUI{
   static startTests(){
     if(this.client.testMode){ return; }
     this.client.testMode = true;
-    setTimeout(this.client.Test, 0);
+    setTimeout(::this.client.Test, 0);
   }
   locale(locale = ""){
     let i18n = new I18n();
@@ -104,7 +105,4 @@ defaultOptions.forEach((option)=>{
   };
 });
 
-TraitifyUI.options = {
-  callbacks: {},
-  targets: {}
-};
+TraitifyUI.options = {};

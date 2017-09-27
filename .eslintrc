@@ -61,7 +61,6 @@
     "no-undef-init": "error",
     "no-shadow-restricted-names": "error",
     "handle-callback-err": "off",
-    "no-lonely-if": "error",
     "constructor-super": "error",
     "no-this-before-super": "error",
     "no-dupe-class-members": "error",
@@ -90,6 +89,7 @@
         "this": {"before": true, "after": true}
       }
     }],
+    "no-lonely-if": "off",
     "no-multiple-empty-lines": ["error", {"max": 1, "maxBOF": 0, "maxEOF": 0}],
     "no-unused-vars": ["error", {"args": "none"}],
     "object-curly-spacing": "off",

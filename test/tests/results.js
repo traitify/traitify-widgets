@@ -1,12 +1,12 @@
-function Init(client){
-  client.test("Results Should Initialize")
+function Init(stepTest){
+  stepTest.test("Results Should Initialize")
     .tag("results")
     .step("Setup Scratch")
     .step("Load Traitify UI with Results assessment id")
     .step("Set scratch as Target")
     .step("Render and Wait for Results to Initialize")
     .expect("Results should be Ready", function(){
-      this.ok(this.scratch.innerHTML.indexOf("traitify--personality-badge--image") != 0);
+      this.ok(this.scratch.innerHTML.indexOf("traitify--personality-badge--image") !== 0);
     });
 }
 

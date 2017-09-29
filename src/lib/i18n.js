@@ -1,5 +1,5 @@
-export default class I18n {
-  constructor() {
+export default class I18n{
+  constructor(){
     this.locale = "en-us";
     this["en-us"] = {
       potential_benefits: "Potential Benefits",
@@ -38,10 +38,10 @@ export default class I18n {
 
     return this;
   }
-  setLocale(locale) {
-    this.locale = locale;
+  setLocale(locale){
+    this.locale = locale.toLowerCase();
   }
-  translate(key) {
+  translate(key){
     return this[this.locale][key];
   }
   t(key){

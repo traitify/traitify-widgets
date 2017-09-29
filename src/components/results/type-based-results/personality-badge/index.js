@@ -1,9 +1,9 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import Color from "color-helpers";
 import style from "./style";
 
-export default class PersonalityBadge extends Component {
-  render() {
+export default class PersonalityBadge extends Component{
+  render(){
     let color = `#${this.props.type.badge.color_1}`;
     return (
       <div class={style.image} style={`border: 3px solid #${color}; background: ${Color.rgba(color, 8.5)};`}>

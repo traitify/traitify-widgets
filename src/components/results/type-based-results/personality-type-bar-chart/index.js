@@ -1,35 +1,35 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import style from "./style";
 
 import PersonalityTypeBar from "../personality-type-bar";
 
-export default class PersonalityTypeBarChart extends Component {
+export default class PersonalityTypeBarChart extends Component{
   componentDidMount(){
     this.props.triggerCallback("PersonalityTypeBarChart", "initialized", this);
   }
-  componentWillMount() {
+  componentWillMount(){
     this.activate();
   }
-  componentWillUpdate() {
+  componentWillUpdate(){
     this.activate();
   }
-  activate() {
-    if (this.props.resultsReady()){
+  activate(){
+    if(this.props.resultsReady()){
       let type = this.props.assessment.personality_types[0];
-      if (!this.props.activeType && type){
-        this.props.setState({ activeType: type });
+      if(!this.props.activeType && type){
+        this.props.setState({activeType: type});
       }
     }
   }
-  maxScore() {
+  maxScore(){
     return this.props.assessment.personality_types[0].score;
   }
-  barHeight(type) {
+  barHeight(type){
     let score = (100 - (this.maxScore() - type.score)) - 5;
     return score > 0 ? score : 0;
   }
-  render() {
-    if (!this.props.resultsReady()) return <div />;
+  render(){
+    if(!this.props.resultsReady()) return <div />;
 
     let props = this.props;
 

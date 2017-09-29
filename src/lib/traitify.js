@@ -1,4 +1,4 @@
-/*global __VERSION__ */
+/*global __VERSION__*/
 import TraitifyLib from "traitify-client";
 import ui from "traitify-ui";
 function Init(){

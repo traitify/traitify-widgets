@@ -80,7 +80,7 @@ module.exports = {
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-        loader: ENV==="production" ? "file?name=[path][name]_[hash:base64:5].[ext]" : "url"
+        loader: ENV==="production" ? "file-loader" : "url-loader"
       }
     ]
   },
@@ -130,8 +130,9 @@ module.exports = {
     setImmediate: false
   },
 
-  devtool: ENV==="production" ? "source-map" : "cheap-module-eval-source-map",
+  devtool: ENV==="production" ? "source-map" : "cheap-module-eval-source-map", // Remove for IE 10 Testing
   devServer: {
+    // inline: false, // Add for IE 10 Testing
     publicPath: "/build/"
   }
 };

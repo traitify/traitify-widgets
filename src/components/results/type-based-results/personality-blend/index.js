@@ -1,17 +1,17 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import style from "./style";
 
 import PersonalityBadge from "../personality-badge";
 
-export default class PersonalityBlend extends Component {
+export default class PersonalityBlend extends Component{
   componentDidMount(){
     this.props.triggerCallback("PersonalityBlend", "initialized", this);
   }
-  render() {
-    if (!this.props.resultsReady()) return <div />;
+  render(){
+    if(!this.props.resultsReady()) return <div />;
 
     let blend = this.props.assessment.personality_blend;
-    if (!blend) return <div />;
+    if(!blend) return <div />;
 
     return (
       <div class={style.blend}>

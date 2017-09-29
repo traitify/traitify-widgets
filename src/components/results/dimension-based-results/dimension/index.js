@@ -1,14 +1,14 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import Color from "color-helpers";
 import style from "./style";
 
-export default class Dimension extends Component {
-  constructor(props) {
+export default class Dimension extends Component{
+  constructor(props){
     super(props);
-    this.state = {showContent: props.index == 0};
+    this.state = {showContent: props.index === 0};
     this.trigger = this.trigger.bind(this);
   }
-  trigger(e) {
+  trigger(e){
     e.preventDefault();
 
     this.props.triggerCallback("Dimension", "showContent", this, this.props.personalityType.personality_type);
@@ -17,18 +17,17 @@ export default class Dimension extends Component {
   componentDidMount(){
     this.props.triggerCallback("Dimension", "initialized", this);
   }
-  render() {
+  render(){
     let type = this.props.personalityType.personality_type;
     let benefits = [];
     let pitfalls = [];
     type.details.forEach((detail)=>{
-      if (detail.title == "Benefits") benefits.push(detail.body);
-      if (detail.title == "Pitfalls") pitfalls.push(detail.body);
+      if(detail.title === "Benefits") benefits.push(detail.body);
+      if(detail.title === "Pitfalls") pitfalls.push(detail.body);
     });
     let color = `#${type.badge.color_1}`;
-    let color2 = `#${type.badge.color_2}`;
-    let perspective = `${(this.props.perspective || 'firstPerson').replace("Person", "")}_person_description`;
-    let description = type.details.find(detail => detail.title == perspective);
+    let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
+    let description = type.details.find(detail=>detail.title === perspective);
     description = (description && description.body) || type.description;
     return (
       <li class={style.dimension} style={`border-top: 5px solid ${color};`}>

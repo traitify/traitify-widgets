@@ -2,10 +2,10 @@ import global from "./global";
 import results from "./results";
 import slideDeck from "./slide-deck";
 
-function Init(client){
-  global(client);
-  results(client);
-  slideDeck(client);
+function Init(stepTest){
+  global(stepTest);
+  results(stepTest);
+  slideDeck(stepTest);
 }
 
 export default Init;

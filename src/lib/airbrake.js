@@ -1,4 +1,4 @@
-    
+/* eslint-disable */
 class Airbrake {
 
     jsonifyNotice(notice, maxLength) {

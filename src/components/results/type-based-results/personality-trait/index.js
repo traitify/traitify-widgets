@@ -1,9 +1,9 @@
-import { h, Component } from "preact";
+import {h, Component} from "preact";
 import Color from "color-helpers";
 import style from "./style";
 
-export default class PersonalityTrait extends Component {
-  render() {
+export default class PersonalityTrait extends Component{
+  render(){
     let trait = this.props.trait.personality_trait;
     let score = Math.round(this.props.trait.score/2 + 50);
     let type = trait.personality_type;

@@ -1,7 +1,7 @@
 export Default from "./default";
 export Results from "./results";
 export SlideDeck from "./slide-deck";
-export Slide from "./slide-deck/_slide";
+export Slide from "./slide-deck/slide";
 
 export TypeBasedResults from "./results/type-based-results";
 export PersonalityBadge from "./results/type-based-results/personality-badge";

@@ -1,7 +1,9 @@
 @import "~style/helpers";
 
-.dimensions {
+.types {
   @extend %widgetContainer;
-  clear: both;
   list-style: none;
+  @include mq(l) {
+    @include cols(6);
+  }
 }

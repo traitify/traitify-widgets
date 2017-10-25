@@ -3,7 +3,6 @@
 .personality {
   @extend %widgetContainer;
   clear: both;
-  max-width: $breakPoint5;
   margin: 20px auto;
   .content {
     background: #005b82;

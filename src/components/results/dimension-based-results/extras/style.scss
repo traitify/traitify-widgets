@@ -2,8 +2,6 @@
 
 .extras {
   @extend %widgetContainer;
-  max-width: $breakPoint5;
-  margin: 0 auto;
 }
 .extra {
   @extend %cf;

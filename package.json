@@ -81,6 +81,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "babel-polyfill": "^6.26.0",
     "color": "^2.0.0",
     "faker": "^4.1.0",
     "fetch-ie8": "^1.4.3",

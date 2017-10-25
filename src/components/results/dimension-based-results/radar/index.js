@@ -24,7 +24,10 @@ export default class Radar extends Component{
 
     let options = {
       labels: [],
-      data: [{values: []}]
+      data: [{
+        fill: true,
+        values: []
+      }]
     };
 
     let types = this.props.assessment.personality_types;

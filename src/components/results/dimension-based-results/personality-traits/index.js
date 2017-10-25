@@ -13,7 +13,12 @@ export default class PersonalityTraits extends Component{
     let traits = this.props.assessment.personality_traits;
     return (
       <div class={style.traits}>
-        {traits.map((trait)=>{
+        <h4 class={style.title}>Most Represented Traits</h4>
+        {traits.slice(0, 5).map((trait)=>{
+          return <PersonalityTrait trait={trait} />;
+        })}
+        <h4 class={style.title}>Least Represented Traits</h4>
+        {traits.slice(-5).map((trait)=>{
           return <PersonalityTrait trait={trait} />;
         })}
       </div>

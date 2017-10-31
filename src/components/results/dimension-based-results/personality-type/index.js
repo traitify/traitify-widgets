@@ -11,11 +11,11 @@ export default class Type extends Component{
   trigger(e){
     e.preventDefault();
 
-    this.props.triggerCallback("Type", "showContent", this, this.props.personalityType.personality_type);
+    this.props.triggerCallback("PersonalityType", "showContent", this, this.props.personalityType.personality_type);
     this.setState({showContent: !this.state.showContent});
   }
   componentDidMount(){
-    this.props.triggerCallback("Type", "initialized", this);
+    this.props.triggerCallback("PersonalityType", "initialized", this);
   }
   render(){
     let type = this.props.personalityType.personality_type;
@@ -29,6 +29,7 @@ export default class Type extends Component{
     let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
     let description = type.details.find(detail=>detail.title === perspective);
     description = (description && description.body) || type.description;
+
     return (
       <li class={style.type} style={`border-left: 5px solid ${color};`}>
         <div class={style.main} style={`background: ${Color.rgba(color, 8.5)};`}>

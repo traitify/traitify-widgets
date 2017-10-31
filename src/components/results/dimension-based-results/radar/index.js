@@ -13,6 +13,7 @@ export default class Radar extends Component{
     window.removeEventListener("resize", this.updateChart);
   }
   componentDidMount(){
+    this.props.triggerCallback("Radar", "initialized", this);
     window.addEventListener("resize", this.updateChart);
     this.updateChart();
   }

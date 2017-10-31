@@ -9,7 +9,7 @@ export default class PersonalityTrait extends Component{
     let type = trait.personality_type;
     let color = `#${type.badge.color_1}`;
     return (
-      <div class={style.trait} style={`border: 3px solid #${color}; background: ${Color.rgba(color, 8.5)};`}>
+      <div class={style.trait} style={`background: ${Color.rgba(color, 8.5)};`}>
         <div class={style.bar} style={`width: ${score}%; background: ${color};`} />
         <div class={style.content}>
           <div class={style.score}>{score}%</div>

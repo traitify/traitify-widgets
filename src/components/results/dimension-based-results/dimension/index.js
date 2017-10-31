@@ -46,10 +46,10 @@ export default class Dimension extends Component{
         {this.state.showContent &&
           <div class={style.details}>
             <div class={style.content} style={`background: ${Color.rgba(color, 30)}`}>
-							<div class={style.extendedDesc}>
-								<h4>Extended Description</h4>
-								<p class={style.description}>{description}</p>
-							</div>
+              <div class={style.extendedDesc}>
+                <h4>Extended Description</h4>
+                <p class={style.description}>{description}</p>
+              </div>
               <div class={style.detail}>
                 <h5 class={style.benefits}>{this.props.translate("potential_benefits")}</h5>
                 <ul>

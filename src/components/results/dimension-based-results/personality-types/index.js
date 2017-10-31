@@ -1,10 +1,10 @@
 import {h, Component} from "preact";
-import Type from "../type";
+import PersonalityType from "../personality-type";
 import style from "./style";
 
 export default class Types extends Component{
   componentDidMount(){
-    this.props.triggerCallback("Types", "initialized", this);
+    this.props.triggerCallback("PersonalityTypes", "initialized", this);
   }
   render(){
     if(!this.props.resultsReady()) return <div />;
@@ -13,7 +13,7 @@ export default class Types extends Component{
     return (
       <ul class={style.types}>
         {props.assessment.personality_types.map((type, i)=>{
-          return <Type personalityType={type} index={i} {...props} />;
+          return <PersonalityType personalityType={type} index={i} {...props} />;
         })}
       </ul>
     );

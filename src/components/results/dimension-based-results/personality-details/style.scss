@@ -1,9 +1,9 @@
 @import "~style/helpers";
 
-.extras {
+.details {
   @extend %widgetContainer;
 }
-.extra {
+.detail {
   @extend %cf;
   font-weight: 400;
   color: #333;

@@ -15,11 +15,11 @@ export default class PersonalityTraits extends Component{
       <div class={style.traits}>
         <h4 class={style.title}>Most Represented Traits</h4>
         {traits.slice(0, 5).map((trait)=>{
-          return <PersonalityTrait trait={trait} />;
+          return <PersonalityTrait trait={trait} {...this.props} />;
         })}
         <h4 class={style.title}>Least Represented Traits</h4>
         {traits.slice(-5).map((trait)=>{
-          return <PersonalityTrait trait={trait} />;
+          return <PersonalityTrait trait={trait} {...this.props} />;
         })}
       </div>
     );

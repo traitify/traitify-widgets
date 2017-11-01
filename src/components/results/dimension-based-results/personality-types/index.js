@@ -12,8 +12,8 @@ export default class Types extends Component{
     let props = this.props;
     return (
       <ul class={style.types}>
-        {props.assessment.personality_types.map((type, i)=>{
-          return <PersonalityType personalityType={type} index={i} {...props} />;
+        {props.assessment.personality_types.map((type)=>{
+          return <PersonalityType personalityType={type} {...props} />;
         })}
       </ul>
     );

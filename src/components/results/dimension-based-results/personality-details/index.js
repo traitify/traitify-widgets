@@ -8,9 +8,7 @@ export default class PersonalityDetails extends Component{
   render(){
     if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
-    let personality = this.props.assessment.archetype;
-    personality = personality || this.props.assessment.personality_types[0].personality_type;
-
+    let personality = this.props.assessment.archetype || {};
     let details = personality.details;
     if(!details) return <div />;
 

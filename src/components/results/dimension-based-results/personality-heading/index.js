@@ -14,7 +14,7 @@ export default class PersonalityHeading extends Component{
     if(!this.props.deckReady(this.props.deck)) return <div />;
 
     let personality = this.props.assessment.archetype;
-    personality = personality || this.props.assessment.personality_types[0].personality_type;
+    if(!personality) return <div />;
 
     return (
       <div class={style.personality}>

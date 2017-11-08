@@ -248,7 +248,7 @@ export default class SlideDeck extends Component{
   }
   render(){
     if(this.state.slides.length === 0) return <span />;
-    if(this.props.resultsReady()) return <span />;
+    if(this.props.resultsReady(this.props.assessment)) return <span />;
 
     let currentSlide = this.currentSlide();
     let loading = this.isComplete() || !this.state.ready;

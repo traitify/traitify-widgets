@@ -4,14 +4,14 @@ import style from "./style";
 export default class PersonalityHeading extends Component{
   componentDidMount(){
     this.props.triggerCallback("PersonalityHeading", "initialized", this);
-    if(!this.props.deckReady()){ this.props.fetchDeck(); }
+    if(!this.props.deckReady(this.props.deck)){ this.props.fetchDeck(); }
   }
   componentDidUpdate(){
-    if(!this.props.deckReady()){ this.props.fetchDeck(); }
+    if(!this.props.deckReady(this.props.deck)){ this.props.fetchDeck(); }
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
-    if(!this.props.deckReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.props.deckReady(this.props.deck)) return <div />;
 
     let personality = this.props.assessment.archetype;
     personality = personality || this.props.assessment.personality_types[0].personality_type;

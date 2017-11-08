@@ -11,8 +11,8 @@ export default class TraitifyState{
 
     this.state.fetch = this.fetch.bind(this);
     this.state.fetchDeck = this.fetchDeck.bind(this);
-    this.state.resultsReady = this.resultsReady.bind(this);
-    this.state.deckReady = this.deckReady.bind(this);
+    this.state.resultsReady = this.resultsReady;
+    this.state.deckReady = this.deckReady;
     this.state.setState = this.setState.bind(this);
     this.state.translate = (key, options)=>this.state.i18n.translate(key, options);
     this.state.triggerCallback = this.triggerCallback.bind(this);
@@ -76,12 +76,11 @@ export default class TraitifyState{
     this.state.callbacks[key].push(callback);
     return this;
   }
-  resultsReady(){
-    let personalityTypes = this.state.assessment.personality_types || [];
-    return personalityTypes.length > 0;
+  resultsReady(assessment){
+    return (assessment.personality_types || []).length > 0;
   }
-  deckReady(){
-    return !!this.state.deck.name;
+  deckReady(deck){
+    return !!deck.name;
   }
   setState(newState){
     this.state = {...this.state, ...newState};

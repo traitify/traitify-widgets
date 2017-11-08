@@ -14,7 +14,7 @@ export default class PersonalityTypeBarChart extends Component{
     this.activate();
   }
   activate(){
-    if(this.props.resultsReady()){
+    if(this.props.resultsReady(this.props.assessment)){
       let type = this.props.assessment.personality_types[0];
       if(!this.props.activeType && type){
         this.props.setState({activeType: type});
@@ -29,7 +29,7 @@ export default class PersonalityTypeBarChart extends Component{
     return score > 0 ? score : 0;
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     let props = this.props;
 

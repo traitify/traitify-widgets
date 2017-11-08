@@ -21,7 +21,7 @@ export default class Radar extends Component{
     this.updateChart();
   }
   createChart(){
-    if(!this.props.resultsReady()) return;
+    if(!this.props.resultsReady(this.props.assessment)) return;
 
     let options = {
       labels: [],
@@ -55,7 +55,7 @@ export default class Radar extends Component{
     delete this.chart;
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     return (
       <div class={style.radar}>

@@ -6,7 +6,7 @@ export default class PersonalityDetails extends Component{
     this.props.triggerCallback("PersonalityDetails", "initialized", this);
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     let personality = this.props.assessment.archetype;
     personality = personality || this.props.assessment.personality_types[0].personality_type;

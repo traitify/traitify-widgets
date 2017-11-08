@@ -18,7 +18,7 @@ export default class PersonalityTraits extends Component{
     this.setState({showMore: !this.state.showMore});
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     let traits = this.props.assessment.personality_traits;
     let text = this.props.translate(this.state.showMore ? "show_less" : "show_more");

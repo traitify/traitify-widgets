@@ -13,15 +13,15 @@ export default class PersonalityHeading extends Component{
     if(!this.props.resultsReady()) return <div />;
     if(!this.props.deckReady()) return <div />;
 
-    // TODO: Replace Personality
-    const personality = this.props.assessment.personality_types[0].personality_type.name;
+    let personality = this.props.assessment.archetype;
+    personality = personality || this.props.assessment.personality_types[0].personality_type;
 
     return (
       <div class={style.personality}>
         <div class={style.content} dangerouslySetInnerHTML={{
           __html: this.props.translate("personality_heading", {
             deck_name: this.props.deck.name,
-            personality: `<strong>${personality}</strong>`
+            personality: `<strong>${personality.name}</strong>`
           })
         }} />
       </div>

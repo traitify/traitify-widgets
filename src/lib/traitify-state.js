@@ -39,7 +39,7 @@ export default class TraitifyState{
     if(sessionStorage.getItem(storeKey)){
       setData(JSON.parse(sessionStorage.getItem(storeKey)));
     }else{
-      this.state.client.get(`/assessments/${this.state.assessmentId}?data=slides,blend,types,traits&locale_key=${this.state.i18n.locale}`).then((data)=>{
+      this.state.client.get(`/assessments/${this.state.assessmentId}?data=slides,archetype,blend,types,traits&locale_key=${this.state.i18n.locale}`).then((data)=>{
         if(data && data.personality_types && data.personality_types.length > 0){
           sessionStorage.setItem(storeKey, JSON.stringify(data));
         }

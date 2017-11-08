@@ -11,7 +11,6 @@ export default class PersonalityDetails extends Component{
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
     let details = personality.details;
-
     if(!details) return <div />;
 
     let complement = details.find(d=>d.title === "Complement");
@@ -19,23 +18,24 @@ export default class PersonalityDetails extends Component{
     let conflict = details.find(d=>d.title === "Conflict");
     conflict = conflict && conflict.body;
     let environments = personality.environments || [];
+
     return (
       <div class={style.details}>
         {complement && (
           <div class={style.complements}>
-            <h4>Complements</h4>
+            <h4>{this.props.translate("complements")}</h4>
             <p>{complement}</p>
           </div>
         )}
         {conflict && (
           <div class={style.conflicts}>
-            <h4>Conflicts</h4>
+            <h4>{this.props.translate("conflicts")}</h4>
             <p>{conflict}</p>
           </div>
         )}
         {environments[0] && (
           <div class={style.environments}>
-            <h4>Best Work Environment</h4>
+            <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
               {environments.map(environment=>{
                 return <li>{environment.name}</li>;

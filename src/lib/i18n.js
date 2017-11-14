@@ -63,9 +63,9 @@ export default class I18n{
   }
   translate(key, options){
     let result = this[this.locale][key];
-    if(!result || !options) { return result; }
+    if(!result || !options){ return result; }
 
-    return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);
+    return result.replace(/%\{[a-z_]*\}/g, (r)=>options[r.slice(2, -1)]);
   }
   t(key, options){
     return this.translate(key, options);

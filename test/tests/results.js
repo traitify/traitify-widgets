@@ -6,7 +6,7 @@ function Init(stepTest){
     .step("Set scratch as Target")
     .step("Render and Wait for Results to Initialize")
     .expect("Results should be Ready", function(){
-      this.ok(this.scratch.innerHTML.indexOf("traitify--personality-badge--image") !== 0);
+      this.ok(this.scratch.innerHTML.indexOf("traitify--components-results-type-based-results-personality-badge---image") !== 0);
     });
 }
 

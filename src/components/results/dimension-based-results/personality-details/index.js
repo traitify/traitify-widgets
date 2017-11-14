@@ -44,7 +44,6 @@ export default class PersonalityDetails extends Component{
               <div class={style.bar} style="background: #32be4b;" />
               <h4 class={style.title} style="color: #32be4b;">{this.props.translate("best_work_environments")}</h4>
               <ul class={style.description}>
-                <li>Values creativity</li>
                 {environments.map(environment=>{
                   return <li>{environment.name}</li>;
                 })}

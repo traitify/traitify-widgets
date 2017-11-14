@@ -8,7 +8,6 @@ export default class PersonalityTrait extends Component{
   }
   render(){
     let trait = this.props.trait.personality_trait;
-    let score = Math.round(this.props.trait.score/2 + 50);
     let type = trait.personality_type;
     let color = `#${type.badge.color_1}`;
     return (

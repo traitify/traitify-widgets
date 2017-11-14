@@ -26,9 +26,6 @@ export default class Type extends Component{
       if(detail.title === "Pitfalls") pitfalls.push(detail.body);
     });
     let color = `#${type.badge.color_1}`;
-    let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
-    let description = type.details.find(detail=>detail.title === perspective);
-    description = (description && description.body) || type.description;
 
     return (
       <li class={style.type} style={`border-left: 5px solid ${color};`}>

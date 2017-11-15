@@ -5,8 +5,11 @@
 
   padding: 20px 0px;
   text-align: center;
+  @include mq(l) {
+    @include cols(6);
+  }
   .radarContainer{
-    width: 100% !important;
+    width: 100%;
     height: auto;
     max-width: 500px;
     margin: 0px auto;

@@ -12,6 +12,15 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+  .triggerButton {
+    text-align: center;
+    @include mq(l) {
+      float: right;
+      position: absolute;
+      top: 50px;
+      right: 30px;
+    }
+  }
   .trigger {
     color: $black;
     background: $gray;
@@ -29,18 +38,14 @@
   .main {
     @extend %cf;
     .content {
+      position: relative;
       color: #333;
       padding: 20px 20px 30px;
       @include mq(m) {
         margin-left: 170px;
         padding-top: 20px;
+        padding-right: 220px;
         text-align: left;
-      }
-      @include mq(l) {
-        padding-right: 80px;
-      }
-      @include mq(xl) {
-        padding-right: 170px;
       }
       h4 {
         margin: 10px 0 0;
@@ -97,34 +102,34 @@
         width: 100%;
       }
     }
-    .score {
-      font-weight: bold;
-      margin: 0;
-      @include rems(26);
-      @include mq(l) {
-        @include rems(28);
-      }
-    }
   }
   .details {
     clear: both;
     margin: 0;
-    @include mq(xl) {
-      margin: 0 60px;
-    }
-    @include mq(xxxl) {
-      margin: 0 130px;
-    }
     .content {
       padding: 20px;
       @include mq(m) {
-        padding-left: 40px;
+        padding-left: 60px;
       }
       @include mq(xl) {
-        padding-left: 0;
+        padding: 20px 240px;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
       }
+      @include mq(xxxl) {
+        padding: 20px 320px;
+      }
+    }
+  }
+  .extendedDesc {
+    border-bottom: 1px solid $black;
+    h4 {
+      margin: 0;
+      font-weight: normal;
+      @include rems(24);
+    }
+    p {
+      @include rems(18);
     }
   }
   .detail {
@@ -134,18 +139,6 @@
       vertical-align: top;
       width: 50%;
       @include rems(17);
-    }
-    @include mq(xl) {
-      width: 38%;
-      &:first-of-type {
-        margin-left: calc(28%/2);
-      }
-    }
-    @include mq(xxxl) {
-      width: 35%;
-      &:first-of-type {
-        margin-left: calc(33%/2);
-      }
     }
     h5 {
       margin: 0;

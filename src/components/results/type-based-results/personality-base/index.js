@@ -5,7 +5,7 @@ import PersonalityType from "../personality-type";
 
 export default class PersonalityBase extends Component{
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     return this.props.assessment.personality_blend ? (
       <PersonalityBlend {...this.props} />

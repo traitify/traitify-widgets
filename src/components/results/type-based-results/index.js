@@ -7,7 +7,7 @@ import PersonalityDetails from "./personality-details";
 
 export default class TypeBasedResults extends Component{
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     return (
       <section>

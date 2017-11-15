@@ -182,6 +182,7 @@ export default class SlideDeck extends Component{
   finish(){
     if(this.state.finished){ return; }
     this.setState({finished: true, finishTime: Date.now()});
+    if(this.props.resultsReady(this.props.assessment)) return;
     this.props.client.put(`/assessments/${this.props.assessmentId}/slides`, this.completedSlides()).then((response)=>{
       this.triggerCallback("finished", this, response);
       this.props.fetch();
@@ -248,7 +249,7 @@ export default class SlideDeck extends Component{
   }
   render(){
     if(this.state.slides.length === 0) return <span />;
-    if(this.props.resultsReady()) return <span />;
+    if(this.props.resultsReady(this.props.assessment)) return <span />;
 
     let currentSlide = this.currentSlide();
     let loading = this.isComplete() || !this.state.ready;

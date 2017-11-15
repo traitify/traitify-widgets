@@ -17,7 +17,7 @@ function Init(stepTest){
     .step("Setup SlideDeck")
     .step("Render and Wait for SlideDeck to be Ready")
     .step("Listen for", "SlideDeck.me")
-    .step("Click", ".traitify--slide-deck--me")
+    .step("Click", ".traitify--components-slide-deck---me")
     .expect("Slide Deck to have Clicked Me", function(){
       this.ok(this["SlideDeck.me"] === true);
     });
@@ -29,7 +29,7 @@ function Init(stepTest){
     .step("Setup SlideDeck")
     .step("Render and Wait for SlideDeck to be Ready")
     .step("Listen for", "SlideDeck.notMe")
-    .step("Click", ".traitify--slide-deck--notMe")
+    .step("Click", ".traitify--components-slide-deck---notMe")
     .expect("Slide Deck to have Clicked Not Me", function(){
       this.ok(this["SlideDeck.notMe"] === true);
     });
@@ -41,7 +41,7 @@ function Init(stepTest){
     .step("Setup SlideDeck")
     .step("Render and Wait for SlideDeck to be Ready")
     .step("Listen for", "SlideDeck.updateSlide")
-    .step("Click", ".traitify--slide-deck--notMe")
+    .step("Click", ".traitify--components-slide-deck---notMe")
     .expect("Slide Deck to Update Slide", function(){
       this.ok(this["SlideDeck.updateSlide"] === true);
     });

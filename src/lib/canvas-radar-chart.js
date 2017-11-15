@@ -15,10 +15,10 @@ let configureData = function(options){
   options.data.forEach((set)=>{
     data.push({
       fill: false,
-      fillStyle: set.color || "rgba(66, 176, 219, 0.3)",
+      fillStyle: set.color || " rgba(5, 143, 196, 0.25)",
       pathLineWidth: 4,
-      pathStrokeStyle: set.color || "#42b0db",
-      pointFillStyle: set.color || "#42b0db",
+      pathStrokeStyle: set.color || "#058fc4",
+      pointFillStyle: set.color || "#058fc4",
       pointRadius: 5,
       ...set
     });

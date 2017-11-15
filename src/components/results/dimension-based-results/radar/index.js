@@ -13,6 +13,7 @@ export default class Radar extends Component{
     window.removeEventListener("resize", this.updateChart);
   }
   componentDidMount(){
+    this.props.triggerCallback("Radar", "initialized", this);
     window.addEventListener("resize", this.updateChart);
     this.updateChart();
   }
@@ -20,11 +21,14 @@ export default class Radar extends Component{
     this.updateChart();
   }
   createChart(){
-    if(!this.props.resultsReady()) return;
+    if(!this.props.resultsReady(this.props.assessment)) return;
 
     let options = {
       labels: [],
-      data: [{values: []}]
+      data: [{
+        fill: true,
+        values: []
+      }]
     };
 
     let types = this.props.assessment.personality_types;
@@ -51,7 +55,7 @@ export default class Radar extends Component{
     delete this.chart;
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     return (
       <div class={style.radar}>

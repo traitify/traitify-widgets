@@ -7,7 +7,7 @@ export default class Dimensions extends Component{
     this.props.triggerCallback("Dimensions", "initialized", this);
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     let props = this.props;
     return (

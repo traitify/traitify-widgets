@@ -58,7 +58,7 @@ module.exports = {
               sourceMap: CSS_MAPS,
               modules: true,
               importLoaders: 2,
-              localIdentName: "traitify--[folder]--[local]"
+              localIdentName: "traitify--[path]--[local]"
             }
           },
           {

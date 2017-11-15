@@ -8,7 +8,7 @@ export default class PersonalityBlend extends Component{
     this.props.triggerCallback("PersonalityBlend", "initialized", this);
   }
   render(){
-    if(!this.props.resultsReady()) return <div />;
+    if(!this.props.resultsReady(this.props.assessment)) return <div />;
 
     let blend = this.props.assessment.personality_blend;
     if(!blend) return <div />;

@@ -1,0 +1,14 @@
+@import "~style/helpers";
+
+.personality {
+  @extend %widgetContainer;
+  clear: both;
+  margin: 20px auto;
+  .content {
+    background: #005b82;
+    color: $white;
+    text-align: center;
+    padding: 20px 10px;
+    @include rems(36);
+  }
+}

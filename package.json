@@ -1,7 +1,11 @@
 {
   "name": "traitify-widgets",
-  "version": "0.0.0",
+  "version": "0.0.7",
   "description": "Traitiy Widgets",
+  "main": "./build/traitify.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "dev": "webpack-dev-server",
     "prestart": "npm run build",

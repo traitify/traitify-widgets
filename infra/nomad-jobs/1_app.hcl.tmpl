@@ -43,17 +43,20 @@ job "traitify-widgets-{{ env "CHEF_ENV" }}" {
     task "traitify-widgets" {
       # set this as the leader so the other tasks exit
       leader = true
-        artifact {
-          source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-{{ template "GET_HASH" }}.tar.gz"
+      artifact {
+        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-{{ template "GET_HASH" }}.tar.gz"
+        options {
+          archive = false
         }
-        artifact {
-          source = "https://jenkins-archive.traitify.com/ops_scripts/artifact-place.sh"
-        }
+      }
+      artifact {
+        source = "https://jenkins-archive.traitify.com/ops_scripts/artifact-place.sh"
+      }
       # our image setup
       driver = "raw_exec"
       config {
         command = "bash"
-        args = [ "local/artifact-place.sh", "-p", "-d", "/opt/fileserve/traitify-widgets", "-a", "local/traitify-widgets-{{ template "GET_HASH" }}.tar.gz" ]
+        args = [ "local/artifact-place.sh", "-p", "-d", "/opt/fileserve/js/v2", "-a", "local/traitify-widgets-{{ template "GET_HASH" }}.tar.gz" ]
       } 
       resources {
         cpu    = 20

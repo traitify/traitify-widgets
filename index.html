@@ -21,7 +21,7 @@
         });
         assessment.allowBack(true);
         assessment.allowFullScreen(true);
-        assessment.perspective("thirdPerson");
+        assessment.perspective("firstPerson");
         assessment.on("personalitytypes.initialized", function(){
           console.log("personalitytypes!")
         })
@@ -54,9 +54,10 @@
     </script>
 
     <select id="deck-name">
-      <option value="career-deck">Career Deck</option>
-      <option value="persuasion">Persuasion</option>
       <option value="big-five">Big Five</option>
+      <option value="career-deck">Career Deck</option>
+      <option value="perseverance">Perseverance</option>
+      <option value="persuasion">Persuasion</option>
     </select>
 
     <button onclick="createAssessment()">New Assessment</button>

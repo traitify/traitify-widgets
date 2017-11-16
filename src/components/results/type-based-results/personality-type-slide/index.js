@@ -21,13 +21,23 @@ export default class PersonalityTypeSlide extends Component{
 
     let type = this.props.type.personality_type;
     let color = `#${type.badge.color_1}`;
-    let name, description;
-    if(type.description[0] === "'"){
-      name = type.description.split("'")[1];
-      description = type.description.split("'").splice(2).join("'");
+
+    let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
+    let description = type.details.find(detail=>detail.title === perspective);
+    description = description && description.body;
+    if(!description) {
+      perspective = `${perspective === "first_person_description" ? "third" : "first"}_person_description"`;
+      description = type.details.find(detail=>detail.title === perspective);
+      description = (description && description.body) || type.description;
+    }
+
+    let name;
+    if(description[0] === "'"){
+      name = description.split("'")[1];
+      description = description.split("'").splice(2).join("'");
     }else{
       name = type.name;
-      description = `- ${type.description}`;
+      description = `- ${description}`;
     }
 
     return (

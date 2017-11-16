@@ -28,7 +28,12 @@ export default class Dimension extends Component{
     let color = `#${type.badge.color_1}`;
     let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
     let description = type.details.find(detail=>detail.title === perspective);
-    description = (description && description.body) || type.description;
+    description = description && description.body;
+    if(!description) {
+      perspective = `${perspective === "first_person_description" ? "third" : "first"}_person_description"`;
+      description = type.details.find(detail=>detail.title === perspective);
+      description = (description && description.body) || type.description;
+    }
 
     return (
       <li class={style.dimension}>
@@ -40,7 +45,7 @@ export default class Dimension extends Component{
           </div>
           <div class={style.content}>
             <h4 class={style.title}>{type.name} <span style={`color: ${color}`}>|</span> {this.props.personalityType.score} - {type.level}</h4>
-            <p class={style.description}>{description}</p>
+            <p class={style.description}>{type.description}</p>
             <p class={style.triggerButton}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>

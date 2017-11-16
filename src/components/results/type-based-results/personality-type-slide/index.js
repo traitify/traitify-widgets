@@ -25,7 +25,7 @@ export default class PersonalityTypeSlide extends Component{
     let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
     let description = type.details.find(detail=>detail.title === perspective);
     description = description && description.body;
-    if(!description) {
+    if(!description){
       perspective = `${perspective === "first_person_description" ? "third" : "first"}_person_description"`;
       description = type.details.find(detail=>detail.title === perspective);
       description = (description && description.body) || type.description;

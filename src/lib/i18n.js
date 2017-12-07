@@ -40,6 +40,19 @@ export default class I18n{
       me: "Moi",
       not_me: "Pas Moi"
     };
+    this["ht-us"] = {
+      best_work_environments: "Pi bon Anviwònman Travay",
+      complements: "Konpliman",
+      conflicts: "Konfli",
+      extended_description: "Pwolonje Deskripsyon",
+      personality_heading: "Pèsonalite %{deck_name} ou %{personality}",
+      potential_benefits: "Benefis Potansyèl",
+      potential_pitfalls: "Potansyèl Potansyèl Yo",
+      show_less: "Montre Mwens",
+      show_more: "Montre Plis",
+      me: "Se Mwen",
+      not_me: "Se Pa Mwen"
+    };
     this["no-no"] = {
       best_work_environments: "Beste arbeidsmiljøer",
       complements: "Utfyller",

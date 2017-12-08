@@ -14,6 +14,7 @@
       Traitify.setHost("https://api.traitify.com");
 
       function initDeck (){
+        Traitify.ui.disableTests();
         var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
         assessment.targets({
           "SlideDeck": "#slide-deck",

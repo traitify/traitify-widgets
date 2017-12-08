@@ -45,19 +45,19 @@ export default class SlideDeck extends Component{
       let completedSlides = {};
       (storedSlides || []).forEach((slide)=>{ completedSlides[slide.id] = slide; });
 
-      slides[0].orientation = "middle";
-      slides[1].orientation = "right";
       slides.forEach((slide, index)=>{
         slide.image = this.imageService(slide);
+        slide.orientation = "invisible";
 
         let completedSlide = completedSlides[slide.id];
         if(completedSlide){
           slide.response = completedSlide.response;
           slide.time_taken = completedSlide.time_taken;
         }
-
-        if(slide.response != null){ this.setOrientation(index + 1, slides); }
       });
+
+      const index = slides.findIndex((slide)=>{ return slide.response == null; });
+      this.setOrientation(index, slides);
 
       return {initialized: true, slides, startTime: Date.now()};
     }, ()=>{
@@ -100,9 +100,9 @@ export default class SlideDeck extends Component{
   }
   checkReady(){
     let loaded = this.loadedSlides().length;
-    let allSlidesLoaded = loaded === this.state.slides.length;
+    let remainingSlidesLoaded = this.state.slides.find((slide)=>{ return slide.loaded || slide.response != null; });
     let nextSlidesLoaded = loaded >= this.currentIndex() + 2;
-    let ready = allSlidesLoaded || nextSlidesLoaded;
+    let ready = remainingSlidesLoaded || nextSlidesLoaded;
 
     if(this.state.ready === ready){ return; }
     this.triggerCallback("isReady", this, ready);

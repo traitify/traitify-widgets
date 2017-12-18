@@ -100,7 +100,7 @@ export default class SlideDeck extends Component{
   }
   checkReady(){
     let loaded = this.loadedSlides().length;
-    let remainingSlidesLoaded = this.state.slides.find((slide)=>{ return slide.loaded || slide.response != null; });
+    let remainingSlidesLoaded = !this.state.slides.find((slide)=>{ return !slide.loaded && slide.response == null; });
     let nextSlidesLoaded = loaded >= this.currentIndex() + 2;
     let ready = remainingSlidesLoaded || nextSlidesLoaded;
 

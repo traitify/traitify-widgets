@@ -59,7 +59,7 @@ job "traitify-widgets-{{ env "CHEF_ENV" }}" {
         args = [ "local/artifact-place.sh", "-p", "-d", "/opt/fileserve/js/v2", "-a", "local/traitify-widgets-{{ template "GET_HASH" }}.tar.gz" ]
       } 
       resources {
-        cpu    = 20
+        cpu    = 100
         memory = 10
       }
     }

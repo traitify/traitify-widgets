@@ -31,7 +31,7 @@ export default class Type extends Component{
       <li class={style.type} style={`border-left: 5px solid ${color};`}>
         <div class={style.main} style={`background: ${Color.rgba(color, 8.5)};`}>
           <div class={style.content}>
-            <h4 class={style.title}>{type.name} <span class={style.score}>{this.props.personalityType.score} - {type.level}</span></h4>
+            <h2 class={style.title}>{type.name} <span class={style.score}>{this.props.personalityType.score} - {type.level}</span></h2>
           </div>
         </div>
       </li>

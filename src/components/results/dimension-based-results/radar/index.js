@@ -60,7 +60,7 @@ export default class Radar extends Component{
     return (
       <div class={style.radar}>
         <div class={style.radarContainer}>
-          <canvas ref={(canvas)=>{ this.canvas = canvas; }} width="820" height="700" />
+          <canvas ref={(canvas)=>{ this.canvas = canvas; }} width="820" height="700" aria-label="A chart displaying your results. See text version below" />
         </div>
       </div>
     );

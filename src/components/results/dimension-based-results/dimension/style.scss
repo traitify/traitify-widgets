@@ -47,7 +47,7 @@
         padding-right: 220px;
         text-align: left;
       }
-      h4 {
+      h2 {
         margin: 10px 0 0;
         font-weight: normal;
         text-align: center;
@@ -123,7 +123,7 @@
   }
   .extendedDesc {
     border-bottom: 1px solid $black;
-    h4 {
+    h3 {
       margin: 0;
       font-weight: normal;
       @include rems(24);
@@ -140,7 +140,7 @@
       width: 50%;
       @include rems(17);
     }
-    h5 {
+    h4 {
       margin: 0;
       line-height: 35px;
       font-weight: normal;

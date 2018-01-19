@@ -9,21 +9,21 @@
     left: 0%;
     display: none !important;
   }
-  &.leftSlide{
+  &.left{
     left: 0%;
   }
-  &.middleSlide{
+  &.middle{
     -webkit-transition: left .3s; /* Safari */
     transition: left .3s;
     left: 0%;
   }
-  &.rightSlide{
+  &.right{
     left: 100%;
   }
   &.slideIE{
     overflow: hidden;
     img{
-      position:absolute;
+      position: absolute;
       width: 100%;
     }
   }

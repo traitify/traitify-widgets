@@ -32,7 +32,7 @@ export default class SlideDeck extends Component{
     this.setState((prevState, props)=>{
       if(prevState.initialized){ return; }
 
-      let slides = props.assessment.slides || [];
+      let slides = [...props.assessment.slides] || [];
       let storedSlides = [];
       if(sessionStorage.getItem(`slides-${props.assessmentId}`)){
         try{
@@ -56,7 +56,7 @@ export default class SlideDeck extends Component{
         }
       });
 
-      const index = slides.findIndex((slide)=>{ return slide.response == null; });
+      const index = slides.findIndex((slide)=>(slide.response == null));
       this.setOrientation(index, slides);
 
       return {initialized: true, slides, startTime: Date.now()};
@@ -79,7 +79,7 @@ export default class SlideDeck extends Component{
     let img = document.createElement("img");
     img.src = slide.image;
     img.onload = ()=>{
-      let slides = this.state.slides;
+      let slides = this.slides();
       slides[slideIndex].loaded = true;
       this.setState({slides}, ()=>{
         this.triggerCallback("prefetchSlides", this);
@@ -88,7 +88,7 @@ export default class SlideDeck extends Component{
       });
     };
     img.onerror = ()=>{
-      let attempts = this.state.imageLoadAttempts;
+      let attempts = [...this.state.imageLoadAttempts];
       attempts[slideIndex] = attempts[slideIndex] || 0;
       attempts[slideIndex] += 1;
       this.setState({imageLoadAttempts: attempts}, ()=>{
@@ -108,14 +108,20 @@ export default class SlideDeck extends Component{
     this.triggerCallback("isReady", this, ready);
     this.setState({ready});
   }
+  slides(){
+    return this.state.slides.map((slide)=>({...slide}));
+  }
+  activeSlides(){
+    return this.loadedSlides().filter((slide)=>(["left", "middle", "right"].includes(slide.orientation)));
+  }
   loadedSlides(){
-    return this.state.slides.filter((slide)=>{ return slide.loaded; });
+    return this.state.slides.filter((slide)=>(slide.loaded));
   }
   currentSlide(){
-    return this.state.slides.find((slide)=>{ return slide.orientation === "middle"; }) || {};
+    return this.state.slides.find((slide)=>(slide.orientation === "middle")) || {};
   }
   currentIndex(){
-    return this.state.slides.map((slide)=>{ return slide.id; }).indexOf(this.currentSlide().id);
+    return this.state.slides.map((slide)=>(slide.id)).indexOf(this.currentSlide().id);
   }
   triggerCallback(key, context, options){
     this.props.triggerCallback("SlideDeck", key, context, options);
@@ -133,7 +139,7 @@ export default class SlideDeck extends Component{
     this.triggerCallback(key, this);
     this.triggerCallback("updateSlide", this, value);
 
-    let slides = this.state.slides;
+    let slides = this.slides();
     let slide = this.currentSlide();
     slide.response = value;
     slide.time_taken = Date.now() - this.state.startTime;
@@ -162,7 +168,7 @@ export default class SlideDeck extends Component{
     this.setState({slides, startTime: Date.now()}, this.checkReady);
   }
   setOrientation(index, slides){
-    slides = slides || this.state.slides;
+    slides = slides || this.slides();
     let farLeftSlide = slides[index - 2];
     let leftSlide = slides[index - 1];
     let middleSlide = slides[index];
@@ -278,7 +284,7 @@ export default class SlideDeck extends Component{
           </div>
         ):[
           <div key="slides" class={style.slideContainer}>
-            <div class={style.captionContainer}>
+            <div class={style.captionContainer} tabIndex="0">
               <div class={style.caption}>
                 {currentSlide.caption}
               </div>
@@ -287,10 +293,10 @@ export default class SlideDeck extends Component{
               </div>
             </div>
             {this.props.client.oldIE ? (
-              <Slide key="slide" slide={currentSlide} client={this.props.client} />
-            ) : this.loadedSlides().map((slide, index)=>{
-              return <Slide key={index} slide={slide} client={this.props.client} />;
-            })}
+              <Slide key="slide" slide={currentSlide} oldIE={true} />
+            ) : this.activeSlides().map((slide)=>(
+              <Slide key={slide.id} slide={slide} oldIE={false} />
+            ))}
           </div>,
           <div key="response" class={style.responseContainer}>
             <div class={style.buttons}>

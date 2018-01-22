@@ -1,34 +1,28 @@
 import {h, Component} from "preact";
 import style from "./style";
+import slideDeckStyle from "../index.scss";
 
 export default class Slide extends Component{
+  componentDidUpdate(prevProps){
+    const middleSlide = this.props.slide.orientation === "middle";
+    const orientationChanged = this.props.slide.orientation !== prevProps.slide.orientation;
+
+    if(!middleSlide || !orientationChanged){ return; }
+    const element = document.querySelector(`.${slideDeckStyle.captionContainer}`);
+    element && element.focus();
+  }
   render(){
-    if(this.props.client.oldIE){
-      return (
-        <div class={`${style.slide} ${style.slideIE} ${style.middleSlide}`}>
-          <img src={this.props.slide.image} />
-        </div>
-      );
-    }
+    const slide = this.props.slide;
 
-    let className;
-    if(this.props.slide.orientation === "invisible"){
-      className = style.invisible;
-    }else if(this.props.slide.orientation === "left"){
-      className = style.leftSlide;
-    }else if(this.props.slide.orientation === "middle"){
-      className = style.middleSlide;
-    }else{
-      className = style.rightSlide;
-    }
-
-    let inlineStyle = {
-      backgroundImage: `url(${this.props.slide.image})`,
-      backgroundPosition: `${this.props.slide.focus_x}% ${this.props.slide.focus_y}%`
-    };
-
-    return (
-      <div class={`${style.slide} ${className}`} style={inlineStyle} />
+    return this.props.oldIE ? (
+      <div class={`${style.slide} ${style.slideIE} ${style.middle}`}>
+        <img src={slide.image} />
+      </div>
+    ) : (
+      <div class={`${style.slide} ${style[slide.orientation]}`} style={{
+        backgroundImage: `url(${slide.image})`,
+        backgroundPosition: `${slide.focus_x}% ${slide.focus_y}%`
+      }} />
     );
   }
 }

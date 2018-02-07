@@ -44,7 +44,7 @@ job "traitify-widgets-{{ env "CHEF_ENV" }}" {
       # set this as the leader so the other tasks exit
       leader = true
       artifact {
-        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-<<< env "GIT_COMMIT" >>>.tar.gz"
+        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-{{ template "GET_HASH" }}.tar.gz"
         options {
           archive = false
         }
@@ -56,7 +56,7 @@ job "traitify-widgets-{{ env "CHEF_ENV" }}" {
       driver = "raw_exec"
       config {
         command = "bash"
-        args = [ "local/artifact-place.sh", "-p", "-d", "/opt/fileserve/js/v2", "-a", "local/traitify-widgets-<<< env "GIT_COMMIT" >>>.tar.gz" ]
+        args = [ "local/artifact-place.sh", "-p", "-d", "/opt/fileserve/js/v2", "-a", "local/traitify-widgets-{{ template "GET_HASH" }}.tar.gz" ]
       } 
       resources {
         cpu    = 100

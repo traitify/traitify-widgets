@@ -22,7 +22,7 @@ export default class Slide extends Component{
       <div class={`${style.slide} ${style[slide.orientation]}`} style={{
         backgroundImage: `url(${slide.image})`,
         backgroundPosition: `${slide.focus_x}% ${slide.focus_y}%`
-      }} role="img" aria-label={slide.alternative_text} />
+      }} role="img" aria-label={slide.orientation === "middle" ? slide.alternative_text : ""} />
     );
   }
 }

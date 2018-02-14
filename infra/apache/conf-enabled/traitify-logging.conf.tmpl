@@ -1,8 +1,0 @@
-# custom log format for traitify
-LogFormat "[%{X-Forwarded-For}i] %l %u [%{%d/%b/%Y:%T}t.%{usec_frac}t %{%z}t] %D \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\""  traitify
-CustomLog "|/usr/bin/rotatelogs -f -n 10 {{ template "GET_VALUE" "infra/apache/access_log" }} 100M"  traitify
-
-# custom error log format
-ErrorLogFormat "[%{u}t] [%-m:%l] [pid %P:tid %T] %7F: %E: [client\ %a] %M% ,\ referer\ %{Referer}i"
-ErrorLog "|/usr/bin/rotatelogs -f -n 10 {{ template "GET_VALUE" "infra/apache/error_log" }} 100M"  
-

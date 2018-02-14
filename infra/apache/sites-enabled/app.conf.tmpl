@@ -1,0 +1,28 @@
+# we use three different entries for redirects.  We could use mod_rewrite, but this is very little in the way of extra
+# code, and avoids that overhead.
+<VirtualHost {{ env "NOMAD_ADDR_http" }} >
+  ServerName    fileserve.traitify.com
+  ServerAlias   *
+  DocumentRoot  {{ env "NOMAD_TASK_DIR" }}/{{ env "APP_NAME" }}
+  DirectoryIndex  index.html index.php index.php5
+
+  # make sure to set an expiration or google doesn't like us
+  ExpiresActive On
+  ExpiresDefault "access plus 12 months"
+  ExpiresByType text/html "access plus 1 month"
+
+  # add in some config for fastly
+  Header set Surrogate-Control max-age=3600,stale-if-error=86400
+  Header set Cache-Control stale-while-revalidate=60
+</VirtualHost>
+
+<Directory {{ env "NOMAD_TASK_DIR" }}/{{ env "APP_NAME" }} >
+  Options -Indexes +FollowSymLinks
+  AllowOverride All
+
+  Order allow,deny
+  Allow from all
+  Require all granted
+
+</Directory>
+

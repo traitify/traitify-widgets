@@ -1,0 +1,9 @@
+init_config:
+
+instances:
+  - apache_status_url: http://localhost:{{.Port}}/server-status?auto
+    tags:
+      - app_name:traitify-widgets
+      
+
+

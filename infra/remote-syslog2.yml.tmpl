@@ -1,0 +1,18 @@
+files:
+  - path: {{ template "GET_VALUE" "infra/apache/error_log" }}
+    tag: {{ env "NOMAD_ALLOC_ID" }}:{{ env "APP_NAME" }}:{{ env "NOMAD_GROUP_NAME"}}:error
+  - path: {{ template "GET_VALUE" "infra/apache/access_log" }}
+    tag: {{ env "NOMAD_ALLOC_ID" }}:{{ env "APP_NAME" }}:{{ env "NOMAD_GROUP_NAME"}}:access
+  - path: /alloc/logs/{{ env "LOG_TASK_NAME" }}.stdout.0
+    tag: {{ env "NOMAD_ALLOC_ID" }}:{{ env "APP_NAME" }}:{{ env "NOMAD_GROUP_NAME"}}:stdout
+  - path: /alloc/logs/{{ env "LOG_TASK_NAME" }}.stderr.0
+    tag: {{ env "NOMAD_ALLOC_ID" }}:{{ env "APP_NAME" }}:{{ env "NOMAD_GROUP_NAME"}}:stderr
+hostname: {{ env "LOCAL_HOSTNAME" }}
+exclude_patterns: {{ template "GET_VALUE" "infra/remote_syslog/exclude_patterns" }}
+destination:
+  host: localhost
+  port: 514
+  protocol: tcp
+facility: local7
+severity: info
+new_file_check_interval: "10" # Check every 10 seconds

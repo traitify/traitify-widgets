@@ -1,15 +1,7 @@
 job "traitify-widgets-{{ env "CHEF_ENV" }}" {
   datacenters = ["awse"]
-  type = "batch"
-# for some reason, we are not able to use this further down in the job
-#meta {
-#    app_name = "traitify-widgets"
-#}
-
-#constraint {
-#  attribute = "${node.class}"
-#  value = "orgs-stag"
-#}
+  type = "service"
+  
   constraint {
     attribute = "${meta.role}"
       value     = "fileserve"
@@ -36,31 +28,159 @@ job "traitify-widgets-{{ env "CHEF_ENV" }}" {
       interval = "1m"
       attempts = 2
       delay    = "15s"
-      mode     = "delay"
+      mode     = "fail"
     }
     count = {{ env "COUNT" }}
 
     task "traitify-widgets" {
       # set this as the leader so the other tasks exit
       leader = true
+      # grab our widget artifacts
       artifact {
-        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-<<< env "GIT_COMMIT" >>>.tar.gz"
-        options {
-          archive = false
-        }
+        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-{{ template "GET_HASH" }}.tar.gz"
+        destination = "local/traitify-widgets/js/v2"
+      }
+      # we also grab the legacy widgets.  These wont build anymore, so we always use the last version that was in prod
+      artifact {
+        source = "https://jenkins-archive.traitify.com/traitify-js-client/traitify-js-client-js-58c90235ff70283078813889498b2d2b01fa6bf5.tar.gz"
+        destination = "local/traitify-widgets/js/client"
       }
       artifact {
-        source = "https://jenkins-archive.traitify.com/ops_scripts/artifact-place.sh"
+        source = "https://jenkins-archive.traitify.com/traitify-js-client/traitify-js-client-docs-58c90235ff70283078813889498b2d2b01fa6bf5.tar.gz"
+        destination = "local/traitify-widgets/docs/client"
+      }
+      artifact {
+        source = "https://jenkins-archive.traitify.com/traitify-js-widgets/traitify-js-widgets-js-4e1468ebc383c3acfa5949e70dd51848ce82700e.tar.gz"
+        destination = "local/traitify-widgets/js/widgets"
+      }
+      artifact {
+        source = "https://jenkins-archive.traitify.com/traitify-js-widgets/traitify-js-widgets-docs-4e1468ebc383c3acfa5949e70dd51848ce82700e.tar.gz"
+        destination = "local/traitify-widgets/docs/widgets"
+      }
+
+      # also grab the stuff we need for apache
+      artifact {
+        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-apache-config-{{ template "GET_HASH" }}.tar.gz"
+        destination = "local/apache"
+      }
+      template {
+        source = "local/apache/sites-enabled/app.conf.tmpl"
+        destination = "etc/apache2/sites-enabled/app.conf"
+        change_mode = "noop"
+        perms = "664"
+      }
+      template {
+        source = "local/apache/conf-enabled/traitify-logging.conf.tmpl"
+        destination = "etc/apache2/conf-enabled/traitify-logging.conf"
+        change_mode = "noop"
+        perms = "664"
+      }
+      template {
+        source = "local/apache/envvars.tmpl"
+        destination = "etc/apache2/envvars"
+        change_mode = "noop"
+        perms = "664"
+      }
+      template {
+        source = "local/apache/ports.conf.tmpl"
+        destination = "etc/apache2/ports.conf"
+        change_mode = "noop"
+        perms = "664"
+      }
+      template {
+        source = "local/apache/apache2.conf.tmpl"
+        destination = "etc/apache2/apache2.conf"
+        change_mode = "noop"
+        perms = "664"
+      }
+			# grab our run file
+      artifact {
+        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-run_apache-{{ template "GET_HASH" }}.sh.tmpl"
+      }
+      template {
+        source = "local/traitify-widgets-run_apache-{{ template "GET_HASH" }}.sh.tmpl"
+        destination = "local/run_apache.sh"
+        change_mode = "noop"
+        perms = "755"
+      }
+
+      # set our environment variables
+      env {
+        CHEF_ENV = "${meta.env}"
+        APP_NAME = "traitify-widgets"
+        LOCAL_HOSTNAME = "${node.unique.name}"
+        CHEF_ROLE = "${meta.role}"
+        GIT_HASH = "{{ template "GET_HASH" }}"
+      }
+      # grant access to secrets
+      vault {
+        policies = [ "app-{{ env "CHEF_ENV" }}-fileserve" ]
+        change_mode = "noop"
       }
       # our image setup
-      driver = "raw_exec"
+      driver = "exec"
+        config {
+          command = "bash"
+          args = [ "local/run_apache.sh" ]
+        } 
+      resources {
+        cpu    = 500
+        memory = 500
+        network {
+          port "http" {}
+        }
+      }
+
+      # add in service discovery
+      service {
+        name = "traitify-widgets"
+        tags = ["${node.unique.name}", "host__${node.unique.name}", "{{ template "GET_HASH" }}", "version__{{ template "GET_HASH" }}", "${meta.env}", "env__${meta.env}", "${meta.env}-fileserve-prefix-/js proto=http", "${meta.env}-fileserve-prefix-/docs proto=http", "consuldogConfig:traitify-widgets-apache.yaml.tmpl:apache" ]
+
+        port = "http"
+
+        check {
+          name = "http"
+          path = "/js/v2/traitify.js"
+          initial_status = "critical"
+          type     = "http"
+          protocol = "http"
+          port     = "http"
+          interval = "5s"
+          timeout  = "2s"
+        }
+      }
+    }
+
+    task "log-shipper" {
+      # grab our config file template
+      artifact {
+        # for development
+        source = "https://jenkins-archive.traitify.com/traitify-widgets/traitify-widgets-remote-syslog2-{{ template "GET_HASH" }}.yml.tmpl"
+      }
+      # turn it into the correct config
+      template {
+        source = "local/traitify-widgets-remote-syslog2-{{ template "GET_HASH" }}.yml.tmpl"
+        destination = "local/remote-syslog2.yml"
+        change_mode = "noop"
+        perms = "664"
+      }
+      # set our environment variables
+      env {
+        CHEF_ENV = "${meta.env}"
+        APP_NAME = "traitify-widgets"
+        LOCAL_HOSTNAME = "${node.unique.name}"
+        LOG_TASK_NAME = "traitify-widgets"
+        GIT_HASH = "{{ template "GET_HASH" }}"
+      }
+      # grant access to secrets
+      driver = "exec"
       config {
-        command = "bash"
-        args = [ "local/artifact-place.sh", "-p", "-d", "/opt/fileserve/js/v2", "-a", "local/traitify-widgets-<<< env "GIT_COMMIT" >>>.tar.gz" ]
-      } 
+        command = "/usr/local/bin/remote_syslog"
+        args = [ "-c", "/local/remote-syslog2.yml", "-D" ]
+      }
       resources {
         cpu    = 100
-        memory = 10
+        memory = 100
       }
     }
   }

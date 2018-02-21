@@ -93,7 +93,7 @@
     "preact": "^8.2.1",
     "proptypes": "^1.1.0",
     "qwest": "^4.4.5",
-    "traitify-js-browser-client": "^1.0.2",
+    "traitify-js-browser-client": "^1.0.3",
     "uuid": "^3.0.1",
     "xhr-mock": "^1.7.0"
   }

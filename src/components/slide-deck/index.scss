@@ -151,6 +151,11 @@
         display: inline-block;
         width:50%;
         padding: 0px;
+        &:focus{
+          outline-width: 5px;
+          outline-offset: -5px;
+          outline-style: solid;
+        }
       }
       .me{
         background-color: $meColor;

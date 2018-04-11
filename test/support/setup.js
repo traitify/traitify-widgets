@@ -1,12 +1,10 @@
+import Traitify from "traitify";
 import Mocks from "./mocks";
 import Steps from "../steps";
 
 function Setup(stepTest){
-  let ui = stepTest.Traitify.ui;
-  let oldIE = stepTest.Traitify.oldIE;
-  class UI extends ui{}
-  stepTest.Traitify = {testMode: true, oldIE, ui: UI};
-  stepTest.Traitify.ui.client = stepTest.Traitify;
+  stepTest.Traitify = new Traitify();
+  stepTest.Traitify.testMode = true;
   stepTest.parallel = true;
   Mocks(stepTest.Traitify);
   Steps(stepTest);

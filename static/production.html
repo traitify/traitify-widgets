@@ -8,12 +8,12 @@
   <body>
     <div id="slide-deck"></div>
     <div id="results"></div>
-    <script src="/build/traitify.js"></script>
+    <script src="https://cdn.traitify.com/js/v2/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
-      function initDeck (){
+      function initDeck(){
         Traitify.ui.disableTests();
         var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
         assessment.targets({

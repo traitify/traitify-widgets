@@ -13,7 +13,7 @@
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
-      function initDeck (){
+      function createWidget(){
         Traitify.ui.disableTests();
         var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
         assessment.targets({
@@ -36,12 +36,12 @@
           }catch(error){
             console.log(error);
           }
-          initDeck();
-        })
+          createWidget();
+        });
       }
 
       if(localStorage.getItem("assessment-id")){
-        initDeck();
+        createWidget();
       }
     </script>
 

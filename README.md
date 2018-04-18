@@ -2,7 +2,7 @@
 
 ## Initializing The Library
 ```
-<script src="https://cdn-prod.traitify.com/js/v2/traitify.js"></script>
+<script src="https://cdn.traitify.com/js/v2/traitify.js"></script>
 <script>
 Traitify.setHost('your host url');
 Traitify.setPublicKey('your public key');

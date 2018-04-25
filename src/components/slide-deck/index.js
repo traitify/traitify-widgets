@@ -136,11 +136,12 @@ export default class SlideDeck extends Component{
     });
   }
   resizeImages = ()=>{
+    if(!this.container){ return; }
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     const retina = window.devicePixelRatio && window.devicePixelRatio > 1;
     const slides = this.slides();
-    const imageHost = "https://images-stag.traitify.com";
+    const imageHost = this.props.imageHost;
 
     slides.forEach((slide)=>{
       slide.loaded = false;

@@ -1,12 +1,13 @@
 import I18n from "./i18n";
 
 export default class TraitifyState{
-  constructor(client){
+  constructor(ui, options){
     this.state = {
-      client,
       assessment: {},
+      client: ui.client,
       deck: {},
-      i18n: new I18n
+      i18n: new I18n,
+      imageHost: ui.imageHost
     };
 
     this.state.fetch = this.fetch.bind(this);
@@ -16,8 +17,7 @@ export default class TraitifyState{
     this.state.setState = this.setState.bind(this);
     this.state.translate = (key, options)=>this.state.i18n.translate(key, options);
     this.state.triggerCallback = this.triggerCallback.bind(this);
-  }
-  setup(options = {}){
+
     options.locale && this.state.i18n.setLocale(options.locale);
 
     Object.keys(options).forEach((key)=>{

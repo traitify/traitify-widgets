@@ -34,8 +34,7 @@ class TraitifyWidget{
     return this;
   }
   render(componentName){
-    let shared = new TraitifyState(this.ui.client);
-    shared.setup(this.options);
+    let shared = new TraitifyState(this.ui, this.options);
 
     return new Promise((resolve, reject)=>{
       try{

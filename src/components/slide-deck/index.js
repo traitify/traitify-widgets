@@ -139,7 +139,7 @@ export default class SlideDeck extends Component{
     if(!this.container){ return; }
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
-    const retina = window.devicePixelRatio && window.devicePixelRatio > 1;
+    const retina = window.devicePixelRatio ? window.devicePixelRatio > 1 : false;
     const slides = this.slides();
     const imageHost = this.props.imageHost;
 

@@ -1,13 +1,13 @@
 import Traitify from "traitify";
 import EmbeddedTests from "./embedded-tests";
 
-window.Traitify = Traitify;
-
-Traitify.StepTest = EmbeddedTests;
-Traitify.StepTest.Traitify = Traitify.Init();
-Traitify.Test = function(){
+const traitify = new Traitify();
+traitify.StepTest = EmbeddedTests;
+traitify.Test = function(){
   this.StepTest.load();
   this.StepTest.play();
 };
 
-export default Traitify;
+window.Traitify = traitify;
+
+export default traitify;

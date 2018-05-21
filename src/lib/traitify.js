@@ -1,12 +1,12 @@
 /*global __VERSION__*/
-import TraitifyLib from "traitify-client";
-import ui from "traitify-ui";
-function Init(){
-  let Traitify = TraitifyLib;
-  Traitify.ui = ui;
-  Traitify.ui.client = Traitify;
-  Traitify.__version__ = __VERSION__;
-  Traitify.Init = Init;
-  return Traitify;
+import TraitifyClient from "traitify-client";
+import TraitifyUI from "traitify-ui";
+
+export default class Traitify extends TraitifyClient{
+  constructor(){
+    super();
+    this.__version__ = __VERSION__;
+    this.ui = new TraitifyUI();
+    this.ui.client = this;
+  }
 }
-export default Init();

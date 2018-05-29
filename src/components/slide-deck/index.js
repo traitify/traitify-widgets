@@ -139,14 +139,13 @@ export default class SlideDeck extends Component{
     if(!this.container){ return; }
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
-    const retina = window.devicePixelRatio ? window.devicePixelRatio > 1 : false;
     const slides = this.slides();
     const imageHost = this.props.imageHost;
 
     slides.forEach((slide)=>{
       slide.loaded = false;
       slide.image = width > 0 && height > 0
-        ? `${imageHost}/v1/images/${slide.id}?width=${width}&height=${height}&retina=${retina}`
+        ? `${imageHost}/v1/images/${slide.id}?width=${width}&height=${height}`
         : slide.image_desktop;
     });
 

@@ -13,49 +13,151 @@ assessment.render();
 </script>
 ```
 
+## Rendering Components
+
+### All Decks
+
+#### SlideDeck
+```
+assessment.render("SlideDeck"); // Render just the SlideDeck in the target element
+```
+
+#### Results
+```
+assessment.render("Results"); // Render just the Results in the target element
+```
+
+#### Personality Types/Dimensions
+```
+assessment.render("PersonalityTypes"); // Render just the Type/Dimensions in the target element
+```
+
+#### Personality Traits
+```
+assessment.render("PersonalityTraits"); // Render just the Traits in the target element
+```
+
+#### Personality Details
+```
+assessment.render("PersonalityDetails"); // Render just the details in the target element
+```
+
+### Type Based Decks (ex. career-deck,core,heroes)
+
+#### Personality Blend
+```
+assessment.render("PersonalityBlend"); // Render just the Blend in the target element
+```
+
+### Dimension Based Decks (big-five)
+
+#### Radar Graph
+```
+assessment.render("Radar"); // Render just the Radar graph in the target element
+```
+
+#### Personality Heading
+```
+assessment.render("PersonalityHeading"); // Render just the archetype in the target element
+```
+
+### Render multiple components in specific elements
+```
+  assessment.targets({
+    "SlideDeck": "#slide-deck",
+    "PersonalityTypes": "#personality-types",
+    "PersonalityTraits": "#personality-traits",
+    "Results": "#results",
+  });
+
+  assessment.render();
+```
+
 ## Events
 ```
-// Event handlers must be set before the render command, or they will not be called.
-assessment.on("SlideDeck.Finished", function(){
-  console.log("finished");
-})
+  // Event handlers must be set before the render command, or they will not be called.
+  assessment.on("SlideDeck.Finished", function(){
+    console.log("SlideDeck.Finished");
+  });
 
-// Must render after adding event callbacks so that the events are passed to the widget set
-assessment.render();
+  assessment.on("SlideDeck.Initialized", function(){
+    console.log("SlideDeck.Initialized");
+  });
+
+  assessment.on("SlideDeck.IsReady", function(){
+    console.log("SlideDeck.IsReady");
+  });
+
+  assessment.on("SlideDeck.UpdateSlide", function(event, slideResponse){
+    console.log("SlideDeck.UpdateSlide");
+    console.log(slideResponse);
+  });
+
+  assessment.on("SlideDeck.BackSlide", function(){
+    console.log("SlideDeck.BackSlide");
+  });
+
+  assessment.on("SlideDeck.Fullscreen", function(event, isFullScreen){
+    console.log("SlideDeck.Fullscreen");
+    console.log(isFullScreen);
+  });
+
+  assessment.on("Results.Initialized", function(){
+    console.log("Results.Initialized");
+  });
+
+  assessment.on("PersonalityTypes.Initialized", function(){
+    console.log("PersonalityTypes.Initialized");
+  });
+
+  assessment.on("PersonalityTraits.Initialized", function(){
+    console.log("PersonalityTraits.Initialized");
+  });
 ```
 
-## Rendering Just the SlideDeck or Just the Results
-### SlideDeck
+## Options
+### Render a back button to allow users to change answers during the test
 ```
-assessment.render("SlideDeck"); // Just the SlideDeck
-```
-
-### Results
-```
-assessment.render("Results"); // Just the Results
+  assessment.allowBack(true);
 ```
 
-## Setup
-
-```sh
-npm install
-npm run dev
+### Allow the user to click a button to go full screen
+```
+  assessment.allowFullScreen(true);
 ```
 
-## Build
+### Render results using specific perspective
+\* currently only the `big-five` assessment has perspective content
+```
+  assessment.perspective("firstPerson");
 
-```sh
-npm run build
+  OR
+
+  assessment.perspective("thirdPerson");
 ```
 
-## Tools
-
-- Webpack: https://webpack.github.io
-- Preact: https://github.com/developit/preact
-- Preact Compat: https://github.com/developit/preact-compat
 
 ## Contibuting
 
 Checkout [Preact Boilerplate] to understand some of the tools this repository uses
 
 [Preact Boilerplate]: https://github.com/developit/preact-boilerplate
+
+### Setup
+
+```sh
+npm install
+npm run dev
+```
+
+### Build
+
+```sh
+npm run build
+```
+
+### Tools in Use
+
+- Webpack: https://webpack.github.io
+- Preact: https://github.com/developit/preact
+- Preact Compat: https://github.com/developit/preact-compat

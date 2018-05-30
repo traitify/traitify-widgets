@@ -4,7 +4,7 @@ import Steps from "../steps";
 
 function Setup(stepTest){
   stepTest.Traitify = new Traitify();
-  stepTest.Traitify.testMode = true;
+  stepTest.Traitify.testing = true;
   stepTest.parallel = true;
   Mocks(stepTest.Traitify);
   Steps(stepTest);

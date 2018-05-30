@@ -27,7 +27,7 @@ export default class TraitifyState{
     this.state.fetch();
   }
   fetch(){
-    let storeKey = `results-${this.state.assessmentId}-${this.state.i18n.locale}`;
+    let storeKey = `results-${this.state.assessmentID}-${this.state.i18n.locale}`;
     let setData = (data)=>{
       this.state.i18n.locale || this.state.i18n.setLocale(data.locale_key);
       this.state.assessment = data;
@@ -39,7 +39,10 @@ export default class TraitifyState{
     if(sessionStorage.getItem(storeKey)){
       setData(JSON.parse(sessionStorage.getItem(storeKey)));
     }else{
-      this.state.client.get(`/assessments/${this.state.assessmentId}?data=slides,archetype,blend,types,traits&locale_key=${this.state.i18n.locale}`).then((data)=>{
+      this.state.client.get(`/assessments/${this.state.assessmentID}`, {
+        data: "slides,archetype,blend,types,traits",
+        locale_key: this.state.i18n.locale
+      }).then((data)=>{
         if(data && data.personality_types && data.personality_types.length > 0){
           sessionStorage.setItem(storeKey, JSON.stringify(data));
         }
@@ -62,7 +65,7 @@ export default class TraitifyState{
       setData(JSON.parse(sessionStorage.getItem(storeKey)));
     }else{
       this.state.fetchingDeck = true;
-      this.state.client.get(`/decks/${this.state.assessment.deck_id}?locale_key=${this.state.i18n.locale}`).then((data)=>{
+      this.state.client.get(`/decks/${this.state.assessment.deck_id}`, {locale_key: this.state.i18n.locale}).then((data)=>{
         if(data && data.name){
           sessionStorage.setItem(storeKey, JSON.stringify(data));
           setData(data);

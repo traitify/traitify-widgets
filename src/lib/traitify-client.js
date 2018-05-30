@@ -1,3 +1,5 @@
+import queryString from "query-string";
+
 export default class TraitifyClient{
   constructor(){
     this.host = "https://api.traitify.com";
@@ -13,11 +15,6 @@ export default class TraitifyClient{
     this.host = host;
     return this;
   }
-  // DEPRECATION: imagePack will no longer be stored in the client
-  setImagePack = (pack)=>{
-    this.imagePack = pack;
-    return this;
-  }
   setPublicKey = (key)=>{
     this.publicKey = key;
     return this;
@@ -26,10 +23,14 @@ export default class TraitifyClient{
     this.version = version;
     return this;
   }
-  // DEPRECATION: Passing callback
-  ajax = (method, path, callback, params)=>{
+  ajax = (method, path, params)=>{
     let url = this.host + "/" + this.version + path;
     let xhr;
+    if(params && ["get", "delete"].includes(method.toLowerCase())){
+      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += queryString.stringify(params);
+      params = null;
+    }
     if(this.oldIE){
       url += url.indexOf("?") === -1 ? "?" : "&";
       url += `authorization=${this.publicKey}&reset_cache=${(new Date).getTime()}`;
@@ -50,7 +51,6 @@ export default class TraitifyClient{
             return reject(xhr.response);
           }else{
             const data = JSON.parse(this.oldIE ? xhr.responseText : xhr.response);
-            if(callback){ callback(data); }
             return resolve(data);
           }
         };
@@ -66,16 +66,8 @@ export default class TraitifyClient{
       }catch(error){ return reject(error); }
     });
   }
-  // DEPRECATION: Request method will be removed
-  request = (method, path, params)=>{
-    let url = path;
-    url += (url.indexOf("?") === -1) ? "?" : "&";
-    if(this.imagePack) url += `image_pack=${this.imagePack}`;
-
-    return this.ajax(method, url, null, params);
-  }
-  // DEPRECATION: Passing callback
-  get = (path, callback)=>(this.ajax("GET", path, callback))
-  put = (path, params)=>(this.request(this.oldIE ? "POST" : "PUT", path, params))
-  post = (path, params)=>(this.request("POST", path, params))
+  get = (path, params)=>(this.ajax("GET", path, params))
+  put = (path, params)=>(this.ajax(this.oldIE ? "POST" : "PUT", path, params))
+  post = (path, params)=>(this.ajax("POST", path, params))
+  delete = (path, params)=>(this.ajax("DELETE", path, params))
 }

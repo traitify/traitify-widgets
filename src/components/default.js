@@ -11,13 +11,13 @@ export default class Default extends Component{
     return (this.props.assessment.personality_types || []).length !== 0;
   }
   render(){
-    let widget = <div />;
     if(this.shouldLoadSlideDeck()){
-      widget = <SlideDeck {...this.props} />;
+      return <SlideDeck {...this.props} />;
     }
     if(this.shouldLoadResults()){
-      widget = <Results {...this.props} />;
+      return <Results {...this.props} />;
     }
-    return widget;
+
+    return <div />;
   }
 }

@@ -2,45 +2,23 @@ import TraitifyWidget from "./traitify-widget";
 
 export default class TraitifyUI{
   constructor(){
-    this.imageHost = "https://images.traitify.com";
+    this.options = {
+      callbacks: {}
+    };
 
-    // DEPRECATION: Calling Widget function from UI
-    [
-      "allowBack",
-      "allowFullScreen",
-      "assessmentId",
-      "perspective",
-      "target",
-      "targets"
-    ].forEach((option)=>{
-      this[option] = (value)=>{
-        let options = {};
-        options[option] = value;
-        return this.component(options);
-      };
-    });
+    this.imageHost = "https://images.traitify.com";
   }
   component(options){
-    return new TraitifyWidget(this, options);
+    return new TraitifyWidget(this, {...this.options, ...options});
   }
-  disableTests(){
-    this.testsDisabled = true;
-  }
-  // DEPRECATION: Calling Widget function from UI
-  locale(value){
-    return this.component().locale(value);
-  }
-  // DEPRECATION: Calling Widget function from UI
   on(key, callback){
-    return this.component().on(key, callback);
+    key = key.toLowerCase();
+    this.options.callbacks[key] = this.options.callbacks[key] || [];
+    this.options.callbacks[key].push(callback);
+    return this;
   }
-  // DEPRECATION: Calling Widget function from UI
-  render(options){
-    return this.component(options).render();
-  }
-  startTests(){
-    if(this.client.testMode){ return; }
-    this.client.testMode = true;
-    setTimeout(::this.client.Test, 0);
+  setImagePack(pack){
+    this.options.imagePack = pack;
+    return this;
   }
 }

@@ -16,7 +16,7 @@ function Init(stepTest){
   ]);
 
   stepTest.step("Load Traitify UI with SlideDeck assessment ID", function(){
-    this.widget = this.constructor.Traitify.ui.assessmentId("slidedeck");
+    this.widget = this.constructor.Traitify.ui.component().assessmentID("slidedeck");
   });
 }
 

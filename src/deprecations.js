@@ -1,5 +1,6 @@
 export default function(traitify){
   const originalAjax = traitify.ajax;
+  const originalComponent = traitify.ui.component;
 
   traitify.ajax = function(method, path, callback, params){
     return originalAjax(method, path, params).then(callback);
@@ -17,6 +18,11 @@ export default function(traitify){
   traitify.setImagePack = function(pack){
     this.ui.setImagePack(pack);
     return this;
+  };
+  traitify.ui.component = function(options){
+    const component = originalComponent(options)
+    component.assessmentId = function(assessmentID){ return this.assessmentID(assessmentID); };
+    return component;
   };
   traitify.ui.allowBack = function(value){ return this.component()[value ? "allowBack" : "disableBack"](); };
   traitify.ui.allowFullScreen = function(value){ return this.component()[value ? "allowFullscreen" : "disableFullscreen"](); };

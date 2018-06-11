@@ -8,7 +8,7 @@ export default class TraitifyUI{
 
     this.imageHost = "https://images.traitify.com";
   }
-  component(options){
+  component(options = {}){
     return new TraitifyWidget(this, {...this.options, ...options});
   }
   on(key, callback){

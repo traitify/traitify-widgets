@@ -1,9 +1,7 @@
 export default function(traitify){
-  const originalAjax = traitify.ajax;
-  const originalComponent = traitify.ui.component;
-
+  traitify.originalAjax = traitify.ajax;
   traitify.ajax = function(method, path, callback, params){
-    return originalAjax(method, path, params).then(callback);
+    return this.originalAjax(method, path, params).then(callback);
   };
   traitify.request = function(method, path, params){
     let url = path;
@@ -12,15 +10,24 @@ export default function(traitify){
 
     return this.ajax(method, url, null, params);
   };
-  traitify.get = function(path, callback){ return this.ajax("GET", path).then(callback); };
+  traitify.get = function(path, params, callback){
+    if(typeof params == "function"){
+      callback = params;
+      params = null;
+    }
+
+    return this.ajax("GET", path, callback, params);
+  };
   traitify.put = function(path, params){ return this.request(this.oldIE ? "POST" : "PUT", path, params); };
   traitify.post = function(path, params){ return this.request("POST", path, params); };
   traitify.setImagePack = function(pack){
     this.ui.setImagePack(pack);
     return this;
   };
+  traitify.ui.originalComponent = traitify.ui.component;
   traitify.ui.component = function(options){
-    const component = originalComponent(options)
+    const component = this.originalComponent(options);
+    component.allowFullScreen = function(value){ return value ? this.allowFullscreen() : this.disableFullscreen(); };
     component.assessmentId = function(assessmentID){ return this.assessmentID(assessmentID); };
     return component;
   };
@@ -35,8 +42,6 @@ export default function(traitify){
     "target",
     "targets"
   ].forEach((option)=>{
-    traitify.ui[option] = function(value){
-      return this.component()[option](value);
-    };
+    traitify.ui[option] = (value)=>traitify.ui.component()[option](value);
   });
 }

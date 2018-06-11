@@ -7,15 +7,17 @@
     "build"
   ],
   "scripts": {
-    "dev": "cross-env MODE=browser webpack-dev-server",
-    "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack -p --progress",
+    "build:compatibility": "cross-env MODE=compatibility NODE_ENV=production webpack -p --progress",
+    "dev": "cross-env MODE=browser webpack-dev-server",
+    "lint": "eslint {src,test}",
     "prebuild": "mkdirp build",
+    "prebuild:compatibility": "mkdirp build",
+    "prestart": "npm run build",
     "test": "npm run -s test:karma",
     "test:karma": "karma start test/karma.conf.js",
     "test:karma:live": "karma start test/karma.chrome.conf.js",
-    "test:karma:browserstack": "karma start test/karma.browserstack.conf.js",
-    "lint": "eslint {src,test}"
+    "test:karma:browserstack": "karma start test/karma.browserstack.conf.js"
   },
   "keywords": [
     "traitify",

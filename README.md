@@ -1,17 +1,42 @@
 # Traitify Widgets
 
-## Initializing The Library
+## Installing and Initializing The Library
+
+The widgets can be installed through our CDN or npm. Usage through the CDN will maintain backwards compatibility, while the npm library will use semantic versioning.
+
+### CDN
+
 ```
 <script src="https://cdn.traitify.com/js/v2/traitify.js"></script>
 <script>
-Traitify.setHost('your host url');
-Traitify.setPublicKey('your public key');
+  Traitify.setHost('your host url');
+  Traitify.setPublicKey('your public key');
 
-assessment = Traitify.ui.assessmentId('an assessment id you have generated via a server side client');
-assessment.target("#the-id-of-the-target-you-wish-to-render-to");
-assessment.render();
+  assessment = Traitify.ui.component();
+  assessment.assessmentID('an assessment id you have generated via a server side client');
+  assessment.target("#the-id-of-the-target-you-wish-to-render-to");
+  assessment.render();
 </script>
 ```
+
+### npm
+
+#### Installation
+```
+npm i --save traitify-widgets
+```
+
+#### Usage
+```
+import traitify from "traitify-widgets";
+
+assessment = traitify.ui.component();
+assessment.assessmentID('an assessment id you have generated via a server side client');
+assessment.target("#the-id-of-the-target-you-wish-to-render-to");
+assessment.render();
+```
+
+[Click here](src/index.js) to view other classes available to import, such as the `TraitifyClient`.
 
 ## Rendering Components
 
@@ -118,12 +143,12 @@ assessment.render("PersonalityHeading"); // Render just the archetype in the tar
 ## Options
 ### Render a back button to allow users to change answers during the test
 ```
-  assessment.allowBack(true);
+  assessment.allowBack();
 ```
 
 ### Allow the user to click a button to go full screen
 ```
-  assessment.allowFullScreen(true);
+  assessment.allowFullscreen();
 ```
 
 ### Render results using specific perspective

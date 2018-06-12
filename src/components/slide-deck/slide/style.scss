@@ -1,31 +1,22 @@
 @import "../variables";
 
 .slide{
+  min-height: $minHeight;
   position: absolute;
   width: 100%;
   height: 100%;
-  min-height: $minHeight;
+  img {
+    width: 100%;
+    height: 100%;
+  }
   &.invisible{
     left: 0%;
     display: none !important;
   }
-  &.left{
-    left: 0%;
-  }
+  &.left{ left: 0%; }
   &.middle{
-    -webkit-transition: left .3s; /* Safari */
     transition: left .3s;
     left: 0%;
   }
-  &.right{
-    left: 100%;
-  }
-  &.slideIE{
-    overflow: hidden;
-    img{
-      position: absolute;
-      width: 100%;
-    }
-  }
-  background-size: cover;
+  &.right{ left: 100%; }
 }

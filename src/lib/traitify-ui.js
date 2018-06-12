@@ -2,7 +2,7 @@ import TraitifyWidget from "./traitify-widget";
 
 export default class TraitifyUI{
   constructor(){
-    this.options = {};
+    this.imageHost = "https://images.traitify.com";
 
     // DEPRECATION: Calling Widget function from UI
     [
@@ -13,7 +13,7 @@ export default class TraitifyUI{
       "target",
       "targets"
     ].forEach((option)=>{
-      this[option] = function(value){
+      this[option] = (value)=>{
         let options = {};
         options[option] = value;
         return this.component(options);

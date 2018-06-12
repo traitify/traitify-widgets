@@ -14,15 +14,10 @@ export default class Slide extends Component{
   render(){
     const slide = this.props.slide;
 
-    return this.props.oldIE ? (
-      <div class={`${style.slide} ${style.slideIE} ${style.middle}`}>
+    return (
+      <div class={`${style.slide} ${style[slide.orientation]}`}>
         <img src={slide.image} alt={slide.alternative_text} />
       </div>
-    ) : (
-      <div class={`${style.slide} ${style[slide.orientation]}`} style={{
-        backgroundImage: `url(${slide.image})`,
-        backgroundPosition: `${slide.focus_x}% ${slide.focus_y}%`
-      }} role="img" aria-label={slide.orientation === "middle" ? slide.alternative_text : ""} />
     );
   }
 }

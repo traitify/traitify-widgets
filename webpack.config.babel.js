@@ -1,37 +1,21 @@
-import webpack from "webpack";
 import autoprefixer from "autoprefixer";
-import ReplacePlugin from "replace-bundle-webpack-plugin";
 import path from "path";
-import git from "git-rev-sync";
+import webpack from "webpack";
 
 const env = process.env.NODE_ENV || "development";
 const cssMaps = env !== "production";
 
 let config = {
   context: path.resolve(__dirname, "src"),
+  devServer: {
+    publicPath: "/build/"
+  },
+  devtool: "source-map",
   entry: [
     "babel-polyfill",
     "./index.js"
   ],
-  output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
-    filename: "traitify.js",
-    library: "Traitify",
-    libraryTarget: "umd",
-    umdNamedDefine: true
-  },
-  resolve: {
-    extensions: [".jsx", ".js", ".json", ".scss"],
-    modules: [
-      path.resolve(__dirname, "src/lib"),
-      path.resolve(__dirname, "node_modules"),
-      "node_modules"
-    ],
-    alias: {
-      style: path.resolve(__dirname, "src/style")
-    }
-  },
+  mode: env,
   module: {
     rules: [
       {
@@ -93,27 +77,29 @@ let config = {
       }
     ]
   },
-  plugins: ([
+  output: {
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/",
+    filename: "traitify.js",
+    library: "Traitify",
+    libraryTarget: "umd",
+    umdNamedDefine: true
+  },
+  plugins: [
     new webpack.DefinePlugin({
-      __VERSION__: JSON.stringify(git.long())
-    }),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(env)
+      VERSION: JSON.stringify(process.env.npm_package_version)
     })
-  ]).concat(env === "production" ? [
-    new webpack.optimize.UglifyJsPlugin(),
-
-    // strip out babel-helper invariant checks
-    new ReplacePlugin([{
-      pattern: /throw\s+(new\s+)?[a-zA-Z]+Error\s*\(/g,
-      replacement: () => "return;("
-    }])
-  ] : []),
-  stats: { colors: true },
-  devtool: "source-map",
-  devServer: {
-    publicPath: "/build/"
+  ],
+  resolve: {
+    extensions: [".jsx", ".js", ".json", ".scss"],
+    modules: [
+      path.resolve(__dirname, "src/lib"),
+      path.resolve(__dirname, "node_modules"),
+      "node_modules"
+    ],
+    alias: {
+      style: path.resolve(__dirname, "src/style")
+    }
   }
 };
 

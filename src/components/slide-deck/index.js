@@ -195,7 +195,7 @@ export default class SlideDeck extends Component{
     attempts[attempts.length - 1] = 0;
     this.setState({imageLoadAttempts: attempts}, this.fetchImages);
   }
-  toggleFullScreen = ()=>{
+  toggleFullscreen = ()=>{
     const fullscreen = this.props.isFullscreen;
 
     if(fullscreen){

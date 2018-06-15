@@ -1,6 +1,5 @@
 import {h, render} from "preact";
 import Error from "../error-handler";
-import I18n from "./i18n";
 import Main from "../components/main";
 import TraitifyState from "./traitify-state";
 
@@ -27,9 +26,8 @@ class TraitifyWidget{
     this.options.allowFullscreen = false;
     return this;
   }
-  locale(locale = ""){
-    const i18n = new I18n();
-    i18n[locale.toLowerCase()] ? locale.toLowerCase() : "en-us";
+  locale(locale){
+    this.options.locale = locale.toLowerCase();
     return this;
   }
   on(key, callback){

@@ -72,7 +72,7 @@ export default class I18n{
     return this;
   }
   setLocale(locale){
-    this.locale = locale.toLowerCase();
+    this.locale = this[locale.toLowerCase()] ? locale.toLowerCase() : "en-us";
   }
   translate(key, options){
     let result = this[this.locale][key];

@@ -11,10 +11,7 @@ let config = {
     publicPath: "/build/"
   },
   devtool: "source-map",
-  entry: [
-    "babel-polyfill",
-    "./index.js"
-  ],
+  entry: ["./index.js"],
   mode: env,
   module: {
     rules: [
@@ -107,7 +104,10 @@ const ie = process.env.MODE === "ie";
 const compatibility = ie || process.env.MODE === "compatibility";
 const browser = compatibility || process.env.MODE === "browser";
 
-if(browser){ config.output.libraryExport = "default"; }
+if(browser){
+  config.entry.unshift("babel-polyfill");
+  config.output.libraryExport = "default";
+}
 if(compatibility){ config.entry[1] = "./compatibility.js"; }
 if(ie){
   config.devServer.inline = false;

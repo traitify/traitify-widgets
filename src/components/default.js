@@ -11,11 +11,11 @@ export default class Default extends Component{
     return (this.props.assessment.personality_types || []).length !== 0;
   }
   render(){
-    if(this.shouldLoadSlideDeck()){
-      return <SlideDeck {...this.props} />;
-    }
     if(this.shouldLoadResults()){
       return <Results {...this.props} />;
+    }
+    if(this.shouldLoadSlideDeck()){
+      return <SlideDeck {...this.props} />;
     }
 
     return <div />;

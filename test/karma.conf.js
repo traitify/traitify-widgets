@@ -21,10 +21,9 @@ module.exports = function(config) {
 
     singleRun: true,
 
-    browsers: ["PhantomJS"],
+    browsers: ["Chrome"],
 
     files: [
-      "node_modules/babel-polyfill/dist/polyfill.js",
       "test/browser/**/*.js"
     ],
 

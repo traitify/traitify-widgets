@@ -1,6 +1,5 @@
 import {h, render} from "preact";
 import Error from "../error-handler";
-import I18n from "./i18n";
 import Main from "../components/main";
 import TraitifyState from "./traitify-state";
 
@@ -10,17 +9,25 @@ class TraitifyWidget{
     this.options = options || {};
     this.options.callbacks = Object.assign({}, this.options.callbacks);
     this.options.targets = Object.assign({}, this.options.targets);
-    if(!this.ui.testsDisabled){ this.ui.startTests(); }
   }
-  locale(locale = ""){
-    let i18n = new I18n();
-
-    if(i18n[locale.toLowerCase()]){
-      this.options.locale = locale.toLowerCase();
-    }else{
-      this.options.locale = "en-us";
-    }
-
+  allowBack(){
+    this.options.allowBack = true;
+    return this;
+  }
+  allowFullscreen(){
+    this.options.allowFullscreen = true;
+    return this;
+  }
+  disableBack(){
+    this.options.allowBack = false;
+    return this;
+  }
+  disableFullscreen(){
+    this.options.allowFullscreen = false;
+    return this;
+  }
+  locale(locale){
+    this.options.locale = locale.toLowerCase();
     return this;
   }
   on(key, callback){
@@ -36,42 +43,53 @@ class TraitifyWidget{
   render(componentName){
     let shared = new TraitifyState(this.ui, this.options);
 
-    return new Promise((resolve, reject)=>{
-      try{
-        if(this.options.target){
-          this.options.targets[componentName || "Default"] = this.options.target;
-        }
+    if(this.options.target){
+      this.options.targets[componentName || "Default"] = this.options.target;
+    }
 
-        if(Object.keys(this.options.targets).length === 0){
-          return reject("Your target element could either not be selected or was not provided");
-        }
+    let promises = [];
 
-        let promise = {resolve, reject};
+    if(Object.keys(this.options.targets).length === 0){
+      promises.push(new Promise((resolve, reject)=>{
+        reject("You did not specify a target");
+      }));
+    }
 
-        Object.keys(this.options.targets).forEach(name=>{
-          if(typeof this.options.targets[name] == "string"){
-            this.options.targets[name] = document.querySelector(this.options.targets[name]);
-          }
-
-          let target = this.options.targets[name];
-          while(target.firstChild) target.removeChild(target.firstChild);
-          render(<Main componentName={name} shared={shared} promise={promise} />, target);
+    Object.keys(this.options.targets).forEach(name=>{
+      promises.push(new Promise((resolve, reject)=>{
+        shared.on("Main.Ready", (context, options)=>{
+          if(options.name === name){ resolve(options.name); }
         });
-      }catch(error){
-        let err = new Error();
-        err.type = error.name;
-        err.message = error.message;
-        err.notify();
-        reject(error);
-      }
+        shared.on("Main.Error", (context, options)=>{
+          if(options.name === name){ reject(options.error); }
+        });
+
+        if(typeof this.options.targets[name] == "string"){
+          this.options.targets[name] = document.querySelector(this.options.targets[name]);
+        }
+
+        const target = this.options.targets[name];
+        if(target){
+          while(target.firstChild){ target.removeChild(target.firstChild); }
+          render(<Main componentName={name} shared={shared} />, target);
+        }else{
+          reject("Your target element could not be selected");
+        }
+      }));
+    });
+
+    return Promise.all(promises).catch(error=>{
+      let err = new Error(this.ui.client);
+      err.type = error.name;
+      err.message = error.message;
+      err.notify();
+      throw error;
     });
   }
 }
 
 [
-  "allowBack",
-  "allowFullScreen",
-  "assessmentId",
+  "assessmentID",
   "perspective",
   "target",
   "targets"

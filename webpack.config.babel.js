@@ -1,33 +1,18 @@
-import webpack from "webpack";
 import autoprefixer from "autoprefixer";
-import ReplacePlugin from "replace-bundle-webpack-plugin";
 import path from "path";
-import git from "git-rev-sync";
-const ENV = process.env.NODE_ENV || "development";
-const CSS_MAPS = ENV !== "production";
+import webpack from "webpack";
 
-module.exports = {
+const env = process.env.NODE_ENV || "development";
+const cssMaps = env !== "production";
+
+let config = {
   context: path.resolve(__dirname, "src"),
-  entry: ["babel-polyfill", "./index.js"],
-
-  output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
-    filename: "traitify.js"
+  devServer: {
+    publicPath: "/build/"
   },
-
-  resolve: {
-    extensions: [".jsx", ".js", ".json", ".scss"],
-    modules: [
-      path.resolve(__dirname, "src/lib"),
-      path.resolve(__dirname, "node_modules"),
-      "node_modules"
-    ],
-    alias: {
-      style: path.resolve(__dirname, "src/style")
-    }
-  },
-
+  devtool: "source-map",
+  entry: ["./index.js"],
+  mode: env,
   module: {
     rules: [
       {
@@ -42,20 +27,25 @@ module.exports = {
         loader: "babel-loader"
       },
       {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
           {
             loader: "style-loader",
             options: {
-              sourceMap: CSS_MAPS,
+              sourceMap: cssMaps,
               singleton: true
             }
           },
           {
             loader: "css-loader",
             options:  {
-              sourceMap: CSS_MAPS,
+              sourceMap: cssMaps,
               modules: true,
               importLoaders: 2,
               localIdentName: "traitify--[path]--[local]"
@@ -64,7 +54,7 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              sourceMap: CSS_MAPS,
+              sourceMap: cssMaps,
               plugins: function() {
                 return [autoprefixer({ browsers: "last 2 versions" })]
               }
@@ -73,66 +63,55 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              sourceMap: CSS_MAPS
+              sourceMap: cssMaps
             }
           }
         ]
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-        loader: ENV==="production" ? "file-loader" : "url-loader"
+        loader: env === "production" ? "file-loader" : "url-loader"
       }
     ]
   },
-
-  plugins: ([
-    new webpack.DefinePlugin({
-      __VERSION__: JSON.stringify(git.long())
-    }),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(ENV)
-    })
-  ]).concat(ENV==="production" ? [
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false
-      },
-      compress: {
-        warnings: false,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
-        negate_iife: false
-      }
-    }),
-
-    // strip out babel-helper invariant checks
-    new ReplacePlugin([{
-      pattern: /throw\s+(new\s+)?[a-zA-Z]+Error\s*\(/g,
-      replacement: () => "return;("
-    }])
-  ] : []),
-
-  stats: { colors: true },
-
-  node: {
-    global: true,
-    process: false,
-    Buffer: false,
-    __filename: false,
-    __dirname: false,
-    setImmediate: false
+  output: {
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/",
+    filename: "traitify.js",
+    library: "Traitify",
+    libraryTarget: "umd",
+    umdNamedDefine: true
   },
-
-  devtool: ENV==="production" ? "source-map" : "cheap-module-eval-source-map", // Remove for IE 10 Testing
-  devServer: {
-    // inline: false, // Add for IE 10 Testing
-    publicPath: "/build/"
+  plugins: [
+    new webpack.DefinePlugin({
+      VERSION: JSON.stringify(process.env.npm_package_version)
+    })
+  ],
+  resolve: {
+    extensions: [".jsx", ".js", ".json", ".scss"],
+    modules: [
+      path.resolve(__dirname, "src/lib"),
+      path.resolve(__dirname, "node_modules"),
+      "node_modules"
+    ],
+    alias: {
+      style: path.resolve(__dirname, "src/style")
+    }
   }
 };
+
+const ie = process.env.MODE === "ie";
+const compatibility = ie || process.env.MODE === "compatibility";
+const browser = compatibility || process.env.MODE === "browser";
+
+if(browser){
+  config.entry.unshift("babel-polyfill");
+  config.output.libraryExport = "default";
+}
+if(compatibility){ config.entry[1] = "./compatibility.js"; }
+if(ie){
+  config.devServer.inline = false;
+  delete config.devtool;
+}
+
+module.exports = config;

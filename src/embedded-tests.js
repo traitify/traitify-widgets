@@ -1,5 +1,5 @@
 import StepTest from "step-test";
-import ErrorHandler from "./error-handler";
+import Error from "./error-handler";
 import Setup from "../test/support/setup";
 import Results from "../test/tests/results";
 import SlideDeck from "../test/tests/slide-deck";
@@ -9,7 +9,7 @@ class EmbeddedTest extends StepTest{
     super(name, cb);
     this.on("play", function(){
       this.timeout = setTimeout(()=>{
-        let err = new ErrorHandler();
+        let err = new Error(EmbeddedTest.traitify);
         err.type = "Test Timeout";
         err.message = `test '${name}' timed out at 300ms`;
         err.notify();
@@ -42,7 +42,7 @@ EmbeddedTest.on("test.assertion.failed", ({name, message})=>{
 });
 
 EmbeddedTest.on("error", (error)=>{
-  let err = new ErrorHandler();
+  let err = new Error(EmbeddedTest.traitify);
   err.type = `Test ${error.name}`;
   err.message = error.message;
   err.notify();

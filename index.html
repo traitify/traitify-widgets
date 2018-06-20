@@ -14,18 +14,20 @@
       Traitify.setHost("https://api.traitify.com");
 
       function createWidget(){
-        Traitify.ui.disableTests();
-        var assessment = Traitify.ui.locale("en-us").assessmentId(localStorage.getItem("assessment-id"));
-        assessment.targets({
-          "SlideDeck": "#slide-deck",
-          "Results": "#results"
-        });
-        assessment.allowBack(true);
-        assessment.allowFullScreen(true);
-        assessment.perspective("firstPerson");
-        widget = assessment.render();
-        widget.catch(function(error){
-          console.log(error)
+        var widget = Traitify.ui.component();
+        widget.locale("en-us").assessmentID(localStorage.getItem("assessment-id"));
+        widget
+          .allowBack()
+          .allowFullscreen()
+          .perspective("firstPerson")
+          .targets({
+            "SlideDeck": "#slide-deck",
+            "Results": "#results"
+          });
+        widget.render().then(function(){
+          console.log("Rendered");
+        }).catch(function(error){
+          console.log(error);
         });
       }
 

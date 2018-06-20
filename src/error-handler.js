@@ -1,9 +1,9 @@
-/*global Traitify*/
 import Airbrake from "airbrake";
 
 class ErrorHandler extends Airbrake{
-  constructor(){
+  constructor(traitify){
     super();
+    this.traitify = traitify;
     this.host = "https://airbrake.io";
     this.projectId = "141848";
     this.projectKey = "c48de83d0f02ea6d598b491878c0c57e";
@@ -93,13 +93,13 @@ class ErrorHandler extends Airbrake{
         "hostname": window.location.host,
         "language": "Javascript",
         "environment": this.env(),
-        "version": Traitify.__version__,
+        "version": this.traitify.__version__,
         "url:": window.location.href,
         "browser": this.browser()
       },
       "session": {
-        "publicKey": Traitify.publicKey,
-        "host": Traitify.host
+        "publicKey": this.traitify.publicKey,
+        "host": this.traitify.host
       }
     };
   }

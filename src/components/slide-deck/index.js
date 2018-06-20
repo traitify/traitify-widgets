@@ -34,9 +34,9 @@ export default class SlideDeck extends Component{
 
       let slides = [...props.assessment.slides] || [];
       let storedSlides = [];
-      if(sessionStorage.getItem(`slides-${props.assessmentId}`)){
+      if(sessionStorage.getItem(`slides-${props.assessmentID}`)){
         try{
-          storedSlides = JSON.parse(sessionStorage.getItem(`slides-${props.assessmentId}`));
+          storedSlides = JSON.parse(sessionStorage.getItem(`slides-${props.assessmentID}`));
         }catch(e){
           console.log(`StoredSlides JSON.parse error ${e}`);
         }
@@ -123,7 +123,7 @@ export default class SlideDeck extends Component{
     slide.time_taken = Date.now() - this.state.startTime;
     this.setState({slides}, ()=>{
       try{
-        sessionStorage.setItem(`slides-${this.props.assessmentId}`, JSON.stringify(this.completedSlides()));
+        sessionStorage.setItem(`slides-${this.props.assessmentID}`, JSON.stringify(this.completedSlides()));
       }catch(error){
         console.log(error);
       }
@@ -155,7 +155,7 @@ export default class SlideDeck extends Component{
     if(this.state.finished){ return; }
     this.setState({finished: true});
     if(this.props.resultsReady(this.props.assessment)) return;
-    this.props.client.put(`/assessments/${this.props.assessmentId}/slides`, this.completedSlides()).then((response)=>{
+    this.props.client.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response)=>{
       this.triggerCallback("finished", this, response);
       this.props.fetch();
     });
@@ -195,8 +195,9 @@ export default class SlideDeck extends Component{
     attempts[attempts.length - 1] = 0;
     this.setState({imageLoadAttempts: attempts}, this.fetchImages);
   }
-  toggleFullScreen = ()=>{
-    const fullscreen = this.props.isFullScreen;
+  toggleFullscreen = ()=>{
+    const fullscreen = this.props.isFullscreen;
+
     if(fullscreen){
       if(document.exitFullscreen){
         document.exitFullscreen();
@@ -218,7 +219,7 @@ export default class SlideDeck extends Component{
         this.container.msRequestFullscreen();
       }
     }
-    this.props.setState({isFullScreen: !fullscreen});
+    this.props.setState({isFullscreen: !fullscreen});
     this.triggerCallback("fullscreen", this, !fullscreen);
   }
   render(){
@@ -285,8 +286,8 @@ export default class SlideDeck extends Component{
               <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
             </button>
           ),
-          this.props.allowFullScreen && (
-            <div key="fullscreen" class={[style.fullScreen, this.props.isFullScreen ? style.fullScreenSmall : ""].join(" ")} onClick={this.toggleFullScreen} />
+          this.props.allowFullscreen && (
+            <div key="fullscreen" class={[style.fullscreen, this.props.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
           )
         ]}
       </div>

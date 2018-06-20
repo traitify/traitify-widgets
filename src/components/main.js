@@ -13,25 +13,29 @@ export default class Main extends Component{
     this.guessComponent();
   }
   componentDidMount(){
-    this.props.promise.resolve(this);
+    this.props.shared.triggerCallback("Main", "Ready", this, {name: this.props.componentName});
   }
   setComponent(){
     let component = Components[this.props.componentName || "Default"];
-    if(component) return this.component = component;
+    if(component){ return this.component = component; }
 
     let names = this.props.componentName.split(".");
     if(names.length === 2){
       const components = Components[names[0] + "Components"] || {};
       component = components[names[1]];
-      if(component) return this.component = component;
-      return this.props.promise.reject(`Could not find component for ${this.props.componentName}`);
+      if(component){ return this.component = component; }
+
+      return this.props.shared.triggerCallback("Main", "Error", this, {
+        error: `Could not find component for ${this.props.componentName}`,
+        name: this.props.componentName
+      });
     }
 
     this.guessComponent();
   }
   guessComponent(){
-    if(this.component) return;
-    if(!this.state.assessment.assessment_type) return;
+    if(this.component){ return; }
+    if(!this.state.assessment.assessment_type){ return; }
 
     let components;
     if(this.state.assessment.assessment_type === "TYPE_BASED"){
@@ -41,9 +45,12 @@ export default class Main extends Component{
     }
 
     const component = components[this.props.componentName];
-    if(!component) return this.props.promise.reject(`Could not find component for ${this.props.componentName}`);
+    if(component){ return this.component = component; }
 
-    this.component = component;
+    this.props.shared.triggerCallback("Main", "Error", this, {
+      error: `Could not find component for ${this.props.componentName}`,
+      name: this.props.componentName
+    });
   }
   render(){
     let fontURL = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";

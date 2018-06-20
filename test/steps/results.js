@@ -14,7 +14,7 @@ function Init(stepTest){
   ]);
 
   stepTest.step("Load Traitify UI with Results assessment id", function(){
-    this.widget = this.constructor.Traitify.ui.assessmentId("results");
+    this.widget = this.constructor.Traitify.ui.component().assessmentID("results");
   });
 }
 

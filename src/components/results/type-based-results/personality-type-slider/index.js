@@ -1,50 +1,40 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
+import PersonalityTypeSlide from "../personality-type-slide";
+import TypeButton from "./type-button";
 import style from "./style";
 
-import PersonalityTypeSlide from "../personality-type-slide";
-
-class TypeButton extends Component{
-  constructor(){
-    super();
-    this.setActive = this.setActive.bind(this);
-  }
-  setActive(e){
-    e.preventDefault();
-    this.props.setActive(this.props.type);
-  }
-  render(){
-    return (
-      <a class={this.props.style} href="#" onClick={this.setActive}>
-        {this.props.children}
-      </a>
-    );
-  }
-}
-
 export default class PersonalityTypeSlider extends Component{
-  constructor(){
-    super();
-    this.setActive = this.setActive.bind(this);
-  }
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTypeSlider", "initialized", this);
+    this.traitify.ui.trigger("PersonalityTypeSlider.initialized", this);
+    this.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.traitify.ui.data["Assessment.activeType"]});
+    });
+    this.followAssessment();
+
+    const activeType = this.traitify.ui.data["Assessment.activeType"];
+    if(activeType){ this.setState({activeType}); }
   }
-  setActive(type){
-    this.props.triggerCallback("PersonalityTypeSlider", "changeType", this, type);
-    this.props.setState({activeType: type});
+  componentDidUpdate(){
+    this.followAssessment();
+  }
+  setActive = (type)=>{
+    this.traitify.ui.trigger("PersonalityTypeSlider.changeType", this, type);
+    this.traitify.ui.trigger("Assessment.activeType", this, type);
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.isReady("results")){ return; }
 
-    let props = this.props;
-    let id, ids, index, backType, nextType;
-    if(props.activeType){
-      id = props.activeType.personality_type.id;
-      ids = props.assessment.personality_types.map((type)=>{ return type.personality_type.id; });
-      index = ids.indexOf(id);
-      backType = props.assessment.personality_types[index - 1];
-      nextType = props.assessment.personality_types[index + 1];
+    const {activeType, assessment} = this.state;
+
+    let backType, nextType;
+    if(activeType){
+      const id = activeType.personality_type.id;
+      const index = assessment.personality_types.findIndex((type)=>type.personality_type.id === id);
+      backType = assessment.personality_types[index - 1];
+      nextType = assessment.personality_types[index + 1];
     }
+
+    const options = this.copyOptions();
 
     return (
       <div class={style.slider}>
@@ -54,9 +44,9 @@ export default class PersonalityTypeSlider extends Component{
           </TypeButton>
         )}
         <ul>
-          {props.assessment.personality_types.map((type)=>{
-            return <PersonalityTypeSlide {...props} type={type} />;
-          })}
+          {this.state.assessment.personality_types.map((type)=>(
+            <PersonalityTypeSlide type={type} options={options} />
+          ))}
         </ul>
         {nextType && (
           <TypeButton style={style.next} type={nextType} setActive={this.setActive}>

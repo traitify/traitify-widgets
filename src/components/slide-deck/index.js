@@ -1,10 +1,11 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
 import Slide from "./slide";
 import style from "./index.scss";
 
 export default class SlideDeck extends Component{
   constructor(props){
     super(props);
+
     this.state = {
       finished: false,
       imageLoading: false,
@@ -13,6 +14,9 @@ export default class SlideDeck extends Component{
       ready: false,
       slides: []
     };
+  }
+  componentWillMount(){
+    this.getAssessment();
   }
   componentDidMount(){
     this.initialize();
@@ -26,24 +30,17 @@ export default class SlideDeck extends Component{
   }
   initialize(){
     if(this.state.initialized){ return; }
-    if(!this.props.assessment){ return; }
-    if((this.props.assessment.slides || []).length === 0){ return; }
+    if(!this.state.assessment){ return; }
+    if((this.state.assessment.slides || []).length === 0){ return; }
 
     this.setState((prevState, props)=>{
       if(prevState.initialized){ return; }
 
-      let slides = [...props.assessment.slides] || [];
-      let storedSlides = [];
-      if(sessionStorage.getItem(`slides-${props.assessmentID}`)){
-        try{
-          storedSlides = JSON.parse(sessionStorage.getItem(`slides-${props.assessmentID}`));
-        }catch(e){
-          console.log(`StoredSlides JSON.parse error ${e}`);
-        }
-      }
-
+      let slides = [...this.state.assessment.slides] || [];
+      let storedSlides = this.cacheGet(`slides-${this.state.assessmentID}`) || [];
       let completedSlides = {};
-      (storedSlides || []).forEach((slide)=>{ completedSlides[slide.id] = slide; });
+
+      storedSlides.forEach((slide)=>{ completedSlides[slide.id] = slide; });
 
       slides.forEach((slide, index)=>{
         let completedSlide = completedSlides[slide.id];
@@ -55,7 +52,7 @@ export default class SlideDeck extends Component{
 
       return {initialized: true, slides, startTime: Date.now()};
     }, ()=>{
-      this.triggerCallback("initialized", this);
+      this.traitify.ui.trigger("SlideDeck.initialized", this);
       if(this.isComplete()){
         this.finish();
       }else{
@@ -99,7 +96,7 @@ export default class SlideDeck extends Component{
     let ready = remainingSlidesLoaded || nextSlidesLoaded;
 
     if(this.state.ready === ready){ return; }
-    this.triggerCallback("isReady", this, ready);
+    this.traitify.ui.trigger("SlideDeck.isReady", this, ready);
     this.setState({ready, startTime: Date.now()});
   }
   slides(){
@@ -108,13 +105,10 @@ export default class SlideDeck extends Component{
   currentIndex(){
     return this.state.slides.findIndex((slide)=>(slide.response == null));
   }
-  triggerCallback(key, context, options){
-    this.props.triggerCallback("SlideDeck", key, context, options);
-  }
   updateSlide(value){
     let key = value ? "me" : "notMe";
-    this.triggerCallback(key, this);
-    this.triggerCallback("updateSlide", this, value);
+    this.traitify.ui.trigger(`SlideDeck.${key}`, this);
+    this.traitify.ui.trigger("SlideDeck.updateSlide", this);
 
     let slides = this.slides();
     let index = this.currentIndex();
@@ -122,11 +116,7 @@ export default class SlideDeck extends Component{
     slide.response = value;
     slide.time_taken = Date.now() - this.state.startTime;
     this.setState({slides}, ()=>{
-      try{
-        sessionStorage.setItem(`slides-${this.props.assessmentID}`, JSON.stringify(this.completedSlides()));
-      }catch(error){
-        console.log(error);
-      }
+      this.cacheSet(`slides-${this.state.assessmentID}`, this.completedSlides());
 
       if(this.isComplete()){
         this.finish();
@@ -140,7 +130,7 @@ export default class SlideDeck extends Component{
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     const slides = this.slides();
-    const imageHost = this.props.imageHost;
+    const imageHost = this.getOption("imageHost");
 
     slides.forEach((slide)=>{
       slide.loaded = false;
@@ -154,10 +144,12 @@ export default class SlideDeck extends Component{
   finish(){
     if(this.state.finished){ return; }
     this.setState({finished: true});
-    if(this.props.resultsReady(this.props.assessment)) return;
-    this.props.client.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response)=>{
-      this.triggerCallback("finished", this, response);
-      this.props.fetch();
+
+    if(this.isReady("results")){ return; }
+
+    this.traitify.put(`/assessments/${this.state.assessmentID}/slides`, this.completedSlides()).then((response)=>{
+      this.traitify.ui.trigger("SlideDeck.finished", this, response);
+      this.getAssessment({force: true});
     });
   }
   progress(){
@@ -196,7 +188,7 @@ export default class SlideDeck extends Component{
     this.setState({imageLoadAttempts: attempts}, this.fetchImages);
   }
   toggleFullscreen = ()=>{
-    const fullscreen = this.props.isFullscreen;
+    const fullscreen = this.state.isFullscreen;
 
     if(fullscreen){
       if(document.exitFullscreen){
@@ -219,11 +211,11 @@ export default class SlideDeck extends Component{
         this.container.msRequestFullscreen();
       }
     }
-    this.props.setState({isFullscreen: !fullscreen});
-    this.triggerCallback("fullscreen", this, !fullscreen);
+    this.setState({isFullscreen: !fullscreen});
+    this.traitify.ui.trigger("SlideDeck.fullscreen", this, !fullscreen);
   }
   render(){
-    if(this.props.resultsReady(this.props.assessment)) return <span />;
+    if(this.isReady("results")){ return; }
 
     const currentIndex = this.currentIndex();
     const currentSlide = this.state.slides[currentIndex];
@@ -274,20 +266,20 @@ export default class SlideDeck extends Component{
           <div key="response" class={style.responseContainer}>
             <div class={style.buttons}>
               <a class={style.me} onClick={this.respondMe} href="#">
-                {this.props.translate("me")}
+                {this.translate("me")}
               </a>
               <a class={style.notMe} onClick={this.respondNotMe} href="#">
-                {this.props.translate("not_me")}
+                {this.translate("not_me")}
               </a>
             </div>
           </div>,
-          this.props.allowBack && currentIndex > 0 && (
+          this.getOption("allowBack") && currentIndex > 0 && (
             <button key="back" class={style.back} onClick={this.back}>
               <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
             </button>
           ),
-          this.props.allowFullscreen && (
-            <div key="fullscreen" class={[style.fullscreen, this.props.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
+          this.getOption("allowFullscreen") && (
+            <div key="fullscreen" class={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
           )
         ]}
       </div>

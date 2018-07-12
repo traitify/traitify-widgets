@@ -1,6 +1,7 @@
-import Traitify from "traitify";
+import Traitify from "lib/traitify";
 
-export TraitifyClient from "traitify-client";
-export TraitifyUI from "traitify-ui";
+export Client from "lib/traitify-client";
+export Component from "components/traitify-component";
+export UI from "lib/traitify-ui";
 export {Traitify};
 export default new Traitify();

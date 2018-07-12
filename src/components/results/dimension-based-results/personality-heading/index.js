@@ -1,26 +1,28 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
 import style from "./style";
 
 export default class PersonalityHeading extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityHeading", "initialized", this);
-    if(!this.props.deckReady(this.props.deck)){ this.props.fetchDeck(); }
+    this.traitify.ui.trigger("PersonalityHeading.initialized", this);
+    this.followAssessment();
+    this.followDeck();
   }
   componentDidUpdate(){
-    if(!this.props.deckReady(this.props.deck)){ this.props.fetchDeck(); }
+    this.followAssessment();
+    this.followDeck();
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
-    if(!this.props.deckReady(this.props.deck)) return <div />;
+    if(!this.isReady("results")){ return; }
+    if(!this.isReady("deck")){ return; }
 
-    let personality = this.props.assessment.archetype;
-    if(!personality) return <div />;
+    const personality = this.state.assessment.archetype;
+    if(!personality){ return; }
 
     return (
       <div class={style.personality}>
         <div class={style.content} dangerouslySetInnerHTML={{
-          __html: this.props.translate("personality_heading", {
-            deck_name: this.props.deck.name,
+          __html: this.translate("personality_heading", {
+            deck_name: this.state.deck.name,
             personality: `<strong>${personality.name}</strong>`
           })
         }} />

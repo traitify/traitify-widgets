@@ -1,26 +1,31 @@
-import {h, Component} from "preact";
-import style from "./style";
-
+import Component from "components/traitify-component";
 import PersonalityTrait from "../personality-trait";
+import style from "./style";
 
 export default class PersonalityTraits extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTraits", "initialized", this);
+    this.traitify.ui.trigger("PersonalityTraits.initialized", this);
+    this.followAssessment();
+  }
+  componentDidUpdate(){
+    this.followAssessment();
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.isReady("results")){ return; }
 
-    let traits = this.props.assessment.personality_traits;
+    const options = this.copyOptions();
+    const traits = this.state.assessment.personality_traits;
+
     return (
       <div class={style.traits}>
         <h4 class={style.title}>Most Represented Traits</h4>
-        {traits.slice(0, 5).map((trait)=>{
-          return <PersonalityTrait trait={trait} {...this.props} />;
-        })}
+        {traits.slice(0, 5).map((trait)=>(
+          <PersonalityTrait trait={trait} options={options} />
+        ))}
         <h4 class={style.title}>Least Represented Traits</h4>
-        {traits.slice(-5).map((trait)=>{
-          return <PersonalityTrait trait={trait} {...this.props} />;
-        })}
+        {traits.slice(-5).map((trait)=>(
+          <PersonalityTrait trait={trait} options={options} />
+        ))}
       </div>
     );
   }

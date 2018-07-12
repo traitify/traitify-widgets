@@ -11,6 +11,7 @@
   ],
   "plugins": [
     "transform-proto-to-assign", // IE 10
-    ["transform-react-jsx", { "pragma": "h" }]
+    ["transform-react-jsx", {pragma: "h" }],
+    ["jsx-pragmatic", {export: "h", import: "h", module: "preact"}]
   ]
 }

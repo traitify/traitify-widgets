@@ -1,4 +1,4 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
 import style from "./style";
 import slideDeckStyle from "../index.scss";
 

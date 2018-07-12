@@ -1,13 +1,14 @@
-import {h, Component} from "preact";
-import Color from "color-helpers";
+import Component from "components/traitify-component";
+import Color from "lib/color-helpers";
 import style from "./style";
 
 export default class PersonalityTrait extends Component{
   render(){
-    let trait = this.props.trait.personality_trait;
-    let score = Math.round(this.props.trait.score/2 + 50);
-    let type = trait.personality_type;
-    let color = `#${type.badge.color_1}`;
+    const trait = this.props.trait.personality_trait;
+    const score = Math.round(this.props.trait.score/2 + 50);
+    const type = trait.personality_type;
+    const color = `#${type.badge.color_1}`;
+
     return (
       <div class={style.trait} style={`background: ${Color.rgba(color, 8.5)};`}>
         <div class={style.bar} style={`width: ${score}%; background: ${color};`} />

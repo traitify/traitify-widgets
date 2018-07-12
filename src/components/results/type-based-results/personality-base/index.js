@@ -1,16 +1,24 @@
-import {h, Component} from "preact";
-
+import Component from "components/traitify-component";
 import PersonalityBlend from "../personality-blend";
 import PersonalityType from "../personality-type";
 
 export default class PersonalityBase extends Component{
+  componentDidMount(){
+    this.traitify.ui.trigger("PersonalityBase.initialized", this);
+    this.followAssessment();
+  }
+  componentDidUpdate(){
+    this.followAssessment();
+  }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.isReady("results")){ return; }
 
-    return this.props.assessment.personality_blend ? (
-      <PersonalityBlend {...this.props} />
+    const options = this.copyOptions();
+
+    return this.state.assessment.personality_blend ? (
+      <PersonalityBlend options={options} />
     ) : (
-      <PersonalityType {...this.props} />
+      <PersonalityType options={options} />
     );
   }
 }

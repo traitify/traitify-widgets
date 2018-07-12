@@ -1,22 +1,26 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
 import style from "./style";
 
 export default class PersonalityDetails extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityDetails", "initialized", this);
+    this.traitify.ui.trigger("PersonalityDetails.initialized", this);
+    this.followAssessment();
+  }
+  componentDidUpdate(){
+    this.followAssessment();
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.isReady("results")){ return; }
 
-    let personality = this.props.assessment.archetype || {};
-    let details = personality.details;
-    if(!details) return <div />;
+    const personality = this.state.assessment.archetype || {};
+    const details = personality.details;
+    if(!details){ return; }
 
     let complement = details.find(d=>d.title === "Complement");
     complement = complement && complement.body;
     let conflict = details.find(d=>d.title === "Conflict");
     conflict = conflict && conflict.body;
-    let environments = personality.environments || [];
+    const environments = personality.environments || [];
 
     return (
       <div class={style.details}>
@@ -24,7 +28,7 @@ export default class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #008dc7;" />
-              <h4 class={style.title} style="color: #008dc7;">{this.props.translate("complements")}</h4>
+              <h4 class={style.title} style="color: #008dc7;">{this.translate("complements")}</h4>
               <p class={style.description}>{complement}</p>
             </div>
           </div>
@@ -33,7 +37,7 @@ export default class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #d04e4a;" />
-              <h4 class={style.title} style="color: #d04e4a;">{this.props.translate("conflicts")}</h4>
+              <h4 class={style.title} style="color: #d04e4a;">{this.translate("conflicts")}</h4>
               <p class={style.description}>{conflict}</p>
             </div>
           </div>
@@ -42,11 +46,11 @@ export default class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #32be4b;" />
-              <h4 class={style.title} style="color: #32be4b;">{this.props.translate("best_work_environments")}</h4>
+              <h4 class={style.title} style="color: #32be4b;">{this.translate("best_work_environments")}</h4>
               <ul class={style.description}>
-                {environments.map(environment=>{
-                  return <li>{environment.name}</li>;
-                })}
+                {environments.map(environment=>(
+                  <li>{environment.name}</li>
+                ))}
               </ul>
             </div>
           </div>

@@ -1,27 +1,24 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
 import style from "./style";
-import Chart from "canvas-radar-chart";
+import Chart from "lib/canvas-radar-chart";
 
 export default class Radar extends Component{
-  constructor(props){
-    super(props);
-    this.createChart = this.createChart.bind(this);
-    this.updateChart = this.updateChart.bind(this);
-    this.destroyChart = this.destroyChart.bind(this);
+  componentDidMount(){
+    window.addEventListener("resize", this.updateChart);
+
+    this.traitify.ui.trigger("Radar.initialized", this);
+    this.updateChart();
+    this.followAssessment();
+  }
+  componentDidUpdate(){
+    this.updateChart();
+    this.followAssessment();
   }
   componentWillUnmount(){
     window.removeEventListener("resize", this.updateChart);
   }
-  componentDidMount(){
-    this.props.triggerCallback("Radar", "initialized", this);
-    window.addEventListener("resize", this.updateChart);
-    this.updateChart();
-  }
-  componentDidUpdate(){
-    this.updateChart();
-  }
-  createChart(){
-    if(!this.props.resultsReady(this.props.assessment)) return;
+  createChart = ()=>{
+    if(!this.isReady("results")){ return; }
 
     let options = {
       labels: [],
@@ -31,7 +28,7 @@ export default class Radar extends Component{
       }]
     };
 
-    let types = this.props.assessment.personality_types;
+    const types = this.state.assessment.personality_types;
     types.forEach((type)=>{
       options.labels.push({
         text: type.personality_type.name,
@@ -43,19 +40,20 @@ export default class Radar extends Component{
     let ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, options);
     this.chart.resize();
-    this.props.triggerCallback("Radar", "initialized", this);
   }
-  updateChart(){
+  updateChart = ()=>{
     if(!this.chart) return this.createChart();
+
     this.chart.resize();
   }
-  destroyChart(){
+  destroyChart = ()=>{
     if(!this.chart) return;
+
     this.chart.destroy();
     delete this.chart;
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.isReady("results")){ return; }
 
     return (
       <div class={style.radar}>

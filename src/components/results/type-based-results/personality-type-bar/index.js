@@ -1,29 +1,31 @@
-import {h, Component} from "preact";
-import Color from "color-helpers";
+import Component from "components/traitify-component";
+import Color from "lib/color-helpers";
 import style from "./style";
 
 export default class PersonalityTypeBar extends Component{
-  constructor(){
-    super();
-    this.setActive = this.setActive.bind(this);
-  }
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTypeBar", "initialized", this);
+    this.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
+    this.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.traitify.ui.data["Assessment.activeType"]});
+    });
+
+    const activeType = this.traitify.ui.data["Assessment.activeType"];
+    if(activeType){ this.setState({activeType}); }
   }
-  setActive(){
-    this.props.triggerCallback("PersonalityTypeBar", "changeType", this, this.props.type);
-    this.props.setState({activeType: this.props.type});
+  setActive = ()=>{
+    this.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
+    this.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
   }
   render(){
-    let type = this.props.type.personality_type;
-    let title = type.name;
-    let icon = type.badge.image_medium;
-    let color = `#${type.badge.color_1}`;
-    let score = Math.round(this.props.type.score);
-    let barHeight = Math.round(this.props.barHeight);
+    const type = this.props.type.personality_type;
+    const title = type.name;
+    const icon = type.badge.image_medium;
+    const color = `#${type.badge.color_1}`;
+    const score = Math.round(this.props.type.score);
+    const barHeight = Math.round(this.props.barHeight);
 
     let active = false;
-    let activeType = this.props.activeType;
+    const activeType = this.state.activeType;
     if(activeType){
       active = type.id === activeType.personality_type.id;
     }

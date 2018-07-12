@@ -1,33 +1,36 @@
-import {h, Component} from "preact";
+import Component from "components/traitify-component";
+import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
-import PersonalityTrait from "../personality-trait";
-
 export default class PersonalityTraits extends Component{
-  constructor(props){
-    super(props);
-    this.onClick = this.onClick.bind(this);
-  }
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTraits", "initialized", this);
+    this.traitify.ui.trigger("PersonalityTraits.initialized", this);
+    this.followAssessment();
   }
-  onClick(e){
+  componentDidUpdate(){
+    this.followAssessment();
+  }
+  onClick = (e)=>{
     e.preventDefault();
-    let callback = this.state.showMore ? "showLess" : "showMore";
-    this.props.triggerCallback("PersonalityTraits", callback, this);
+
+    const callback = this.state.showMore ? "showLess" : "showMore";
+    this.traitify.ui.trigger(`PersonalityTraits.${callback}`, this);
     this.setState({showMore: !this.state.showMore});
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.isReady("results")){ return; }
 
-    let traits = this.props.assessment.personality_traits;
-    let text = this.props.translate(this.state.showMore ? "show_less" : "show_more");
-    if(!this.state.showMore) traits = traits.slice(0, 8);
+    const options = this.copyOptions();
+    const text = this.translate(this.state.showMore ? "show_less" : "show_more");
+    let traits = this.state.assessment.personality_traits;
+
+    if(!this.state.showMore){ traits = traits.slice(0, 8); }
+
     return (
       <div class={style.traits}>
-        {traits.map((trait)=>{
-          return <PersonalityTrait trait={trait} />;
-        })}
+        {traits.map((trait)=>(
+          <PersonalityTrait trait={trait} options={options} />
+        ))}
         <p class={style.center}>
           <a href="#" class={style.toggle} onClick={this.onClick}>{text}</a>
         </p>

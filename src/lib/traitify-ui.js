@@ -1,7 +1,8 @@
 import TraitifyWidget from "lib/traitify-widget";
 
 export default class TraitifyUI{
-  constructor(){
+  constructor(options){
+    this.client = options.client;
     this.options = {
       imageHost: "https://images.traitify.com"
     };

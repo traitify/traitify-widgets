@@ -5,4 +5,4 @@ Color.rgba = (color, opacity)=>{
   return `rgba(${color.red()},${color.green()},${color.blue()},${opacity/100})`;
 };
 
-module.exports = Color;
+export default Color;

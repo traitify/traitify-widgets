@@ -1,19 +1,16 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-export default class PersonalityDetails extends Component{
+class PersonalityDetails extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityDetails.initialized", this);
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
+    this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
-    let personality = this.state.assessment.personality_blend;
-    personality = personality || this.state.assessment.personality_types[0];
+    let personality = this.props.assessment.personality_blend;
+    personality = personality || this.props.assessment.personality_types[0];
 
     const details = personality.details;
     if(!details) return;
@@ -28,19 +25,19 @@ export default class PersonalityDetails extends Component{
       <div class={style.details}>
         {complement && (
           <div class={style.complements}>
-            <h4>{this.translate("complements")}</h4>
+            <h4>{this.props.i18n.translate("complements")}</h4>
             <p>{complement}</p>
           </div>
         )}
         {conflict && (
           <div class={style.conflicts}>
-            <h4>{this.translate("conflicts")}</h4>
+            <h4>{this.props.i18n.translate("conflicts")}</h4>
             <p>{conflict}</p>
           </div>
         )}
         {environments[0] && (
           <div class={style.environments}>
-            <h4>{this.translate("best_work_environments")}</h4>
+            <h4>{this.props.i18n.translate("best_work_environments")}</h4>
             <ul>
               {environments.map(environment=>(
                 <li>{environment.name}</li>
@@ -52,3 +49,6 @@ export default class PersonalityDetails extends Component{
     );
   }
 }
+
+export {PersonalityDetails as Component};
+export default withTraitify(PersonalityDetails);

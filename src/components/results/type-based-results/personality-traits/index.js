@@ -1,35 +1,31 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
-export default class PersonalityTraits extends Component{
+class PersonalityTraits extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityTraits.initialized", this);
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
+    this.props.traitify.ui.trigger("PersonalityTraits.initialized", this);
   }
   onClick = (e)=>{
     e.preventDefault();
 
     const callback = this.state.showMore ? "showLess" : "showMore";
-    this.traitify.ui.trigger(`PersonalityTraits.${callback}`, this);
+    this.props.traitify.ui.trigger(`PersonalityTraits.${callback}`, this);
     this.setState({showMore: !this.state.showMore});
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
-    const options = this.copyOptions();
-    const text = this.translate(this.state.showMore ? "show_less" : "show_more");
-    let traits = this.state.assessment.personality_traits;
+    const text = this.props.i18n.translate(this.state.showMore ? "show_less" : "show_more");
+    let traits = this.props.assessment.personality_traits;
 
     if(!this.state.showMore){ traits = traits.slice(0, 8); }
 
     return (
       <div class={style.traits}>
         {traits.map((trait)=>(
-          <PersonalityTrait trait={trait} options={options} />
+          <PersonalityTrait trait={trait} {...this.props} />
         ))}
         <p class={style.center}>
           <a href="#" class={style.toggle} onClick={this.onClick}>{text}</a>
@@ -38,3 +34,6 @@ export default class PersonalityTraits extends Component{
     );
   }
 }
+
+export {PersonalityTraits as Component};
+export default withTraitify(PersonalityTraits);

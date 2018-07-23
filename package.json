@@ -20,6 +20,9 @@
     "test:live": "npm test --watch"
   },
   "jest": {
+    "globals": {
+      "VERSION": "0.0.0-test"
+    },
     "moduleFileExtensions": [
       "scss",
       "js"

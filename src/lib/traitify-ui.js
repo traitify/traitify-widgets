@@ -2,11 +2,10 @@ import TraitifyWidget from "lib/traitify-widget";
 
 export default class TraitifyUI{
   constructor(options){
-    this.client = options.client;
+    this.traitify = options.traitify;
     this.options = {
       imageHost: "https://images.traitify.com"
     };
-
     this.callbacks = {};
     this.data = {};
     this.requests = {};

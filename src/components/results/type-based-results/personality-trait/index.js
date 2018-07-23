@@ -1,8 +1,12 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Color from "lib/color-helpers";
 import style from "./style";
 
-export default class PersonalityTrait extends Component{
+class PersonalityTrait extends Component{
+  componentDidMount(){
+    this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
+  }
   render(){
     const trait = this.props.trait.personality_trait;
     const score = Math.round(this.props.trait.score/2 + 50);
@@ -24,3 +28,6 @@ export default class PersonalityTrait extends Component{
     );
   }
 }
+
+export {PersonalityTrait as Component};
+export default withTraitify(PersonalityTrait);

@@ -6,6 +6,6 @@ export default class Traitify extends TraitifyClient{
   constructor(){
     super();
     this.__version__ = VERSION;
-    this.ui = new TraitifyUI({client: this});
+    this.ui = new TraitifyUI({traitify: this});
   }
 }

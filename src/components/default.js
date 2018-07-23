@@ -1,22 +1,20 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Results from "./results";
 import SlideDeck from "./slide-deck";
 
-export default class Default extends Component{
-  componentDidMount(){
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
-  }
+class Default extends Component{
   render(){
-    if(this.isReady("results")){
+    if(this.props.isReady("results")){
       return <Results {...this.props} />;
     }
-    if(this.isReady("slides")){
+    if(this.props.isReady("slides")){
       return <SlideDeck {...this.props} />;
     }
 
     return <div />;
   }
 }
+
+export {Default as Component};
+export default withTraitify(Default);

@@ -1,8 +1,12 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Color from "lib/color-helpers";
 import style from "./style";
 
-export default class PersonalityBadge extends Component{
+class PersonalityBadge extends Component{
+  componentDidMount(){
+    this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
+  }
   render(){
     const color = `#${this.props.type.badge.color_1}`;
 
@@ -13,3 +17,6 @@ export default class PersonalityBadge extends Component{
     );
   }
 }
+
+export {PersonalityBadge as Component};
+export default withTraitify(PersonalityBadge);

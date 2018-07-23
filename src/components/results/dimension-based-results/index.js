@@ -1,4 +1,4 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
 import Radar from "./radar";
 import PersonalityTypes from "./personality-types";
 import PersonalityHeading from "./personality-heading";
@@ -8,16 +8,14 @@ import PersonalityTraits from "./personality-traits";
 
 export default class DimensionBasedResults extends Component{
   render(){
-    const options = this.copyOptions();
-
     return (
       <section>
-        <Radar options={options} />
-        <PersonalityTypes options={options} />
-        <PersonalityHeading options={options} />
-        <PersonalityDetails options={options} />
-        <Dimensions options={options} />
-        <PersonalityTraits options={options} />
+        <Radar {...this.props} />
+        <PersonalityTypes {...this.props} />
+        <PersonalityHeading {...this.props} />
+        <PersonalityDetails {...this.props} />
+        <Dimensions {...this.props} />
+        <PersonalityTraits {...this.props} />
       </section>
     );
   }

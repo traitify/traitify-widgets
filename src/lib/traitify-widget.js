@@ -1,5 +1,5 @@
 import {render} from "preact";
-import {guessComponent} from "lib/helpers";
+import guessComponent from "lib/helpers/guess-component";
 
 class TraitifyWidget{
   constructor(ui, options){

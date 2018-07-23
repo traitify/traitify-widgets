@@ -1,4 +1,4 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
 
 export default class TypeButton extends Component{
   setActive = (e)=>{

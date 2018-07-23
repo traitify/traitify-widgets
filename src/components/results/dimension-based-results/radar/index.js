@@ -1,24 +1,23 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 import Chart from "lib/canvas-radar-chart";
 
-export default class Radar extends Component{
+class Radar extends Component{
   componentDidMount(){
     window.addEventListener("resize", this.updateChart);
 
-    this.traitify.ui.trigger("Radar.initialized", this);
+    this.props.traitify.ui.trigger("Radar.initialized", this);
     this.updateChart();
-    this.followAssessment();
   }
   componentDidUpdate(){
     this.updateChart();
-    this.followAssessment();
   }
   componentWillUnmount(){
     window.removeEventListener("resize", this.updateChart);
   }
   createChart = ()=>{
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
     let options = {
       labels: [],
@@ -28,7 +27,7 @@ export default class Radar extends Component{
       }]
     };
 
-    const types = this.state.assessment.personality_types;
+    const types = this.props.assessment.personality_types;
     types.forEach((type)=>{
       options.labels.push({
         text: type.personality_type.name,
@@ -53,7 +52,7 @@ export default class Radar extends Component{
     delete this.chart;
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
     return (
       <div class={style.radar}>
@@ -64,3 +63,6 @@ export default class Radar extends Component{
     );
   }
 }
+
+export {Radar as Component};
+export default withTraitify(Radar);

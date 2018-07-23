@@ -1,20 +1,21 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Color from "lib/color-helpers";
 import style from "./style";
 
-export default class PersonalityTypeBar extends Component{
+class PersonalityTypeBar extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
-    this.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.traitify.ui.data["Assessment.activeType"]});
+    this.props.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
+    this.props.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.props.traitify.ui.data["Assessment.activeType"]});
     });
 
-    const activeType = this.traitify.ui.data["Assessment.activeType"];
+    const activeType = this.props.traitify.ui.data["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
   setActive = ()=>{
-    this.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
-    this.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
+    this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
+    this.props.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
   }
   render(){
     const type = this.props.type.personality_type;
@@ -41,3 +42,6 @@ export default class PersonalityTypeBar extends Component{
     );
   }
 }
+
+export {PersonalityTypeBar as Component};
+export default withTraitify(PersonalityTypeBar);

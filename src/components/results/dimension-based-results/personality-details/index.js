@@ -1,18 +1,15 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-export default class PersonalityDetails extends Component{
+class PersonalityDetails extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityDetails.initialized", this);
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
+    this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
-    const personality = this.state.assessment.archetype || {};
+    const personality = this.props.assessment.archetype || {};
     const details = personality.details;
     if(!details){ return; }
 
@@ -28,7 +25,7 @@ export default class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #008dc7;" />
-              <h4 class={style.title} style="color: #008dc7;">{this.translate("complements")}</h4>
+              <h4 class={style.title} style="color: #008dc7;">{this.props.i18n.translate("complements")}</h4>
               <p class={style.description}>{complement}</p>
             </div>
           </div>
@@ -37,7 +34,7 @@ export default class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #d04e4a;" />
-              <h4 class={style.title} style="color: #d04e4a;">{this.translate("conflicts")}</h4>
+              <h4 class={style.title} style="color: #d04e4a;">{this.props.i18n.translate("conflicts")}</h4>
               <p class={style.description}>{conflict}</p>
             </div>
           </div>
@@ -46,7 +43,7 @@ export default class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #32be4b;" />
-              <h4 class={style.title} style="color: #32be4b;">{this.translate("best_work_environments")}</h4>
+              <h4 class={style.title} style="color: #32be4b;">{this.props.i18n.translate("best_work_environments")}</h4>
               <ul class={style.description}>
                 {environments.map(environment=>(
                   <li>{environment.name}</li>
@@ -59,3 +56,6 @@ export default class PersonalityDetails extends Component{
     );
   }
 }
+
+export {PersonalityDetails as Component};
+export default withTraitify(PersonalityDetails);

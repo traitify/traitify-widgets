@@ -1,8 +1,9 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Color from "lib/color-helpers";
 import style from "./style";
 
-export default class Type extends Component{
+class Type extends Component{
   constructor(props){
     super(props);
 
@@ -11,11 +12,11 @@ export default class Type extends Component{
   trigger = (e)=>{
     e.preventDefault();
 
-    this.traitify.ui.trigger("PersonalityType.showContent", this, this.props.type.personality_type);
+    this.props.traitify.ui.trigger("PersonalityType.showContent", this, this.props.type.personality_type);
     this.setState({showContent: !this.state.showContent});
   }
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityType.initialized", this);
+    this.props.traitify.ui.trigger("PersonalityType.initialized", this);
   }
   render(){
     const type = this.props.type.personality_type;
@@ -39,3 +40,6 @@ export default class Type extends Component{
     );
   }
 }
+
+export {Type as Component};
+export default withTraitify(Type);

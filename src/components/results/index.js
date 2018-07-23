@@ -1,25 +1,22 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import TypeBasedResults from "./type-based-results";
 import DimensionBasedResults from "./dimension-based-results";
 
-export default class Results extends Component{
+class Results extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("Results.initialized", this);
-
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
+    this.props.traitify.ui.trigger("Results.initialized", this);
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
-    const options = this.copyOptions();
-
-    return (this.state.assessment.assessment_type === "TYPE_BASED") ? (
-      <TypeBasedResults options={options} />
+    return (this.props.assessment.assessment_type === "TYPE_BASED") ? (
+      <TypeBasedResults {...this.props} />
     ) : (
-      <DimensionBasedResults options={options} />
+      <DimensionBasedResults {...this.props} />
     );
   }
 }
+
+export {Results as Component};
+export default withTraitify(Results);

@@ -1,15 +1,16 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Color from "lib/color-helpers";
 import style from "./style";
 
-export default class PersonalityTypeSlide extends Component{
+class PersonalityTypeSlide extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityTypeSlide.initialized", this);
-    this.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.traitify.ui.data["Assessment.activeType"]});
+    this.props.traitify.ui.trigger("PersonalityTypeSlide.initialized", this);
+    this.props.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.props.traitify.ui.data["Assessment.activeType"]});
     });
 
-    const activeType = this.traitify.ui.data["Assessment.activeType"];
+    const activeType = this.props.traitify.ui.data["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
   render(){
@@ -21,7 +22,7 @@ export default class PersonalityTypeSlide extends Component{
 
     const color = `#${type.badge.color_1}`;
     const position = "middle";
-    let perspective = `${(this.getOption("perspective") || "firstPerson").replace("Person", "")}_person_description`;
+    let perspective = `${(this.props.getOption("perspective") || "firstPerson").replace("Person", "")}_person_description`;
     let description = type.details.find(detail=>detail.title === perspective);
     description = description && description.body;
     if(!description){
@@ -47,3 +48,6 @@ export default class PersonalityTypeSlide extends Component{
     );
   }
 }
+
+export {PersonalityTypeSlide as Component};
+export default withTraitify(PersonalityTypeSlide);

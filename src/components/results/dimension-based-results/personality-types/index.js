@@ -1,26 +1,24 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import PersonalityType from "../personality-type";
 import style from "./style";
 
-export default class Types extends Component{
+class Types extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityTypes.initialized", this);
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
+    this.props.traitify.ui.trigger("PersonalityTypes.initialized", this);
   }
   render(){
-    if(!this.isReady("results")){ return; }
-
-    const options = this.copyOptions();
+    if(!this.props.isReady("results")){ return; }
 
     return (
       <ul class={style.types}>
-        {this.state.assessment.personality_types.map((type)=>(
-          <PersonalityType type={type} options={options} />
+        {this.props.assessment.personality_types.map((type)=>(
+          <PersonalityType type={type} {...this.props} />
         ))}
       </ul>
     );
   }
 }
+
+export {Types as Component};
+export default withTraitify(Types);

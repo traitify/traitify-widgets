@@ -1,8 +1,9 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Slide from "./slide";
 import style from "./index.scss";
 
-export default class SlideDeck extends Component{
+class SlideDeck extends Component{
   constructor(props){
     super(props);
 
@@ -14,9 +15,6 @@ export default class SlideDeck extends Component{
       ready: false,
       slides: []
     };
-  }
-  componentWillMount(){
-    this.getAssessment();
   }
   componentDidMount(){
     this.initialize();
@@ -30,14 +28,14 @@ export default class SlideDeck extends Component{
   }
   initialize(){
     if(this.state.initialized){ return; }
-    if(!this.state.assessment){ return; }
-    if((this.state.assessment.slides || []).length === 0){ return; }
+    if(!this.props.assessment){ return; }
+    if((this.props.assessment.slides || []).length === 0){ return; }
 
     this.setState((prevState, props)=>{
       if(prevState.initialized){ return; }
 
-      let slides = [...this.state.assessment.slides] || [];
-      let storedSlides = this.cacheGet(`slides-${this.state.assessmentID}`) || [];
+      let slides = [...this.props.assessment.slides] || [];
+      let storedSlides = this.props.cache.get(`slides-${this.props.assessmentID}`) || [];
       let completedSlides = {};
 
       storedSlides.forEach((slide)=>{ completedSlides[slide.id] = slide; });
@@ -52,7 +50,7 @@ export default class SlideDeck extends Component{
 
       return {initialized: true, slides, startTime: Date.now()};
     }, ()=>{
-      this.traitify.ui.trigger("SlideDeck.initialized", this);
+      this.props.traitify.ui.trigger("SlideDeck.initialized", this);
       if(this.isComplete()){
         this.finish();
       }else{
@@ -96,7 +94,7 @@ export default class SlideDeck extends Component{
     let ready = remainingSlidesLoaded || nextSlidesLoaded;
 
     if(this.state.ready === ready){ return; }
-    this.traitify.ui.trigger("SlideDeck.isReady", this, ready);
+    this.props.traitify.ui.trigger("SlideDeck.isReady", this, ready);
     this.setState({ready, startTime: Date.now()});
   }
   slides(){
@@ -107,8 +105,8 @@ export default class SlideDeck extends Component{
   }
   updateSlide(value){
     let key = value ? "me" : "notMe";
-    this.traitify.ui.trigger(`SlideDeck.${key}`, this);
-    this.traitify.ui.trigger("SlideDeck.updateSlide", this);
+    this.props.traitify.ui.trigger(`SlideDeck.${key}`, this);
+    this.props.traitify.ui.trigger("SlideDeck.updateSlide", this);
 
     let slides = this.slides();
     let index = this.currentIndex();
@@ -116,7 +114,7 @@ export default class SlideDeck extends Component{
     slide.response = value;
     slide.time_taken = Date.now() - this.state.startTime;
     this.setState({slides}, ()=>{
-      this.cacheSet(`slides-${this.state.assessmentID}`, this.completedSlides());
+      this.props.cache.set(`slides-${this.props.assessmentID}`, this.completedSlides());
 
       if(this.isComplete()){
         this.finish();
@@ -130,7 +128,7 @@ export default class SlideDeck extends Component{
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     const slides = this.slides();
-    const imageHost = this.getOption("imageHost");
+    const imageHost = this.props.getOption("imageHost");
 
     slides.forEach((slide)=>{
       slide.loaded = false;
@@ -145,11 +143,11 @@ export default class SlideDeck extends Component{
     if(this.state.finished){ return; }
     this.setState({finished: true});
 
-    if(this.isReady("results")){ return; }
+    if(this.props.isReady("results")){ return; }
 
-    this.traitify.put(`/assessments/${this.state.assessmentID}/slides`, this.completedSlides()).then((response)=>{
-      this.traitify.ui.trigger("SlideDeck.finished", this, response);
-      this.getAssessment({force: true});
+    this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response)=>{
+      this.props.traitify.ui.trigger("SlideDeck.finished", this, response);
+      this.props.getAssessment({force: true});
     });
   }
   progress(){
@@ -212,10 +210,10 @@ export default class SlideDeck extends Component{
       }
     }
     this.setState({isFullscreen: !fullscreen});
-    this.traitify.ui.trigger("SlideDeck.fullscreen", this, !fullscreen);
+    this.props.traitify.ui.trigger("SlideDeck.fullscreen", this, !fullscreen);
   }
   render(){
-    if(this.isReady("results")){ return; }
+    if(this.props.isReady("results")){ return; }
 
     const currentIndex = this.currentIndex();
     const currentSlide = this.state.slides[currentIndex];
@@ -273,12 +271,12 @@ export default class SlideDeck extends Component{
               </a>
             </div>
           </div>,
-          this.getOption("allowBack") && currentIndex > 0 && (
+          this.props.getOption("allowBack") && currentIndex > 0 && (
             <button key="back" class={style.back} onClick={this.back}>
               <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
             </button>
           ),
-          this.getOption("allowFullscreen") && (
+          this.props.getOption("allowFullscreen") && (
             <div key="fullscreen" class={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
           )
         ]}
@@ -286,3 +284,6 @@ export default class SlideDeck extends Component{
     );
   }
 }
+
+export {SlideDeck as Component};
+export default withTraitify(SlideDeck);

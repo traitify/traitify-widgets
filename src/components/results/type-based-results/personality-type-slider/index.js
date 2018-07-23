@@ -1,30 +1,28 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import PersonalityTypeSlide from "../personality-type-slide";
 import TypeButton from "./type-button";
 import style from "./style";
 
-export default class PersonalityTypeSlider extends Component{
+class PersonalityTypeSlider extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityTypeSlider.initialized", this);
-    this.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.traitify.ui.data["Assessment.activeType"]});
+    this.props.traitify.ui.trigger("PersonalityTypeSlider.initialized", this);
+    this.props.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.props.traitify.ui.data["Assessment.activeType"]});
     });
-    this.followAssessment();
 
-    const activeType = this.traitify.ui.data["Assessment.activeType"];
+    const activeType = this.props.traitify.ui.data["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
-  componentDidUpdate(){
-    this.followAssessment();
-  }
   setActive = (type)=>{
-    this.traitify.ui.trigger("PersonalityTypeSlider.changeType", this, type);
-    this.traitify.ui.trigger("Assessment.activeType", this, type);
+    this.props.traitify.ui.trigger("PersonalityTypeSlider.changeType", this, type);
+    this.props.traitify.ui.trigger("Assessment.activeType", this, type);
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
-    const {activeType, assessment} = this.state;
+    const {activeType} = this.state;
+    const {assessment} = this.props;
 
     let backType, nextType;
     if(activeType){
@@ -34,8 +32,6 @@ export default class PersonalityTypeSlider extends Component{
       nextType = assessment.personality_types[index + 1];
     }
 
-    const options = this.copyOptions();
-
     return (
       <div class={style.slider}>
         {backType && (
@@ -44,8 +40,8 @@ export default class PersonalityTypeSlider extends Component{
           </TypeButton>
         )}
         <ul>
-          {this.state.assessment.personality_types.map((type)=>(
-            <PersonalityTypeSlide type={type} options={options} />
+          {this.props.assessment.personality_types.map((type)=>(
+            <PersonalityTypeSlide type={type} {...this.props} />
           ))}
         </ul>
         {nextType && (
@@ -57,3 +53,6 @@ export default class PersonalityTypeSlider extends Component{
     );
   }
 }
+
+export {PersonalityTypeSlider as Component};
+export default withTraitify(PersonalityTypeSlider);

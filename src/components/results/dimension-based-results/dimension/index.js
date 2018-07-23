@@ -1,8 +1,9 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Color from "lib/color-helpers";
 import style from "./style";
 
-export default class Dimension extends Component{
+class Dimension extends Component{
   constructor(props){
     super(props);
 
@@ -11,15 +12,15 @@ export default class Dimension extends Component{
   trigger = (e)=>{
     e.preventDefault();
 
-    this.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
+    this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
     this.setState({showContent: !this.state.showContent});
   }
   componentDidMount(){
-    this.traitify.ui.trigger("Dimension.initialized", this);
+    this.props.traitify.ui.trigger("Dimension.initialized", this);
   }
   description(suffix){
     const type = this.props.type.personality_type;
-    const perspective = (this.getOption("perspective") || "firstPerson").replace("Person", "");
+    const perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
     let description = type.details.find(detail=>detail.title === `${perspective}_person_${suffix}`);
     description = description && description.body;
 
@@ -50,24 +51,24 @@ export default class Dimension extends Component{
           <div class={style.content}>
             <h2 class={style.title}>{type.name} <span style={`color: ${color}`}>|</span> {this.props.type.score} - {type.level}</h2>
             <p class={style.description}>{this.description("short_description")}</p>
-            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger} href="#">{this.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
+            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.i18n.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>
         {this.state.showContent &&
           <div class={style.details}>
             <div class={style.content} style={`background: ${Color.rgba(color, 30)}`}>
               <div class={style.extendedDesc}>
-                <h3>{this.translate("extended_description")}</h3>
+                <h3>{this.props.i18n.translate("extended_description")}</h3>
                 <p class={style.description}>{this.description("description")}</p>
               </div>
               <div class={style.detail}>
-                <h4 class={style.benefits}>{this.translate("potential_benefits")}</h4>
+                <h4 class={style.benefits}>{this.props.i18n.translate("potential_benefits")}</h4>
                 <ul>
                   {benefits.map((benefit)=>(<li>{benefit}</li>))}
                 </ul>
               </div>
               <div class={style.detail}>
-                <h4 class={style.pitfalls}>{this.translate("potential_pitfalls")}</h4>
+                <h4 class={style.pitfalls}>{this.props.i18n.translate("potential_pitfalls")}</h4>
                 <ul>
                   {pitfalls.map((pitfall)=>(<li>{pitfall}</li>))}
                 </ul>
@@ -79,3 +80,6 @@ export default class Dimension extends Component{
     );
   }
 }
+
+export {Dimension as Component};
+export default withTraitify(Dimension);

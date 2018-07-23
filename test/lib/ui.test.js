@@ -35,8 +35,12 @@ describe("UI", ()=>{
       const widgetElement = createElement();
       const traitify = new Traitify;
 
-      render(<Default traitify={traitify} />, componentElement);
+      traitify.ui.options.disableAirbrake = true;
       traitify.ui.component().target(widgetElement).render();
+      render(<Default traitify={traitify} />, componentElement);
+
+      console.log(componentElement);
+      console.log(widgetElement);
 
       expect(componentElement.innerHTML).toEqual(widgetElement.innerHTML);
     });

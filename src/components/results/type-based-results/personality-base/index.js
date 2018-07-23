@@ -1,24 +1,22 @@
-import Component from "components/traitify-component";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import PersonalityBlend from "../personality-blend";
 import PersonalityType from "../personality-type";
 
-export default class PersonalityBase extends Component{
+class PersonalityBase extends Component{
   componentDidMount(){
-    this.traitify.ui.trigger("PersonalityBase.initialized", this);
-    this.followAssessment();
-  }
-  componentDidUpdate(){
-    this.followAssessment();
+    this.props.traitify.ui.trigger("PersonalityBase.initialized", this);
   }
   render(){
-    if(!this.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return; }
 
-    const options = this.copyOptions();
-
-    return this.state.assessment.personality_blend ? (
-      <PersonalityBlend options={options} />
+    return this.props.assessment.personality_blend ? (
+      <PersonalityBlend {...this.props} />
     ) : (
-      <PersonalityType options={options} />
+      <PersonalityType {...this.props} />
     );
   }
 }
+
+export {PersonalityBase as Component};
+export default withTraitify(PersonalityBase);

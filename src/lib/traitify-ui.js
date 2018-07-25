@@ -1,10 +1,11 @@
 import TraitifyWidget from "lib/traitify-widget";
 
 export default class TraitifyUI{
-  constructor(options){
-    this.traitify = options.traitify;
+  constructor(traitify, options = {}){
+    this.traitify = traitify;
     this.options = {
-      imageHost: "https://images.traitify.com"
+      imageHost: "https://images.traitify.com",
+      ...options
     };
     this.callbacks = {};
     this.data = {};
@@ -30,6 +31,14 @@ export default class TraitifyUI{
     this.data[_key] = value;
 
     const key = _key.toLowerCase();
+    const widgetID = context.props && context.props.widgetID;
+    const widgetKey = widgetID && `Widget-${widgetID}.${key}`;
+
+    if(this.callbacks[widgetKey]){
+      this.callbacks[widgetKey].forEach((callback)=>{
+        callback.apply(this, [context, value]);
+      });
+    }
 
     if(this.callbacks[key]){
       this.callbacks[key].forEach((callback)=>{

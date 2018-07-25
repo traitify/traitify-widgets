@@ -1,11 +1,12 @@
 import {render} from "preact";
+import uuid from "uuid";
 import guessComponent from "lib/helpers/guess-component";
 
 class TraitifyWidget{
-  constructor(ui, options){
+  constructor(ui, options = {}){
+    this.id = uuid();
     this.ui = ui;
-    this.options = options || {};
-    this.options.callbacks = Object.assign({}, this.options.callbacks);
+    this.options = options;
     this.options.targets = Object.assign({}, this.options.targets);
   }
   allowBack(){
@@ -15,6 +16,11 @@ class TraitifyWidget{
   }
   allowFullscreen(){
     this.options.allowFullscreen = true;
+
+    return this;
+  }
+  assessmentID(assessmentID){
+    this.options.assessmentID = assessmentID;
 
     return this;
   }
@@ -34,9 +40,12 @@ class TraitifyWidget{
     return this;
   }
   on(key, callback){
-    key = key.toLowerCase();
-    this.options.callbacks[key] = this.options.callbacks[key] || [];
-    this.options.callbacks[key].push(callback);
+    this.ui.on(`Widget-${this.id}.${key}`, callback);
+
+    return this;
+  }
+  perspective(perspective){
+    this.options.perspective = perspective;
 
     return this;
   }
@@ -72,24 +81,22 @@ class TraitifyWidget{
 
         while(target.firstChild){ target.removeChild(target.firstChild); }
 
-        resolve(render(<Component options={this.options} traitify={this.ui.traitify} />, target));
+        resolve(render(<Component widgetID={this.id} options={this.options} traitify={this.ui.traitify} />, target));
       }));
     });
 
     return Promise.all(promises);
   }
-}
+  target(target){
+    this.options.target = target;
 
-[
-  "assessmentID",
-  "perspective",
-  "target",
-  "targets"
-].forEach((option)=>{
-  TraitifyWidget.prototype[option] = function(value){
-    this.options[option] = value;
     return this;
-  };
-});
+  }
+  targets(targets){
+    this.options.targets = targets;
+
+    return this;
+  }
+}
 
 export default TraitifyWidget;

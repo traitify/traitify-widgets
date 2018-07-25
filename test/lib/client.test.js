@@ -180,7 +180,7 @@ describe("Client", ()=>{
           return expect(response).resolves.toEqual([{name: "Neo"}]);
         });
 
-        it("returns error", ()=>{
+        it("returns not found error", ()=>{
           const response = client.ajax("GET", "/profiles");
           const xhr = XDomainRequest.mock.results[0].value;
 
@@ -189,6 +189,26 @@ describe("Client", ()=>{
           xhr.onload();
 
           expect(response).rejects.toEqual("Error: Not Found");
+        });
+
+        it("returns timeout error", ()=>{
+          const response = client.ajax("GET", "/profiles");
+          const xhr = XDomainRequest.mock.results[0].value;
+
+          xhr.responseText = "Error: Timeout";
+          xhr.ontimeout();
+
+          return expect(response).rejects.toEqual("Error: Timeout");
+        });
+
+        it("returns error", ()=>{
+          const response = client.ajax("GET", "/profiles");
+          const xhr = XDomainRequest.mock.results[0].value;
+
+          xhr.responseText = "Error";
+          xhr.onerror();
+
+          return expect(response).rejects.toEqual("Error");
         });
       });
     });
@@ -232,6 +252,13 @@ describe("Client", ()=>{
           expect(xhrMocks.send).toHaveBeenCalledWith(JSON.stringify(null));
         });
 
+        it("combines query params", ()=>{
+          client.ajax("GET", "/profiles?per_page=10", {locale_key: "en-us"});
+          const url = xhrMocks.open.mock.calls[0][1];
+
+          expect(url).toEqual("https://api.traitify.com/v1/profiles?per_page=10&locale_key=en-us");
+        });
+
         it("passes body params", ()=>{
           client.ajax("POST", "/profiles", {locale_key: "en-us"});
           const url = xhrMocks.open.mock.calls[0][1];
@@ -242,6 +269,13 @@ describe("Client", ()=>{
       });
 
       describe("response", ()=>{
+        it("returns if offline", ()=>{
+          client.online = jest.fn(()=>false);
+          const response = client.ajax("GET", "/profiles");
+
+          return expect(response).rejects.toBeUndefined();
+        });
+
         it("returns parsed responseText", ()=>{
           const response = client.ajax("GET", "/profiles");
           const xhr = XMLHttpRequest.mock.results[0].value;
@@ -282,6 +316,16 @@ describe("Client", ()=>{
           xhr.onerror();
 
           return expect(response).rejects.toEqual("Error");
+        });
+
+        it("catches error", ()=>{
+          xhrMocks.send.mockImplementationOnce(()=>{
+            throw new SyntaxError();
+          });
+
+          const response = client.ajax("GET", "/profiles");
+
+          return expect(response).rejects.toThrow(SyntaxError);
         });
       });
     });

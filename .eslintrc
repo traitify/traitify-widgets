@@ -92,6 +92,7 @@
         "this": {"before": true, "after": true}
       }
     }],
+    "new-parens": "error",
     "no-lonely-if": "off",
     "no-multiple-empty-lines": ["error", {"max": 1, "maxBOF": 0, "maxEOF": 0}],
     "no-unused-vars": ["error", {"args": "none"}],

@@ -16,8 +16,8 @@
     "prebuild:compatibility": "mkdirp build",
     "prestart": "npm run build",
     "pretest": "npm run lint",
-    "test": "jest --no-cache --coverage",
-    "test:live": "npm test --watch"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "globals": {
@@ -28,8 +28,10 @@
       "js"
     ],
     "modulePaths": [
-      "<rootDir>/src/"
+      "<rootDir>/src/",
+      "<rootDir>/test"
     ],
+    "testURL": "https://www.example.com",
     "transform": {
       "^.+\\.(css|less|scss|sass)$": "<rootDir>/test/support/css-transformer",
       "^.+\\.jsx?$": "babel-jest"

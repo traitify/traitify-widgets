@@ -180,7 +180,7 @@ export default function withTraitify(WrappedComponent){
       };
     }
     setI18n(){
-      this.i18n = this.props.i18n || new I18n;
+      this.i18n = this.props.i18n || new I18n();
 
       const locale = this.props.locale;
       if(locale && locale !== this.i18n.locale){ this.i18n.setLocale(locale); }

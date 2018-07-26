@@ -13,8 +13,10 @@ export default function guessComponent(name, options = {}){
     const type = options.assessmentType.slice(0, -6);
 
     componentName = name;
-    componentType = `${type.charAt(0).toUpperCase()}${type.substring(1)}Components`;
+    componentType = `${type.charAt(0).toUpperCase()}${type.substring(1).toLowerCase()}Components`;
   }else{ return; }
+
+  console.log(componentType);
 
   return Components[componentType][componentName];
 }

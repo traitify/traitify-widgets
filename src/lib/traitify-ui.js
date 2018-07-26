@@ -32,7 +32,7 @@ export default class TraitifyUI{
 
     const key = _key.toLowerCase();
     const widgetID = context.props && context.props.widgetID;
-    const widgetKey = widgetID && `Widget-${widgetID}.${key}`;
+    const widgetKey = widgetID && `widget-${widgetID}.${key}`.toLowerCase();
 
     if(this.callbacks[widgetKey]){
       this.callbacks[widgetKey].forEach((callback)=>{

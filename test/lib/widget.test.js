@@ -165,7 +165,7 @@ describe("Widget", ()=>{
     });
 
     afterAll(()=>{
-      document.querySelector = originalQuerySelector ;
+      document.querySelector = originalQuerySelector;
     });
 
     it("requires a component", ()=>{
@@ -192,8 +192,6 @@ describe("Widget", ()=>{
         expect(render).toHaveBeenCalledTimes(1);
         done();
       });
-
-      expect(render).toHaveBeenCalledTimes(1);
     });
 
     it("renders dom target", (done)=>{
@@ -202,8 +200,6 @@ describe("Widget", ()=>{
         expect(render).toHaveBeenCalledTimes(1);
         done();
       });
-
-      expect(render).toHaveBeenCalledTimes(1);
     });
 
     it("renders targets", (done)=>{
@@ -214,6 +210,19 @@ describe("Widget", ()=>{
       };
       widget.render().then((result)=>{
         expect(render).toHaveBeenCalledTimes(3);
+        done();
+      });
+    });
+
+    it("removes dom target's children", (done)=>{
+      const removeChild = jest.fn(function(){ this.firstChild = null; });
+      widget.options.target = {
+        removeChild,
+        firstChild: {nodeName: "div"},
+        nodeName: "div"
+      };
+      widget.render().then((result)=>{
+        expect(render).toHaveBeenCalled();
         done();
       });
     });

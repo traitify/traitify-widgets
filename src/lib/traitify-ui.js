@@ -1,8 +1,12 @@
-import TraitifyWidget from "lib/traitify-widget";
+import I18n from "lib/i18n";
+import Widget from "lib/traitify-widget";
 
 export default class TraitifyUI{
-  constructor(traitify, options = {}){
+  constructor(traitify, _options = {}){
+    const {i18n, ...options} = _options;
+
     this.traitify = traitify;
+    this.i18n = i18n || new I18n();
     this.options = {
       imageHost: "https://images.traitify.com",
       ...options
@@ -12,7 +16,7 @@ export default class TraitifyUI{
     this.requests = {};
   }
   component(options = {}){
-    return new TraitifyWidget(this, {...this.options, ...options});
+    return new Widget(this, {...this.options, ...options});
   }
   on(_key, callback){
     const key = _key.toLowerCase();

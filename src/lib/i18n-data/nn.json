@@ -1,0 +1,13 @@
+{
+  "best_work_environments": "Beste arbeidsmiljøer",
+  "complements": "Utfyller",
+  "conflicts": "Konflikter",
+  "extended_description": "Utvidet beskrivelse",
+  "personality_heading": "Din %{deck_name} personlighet er %{personality}",
+  "potential_benefits": "Potensielle fordeler",
+  "potential_pitfalls": "Potensielle fallgruver",
+  "show_less": "Vis mindre",
+  "show_more": "Vis mer",
+  "me": "Meg",
+  "not_me": "Ikke meg"
+}

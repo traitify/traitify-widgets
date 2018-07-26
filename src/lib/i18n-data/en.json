@@ -1,0 +1,13 @@
+{
+  "best_work_environments": "Best Work Environments",
+  "complements": "Complements",
+  "conflicts": "Conflicts",
+  "extended_description": "Extended Description",
+  "personality_heading": "Your %{deck_name} Personality is %{personality}",
+  "potential_benefits": "Potential Benefits",
+  "potential_pitfalls": "Potential Pitfalls",
+  "show_less": "Show Less",
+  "show_more": "Show More",
+  "me": "Me",
+  "not_me": "Not Me"
+}

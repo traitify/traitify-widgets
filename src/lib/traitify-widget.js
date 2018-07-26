@@ -2,7 +2,7 @@ import {render} from "preact";
 import uuid from "uuid";
 import guessComponent from "lib/helpers/guess-component";
 
-class TraitifyWidget{
+export default class TraitifyWidget{
   constructor(ui, options = {}){
     this.id = uuid();
     this.ui = ui;
@@ -98,5 +98,3 @@ class TraitifyWidget{
     return this;
   }
 }
-
-export default TraitifyWidget;

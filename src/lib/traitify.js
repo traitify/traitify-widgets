@@ -1,11 +1,11 @@
 /* global VERSION */
-import TraitifyClient from "lib/traitify-client";
-import TraitifyUI from "lib/traitify-ui";
+import Client from "lib/traitify-client";
+import UI from "lib/traitify-ui";
 
-export default class Traitify extends TraitifyClient{
+export default class Traitify extends Client{
   constructor(){
     super();
     this.__version__ = VERSION;
-    this.ui = new TraitifyUI(this);
+    this.ui = new UI(this);
   }
 }

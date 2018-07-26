@@ -1,7 +1,9 @@
+import I18n from "lib/i18n";
 import UI from "lib/traitify-ui";
 import Widget from "lib/traitify-widget";
 
 jest.mock("lib/traitify-widget");
+jest.mock("lib/i18n");
 
 describe("UI", ()=>{
   let ui;
@@ -10,6 +12,21 @@ describe("UI", ()=>{
     Widget.mockClear();
 
     ui = new UI({});
+  });
+
+  describe("constructor", ()=>{
+    it("has default imageHost", ()=>{
+      expect(ui.options.imageHost).toBe("https://images.traitify.com");
+    });
+
+    it("creates default i18n", ()=>{
+      expect(ui.i18n).toBeInstanceOf(I18n);
+    });
+
+    it("sets shared data", ()=>{
+      expect(ui.data).toEqual({});
+      expect(ui.requests).toEqual({});
+    });
   });
 
   describe("component", ()=>{
@@ -109,6 +126,12 @@ describe("UI", ()=>{
       const returnValue = ui.trigger("Default.Initialize", {});
 
       expect(returnValue).toEqual(ui);
+    });
+
+    it("saves data", ()=>{
+      ui.trigger("Default.Initialize", {}, true);
+
+      expect(ui.data["Default.Initialize"]).toBe(true);
     });
   });
 });

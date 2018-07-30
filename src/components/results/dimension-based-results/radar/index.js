@@ -1,7 +1,7 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
-import Chart from "lib/canvas-radar-chart";
+import Chart from "lib/helpers/canvas-radar-chart";
 
 class Radar extends Component{
   componentDidMount(){
@@ -38,18 +38,12 @@ class Radar extends Component{
 
     let ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, options);
-    this.chart.resize();
+    this.chart.render();
   }
   updateChart = ()=>{
-    if(!this.chart) return this.createChart();
+    if(!this.chart){ return this.createChart(); }
 
     this.chart.resize();
-  }
-  destroyChart = ()=>{
-    if(!this.chart) return;
-
-    this.chart.destroy();
-    delete this.chart;
   }
   render(){
     if(!this.props.isReady("results")){ return; }

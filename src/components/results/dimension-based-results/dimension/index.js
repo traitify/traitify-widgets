@@ -1,6 +1,6 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
-import Color from "lib/color-helpers";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Dimension extends Component{
@@ -42,7 +42,7 @@ class Dimension extends Component{
 
     return (
       <li class={style.dimension}>
-        <div class={style.main} style={`background: ${Color.rgba(color, 8.5)};border-left: 5px solid ${color};`}>
+        <div class={style.main} style={`background: ${rgba(color, 8.5)};border-left: 5px solid ${color};`}>
           <div class={style.side}>
             <p class={style.icon}>
               <img src={type.badge.image_medium} alt="" role="presentation" ariahidden="true" />
@@ -51,12 +51,12 @@ class Dimension extends Component{
           <div class={style.content}>
             <h2 class={style.title}>{type.name} <span style={`color: ${color}`}>|</span> {this.props.type.score} - {type.level}</h2>
             <p class={style.description}>{this.description("short_description")}</p>
-            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${Color.rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.i18n.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
+            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.i18n.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>
         {this.state.showContent &&
           <div class={style.details}>
-            <div class={style.content} style={`background: ${Color.rgba(color, 30)}`}>
+            <div class={style.content} style={`background: ${rgba(color, 30)}`}>
               <div class={style.extendedDesc}>
                 <h3>{this.props.i18n.translate("extended_description")}</h3>
                 <p class={style.description}>{this.description("description")}</p>

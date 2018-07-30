@@ -1,6 +1,6 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
-import Color from "lib/color-helpers";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Type extends Component{
@@ -31,7 +31,7 @@ class Type extends Component{
 
     return (
       <li class={style.type} style={`border-left: 5px solid ${color};`}>
-        <div class={style.main} style={`background: ${Color.rgba(color, 8.5)};`}>
+        <div class={style.main} style={`background: ${rgba(color, 8.5)};`}>
           <div class={style.content}>
             <h2 class={style.title}>{type.name} <span class={style.score}>{this.props.type.score} - {type.level}</span></h2>
           </div>

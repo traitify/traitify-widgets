@@ -1,6 +1,6 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
-import Color from "lib/color-helpers";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityTrait extends Component{
@@ -14,7 +14,7 @@ class PersonalityTrait extends Component{
     const color = `#${type.badge.color_1}`;
 
     return (
-      <div class={style.trait} style={`background: ${Color.rgba(color, 8.5)};`}>
+      <div class={style.trait} style={`background: ${rgba(color, 8.5)};`}>
         <div class={style.bar} style={`width: ${score}%; background: ${color};`} />
         <div class={style.content}>
           <div class={style.score}>{score}%</div>

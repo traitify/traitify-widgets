@@ -1,6 +1,6 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
-import Color from "lib/color-helpers";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityTypeBar extends Component{
@@ -34,7 +34,7 @@ class PersonalityTypeBar extends Component{
     return (
       <li class={`${style.bar} ${active ? style.selected : ""}`} onMouseOver={this.setActive} onClick={this.setActive}>
         <span class={style.score} style={`background: ${color}; height: ${barHeight}%;`}>{score}%</span>
-        <span class={style.label} style={active && `background-color: ${Color.rgba(color, 8.5)}`}>
+        <span class={style.label} style={active && `background-color: ${rgba(color, 8.5)}`}>
           <img src={icon} alt={title} />
           <i>{title}</i>
         </span>

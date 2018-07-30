@@ -1,4 +1,4 @@
-let configureLabels = function(options){
+function configureLabels(options){
   let labels = [];
   options.labels.forEach((label)=>{
     labels.push({
@@ -8,9 +8,9 @@ let configureLabels = function(options){
     });
   });
   return labels;
-};
+}
 
-let configureData = function(options){
+function configureData(options){
   let data = [];
   options.data.forEach((set)=>{
     data.push({
@@ -24,9 +24,9 @@ let configureData = function(options){
     });
   });
   return data;
-};
+}
 
-let configureGrid = function(ctx, options){
+function configureGrid(ctx, options){
   let grid = {
     axes: [],
     options: {
@@ -39,10 +39,10 @@ let configureGrid = function(ctx, options){
     }
   };
 
-  let canvasWidth = ctx.canvas.width;
-  let canvasHeight = ctx.canvas.height;
+  const canvasWidth = ctx.canvas.width;
+  const canvasHeight = ctx.canvas.height;
   grid.center = {x: canvasWidth / 2, y: canvasHeight / 2};
-  grid.radius = (canvasWidth > canvasHeight ? canvasHeight : canvasWidth) / 3.1;
+  grid.radius = (canvasWidth > canvasHeight ? canvasHeight : canvasWidth) / Math.PI;
 
   for(let axis = 0; axis < options.labels.length; axis++){
     grid.axes.push({
@@ -51,7 +51,7 @@ let configureGrid = function(ctx, options){
   }
 
   return grid;
-};
+}
 
 export default class CanvasRadarChart{
   constructor(ctx, options){
@@ -59,42 +59,42 @@ export default class CanvasRadarChart{
     this.data = configureData(options);
     this.labels = configureLabels(options);
     this.grid = configureGrid(ctx, options);
-
+  }
+  render(){
     this.renderGrid();
     this.renderLabels();
     this.renderData();
+    this.resize();
   }
-
   resize(){
-    let canvas = this.ctx.canvas;
-    let container = canvas.parentNode;
-    let newWidth = container.clientWidth;
-    let aspectRatio = canvas.width / canvas.height;
+    const canvas = this.ctx.canvas;
+    const container = canvas.parentNode;
+    const newWidth = container.clientWidth;
+    const aspectRatio = canvas.width / canvas.height;
+
     canvas.style.width = newWidth + "px";
     canvas.style.height = (newWidth / aspectRatio) + "px";
   }
-
   renderGrid(){
-    let innerLines = this.grid.options.innerLines;
+    const innerLines = this.grid.options.innerLines;
 
     for(let line = 0; line <= innerLines + 1; line++){
       this.renderPolygon(this.grid.radius * (line/(innerLines + 1)), line);
     }
   }
-
   renderPolygon(radius, line){
-    let options = this.grid.options;
+    const options = this.grid.options;
 
     this.ctx.strokeStyle = options.strokeStyle;
     this.ctx.lineWidth = options.lineWidth;
     this.ctx.beginPath();
 
     this.grid.axes.concat(this.grid.axes[0]).forEach((axis, index)=>{
-      let x = this.grid.center.x + radius * -Math.cos(axis.angle);
-      let y = this.grid.center.y + radius * -Math.sin(axis.angle);
+      const x = this.grid.center.x + radius * -Math.cos(axis.angle);
+      const y = this.grid.center.y + radius * -Math.sin(axis.angle);
 
       if(index === 0){
-        let scale = parseInt(options.max * (line / (options.innerLines + 1)), 10);
+        const scale = parseInt(options.max * (line / (options.innerLines + 1)), 10);
         this.ctx.font = options.font;
         this.ctx.fillText(scale, x + 5, y + 20);
       }
@@ -109,32 +109,30 @@ export default class CanvasRadarChart{
     this.ctx.closePath();
     this.ctx.stroke();
   }
-
   renderLabels(){
     this.grid.axes.forEach((axis, index)=>{
-      let label = this.labels[index];
-      let img = new Image();
-      img.src = label.image;
-      img.onload = ()=>{
-        let diagonal = Math.sqrt((Math.pow(img.width, 2) + Math.pow(img.height, 2)));
-        let x = (this.grid.center.x - img.width / 2) + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.cos(axis.angle);
-        let y = (this.grid.center.y - img.height / 2) + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.sin(axis.angle);
-        this.ctx.drawImage(img, x, y);
+      const label = this.labels[index];
+      axis.img = new Image();
+      axis.img.src = label.image;
+      axis.img.onload = ()=>{
+        const diagonal = Math.sqrt((Math.pow(axis.img.width, 2) + Math.pow(axis.img.height, 2)));
+        const x = (this.grid.center.x - axis.img.width / 2) + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.cos(axis.angle);
+        const y = (this.grid.center.y - axis.img.height / 2) + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.sin(axis.angle);
+        this.ctx.drawImage(axis.img, x, y);
 
-        this.renderLabelText(label, x + img.width / 2, y + img.height);
+        this.renderLabelText(label, x + axis.img.width / 2, y + axis.img.height);
       };
     });
   }
-
   renderLabelText(label, x, y){
     this.ctx.fillStyle = label.fillStyle;
     this.ctx.font = label.font;
     this.ctx.textAlign = "center";
     this.ctx.textBaseline = "top";
-    let textLength = this.ctx.measureText(label.text).width;
+    const textLength = this.ctx.measureText(label.text).width;
 
     if(x < 150 || x > 680){
-      let lines = label.text.split(" ");
+      const lines = label.text.split(" ");
       if(lines.length > 1){
         for(let i = 0; i < lines.length; i++){
           this.ctx.fillText(lines[i], x, y + (i * 22));
@@ -150,18 +148,17 @@ export default class CanvasRadarChart{
       this.ctx.fillText(label.text, x, y);
     }
   }
-
   renderData(){
     this.data.forEach((data)=>{
-      let points = [];
+      const points = [];
 
       this.ctx.strokeStyle = data.pathStrokeStyle;
       this.ctx.lineWidth = data.pathLineWidth;
       this.ctx.beginPath();
       this.grid.axes.forEach((axis, index)=>{
-        let value = this.grid.radius * data.values[index] / this.grid.options.max;
-        let x = this.grid.center.x + value * -Math.cos(axis.angle);
-        let y = this.grid.center.y + value * -Math.sin(axis.angle);
+        const value = this.grid.radius * data.values[index] / this.grid.options.max;
+        const x = this.grid.center.x + value * -Math.cos(axis.angle);
+        const y = this.grid.center.y + value * -Math.sin(axis.angle);
         points.push({x, y});
         this.ctx.lineTo(x, y);
       });

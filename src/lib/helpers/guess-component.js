@@ -16,7 +16,5 @@ export default function guessComponent(name, options = {}){
     componentType = `${type.charAt(0).toUpperCase()}${type.substring(1).toLowerCase()}Components`;
   }else{ return; }
 
-  console.log(componentType);
-
   return Components[componentType][componentName];
 }

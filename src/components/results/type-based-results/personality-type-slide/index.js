@@ -1,6 +1,6 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
-import Color from "lib/color-helpers";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityTypeSlide extends Component{
@@ -41,7 +41,7 @@ class PersonalityTypeSlide extends Component{
     }
 
     return (
-      <li class={`${style.slide} ${style[position]}`} style={`background: ${Color.rgba(color, 8.5)};`}>
+      <li class={`${style.slide} ${style[position]}`} style={`background: ${rgba(color, 8.5)};`}>
         <span class={style.title} style={`color: ${color}`}>{name}</span>
         {description}
       </li>

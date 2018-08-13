@@ -24,7 +24,7 @@ describe("UI", ()=>{
     });
 
     it("sets shared data", ()=>{
-      expect(ui.data).toEqual({});
+      expect(ui.current).toEqual({});
       expect(ui.requests).toEqual({});
     });
   });
@@ -41,6 +41,33 @@ describe("UI", ()=>{
       const component = ui.component();
 
       expect(component).toBeInstanceOf(Widget);
+    });
+  });
+
+  describe("off", ()=>{
+    it("returns ui", ()=>{
+      const returnValue = ui.off("Default.Initialize", ()=>{});
+
+      expect(returnValue).toEqual(ui);
+    });
+
+    it("removes callback", ()=>{
+      const callback = ()=>{};
+
+      ui.on("Default.Initialize", callback);
+      ui.off("Default.Initialize", callback);
+
+      expect(ui.callbacks["default.initialize"]).toBeUndefined();
+    });
+
+    it("leaves other callbacks", ()=>{
+      const callbacks = [()=>{}, ()=>{}];
+
+      ui.on("Default.Initialize", callbacks[0]);
+      ui.on("Default.Initialize", callbacks[1]);
+      ui.off("Default.Initialize", callbacks[0]);
+
+      expect(ui.callbacks["default.initialize"]).toEqual([callbacks[1]]);
     });
   });
 
@@ -128,10 +155,10 @@ describe("UI", ()=>{
       expect(returnValue).toEqual(ui);
     });
 
-    it("saves data", ()=>{
+    it("saves current", ()=>{
       ui.trigger("Default.Initialize", {}, true);
 
-      expect(ui.data["Default.Initialize"]).toBe(true);
+      expect(ui.current["Default.Initialize"]).toBe(true);
     });
   });
 });

@@ -98,7 +98,7 @@
     "no-unused-vars": ["error", {"args": "none"}],
     "object-curly-spacing": "off",
     "padded-blocks": ["error", "never"],
-    "quotes": ["error", "double", {"avoidEscape": true}],
+    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
     "space-before-blocks": ["error", "never"],
     "space-before-function-paren": ["error", "never"]
   }

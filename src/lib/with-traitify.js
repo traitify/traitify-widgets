@@ -79,7 +79,7 @@ export default function withTraitify(WrappedComponent){
     }
     getAssessment = (options = {})=>{
       const {assessmentID, locale} = this.state;
-      if(!assessmentID){ return; }
+      if(!assessmentID){ return Promise.resolve(); }
 
       const key = `${locale}.assessment.${assessmentID}`;
       const hasResults = (data)=>(
@@ -89,10 +89,12 @@ export default function withTraitify(WrappedComponent){
           && data.personality_types
           && data.personality_types.length > 0
       );
-      const setAssessment = (data)=>{
-        this.setState({assessment: data});
-        this.traitify.ui.trigger(key, this, data);
-      };
+      const setAssessment = (data)=>(
+        new Promise((resolve)=>{
+          this.setState({assessment: data}, ()=>(resolve(data)));
+          this.traitify.ui.trigger(key, this, data);
+        })
+      );
 
       let assessment = this.props.assessment;
       if(hasResults(assessment)){ return setAssessment(assessment); }
@@ -100,9 +102,9 @@ export default function withTraitify(WrappedComponent){
       assessment = this.cache.get(key);
       if(hasResults(assessment)){ return setAssessment(assessment); }
 
-      if(this.traitify.ui.requests[key] && !options.force){ return; }
+      if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
 
-      this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
+      return this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
         data: "archetype,blend,slides,types,traits",
         locale_key: locale
       }).then((data)=>{
@@ -115,9 +117,9 @@ export default function withTraitify(WrappedComponent){
         delete this.traitify.ui.requests[key];
       });
     }
-    getDeck(options = {}){
+    getDeck = (options = {})=>{
       const {deckID, locale} = this.state;
-      if(!deckID){ return; }
+      if(!deckID){ return Promise.resolve(); }
 
       const key = `${locale}.deck.${deckID}`;
       const hasData = (data)=>(
@@ -126,10 +128,12 @@ export default function withTraitify(WrappedComponent){
           && data.locale_key.toLowerCase() === locale
           && data.name
       );
-      const setDeck = (data)=>{
-        this.setState({deck: data});
-        this.traitify.ui.trigger(key, this, data);
-      };
+      const setDeck = (data)=>(
+        new Promise((resolve)=>{
+          this.setState({deck: data}, ()=>(resolve(data)));
+          this.traitify.ui.trigger(key, this, data);
+        })
+      );
 
       let deck = this.state.deck;
       if(hasData(deck)){ return setDeck(deck); }
@@ -137,13 +141,12 @@ export default function withTraitify(WrappedComponent){
       deck = this.cache.get(key);
       if(hasData(deck)){ return setDeck(deck); }
 
-      if(this.traitify.ui.requests[key] && !options.force){ return; }
+      if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
 
-      this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
+      return this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
         locale_key: locale
       }).then((data)=>{
-        data.locale_key = data.locale_key || locale;
-
+        if(data && !data.locale_key){ data.locale_key = locale; }
         if(hasData(data)){ this.cache.set(key, data); }
 
         setDeck(data);

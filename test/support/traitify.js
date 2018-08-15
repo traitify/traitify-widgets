@@ -1,7 +1,5 @@
 import OriginalTraitify from "lib/traitify";
 
 export default class Traitify extends OriginalTraitify{
-  ajax = jest
-    .fn(()=>new Promise((resolve)=>resolve()))
-    .mockName("ajax")
+  ajax = jest.fn(()=>(Promise.resolve())).mockName("ajax")
 }

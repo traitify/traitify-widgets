@@ -17,11 +17,24 @@ class SlideDeck extends Component{
     };
   }
   componentDidMount(){
+    this.props.traitify.ui.trigger("SlideDeck.initialized", this);
     this.initialize();
     window.addEventListener("resize", this.resizeImages);
   }
-  componentDidUpdate(){
-    this.state.initialized ? this.update() : this.initialize();
+  componentDidUpdate(prevProps){
+    if(!this.state.initialized){ return this.initialize(); }
+    if(this.props.assessment.locale_key !== prevProps.assessment.locale_key){
+      return this.setState({
+        finished: false,
+        imageLoading: false,
+        imageLoadAttempts: [],
+        initialized: false,
+        ready: false,
+        slides: []
+      });
+    }
+
+    this.update();
   }
   componentWillUnmount(){
     window.removeEventListener("resize", this.resizeImages);
@@ -34,8 +47,9 @@ class SlideDeck extends Component{
     this.setState((prevState, props)=>{
       if(prevState.initialized){ return; }
 
-      let slides = [...this.props.assessment.slides] || [];
-      let storedSlides = this.props.cache.get(`slides-${this.props.assessmentID}`) || [];
+      const {assessment, assessmentID, cache} = props;
+      let slides = [...assessment.slides] || [];
+      let storedSlides = cache.get(`slides.${assessmentID}`) || [];
       let completedSlides = {};
 
       storedSlides.forEach((slide)=>{ completedSlides[slide.id] = slide; });
@@ -50,7 +64,6 @@ class SlideDeck extends Component{
 
       return {initialized: true, slides, startTime: Date.now()};
     }, ()=>{
-      this.props.traitify.ui.trigger("SlideDeck.initialized", this);
       if(this.isComplete()){
         this.finish();
       }else{
@@ -87,7 +100,7 @@ class SlideDeck extends Component{
       };
     });
   }
-  update(){
+  update(prevProps){
     let loaded = this.state.slides.filter((slide)=>(slide.loaded)).length;
     let remainingSlidesLoaded = !this.state.slides.find((slide)=>(!slide.loaded && slide.response == null));
     let nextSlidesLoaded = loaded >= this.currentIndex() + 2;
@@ -114,7 +127,9 @@ class SlideDeck extends Component{
     slide.response = value;
     slide.time_taken = Date.now() - this.state.startTime;
     this.setState({slides}, ()=>{
-      this.props.cache.set(`slides-${this.props.assessmentID}`, this.completedSlides());
+      const {assessmentID, cache} = this.props;
+
+      cache.set(`slides.${assessmentID}`, this.completedSlides());
 
       if(this.isComplete()){
         this.finish();
@@ -264,10 +279,10 @@ class SlideDeck extends Component{
           <div key="response" class={style.responseContainer}>
             <div class={style.buttons}>
               <a class={style.me} onClick={this.respondMe} href="#">
-                {this.translate("me")}
+                {this.props.translate("me")}
               </a>
               <a class={style.notMe} onClick={this.respondNotMe} href="#">
-                {this.translate("not_me")}
+                {this.props.translate("not_me")}
               </a>
             </div>
           </div>,

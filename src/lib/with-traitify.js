@@ -234,13 +234,12 @@ export default function withTraitify(WrappedComponent){
     }
     setupI18n(){
       this.addListener("I18n.setLocale", (_, locale)=>{ this.setState({locale: locale.toLowerCase()}); });
-      this.i18n = this.traitify.ui.i18n;
 
       const locale = this.props.locale || (this.props.options && this.props.options.locale);
-      if(locale && locale.toLowerCase() !== this.i18n.locale){
+      if(locale && locale.toLowerCase() !== this.traitify.ui.i18n.locale){
         this.traitify.ui.setLocale(locale.toLowerCase());
       }else{
-        this.setState({locale: this.i18n.locale});
+        this.setState({locale: this.traitify.ui.i18n.locale});
       }
     }
     setupTraitify(){
@@ -264,8 +263,8 @@ export default function withTraitify(WrappedComponent){
         });
 
         const currentValue = this.traitify.ui.current[key];
-        if(currentValue){
-          this.getListener(key)(...currentValue);
+        if(currentValue != null){
+          this.getListener(key)(null, currentValue);
         }else{
           this.getAssessment();
         }
@@ -287,8 +286,8 @@ export default function withTraitify(WrappedComponent){
         });
 
         const currentValue = this.traitify.ui.current[key];
-        if(currentValue){
-          this.getListener(key)(...currentValue);
+        if(currentValue != null){
+          this.getListener(key)(null, currentValue);
         }else{
           this.getDeck();
         }
@@ -301,13 +300,13 @@ export default function withTraitify(WrappedComponent){
         followDeck,
         getAssessment,
         getOption,
-        i18n,
         isReady,
         props,
         state,
         traitify
       } = this;
 
+      const {locale, translate} = this.traitify.ui.i18n;
       const options = {
         ...props,
         ...state,
@@ -316,9 +315,10 @@ export default function withTraitify(WrappedComponent){
         followDeck,
         getAssessment,
         getOption,
-        i18n,
+        locale,
         isReady,
-        traitify
+        traitify,
+        translate
       };
 
       return <WrappedComponent {...options} />;

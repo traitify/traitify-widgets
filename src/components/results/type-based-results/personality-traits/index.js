@@ -17,7 +17,7 @@ class PersonalityTraits extends Component{
   render(){
     if(!this.props.isReady("results")){ return; }
 
-    const text = this.props.i18n.translate(this.state.showMore ? "show_less" : "show_more");
+    const text = this.props.translate(this.state.showMore ? "show_less" : "show_more");
     let traits = this.props.assessment.personality_traits;
 
     if(!this.state.showMore){ traits = traits.slice(0, 8); }

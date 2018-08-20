@@ -7,7 +7,7 @@ class PersonalityTypeBarChart extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTypeBarChart.initialized", this);
     this.props.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.props.traitify.ui.data["Assessment.activeType"]});
+      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
     });
     this.activate();
   }
@@ -18,7 +18,7 @@ class PersonalityTypeBarChart extends Component{
     if(!this.props.isReady("results")){ return; }
     if(this.state.activeType){ return; }
 
-    const activeType = this.props.traitify.ui.data["Assessment.activeType"];
+    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){
       this.setState({activeType});
     }else{

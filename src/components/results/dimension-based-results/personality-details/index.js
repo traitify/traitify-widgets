@@ -25,7 +25,7 @@ class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #008dc7;" />
-              <h4 class={style.title} style="color: #008dc7;">{this.props.i18n.translate("complements")}</h4>
+              <h4 class={style.title} style="color: #008dc7;">{this.props.translate("complements")}</h4>
               <p class={style.description}>{complement}</p>
             </div>
           </div>
@@ -34,7 +34,7 @@ class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #d04e4a;" />
-              <h4 class={style.title} style="color: #d04e4a;">{this.props.i18n.translate("conflicts")}</h4>
+              <h4 class={style.title} style="color: #d04e4a;">{this.props.translate("conflicts")}</h4>
               <p class={style.description}>{conflict}</p>
             </div>
           </div>
@@ -43,7 +43,7 @@ class PersonalityDetails extends Component{
           <div class={style.detail}>
             <div class={style.content}>
               <div class={style.bar} style="background: #32be4b;" />
-              <h4 class={style.title} style="color: #32be4b;">{this.props.i18n.translate("best_work_environments")}</h4>
+              <h4 class={style.title} style="color: #32be4b;">{this.props.translate("best_work_environments")}</h4>
               <ul class={style.description}>
                 {environments.map(environment=>(
                   <li>{environment.name}</li>

@@ -25,19 +25,19 @@ class PersonalityDetails extends Component{
       <div class={style.details}>
         {complement && (
           <div class={style.complements}>
-            <h4>{this.props.i18n.translate("complements")}</h4>
+            <h4>{this.props.translate("complements")}</h4>
             <p>{complement}</p>
           </div>
         )}
         {conflict && (
           <div class={style.conflicts}>
-            <h4>{this.props.i18n.translate("conflicts")}</h4>
+            <h4>{this.props.translate("conflicts")}</h4>
             <p>{conflict}</p>
           </div>
         )}
         {environments[0] && (
           <div class={style.environments}>
-            <h4>{this.props.i18n.translate("best_work_environments")}</h4>
+            <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
               {environments.map(environment=>(
                 <li>{environment.name}</li>

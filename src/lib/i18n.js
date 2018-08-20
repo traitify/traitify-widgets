@@ -31,18 +31,15 @@ export default class I18n{
       this.addTranslations(locale, i18nData[locale]);
     });
   }
-  setLocale(_locale){
+  setLocale = (_locale)=>{
     const locale = _locale.toLowerCase();
 
     if(this.data[locale]){ this.locale = locale; }
   }
-  translate(key, options){
+  translate = (key, options)=>{
     const result = this.data[this.locale][key];
     if(!result || !options){ return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r)=>options[r.slice(2, -1)]);
-  }
-  t(key, options){
-    return this.translate(key, options);
   }
 }

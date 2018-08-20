@@ -17,7 +17,7 @@ class PersonalityHeading extends Component{
     return (
       <div class={style.personality}>
         <div class={style.content} dangerouslySetInnerHTML={{
-          __html: this.props.i18n.translate("personality_heading", {
+          __html: this.props.translate("personality_heading", {
             deck_name: this.props.deck.name,
             personality: `<strong>${personality.name}</strong>`
           })

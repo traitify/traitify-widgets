@@ -51,24 +51,24 @@ class Dimension extends Component{
           <div class={style.content}>
             <h2 class={style.title}>{type.name} <span style={`color: ${color}`}>|</span> {this.props.type.score} - {type.level}</h2>
             <p class={style.description}>{this.description("short_description")}</p>
-            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.i18n.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
+            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>
         {this.state.showContent &&
           <div class={style.details}>
             <div class={style.content} style={`background: ${rgba(color, 30)}`}>
               <div class={style.extendedDesc}>
-                <h3>{this.props.i18n.translate("extended_description")}</h3>
+                <h3>{this.props.translate("extended_description")}</h3>
                 <p class={style.description}>{this.description("description")}</p>
               </div>
               <div class={style.detail}>
-                <h4 class={style.benefits}>{this.props.i18n.translate("potential_benefits")}</h4>
+                <h4 class={style.benefits}>{this.props.translate("potential_benefits")}</h4>
                 <ul>
                   {benefits.map((benefit)=>(<li>{benefit}</li>))}
                 </ul>
               </div>
               <div class={style.detail}>
-                <h4 class={style.pitfalls}>{this.props.i18n.translate("potential_pitfalls")}</h4>
+                <h4 class={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h4>
                 <ul>
                   {pitfalls.map((pitfall)=>(<li>{pitfall}</li>))}
                 </ul>

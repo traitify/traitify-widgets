@@ -1,13 +1,15 @@
 import {Component} from "preact";
-import Caption from "../caption";
-import Response from "../response";
 import style from "./style";
 
 export default class Slide extends Component{
-  progress(){
-    const {currentIndex, isComplete, slides} = this.props;
+  componentDidUpdate(prevProps){
+    const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
+    const slideChanged = prevProps.currentIndex !== this.props.currentIndex;
 
-    return isComplete ? 100 : currentIndex / slides.length * 100;
+    if(!instructionsChanged && !slideChanged){ return; }
+
+    const element = document.querySelector(`.${style.captionContainer}`);
+    element && element.focus();
   }
   respondMe = ()=>{ this.props.updateSlide(true); }
   respondNotMe = ()=>{ this.props.updateSlide(false); }
@@ -45,38 +47,89 @@ export default class Slide extends Component{
       back,
       currentIndex,
       getOption,
+      isComplete,
+      showInstructions,
       slides,
+      start,
       translate
     } = this.props;
-    const currentSlide = slides[currentIndex];
     const activeSlides = [];
+    let allowBack, allowFullscreen, currentSlide, progress;
 
-    if(slides[currentIndex - 1]){ activeSlides.push({orientation: "left", ...slides[currentIndex - 1]}); }
-    if(slides[currentIndex]){ activeSlides.push({orientation: "middle", ...slides[currentIndex]}); }
-    if(slides[currentIndex + 1]){ activeSlides.push({orientation: "right", ...slides[currentIndex + 1]}); }
+    if(showInstructions){
+      activeSlides.push({orientation: "right", ...slides[currentIndex]});
+    }else{
+      if(slides[currentIndex - 1]){ activeSlides.push({orientation: "left", ...slides[currentIndex - 1]}); }
+      activeSlides.push({orientation: "middle", ...slides[currentIndex]});
+      if(slides[currentIndex + 1]){ activeSlides.push({orientation: "right", ...slides[currentIndex + 1]}); }
+    }
+
+    activeSlides.forEach((slide, index)=>{
+      activeSlides[index] = (
+        <div key={slide.id} class={`${style.slide} ${style[slide.orientation]}`}>
+          <img src={slide.image} alt={slide.alternative_text} />
+        </div>
+      );
+    });
+
+    if(showInstructions){
+      activeSlides.unshift(
+        <div key="instructions" class={`${style.slide} ${style.middle}`}>
+          <div class={style.instructionsSlide}>
+            <div class={style.instructionsText}>
+              <p>Go with your gut and answer <strong>honestly</strong>, then it is far more likely we will see what makes you unique. There is not one <em>right</em> answer. The best approach to this questionnaire is just to be you!</p>
+              <p>For each image, simply click <strong>"Me"</strong> if the image describes how you generally are and <strong>"Not Me"</strong> if it does not.</p>
+              <p>This questionnaire will take just a couple of minutes to complete.</p>
+              <p>Be aware, we may cross-check your answers.</p>
+            </div>
+            <div class={style.instructionsStart}>
+              <button class={style.instructionsButton} onClick={start}>
+                {translate("get_started")} &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+      allowBack = false;
+      allowFullscreen = false;
+      currentSlide = {caption: translate("instructions")};
+      progress = 0;
+    }else{
+      allowBack = getOption("allowBack") && currentIndex > 0;
+      allowFullscreen = getOption("allowFullscreen");
+      currentSlide = slides[currentIndex];
+      progress = isComplete ? 100 : currentIndex / slides.length * 100;
+    }
 
     return (
-      <div class={style.slideContainer}>
-        <Caption caption={currentSlide.caption} progress={this.progress()} />
-        {activeSlides.map((slide)=>(
-          <div key={slide.id} class={`${style.slide} ${style[slide.orientation]}`}>
-            <img src={slide.image} alt={slide.alternative_text} />
+      <div class={style.container}>
+        <div class={style.captionContainer} tabIndex="0">
+          <div class={style.caption}>
+            {currentSlide.caption}
           </div>
-        ))}
-        <Response>
-          <button class={style.me} onClick={this.respondMe}>
-            {translate("me")}
-          </button>
-          <button class={style.notMe} onClick={this.respondNotMe}>
-            {translate("not_me")}
-          </button>
-        </Response>
-        {getOption("allowBack") && currentIndex > 0 && (
+          <div class={style.progressContainer}>
+            <div class={style.progress} style={{width: `${progress}%`}} />
+          </div>
+        </div>
+        {activeSlides}
+        {!showInstructions && (
+          <div class={style.responseContainer}>
+            <div class={style.buttons}>
+              <button class={style.me} onClick={this.respondMe}>
+                {translate("me")}
+              </button>
+              <button class={style.notMe} onClick={this.respondNotMe}>
+                {translate("not_me")}
+              </button>
+            </div>
+          </div>
+        )}
+        {allowBack && (
           <button class={style.back} onClick={back}>
             <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
           </button>
         )}
-        {getOption("allowFullscreen") && (
+        {allowFullscreen && (
           <div class={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
         )}
       </div>

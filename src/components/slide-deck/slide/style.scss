@@ -25,6 +25,40 @@
     max-height: 100%;
   }
 }
+.captionContainer{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+  background-color: $captionBackground;
+  .caption{
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    line-height: 50px;
+  }
+  .progressContainer{
+    margin: 0px auto;
+    width: 300px;
+    margin-bottom: 10px;
+  }
+  .progress{
+    -webkit-transition: width .3s; /* Safari */
+    transition: width .3s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100%;
+    background-color: $progressBar;
+  }
+}
 .fullscreen{
   background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png');
   &.fullscreenSmall{
@@ -47,17 +81,82 @@
   right: 30px;
   cursor: pointer;
 }
-.me, .notMe{ width:50%; }
-.me{
-  background-color: $meColor;
-  &:active{
-    background-color: $mePressedColor;
+.instructionsButton {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  background: #3ca94e;
+  background: $instructionsColor;
+  border-radius: 5px;
+  padding: 10px 70px;
+  &:hover {
+    background: $instructionsActiveColor;
   }
 }
-.notMe{
-  background-color: $notMeColor;
-  &:active{
-    background-color: $notMePressedColor;
+.instructionsSlide {
+  min-height: 600px;
+  background: url("https://cdn.traitify.com/images/instructions_slide.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 70px 20px 0;
+}
+.instructionsStart {
+  text-align: center;
+}
+.instructionsText {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.responseContainer{
+  z-index: 1;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  .buttons{
+    margin: 0px auto;
+    width: 300px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    color: #fff;
+    overflow: hidden;
+    height: 57px;
+    line-height: 57px;
+    border-radius: 3px;
+    .me, .notMe{
+      transition: none;
+      cursor: pointer;
+      user-select: none;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      padding: 0px;
+      &:focus{
+        outline-width: 5px;
+        outline-offset: -5px;
+        outline-style: solid;
+      }
+    }
+    .me{
+      background-color: $meColor;
+      &:active{
+        background-color: $mePressedColor;
+      }
+    }
+    .notMe{
+      background-color: $notMeColor;
+      &:active{
+        background-color: $notMePressedColor;
+      }
+    }
   }
 }
 .slideContainer{

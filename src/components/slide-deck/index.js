@@ -1,6 +1,5 @@
 import {Component} from "preact";
 import withTraitify from "lib/with-traitify";
-import Instructions from "./instructions";
 import Loading from "./loading";
 import Slide from "./slide";
 import style from "./style.scss";
@@ -204,24 +203,19 @@ class SlideDeck extends Component{
         {(isComplete || !this.state.ready) ? (
           <Loading imageLoadAttempts={this.state.imageLoadAttempts} retry={this.retry} />
         ):(
-          this.state.showInstructions ? (
-            <Instructions
-              start={this.hideInstructions}
-              translate={this.props.translate}
-            />
-          ) : (
-            <Slide
-              back={this.back}
-              container={this.container}
-              currentIndex={this.currentIndex()}
-              getOption={this.props.getOption}
-              isComplete={isComplete}
-              slides={this.state.slides}
-              traitify={this.props.traitify}
-              translate={this.props.translate}
-              updateSlide={this.updateSlide}
-            />
-          )
+          <Slide
+            back={this.back}
+            container={this.container}
+            currentIndex={this.currentIndex()}
+            getOption={this.props.getOption}
+            isComplete={isComplete}
+            showInstructions={this.state.showInstructions}
+            slides={this.state.slides}
+            start={this.hideInstructions}
+            traitify={this.props.traitify}
+            translate={this.props.translate}
+            updateSlide={this.updateSlide}
+          />
         )}
       </div>
     );

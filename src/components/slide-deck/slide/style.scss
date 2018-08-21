@@ -90,9 +90,15 @@
   background: #3ca94e;
   background: $instructionsColor;
   border-radius: 5px;
+  border: 0;
   padding: 10px 70px;
+  cursor: pointer;
   &:hover {
     background: $instructionsActiveColor;
+  }
+  @include mq(l) {
+    font-size: 32px;
+    padding: 10px 80px;
   }
 }
 .instructionsSlide {
@@ -101,6 +107,9 @@
   background-size: cover;
   color: #fff;
   padding: 70px 20px 0;
+  @include mq(m) {
+    padding: 120px 20px 0;
+  }
 }
 .instructionsStart {
   text-align: center;
@@ -112,6 +121,15 @@
   border: 2px solid #fff;
   border-radius: 5px;
   font-size: 15px;
+  @include mq(m) {
+    margin: 0 auto 40px;
+    font-size: 18px;
+  }
+  @include mq(l) {
+    margin: 0 auto 40px;
+    padding: 10px 30px;
+    font-size: 20px;
+  }
 }
 .responseContainer{
   z-index: 1;

@@ -1,0 +1,26 @@
+@import "./../variables";
+@import "../../../style/helpers";
+
+.container{
+  background: url("https://cdn.traitify.com/images/instructions_slide.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+  min-height: $minHeight;
+  color: #fff;
+  padding-top: 70px;
+}
+.button{
+  background: $instructionsColor;
+  border-radius: 5px;
+  &:hover{ background: $instructionsActiveColor; }
+}
+.text{
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 70px 20px 0;
+  padding: 0 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 15px;
+}

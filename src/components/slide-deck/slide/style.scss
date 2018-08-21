@@ -1,5 +1,71 @@
-@import "../variables";
+@import "./../variables";
+@import "../../../style/helpers";
 
+.back{
+  background-color: $progressBar;
+  background-size: 100% 100%;
+  -webkit-transition: opacity .2s; /* Safari */
+  transition: opacity .2s;
+  &:hover{ opacity: 1; }
+
+  cursor: pointer;
+  position: absolute;
+  left: 30px;
+  bottom: 36px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 3px;
+  opacity: 0.7;
+  z-index: 3;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.fullscreen{
+  background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png');
+  &.fullscreenSmall{
+    background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-small.png');
+  }
+  background-size: 100% 100%;
+  -webkit-transition: opacity .2s; /* Safari */
+  transition: opacity .2s;
+  &:hover{ opacity: 1; }
+
+  padding: 3px;
+  border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  opacity: .5;
+  bottom: 36px;
+
+  position: absolute;
+  z-index: 3;
+  right: 30px;
+  cursor: pointer;
+}
+.me, .notMe{ width:50%; }
+.me{
+  background-color: $meColor;
+  &:active{
+    background-color: $mePressedColor;
+  }
+}
+.notMe{
+  background-color: $notMeColor;
+  &:active{
+    background-color: $notMePressedColor;
+  }
+}
+.slideContainer{
+  position: relative;
+  height: 100%;
+  min-height: $minHeight;
+  overflow: hidden;
+}
 .slide{
   min-height: $minHeight;
   position: absolute;

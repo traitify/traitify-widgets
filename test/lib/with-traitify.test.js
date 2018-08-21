@@ -553,10 +553,11 @@ describe("withTraitify", ()=>{
   });
 
   describe("i18n", ()=>{
-    it("passes through traitify", ()=>{
+    it("passes locale and translate through traitify", ()=>{
       renderResult = render(<Component traitify={traitify} />, createElement());
 
-      expect(getComponent().props.i18n).toBe(traitify.ui.i18n);
+      expect(getComponent().props.locale).toBe(traitify.ui.i18n.locale);
+      expect(getComponent().props.translate).toBe(traitify.ui.i18n.translate);
     });
 
     it("changes locale", ()=>{

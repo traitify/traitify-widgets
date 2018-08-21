@@ -1,4 +1,4 @@
-import render from "preact-render-to-json";
+import renderJSON from "preact-render-to-json";
 import Component from "components/results/dimension-based-results";
 import {createElement, domHooks} from "support/dom";
 
@@ -14,7 +14,7 @@ describe("DimensionBasedResults", ()=>{
   domHooks();
 
   it("renders results", ()=>{
-    const tree = render(<Component />, createElement());
+    const tree = renderJSON(<Component />, createElement());
 
     expect(tree).toMatchSnapshot();
   });

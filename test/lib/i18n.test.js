@@ -110,16 +110,4 @@ describe("I18n", ()=>{
       expect(translation).toBeUndefined();
     });
   });
-
-  describe("t", ()=>{
-    beforeEach(()=>{
-      i18n.translate = jest.fn();
-    });
-
-    it("calls translate", ()=>{
-      i18n.t("me", {});
-
-      expect(i18n.translate).toHaveBeenCalledWith("me", {});
-    });
-  });
 });

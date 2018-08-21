@@ -1,0 +1,36 @@
+@import "./../variables";
+
+.container{
+  z-index: 1;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  .buttons{
+    margin: 0px auto;
+    width: 300px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    color: #fff;
+    overflow: hidden;
+    height: 57px;
+    line-height: 57px;
+    border-radius: 3px;
+    button{
+      transition: none;
+      cursor: pointer;
+      user-select: none;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      padding: 0px;
+      &:focus{
+        outline-width: 5px;
+        outline-offset: -5px;
+        outline-style: solid;
+      }
+    }
+  }
+}

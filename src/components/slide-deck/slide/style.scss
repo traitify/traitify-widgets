@@ -141,12 +141,9 @@
     margin: 0px auto;
     width: 300px;
     margin-bottom: 10px;
-    letter-spacing: 2px;
-    font-size: 24px;
     color: #fff;
     overflow: hidden;
     height: 57px;
-    line-height: 57px;
     border-radius: 3px;
     .me, .notMe{
       transition: none;
@@ -157,6 +154,12 @@
       position: relative;
       display: inline-block;
       padding: 0px;
+      border: 0;
+      height: 57px;
+      line-height: 57px;
+      letter-spacing: 2px;
+      font-size: 24px;
+      width: 150px;
       &:focus{
         outline-width: 5px;
         outline-offset: -5px;

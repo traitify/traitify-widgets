@@ -1,4 +1,5 @@
 import {Component} from "preact";
+import Markdown from "preact-markdown";
 import style from "./style";
 
 export default class Slide extends Component{
@@ -47,6 +48,7 @@ export default class Slide extends Component{
       back,
       currentIndex,
       getOption,
+      instructions,
       isComplete,
       showInstructions,
       slides,
@@ -77,10 +79,7 @@ export default class Slide extends Component{
         <div key="instructions" class={`${style.slide} ${style.middle}`}>
           <div class={style.instructionsSlide}>
             <div class={style.instructionsText}>
-              <p>Go with your gut and answer <strong>honestly</strong>, then it is far more likely we will see what makes you unique. There is not one <em>right</em> answer. The best approach to this questionnaire is just to be you!</p>
-              <p>For each image, simply click <strong>"Me"</strong> if the image describes how you generally are and <strong>"Not Me"</strong> if it does not.</p>
-              <p>This questionnaire will take just a couple of minutes to complete.</p>
-              <p>Be aware, we may cross-check your answers.</p>
+              <Markdown markdown={instructions} />
             </div>
             <div class={style.instructionsStart}>
               <button class={style.instructionsButton} onClick={start}>

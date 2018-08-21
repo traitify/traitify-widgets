@@ -64,7 +64,16 @@ class SlideDeck extends Component{
         }
       });
 
-      return {initialized: true, slides, startTime: Date.now()};
+      const newState = {slides, initialized: true, startTime: Date.now()};
+
+      if(this.props.getOption("allowInstructions") && assessment.instructions){
+        newState.instructions = assessment.instructions.instructional_text;
+        newState.showInstructions = true;
+      }else{
+        newState.showInstructions = false;
+      }
+
+      return newState;
     }, ()=>{
       if(this.isComplete()){
         this.finish();
@@ -208,6 +217,7 @@ class SlideDeck extends Component{
             container={this.container}
             currentIndex={this.currentIndex()}
             getOption={this.props.getOption}
+            instructions={this.state.instructions}
             isComplete={isComplete}
             showInstructions={this.state.showInstructions}
             slides={this.state.slides}

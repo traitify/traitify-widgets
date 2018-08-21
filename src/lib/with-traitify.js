@@ -105,7 +105,7 @@ export default function withTraitify(WrappedComponent){
       if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
 
       return this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
-        data: "archetype,blend,slides,types,traits",
+        data: "archetype,blend,instructions,slides,types,traits",
         locale_key: locale
       }).then((data)=>{
         if(hasResults(data)){ this.cache.set(key, data); }

@@ -19,6 +19,11 @@ export default class TraitifyWidget{
 
     return this;
   }
+  allowInstructions(){
+    this.options.allowInstructions = true;
+
+    return this;
+  }
   assessmentID(assessmentID){
     this.options.assessmentID = assessmentID;
 
@@ -31,6 +36,11 @@ export default class TraitifyWidget{
   }
   disableFullscreen(){
     this.options.allowFullscreen = false;
+
+    return this;
+  }
+  disableInstructions(){
+    this.options.allowInstructions = false;
 
     return this;
   }

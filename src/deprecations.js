@@ -34,7 +34,6 @@ export default function(traitify){
   traitify.ui.allowBack = function(value){ return this.component()[value ? "allowBack" : "disableBack"](); };
   traitify.ui.allowFullScreen = function(value){ return this.component()[value ? "allowFullscreen" : "disableFullscreen"](); };
   traitify.ui.assessmentId = function(assessmentID){ return this.component().assessmentID(assessmentID); };
-  traitify.ui.on = function(key, callback){ return this.component().on(key, callback); };
   traitify.ui.render = function(options){ return this.component(options).render(); };
   [
     "locale",

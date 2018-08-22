@@ -1,7 +1,8 @@
 {
   "name": "traitify-widgets",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Traitiy Widgets",
+  "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
   "files": [
     "build"
@@ -14,9 +15,27 @@
     "prebuild": "mkdirp build",
     "prebuild:compatibility": "mkdirp build",
     "prestart": "npm run build",
-    "test": "karma start test/karma.conf.js",
-    "test:live": "karma start test/karma.live.conf.js",
-    "test:browserstack": "karma start test/karma.browserstack.conf.js"
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "globals": {
+      "VERSION": "0.0.0-test"
+    },
+    "moduleFileExtensions": [
+      "scss",
+      "js"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/",
+      "<rootDir>/test"
+    ],
+    "testURL": "https://www.example.com",
+    "transform": {
+      "^.+\\.(css|less|scss|sass)$": "<rootDir>/test/support/css-transformer",
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "keywords": [
     "traitify",
@@ -30,39 +49,32 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.4.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-jsx-pragmatic": "^1.0.2",
     "babel-plugin-transform-proto-to-assign": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
     "babel-runtime": "^6.11.6",
-    "chai": "^4.1.1",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.5",
     "eslint": "^4.5.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-react": "^7.9.1",
     "file-loader": "^1.1.11",
-    "karma": "^2.0.2",
-    "karma-chai": "^0.1.0",
-    "karma-chai-sinon": "^0.1.5",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-coverage": "^1.1.2",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-step-test": "^0.3.9",
-    "karma-webpack": "^3.0.0",
+    "jest": "^23.4.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.3",
     "postcss-loader": "^2.1.5",
+    "preact-render-to-json": "^3.6.6",
     "replace-bundle-webpack-plugin": "^1.0.0",
     "sass-loader": "^7.0.3",
     "simulate-event": "^1.4.0",
-    "sinon": "^6.0.0",
-    "sinon-chai": "^3.2.0",
     "source-map-loader": "^0.2.1",
-    "step-test": "^0.2.10",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.12.0",
@@ -70,10 +82,13 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "airbrake-js": "^1.4.0",
     "babel-polyfill": "^6.26.0",
     "color": "^3.0.0",
     "preact": "^8.2.9",
-    "query-string": "^5.1.1"
+    "preact-markdown": "^0.4.0",
+    "query-string": "^5.1.1",
+    "uuid": "^3.3.2"
   },
   "dependenciesNotes": {
     "query-string": "Version 6+ is written in ES6 and not transpiled"

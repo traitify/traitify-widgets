@@ -1,28 +1,28 @@
-import {h, Component} from "preact";
-import Color from "color-helpers";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-export default class PersonalityTypeSlide extends Component{
+class PersonalityTypeSlide extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTypeSlide", "initialized", this);
-  }
-  position(){
-    if(!this.props.activeType) return "none";
+    this.props.traitify.ui.trigger("PersonalityTypeSlide.initialized", this);
+    this.props.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+    });
 
-    let id = this.props.type.personality_type.id;
-    let activeID = this.props.activeType.personality_type.id;
-    if(id === activeID) return "middle";
-
-    return "none";
+    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    if(activeType){ this.setState({activeType}); }
   }
   render(){
-    let position = this.position();
-    if(position === "none") return <div />;
+    const {activeType} = this.state;
+    const type = this.props.type.personality_type;
 
-    let type = this.props.type.personality_type;
-    let color = `#${type.badge.color_1}`;
+    if(!activeType){ return; }
+    if(type.id !== activeType.personality_type.id){ return; }
 
-    let perspective = `${(this.props.perspective || "firstPerson").replace("Person", "")}_person_description`;
+    const color = `#${type.badge.color_1}`;
+    const position = "middle";
+    let perspective = `${(this.props.getOption("perspective") || "firstPerson").replace("Person", "")}_person_description`;
     let description = type.details.find(detail=>detail.title === perspective);
     description = description && description.body;
     if(!description){
@@ -41,10 +41,13 @@ export default class PersonalityTypeSlide extends Component{
     }
 
     return (
-      <li class={`${style.slide} ${style[position]}`} style={`background: ${Color.rgba(color, 8.5)};`}>
+      <li class={`${style.slide} ${style[position]}`} style={`background: ${rgba(color, 8.5)};`}>
         <span class={style.title} style={`color: ${color}`}>{name}</span>
         {description}
       </li>
     );
   }
 }
+
+export {PersonalityTypeSlide as Component};
+export default withTraitify(PersonalityTypeSlide);

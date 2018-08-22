@@ -1,11 +1,11 @@
-import {h, Component} from "preact";
-
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import PersonalityTypeBarChart from "../personality-type-bar-chart";
 import PersonalityTypeSlider from "../personality-type-slider";
 
-export default class PersonalityTypes extends Component{
+class PersonalityTypes extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTypes", "initialized", this);
+    this.props.traitify.ui.trigger("PersonalityTypes.initialized", this);
   }
   render(){
     return (
@@ -16,3 +16,6 @@ export default class PersonalityTypes extends Component{
     );
   }
 }
+
+export {PersonalityTypes as Component};
+export default withTraitify(PersonalityTypes);

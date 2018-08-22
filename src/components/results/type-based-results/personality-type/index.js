@@ -1,23 +1,26 @@
-import {h, Component} from "preact";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import PersonalityBadge from "../personality-badge";
 import style from "./style";
 
-import PersonalityBadge from "../personality-badge";
-
-export default class PersonalityType extends Component{
+class PersonalityType extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityType", "initialized", this);
+    this.props.traitify.ui.trigger("PersonalityType.initialized", this);
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.props.isReady("results")){ return; }
 
-    let type = this.props.assessment.personality_types[0].personality_type;
+    const type = this.props.assessment.personality_types[0].personality_type;
 
     return (
       <div class={style.type}>
-        <PersonalityBadge type={type} />
+        <PersonalityBadge type={type} {...this.props} />
         <h3 class={style.name}>{type.name}</h3>
         <p class={style.description}>{type.description}</p>
       </div>
     );
   }
 }
+
+export {PersonalityType as Component};
+export default withTraitify(PersonalityType);

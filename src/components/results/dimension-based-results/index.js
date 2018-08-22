@@ -1,4 +1,4 @@
-import {h, Component} from "preact";
+import {Component} from "preact";
 import Radar from "./radar";
 import PersonalityTypes from "./personality-types";
 import PersonalityHeading from "./personality-heading";
@@ -7,9 +7,6 @@ import Dimensions from "./dimensions";
 import PersonalityTraits from "./personality-traits";
 
 export default class DimensionBasedResults extends Component{
-  componentDidMount(){
-    this.props.triggerCallback("DimensionBasedResults", "initialized", this);
-  }
   render(){
     return (
       <section>

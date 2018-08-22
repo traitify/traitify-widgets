@@ -1,21 +1,24 @@
-import {h, Component} from "preact";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Dimension from "../dimension";
 import style from "./style";
 
-export default class Dimensions extends Component{
+class Dimensions extends Component{
   componentDidMount(){
-    this.props.triggerCallback("Dimensions", "initialized", this);
+    this.props.traitify.ui.trigger("Dimensions.initialized", this);
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.props.isReady("results")){ return; }
 
-    let props = this.props;
     return (
       <ul class={style.dimensions}>
-        {props.assessment.personality_types.map((type, i)=>{
-          return <Dimension personalityType={type} index={i} {...props} />;
-        })}
+        {this.props.assessment.personality_types.map((type, i)=>(
+          <Dimension type={type} index={i} {...this.props} />
+        ))}
       </ul>
     );
   }
 }
+
+export {Dimensions as Component};
+export default withTraitify(Dimensions);

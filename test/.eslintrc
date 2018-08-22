@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "max-nested-callbacks": "off",
+    "react/jsx-no-bind": "off"
+  }
+}

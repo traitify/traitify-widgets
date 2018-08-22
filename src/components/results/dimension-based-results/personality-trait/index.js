@@ -1,17 +1,19 @@
-import {h, Component} from "preact";
-import Color from "color-helpers";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-export default class PersonalityTrait extends Component{
+class PersonalityTrait extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTrait", "initialized", this);
+    this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
   }
   render(){
-    let trait = this.props.trait.personality_trait;
-    let type = trait.personality_type;
-    let color = `#${type.badge.color_1}`;
+    const trait = this.props.trait.personality_trait;
+    const type = trait.personality_type;
+    const color = `#${type.badge.color_1}`;
+
     return (
-      <div class={style.trait} style={`background: ${Color.rgba(color, 8.5)};`}>
+      <div class={style.trait} style={`background: ${rgba(color, 8.5)};`}>
         <div class={style.bar} style={`width: 100%; background: ${color};`} />
         <div class={style.content}>
           <img src={type.badge.image_medium} alt={type.name} class={style.icon} />
@@ -24,3 +26,6 @@ export default class PersonalityTrait extends Component{
     );
   }
 }
+
+export {PersonalityTrait as Component};
+export default withTraitify(PersonalityTrait);

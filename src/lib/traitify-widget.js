@@ -1,48 +1,70 @@
-import {h, render} from "preact";
-import Error from "../error-handler";
-import Main from "../components/main";
-import TraitifyState from "./traitify-state";
+import {render} from "preact";
+import uuid from "uuid";
+import guessComponent from "lib/helpers/guess-component";
 
-class TraitifyWidget{
-  constructor(ui, options){
+export default class TraitifyWidget{
+  constructor(ui, options = {}){
+    this.id = uuid();
     this.ui = ui;
-    this.options = options || {};
-    this.options.callbacks = Object.assign({}, this.options.callbacks);
+    this.options = options;
     this.options.targets = Object.assign({}, this.options.targets);
   }
   allowBack(){
     this.options.allowBack = true;
+
     return this;
   }
   allowFullscreen(){
     this.options.allowFullscreen = true;
+
+    return this;
+  }
+  allowInstructions(){
+    this.options.allowInstructions = true;
+
+    return this;
+  }
+  assessmentID(assessmentID){
+    this.options.assessmentID = assessmentID;
+
     return this;
   }
   disableBack(){
     this.options.allowBack = false;
+
     return this;
   }
   disableFullscreen(){
     this.options.allowFullscreen = false;
+
+    return this;
+  }
+  disableInstructions(){
+    this.options.allowInstructions = false;
+
     return this;
   }
   locale(locale){
     this.options.locale = locale.toLowerCase();
+
     return this;
   }
   on(key, callback){
-    key = key.toLowerCase();
-    this.options.callbacks[key] = this.options.callbacks[key] || [];
-    this.options.callbacks[key].push(callback);
+    this.ui.on(`Widget-${this.id}.${key}`, callback);
+
+    return this;
+  }
+  perspective(perspective){
+    this.options.perspective = perspective;
+
     return this;
   }
   refresh(){
     this.render();
+
     return this;
   }
   render(componentName){
-    let shared = new TraitifyState(this.ui, this.options);
-
     if(this.options.target){
       this.options.targets[componentName || "Default"] = this.options.target;
     }
@@ -57,47 +79,32 @@ class TraitifyWidget{
 
     Object.keys(this.options.targets).forEach(name=>{
       promises.push(new Promise((resolve, reject)=>{
-        shared.on("Main.Ready", (context, options)=>{
-          if(options.name === name){ resolve(options.name); }
-        });
-        shared.on("Main.Error", (context, options)=>{
-          if(options.name === name){ reject(options.error); }
-        });
+        const Component = guessComponent(name);
+        if(!Component){ return reject(`Could not find component for ${name}`); }
 
         if(typeof this.options.targets[name] == "string"){
           this.options.targets[name] = document.querySelector(this.options.targets[name]);
         }
 
         const target = this.options.targets[name];
-        if(target){
-          while(target.firstChild){ target.removeChild(target.firstChild); }
-          render(<Main componentName={name} shared={shared} />, target);
-        }else{
-          reject("Your target element could not be selected");
-        }
+        if(!target){ return reject(`Could not select target for ${name}`); }
+
+        while(target.firstChild){ target.removeChild(target.firstChild); }
+
+        resolve(render(<Component widgetID={this.id} options={this.options} traitify={this.ui.traitify} />, target));
       }));
     });
 
-    return Promise.all(promises).catch(error=>{
-      let err = new Error(this.ui.client);
-      err.type = error.name;
-      err.message = error.message;
-      err.notify();
-      throw error;
-    });
+    return Promise.all(promises);
+  }
+  target(target){
+    this.options.target = target;
+
+    return this;
+  }
+  targets(targets){
+    this.options.targets = targets;
+
+    return this;
   }
 }
-
-[
-  "assessmentID",
-  "perspective",
-  "target",
-  "targets"
-].forEach((option)=>{
-  TraitifyWidget.prototype[option] = function(value){
-    this.options[option] = value;
-    return this;
-  };
-});
-
-export default TraitifyWidget;

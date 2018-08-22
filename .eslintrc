@@ -1,6 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended"
+  ],
   "plugins": ["babel", "react"],
   "env": {
     "browser": true,
@@ -80,6 +83,7 @@
       "overrides": {
         "as": {"before": true, "after": true},
         "case": {"before": true, "after": true},
+        "const": {"before": true, "after": true},
         "export": {"before": true, "after": true},
         "from": {"before": true, "after": true},
         "import": {"before": true, "after": true},
@@ -88,12 +92,13 @@
         "this": {"before": true, "after": true}
       }
     }],
+    "new-parens": "error",
     "no-lonely-if": "off",
     "no-multiple-empty-lines": ["error", {"max": 1, "maxBOF": 0, "maxEOF": 0}],
     "no-unused-vars": ["error", {"args": "none"}],
     "object-curly-spacing": "off",
     "padded-blocks": ["error", "never"],
-    "quotes": ["error", "double", {"avoidEscape": true}],
+    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
     "space-before-blocks": ["error", "never"],
     "space-before-function-paren": ["error", "never"]
   }

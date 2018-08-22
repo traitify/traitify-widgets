@@ -1,13 +1,15 @@
-import {h, Component} from "preact";
-
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import TypeBasedResults from "./type-based-results";
 import DimensionBasedResults from "./dimension-based-results";
 
-export default class Results extends Component{
+class Results extends Component{
   componentDidMount(){
-    this.props.triggerCallback("Results", "initialized", this);
+    this.props.traitify.ui.trigger("Results.initialized", this);
   }
   render(){
+    if(!this.props.isReady("results")){ return; }
+
     return (this.props.assessment.assessment_type === "TYPE_BASED") ? (
       <TypeBasedResults {...this.props} />
     ) : (
@@ -15,3 +17,6 @@ export default class Results extends Component{
     );
   }
 }
+
+export {Results as Component};
+export default withTraitify(Results);

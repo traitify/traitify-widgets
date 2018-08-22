@@ -1,0 +1,9 @@
+@import "../../style/helpers";
+@import "../../style/variables";
+
+.widgetContainer{
+  @extend %widgetContainer;
+
+  position: relative;
+  min-height: $minHeight;
+}

@@ -1,23 +1,20 @@
-import {h, Component} from "preact";
-
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import Results from "./results";
 import SlideDeck from "./slide-deck";
 
-export default class Default extends Component{
-  shouldLoadSlideDeck(){
-    return (this.props.assessment.slides || []).length !== 0;
-  }
-  shouldLoadResults(){
-    return (this.props.assessment.personality_types || []).length !== 0;
-  }
+class Default extends Component{
   render(){
-    if(this.shouldLoadResults()){
+    if(this.props.isReady("results")){
       return <Results {...this.props} />;
     }
-    if(this.shouldLoadSlideDeck()){
+    if(this.props.isReady("slides")){
       return <SlideDeck {...this.props} />;
     }
 
     return <div />;
   }
 }
+
+export {Default as Component};
+export default withTraitify(Default);

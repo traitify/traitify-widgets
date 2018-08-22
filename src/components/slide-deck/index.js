@@ -1,25 +1,42 @@
-import {h, Component} from "preact";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import Loading from "./loading";
 import Slide from "./slide";
-import style from "./index.scss";
+import style from "./style.scss";
 
-export default class SlideDeck extends Component{
+class SlideDeck extends Component{
   constructor(props){
     super(props);
+
     this.state = {
       finished: false,
       imageLoading: false,
       imageLoadAttempts: [],
       initialized: false,
       ready: false,
-      slides: []
+      slides: [],
+      showInstructions: true
     };
   }
   componentDidMount(){
+    this.props.traitify.ui.trigger("SlideDeck.initialized", this);
     this.initialize();
     window.addEventListener("resize", this.resizeImages);
   }
-  componentDidUpdate(){
-    this.state.initialized ? this.update() : this.initialize();
+  componentDidUpdate(prevProps){
+    if(!this.state.initialized){ return this.initialize(); }
+    if(this.props.assessment.locale_key !== prevProps.assessment.locale_key){
+      return this.setState({
+        finished: false,
+        imageLoading: false,
+        imageLoadAttempts: [],
+        initialized: false,
+        ready: false,
+        slides: []
+      });
+    }
+
+    this.update();
   }
   componentWillUnmount(){
     window.removeEventListener("resize", this.resizeImages);
@@ -32,18 +49,12 @@ export default class SlideDeck extends Component{
     this.setState((prevState, props)=>{
       if(prevState.initialized){ return; }
 
-      let slides = [...props.assessment.slides] || [];
-      let storedSlides = [];
-      if(sessionStorage.getItem(`slides-${props.assessmentID}`)){
-        try{
-          storedSlides = JSON.parse(sessionStorage.getItem(`slides-${props.assessmentID}`));
-        }catch(e){
-          console.log(`StoredSlides JSON.parse error ${e}`);
-        }
-      }
-
+      const {assessment, assessmentID, cache} = props;
+      let slides = [...assessment.slides] || [];
+      let storedSlides = cache.get(`slides.${assessmentID}`) || [];
       let completedSlides = {};
-      (storedSlides || []).forEach((slide)=>{ completedSlides[slide.id] = slide; });
+
+      storedSlides.forEach((slide)=>{ completedSlides[slide.id] = slide; });
 
       slides.forEach((slide, index)=>{
         let completedSlide = completedSlides[slide.id];
@@ -53,9 +64,17 @@ export default class SlideDeck extends Component{
         }
       });
 
-      return {initialized: true, slides, startTime: Date.now()};
+      const newState = {slides, initialized: true, startTime: Date.now()};
+
+      if(this.props.getOption("allowInstructions") && assessment.instructions){
+        newState.instructions = assessment.instructions.instructional_text;
+        newState.showInstructions = true;
+      }else{
+        newState.showInstructions = false;
+      }
+
+      return newState;
     }, ()=>{
-      this.triggerCallback("initialized", this);
       if(this.isComplete()){
         this.finish();
       }else{
@@ -92,14 +111,14 @@ export default class SlideDeck extends Component{
       };
     });
   }
-  update(){
+  update(prevProps){
     let loaded = this.state.slides.filter((slide)=>(slide.loaded)).length;
     let remainingSlidesLoaded = !this.state.slides.find((slide)=>(!slide.loaded && slide.response == null));
     let nextSlidesLoaded = loaded >= this.currentIndex() + 2;
     let ready = remainingSlidesLoaded || nextSlidesLoaded;
 
     if(this.state.ready === ready){ return; }
-    this.triggerCallback("isReady", this, ready);
+    this.props.traitify.ui.trigger("SlideDeck.isReady", this, ready);
     this.setState({ready, startTime: Date.now()});
   }
   slides(){
@@ -108,39 +127,12 @@ export default class SlideDeck extends Component{
   currentIndex(){
     return this.state.slides.findIndex((slide)=>(slide.response == null));
   }
-  triggerCallback(key, context, options){
-    this.props.triggerCallback("SlideDeck", key, context, options);
-  }
-  updateSlide(value){
-    let key = value ? "me" : "notMe";
-    this.triggerCallback(key, this);
-    this.triggerCallback("updateSlide", this, value);
-
-    let slides = this.slides();
-    let index = this.currentIndex();
-    let slide = slides[index];
-    slide.response = value;
-    slide.time_taken = Date.now() - this.state.startTime;
-    this.setState({slides}, ()=>{
-      try{
-        sessionStorage.setItem(`slides-${this.props.assessmentID}`, JSON.stringify(this.completedSlides()));
-      }catch(error){
-        console.log(error);
-      }
-
-      if(this.isComplete()){
-        this.finish();
-      }else{
-        this.setState({startTime: Date.now()});
-      }
-    });
-  }
   resizeImages = ()=>{
     if(!this.container){ return; }
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     const slides = this.slides();
-    const imageHost = this.props.imageHost;
+    const imageHost = this.props.getOption("imageHost");
 
     slides.forEach((slide)=>{
       slide.loaded = false;
@@ -154,14 +146,13 @@ export default class SlideDeck extends Component{
   finish(){
     if(this.state.finished){ return; }
     this.setState({finished: true});
-    if(this.props.resultsReady(this.props.assessment)) return;
-    this.props.client.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response)=>{
-      this.triggerCallback("finished", this, response);
-      this.props.fetch();
+
+    if(this.props.isReady("results")){ return; }
+
+    this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response)=>{
+      this.props.traitify.ui.trigger("SlideDeck.finished", this, response);
+      this.props.getAssessment({force: true});
     });
-  }
-  progress(){
-    return this.isComplete() ? 100 : this.currentIndex() / this.state.slides.length * 100;
   }
   completedSlides(){
     return this.state.slides.filter((slide)=>(
@@ -181,116 +172,65 @@ export default class SlideDeck extends Component{
     slides[this.currentIndex() - 1].response = null;
     this.setState({slides, startTime: Date.now()}, this.fetchImages);
   }
-  respondMe = (e)=>{
-    e.preventDefault();
-    this.updateSlide(true);
+  hideInstructions = ()=>{
+    this.setState({showInstructions: false});
   }
-  respondNotMe = (e)=>{
-    e.preventDefault();
-    this.updateSlide(false);
-  }
-  retry = (e)=>{
-    e.preventDefault();
+  retry = ()=>{
     let attempts = this.state.imageLoadAttempts;
     attempts[attempts.length - 1] = 0;
     this.setState({imageLoadAttempts: attempts}, this.fetchImages);
   }
-  toggleFullscreen = ()=>{
-    const fullscreen = this.props.isFullscreen;
+  updateSlide = (value)=>{
+    let key = value ? "me" : "notMe";
+    this.props.traitify.ui.trigger(`SlideDeck.${key}`, this);
+    this.props.traitify.ui.trigger("SlideDeck.updateSlide", this);
 
-    if(fullscreen){
-      if(document.exitFullscreen){
-        document.exitFullscreen();
-      }else if(document.webkitExitFullscreen){
-        document.webkitExitFullscreen();
-      }else if(document.mozCancelFullScreen){
-        document.mozCancelFullScreen();
-      }else if(document.msExitFullscreen){
-        document.msExitFullscreen();
+    let slides = this.slides();
+    let index = this.currentIndex();
+    let slide = slides[index];
+    slide.response = value;
+    slide.time_taken = Date.now() - this.state.startTime;
+    this.setState({slides}, ()=>{
+      const {assessmentID, cache} = this.props;
+
+      cache.set(`slides.${assessmentID}`, this.completedSlides());
+
+      if(this.isComplete()){
+        this.finish();
+      }else{
+        this.setState({startTime: Date.now()});
       }
-    }else{
-      if(this.container.requestFullscreen){
-        this.container.requestFullscreen();
-      }else if(this.container.webkitRequestFullscreen){
-        this.container.webkitRequestFullscreen();
-      }else if(this.container.mozRequestFullScreen){
-        this.container.mozRequestFullScreen();
-      }else if(this.container.msRequestFullscreen){
-        this.container.msRequestFullscreen();
-      }
-    }
-    this.props.setState({isFullscreen: !fullscreen});
-    this.triggerCallback("fullscreen", this, !fullscreen);
+    });
   }
   render(){
-    if(this.props.resultsReady(this.props.assessment)) return <span />;
+    if(this.props.isReady("results")){ return; }
 
-    const currentIndex = this.currentIndex();
-    const currentSlide = this.state.slides[currentIndex];
-    const loading = this.isComplete() || !this.state.ready;
-    const slides = this.state.slides;
-    const activeSlides = [
-      slides[currentIndex - 1] && {orientation: "left", ...slides[currentIndex - 1]},
-      slides[currentIndex] && {orientation: "middle", ...slides[currentIndex]},
-      slides[currentIndex + 1] && {orientation: "right", ...slides[currentIndex + 1]}
-    ].filter((slide)=>slide);
+    const isComplete = this.isComplete();
 
     return (
       <div class={style.widgetContainer} ref={(container)=>{ this.container = container; }}>
-        {loading ? (
-          <div class={style.cover}>
-            <div class={style.loading}>
-              {this.state.imageLoadAttempts[this.state.imageLoadAttempts.length - 1] >= 30 ? (
-                <div class={style.retry}>
-                  <div class={style.label}>
-                    Unable to load more slides at this time.
-                  </div>
-                  <a href="#" class={style.link} onClick={this.retry}>
-                    Click Here to Try Again
-                  </a>
-                </div>
-              ):(
-                <div class={style.symbol}>
-                  <i />
-                  <i />
-                </div>
-              )}
-            </div>
-          </div>
-        ):[
-          <div key="slides" class={style.slideContainer}>
-            <div class={style.captionContainer} tabIndex="0">
-              <div class={style.caption}>
-                {currentSlide.caption}
-              </div>
-              <div class={style.progressContainer}>
-                <div class={style.progress} style={{width: `${this.progress()}%`}} />
-              </div>
-            </div>
-            {activeSlides.map((slide)=>(
-              <Slide key={slide.id} slide={slide} />
-            ))}
-          </div>,
-          <div key="response" class={style.responseContainer}>
-            <div class={style.buttons}>
-              <a class={style.me} onClick={this.respondMe} href="#">
-                {this.props.translate("me")}
-              </a>
-              <a class={style.notMe} onClick={this.respondNotMe} href="#">
-                {this.props.translate("not_me")}
-              </a>
-            </div>
-          </div>,
-          this.props.allowBack && currentIndex > 0 && (
-            <button key="back" class={style.back} onClick={this.back}>
-              <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
-            </button>
-          ),
-          this.props.allowFullscreen && (
-            <div key="fullscreen" class={[style.fullscreen, this.props.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
-          )
-        ]}
+        {(isComplete || !this.state.ready) ? (
+          <Loading imageLoadAttempts={this.state.imageLoadAttempts} retry={this.retry} />
+        ):(
+          <Slide
+            back={this.back}
+            container={this.container}
+            currentIndex={this.currentIndex()}
+            getOption={this.props.getOption}
+            instructions={this.state.instructions}
+            isComplete={isComplete}
+            showInstructions={this.state.showInstructions}
+            slides={this.state.slides}
+            start={this.hideInstructions}
+            traitify={this.props.traitify}
+            translate={this.props.translate}
+            updateSlide={this.updateSlide}
+          />
+        )}
       </div>
     );
   }
 }
+
+export {SlideDeck as Component};
+export default withTraitify(SlideDeck);

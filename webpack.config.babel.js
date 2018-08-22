@@ -16,12 +16,6 @@ let config = {
   module: {
     rules: [
       {
-        enforce: "pre",
-        test: /\.jsx?$/,
-        exclude: path.resolve(__dirname, "src"),
-        loader: "source-map-loader"
-      },
-      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -74,6 +68,15 @@ let config = {
       }
     ]
   },
+  // Node section fixes the following issues that come from using AirbrakeJS
+  //   https://github.com/request/request/issues/1529
+  //   https://github.com/airbrake/airbrake-js/issues/320
+  node: {
+    console: true,
+    fs: "empty",
+    net: "empty",
+    tls: "empty"
+  },
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
@@ -90,9 +93,8 @@ let config = {
   resolve: {
     extensions: [".jsx", ".js", ".json", ".scss"],
     modules: [
-      path.resolve(__dirname, "src/lib"),
-      path.resolve(__dirname, "node_modules"),
-      "node_modules"
+      path.resolve(__dirname, "src"),
+      path.resolve(__dirname, "node_modules")
     ],
     alias: {
       style: path.resolve(__dirname, "src/style")

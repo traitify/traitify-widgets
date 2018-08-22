@@ -1,14 +1,22 @@
-import {h, Component} from "preact";
-import Color from "color-helpers";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-export default class PersonalityBadge extends Component{
+class PersonalityBadge extends Component{
+  componentDidMount(){
+    this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
+  }
   render(){
-    let color = `#${this.props.type.badge.color_1}`;
+    const color = `#${this.props.type.badge.color_1}`;
+
     return (
-      <div class={style.image} style={`border: 3px solid #${color}; background: ${Color.rgba(color, 8.5)};`}>
+      <div class={style.image} style={`border: 3px solid ${color}; background: ${rgba(color, 8.5)};`}>
         <img alt="" role="presentation" ariahidden="true" src={this.props.type.badge.image_medium} />
       </div>
     );
   }
 }
+
+export {PersonalityBadge as Component};
+export default withTraitify(PersonalityBadge);

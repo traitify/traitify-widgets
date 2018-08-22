@@ -1,17 +1,19 @@
-import {h, Component} from "preact";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-export default class PersonalityDetails extends Component{
+class PersonalityDetails extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityDetails", "initialized", this);
+    this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
+    if(!this.props.isReady("results")){ return; }
 
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
-    let details = personality.details;
-    if(!details) return <div />;
+
+    const details = personality.details;
+    if(!details) return;
 
     let complement = details.find(d=>d.title === "Complement");
     complement = complement && complement.body;
@@ -37,9 +39,9 @@ export default class PersonalityDetails extends Component{
           <div class={style.environments}>
             <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
-              {environments.map(environment=>{
-                return <li>{environment.name}</li>;
-              })}
+              {environments.map(environment=>(
+                <li>{environment.name}</li>
+              ))}
             </ul>
           </div>
         )}
@@ -47,3 +49,6 @@ export default class PersonalityDetails extends Component{
     );
   }
 }
+
+export {PersonalityDetails as Component};
+export default withTraitify(PersonalityDetails);

@@ -24,7 +24,7 @@ export default class TraitifyClient{
     return this;
   }
   ajax = (method, path, params)=>{
-    let url = this.host + "/" + this.version + path;
+    let url = `${this.host}/${this.version}${path}`;
     let xhr;
     if(params && ["get", "delete"].includes(method.toLowerCase())){
       url += url.indexOf("?") === -1 ? "?" : "&";
@@ -33,13 +33,13 @@ export default class TraitifyClient{
     }
     if(this.oldIE){
       url += url.indexOf("?") === -1 ? "?" : "&";
-      url += `authorization=${this.publicKey}&reset_cache=${(new Date).getTime()}`;
+      url += queryString.stringify({authorization: this.publicKey, reset_cache: (new Date()).getTime()});
       xhr = new XDomainRequest();
       xhr.open(method, url);
     }else{
       xhr = new XMLHttpRequest();
       xhr.open(method, url, true);
-      xhr.setRequestHeader("Authorization", "Basic " + btoa(this.publicKey + ":x"));
+      xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }
@@ -48,22 +48,18 @@ export default class TraitifyClient{
       try{
         xhr.onload = ()=>{
           if(xhr.status === 404){
-            return reject(xhr.response);
+            reject(xhr.response || xhr.responseText);
           }else{
-            const data = JSON.parse(this.oldIE ? xhr.responseText : xhr.response);
-            return resolve(data);
+            resolve(JSON.parse(xhr.response || xhr.responseText));
           }
         };
-        xhr.onprogress = function(){};
-        xhr.ontimeout = function(){};
-        xhr.onerror = function(){};
-        window.setTimeout(()=>{
-          try{
-            return xhr.send(JSON.stringify(params));
-          }catch(error){ return reject(error); }
-        }, 0);
-        return xhr;
-      }catch(error){ return reject(error); }
+        xhr.onerror = ()=>{ reject(xhr.response || xhr.responseText); };
+        xhr.ontimeout = ()=>{ reject(xhr.response || xhr.responseText); };
+
+        const send = ()=>{ xhr.send(JSON.stringify(params)); };
+
+        this.oldIE ? window.setTimeout(send, 0) : send();
+      }catch(error){ reject(error); }
     });
   }
   get = (path, params)=>(this.ajax("GET", path, params))

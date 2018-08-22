@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DimensionBasedResults renders results 1`] = `
+<section>
+  <div
+    class="mock"
+  >
+    Radar
+  </div>
+  <div
+    class="mock"
+  >
+    Personality Types
+  </div>
+  <div
+    class="mock"
+  >
+    Personality Heading
+  </div>
+  <div
+    class="mock"
+  >
+    Personality Details
+  </div>
+  <div
+    class="mock"
+  >
+    Dimensions
+  </div>
+  <div
+    class="mock"
+  >
+    Personality Traits
+  </div>
+</section>
+`;

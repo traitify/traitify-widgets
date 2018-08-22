@@ -1,29 +1,32 @@
-import {h, Component} from "preact";
-import Color from "color-helpers";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-export default class PersonalityTypeBar extends Component{
-  constructor(){
-    super();
-    this.setActive = this.setActive.bind(this);
-  }
+class PersonalityTypeBar extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTypeBar", "initialized", this);
+    this.props.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
+    this.props.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+    });
+
+    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    if(activeType){ this.setState({activeType}); }
   }
-  setActive(){
-    this.props.triggerCallback("PersonalityTypeBar", "changeType", this, this.props.type);
-    this.props.setState({activeType: this.props.type});
+  setActive = ()=>{
+    this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
+    this.props.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
   }
   render(){
-    let type = this.props.type.personality_type;
-    let title = type.name;
-    let icon = type.badge.image_medium;
-    let color = `#${type.badge.color_1}`;
-    let score = Math.round(this.props.type.score);
-    let barHeight = Math.round(this.props.barHeight);
+    const type = this.props.type.personality_type;
+    const title = type.name;
+    const icon = type.badge.image_medium;
+    const color = `#${type.badge.color_1}`;
+    const score = Math.round(this.props.type.score);
+    const barHeight = Math.round(this.props.barHeight);
 
     let active = false;
-    let activeType = this.props.activeType;
+    const activeType = this.state.activeType;
     if(activeType){
       active = type.id === activeType.personality_type.id;
     }
@@ -31,7 +34,7 @@ export default class PersonalityTypeBar extends Component{
     return (
       <li class={`${style.bar} ${active ? style.selected : ""}`} onMouseOver={this.setActive} onClick={this.setActive}>
         <span class={style.score} style={`background: ${color}; height: ${barHeight}%;`}>{score}%</span>
-        <span class={style.label} style={active && `background-color: ${Color.rgba(color, 8.5)}`}>
+        <span class={style.label} style={active && `background-color: ${rgba(color, 8.5)}`}>
           <img src={icon} alt={title} />
           <i>{title}</i>
         </span>
@@ -39,3 +42,6 @@ export default class PersonalityTypeBar extends Component{
     );
   }
 }
+
+export {PersonalityTypeBar as Component};
+export default withTraitify(PersonalityTypeBar);

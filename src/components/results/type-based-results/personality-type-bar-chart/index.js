@@ -1,44 +1,50 @@
-import {h, Component} from "preact";
+import {Component} from "preact";
+import withTraitify from "lib/with-traitify";
+import PersonalityTypeBar from "../personality-type-bar";
 import style from "./style";
 
-import PersonalityTypeBar from "../personality-type-bar";
-
-export default class PersonalityTypeBarChart extends Component{
+class PersonalityTypeBarChart extends Component{
   componentDidMount(){
-    this.props.triggerCallback("PersonalityTypeBarChart", "initialized", this);
-  }
-  componentWillMount(){
+    this.props.traitify.ui.trigger("PersonalityTypeBarChart.initialized", this);
+    this.props.traitify.ui.on("Assessment.activeType", ()=>{
+      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+    });
     this.activate();
   }
-  componentWillUpdate(){
+  componentDidUpdate(){
     this.activate();
   }
   activate(){
-    if(this.props.resultsReady(this.props.assessment)){
-      let type = this.props.assessment.personality_types[0];
-      if(!this.props.activeType && type){
-        this.props.setState({activeType: type});
-      }
+    if(!this.props.isReady("results")){ return; }
+    if(this.state.activeType){ return; }
+
+    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    if(activeType){
+      this.setState({activeType});
+    }else{
+      const type = this.props.assessment.personality_types[0];
+
+      this.props.traitify.ui.trigger("Assessment.activeType", this, type);
     }
   }
-  maxScore(){
-    return this.props.assessment.personality_types[0].score;
-  }
   barHeight(type){
-    let score = (100 - (this.maxScore() - type.score)) - 5;
+    const maxScore = this.props.assessment.personality_types[0].score;
+    const score = (100 - (maxScore - type.score)) - 5;
+
     return score > 0 ? score : 0;
   }
   render(){
-    if(!this.props.resultsReady(this.props.assessment)) return <div />;
-
-    let props = this.props;
+    if(!this.props.isReady("results")){ return; }
 
     return (
       <ul class={style.chart}>
-        {this.props.assessment.personality_types.map((type)=>{
-          return <PersonalityTypeBar {...props} type={type} barHeight={this.barHeight(type)} />;
-        })}
+        {this.props.assessment.personality_types.map((type)=>(
+          <PersonalityTypeBar type={type} barHeight={this.barHeight(type)} {...this.props} />
+        ))}
       </ul>
     );
   }
 }
+
+export {PersonalityTypeBarChart as Component};
+export default withTraitify(PersonalityTypeBarChart);

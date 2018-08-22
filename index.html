@@ -33,7 +33,11 @@
       }
 
       function createAssessment(){
-        Traitify.post("/assessments", {deck_id: document.querySelector("#deck-name").value, locale_key: "en-us"}).then(function(assessment){
+        Traitify.post("/assessments", {
+          deck_id: document.querySelector("#deck-name").value,
+          locale_key: "en-us",
+          package_id: "cfc05114-b8af-43fb-af27-c175e0cc25ee"
+        }).then(function(assessment){
           try{
             localStorage.setItem("assessment-id", assessment.id);
           }catch(error){

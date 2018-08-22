@@ -1,4 +1,5 @@
 import * as Components from "components";
+import componentFromAssessment from "lib/helpers/component-from-assessment";
 
 export default function guessComponent(name, options = {}){
   let component = Components[name || "Default"];
@@ -14,7 +15,18 @@ export default function guessComponent(name, options = {}){
 
     componentName = name;
     componentType = `${type.charAt(0).toUpperCase()}${type.substring(1).toLowerCase()}Components`;
-  }else{ return; }
+  }else{
+    const dimensionComponent = Components.DimensionComponents[name];
+    const typeComponent = Components.TypeComponents[name];
+    if(dimensionComponent && typeComponent){
+      return componentFromAssessment({
+        DIMENSION_BASED: dimensionComponent,
+        TYPE_BASED: typeComponent
+      });
+    }else{
+      return dimensionComponent || typeComponent;
+    }
+  }
 
   return Components[componentType][componentName];
 }

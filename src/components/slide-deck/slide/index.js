@@ -101,7 +101,7 @@ export default class Slide extends Component{
     }
 
     return (
-      <div class={style.container}>
+      <div class={style.slideContainer}>
         <div class={style.captionContainer} tabIndex="0">
           <div class={style.caption}>
             {currentSlide.caption}

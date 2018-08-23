@@ -3,7 +3,6 @@ import UI from "lib/traitify-ui";
 import Widget from "lib/traitify-widget";
 
 jest.mock("lib/traitify-widget");
-jest.mock("lib/i18n");
 
 describe("UI", ()=>{
   let ui;
@@ -107,6 +106,26 @@ describe("UI", ()=>{
       ui.setImagePack("linear");
 
       expect(ui.options.imagePack).toBe("linear");
+    });
+  });
+
+  describe("setLocale", ()=>{
+    it("returns ui", ()=>{
+      const returnValue = ui.setLocale("es-us");
+
+      expect(returnValue).toEqual(ui);
+    });
+
+    it("updates i18n", ()=>{
+      ui.setLocale("es-us");
+
+      expect(ui.i18n.locale).toBe("es-us");
+    });
+
+    it("ignores bad input", ()=>{
+      ui.setLocale("espn");
+
+      expect(ui.i18n.locale).toBe("en-us");
     });
   });
 

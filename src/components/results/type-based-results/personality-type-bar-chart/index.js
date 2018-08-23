@@ -13,6 +13,7 @@ class PersonalityTypeBarChart extends Component{
   }
   componentDidUpdate(){
     this.activate();
+    this.props.traitify.ui.trigger("PersonalityTypeBarChart.updated", this);
   }
   activate(){
     if(!this.props.isReady("results")){ return; }

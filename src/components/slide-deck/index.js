@@ -24,6 +24,8 @@ class SlideDeck extends Component{
     window.addEventListener("resize", this.resizeImages);
   }
   componentDidUpdate(prevProps){
+    this.props.traitify.ui.trigger("Results.updated", this);
+
     if(!this.state.initialized){ return this.initialize(); }
     if(this.props.assessment.locale_key !== prevProps.assessment.locale_key){
       return this.setState({

@@ -13,6 +13,9 @@ class PersonalityTypeSlide extends Component{
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTypeSlide.updated", this);
+  }
   render(){
     const {activeType} = this.state;
     const type = this.props.type.personality_type;

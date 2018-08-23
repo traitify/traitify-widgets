@@ -6,6 +6,9 @@ class PersonalityDetails extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityDetails.updated", this);
+  }
   render(){
     if(!this.props.isReady("results")){ return; }
 

@@ -75,7 +75,6 @@ describe("SlideDeck", ()=>{
     // const tree = renderJSON(<Component {...defaultProps} />, createElement());
     renderJSON(<Component {...defaultProps} />, createElement());
 
-    console.log(Component);
     // expect(tree).toMatchSnapshot();
   });
 

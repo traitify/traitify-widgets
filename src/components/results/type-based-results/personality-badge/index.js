@@ -7,6 +7,9 @@ class PersonalityBadge extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTrait.updated", this);
+  }
   render(){
     const color = `#${this.props.type.badge.color_1}`;
 

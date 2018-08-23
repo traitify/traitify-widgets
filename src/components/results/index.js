@@ -7,6 +7,9 @@ class Results extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("Results.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("Results.updated", this);
+  }
   render(){
     if(!this.props.isReady("results")){ return; }
 

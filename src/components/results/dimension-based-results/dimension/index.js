@@ -18,6 +18,9 @@ class Dimension extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("Dimension.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("Dimension.updated", this);
+  }
   description(suffix){
     const type = this.props.type.personality_type;
     const perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");

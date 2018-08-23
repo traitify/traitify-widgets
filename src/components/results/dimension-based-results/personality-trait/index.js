@@ -7,6 +7,9 @@ class PersonalityTrait extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTrait.updated", this);
+  }
   render(){
     const trait = this.props.trait.personality_trait;
     const type = trait.personality_type;

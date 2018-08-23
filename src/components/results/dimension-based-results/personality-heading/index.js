@@ -7,6 +7,9 @@ class PersonalityHeading extends Component{
     this.props.traitify.ui.trigger("PersonalityHeading.initialized", this);
     this.props.followDeck();
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityHeading.updated", this);
+  }
   render(){
     if(!this.props.isReady("results")){ return; }
     if(!this.props.isReady("deck")){ return; }

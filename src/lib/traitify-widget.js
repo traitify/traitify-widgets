@@ -6,7 +6,7 @@ export default class TraitifyWidget{
   constructor(ui, options = {}){
     this.id = uuid();
     this.ui = ui;
-    this.options = options;
+    this.options = {allowInstructions: true, ...options};
     this.options.targets = Object.assign({}, this.options.targets);
   }
   allowBack(){

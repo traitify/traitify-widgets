@@ -43,7 +43,7 @@ export default class TraitifyUI{
   }
   setLocale(locale){
     this.i18n.setLocale(locale);
-    this.trigger("I18n.setLocale", this, locale);
+    this.trigger("I18n.setLocale", this, this.i18n.locale);
 
     return this;
   }

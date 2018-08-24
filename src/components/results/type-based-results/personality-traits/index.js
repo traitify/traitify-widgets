@@ -7,6 +7,9 @@ class PersonalityTraits extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTraits.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTraits.updated", this);
+  }
   onClick = (e)=>{
     e.preventDefault();
 

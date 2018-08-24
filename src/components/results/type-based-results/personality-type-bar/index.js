@@ -13,6 +13,9 @@ class PersonalityTypeBar extends Component{
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTypeBar.updated", this);
+  }
   setActive = ()=>{
     this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
     this.props.traitify.ui.trigger("Assessment.activeType", this, this.props.type);

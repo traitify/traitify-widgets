@@ -18,6 +18,9 @@ class Type extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityType.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityType.updated", this);
+  }
   render(){
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;

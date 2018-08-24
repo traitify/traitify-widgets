@@ -12,6 +12,7 @@ class Radar extends Component{
   }
   componentDidUpdate(){
     this.updateChart();
+    this.props.traitify.ui.trigger("Radar.updated", this);
   }
   componentWillUnmount(){
     window.removeEventListener("resize", this.updateChart);

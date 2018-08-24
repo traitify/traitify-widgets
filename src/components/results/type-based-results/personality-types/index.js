@@ -7,6 +7,9 @@ class PersonalityTypes extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTypes.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTypes.updated", this);
+  }
   render(){
     return (
       <div>

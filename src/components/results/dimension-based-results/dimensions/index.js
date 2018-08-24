@@ -7,6 +7,9 @@ class Dimensions extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("Dimensions.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("Dimensions.updated", this);
+  }
   render(){
     if(!this.props.isReady("results")){ return; }
 

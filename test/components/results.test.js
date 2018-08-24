@@ -39,9 +39,8 @@ describe("Results", ()=>{
   });
 
   it("triggers initialization callback", ()=>{
-    const element = createElement();
-    render(<Component isReady={()=>(false)} traitify={traitify} />, element);
+    render(<Component isReady={()=>(false)} traitify={traitify} />, createElement());
 
-    expect(traitify.ui.trigger).toBeCalled();
+    expect(traitify.ui.trigger.mock.calls[0][0]).toBe("Results.initialized");
   });
 });

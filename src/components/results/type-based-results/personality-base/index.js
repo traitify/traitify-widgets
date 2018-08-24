@@ -7,6 +7,9 @@ class PersonalityBase extends Component{
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityBase.initialized", this);
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityBase.updated", this);
+  }
   render(){
     if(!this.props.isReady("results")){ return; }
 

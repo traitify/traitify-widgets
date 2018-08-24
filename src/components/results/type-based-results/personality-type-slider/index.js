@@ -14,6 +14,9 @@ class PersonalityTypeSlider extends Component{
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
+  componentDidUpdate(){
+    this.props.traitify.ui.trigger("PersonalityTypeSlider.updated", this);
+  }
   setActive = (type)=>{
     this.props.traitify.ui.trigger("PersonalityTypeSlider.changeType", this, type);
     this.props.traitify.ui.trigger("Assessment.activeType", this, type);

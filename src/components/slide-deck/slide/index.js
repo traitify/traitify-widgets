@@ -82,7 +82,7 @@ export default class Slide extends Component{
               <Markdown markdown={instructions} />
             </div>
             <div class={style.instructionsStart}>
-              <button class={style.instructionsButton} onClick={start}>
+              <button class={style.instructionsButton} onClick={start} type="button">
                 {translate("get_started")} &rarr;
               </button>
             </div>
@@ -114,17 +114,17 @@ export default class Slide extends Component{
         {!showInstructions && (
           <div class={style.responseContainer}>
             <div class={style.buttons}>
-              <button class={style.me} onClick={this.respondMe}>
+              <button class={style.me} onClick={this.respondMe} type="button">
                 {translate("me")}
               </button>
-              <button class={style.notMe} onClick={this.respondNotMe}>
+              <button class={style.notMe} onClick={this.respondNotMe} type="button">
                 {translate("not_me")}
               </button>
             </div>
           </div>
         )}
         {allowBack && (
-          <button class={style.back} onClick={back}>
+          <button class={style.back} onClick={back} type="button">
             <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
           </button>
         )}

@@ -13,7 +13,7 @@ export default class Loading extends Component{
               <div class={style.label}>
                 Unable to load more slides at this time.
               </div>
-              <button class={style.link} onClick={retry}>
+              <button class={style.link} onClick={retry} type="button">
                 Click Here to Try Again
               </button>
             </div>

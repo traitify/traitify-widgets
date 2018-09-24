@@ -3,6 +3,8 @@ import es from "lib/i18n-data/es.json";
 import fr from "lib/i18n-data/fr.json";
 import ht from "lib/i18n-data/ht.json";
 import nn from "lib/i18n-data/nn.json";
+import frfr from "lib/i18n-data/fr_fr.json";
+import svse from "lib/i18n-data/sv_se.json";
 
 export default {
   "en-us": en,
@@ -10,5 +12,7 @@ export default {
   "fr-ca": fr,
   "fr-us": fr,
   "ht-us": ht,
-  "no-no": nn
+  "no-no": nn,
+  "sv-se": svse,
+  "fr-fr": frfr
 };

@@ -15,7 +15,7 @@
 
       function createWidget(){
         var widget = Traitify.ui.component();
-        widget.locale("en-us").assessmentID(localStorage.getItem("assessment-id"));
+        widget.locale(document.querySelector("#locale").value).assessmentID(localStorage.getItem("assessment-id"));
         widget
           .allowBack()
           .allowFullscreen()
@@ -46,11 +46,17 @@
         });
       }
 
+      function changeLocale(){
+        Traitify.ui.setLocale(document.querySelector("#locale").value);
+      }
+
       if(localStorage.getItem("assessment-id")){
         createWidget();
       }
     </script>
 
+    <br/>
+    <br/>
     <select id="deck-name">
       <option value="big-five">Big Five</option>
       <option value="career-deck">Career Deck</option>
@@ -59,5 +65,18 @@
     </select>
 
     <button onclick="createAssessment()">New Assessment</button>
+    <br/>
+    <br/>
+    <select id="locale">
+      <option value="ht-us">Creole</option>
+      <option value="en-us" selected>English</option>
+      <option value="no-no">Norwegian</option>
+      <option value="es-us">Spanish</option>
+      <option value="fr-ca">French (Canadian)</option>
+      <option value="fr-fr">French (France)</option>
+      <option value="sv-se">Swedish</option>
+    </select>
+
+    <button onclick="changeLocale()">Change Locale</button>
   </body>
 </html>

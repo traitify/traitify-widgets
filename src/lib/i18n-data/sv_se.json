@@ -1,0 +1,13 @@
+{
+  "best_work_environments": "Passande arbetsmiljöer",
+  "complements": "Förenlig med",
+  "conflicts": "Strider emot",
+  "extended_description": "Beskrivning i detalj",
+  "personality_heading": "Din personlighet %{deck_name} är %{personality}",
+  "potential_benefits": "Möjliga fördelar",
+  "potential_pitfalls": "Möjliga fallgropar",
+  "show_less": "Visa mindre",
+  "show_more": "Visa mer",
+  "me": "Mig",
+  "not_me": "Inte mig"
+}

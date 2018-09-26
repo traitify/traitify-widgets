@@ -7,6 +7,7 @@
   </head>
   <body>
     <div id="slide-deck"></div>
+    <div id="careers"></div>
     <div id="results"></div>
     <script src="/build/traitify.js"></script>
     <script>
@@ -14,6 +15,11 @@
       Traitify.setHost("https://api.traitify.com");
 
       function createWidget(){
+        Traitify.ui.on("CareerModal.updated", function(context){
+          if(!context.customContent){ return; }
+          context.customContent.appendChild(document.createTextNode("I am custom content"));
+        });
+
         var widget = Traitify.ui.component();
         widget.locale(document.querySelector("#locale").value).assessmentID(localStorage.getItem("assessment-id"));
         widget
@@ -22,6 +28,7 @@
           .perspective("firstPerson")
           .targets({
             "SlideDeck": "#slide-deck",
+            "Careers": "#careers",
             "Results": "#results"
           });
         widget.render().then(function(){

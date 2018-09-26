@@ -1,0 +1,188 @@
+@import "~style/helpers";
+
+.container {
+  @extend %cf;
+  position: absolute;
+  width: 95%;
+  padding: 10px 0;
+  margin-left: -5px;
+  background: #fff;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, sans-serif;
+  @include mq(m) {
+    margin-left: 0;
+  }
+  @include mq(l) {
+    margin-top: 40px;
+    background: transparent;
+    @include cols(2.5);
+    padding-left: 0;
+    margin-left: 6px;
+  }
+  @include mq(xl) {
+    max-width: 234px;
+  }
+  form {
+    clear: both;
+    @extend %cf;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      clear: both;
+      text-align: left;
+      float: left;
+      width: 50%;
+      padding-right: 2%;
+      margin: 0;
+      &:last-of-type {
+        @extend %cf;
+        padding-right: 0;
+        margin-top: 0;
+        clear: none;
+      }
+      @include mq(l) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    .label {
+      display: none;
+      @include mq(l) {
+        display: block;
+        text-transform: uppercase;
+        padding-left: 0;
+        margin-left: -3px;
+        @include rems(18);
+      }
+    }
+    .field {
+      display: inline-block;
+      padding: 8px 12px;
+      height: 42px;
+      margin-left: -5px;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      -webkit-appearance: none;
+      background: #e2e2e2;
+      color: #333;
+      width: 100%;
+    }
+    .fieldGroup {
+      background: #e2e2e2 image-url("https://cdn.traitify.com/assets/images/js/select.gif") no-repeat 98% 50%;
+      @include mq(l) {
+        background: #fff;
+        height: auto;
+        border: 0;
+      }
+    }
+  }
+}
+
+.fieldGroup {
+  i {
+    font-style: normal;
+    display: block;
+    @include mq(l) {
+      display: none;
+    }
+  }
+  .check:checked + span:before {
+    @include mq(l) {
+      color: #3ca94e;
+    }
+  }
+  .field {
+    margin-left: 0;
+  }
+  .formGroup {
+    @extend %cf;
+    display: none;
+    z-index: 50;
+    position: relative;
+    margin-top: 5px;
+    margin-left: -13px;
+    margin-right: -13px;
+    border: 1px solid #e2e2e2;
+    @include rems(13);
+    @include mq(l) {
+      margin-top: -9px;
+      display: block;
+      z-index: 0;
+      border: 0;
+      @include rems(16);
+    }
+    li {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0 0 5px;
+      background: #fff;
+      &.hidden {
+        display: none;
+      }
+    }
+    &.block { display: block; }
+    .groupTitle {
+      background: #e2e2e2;
+      font-weight: 400;
+      height: 38px;
+      line-height: 38px;
+      @include mq(l) {
+        background: #fff;
+        text-transform: uppercase;
+        padding-left: 3px;
+        margin-top: 15px;
+        @include rems(18);
+      }
+    }
+    label {
+      span:last-of-type {
+        margin-left: 5px;
+      }
+    }
+    [type="submit"] {
+      background: #3ca94e;
+      color: #fff;
+      display: inline-block;
+      padding: 6px 25px;
+      min-width: 150px;
+      text-align: center;
+      border: 0;
+      border-radius: 0;
+      margin-top: 20px;
+      @include rems(18);
+    }
+  }
+}
+
+.check {
+  cursor: pointer;
+  float: left;
+  display: block;
+  opacity: 0;
+  width: 0;
+  + span svg {
+    color: #d6d6d6;
+  }
+  &:checked + span svg {
+    color: #00aeef;
+  }
+  &:focus + span svg {
+    color: #00aeef;
+  }
+  &:checked:focus + span svg {
+    color: #00aeef !important;
+  }
+}
+
+.search input.field {
+  background: #e2e2e2 url("https://cdn.traitify.com/assets/images/js/search.svg") no-repeat 10px center;
+  background-size: 17px 17px;
+  padding-right: 10px;
+  text-indent: 22px;
+  @include mq(l) {
+    @include rems(16);
+  }
+}

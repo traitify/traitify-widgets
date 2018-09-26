@@ -67,11 +67,40 @@ assessment.render("PersonalityTraits"); // Render just the Traits in the target 
 assessment.render("PersonalityDetails"); // Render just the details in the target element
 ```
 
-### Type Based Decks (ex. career-deck,core,heroes)
+### Type Based Decks (ex. career-deck, core, heroes)
 
 #### Personality Blend
 ```
 assessment.render("PersonalityBlend"); // Render just the Blend in the target element
+```
+
+#### Careers (career-deck only)
+```
+assessment.render("Careers"); // Render all the career components
+
+// The individual career components can also be rendered or replaced
+assessment.render("CareerFilter"); // Render the career filter
+assessment.render("CareerResults"); // Render the career list
+assessment.render("CareerModal"); // Render the career modal
+
+// Add content to the career modal
+traitify.ui.on("CareerModal.updated", function(context){
+  if(!context.customContent){ return; }
+  context.customContent.appendChild(document.createTextNode("I am custom content"));
+});
+
+// Add content to the career filter
+traitify.ui.on("CareerFilter.updated", function(context){
+  context.customContent.appendChild(document.createTextNode("I am custom content"));
+});
+
+// Update parameters and re-request careers
+traitify.ui.trigger("Careers.mergeParams", this, {experienceLevels: [4, 5], page: 1});
+
+// Update different options for career components
+traitify.ui.options.careerOptions.experienceLevels = [4, 5];
+traitify.ui.options.careerOptions.path = "/my-career-endpoint";
+traitify.ui.options.careerOptions.perPage = 10;
 ```
 
 ### Dimension Based Decks (big-five)

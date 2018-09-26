@@ -43,7 +43,7 @@ export default class TraitifyClient{
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }
-    return new Promise((resolve, reject)=>{
+    const promise = new Promise((resolve, reject)=>{
       if(!this.online()){ return reject(); }
       try{
         xhr.onload = ()=>{
@@ -61,6 +61,9 @@ export default class TraitifyClient{
         this.oldIE ? window.setTimeout(send, 0) : send();
       }catch(error){ reject(error); }
     });
+
+    promise.xhr = xhr;
+    return promise;
   }
   get = (path, params)=>(this.ajax("GET", path, params))
   put = (path, params)=>(this.ajax(this.oldIE ? "POST" : "PUT", path, params))

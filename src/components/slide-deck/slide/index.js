@@ -125,7 +125,7 @@ export default class Slide extends Component{
         )}
         {allowBack && (
           <button class={style.back} onClick={back} type="button">
-            <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
+            <img src="https://cdn.traitify.com/assets/images/js/arrow_left.svg" alt="Back" />
           </button>
         )}
         {allowFullscreen && (

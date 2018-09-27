@@ -34,6 +34,7 @@
 
 .title {
   color: #333;
+  font-weight: normal;
   @include rems(14);
   @include mq(m) {
     height: 48px; // font-size * line-height * lines to show

@@ -74,33 +74,69 @@ assessment.render("PersonalityDetails"); // Render just the details in the targe
 assessment.render("PersonalityBlend"); // Render just the Blend in the target element
 ```
 
-#### Careers (career-deck only)
+### Careers Deck Components (career-deck)
+
+#### Render All Career Components
 ```
 assessment.render("Careers"); // Render all the career components
+```
 
-// The individual career components can also be rendered or replaced
+#### Specific Career Components
+
+#### Career Filter
+```
 assessment.render("CareerFilter"); // Render the career filter
-assessment.render("CareerResults"); // Render the career list
-assessment.render("CareerModal"); // Render the career modal
+```
 
+#### Career Results
+```
+assessment.render("CareerResults"); // Render the career list
+```
+
+#### Career Modal
+```
+assessment.render("CareerModal"); // Render the career modal
+```
+
+### Additional Career Component Customizations
+
+#### Add content to the Career Filter
+```
+// Add content to the career filter
+Traitify.ui.on("CareerFilter.updated", function(context){
+  context.customContent.appendChild(document.createTextNode("I am custom content"));
+});
+```
+
+#### Add content to the Career Modal
+```
 // Add content to the career modal
-traitify.ui.on("CareerModal.updated", function(context){
+Traitify.ui.on("CareerModal.updated", function(context){
   if(!context.customContent){ return; }
   context.customContent.appendChild(document.createTextNode("I am custom content"));
 });
+```
 
-// Add content to the career filter
-traitify.ui.on("CareerFilter.updated", function(context){
-  context.customContent.appendChild(document.createTextNode("I am custom content"));
-});
-
+#### Trigger a refresh of the career results with different params
+```
 // Update parameters and re-request careers
-traitify.ui.trigger("Careers.mergeParams", this, {experienceLevels: [4, 5], page: 1});
+Traitify.ui.trigger("Careers.mergeParams", this, {experienceLevels: [4, 5], page: 1});
+```
 
-// Update different options for career components
-traitify.ui.options.careerOptions.experienceLevels = [4, 5];
-traitify.ui.options.careerOptions.path = "/my-career-endpoint";
-traitify.ui.options.careerOptions.perPage = 10;
+#### Get your careers from a different endpoint
+This is useful if you want to get the career results server side and modify the data returned or just want to proxy through your own server.
+```
+Traitify.ui.options.careerOptions.path = "/my-career-endpoint";
+```
+
+#### Change which experience levels are in the filter
+```
+Traitify.ui.options.careerOptions.experienceLevels = [4, 5];
+```
+
+#### Change how many results to show per page
+```
+Traitify.ui.options.careerOptions.perPage = 10;
 ```
 
 ### Dimension Based Decks (big-five)
@@ -122,6 +158,7 @@ assessment.render("PersonalityHeading"); // Render just the archetype in the tar
     "PersonalityTypes": "#personality-types",
     "PersonalityTraits": "#personality-traits",
     "Results": "#results",
+    "Careers": "#careers",
   });
 
   assessment.render();

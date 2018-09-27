@@ -60,9 +60,9 @@
   }
 }
 .fullscreen{
-  background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png');
+  background-image: url("https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png");
   &.fullscreenSmall{
-    background-image: url('https://cdn.traitify.com/assets/images/js/full-screen-icon-small.png');
+    background-image: url("https://cdn.traitify.com/assets/images/js/full-screen-icon-small.png");
   }
   background-size: 100% 100%;
   -webkit-transition: opacity .2s; /* Safari */
@@ -103,7 +103,7 @@
 }
 .instructionsSlide {
   min-height: 600px;
-  background: url("https://cdn.traitify.com/images/instructions_slide.jpg") no-repeat center center;
+  background: url("https://cdn.traitify.com/assets/images/js/instructions_slide.jpg") no-repeat center center;
   background-size: cover;
   color: #fff;
   padding: 70px 20px 0;

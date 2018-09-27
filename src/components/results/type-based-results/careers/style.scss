@@ -1,0 +1,7 @@
+@import "~style/helpers";
+
+.container {
+  @extend %widgetContainer;
+  margin: 0 auto 20px;
+  text-align: center;
+}

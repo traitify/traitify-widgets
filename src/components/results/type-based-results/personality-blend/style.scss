@@ -2,6 +2,7 @@
 
 .blend {
   @extend %widgetContainer;
+  clear: both;
   margin: 0 auto 20px;
   text-align: center;
 }

@@ -8,6 +8,7 @@ export default class TraitifyUI{
     this.traitify = traitify;
     this.i18n = i18n || new I18n();
     this.options = {
+      careerOptions: {},
       imageHost: "https://images.traitify.com",
       ...options
     };

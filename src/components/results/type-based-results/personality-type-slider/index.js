@@ -39,7 +39,7 @@ class PersonalityTypeSlider extends Component{
       <div class={style.slider}>
         {backType && (
           <TypeButton style={style.back} type={backType} setActive={this.setActive}>
-            <img src="https://cdn.traitify.com/assets/images/arrow_left.svg" alt="Back" />
+            <img src="https://cdn.traitify.com/assets/images/js/arrow_left.svg" alt="Back" />
           </TypeButton>
         )}
         <ul>
@@ -49,7 +49,7 @@ class PersonalityTypeSlider extends Component{
         </ul>
         {nextType && (
           <TypeButton style={style.next} type={nextType} setActive={this.setActive}>
-            <img src="https://cdn.traitify.com/assets/images/arrow_right.svg" alt="Next" />
+            <img src="https://cdn.traitify.com/assets/images/js/arrow_right.svg" alt="Next" />
           </TypeButton>
         )}
       </div>

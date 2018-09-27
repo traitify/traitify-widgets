@@ -167,16 +167,18 @@ describe("withTraitify", ()=>{
   describe("cache", ()=>{
     let originalSessionStorage;
 
-    beforeEach(()=>{
-      originalSessionStorage = global.sessionStorage;
-      global.sessionStorage = {
-        getItem: jest.fn().mockName("getItem"),
-        setItem: jest.fn().mockName("setItem")
-      };
+    beforeAll(()=>{
+      originalSessionStorage = window.sessionStorage;
+      Object.defineProperty(window, "sessionStorage", {writable: true, value: {}});
     });
 
-    afterEach(()=>{
-      global.sessionStorage = originalSessionStorage;
+    afterAll(()=>{
+      Object.defineProperty(window, "sessionStorage", {writable: false, value: originalSessionStorage});
+    });
+
+    beforeEach(()=>{
+      sessionStorage.getItem = jest.fn().mockName("getItem");
+      sessionStorage.setItem = jest.fn().mockName("setItem");
     });
 
     it("passes prop", ()=>{
@@ -201,7 +203,7 @@ describe("withTraitify", ()=>{
       });
 
       it("returns json", ()=>{
-        global.sessionStorage.getItem = jest.fn(()=>("{\"id\": \"xyz\"}"));
+        sessionStorage.getItem = jest.fn(()=>("{\"id\": \"xyz\"}"));
         renderResult = render(<Component traitify={traitify} />, createElement());
         const result = getComponent().props.cache.get("abc");
 
@@ -216,7 +218,7 @@ describe("withTraitify", ()=>{
       });
 
       it("catches error", ()=>{
-        global.sessionStorage.getItem = jest.fn(()=>{ throw new SyntaxError(); });
+        sessionStorage.getItem = jest.fn(()=>{ throw new SyntaxError(); });
         renderResult = render(<Component traitify={traitify} />, createElement());
         const result = getComponent().props.cache.get("abc");
 
@@ -233,7 +235,7 @@ describe("withTraitify", ()=>{
       });
 
       it("catches error", ()=>{
-        global.sessionStorage.setItem = jest.fn(()=>{ throw new SyntaxError(); });
+        sessionStorage.setItem = jest.fn(()=>{ throw new SyntaxError(); });
         renderResult = render(<Component traitify={traitify} />, createElement());
         const result = getComponent().props.cache.set("abc", {id: "xyz"});
 

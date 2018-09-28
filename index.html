@@ -21,7 +21,7 @@
         });
 
         var widget = Traitify.ui.component();
-        widget.locale(document.querySelector("#locale").value).assessmentID(localStorage.getItem("assessment-id"));
+        widget.locale(localStorage.getItem("locale") || "en-us").assessmentID(localStorage.getItem("assessment-id"));
         widget
           .allowBack()
           .allowFullscreen()
@@ -55,6 +55,7 @@
 
       function changeLocale(){
         Traitify.ui.setLocale(document.querySelector("#locale").value);
+        localStorage.setItem("locale", document.querySelector("#locale").value);
       }
 
       if(localStorage.getItem("assessment-id")){

@@ -30,7 +30,7 @@ class CareerFilter extends Component{
     if(this.props.options
       && this.props.options.careerOptions
       && this.props.options.careerOptions[name] != null
-    ){ return this.props.careerOptions.options[name]; }
+    ){ return this.props.options.careerOptions[name]; }
     if(this.traitify
       && this.traitify.ui.options.careerOptions
       && this.traitify.ui.options.careerOptions[name] != null

@@ -1,3 +1,4 @@
+import "support/anti-airbrake";
 import Airbrake from "airbrake-js";
 import {render} from "preact";
 import withTraitify from "lib/with-traitify";

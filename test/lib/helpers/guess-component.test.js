@@ -1,16 +1,21 @@
 import guessComponent from "lib/helpers/guess-component";
+import componentFromAssessment from "lib/helpers/component-from-assessment";
 
 jest.mock("components", ()=>({
   Default: {name: "Default"},
   DimensionComponents: {
-    Dimensions: {name: "Dimensions"}
+    Dimensions: {name: "Dimensions"},
+    PersonalityType: {name: "PersonalityType"}
   },
   Results: {name: "Results"},
   SlideDeck: {name: "SlideDeck"},
   TypeComponents: {
-    PersonalityBadge: {name: "PersonalityBadge"}
+    PersonalityBadge: {name: "PersonalityBadge"},
+    PersonalityType: {name: "PersonalityType"}
   }
 }));
+
+jest.mock("lib/helpers/component-from-assessment");
 
 describe("Helpers", ()=>{
   describe("guessComponent", ()=>{
@@ -54,6 +59,16 @@ describe("Helpers", ()=>{
       const component = guessComponent("PersonalityBadge", {assessmentType: "TYPE_BASED"});
 
       expect(component.name).toBe("PersonalityBadge");
+    });
+
+    it("returns ambiguous component", ()=>{
+      componentFromAssessment.mockClear();
+      guessComponent("PersonalityType");
+
+      expect(componentFromAssessment).toHaveBeenCalledWith({
+        DIMENSION_BASED: {name: "PersonalityType"},
+        TYPE_BASED: {name: "PersonalityType"}
+      });
     });
 
     it("allows misses", ()=>{

@@ -50,6 +50,20 @@ describe("Widget", ()=>{
     });
   });
 
+  describe("allowInstructions", ()=>{
+    it("returns widget", ()=>{
+      const returnValue = widget.allowInstructions();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", ()=>{
+      widget.allowInstructions();
+
+      expect(widget.options.allowInstructions).toBe(true);
+    });
+  });
+
   describe("assessmentID", ()=>{
     it("returns widget", ()=>{
       const returnValue = widget.assessmentID("abc");
@@ -89,6 +103,20 @@ describe("Widget", ()=>{
       widget.disableFullscreen();
 
       expect(widget.options.allowFullscreen).toBe(false);
+    });
+  });
+
+  describe("disableInstructions", ()=>{
+    it("returns widget", ()=>{
+      const returnValue = widget.disableInstructions();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", ()=>{
+      widget.disableInstructions();
+
+      expect(widget.options.allowInstructions).toBe(false);
     });
   });
 

@@ -16,7 +16,7 @@ describe("SlideDeck", ()=>{
       time_taken: complete ? Math.random() * 100 : null
     }
   );
-  const assessment = {id: "xyz", slides: [...Array(20)].map((_, i)=>(createSlide(i, false)))};
+  const assessment = {id: "xyz", slides: Array.from({length: 20}).map((_, i)=>(createSlide(i, false)))};
   const assessmentWithoutSlides = {id: "xyz", slides: []};
   const defaultProps = {
     assessment,
@@ -88,11 +88,22 @@ describe("SlideDeck", ()=>{
   });
 
   it("triggers initialization callback", ()=>{
-    const element = createElement();
     const props = {...defaultProps};
     props.traitify.ui.trigger = jest.fn().mockName("trigger");
-    render(<Component {...props} />, element);
+    render(<Component {...props} />, createElement());
 
     expect(defaultProps.traitify.ui.trigger).toBeCalled();
+  });
+
+  it("normalizes time taken", ()=>{
+    const renderResult = render(<Component {...defaultProps} />, createElement());
+    const component = renderResult._component;
+    component.state.slides = Array.from({length: 20}).map((_, i)=>(createSlide(i, true)));
+    component.state.slides[0].response = true;
+    component.state.slides[0].time_taken = -100;
+
+    const badSlides = component.completedSlides().filter((slide)=>(slide.time_taken < 0));
+
+    expect(badSlides).toHaveLength(0);
   });
 });

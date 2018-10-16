@@ -162,7 +162,7 @@ class SlideDeck extends Component{
     )).map((slide)=>({
       id: slide.id,
       response: slide.response,
-      time_taken: slide.time_taken || 12345
+      time_taken: slide.time_taken >= 0 ? slide.time_taken : 2
     }));
   }
   isComplete(){

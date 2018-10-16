@@ -17,11 +17,11 @@ class PersonalityTraits extends Component{
 
     return (
       <div class={style.traits}>
-        <h4 class={style.title}>Most Represented Traits</h4>
+        <h4 class={style.title}>{this.props.translate("most_represented_traits")}</h4>
         {traits.slice(0, 5).map((trait)=>(
           <PersonalityTrait trait={trait} {...this.props} />
         ))}
-        <h4 class={style.title}>Least Represented Traits</h4>
+        <h4 class={style.title}>{this.props.translate("least_represented_traits")}</h4>
         {traits.slice(-5).map((trait)=>(
           <PersonalityTrait trait={trait} {...this.props} />
         ))}

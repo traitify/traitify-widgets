@@ -15,7 +15,7 @@ class PersonalityBadge extends Component{
 
     return (
       <div class={style.image} style={`border: 3px solid ${color}; background: ${rgba(color, 8.5)};`}>
-        <img alt="" role="presentation" ariahidden="true" src={this.props.type.badge.image_medium} />
+        <img alt={this.props.translate("badge")} role="presentation" ariahidden="true" src={this.props.type.badge.image_medium} />
       </div>
     );
   }

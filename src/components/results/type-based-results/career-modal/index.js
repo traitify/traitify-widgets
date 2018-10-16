@@ -60,7 +60,7 @@ class CareerModal extends Component{
     return (
       <div class={`${style.modal} ${style.container}`} role="dialog">
         <section class={style.modalContainer}>
-          <Icon aria-label="Close" class={style.close} icon={faTimes} onClick={this.close} tabindex="-1" />
+          <Icon aria-label={translate("close")} class={style.close} icon={faTimes} onClick={this.close} tabindex="-1" />
           <div class={style.modalContent}>
             <img class={style.image} alt={career.title} src={career.picture} />
             <h2 class={style.title}>{career.title}</h2>

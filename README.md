@@ -207,6 +207,27 @@ assessment.render("PersonalityHeading"); // Render just the archetype in the tar
 ```
 
 ## Options
+### Internationalization Options
+```
+// Set globally
+Traitify.ui.setLocale("es-us");
+```
+or
+```
+// Set just for the instance of the widget
+assessment.locale("nl-nl");
+```
+Here is a list of the available locales (`en-us` is the default):
+  - Creole - `ht-us`
+  - Dutch - `nl-nl`
+  - English (GB) - `en-gb`
+  - English (United States) - `en-us`
+  - French (Canadian) - `fr-ca`
+  - French (France) - `fr-fr`
+  - Norwegian - `no-no`
+  - Spanish (United States) - `es-us`
+  - Swedish - `sv-se`
+
 ### Render a back button to allow users to change answers during the test
 ```
   assessment.allowBack();

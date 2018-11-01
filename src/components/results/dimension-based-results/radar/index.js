@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 import Chart from "lib/helpers/canvas-radar-chart";
@@ -47,11 +47,11 @@ class Radar extends Component{
     this.chart.resize();
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     return (
-      <div class={style.radar}>
-        <div class={style.radarContainer}>
+      <div className={style.radar}>
+        <div className={style.radarContainer}>
           <canvas ref={(canvas)=>{ this.canvas = canvas; }} width="820" height="700" aria-label={this.props.translate("radar_chart_label")} />
         </div>
       </div>

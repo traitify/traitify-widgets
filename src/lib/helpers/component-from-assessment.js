@@ -1,8 +1,13 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 
 export default function componentFromAssessment(options){
   class AssessmentComponent extends Component{
+    constructor(props){
+      super(props);
+
+      this.state = {component: null};
+    }
     componentDidMount(){
       if(this.props.assessment){ this.pickComponent(); }
     }

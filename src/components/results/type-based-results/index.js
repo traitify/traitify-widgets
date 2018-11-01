@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import PersonalityBase from "./personality-base";
 import PersonalityTypes from "./personality-types";
 import PersonalityTraits from "./personality-traits";

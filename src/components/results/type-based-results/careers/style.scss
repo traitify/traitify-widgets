@@ -4,4 +4,10 @@
   @extend %widgetContainer;
   margin: 0 auto 20px;
   text-align: center;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }

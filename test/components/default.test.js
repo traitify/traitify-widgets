@@ -1,32 +1,26 @@
-import {render} from "preact";
 import {Component} from "components/default";
-import {createElement, domHooks} from "support/dom";
+import ComponentHandler from "support/component-handler";
 
 jest.mock("lib/with-traitify");
 jest.mock("components/results", ()=>(()=>(<div className="mock">Results</div>)));
 jest.mock("components/slide-deck", ()=>(()=>(<div className="mock">Slide Deck</div>)));
 
 describe("Default", ()=>{
-  domHooks();
-
   it("renders results", ()=>{
-    const element = createElement();
-    render(<Component isReady={(type)=>(type === "results")} />, element);
+    const component = new ComponentHandler(<Component isReady={(type)=>(type === "results")} />);
 
-    expect(element.innerHTML).toEqual(`<div class="mock">Results</div>`);
+    expect(component.tree).toMatchSnapshot();
   });
 
   it("renders slide deck", ()=>{
-    const element = createElement();
-    render(<Component isReady={(type)=>(type === "slides")} />, element);
+    const component = new ComponentHandler(<Component isReady={(type)=>(type === "slides")} />);
 
-    expect(element.innerHTML).toEqual(`<div class="mock">Slide Deck</div>`);
+    expect(component.tree).toMatchSnapshot();
   });
 
   it("renders div if not ready", ()=>{
-    const element = createElement();
-    render(<Component isReady={(type)=>(false)} />, element);
+    const component = new ComponentHandler(<Component isReady={(type)=>(false)} />);
 
-    expect(element.innerHTML).toEqual("<div></div>");
+    expect(component.tree).toMatchSnapshot();
   });
 });

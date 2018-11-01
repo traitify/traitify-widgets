@@ -1,19 +1,28 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeBar from "../personality-type-bar";
 import style from "./style";
 
 class PersonalityTypeBarChart extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {activeType: null};
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTypeBarChart.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
-    });
+    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
     this.activate();
   }
   componentDidUpdate(){
     this.activate();
     this.props.traitify.ui.trigger("PersonalityTypeBarChart.updated", this);
+  }
+  componentWillUnmount(){
+    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+  }
+  getActiveType = ()=>{
+    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
   }
   activate(){
     if(!this.props.isReady("results")){ return; }
@@ -35,12 +44,12 @@ class PersonalityTypeBarChart extends Component{
     return score > 0 ? score : 0;
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     return (
-      <ul class={style.chart}>
+      <ul className={style.chart}>
         {this.props.assessment.personality_types.map((type)=>(
-          <PersonalityTypeBar type={type} barHeight={this.barHeight(type)} {...this.props} />
+          <PersonalityTypeBar key={type.personality_type.id} type={type} barHeight={this.barHeight(type)} {...this.props} />
         ))}
       </ul>
     );

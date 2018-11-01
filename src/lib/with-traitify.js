@@ -1,5 +1,5 @@
 import Airbrake from "airbrake-js";
-import {Component} from "preact";
+import {Component} from "react";
 import {getDisplayName, loadFont} from "lib/helpers";
 
 // Unwrap Airbrake's console wrapper
@@ -15,7 +15,15 @@ export default function withTraitify(WrappedComponent){
     constructor(props){
       super(props);
 
-      this.state = {};
+      this.state = {
+        assessment: null,
+        assessmentID: null,
+        deck: null,
+        deckID: null,
+        error: null,
+        followingDeck: null,
+        locale: null
+      };
       this.setupTraitify();
       this.setupAirbrake();
       this.setupCache();
@@ -23,6 +31,8 @@ export default function withTraitify(WrappedComponent){
       this.setAssessmentID();
     }
     componentDidMount(){
+      this.didMount = true;
+
       loadFont();
 
       this.updateAssessment();
@@ -68,10 +78,20 @@ export default function withTraitify(WrappedComponent){
 
       this.setState({error});
     }
-    addListener = (key, callback)=>{
+    addListener = (_key, callback)=>{
+      const key = _key.toLowerCase();
+
       this.listeners = this.listeners || {};
       this.listeners[key] = callback;
       this.traitify.ui.on(key, callback);
+    }
+    // setState method that also works in the constructor
+    safeSetState = (state)=>{
+      if(this.didMount){
+        this.setState(state);
+      }else{
+        this.state = {...this.state, ...state};
+      }
     }
     followDeck = ()=>{
       this.setState({followingDeck: true});
@@ -156,7 +176,7 @@ export default function withTraitify(WrappedComponent){
         delete this.traitify.ui.requests[key];
       });
     }
-    getListener = (key)=>(this.listeners[key])
+    getListener = (key)=>(this.listeners[key.toLowerCase()])
     getOption = (name)=>{
       if(this.props[name] != null){ return this.props[name]; }
       if(this.props.options && this.props.options[name] != null){ return this.props.options[name]; }
@@ -176,16 +196,18 @@ export default function withTraitify(WrappedComponent){
           return false;
       }
     }
-    removeListener = (key)=>{
+    removeListener = (_key)=>{
+      const key = _key.toLowerCase();
+
       this.traitify.ui.off(key, this.getListener(key));
       delete this.listeners[key];
     }
     setAssessmentID(){
-      this.setState({
-        assessmentID: this.getOption("assessmentID") || (
-          this.props.assessment && this.props.assessment.id
-        )
-      });
+      const assessmentID = this.getOption("assessmentID") || (
+        this.props.assessment && this.props.assessment.id
+      );
+
+      if(assessmentID){ this.safeSetState({assessmentID}); }
     }
     setupAirbrake(){
       if(this.getOption("disableAirbrake")){ return; }
@@ -233,13 +255,15 @@ export default function withTraitify(WrappedComponent){
       };
     }
     setupI18n(){
-      this.addListener("I18n.setLocale", (_, locale)=>{ this.setState({locale: locale.toLowerCase()}); });
+      this.addListener("I18n.setLocale", (_, locale)=>{
+        this.safeSetState({locale: locale.toLowerCase()});
+      });
 
       const locale = this.props.locale || (this.props.options && this.props.options.locale);
       if(locale && locale.toLowerCase() !== this.traitify.ui.i18n.locale){
         this.traitify.ui.setLocale(locale.toLowerCase());
       }else{
-        this.setState({locale: this.traitify.ui.i18n.locale});
+        this.safeSetState({locale: this.traitify.ui.i18n.locale});
       }
     }
     setupTraitify(){

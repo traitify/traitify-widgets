@@ -1,8 +1,7 @@
 import "support/anti-airbrake";
 import Airbrake from "airbrake-js";
-import {render} from "preact";
 import withTraitify from "lib/with-traitify";
-import {createElement, domHooks} from "support/dom";
+import ComponentHandler from "support/component-handler";
 import DummyComponent from "support/dummy-component";
 import Traitify from "support/traitify";
 
@@ -12,16 +11,9 @@ jest.mock("lib/helpers", ()=>({
   loadFont: jest.fn().mockName("loadFont")
 }));
 
-let renderResult;
-const getParentComponent = ()=>(renderResult._component);
-const getComponent = ()=>(getParentComponent()._component);
-const updateComponent = (options)=>{
-  const component = getParentComponent();
-  const prevProps = {...component.props};
-  const prevState = {...component.state};
-  component.props = {...component.props, ...options.props};
-  component.state = {...component.state, ...options.state};
-  component.componentDidUpdate(prevProps, prevState);
+let component;
+const getDummyComponent = ()=>{
+  return component.renderer.root.findByType(DummyComponent).instance;
 };
 
 describe("withTraitify", ()=>{
@@ -30,8 +22,6 @@ describe("withTraitify", ()=>{
   const deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
   const deckWithoutName = {id: "big-five", locale_key: "en-US"};
   let Component, traitify;
-
-  domHooks();
 
   beforeEach(()=>{
     Airbrake.mockClear();
@@ -42,18 +32,17 @@ describe("withTraitify", ()=>{
 
   describe("addListener", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
     });
 
     it("creates listeners object", ()=>{
       const callback = ()=>{};
       const key = "taco";
-      const parentComponent = getParentComponent();
-      delete parentComponent.listeners;
-      parentComponent.addListener(key, callback);
+      delete component.instance.listeners;
+      component.instance.addListener(key, callback);
 
-      expect(parentComponent.listeners).toBeInstanceOf(Object);
-      expect(parentComponent.listeners).toMatchObject({[key]: callback});
+      expect(component.instance.listeners).toBeInstanceOf(Object);
+      expect(component.instance.listeners).toMatchObject({[key]: callback});
     });
 
     it("adds to listeners object", ()=>{
@@ -61,27 +50,25 @@ describe("withTraitify", ()=>{
       const key = "taco";
       const otherCallback = ()=>{};
       const otherKey = "other taco";
-      const parentComponent = getParentComponent();
-      delete parentComponent.listeners;
-      parentComponent.addListener(key, callback);
-      parentComponent.addListener(otherKey, otherCallback);
+      delete component.instance.listeners;
+      component.instance.addListener(key, callback);
+      component.instance.addListener(otherKey, otherCallback);
 
-      expect(parentComponent.listeners).toBeInstanceOf(Object);
-      expect(parentComponent.listeners).toMatchObject({[key]: callback, [otherKey]: otherCallback});
+      expect(component.instance.listeners).toBeInstanceOf(Object);
+      expect(component.instance.listeners).toMatchObject({[key]: callback, [otherKey]: otherCallback});
     });
   });
 
   describe("componentWillUnmount", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
     });
 
     it("unfollows listeners", ()=>{
-      const parentComponent = getParentComponent();
-      parentComponent.removeListener = jest.fn().mockName("removeListener");
-      parentComponent.componentWillUnmount();
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.componentWillUnmount();
 
-      expect(parentComponent.removeListener).toHaveBeenCalledWith("I18n.setLocale");
+      expect(component.instance.removeListener).toHaveBeenCalledWith("i18n.setlocale");
     });
   });
 
@@ -93,29 +80,29 @@ describe("withTraitify", ()=>{
 
   describe("airbrake", ()=>{
     it("gets disabled", ()=>{
-      renderResult = render(<Component disableAirbrake={true} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component disableAirbrake={true} traitify={traitify} />);
 
-      expect(getComponent().props.airbrake).toBeUndefined();
+      expect(getDummyComponent().props.airbrake).toBeUndefined();
     });
 
     it("passes prop", ()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.airbrake).toBeInstanceOf(Airbrake);
+      expect(getDummyComponent().props.airbrake).toBeInstanceOf(Airbrake);
     });
 
     it("passes through prop", ()=>{
       const airbrake = new Airbrake();
-      renderResult = render(<Component airbrake={airbrake} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component airbrake={airbrake} traitify={traitify} />);
 
       expect(Airbrake.mock.instances).toHaveLength(1);
     });
 
     it("catches errors", ()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
-      renderResult._component.componentDidCatch();
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.componentDidCatch();
 
-      expect(getComponent().props.airbrake.notify).toHaveBeenCalled();
+      expect(getDummyComponent().props.airbrake.notify).toHaveBeenCalled();
     });
 
     describe("filters errors", ()=>{
@@ -127,8 +114,8 @@ describe("withTraitify", ()=>{
       });
 
       beforeEach(()=>{
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        filter = getComponent().props.airbrake.addFilter.mock.calls[0][0];
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        filter = getDummyComponent().props.airbrake.addFilter.mock.calls[0][0];
       });
 
       afterAll(()=>{
@@ -183,45 +170,45 @@ describe("withTraitify", ()=>{
     });
 
     it("passes prop", ()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.cache).toBeDefined();
+      expect(getDummyComponent().props.cache).toBeDefined();
     });
 
     it("passes through prop", ()=>{
       const cache = {get: ()=>{}, set: ()=>{}};
-      renderResult = render(<Component cache={cache} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component cache={cache} traitify={traitify} />);
 
-      expect(getComponent().props.cache).toBe(cache);
+      expect(getDummyComponent().props.cache).toBe(cache);
     });
 
     describe("get", ()=>{
       it("calls getItem", ()=>{
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        getComponent().props.cache.get("abc");
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        getDummyComponent().props.cache.get("abc");
 
         expect(sessionStorage.getItem).toHaveBeenCalledWith("abc");
       });
 
       it("returns json", ()=>{
         sessionStorage.getItem = jest.fn(()=>("{\"id\": \"xyz\"}"));
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        const result = getComponent().props.cache.get("abc");
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        const result = getDummyComponent().props.cache.get("abc");
 
         expect(result).toEqual({id: "xyz"});
       });
 
       it("returns nothing", ()=>{
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        const result = getComponent().props.cache.get("abc");
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        const result = getDummyComponent().props.cache.get("abc");
 
         expect(result).toBeUndefined();
       });
 
       it("catches error", ()=>{
         sessionStorage.getItem = jest.fn(()=>{ throw new SyntaxError(); });
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        const result = getComponent().props.cache.get("abc");
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        const result = getDummyComponent().props.cache.get("abc");
 
         expect(result).toBeUndefined();
       });
@@ -229,16 +216,16 @@ describe("withTraitify", ()=>{
 
     describe("set", ()=>{
       it("calls setItem with json", ()=>{
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        getComponent().props.cache.set("abc", {id: "xyz"});
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        getDummyComponent().props.cache.set("abc", {id: "xyz"});
 
         expect(sessionStorage.setItem).toHaveBeenCalledWith("abc", "{\"id\":\"xyz\"}");
       });
 
       it("catches error", ()=>{
         sessionStorage.setItem = jest.fn(()=>{ throw new SyntaxError(); });
-        renderResult = render(<Component traitify={traitify} />, createElement());
-        const result = getComponent().props.cache.set("abc", {id: "xyz"});
+        component = new ComponentHandler(<Component traitify={traitify} />);
+        const result = getDummyComponent().props.cache.set("abc", {id: "xyz"});
 
         expect(result).toBeUndefined();
       });
@@ -250,8 +237,8 @@ describe("withTraitify", ()=>{
 
     beforeEach(()=>{
       getDeck.mockClear();
-      renderResult = render(<Component traitify={traitify} />, createElement());
-      renderResult._component.updateDeck = function(){
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.updateDeck = function(){
         if(!this.state.deckID){ return; }
 
         getDeck();
@@ -259,21 +246,21 @@ describe("withTraitify", ()=>{
     });
 
     it("gets deck when state gets deckID", ()=>{
-      getComponent().props.followDeck();
-      updateComponent({state: {deck, deckID: deck.id}});
+      getDummyComponent().props.followDeck();
+      component.updateState({deck, deckID: deck.id});
 
       expect(getDeck).toHaveBeenCalled();
     });
 
     it("gets deck if state has deckID", ()=>{
-      updateComponent({state: {deck, deckID: deck.id}});
-      getComponent().props.followDeck();
+      component.updateState({deck, deckID: deck.id});
+      getDummyComponent().props.followDeck();
 
       expect(getDeck).toHaveBeenCalled();
     });
 
     it("doesn't get deck if state doesn't have deckID", ()=>{
-      getComponent().props.followDeck();
+      getDummyComponent().props.followDeck();
 
       expect(getDeck).not.toHaveBeenCalled();
     });
@@ -289,8 +276,8 @@ describe("withTraitify", ()=>{
         get: jest.fn().mockName("get"),
         set: jest.fn().mockName("set")
       };
-      renderResult = render(<Component cache={cache} traitify={traitify} />, createElement());
-      renderResult._component.updateAssessment = function(){
+      component = new ComponentHandler(<Component cache={cache} traitify={traitify} />);
+      component.instance.updateAssessment = function(){
         if(!this.state.assessmentID){ return; }
 
         const key = `${this.state.locale}.assessment.${this.state.assessmentID}`;
@@ -307,19 +294,19 @@ describe("withTraitify", ()=>{
     });
 
     it("requires assessmentID", (done)=>{
-      getComponent().props.getAssessment().then(()=>{
-        const props = getComponent().props;
+      getDummyComponent().props.getAssessment().then(()=>{
+        const props = getDummyComponent().props;
 
-        expect(props.assessment).toBeUndefined();
+        expect(props.assessment).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
         done();
       });
     });
 
     it("checks props", (done)=>{
-      updateComponent({props: {assessment}});
-      getComponent().props.getAssessment().then(()=>{
-        const props = getComponent().props;
+      component.updateProps({assessment});
+      getDummyComponent().props.getAssessment().then(()=>{
+        const props = getDummyComponent().props;
 
         expect(props.assessment).toBe(assessment);
         expect(props.cache.get).not.toHaveBeenCalled();
@@ -328,18 +315,18 @@ describe("withTraitify", ()=>{
     });
 
     it("skips props if no results", (done)=>{
-      updateComponent({props: {assessment: assessmentWithoutResults}});
-      getComponent().props.getAssessment().then(()=>{
-        expect(getComponent().props.cache.get).toHaveBeenCalled();
+      component.updateProps({assessment: assessmentWithoutResults});
+      getDummyComponent().props.getAssessment().then(()=>{
+        expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
         done();
       });
     });
 
     it("checks cache", (done)=>{
       cache.get.mockReturnValue(assessment);
-      updateComponent({props: {assessmentID: assessment.id}});
-      getComponent().props.getAssessment().then(()=>{
-        const props = getComponent().props;
+      component.updateProps({assessmentID: assessment.id});
+      getDummyComponent().props.getAssessment().then(()=>{
+        const props = getDummyComponent().props;
 
         expect(props.assessment).toBe(assessment);
         expect(props.cache.get).toHaveBeenCalled();
@@ -349,18 +336,18 @@ describe("withTraitify", ()=>{
 
     it("skips cache if no results", (done)=>{
       cache.get.mockReturnValue(assessmentWithoutResults);
-      updateComponent({props: {assessmentID: assessmentWithoutResults.id}});
-      getComponent().props.getAssessment().then(()=>{
-        expect(getComponent().props.assessment).not.toBe(assessmentWithoutResults);
+      component.updateProps({assessmentID: assessmentWithoutResults.id});
+      getDummyComponent().props.getAssessment().then(()=>{
+        expect(getDummyComponent().props.assessment).not.toBe(assessmentWithoutResults);
         done();
       });
     });
 
     it("sets cache if results", (done)=>{
       traitify.ajax.mockReturnValue(Promise.resolve(assessment));
-      updateComponent({props: {assessmentID: assessment.id}});
-      getComponent().props.getAssessment().then(()=>{
-        expect(getComponent().props.cache.set).toHaveBeenCalled();
+      component.updateProps({assessmentID: assessment.id});
+      getDummyComponent().props.getAssessment().then(()=>{
+        expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
         done();
       });
     });
@@ -369,8 +356,8 @@ describe("withTraitify", ()=>{
       const key = `en-us.assessment.${assessmentWithoutResults.id}`;
       const request = new Promise(()=>{});
       traitify.ui.requests[key] = request;
-      updateComponent({props: {assessmentID: assessmentWithoutResults.id}});
-      getComponent().props.getAssessment();
+      component.updateProps({assessmentID: assessmentWithoutResults.id});
+      getDummyComponent().props.getAssessment();
 
       expect(traitify.ui.requests[key]).toBe(request);
     });
@@ -379,8 +366,8 @@ describe("withTraitify", ()=>{
       const key = `en-us.assessment.${assessmentWithoutResults.id}`;
       const request = new Promise(()=>{});
       traitify.ui.requests[key] = request;
-      updateComponent({props: {assessmentID: assessmentWithoutResults.id}});
-      getComponent().props.getAssessment({force: true});
+      component.updateProps({assessmentID: assessmentWithoutResults.id});
+      getDummyComponent().props.getAssessment({force: true});
 
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
@@ -388,8 +375,8 @@ describe("withTraitify", ()=>{
     it("catches error with request", (done)=>{
       const key = `en-us.assessment.${assessmentWithoutResults.id}`;
       traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
-      updateComponent({props: {assessmentID: assessmentWithoutResults.id}});
-      getComponent().props.getAssessment().then(()=>{
+      component.updateProps({assessmentID: assessmentWithoutResults.id});
+      getDummyComponent().props.getAssessment().then(()=>{
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
         done();
@@ -407,7 +394,7 @@ describe("withTraitify", ()=>{
         get: jest.fn().mockName("get"),
         set: jest.fn().mockName("set")
       };
-      renderResult = render(<Component cache={cache} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component cache={cache} traitify={traitify} />);
     });
 
     afterEach(()=>{
@@ -415,19 +402,19 @@ describe("withTraitify", ()=>{
     });
 
     it("requires deckID", (done)=>{
-      getParentComponent().getDeck().then(()=>{
-        const props = getComponent().props;
+      component.instance.getDeck().then(()=>{
+        const props = getDummyComponent().props;
 
-        expect(props.deck).toBeUndefined();
+        expect(props.deck).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
         done();
       });
     });
 
     it("checks state", (done)=>{
-      updateComponent({state: {deck, deckID: deck.id}});
-      getParentComponent().getDeck().then(()=>{
-        const props = getComponent().props;
+      component.updateState({deck, deckID: deck.id});
+      component.instance.getDeck().then(()=>{
+        const props = getDummyComponent().props;
 
         expect(props.deck).toBe(deck);
         expect(props.cache.get).not.toHaveBeenCalled();
@@ -436,18 +423,18 @@ describe("withTraitify", ()=>{
     });
 
     it("skips state if no name", (done)=>{
-      updateComponent({state: {deck: deckWithoutName, deckID: deckWithoutName.id}});
-      getParentComponent().getDeck().then(()=>{
-        expect(getComponent().props.cache.get).toHaveBeenCalled();
+      component.updateState({deck: deckWithoutName, deckID: deckWithoutName.id});
+      component.instance.getDeck().then(()=>{
+        expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
         done();
       });
     });
 
     it("checks cache", (done)=>{
       cache.get.mockReturnValue(deck);
-      updateComponent({state: {deckID: deck.id}});
-      getParentComponent().getDeck().then(()=>{
-        const props = getComponent().props;
+      component.updateState({deckID: deck.id});
+      component.instance.getDeck().then(()=>{
+        const props = getDummyComponent().props;
 
         expect(props.deck).toBe(deck);
         expect(props.cache.get).toHaveBeenCalled();
@@ -457,18 +444,18 @@ describe("withTraitify", ()=>{
 
     it("skips cache if no name", (done)=>{
       cache.get.mockReturnValue(deckWithoutName);
-      updateComponent({state: {deckID: deckWithoutName.id}});
-      getParentComponent().getDeck().then(()=>{
-        expect(getComponent().props.deck).not.toBe(deckWithoutName);
+      component.updateState({deckID: deckWithoutName.id});
+      component.instance.getDeck().then(()=>{
+        expect(getDummyComponent().props.deck).not.toBe(deckWithoutName);
         done();
       });
     });
 
     it("sets cache if name", (done)=>{
       traitify.ajax.mockReturnValue(Promise.resolve(deck));
-      updateComponent({state: {deckID: deck.id}});
-      getParentComponent().getDeck().then(()=>{
-        expect(getComponent().props.cache.set).toHaveBeenCalled();
+      component.updateState({deckID: deck.id});
+      component.instance.getDeck().then(()=>{
+        expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
         done();
       });
     });
@@ -476,9 +463,9 @@ describe("withTraitify", ()=>{
     it("sets deck locale if missing", (done)=>{
       const deckWithoutLocale = {id: "big-five", name: "Big Five"};
       traitify.ajax.mockReturnValue(Promise.resolve(deckWithoutLocale));
-      updateComponent({state: {deckID: deckWithoutLocale.id}});
-      getParentComponent().getDeck().then(()=>{
-        expect(getComponent().props.deck.locale_key).toBe(traitify.ui.i18n.locale);
+      component.updateState({deckID: deckWithoutLocale.id});
+      component.instance.getDeck().then(()=>{
+        expect(getDummyComponent().props.deck.locale_key).toBe(traitify.ui.i18n.locale);
         done();
       });
     });
@@ -487,8 +474,8 @@ describe("withTraitify", ()=>{
       const key = `en-us.deck.${deckWithoutName.id}`;
       const request = new Promise(()=>{});
       traitify.ui.requests[key] = request;
-      updateComponent({state: {deckID: deckWithoutName.id}});
-      getParentComponent().getDeck();
+      component.updateState({deckID: deckWithoutName.id});
+      component.instance.getDeck();
 
       expect(traitify.ui.requests[key]).toBe(request);
     });
@@ -497,8 +484,8 @@ describe("withTraitify", ()=>{
       const key = `en-us.deck.${deckWithoutName.id}`;
       const request = new Promise(()=>{});
       traitify.ui.requests[key] = request;
-      updateComponent({state: {deckID: deckWithoutName.id}});
-      getParentComponent().getDeck({force: true});
+      component.updateState({deckID: deckWithoutName.id});
+      component.instance.getDeck({force: true});
 
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
@@ -506,8 +493,8 @@ describe("withTraitify", ()=>{
     it("catches error with request", (done)=>{
       const key = `en-us.deck.${deckWithoutName.id}`;
       traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
-      updateComponent({state: {deckID: deckWithoutName.id}});
-      getParentComponent().getDeck().then(()=>{
+      component.updateState({deckID: deckWithoutName.id});
+      component.instance.getDeck().then(()=>{
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
         done();
@@ -517,223 +504,229 @@ describe("withTraitify", ()=>{
 
   describe("getOption", ()=>{
     it("checks prop", ()=>{
-      renderResult = render(<Component allowBack={true} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component allowBack={true} traitify={traitify} />);
 
-      expect(getComponent().props.getOption("allowBack")).toBe(true);
+      expect(getDummyComponent().props.getOption("allowBack")).toBe(true);
     });
 
     it("prioritizes prop", ()=>{
-      renderResult = render(<Component allowBack={true} options={{allowBack: false}} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component allowBack={true} options={{allowBack: false}} traitify={traitify} />);
 
-      expect(getComponent().props.getOption("allowBack")).toBe(true);
+      expect(getDummyComponent().props.getOption("allowBack")).toBe(true);
     });
 
     it("checks options", ()=>{
-      renderResult = render(<Component options={{allowBack: false}} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component options={{allowBack: false}} traitify={traitify} />);
 
-      expect(getComponent().props.getOption("allowBack")).toBe(false);
+      expect(getDummyComponent().props.getOption("allowBack")).toBe(false);
     });
 
     it("prioritizes options", ()=>{
       traitify.ui.options.allowBack = true;
-      renderResult = render(<Component options={{allowBack: false}} traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component options={{allowBack: false}} traitify={traitify} />);
 
-      expect(getComponent().props.getOption("allowBack")).toBe(false);
+      expect(getDummyComponent().props.getOption("allowBack")).toBe(false);
     });
 
     it("checks traitify ui", ()=>{
       traitify.ui.options.allowBack = true;
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.getOption("allowBack")).toBe(true);
+      expect(getDummyComponent().props.getOption("allowBack")).toBe(true);
     });
 
     it("gives up", ()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.getOption("allowBack")).toBeUndefined();
+      expect(getDummyComponent().props.getOption("allowBack")).toBeUndefined();
     });
   });
 
   describe("i18n", ()=>{
     it("passes locale and translate through traitify", ()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.locale).toBe(traitify.ui.i18n.locale);
-      expect(getComponent().props.translate).toBe(traitify.ui.i18n.translate);
+      expect(getDummyComponent().props.locale).toBe(traitify.ui.i18n.locale);
+      expect(getDummyComponent().props.translate).toBe(traitify.ui.i18n.translate);
     });
 
     it("changes locale", ()=>{
-      traitify.ui.i18n.setLocale = jest.fn().mockName("setLocale");
-      renderResult = render(<Component locale="es-us" traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component locale="es-us" traitify={traitify} />);
 
-      expect(traitify.ui.i18n.setLocale).toHaveBeenCalledWith("es-us");
+      expect(traitify.ui.i18n.locale).toBe("es-us");
+    });
+
+    it("follows locale change", ()=>{
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      traitify.ui.setLocale("es-us");
+
+      expect(component.state.locale).toBe("es-us");
     });
   });
 
   describe("isReady", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
     });
 
     describe("is ready", ()=>{
       beforeEach(()=>{
-        updateComponent({
-          state: {
-            assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
-            deck: {id: "big-five", name: "Big Five"}
-          }
+        component.updateState({
+          assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
+          deck: {id: "big-five", name: "Big Five"}
         });
       });
 
       it("checks deck", ()=>{
-        expect(getComponent().props.isReady("deck")).toBe(true);
+        expect(getDummyComponent().props.isReady("deck")).toBe(true);
       });
 
       it("checks results", ()=>{
-        expect(getComponent().props.isReady("results")).toBe(true);
+        expect(getDummyComponent().props.isReady("results")).toBe(true);
       });
 
       it("checks slides", ()=>{
-        expect(getComponent().props.isReady("slides")).toBe(true);
+        expect(getDummyComponent().props.isReady("slides")).toBe(true);
       });
     });
 
     describe("half ready", ()=>{
       beforeEach(()=>{
-        updateComponent({
-          state: {
-            assessment: {id: "abc"},
-            deck: {id: "big-five"}
-          }
+        component.updateState({
+          assessment: {id: "abc"},
+          deck: {id: "big-five"}
         });
       });
 
       it("checks deck", ()=>{
-        expect(getComponent().props.isReady("deck")).toBe(false);
+        expect(getDummyComponent().props.isReady("deck")).toBe(false);
       });
 
       it("checks results", ()=>{
-        expect(getComponent().props.isReady("results")).toBe(false);
+        expect(getDummyComponent().props.isReady("results")).toBe(false);
       });
 
       it("checks slides", ()=>{
-        expect(getComponent().props.isReady("slides")).toBe(false);
+        expect(getDummyComponent().props.isReady("slides")).toBe(false);
       });
     });
 
     describe("isn't ready", ()=>{
       beforeEach(()=>{
-        renderResult = render(<Component traitify={traitify} />, createElement());
+        component = new ComponentHandler(<Component traitify={traitify} />);
       });
 
       it("checks deck", ()=>{
-        expect(getComponent().props.isReady("deck")).toBe(false);
+        expect(getDummyComponent().props.isReady("deck")).toBe(false);
       });
 
       it("checks results", ()=>{
-        expect(getComponent().props.isReady("results")).toBe(false);
+        expect(getDummyComponent().props.isReady("results")).toBe(false);
       });
 
       it("checks slides", ()=>{
-        expect(getComponent().props.isReady("slides")).toBe(false);
+        expect(getDummyComponent().props.isReady("slides")).toBe(false);
       });
 
       it("checks default", ()=>{
-        expect(getComponent().props.isReady()).toBe(false);
+        expect(getDummyComponent().props.isReady()).toBe(false);
       });
     });
   });
 
   describe("removeListener", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
     });
 
     it("creates listeners object", ()=>{
       const callback = ()=>{};
       const key = "taco";
-      delete getParentComponent().listeners;
-      getParentComponent().addListener(key, callback);
+      delete component.instance.listeners;
+      component.instance.addListener(key, callback);
 
-      expect(getParentComponent().listeners).toBeInstanceOf(Object);
-      expect(getParentComponent().listeners).toMatchObject({[key]: callback});
+      expect(component.instance.listeners).toBeInstanceOf(Object);
+      expect(component.instance.listeners).toMatchObject({[key]: callback});
     });
 
     it("removes listener", ()=>{
-      getParentComponent().listeners = {taco: ()=>{}};
-      getParentComponent().removeListener("taco");
+      component.instance.listeners = {taco: ()=>{}};
+      component.instance.removeListener("taco");
 
-      expect(getParentComponent().listeners).toBeInstanceOf(Object);
-      expect(getParentComponent().listeners.taco).toBeUndefined();
+      expect(component.instance.listeners).toBeInstanceOf(Object);
+      expect(component.instance.listeners.taco).toBeUndefined();
     });
 
     it("leaves other listeners", ()=>{
       const callback = ()=>{};
-      getParentComponent().listeners = {
+      component.instance.listeners = {
         taco: ()=>{},
         otherTaco: callback
       };
-      getParentComponent().removeListener("taco");
+      component.instance.removeListener("taco");
 
-      expect(getParentComponent().listeners.taco).toBeUndefined();
-      expect(getParentComponent().listeners.otherTaco).toBe(callback);
+      expect(component.instance.listeners.taco).toBeUndefined();
+      expect(component.instance.listeners.otherTaco).toBe(callback);
     });
   });
 
   describe("setAssessmentID", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
-      renderResult._component.getAssessment = jest.fn().mockName("getAssessment");
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.getAssessment = jest.fn().mockName("getAssessment");
     });
 
     it("checks assessment prop", ()=>{
-      updateComponent({props: {assessment}});
-      getParentComponent().setAssessmentID();
-      getParentComponent().forceUpdate();
-      const state = getParentComponent().state;
+      component.updateProps({assessment});
+      component.instance.setAssessmentID();
 
-      expect(state.assessmentID).toBe(assessment.id);
+      expect(component.state.assessmentID).toBe(assessment.id);
     });
 
     it("checks assessmentID prop", ()=>{
-      updateComponent({props: {assessmentID: assessment.id}});
-      getParentComponent().setAssessmentID();
-      getParentComponent().forceUpdate();
-      const state = getParentComponent().state;
+      component.updateProps({assessmentID: assessment.id});
+      component.instance.setAssessmentID();
 
-      expect(state.assessmentID).toBe(assessment.id);
+      expect(component.state.assessmentID).toBe(assessment.id);
     });
 
     it("gives up", ()=>{
-      getParentComponent().setAssessmentID();
-      getParentComponent().forceUpdate();
-      const state = getParentComponent().state;
+      component.instance.setAssessmentID();
 
-      expect(state.assessmentID).toBeUndefined();
+      expect(component.state.assessmentID).toBeNull();
     });
   });
 
   describe("traitify", ()=>{
+    let originalError;
+
+    beforeEach(()=>{
+      // Required to hide console.error from React
+      originalError = console.error;
+      console.error = jest.fn().mockName("error");
+    });
+
     afterEach(()=>{
       delete window.Traitify;
+
+      console.error = originalError;
     });
 
     it("passes through prop", ()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.traitify).toBe(traitify);
+      expect(getDummyComponent().props.traitify).toBe(traitify);
     });
 
     it("passes through window", ()=>{
       window.Traitify = traitify;
-      renderResult = render(<Component />, createElement());
+      component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getComponent().props.traitify).toBe(window.Traitify);
+      expect(getDummyComponent().props.traitify).toBe(window.Traitify);
     });
 
     it("errors without traitify", ()=>{
-      const renderComponent = ()=>{ render(<Component />, createElement()); };
+      const renderComponent = ()=>{ new ComponentHandler(<Component />); };
 
       expect(renderComponent).toThrow("Traitify must be passed as a prop or attached to window");
     });
@@ -741,119 +734,109 @@ describe("withTraitify", ()=>{
 
   describe("updateAssessment", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
-      renderResult._component.componentDidUpdate = jest.fn().mockName("componentDidUpdate");
-      renderResult._component.getAssessment = jest.fn().mockName("getAssessment");
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.componentDidUpdate = jest.fn().mockName("componentDidUpdate");
+      component.instance.getAssessment = jest.fn().mockName("getAssessment");
     });
 
     it("removes old listener if assessment changes", ()=>{
       const key = `en-us.assessment.${assessmentWithoutResults.id}`;
-      const parentComponent = getParentComponent();
-      parentComponent.removeListener = jest.fn().mockName("removeListener");
-      parentComponent.updateAssessment({oldID: assessmentWithoutResults.id});
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateAssessment({oldID: assessmentWithoutResults.id});
 
-      expect(parentComponent.removeListener).toHaveBeenCalledWith(key);
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
     });
 
     it("removes old listener if locale changes", ()=>{
       const key = `es-us.assessment.${assessmentWithoutResults.id}`;
-      const parentComponent = getParentComponent();
-      updateComponent({state: {assessmentID: assessment.id}});
-      parentComponent.removeListener = jest.fn().mockName("removeListener");
-      parentComponent.updateAssessment({oldLocale: "es-us"});
+      component.updateState({assessmentID: assessment.id});
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateAssessment({oldLocale: "es-us"});
 
-      expect(parentComponent.removeListener).toHaveBeenCalledWith(key);
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
     });
 
     it("adds new listener", ()=>{
-      const parentComponent = getParentComponent();
-      updateComponent({state: {assessmentID: assessment.id}});
-      parentComponent.addListener = jest.fn().mockName("addListener");
-      parentComponent.updateAssessment();
+      component.updateState({assessmentID: assessment.id});
+      component.instance.addListener = jest.fn().mockName("addListener");
+      component.instance.updateAssessment();
 
-      expect(parentComponent.addListener).toHaveBeenCalled();
+      expect(component.instance.addListener).toHaveBeenCalled();
     });
 
     it("gets assessment if no current value", ()=>{
-      const parentComponent = getParentComponent();
-      updateComponent({state: {assessmentID: assessment.id}});
-      parentComponent.setState = jest.fn().mockName("setState");
-      parentComponent.updateAssessment();
+      component.updateState({assessmentID: assessment.id});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateAssessment();
 
-      expect(parentComponent.getAssessment).toHaveBeenCalled();
-      expect(parentComponent.setState).not.toHaveBeenCalled();
+      expect(component.instance.getAssessment).toHaveBeenCalled();
+      expect(component.instance.setState).not.toHaveBeenCalled();
     });
 
     it("uses current value", ()=>{
       const key = `en-us.assessment.${assessment.id}`;
-      const parentComponent = getParentComponent();
       traitify.ui.current[key] = [{}, assessment];
-      updateComponent({state: {assessmentID: assessment.id}});
-      parentComponent.setState = jest.fn().mockName("setState");
-      parentComponent.updateAssessment();
+      component.updateState({assessmentID: assessment.id});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateAssessment();
 
-      expect(parentComponent.setState).toHaveBeenCalled();
-      expect(parentComponent.getAssessment).not.toHaveBeenCalled();
+      expect(component.instance.setState).toHaveBeenCalled();
+      expect(component.instance.getAssessment).not.toHaveBeenCalled();
     });
   });
 
   describe("updateDeck", ()=>{
     beforeEach(()=>{
-      renderResult = render(<Component traitify={traitify} />, createElement());
-      renderResult._component.componentDidUpdate = jest.fn().mockName("componentDidUpdate");
-      renderResult._component.getDeck = jest.fn().mockName("getDeck");
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.componentDidUpdate = jest.fn().mockName("componentDidUpdate");
+      component.instance.getDeck = jest.fn().mockName("getDeck");
     });
 
     it("removes old listener if deck changes", ()=>{
       const key = `en-us.deck.${deck.id}`;
-      const parentComponent = getParentComponent();
-      parentComponent.removeListener = jest.fn().mockName("removeListener");
-      parentComponent.updateDeck({oldID: deck.id});
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateDeck({oldID: deck.id});
 
-      expect(parentComponent.removeListener).toHaveBeenCalledWith(key);
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
     });
 
     it("removes old listener if locale changes", ()=>{
       const key = `es-us.deck.${deck.id}`;
-      const parentComponent = getParentComponent();
-      updateComponent({state: {deckID: deck.id}});
-      parentComponent.removeListener = jest.fn().mockName("removeListener");
-      parentComponent.updateDeck({oldLocale: "es-us"});
+      component.updateState({deckID: deck.id});
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateDeck({oldLocale: "es-us"});
 
-      expect(parentComponent.removeListener).toHaveBeenCalledWith(key);
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
     });
 
     it("adds new listener", ()=>{
-      const parentComponent = getParentComponent();
-      updateComponent({state: {deckID: deck.id}});
-      parentComponent.addListener = jest.fn().mockName("addListener");
-      parentComponent.removeListener = jest.fn().mockName("removeListener");
-      parentComponent.updateDeck();
+      component.updateState({deckID: deck.id});
+      component.instance.addListener = jest.fn().mockName("addListener");
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateDeck();
 
-      expect(parentComponent.removeListener).not.toHaveBeenCalled();
-      expect(parentComponent.addListener).toHaveBeenCalled();
+      expect(component.instance.removeListener).not.toHaveBeenCalled();
+      expect(component.instance.addListener).toHaveBeenCalled();
     });
 
     it("gets deck if no current value", ()=>{
-      const parentComponent = getParentComponent();
-      updateComponent({state: {deckID: deck.id}});
-      parentComponent.setState = jest.fn().mockName("setState");
-      parentComponent.updateDeck();
+      component.updateState({deckID: deck.id});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateDeck();
 
-      expect(parentComponent.getDeck).toHaveBeenCalled();
-      expect(parentComponent.setState).not.toHaveBeenCalled();
+      expect(component.instance.getDeck).toHaveBeenCalled();
+      expect(component.instance.setState).not.toHaveBeenCalled();
     });
 
     it("uses current value", ()=>{
       const key = `en-us.deck.${deck.id}`;
-      const parentComponent = getParentComponent();
       traitify.ui.current[key] = [{}, deck];
-      updateComponent({state: {deckID: deck.id}});
-      parentComponent.setState = jest.fn().mockName("setState");
-      parentComponent.updateDeck();
+      component.updateState({deckID: deck.id});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateDeck();
 
-      expect(parentComponent.setState).toHaveBeenCalled();
-      expect(parentComponent.getDeck).not.toHaveBeenCalled();
+      expect(component.instance.setState).toHaveBeenCalled();
+      expect(component.instance.getDeck).not.toHaveBeenCalled();
     });
   });
 });

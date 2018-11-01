@@ -1,22 +1,19 @@
 import {faRocket} from "@fortawesome/free-solid-svg-icons";
-import renderJSON from "preact-render-to-json";
 import Icon from "lib/helpers/icon";
-import {createElement, domHooks} from "support/dom";
+import ComponentHandler from "support/component-handler";
 
 describe("Helpers", ()=>{
-  domHooks();
-
   describe("Icon", ()=>{
     it("renders icon", ()=>{
-      const tree = renderJSON(<Icon icon={faRocket} />, createElement());
+      const component = new ComponentHandler(<Icon icon={faRocket} />);
 
-      expect(tree).toMatchSnapshot();
+      expect(component.tree).toMatchSnapshot();
     });
 
     it("renders props", ()=>{
-      const tree = renderJSON(<Icon icon={faRocket} class="rocket" />, createElement());
+      const component = new ComponentHandler(<Icon icon={faRocket} class="rocket" />);
 
-      expect(tree.props.class).toEqual("rocket");
+      expect(component.tree.props.class).toEqual("rocket");
     });
   });
 });

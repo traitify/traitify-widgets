@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityTrait from "../personality-trait";
 import style from "./style";
@@ -11,19 +11,19 @@ class PersonalityTraits extends Component{
     this.props.traitify.ui.trigger("PersonalityTraits.updated", this);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     const traits = this.props.assessment.personality_traits;
 
     return (
-      <div class={style.traits}>
-        <h4 class={style.title}>{this.props.translate("most_represented_traits")}</h4>
+      <div className={style.traits}>
+        <h4 className={style.title}>{this.props.translate("most_represented_traits")}</h4>
         {traits.slice(0, 5).map((trait)=>(
-          <PersonalityTrait trait={trait} {...this.props} />
+          <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...this.props} />
         ))}
-        <h4 class={style.title}>{this.props.translate("least_represented_traits")}</h4>
+        <h4 className={style.title}>{this.props.translate("least_represented_traits")}</h4>
         {traits.slice(-5).map((trait)=>(
-          <PersonalityTrait trait={trait} {...this.props} />
+          <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...this.props} />
         ))}
       </div>
     );

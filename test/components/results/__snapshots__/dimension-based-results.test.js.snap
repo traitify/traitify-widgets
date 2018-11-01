@@ -3,32 +3,32 @@
 exports[`DimensionBasedResults renders results 1`] = `
 <section>
   <div
-    class="mock"
+    className="mock"
   >
     Radar
   </div>
   <div
-    class="mock"
+    className="mock"
   >
     Personality Types
   </div>
   <div
-    class="mock"
+    className="mock"
   >
     Personality Heading
   </div>
   <div
-    class="mock"
+    className="mock"
   >
     Personality Details
   </div>
   <div
-    class="mock"
+    className="mock"
   >
     Dimensions
   </div>
   <div
-    class="mock"
+    className="mock"
   >
     Personality Traits
   </div>

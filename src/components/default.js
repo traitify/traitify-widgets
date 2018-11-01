@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import Results from "./results";
 import SlideDeck from "./slide-deck";

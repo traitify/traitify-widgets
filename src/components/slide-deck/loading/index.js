@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import style from "./style.scss";
 
 export default class Loading extends Component{
@@ -6,17 +6,17 @@ export default class Loading extends Component{
     const {imageLoadAttempts, retry, translate} = this.props;
 
     return (
-      <div class={style.cover}>
-        <div class={style.loading}>
+      <div className={style.cover}>
+        <div className={style.loading}>
           {imageLoadAttempts[imageLoadAttempts.length - 1] >= 10 ? (
-            <div class={style.retry}>
-              <div class={style.label}>{translate("slide_error")}</div>
-              <button class={style.link} onClick={retry} type="button">
+            <div className={style.retry}>
+              <div className={style.label}>{translate("slide_error")}</div>
+              <button className={style.link} onClick={retry} type="button">
                 {translate("try_again")}
               </button>
             </div>
           ):(
-            <div class={style.symbol}>
+            <div className={style.symbol}>
               <i />
               <i />
             </div>

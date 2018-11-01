@@ -1,7 +1,5 @@
-import {render} from "preact";
-import renderJSON from "preact-render-to-json";
 import {Component} from "components/slide-deck";
-import {createElement, domHooks} from "support/dom";
+import ComponentHandler from "support/component-handler";
 import Traitify from "support/traitify";
 
 jest.mock("lib/with-traitify");
@@ -26,8 +24,6 @@ describe("SlideDeck", ()=>{
     getOption: jest.fn().mockName("getAssessment"),
     isReady: ()=>(true)
   };
-
-  domHooks();
 
   beforeEach(()=>{
     defaultProps.cache.get.mockClear();
@@ -72,37 +68,35 @@ describe("SlideDeck", ()=>{
   });
 
   it("renders current slide", ()=>{
-    // const tree = renderJSON(<Component {...defaultProps} />, createElement());
-    renderJSON(<Component {...defaultProps} />, createElement());
+    // const component = new ComponentHandler(<Component {...defaultProps} />);
 
-    // expect(tree).toMatchSnapshot();
+    // expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if not ready", ()=>{
-    const element = createElement();
     const props = {...defaultProps};
     props.assessment = assessmentWithoutSlides;
-    render(<Component {...props} />, element);
+    const component = new ComponentHandler(<Component {...props} />);
 
-    expect(element.innerHTML).toEqual("");
+    expect(component.tree).toMatchSnapshot();
   });
 
   it("triggers initialization callback", ()=>{
     const props = {...defaultProps};
     props.traitify.ui.trigger = jest.fn().mockName("trigger");
-    render(<Component {...props} />, createElement());
+    new ComponentHandler(<Component {...props} />);
 
-    expect(defaultProps.traitify.ui.trigger).toBeCalled();
+    expect(props.traitify.ui.trigger).toBeCalled();
   });
 
   it("normalizes time taken", ()=>{
-    const renderResult = render(<Component {...defaultProps} />, createElement());
-    const component = renderResult._component;
-    component.state.slides = Array.from({length: 20}).map((_, i)=>(createSlide(i, true)));
-    component.state.slides[0].response = true;
-    component.state.slides[0].time_taken = -100;
+    const component = new ComponentHandler(<Component {...defaultProps} />);
+    const slides = Array.from({length: 20}).map((_, i)=>(createSlide(i, true)));
+    slides[0].response = true;
+    slides[0].time_taken = -100;
+    component.updateState({slides});
 
-    const badSlides = component.completedSlides().filter((slide)=>(slide.time_taken < 0));
+    const badSlides = component.instance.completedSlides().filter((slide)=>(slide.time_taken < 0));
 
     expect(badSlides).toHaveLength(0);
   });

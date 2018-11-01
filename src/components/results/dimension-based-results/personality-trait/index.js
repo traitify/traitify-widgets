@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
@@ -16,13 +16,13 @@ class PersonalityTrait extends Component{
     const color = `#${type.badge.color_1}`;
 
     return (
-      <div class={style.trait} style={`background: ${rgba(color, 8.5)};`}>
-        <div class={style.bar} style={`width: 100%; background: ${color};`} />
-        <div class={style.content}>
-          <img src={type.badge.image_medium} alt={type.name} class={style.icon} />
-          <h3 class={style.name}>
+      <div className={style.trait} style={{background: rgba(color, 8.5)}}>
+        <div className={style.bar} style={{width: "100%", background: color}} />
+        <div className={style.content}>
+          <img src={type.badge.image_medium} alt={type.name} className={style.icon} />
+          <h3 className={style.name}>
             {trait.name}
-            <span class={style.description}>{trait.definition}</span>
+            <span className={style.description}>{trait.definition}</span>
           </h3>
         </div>
       </div>

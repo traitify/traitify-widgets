@@ -1,6 +1,5 @@
-import renderJSON from "preact-render-to-json";
 import Component from "components/results/dimension-based-results";
-import {createElement, domHooks} from "support/dom";
+import ComponentHandler from "support/component-handler";
 
 jest.mock("lib/with-traitify");
 jest.mock("components/results/dimension-based-results/radar", ()=>(()=>(<div className="mock">Radar</div>)));
@@ -11,11 +10,9 @@ jest.mock("components/results/dimension-based-results/dimensions", ()=>(()=>(<di
 jest.mock("components/results/dimension-based-results/personality-traits", ()=>(()=>(<div className="mock">Personality Traits</div>)));
 
 describe("DimensionBasedResults", ()=>{
-  domHooks();
-
   it("renders results", ()=>{
-    const tree = renderJSON(<Component />, createElement());
+    const component = new ComponentHandler(<Component />);
 
-    expect(tree).toMatchSnapshot();
+    expect(component.tree).toMatchSnapshot();
   });
 });

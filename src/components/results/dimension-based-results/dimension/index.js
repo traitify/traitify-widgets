@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
@@ -44,36 +44,36 @@ class Dimension extends Component{
     });
 
     return (
-      <li class={style.dimension}>
-        <div class={style.main} style={`background: ${rgba(color, 8.5)};border-left: 5px solid ${color};`}>
-          <div class={style.side}>
-            <p class={style.icon}>
+      <li className={style.dimension}>
+        <div className={style.main} style={{background: rgba(color, 8.5), borderLeft: `5px solid ${color}`}}>
+          <div className={style.side}>
+            <p className={style.icon}>
               <img src={type.badge.image_medium} alt="" role="presentation" ariahidden="true" />
             </p>
           </div>
-          <div class={style.content}>
-            <h2 class={style.title}>{type.name} <span style={`color: ${color}`}>|</span> {this.props.type.score} - {type.level}</h2>
-            <p class={style.description}>{this.description("short_description")}</p>
-            <p class={style.triggerButton}><a class={style.trigger} style={`background: ${rgba(color, 30)}`} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
+          <div className={style.content}>
+            <h2 className={style.title}>{type.name} <span style={{color}}>|</span> {this.props.type.score} - {type.level}</h2>
+            <p className={style.description}>{this.description("short_description")}</p>
+            <p className={style.triggerButton}><a className={style.trigger} style={{background: rgba(color, 30)}} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
           </div>
         </div>
         {this.state.showContent &&
-          <div class={style.details}>
-            <div class={style.content} style={`background: ${rgba(color, 30)}`}>
-              <div class={style.extendedDesc}>
+          <div className={style.details}>
+            <div className={style.content} style={{background: rgba(color, 30)}}>
+              <div className={style.extendedDesc}>
                 <h3>{this.props.translate("extended_description")}</h3>
-                <p class={style.description}>{this.description("description")}</p>
+                <p className={style.description}>{this.description("description")}</p>
               </div>
-              <div class={style.detail}>
-                <h4 class={style.benefits}>{this.props.translate("potential_benefits")}</h4>
+              <div className={style.detail}>
+                <h4 className={style.benefits}>{this.props.translate("potential_benefits")}</h4>
                 <ul>
-                  {benefits.map((benefit)=>(<li>{benefit}</li>))}
+                  {benefits.map((benefit)=>(<li key={benefit}>{benefit}</li>))}
                 </ul>
               </div>
-              <div class={style.detail}>
-                <h4 class={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h4>
+              <div className={style.detail}>
+                <h4 className={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h4>
                 <ul>
-                  {pitfalls.map((pitfall)=>(<li>{pitfall}</li>))}
+                  {pitfalls.map((pitfall)=>(<li key={pitfall}>{pitfall}</li>))}
                 </ul>
               </div>
             </div>

@@ -2,7 +2,7 @@ import {
   faCheckSquare,
   faSquare
 } from "@fortawesome/free-solid-svg-icons";
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import Icon from "lib/helpers/icon";
 import style from "./style";
@@ -11,7 +11,10 @@ class CareerFilter extends Component{
   constructor(props){
     super(props);
 
-    this.state = {params: {}};
+    this.state = {
+      params: {},
+      showFilters: false
+    };
   }
   componentDidMount(){
     this.props.traitify.ui.trigger("CareerFilter.initialized", this);
@@ -64,7 +67,8 @@ class CareerFilter extends Component{
     const value = +e.target.value;
     const defaultLevels = this.careerOption("experienceLevels") || [1, 2, 3, 4, 5];
     let params = {...this.state.params};
-    let levels = params.experience_levels || defaultLevels;
+    let levels = params.experience_levels;
+    levels = levels ? levels.split(",").map((level)=>(+level)) : defaultLevels;
 
     if(levels.includes(value)){
       levels = levels.filter((l)=>(l !== value));
@@ -73,7 +77,7 @@ class CareerFilter extends Component{
       levels.push(value);
     }
 
-    params.experience_levels = levels.sort();
+    params.experience_levels = levels.sort().join(",");
 
     this.setState({params});
   }
@@ -88,7 +92,7 @@ class CareerFilter extends Component{
     return false;
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     const {params, showFilters} = this.state;
     const {translate} = this.props;
@@ -98,40 +102,40 @@ class CareerFilter extends Component{
     const currentSearch = params.search || "";
 
     return (
-      <div class={style.container}>
+      <div className={style.container}>
         <form onSubmit={this.onSubmit}>
           <ul>
-            <li class={style.search}>
-              <label class={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
-              <input class={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange}/>
+            <li className={style.search}>
+              <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
+              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange}/>
             </li>
             <li onClick={this.toggleFilters}>
-              <div class={`${style.fieldGroup} ${style.field}`}>
+              <div className={`${style.fieldGroup} ${style.field}`}>
                 <i>{translate("filter")}</i>
-                <ul class={`${style.formGroup} ${showFilters ? style.block : ""}`}>
+                <ul className={`${style.formGroup} ${showFilters ? style.block : ""}`}>
                   <div>
-                    <li class={style.groupTitle}>{translate("sort")}</li>
+                    <li className={style.groupTitle}>{translate("sort")}</li>
                     <li>
                       <label htmlFor="traitify-career-sort-match">
-                        <input aria-labelledby="traitify-career-sort-match-label" checked={currentSort === "match"} class={style.check} id="traitify-career-sort-match" name="sort" type="radio" onChange={this.onChange} value="match" />
+                        <input aria-labelledby="traitify-career-sort-match-label" checked={currentSort === "match"} className={style.check} id="traitify-career-sort-match" name="sort" type="radio" onChange={this.onChange} value="match" />
                         <Icon icon={currentSort === "match" ? faCheckSquare : faSquare} />
                         <span id="traitify-career-sort-match-label">{translate("best_match")}</span>
                       </label>
                     </li>
                     <li>
                       <label htmlFor="traitify-career-sort-title">
-                        <input aria-labelledby="traitify-career-sort-title-label" checked={currentSort === "title"} class={style.check} id="traitify-career-sort-title" name="sort" type="radio" onChange={this.onChange} value="title" />
+                        <input aria-labelledby="traitify-career-sort-title-label" checked={currentSort === "title"} className={style.check} id="traitify-career-sort-title" name="sort" type="radio" onChange={this.onChange} value="title" />
                         <Icon icon={currentSort === "title" ? faCheckSquare : faSquare} />
                         <span id="traitify-career-sort-title-label">{translate("title")}</span>
                       </label>
                     </li>
                   </div>
                   <div>
-                    <li class={style.groupTitle}>{translate("experience_level")}</li>
+                    <li className={style.groupTitle}>{translate("experience_level")}</li>
                     {experienceLevels.map((level)=>(
-                      <li>
+                      <li key={level}>
                         <label htmlFor={`traitify-career-level-${level}`}>
-                          <input aria-labelledby={`traitify-career-level-${level}-label`} checked={currentExperienceLevels.includes(level)} class={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
+                          <input aria-labelledby={`traitify-career-level-${level}-label`} checked={currentExperienceLevels.includes(level)} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
                           <Icon icon={currentExperienceLevels.includes(level) ? faCheckSquare : faSquare} />
                           <span id={`traitify-career-level-${level}-label`}>{translate(`experience_level_${level}`)}</span>
                         </label>

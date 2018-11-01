@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import Radar from "./radar";
 import PersonalityTypes from "./personality-types";
 import PersonalityHeading from "./personality-heading";

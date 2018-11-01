@@ -1,14 +1,17 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityTypeSlide extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {activeType: null};
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTypeSlide.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
-    });
+    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
 
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
@@ -16,12 +19,18 @@ class PersonalityTypeSlide extends Component{
   componentDidUpdate(){
     this.props.traitify.ui.trigger("PersonalityTypeSlide.updated", this);
   }
+  componentWillUnmount(){
+    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+  }
+  getActiveType = ()=>{
+    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+  }
   render(){
     const {activeType} = this.state;
     const type = this.props.type.personality_type;
 
-    if(!activeType){ return; }
-    if(type.id !== activeType.personality_type.id){ return; }
+    if(!activeType){ return null; }
+    if(type.id !== activeType.personality_type.id){ return null; }
 
     const color = `#${type.badge.color_1}`;
     const position = "middle";
@@ -44,8 +53,8 @@ class PersonalityTypeSlide extends Component{
     }
 
     return (
-      <li class={`${style.slide} ${style[position]}`} style={`background: ${rgba(color, 8.5)};`}>
-        <span class={style.title} style={`color: ${color}`}>{name}</span>
+      <li className={`${style.slide} ${style[position]}`} style={{background: rgba(color, 8.5)}}>
+        <span className={style.title} style={{color}}>{name}</span>
         {description}
       </li>
     );

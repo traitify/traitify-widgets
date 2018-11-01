@@ -7,12 +7,14 @@
   </head>
   <body>
     <div id="slide-deck"></div>
-    <div id="careers"></div>
     <div id="results"></div>
+    <div id="careers"></div>
     <script src="/build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
+
+      var widget;
 
       function createWidget(){
         Traitify.ui.on("CareerModal.updated", function(context){
@@ -20,7 +22,7 @@
           context.customContent.appendChild(document.createTextNode("I am custom content"));
         });
 
-        var widget = Traitify.ui.component();
+        widget = Traitify.ui.component();
         widget.locale(localStorage.getItem("locale") || "en-us").assessmentID(localStorage.getItem("assessment-id"));
         widget
           .allowBack()
@@ -58,35 +60,43 @@
         localStorage.setItem("locale", document.querySelector("#locale").value);
       }
 
+      function destroyWidget(){
+        if(widget){ widget.destroy(); }
+      }
+
       if(localStorage.getItem("assessment-id")){
         createWidget();
       }
     </script>
 
-    <br/>
-    <br/>
-    <select id="deck-name">
-      <option value="big-five">Big Five</option>
-      <option value="career-deck">Career Deck</option>
-      <option value="perseverance">Perseverance</option>
-      <option value="persuasion">Persuasion</option>
-    </select>
-
-    <button onclick="createAssessment()">New Assessment</button>
-    <br/>
-    <br/>
-    <select id="locale">
-      <option value="ht-us">Creole</option>
-      <option value="nl-nl">Dutch</option>
-      <option value="en-us" selected>English</option>
-      <option value="en-gb">English (GB)</option>
-      <option value="fr-ca">French (Canadian)</option>
-      <option value="fr-fr">French (France)</option>
-      <option value="no-no">Norwegian</option>
-      <option value="es-us">Spanish</option>
-      <option value="sv-se">Swedish</option>
-    </select>
-
-    <button onclick="changeLocale()">Change Locale</button>
+    <style>
+      .row { margin: 15px; }
+    </style>
+    <div class="row">
+      <select id="deck-name">
+        <option value="big-five">Big Five</option>
+        <option value="career-deck">Career Deck</option>
+        <option value="perseverance">Perseverance</option>
+        <option value="persuasion">Persuasion</option>
+      </select>
+      <button onclick="createAssessment()">New Assessment</button>
+    </div>
+    <div class="row">
+      <select id="locale">
+        <option value="ht-us">Creole</option>
+        <option value="nl-nl">Dutch</option>
+        <option value="en-us" selected>English</option>
+        <option value="en-gb">English (GB)</option>
+        <option value="fr-ca">French (Canadian)</option>
+        <option value="fr-fr">French (France)</option>
+        <option value="no-no">Norwegian</option>
+        <option value="es-us">Spanish</option>
+        <option value="sv-se">Swedish</option>
+      </select>
+      <button onclick="changeLocale()">Change Locale</button>
+    </div>
+    <div class="row">
+      <button onclick="destroyWidget()">Destroy Widget</button>
+    </div>
   </body>
 </html>

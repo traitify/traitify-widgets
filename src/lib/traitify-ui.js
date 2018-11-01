@@ -12,8 +12,8 @@ export default class TraitifyUI{
       imageHost: "https://images.traitify.com",
       ...options
     };
-    this.callbacks = {};
     this.current = {};
+    this.callbacks = {};
     this.requests = {};
   }
   component(options = {}){
@@ -23,7 +23,7 @@ export default class TraitifyUI{
     const key = _key.toLowerCase();
 
     this.callbacks[key] = this.callbacks[key] || [];
-    this.callbacks[key] = this.callbacks[key].filter((_callback)=>(callback !== _callback));
+    this.callbacks[key] = this.callbacks[key].filter((_callback)=>(_callback !== callback));
 
     if(this.callbacks[key].length === 0){ delete this.callbacks[key]; }
 

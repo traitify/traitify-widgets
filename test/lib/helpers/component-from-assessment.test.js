@@ -1,6 +1,5 @@
-import {render} from "preact";
 import componentFromAssessment from "lib/helpers/component-from-assessment";
-import {createElement, domHooks} from "support/dom";
+import ComponentHandler from "support/component-handler";
 
 jest.mock("lib/with-traitify", ()=>((Component)=>(Component)));
 
@@ -9,21 +8,8 @@ const DimensionComponent = ()=>(<div className="dimension">Personality Types</di
 const typeAssessment = {assessment_type: "TYPE_BASED"};
 const TypeComponent = ()=>(<div className="type">Personality Types</div>);
 
-let renderResult;
-const getComponent = ()=>(renderResult._component);
-const updateComponent = (options)=>{
-  const component = getComponent();
-  const prevProps = {...component.props};
-  const prevState = {...component.state};
-  component.props = {...component.props, ...options.props};
-  component.state = {...component.state, ...options.state};
-  component.componentDidUpdate(prevProps, prevState);
-};
-
 describe("Helpers", ()=>{
   let Component;
-
-  domHooks();
 
   beforeEach(()=>{
     Component = componentFromAssessment({
@@ -34,28 +20,28 @@ describe("Helpers", ()=>{
 
   describe("componentFromAssessment", ()=>{
     it("waits for props", ()=>{
-      renderResult = render(<Component />, createElement());
+      const component = new ComponentHandler(<Component />);
 
-      expect(getComponent().state.component).toBeUndefined();
+      expect(component.state.component).toBeNull();
     });
 
     it("sets dimension component", ()=>{
-      renderResult = render(<Component assessment={dimensionAssessment} />, createElement());
+      const component = new ComponentHandler(<Component assessment={dimensionAssessment} />);
 
-      expect(getComponent().state.component).toEqual(DimensionComponent);
+      expect(component.state.component).toEqual(DimensionComponent);
     });
 
     it("sets type component", ()=>{
-      renderResult = render(<Component assessment={typeAssessment} />, createElement());
+      const component = new ComponentHandler(<Component assessment={typeAssessment} />);
 
-      expect(getComponent().state.component).toEqual(TypeComponent);
+      expect(component.state.component).toEqual(TypeComponent);
     });
 
     it("sets component after update", ()=>{
-      renderResult = render(<Component />, createElement());
-      updateComponent({props: {assessment: typeAssessment}});
+      const component = new ComponentHandler(<Component />);
+      component.updateProps({assessment: typeAssessment});
 
-      expect(getComponent().state.component).toEqual(TypeComponent);
+      expect(component.state.component).toEqual(TypeComponent);
     });
   });
 });

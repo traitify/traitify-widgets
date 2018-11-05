@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import Dimension from "../dimension";
 import style from "./style";
@@ -11,12 +11,12 @@ class Dimensions extends Component{
     this.props.traitify.ui.trigger("Dimensions.updated", this);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     return (
-      <ul class={style.dimensions}>
+      <ul className={style.dimensions}>
         {this.props.assessment.personality_types.map((type, i)=>(
-          <Dimension type={type} index={i} {...this.props} />
+          <Dimension key={type.personality_type.id} type={type} index={i} {...this.props} />
         ))}
       </ul>
     );

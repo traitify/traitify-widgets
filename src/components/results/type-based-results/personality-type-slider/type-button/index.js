@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 
 export default class TypeButton extends Component{
   setActive = (e)=>{
@@ -8,7 +8,7 @@ export default class TypeButton extends Component{
   }
   render(){
     return (
-      <a className={this.props.style} href="#" onClick={this.setActive}>
+      <a className={this.props.className} href="#" onClick={this.setActive}>
         {this.props.children}
       </a>
     );

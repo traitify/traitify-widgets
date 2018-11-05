@@ -1,15 +1,18 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeSlide from "../personality-type-slide";
 import TypeButton from "./type-button";
 import style from "./style";
 
 class PersonalityTypeSlider extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {activeType: null};
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTypeSlider.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
-    });
+    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
 
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
@@ -17,12 +20,18 @@ class PersonalityTypeSlider extends Component{
   componentDidUpdate(){
     this.props.traitify.ui.trigger("PersonalityTypeSlider.updated", this);
   }
+  componentWillUnmount(){
+    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+  }
+  getActiveType = ()=>{
+    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+  }
   setActive = (type)=>{
     this.props.traitify.ui.trigger("PersonalityTypeSlider.changeType", this, type);
     this.props.traitify.ui.trigger("Assessment.activeType", this, type);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     const {activeType} = this.state;
     const {assessment, translate} = this.props;
@@ -36,19 +45,19 @@ class PersonalityTypeSlider extends Component{
     }
 
     return (
-      <div class={style.slider}>
+      <div className={style.slider}>
         {backType && (
-          <TypeButton style={style.back} type={backType} setActive={this.setActive}>
+          <TypeButton className={style.back} type={backType} setActive={this.setActive}>
             <img src="https://cdn.traitify.com/assets/images/js/arrow_left.svg" alt={translate("back")} />
           </TypeButton>
         )}
         <ul>
           {this.props.assessment.personality_types.map((type)=>(
-            <PersonalityTypeSlide type={type} {...this.props} />
+            <PersonalityTypeSlide key={type.personality_type.id} type={type} {...this.props} />
           ))}
         </ul>
         {nextType && (
-          <TypeButton style={style.next} type={nextType} setActive={this.setActive}>
+          <TypeButton className={style.next} type={nextType} setActive={this.setActive}>
             <img src="https://cdn.traitify.com/assets/images/js/arrow_right.svg" alt={translate("next")} />
           </TypeButton>
         )}

@@ -1,4 +1,4 @@
-import {render} from "preact";
+import {render, unmountComponentAtNode} from "react-dom";
 import uuid from "uuid";
 import guessComponent from "lib/helpers/guess-component";
 
@@ -26,6 +26,15 @@ export default class TraitifyWidget{
   }
   assessmentID(assessmentID){
     this.options.assessmentID = assessmentID;
+
+    return this;
+  }
+  destroy(){
+    Object.keys(this.options.targets).forEach(name=>{
+      if(this.options.targets[name] instanceof Element){
+        unmountComponentAtNode(this.options.targets[name]);
+      }
+    });
 
     return this;
   }
@@ -89,7 +98,7 @@ export default class TraitifyWidget{
         const target = this.options.targets[name];
         if(!target){ return reject(`Could not select target for ${name}`); }
 
-        while(target.firstChild){ target.removeChild(target.firstChild); }
+        unmountComponentAtNode(target);
 
         resolve(render(<Component widgetID={this.id} options={this.options} traitify={this.ui.traitify} />, target));
       }));

@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
@@ -10,13 +10,13 @@ class PersonalityDetails extends Component{
     this.props.traitify.ui.trigger("PersonalityDetails.updated", this);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
 
     const details = personality.details;
-    if(!details) return;
+    if(!details){ return null; }
 
     let complement = details.find(d=>d.title === "Complement");
     complement = complement && complement.body;
@@ -25,25 +25,25 @@ class PersonalityDetails extends Component{
     let environments = personality.environments || [];
 
     return (
-      <div class={style.details}>
+      <div className={style.details}>
         {complement && (
-          <div class={style.complements}>
+          <div className={style.complements}>
             <h4>{this.props.translate("complements")}</h4>
             <p>{complement}</p>
           </div>
         )}
         {conflict && (
-          <div class={style.conflicts}>
+          <div className={style.conflicts}>
             <h4>{this.props.translate("conflicts")}</h4>
             <p>{conflict}</p>
           </div>
         )}
         {environments[0] && (
-          <div class={style.environments}>
+          <div className={style.environments}>
             <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
               {environments.map(environment=>(
-                <li>{environment.name}</li>
+                <li key={environment.name}>{environment.name}</li>
               ))}
             </ul>
           </div>

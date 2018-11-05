@@ -12,7 +12,7 @@ import {
   faTimes,
   faQuestion
 } from "@fortawesome/free-solid-svg-icons";
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import Icon from "lib/helpers/icon";
 import style from "./style";
@@ -49,7 +49,7 @@ class CareerModal extends Component{
   render(){
     const {career, show, showLegend} = this.state;
 
-    if(!show || !career){ return; }
+    if(!show || !career){ return null; }
 
     const {translate} = this.props;
     let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
@@ -58,55 +58,55 @@ class CareerModal extends Component{
     growth = growth && `${growth}%`;
 
     return (
-      <div class={`${style.modal} ${style.container}`} role="dialog">
-        <section class={style.modalContainer}>
-          <Icon aria-label={translate("close")} class={style.close} icon={faTimes} onClick={this.close} tabindex="-1" />
-          <div class={style.modalContent}>
-            <img class={style.image} alt={career.title} src={career.picture} />
-            <h2 class={style.title}>{career.title}</h2>
-            <p class={style.description}>{career.description}</p>
+      <div className={`${style.modal} ${style.container}`} role="dialog">
+        <section className={style.modalContainer}>
+          <Icon aria-label={translate("close")} className={style.close} icon={faTimes} onClick={this.close} tabIndex="-1" />
+          <div className={style.modalContent}>
+            <img className={style.image} alt={career.title} src={career.picture} />
+            <h2 className={style.title}>{career.title}</h2>
+            <p className={style.description}>{career.description}</p>
             <hr/>
-            <h3 class={style.heading}><Icon icon={faInfoCircle} /> {translate("career_information")}:</h3>
-            <ul class={style.info}>
+            <h3 className={style.heading}><Icon icon={faInfoCircle} /> {translate("career_information")}:</h3>
+            <ul className={style.info}>
               <li>
                 <h4><Icon icon={faDollarSign} /> {translate("salary_mean")}:</h4>
-                <div class={`${style.infoText} ${style.salary}`}>{salary}</div>
+                <div className={`${style.infoText} ${style.salary}`}>{salary}</div>
               </li>
               <li>
                 <h4><Icon icon={faChartBar} /> {translate("employment_growth")}:</h4>
-                <div class={`${style.infoText} ${style.growth}`}>{growth}</div>
+                <div className={`${style.infoText} ${style.growth}`}>{growth}</div>
               </li>
               <li>
                 <h4><Icon icon={faGraduationCap} /> {translate("education")}:</h4>
-                <div class={`${style.infoText} ${style.education}`}>{translate(`experience_level_${career.experience_level.id}`)}</div>
+                <div className={`${style.infoText} ${style.education}`}>{translate(`experience_level_${career.experience_level.id}`)}</div>
               </li>
             </ul>
-            <ul class={style.info}>
+            <ul className={style.info}>
               <li>
                 <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
-                <div class={style.infoText}>
-                  <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} class={style.check} disabled type="checkbox" readOnly />
+                <div className={style.infoText}>
+                  <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled type="checkbox" readOnly />
                   <Icon icon={career.bright_outlooks.length > 0 ? faCheckSquare : faSquare} />
                 </div>
               </li>
               <li>
                 <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
-                <div class={style.infoText}>
-                  <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} class={style.check} disabled type="checkbox" readOnly />
+                <div className={style.infoText}>
+                  <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} className={style.check} disabled type="checkbox" readOnly />
                   <Icon icon={career.green_categories.length > 0 ? faCheckSquare : faSquare} />
                 </div>
               </li>
               <li>
-                <div class={style.infoText}>
-                  <button class={style.legendToggle} onClick={this.toggleLegend} title={translate("more_information")} type="button">
+                <div className={style.infoText}>
+                  <button className={style.legendToggle} onClick={this.toggleLegend} title={translate("more_information")} type="button">
                     {translate("help")} <Icon icon={faQuestion} />
                   </button>
                 </div>
               </li>
             </ul>
             {showLegend && (
-              <div class={style.legend}>
-                <ul class={style.info}>
+              <div className={style.legend}>
+                <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faDollarSign} /> {translate("salary_mean")}:</h4>
                     <p dangerouslySetInnerHTML={{__html: translate("salary_mean_html")}} />
@@ -120,7 +120,7 @@ class CareerModal extends Component{
                     <p dangerouslySetInnerHTML={{__html: translate("education_html")}} />
                   </li>
                 </ul>
-                <ul class={style.info}>
+                <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
                     <p dangerouslySetInnerHTML={{__html: translate("bright_future_html")}} />
@@ -130,21 +130,21 @@ class CareerModal extends Component{
                     <p dangerouslySetInnerHTML={{__html: translate("green_career_html")}} />
                   </li>
                 </ul>
-                <p class={style.center}>
-                  <button class={style.legendToggle} onClick={this.toggleLegend} title={translate("close")} type="button">{translate("close")}</button>
+                <p className={style.center}>
+                  <button className={style.legendToggle} onClick={this.toggleLegend} title={translate("close")} type="button">{translate("close")}</button>
                 </p>
               </div>
             )}
             <hr/>
-            <h3 class={style.heading}><Icon icon={faGlobeAmericas} /> {translate("experience_level")}</h3>
-            <ol class={style.experience}>
+            <h3 className={style.heading}><Icon icon={faGlobeAmericas} /> {translate("experience_level")}</h3>
+            <ol className={style.experience}>
               {[1, 2, 3, 4, 5].map((level)=>(
-                <li key={level} class={career.experience_level.id >= level ? style.active : ""} />
+                <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
               ))}
             </ol>
             <p>{career.experience_level.experience}</p>
             <hr/>
-            <h3 class={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
+            <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
             <p dangerouslySetInnerHTML={{__html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})}} />
             <div ref={(customContent)=>{ this.customContent = customContent; }} />
           </div>

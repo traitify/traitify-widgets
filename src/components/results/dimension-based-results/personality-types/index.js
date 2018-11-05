@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityType from "../personality-type";
 import style from "./style";
@@ -11,12 +11,12 @@ class Types extends Component{
     this.props.traitify.ui.trigger("PersonalityTypes.updated", this);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     return (
-      <ul class={style.types}>
+      <ul className={style.types}>
         {this.props.assessment.personality_types.map((type)=>(
-          <PersonalityType type={type} {...this.props} />
+          <PersonalityType key={type.personality_type.id} type={type} {...this.props} />
         ))}
       </ul>
     );

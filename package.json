@@ -33,6 +33,9 @@
       "<rootDir>/src/",
       "<rootDir>/test"
     ],
+    "setupFiles": [
+      "<rootDir>/test/support/test-helper.js"
+    ],
     "testURL": "https://www.example.com",
     "transform": {
       "^.+\\.(css|less|scss|sass)$": "<rootDir>/test/support/css-transformer",
@@ -72,7 +75,7 @@
     "mkdirp": "^0.5.1",
     "node-sass": "^4.9.3",
     "postcss-loader": "^2.1.6",
-    "preact-render-to-json": "^3.6.6",
+    "react-test-renderer": "^16.6.0",
     "replace-bundle-webpack-plugin": "^1.0.0",
     "sass-loader": "^7.1.0",
     "simulate-event": "^1.4.0",
@@ -89,9 +92,10 @@
     "airbrake-js": "^1.5.0",
     "babel-polyfill": "^6.26.0",
     "color": "^3.1.0",
-    "preact": "^8.3.1",
-    "preact-markdown": "^0.4.0",
     "query-string": "^5.1.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-markdown": "^4.0.3",
     "uuid": "^3.3.2"
   },
   "dependenciesNotes": {

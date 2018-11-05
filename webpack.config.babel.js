@@ -86,6 +86,7 @@ let config = {
     umdNamedDefine: true
   },
   plugins: [
+    new webpack.ProvidePlugin({"React": "react"}),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(process.env.npm_package_version)
     })

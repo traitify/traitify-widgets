@@ -1,8 +1,13 @@
-import {Component} from "preact";
-import Markdown from "preact-markdown";
+import {Component} from "react";
+import Markdown from "react-markdown";
 import style from "./style";
 
 export default class Slide extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {isFullscreen: false};
+  }
   componentDidUpdate(prevProps){
     const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
     const slideChanged = prevProps.currentIndex !== this.props.currentIndex;
@@ -68,7 +73,7 @@ export default class Slide extends Component{
 
     activeSlides.forEach((slide, index)=>{
       activeSlides[index] = (
-        <div key={slide.id} class={`${style.slide} ${style[slide.orientation]}`}>
+        <div key={slide.id} className={`${style.slide} ${style[slide.orientation]}`}>
           <img src={slide.image} alt={slide.alternative_text} />
         </div>
       );
@@ -76,13 +81,13 @@ export default class Slide extends Component{
 
     if(showInstructions){
       activeSlides.unshift(
-        <div key="instructions" class={`${style.slide} ${style.middle}`}>
-          <div class={style.instructionsSlide}>
-            <div class={style.instructionsText}>
-              <Markdown markdown={instructions} />
+        <div key="instructions" className={`${style.slide} ${style.middle}`}>
+          <div className={style.instructionsSlide}>
+            <div className={style.instructionsText}>
+              <Markdown source={instructions} />
             </div>
-            <div class={style.instructionsStart}>
-              <button class={style.instructionsButton} onClick={start} type="button">
+            <div className={style.instructionsStart}>
+              <button className={style.instructionsButton} onClick={start} type="button">
                 {translate("get_started")} &rarr;
               </button>
             </div>
@@ -101,35 +106,35 @@ export default class Slide extends Component{
     }
 
     return (
-      <div class={style.slideContainer}>
-        <div class={style.captionContainer} tabIndex="0">
-          <div class={style.caption}>
+      <div className={style.slideContainer}>
+        <div className={style.captionContainer} tabIndex="0">
+          <div className={style.caption}>
             {currentSlide.caption}
           </div>
-          <div class={style.progressContainer}>
-            <div class={style.progress} style={{width: `${progress}%`}} />
+          <div className={style.progressContainer}>
+            <div className={style.progress} style={{width: `${progress}%`}} />
           </div>
         </div>
         {activeSlides}
         {!showInstructions && (
-          <div class={style.responseContainer}>
-            <div class={style.buttons}>
-              <button class={style.me} onClick={this.respondMe} type="button">
+          <div className={style.responseContainer}>
+            <div className={style.buttons}>
+              <button className={style.me} onClick={this.respondMe} type="button">
                 {translate("me")}
               </button>
-              <button class={style.notMe} onClick={this.respondNotMe} type="button">
+              <button className={style.notMe} onClick={this.respondNotMe} type="button">
                 {translate("not_me")}
               </button>
             </div>
           </div>
         )}
         {allowBack && (
-          <button class={style.back} onClick={back} type="button">
+          <button className={style.back} onClick={back} type="button">
             <img src="https://cdn.traitify.com/assets/images/js/arrow_left.svg" alt={translate("back")} />
           </button>
         )}
         {allowFullscreen && (
-          <div class={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
+          <div className={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
         )}
       </div>
     );

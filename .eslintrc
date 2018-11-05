@@ -16,11 +16,6 @@
       "modules": true
     }
   },
-  "settings": {
-    "react": {
-      "pragma": "h"
-    }
-  },
   "globals": {
     "sleep": 1
   },
@@ -72,7 +67,6 @@
     "no-var": "error",
     "object-shorthand": "error",
     "prefer-arrow-callback": "error",
-
     "arrow-spacing": ["error", {"before": false, "after": false}],
     "babel/object-curly-spacing": "error",
     "indent": ["error", 2, {"SwitchCase": 1}],

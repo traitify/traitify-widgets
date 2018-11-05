@@ -1,8 +1,8 @@
 import Widget from "lib/traitify-widget";
 import guessComponent from "lib/helpers/guess-component";
-import {render} from "preact";
+import {render, unmountComponentAtNode} from "react-dom";
 
-jest.mock("preact");
+jest.mock("react-dom");
 jest.mock("lib/helpers/guess-component", ()=>(
   jest.fn((name)=>(
     name && name !== "NotFound" && jest.fn(
@@ -75,6 +75,33 @@ describe("Widget", ()=>{
       widget.assessmentID("abc");
 
       expect(widget.options.assessmentID).toBe("abc");
+    });
+  });
+
+  describe("destroy", ()=>{
+    beforeEach(()=>{
+      unmountComponentAtNode.mockClear();
+    });
+
+    it("returns widget", ()=>{
+      const returnValue = widget.destroy();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("ignores invalid targets", ()=>{
+      widget.options.targets = {Default: "#not-found"};
+      widget.destroy();
+
+      expect(unmountComponentAtNode).not.toHaveBeenCalled();
+    });
+
+    it("unmounts targets", ()=>{
+      const div = document.createElement("div");
+      widget.options.targets = {Default: div};
+      widget.destroy();
+
+      expect(unmountComponentAtNode).toHaveBeenCalledWith(div);
     });
   });
 

@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import CareerFilter from "../career-filter";
 import CareerModal from "../career-modal";
@@ -13,10 +13,10 @@ class Careers extends Component{
     this.props.traitify.ui.trigger("Careers.updated", this);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     return (
-      <div class={style.container}>
+      <div className={style.container}>
         <CareerFilter {...this.props} />
         <CareerResults {...this.props} />
         <CareerModal {...this.props} />

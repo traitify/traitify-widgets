@@ -1,4 +1,4 @@
-// import {render} from "preact";
+// import {render} from "react-dom";
 // import {createElement, domHooks} from "support/dom";
 // import Default from "components/default";
 // import Traitify from "support/traitify";

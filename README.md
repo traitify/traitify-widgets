@@ -265,10 +265,6 @@ We expose our JavaScript api client that you can use to make additional calls to
 
 ## Contibuting
 
-Checkout [Preact Boilerplate] to understand some of the tools this repository uses
-
-[Preact Boilerplate]: https://github.com/developit/preact-boilerplate
-
 ### Setup
 
 ```sh
@@ -284,6 +280,5 @@ npm run build
 
 ### Tools in Use
 
+- React: https://reactjs.org
 - Webpack: https://webpack.github.io
-- Preact: https://github.com/developit/preact
-- Preact Compat: https://github.com/developit/preact-compat

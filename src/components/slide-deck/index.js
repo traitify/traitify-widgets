@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import Loading from "./loading";
 import Slide from "./slide";
@@ -205,12 +205,12 @@ class SlideDeck extends Component{
     });
   }
   render(){
-    if(this.props.isReady("results")){ return; }
+    if(this.props.isReady("results")){ return null; }
 
     const isComplete = this.isComplete();
 
     return (
-      <div class={style.widgetContainer} ref={(container)=>{ this.container = container; }}>
+      <div className={style.widgetContainer} ref={(container)=>{ this.container = container; }}>
         {(isComplete || !this.state.ready) ? (
           <Loading imageLoadAttempts={this.state.imageLoadAttempts} retry={this.retry} />
         ):(

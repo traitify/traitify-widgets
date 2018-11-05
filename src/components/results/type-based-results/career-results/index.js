@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import Career from "../career";
 import style from "./style";
@@ -93,22 +93,22 @@ class CareerResults extends Component{
     });
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     const {careers, fetching, moreCareers} = this.state;
     const {translate} = this.props;
 
     return (
-      <div class={style.container}>
-        {careers.map((career)=>(<Career career={{score: career.score, ...career.career}} {...this.props} />))}
-        <p class={style.center}>
+      <div className={style.container}>
+        {careers.map((career)=>(<Career key={career.career.id} career={{score: career.score, ...career.career}} {...this.props} />))}
+        <p className={style.center}>
           {fetching && <span>{translate("loading")}</span>}
           {!fetching && [
             moreCareers && (
-              <button class={style.more} onClick={this.showMore} type="button">{translate("show_more")}</button>
+              <button key="more" className={style.more} onClick={this.showMore} type="button">{translate("show_more")}</button>
             ),
-            (careers.length === 0 && <span>{translate("no_careers")}</span>),
-            (careers.length > 0 && !moreCareers && <span>{translate("no_more_careers")}</span>)
+            (careers.length === 0 && <span key="none">{translate("no_careers")}</span>),
+            (careers.length > 0 && !moreCareers && <span key="done">{translate("no_more_careers")}</span>)
           ]}
         </p>
       </div>

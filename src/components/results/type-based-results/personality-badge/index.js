@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
@@ -14,7 +14,7 @@ class PersonalityBadge extends Component{
     const color = `#${this.props.type.badge.color_1}`;
 
     return (
-      <div class={style.image} style={`border: 3px solid ${color}; background: ${rgba(color, 8.5)};`}>
+      <div className={style.image} style={{border: `3px solid ${color}`, background: rgba(color, 8.5)}}>
         <img alt={this.props.translate("badge")} role="presentation" ariahidden="true" src={this.props.type.badge.image_medium} />
       </div>
     );

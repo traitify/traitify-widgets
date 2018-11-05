@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityBlend from "../personality-blend";
 import PersonalityType from "../personality-type";
@@ -11,7 +11,7 @@ class PersonalityBase extends Component{
     this.props.traitify.ui.trigger("PersonalityBase.updated", this);
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     return this.props.assessment.personality_blend ? (
       <PersonalityBlend {...this.props} />

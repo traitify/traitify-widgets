@@ -1,20 +1,29 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityTypeBar extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {activeType: null};
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", ()=>{
-      this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
-    });
+    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
 
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
     if(activeType){ this.setState({activeType}); }
   }
   componentDidUpdate(){
     this.props.traitify.ui.trigger("PersonalityTypeBar.updated", this);
+  }
+  componentWillUnmount(){
+    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+  }
+  getActiveType = ()=>{
+    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
   }
   setActive = ()=>{
     this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
@@ -35,9 +44,9 @@ class PersonalityTypeBar extends Component{
     }
 
     return (
-      <li class={`${style.bar} ${active ? style.selected : ""}`} onMouseOver={this.setActive} onClick={this.setActive}>
-        <span class={style.score} style={`background: ${color}; height: ${barHeight}%;`}>{score}%</span>
-        <span class={style.label} style={active && `background-color: ${rgba(color, 8.5)}`}>
+      <li className={`${style.bar} ${active ? style.selected : ""}`} onMouseOver={this.setActive} onClick={this.setActive}>
+        <span className={style.score} style={{background: color, height: `${barHeight}%`}}>{score}%</span>
+        <span className={style.label} style={active ? {backgroundColor: rgba(color, 8.5)} : {}}>
           <img src={icon} alt={title} />
           <i>{title}</i>
         </span>

@@ -1,4 +1,4 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeBarChart from "../personality-type-bar-chart";
 import PersonalityTypeSlider from "../personality-type-slider";

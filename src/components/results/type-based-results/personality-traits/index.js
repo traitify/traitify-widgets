@@ -1,9 +1,14 @@
-import {Component} from "preact";
+import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
 class PersonalityTraits extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {showMore: false};
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTraits.initialized", this);
   }
@@ -18,7 +23,7 @@ class PersonalityTraits extends Component{
     this.setState({showMore: !this.state.showMore});
   }
   render(){
-    if(!this.props.isReady("results")){ return; }
+    if(!this.props.isReady("results")){ return null; }
 
     const text = this.props.translate(this.state.showMore ? "show_less" : "show_more");
     let traits = this.props.assessment.personality_traits;
@@ -26,12 +31,12 @@ class PersonalityTraits extends Component{
     if(!this.state.showMore){ traits = traits.slice(0, 8); }
 
     return (
-      <div class={style.traits}>
+      <div className={style.traits}>
         {traits.map((trait)=>(
-          <PersonalityTrait trait={trait} {...this.props} />
+          <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...this.props} />
         ))}
-        <p class={style.center}>
-          <a href="#" class={style.toggle} onClick={this.onClick}>{text}</a>
+        <p className={style.center}>
+          <a href="#" className={style.toggle} onClick={this.onClick}>{text}</a>
         </p>
       </div>
     );

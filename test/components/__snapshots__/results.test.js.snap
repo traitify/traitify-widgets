@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results renders dimension based results 1`] = `
+<div
+  className="mock"
+>
+  Dimension Based
+</div>
+`;
+
+exports[`Results renders nothing if not ready 1`] = `null`;
+
+exports[`Results renders type based results 1`] = `
+<div
+  className="mock"
+>
+  Type Based
+</div>
+`;

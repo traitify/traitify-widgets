@@ -2,14 +2,15 @@ import * as Components from "components";
 import componentFromAssessment from "lib/helpers/component-from-assessment";
 
 export default function guessComponent(name, options = {}){
-  let component = Components[name || "Default"];
+  const component = Components[name || "Default"];
   if(component){ return component; }
 
-  let componentName, componentType;
+  let componentName;
+  let componentType;
   const names = name.split(".");
   if(names.length === 2){
-    componentName = names[1];
-    componentType = `${names[0]}Components`;
+    componentName = names.pop();
+    componentType = `${names.pop()}Components`;
   }else if(options.assessmentType){
     const type = options.assessmentType.slice(0, -6);
 

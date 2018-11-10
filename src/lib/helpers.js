@@ -1,3 +1,9 @@
+export function dangerousProps(_props){
+  const {html, ...props} = _props;
+
+  return {...props, dangerouslySetInnerHTML: {__html: html}};
+}
+
 export function getDisplayName(Component){
   return Component.displayName || Component.name || "Component";
 }

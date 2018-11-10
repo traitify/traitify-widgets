@@ -84,7 +84,7 @@ describe("Client", ()=>{
       client.oldIE = true;
       client.setHost("http://localhost:8080");
 
-      expect(location.protocol).toBe("https:");
+      expect(window.location.protocol).toBe("https:");
       expect(client.host).toBe("https://localhost:8080");
     });
   });

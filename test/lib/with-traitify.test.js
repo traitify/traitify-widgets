@@ -1,3 +1,4 @@
+/* eslint no-console: "off" */
 import "support/anti-airbrake";
 import Airbrake from "airbrake-js";
 import withTraitify from "lib/with-traitify";
@@ -7,21 +8,22 @@ import Traitify from "support/traitify";
 
 jest.mock("airbrake-js");
 jest.mock("lib/helpers", ()=>({
-  getDisplayName: jest.fn((component)=>(component.name)).mockName("getDisplayName"),
+  getDisplayName: jest.fn((component)=>component.name).mockName("getDisplayName"),
   loadFont: jest.fn().mockName("loadFont")
 }));
 
 let component;
-const getDummyComponent = ()=>{
-  return component.renderer.root.findByType(DummyComponent).instance;
-};
+const getDummyComponent = ()=>(
+  component.renderer.root.findByType(DummyComponent).instance
+);
 
 describe("withTraitify", ()=>{
-  const assessment = {id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}]};
+  const assessmentWithResults = {id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}]};
   const assessmentWithoutResults = {id: "abc", locale_key: "en-US", slides: [{name: "Snakes"}]};
   const deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
   const deckWithoutName = {id: "big-five", locale_key: "en-US"};
-  let Component, traitify;
+  let Component;
+  let traitify;
 
   beforeEach(()=>{
     Airbrake.mockClear();
@@ -55,7 +57,10 @@ describe("withTraitify", ()=>{
       component.instance.addListener(otherKey, otherCallback);
 
       expect(component.instance.listeners).toBeInstanceOf(Object);
-      expect(component.instance.listeners).toMatchObject({[key]: callback, [otherKey]: otherCallback});
+      expect(component.instance.listeners).toMatchObject({
+        [key]: callback,
+        [otherKey]: otherCallback
+      });
     });
   });
 
@@ -106,10 +111,12 @@ describe("withTraitify", ()=>{
     });
 
     describe("filters errors", ()=>{
-      let filter, originalLocation;
+      let filter;
+      let originalLocation;
 
       beforeAll(()=>{
         originalLocation = window.location;
+        delete window.location;
         Object.defineProperty(window, "location", {writable: true, value: {}});
       });
 
@@ -157,16 +164,23 @@ describe("withTraitify", ()=>{
 
     beforeAll(()=>{
       originalSessionStorage = window.sessionStorage;
-      Object.defineProperty(window, "sessionStorage", {writable: true, value: {}});
-    });
-
-    afterAll(()=>{
-      Object.defineProperty(window, "sessionStorage", {writable: false, value: originalSessionStorage});
+      delete window.sessionStorage;
+      Object.defineProperty(window, "sessionStorage", {
+        writable: true,
+        value: {
+          getItem: jest.fn().mockName("getItem"),
+          setItem: jest.fn().mockName("setItem")
+        }
+      });
     });
 
     beforeEach(()=>{
-      sessionStorage.getItem = jest.fn().mockName("getItem");
-      sessionStorage.setItem = jest.fn().mockName("setItem");
+      sessionStorage.getItem.mockClear();
+      sessionStorage.setItem.mockClear();
+    });
+
+    afterAll(()=>{
+      Object.defineProperty(window, "sessionStorage", {writable: true, value: originalSessionStorage});
     });
 
     it("passes prop", ()=>{
@@ -191,7 +205,7 @@ describe("withTraitify", ()=>{
       });
 
       it("returns json", ()=>{
-        sessionStorage.getItem = jest.fn(()=>("{\"id\": \"xyz\"}"));
+        sessionStorage.getItem.mockReturnValueOnce("{\"id\": \"xyz\"}");
         component = new ComponentHandler(<Component traitify={traitify} />);
         const result = getDummyComponent().props.cache.get("abc");
 
@@ -202,15 +216,15 @@ describe("withTraitify", ()=>{
         component = new ComponentHandler(<Component traitify={traitify} />);
         const result = getDummyComponent().props.cache.get("abc");
 
-        expect(result).toBeUndefined();
+        expect(result).toBeNull();
       });
 
       it("catches error", ()=>{
-        sessionStorage.getItem = jest.fn(()=>{ throw new SyntaxError(); });
+        sessionStorage.getItem.mockImplementationOnce(()=>{ throw new SyntaxError(); });
         component = new ComponentHandler(<Component traitify={traitify} />);
         const result = getDummyComponent().props.cache.get("abc");
 
-        expect(result).toBeUndefined();
+        expect(result).toBeNull();
       });
     });
 
@@ -223,11 +237,11 @@ describe("withTraitify", ()=>{
       });
 
       it("catches error", ()=>{
-        sessionStorage.setItem = jest.fn(()=>{ throw new SyntaxError(); });
+        sessionStorage.setItem.mockImplementationOnce(()=>{ throw new SyntaxError(); });
         component = new ComponentHandler(<Component traitify={traitify} />);
         const result = getDummyComponent().props.cache.set("abc", {id: "xyz"});
 
-        expect(result).toBeUndefined();
+        expect(result).toBeNull();
       });
     });
   });
@@ -267,7 +281,8 @@ describe("withTraitify", ()=>{
   });
 
   describe("getAssessment", ()=>{
-    let cache, originalWarn;
+    let cache;
+    let originalWarn;
 
     beforeEach(()=>{
       originalWarn = console.warn;
@@ -283,7 +298,12 @@ describe("withTraitify", ()=>{
         const key = `${this.state.locale}.assessment.${this.state.assessmentID}`;
 
         this.listeners[key] = (_, assessment)=>{
-          this.setState({assessment, assessmentID: assessment.id, deck: null, deckID: assessment.deck_id});
+          this.setState({
+            assessment,
+            assessmentID: assessment.id,
+            deck: null,
+            deckID: assessment.deck_id
+          });
         };
         this.traitify.ui.on(key, this.listeners[key]);
       };
@@ -295,7 +315,7 @@ describe("withTraitify", ()=>{
 
     it("requires assessmentID", (done)=>{
       getDummyComponent().props.getAssessment().then(()=>{
-        const props = getDummyComponent().props;
+        const {props} = getDummyComponent();
 
         expect(props.assessment).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
@@ -304,11 +324,11 @@ describe("withTraitify", ()=>{
     });
 
     it("checks props", (done)=>{
-      component.updateProps({assessment});
+      component.updateProps({assessment: assessmentWithResults});
       getDummyComponent().props.getAssessment().then(()=>{
-        const props = getDummyComponent().props;
+        const {props} = getDummyComponent();
 
-        expect(props.assessment).toBe(assessment);
+        expect(props.assessment).toBe(assessmentWithResults);
         expect(props.cache.get).not.toHaveBeenCalled();
         done();
       });
@@ -323,12 +343,12 @@ describe("withTraitify", ()=>{
     });
 
     it("checks cache", (done)=>{
-      cache.get.mockReturnValue(assessment);
-      component.updateProps({assessmentID: assessment.id});
+      cache.get.mockReturnValue(assessmentWithResults);
+      component.updateProps({assessmentID: assessmentWithResults.id});
       getDummyComponent().props.getAssessment().then(()=>{
-        const props = getDummyComponent().props;
+        const {props} = getDummyComponent();
 
-        expect(props.assessment).toBe(assessment);
+        expect(props.assessment).toBe(assessmentWithResults);
         expect(props.cache.get).toHaveBeenCalled();
         done();
       });
@@ -344,8 +364,8 @@ describe("withTraitify", ()=>{
     });
 
     it("sets cache if results", (done)=>{
-      traitify.ajax.mockReturnValue(Promise.resolve(assessment));
-      component.updateProps({assessmentID: assessment.id});
+      traitify.ajax.mockReturnValue(Promise.resolve(assessmentWithResults));
+      component.updateProps({assessmentID: assessmentWithResults.id});
       getDummyComponent().props.getAssessment().then(()=>{
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
         done();
@@ -385,7 +405,8 @@ describe("withTraitify", ()=>{
   });
 
   describe("getDeck", ()=>{
-    let cache, originalWarn;
+    let cache;
+    let originalWarn;
 
     beforeEach(()=>{
       originalWarn = console.warn;
@@ -403,7 +424,7 @@ describe("withTraitify", ()=>{
 
     it("requires deckID", (done)=>{
       component.instance.getDeck().then(()=>{
-        const props = getDummyComponent().props;
+        const {props} = getDummyComponent();
 
         expect(props.deck).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
@@ -414,7 +435,7 @@ describe("withTraitify", ()=>{
     it("checks state", (done)=>{
       component.updateState({deck, deckID: deck.id});
       component.instance.getDeck().then(()=>{
-        const props = getDummyComponent().props;
+        const {props} = getDummyComponent();
 
         expect(props.deck).toBe(deck);
         expect(props.cache.get).not.toHaveBeenCalled();
@@ -434,7 +455,7 @@ describe("withTraitify", ()=>{
       cache.get.mockReturnValue(deck);
       component.updateState({deckID: deck.id});
       component.instance.getDeck().then(()=>{
-        const props = getDummyComponent().props;
+        const {props} = getDummyComponent();
 
         expect(props.deck).toBe(deck);
         expect(props.cache.get).toHaveBeenCalled();
@@ -510,20 +531,26 @@ describe("withTraitify", ()=>{
     });
 
     it("prioritizes prop", ()=>{
-      component = new ComponentHandler(<Component allowBack={true} options={{allowBack: false}} traitify={traitify} />);
+      component = new ComponentHandler(
+        <Component allowBack={true} options={{allowBack: false}} traitify={traitify} />
+      );
 
       expect(getDummyComponent().props.getOption("allowBack")).toBe(true);
     });
 
     it("checks options", ()=>{
-      component = new ComponentHandler(<Component options={{allowBack: false}} traitify={traitify} />);
+      component = new ComponentHandler(
+        <Component options={{allowBack: false}} traitify={traitify} />
+      );
 
       expect(getDummyComponent().props.getOption("allowBack")).toBe(false);
     });
 
     it("prioritizes options", ()=>{
       traitify.ui.options.allowBack = true;
-      component = new ComponentHandler(<Component options={{allowBack: false}} traitify={traitify} />);
+      component = new ComponentHandler(
+        <Component options={{allowBack: false}} traitify={traitify} />
+      );
 
       expect(getDummyComponent().props.getOption("allowBack")).toBe(false);
     });
@@ -677,17 +704,17 @@ describe("withTraitify", ()=>{
     });
 
     it("checks assessment prop", ()=>{
-      component.updateProps({assessment});
+      component.updateProps({assessment: assessmentWithResults});
       component.instance.setAssessmentID();
 
-      expect(component.state.assessmentID).toBe(assessment.id);
+      expect(component.state.assessmentID).toBe(assessmentWithResults.id);
     });
 
     it("checks assessmentID prop", ()=>{
-      component.updateProps({assessmentID: assessment.id});
+      component.updateProps({assessmentID: assessmentWithResults.id});
       component.instance.setAssessmentID();
 
-      expect(component.state.assessmentID).toBe(assessment.id);
+      expect(component.state.assessmentID).toBe(assessmentWithResults.id);
     });
 
     it("gives up", ()=>{
@@ -749,7 +776,7 @@ describe("withTraitify", ()=>{
 
     it("removes old listener if locale changes", ()=>{
       const key = `es-us.assessment.${assessmentWithoutResults.id}`;
-      component.updateState({assessmentID: assessment.id});
+      component.updateState({assessmentID: assessmentWithoutResults.id});
       component.instance.removeListener = jest.fn().mockName("removeListener");
       component.instance.updateAssessment({oldLocale: "es-us"});
 
@@ -757,7 +784,7 @@ describe("withTraitify", ()=>{
     });
 
     it("adds new listener", ()=>{
-      component.updateState({assessmentID: assessment.id});
+      component.updateState({assessmentID: assessmentWithResults.id});
       component.instance.addListener = jest.fn().mockName("addListener");
       component.instance.updateAssessment();
 
@@ -765,7 +792,7 @@ describe("withTraitify", ()=>{
     });
 
     it("gets assessment if no current value", ()=>{
-      component.updateState({assessmentID: assessment.id});
+      component.updateState({assessmentID: assessmentWithResults.id});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateAssessment();
 
@@ -774,9 +801,9 @@ describe("withTraitify", ()=>{
     });
 
     it("uses current value", ()=>{
-      const key = `en-us.assessment.${assessment.id}`;
-      traitify.ui.current[key] = [{}, assessment];
-      component.updateState({assessmentID: assessment.id});
+      const key = `en-us.assessment.${assessmentWithResults.id}`;
+      traitify.ui.current[key] = [{}, assessmentWithResults];
+      component.updateState({assessmentID: assessmentWithResults.id});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateAssessment();
 

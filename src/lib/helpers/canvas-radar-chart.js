@@ -1,5 +1,7 @@
+/* eslint-disable no-param-reassign */
 function configureLabels(options){
-  let labels = [];
+  const labels = [];
+
   options.labels.forEach((label)=>{
     labels.push({
       fillStyle: "#222222",
@@ -7,11 +9,13 @@ function configureLabels(options){
       ...label
     });
   });
+
   return labels;
 }
 
 function configureData(options){
-  let data = [];
+  const data = [];
+
   options.data.forEach((set)=>{
     data.push({
       fill: false,
@@ -23,11 +27,12 @@ function configureData(options){
       ...set
     });
   });
+
   return data;
 }
 
 function configureGrid(ctx, options){
-  let grid = {
+  const grid = {
     axes: [],
     options: {
       font: "18px Arial",
@@ -44,9 +49,9 @@ function configureGrid(ctx, options){
   grid.center = {x: canvasWidth / 2, y: canvasHeight / 2};
   grid.radius = (canvasWidth > canvasHeight ? canvasHeight : canvasWidth) / Math.PI;
 
-  for(let axis = 0; axis < options.labels.length; axis++){
+  for(let axis = 0; axis < options.labels.length; axis += 1){
     grid.axes.push({
-      angle: (2 * Math.PI * axis / options.labels.length) + 1/2 * Math.PI
+      angle: (2 * Math.PI * axis / options.labels.length) + 1 / 2 * Math.PI
     });
   }
 
@@ -67,23 +72,23 @@ export default class CanvasRadarChart{
     this.resize();
   }
   resize(){
-    const canvas = this.ctx.canvas;
+    const {canvas} = this.ctx;
     const container = canvas.parentNode;
     const newWidth = container.clientWidth;
     const aspectRatio = canvas.width / canvas.height;
 
-    canvas.style.width = newWidth + "px";
-    canvas.style.height = (newWidth / aspectRatio) + "px";
+    canvas.style.width = `${newWidth}px`;
+    canvas.style.height = `${(newWidth / aspectRatio)}px`;
   }
   renderGrid(){
-    const innerLines = this.grid.options.innerLines;
+    const {innerLines} = this.grid.options;
 
-    for(let line = 0; line <= innerLines + 1; line++){
-      this.renderPolygon(this.grid.radius * (line/(innerLines + 1)), line);
+    for(let line = 0; line <= innerLines + 1; line += 1){
+      this.renderPolygon(this.grid.radius * (line / (innerLines + 1)), line);
     }
   }
   renderPolygon(radius, line){
-    const options = this.grid.options;
+    const {options} = this.grid;
 
     this.ctx.strokeStyle = options.strokeStyle;
     this.ctx.lineWidth = options.lineWidth;
@@ -115,9 +120,11 @@ export default class CanvasRadarChart{
       axis.img = new Image();
       axis.img.src = label.image;
       axis.img.onload = ()=>{
-        const diagonal = Math.sqrt((Math.pow(axis.img.width, 2) + Math.pow(axis.img.height, 2)));
-        const x = (this.grid.center.x - axis.img.width / 2) + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.cos(axis.angle);
-        const y = (this.grid.center.y - axis.img.height / 2) + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.sin(axis.angle);
+        const diagonal = Math.sqrt((axis.img.width ** 2) + (axis.img.height ** 2));
+        const x = (this.grid.center.x - axis.img.width / 2)
+          + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.cos(axis.angle);
+        const y = (this.grid.center.y - axis.img.height / 2)
+          + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.sin(axis.angle);
         this.ctx.drawImage(axis.img, x, y);
 
         this.renderLabelText(label, x + axis.img.width / 2, y + axis.img.height);
@@ -134,9 +141,9 @@ export default class CanvasRadarChart{
     if(x < 150 || x > 680){
       const lines = label.text.split(" ");
       if(lines.length > 1){
-        for(let i = 0; i < lines.length; i++){
-          this.ctx.fillText(lines[i], x, y + (i * 22));
-        }
+        lines.forEach((line, index)=>{
+          this.ctx.fillText(line, x, y + (index * 22));
+        });
       }else if(textLength > 145 && x < 150){
         this.ctx.fillText(label.text, x - 20, y);
       }else if(textLength > 145 && x > 680){
@@ -171,7 +178,7 @@ export default class CanvasRadarChart{
       this.ctx.stroke();
 
       this.ctx.fillStyle = data.pointFillStyle;
-      points.map(point=>{
+      points.forEach((point)=>{
         this.ctx.beginPath();
         this.ctx.arc(point.x, point.y, data.pointRadius, 0, 2 * Math.PI, false);
         this.ctx.fill();

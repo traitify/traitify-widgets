@@ -18,9 +18,13 @@ class PersonalityTraits extends Component{
   onClick = (e)=>{
     e.preventDefault();
 
-    const callback = this.state.showMore ? "showLess" : "showMore";
-    this.props.traitify.ui.trigger(`PersonalityTraits.${callback}`, this);
-    this.setState({showMore: !this.state.showMore});
+    this.setState((state, props)=>{
+      const {showMore} = state;
+      const key = showMore ? "showLess" : "showMore";
+      props.traitify.ui.trigger(`PersonalityTraits.${key}`, this);
+
+      return {showMore: !showMore};
+    });
   }
   render(){
     if(!this.props.isReady("results")){ return null; }
@@ -36,7 +40,7 @@ class PersonalityTraits extends Component{
           <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...this.props} />
         ))}
         <p className={style.center}>
-          <a href="#" className={style.toggle} onClick={this.onClick}>{text}</a>
+          <button className={style.toggle} onClick={this.onClick} type="button">{text}</button>
         </p>
       </div>
     );

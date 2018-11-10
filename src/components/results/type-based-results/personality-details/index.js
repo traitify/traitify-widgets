@@ -15,14 +15,14 @@ class PersonalityDetails extends Component{
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
 
-    const details = personality.details;
+    const {details} = personality;
     if(!details){ return null; }
 
-    let complement = details.find(d=>d.title === "Complement");
+    let complement = details.find((detail)=>(detail.title === "Complement"));
     complement = complement && complement.body;
-    let conflict = details.find(d=>d.title === "Conflict");
+    let conflict = details.find((detail)=>(detail.title === "Conflict"));
     conflict = conflict && conflict.body;
-    let environments = personality.environments || [];
+    const environments = personality.environments || [];
 
     return (
       <div className={style.details}>
@@ -42,7 +42,7 @@ class PersonalityDetails extends Component{
           <div className={style.environments}>
             <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
-              {environments.map(environment=>(
+              {environments.map((environment)=>(
                 <li key={environment.name}>{environment.name}</li>
               ))}
             </ul>

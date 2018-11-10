@@ -1,8 +1,11 @@
+/* eslint-disable no-param-reassign */
 import CanvasRadarChart from "lib/helpers/canvas-radar-chart";
 
 describe("Helpers", ()=>{
   describe("canvasRadarChart", ()=>{
-    let chart, ctx, options;
+    let chart;
+    let ctx;
+    let options;
 
     beforeEach(()=>{
       ctx = {
@@ -57,12 +60,12 @@ describe("Helpers", ()=>{
       it("configures grid", ()=>{
         expect(chart.grid.axes).toEqual([
           {angle: Math.PI / 2},
-          {angle: 2 * Math.PI * 1/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 2/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 3/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 4/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 5/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 6/7 + Math.PI / 2}
+          {angle: 2 * Math.PI * 1 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 2 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 3 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 4 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 5 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 6 / 7 + Math.PI / 2}
         ]);
         expect(chart.grid.center).toEqual({x: 410, y: 350});
         expect(chart.grid.options).toMatchObject({innerLines: 2, lineWidth: 0.5});

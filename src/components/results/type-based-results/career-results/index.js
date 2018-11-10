@@ -59,14 +59,19 @@ class CareerResults extends Component{
     };
 
     this.props.traitify.ui.trigger("Careers.fetching", this, true);
-    this.props.traitify.ui.trigger("Careers.request", this,
+    this.props.traitify.ui.trigger(
+      "Careers.request",
+      this,
       this.props.traitify.get(path, params).then((response)=>{
-        const previousCareers = (params.page > 1) ? this.state.careers : [];
+        this.setState((state)=>{
+          const previousCareers = (params.page > 1) ? state.careers : [];
 
-        this.props.traitify.ui.trigger("Careers.fetching", this, false);
-        this.setState({
-          careers: previousCareers.concat(response),
-          moreCareers: response.length >= params.careers_per_page
+          return {
+            careers: previousCareers.concat(response),
+            moreCareers: response.length >= params.careers_per_page
+          };
+        }, ()=>{
+          this.props.traitify.ui.trigger("Careers.fetching", this, false);
         });
       })
     );
@@ -100,7 +105,11 @@ class CareerResults extends Component{
 
     return (
       <div className={style.container}>
-        {careers.map((career)=>(<Career key={career.career.id} career={{score: career.score, ...career.career}} {...this.props} />))}
+        {careers.map((_career)=>{
+          const {career, score} = _career;
+
+          return <Career key={career.id} career={{score, ...career}} {...this.props} />;
+        })}
         <p className={style.center}>
           {fetching && <span>{translate("loading")}</span>}
           {!fetching && [

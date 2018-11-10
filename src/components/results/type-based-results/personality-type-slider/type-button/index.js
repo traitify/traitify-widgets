@@ -8,9 +8,9 @@ export default class TypeButton extends Component{
   }
   render(){
     return (
-      <a className={this.props.className} href="#" onClick={this.setActive}>
+      <button className={this.props.className} onClick={this.setActive} type="button">
         {this.props.children}
-      </a>
+      </button>
     );
   }
 }

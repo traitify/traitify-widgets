@@ -35,11 +35,11 @@ class PersonalityTypeSlide extends Component{
     const color = `#${type.badge.color_1}`;
     const position = "middle";
     let perspective = `${(this.props.getOption("perspective") || "firstPerson").replace("Person", "")}_person_description`;
-    let description = type.details.find(detail=>detail.title === perspective);
+    let description = type.details.find((detail)=>(detail.title === perspective));
     description = description && description.body;
     if(!description){
       perspective = `${perspective === "first_person_description" ? "third" : "first"}_person_description"`;
-      description = type.details.find(detail=>detail.title === perspective);
+      description = type.details.find((detail)=>(detail.title === perspective));
       description = (description && description.body) || type.description;
     }
 

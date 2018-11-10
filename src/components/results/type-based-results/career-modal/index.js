@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
+import {dangerousProps} from "lib/helpers";
 import Icon from "lib/helpers/icon";
 import style from "./style";
 
@@ -45,7 +46,7 @@ class CareerModal extends Component{
   hide = ()=>{ this.setState({show: false}); }
   setCareer = ()=>{ this.setState({career: this.props.traitify.ui.current["CareerModal.career"]}); }
   show = ()=>{ this.setState({show: true}); }
-  toggleLegend = ()=>{ this.setState({showLegend: !this.state.showLegend}); }
+  toggleLegend = ()=>{ this.setState((state)=>({showLegend: !state.showLegend})); }
   render(){
     const {career, show, showLegend} = this.state;
 
@@ -65,7 +66,7 @@ class CareerModal extends Component{
             <img className={style.image} alt={career.title} src={career.picture} />
             <h2 className={style.title}>{career.title}</h2>
             <p className={style.description}>{career.description}</p>
-            <hr/>
+            <hr />
             <h3 className={style.heading}><Icon icon={faInfoCircle} /> {translate("career_information")}:</h3>
             <ul className={style.info}>
               <li>
@@ -85,14 +86,14 @@ class CareerModal extends Component{
               <li>
                 <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
                 <div className={style.infoText}>
-                  <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled type="checkbox" readOnly />
+                  <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
                   <Icon icon={career.bright_outlooks.length > 0 ? faCheckSquare : faSquare} />
                 </div>
               </li>
               <li>
                 <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
                 <div className={style.infoText}>
-                  <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} className={style.check} disabled type="checkbox" readOnly />
+                  <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
                   <Icon icon={career.green_categories.length > 0 ? faCheckSquare : faSquare} />
                 </div>
               </li>
@@ -109,25 +110,25 @@ class CareerModal extends Component{
                 <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faDollarSign} /> {translate("salary_mean")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("salary_mean_html")}} />
+                    <p {...dangerousProps({html: translate("salary_mean_html")})} />
                   </li>
                   <li>
                     <h4><Icon icon={faChartBar} /> {translate("employment_growth")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("employment_growth_html")}} />
+                    <p {...dangerousProps({html: translate("employment_growth_html")})} />
                   </li>
                   <li>
                     <h4><Icon icon={faGraduationCap} /> {translate("education")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("education_html")}} />
+                    <p {...dangerousProps({html: translate("education_html")})} />
                   </li>
                 </ul>
                 <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("bright_future_html")}} />
+                    <p {...dangerousProps({html: translate("bright_future_html")})} />
                   </li>
                   <li>
                     <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("green_career_html")}} />
+                    <p {...dangerousProps({html: translate("green_career_html")})} />
                   </li>
                 </ul>
                 <p className={style.center}>
@@ -135,7 +136,7 @@ class CareerModal extends Component{
                 </p>
               </div>
             )}
-            <hr/>
+            <hr />
             <h3 className={style.heading}><Icon icon={faGlobeAmericas} /> {translate("experience_level")}</h3>
             <ol className={style.experience}>
               {[1, 2, 3, 4, 5].map((level)=>(
@@ -143,9 +144,9 @@ class CareerModal extends Component{
               ))}
             </ol>
             <p>{career.experience_level.experience}</p>
-            <hr/>
+            <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
-            <p dangerouslySetInnerHTML={{__html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})}} />
+            <p {...dangerousProps({html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})})} />
             <div ref={(customContent)=>{ this.customContent = customContent; }} />
           </div>
         </section>

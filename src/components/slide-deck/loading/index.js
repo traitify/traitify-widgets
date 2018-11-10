@@ -15,7 +15,7 @@ export default class Loading extends Component{
                 {translate("try_again")}
               </button>
             </div>
-          ):(
+          ) : (
             <div className={style.symbol}>
               <i />
               <i />

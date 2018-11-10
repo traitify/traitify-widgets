@@ -1,7 +1,7 @@
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
 import Chart from "lib/helpers/canvas-radar-chart";
+import style from "./style";
 
 class Radar extends Component{
   componentDidMount(){
@@ -20,7 +20,7 @@ class Radar extends Component{
   createChart = ()=>{
     if(!this.props.isReady("results")){ return; }
 
-    let options = {
+    const options = {
       labels: [],
       data: [{
         fill: true,
@@ -37,7 +37,7 @@ class Radar extends Component{
       options.data[0].values.push(type.score);
     });
 
-    let ctx = this.canvas.getContext("2d");
+    const ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, options);
     this.chart.render();
   }

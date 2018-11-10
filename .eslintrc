@@ -1,26 +1,90 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "eslint:recommended",
-    "plugin:jest/recommended"
-  ],
-  "plugins": ["babel", "react"],
   "env": {
     "browser": true,
     "es6": true,
     "node": true
   },
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
+  "globals": {
+    "XDomainRequest": true
+  },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
       "modules": true
     }
   },
-  "globals": {
-    "sleep": 1
-  },
+  "plugins": ["babel", "jest"],
   "rules": {
-    "react/jsx-no-bind": ["error", { "ignoreRefs": true }],
+    // TODO: Spacing guidelines can be updated after initial change
+    "arrow-spacing": ["error", {before: false, after: false}],
+    "keyword-spacing": ["error", {
+      "before": false,
+      "after": false,
+      "overrides": {
+        "as": {before: true, after: true},
+        "case": {before: true, after: true},
+        "const": {before: true, after: true},
+        "export": {before: true, after: true},
+        "from": {before: true, after: true},
+        "import": {before: true, after: true},
+        "let": {before: true, after: true},
+        "return": {before: true, after: true},
+        "this": {before: true, after: true}
+      }
+    }],
+    "space-before-blocks": ["error", "never"],
+    "space-before-function-paren": ["error", "never"],
+
+    // TODO: Remove
+    "react/prop-types": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+
+    "arrow-parens": ["error", "always"], // Consistency
+    "babel/object-curly-spacing": "error", // Replace non-babel version
+    "class-methods-use-this": "off", // Allows methods to be overridden
+    "comma-dangle": ["error", "never"], // Unnecessary
+    "consistent-return": "off", // Makes it hard to return early for conditionals
+    "func-names": "off", // Unnecessary and unused with arrow functions
+    "lines-between-class-members": ["error", "never"],
+    "no-else-return": "off", // Allows more functional styles
+    "no-underscore-dangle": "off", // Doesn't allow `const key = _key.toLowerCase()`
+    "no-unused-expressions": ["error", {allowShortCircuit: true, allowTernary: true}],
+    "object-curly-newline": ["error", {multiline: true, consistent: true}],
+    "object-curly-spacing": "off", // Incompatible with babel/object-curly-spacing
+    "prefer-destructuring": ["error", {
+      VariableDeclarator: {
+        array: false,
+        object: true,
+      },
+      AssignmentExpression: {
+        array: false,
+        object: false,
+      },
+    }, {
+      enforceForRenamedProperties: false,
+    }], // Assignment expression looks funky with parens
+    "quote-props": ["error", "consistent-as-needed", {keywords: false}],
+    "quotes": ["error", "double", {allowTemplateLiterals: true}],
+    "react/destructuring-assignment": "off", // Overactive and solved by prefer-destructuring
+    "react/jsx-boolean-value": ["error", "always"], // Prefer explicit
+    "react/jsx-filename-extension": "off", // Unnecessary
+    "react/jsx-one-expression-per-line": "off", // Creates unnecessary white space issues
+    "react/no-did-update-set-state": "off", // Makes hacks needed for prop change triggers
+    "react/no-unused-state": "off", // TODO: Remove when rule is fixed for setState function
+    "react/prefer-stateless-function": "off", // Prefer React
+    "react/react-in-jsx-scope": "off", // Global React
+    "react/sort-comp": "off" // TODO: Remove when airbnb includes componentDidCatch
+  },
+  /*
+  // TODO: Look into whether or not we should continue to use these
+  // First check if they're already added by airbnb
+  "old": {
+    "react/jsx-no-bind": ["error", {ignoreRefs: true }],
     "react/jsx-no-duplicate-props": "error",
     "react/self-closing-comp": "error",
     "react/prefer-es6-class": "error",
@@ -40,7 +104,6 @@
     "semi": "error",
     "camelcase": "off",
     "comma-style": "error",
-    "comma-dangle": ["error", "never"],
     "no-mixed-spaces-and-tabs": "error",
     "no-trailing-spaces": "error",
     "max-nested-callbacks": ["error", 3],
@@ -67,33 +130,16 @@
     "no-var": "error",
     "object-shorthand": "error",
     "prefer-arrow-callback": "error",
-    "arrow-spacing": ["error", {"before": false, "after": false}],
-    "babel/object-curly-spacing": "error",
-    "indent": ["error", 2, {"SwitchCase": 1}],
+    "indent": ["error", 2, {SwitchCase: 1}],
     "jsx-quotes": "error",
-    "keyword-spacing": ["error", {
-      "before": false,
-      "after": false,
-      "overrides": {
-        "as": {"before": true, "after": true},
-        "case": {"before": true, "after": true},
-        "const": {"before": true, "after": true},
-        "export": {"before": true, "after": true},
-        "from": {"before": true, "after": true},
-        "import": {"before": true, "after": true},
-        "let": {"before": true, "after": true},
-        "return": {"before": true, "after": true},
-        "this": {"before": true, "after": true}
-      }
-    }],
     "new-parens": "error",
     "no-lonely-if": "off",
-    "no-multiple-empty-lines": ["error", {"max": 1, "maxBOF": 0, "maxEOF": 0}],
-    "no-unused-vars": ["error", {"args": "none"}],
-    "object-curly-spacing": "off",
+    "no-multiple-empty-lines": ["error", {max: 1, maxBOF: 0, maxEOF: 0}],
+    "no-unused-vars": ["error", {args: "none"}],
     "padded-blocks": ["error", "never"],
-    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
-    "space-before-blocks": ["error", "never"],
-    "space-before-function-paren": ["error", "never"]
+  }
+  */
+  "settings": {
+    "import/resolver": "webpack"
   }
 }

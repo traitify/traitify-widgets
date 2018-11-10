@@ -25,7 +25,9 @@ describe("Helpers", ()=>{
   });
 
   describe("loadFont", ()=>{
-    let originalAppendChild, originalCreateElement, originalQuerySelector;
+    let originalAppendChild;
+    let originalCreateElement;
+    let originalQuerySelector;
 
     beforeAll(()=>{
       originalAppendChild = document.body.appendChild;

@@ -2,12 +2,14 @@ import Airbrake from "airbrake-js";
 import {Component} from "react";
 import {getDisplayName, loadFont} from "lib/helpers";
 
+/* eslint-disable no-console */
 // Unwrap Airbrake's console wrapper
 ["debug", "log", "info", "warn", "error"].forEach((method)=>{
   if(method in console && console[method].inner){
     console[method] = console[method].inner;
   }
 });
+/* eslint-enable no-console */
 
 export default function withTraitify(WrappedComponent){
   return class TraitifyComponent extends Component{
@@ -116,7 +118,7 @@ export default function withTraitify(WrappedComponent){
         })
       );
 
-      let assessment = this.props.assessment;
+      let {assessment} = this.props;
       if(hasResults(assessment)){ return setAssessment(assessment); }
 
       assessment = this.cache.get(key);
@@ -124,7 +126,7 @@ export default function withTraitify(WrappedComponent){
 
       if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
 
-      return this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
+      this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
         data: "archetype,blend,instructions,slides,types,traits",
         locale_key: locale
       }).then((data)=>{
@@ -132,10 +134,12 @@ export default function withTraitify(WrappedComponent){
 
         setAssessment(data);
       }).catch((error)=>{
-        console.warn(error);
+        console.warn(error); // eslint-disable-line no-console
 
         delete this.traitify.ui.requests[key];
       });
+
+      return this.traitify.ui.requests[key];
     }
     getDeck = (options = {})=>{
       const {deckID, locale} = this.state;
@@ -155,7 +159,7 @@ export default function withTraitify(WrappedComponent){
         })
       );
 
-      let deck = this.state.deck;
+      let {deck} = this.state;
       if(hasData(deck)){ return setDeck(deck); }
 
       deck = this.cache.get(key);
@@ -163,24 +167,30 @@ export default function withTraitify(WrappedComponent){
 
       if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
 
-      return this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
+      this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
         locale_key: locale
-      }).then((data)=>{
+      }).then((_data)=>{
+        const data = {..._data};
         if(data && !data.locale_key){ data.locale_key = locale; }
         if(hasData(data)){ this.cache.set(key, data); }
 
         setDeck(data);
       }).catch((error)=>{
-        console.warn(error);
+        console.warn(error); // eslint-disable-line no-console
 
         delete this.traitify.ui.requests[key];
       });
+
+      return this.traitify.ui.requests[key];
     }
     getListener = (key)=>(this.listeners[key.toLowerCase()])
     getOption = (name)=>{
-      if(this.props[name] != null){ return this.props[name]; }
-      if(this.props.options && this.props.options[name] != null){ return this.props.options[name]; }
-      if(this.traitify && this.traitify.ui.options[name] != null){ return this.traitify.ui.options[name]; }
+      const {props, traitify} = this;
+      const {[name]: prop, options} = props;
+
+      if(prop != null){ return prop; }
+      if(options && options[name] != null){ return options[name]; }
+      if(traitify && traitify.ui.options[name] != null){ return traitify.ui.options[name]; }
     }
     isReady = (type)=>{
       const {assessment, deck} = this.state;
@@ -221,19 +231,23 @@ export default function withTraitify(WrappedComponent){
         projectKey: "c48de83d0f02ea6d598b491878c0c57e"
       });
       this.airbrake.addFilter((notice)=>{
-        const host = window.location.host;
+        let environment;
+        const {host} = window.location;
 
         if(host.includes("lvh.me:3000")){
-          notice.context.environment = "development";
+          environment = "development";
         }else if(host.includes("stag.traitify.com")){
-          notice.context.environment = "staging";
+          environment = "staging";
         }else if(host.includes("traitify.com")){
-          notice.context.environment = "production";
+          environment = "production";
         }else{
-          notice.context.environment = "client";
+          environment = "client";
         }
 
+        /* eslint-disable no-param-reassign */
+        notice.context.environment = environment;
         notice.context.version = this.traitify.__version__;
+        /* eslint-enable no-param-reassign */
 
         return notice;
       });
@@ -244,13 +258,13 @@ export default function withTraitify(WrappedComponent){
           try{
             const data = sessionStorage.getItem(key);
 
-            if(data){ return JSON.parse(data); }
-          }catch(error){ return; }
+            return data ? JSON.parse(data) : null;
+          }catch(error){ return null; }
         },
         set(key, data){
           try{
             return sessionStorage.setItem(key, JSON.stringify(data));
-          }catch(error){ return; }
+          }catch(error){ return null; }
         }
       };
     }
@@ -259,7 +273,8 @@ export default function withTraitify(WrappedComponent){
         this.safeSetState({locale: locale.toLowerCase()});
       });
 
-      const locale = this.props.locale || (this.props.options && this.props.options.locale);
+      const {locale: propLocale, options} = this.props;
+      const locale = propLocale || (options && options.locale);
       if(locale && locale.toLowerCase() !== this.traitify.ui.i18n.locale){
         this.traitify.ui.setLocale(locale.toLowerCase());
       }else{
@@ -272,18 +287,25 @@ export default function withTraitify(WrappedComponent){
       if(!this.traitify){ throw new Error("Traitify must be passed as a prop or attached to window"); }
     }
     updateAssessment(options = {}){
+      const {assessmentID, locale} = this.state;
+
       if(options.oldID || options.oldLocale){
-        const oldAssessmentID = options.oldID || this.state.assessmentID;
-        const oldLocale = options.oldLocale || this.state.locale;
+        const oldAssessmentID = options.oldID || assessmentID;
+        const oldLocale = options.oldLocale || locale;
         const key = `${oldLocale}.assessment.${oldAssessmentID}`;
 
         this.removeListener(key);
       }
-      if(this.state.assessmentID){
-        const key = `${this.state.locale}.assessment.${this.state.assessmentID}`;
+      if(assessmentID){
+        const key = `${locale}.assessment.${assessmentID}`;
 
         this.addListener(key, (_, assessment)=>{
-          this.setState({assessment, assessmentID: assessment.id, deck: null, deckID: assessment.deck_id});
+          this.setState({
+            assessment,
+            assessmentID: assessment.id,
+            deck: null,
+            deckID: assessment.deck_id
+          });
         });
 
         const currentValue = this.traitify.ui.current[key];
@@ -295,15 +317,17 @@ export default function withTraitify(WrappedComponent){
       }
     }
     updateDeck(options = {}){
+      const {deckID, locale} = this.state;
+
       if(options.oldID || options.oldLocale){
-        const oldDeckID = options.oldID || this.state.deckID;
-        const oldLocale = options.oldLocale || this.state.locale;
+        const oldDeckID = options.oldID || deckID;
+        const oldLocale = options.oldLocale || locale;
         const key = `${oldLocale}.deck.${oldDeckID}`;
 
         this.removeListener(key);
       }
-      if(this.state.deckID){
-        const key = `${this.state.locale}.deck.${this.state.deckID}`;
+      if(deckID){
+        const key = `${locale}.deck.${deckID}`;
 
         this.addListener(key, (_, deck)=>{
           this.setState({deck});

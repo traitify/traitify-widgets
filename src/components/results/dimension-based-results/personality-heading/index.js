@@ -1,5 +1,6 @@
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
+import {dangerousProps} from "lib/helpers";
 import style from "./style";
 
 class PersonalityHeading extends Component{
@@ -19,12 +20,15 @@ class PersonalityHeading extends Component{
 
     return (
       <div className={style.personality}>
-        <div className={style.content} dangerouslySetInnerHTML={{
-          __html: this.props.translate("personality_heading", {
-            deck_name: this.props.deck.name,
-            personality: `<strong>${personality.name}</strong>`
-          })
-        }} />
+        <div
+          className={style.content}
+          {...dangerousProps({
+            html: this.props.translate("personality_heading", {
+              deck_name: this.props.deck.name,
+              personality: `<strong>${personality.name}</strong>`
+            })
+          })}
+        />
       </div>
     );
   }

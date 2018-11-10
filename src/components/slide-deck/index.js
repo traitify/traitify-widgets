@@ -4,6 +4,9 @@ import Loading from "./loading";
 import Slide from "./slide";
 import style from "./style.scss";
 
+const slideIndex = (slides)=>(slides.findIndex((slide)=>(slide.response == null)));
+const mutable = (data)=>(data.map((item)=>({...item})));
+
 class SlideDeck extends Component{
   constructor(props){
     super(props);
@@ -48,22 +51,24 @@ class SlideDeck extends Component{
     if(!this.props.assessment){ return; }
     if((this.props.assessment.slides || []).length === 0){ return; }
 
-    this.setState((prevState, props)=>{
-      if(prevState.initialized){ return; }
+    this.setState((state, props)=>{
+      if(state.initialized){ return; }
 
       const {assessment, assessmentID, cache} = props;
-      let slides = [...assessment.slides] || [];
-      let storedSlides = cache.get(`slides.${assessmentID}`) || [];
-      let completedSlides = {};
+      const storedSlides = cache.get(`slides.${assessmentID}`) || [];
+      const completedSlides = {};
 
       storedSlides.forEach((slide)=>{ completedSlides[slide.id] = slide; });
 
-      slides.forEach((slide, index)=>{
-        let completedSlide = completedSlides[slide.id];
+      const slides = assessment.slides.map((_slide)=>{
+        const slide = {..._slide};
+        const completedSlide = completedSlides[slide.id];
         if(completedSlide){
           slide.response = completedSlide.response;
           slide.time_taken = completedSlide.time_taken;
         }
+
+        return slide;
       });
 
       const newState = {slides, initialized: true, startTime: Date.now()};
@@ -87,63 +92,67 @@ class SlideDeck extends Component{
   fetchImages = ()=>{
     if(this.state.imageLoading){ return; }
 
-    const currentIndex = this.currentIndex();
-    const slideIndex = this.state.slides.findIndex((slide, index)=>(
+    const currentIndex = slideIndex(this.state.slides);
+    const loadingIndex = this.state.slides.findIndex((slide, index)=>(
       index >= currentIndex && !slide.loaded && slide.response == null
     ));
-    if(slideIndex === -1){ return; }
-    if(this.state.imageLoadAttempts[slideIndex] >= 30){ return; }
+    if(loadingIndex === -1){ return; }
+    if(this.state.imageLoadAttempts[loadingIndex] >= 30){ return; }
 
     this.setState({imageLoading: true}, ()=>{
-      const slide = this.state.slides[slideIndex];
-      let img = document.createElement("img");
+      const slide = this.state.slides[loadingIndex];
+      const img = document.createElement("img");
       img.src = slide.image;
       img.onload = ()=>{
-        let slides = this.slides();
-        slides[slideIndex].loaded = true;
-        this.setState({imageLoading: false, slides}, this.fetchImages);
+        this.setState((state)=>{
+          const slides = mutable(state.slides);
+          slides[loadingIndex].loaded = true;
+
+          return {imageLoading: false, slides};
+        }, this.fetchImages);
       };
       img.onerror = ()=>{
-        let attempts = [...this.state.imageLoadAttempts];
-        attempts[slideIndex] = attempts[slideIndex] || 0;
-        attempts[slideIndex] += 1;
-        this.setState({imageLoading: false, imageLoadAttempts: attempts}, ()=>{
+        this.setState((state)=>{
+          const attempts = [...state.imageLoadAttempts];
+          attempts[loadingIndex] = attempts[loadingIndex] || 0;
+          attempts[loadingIndex] += 1;
+
+          return {imageLoading: false, imageLoadAttempts: attempts};
+        }, ()=>{
           setTimeout(this.fetchImages, 2000);
         });
       };
     });
   }
-  update(prevProps){
-    let loaded = this.state.slides.filter((slide)=>(slide.loaded)).length;
-    let remainingSlidesLoaded = !this.state.slides.find((slide)=>(!slide.loaded && slide.response == null));
-    let nextSlidesLoaded = loaded >= this.currentIndex() + 2;
-    let ready = remainingSlidesLoaded || nextSlidesLoaded;
+  update(){
+    const loadedIndex = this.state.slides.filter((slide)=>(slide.loaded)).length;
+    const remainingSlidesLoaded = !this.state.slides.find(
+      (slide)=>(!slide.loaded && slide.response == null)
+    );
+    const nextSlidesLoaded = loadedIndex >= slideIndex(this.state.slides) + 2;
+    const ready = remainingSlidesLoaded || nextSlidesLoaded;
 
     if(this.state.ready === ready){ return; }
     this.props.traitify.ui.trigger("SlideDeck.isReady", this, ready);
     this.setState({ready, startTime: Date.now()});
   }
-  slides(){
-    return this.state.slides.map((slide)=>({...slide}));
-  }
-  currentIndex(){
-    return this.state.slides.findIndex((slide)=>(slide.response == null));
-  }
   resizeImages = ()=>{
-    if(!this.container){ return; }
-    const width = this.container.clientWidth;
-    const height = this.container.clientHeight;
-    const slides = this.slides();
-    const imageHost = this.props.getOption("imageHost");
+    this.setState((state, props)=>{
+      if(!this.container){ return; }
 
-    slides.forEach((slide)=>{
-      slide.loaded = false;
-      slide.image = width > 0 && height > 0
-        ? `${imageHost}/v1/images/${slide.id}?width=${width}&height=${height}`
-        : slide.image_desktop;
-    });
+      const width = this.container.clientWidth;
+      const height = this.container.clientHeight;
+      const imageHost = props.getOption("imageHost");
+      const slides = state.slides.map((slide)=>({
+        ...slide,
+        loaded: false,
+        image: width > 0 && height > 0
+          ? `${imageHost}/v1/images/${slide.id}?width=${width}&height=${height}`
+          : slide.image_desktop
+      }));
 
-    this.setState({imageLoadAttempts: [], slides}, this.fetchImages);
+      return {imageLoadAttempts: [], slides};
+    }, this.fetchImages);
   }
   finish(){
     if(this.state.finished){ return; }
@@ -166,33 +175,46 @@ class SlideDeck extends Component{
     }));
   }
   isComplete(){
-    return this.state.slides.length > 0 && this.state.slides.length === this.completedSlides().length;
+    const {slides} = this.state;
+
+    return slides.length > 0 && slides.length === this.completedSlides().length;
   }
   // Event Methods
   back = ()=>{
-    let slides = this.slides();
-    slides[this.currentIndex() - 1].response = null;
-    this.setState({slides, startTime: Date.now()}, this.fetchImages);
+    this.setState((state)=>{
+      const slides = mutable(state.slides);
+
+      slides[slideIndex(slides) - 1].response = null;
+
+      return {slides, startTime: Date.now()};
+    }, this.fetchImages);
   }
   hideInstructions = ()=>{
     this.setState({showInstructions: false});
   }
   retry = ()=>{
-    let attempts = this.state.imageLoadAttempts;
-    attempts[attempts.length - 1] = 0;
-    this.setState({imageLoadAttempts: attempts}, this.fetchImages);
+    this.setState((state)=>{
+      const {imageLoadAttempts: attempts} = state;
+      const imageLoadAttempts = [...attempts];
+
+      imageLoadAttempts[attempts.length - 1] = 0;
+
+      return {imageLoadAttempts: attempts};
+    }, this.fetchImages);
   }
   updateSlide = (value)=>{
-    let key = value ? "me" : "notMe";
-    this.props.traitify.ui.trigger(`SlideDeck.${key}`, this);
-    this.props.traitify.ui.trigger("SlideDeck.updateSlide", this);
+    this.setState((state)=>{
+      const key = value ? "me" : "notMe";
+      this.props.traitify.ui.trigger(`SlideDeck.${key}`, this);
+      this.props.traitify.ui.trigger("SlideDeck.updateSlide", this);
 
-    let slides = this.slides();
-    let index = this.currentIndex();
-    let slide = slides[index];
-    slide.response = value;
-    slide.time_taken = Date.now() - this.state.startTime;
-    this.setState({slides}, ()=>{
+      const slides = mutable(state.slides);
+      const slide = slides[slideIndex(slides)];
+      slide.response = value;
+      slide.time_taken = Date.now() - state.startTime;
+
+      return {slides};
+    }, ()=>{
       const {assessmentID, cache} = this.props;
 
       cache.set(`slides.${assessmentID}`, this.completedSlides());
@@ -213,15 +235,15 @@ class SlideDeck extends Component{
       <div className={style.widgetContainer} ref={(container)=>{ this.container = container; }}>
         {(isComplete || !this.state.ready) ? (
           <Loading imageLoadAttempts={this.state.imageLoadAttempts} retry={this.retry} />
-        ):(
+        ) : (
           <Slide
             back={this.back}
             container={this.container}
-            currentIndex={this.currentIndex()}
             getOption={this.props.getOption}
             instructions={this.state.instructions}
             isComplete={isComplete}
             showInstructions={this.state.showInstructions}
+            slideIndex={slideIndex(this.state.slides)}
             slides={this.state.slides}
             start={this.hideInstructions}
             traitify={this.props.traitify}

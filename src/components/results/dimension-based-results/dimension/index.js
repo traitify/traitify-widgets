@@ -13,7 +13,7 @@ class Dimension extends Component{
     e.preventDefault();
 
     this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
-    this.setState({showContent: !this.state.showContent});
+    this.setState((state)=>({showContent: !state.showContent}));
   }
   componentDidMount(){
     this.props.traitify.ui.trigger("Dimension.initialized", this);
@@ -24,19 +24,19 @@ class Dimension extends Component{
   description(suffix){
     const type = this.props.type.personality_type;
     const perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
-    let description = type.details.find(detail=>detail.title === `${perspective}_person_${suffix}`);
+    let description = type.details.find((detail)=>(detail.title === `${perspective}_person_${suffix}`));
     description = description && description.body;
 
     if(description){ return description; }
-    description = type.details.find(detail=>detail.title === `${perspective}_person_${suffix}`);
+    description = type.details.find((detail)=>(detail.title === `${perspective}_person_${suffix}`));
 
     return (description && description.body) || type.description;
   }
   render(){
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;
-    let benefits = [];
-    let pitfalls = [];
+    const benefits = [];
+    const pitfalls = [];
 
     type.details.forEach((detail)=>{
       if(detail.title === "Benefits"){ benefits.push(detail.body); }
@@ -48,16 +48,27 @@ class Dimension extends Component{
         <div className={style.main} style={{background: rgba(color, 8.5), borderLeft: `5px solid ${color}`}}>
           <div className={style.side}>
             <p className={style.icon}>
-              <img src={type.badge.image_medium} alt="" role="presentation" ariahidden="true" />
+              <img src={type.badge.image_medium} alt="" ariahidden="true" />
             </p>
           </div>
           <div className={style.content}>
-            <h2 className={style.title}>{type.name} <span style={{color}}>|</span> {this.props.type.score} - {type.level}</h2>
+            <h2 className={style.title}>
+              {type.name} <span style={{color}}>|</span> {this.props.type.score} - {type.level}
+            </h2>
             <p className={style.description}>{this.description("short_description")}</p>
-            <p className={style.triggerButton}><a className={style.trigger} style={{background: rgba(color, 30)}} onClick={this.trigger} href="#">{this.props.translate(this.state.showContent ? "show_less" : "show_more")}</a></p>
+            <p className={style.triggerButton}>
+              <button
+                className={style.trigger}
+                style={{background: rgba(color, 30)}}
+                onClick={this.trigger}
+                type="button"
+              >
+                {this.props.translate(this.state.showContent ? "show_less" : "show_more")}
+              </button>
+            </p>
           </div>
         </div>
-        {this.state.showContent &&
+        {this.state.showContent && (
           <div className={style.details}>
             <div className={style.content} style={{background: rgba(color, 30)}}>
               <div className={style.extendedDesc}>
@@ -78,7 +89,7 @@ class Dimension extends Component{
               </div>
             </div>
           </div>
-        }
+        )}
       </li>
     );
   }

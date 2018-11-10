@@ -30,7 +30,7 @@ export default class TraitifyWidget{
     return this;
   }
   destroy(){
-    Object.keys(this.options.targets).forEach(name=>{
+    Object.keys(this.options.targets).forEach((name)=>{
       if(this.options.targets[name] instanceof Element){
         unmountComponentAtNode(this.options.targets[name]);
       }
@@ -78,29 +78,32 @@ export default class TraitifyWidget{
       this.options.targets[componentName || "Default"] = this.options.target;
     }
 
-    let promises = [];
+    const promises = [];
 
     if(Object.keys(this.options.targets).length === 0){
       promises.push(new Promise((resolve, reject)=>{
-        reject("You did not specify a target");
+        reject(new Error("You did not specify a target"));
       }));
     }
 
-    Object.keys(this.options.targets).forEach(name=>{
+    Object.keys(this.options.targets).forEach((name)=>{
       promises.push(new Promise((resolve, reject)=>{
         const Component = guessComponent(name);
-        if(!Component){ return reject(`Could not find component for ${name}`); }
+        if(!Component){ return reject(new Error(`Could not find component for ${name}`)); }
 
-        if(typeof this.options.targets[name] == "string"){
+        if(typeof this.options.targets[name] === "string"){
           this.options.targets[name] = document.querySelector(this.options.targets[name]);
         }
 
         const target = this.options.targets[name];
-        if(!target){ return reject(`Could not select target for ${name}`); }
+        if(!target){ return reject(new Error(`Could not select target for ${name}`)); }
 
         unmountComponentAtNode(target);
 
-        resolve(render(<Component widgetID={this.id} options={this.options} traitify={this.ui.traitify} />, target));
+        resolve(render(
+          <Component widgetID={this.id} options={this.options} traitify={this.ui.traitify} />,
+          target
+        ));
       }));
     });
 

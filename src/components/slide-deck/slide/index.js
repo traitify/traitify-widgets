@@ -10,7 +10,7 @@ export default class Slide extends Component{
   }
   componentDidUpdate(prevProps){
     const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
-    const slideChanged = prevProps.currentIndex !== this.props.currentIndex;
+    const slideChanged = prevProps.slideIndex !== this.props.slideIndex;
 
     if(!instructionsChanged && !slideChanged){ return; }
 
@@ -51,24 +51,27 @@ export default class Slide extends Component{
   render(){
     const {
       back,
-      currentIndex,
       getOption,
       instructions,
       isComplete,
       showInstructions,
+      slideIndex,
       slides,
       start,
       translate
     } = this.props;
     const activeSlides = [];
-    let allowBack, allowFullscreen, currentSlide, progress;
+    let allowBack;
+    let allowFullscreen;
+    let currentSlide;
+    let progress;
 
     if(showInstructions){
-      activeSlides.push({orientation: "right", ...slides[currentIndex]});
+      activeSlides.push({orientation: "right", ...slides[slideIndex]});
     }else{
-      if(slides[currentIndex - 1]){ activeSlides.push({orientation: "left", ...slides[currentIndex - 1]}); }
-      activeSlides.push({orientation: "middle", ...slides[currentIndex]});
-      if(slides[currentIndex + 1]){ activeSlides.push({orientation: "right", ...slides[currentIndex + 1]}); }
+      if(slides[slideIndex - 1]){ activeSlides.push({orientation: "left", ...slides[slideIndex - 1]}); }
+      activeSlides.push({orientation: "middle", ...slides[slideIndex]});
+      if(slides[slideIndex + 1]){ activeSlides.push({orientation: "right", ...slides[slideIndex + 1]}); }
     }
 
     activeSlides.forEach((slide, index)=>{
@@ -88,7 +91,8 @@ export default class Slide extends Component{
             </div>
             <div className={style.instructionsStart}>
               <button className={style.instructionsButton} onClick={start} type="button">
-                {translate("get_started")} &rarr;
+                {translate("get_started")}
+                &rarr;
               </button>
             </div>
           </div>
@@ -99,15 +103,15 @@ export default class Slide extends Component{
       currentSlide = {caption: translate("instructions")};
       progress = 0;
     }else{
-      allowBack = getOption("allowBack") && currentIndex > 0;
+      allowBack = getOption("allowBack") && slideIndex > 0;
       allowFullscreen = getOption("allowFullscreen");
-      currentSlide = slides[currentIndex];
-      progress = isComplete ? 100 : currentIndex / slides.length * 100;
+      currentSlide = slides[slideIndex];
+      progress = isComplete ? 100 : slideIndex / slides.length * 100;
     }
 
     return (
       <div className={style.slideContainer}>
-        <div className={style.captionContainer} tabIndex="0">
+        <div className={style.captionContainer}>
           <div className={style.caption}>
             {currentSlide.caption}
           </div>
@@ -134,7 +138,7 @@ export default class Slide extends Component{
           </button>
         )}
         {allowFullscreen && (
-          <div className={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} />
+          <button className={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} type="button" />
         )}
       </div>
     );

@@ -25,6 +25,9 @@ class PersonalityTypeBar extends Component{
   getActiveType = ()=>{
     this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
   }
+  onKey = (e)=>{
+    if(e.key === "Enter"){ this.setActive(); }
+  }
   setActive = ()=>{
     this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
     this.props.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
@@ -38,13 +41,19 @@ class PersonalityTypeBar extends Component{
     const barHeight = Math.round(this.props.barHeight);
 
     let active = false;
-    const activeType = this.state.activeType;
+    const {activeType} = this.state;
     if(activeType){
       active = type.id === activeType.personality_type.id;
     }
 
     return (
-      <li className={`${style.bar} ${active ? style.selected : ""}`} onMouseOver={this.setActive} onClick={this.setActive}>
+      <li
+        className={`${style.bar} ${active ? style.selected : ""}`}
+        onMouseOver={this.setActive}
+        onClick={this.setActive}
+        onFocus={this.setActive}
+        onKeyPress={this.onKey}
+      >
         <span className={style.score} style={{background: color, height: `${barHeight}%`}}>{score}%</span>
         <span className={style.label} style={active ? {backgroundColor: rgba(color, 8.5)} : {}}>
           <img src={icon} alt={title} />

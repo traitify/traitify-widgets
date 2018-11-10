@@ -4,15 +4,15 @@ export default class TraitifyClient{
   constructor(){
     this.host = "https://api.traitify.com";
     this.version = "v1";
-    this.oldIE = typeof XDomainRequest != "undefined";
+    this.oldIE = typeof XDomainRequest !== "undefined";
   }
   online(){ return navigator.onLine; }
   setHost = (host)=>{
-    if(this.oldIE){
-      host = host.replace("https://", "").replace("http://", "");
-      host = `${location.protocol}//${host}`;
-    }
     this.host = host;
+    if(this.oldIE){
+      this.host = this.host.replace("https://", "").replace("http://", "");
+      this.host = `${window.location.protocol}//${this.host}`;
+    }
     return this;
   }
   setPublicKey = (key)=>{
@@ -23,17 +23,23 @@ export default class TraitifyClient{
     this.version = version;
     return this;
   }
-  ajax = (method, path, params)=>{
+  ajax = (method, path, _params)=>{
+    let params;
     let url = `${this.host}/${this.version}${path}`;
     let xhr;
-    if(params && ["get", "delete"].includes(method.toLowerCase())){
+    if(_params && ["get", "delete"].includes(method.toLowerCase())){
       url += url.indexOf("?") === -1 ? "?" : "&";
-      url += queryString.stringify(params);
+      url += queryString.stringify(_params);
       params = null;
+    }else{
+      params = _params;
     }
     if(this.oldIE){
       url += url.indexOf("?") === -1 ? "?" : "&";
-      url += queryString.stringify({authorization: this.publicKey, reset_cache: (new Date()).getTime()});
+      url += queryString.stringify({
+        authorization: this.publicKey,
+        reset_cache: (new Date()).getTime()
+      });
       xhr = new XDomainRequest();
       xhr.open(method, url);
     }else{

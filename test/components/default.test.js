@@ -19,7 +19,7 @@ describe("Default", ()=>{
   });
 
   it("renders div if not ready", ()=>{
-    const component = new ComponentHandler(<Component isReady={(type)=>(false)} />);
+    const component = new ComponentHandler(<Component isReady={()=>(false)} />);
 
     expect(component.tree).toMatchSnapshot();
   });

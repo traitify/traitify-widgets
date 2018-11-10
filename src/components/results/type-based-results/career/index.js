@@ -17,7 +17,7 @@ class Career extends Component{
     const {career, translate} = this.props;
 
     return (
-      <div className={style.container} onClick={this.openModal}>
+      <button className={style.container} onClick={this.openModal} type="button">
         <img alt={career.title} src={career.picture} />
         <div className={style.content}>
           <h2 className={style.title}>{career.title}</h2>
@@ -38,7 +38,7 @@ class Career extends Component{
             <span data-match-rate={`${career.score}%`} style={{width: `${career.score}%`}} />
           </div>
         </div>
-      </div>
+      </button>
     );
   }
 }

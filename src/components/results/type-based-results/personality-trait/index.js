@@ -12,7 +12,7 @@ class PersonalityTrait extends Component{
   }
   render(){
     const trait = this.props.trait.personality_trait;
-    const score = Math.round(this.props.trait.score/2 + 50);
+    const score = Math.round(this.props.trait.score / 2 + 50);
     const type = trait.personality_type;
     const color = `#${type.badge.color_1}`;
 

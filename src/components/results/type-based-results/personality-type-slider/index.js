@@ -36,9 +36,10 @@ class PersonalityTypeSlider extends Component{
     const {activeType} = this.state;
     const {assessment, translate} = this.props;
 
-    let backType, nextType;
+    let backType;
+    let nextType;
     if(activeType){
-      const id = activeType.personality_type.id;
+      const {id} = activeType.personality_type;
       const index = assessment.personality_types.findIndex((type)=>type.personality_type.id === id);
       backType = assessment.personality_types[index - 1];
       nextType = assessment.personality_types[index + 1];

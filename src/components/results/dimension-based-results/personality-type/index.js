@@ -13,7 +13,7 @@ class Type extends Component{
     e.preventDefault();
 
     this.props.traitify.ui.trigger("PersonalityType.showContent", this, this.props.type.personality_type);
-    this.setState({showContent: !this.state.showContent});
+    this.setState((state)=>({showContent: !state.showContent}));
   }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityType.initialized", this);
@@ -29,7 +29,10 @@ class Type extends Component{
       <li className={style.type} style={{borderLeft: `5px solid ${color}`}}>
         <div className={style.main} style={{background: rgba(color, 8.5)}}>
           <div className={style.content}>
-            <h2 className={style.title}>{type.name} <span className={style.score}>{this.props.type.score} - {type.level}</span></h2>
+            <h2 className={style.title}>
+              {type.name}
+              <span className={style.score}>{this.props.type.score} - {type.level}</span>
+            </h2>
           </div>
         </div>
       </li>

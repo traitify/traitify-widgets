@@ -14,14 +14,18 @@ describe("Results", ()=>{
 
   it("renders dimension based results", ()=>{
     const assessment = {assessment_type: "DIMENSION_BASED"};
-    const component = new ComponentHandler(<Component assessment={assessment} isReady={()=>(true)} traitify={traitify} />);
+    const component = new ComponentHandler(
+      <Component assessment={assessment} isReady={()=>(true)} traitify={traitify} />
+    );
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders type based results", ()=>{
     const assessment = {assessment_type: "TYPE_BASED"};
-    const component = new ComponentHandler(<Component assessment={assessment} isReady={()=>(true)} traitify={traitify} />);
+    const component = new ComponentHandler(
+      <Component assessment={assessment} isReady={()=>(true)} traitify={traitify} />
+    );
 
     expect(component.tree).toMatchSnapshot();
   });

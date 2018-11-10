@@ -108,7 +108,7 @@ const compatibility = ie || process.env.MODE === "compatibility";
 const browser = compatibility || process.env.MODE === "browser";
 
 if(browser){
-  config.entry.unshift("babel-polyfill");
+  config.entry.unshift("@babel/polyfill");
   config.output.libraryExport = "default";
 }
 if(compatibility){ config.entry[1] = "./compatibility.js"; }

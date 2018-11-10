@@ -40,15 +40,17 @@ class CareerFilter extends Component{
     ){ return this.traitify.ui.options.careerOptions[name]; }
   }
   mergeParams = ()=>{
-    this.setState({
+    this.setState((state, props)=>({
       params: {
-        ...this.state.params,
-        ...this.props.traitify.ui.current["Careers.mergeParams"]
+        ...state.params,
+        ...props.traitify.ui.current["Careers.mergeParams"]
       }
-    });
+    }));
   }
   toggleFilters = (e)=>{
-    if(e.target.tagName.toLowerCase() === "i"){ this.setState({showFilters: !this.state.showFilters}); }
+    if(e.target.tagName.toLowerCase() === "i"){
+      this.setState((state)=>({showFilters: !state.showFilters}));
+    }
   }
   updateParams = ()=>{
     this.setState({
@@ -56,30 +58,35 @@ class CareerFilter extends Component{
     });
   }
   onChange = (e)=>{
-    let params = {...this.state.params};
-    const {name, value} = e.target;
+    this.setState((state)=>{
+      const params = {...state.params};
+      const {name, value} = e.target;
 
-    params[name] = value;
+      params[name] = value;
 
-    this.setState({params});
+      return {params};
+    });
   }
   onExperienceChange = (e)=>{
     const value = +e.target.value;
     const defaultLevels = this.careerOption("experienceLevels") || [1, 2, 3, 4, 5];
-    let params = {...this.state.params};
-    let levels = params.experience_levels;
-    levels = levels ? levels.split(",").map((level)=>(+level)) : defaultLevels;
 
-    if(levels.includes(value)){
-      levels = levels.filter((l)=>(l !== value));
-      if(levels.length === 0){ levels = defaultLevels; }
-    }else{
-      levels.push(value);
-    }
+    this.setState((state)=>{
+      const params = {...state.params};
+      let levels = params.experience_levels;
+      levels = levels ? levels.split(",").map((level)=>(+level)) : defaultLevels;
 
-    params.experience_levels = levels.sort().join(",");
+      if(levels.includes(value)){
+        levels = levels.filter((l)=>(l !== value));
+        if(levels.length === 0){ levels = defaultLevels; }
+      }else{
+        levels.push(value);
+      }
 
-    this.setState({params});
+      params.experience_levels = levels.sort().join(",");
+
+      return {params};
+    });
   }
   onSubmit = (e)=>{
     e.preventDefault();
@@ -90,6 +97,9 @@ class CareerFilter extends Component{
     });
 
     return false;
+  }
+  onKey = (e)=>{
+    if(e.key === "Enter"){ this.toggleFilters(); }
   }
   render(){
     if(!this.props.isReady("results")){ return null; }
@@ -106,10 +116,11 @@ class CareerFilter extends Component{
         <form onSubmit={this.onSubmit}>
           <ul>
             <li className={style.search}>
-              <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
-              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange}/>
+              <label className={style.label} htmlFor="traitify-career-search">{translate("search")}
+                <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange} />
+              </label>
             </li>
-            <li onClick={this.toggleFilters}>
+            <li onClick={this.toggleFilters} onKeyPress={this.onKey}>
               <div className={`${style.fieldGroup} ${style.field}`}>
                 <i>{translate("filter")}</i>
                 <ul className={`${style.formGroup} ${showFilters ? style.block : ""}`}>
@@ -132,15 +143,19 @@ class CareerFilter extends Component{
                   </div>
                   <div>
                     <li className={style.groupTitle}>{translate("experience_level")}</li>
-                    {experienceLevels.map((level)=>(
-                      <li key={level}>
-                        <label htmlFor={`traitify-career-level-${level}`}>
-                          <input aria-labelledby={`traitify-career-level-${level}-label`} checked={currentExperienceLevels.includes(level)} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
-                          <Icon icon={currentExperienceLevels.includes(level) ? faCheckSquare : faSquare} />
-                          <span id={`traitify-career-level-${level}-label`}>{translate(`experience_level_${level}`)}</span>
-                        </label>
-                      </li>
-                    ))}
+                    {experienceLevels.map((level)=>{
+                      const checked = currentExperienceLevels.includes(level);
+
+                      return (
+                        <li key={level}>
+                          <label htmlFor={`traitify-career-level-${level}`}>
+                            <input aria-labelledby={`traitify-career-level-${level}-label`} checked={checked} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
+                            <Icon icon={checked ? faCheckSquare : faSquare} />
+                            <span id={`traitify-career-level-${level}-label`}>{translate(`experience_level_${level}`)}</span>
+                          </label>
+                        </li>
+                      );
+                    })}
                   </div>
                   <div>
                     <li>

@@ -12,7 +12,8 @@ jest.mock("lib/helpers/guess-component", ()=>(
 ));
 
 describe("Widget", ()=>{
-  let ui, widget;
+  let ui;
+  let widget;
 
   beforeEach(()=>{
     guessComponent.mockClear();
@@ -226,24 +227,24 @@ describe("Widget", ()=>{
     it("requires a component", ()=>{
       const result = widget.target("#results").render("NotFound");
 
-      return expect(result).rejects.toEqual("Could not find component for NotFound");
+      return expect(result).rejects.toThrow("Could not find component for NotFound");
     });
 
     it("requires a target", ()=>{
       const result = widget.render();
 
-      return expect(result).rejects.toEqual("You did not specify a target");
+      return expect(result).rejects.toThrow("You did not specify a target");
     });
 
     it("requires a valid target", ()=>{
       const result = widget.target("#not-found").render();
 
-      return expect(result).rejects.toEqual("Could not select target for Default");
+      return expect(result).rejects.toThrow("Could not select target for Default");
     });
 
     it("renders string target", (done)=>{
       widget.options.target = "#results";
-      widget.render().then((result)=>{
+      widget.render().then(()=>{
         expect(render).toHaveBeenCalledTimes(1);
         done();
       });
@@ -251,7 +252,7 @@ describe("Widget", ()=>{
 
     it("renders dom target", (done)=>{
       widget.options.target = {nodeName: "div"};
-      widget.render().then((result)=>{
+      widget.render().then(()=>{
         expect(render).toHaveBeenCalledTimes(1);
         done();
       });
@@ -263,7 +264,7 @@ describe("Widget", ()=>{
         PersonalityTraits: "#traits",
         PersonalityTypes: "#types"
       };
-      widget.render().then((result)=>{
+      widget.render().then(()=>{
         expect(render).toHaveBeenCalledTimes(3);
         done();
       });
@@ -276,7 +277,7 @@ describe("Widget", ()=>{
         firstChild: {nodeName: "div"},
         nodeName: "div"
       };
-      widget.render().then((result)=>{
+      widget.render().then(()=>{
         expect(render).toHaveBeenCalled();
         done();
       });

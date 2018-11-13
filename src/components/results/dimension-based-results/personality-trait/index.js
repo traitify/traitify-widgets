@@ -1,9 +1,17 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
+import TraitifyPropType from "lib/helpers/prop-type";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class PersonalityTrait extends Component{
+  static propTypes = {
+    trait: PropTypes.shape({
+      personality_trait: PropTypes.object.isRequired
+    }).isRequired,
+    traitify: TraitifyPropType.isRequired
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
   }

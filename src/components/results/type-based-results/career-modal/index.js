@@ -12,13 +12,19 @@ import {
   faTimes,
   faQuestion
 } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
 import {dangerousProps} from "lib/helpers";
 import Icon from "lib/helpers/icon";
+import TraitifyPropType from "lib/helpers/prop-type";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class CareerModal extends Component{
+  static propTypes = {
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   constructor(props){
     super(props);
 

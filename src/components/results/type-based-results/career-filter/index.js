@@ -2,12 +2,21 @@ import {
   faCheckSquare,
   faSquare
 } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
 import Icon from "lib/helpers/icon";
+import TraitifyPropType from "lib/helpers/prop-type";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class CareerFilter extends Component{
+  static defaultProps = {options: null}
+  static propTypes = {
+    isReady: PropTypes.func.isRequired,
+    options: PropTypes.shape({careerOptions: PropTypes.object}),
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   constructor(props){
     super(props);
 
@@ -58,9 +67,10 @@ class CareerFilter extends Component{
     });
   }
   onChange = (e)=>{
+    const {name, value} = e.target;
+
     this.setState((state)=>{
       const params = {...state.params};
-      const {name, value} = e.target;
 
       params[name] = value;
 

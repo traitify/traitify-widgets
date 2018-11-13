@@ -41,7 +41,6 @@
     "space-before-function-paren": ["error", "never"],
 
     // TODO: Remove
-    "react/prop-types": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
 
     "arrow-parens": ["error", "always"], // Consistency

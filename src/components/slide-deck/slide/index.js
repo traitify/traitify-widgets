@@ -1,12 +1,23 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
 import Markdown from "react-markdown";
 import style from "./style";
 
 export default class Slide extends Component{
-  constructor(props){
-    super(props);
-
-    this.state = {isFullscreen: false};
+  static defaultProps = {instructions: null}
+  static propTypes = {
+    back: PropTypes.func.isRequired,
+    getOption: PropTypes.func.isRequired,
+    instructions: PropTypes.string,
+    isComplete: PropTypes.bool.isRequired,
+    isFullscreen: PropTypes.bool.isRequired,
+    showInstructions: PropTypes.bool.isRequired,
+    slideIndex: PropTypes.number.isRequired,
+    slides: PropTypes.arrayOf(PropTypes.object).isRequired,
+    start: PropTypes.func.isRequired,
+    toggleFullscreen: PropTypes.func.isRequired,
+    translate: PropTypes.func.isRequired,
+    updateSlide: PropTypes.func.isRequired
   }
   componentDidUpdate(prevProps){
     const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
@@ -19,45 +30,18 @@ export default class Slide extends Component{
   }
   respondMe = ()=>{ this.props.updateSlide(true); }
   respondNotMe = ()=>{ this.props.updateSlide(false); }
-  toggleFullscreen = ()=>{
-    const fullscreen = this.state.isFullscreen;
-
-    if(fullscreen){
-      if(document.exitFullscreen){
-        document.exitFullscreen();
-      }else if(document.webkitExitFullscreen){
-        document.webkitExitFullscreen();
-      }else if(document.mozCancelFullScreen){
-        document.mozCancelFullScreen();
-      }else if(document.msExitFullscreen){
-        document.msExitFullscreen();
-      }
-    }else{
-      const {container} = this.props;
-
-      if(container.requestFullscreen){
-        container.requestFullscreen();
-      }else if(container.webkitRequestFullscreen){
-        container.webkitRequestFullscreen();
-      }else if(container.mozRequestFullScreen){
-        container.mozRequestFullScreen();
-      }else if(container.msRequestFullscreen){
-        container.msRequestFullscreen();
-      }
-    }
-    this.setState({isFullscreen: !fullscreen});
-    this.props.traitify.ui.trigger("SlideDeck.fullscreen", this, !fullscreen);
-  }
   render(){
     const {
       back,
       getOption,
       instructions,
       isComplete,
+      isFullscreen,
       showInstructions,
       slideIndex,
       slides,
       start,
+      toggleFullscreen,
       translate
     } = this.props;
     const activeSlides = [];
@@ -138,7 +122,7 @@ export default class Slide extends Component{
           </button>
         )}
         {allowFullscreen && (
-          <button className={[style.fullscreen, this.state.isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={this.toggleFullscreen} type="button" />
+          <button className={[style.fullscreen, isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={toggleFullscreen} type="button" />
         )}
       </div>
     );

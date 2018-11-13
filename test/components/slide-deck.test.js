@@ -14,15 +14,24 @@ describe("SlideDeck", ()=>{
       time_taken: complete ? Math.random() * 100 : null
     }
   );
-  const assessment = {id: "xyz", slides: Array.from({length: 20}).map((_, i)=>(createSlide(i, false)))};
-  const assessmentWithoutSlides = {id: "xyz", slides: []};
+  const assessment = {
+    id: "xyz",
+    locale_key: "en-us",
+    slides: Array.from({length: 20}).map((_, i)=>(createSlide(i, false)))
+  };
+  const assessmentWithoutSlides = {
+    id: "xyz",
+    locale_key: "en-us",
+    slides: []
+  };
   const defaultProps = {
     assessment,
     assessmentID: assessment.id,
     cache: {get: jest.fn().mockName("get"), set: jest.fn().mockName("set")},
     getAssessment: jest.fn().mockName("getAssessment"),
     getOption: jest.fn().mockName("getAssessment"),
-    isReady: ()=>(true)
+    isReady: ()=>(true),
+    translate: (key)=>(key)
   };
 
   beforeEach(()=>{

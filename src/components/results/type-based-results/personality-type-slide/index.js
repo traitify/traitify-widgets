@@ -1,9 +1,19 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
+import TraitifyPropType from "lib/helpers/prop-type";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class PersonalityTypeSlide extends Component{
+  static propTypes = {
+    getOption: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    type: PropTypes.shape({
+      personality_type: PropTypes.object.isRequired,
+      score: PropTypes.number.isRequired
+    }).isRequired
+  }
   constructor(props){
     super(props);
 

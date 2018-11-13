@@ -1,8 +1,21 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class Career extends Component{
+  static propTypes = {
+    career: PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      experience_level: PropTypes.object.isRequired,
+      picture: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired
+    }).isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("Career.initialized", this);
   }

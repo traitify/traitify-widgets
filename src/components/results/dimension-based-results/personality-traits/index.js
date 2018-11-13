@@ -1,9 +1,18 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
 class PersonalityTraits extends Component{
+  static defaultProps = {assessment: null}
+  static propTypes = {
+    assessment: PropTypes.shape({personality_traits: PropTypes.array}),
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityTraits.initialized", this);
   }

@@ -1,5 +1,4 @@
 /* eslint no-console: "off" */
-import "support/anti-airbrake";
 import Airbrake from "airbrake-js";
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";

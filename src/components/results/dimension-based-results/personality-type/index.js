@@ -1,13 +1,17 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Type extends Component{
-  constructor(props){
-    super(props);
-
-    this.state = {showContent: props.index === 0};
+  static propTypes = {
+    type: PropTypes.shape({
+      personality_type: PropTypes.object.isRequired,
+      score: PropTypes.number.isRequired
+    }).isRequired,
+    traitify: TraitifyPropType.isRequired
   }
   trigger = (e)=>{
     e.preventDefault();

@@ -1,9 +1,20 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import {dangerousProps} from "lib/helpers";
 import style from "./style";
 
 class PersonalityHeading extends Component{
+  static defaultProps = {assessment: null, deck: null}
+  static propTypes = {
+    assessment: PropTypes.shape({archetype: PropTypes.object}),
+    deck: PropTypes.shape({name: PropTypes.string.isRequired}),
+    followDeck: PropTypes.func.isRequired,
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   componentDidMount(){
     this.props.traitify.ui.trigger("PersonalityHeading.initialized", this);
     this.props.followDeck();

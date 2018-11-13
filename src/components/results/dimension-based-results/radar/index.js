@@ -1,9 +1,18 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import Chart from "lib/helpers/canvas-radar-chart";
 import style from "./style";
 
 class Radar extends Component{
+  static defaultProps = {assessment: null}
+  static propTypes = {
+    assessment: PropTypes.shape({personality_types: PropTypes.array}),
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   componentDidMount(){
     window.addEventListener("resize", this.updateChart);
 

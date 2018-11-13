@@ -1,9 +1,18 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
 class PersonalityTraits extends Component{
+  static defaultProps = {assessment: null}
+  static propTypes = {
+    assessment: PropTypes.shape({personality_traits: PropTypes.array}),
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   constructor(props){
     super(props);
 
@@ -18,12 +27,10 @@ class PersonalityTraits extends Component{
   onClick = (e)=>{
     e.preventDefault();
 
-    this.setState((state, props)=>{
-      const {showMore} = state;
-      const key = showMore ? "showLess" : "showMore";
-      props.traitify.ui.trigger(`PersonalityTraits.${key}`, this);
+    this.setState((state)=>({showMore: !state.showMore}), ()=>{
+      const key = this.state.showMore ? "showLess" : "showMore";
 
-      return {showMore: !showMore};
+      this.props.traitify.ui.trigger(`PersonalityTraits.${key}`, this);
     });
   }
   render(){

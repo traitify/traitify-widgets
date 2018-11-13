@@ -2,15 +2,6 @@ import Airbrake from "airbrake-js";
 import {Component} from "react";
 import {getDisplayName, loadFont} from "lib/helpers";
 
-/* eslint-disable no-console */
-// Unwrap Airbrake's console wrapper
-["debug", "log", "info", "warn", "error"].forEach((method)=>{
-  if(method in console && console[method].inner){
-    console[method] = console[method].inner;
-  }
-});
-/* eslint-enable no-console */
-
 export default function withTraitify(WrappedComponent){
   return class TraitifyComponent extends Component{
     static displayName = `Traitify${getDisplayName(WrappedComponent)}`
@@ -228,7 +219,8 @@ export default function withTraitify(WrappedComponent){
       this.airbrake = new Airbrake({
         ignoreWindowError: true,
         projectId: "141848",
-        projectKey: "c48de83d0f02ea6d598b491878c0c57e"
+        projectKey: "c48de83d0f02ea6d598b491878c0c57e",
+        unwrapConsole: true
       });
       this.airbrake.addFilter((notice)=>{
         let environment;

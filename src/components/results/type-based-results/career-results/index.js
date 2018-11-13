@@ -1,9 +1,20 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import Career from "../career";
 import style from "./style";
 
 class CareerResults extends Component{
+  static defaultProps = {options: null}
+  static propTypes = {
+    assessmentID: PropTypes.string.isRequired,
+    isReady: PropTypes.func.isRequired,
+    locale: PropTypes.string.isRequired,
+    options: PropTypes.shape({careerOptions: PropTypes.object}),
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   constructor(props){
     super(props);
 

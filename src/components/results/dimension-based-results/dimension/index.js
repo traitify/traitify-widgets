@@ -1,9 +1,21 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Dimension extends Component{
+  static propTypes = {
+    getOption: PropTypes.func.isRequired,
+    index: PropTypes.number.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired,
+    type: PropTypes.shape({
+      personality_type: PropTypes.object.isRequired,
+      score: PropTypes.number.isRequired
+    }).isRequired
+  }
   constructor(props){
     super(props);
 

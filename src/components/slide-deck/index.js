@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import Loading from "./loading";
 import Slide from "./slide";
@@ -8,6 +10,24 @@ const slideIndex = (slides)=>(slides.findIndex((slide)=>(slide.response == null)
 const mutable = (data)=>(data.map((item)=>({...item})));
 
 class SlideDeck extends Component{
+  static defaultProps = {assessment: null}
+  static propTypes = {
+    assessment: PropTypes.shape({
+      instructions: PropTypes.shape({instructional_text: PropTypes.string.isRequired}),
+      locale_key: PropTypes.string.isRequired,
+      slides: PropTypes.arrayOf(PropTypes.object).isRequired
+    }),
+    assessmentID: PropTypes.string.isRequired,
+    cache: PropTypes.shape({
+      get: PropTypes.func.isRequired,
+      set: PropTypes.func.isRequired
+    }).isRequired,
+    getAssessment: PropTypes.func.isRequired,
+    getOption: PropTypes.func.isRequired,
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
   constructor(props){
     super(props);
 
@@ -16,6 +36,7 @@ class SlideDeck extends Component{
       imageLoading: false,
       imageLoadAttempts: [],
       initialized: false,
+      isFullscreen: false,
       ready: false,
       slides: [],
       showInstructions: true
@@ -202,6 +223,39 @@ class SlideDeck extends Component{
       return {imageLoadAttempts: attempts};
     }, this.fetchImages);
   }
+  toggleFullscreen = ()=>{
+    this.setState((state)=>{
+      const {isFullscreen} = state;
+
+      if(isFullscreen){
+        if(document.exitFullscreen){
+          document.exitFullscreen();
+        }else if(document.webkitExitFullscreen){
+          document.webkitExitFullscreen();
+        }else if(document.mozCancelFullScreen){
+          document.mozCancelFullScreen();
+        }else if(document.msExitFullscreen){
+          document.msExitFullscreen();
+        }
+      }else{
+        const {container} = this;
+
+        if(container.requestFullscreen){
+          container.requestFullscreen();
+        }else if(container.webkitRequestFullscreen){
+          container.webkitRequestFullscreen();
+        }else if(container.mozRequestFullScreen){
+          container.mozRequestFullScreen();
+        }else if(container.msRequestFullscreen){
+          container.msRequestFullscreen();
+        }
+      }
+
+      return {isFullscreen: !isFullscreen};
+    }, ()=>{
+      this.props.traitify.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
+    });
+  }
   updateSlide = (value)=>{
     this.setState((state)=>{
       const key = value ? "me" : "notMe";
@@ -234,19 +288,23 @@ class SlideDeck extends Component{
     return (
       <div className={style.widgetContainer} ref={(container)=>{ this.container = container; }}>
         {(isComplete || !this.state.ready) ? (
-          <Loading imageLoadAttempts={this.state.imageLoadAttempts} retry={this.retry} />
+          <Loading
+            imageLoadAttempts={this.state.imageLoadAttempts}
+            retry={this.retry}
+            translate={this.props.translate}
+          />
         ) : (
           <Slide
             back={this.back}
-            container={this.container}
             getOption={this.props.getOption}
             instructions={this.state.instructions}
             isComplete={isComplete}
+            isFullscreen={this.state.isFullscreen}
             showInstructions={this.state.showInstructions}
             slideIndex={slideIndex(this.state.slides)}
             slides={this.state.slides}
             start={this.hideInstructions}
-            traitify={this.props.traitify}
+            toggleFullscreen={this.toggleFullscreen}
             translate={this.props.translate}
             updateSlide={this.updateSlide}
           />

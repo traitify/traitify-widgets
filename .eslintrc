@@ -51,6 +51,7 @@
     "func-names": "off", // Unnecessary and unused with arrow functions
     "lines-between-class-members": ["error", "never"],
     "no-else-return": "off", // Allows more functional styles
+    "no-multiple-empty-lines": ["error", {max: 1, maxBOF: 0, maxEOF: 0}], // Little stricter
     "no-underscore-dangle": "off", // Doesn't allow `const key = _key.toLowerCase()`
     "no-unused-expressions": ["error", {allowShortCircuit: true, allowTernary: true}],
     "object-curly-newline": ["error", {multiline: true, consistent: true}],
@@ -79,65 +80,6 @@
     "react/react-in-jsx-scope": "off", // Global React
     "react/sort-comp": "off" // TODO: Remove when airbnb includes componentDidCatch
   },
-  /*
-  // TODO: Look into whether or not we should continue to use these
-  // First check if they're already added by airbnb
-  "old": {
-    "react/jsx-no-bind": ["error", {ignoreRefs: true }],
-    "react/jsx-no-duplicate-props": "error",
-    "react/self-closing-comp": "error",
-    "react/prefer-es6-class": "error",
-    "react/no-string-refs": "error",
-    "react/require-render-return": "error",
-    "react/no-find-dom-node": "error",
-    "react/no-is-mounted": "error",
-    "react/jsx-no-comment-textnodes": "error",
-    "react/jsx-curly-spacing": "error",
-    "react/jsx-no-undef": "error",
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "no-empty": "off",
-    "no-console": "off",
-    "no-empty-pattern": "off",
-    "no-cond-assign": "warn",
-    "semi": "error",
-    "camelcase": "off",
-    "comma-style": "error",
-    "no-mixed-spaces-and-tabs": "error",
-    "no-trailing-spaces": "error",
-    "max-nested-callbacks": ["error", 3],
-    "no-eval": "error",
-    "no-implied-eval": "error",
-    "no-new-func": "error",
-    "guard-for-in": "error",
-    "eqeqeq": ["warn", "smart"],
-    "no-redeclare": "error",
-    "no-dupe-keys": "error",
-    "radix": "error",
-    "strict": ["error", "never"],
-    "no-shadow": "off",
-    "no-delete-var": "error",
-    "no-undef-init": "error",
-    "no-shadow-restricted-names": "error",
-    "handle-callback-err": "off",
-    "constructor-super": "error",
-    "no-this-before-super": "error",
-    "no-dupe-class-members": "error",
-    "no-const-assign": "error",
-    "prefer-spread": "error",
-    "no-useless-concat": "error",
-    "no-var": "error",
-    "object-shorthand": "error",
-    "prefer-arrow-callback": "error",
-    "indent": ["error", 2, {SwitchCase: 1}],
-    "jsx-quotes": "error",
-    "new-parens": "error",
-    "no-lonely-if": "off",
-    "no-multiple-empty-lines": ["error", {max: 1, maxBOF: 0, maxEOF: 0}],
-    "no-unused-vars": ["error", {args: "none"}],
-    "padded-blocks": ["error", "never"],
-  }
-  */
   "settings": {
     "import/resolver": "webpack"
   }

@@ -56,10 +56,8 @@ class CareerFilter extends Component{
       }
     }));
   }
-  toggleFilters = (e)=>{
-    if(e.target.tagName.toLowerCase() === "i"){
-      this.setState((state)=>({showFilters: !state.showFilters}));
-    }
+  toggleFilters = ()=>{
+    this.setState((state)=>({showFilters: !state.showFilters}));
   }
   updateParams = ()=>{
     this.setState({
@@ -108,9 +106,6 @@ class CareerFilter extends Component{
 
     return false;
   }
-  onKey = (e)=>{
-    if(e.key === "Enter"){ this.toggleFilters(); }
-  }
   render(){
     if(!this.props.isReady("results")){ return null; }
 
@@ -126,13 +121,12 @@ class CareerFilter extends Component{
         <form onSubmit={this.onSubmit}>
           <ul>
             <li className={style.search}>
-              <label className={style.label} htmlFor="traitify-career-search">{translate("search")}
-                <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange} />
-              </label>
+              <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
+              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange} />
             </li>
-            <li onClick={this.toggleFilters} onKeyPress={this.onKey}>
-              <div className={`${style.fieldGroup} ${style.field}`}>
-                <i>{translate("filter")}</i>
+            <li>
+              <div className={style.fieldGroup}>
+                <button onClick={this.toggleFilters} type="button">{translate("filter")}</button>
                 <ul className={`${style.formGroup} ${showFilters ? style.block : ""}`}>
                   <div>
                     <li className={style.groupTitle}>{translate("sort")}</li>
@@ -168,7 +162,7 @@ class CareerFilter extends Component{
                     })}
                   </div>
                   <div>
-                    <li>
+                    <li className={style.center}>
                       <input type="submit" value={translate("search")} />
                     </li>
                   </div>

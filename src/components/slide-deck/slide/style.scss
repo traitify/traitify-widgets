@@ -4,14 +4,13 @@
 .back{
   background-color: $progressBar;
   background-size: 100% 100%;
+  border: none;
   -webkit-transition: opacity .2s; /* Safari */
   transition: opacity .2s;
   &:hover{ opacity: 1; }
 
   cursor: pointer;
   position: absolute;
-  left: 30px;
-  bottom: 36px;
   width: 40px;
   height: 40px;
   padding: 10px;
@@ -23,6 +22,17 @@
     display: block;
     max-width: 100%;
     max-height: 100%;
+  }
+
+  bottom: 100px;
+  margin-right: 110px;
+  right: 50%;
+
+  @include mq(xs) {
+    bottom: 36px;
+    left: 30px;
+    margin-right: 0;
+    right: initial;
   }
 }
 .captionContainer{
@@ -60,6 +70,8 @@
   }
 }
 .fullscreen{
+  background: none;
+  border: none;
   background-image: url("https://cdn.traitify.com/assets/images/js/full-screen-icon-large.png");
   &.fullscreenSmall{
     background-image: url("https://cdn.traitify.com/assets/images/js/full-screen-icon-small.png");
@@ -74,12 +86,21 @@
   width: 40px;
   height: 40px;
   opacity: .5;
-  bottom: 36px;
 
   position: absolute;
   z-index: 3;
-  right: 30px;
   cursor: pointer;
+
+  bottom: 100px;
+  left: 50%;
+  margin-left: 110px;
+
+  @include mq(xs) {
+    bottom: 36px;
+    left: initial;
+    margin-left: 0;
+    right: 30px;
+  }
 }
 .instructionsButton {
   display: inline-block;

@@ -55,7 +55,7 @@ class PersonalityTypeBarChart extends Component{
     if(!this.props.isReady("results")){ return null; }
 
     return (
-      <ul className={style.chart}>
+      <div className={style.chart}>
         {this.props.assessment.personality_types.map((type)=>(
           <PersonalityTypeBar
             key={type.personality_type.id}
@@ -64,7 +64,7 @@ class PersonalityTypeBarChart extends Component{
             {...this.props}
           />
         ))}
-      </ul>
+      </div>
     );
   }
 }

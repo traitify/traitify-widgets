@@ -2,7 +2,6 @@
 
 .chart {
   @extend %widgetContainer;
-  
   display: table;
   table-layout: fixed;
   height: 300px;

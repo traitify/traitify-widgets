@@ -104,7 +104,7 @@ class CareerModal extends Component{
                 </div>
               </li>
               <li>
-                <div className={style.infoText}>
+                <div className={style.center}>
                   <button className={style.legendToggle} onClick={this.toggleLegend} title={translate("more_information")} type="button">
                     {translate("help")} <Icon icon={faQuestion} />
                   </button>

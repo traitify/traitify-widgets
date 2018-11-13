@@ -57,18 +57,28 @@ class PersonalityTypeBar extends Component{
     }
 
     return (
-      <li
-        className={`${style.bar} ${active ? style.selected : ""}`}
-        onMouseOver={this.setActive}
-        onClick={this.setActive}
-        onFocus={this.setActive}
-        onKeyPress={this.onKey}
-      >
-        <span className={style.score} style={{background: color, height: `${barHeight}%`}}>{score}%</span>
-        <span className={style.label} style={active ? {backgroundColor: rgba(color, 8.5)} : {}}>
+      <li className={`${style.bar} ${active ? style.selected : ""}`}>
+        <button
+          className={style.score}
+          onMouseOver={this.setActive}
+          onClick={this.setActive}
+          onFocus={this.setActive}
+          style={{background: color, height: `${barHeight}%`}}
+          type="button"
+        >
+          <span>{score}%</span>
+        </button>
+        <button
+          className={style.label}
+          style={active ? {backgroundColor: rgba(color, 8.5)} : {}}
+          onMouseOver={this.setActive}
+          onClick={this.setActive}
+          onFocus={this.setActive}
+          type="button"
+        >
           <img src={icon} alt={title} />
           <i>{title}</i>
-        </span>
+        </button>
       </li>
     );
   }

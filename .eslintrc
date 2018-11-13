@@ -40,15 +40,19 @@
     "space-before-blocks": ["error", "never"],
     "space-before-function-paren": ["error", "never"],
 
-    // TODO: Remove
-    "jsx-a11y/no-noninteractive-element-interactions": "off",
-
     "arrow-parens": ["error", "always"], // Consistency
     "babel/object-curly-spacing": "error", // Replace non-babel version
     "class-methods-use-this": "off", // Allows methods to be overridden
     "comma-dangle": ["error", "never"], // Unnecessary
     "consistent-return": "off", // Makes it hard to return early for conditionals
     "func-names": "off", // Unnecessary and unused with arrow functions
+    "jsx-a11y/label-has-for": ["error", {
+      components: [],
+      required: {
+        some: ["nesting", "id"],
+      },
+      allowChildren: false,
+    }],
     "lines-between-class-members": ["error", "never"],
     "no-else-return": "off", // Allows more functional styles
     "no-multiple-empty-lines": ["error", {max: 1, maxBOF: 0, maxEOF: 0}], // Little stricter

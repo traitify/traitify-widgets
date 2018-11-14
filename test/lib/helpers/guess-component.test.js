@@ -1,7 +1,7 @@
 import guessComponent from "lib/helpers/guess-component";
 import componentFromAssessment from "lib/helpers/component-from-assessment";
 
-jest.mock("components", ()=>({
+jest.mock("components", () => ({
   Default: {name: "Default"},
   DimensionComponents: {
     Dimensions: {name: "Dimensions"},
@@ -17,51 +17,51 @@ jest.mock("components", ()=>({
 
 jest.mock("lib/helpers/component-from-assessment");
 
-describe("Helpers", ()=>{
-  describe("guessComponent", ()=>{
-    it("returns default", ()=>{
+describe("Helpers", () => {
+  describe("guessComponent", () => {
+    it("returns default", () => {
       const component = guessComponent();
 
       expect(component.name).toBe("Default");
     });
 
-    it("returns results", ()=>{
+    it("returns results", () => {
       const component = guessComponent("Results");
 
       expect(component.name).toBe("Results");
     });
 
-    it("returns slide deck", ()=>{
+    it("returns slide deck", () => {
       const component = guessComponent("SlideDeck");
 
       expect(component.name).toBe("SlideDeck");
     });
 
-    it("returns explicit dimension component", ()=>{
+    it("returns explicit dimension component", () => {
       const component = guessComponent("Dimension.Dimensions");
 
       expect(component.name).toBe("Dimensions");
     });
 
-    it("returns explicit type component", ()=>{
+    it("returns explicit type component", () => {
       const component = guessComponent("Type.PersonalityBadge");
 
       expect(component.name).toBe("PersonalityBadge");
     });
 
-    it("returns implicit dimension component", ()=>{
+    it("returns implicit dimension component", () => {
       const component = guessComponent("Dimensions", {assessmentType: "DIMENSION_BASED"});
 
       expect(component.name).toBe("Dimensions");
     });
 
-    it("returns implicit type component", ()=>{
+    it("returns implicit type component", () => {
       const component = guessComponent("PersonalityBadge", {assessmentType: "TYPE_BASED"});
 
       expect(component.name).toBe("PersonalityBadge");
     });
 
-    it("returns ambiguous component", ()=>{
+    it("returns ambiguous component", () => {
       componentFromAssessment.mockClear();
       guessComponent("PersonalityType");
 
@@ -71,7 +71,7 @@ describe("Helpers", ()=>{
       });
     });
 
-    it("allows misses", ()=>{
+    it("allows misses", () => {
       const component = guessComponent("Tacos");
 
       expect(component).toBeUndefined();

@@ -3,7 +3,7 @@ import {Component} from "react";
 import Markdown from "react-markdown";
 import style from "./style";
 
-export default class Slide extends Component{
+export default class Slide extends Component {
   static defaultProps = {instructions: null}
   static propTypes = {
     back: PropTypes.func.isRequired,
@@ -19,18 +19,18 @@ export default class Slide extends Component{
     translate: PropTypes.func.isRequired,
     updateSlide: PropTypes.func.isRequired
   }
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps) {
     const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
     const slideChanged = prevProps.slideIndex !== this.props.slideIndex;
 
-    if(!instructionsChanged && !slideChanged){ return; }
+    if(!instructionsChanged && !slideChanged) { return; }
 
     const element = document.querySelector(`.${style.captionContainer}`);
     element && element.focus();
   }
-  respondMe = ()=>{ this.props.updateSlide(true); }
-  respondNotMe = ()=>{ this.props.updateSlide(false); }
-  render(){
+  respondMe = () => { this.props.updateSlide(true); }
+  respondNotMe = () => { this.props.updateSlide(false); }
+  render() {
     const {
       back,
       getOption,
@@ -50,15 +50,15 @@ export default class Slide extends Component{
     let currentSlide;
     let progress;
 
-    if(showInstructions){
+    if(showInstructions) {
       activeSlides.push({orientation: "right", ...slides[slideIndex]});
-    }else{
-      if(slides[slideIndex - 1]){ activeSlides.push({orientation: "left", ...slides[slideIndex - 1]}); }
+    } else {
+      if(slides[slideIndex - 1]) { activeSlides.push({orientation: "left", ...slides[slideIndex - 1]}); }
       activeSlides.push({orientation: "middle", ...slides[slideIndex]});
-      if(slides[slideIndex + 1]){ activeSlides.push({orientation: "right", ...slides[slideIndex + 1]}); }
+      if(slides[slideIndex + 1]) { activeSlides.push({orientation: "right", ...slides[slideIndex + 1]}); }
     }
 
-    activeSlides.forEach((slide, index)=>{
+    activeSlides.forEach((slide, index) => {
       activeSlides[index] = (
         <div key={slide.id} className={`${style.slide} ${style[slide.orientation]}`}>
           <img src={slide.image} alt={slide.alternative_text} />
@@ -66,7 +66,7 @@ export default class Slide extends Component{
       );
     });
 
-    if(showInstructions){
+    if(showInstructions) {
       activeSlides.unshift(
         <div key="instructions" className={`${style.slide} ${style.middle}`}>
           <div className={style.instructionsSlide}>
@@ -86,7 +86,7 @@ export default class Slide extends Component{
       allowFullscreen = false;
       currentSlide = {caption: translate("instructions")};
       progress = 0;
-    }else{
+    } else {
       allowBack = getOption("allowBack") && slideIndex > 0;
       allowFullscreen = getOption("allowFullscreen");
       currentSlide = slides[slideIndex];

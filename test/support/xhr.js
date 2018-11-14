@@ -7,5 +7,5 @@ export const xhrMocks = {
   send: jest.fn().mockName("xhrSend"),
   setRequestHeader: jest.fn().mockName("xhrSetRequestHeader")
 };
-export const XDomainRequestMock = jest.fn().mockImplementation(()=>({...xdrMocks}));
-export const XMLHttpRequestMock = jest.fn().mockImplementation(()=>({...xhrMocks}));
+export const XDomainRequestMock = jest.fn().mockImplementation(() => ({...xdrMocks}));
+export const XMLHttpRequestMock = jest.fn().mockImplementation(() => ({...xhrMocks}));

@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import {dangerousProps} from "lib/helpers";
 import style from "./style";
 
-class PersonalityHeading extends Component{
+class PersonalityHeading extends Component {
   static defaultProps = {assessment: null, deck: null}
   static propTypes = {
     assessment: PropTypes.shape({archetype: PropTypes.object}),
@@ -15,19 +15,19 @@ class PersonalityHeading extends Component{
     traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityHeading.initialized", this);
     this.props.followDeck();
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityHeading.updated", this);
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
-    if(!this.props.isReady("deck")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
+    if(!this.props.isReady("deck")) { return null; }
 
     const personality = this.props.assessment.archetype;
-    if(!personality){ return null; }
+    if(!personality) { return null; }
 
     return (
       <div className={style.personality}>

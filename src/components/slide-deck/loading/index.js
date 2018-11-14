@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import style from "./style.scss";
 
-export default class Loading extends Component{
+export default class Loading extends Component {
   static propTypes = {
     imageLoadAttempts: PropTypes.arrayOf(PropTypes.number).isRequired,
     retry: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired
   }
-  render(){
+  render() {
     const {imageLoadAttempts, retry, translate} = this.props;
 
     return (

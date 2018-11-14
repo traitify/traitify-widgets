@@ -4,17 +4,17 @@ import withTraitify from "lib/with-traitify";
 import PersonalityTypeBarChart from "../personality-type-bar-chart";
 import PersonalityTypeSlider from "../personality-type-slider";
 
-class PersonalityTypes extends Component{
+class PersonalityTypes extends Component {
   static propTypes = {
     traitify: TraitifyPropType.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityTypes.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityTypes.updated", this);
   }
-  render(){
+  render() {
     return (
       <div>
         <PersonalityTypeBarChart {...this.props} />

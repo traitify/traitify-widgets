@@ -5,7 +5,7 @@ import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class PersonalityTrait extends Component{
+class PersonalityTrait extends Component {
   static propTypes = {
     traitify: TraitifyPropType.isRequired,
     trait: PropTypes.shape({
@@ -13,13 +13,13 @@ class PersonalityTrait extends Component{
       score: PropTypes.number.isRequired
     }).isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityTrait.updated", this);
   }
-  render(){
+  render() {
     const trait = this.props.trait.personality_trait;
     const score = Math.round(this.props.trait.score / 2 + 50);
     const type = trait.personality_type;

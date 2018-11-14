@@ -5,20 +5,20 @@ import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class PersonalityTrait extends Component{
+class PersonalityTrait extends Component {
   static propTypes = {
     trait: PropTypes.shape({
       personality_trait: PropTypes.object.isRequired
     }).isRequired,
     traitify: TraitifyPropType.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityTrait.updated", this);
   }
-  render(){
+  render() {
     const trait = this.props.trait.personality_trait;
     const type = trait.personality_type;
     const color = `#${type.badge.color_1}`;

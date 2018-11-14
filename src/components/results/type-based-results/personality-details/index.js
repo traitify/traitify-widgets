@@ -4,7 +4,7 @@ import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class PersonalityDetails extends Component{
+class PersonalityDetails extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({
@@ -15,24 +15,24 @@ class PersonalityDetails extends Component{
     traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityDetails.updated", this);
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
 
     const {details} = personality;
-    if(!details){ return null; }
+    if(!details) { return null; }
 
-    let complement = details.find((detail)=>(detail.title === "Complement"));
+    let complement = details.find((detail) => (detail.title === "Complement"));
     complement = complement && complement.body;
-    let conflict = details.find((detail)=>(detail.title === "Conflict"));
+    let conflict = details.find((detail) => (detail.title === "Conflict"));
     conflict = conflict && conflict.body;
     const environments = personality.environments || [];
 
@@ -54,7 +54,7 @@ class PersonalityDetails extends Component{
           <div className={style.environments}>
             <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
-              {environments.map((environment)=>(
+              {environments.map((environment) => (
                 <li key={environment.name}>{environment.name}</li>
               ))}
             </ul>

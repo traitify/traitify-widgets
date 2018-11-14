@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-class PersonalityTypeBar extends Component{
+class PersonalityTypeBar extends Component {
   static propTypes = {
     barHeight: PropTypes.number.isRequired,
     traitify: TraitifyPropType.isRequired,
@@ -14,35 +14,35 @@ class PersonalityTypeBar extends Component{
       score: PropTypes.number.isRequired
     }).isRequired
   }
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {activeType: null};
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
     this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
 
     const activeType = this.props.traitify.ui.current["Assessment.activeType"];
-    if(activeType){ this.setState({activeType}); }
+    if(activeType) { this.setState({activeType}); }
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityTypeBar.updated", this);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
   }
-  getActiveType = ()=>{
+  getActiveType = () => {
     this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
   }
-  onKey = (e)=>{
-    if(e.key === "Enter"){ this.setActive(); }
+  onKey = (e) => {
+    if(e.key === "Enter") { this.setActive(); }
   }
-  setActive = ()=>{
+  setActive = () => {
     this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
     this.props.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
   }
-  render(){
+  render() {
     const type = this.props.type.personality_type;
     const title = type.name;
     const icon = type.badge.image_medium;
@@ -52,7 +52,7 @@ class PersonalityTypeBar extends Component{
 
     let active = false;
     const {activeType} = this.state;
-    if(activeType){
+    if(activeType) {
       active = type.id === activeType.personality_type.id;
     }
 

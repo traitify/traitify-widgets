@@ -1,17 +1,17 @@
-export function dangerousProps(_props){
+export function dangerousProps(_props) {
   const {html, ...props} = _props;
 
   return {...props, dangerouslySetInnerHTML: {__html: html}};
 }
 
-export function getDisplayName(Component){
+export function getDisplayName(Component) {
   return Component.displayName || Component.name || "Component";
 }
 
-export function loadFont(){
+export function loadFont() {
   const fontURL = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";
 
-  if(!document.querySelector(`link[href='${fontURL}']`)){
+  if(!document.querySelector(`link[href='${fontURL}']`)) {
     const font = document.createElement("link");
     font.rel = "stylesheet";
     font.type = "text/css";

@@ -7,19 +7,19 @@ import CareerModal from "../career-modal";
 import CareerResults from "../career-results";
 import style from "./style";
 
-class Careers extends Component{
+class Careers extends Component {
   static propTypes = {
     isReady: PropTypes.func.isRequired,
     traitify: TraitifyPropType.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("Careers.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("Careers.updated", this);
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     return (
       <div className={style.container}>

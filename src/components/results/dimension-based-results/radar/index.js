@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import Chart from "lib/helpers/canvas-radar-chart";
 import style from "./style";
 
-class Radar extends Component{
+class Radar extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
@@ -13,21 +13,21 @@ class Radar extends Component{
     traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     window.addEventListener("resize", this.updateChart);
 
     this.props.traitify.ui.trigger("Radar.initialized", this);
     this.updateChart();
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.updateChart();
     this.props.traitify.ui.trigger("Radar.updated", this);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener("resize", this.updateChart);
   }
-  createChart = ()=>{
-    if(!this.props.isReady("results")){ return; }
+  createChart = () => {
+    if(!this.props.isReady("results")) { return; }
 
     const options = {
       labels: [],
@@ -38,7 +38,7 @@ class Radar extends Component{
     };
 
     const types = this.props.assessment.personality_types;
-    types.forEach((type)=>{
+    types.forEach((type) => {
       options.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
@@ -50,18 +50,18 @@ class Radar extends Component{
     this.chart = new Chart(ctx, options);
     this.chart.render();
   }
-  updateChart = ()=>{
-    if(!this.chart){ return this.createChart(); }
+  updateChart = () => {
+    if(!this.chart) { return this.createChart(); }
 
     this.chart.resize();
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     return (
       <div className={style.radar}>
         <div className={style.radarContainer}>
-          <canvas ref={(canvas)=>{ this.canvas = canvas; }} width="820" height="700" aria-label={this.props.translate("radar_chart_label")} />
+          <canvas ref={(canvas) => { this.canvas = canvas; }} width="820" height="700" aria-label={this.props.translate("radar_chart_label")} />
         </div>
       </div>
     );

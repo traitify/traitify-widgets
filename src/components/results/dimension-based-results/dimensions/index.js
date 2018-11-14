@@ -5,25 +5,25 @@ import withTraitify from "lib/with-traitify";
 import Dimension from "../dimension";
 import style from "./style";
 
-class Dimensions extends Component{
+class Dimensions extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     isReady: PropTypes.func.isRequired,
     traitify: TraitifyPropType.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("Dimensions.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("Dimensions.updated", this);
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     return (
       <ul className={style.dimensions}>
-        {this.props.assessment.personality_types.map((type, i)=>(
+        {this.props.assessment.personality_types.map((type, i) => (
           <Dimension key={type.personality_type.id} type={type} index={i} {...this.props} />
         ))}
       </ul>

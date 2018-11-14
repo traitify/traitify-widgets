@@ -3,11 +3,9 @@
     "plugin:jest/recommended"
   ],
   "rules": {
-    "import/no-unresolved": "off", // Until jest import/resolver is fixed
-    "max-nested-callbacks": "off",
+    "import/no-unresolved": "off", // TODO: Fix when jest import/resolver is fixed
     "no-new": "off",
-    "prefer-promise-reject-errors": "off",
-    "react/jsx-no-bind": "off"
+    "prefer-promise-reject-errors": "off"
   },
   "settings": {
     "import/resolver": {

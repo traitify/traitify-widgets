@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-class Type extends Component{
+class Type extends Component {
   static propTypes = {
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
@@ -13,19 +13,19 @@ class Type extends Component{
     }).isRequired,
     traitify: TraitifyPropType.isRequired
   }
-  trigger = (e)=>{
+  trigger = (e) => {
     e.preventDefault();
 
     this.props.traitify.ui.trigger("PersonalityType.showContent", this, this.props.type.personality_type);
-    this.setState((state)=>({showContent: !state.showContent}));
+    this.setState((state) => ({showContent: !state.showContent}));
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityType.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityType.updated", this);
   }
-  render(){
+  render() {
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;
 

@@ -4,7 +4,7 @@ import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class Career extends Component{
+class Career extends Component {
   static propTypes = {
     career: PropTypes.shape({
       description: PropTypes.string.isRequired,
@@ -16,17 +16,17 @@ class Career extends Component{
     traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("Career.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("Career.updated", this);
   }
-  openModal = ()=>{
+  openModal = () => {
     this.props.traitify.ui.trigger("CareerModal.career", this, this.props.career);
     this.props.traitify.ui.trigger("CareerModal.show", this);
   }
-  render(){
+  render() {
     const {career, translate} = this.props;
 
     return (
@@ -37,7 +37,7 @@ class Career extends Component{
           <p className={style.description}>{career.description}</p>
           <h3 className={style.subtitle}>{translate("experience_level")}</h3>
           <ol className={style.experience}>
-            {[1, 2, 3, 4, 5].map((level)=>(
+            {[1, 2, 3, 4, 5].map((level) => (
               <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
             ))}
           </ol>

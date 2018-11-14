@@ -2,9 +2,9 @@
 // import Default from "components/default";
 // import Traitify from "support/traitify";
 
-describe("Integration", ()=>{
-  describe("component", ()=>{
-    it("should render the component", ()=>{
+describe("Integration", () => {
+  describe("component", () => {
+    it("should render the component", () => {
       // const widgetElement = createElement();
       // const traitify = new Traitify();
 

@@ -1,30 +1,30 @@
 import * as Components from "components";
 import componentFromAssessment from "lib/helpers/component-from-assessment";
 
-export default function guessComponent(name, options = {}){
+export default function guessComponent(name, options = {}) {
   const component = Components[name || "Default"];
-  if(component){ return component; }
+  if(component) { return component; }
 
   let componentName;
   let componentType;
   const names = name.split(".");
-  if(names.length === 2){
+  if(names.length === 2) {
     componentName = names.pop();
     componentType = `${names.pop()}Components`;
-  }else if(options.assessmentType){
+  } else if(options.assessmentType) {
     const type = options.assessmentType.slice(0, -6);
 
     componentName = name;
     componentType = `${type.charAt(0).toUpperCase()}${type.substring(1).toLowerCase()}Components`;
-  }else{
+  } else {
     const dimensionComponent = Components.DimensionComponents[name];
     const typeComponent = Components.TypeComponents[name];
-    if(dimensionComponent && typeComponent){
+    if(dimensionComponent && typeComponent) {
       return componentFromAssessment({
         DIMENSION_BASED: dimensionComponent,
         TYPE_BASED: typeComponent
       });
-    }else{
+    } else {
       return dimensionComponent || typeComponent;
     }
   }

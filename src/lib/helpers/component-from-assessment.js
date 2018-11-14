@@ -1,25 +1,25 @@
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 
-export default function componentFromAssessment(options){
-  class AssessmentComponent extends Component{
-    constructor(props){
+export default function componentFromAssessment(options) {
+  class AssessmentComponent extends Component {
+    constructor(props) {
       super(props);
 
       this.state = {component: null};
     }
-    componentDidMount(){
-      if(this.props.assessment){ this.pickComponent(); }
+    componentDidMount() {
+      if(this.props.assessment) { this.pickComponent(); }
     }
-    componentDidUpdate(prevProps){
+    componentDidUpdate(prevProps) {
       const {assessment} = this.props;
 
-      if(assessment && assessment !== prevProps.assessment){ this.pickComponent(); }
+      if(assessment && assessment !== prevProps.assessment) { this.pickComponent(); }
     }
-    pickComponent(){
+    pickComponent() {
       this.setState({component: options[this.props.assessment.assessment_type]});
     }
-    render(){
+    render() {
       const ChosenComponent = this.state.component;
 
       return ChosenComponent ? <ChosenComponent {...this.props} /> : <div />;

@@ -8,79 +8,79 @@ import {
 
 const responseJSON = "[{\"name\": \"Neo\"}]";
 
-describe("Client", ()=>{
+describe("Client", () => {
   let client;
 
-  beforeEach(()=>{
+  beforeEach(() => {
     client = new Client();
   });
 
-  describe("constructor", ()=>{
-    it("has default host", ()=>{
+  describe("constructor", () => {
+    it("has default host", () => {
       expect(client.version).toBe("v1");
     });
 
-    it("has default version", ()=>{
+    it("has default version", () => {
       expect(client.host).toBe("https://api.traitify.com");
     });
 
-    describe("oldIE", ()=>{
-      afterEach(()=>{
+    describe("oldIE", () => {
+      afterEach(() => {
         delete global.XDomainRequest;
       });
 
-      it("should be true", ()=>{
+      it("should be true", () => {
         global.XDomainRequest = XDomainRequestMock;
         client = new Client();
 
         expect(client.oldIE).toBe(true);
       });
 
-      it("should be false", ()=>{
+      it("should be false", () => {
         expect(client.oldIE).toBe(false);
       });
     });
   });
 
-  describe("online", ()=>{
+  describe("online", () => {
     let originalValue;
 
-    beforeAll(()=>{
+    beforeAll(() => {
       originalValue = navigator.onLine;
       Object.defineProperty(navigator, "onLine", {writable: true, value: true});
     });
 
-    afterAll(()=>{
+    afterAll(() => {
       Object.defineProperty(navigator, "onLine", {writable: false, value: originalValue});
     });
 
-    it("should be true", ()=>{
+    it("should be true", () => {
       global.navigator.onLine = true;
 
       expect(client.online()).toBe(true);
     });
 
-    it("should be false", ()=>{
+    it("should be false", () => {
       global.navigator.onLine = false;
 
       expect(client.online()).toBe(false);
     });
   });
 
-  describe("setHost", ()=>{
-    it("returns client", ()=>{
+  describe("setHost", () => {
+    it("returns client", () => {
       const returnValue = client.setHost("http://localhost:8080");
 
       expect(returnValue).toEqual(client);
     });
 
-    it("updates host", ()=>{
+    it("updates host", () => {
       client.setHost("http://localhost:8080");
 
       expect(client.host).toBe("http://localhost:8080");
     });
 
-    it("updates host for IE", ()=>{
+    it("updates host for IE", () => {
       client.oldIE = true;
       client.setHost("http://localhost:8080");
 
@@ -89,78 +89,78 @@ describe("Client", ()=>{
     });
   });
 
-  describe("setPublicKey", ()=>{
-    it("returns client", ()=>{
+  describe("setPublicKey", () => {
+    it("returns client", () => {
       const returnValue = client.setPublicKey("xyz");
 
       expect(returnValue).toEqual(client);
     });
 
-    it("updates public key", ()=>{
+    it("updates public key", () => {
       client.setPublicKey("xyz");
 
       expect(client.publicKey).toBe("xyz");
     });
   });
 
-  describe("setVersion", ()=>{
-    it("returns client", ()=>{
+  describe("setVersion", () => {
+    it("returns client", () => {
       const returnValue = client.setVersion("v2");
 
       expect(returnValue).toEqual(client);
     });
 
-    it("updates version", ()=>{
+    it("updates version", () => {
       client.setVersion("v2");
 
       expect(client.version).toBe("v2");
     });
   });
 
-  describe("ajax", ()=>{
-    beforeEach(()=>{
+  describe("ajax", () => {
+    beforeEach(() => {
       client.setPublicKey("xyz");
     });
 
-    describe("with oldIE", ()=>{
-      beforeAll(()=>{
+    describe("with oldIE", () => {
+      beforeAll(() => {
         global.XDomainRequest = XDomainRequestMock;
       });
 
-      beforeEach(()=>{
+      beforeEach(() => {
         XDomainRequest.mockClear();
-        Object.values(xdrMocks).forEach((mock)=>mock.mockClear());
+        Object.values(xdrMocks).forEach((mock) => mock.mockClear());
 
         client.oldIE = true;
       });
 
-      afterAll(()=>{
+      afterAll(() => {
         delete global.XDomainRequest;
       });
 
-      describe("request", ()=>{
-        it("includes authorization", ()=>{
+      describe("request", () => {
+        it("includes authorization", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
           const url = xdrMocks.open.mock.calls[0][1];
 
           expect(url).toContain("authorization=xyz");
         });
 
-        it("includes reset cache", ()=>{
+        it("includes reset cache", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
           const url = xdrMocks.open.mock.calls[0][1];
 
           expect(url).toContain("reset_cache=");
         });
 
-        it("includes params", ()=>{
+        it("includes params", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
           const url = xdrMocks.open.mock.calls[0][1];
 
           expect(url).toContain("locale_key=en-us");
         });
 
-        it("doesn't require params", ()=>{
+        it("doesn't require params", () => {
           client.ajax("GET", "/profiles");
           const url = xdrMocks.open.mock.calls[0][1];
 
@@ -168,8 +168,8 @@ describe("Client", ()=>{
         });
       });
 
-      describe("response", ()=>{
-        it("returns parsed responseText", ()=>{
+      describe("response", () => {
+        it("returns parsed responseText", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XDomainRequest.mock.results[0].value;
 
@@ -180,7 +180,7 @@ describe("Client", ()=>{
           return expect(response).resolves.toEqual([{name: "Neo"}]);
         });
 
-        it("returns not found error", ()=>{
+        it("returns not found error", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XDomainRequest.mock.results[0].value;
 
@@ -191,7 +191,7 @@ describe("Client", ()=>{
           expect(response).rejects.toEqual("Error: Not Found");
         });
 
-        it("returns timeout error", ()=>{
+        it("returns timeout error", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XDomainRequest.mock.results[0].value;
 
@@ -201,7 +201,7 @@ describe("Client", ()=>{
           return expect(response).rejects.toEqual("Error: Timeout");
         });
 
-        it("returns error", ()=>{
+        it("returns error", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XDomainRequest.mock.results[0].value;
 
@@ -213,38 +213,38 @@ describe("Client", ()=>{
       });
     });
 
-    describe("without oldIE", ()=>{
+    describe("without oldIE", () => {
       let OriginalXMLHttpRequest;
 
-      beforeAll(()=>{
+      beforeAll(() => {
         OriginalXMLHttpRequest = XMLHttpRequest;
         global.XMLHttpRequest = XMLHttpRequestMock;
       });
 
-      beforeEach(()=>{
+      beforeEach(() => {
         XMLHttpRequest.mockClear();
-        Object.values(xhrMocks).forEach((mock)=>mock.mockClear());
+        Object.values(xhrMocks).forEach((mock) => mock.mockClear());
       });
 
-      afterAll(()=>{
+      afterAll(() => {
         global.XMLHttpRequest = OriginalXMLHttpRequest;
       });
 
-      describe("request", ()=>{
-        it("includes authorization", ()=>{
+      describe("request", () => {
+        it("includes authorization", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
 
           expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Authorization", `Basic ${btoa("xyz:x")}`);
         });
 
-        it("includes headers", ()=>{
+        it("includes headers", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
 
           expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Content-type", "application/json");
           expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Accept", "application/json");
         });
 
-        it("passes query params", ()=>{
+        it("passes query params", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
           const url = xhrMocks.open.mock.calls[0][1];
 
@@ -252,14 +252,14 @@ describe("Client", ()=>{
           expect(xhrMocks.send).toHaveBeenCalledWith(JSON.stringify(null));
         });
 
-        it("combines query params", ()=>{
+        it("combines query params", () => {
           client.ajax("GET", "/profiles?per_page=10", {locale_key: "en-us"});
           const url = xhrMocks.open.mock.calls[0][1];
 
           expect(url).toEqual("https://api.traitify.com/v1/profiles?per_page=10&locale_key=en-us");
         });
 
-        it("passes body params", ()=>{
+        it("passes body params", () => {
           client.ajax("POST", "/profiles", {locale_key: "en-us"});
           const url = xhrMocks.open.mock.calls[0][1];
 
@@ -268,15 +268,15 @@ describe("Client", ()=>{
         });
       });
 
-      describe("response", ()=>{
-        it("returns if offline", ()=>{
-          client.online = jest.fn(()=>false);
+      describe("response", () => {
+        it("returns if offline", () => {
+          client.online = jest.fn(() => false);
           const response = client.ajax("GET", "/profiles");
 
           return expect(response).rejects.toBeUndefined();
         });
 
-        it("returns parsed responseText", ()=>{
+        it("returns parsed responseText", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XMLHttpRequest.mock.results[0].value;
 
@@ -287,7 +287,7 @@ describe("Client", ()=>{
           return expect(response).resolves.toEqual([{name: "Neo"}]);
         });
 
-        it("returns not found error", ()=>{
+        it("returns not found error", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XMLHttpRequest.mock.results[0].value;
 
@@ -298,7 +298,7 @@ describe("Client", ()=>{
           return expect(response).rejects.toEqual("Error: Not Found");
         });
 
-        it("returns timeout error", ()=>{
+        it("returns timeout error", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XMLHttpRequest.mock.results[0].value;
 
@@ -308,7 +308,7 @@ describe("Client", ()=>{
           return expect(response).rejects.toEqual("Error: Timeout");
         });
 
-        it("returns error", ()=>{
+        it("returns error", () => {
           const response = client.ajax("GET", "/profiles");
           const xhr = XMLHttpRequest.mock.results[0].value;
 
@@ -318,8 +318,8 @@ describe("Client", ()=>{
           return expect(response).rejects.toEqual("Error");
         });
 
-        it("catches error", ()=>{
-          xhrMocks.send.mockImplementationOnce(()=>{
+        it("catches error", () => {
+          xhrMocks.send.mockImplementationOnce(() => {
             throw new SyntaxError();
           });
 
@@ -331,8 +331,8 @@ describe("Client", ()=>{
     });
   });
 
-  describe("get", ()=>{
-    it("makes ajax request", ()=>{
+  describe("get", () => {
+    it("makes ajax request", () => {
       client.ajax = jest.fn().mockName("ajax");
       client.get("/profiles", {locale_key: "en-us"});
 
@@ -340,13 +340,13 @@ describe("Client", ()=>{
     });
   });
 
-  describe("put", ()=>{
-    describe("with oldIE", ()=>{
-      beforeEach(()=>{
+  describe("put", () => {
+    describe("with oldIE", () => {
+      beforeEach(() => {
         client.oldIE = true;
       });
 
-      it("makes ajax request", ()=>{
+      it("makes ajax request", () => {
         client.ajax = jest.fn().mockName("ajax");
         client.put("/profiles", {locale_key: "en-us"});
 
@@ -354,8 +354,8 @@ describe("Client", ()=>{
       });
     });
 
-    describe("without oldIE", ()=>{
-      it("makes ajax request", ()=>{
+    describe("without oldIE", () => {
+      it("makes ajax request", () => {
         client.ajax = jest.fn().mockName("ajax");
         client.put("/profiles", {locale_key: "en-us"});
 
@@ -364,8 +364,8 @@ describe("Client", ()=>{
     });
   });
 
-  describe("post", ()=>{
-    it("makes ajax request", ()=>{
+  describe("post", () => {
+    it("makes ajax request", () => {
       client.ajax = jest.fn().mockName("ajax");
       client.post("/profiles", {locale_key: "en-us"});
 
@@ -373,8 +373,8 @@ describe("Client", ()=>{
     });
   });
 
-  describe("delete", ()=>{
-    it("makes ajax request", ()=>{
+  describe("delete", () => {
+    it("makes ajax request", () => {
       client.ajax = jest.fn().mockName("ajax");
       client.delete("/profiles", {locale_key: "en-us"});
 

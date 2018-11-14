@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-class Dimension extends Component{
+class Dimension extends Component {
   static propTypes = {
     getOption: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
@@ -16,43 +16,43 @@ class Dimension extends Component{
       score: PropTypes.number.isRequired
     }).isRequired
   }
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {showContent: props.index === 0};
   }
-  trigger = (e)=>{
+  trigger = (e) => {
     e.preventDefault();
 
     this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
-    this.setState((state)=>({showContent: !state.showContent}));
+    this.setState((state) => ({showContent: !state.showContent}));
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("Dimension.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("Dimension.updated", this);
   }
-  description(suffix){
+  description(suffix) {
     const type = this.props.type.personality_type;
     const perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
-    let description = type.details.find((detail)=>(detail.title === `${perspective}_person_${suffix}`));
+    let description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
     description = description && description.body;
 
-    if(description){ return description; }
-    description = type.details.find((detail)=>(detail.title === `${perspective}_person_${suffix}`));
+    if(description) { return description; }
+    description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
 
     return (description && description.body) || type.description;
   }
-  render(){
+  render() {
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;
     const benefits = [];
     const pitfalls = [];
 
-    type.details.forEach((detail)=>{
-      if(detail.title === "Benefits"){ benefits.push(detail.body); }
-      if(detail.title === "Pitfalls"){ pitfalls.push(detail.body); }
+    type.details.forEach((detail) => {
+      if(detail.title === "Benefits") { benefits.push(detail.body); }
+      if(detail.title === "Pitfalls") { pitfalls.push(detail.body); }
     });
 
     return (
@@ -90,13 +90,13 @@ class Dimension extends Component{
               <div className={style.detail}>
                 <h4 className={style.benefits}>{this.props.translate("potential_benefits")}</h4>
                 <ul>
-                  {benefits.map((benefit)=>(<li key={benefit}>{benefit}</li>))}
+                  {benefits.map((benefit) => (<li key={benefit}>{benefit}</li>))}
                 </ul>
               </div>
               <div className={style.detail}>
                 <h4 className={style.pitfalls}>{this.props.translate("potential_pitfalls")}</h4>
                 <ul>
-                  {pitfalls.map((pitfall)=>(<li key={pitfall}>{pitfall}</li>))}
+                  {pitfalls.map((pitfall) => (<li key={pitfall}>{pitfall}</li>))}
                 </ul>
               </div>
             </div>

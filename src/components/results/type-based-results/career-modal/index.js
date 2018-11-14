@@ -20,12 +20,12 @@ import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class CareerModal extends Component{
+class CareerModal extends Component {
   static propTypes = {
     traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired
   }
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -34,29 +34,29 @@ class CareerModal extends Component{
       showLegend: false
     };
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("CareerModal.initialized", this);
     this.props.traitify.ui.on("CareerModal.career", this.setCareer);
     this.props.traitify.ui.on("CareerModal.hide", this.hide);
     this.props.traitify.ui.on("CareerModal.show", this.show);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("CareerModal.updated", this);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.traitify.ui.off("CareerModal.career", this.setCareer);
     this.props.traitify.ui.off("CareerModal.hide", this.hide);
     this.props.traitify.ui.off("CareerModal.show", this.show);
   }
-  close = ()=>{ this.props.traitify.ui.trigger("CareerModal.hide", this); }
-  hide = ()=>{ this.setState({show: false}); }
-  setCareer = ()=>{ this.setState({career: this.props.traitify.ui.current["CareerModal.career"]}); }
-  show = ()=>{ this.setState({show: true}); }
-  toggleLegend = ()=>{ this.setState((state)=>({showLegend: !state.showLegend})); }
-  render(){
+  close = () => { this.props.traitify.ui.trigger("CareerModal.hide", this); }
+  hide = () => { this.setState({show: false}); }
+  setCareer = () => { this.setState({career: this.props.traitify.ui.current["CareerModal.career"]}); }
+  show = () => { this.setState({show: true}); }
+  toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); }
+  render() {
     const {career, show, showLegend} = this.state;
 
-    if(!show || !career){ return null; }
+    if(!show || !career) { return null; }
 
     const {translate} = this.props;
     let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
@@ -145,7 +145,7 @@ class CareerModal extends Component{
             <hr />
             <h3 className={style.heading}><Icon icon={faGlobeAmericas} /> {translate("experience_level")}</h3>
             <ol className={style.experience}>
-              {[1, 2, 3, 4, 5].map((level)=>(
+              {[1, 2, 3, 4, 5].map((level) => (
                 <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
               ))}
             </ol>
@@ -153,7 +153,7 @@ class CareerModal extends Component{
             <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
             <p {...dangerousProps({html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})})} />
-            <div ref={(customContent)=>{ this.customContent = customContent; }} />
+            <div ref={(customContent) => { this.customContent = customContent; }} />
           </div>
         </section>
       </div>

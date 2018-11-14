@@ -1,10 +1,13 @@
+/* eslint-disable no-param-reassign */
 import CanvasRadarChart from "lib/helpers/canvas-radar-chart";
 
-describe("Helpers", ()=>{
-  describe("canvasRadarChart", ()=>{
-    let chart, ctx, options;
+describe("Helpers", () => {
+  describe("canvasRadarChart", () => {
+    let chart;
+    let ctx;
+    let options;
 
-    beforeEach(()=>{
+    beforeEach(() => {
       ctx = {
         arc: jest.fn().mockName("arc"),
         beginPath: jest.fn().mockName("beginPath"),
@@ -25,7 +28,7 @@ describe("Helpers", ()=>{
         fill: jest.fn().mockName("fill"),
         fillText: jest.fn().mockName("fillText"),
         lineTo: jest.fn().mockName("lineTo"),
-        measureText: jest.fn((text)=>({width: text.length * 20})).mockName("measureText"),
+        measureText: jest.fn((text) => ({width: text.length * 20})).mockName("measureText"),
         moveTo: jest.fn().mockName("moveTo"),
         stroke: jest.fn().mockName("stroke")
       };
@@ -48,35 +51,35 @@ describe("Helpers", ()=>{
       chart = new CanvasRadarChart(ctx, options);
     });
 
-    describe("constructor", ()=>{
-      it("configures data", ()=>{
+    describe("constructor", () => {
+      it("configures data", () => {
         expect(chart.data[0]).toMatchObject({fill: true, pointRadius: 5});
         expect(chart.data[1]).toMatchObject({fill: false, pointRadius: 5});
       });
 
-      it("configures grid", ()=>{
+      it("configures grid", () => {
         expect(chart.grid.axes).toEqual([
           {angle: Math.PI / 2},
-          {angle: 2 * Math.PI * 1/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 2/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 3/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 4/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 5/7 + Math.PI / 2},
-          {angle: 2 * Math.PI * 6/7 + Math.PI / 2}
+          {angle: 2 * Math.PI * 1 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 2 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 3 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 4 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 5 / 7 + Math.PI / 2},
+          {angle: 2 * Math.PI * 6 / 7 + Math.PI / 2}
         ]);
         expect(chart.grid.center).toEqual({x: 410, y: 350});
         expect(chart.grid.options).toMatchObject({innerLines: 2, lineWidth: 0.5});
         expect(chart.grid.radius).toEqual(700 / Math.PI);
       });
 
-      it("configures grid with radius based on width", ()=>{
+      it("configures grid with radius based on width", () => {
         ctx.canvas.width = 600;
         chart = new CanvasRadarChart(ctx, options);
 
         expect(chart.grid.radius).toEqual(600 / Math.PI);
       });
 
-      it("configures labels", ()=>{
+      it("configures labels", () => {
         expect(chart.labels[0]).toMatchObject({font: "18px Arial"});
         expect(chart.labels[1]).toMatchObject({font: "22px Arial"});
         expect(chart.labels[2]).toMatchObject({font: "22px Arial"});
@@ -87,10 +90,10 @@ describe("Helpers", ()=>{
       });
     });
 
-    describe("render", ()=>{
-      it("renders data", ()=>{
-        chart.renderGrid = ()=>{};
-        chart.renderLabels = ()=>{};
+    describe("render", () => {
+      it("renders data", () => {
+        chart.renderGrid = () => {};
+        chart.renderLabels = () => {};
         chart.render();
 
         expect(ctx.arc).toHaveBeenCalledTimes(14);
@@ -105,9 +108,9 @@ describe("Helpers", ()=>{
         expect(ctx.stroke).toHaveBeenCalledTimes(2);
       });
 
-      it("renders grid", ()=>{
-        chart.renderData = ()=>{};
-        chart.renderLabels = ()=>{};
+      it("renders grid", () => {
+        chart.renderData = () => {};
+        chart.renderLabels = () => {};
         chart.render();
 
         expect(ctx.arc).toHaveBeenCalledTimes(0);
@@ -122,11 +125,11 @@ describe("Helpers", ()=>{
         expect(ctx.stroke).toHaveBeenCalledTimes(4);
       });
 
-      it("renders labels", ()=>{
-        chart.renderData = ()=>{};
-        chart.renderGrid = ()=>{};
+      it("renders labels", () => {
+        chart.renderData = () => {};
+        chart.renderGrid = () => {};
         chart.render();
-        chart.grid.axes.forEach((axis)=>{
+        chart.grid.axes.forEach((axis) => {
           axis.img.height = 400;
           axis.img.width = 400;
           axis.img.onload();
@@ -145,15 +148,15 @@ describe("Helpers", ()=>{
       });
     });
 
-    describe("resize", ()=>{
-      beforeEach(()=>{
+    describe("resize", () => {
+      beforeEach(() => {
         ctx.canvas.parentNode.clientWidth = 1640;
 
         chart = new CanvasRadarChart(ctx, options);
         chart.resize();
       });
 
-      it("updates dimensions", ()=>{
+      it("updates dimensions", () => {
         expect(chart.ctx.canvas.style.height).toBe("1400px");
         expect(chart.ctx.canvas.style.width).toBe("1640px");
       });

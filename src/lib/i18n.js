@@ -1,12 +1,12 @@
 import i18nData from "lib/i18n-data";
 
-export default class I18n{
-  constructor(){
+export default class I18n {
+  constructor() {
     this.data = {};
     this.setDefaultTranslations();
     this.setLocale("en-us");
   }
-  addTranslations(_locale, data){
+  addTranslations(_locale, data) {
     const locale = _locale.toLowerCase();
     const currentData = this.data[locale] || {};
 
@@ -15,7 +15,7 @@ export default class I18n{
       ...data
     };
   }
-  copyTranslations(_originLocale, _targetLocale){
+  copyTranslations(_originLocale, _targetLocale) {
     const originLocale = _originLocale.toLowerCase();
     const targetLocale = _targetLocale.toLowerCase();
     const targetData = this.data[targetLocale] || {};
@@ -26,20 +26,20 @@ export default class I18n{
       ...originData
     };
   }
-  setDefaultTranslations(){
-    Object.keys(i18nData).forEach((locale)=>{
+  setDefaultTranslations() {
+    Object.keys(i18nData).forEach((locale) => {
       this.addTranslations(locale, i18nData[locale]);
     });
   }
-  setLocale = (_locale)=>{
+  setLocale = (_locale) => {
     const locale = _locale.toLowerCase();
 
-    if(this.data[locale]){ this.locale = locale; }
+    if(this.data[locale]) { this.locale = locale; }
   }
-  translate = (key, options)=>{
+  translate = (key, options) => {
     const result = this.data[this.locale][key];
-    if(!result || !options){ return result; }
+    if(!result || !options) { return result; }
 
-    return result.replace(/%\{[a-z_]*\}/g, (r)=>options[r.slice(2, -1)]);
+    return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);
   }
 }

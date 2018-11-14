@@ -1,30 +1,43 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class Career extends Component{
-  componentDidMount(){
+class Career extends Component {
+  static propTypes = {
+    career: PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      experience_level: PropTypes.object.isRequired,
+      picture: PropTypes.string.isRequired,
+      score: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired
+    }).isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
+  componentDidMount() {
     this.props.traitify.ui.trigger("Career.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("Career.updated", this);
   }
-  openModal = ()=>{
+  openModal = () => {
     this.props.traitify.ui.trigger("CareerModal.career", this, this.props.career);
     this.props.traitify.ui.trigger("CareerModal.show", this);
   }
-  render(){
+  render() {
     const {career, translate} = this.props;
 
     return (
-      <div className={style.container} onClick={this.openModal}>
+      <button className={style.container} onClick={this.openModal} type="button">
         <img alt={career.title} src={career.picture} />
         <div className={style.content}>
           <h2 className={style.title}>{career.title}</h2>
           <p className={style.description}>{career.description}</p>
           <h3 className={style.subtitle}>{translate("experience_level")}</h3>
           <ol className={style.experience}>
-            {[1, 2, 3, 4, 5].map((level)=>(
+            {[1, 2, 3, 4, 5].map((level) => (
               <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
             ))}
           </ol>
@@ -38,7 +51,7 @@ class Career extends Component{
             <span data-match-rate={`${career.score}%`} style={{width: `${career.score}%`}} />
           </div>
         </div>
-      </div>
+      </button>
     );
   }
 }

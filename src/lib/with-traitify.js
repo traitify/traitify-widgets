@@ -2,17 +2,10 @@ import Airbrake from "airbrake-js";
 import {Component} from "react";
 import {getDisplayName, loadFont} from "lib/helpers";
 
-// Unwrap Airbrake's console wrapper
-["debug", "log", "info", "warn", "error"].forEach((method)=>{
-  if(method in console && console[method].inner){
-    console[method] = console[method].inner;
-  }
-});
-
-export default function withTraitify(WrappedComponent){
-  return class TraitifyComponent extends Component{
+export default function withTraitify(WrappedComponent) {
+  return class TraitifyComponent extends Component {
     static displayName = `Traitify${getDisplayName(WrappedComponent)}`
-    constructor(props){
+    constructor(props) {
       super(props);
 
       this.state = {
@@ -30,20 +23,20 @@ export default function withTraitify(WrappedComponent){
       this.setupI18n();
       this.setAssessmentID();
     }
-    componentDidMount(){
+    componentDidMount() {
       this.didMount = true;
 
       loadFont();
 
       this.updateAssessment();
     }
-    componentDidUpdate(prevProps, prevState){
+    componentDidUpdate(prevProps, prevState) {
       const newAssessment = this.props.assessment || {};
       const oldAssessment = prevProps.assessment || {};
 
-      if(oldAssessment.id !== newAssessment.id){
+      if(oldAssessment.id !== newAssessment.id) {
         this.setState({assessmentID: newAssessment.id});
-      }else if(prevProps.assessmentID !== this.props.assessmentID){
+      } else if(prevProps.assessmentID !== this.props.assessmentID) {
         this.setState({assessmentID: this.props.assessmentID});
       }
 
@@ -53,18 +46,18 @@ export default function withTraitify(WrappedComponent){
         locale: prevState.locale !== this.state.locale
       };
 
-      if(changes.assessmentID || changes.locale){
+      if(changes.assessmentID || changes.locale) {
         this.updateAssessment({oldID: prevState.assessmentID, oldLocale: prevState.locale});
       }
 
-      if(this.state.followingDeck && (changes.deckID || changes.locale)){
+      if(this.state.followingDeck && (changes.deckID || changes.locale)) {
         this.updateDeck({oldID: prevState.deckID, oldLocale: prevState.locale});
       }
     }
-    componentWillUnmount(){
-      Object.keys(this.listeners).forEach((key)=>{ this.removeListener(key); });
+    componentWillUnmount() {
+      Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
     }
-    componentDidCatch(error, info){
+    componentDidCatch(error, info) {
       this.airbrake && this.airbrake.notify({
         error,
         params: {
@@ -78,7 +71,7 @@ export default function withTraitify(WrappedComponent){
 
       this.setState({error});
     }
-    addListener = (_key, callback)=>{
+    addListener = (_key, callback) => {
       const key = _key.toLowerCase();
 
       this.listeners = this.listeners || {};
@@ -86,106 +79,118 @@ export default function withTraitify(WrappedComponent){
       this.traitify.ui.on(key, callback);
     }
     // setState method that also works in the constructor
-    safeSetState = (state)=>{
-      if(this.didMount){
+    safeSetState = (state) => {
+      if(this.didMount) {
         this.setState(state);
-      }else{
+      } else {
         this.state = {...this.state, ...state};
       }
     }
-    followDeck = ()=>{
+    followDeck = () => {
       this.setState({followingDeck: true});
       this.updateDeck();
     }
-    getAssessment = (options = {})=>{
+    getAssessment = (options = {}) => {
       const {assessmentID, locale} = this.state;
-      if(!assessmentID){ return Promise.resolve(); }
+      if(!assessmentID) { return Promise.resolve(); }
 
       const key = `${locale}.assessment.${assessmentID}`;
-      const hasResults = (data)=>(
+      const hasResults = (data) => (
         data && data.locale_key
           && data.id === assessmentID
           && data.locale_key.toLowerCase() === locale
           && data.personality_types
           && data.personality_types.length > 0
       );
-      const setAssessment = (data)=>(
-        new Promise((resolve)=>{
-          this.setState({assessment: data}, ()=>(resolve(data)));
+      const setAssessment = (data) => (
+        new Promise((resolve) => {
+          this.setState({assessment: data}, () => (resolve(data)));
           this.traitify.ui.trigger(key, this, data);
         })
       );
 
-      let assessment = this.props.assessment;
-      if(hasResults(assessment)){ return setAssessment(assessment); }
+      let {assessment} = this.props;
+      if(hasResults(assessment)) { return setAssessment(assessment); }
 
       assessment = this.cache.get(key);
-      if(hasResults(assessment)){ return setAssessment(assessment); }
+      if(hasResults(assessment)) { return setAssessment(assessment); }
 
-      if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
+      if(this.traitify.ui.requests[key] && !options.force) {
+        return this.traitify.ui.requests[key];
+      }
 
-      return this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
+      this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
         data: "archetype,blend,instructions,slides,types,traits",
         locale_key: locale
-      }).then((data)=>{
-        if(hasResults(data)){ this.cache.set(key, data); }
+      }).then((data) => {
+        if(hasResults(data)) { this.cache.set(key, data); }
 
         setAssessment(data);
-      }).catch((error)=>{
-        console.warn(error);
+      }).catch((error) => {
+        console.warn(error); // eslint-disable-line no-console
 
         delete this.traitify.ui.requests[key];
       });
+
+      return this.traitify.ui.requests[key];
     }
-    getDeck = (options = {})=>{
+    getDeck = (options = {}) => {
       const {deckID, locale} = this.state;
-      if(!deckID){ return Promise.resolve(); }
+      if(!deckID) { return Promise.resolve(); }
 
       const key = `${locale}.deck.${deckID}`;
-      const hasData = (data)=>(
+      const hasData = (data) => (
         data && data.locale_key
           && data.id === deckID
           && data.locale_key.toLowerCase() === locale
           && data.name
       );
-      const setDeck = (data)=>(
-        new Promise((resolve)=>{
-          this.setState({deck: data}, ()=>(resolve(data)));
+      const setDeck = (data) => (
+        new Promise((resolve) => {
+          this.setState({deck: data}, () => (resolve(data)));
           this.traitify.ui.trigger(key, this, data);
         })
       );
 
-      let deck = this.state.deck;
-      if(hasData(deck)){ return setDeck(deck); }
+      let {deck} = this.state;
+      if(hasData(deck)) { return setDeck(deck); }
 
       deck = this.cache.get(key);
-      if(hasData(deck)){ return setDeck(deck); }
+      if(hasData(deck)) { return setDeck(deck); }
 
-      if(this.traitify.ui.requests[key] && !options.force){ return this.traitify.ui.requests[key]; }
+      if(this.traitify.ui.requests[key] && !options.force) {
+        return this.traitify.ui.requests[key];
+      }
 
-      return this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
+      this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
         locale_key: locale
-      }).then((data)=>{
-        if(data && !data.locale_key){ data.locale_key = locale; }
-        if(hasData(data)){ this.cache.set(key, data); }
+      }).then((_data) => {
+        const data = {..._data};
+        if(data && !data.locale_key) { data.locale_key = locale; }
+        if(hasData(data)) { this.cache.set(key, data); }
 
         setDeck(data);
-      }).catch((error)=>{
-        console.warn(error);
+      }).catch((error) => {
+        console.warn(error); // eslint-disable-line no-console
 
         delete this.traitify.ui.requests[key];
       });
+
+      return this.traitify.ui.requests[key];
     }
-    getListener = (key)=>(this.listeners[key.toLowerCase()])
-    getOption = (name)=>{
-      if(this.props[name] != null){ return this.props[name]; }
-      if(this.props.options && this.props.options[name] != null){ return this.props.options[name]; }
-      if(this.traitify && this.traitify.ui.options[name] != null){ return this.traitify.ui.options[name]; }
+    getListener = (key) => (this.listeners[key.toLowerCase()])
+    getOption = (name) => {
+      const {props, traitify} = this;
+      const {[name]: prop, options} = props;
+
+      if(prop != null) { return prop; }
+      if(options && options[name] != null) { return options[name]; }
+      if(traitify && traitify.ui.options[name] != null) { return traitify.ui.options[name]; }
     }
-    isReady = (type)=>{
+    isReady = (type) => {
       const {assessment, deck} = this.state;
 
-      switch(type){
+      switch(type) {
         case "deck":
           return !!((deck && !!deck.name));
         case "results":
@@ -196,128 +201,143 @@ export default function withTraitify(WrappedComponent){
           return false;
       }
     }
-    removeListener = (_key)=>{
+    removeListener = (_key) => {
       const key = _key.toLowerCase();
 
       this.traitify.ui.off(key, this.getListener(key));
       delete this.listeners[key];
     }
-    setAssessmentID(){
+    setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
         this.props.assessment && this.props.assessment.id
       );
 
-      if(assessmentID){ this.safeSetState({assessmentID}); }
+      if(assessmentID) { this.safeSetState({assessmentID}); }
     }
-    setupAirbrake(){
-      if(this.getOption("disableAirbrake")){ return; }
+    setupAirbrake() {
+      if(this.getOption("disableAirbrake")) { return; }
 
       this.airbrake = this.props.airbrake;
-      if(this.airbrake){ return; }
+      if(this.airbrake) { return; }
 
       this.airbrake = new Airbrake({
         ignoreWindowError: true,
         projectId: "141848",
-        projectKey: "c48de83d0f02ea6d598b491878c0c57e"
+        projectKey: "c48de83d0f02ea6d598b491878c0c57e",
+        unwrapConsole: true
       });
-      this.airbrake.addFilter((notice)=>{
-        const host = window.location.host;
+      this.airbrake.addFilter((notice) => {
+        let environment;
+        const {host} = window.location;
 
-        if(host.includes("lvh.me:3000")){
-          notice.context.environment = "development";
-        }else if(host.includes("stag.traitify.com")){
-          notice.context.environment = "staging";
-        }else if(host.includes("traitify.com")){
-          notice.context.environment = "production";
-        }else{
-          notice.context.environment = "client";
+        if(host.includes("lvh.me:3000")) {
+          environment = "development";
+        } else if(host.includes("stag.traitify.com")) {
+          environment = "staging";
+        } else if(host.includes("traitify.com")) {
+          environment = "production";
+        } else {
+          environment = "client";
         }
 
+        /* eslint-disable no-param-reassign */
+        notice.context.environment = environment;
         notice.context.version = this.traitify.__version__;
+        /* eslint-enable no-param-reassign */
 
         return notice;
       });
     }
-    setupCache(){
+    setupCache() {
       this.cache = this.props.cache || {
-        get(key){
-          try{
+        get(key) {
+          try {
             const data = sessionStorage.getItem(key);
 
-            if(data){ return JSON.parse(data); }
-          }catch(error){ return; }
+            return data ? JSON.parse(data) : null;
+          } catch(error) { return null; }
         },
-        set(key, data){
-          try{
+        set(key, data) {
+          try {
             return sessionStorage.setItem(key, JSON.stringify(data));
-          }catch(error){ return; }
+          } catch(error) { return null; }
         }
       };
     }
-    setupI18n(){
-      this.addListener("I18n.setLocale", (_, locale)=>{
+    setupI18n() {
+      this.addListener("I18n.setLocale", (_, locale) => {
         this.safeSetState({locale: locale.toLowerCase()});
       });
 
-      const locale = this.props.locale || (this.props.options && this.props.options.locale);
-      if(locale && locale.toLowerCase() !== this.traitify.ui.i18n.locale){
+      const {locale: propLocale, options} = this.props;
+      const locale = propLocale || (options && options.locale);
+      if(locale && locale.toLowerCase() !== this.traitify.ui.i18n.locale) {
         this.traitify.ui.setLocale(locale.toLowerCase());
-      }else{
+      } else {
         this.safeSetState({locale: this.traitify.ui.i18n.locale});
       }
     }
-    setupTraitify(){
+    setupTraitify() {
       this.traitify = this.props.traitify || window.Traitify;
 
-      if(!this.traitify){ throw new Error("Traitify must be passed as a prop or attached to window"); }
+      if(!this.traitify) { throw new Error("Traitify must be passed as a prop or attached to window"); }
     }
-    updateAssessment(options = {}){
-      if(options.oldID || options.oldLocale){
-        const oldAssessmentID = options.oldID || this.state.assessmentID;
-        const oldLocale = options.oldLocale || this.state.locale;
+    updateAssessment(options = {}) {
+      const {assessmentID, locale} = this.state;
+
+      if(options.oldID || options.oldLocale) {
+        const oldAssessmentID = options.oldID || assessmentID;
+        const oldLocale = options.oldLocale || locale;
         const key = `${oldLocale}.assessment.${oldAssessmentID}`;
 
         this.removeListener(key);
       }
-      if(this.state.assessmentID){
-        const key = `${this.state.locale}.assessment.${this.state.assessmentID}`;
+      if(assessmentID) {
+        const key = `${locale}.assessment.${assessmentID}`;
 
-        this.addListener(key, (_, assessment)=>{
-          this.setState({assessment, assessmentID: assessment.id, deck: null, deckID: assessment.deck_id});
+        this.addListener(key, (_, assessment) => {
+          this.setState({
+            assessment,
+            assessmentID: assessment.id,
+            deck: null,
+            deckID: assessment.deck_id
+          });
         });
 
         const currentValue = this.traitify.ui.current[key];
-        if(currentValue != null){
+        if(currentValue != null) {
           this.getListener(key)(null, currentValue);
-        }else{
+        } else {
           this.getAssessment();
         }
       }
     }
-    updateDeck(options = {}){
-      if(options.oldID || options.oldLocale){
-        const oldDeckID = options.oldID || this.state.deckID;
-        const oldLocale = options.oldLocale || this.state.locale;
+    updateDeck(options = {}) {
+      const {deckID, locale} = this.state;
+
+      if(options.oldID || options.oldLocale) {
+        const oldDeckID = options.oldID || deckID;
+        const oldLocale = options.oldLocale || locale;
         const key = `${oldLocale}.deck.${oldDeckID}`;
 
         this.removeListener(key);
       }
-      if(this.state.deckID){
-        const key = `${this.state.locale}.deck.${this.state.deckID}`;
+      if(deckID) {
+        const key = `${locale}.deck.${deckID}`;
 
-        this.addListener(key, (_, deck)=>{
+        this.addListener(key, (_, deck) => {
           this.setState({deck});
         });
 
         const currentValue = this.traitify.ui.current[key];
-        if(currentValue != null){
+        if(currentValue != null) {
           this.getListener(key)(null, currentValue);
-        }else{
+        } else {
           this.getDeck();
         }
       }
     }
-    render(){
+    render() {
       const {
         airbrake,
         cache,

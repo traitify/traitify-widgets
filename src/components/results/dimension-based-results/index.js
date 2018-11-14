@@ -6,8 +6,8 @@ import PersonalityDetails from "./personality-details";
 import Dimensions from "./dimensions";
 import PersonalityTraits from "./personality-traits";
 
-export default class DimensionBasedResults extends Component{
-  render(){
+export default class DimensionBasedResults extends Component {
+  render() {
     return (
       <section>
         <Radar {...this.props} />

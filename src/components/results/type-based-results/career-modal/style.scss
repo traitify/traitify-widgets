@@ -38,6 +38,7 @@
 }
 
 .container {
+  @extend %widgetContainer;
   .modalContainer {
     @include mq(m) {
       max-width: 650px;
@@ -151,7 +152,7 @@ h2, h3, h4 {
 .legend {
   clear: both;
   float: left;
-  margin: -22px 0 25px;
+  margin-bottom: 25px;
   padding-top: 20px;
   background: lighten(#ca4c49, 44%);
   border: 1px solid #ca4c49;

@@ -18,29 +18,8 @@
     "prebuild:compatibility": "mkdirp build",
     "prestart": "npm run build",
     "pretest": "npm run lint",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch"
-  },
-  "jest": {
-    "globals": {
-      "VERSION": "0.0.0-test"
-    },
-    "moduleFileExtensions": [
-      "scss",
-      "js"
-    ],
-    "modulePaths": [
-      "<rootDir>/src/",
-      "<rootDir>/test"
-    ],
-    "setupFiles": [
-      "<rootDir>/test/support/test-helper.js"
-    ],
-    "testURL": "https://www.example.com",
-    "transform": {
-      "^.+\\.(css|less|scss|sass)$": "<rootDir>/test/support/css-transformer",
-      "^.+\\.jsx?$": "babel-jest"
-    }
+    "test": "jest --config test/jest.config.js --coverage",
+    "test:watch": "jest --config test/jest.config.js --watch"
   },
   "keywords": [
     "traitify",
@@ -50,25 +29,47 @@
   "license": "MIT",
   "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-proto-to-assign": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
     "autoprefixer": "^8.6.5",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.6.0",
-    "babel-loader": "^7.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^8.0.0",
     "babel-plugin-jsx-pragmatic": "^1.0.2",
-    "babel-plugin-transform-proto-to-assign": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.8.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.14.0",
-    "babel-runtime": "^6.11.6",
+    "babel-preset-airbnb": "^3.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.5",
-    "eslint": "^4.5.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-jest": "^2.1.1",
+    "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.24.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "file-loader": "^1.1.11",
     "jest": "^23.6.0",
@@ -87,15 +88,17 @@
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.5",
     "@fortawesome/free-solid-svg-icons": "^5.4.0",
     "airbrake-js": "^1.5.0",
-    "babel-polyfill": "^6.26.0",
     "color": "^3.1.0",
+    "prop-types": "^15.6.2",
     "query-string": "^5.1.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-markdown": "^4.0.3",
+    "regenerator-runtime": "^0.12.1",
     "uuid": "^3.3.2"
   },
   "dependenciesNotes": {

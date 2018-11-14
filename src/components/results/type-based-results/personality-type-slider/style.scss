@@ -11,6 +11,9 @@
   }
 }
 .back, .next {
+  background: none;
+  border: none;
+  padding: 0;
   position: absolute;
   top: 80px;
   width: 30px;

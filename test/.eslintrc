@@ -1,6 +1,20 @@
 {
+  "extends": [
+    "plugin:jest/recommended"
+  ],
   "rules": {
-    "max-nested-callbacks": "off",
-    "react/jsx-no-bind": "off"
+    "import/no-unresolved": "off", // TODO: Fix when jest import/resolver is fixed
+    "no-new": "off",
+    "prefer-promise-reject-errors": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "jest": {
+        "jestConfigFile": "./test/jest.config.js"
+      },
+      "webpack": {
+        "config": "webpack.config.babel.js"
+      }
+    }
   }
 }

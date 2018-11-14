@@ -12,13 +12,20 @@ import {
   faTimes,
   faQuestion
 } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
+import {dangerousProps} from "lib/helpers";
 import Icon from "lib/helpers/icon";
+import TraitifyPropType from "lib/helpers/prop-type";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class CareerModal extends Component{
-  constructor(props){
+class CareerModal extends Component {
+  static propTypes = {
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -27,29 +34,29 @@ class CareerModal extends Component{
       showLegend: false
     };
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("CareerModal.initialized", this);
     this.props.traitify.ui.on("CareerModal.career", this.setCareer);
     this.props.traitify.ui.on("CareerModal.hide", this.hide);
     this.props.traitify.ui.on("CareerModal.show", this.show);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("CareerModal.updated", this);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.traitify.ui.off("CareerModal.career", this.setCareer);
     this.props.traitify.ui.off("CareerModal.hide", this.hide);
     this.props.traitify.ui.off("CareerModal.show", this.show);
   }
-  close = ()=>{ this.props.traitify.ui.trigger("CareerModal.hide", this); }
-  hide = ()=>{ this.setState({show: false}); }
-  setCareer = ()=>{ this.setState({career: this.props.traitify.ui.current["CareerModal.career"]}); }
-  show = ()=>{ this.setState({show: true}); }
-  toggleLegend = ()=>{ this.setState({showLegend: !this.state.showLegend}); }
-  render(){
+  close = () => { this.props.traitify.ui.trigger("CareerModal.hide", this); }
+  hide = () => { this.setState({show: false}); }
+  setCareer = () => { this.setState({career: this.props.traitify.ui.current["CareerModal.career"]}); }
+  show = () => { this.setState({show: true}); }
+  toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); }
+  render() {
     const {career, show, showLegend} = this.state;
 
-    if(!show || !career){ return null; }
+    if(!show || !career) { return null; }
 
     const {translate} = this.props;
     let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
@@ -65,7 +72,7 @@ class CareerModal extends Component{
             <img className={style.image} alt={career.title} src={career.picture} />
             <h2 className={style.title}>{career.title}</h2>
             <p className={style.description}>{career.description}</p>
-            <hr/>
+            <hr />
             <h3 className={style.heading}><Icon icon={faInfoCircle} /> {translate("career_information")}:</h3>
             <ul className={style.info}>
               <li>
@@ -85,19 +92,19 @@ class CareerModal extends Component{
               <li>
                 <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
                 <div className={style.infoText}>
-                  <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled type="checkbox" readOnly />
+                  <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
                   <Icon icon={career.bright_outlooks.length > 0 ? faCheckSquare : faSquare} />
                 </div>
               </li>
               <li>
                 <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
                 <div className={style.infoText}>
-                  <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} className={style.check} disabled type="checkbox" readOnly />
+                  <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
                   <Icon icon={career.green_categories.length > 0 ? faCheckSquare : faSquare} />
                 </div>
               </li>
               <li>
-                <div className={style.infoText}>
+                <div className={style.center}>
                   <button className={style.legendToggle} onClick={this.toggleLegend} title={translate("more_information")} type="button">
                     {translate("help")} <Icon icon={faQuestion} />
                   </button>
@@ -109,25 +116,25 @@ class CareerModal extends Component{
                 <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faDollarSign} /> {translate("salary_mean")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("salary_mean_html")}} />
+                    <p {...dangerousProps({html: translate("salary_mean_html")})} />
                   </li>
                   <li>
                     <h4><Icon icon={faChartBar} /> {translate("employment_growth")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("employment_growth_html")}} />
+                    <p {...dangerousProps({html: translate("employment_growth_html")})} />
                   </li>
                   <li>
                     <h4><Icon icon={faGraduationCap} /> {translate("education")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("education_html")}} />
+                    <p {...dangerousProps({html: translate("education_html")})} />
                   </li>
                 </ul>
                 <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("bright_future_html")}} />
+                    <p {...dangerousProps({html: translate("bright_future_html")})} />
                   </li>
                   <li>
                     <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
-                    <p dangerouslySetInnerHTML={{__html: translate("green_career_html")}} />
+                    <p {...dangerousProps({html: translate("green_career_html")})} />
                   </li>
                 </ul>
                 <p className={style.center}>
@@ -135,18 +142,18 @@ class CareerModal extends Component{
                 </p>
               </div>
             )}
-            <hr/>
+            <hr />
             <h3 className={style.heading}><Icon icon={faGlobeAmericas} /> {translate("experience_level")}</h3>
             <ol className={style.experience}>
-              {[1, 2, 3, 4, 5].map((level)=>(
+              {[1, 2, 3, 4, 5].map((level) => (
                 <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
               ))}
             </ol>
             <p>{career.experience_level.experience}</p>
-            <hr/>
+            <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
-            <p dangerouslySetInnerHTML={{__html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})}} />
-            <div ref={(customContent)=>{ this.customContent = customContent; }} />
+            <p {...dangerousProps({html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})})} />
+            <div ref={(customContent) => { this.customContent = customContent; }} />
           </div>
         </section>
       </div>

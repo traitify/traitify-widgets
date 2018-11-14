@@ -1,26 +1,35 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
 import Chart from "lib/helpers/canvas-radar-chart";
+import style from "./style";
 
-class Radar extends Component{
-  componentDidMount(){
+class Radar extends Component {
+  static defaultProps = {assessment: null}
+  static propTypes = {
+    assessment: PropTypes.shape({personality_types: PropTypes.array}),
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
+  componentDidMount() {
     window.addEventListener("resize", this.updateChart);
 
     this.props.traitify.ui.trigger("Radar.initialized", this);
     this.updateChart();
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.updateChart();
     this.props.traitify.ui.trigger("Radar.updated", this);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener("resize", this.updateChart);
   }
-  createChart = ()=>{
-    if(!this.props.isReady("results")){ return; }
+  createChart = () => {
+    if(!this.props.isReady("results")) { return; }
 
-    let options = {
+    const options = {
       labels: [],
       data: [{
         fill: true,
@@ -29,7 +38,7 @@ class Radar extends Component{
     };
 
     const types = this.props.assessment.personality_types;
-    types.forEach((type)=>{
+    types.forEach((type) => {
       options.labels.push({
         text: type.personality_type.name,
         image: type.personality_type.badge.image_small
@@ -37,22 +46,22 @@ class Radar extends Component{
       options.data[0].values.push(type.score);
     });
 
-    let ctx = this.canvas.getContext("2d");
+    const ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, options);
     this.chart.render();
   }
-  updateChart = ()=>{
-    if(!this.chart){ return this.createChart(); }
+  updateChart = () => {
+    if(!this.chart) { return this.createChart(); }
 
     this.chart.resize();
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     return (
       <div className={style.radar}>
         <div className={style.radarContainer}>
-          <canvas ref={(canvas)=>{ this.canvas = canvas; }} width="820" height="700" aria-label={this.props.translate("radar_chart_label")} />
+          <canvas ref={(canvas) => { this.canvas = canvas; }} width="820" height="700" aria-label={this.props.translate("radar_chart_label")} />
         </div>
       </div>
     );

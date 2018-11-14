@@ -4,54 +4,54 @@ import Widget from "lib/traitify-widget";
 
 jest.mock("lib/traitify-widget");
 
-describe("UI", ()=>{
+describe("UI", () => {
   let ui;
 
-  beforeEach(()=>{
+  beforeEach(() => {
     Widget.mockClear();
 
     ui = new UI({});
   });
 
-  describe("constructor", ()=>{
-    it("has default imageHost", ()=>{
+  describe("constructor", () => {
+    it("has default imageHost", () => {
       expect(ui.options.imageHost).toBe("https://images.traitify.com");
     });
 
-    it("creates default i18n", ()=>{
+    it("creates default i18n", () => {
       expect(ui.i18n).toBeInstanceOf(I18n);
     });
 
-    it("sets shared data", ()=>{
+    it("sets shared data", () => {
       expect(ui.current).toEqual({});
       expect(ui.requests).toEqual({});
     });
   });
 
-  describe("component", ()=>{
-    it("merges options", ()=>{
+  describe("component", () => {
+    it("merges options", () => {
       ui.options = {abc: "original", xyz: "original"};
       ui.component({xyz: "override"});
 
       expect(Widget).toHaveBeenCalledWith(ui, {abc: "original", xyz: "override"});
     });
 
-    it("returns a component", ()=>{
+    it("returns a component", () => {
       const component = ui.component();
 
       expect(component).toBeInstanceOf(Widget);
     });
   });
 
-  describe("off", ()=>{
-    it("returns ui", ()=>{
-      const returnValue = ui.off("Default.Initialize", ()=>{});
+  describe("off", () => {
+    it("returns ui", () => {
+      const returnValue = ui.off("Default.Initialize", () => {});
 
       expect(returnValue).toEqual(ui);
     });
 
-    it("removes callback", ()=>{
-      const callback = ()=>{};
+    it("removes callback", () => {
+      const callback = () => {};
 
       ui.on("Default.Initialize", callback);
       ui.off("Default.Initialize", callback);
@@ -59,8 +59,8 @@ describe("UI", ()=>{
       expect(ui.callbacks["default.initialize"]).toBeUndefined();
     });
 
-    it("leaves other callbacks", ()=>{
-      const callbacks = [()=>{}, ()=>{}];
+    it("leaves other callbacks", () => {
+      const callbacks = [() => {}, () => {}];
 
       ui.on("Default.Initialize", callbacks[0]);
       ui.on("Default.Initialize", callbacks[1]);
@@ -70,23 +70,23 @@ describe("UI", ()=>{
     });
   });
 
-  describe("on", ()=>{
-    it("returns ui", ()=>{
-      const returnValue = ui.on("Default.Initialize", ()=>{});
+  describe("on", () => {
+    it("returns ui", () => {
+      const returnValue = ui.on("Default.Initialize", () => {});
 
       expect(returnValue).toEqual(ui);
     });
 
-    it("adds callback", ()=>{
-      const callback = ()=>{};
+    it("adds callback", () => {
+      const callback = () => {};
 
       ui.on("Default.Initialize", callback);
 
       expect(ui.callbacks["default.initialize"]).toEqual([callback]);
     });
 
-    it("stacks callbacks", ()=>{
-      const callbacks = [()=>{}, ()=>{}];
+    it("stacks callbacks", () => {
+      const callbacks = [() => {}, () => {}];
 
       ui.on("Default.Initialize", callbacks[0]);
       ui.on("Default.Initialize", callbacks[1]);
@@ -95,42 +95,42 @@ describe("UI", ()=>{
     });
   });
 
-  describe("setImagePack", ()=>{
-    it("returns ui", ()=>{
+  describe("setImagePack", () => {
+    it("returns ui", () => {
       const returnValue = ui.setImagePack("linear");
 
       expect(returnValue).toEqual(ui);
     });
 
-    it("updates option", ()=>{
+    it("updates option", () => {
       ui.setImagePack("linear");
 
       expect(ui.options.imagePack).toBe("linear");
     });
   });
 
-  describe("setLocale", ()=>{
-    it("returns ui", ()=>{
+  describe("setLocale", () => {
+    it("returns ui", () => {
       const returnValue = ui.setLocale("es-us");
 
       expect(returnValue).toEqual(ui);
     });
 
-    it("updates i18n", ()=>{
+    it("updates i18n", () => {
       ui.setLocale("es-us");
 
       expect(ui.i18n.locale).toBe("es-us");
     });
 
-    it("ignores bad input", ()=>{
+    it("ignores bad input", () => {
       ui.setLocale("espn");
 
       expect(ui.i18n.locale).toBe("en-us");
     });
   });
 
-  describe("trigger", ()=>{
-    beforeEach(()=>{
+  describe("trigger", () => {
+    beforeEach(() => {
       ui.callbacks = {
         "all": [jest.fn(), jest.fn()],
         "default.initialize": [jest.fn(), jest.fn()],
@@ -139,13 +139,13 @@ describe("UI", ()=>{
       };
     });
 
-    it("returns ui", ()=>{
+    it("returns ui", () => {
       const returnValue = ui.trigger("Default.Initialize", {});
 
       expect(returnValue).toEqual(ui);
     });
 
-    it("calls each widget callback", ()=>{
+    it("calls each widget callback", () => {
       ui.trigger("Default.Initialize", {props: {widgetID: "x"}});
 
       expect(ui.callbacks["widget-x.default.initialize"][0]).toHaveBeenCalled();
@@ -153,28 +153,28 @@ describe("UI", ()=>{
       expect(ui.callbacks["widget-y.default.initialize"][0]).not.toHaveBeenCalled();
     });
 
-    it("calls each regular callback", ()=>{
+    it("calls each regular callback", () => {
       ui.trigger("Default.Initialize", {});
 
       expect(ui.callbacks["default.initialize"][0]).toHaveBeenCalled();
       expect(ui.callbacks["default.initialize"][1]).toHaveBeenCalled();
     });
 
-    it("calls each all callback", ()=>{
+    it("calls each all callback", () => {
       ui.trigger("Default.Initialize", {});
 
       expect(ui.callbacks["default.initialize"][0]).toHaveBeenCalled();
       expect(ui.callbacks["default.initialize"][1]).toHaveBeenCalled();
     });
 
-    it("doesn't require any callbacks", ()=>{
+    it("doesn't require any callbacks", () => {
       ui.callbacks = {};
       const returnValue = ui.trigger("Default.Initialize", {});
 
       expect(returnValue).toEqual(ui);
     });
 
-    it("saves current", ()=>{
+    it("saves current", () => {
       ui.trigger("Default.Initialize", {}, true);
 
       expect(ui.current["Default.Initialize"]).toBe(true);

@@ -1,12 +1,14 @@
 @import "~style/helpers";
 
 .container {
+  @extend %widgetContainer;
   @extend %cf;
+  display: block;
   border: 1px solid #ddd;
   margin: 0 auto 5%;
+  padding: 0;
   width: 262px;
   z-index: 1;
-  cursor: pointer;
   @include mq(xs) {
     margin: 0 1.5% 3%;
     @include cols(6);

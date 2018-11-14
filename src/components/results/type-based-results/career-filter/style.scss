@@ -1,22 +1,11 @@
 @import "~style/helpers";
 
 .container {
+  @extend %widgetContainer;
   @extend %cf;
-  position: absolute;
-  width: 95%;
-  padding: 10px 0;
-  margin-left: -5px;
-  background: #fff;
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, sans-serif;
-  @include mq(m) {
-    margin-left: 0;
-  }
+  margin-bottom: 10px;
   @include mq(l) {
-    margin-top: 40px;
-    background: transparent;
     @include cols(2.5);
-    padding-left: 0;
-    margin-left: 6px;
   }
   @include mq(xl) {
     max-width: 234px;
@@ -61,29 +50,43 @@
       display: inline-block;
       padding: 8px 12px;
       height: 42px;
-      margin-left: -5px;
       border: 1px solid #ddd;
       border-radius: 0;
       -webkit-appearance: none;
       background: #e2e2e2;
       color: #333;
       width: 100%;
+      @include mq(l) {
+        margin-left: -5px;
+      }
     }
     .fieldGroup {
-      background: #e2e2e2 image-url("https://cdn.traitify.com/assets/images/js/select.gif") no-repeat 98% 50%;
+      background: #e2e2e2 url("https://cdn.traitify.com/assets/images/js/select.gif") no-repeat 98% 50%;
+      position: relative;
       @include mq(l) {
         background: #fff;
         height: auto;
         border: 0;
+      }
+      ul {
+        position: absolute;
+        left: 0;
+        right: 0;
       }
     }
   }
 }
 
 .fieldGroup {
-  i {
+  button {
     font-style: normal;
     display: block;
+    width: 100%;
+    background: #e2e2e2;
+    font-size: 16px;
+    border: 0;
+    margin: 0;
+    padding: 11px 0;
     @include mq(l) {
       display: none;
     }
@@ -101,13 +104,10 @@
     display: none;
     z-index: 50;
     position: relative;
-    margin-top: 5px;
-    margin-left: -13px;
-    margin-right: -13px;
+    margin: 0;
     border: 1px solid #e2e2e2;
     @include rems(13);
     @include mq(l) {
-      margin-top: -9px;
       display: block;
       z-index: 0;
       border: 0;
@@ -129,10 +129,10 @@
       font-weight: 400;
       height: 38px;
       line-height: 38px;
+      padding-left: 3px;
       @include mq(l) {
         background: #fff;
         text-transform: uppercase;
-        padding-left: 3px;
         margin-top: 15px;
         @include rems(18);
       }
@@ -145,14 +145,17 @@
     [type="submit"] {
       background: #3ca94e;
       color: #fff;
-      display: inline-block;
+      display: block;
       padding: 6px 25px;
       min-width: 150px;
       text-align: center;
       border: 0;
       border-radius: 0;
-      margin-top: 20px;
+      margin: 10px auto 0;
       @include rems(18);
+      @include mq(l) {
+        margin: 20px 0 0;
+      }
     }
   }
 }

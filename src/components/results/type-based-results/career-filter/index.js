@@ -2,13 +2,22 @@ import {
   faCheckSquare,
   faSquare
 } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
 import Icon from "lib/helpers/icon";
+import TraitifyPropType from "lib/helpers/prop-type";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class CareerFilter extends Component{
-  constructor(props){
+class CareerFilter extends Component {
+  static defaultProps = {options: null}
+  static propTypes = {
+    isReady: PropTypes.func.isRequired,
+    options: PropTypes.shape({careerOptions: PropTypes.object}),
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -16,72 +25,78 @@ class CareerFilter extends Component{
       showFilters: false
     };
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.traitify.ui.trigger("CareerFilter.initialized", this);
     this.props.traitify.ui.on("Careers.mergeParams", this.mergeParams);
     this.props.traitify.ui.on("Careers.updateParams", this.updateParams);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("CareerFilter.updated", this);
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.traitify.ui.off("Careers.mergeParams", this.mergeParams);
     this.props.traitify.ui.off("Careers.updateParams", this.updateParams);
   }
-  careerOption = (name)=>{
-    if(this.props[name] != null){ return this.props[name]; }
+  careerOption = (name) => {
+    if(this.props[name] != null) { return this.props[name]; }
     if(this.props.options
       && this.props.options.careerOptions
       && this.props.options.careerOptions[name] != null
-    ){ return this.props.options.careerOptions[name]; }
+    ) { return this.props.options.careerOptions[name]; }
     if(this.traitify
       && this.traitify.ui.options.careerOptions
       && this.traitify.ui.options.careerOptions[name] != null
-    ){ return this.traitify.ui.options.careerOptions[name]; }
+    ) { return this.traitify.ui.options.careerOptions[name]; }
   }
-  mergeParams = ()=>{
-    this.setState({
+  mergeParams = () => {
+    this.setState((state, props) => ({
       params: {
-        ...this.state.params,
-        ...this.props.traitify.ui.current["Careers.mergeParams"]
+        ...state.params,
+        ...props.traitify.ui.current["Careers.mergeParams"]
       }
-    });
+    }));
   }
-  toggleFilters = (e)=>{
-    if(e.target.tagName.toLowerCase() === "i"){ this.setState({showFilters: !this.state.showFilters}); }
+  toggleFilters = () => {
+    this.setState((state) => ({showFilters: !state.showFilters}));
   }
-  updateParams = ()=>{
+  updateParams = () => {
     this.setState({
       params: {...this.props.traitify.ui.current["Careers.updateParams"]}
     });
   }
-  onChange = (e)=>{
-    let params = {...this.state.params};
+  onChange = (e) => {
     const {name, value} = e.target;
 
-    params[name] = value;
+    this.setState((state) => {
+      const params = {...state.params};
 
-    this.setState({params});
+      params[name] = value;
+
+      return {params};
+    });
   }
-  onExperienceChange = (e)=>{
+  onExperienceChange = (e) => {
     const value = +e.target.value;
     const defaultLevels = this.careerOption("experienceLevels") || [1, 2, 3, 4, 5];
-    let params = {...this.state.params};
-    let levels = params.experience_levels;
-    levels = levels ? levels.split(",").map((level)=>(+level)) : defaultLevels;
 
-    if(levels.includes(value)){
-      levels = levels.filter((l)=>(l !== value));
-      if(levels.length === 0){ levels = defaultLevels; }
-    }else{
-      levels.push(value);
-    }
+    this.setState((state) => {
+      const params = {...state.params};
+      let levels = params.experience_levels;
+      levels = levels ? levels.split(",").map((level) => (+level)) : defaultLevels;
 
-    params.experience_levels = levels.sort().join(",");
+      if(levels.includes(value)) {
+        levels = levels.filter((l) => (l !== value));
+        if(levels.length === 0) { levels = defaultLevels; }
+      } else {
+        levels.push(value);
+      }
 
-    this.setState({params});
+      params.experience_levels = levels.sort().join(",");
+
+      return {params};
+    });
   }
-  onSubmit = (e)=>{
+  onSubmit = (e) => {
     e.preventDefault();
 
     this.props.traitify.ui.trigger("Careers.mergeParams", this, {
@@ -91,8 +106,8 @@ class CareerFilter extends Component{
 
     return false;
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     const {params, showFilters} = this.state;
     const {translate} = this.props;
@@ -107,11 +122,11 @@ class CareerFilter extends Component{
           <ul>
             <li className={style.search}>
               <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
-              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange}/>
+              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange} />
             </li>
-            <li onClick={this.toggleFilters}>
-              <div className={`${style.fieldGroup} ${style.field}`}>
-                <i>{translate("filter")}</i>
+            <li>
+              <div className={style.fieldGroup}>
+                <button onClick={this.toggleFilters} type="button">{translate("filter")}</button>
                 <ul className={`${style.formGroup} ${showFilters ? style.block : ""}`}>
                   <div>
                     <li className={style.groupTitle}>{translate("sort")}</li>
@@ -132,25 +147,29 @@ class CareerFilter extends Component{
                   </div>
                   <div>
                     <li className={style.groupTitle}>{translate("experience_level")}</li>
-                    {experienceLevels.map((level)=>(
-                      <li key={level}>
-                        <label htmlFor={`traitify-career-level-${level}`}>
-                          <input aria-labelledby={`traitify-career-level-${level}-label`} checked={currentExperienceLevels.includes(level)} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
-                          <Icon icon={currentExperienceLevels.includes(level) ? faCheckSquare : faSquare} />
-                          <span id={`traitify-career-level-${level}-label`}>{translate(`experience_level_${level}`)}</span>
-                        </label>
-                      </li>
-                    ))}
+                    {experienceLevels.map((level) => {
+                      const checked = currentExperienceLevels.includes(level);
+
+                      return (
+                        <li key={level}>
+                          <label htmlFor={`traitify-career-level-${level}`}>
+                            <input aria-labelledby={`traitify-career-level-${level}-label`} checked={checked} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
+                            <Icon icon={checked ? faCheckSquare : faSquare} />
+                            <span id={`traitify-career-level-${level}-label`}>{translate(`experience_level_${level}`)}</span>
+                          </label>
+                        </li>
+                      );
+                    })}
                   </div>
                   <div>
-                    <li>
+                    <li className={style.center}>
                       <input type="submit" value={translate("search")} />
                     </li>
                   </div>
                 </ul>
               </div>
             </li>
-            <div ref={(customContent)=>{ this.customContent = customContent; }} />
+            <div ref={(customContent) => { this.customContent = customContent; }} />
           </ul>
         </form>
       </div>

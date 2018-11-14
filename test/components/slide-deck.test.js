@@ -4,8 +4,8 @@ import Traitify from "support/traitify";
 
 jest.mock("lib/with-traitify");
 
-describe("SlideDeck", ()=>{
-  const createSlide = (index, complete)=>(
+describe("SlideDeck", () => {
+  const createSlide = (index, complete) => (
     {
       caption: `Slide ${index}`,
       id: `s-${index}`,
@@ -14,18 +14,27 @@ describe("SlideDeck", ()=>{
       time_taken: complete ? Math.random() * 100 : null
     }
   );
-  const assessment = {id: "xyz", slides: Array.from({length: 20}).map((_, i)=>(createSlide(i, false)))};
-  const assessmentWithoutSlides = {id: "xyz", slides: []};
+  const assessment = {
+    id: "xyz",
+    locale_key: "en-us",
+    slides: Array.from({length: 20}).map((_, i) => (createSlide(i, false)))
+  };
+  const assessmentWithoutSlides = {
+    id: "xyz",
+    locale_key: "en-us",
+    slides: []
+  };
   const defaultProps = {
     assessment,
     assessmentID: assessment.id,
     cache: {get: jest.fn().mockName("get"), set: jest.fn().mockName("set")},
     getAssessment: jest.fn().mockName("getAssessment"),
     getOption: jest.fn().mockName("getAssessment"),
-    isReady: ()=>(true)
+    isReady: () => (true),
+    translate: (key) => (key)
   };
 
-  beforeEach(()=>{
+  beforeEach(() => {
     defaultProps.cache.get.mockClear();
     defaultProps.cache.get.mockClear();
     defaultProps.getAssessment.mockClear();
@@ -49,7 +58,7 @@ describe("SlideDeck", ()=>{
   //   loading/isReady logic
   //   isReady callback
 
-  describe("initialize", ()=>{
+  describe("initialize", () => {
     // only initializes once
     //   setState only called once
     // doesn't initialize if
@@ -67,13 +76,13 @@ describe("SlideDeck", ()=>{
     //   fetches images
   });
 
-  it("renders current slide", ()=>{
+  it("renders current slide", () => {
     // const component = new ComponentHandler(<Component {...defaultProps} />);
 
     // expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if not ready", ()=>{
+  it("renders nothing if not ready", () => {
     const props = {...defaultProps};
     props.assessment = assessmentWithoutSlides;
     const component = new ComponentHandler(<Component {...props} />);
@@ -81,7 +90,7 @@ describe("SlideDeck", ()=>{
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("triggers initialization callback", ()=>{
+  it("triggers initialization callback", () => {
     const props = {...defaultProps};
     props.traitify.ui.trigger = jest.fn().mockName("trigger");
     new ComponentHandler(<Component {...props} />);
@@ -89,14 +98,15 @@ describe("SlideDeck", ()=>{
     expect(props.traitify.ui.trigger).toBeCalled();
   });
 
-  it("normalizes time taken", ()=>{
+  it("normalizes time taken", () => {
     const component = new ComponentHandler(<Component {...defaultProps} />);
-    const slides = Array.from({length: 20}).map((_, i)=>(createSlide(i, true)));
+    const slides = Array.from({length: 20}).map((_, i) => (createSlide(i, true)));
     slides[0].response = true;
     slides[0].time_taken = -100;
     component.updateState({slides});
 
-    const badSlides = component.instance.completedSlides().filter((slide)=>(slide.time_taken < 0));
+    const badSlides = component.instance.completedSlides()
+      .filter((slide) => (slide.time_taken < 0));
 
     expect(badSlides).toHaveLength(0);
   });

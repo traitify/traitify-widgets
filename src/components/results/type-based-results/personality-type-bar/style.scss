@@ -5,10 +5,14 @@
   display: table-cell;
   vertical-align: bottom;
   height: 300px;
-  padding-bottom: 10px;
   border-bottom: 2px solid $border;
+  padding: 0 3px 10px;
   @include mq(m) {
     height: 375px;
+  }
+  @include mq(xl) {
+    padding-left: 6px;
+    padding-right: 6px;
   }
   &:hover, &.selected {
     cursor: pointer;
@@ -16,24 +20,32 @@
       height: 100% !important;
     }
   }
+  button {
+    border: none;
+    border-radius: 0;
+  }
 }
 .score {
-  margin: 0 3px;
   display: block;
-  padding-top: 10px;
   text-align: center;
   color: $white;
   transition: height 0.5s;
+  position: relative;
+  width: 100%;
+  span {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+  }
   @include rems(19);
   @include mq(m) {
     @include rems(28);
   }
   @include mq(xl) {
-    margin: 0 6px;
     @include rems(36);
   }
   @include mq(xxl) {
-    margin: 0 6px;
     @include rems(40);
   }
 }
@@ -41,7 +53,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -143px;
+  width: 100%;
+  bottom: -144px;
   display: block;
   color: $black;
   text-align: center;

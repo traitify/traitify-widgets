@@ -1,28 +1,40 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
+import TraitifyPropType from "lib/helpers/prop-type";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class PersonalityDetails extends Component{
-  componentDidMount(){
+class PersonalityDetails extends Component {
+  static defaultProps = {assessment: null}
+  static propTypes = {
+    assessment: PropTypes.shape({
+      personality_blend: PropTypes.object,
+      personality_types: PropTypes.array.isRequired
+    }),
+    isReady: PropTypes.func.isRequired,
+    traitify: TraitifyPropType.isRequired,
+    translate: PropTypes.func.isRequired
+  }
+  componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
   }
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityDetails.updated", this);
   }
-  render(){
-    if(!this.props.isReady("results")){ return null; }
+  render() {
+    if(!this.props.isReady("results")) { return null; }
 
     let personality = this.props.assessment.personality_blend;
     personality = personality || this.props.assessment.personality_types[0];
 
-    const details = personality.details;
-    if(!details){ return null; }
+    const {details} = personality;
+    if(!details) { return null; }
 
-    let complement = details.find(d=>d.title === "Complement");
+    let complement = details.find((detail) => (detail.title === "Complement"));
     complement = complement && complement.body;
-    let conflict = details.find(d=>d.title === "Conflict");
+    let conflict = details.find((detail) => (detail.title === "Conflict"));
     conflict = conflict && conflict.body;
-    let environments = personality.environments || [];
+    const environments = personality.environments || [];
 
     return (
       <div className={style.details}>
@@ -42,7 +54,7 @@ class PersonalityDetails extends Component{
           <div className={style.environments}>
             <h4>{this.props.translate("best_work_environments")}</h4>
             <ul>
-              {environments.map(environment=>(
+              {environments.map((environment) => (
                 <li key={environment.name}>{environment.name}</li>
               ))}
             </ul>

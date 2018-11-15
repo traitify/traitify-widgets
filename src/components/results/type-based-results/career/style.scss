@@ -4,7 +4,7 @@
   @extend %widgetContainer;
   @extend %cf;
   display: block;
-  border: 1px solid #ddd;
+  background-color: #fff;
   margin: 0 auto 5%;
   padding: 0;
   width: 262px;
@@ -22,8 +22,10 @@
     width: 23%;
     margin: 0 1% 2%;
   }
-
   img { width: 100%; }
+  &[type="button"] {
+    border: 1px solid #ddd;
+  }
 }
 
 .content {

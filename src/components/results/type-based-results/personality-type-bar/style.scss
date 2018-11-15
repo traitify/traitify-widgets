@@ -21,8 +21,7 @@
     }
   }
   button {
-    border: none;
-    border-radius: 0;
+    background: none;
   }
 }
 .score {
@@ -51,14 +50,15 @@
 }
 .label {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 0px;
+  right: 0px;
   width: 100%;
   bottom: -144px;
   display: block;
   color: $black;
   text-align: center;
-  margin: 0 3px 0;
+  margin: 0;
+  padding: 0;
   @include border-radius(5px);
   @include rems(15);
   @include mq(m) {
@@ -67,7 +67,6 @@
   }
   @include mq(xl) {
     bottom: -146px;
-    margin: 0 6px 0;
   }
   img {
     display: block;

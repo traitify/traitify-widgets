@@ -239,6 +239,8 @@
     box-sizing: border-box;
   }
   button {
+    border: none;
+    border-radius: 0;
     cursor: pointer;
     font-family: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   }

@@ -6,7 +6,9 @@ import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Dimension extends Component {
+  static defaultProps = {assessmentID: null}
   static propTypes = {
+    assessmentID: PropTypes.string,
     getOption: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     traitify: TraitifyPropType.isRequired,
@@ -21,17 +23,15 @@ class Dimension extends Component {
 
     this.state = {showContent: props.index === 0};
   }
-  trigger = (e) => {
-    e.preventDefault();
-
-    this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
-    this.setState((state) => ({showContent: !state.showContent}));
-  }
   componentDidMount() {
     this.props.traitify.ui.trigger("Dimension.initialized", this);
   }
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     this.props.traitify.ui.trigger("Dimension.updated", this);
+
+    if(this.props.assessmentID !== prevProps.assessmentID) {
+      this.setState({showContent: this.props.index === 0});
+    }
   }
   description(suffix) {
     const type = this.props.type.personality_type;
@@ -43,6 +43,10 @@ class Dimension extends Component {
     description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
 
     return (description && description.body) || type.description;
+  }
+  trigger = () => {
+    this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
+    this.setState((state) => ({showContent: !state.showContent}));
   }
   render() {
     const type = this.props.type.personality_type;

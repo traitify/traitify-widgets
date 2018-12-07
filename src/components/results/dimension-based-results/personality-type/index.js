@@ -13,12 +13,6 @@ class Type extends Component {
     }).isRequired,
     traitify: TraitifyPropType.isRequired
   }
-  trigger = (e) => {
-    e.preventDefault();
-
-    this.props.traitify.ui.trigger("PersonalityType.showContent", this, this.props.type.personality_type);
-    this.setState((state) => ({showContent: !state.showContent}));
-  }
   componentDidMount() {
     this.props.traitify.ui.trigger("PersonalityType.initialized", this);
   }

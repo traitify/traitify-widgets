@@ -24,9 +24,7 @@ class PersonalityTraits extends Component {
   componentDidUpdate() {
     this.props.traitify.ui.trigger("PersonalityTraits.updated", this);
   }
-  onClick = (e) => {
-    e.preventDefault();
-
+  onClick = () => {
     this.setState((state) => ({showMore: !state.showMore}), () => {
       const key = this.state.showMore ? "showLess" : "showMore";
 

@@ -5,6 +5,19 @@ import withTraitify from "lib/with-traitify";
 import Chart from "lib/helpers/canvas-radar-chart";
 import style from "./style";
 
+const dataMapper = (assessment) => {
+  if(!assessment || !assessment.personality_types) { return null; }
+
+  return JSON.stringify(assessment.personality_types.map((type) => [
+    type.score,
+    type.personality_type.name,
+    type.personality_type.badge.image_small
+  ]));
+};
+const dataChanged = (newAssessment, oldAssessment) => (
+  dataMapper(newAssessment) !== dataMapper(oldAssessment)
+);
+
 class Radar extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
@@ -19,9 +32,12 @@ class Radar extends Component {
     this.props.traitify.ui.trigger("Radar.initialized", this);
     this.updateChart();
   }
-  componentDidUpdate() {
-    this.updateChart();
+  componentDidUpdate(prevProps) {
     this.props.traitify.ui.trigger("Radar.updated", this);
+
+    if(dataChanged(this.props.assessment, prevProps.assessment)) { this.destroyChart(); }
+
+    this.updateChart();
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateChart);
@@ -49,6 +65,12 @@ class Radar extends Component {
     const ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, options);
     this.chart.render();
+  }
+  destroyChart = () => {
+    if(!this.chart) { return; }
+
+    this.chart.destroy();
+    this.chart = null;
   }
   updateChart = () => {
     if(!this.chart) { return this.createChart(); }

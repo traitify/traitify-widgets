@@ -6,9 +6,10 @@ import PersonalityTypeBar from "../personality-type-bar";
 import style from "./style";
 
 class PersonalityTypeBarChart extends Component {
-  static defaultProps = {assessment: null}
+  static defaultProps = {assessment: null, assessmentID: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
+    assessmentID: PropTypes.string,
     isReady: PropTypes.func.isRequired,
     traitify: TraitifyPropType.isRequired
   }
@@ -22,9 +23,14 @@ class PersonalityTypeBarChart extends Component {
     this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
     this.activate();
   }
-  componentDidUpdate() {
-    this.activate();
+  componentDidUpdate(prevProps) {
     this.props.traitify.ui.trigger("PersonalityTypeBarChart.updated", this);
+
+    if(this.props.assessmentID !== prevProps.assessmentID) {
+      this.props.traitify.ui.trigger("Assessment.activeType", this, null);
+    }
+
+    this.activate();
   }
   componentWillUnmount() {
     this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);

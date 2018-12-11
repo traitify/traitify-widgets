@@ -1,4 +1,5 @@
 import {Component} from "components/slide-deck";
+import UI from "lib/traitify-ui";
 import ComponentHandler from "support/component-handler";
 import Traitify from "support/traitify";
 
@@ -40,6 +41,7 @@ describe("SlideDeck", () => {
     defaultProps.getAssessment.mockClear();
     defaultProps.getOption.mockClear();
     defaultProps.traitify = new Traitify();
+    defaultProps.ui = new UI(defaultProps.traitify);
   });
 
   // TODO: Test render for snapshot
@@ -92,10 +94,10 @@ describe("SlideDeck", () => {
 
   it("triggers initialization callback", () => {
     const props = {...defaultProps};
-    props.traitify.ui.trigger = jest.fn().mockName("trigger");
+    props.ui.trigger = jest.fn().mockName("trigger");
     new ComponentHandler(<Component {...props} />);
 
-    expect(props.traitify.ui.trigger).toBeCalled();
+    expect(props.ui.trigger).toBeCalled();
   });
 
   it("normalizes time taken", () => {

@@ -5,7 +5,7 @@ import {
 import PropTypes from "prop-types";
 import {Component} from "react";
 import Icon from "lib/helpers/icon";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
@@ -14,8 +14,8 @@ class CareerFilter extends Component {
   static propTypes = {
     isReady: PropTypes.func.isRequired,
     options: PropTypes.shape({careerOptions: PropTypes.object}),
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -26,16 +26,16 @@ class CareerFilter extends Component {
     };
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("CareerFilter.initialized", this);
-    this.props.traitify.ui.on("Careers.mergeParams", this.mergeParams);
-    this.props.traitify.ui.on("Careers.updateParams", this.updateParams);
+    this.props.ui.trigger("CareerFilter.initialized", this);
+    this.props.ui.on("Careers.mergeParams", this.mergeParams);
+    this.props.ui.on("Careers.updateParams", this.updateParams);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("CareerFilter.updated", this);
+    this.props.ui.trigger("CareerFilter.updated", this);
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("Careers.mergeParams", this.mergeParams);
-    this.props.traitify.ui.off("Careers.updateParams", this.updateParams);
+    this.props.ui.off("Careers.mergeParams", this.mergeParams);
+    this.props.ui.off("Careers.updateParams", this.updateParams);
   }
   careerOption = (name) => {
     if(this.props[name] != null) { return this.props[name]; }
@@ -43,16 +43,16 @@ class CareerFilter extends Component {
       && this.props.options.careerOptions
       && this.props.options.careerOptions[name] != null
     ) { return this.props.options.careerOptions[name]; }
-    if(this.traitify
-      && this.traitify.ui.options.careerOptions
-      && this.traitify.ui.options.careerOptions[name] != null
-    ) { return this.traitify.ui.options.careerOptions[name]; }
+    if(this.props.ui
+      && this.props.ui.options.careerOptions
+      && this.props.ui.options.careerOptions[name] != null
+    ) { return this.props.ui.options.careerOptions[name]; }
   }
   mergeParams = () => {
     this.setState((state, props) => ({
       params: {
         ...state.params,
-        ...props.traitify.ui.current["Careers.mergeParams"]
+        ...props.ui.current["Careers.mergeParams"]
       }
     }));
   }
@@ -61,7 +61,7 @@ class CareerFilter extends Component {
   }
   updateParams = () => {
     this.setState({
-      params: {...this.props.traitify.ui.current["Careers.updateParams"]}
+      params: {...this.props.ui.current["Careers.updateParams"]}
     });
   }
   onChange = (e) => {
@@ -99,7 +99,7 @@ class CareerFilter extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    this.props.traitify.ui.trigger("Careers.mergeParams", this, {
+    this.props.ui.trigger("Careers.mergeParams", this, {
       ...this.state.params,
       page: 1
     });

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeBar from "../personality-type-bar";
 import style from "./style";
@@ -11,7 +11,7 @@ class PersonalityTypeBarChart extends Component {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     assessmentID: PropTypes.string,
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -19,36 +19,36 @@ class PersonalityTypeBarChart extends Component {
     this.state = {activeType: null};
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityTypeBarChart.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
+    this.props.ui.trigger("PersonalityTypeBarChart.initialized", this);
+    this.props.ui.on("Assessment.activeType", this.getActiveType);
     this.activate();
   }
   componentDidUpdate(prevProps) {
-    this.props.traitify.ui.trigger("PersonalityTypeBarChart.updated", this);
+    this.props.ui.trigger("PersonalityTypeBarChart.updated", this);
 
     if(this.props.assessmentID !== prevProps.assessmentID) {
-      this.props.traitify.ui.trigger("Assessment.activeType", this, null);
+      this.props.ui.trigger("Assessment.activeType", this, null);
     }
 
     this.activate();
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+    this.props.ui.off("Assessment.activeType", this.getActiveType);
   }
   getActiveType = () => {
-    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+    this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
   }
   activate() {
     if(!this.props.isReady("results")) { return; }
     if(this.state.activeType) { return; }
 
-    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    const activeType = this.props.ui.current["Assessment.activeType"];
     if(activeType) {
       this.setState({activeType});
     } else {
       const type = this.props.assessment.personality_types[0];
 
-      this.props.traitify.ui.trigger("Assessment.activeType", this, type);
+      this.props.ui.trigger("Assessment.activeType", this, type);
     }
   }
   barHeight(type) {

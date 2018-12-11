@@ -1,20 +1,21 @@
-import I18n from "lib/i18n";
 import Widget from "lib/traitify-widget";
 
 export default class TraitifyUI {
   constructor(traitify, _options = {}) {
     const {i18n, ...options} = _options;
 
-    this.traitify = traitify;
-    this.i18n = i18n || new I18n();
+    this.current = {};
+    this.callbacks = {};
+    this.i18n = i18n || traitify.i18n;
     this.options = {
       careerOptions: {},
       imageHost: "https://images.traitify.com",
       ...options
     };
-    this.current = {};
-    this.callbacks = {};
     this.requests = {};
+    this.traitify = traitify;
+
+    this.setLocale("en-us");
   }
   component(options = {}) {
     return new Widget(this, {...this.options, ...options});
@@ -42,9 +43,11 @@ export default class TraitifyUI {
 
     return this;
   }
-  setLocale(locale) {
-    this.i18n.setLocale(locale);
-    this.trigger("I18n.setLocale", this, this.i18n.locale);
+  setLocale(_locale) {
+    const locale = _locale.toLowerCase();
+    if(this.i18n.data[locale]) { this.locale = locale; }
+
+    this.trigger("I18n.setLocale", this, this.locale);
 
     return this;
   }

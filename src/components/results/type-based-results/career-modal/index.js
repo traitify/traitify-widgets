@@ -16,13 +16,13 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import {dangerousProps} from "lib/helpers";
 import Icon from "lib/helpers/icon";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class CareerModal extends Component {
   static propTypes = {
-    traitify: TraitifyPropType.isRequired,
+    traitify: TraitifyPropTypes.traitify.isRequired,
     translate: PropTypes.func.isRequired
   }
   constructor(props) {
@@ -35,22 +35,22 @@ class CareerModal extends Component {
     };
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("CareerModal.initialized", this);
-    this.props.traitify.ui.on("CareerModal.career", this.setCareer);
-    this.props.traitify.ui.on("CareerModal.hide", this.hide);
-    this.props.traitify.ui.on("CareerModal.show", this.show);
+    this.props.ui.trigger("CareerModal.initialized", this);
+    this.props.ui.on("CareerModal.career", this.setCareer);
+    this.props.ui.on("CareerModal.hide", this.hide);
+    this.props.ui.on("CareerModal.show", this.show);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("CareerModal.updated", this);
+    this.props.ui.trigger("CareerModal.updated", this);
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("CareerModal.career", this.setCareer);
-    this.props.traitify.ui.off("CareerModal.hide", this.hide);
-    this.props.traitify.ui.off("CareerModal.show", this.show);
+    this.props.ui.off("CareerModal.career", this.setCareer);
+    this.props.ui.off("CareerModal.hide", this.hide);
+    this.props.ui.off("CareerModal.show", this.show);
   }
-  close = () => { this.props.traitify.ui.trigger("CareerModal.hide", this); }
+  close = () => { this.props.ui.trigger("CareerModal.hide", this); }
   hide = () => { this.setState({show: false}); }
-  setCareer = () => { this.setState({career: this.props.traitify.ui.current["CareerModal.career"]}); }
+  setCareer = () => { this.setState({career: this.props.ui.current["CareerModal.career"]}); }
   show = () => { this.setState({show: true}); }
   toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); }
   render() {

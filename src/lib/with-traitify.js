@@ -76,7 +76,7 @@ export default function withTraitify(WrappedComponent) {
 
       this.listeners = this.listeners || {};
       this.listeners[key] = callback;
-      this.traitify.ui.on(key, callback);
+      this.ui.on(key, callback);
     }
     // setState method that also works in the constructor
     safeSetState = (state) => {
@@ -105,7 +105,7 @@ export default function withTraitify(WrappedComponent) {
       const setAssessment = (data) => (
         new Promise((resolve) => {
           this.setState({assessment: data}, () => (resolve(data)));
-          this.traitify.ui.trigger(key, this, data);
+          this.ui.trigger(key, this, data);
         })
       );
 
@@ -115,11 +115,11 @@ export default function withTraitify(WrappedComponent) {
       assessment = this.cache.get(key);
       if(hasResults(assessment)) { return setAssessment(assessment); }
 
-      if(this.traitify.ui.requests[key] && !options.force) {
-        return this.traitify.ui.requests[key];
+      if(this.ui.requests[key] && !options.force) {
+        return this.ui.requests[key];
       }
 
-      this.traitify.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
+      this.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
         data: "archetype,blend,instructions,slides,types,traits",
         locale_key: locale
       }).then((data) => {
@@ -129,10 +129,10 @@ export default function withTraitify(WrappedComponent) {
       }).catch((error) => {
         console.warn(error); // eslint-disable-line no-console
 
-        delete this.traitify.ui.requests[key];
+        delete this.ui.requests[key];
       });
 
-      return this.traitify.ui.requests[key];
+      return this.ui.requests[key];
     }
     getDeck = (options = {}) => {
       const {deckID, locale} = this.state;
@@ -148,7 +148,7 @@ export default function withTraitify(WrappedComponent) {
       const setDeck = (data) => (
         new Promise((resolve) => {
           this.setState({deck: data}, () => (resolve(data)));
-          this.traitify.ui.trigger(key, this, data);
+          this.ui.trigger(key, this, data);
         })
       );
 
@@ -158,11 +158,11 @@ export default function withTraitify(WrappedComponent) {
       deck = this.cache.get(key);
       if(hasData(deck)) { return setDeck(deck); }
 
-      if(this.traitify.ui.requests[key] && !options.force) {
-        return this.traitify.ui.requests[key];
+      if(this.ui.requests[key] && !options.force) {
+        return this.ui.requests[key];
       }
 
-      this.traitify.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
+      this.ui.requests[key] = this.traitify.get(`/decks/${deckID}`, {
         locale_key: locale
       }).then((_data) => {
         const data = {..._data};
@@ -173,19 +173,19 @@ export default function withTraitify(WrappedComponent) {
       }).catch((error) => {
         console.warn(error); // eslint-disable-line no-console
 
-        delete this.traitify.ui.requests[key];
+        delete this.ui.requests[key];
       });
 
-      return this.traitify.ui.requests[key];
+      return this.ui.requests[key];
     }
     getListener = (key) => (this.listeners[key.toLowerCase()])
     getOption = (name) => {
-      const {props, traitify} = this;
+      const {props, ui} = this;
       const {[name]: prop, options} = props;
 
       if(prop != null) { return prop; }
       if(options && options[name] != null) { return options[name]; }
-      if(traitify && traitify.ui.options[name] != null) { return traitify.ui.options[name]; }
+      if(ui && ui.options[name] != null) { return ui.options[name]; }
     }
     isReady = (type) => {
       const {assessment, deck} = this.state;
@@ -204,7 +204,7 @@ export default function withTraitify(WrappedComponent) {
     removeListener = (_key) => {
       const key = _key.toLowerCase();
 
-      this.traitify.ui.off(key, this.getListener(key));
+      this.ui.off(key, this.getListener(key));
       delete this.listeners[key];
     }
     setAssessmentID() {
@@ -271,16 +271,20 @@ export default function withTraitify(WrappedComponent) {
 
       const {locale: propLocale, options} = this.props;
       const locale = propLocale || (options && options.locale);
-      if(locale && locale.toLowerCase() !== this.traitify.ui.i18n.locale) {
-        this.traitify.ui.setLocale(locale.toLowerCase());
+      if(locale && locale.toLowerCase() !== this.ui.locale) {
+        this.ui.setLocale(locale.toLowerCase());
       } else {
-        this.safeSetState({locale: this.traitify.ui.i18n.locale});
+        this.safeSetState({locale: this.ui.locale});
       }
     }
     setupTraitify() {
-      this.traitify = this.props.traitify || window.Traitify;
+      const {traitify, ui} = this.props;
+
+      this.traitify = traitify || (ui && ui.traitify) || window.Traitify;
 
       if(!this.traitify) { throw new Error("Traitify must be passed as a prop or attached to window"); }
+
+      this.ui = ui || this.traitify.ui;
     }
     updateAssessment(options = {}) {
       const {assessmentID, locale} = this.state;
@@ -304,7 +308,7 @@ export default function withTraitify(WrappedComponent) {
           });
         });
 
-        const currentValue = this.traitify.ui.current[key];
+        const currentValue = this.ui.current[key];
         if(currentValue != null) {
           this.getListener(key)(null, currentValue);
         } else {
@@ -329,7 +333,7 @@ export default function withTraitify(WrappedComponent) {
           this.setState({deck});
         });
 
-        const currentValue = this.traitify.ui.current[key];
+        const currentValue = this.ui.current[key];
         if(currentValue != null) {
           this.getListener(key)(null, currentValue);
         } else {
@@ -347,10 +351,12 @@ export default function withTraitify(WrappedComponent) {
         isReady,
         props,
         state,
-        traitify
+        traitify,
+        ui
       } = this;
 
-      const {locale, translate} = this.traitify.ui.i18n;
+      const {i18n, locale} = ui;
+      const translate = i18n.translate.bind(null, locale);
       const options = {
         ...props,
         ...state,
@@ -362,7 +368,8 @@ export default function withTraitify(WrappedComponent) {
         locale,
         isReady,
         traitify,
-        translate
+        translate,
+        ui
       };
 
       return <WrappedComponent {...options} />;

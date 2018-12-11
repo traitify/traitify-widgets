@@ -485,7 +485,7 @@ describe("withTraitify", () => {
       traitify.ajax.mockReturnValue(Promise.resolve(deckWithoutLocale));
       component.updateState({deckID: deckWithoutLocale.id});
       component.instance.getDeck().then(() => {
-        expect(getDummyComponent().props.deck.locale_key).toBe(traitify.ui.i18n.locale);
+        expect(getDummyComponent().props.deck.locale_key).toBe(traitify.ui.locale);
         done();
       });
     });
@@ -569,17 +569,16 @@ describe("withTraitify", () => {
   });
 
   describe("i18n", () => {
-    it("passes locale and translate through traitify", () => {
+    it("passes locale through ui", () => {
       component = new ComponentHandler(<Component traitify={traitify} />);
 
-      expect(getDummyComponent().props.locale).toBe(traitify.ui.i18n.locale);
-      expect(getDummyComponent().props.translate).toBe(traitify.ui.i18n.translate);
+      expect(getDummyComponent().props.locale).toBe(traitify.ui.locale);
     });
 
     it("changes locale", () => {
       component = new ComponentHandler(<Component locale="es-us" traitify={traitify} />);
 
-      expect(traitify.ui.i18n.locale).toBe("es-us");
+      expect(traitify.ui.locale).toBe("es-us");
     });
 
     it("follows locale change", () => {

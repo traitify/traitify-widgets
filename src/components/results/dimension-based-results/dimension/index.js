@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
@@ -11,12 +11,12 @@ class Dimension extends Component {
     assessmentID: PropTypes.string,
     getOption: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
-    traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired,
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
       score: PropTypes.number.isRequired
-    }).isRequired
+    }).isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -24,10 +24,10 @@ class Dimension extends Component {
     this.state = {showContent: props.index === 0};
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("Dimension.initialized", this);
+    this.props.ui.trigger("Dimension.initialized", this);
   }
   componentDidUpdate(prevProps) {
-    this.props.traitify.ui.trigger("Dimension.updated", this);
+    this.props.ui.trigger("Dimension.updated", this);
 
     if(this.props.assessmentID !== prevProps.assessmentID) {
       this.setState({showContent: this.props.index === 0});
@@ -45,7 +45,7 @@ class Dimension extends Component {
     return (description && description.body) || type.description;
   }
   trigger = () => {
-    this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
+    this.props.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
     this.setState((state) => ({showContent: !state.showContent}));
   }
   render() {

@@ -6,16 +6,23 @@ jest.mock("components/results/dimension-based-results", () => (() => (<div class
 jest.mock("components/results/type-based-results", () => (() => (<div className="mock">Type Based</div>)));
 
 describe("Results", () => {
-  const traitify = {ui: {trigger: jest.fn().mockName("trigger")}};
+  const ui = {
+    current: {},
+    off: jest.fn().mockName("off"),
+    on: jest.fn().mockName("on"),
+    trigger: jest.fn().mockName("trigger")
+  };
 
   beforeEach(() => {
-    traitify.ui.trigger.mockClear();
+    ui.off.mockClear();
+    ui.on.mockClear();
+    ui.trigger.mockClear();
   });
 
   it("renders dimension based results", () => {
     const assessment = {assessment_type: "DIMENSION_BASED"};
     const component = new ComponentHandler(
-      <Component assessment={assessment} isReady={() => (true)} traitify={traitify} />
+      <Component assessment={assessment} isReady={() => (true)} ui={ui} />
     );
 
     expect(component.tree).toMatchSnapshot();
@@ -24,7 +31,7 @@ describe("Results", () => {
   it("renders type based results", () => {
     const assessment = {assessment_type: "TYPE_BASED"};
     const component = new ComponentHandler(
-      <Component assessment={assessment} isReady={() => (true)} traitify={traitify} />
+      <Component assessment={assessment} isReady={() => (true)} ui={ui} />
     );
 
     expect(component.tree).toMatchSnapshot();
@@ -32,24 +39,24 @@ describe("Results", () => {
 
   it("renders nothing if not ready", () => {
     const component = new ComponentHandler(
-      <Component isReady={() => (false)} traitify={traitify} />
+      <Component isReady={() => (false)} ui={ui} />
     );
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("triggers initialization callback", () => {
-    new ComponentHandler(<Component isReady={() => (false)} traitify={traitify} />);
+    new ComponentHandler(<Component isReady={() => (false)} ui={ui} />);
 
-    expect(traitify.ui.trigger.mock.calls[0][0]).toBe("Results.initialized");
+    expect(ui.trigger.mock.calls[0][0]).toBe("Results.initialized");
   });
 
   it("triggers update callback", () => {
     const component = new ComponentHandler(
-      <Component isReady={() => (false)} traitify={traitify} />
+      <Component isReady={() => (false)} ui={ui} />
     );
     component.updateProps();
 
-    expect(traitify.ui.trigger.mock.calls[1][0]).toBe("Results.updated");
+    expect(ui.trigger.mock.calls[1][0]).toBe("Results.updated");
   });
 });

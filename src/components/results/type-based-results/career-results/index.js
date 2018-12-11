@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Career from "../career";
 import style from "./style";
@@ -12,8 +12,9 @@ class CareerResults extends Component {
     isReady: PropTypes.func.isRequired,
     locale: PropTypes.string.isRequired,
     options: PropTypes.shape({careerOptions: PropTypes.object}),
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    traitify: TraitifyPropTypes.traitify.isRequired,
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -25,49 +26,49 @@ class CareerResults extends Component {
     };
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("CareerResults.initialized", this);
-    this.props.traitify.ui.on("Careers.fetch", this.fetch);
-    this.props.traitify.ui.on("Careers.fetching", this.fetching);
-    this.props.traitify.ui.on("Careers.mergeParams", this.mergeParams);
-    this.props.traitify.ui.on("Careers.updateParams", this.updateParams);
+    this.props.ui.trigger("CareerResults.initialized", this);
+    this.props.ui.on("Careers.fetch", this.fetch);
+    this.props.ui.on("Careers.fetching", this.fetching);
+    this.props.ui.on("Careers.mergeParams", this.mergeParams);
+    this.props.ui.on("Careers.updateParams", this.updateParams);
 
-    if(this.props.isReady("results") && !this.props.traitify.ui.current["Careers.fetch"]) {
-      this.props.traitify.ui.trigger("Careers.fetch", this, {});
+    if(this.props.isReady("results") && !this.props.ui.current["Careers.fetch"]) {
+      this.props.ui.trigger("Careers.fetch", this, {});
     }
   }
   componentDidUpdate(prevProps) {
-    this.props.traitify.ui.trigger("CareerResults.updated", this);
+    this.props.ui.trigger("CareerResults.updated", this);
 
     const assessmentChanged = this.props.assessmentID !== prevProps.assessmentID;
     const assessmentReady = this.props.isReady("results");
-    const existingRequest = this.props.traitify.ui.current["Careers.fetch"];
+    const existingRequest = this.props.ui.current["Careers.fetch"];
     const localeChanged = this.props.locale !== prevProps.locale;
 
     if(assessmentReady && !existingRequest) {
-      this.props.traitify.ui.trigger("Careers.fetch", this, {});
+      this.props.ui.trigger("Careers.fetch", this, {});
     } else if(assessmentReady && (assessmentChanged || localeChanged)) {
       this.abortExistingRequest();
-      this.props.traitify.ui.trigger("Careers.fetching", this, false);
-      this.props.traitify.ui.trigger("Careers.fetch", this, localeChanged ? existingRequest : {});
+      this.props.ui.trigger("Careers.fetching", this, false);
+      this.props.ui.trigger("Careers.fetch", this, localeChanged ? existingRequest : {});
     } else if(assessmentChanged || localeChanged) {
       this.abortExistingRequest();
-      this.props.traitify.ui.trigger("Careers.fetching", this, false);
-      this.props.traitify.ui.trigger("Careers.fetch", this, null);
+      this.props.ui.trigger("Careers.fetching", this, false);
+      this.props.ui.trigger("Careers.fetch", this, null);
     }
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("Careers.fetch", this.fetch);
-    this.props.traitify.ui.off("Careers.fetching", this.fetching);
-    this.props.traitify.ui.off("Careers.mergeParams", this.mergeParams);
-    this.props.traitify.ui.off("Careers.updateParams", this.updateParams);
+    this.props.ui.off("Careers.fetch", this.fetch);
+    this.props.ui.off("Careers.fetching", this.fetching);
+    this.props.ui.off("Careers.mergeParams", this.mergeParams);
+    this.props.ui.off("Careers.updateParams", this.updateParams);
 
     this.abortExistingRequest();
-    this.props.traitify.ui.trigger("Careers.fetching", this, false);
-    this.props.traitify.ui.trigger("Careers.fetch", this, null);
+    this.props.ui.trigger("Careers.fetching", this, false);
+    this.props.ui.trigger("Careers.fetch", this, null);
   }
   abortExistingRequest = () => {
-    if(this.props.traitify.ui.current["Careers.fetching"]) {
-      const previousRequest = this.props.traitify.ui.current["Careers.request"];
+    if(this.props.ui.current["Careers.fetching"]) {
+      const previousRequest = this.props.ui.current["Careers.request"];
       previousRequest && previousRequest.xhr && previousRequest.xhr.abort();
     }
   }
@@ -77,13 +78,13 @@ class CareerResults extends Component {
       && this.props.options.careerOptions
       && this.props.options.careerOptions[name] != null
     ) { return this.props.options.careerOptions[name]; }
-    if(this.traitify
-      && this.traitify.ui.options.careerOptions
-      && this.traitify.ui.options.careerOptions[name] != null
-    ) { return this.traitify.ui.options.careerOptions[name]; }
+    if(this.props.ui
+      && this.props.ui.options.careerOptions
+      && this.props.ui.options.careerOptions[name] != null
+    ) { return this.props.ui.options.careerOptions[name]; }
   }
   fetch = () => {
-    const fetchParams = this.props.traitify.ui.current["Careers.fetch"];
+    const fetchParams = this.props.ui.current["Careers.fetch"];
 
     if(!fetchParams) { return; }
 
@@ -96,8 +97,8 @@ class CareerResults extends Component {
     };
 
     this.abortExistingRequest();
-    this.props.traitify.ui.trigger("Careers.fetching", this, true);
-    this.props.traitify.ui.trigger(
+    this.props.ui.trigger("Careers.fetching", this, true);
+    this.props.ui.trigger(
       "Careers.request",
       this,
       this.props.traitify.get(path, params).then((response) => {
@@ -109,30 +110,30 @@ class CareerResults extends Component {
             moreCareers: response.length >= params.careers_per_page
           };
         }, () => {
-          this.props.traitify.ui.trigger("Careers.fetching", this, false);
+          this.props.ui.trigger("Careers.fetching", this, false);
         });
       })
     );
   }
   fetching = () => {
-    this.setState({fetching: this.props.traitify.ui.current["Careers.fetching"]});
+    this.setState({fetching: this.props.ui.current["Careers.fetching"]});
   }
   mergeParams = () => {
-    this.props.traitify.ui.trigger("Careers.fetch", this, {
-      ...this.props.traitify.ui.current["Careers.fetch"],
-      ...this.props.traitify.ui.current["Careers.mergeParams"]
+    this.props.ui.trigger("Careers.fetch", this, {
+      ...this.props.ui.current["Careers.fetch"],
+      ...this.props.ui.current["Careers.mergeParams"]
     });
   }
   showMore = () => {
-    if(this.props.traitify.ui.current["Careers.fetching"]) { return; }
-    const params = this.props.traitify.ui.current["Careers.fetch"] || {};
+    if(this.props.ui.current["Careers.fetching"]) { return; }
+    const params = this.props.ui.current["Careers.fetch"] || {};
     const page = (params.page || 1) + 1;
 
-    this.props.traitify.ui.trigger("Careers.mergeParams", this, {page});
+    this.props.ui.trigger("Careers.mergeParams", this, {page});
   }
   updateParams = () => {
-    this.props.traitify.ui.trigger("Careers.fetch", this, {
-      ...this.props.traitify.ui.current["Careers.updateParams"]
+    this.props.ui.trigger("Careers.fetch", this, {
+      ...this.props.ui.current["Careers.updateParams"]
     });
   }
   render() {

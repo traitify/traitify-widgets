@@ -1,18 +1,18 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
 import {rgba} from "lib/helpers/color";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class PersonalityTypeSlide extends Component {
   static propTypes = {
     getOption: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired,
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
       score: PropTypes.number.isRequired
-    }).isRequired
+    }).isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -20,20 +20,20 @@ class PersonalityTypeSlide extends Component {
     this.state = {activeType: null};
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityTypeSlide.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
+    this.props.ui.trigger("PersonalityTypeSlide.initialized", this);
+    this.props.ui.on("Assessment.activeType", this.getActiveType);
 
-    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    const activeType = this.props.ui.current["Assessment.activeType"];
     if(activeType) { this.setState({activeType}); }
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityTypeSlide.updated", this);
+    this.props.ui.trigger("PersonalityTypeSlide.updated", this);
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+    this.props.ui.off("Assessment.activeType", this.getActiveType);
   }
   getActiveType = () => {
-    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+    this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
   }
   render() {
     const {activeType} = this.state;

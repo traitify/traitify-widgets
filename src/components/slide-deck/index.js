@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Loading from "./loading";
 import Slide from "./slide";
@@ -25,8 +25,9 @@ class SlideDeck extends Component {
     getAssessment: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    traitify: TraitifyPropTypes.traitify.isRequired,
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -43,12 +44,12 @@ class SlideDeck extends Component {
     };
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("SlideDeck.initialized", this);
+    this.props.ui.trigger("SlideDeck.initialized", this);
     this.initialize();
     window.addEventListener("resize", this.resizeImages);
   }
   componentDidUpdate(prevProps) {
-    this.props.traitify.ui.trigger("Results.updated", this);
+    this.props.ui.trigger("Results.updated", this);
 
     if(!this.state.initialized) { return this.initialize(); }
     if(this.props.assessment.locale_key !== prevProps.assessment.locale_key) {
@@ -154,7 +155,7 @@ class SlideDeck extends Component {
     const ready = remainingSlidesLoaded || nextSlidesLoaded;
 
     if(this.state.ready === ready) { return; }
-    this.props.traitify.ui.trigger("SlideDeck.isReady", this, ready);
+    this.props.ui.trigger("SlideDeck.isReady", this, ready);
     this.setState({ready, startTime: Date.now()});
   }
   resizeImages = () => {
@@ -182,7 +183,7 @@ class SlideDeck extends Component {
     if(this.props.isReady("results")) { return; }
 
     this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response) => {
-      this.props.traitify.ui.trigger("SlideDeck.finished", this, response);
+      this.props.ui.trigger("SlideDeck.finished", this, response);
       this.props.getAssessment({force: true});
     });
   }
@@ -253,14 +254,14 @@ class SlideDeck extends Component {
 
       return {isFullscreen: !isFullscreen};
     }, () => {
-      this.props.traitify.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
+      this.props.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
     });
   }
   updateSlide = (value) => {
     this.setState((state) => {
       const key = value ? "me" : "notMe";
-      this.props.traitify.ui.trigger(`SlideDeck.${key}`, this);
-      this.props.traitify.ui.trigger("SlideDeck.updateSlide", this);
+      this.props.ui.trigger(`SlideDeck.${key}`, this);
+      this.props.ui.trigger("SlideDeck.updateSlide", this);
 
       const slides = mutable(state.slides);
       const slide = slides[slideIndex(slides)];

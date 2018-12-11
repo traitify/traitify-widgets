@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Chart from "lib/helpers/canvas-radar-chart";
 import style from "./style";
@@ -23,17 +23,17 @@ class Radar extends Component {
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
     window.addEventListener("resize", this.updateChart);
 
-    this.props.traitify.ui.trigger("Radar.initialized", this);
+    this.props.ui.trigger("Radar.initialized", this);
     this.updateChart();
   }
   componentDidUpdate(prevProps) {
-    this.props.traitify.ui.trigger("Radar.updated", this);
+    this.props.ui.trigger("Radar.updated", this);
 
     if(dataChanged(this.props.assessment, prevProps.assessment)) { this.destroyChart(); }
 

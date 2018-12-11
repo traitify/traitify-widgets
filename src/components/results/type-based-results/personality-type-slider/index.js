@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeSlide from "../personality-type-slide";
 import TypeButton from "./type-button";
@@ -11,8 +11,8 @@ class PersonalityTypeSlider extends Component {
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -20,24 +20,24 @@ class PersonalityTypeSlider extends Component {
     this.state = {activeType: null};
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityTypeSlider.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
+    this.props.ui.trigger("PersonalityTypeSlider.initialized", this);
+    this.props.ui.on("Assessment.activeType", this.getActiveType);
 
-    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    const activeType = this.props.ui.current["Assessment.activeType"];
     if(activeType) { this.setState({activeType}); }
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityTypeSlider.updated", this);
+    this.props.ui.trigger("PersonalityTypeSlider.updated", this);
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+    this.props.ui.off("Assessment.activeType", this.getActiveType);
   }
   getActiveType = () => {
-    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
+    this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
   }
   setActive = (type) => {
-    this.props.traitify.ui.trigger("PersonalityTypeSlider.changeType", this, type);
-    this.props.traitify.ui.trigger("Assessment.activeType", this, type);
+    this.props.ui.trigger("PersonalityTypeSlider.changeType", this, type);
+    this.props.ui.trigger("Assessment.activeType", this, type);
   }
   render() {
     if(!this.props.isReady("results")) { return null; }

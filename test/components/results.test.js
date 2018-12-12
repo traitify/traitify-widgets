@@ -6,17 +6,15 @@ jest.mock("components/results/dimension-based-results", () => (() => (<div class
 jest.mock("components/results/type-based-results", () => (() => (<div className="mock">Type Based</div>)));
 
 describe("Results", () => {
-  const ui = {
-    current: {},
-    off: jest.fn().mockName("off"),
-    on: jest.fn().mockName("on"),
-    trigger: jest.fn().mockName("trigger")
-  };
+  let ui;
 
   beforeEach(() => {
-    ui.off.mockClear();
-    ui.on.mockClear();
-    ui.trigger.mockClear();
+    ui = {
+      current: {},
+      off: jest.fn().mockName("off"),
+      on: jest.fn().mockName("on"),
+      trigger: jest.fn().mockName("trigger")
+    };
   });
 
   it("renders dimension based results", () => {

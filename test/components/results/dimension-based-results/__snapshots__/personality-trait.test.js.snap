@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTrait renders component 1`] = `
+<div
+  style={
+    Object {
+      "background": "rgba(41,183,112,0.085)",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "background": "#29B770",
+        "width": "100%",
+      }
+    }
+  />
+  <div>
+    <img
+      alt="Agreeableness"
+      src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+    />
+    <h3>
+      Steady
+      <span>
+        dependable, even and consistent
+      </span>
+    </h3>
+  </div>
+</div>
+`;

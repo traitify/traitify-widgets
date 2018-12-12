@@ -1,9 +1,24 @@
 import {
+  dangerousProps,
   getDisplayName,
   loadFont
 } from "lib/helpers";
 
 describe("Helpers", () => {
+  describe("dangerousProps", () => {
+    it("sets dangerouslySetInnerHTML", () => {
+      const props = dangerousProps({html: "<i>Danger</i>"});
+
+      expect(props).toEqual({dangerouslySetInnerHTML: {__html: "<i>Danger</i>"}});
+    });
+
+    it("returns extra props", () => {
+      const props = dangerousProps({className: "extra", html: "<i>Danger</i>"});
+
+      expect(props.className).toEqual("extra");
+    });
+  });
+
   describe("getDisplayName", () => {
     it("returns component's displayName", () => {
       const name = getDisplayName({displayName: "Traitify", name: "Backup"});

@@ -35,11 +35,12 @@ class Dimension extends Component {
   }
   description(suffix) {
     const type = this.props.type.personality_type;
-    const perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
+    let perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
     let description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
     description = description && description.body;
 
     if(description) { return description; }
+    perspective = perspective === "third" ? "first" : "third";
     description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
 
     return (description && description.body) || type.description;

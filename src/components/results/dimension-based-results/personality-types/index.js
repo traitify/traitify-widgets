@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import PersonalityType from "../personality-type";
 import style from "./style";
 
-class Types extends Component {
+class PersonalityTypes extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
@@ -31,5 +31,5 @@ class Types extends Component {
   }
 }
 
-export {Types as Component};
-export default withTraitify(Types);
+export {PersonalityTypes as Component};
+export default withTraitify(PersonalityTypes);

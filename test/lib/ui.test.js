@@ -3,7 +3,9 @@ import Traitify from "lib/traitify";
 import UI from "lib/traitify-ui";
 import Widget from "lib/traitify-widget";
 
+jest.mock("lib/helpers/guess-component", () => {});
 jest.mock("lib/i18n");
+jest.mock("lib/i18n-data", () => {});
 jest.mock("lib/traitify");
 jest.mock("lib/traitify-widget");
 

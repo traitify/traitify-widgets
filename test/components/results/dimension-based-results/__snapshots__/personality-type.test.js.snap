@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityType renders component 1`] = `
+<li
+  style={
+    Object {
+      "borderLeft": "5px solid #29B770",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "background": "rgba(41,183,112,0.085)",
+      }
+    }
+  >
+    <div>
+      <h2>
+        Agreeableness
+        <span>
+          6
+           - 
+          Medium
+        </span>
+      </h2>
+    </div>
+  </div>
+</li>
+`;

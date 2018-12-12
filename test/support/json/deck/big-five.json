@@ -1,0 +1,71 @@
+{
+  "assessment_type": "DIMENSION_BASED",
+  "scoring_scale": "STEN",
+  "id": "big-five",
+  "name": "Big Five",
+  "description": "Traitify's Big Five Personality Assessment provides a powerful profile of an individual's work-related behavior. It measures Openness, Conscientiousness, Extraversion, Agreeableness and Emotional Stability. The Big Five is backed by 50 years of research and align with key job and performance metrics. The questionnaire allows users to benchmark job candidates against industry standard profiles and/or a businesses' top performers, to focus interview questions and much more. Within organizations it has applications in team building, exploring communication styles, and pinpointing areas for personal development.  It is an essential tool for HR professionals, L&D specialists, and anyone who wants to know more about work personality.",
+  "personality_group": "Big Five",
+  "slide_count": 73,
+  "badges": [
+    {
+      "image_small": "https://cdn.traitify.com/badges/c3e5148a-da49-4d3c-abd7-94dadf9ece2b_small",
+      "image_medium": "https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium",
+      "image_large": "https://cdn.traitify.com/badges/b87d4a86-198d-4eb0-b5c9-99f2dc346ef9_large",
+      "font_color": "",
+      "color_1": "29B770",
+      "color_2": "",
+      "color_3": "",
+      "personality_type": "Agreeableness",
+      "description": "Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them."
+    },
+    {
+      "image_small": "https://cdn.traitify.com/badges/0902c419-92a0-4855-8ff2-2e9875046556_small",
+      "image_medium": "https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium",
+      "image_large": "https://cdn.traitify.com/badges/1488d081-2d84-42aa-b7ee-d58facba08b5_large",
+      "font_color": "",
+      "color_1": "F98B1C",
+      "color_2": "",
+      "color_3": "",
+      "personality_type": "Conscientiousness",
+      "description": "Delivering Results (Conscientiousness) concerns work style and how someone directs their efforts and attention toward completing tasks. The level of discipline, dedication, perseverance, organization and reliability are hallmark factors of this dimension. "
+    },
+    {
+      "image_small": "https://cdn.traitify.com/badges/2f793151-b520-4cc9-91c8-5ddb0c091c94_small",
+      "image_medium": "https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium",
+      "image_large": "https://cdn.traitify.com/badges/95f6ff51-4de1-4146-9980-eea84d276f7a_large",
+      "font_color": "",
+      "color_1": "ef615e",
+      "color_2": "",
+      "color_3": "",
+      "personality_type": "Emotional Stability",
+      "description": "Managing pressure (Emotional Stability) concerns the manner in which someone deals with pressure and the way in which they control their emotions and underlying tension, in order to stay on task and cope with everyday challenges."
+    },
+    {
+      "image_small": "https://cdn.traitify.com/badges/5e021131-c2d9-4190-a7bb-9277d5a159ec_small",
+      "image_medium": "https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium",
+      "image_large": "https://cdn.traitify.com/badges/d7f1a092-1d74-4b24-8777-3cff52457c7a_large",
+      "font_color": "",
+      "color_1": "FFCC3B",
+      "color_2": "",
+      "color_3": "",
+      "personality_type": "Extraversion",
+      "description": "Engaging with people (Extraversion) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues."
+    },
+    {
+      "image_small": "https://cdn.traitify.com/badges/c05e769f-2c6d-42e3-83b7-6ca4239e3da0_small",
+      "image_medium": "https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium",
+      "image_large": "https://cdn.traitify.com/badges/89aab732-f414-4f08-ae83-e878580f0ed2_large",
+      "font_color": "",
+      "color_1": "42B0DB",
+      "color_2": "",
+      "color_3": "",
+      "personality_type": "Openness",
+      "description": "Solving Problems (Openness) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision-making."
+    }
+  ],
+  "example_usage": null,
+  "validated": false,
+  "image_cover": "https://cdn.traitify.com/decks/fd6f1744-bdc7-48c0-ab48-897ac542d2f8_cover",
+  "personality_traits": [],
+  "personality_types": []
+}

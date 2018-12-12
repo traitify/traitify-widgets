@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDetails renders component 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#008dc7",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#008dc7",
+          }
+        }
+      >
+        complements
+      </h4>
+      <p>
+        You are sensitive, even-tempered, compassionate and compatible with many people. Since you are agreeable and enjoy multitasking and doing tasks on the fly in a relaxed, spontaneous way, you often work in a nonlinear fashion, accomplishing a little of this and a little of that.  Finally, you find that those with open-minds are just too flexible and those with too intense a work ethic are too inflexible for you.
+      </p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#d04e4a",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#d04e4a",
+          }
+        }
+      >
+        conflicts
+      </h4>
+      <p>
+        As a lover of people, you are fortunate that you work well with most sorts of people. Often sought out for your amicability, you may find that others may try to dominate and manipulate you, and you may have to adopt a certain amount of assertiveness to be respected. However, you may find that, because of your sensitivity and flexibility, you may be viewed as too laid back and engaging in the process of doing by some, who feel that you get lost in the weeds and are not task oriented enough. Also, others may worry about your emotional vulnerabilities at times.
+      </p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#32be4b",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#32be4b",
+          }
+        }
+      >
+        best_work_environments
+      </h4>
+      <ul>
+        <li>
+          Is routine-oriented but unstructured
+        </li>
+        <li>
+          Allows for peer support in the pursuit of goals
+        </li>
+        <li>
+          Features a low key atmosphere that doesn’t seem overly competitive
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityDetails renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityDetails renders nothing if not ready 1`] = `null`;
+
+exports[`PersonalityDetails skips environments section if no environments 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#008dc7",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#008dc7",
+          }
+        }
+      >
+        complements
+      </h4>
+      <p>
+        You are sensitive, even-tempered, compassionate and compatible with many people. Since you are agreeable and enjoy multitasking and doing tasks on the fly in a relaxed, spontaneous way, you often work in a nonlinear fashion, accomplishing a little of this and a little of that.  Finally, you find that those with open-minds are just too flexible and those with too intense a work ethic are too inflexible for you.
+      </p>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#d04e4a",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#d04e4a",
+          }
+        }
+      >
+        conflicts
+      </h4>
+      <p>
+        As a lover of people, you are fortunate that you work well with most sorts of people. Often sought out for your amicability, you may find that others may try to dominate and manipulate you, and you may have to adopt a certain amount of assertiveness to be respected. However, you may find that, because of your sensitivity and flexibility, you may be viewed as too laid back and engaging in the process of doing by some, who feel that you get lost in the weeds and are not task oriented enough. Also, others may worry about your emotional vulnerabilities at times.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityDetails skips section if no detail 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#32be4b",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#32be4b",
+          }
+        }
+      >
+        best_work_environments
+      </h4>
+      <ul>
+        <li>
+          Is routine-oriented but unstructured
+        </li>
+        <li>
+          Allows for peer support in the pursuit of goals
+        </li>
+        <li>
+          Features a low key atmosphere that doesn’t seem overly competitive
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

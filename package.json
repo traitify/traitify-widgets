@@ -79,7 +79,6 @@
     "react-test-renderer": "^16.6.0",
     "replace-bundle-webpack-plugin": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "simulate-event": "^1.4.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.21.0",
     "url-loader": "^1.1.2",

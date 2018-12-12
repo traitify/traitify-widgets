@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-class Type extends Component {
+class PersonalityType extends Component {
   static propTypes = {
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
@@ -38,5 +38,5 @@ class Type extends Component {
   }
 }
 
-export {Type as Component};
-export default withTraitify(Type);
+export {PersonalityType as Component};
+export default withTraitify(PersonalityType);

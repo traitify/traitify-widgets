@@ -1,5 +1,5 @@
-import guessComponent from "lib/helpers/guess-component";
 import componentFromAssessment from "lib/helpers/component-from-assessment";
+import guessComponent from "lib/helpers/guess-component";
 
 jest.mock("components", () => ({
   Default: {name: "Default"},

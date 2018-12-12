@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTypes renders component 1`] = `
+<ul>
+  <div
+    className="mock"
+  >
+    Type - 
+    Agreeableness
+  </div>
+  <div
+    className="mock"
+  >
+    Type - 
+    Extraversion
+  </div>
+  <div
+    className="mock"
+  >
+    Type - 
+    Conscientiousness
+  </div>
+  <div
+    className="mock"
+  >
+    Type - 
+    Openness
+  </div>
+  <div
+    className="mock"
+  >
+    Type - 
+    Emotional Stability
+  </div>
+</ul>
+`;
+
+exports[`PersonalityTypes renders nothing if not ready 1`] = `null`;

@@ -743,9 +743,15 @@ describe("withTraitify", () => {
       expect(getDummyComponent().props.traitify).toBe(traitify);
     });
 
+    it("passes through ui", () => {
+      component = new ComponentHandler(<Component ui={traitify.ui} />);
+
+      expect(getDummyComponent().props.traitify).toBe(traitify);
+    });
+
     it("passes through window", () => {
       window.Traitify = traitify;
-      component = new ComponentHandler(<Component traitify={traitify} />);
+      component = new ComponentHandler(<Component />);
 
       expect(getDummyComponent().props.traitify).toBe(window.Traitify);
     });

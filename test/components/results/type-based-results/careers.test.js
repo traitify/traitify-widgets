@@ -1,18 +1,16 @@
-import {Component} from "components/results/dimension-based-results/dimensions";
+import {Component} from "components/results/type-based-results/careers";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
 
-jest.mock("components/results/dimension-based-results/dimension", () => ((props) => (
-  <div className="mock">Dimension - {props.type.personality_type.name}</div>
-)));
+jest.mock("components/results/type-based-results/career-filter", () => (() => (<div className="mock">Career Filter</div>)));
+jest.mock("components/results/type-based-results/career-modal", () => (() => (<div className="mock">Career Modal</div>)));
+jest.mock("components/results/type-based-results/career-results", () => (() => (<div className="mock">Career Results</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Dimensions", () => {
+describe("Careers", () => {
   let props;
 
   beforeEach(() => {
     props = {
-      assessment,
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
       ui: {
         current: {},
@@ -27,14 +25,14 @@ describe("Dimensions", () => {
     it("triggers initialization", () => {
       const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Careers.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Careers.updated", component.instance);
     });
   });
 
@@ -45,7 +43,6 @@ describe("Dimensions", () => {
   });
 
   it("renders nothing if not ready", () => {
-    props.assessment = null;
     props.isReady.mockImplementation(() => false);
     const component = new ComponentHandler(<Component {...props} />);
 

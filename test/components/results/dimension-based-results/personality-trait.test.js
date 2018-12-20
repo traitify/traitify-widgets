@@ -21,16 +21,16 @@ describe("PersonalityTrait", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+      const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger.mock.calls[0][0]).toBe("PersonalityTrait.initialized");
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTrait.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger.mock.calls[1][0]).toBe("PersonalityTrait.updated");
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTrait.updated", component.instance);
     });
   });
 

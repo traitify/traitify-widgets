@@ -1,13 +1,11 @@
-import {Component} from "components/results/dimension-based-results/dimensions";
+import {Component} from "components/results/type-based-results/personality-type";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
-jest.mock("components/results/dimension-based-results/dimension", () => ((props) => (
-  <div className="mock">Dimension - {props.type.personality_type.name}</div>
-)));
+jest.mock("components/results/type-based-results/personality-badge", () => (() => (<div className="mock">Personality Badge</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Dimensions", () => {
+describe("PersonalityType", () => {
   let props;
 
   beforeEach(() => {
@@ -27,14 +25,14 @@ describe("Dimensions", () => {
     it("triggers initialization", () => {
       const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityType.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityType.updated", component.instance);
     });
   });
 

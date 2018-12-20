@@ -1,9 +1,9 @@
 import {Component} from "components/results";
 import ComponentHandler from "support/component-handler";
 
-jest.mock("lib/with-traitify");
 jest.mock("components/results/dimension-based-results", () => (() => (<div className="mock">Dimension Based</div>)));
 jest.mock("components/results/type-based-results", () => (() => (<div className="mock">Type Based</div>)));
+jest.mock("lib/with-traitify");
 
 describe("Results", () => {
   let ui;
@@ -15,6 +15,21 @@ describe("Results", () => {
       on: jest.fn().mockName("on"),
       trigger: jest.fn().mockName("trigger")
     };
+  });
+
+  describe("callbacks", () => {
+    it("triggers initialization", () => {
+      const component = new ComponentHandler(<Component isReady={() => (false)} ui={ui} />);
+
+      expect(ui.trigger).toHaveBeenCalledWith("Results.initialized", component.instance);
+    });
+
+    it("triggers update", () => {
+      const component = new ComponentHandler(<Component isReady={() => (false)} ui={ui} />);
+      component.updateProps();
+
+      expect(ui.trigger).toHaveBeenCalledWith("Results.updated", component.instance);
+    });
   });
 
   it("renders dimension based results", () => {
@@ -41,20 +56,5 @@ describe("Results", () => {
     );
 
     expect(component.tree).toMatchSnapshot();
-  });
-
-  it("triggers initialization callback", () => {
-    new ComponentHandler(<Component isReady={() => (false)} ui={ui} />);
-
-    expect(ui.trigger.mock.calls[0][0]).toBe("Results.initialized");
-  });
-
-  it("triggers update callback", () => {
-    const component = new ComponentHandler(
-      <Component isReady={() => (false)} ui={ui} />
-    );
-    component.updateProps();
-
-    expect(ui.trigger.mock.calls[1][0]).toBe("Results.updated");
   });
 });

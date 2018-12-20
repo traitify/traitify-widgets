@@ -1,15 +1,16 @@
-import {Component} from "components/results/dimension-based-results/personality-type";
+import {Component} from "components/results/type-based-results/personality-badge";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("PersonalityType", () => {
+describe("PersonalityBadge", () => {
   let props;
 
   beforeEach(() => {
     props = {
-      type: assessment.personality_types[0],
+      translate: jest.fn().mockName("translate").mockImplementation((value) => value),
+      type: assessment.personality_types[0].personality_type,
       ui: {
         current: {},
         off: jest.fn().mockName("off"),
@@ -23,14 +24,14 @@ describe("PersonalityType", () => {
     it("triggers initialization", () => {
       const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityType.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityBadge.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityType.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityBadge.updated", component.instance);
     });
   });
 

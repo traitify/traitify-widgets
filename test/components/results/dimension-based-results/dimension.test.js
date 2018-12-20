@@ -2,6 +2,7 @@ import {Component} from "components/results/dimension-based-results/dimension";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 
+jest.mock("lib/helpers", () => ({detailWithPerspective: (options) => options.base.description}));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Dimension", () => {
@@ -24,24 +25,23 @@ describe("Dimension", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+      const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger.mock.calls[0][0]).toBe("Dimension.initialized");
+      expect(props.ui.trigger).toHaveBeenCalledWith("Dimension.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger.mock.calls[1][0]).toBe("Dimension.updated");
+      expect(props.ui.trigger).toHaveBeenCalledWith("Dimension.updated", component.instance);
     });
 
     it("triggers show content", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.instance.trigger();
 
-      expect(props.ui.trigger.mock.calls[1][0]).toBe("Dimension.showContent");
-      expect(props.ui.trigger.mock.calls[1][2]).toBe(props.type.personality_type);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Dimension.showContent", component.instance, props.type.personality_type);
     });
   });
 
@@ -100,71 +100,6 @@ describe("Dimension", () => {
       component.updateProps({assessmentID: "other"});
 
       expect(component.state.showContent).toBe(false);
-    });
-  });
-
-  describe("description", () => {
-    it("defaults to first person", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      const description = props.type.personality_type.details.find((detail) => (detail.title === "first_person_description"));
-
-      expect(component.instance.description("description")).toBe(description.body);
-    });
-
-    it("shows third person", () => {
-      props.getOption.mockReturnValue("thirdPerson");
-      const component = new ComponentHandler(<Component {...props} />);
-      const description = props.type.personality_type.details.find((detail) => (detail.title === "third_person_description"));
-
-      expect(component.instance.description("description")).toBe(description.body);
-    });
-
-    it("falls back to third person", () => {
-      const details = props.type.personality_type.details.filter((detail) => (detail.title !== "first_person_description"));
-      props.type = {
-        ...props.type,
-        personality_type: {
-          ...props.type.personality_type,
-          details
-        }
-      };
-      const component = new ComponentHandler(<Component {...props} />);
-      const description = props.type.personality_type.details.find((detail) => (detail.title === "third_person_description"));
-
-      expect(component.instance.description("description")).toBe(description.body);
-    });
-
-    it("falls back to first person", () => {
-      props.getOption.mockReturnValue("thirdPerson");
-      const details = props.type.personality_type.details.filter((detail) => (detail.title !== "third_person_description"));
-      props.type = {
-        ...props.type,
-        personality_type: {
-          ...props.type.personality_type,
-          details
-        }
-      };
-      const component = new ComponentHandler(<Component {...props} />);
-      const description = props.type.personality_type.details.find((detail) => (detail.title === "first_person_description"));
-
-      expect(component.instance.description("description")).toBe(description.body);
-    });
-
-    it("falls back to description", () => {
-      const details = props.type.personality_type.details
-        .filter((detail) => (detail.title !== "first_person_description"))
-        .filter((detail) => (detail.title !== "third_person_description"));
-      props.type = {
-        ...props.type,
-        personality_type: {
-          ...props.type.personality_type,
-          details
-        }
-      };
-      const component = new ComponentHandler(<Component {...props} />);
-      const {description} = props.type.personality_type;
-
-      expect(component.instance.description("description")).toBe(description);
     });
   });
 });

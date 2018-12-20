@@ -25,7 +25,7 @@ class PersonalityDetails extends Component {
     if(!this.props.isReady("results")) { return null; }
 
     let personality = this.props.assessment.personality_blend;
-    personality = personality || this.props.assessment.personality_types[0];
+    personality = personality || this.props.assessment.personality_types[0].personality_type;
 
     const {details} = personality;
     if(!details) { return null; }

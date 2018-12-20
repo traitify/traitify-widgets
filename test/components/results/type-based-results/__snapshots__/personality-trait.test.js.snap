@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTrait renders component 1`] = `
+<div
+  style={
+    Object {
+      "background": "rgba(247,208,15,0.085)",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "background": "#f7d00f",
+        "width": "100%",
+      }
+    }
+  />
+  <div>
+    <div>
+      100
+      %
+    </div>
+    <img
+      alt="Planner"
+      src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+    />
+    <h3>
+      Alert
+      <span>
+        energized and aware of one’s surroundings
+      </span>
+    </h3>
+  </div>
+</div>
+`;

@@ -1,10 +1,52 @@
 import {
+  careerOption,
   dangerousProps,
+  detailWithPerspective,
   getDisplayName,
   loadFont
 } from "lib/helpers";
+import assessment from "support/json/assessment/dimension-based.json";
 
 describe("Helpers", () => {
+  describe("careerOption", () => {
+    const options = {careerOptions: {perPage: 20}};
+    const ui = {options: {careerOptions: {perPage: 30}}};
+
+    it("checks prop", () => {
+      const props = {perPage: 10};
+
+      expect(careerOption(props, "perPage")).toBe(10);
+    });
+
+    it("prioritizes prop", () => {
+      const props = {perPage: 10, options};
+
+      expect(careerOption(props, "perPage")).toBe(10);
+    });
+
+    it("checks options", () => {
+      const props = {options};
+
+      expect(careerOption(props, "perPage")).toBe(20);
+    });
+
+    it("prioritizes options", () => {
+      const props = {options, ui};
+
+      expect(careerOption(props, "perPage")).toBe(20);
+    });
+
+    it("checks ui", () => {
+      const props = {ui};
+
+      expect(careerOption(props, "perPage")).toBe(30);
+    });
+
+    it("gives up", () => {
+      expect(careerOption({}, "perPage")).toBeUndefined();
+    });
+  });
+
   describe("dangerousProps", () => {
     it("sets dangerouslySetInnerHTML", () => {
       const props = dangerousProps({html: "<i>Danger</i>"});
@@ -16,6 +58,59 @@ describe("Helpers", () => {
       const props = dangerousProps({className: "extra", html: "<i>Danger</i>"});
 
       expect(props.className).toEqual("extra");
+    });
+  });
+
+  describe("detailWithPerspective", () => {
+    let options;
+
+    beforeEach(() => {
+      options = {
+        base: assessment.personality_types[0].personality_type,
+        name: "description"
+      };
+    });
+
+    it("defaults to first person", () => {
+      const detail = options.base.details.find((d) => (d.title === "first_person_description"));
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(detail.body);
+    });
+
+    it("shows third person", () => {
+      options.perspective = "thirdPerson";
+      const detail = options.base.details.find((d) => (d.title === "third_person_description"));
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(detail.body);
+    });
+
+    it("falls back to third person", () => {
+      const detail = options.base.details.find((d) => (d.title === "third_person_description"));
+      const details = options.base.details.filter((d) => (d.title !== "first_person_description"));
+      options.base = {...options.base, details};
+      options.perspective = "firstPerson";
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(detail.body);
+    });
+
+    it("falls back to first person", () => {
+      const detail = options.base.details.find((d) => (d.title === "first_person_description"));
+      const details = options.base.details.filter((d) => (d.title !== "third_person_description"));
+      options.base = {...options.base, details};
+      options.perspective = "thirdPerson";
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(detail.body);
+    });
+
+    it("falls back to description", () => {
+      options.base = {...options.base, details: []};
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(options.base.description);
     });
   });
 

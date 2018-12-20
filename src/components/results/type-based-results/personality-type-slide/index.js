@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {detailWithPerspective} from "lib/helpers";
 import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -44,14 +45,11 @@ class PersonalityTypeSlide extends Component {
 
     const color = `#${type.badge.color_1}`;
     const position = "middle";
-    let perspective = `${(this.props.getOption("perspective") || "firstPerson").replace("Person", "")}_person_description`;
-    let description = type.details.find((detail) => (detail.title === perspective));
-    description = description && description.body;
-    if(!description) {
-      perspective = `${perspective === "first_person_description" ? "third" : "first"}_person_description"`;
-      description = type.details.find((detail) => (detail.title === perspective));
-      description = (description && description.body) || type.description;
-    }
+    let description = detailWithPerspective({
+      base: type,
+      name: "description",
+      perspective: this.props.getOption("perspective")
+    });
 
     let name;
     if(description[0] === "'") {

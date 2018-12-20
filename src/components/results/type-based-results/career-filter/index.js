@@ -4,6 +4,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {careerOption} from "lib/helpers";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -37,17 +38,6 @@ class CareerFilter extends Component {
     this.props.ui.off("Careers.mergeParams", this.mergeParams);
     this.props.ui.off("Careers.updateParams", this.updateParams);
   }
-  careerOption = (name) => {
-    if(this.props[name] != null) { return this.props[name]; }
-    if(this.props.options
-      && this.props.options.careerOptions
-      && this.props.options.careerOptions[name] != null
-    ) { return this.props.options.careerOptions[name]; }
-    if(this.props.ui
-      && this.props.ui.options.careerOptions
-      && this.props.ui.options.careerOptions[name] != null
-    ) { return this.props.ui.options.careerOptions[name]; }
-  }
   mergeParams = () => {
     this.setState((state, props) => ({
       params: {
@@ -77,7 +67,7 @@ class CareerFilter extends Component {
   }
   onExperienceChange = (e) => {
     const value = +e.target.value;
-    const defaultLevels = this.careerOption("experienceLevels") || [1, 2, 3, 4, 5];
+    const defaultLevels = careerOption(this.props, "experienceLevels") || [1, 2, 3, 4, 5];
 
     this.setState((state) => {
       const params = {...state.params};
@@ -111,7 +101,7 @@ class CareerFilter extends Component {
 
     const {params, showFilters} = this.state;
     const {translate} = this.props;
-    const experienceLevels = this.careerOption("experienceLevels") || [1, 2, 3, 4, 5];
+    const experienceLevels = careerOption(this.props, "experienceLevels") || [1, 2, 3, 4, 5];
     const currentExperienceLevels = params.experience_levels || experienceLevels;
     const currentSort = params.sort || "match";
     const currentSearch = params.search || "";

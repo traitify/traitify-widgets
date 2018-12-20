@@ -30,16 +30,16 @@ describe("Radar", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />, {createNodeMock});
+      const component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
-      expect(props.ui.trigger.mock.calls[0][0]).toBe("Radar.initialized");
+      expect(props.ui.trigger).toHaveBeenCalledWith("Radar.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />, {createNodeMock});
       component.updateProps();
 
-      expect(props.ui.trigger.mock.calls[1][0]).toBe("Radar.updated");
+      expect(props.ui.trigger).toHaveBeenCalledWith("Radar.updated", component.instance);
     });
   });
 

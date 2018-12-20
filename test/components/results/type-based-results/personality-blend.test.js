@@ -1,13 +1,13 @@
-import {Component} from "components/results/dimension-based-results/dimensions";
+import {Component} from "components/results/type-based-results/personality-blend";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
-jest.mock("components/results/dimension-based-results/dimension", () => ((props) => (
-  <div className="mock">Dimension - {props.type.personality_type.name}</div>
+jest.mock("components/results/type-based-results/personality-badge", () => ((props) => (
+  <div className="mock">Badge - {props.type.name}</div>
 )));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Dimensions", () => {
+describe("PersonalityBlend", () => {
   let props;
 
   beforeEach(() => {
@@ -27,14 +27,14 @@ describe("Dimensions", () => {
     it("triggers initialization", () => {
       const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityBlend.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityBlend.updated", component.instance);
     });
   });
 
@@ -47,6 +47,13 @@ describe("Dimensions", () => {
   it("renders nothing if not ready", () => {
     props.assessment = null;
     props.isReady.mockImplementation(() => false);
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if no blend", () => {
+    props.assessment = {...props.assessment, personality_blend: null};
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

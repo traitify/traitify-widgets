@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {careerOption} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Career from "../career";
@@ -49,7 +50,7 @@ class CareerResults extends Component {
     } else if(assessmentReady && (assessmentChanged || localeChanged)) {
       this.abortExistingRequest();
       this.props.ui.trigger("Careers.fetching", this, false);
-      this.props.ui.trigger("Careers.fetch", this, localeChanged ? existingRequest : {});
+      this.props.ui.trigger("Careers.fetch", this, assessmentChanged ? {} : existingRequest);
     } else if(assessmentChanged || localeChanged) {
       this.abortExistingRequest();
       this.props.ui.trigger("Careers.fetching", this, false);
@@ -72,25 +73,14 @@ class CareerResults extends Component {
       previousRequest && previousRequest.xhr && previousRequest.xhr.abort();
     }
   }
-  careerOption = (name) => {
-    if(this.props[name] != null) { return this.props[name]; }
-    if(this.props.options
-      && this.props.options.careerOptions
-      && this.props.options.careerOptions[name] != null
-    ) { return this.props.options.careerOptions[name]; }
-    if(this.props.ui
-      && this.props.ui.options.careerOptions
-      && this.props.ui.options.careerOptions[name] != null
-    ) { return this.props.ui.options.careerOptions[name]; }
-  }
   fetch = () => {
     const fetchParams = this.props.ui.current["Careers.fetch"];
 
     if(!fetchParams) { return; }
 
-    const path = this.careerOption("path") || `/assessments/${this.props.assessmentID}/matches/careers`;
+    const path = careerOption(this.props, "path") || `/assessments/${this.props.assessmentID}/matches/careers`;
     const params = {
-      careers_per_page: this.careerOption("perPage") || 20,
+      careers_per_page: careerOption(this.props, "perPage") || 20,
       locale_key: this.props.locale,
       paged: true,
       ...fetchParams

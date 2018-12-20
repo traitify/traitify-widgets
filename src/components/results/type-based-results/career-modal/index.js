@@ -22,8 +22,8 @@ import style from "./style";
 
 class CareerModal extends Component {
   static propTypes = {
-    traitify: TraitifyPropTypes.traitify.isRequired,
-    translate: PropTypes.func.isRequired
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);

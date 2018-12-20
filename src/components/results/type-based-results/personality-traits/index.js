@@ -26,7 +26,7 @@ class PersonalityTraits extends Component {
   }
   onClick = () => {
     this.setState((state) => ({showMore: !state.showMore}), () => {
-      const key = this.state.showMore ? "showLess" : "showMore";
+      const key = this.state.showMore ? "showMore" : "showLess";
 
       this.props.ui.trigger(`PersonalityTraits.${key}`, this);
     });

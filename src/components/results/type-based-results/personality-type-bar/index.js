@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityTypeBar extends Component {
@@ -34,9 +34,6 @@ class PersonalityTypeBar extends Component {
   }
   getActiveType = () => {
     this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
-  }
-  onKey = (e) => {
-    if(e.key === "Enter") { this.setActive(); }
   }
   setActive = () => {
     this.props.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);

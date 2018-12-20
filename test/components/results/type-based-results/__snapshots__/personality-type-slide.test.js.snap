@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTypeSlide renders component 1`] = `
+<li
+  className="undefined undefined"
+  style={
+    Object {
+      "background": "rgba(50,191,76,0.085)",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "color": "#32BF4C",
+      }
+    }
+  >
+    Naturalists
+  </span>
+  ...are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+</li>
+`;
+
+exports[`PersonalityTypeSlide renders nothing if different active type 1`] = `null`;
+
+exports[`PersonalityTypeSlide renders nothing if no active type 1`] = `null`;
+
+exports[`PersonalityTypeSlide renders type name correctly 1`] = `
+<li
+  className="undefined undefined"
+  style={
+    Object {
+      "background": "rgba(50,191,76,0.085)",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "color": "#32BF4C",
+      }
+    }
+  >
+    Naturalist
+  </span>
+  - are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+</li>
+`;

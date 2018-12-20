@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTypes renders component 1`] = `
+<div>
+  <div
+    className="mock"
+  >
+    Personality Type Bar Chart
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Type Slider
+  </div>
+</div>
+`;

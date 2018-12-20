@@ -12,10 +12,10 @@ class PersonalityBadge extends Component {
     ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.ui.trigger("PersonalityTrait.initialized", this);
+    this.props.ui.trigger("PersonalityBadge.initialized", this);
   }
   componentDidUpdate() {
-    this.props.ui.trigger("PersonalityTrait.updated", this);
+    this.props.ui.trigger("PersonalityBadge.updated", this);
   }
   render() {
     const color = `#${this.props.type.badge.color_1}`;

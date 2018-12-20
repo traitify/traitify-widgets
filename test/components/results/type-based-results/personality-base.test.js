@@ -1,13 +1,12 @@
-import {Component} from "components/results/dimension-based-results/dimensions";
+import {Component} from "components/results/type-based-results/personality-base";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
-jest.mock("components/results/dimension-based-results/dimension", () => ((props) => (
-  <div className="mock">Dimension - {props.type.personality_type.name}</div>
-)));
+jest.mock("components/results/type-based-results/personality-blend", () => (() => (<div className="mock">Personality Blend</div>)));
+jest.mock("components/results/type-based-results/personality-type", () => (() => (<div className="mock">Personality Type</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Dimensions", () => {
+describe("PersonalityBase", () => {
   let props;
 
   beforeEach(() => {
@@ -27,14 +26,14 @@ describe("Dimensions", () => {
     it("triggers initialization", () => {
       const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityBase.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Dimensions.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityBase.updated", component.instance);
     });
   });
 
@@ -47,6 +46,13 @@ describe("Dimensions", () => {
   it("renders nothing if not ready", () => {
     props.assessment = null;
     props.isReady.mockImplementation(() => false);
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders type if no blend", () => {
+    props.assessment = {...props.assessment, personality_blend: null};
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

@@ -38,7 +38,7 @@ exports[`Dimension renders component 1`] = `
         Medium
       </h2>
       <p>
-        You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+        Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
       </p>
       <p>
         <button
@@ -94,7 +94,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
         Medium
       </h2>
       <p>
-        You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+        Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
       </p>
       <p>
         <button
@@ -120,7 +120,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
       <div>
         <h3 />
         <p>
-          You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, while you are a loyal friend and colleague, you do not take everything on trust. Your results indicate that you tend to have an attitude towards others that is built on openness and a view that people are imperfect and sometimes need help. Therefore, when you deal with other people, you will search for a mutually acceptable outcome, because you know that you need to work together. In this way, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+          Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
         </p>
       </div>
       <div>
@@ -212,7 +212,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
         Medium
       </h2>
       <p>
-        You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+        Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
       </p>
       <p>
         <button

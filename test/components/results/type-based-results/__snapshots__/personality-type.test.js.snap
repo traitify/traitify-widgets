@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityType renders component 1`] = `
+<div>
+  <div
+    className="mock"
+  >
+    Personality Badge
+  </div>
+  <h3>
+    Naturalist
+  </h3>
+  <p>
+    'Naturalists'...are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+  </p>
+</div>
+`;
+
+exports[`PersonalityType renders nothing if not ready 1`] = `null`;

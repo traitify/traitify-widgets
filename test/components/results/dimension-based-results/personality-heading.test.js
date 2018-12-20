@@ -26,16 +26,16 @@ describe("PersonalityHeading", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+      const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger.mock.calls[0][0]).toBe("PersonalityHeading.initialized");
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityHeading.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger.mock.calls[1][0]).toBe("PersonalityHeading.updated");
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityHeading.updated", component.instance);
     });
   });
 

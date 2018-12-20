@@ -1,6 +1,6 @@
-import {Component} from "components/results/dimension-based-results/personality-details";
+import {Component} from "components/results/type-based-results/personality-details";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
@@ -50,8 +50,21 @@ describe("PersonalityDetails", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if no archetype", () => {
-    props.assessment = {...props.assessment, archetype: null};
+  it("renders nothing if no details", () => {
+    props.assessment = {
+      ...props.assessment,
+      personality_blend: {
+        ...props.assessment.personality_blend,
+        details: null
+      }
+    };
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders top personality if no blend", () => {
+    props.assessment = {...props.assessment, personality_blend: null};
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -60,8 +73,8 @@ describe("PersonalityDetails", () => {
   it("skips section if no detail", () => {
     props.assessment = {
       ...props.assessment,
-      archetype: {
-        ...props.assessment.archetype,
+      personality_blend: {
+        ...props.assessment.personality_blend,
         details: []
       }
     };
@@ -73,8 +86,8 @@ describe("PersonalityDetails", () => {
   it("skips environments section if no environments", () => {
     props.assessment = {
       ...props.assessment,
-      archetype: {
-        ...props.assessment.archetype,
+      personality_blend: {
+        ...props.assessment.personality_blend,
         environments: null
       }
     };

@@ -1,8 +1,8 @@
-import {Component} from "components/results/dimension-based-results/personality-traits";
+import {Component} from "components/results/type-based-results/personality-traits";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
-jest.mock("components/results/dimension-based-results/personality-trait", () => ((props) => (
+jest.mock("components/results/type-based-results/personality-trait", () => ((props) => (
   <div className="mock">Trait - {props.trait.personality_trait.name}</div>
 )));
 jest.mock("lib/with-traitify", () => ((value) => value));
@@ -37,6 +37,21 @@ describe("PersonalityTraits", () => {
 
       expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTraits.updated", component.instance);
     });
+
+    it("triggers show less", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.updateState({showMore: true});
+      component.instance.onClick();
+
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTraits.showLess", component.instance);
+    });
+
+    it("triggers show more", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.instance.onClick();
+
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTraits.showMore", component.instance);
+    });
   });
 
   it("renders component", () => {
@@ -49,6 +64,13 @@ describe("PersonalityTraits", () => {
     props.assessment = null;
     props.isReady.mockImplementation(() => false);
     const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders more traits", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    component.updateState({showMore: true});
 
     expect(component.tree).toMatchSnapshot();
   });

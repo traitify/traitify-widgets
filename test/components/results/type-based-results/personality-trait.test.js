@@ -1,15 +1,15 @@
-import {Component} from "components/results/dimension-based-results/personality-type";
+import {Component} from "components/results/type-based-results/personality-trait";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("PersonalityType", () => {
+describe("PersonalityTrait", () => {
   let props;
 
   beforeEach(() => {
     props = {
-      type: assessment.personality_types[0],
+      trait: assessment.personality_traits[0],
       ui: {
         current: {},
         off: jest.fn().mockName("off"),
@@ -23,14 +23,14 @@ describe("PersonalityType", () => {
     it("triggers initialization", () => {
       const component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityType.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTrait.initialized", component.instance);
     });
 
     it("triggers update", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityType.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityTrait.updated", component.instance);
     });
   });
 

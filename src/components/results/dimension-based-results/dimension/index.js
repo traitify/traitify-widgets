@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {detailWithPerspective} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
@@ -33,18 +34,6 @@ class Dimension extends Component {
       this.setState({showContent: this.props.index === 0});
     }
   }
-  description(suffix) {
-    const type = this.props.type.personality_type;
-    let perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
-    let description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
-    description = description && description.body;
-
-    if(description) { return description; }
-    perspective = perspective === "third" ? "first" : "third";
-    description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
-
-    return (description && description.body) || type.description;
-  }
   trigger = () => {
     this.props.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
     this.setState((state) => ({showContent: !state.showContent}));
@@ -52,6 +41,9 @@ class Dimension extends Component {
   render() {
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;
+    const options = {base: type, perspective: this.props.getOption("perspective")};
+    const description = detailWithPerspective({...options, name: "description"});
+    const shortDescription = detailWithPerspective({...options, name: "short_description"});
     const benefits = [];
     const pitfalls = [];
 
@@ -72,7 +64,7 @@ class Dimension extends Component {
             <h2 className={style.title}>
               {type.name} <span style={{color}}>|</span> {this.props.type.score} - {type.level}
             </h2>
-            <p className={style.description}>{this.description("short_description")}</p>
+            <p className={style.description}>{shortDescription}</p>
             <p className={style.triggerButton}>
               <button
                 className={style.trigger}
@@ -90,7 +82,7 @@ class Dimension extends Component {
             <div className={style.content} style={{background: rgba(color, 30)}}>
               <div className={style.extendedDesc}>
                 <h3>{this.props.translate("extended_description")}</h3>
-                <p className={style.description}>{this.description("description")}</p>
+                <p className={style.description}>{description}</p>
               </div>
               <div className={style.detail}>
                 <h4 className={style.benefits}>{this.props.translate("potential_benefits")}</h4>

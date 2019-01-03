@@ -1,25 +1,25 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
+  env: {
+    browser: true,
+    es6: true,
+    node: true
   },
-  "extends": [
+  extends: [
     "airbnb",
     "plugin:jest/recommended"
   ],
-  "globals": {
-    "XDomainRequest": true
+  globals: {
+    XDomainRequest: true
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-      "modules": true
+  parser: "babel-eslint",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+      modules: true
     }
   },
-  "plugins": ["babel", "jest"],
-  "rules": {
+  plugins: ["babel", "jest"],
+  rules: {
     "arrow-parens": ["error", "always"], // Consistency
     "babel/object-curly-spacing": "error", // Replace non-babel version
     "class-methods-use-this": "off", // Allows methods to be overridden
@@ -83,7 +83,8 @@
     "react/sort-comp": "off", // TODO: Remove when airbnb includes componentDidCatch
     "space-before-function-paren": ["error", "never"] // Whitespace - Preference
   },
-  "settings": {
-    "import/resolver": "webpack"
+  settings: {
+    "import/resolver": "webpack",
+    react: {version: "detect"}
   }
 }

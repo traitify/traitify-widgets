@@ -87,7 +87,6 @@ describe("Radar", () => {
   });
 
   describe("resize", () => {
-    const byResize = (call) => (call[0] === "resize");
     let originalAddEventListener;
     let originalRemoveEventListener;
 
@@ -109,22 +108,19 @@ describe("Radar", () => {
     });
 
     it("adds event listener", () => {
-      new ComponentHandler(<Component {...props} />, {createNodeMock});
-      const addResizeListeners = window.addEventListener.mock.calls.filter(byResize);
-      const removeResizeListeners = window.removeEventListener.mock.calls.filter(byResize);
+      const component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
-      expect(addResizeListeners).toHaveLength(1);
-      expect(removeResizeListeners).toHaveLength(0);
+      expect(window.addEventListener).toHaveBeenCalledWith("resize", component.instance.updateChart);
+      expect(window.removeEventListener).not.toHaveBeenCalledWith("resize", component.instance.updateChart);
     });
 
     it("removes event listener", () => {
       const component = new ComponentHandler(<Component {...props} />, {createNodeMock});
+      const {instance} = component;
       component.unmount();
-      const addResizeListeners = window.addEventListener.mock.calls.filter(byResize);
-      const removeResizeListeners = window.removeEventListener.mock.calls.filter(byResize);
 
-      expect(addResizeListeners).toHaveLength(1);
-      expect(removeResizeListeners).toHaveLength(1);
+      expect(window.addEventListener).toHaveBeenCalledWith("resize", instance.updateChart);
+      expect(window.removeEventListener).toHaveBeenCalledWith("resize", instance.updateChart);
     });
   });
 });

@@ -16,7 +16,6 @@ describe("CareerResults", () => {
       assessmentID: assessment.id,
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
       locale: "en-us",
-      options: {careerOptions: {}},
       traitify: {
         get: jest.fn().mockName("get"),
         put: jest.fn().mockName("put")
@@ -26,7 +25,6 @@ describe("CareerResults", () => {
         current: {},
         off: jest.fn().mockName("off"),
         on: jest.fn().mockName("on"),
-        options: {careerOptions: {}},
         trigger: jest.fn().mockName("trigger")
       }
     };
@@ -186,7 +184,7 @@ describe("CareerResults", () => {
     });
   });
 
-  describe("updates", () => {
+  describe("update", () => {
     it("clears fetch params if the assessment or locale changes and assessment is not ready", () => {
       const component = new ComponentHandler(<Component {...props} />);
       props.isReady.mockImplementation(() => false);

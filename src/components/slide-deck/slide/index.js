@@ -28,8 +28,8 @@ export default class Slide extends Component {
     const element = document.querySelector(`.${style.captionContainer}`);
     element && element.focus();
   }
-  respondMe = () => { this.props.updateSlide(true); }
-  respondNotMe = () => { this.props.updateSlide(false); }
+  respondMe = () => { this.props.updateSlide(this.props.slideIndex, true); }
+  respondNotMe = () => { this.props.updateSlide(this.props.slideIndex, false); }
   render() {
     const {
       back,

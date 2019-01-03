@@ -1,0 +1,472 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slide renders back button 1`] = `
+<div>
+  <div>
+    <div>
+      Short Cuts
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+  <button
+    onClick={[MockFunction back]}
+    type="button"
+  >
+    <img
+      alt="back"
+      src="https://cdn.traitify.com/assets/images/js/arrow_left.svg"
+    />
+  </button>
+</div>
+`;
+
+exports[`Slide renders back button unless first slide 1`] = `
+<div>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slide renders complete progress bar 1`] = `
+<div>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slide renders component 1`] = `
+<div>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slide renders component with previous and next slides 1`] = `
+<div>
+  <div>
+    <div>
+      Short Cuts
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slide renders component with previous slide 1`] = `
+<div>
+  <div>
+    <div>
+      Outgoing
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "98.63013698630137%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of an older man trying to pour cereal from an empty container into his bowl as a boy eats from a full bowl of cereal and milk sitting next to him."
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slide renders fullscreen 1`] = `
+<div>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+  <button
+    className=" "
+    onClick={[MockFunction toggleFullscreen]}
+    type="button"
+  />
+</div>
+`;
+
+exports[`Slide renders fullscreen button 1`] = `
+<div>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+    </div>
+  </div>
+  <button
+    className=" "
+    onClick={[MockFunction toggleFullscreen]}
+    type="button"
+  />
+</div>
+`;
+
+exports[`Slide renders instructions 1`] = `
+<div>
+  <div>
+    <div>
+      instructions
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <div>
+      <div>
+        <p>
+          Click me or not me
+        </p>
+      </div>
+      <div>
+        <button
+          onClick={[MockFunction start]}
+          type="button"
+        >
+          get_started
+          →
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+</div>
+`;

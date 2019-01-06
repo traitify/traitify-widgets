@@ -1,8 +1,13 @@
+import PropTypes from "prop-types";
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 
 export default function componentFromAssessment(options) {
   class AssessmentComponent extends Component {
+    static defaultProps = {assessment: null}
+    static propTypes = {
+      assessment: PropTypes.shape({assessment_type: PropTypes.string.isRequired})
+    }
     constructor(props) {
       super(props);
 

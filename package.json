@@ -52,6 +52,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "acorn": "^6.0.5",
     "autoprefixer": "^8.6.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
@@ -63,6 +64,7 @@
     "css-loader": "^0.28.5",
     "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-traitify": "0.0.0",
     "eslint-import-resolver-jest": "^2.1.1",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-loader": "^2.1.1",
@@ -84,7 +86,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",

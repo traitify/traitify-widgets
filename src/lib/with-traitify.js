@@ -1,10 +1,41 @@
 import Airbrake from "airbrake-js";
+import PropTypes from "prop-types";
 import {Component} from "react";
 import {getDisplayName, loadFont} from "lib/helpers";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 
 export default function withTraitify(WrappedComponent) {
   return class TraitifyComponent extends Component {
     static displayName = `Traitify${getDisplayName(WrappedComponent)}`
+    static defaultProps = {
+      airbrake: null,
+      assessment: null,
+      assessmentID: null,
+      cache: null,
+      locale: null,
+      options: null,
+      traitify: null,
+      ui: null
+    }
+    static propTypes = {
+      airbrake: PropTypes.instanceOf(Airbrake),
+      assessment: PropTypes.shape({
+        deck_id: PropTypes.string,
+        id: PropTypes.string,
+        locale_key: PropTypes.string,
+        personality_types: PropTypes.array,
+        slides: PropTypes.array
+      }),
+      assessmentID: PropTypes.string,
+      cache: PropTypes.shape({
+        get: PropTypes.func.isRequired,
+        set: PropTypes.func.isRequired
+      }),
+      locale: PropTypes.string,
+      options: PropTypes.shape({locale: PropTypes.string}),
+      traitify: TraitifyPropTypes.traitify,
+      ui: TraitifyPropTypes.ui
+    }
     constructor(props) {
       super(props);
 

@@ -175,6 +175,12 @@ describe("SlideDeck Helpers", () => {
       expect(result).toBe(false);
     });
 
+    it("returns false if slides are empty", () => {
+      const result = isReady([]);
+
+      expect(result).toBe(false);
+    });
+
     it("returns true if completed slides precede loaded slides", () => {
       const result = isReady([
         ...assessment.slides.slice(0, 10).map((slide) => ({...slide, response: true})),

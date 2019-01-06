@@ -49,18 +49,20 @@ export function toggleFullscreen(options) {
       || document.mozCancelFullScreen
       || document.msExitFullscreen;
 
-    exitFullscreen();
+    exitFullscreen.apply(document);
   } else {
     const requestFullscreen = element.requestFullscreen
       || element.webkitRequestFullscreen
       || element.mozRequestFullScreen
       || element.msRequestFullscreen;
 
-    requestFullscreen();
+    requestFullscreen.apply(element);
   }
 }
 
 export function isReady(slides) {
+  if(slides.length === 0) { return false; }
+
   const loadedIndex = loadingIndex(slides);
   const remainingSlidesLoaded = loadedIndex === -1;
   const nextSlidesLoaded = loadedIndex > slideIndex(slides) + 2;

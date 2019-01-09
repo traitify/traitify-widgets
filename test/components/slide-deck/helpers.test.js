@@ -4,6 +4,7 @@ import {
   dataMapper,
   getStateFromProps,
   isFinished,
+  isFullscreen,
   isReady,
   loadingIndex,
   mutable,
@@ -161,6 +162,49 @@ describe("SlideDeck Helpers", () => {
       const result = isFinished(assessment.slides.map((slide) => ({...slide, response: true})));
 
       expect(result).toBe(true);
+    });
+  });
+
+  describe("isFullscreen", () => {
+    afterEach(() => {
+      document.fullscreenElement = null;
+      document.webkitFullscreenElement = null;
+      document.mozFullScreenElement = null;
+      document.msFullscreenElement = null;
+    });
+
+    it("checks fullscreenElement ", () => {
+      document.fullscreenElement = {};
+      const result = isFullscreen();
+
+      expect(result).toBe(true);
+    });
+
+    it("checks webkitFullscreenElement ", () => {
+      document.webkitFullscreenElement = {};
+      const result = isFullscreen();
+
+      expect(result).toBe(true);
+    });
+
+    it("checks mozFullScreenElement", () => {
+      document.mozFullScreenElement = {};
+      const result = isFullscreen();
+
+      expect(result).toBe(true);
+    });
+
+    it("checks msFullscreenElement", () => {
+      document.msFullscreenElement = {};
+      const result = isFullscreen();
+
+      expect(result).toBe(true);
+    });
+
+    it("falls back to false", () => {
+      const result = isFullscreen();
+
+      expect(result).toBe(false);
     });
   });
 

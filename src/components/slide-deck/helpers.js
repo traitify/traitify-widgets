@@ -30,6 +30,15 @@ export function isFinished(slides) {
   return slides.length > 0 && slides.length === completedSlides(slides).length;
 }
 
+export function isFullscreen() {
+  const fullscreen = document.fullscreenElement
+    || document.webkitFullscreenElement
+    || document.mozFullScreenElement
+    || document.msFullscreenElement;
+
+  return !!fullscreen;
+}
+
 export function loadingIndex(slides) {
   return slides.findIndex((slide) => (!slide.loaded && slide.response == null));
 }

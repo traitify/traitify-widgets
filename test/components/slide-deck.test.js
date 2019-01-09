@@ -12,6 +12,7 @@ describe("SlideDeck", () => {
   let finish;
   let getStateFromProps;
   let isFinished;
+  let isFullscreen;
   let isReady;
   let props;
   let setState;
@@ -22,6 +23,7 @@ describe("SlideDeck", () => {
     finish = jest.spyOn(Component.prototype, "finish");
     getStateFromProps = jest.spyOn(helpers, "getStateFromProps");
     isFinished = jest.spyOn(helpers, "isFinished");
+    isFullscreen = jest.spyOn(helpers, "isFullscreen");
     isReady = jest.spyOn(helpers, "isReady");
     setState = jest.spyOn(Component.prototype, "setState");
     toggleFullscreen = jest.spyOn(helpers, "toggleFullscreen");
@@ -431,17 +433,29 @@ describe("SlideDeck", () => {
     });
 
     describe("toggleFullscreen", () => {
-      it("updates state and triggers callback", () => {
+      it("triggers call request", () => {
         const component = new ComponentHandler(<Component {...props} />);
-        toggleFullscreen.mockImplementationOnce(() => {});
+        toggleFullscreen.mockImplementation(() => {});
+        component.instance.container = {};
         component.instance.toggleFullscreen();
 
-        expect(component.state.isFullscreen).toBe(true);
-        expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.fullscreen", component.instance, true);
         expect(toggleFullscreen).toHaveBeenCalledWith({
           current: false,
           element: component.instance.container
         });
+      });
+    });
+
+    describe("fullscreenToggled", () => {
+      it("updates state and triggers callback", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        isFullscreen.mockReturnValue(true);
+        component.instance.resizeImages = jest.fn().mockName("resizeImages");
+        component.instance.fullscreenToggled();
+
+        expect(component.state.isFullscreen).toBe(true);
+        expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.fullscreen", component.instance, true);
+        expect(component.instance.resizeImages).toHaveBeenCalled();
       });
     });
 

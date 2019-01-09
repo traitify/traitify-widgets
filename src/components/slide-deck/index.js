@@ -7,6 +7,7 @@ import {
   dataChanged,
   getStateFromProps,
   isFinished,
+  isFullscreen,
   isReady,
   loadingIndex,
   mutable,
@@ -56,6 +57,10 @@ class SlideDeck extends Component {
     }
 
     window.addEventListener("resize", this.resizeImages);
+    window.addEventListener("fullscreenchange", this.fullscreenToggled);
+    window.addEventListener("webkitfullscreenchange", this.fullscreenToggled);
+    window.addEventListener("mozfullscreenchange", this.fullscreenToggled);
+    window.addEventListener("MSFullscreenChange", this.fullscreenToggled);
   }
   componentDidUpdate(prevProps) {
     this.props.ui.trigger("SlideDeck.updated", this);
@@ -72,6 +77,10 @@ class SlideDeck extends Component {
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.resizeImages);
+    window.removeEventListener("fullscreenchange", this.fullscreenToggled);
+    window.removeEventListener("webkitfullscreenchange", this.fullscreenToggled);
+    window.removeEventListener("mozfullscreenchange", this.fullscreenToggled);
+    window.removeEventListener("MSFullscreenChange", this.fullscreenToggled);
   }
   fetchImages = () => {
     if(this.state.imageLoading) { return; }
@@ -103,6 +112,12 @@ class SlideDeck extends Component {
           setTimeout(this.fetchImages, 2000);
         });
       };
+    });
+  }
+  fullscreenToggled = () => {
+    this.setState({isFullscreen: isFullscreen()}, () => {
+      this.props.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
+      this.resizeImages();
     });
   }
   resizeImages = () => {
@@ -152,15 +167,7 @@ class SlideDeck extends Component {
     this.setState({imageLoadingAttempts: 0}, this.fetchImages);
   }
   toggleFullscreen = () => {
-    this.setState((state) => {
-      const {isFullscreen} = state;
-
-      toggleFullscreen({current: isFullscreen, element: this.container});
-
-      return {isFullscreen: !isFullscreen};
-    }, () => {
-      this.props.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
-    });
+    toggleFullscreen({current: this.state.isFullscreen, element: this.container});
   }
   updateSlide = (index, value) => {
     this.setState((state) => {

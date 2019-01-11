@@ -40,7 +40,6 @@
   height: 50px;
   text-align: center;
   font-size: 25px;
-  color: #fff;
   position: absolute;
   top: 0px;
   z-index: 1;
@@ -52,6 +51,7 @@
     position: absolute;
     z-index: 1;
     line-height: 50px;
+    color: #fff;
   }
   .progressContainer{
     margin: 0px auto;

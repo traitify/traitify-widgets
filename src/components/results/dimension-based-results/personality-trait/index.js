@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
 import {rgba} from "lib/helpers/color";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
@@ -10,13 +10,13 @@ class PersonalityTrait extends Component {
     trait: PropTypes.shape({
       personality_trait: PropTypes.object.isRequired
     }).isRequired,
-    traitify: TraitifyPropType.isRequired
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
+    this.props.ui.trigger("PersonalityTrait.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityTrait.updated", this);
+    this.props.ui.trigger("PersonalityTrait.updated", this);
   }
   render() {
     const trait = this.props.trait.personality_trait;

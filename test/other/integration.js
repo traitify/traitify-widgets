@@ -1,6 +1,6 @@
 // import {render} from "react-dom";
 // import Default from "components/default";
-// import Traitify from "support/traitify";
+// import UI from "lib/traitify-ui";
 
 describe("Integration", () => {
   describe("component", () => {
@@ -8,9 +8,9 @@ describe("Integration", () => {
       // const widgetElement = createElement();
       // const traitify = new Traitify();
 
-      // traitify.ui.options.disableAirbrake = true;
-      // traitify.ui.component().target(widgetElement).render();
-      // render(<Default traitify={traitify} />);
+      // ui.options.disableAirbrake = true;
+      // ui.component().target(widgetElement).render();
+      // render(<Default ui={ui} />);
 
       // expect(componentElement.innerHTML).toEqual(widgetElement.innerHTML);
     });

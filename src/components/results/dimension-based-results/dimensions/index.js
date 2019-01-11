@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Dimension from "../dimension";
 import style from "./style";
@@ -10,13 +10,13 @@ class Dimensions extends Component {
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("Dimensions.initialized", this);
+    this.props.ui.trigger("Dimensions.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("Dimensions.updated", this);
+    this.props.ui.trigger("Dimensions.updated", this);
   }
   render() {
     if(!this.props.isReady("results")) { return null; }

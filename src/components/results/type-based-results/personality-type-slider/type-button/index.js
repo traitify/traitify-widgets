@@ -12,9 +12,7 @@ export default class TypeButton extends Component {
       score: PropTypes.number.isRequired
     }).isRequired
   }
-  setActive = (e) => {
-    e.preventDefault();
-
+  setActive = () => {
     this.props.setActive(this.props.type);
   }
   render() {

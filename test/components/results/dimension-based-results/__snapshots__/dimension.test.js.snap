@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dimension renders component 1`] = `
+<li>
+  <div
+    style={
+      Object {
+        "background": "rgba(41,183,112,0.085)",
+        "borderLeft": "5px solid #29B770",
+      }
+    }
+  >
+    <div>
+      <p>
+        <img
+          alt=""
+          ariahidden="true"
+          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+        />
+      </p>
+    </div>
+    <div>
+      <h2>
+        Agreeableness
+         
+        <span
+          style={
+            Object {
+              "color": "#29B770",
+            }
+          }
+        >
+          |
+        </span>
+         
+        6
+         - 
+        Medium
+      </h2>
+      <p>
+        Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+      </p>
+      <p>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.3)",
+            }
+          }
+          type="button"
+        />
+      </p>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`Dimension with index of 0 shows content by default 1`] = `
+<li>
+  <div
+    style={
+      Object {
+        "background": "rgba(41,183,112,0.085)",
+        "borderLeft": "5px solid #29B770",
+      }
+    }
+  >
+    <div>
+      <p>
+        <img
+          alt=""
+          ariahidden="true"
+          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+        />
+      </p>
+    </div>
+    <div>
+      <h2>
+        Agreeableness
+         
+        <span
+          style={
+            Object {
+              "color": "#29B770",
+            }
+          }
+        >
+          |
+        </span>
+         
+        6
+         - 
+        Medium
+      </h2>
+      <p>
+        Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+      </p>
+      <p>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.3)",
+            }
+          }
+          type="button"
+        />
+      </p>
+    </div>
+  </div>
+  <div>
+    <div
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.3)",
+        }
+      }
+    >
+      <div>
+        <h3 />
+        <p>
+          Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+        </p>
+      </div>
+      <div>
+        <h4 />
+        <ul>
+          <li>
+            Forgiving style
+          </li>
+          <li>
+            Looks for win-win outcome
+          </li>
+          <li>
+            Negotiates with sensitivity
+          </li>
+          <li>
+            Realistic view of others
+          </li>
+          <li>
+            Recognises imperfection 
+          </li>
+          <li>
+            Relational style
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 />
+        <ul>
+          <li>
+            May appear too open-minded (to others)
+          </li>
+          <li>
+            May be viewed as a ‘pushover’ by others’
+          </li>
+          <li>
+            May let sympathy get in the way
+          </li>
+          <li>
+            May lose out to very assertive colleagues
+          </li>
+          <li>
+            May not always be objective enough
+          </li>
+          <li>
+            May not go for the optimal personal win
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`Dimension with non-zero index hides content by default 1`] = `
+<li>
+  <div
+    style={
+      Object {
+        "background": "rgba(41,183,112,0.085)",
+        "borderLeft": "5px solid #29B770",
+      }
+    }
+  >
+    <div>
+      <p>
+        <img
+          alt=""
+          ariahidden="true"
+          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+        />
+      </p>
+    </div>
+    <div>
+      <h2>
+        Agreeableness
+         
+        <span
+          style={
+            Object {
+              "color": "#29B770",
+            }
+          }
+        >
+          |
+        </span>
+         
+        6
+         - 
+        Medium
+      </h2>
+      <p>
+        Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+      </p>
+      <p>
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.3)",
+            }
+          }
+          type="button"
+        />
+      </p>
+    </div>
+  </div>
+</li>
+`;

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import CareerFilter from "../career-filter";
 import CareerModal from "../career-modal";
@@ -10,13 +10,13 @@ import style from "./style";
 class Careers extends Component {
   static propTypes = {
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("Careers.initialized", this);
+    this.props.ui.trigger("Careers.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("Careers.updated", this);
+    this.props.ui.trigger("Careers.updated", this);
   }
   render() {
     if(!this.props.isReady("results")) { return null; }

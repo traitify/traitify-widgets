@@ -1,7 +1,33 @@
+export function careerOption(props, name) {
+  if(props[name] != null) { return props[name]; }
+  if(props.options
+    && props.options.careerOptions
+    && props.options.careerOptions[name] != null
+  ) { return props.options.careerOptions[name]; }
+  if(props.ui
+    && props.ui.options
+    && props.ui.options.careerOptions
+    && props.ui.options.careerOptions[name] != null
+  ) { return props.ui.options.careerOptions[name]; }
+}
+
 export function dangerousProps(_props) {
   const {html, ...props} = _props;
 
   return {...props, dangerouslySetInnerHTML: {__html: html}};
+}
+
+export function detailWithPerspective(options) {
+  const {base, name} = options;
+  let perspective = (options.perspective || "firstPerson").replace("Person", "");
+  let detail = base.details.find((d) => (d.title === `${perspective}_person_${name}`));
+  detail = detail && detail.body;
+
+  if(detail) { return detail; }
+  perspective = perspective === "third" ? "first" : "third";
+  detail = base.details.find((d) => (d.title === `${perspective}_person_${name}`));
+
+  return (detail && detail.body) || base[name];
 }
 
 export function getDisplayName(Component) {

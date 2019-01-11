@@ -65,6 +65,11 @@ export default class CanvasRadarChart {
     this.labels = configureLabels(options);
     this.grid = configureGrid(ctx, options);
   }
+  destroy() {
+    const {canvas} = this.ctx;
+
+    canvas.width = canvas.width;
+  }
   render() {
     this.renderGrid();
     this.renderLabels();

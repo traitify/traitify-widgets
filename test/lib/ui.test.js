@@ -1,16 +1,25 @@
 import I18n from "lib/i18n";
+import Traitify from "lib/traitify";
 import UI from "lib/traitify-ui";
 import Widget from "lib/traitify-widget";
 
+jest.mock("lib/helpers/guess-component", () => {});
+jest.mock("lib/i18n");
+jest.mock("lib/i18n-data", () => {});
+jest.mock("lib/traitify");
 jest.mock("lib/traitify-widget");
 
 describe("UI", () => {
+  let traitify;
   let ui;
 
   beforeEach(() => {
     Widget.mockClear();
 
-    ui = new UI({});
+    traitify = new Traitify();
+    traitify.i18n = new I18n();
+    traitify.i18n.data = {"en-us": {}};
+    ui = new UI(traitify);
   });
 
   describe("constructor", () => {
@@ -18,12 +27,12 @@ describe("UI", () => {
       expect(ui.options.imageHost).toBe("https://images.traitify.com");
     });
 
-    it("creates default i18n", () => {
+    it("copies i18n from Traitify", () => {
       expect(ui.i18n).toBeInstanceOf(I18n);
     });
 
     it("sets shared data", () => {
-      expect(ui.current).toEqual({});
+      expect(ui.current).toEqual({"I18n.setLocale": "en-us"});
       expect(ui.requests).toEqual({});
     });
   });
@@ -116,16 +125,16 @@ describe("UI", () => {
       expect(returnValue).toEqual(ui);
     });
 
-    it("updates i18n", () => {
-      ui.setLocale("es-us");
+    it("updates locale", () => {
+      ui.setLocale("en-US");
 
-      expect(ui.i18n.locale).toBe("es-us");
+      expect(ui.locale).toBe("en-us");
     });
 
     it("ignores bad input", () => {
       ui.setLocale("espn");
 
-      expect(ui.i18n.locale).toBe("en-us");
+      expect(ui.locale).toBe("en-us");
     });
   });
 

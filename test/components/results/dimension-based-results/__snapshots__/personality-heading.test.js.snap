@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityHeading renders component 1`] = `
+<div>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": Array [
+          "personality_heading",
+          Object {
+            "deck_name": "Big Five",
+            "personality": "<strong>Cohort</strong>",
+          },
+        ],
+      }
+    }
+  />
+</div>
+`;
+
+exports[`PersonalityHeading renders nothing if deck not ready 1`] = `null`;
+
+exports[`PersonalityHeading renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityHeading renders nothing if results not ready 1`] = `null`;

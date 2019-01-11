@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityBase renders component 1`] = `
+<div
+  className="mock"
+>
+  Personality Blend
+</div>
+`;
+
+exports[`PersonalityBase renders nothing if not ready 1`] = `null`;
+
+exports[`PersonalityBase renders type if no blend 1`] = `
+<div
+  className="mock"
+>
+  Personality Type
+</div>
+`;

@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTypeSlider renders back button 1`] = `
+<div>
+  <button
+    className={null}
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="back"
+      src="https://cdn.traitify.com/assets/images/js/arrow_left.svg"
+    />
+  </button>
+  <ul>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Naturalist
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Analyzer
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Inventor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Mentor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Planner
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Visionary
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Action-Taker
+    </div>
+  </ul>
+</div>
+`;
+
+exports[`PersonalityTypeSlider renders both buttons 1`] = `
+<div>
+  <button
+    className={null}
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="back"
+      src="https://cdn.traitify.com/assets/images/js/arrow_left.svg"
+    />
+  </button>
+  <ul>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Naturalist
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Analyzer
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Inventor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Mentor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Planner
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Visionary
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Action-Taker
+    </div>
+  </ul>
+  <button
+    className={null}
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="next"
+      src="https://cdn.traitify.com/assets/images/js/arrow_right.svg"
+    />
+  </button>
+</div>
+`;
+
+exports[`PersonalityTypeSlider renders component 1`] = `
+<div>
+  <ul>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Naturalist
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Analyzer
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Inventor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Mentor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Planner
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Visionary
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Action-Taker
+    </div>
+  </ul>
+</div>
+`;
+
+exports[`PersonalityTypeSlider renders next button 1`] = `
+<div>
+  <ul>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Naturalist
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Analyzer
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Inventor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Mentor
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Planner
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Visionary
+    </div>
+    <div
+      className="mock"
+    >
+      Slide - 
+      Action-Taker
+    </div>
+  </ul>
+  <button
+    className={null}
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="next"
+      src="https://cdn.traitify.com/assets/images/js/arrow_right.svg"
+    />
+  </button>
+</div>
+`;
+
+exports[`PersonalityTypeSlider renders nothing if not ready 1`] = `null`;
+
+exports[`PersonalityTypeSlider type button renders component 1`] = `
+<button
+  className={null}
+  onClick={[Function]}
+  type="button"
+/>
+`;

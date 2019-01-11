@@ -1,21 +1,21 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityBadge extends Component {
   static propTypes = {
-    traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired,
-    type: PropTypes.shape({badge: PropTypes.object.isRequired}).isRequired
+    type: PropTypes.shape({badge: PropTypes.object.isRequired}).isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityTrait.initialized", this);
+    this.props.ui.trigger("PersonalityBadge.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityTrait.updated", this);
+    this.props.ui.trigger("PersonalityBadge.updated", this);
   }
   render() {
     const color = `#${this.props.type.badge.color_1}`;

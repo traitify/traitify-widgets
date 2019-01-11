@@ -101,7 +101,7 @@ export default class TraitifyWidget {
         unmountComponentAtNode(target);
 
         resolve(render(
-          <Component widgetID={this.id} options={this.options} traitify={this.ui.traitify} />,
+          <Component widgetID={this.id} options={this.options} ui={this.ui} />,
           target
         ));
       }));

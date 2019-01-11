@@ -21,7 +21,9 @@ describe("Helpers", () => {
             height: "700px",
             width: "820px"
           },
-          width: 820
+          _width: 820,
+          get width() { return this._width; },
+          set width(value) { this._width = value; }
         },
         closePath: jest.fn().mockName("closePath"),
         drawImage: jest.fn().mockName("drawImage"),
@@ -87,6 +89,15 @@ describe("Helpers", () => {
         expect(chart.labels[4]).toMatchObject({font: "22px Arial"});
         expect(chart.labels[5]).toMatchObject({font: "22px Arial"});
         expect(chart.labels[6]).toMatchObject({font: "22px Arial"});
+      });
+    });
+
+    describe("destroy", () => {
+      it("reassigns the width", () => {
+        const spy = jest.spyOn(ctx.canvas, "width", "set");
+        chart.destroy();
+
+        expect(spy).toHaveBeenCalled();
       });
     });
 

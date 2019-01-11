@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTypeBarChart renders component 1`] = `
+<div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Naturalist
+  </div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Analyzer
+  </div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Inventor
+  </div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Mentor
+  </div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Planner
+  </div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Visionary
+  </div>
+  <div
+    className="mock"
+  >
+    Bar - 
+    Action-Taker
+  </div>
+</div>
+`;
+
+exports[`PersonalityTypeBarChart renders nothing if not ready 1`] = `null`;

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
@@ -12,20 +12,20 @@ class PersonalityDetails extends Component {
       personality_types: PropTypes.array.isRequired
     }),
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityDetails.initialized", this);
+    this.props.ui.trigger("PersonalityDetails.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityDetails.updated", this);
+    this.props.ui.trigger("PersonalityDetails.updated", this);
   }
   render() {
     if(!this.props.isReady("results")) { return null; }
 
     let personality = this.props.assessment.personality_blend;
-    personality = personality || this.props.assessment.personality_types[0];
+    personality = personality || this.props.assessment.personality_types[0].personality_type;
 
     const {details} = personality;
     if(!details) { return null; }

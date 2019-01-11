@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
@@ -13,18 +13,18 @@ class Career extends Component {
       score: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired
     }).isRequired,
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("Career.initialized", this);
+    this.props.ui.trigger("Career.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("Career.updated", this);
+    this.props.ui.trigger("Career.updated", this);
   }
   openModal = () => {
-    this.props.traitify.ui.trigger("CareerModal.career", this, this.props.career);
-    this.props.traitify.ui.trigger("CareerModal.show", this);
+    this.props.ui.trigger("CareerModal.career", this, this.props.career);
+    this.props.ui.trigger("CareerModal.show", this);
   }
   render() {
     const {career, translate} = this.props;

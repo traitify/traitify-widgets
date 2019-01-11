@@ -1,9 +1,9 @@
 import {Component} from "components/default";
 import ComponentHandler from "support/component-handler";
 
-jest.mock("lib/with-traitify");
 jest.mock("components/results", () => (() => (<div className="mock">Results</div>)));
 jest.mock("components/slide-deck", () => (() => (<div className="mock">Slide Deck</div>)));
+jest.mock("lib/with-traitify");
 
 describe("Default", () => {
   it("renders results", () => {

@@ -1,29 +1,23 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
-class Type extends Component {
+class PersonalityType extends Component {
   static propTypes = {
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
       score: PropTypes.number.isRequired
     }).isRequired,
-    traitify: TraitifyPropType.isRequired
-  }
-  trigger = (e) => {
-    e.preventDefault();
-
-    this.props.traitify.ui.trigger("PersonalityType.showContent", this, this.props.type.personality_type);
-    this.setState((state) => ({showContent: !state.showContent}));
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityType.initialized", this);
+    this.props.ui.trigger("PersonalityType.initialized", this);
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityType.updated", this);
+    this.props.ui.trigger("PersonalityType.updated", this);
   }
   render() {
     const type = this.props.type.personality_type;
@@ -44,5 +38,5 @@ class Type extends Component {
   }
 }
 
-export {Type as Component};
-export default withTraitify(Type);
+export {PersonalityType as Component};
+export default withTraitify(PersonalityType);

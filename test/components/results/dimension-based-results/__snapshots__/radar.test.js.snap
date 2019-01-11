@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radar renders component 1`] = `
+<div>
+  <div>
+    <canvas
+      aria-label="radar_chart_label"
+      height="700"
+      width="820"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radar renders nothing if not ready 1`] = `null`;

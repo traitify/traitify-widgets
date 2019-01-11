@@ -1,8 +1,8 @@
 import {Component} from "react";
 import PersonalityBase from "./personality-base";
-import PersonalityTypes from "./personality-types";
-import PersonalityTraits from "./personality-traits";
 import PersonalityDetails from "./personality-details";
+import PersonalityTraits from "./personality-traits";
+import PersonalityTypes from "./personality-types";
 
 export default class TypeBasedResults extends Component {
   render() {

@@ -4,7 +4,6 @@ export default class I18n {
   constructor() {
     this.data = {};
     this.setDefaultTranslations();
-    this.setLocale("en-us");
   }
   addTranslations(_locale, data) {
     const locale = _locale.toLowerCase();
@@ -31,13 +30,8 @@ export default class I18n {
       this.addTranslations(locale, i18nData[locale]);
     });
   }
-  setLocale = (_locale) => {
-    const locale = _locale.toLowerCase();
-
-    if(this.data[locale]) { this.locale = locale; }
-  }
-  translate = (key, options) => {
-    const result = this.data[this.locale][key];
+  translate = (locale, key, options) => {
+    const result = this.data[locale][key];
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);

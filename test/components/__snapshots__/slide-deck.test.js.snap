@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SlideDeck renders nothing if not ready 1`] = `null`;
+exports[`SlideDeck renders component 1`] = `
+<div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`SlideDeck renders loading if finished 1`] = `
+<div>
+  <div
+    className="mock"
+  >
+    Loading
+  </div>
+</div>
+`;
+
+exports[`SlideDeck renders loading if not ready 1`] = `
+<div>
+  <div
+    className="mock"
+  >
+    Loading
+  </div>
+</div>
+`;
+
+exports[`SlideDeck renders nothing if results ready 1`] = `null`;

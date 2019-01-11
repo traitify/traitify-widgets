@@ -8,10 +8,6 @@ describe("I18n", () => {
   });
 
   describe("constructor", () => {
-    it("has default locale", () => {
-      expect(i18n.locale).toBe("en-us");
-    });
-
     it("creates default translations", () => {
       expect(i18n.data).toBeDefined();
       expect(i18n.data["en-us"]).toBeDefined();
@@ -76,36 +72,28 @@ describe("I18n", () => {
     });
   });
 
-  describe("setLocale", () => {
-    it("updates locale", () => {
-      i18n.setLocale("en-US");
-
-      expect(i18n.locale).toBe("en-us");
-    });
-
-    it("requires locale data", () => {
-      i18n.setLocale("en-ru");
-
-      expect(i18n.locale).toBe("en-us");
-    });
-  });
-
   describe("translate", () => {
+    let translate;
+
+    beforeEach(() => {
+      translate = i18n.translate.bind(null, "en-us");
+    });
+
     it("returns translation", () => {
-      const translation = i18n.translate("me");
+      const translation = translate("me");
 
       expect(translation).toBe("Me");
     });
 
     it("substitutes options", () => {
       i18n.data["en-us"].love = "I love %{noun}";
-      const translation = i18n.translate("love", {noun: "tacos"});
+      const translation = translate("love", {noun: "tacos"});
 
       expect(translation).toBe("I love tacos");
     });
 
     it("allows misses", () => {
-      const translation = i18n.translate("tacos");
+      const translation = translate("tacos");
 
       expect(translation).toBeUndefined();
     });

@@ -1,18 +1,18 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
-import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
+import TraitifyPropTypes from "lib/helpers/prop-types";
+import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class PersonalityTypeBar extends Component {
   static propTypes = {
     barHeight: PropTypes.number.isRequired,
-    traitify: TraitifyPropType.isRequired,
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
       score: PropTypes.number.isRequired
-    }).isRequired
+    }).isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
@@ -20,27 +20,24 @@ class PersonalityTypeBar extends Component {
     this.state = {activeType: null};
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("PersonalityTypeBar.initialized", this);
-    this.props.traitify.ui.on("Assessment.activeType", this.getActiveType);
+    this.props.ui.trigger("PersonalityTypeBar.initialized", this);
+    this.props.ui.on("Assessment.activeType", this.getActiveType);
 
-    const activeType = this.props.traitify.ui.current["Assessment.activeType"];
+    const activeType = this.props.ui.current["Assessment.activeType"];
     if(activeType) { this.setState({activeType}); }
   }
   componentDidUpdate() {
-    this.props.traitify.ui.trigger("PersonalityTypeBar.updated", this);
+    this.props.ui.trigger("PersonalityTypeBar.updated", this);
   }
   componentWillUnmount() {
-    this.props.traitify.ui.off("Assessment.activeType", this.getActiveType);
+    this.props.ui.off("Assessment.activeType", this.getActiveType);
   }
   getActiveType = () => {
-    this.setState({activeType: this.props.traitify.ui.current["Assessment.activeType"]});
-  }
-  onKey = (e) => {
-    if(e.key === "Enter") { this.setActive(); }
+    this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
   }
   setActive = () => {
-    this.props.traitify.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
-    this.props.traitify.ui.trigger("Assessment.activeType", this, this.props.type);
+    this.props.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
+    this.props.ui.trigger("Assessment.activeType", this, this.props.type);
   }
   render() {
     const type = this.props.type.personality_type;

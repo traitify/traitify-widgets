@@ -1,18 +1,28 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
+import {
+  completedSlides,
+  dataChanged,
+  getStateFromProps,
+  isFinished,
+  isFullscreen,
+  isReady,
+  loadingIndex,
+  mutable,
+  slideIndex,
+  toggleFullscreen
+} from "./helpers";
 import Loading from "./loading";
 import Slide from "./slide";
 import style from "./style.scss";
-
-const slideIndex = (slides) => (slides.findIndex((slide) => (slide.response == null)));
-const mutable = (data) => (data.map((item) => ({...item})));
 
 class SlideDeck extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({
+      id: PropTypes.string.isRequired,
       instructions: PropTypes.shape({instructional_text: PropTypes.string.isRequired}),
       locale_key: PropTypes.string.isRequired,
       slides: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -25,137 +35,90 @@ class SlideDeck extends Component {
     getAssessment: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
-    traitify: TraitifyPropType.isRequired,
-    translate: PropTypes.func.isRequired
+    traitify: TraitifyPropTypes.traitify.isRequired,
+    translate: PropTypes.func.isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
 
     this.state = {
-      finished: false,
-      imageLoading: false,
-      imageLoadAttempts: [],
-      initialized: false,
       isFullscreen: false,
-      ready: false,
-      slides: [],
-      showInstructions: true
+      ...getStateFromProps(props)
     };
   }
   componentDidMount() {
-    this.props.traitify.ui.trigger("SlideDeck.initialized", this);
-    this.initialize();
-    window.addEventListener("resize", this.resizeImages);
-  }
-  componentDidUpdate(prevProps) {
-    this.props.traitify.ui.trigger("Results.updated", this);
+    this.props.ui.trigger("SlideDeck.initialized", this);
 
-    if(!this.state.initialized) { return this.initialize(); }
-    if(this.props.assessment.locale_key !== prevProps.assessment.locale_key) {
-      return this.setState({
-        finished: false,
-        imageLoading: false,
-        imageLoadAttempts: [],
-        initialized: false,
-        ready: false,
-        slides: []
-      });
+    if(isFinished(this.state.slides)) {
+      this.finish();
+    } else if(this.state.slides.length > 0) {
+      this.resizeImages();
     }
 
-    this.update();
+    window.addEventListener("resize", this.resizeImages);
+    window.addEventListener("fullscreenchange", this.fullscreenToggled);
+    window.addEventListener("webkitfullscreenchange", this.fullscreenToggled);
+    window.addEventListener("mozfullscreenchange", this.fullscreenToggled);
+    window.addEventListener("MSFullscreenChange", this.fullscreenToggled);
+  }
+  componentDidUpdate(prevProps) {
+    this.props.ui.trigger("SlideDeck.updated", this);
+
+    if(dataChanged(this.props.assessment, prevProps.assessment)) {
+      this.setState(getStateFromProps(this.props), () => {
+        if(isFinished(this.state.slides)) {
+          this.finish();
+        } else if(this.state.slides.length > 0) {
+          this.resizeImages();
+        }
+      });
+    }
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.resizeImages);
-  }
-  initialize() {
-    if(this.state.initialized) { return; }
-    if(!this.props.assessment) { return; }
-    if((this.props.assessment.slides || []).length === 0) { return; }
-
-    this.setState((state, props) => {
-      if(state.initialized) { return; }
-
-      const {assessment, assessmentID, cache} = props;
-      const storedSlides = cache.get(`slides.${assessmentID}`) || [];
-      const completedSlides = {};
-
-      storedSlides.forEach((slide) => { completedSlides[slide.id] = slide; });
-
-      const slides = assessment.slides.map((_slide) => {
-        const slide = {..._slide};
-        const completedSlide = completedSlides[slide.id];
-        if(completedSlide) {
-          slide.response = completedSlide.response;
-          slide.time_taken = completedSlide.time_taken;
-        }
-
-        return slide;
-      });
-
-      const newState = {slides, initialized: true, startTime: Date.now()};
-
-      if(this.props.getOption("allowInstructions") && assessment.instructions) {
-        newState.instructions = assessment.instructions.instructional_text;
-        newState.showInstructions = true;
-      } else {
-        newState.showInstructions = false;
-      }
-
-      return newState;
-    }, () => {
-      if(this.isComplete()) {
-        this.finish();
-      } else {
-        this.resizeImages();
-      }
-    });
+    window.removeEventListener("fullscreenchange", this.fullscreenToggled);
+    window.removeEventListener("webkitfullscreenchange", this.fullscreenToggled);
+    window.removeEventListener("mozfullscreenchange", this.fullscreenToggled);
+    window.removeEventListener("MSFullscreenChange", this.fullscreenToggled);
   }
   fetchImages = () => {
     if(this.state.imageLoading) { return; }
 
-    const currentIndex = slideIndex(this.state.slides);
-    const loadingIndex = this.state.slides.findIndex((slide, index) => (
-      index >= currentIndex && !slide.loaded && slide.response == null
-    ));
-    if(loadingIndex === -1) { return; }
-    if(this.state.imageLoadAttempts[loadingIndex] >= 30) { return; }
+    const currentIndex = loadingIndex(this.state.slides);
+    if(currentIndex === -1) { return; }
+    if(this.state.imageLoadingAttempts >= 3) { return; }
 
     this.setState({imageLoading: true}, () => {
-      const slide = this.state.slides[loadingIndex];
+      const slide = this.state.slides[currentIndex];
       const img = document.createElement("img");
       img.src = slide.image;
       img.onload = () => {
         this.setState((state) => {
           const slides = mutable(state.slides);
-          slides[loadingIndex].loaded = true;
+          slides[currentIndex].loaded = true;
 
-          return {imageLoading: false, slides};
+          return {
+            imageLoading: false,
+            imageLoadingAttempts: 0,
+            slides
+          };
         }, this.fetchImages);
       };
       img.onerror = () => {
-        this.setState((state) => {
-          const attempts = [...state.imageLoadAttempts];
-          attempts[loadingIndex] = attempts[loadingIndex] || 0;
-          attempts[loadingIndex] += 1;
-
-          return {imageLoading: false, imageLoadAttempts: attempts};
-        }, () => {
+        this.setState((state) => (
+          {imageLoading: false, imageLoadingAttempts: state.imageLoadingAttempts + 1}
+        ), () => {
           setTimeout(this.fetchImages, 2000);
         });
       };
     });
   }
-  update() {
-    const loadedIndex = this.state.slides.filter((slide) => (slide.loaded)).length;
-    const remainingSlidesLoaded = !this.state.slides.find(
-      (slide) => (!slide.loaded && slide.response == null)
-    );
-    const nextSlidesLoaded = loadedIndex >= slideIndex(this.state.slides) + 2;
-    const ready = remainingSlidesLoaded || nextSlidesLoaded;
-
-    if(this.state.ready === ready) { return; }
-    this.props.traitify.ui.trigger("SlideDeck.isReady", this, ready);
-    this.setState({ready, startTime: Date.now()});
+  fullscreenToggled = () => {
+    this.setState({isFullscreen: isFullscreen()}, () => {
+      this.props.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
+      this.resizeImages();
+    });
   }
   resizeImages = () => {
     this.setState((state, props) => {
@@ -172,7 +135,7 @@ class SlideDeck extends Component {
           : slide.image_desktop
       }));
 
-      return {imageLoadAttempts: [], slides};
+      return {imageLoadingAttempts: 0, slides};
     }, this.fetchImages);
   }
   finish() {
@@ -181,24 +144,11 @@ class SlideDeck extends Component {
 
     if(this.props.isReady("results")) { return; }
 
-    this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, this.completedSlides()).then((response) => {
-      this.props.traitify.ui.trigger("SlideDeck.finished", this, response);
+    // TODO: If error, display it
+    this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, completedSlides(this.state.slides)).then((response) => {
+      this.props.ui.trigger("SlideDeck.finished", this, response);
       this.props.getAssessment({force: true});
     });
-  }
-  completedSlides() {
-    return this.state.slides.filter((slide) => (
-      slide.response != null
-    )).map((slide) => ({
-      id: slide.id,
-      response: slide.response,
-      time_taken: slide.time_taken >= 0 ? slide.time_taken : 2
-    }));
-  }
-  isComplete() {
-    const {slides} = this.state;
-
-    return slides.length > 0 && slides.length === this.completedSlides().length;
   }
   // Event Methods
   back = () => {
@@ -214,82 +164,41 @@ class SlideDeck extends Component {
     this.setState({showInstructions: false});
   }
   retry = () => {
-    this.setState((state) => {
-      const {imageLoadAttempts: attempts} = state;
-      const imageLoadAttempts = [...attempts];
-
-      imageLoadAttempts[attempts.length - 1] = 0;
-
-      return {imageLoadAttempts: attempts};
-    }, this.fetchImages);
+    this.setState({imageLoadingAttempts: 0}, this.fetchImages);
   }
   toggleFullscreen = () => {
-    this.setState((state) => {
-      const {isFullscreen} = state;
-
-      if(isFullscreen) {
-        if(document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if(document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if(document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if(document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      } else {
-        const {container} = this;
-
-        if(container.requestFullscreen) {
-          container.requestFullscreen();
-        } else if(container.webkitRequestFullscreen) {
-          container.webkitRequestFullscreen();
-        } else if(container.mozRequestFullScreen) {
-          container.mozRequestFullScreen();
-        } else if(container.msRequestFullscreen) {
-          container.msRequestFullscreen();
-        }
-      }
-
-      return {isFullscreen: !isFullscreen};
-    }, () => {
-      this.props.traitify.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
-    });
+    toggleFullscreen({current: this.state.isFullscreen, element: this.container});
   }
-  updateSlide = (value) => {
+  updateSlide = (index, value) => {
     this.setState((state) => {
       const key = value ? "me" : "notMe";
-      this.props.traitify.ui.trigger(`SlideDeck.${key}`, this);
-      this.props.traitify.ui.trigger("SlideDeck.updateSlide", this);
+      this.props.ui.trigger(`SlideDeck.${key}`, this);
+      this.props.ui.trigger("SlideDeck.updateSlide", this);
 
       const slides = mutable(state.slides);
-      const slide = slides[slideIndex(slides)];
-      slide.response = value;
-      slide.time_taken = Date.now() - state.startTime;
+      slides[index].response = value;
+      slides[index].time_taken = Date.now() - state.startTime;
 
-      return {slides};
+      return {slides, startTime: Date.now()};
     }, () => {
       const {assessmentID, cache} = this.props;
 
-      cache.set(`slides.${assessmentID}`, this.completedSlides());
+      cache.set(`slides.${assessmentID}`, completedSlides(this.state.slides));
 
-      if(this.isComplete()) {
-        this.finish();
-      } else {
-        this.setState({startTime: Date.now()});
-      }
+      if(isFinished(this.state.slides)) { this.finish(); }
     });
   }
   render() {
     if(this.props.isReady("results")) { return null; }
 
-    const isComplete = this.isComplete();
+    const finished = isFinished(this.state.slides);
+    const ready = isReady(this.state.slides);
 
     return (
       <div className={style.widgetContainer} ref={(container) => { this.container = container; }}>
-        {(isComplete || !this.state.ready) ? (
+        {(finished || !ready) ? (
           <Loading
-            imageLoadAttempts={this.state.imageLoadAttempts}
+            imageLoading={this.state.imageLoadingAttempts < 3}
             retry={this.retry}
             translate={this.props.translate}
           />
@@ -298,7 +207,7 @@ class SlideDeck extends Component {
             back={this.back}
             getOption={this.props.getOption}
             instructions={this.state.instructions}
-            isComplete={isComplete}
+            isComplete={finished}
             isFullscreen={this.state.isFullscreen}
             showInstructions={this.state.showInstructions}
             slideIndex={slideIndex(this.state.slides)}

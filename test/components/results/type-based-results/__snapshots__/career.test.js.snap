@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Career renders component 1`] = `
+<button
+  onClick={[Function]}
+  type="button"
+>
+  <img
+    alt="Methane/Landfill Gas Collection System Operators"
+    src="https://cdn.traitify.com/careers/d7da4259-9f10-4121-b0ca-7534b3ee2d3b_methane-landfill-gas-collection-system-operators"
+  />
+  <div>
+    <h2>
+      Methane/Landfill Gas Collection System Operators
+    </h2>
+    <p>
+      Direct daily operations, maintenance, or repair of landfill gas projects, including maintenance of daily logs, determination of service priorities, and compliance with reporting requirements.
+    </p>
+    <h3>
+      experience_level
+    </h3>
+    <ol>
+      <li />
+      <li
+        className=""
+      />
+      <li
+        className=""
+      />
+      <li
+        className=""
+      />
+      <li
+        className=""
+      />
+    </ol>
+    <h3>
+      education
+    </h3>
+    <p>
+      experience_level_1
+    </p>
+    <h3>
+      match_rate
+      <i>
+        66
+        %
+      </i>
+    </h3>
+    <div>
+      <span
+        data-match-rate="65.52296205600837%"
+        style={
+          Object {
+            "width": "65.52296205600837%",
+          }
+        }
+      />
+    </div>
+  </div>
+</button>
+`;

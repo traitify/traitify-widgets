@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading renders component 1`] = `
+<div>
+  <div>
+    <div>
+      <i />
+      <i />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Loading renders retry button if not loading 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        slide_error
+      </div>
+      <button
+        onClick={[MockFunction retry]}
+        type="button"
+      >
+        try_again
+      </button>
+    </div>
+  </div>
+</div>
+`;

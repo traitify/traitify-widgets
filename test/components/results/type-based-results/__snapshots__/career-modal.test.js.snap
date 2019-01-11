@@ -1,0 +1,895 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CareerModal renders component 1`] = `
+<div
+  className="undefined undefined"
+  role="dialog"
+>
+  <section>
+    <div
+      className="mock"
+    >
+      Icon - 
+      times
+    </div>
+    <div>
+      <img
+        alt="Methane/Landfill Gas Collection System Operators"
+        src="https://cdn.traitify.com/careers/d7da4259-9f10-4121-b0ca-7534b3ee2d3b_methane-landfill-gas-collection-system-operators"
+      />
+      <h2>
+        Methane/Landfill Gas Collection System Operators
+      </h2>
+      <p>
+        Direct daily operations, maintenance, or repair of landfill gas projects, including maintenance of daily logs, determination of service priorities, and compliance with reporting requirements.
+      </p>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          info-circle
+        </div>
+         
+        career_information
+        :
+      </h3>
+      <ul>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              dollar-sign
+            </div>
+             
+            salary_mean
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            $107060
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              chart-bar
+            </div>
+             
+            employment_growth
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            -3.7%
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              graduation-cap
+            </div>
+             
+            education
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            experience_level_1
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              lightbulb
+            </div>
+             
+            bright_future
+            :
+          </h4>
+          <div>
+            <input
+              aria-label="bright_future"
+              checked={true}
+              disabled={true}
+              readOnly={true}
+              type="checkbox"
+            />
+            <div
+              className="mock"
+            >
+              Icon - 
+              check-square
+            </div>
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              leaf
+            </div>
+             
+            green_career
+            :
+          </h4>
+          <div>
+            <input
+              aria-label="green_career"
+              checked={true}
+              disabled={true}
+              readOnly={true}
+              type="checkbox"
+            />
+            <div
+              className="mock"
+            >
+              Icon - 
+              check-square
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <button
+              onClick={[Function]}
+              title="more_information"
+              type="button"
+            >
+              help
+               
+              <div
+                className="mock"
+              >
+                Icon - 
+                question
+              </div>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          globe-americas
+        </div>
+         
+        experience_level
+      </h3>
+      <ol>
+        <li />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+      </ol>
+      <p>
+        Little or no previous work-related skill, knowledge, or experience is needed for these occupations. For example, a person can become a waiter or waitress even if he/she has never worked before.
+      </p>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          adjust
+        </div>
+         
+        match_rate
+      </h3>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "match_rate_html",
+          }
+        }
+      />
+      <div />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`CareerModal renders legend 1`] = `
+<div
+  className="undefined undefined"
+  role="dialog"
+>
+  <section>
+    <div
+      className="mock"
+    >
+      Icon - 
+      times
+    </div>
+    <div>
+      <img
+        alt="Methane/Landfill Gas Collection System Operators"
+        src="https://cdn.traitify.com/careers/d7da4259-9f10-4121-b0ca-7534b3ee2d3b_methane-landfill-gas-collection-system-operators"
+      />
+      <h2>
+        Methane/Landfill Gas Collection System Operators
+      </h2>
+      <p>
+        Direct daily operations, maintenance, or repair of landfill gas projects, including maintenance of daily logs, determination of service priorities, and compliance with reporting requirements.
+      </p>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          info-circle
+        </div>
+         
+        career_information
+        :
+      </h3>
+      <ul>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              dollar-sign
+            </div>
+             
+            salary_mean
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            $107060
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              chart-bar
+            </div>
+             
+            employment_growth
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            -3.7%
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              graduation-cap
+            </div>
+             
+            education
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            experience_level_1
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              lightbulb
+            </div>
+             
+            bright_future
+            :
+          </h4>
+          <div>
+            <input
+              aria-label="bright_future"
+              checked={true}
+              disabled={true}
+              readOnly={true}
+              type="checkbox"
+            />
+            <div
+              className="mock"
+            >
+              Icon - 
+              check-square
+            </div>
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              leaf
+            </div>
+             
+            green_career
+            :
+          </h4>
+          <div>
+            <input
+              aria-label="green_career"
+              checked={true}
+              disabled={true}
+              readOnly={true}
+              type="checkbox"
+            />
+            <div
+              className="mock"
+            >
+              Icon - 
+              check-square
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <button
+              onClick={[Function]}
+              title="more_information"
+              type="button"
+            >
+              help
+               
+              <div
+                className="mock"
+              >
+                Icon - 
+                question
+              </div>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <ul>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                dollar-sign
+              </div>
+               
+              salary_mean
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "salary_mean_html",
+                }
+              }
+            />
+          </li>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                chart-bar
+              </div>
+               
+              employment_growth
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "employment_growth_html",
+                }
+              }
+            />
+          </li>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                graduation-cap
+              </div>
+               
+              education
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "education_html",
+                }
+              }
+            />
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                lightbulb
+              </div>
+               
+              bright_future
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "bright_future_html",
+                }
+              }
+            />
+          </li>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                leaf
+              </div>
+               
+              green_career
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "green_career_html",
+                }
+              }
+            />
+          </li>
+        </ul>
+        <p>
+          <button
+            onClick={[Function]}
+            title="close"
+            type="button"
+          >
+            close
+          </button>
+        </p>
+      </div>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          globe-americas
+        </div>
+         
+        experience_level
+      </h3>
+      <ol>
+        <li />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+      </ol>
+      <p>
+        Little or no previous work-related skill, knowledge, or experience is needed for these occupations. For example, a person can become a waiter or waitress even if he/she has never worked before.
+      </p>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          adjust
+        </div>
+         
+        match_rate
+      </h3>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "match_rate_html",
+          }
+        }
+      />
+      <div />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`CareerModal renders nothing if no career 1`] = `null`;
+
+exports[`CareerModal renders nothing if not shown 1`] = `null`;
+
+exports[`CareerModal renders unchecked squares if no bright outlooks or green categories 1`] = `
+<div
+  className="undefined undefined"
+  role="dialog"
+>
+  <section>
+    <div
+      className="mock"
+    >
+      Icon - 
+      times
+    </div>
+    <div>
+      <img
+        alt="Methane/Landfill Gas Collection System Operators"
+        src="https://cdn.traitify.com/careers/d7da4259-9f10-4121-b0ca-7534b3ee2d3b_methane-landfill-gas-collection-system-operators"
+      />
+      <h2>
+        Methane/Landfill Gas Collection System Operators
+      </h2>
+      <p>
+        Direct daily operations, maintenance, or repair of landfill gas projects, including maintenance of daily logs, determination of service priorities, and compliance with reporting requirements.
+      </p>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          info-circle
+        </div>
+         
+        career_information
+        :
+      </h3>
+      <ul>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              dollar-sign
+            </div>
+             
+            salary_mean
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            $107060
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              chart-bar
+            </div>
+             
+            employment_growth
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            -3.7%
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              graduation-cap
+            </div>
+             
+            education
+            :
+          </h4>
+          <div
+            className="undefined undefined"
+          >
+            experience_level_1
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              lightbulb
+            </div>
+             
+            bright_future
+            :
+          </h4>
+          <div>
+            <input
+              aria-label="bright_future"
+              checked={false}
+              disabled={true}
+              readOnly={true}
+              type="checkbox"
+            />
+            <div
+              className="mock"
+            >
+              Icon - 
+              square
+            </div>
+          </div>
+        </li>
+        <li>
+          <h4>
+            <div
+              className="mock"
+            >
+              Icon - 
+              leaf
+            </div>
+             
+            green_career
+            :
+          </h4>
+          <div>
+            <input
+              aria-label="green_career"
+              checked={false}
+              disabled={true}
+              readOnly={true}
+              type="checkbox"
+            />
+            <div
+              className="mock"
+            >
+              Icon - 
+              square
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <button
+              onClick={[Function]}
+              title="more_information"
+              type="button"
+            >
+              help
+               
+              <div
+                className="mock"
+              >
+                Icon - 
+                question
+              </div>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <ul>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                dollar-sign
+              </div>
+               
+              salary_mean
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "salary_mean_html",
+                }
+              }
+            />
+          </li>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                chart-bar
+              </div>
+               
+              employment_growth
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "employment_growth_html",
+                }
+              }
+            />
+          </li>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                graduation-cap
+              </div>
+               
+              education
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "education_html",
+                }
+              }
+            />
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                lightbulb
+              </div>
+               
+              bright_future
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "bright_future_html",
+                }
+              }
+            />
+          </li>
+          <li>
+            <h4>
+              <div
+                className="mock"
+              >
+                Icon - 
+                leaf
+              </div>
+               
+              green_career
+              :
+            </h4>
+            <p
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "green_career_html",
+                }
+              }
+            />
+          </li>
+        </ul>
+        <p>
+          <button
+            onClick={[Function]}
+            title="close"
+            type="button"
+          >
+            close
+          </button>
+        </p>
+      </div>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          globe-americas
+        </div>
+         
+        experience_level
+      </h3>
+      <ol>
+        <li />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+        <li
+          className=""
+        />
+      </ol>
+      <p>
+        Little or no previous work-related skill, knowledge, or experience is needed for these occupations. For example, a person can become a waiter or waitress even if he/she has never worked before.
+      </p>
+      <hr />
+      <h3>
+        <div
+          className="mock"
+        >
+          Icon - 
+          adjust
+        </div>
+         
+        match_rate
+      </h3>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "match_rate_html",
+          }
+        }
+      />
+      <div />
+    </div>
+  </section>
+</div>
+`;

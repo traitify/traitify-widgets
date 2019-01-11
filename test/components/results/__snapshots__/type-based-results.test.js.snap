@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeBasedResults renders results 1`] = `
+<section>
+  <div
+    className="mock"
+  >
+    Personality Base
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Types
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Details
+  </div>
+</section>
+`;

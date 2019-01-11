@@ -1,52 +1,49 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import TraitifyPropType from "lib/helpers/prop-type";
+import {detailWithPerspective} from "lib/helpers";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Dimension extends Component {
+  static defaultProps = {assessmentID: null}
   static propTypes = {
+    assessmentID: PropTypes.string,
     getOption: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
-    traitify: TraitifyPropType.isRequired,
     translate: PropTypes.func.isRequired,
     type: PropTypes.shape({
       personality_type: PropTypes.object.isRequired,
       score: PropTypes.number.isRequired
-    }).isRequired
+    }).isRequired,
+    ui: TraitifyPropTypes.ui.isRequired
   }
   constructor(props) {
     super(props);
 
     this.state = {showContent: props.index === 0};
   }
-  trigger = (e) => {
-    e.preventDefault();
-
-    this.props.traitify.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
-    this.setState((state) => ({showContent: !state.showContent}));
-  }
   componentDidMount() {
-    this.props.traitify.ui.trigger("Dimension.initialized", this);
+    this.props.ui.trigger("Dimension.initialized", this);
   }
-  componentDidUpdate() {
-    this.props.traitify.ui.trigger("Dimension.updated", this);
+  componentDidUpdate(prevProps) {
+    this.props.ui.trigger("Dimension.updated", this);
+
+    if(this.props.assessmentID !== prevProps.assessmentID) {
+      this.setState({showContent: this.props.index === 0});
+    }
   }
-  description(suffix) {
-    const type = this.props.type.personality_type;
-    const perspective = (this.props.getOption("perspective") || "firstPerson").replace("Person", "");
-    let description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
-    description = description && description.body;
-
-    if(description) { return description; }
-    description = type.details.find((detail) => (detail.title === `${perspective}_person_${suffix}`));
-
-    return (description && description.body) || type.description;
+  trigger = () => {
+    this.props.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
+    this.setState((state) => ({showContent: !state.showContent}));
   }
   render() {
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;
+    const options = {base: type, perspective: this.props.getOption("perspective")};
+    const description = detailWithPerspective({...options, name: "description"});
+    const shortDescription = detailWithPerspective({...options, name: "short_description"});
     const benefits = [];
     const pitfalls = [];
 
@@ -67,7 +64,7 @@ class Dimension extends Component {
             <h2 className={style.title}>
               {type.name} <span style={{color}}>|</span> {this.props.type.score} - {type.level}
             </h2>
-            <p className={style.description}>{this.description("short_description")}</p>
+            <p className={style.description}>{shortDescription}</p>
             <p className={style.triggerButton}>
               <button
                 className={style.trigger}
@@ -85,7 +82,7 @@ class Dimension extends Component {
             <div className={style.content} style={{background: rgba(color, 30)}}>
               <div className={style.extendedDesc}>
                 <h3>{this.props.translate("extended_description")}</h3>
-                <p className={style.description}>{this.description("description")}</p>
+                <p className={style.description}>{description}</p>
               </div>
               <div className={style.detail}>
                 <h4 className={style.benefits}>{this.props.translate("potential_benefits")}</h4>

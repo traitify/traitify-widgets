@@ -93,6 +93,19 @@ describe("SlideDeck Helpers", () => {
     });
 
     it("returns defaults without slides", () => {
+      props.assessment = {...assessment, slides: null};
+      const result = getStateFromProps(props);
+
+      expect(result).toEqual({
+        finished: false,
+        imageLoading: false,
+        imageLoadingAttempts: 0,
+        slides: [],
+        showInstructions: false
+      });
+    });
+
+    it("returns defaults with empty slides", () => {
       props.assessment = {...assessment, slides: []};
       const result = getStateFromProps(props);
 

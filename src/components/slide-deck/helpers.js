@@ -88,7 +88,7 @@ export function getStateFromProps(props) {
     showInstructions: false
   };
   const {assessment, assessmentID, cache, getOption} = props;
-  if(!assessment || assessment.slides.length === 0) { return state; }
+  if(!assessment || !assessment.slides || assessment.slides.length === 0) { return state; }
 
   const storedSlides = cache.get(`slides.${assessmentID}`) || [];
 

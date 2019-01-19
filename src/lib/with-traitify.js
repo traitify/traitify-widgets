@@ -302,10 +302,10 @@ export default function withTraitify(WrappedComponent) {
 
       const {locale: propLocale, options} = this.props;
       const locale = propLocale || (options && options.locale);
-      if(locale && locale.toLowerCase() !== this.ui.locale) {
+      if(locale && locale.toLowerCase() !== this.ui.options.locale) {
         this.ui.setLocale(locale.toLowerCase());
       } else {
-        this.safeSetState({locale: this.ui.locale});
+        this.safeSetState({locale: this.ui.options.locale});
       }
     }
     setupTraitify() {
@@ -386,7 +386,7 @@ export default function withTraitify(WrappedComponent) {
         ui
       } = this;
 
-      const {i18n, locale} = ui;
+      const {i18n, options: {locale}} = ui;
       const translate = i18n.translate.bind(null, locale);
       const options = {
         ...props,

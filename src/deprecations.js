@@ -4,12 +4,14 @@ export default function(traitify) {
   traitify.ajax = function(method, path, callback, params) {
     return this.originalAjax(method, path, params).then(callback);
   };
-  traitify.request = function(method, path, params) {
-    let url = path;
-    url += (url.indexOf("?") === -1) ? "?" : "&";
-    if(this.ui.options.imagePack) url += `image_pack=${this.ui.options.imagePack}`;
+  traitify.request = function(method, _path, params) {
+    let path = _path;
+    if(this.ui.options.imagePack) {
+      path += (path.indexOf("?") === -1) ? "?" : "&";
+      path += `image_pack=${this.ui.options.imagePack}`;
+    }
 
-    return this.ajax(method, url, null, params);
+    return this.ajax(method, path, null, params);
   };
   traitify.get = function(path, params, callback) {
     if(typeof params === "function") {

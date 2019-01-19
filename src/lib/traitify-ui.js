@@ -2,7 +2,7 @@ import Widget from "lib/traitify-widget";
 
 export default class TraitifyUI {
   constructor(traitify, _options = {}) {
-    const {i18n, ...options} = _options;
+    const {i18n, locale, ...options} = _options;
 
     this.current = {};
     this.callbacks = {};
@@ -15,7 +15,8 @@ export default class TraitifyUI {
     this.requests = {};
     this.traitify = traitify;
 
-    this.setLocale("en-us");
+    if(locale) { this.setLocale(locale); }
+    if(!this.options.locale) { this.setLocale("en-us"); }
   }
   component(options = {}) {
     return new Widget(this, {...this.options, ...options});
@@ -45,9 +46,10 @@ export default class TraitifyUI {
   }
   setLocale(_locale) {
     const locale = _locale.toLowerCase();
-    if(this.i18n.data[locale]) { this.locale = locale; }
-
-    this.trigger("I18n.setLocale", this, this.locale);
+    if(this.i18n.data[locale]) {
+      this.options.locale = locale;
+      this.trigger("I18n.setLocale", this, this.options.locale);
+    }
 
     return this;
   }

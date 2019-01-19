@@ -35,6 +35,19 @@ describe("UI", () => {
       expect(ui.current).toEqual({"I18n.setLocale": "en-us"});
       expect(ui.requests).toEqual({});
     });
+
+    it("sets locale if passed in options", () => {
+      traitify.i18n.data = {"en-us": {}, "es-us": {}};
+      ui = new UI(traitify, {locale: "es-us"});
+
+      expect(ui.options.locale).toBe("es-us");
+    });
+
+    it("sets locale to fallback if original locale is invalid", () => {
+      ui = new UI(traitify, {locale: "es-us"});
+
+      expect(ui.options.locale).toBe("en-us");
+    });
   });
 
   describe("component", () => {
@@ -128,13 +141,13 @@ describe("UI", () => {
     it("updates locale", () => {
       ui.setLocale("en-US");
 
-      expect(ui.locale).toBe("en-us");
+      expect(ui.options.locale).toBe("en-us");
     });
 
     it("ignores bad input", () => {
       ui.setLocale("espn");
 
-      expect(ui.locale).toBe("en-us");
+      expect(ui.options.locale).toBe("en-us");
     });
   });
 

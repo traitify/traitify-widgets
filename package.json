@@ -11,6 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "build:compatibility": "cross-env MODE=compatibility NODE_ENV=production webpack -p --progress",
     "dev": "cross-env MODE=browser webpack-dev-server",
+    "dev:compatibility": "cross-env MODE=compatibility webpack-dev-server",
     "dev:secure": "cross-env MODE=browser webpack-dev-server --https",
     "lint": "eslint {src,test}",
     "lint:fix": "eslint {src,test} --fix",

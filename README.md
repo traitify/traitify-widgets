@@ -224,7 +224,7 @@ Here is a list of the available locales (`en-us` is the default):
   - English (United States) - `en-us`
   - French (Canadian) - `fr-ca`
   - French (France) - `fr-fr`
-  - Japanese - `ja`
+  - Japanese - `ja-jp`
   - Norwegian - `no-no`
   - Spanish (United States) - `es-us`
   - Swedish - `sv-se`

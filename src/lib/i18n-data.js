@@ -17,7 +17,7 @@ export default {
   "fr-us": fr,
   "fr-fr": frfr,
   "ht-us": ht,
-  "ja": jajp,
+  "ja-jp": jajp,
   "nl-nl": nl,
   "no-no": nn,
   "sv-se": svse,

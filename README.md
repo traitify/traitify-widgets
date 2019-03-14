@@ -1,5 +1,6 @@
 # Traitify Widgets
 
+
 ## Installing and Initializing The Library
 
 The widgets can be installed through our CDN or npm. Usage through the CDN will maintain backwards compatibility, while the npm library will use semantic versioning.
@@ -282,3 +283,4 @@ npm run build
 
 - React: https://reactjs.org
 - Webpack: https://webpack.github.io
+

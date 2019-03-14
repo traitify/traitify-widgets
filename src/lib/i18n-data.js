@@ -3,10 +3,11 @@ import es from "lib/i18n-data/es.json";
 import fr from "lib/i18n-data/fr.json";
 import frfr from "lib/i18n-data/fr_fr.json";
 import ht from "lib/i18n-data/ht.json";
-import jajp from "lib/i18n-data/ja_jp.json";
+import jajp from "lib/i18n-data/ja.json";
 import nl from "lib/i18n-data/nl.json";
 import nn from "lib/i18n-data/nn.json";
 import svse from "lib/i18n-data/sv_se.json";
+import zhcn from "lib/i18n-data/zh_cn.json";
 
 export default {
   "en-us": en,
@@ -14,10 +15,11 @@ export default {
   "es-us": es,
   "fr-ca": fr,
   "fr-us": fr,
+  "fr-fr": frfr,
   "ht-us": ht,
-  "ja-jp": jajp,
+  "ja": jajp,
   "nl-nl": nl,
   "no-no": nn,
   "sv-se": svse,
-  "fr-fr": frfr
+  "zh-cn": zhcn
 };

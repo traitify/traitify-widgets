@@ -6,6 +6,7 @@ import ht from "lib/i18n-data/ht.json";
 import jajp from "lib/i18n-data/ja.json";
 import nl from "lib/i18n-data/nl.json";
 import nn from "lib/i18n-data/nn.json";
+import ptbr from "lib/i18n-data/pt_br.json";
 import svse from "lib/i18n-data/sv_se.json";
 import zhcn from "lib/i18n-data/zh_cn.json";
 
@@ -18,6 +19,7 @@ export default {
   "fr-fr": frfr,
   "ht-us": ht,
   "ja": jajp,
+  "pt-br": ptbr,
   "nl-nl": nl,
   "no-no": nn,
   "sv-se": svse,

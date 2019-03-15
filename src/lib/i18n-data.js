@@ -1,26 +1,26 @@
-import en from "lib/i18n-data/en.json";
-import es from "lib/i18n-data/es.json";
-import fr from "lib/i18n-data/fr.json";
+import enus from "lib/i18n-data/en_us.json";
+import esus from "lib/i18n-data/es_us.json";
+import frca from "lib/i18n-data/fr_ca.json";
 import frfr from "lib/i18n-data/fr_fr.json";
-import ht from "lib/i18n-data/ht.json";
+import htus from "lib/i18n-data/ht_us.json";
 import jajp from "lib/i18n-data/ja_jp.json";
-import nl from "lib/i18n-data/nl.json";
-import nn from "lib/i18n-data/nn.json";
+import nlnl from "lib/i18n-data/nl_nl.json";
+import nono from "lib/i18n-data/no_no.json";
 import ptbr from "lib/i18n-data/pt_br.json";
 import svse from "lib/i18n-data/sv_se.json";
 import zhcn from "lib/i18n-data/zh_cn.json";
 
 export default {
-  "en-us": en,
-  "en-gb": en,
-  "es-us": es,
-  "fr-ca": fr,
-  "fr-us": fr,
+  "en-us": enus,
+  "en-gb": engb,
+  "es-us": esus,
+  "fr-ca": frca,
+  "fr-us": frus,
   "fr-fr": frfr,
-  "ht-us": ht,
+  "ht-us": htus,
   "ja-jp": jajp,
-  "nl-nl": nl,
-  "no-no": nn,
+  "nl-nl": nlnl,
+  "no-no": nono,
   "pt-br": ptbr,
   "sv-se": svse,
   "zh-cn": zhcn

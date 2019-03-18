@@ -219,13 +219,16 @@ or
 assessment.locale("nl-nl");
 ```
 Here is a list of the available locales (`en-us` is the default):
+  - Chinese - `zh-cn`
   - Creole - `ht-us`
   - Dutch - `nl-nl`
   - English (GB) - `en-gb`
   - English (United States) - `en-us`
   - French (Canadian) - `fr-ca`
   - French (France) - `fr-fr`
+  - Japanese - `ja-jp`
   - Norwegian - `no-no`
+  - Portuguese - `pt-br`
   - Spanish (United States) - `es-us`
   - Swedish - `sv-se`
 

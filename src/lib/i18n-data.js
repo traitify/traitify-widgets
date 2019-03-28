@@ -1,4 +1,5 @@
 import enUS from "lib/i18n-data/en_us.json";
+import enGB from "lib/i18n-data/en_gb.json";
 import esUS from "lib/i18n-data/es_us.json";
 import frCA from "lib/i18n-data/fr_ca.json";
 import frFR from "lib/i18n-data/fr_fr.json";
@@ -12,7 +13,7 @@ import zhCN from "lib/i18n-data/zh_cn.json";
 
 export default {
   "en-us": enUS,
-  "en-gb": enUS,
+  "en-gb": enGB,
   "es-us": esUS,
   "fr-ca": frCA,
   "fr-us": frCA,

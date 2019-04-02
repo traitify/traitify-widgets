@@ -32,7 +32,7 @@
     bottom: 36px;
     left: 30px;
     margin-right: 0;
-    right: initial;
+    right: auto;
   }
 }
 .captionContainer{
@@ -97,7 +97,7 @@
 
   @include mq(xs) {
     bottom: 36px;
-    left: initial;
+    left: auto;
     margin-left: 0;
     right: 30px;
   }

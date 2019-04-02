@@ -61,7 +61,7 @@
   @include rems(15);
   @include mq(m) {
     display: inline;
-    overflow: initial;
+    overflow: auto;
     margin-left: 5px;
     @include rems(17);
     &:before {

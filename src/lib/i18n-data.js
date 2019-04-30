@@ -1,21 +1,28 @@
-import en from "lib/i18n-data/en.json";
-import es from "lib/i18n-data/es.json";
-import fr from "lib/i18n-data/fr.json";
-import ht from "lib/i18n-data/ht.json";
-import nl from "lib/i18n-data/nl.json";
-import nn from "lib/i18n-data/nn.json";
-import frfr from "lib/i18n-data/fr_fr.json";
-import svse from "lib/i18n-data/sv_se.json";
+import enUS from "lib/i18n-data/en_us.json";
+import enGB from "lib/i18n-data/en_gb.json";
+import esUS from "lib/i18n-data/es_us.json";
+import frCA from "lib/i18n-data/fr_ca.json";
+import frFR from "lib/i18n-data/fr_fr.json";
+import htUS from "lib/i18n-data/ht_us.json";
+import jaJP from "lib/i18n-data/ja_jp.json";
+import nlNL from "lib/i18n-data/nl_nl.json";
+import noNO from "lib/i18n-data/no_no.json";
+import ptBR from "lib/i18n-data/pt_br.json";
+import svSE from "lib/i18n-data/sv_se.json";
+import zhCN from "lib/i18n-data/zh_cn.json";
 
 export default {
-  "en-us": en,
-  "en-gb": en,
-  "es-us": es,
-  "fr-ca": fr,
-  "fr-us": fr,
-  "ht-us": ht,
-  "nl-nl": nl,
-  "no-no": nn,
-  "sv-se": svse,
-  "fr-fr": frfr
+  "en-us": enUS,
+  "en-gb": enGB,
+  "es-us": esUS,
+  "fr-ca": frCA,
+  "fr-us": frCA,
+  "fr-fr": frFR,
+  "ht-us": htUS,
+  "ja-jp": jaJP,
+  "nl-nl": nlNL,
+  "no-no": noNO,
+  "pt-br": ptBR,
+  "sv-se": svSE,
+  "zh-cn": zhCN
 };

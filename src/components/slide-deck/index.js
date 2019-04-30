@@ -131,7 +131,7 @@ class SlideDeck extends Component {
         ...slide,
         loaded: false,
         image: width > 0 && height > 0
-          ? `${imageHost}/v1/images/${slide.id}?width=${width}&height=${height}`
+          ? `${imageHost}/slides/${slide.image_desktop_retina.split("/").pop()}?w=${width}&h=${height}&fp-x=${slide.focus_x / 100}&fp-y=${slide.focus_y / 100}&auto=format`
           : slide.image_desktop
       }));
 

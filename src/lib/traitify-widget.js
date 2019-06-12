@@ -77,7 +77,7 @@ export default class TraitifyWidget {
     if(this.options.target) {
       this.options.targets[componentName || "Default"] = this.options.target;
     }
-
+    this.options.targets = {InterviewGuide: "#interview-guide"};
     const promises = [];
 
     if(Object.keys(this.options.targets).length === 0) {

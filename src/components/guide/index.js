@@ -4,6 +4,7 @@ import {Component} from "react";
 import ApolloClient from "apollo-boost";
 import {ApolloProvider, Query} from "react-apollo";
 import query from "graphql-queries/guide-for-assessment";
+import Competency from "./competency/index";
 
 const client = new ApolloClient({
   headers: {authorization: "Basic ZGhtZ3NnMWQ2MmJxcDhpb2tqaTEzZnVobWY6eA=="},
@@ -53,7 +54,7 @@ class Guide extends Component {
               if(error) return <p>Error :(</p>;
 
               console.log(data, "query data");
-              return <div>testing please wait a moment</div>;
+              return <Competency competency={data.guideForAssessment.competencies} />;
             }}
           </Query>
         </div>

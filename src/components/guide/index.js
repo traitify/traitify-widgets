@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";
+import keysToCamel from "lib/helpers/casing";
 import ApolloClient from "apollo-boost";
 import {ApolloProvider, Query} from "react-apollo";
 import query from "graphql-queries/guide-for-assessment";
-import Competency from "./competency/index";
+import Competencies from "./competencies/index";
 
 const client = new ApolloClient({
   headers: {authorization: "Basic ZGhtZ3NnMWQ2MmJxcDhpb2tqaTEzZnVobWY6eA=="},
@@ -14,37 +15,42 @@ const client = new ApolloClient({
 class Guide extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({assessment_type: PropTypes.string})
+    assessment: PropTypes.shape({
+      id: PropTypes.string,
+      deck_id: PropTypes.string,
+      personality_types: PropTypes.array
+    })
   }
   buildPersonalityTypes(types) {
-    const invalidArguments = [];
+    let invalidArguments = false;
     const toGraphql = types.map((type) => {
-      let personalityType = type.personality_type;
-      if(personalityType.level == null) { return invalidArguments.push(null); }
+      const {level, id} = type.personalityType;
+      if(level == null) { invalidArguments = true; }
 
-      personalityType = {level: personalityType.level, id: personalityType.id};
-      return {personalityType};
+      return {personalityType: {level, id}};
     });
 
-    if(invalidArguments.length > 0) {
+    if(invalidArguments) {
       // Airbrake?
-      return false;
+      return {error: "level cannot be null"};
     } else {
       return toGraphql;
     }
   }
   render() {
     if(!this.props.assessment) { return null; }
-    const props = this.props.assessment;
-    const personalityTypes = this.buildPersonalityTypes(props.personality_types);
-    if(!personalityTypes) { return <div>Invalid</div>; }
+    let assessment = keysToCamel(this.props.assessment);
+    const {id, deckId} = assessment;
+    let {personalityTypes} = assessment;
+    personalityTypes = this.buildPersonalityTypes(personalityTypes);
+    if(personalityTypes.error) { return <div>{personalityTypes.error}</div>; }
 
-    const assessment = {
-      id: props.id,
-      deckId: props.deck_id,
+    assessment = {
+      id,
+      deckId,
       personalityTypes
     };
-
+    console.log(assessment);
     return (
       <ApolloProvider client={client}>
         <div className="guide-container">
@@ -54,7 +60,7 @@ class Guide extends Component {
               if(error) return <p>Error :(</p>;
 
               console.log(data, "query data");
-              return <Competency competency={data.guideForAssessment.competencies} />;
+              return <Competencies competencies={data.guideForAssessment.competencies} />;
             }}
           </Query>
         </div>

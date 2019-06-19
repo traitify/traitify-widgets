@@ -4,7 +4,7 @@ import {Component} from "react";
 import keysToCamel from "lib/helpers/casing";
 import ApolloClient from "apollo-boost";
 import {ApolloProvider, Query} from "react-apollo";
-import query from "graphql-queries/guide-for-assessment";
+import query from "queries/guide-for-assessment";
 import Competencies from "./competencies/index";
 
 const client = new ApolloClient({

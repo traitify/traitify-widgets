@@ -31,7 +31,6 @@ class Guide extends Component {
     });
 
     if(invalidArguments) {
-      // Airbrake?
       return {error: "level cannot be null"};
     } else {
       return toGraphql;

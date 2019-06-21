@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import screenWidth from "./helpers";
 import QuestionSequences from "../question-sequences/index";
 
 class Competencies extends Component {
@@ -9,7 +10,6 @@ class Competencies extends Component {
   }
   constructor(props) {
     super(props);
-
     this.state = {
       competencies: props.competencies,
       displayedCompetency: props.competencies[0]
@@ -22,15 +22,42 @@ class Competencies extends Component {
       }
     });
   }
+  selectBoxOrTabs() {
+    if(screenWidth() > 500) {
+      return (
+        this.state.competencies.map((competency) => (
+          <div id="badge-container" key={competency.id}>
+            <div
+              role="link"
+              tabIndex={0}
+              onKeyPress={(e) => this.displayedCompetency(e)}
+              onClick={(e) => this.displayedCompetency(e)}
+            >
+              {competency.id}
+            </div>
+          </div>
+        ))
+      );
+    } else {
+      return (
+        this.state.competencies.map((competency) => (
+          <div id="badge-container" key={competency.id}>
+            <select
+              onKeyPress={(e) => this.displayedCompetency(e)}
+              onClick={(e) => this.displayedCompetency(e)}
+            >
+              {competency.id}
+            </select>
+          </div>
+        ))
+      );
+    }
+  }
   render() {
     const {name, id, introduction, questionSequences} = this.state.displayedCompetency;
     return (
       <div className="competency-container">
-        {this.state.competencies.map((competency) => (
-          <div id="badge-container" key={competency.id}>
-            <div role="link" tabIndex={0} onKeyPress={this.displayedCompetency.bind(this)} onClick={this.displayedCompetency.bind(this)}>{competency.id}</div>
-          </div>
-        ))}
+        {this.selectBoxOrTabs()}
         <div className="competency" key={id}>
           <div className="name">{name}</div>
           <div className="introduction">{introduction}</div>

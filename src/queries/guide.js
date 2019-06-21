@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export default gql`
-  query GuideForAssessment($assessment: Assessment!) {
-    guideForAssessment(assessment: $assessment, localeKey: "en-us") {
+  query Guide($assessmentId: String!) {
+    guide(assessmentId: $assessmentId, localeKey: "en-us") {
       id
       name
       deckId

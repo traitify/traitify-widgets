@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";
-import ApolloClient from "apollo-boost";
 import {ApolloProvider, Query} from "react-apollo";
+import ApolloClient from "apollo-boost";
+// import client from "graphql/client";
 import query from "queries/guide";
 import Competencies from "./competencies/index";
 
@@ -12,17 +13,24 @@ const client = new ApolloClient({
 });
 
 class Guide extends Component {
-  static defaultProps = {assessmentID: null}
+  static defaultProps = {assessmentID: null, traitify: null}
   static propTypes = {
-    assessmentID: PropTypes.string
+    assessmentID: PropTypes.string,
+    traitify: PropTypes.shape({
+      publicKey: PropTypes.string
+    })
   }
   render() {
-    if(!this.props.assessmentID) { return null; }
+    console.log(this.props);
+    const {assessmentID} = this.props;
+    const {publicKey} = this.props.traitify;
+    console.log(publicKey);
+    if(!assessmentID) { return null; }
 
     return (
       <ApolloProvider client={client}>
         <div className="guide-container">
-          <Query query={query} variables={{assessmentId: this.props.assessmentID}}>
+          <Query query={query} variables={{assessmentId: assessmentID}}>
             {({loading, error, data}) => {
               if(loading) return <p>Loading...</p>;
               if(error) return <p>Error :(</p>;

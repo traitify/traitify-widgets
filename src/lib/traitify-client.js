@@ -71,6 +71,38 @@ export default class TraitifyClient {
     promise.xhr = xhr;
     return promise;
   }
+  graphqlQuery = (path, params) => {
+    const url = `${this.host}/${this.version}${path}`;
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Authorization", `Basic ZGhtZ3NnMWQ2MmJxcDhpb2tqaTEzZnVobWY6eA==`);
+    xhr.setRequestHeader("Content-type", "application/graphql");
+    xhr.setRequestHeader("Accept-language", "en-US");
+    xhr.setRequestHeader("Accept", "*/*");
+
+    const promise = new Promise((resolve, reject) => {
+      if(!this.online()) { return reject(); }
+      try {
+        xhr.onload = () => {
+          if(xhr.status === 404) {
+            reject(xhr.response || xhr.responseText);
+          } else {
+            resolve(JSON.parse(xhr.response || xhr.responseText));
+          }
+        };
+        xhr.onerror = () => { reject(xhr.response || xhr.responseText); };
+        xhr.ontimeout = () => { reject(xhr.response || xhr.responseText); };
+
+        const send = () => { xhr.send(params); };
+
+        this.oldIE ? window.setTimeout(send, 0) : send();
+      } catch(error) { reject(error); }
+    });
+
+    promise.xhr = xhr;
+    return promise;
+  }
   get = (path, params) => (this.ajax("GET", path, params))
   put = (path, params) => (this.ajax(this.oldIE ? "POST" : "PUT", path, params))
   post = (path, params) => (this.ajax("POST", path, params))

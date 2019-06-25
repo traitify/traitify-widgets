@@ -17,9 +17,10 @@ class Guide extends Component {
     //   assessmentId: "4f2a3c1c-57e4-4a86-b59c-4ebbf7787a8a",
     //   localeKey: "en-US"
     // };
-    // const fields = ["deckId"];
+    const fields = ["deckId"];
     const graphql = new GraphQL();
-    console.log(graphql);
+    graphql.toQuery(fields);
+    // console.log(graphql);
     // console.log(new TraitifyClient().graphqlQuery("/interview_guides/
     // graphql", `{ guide(${graphql.toArgs(params)}) { ${graphql.toQuery(fields)} }}`));
 

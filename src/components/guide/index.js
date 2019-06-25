@@ -17,7 +17,10 @@ class Guide extends Component {
       assessmentId: "4f2a3c1c-57e4-4a86-b59c-4ebbf7787a8a",
       localeKey: "en-US"
     };
-    const fields = ["deckId"];
+    const fields = [
+      "deckId", "id", "name",
+      {competencies: ["id", "name", "introduction", "order", {questionSequences: ["id", "name", {questions: ["id", "text", "adaptability", "order"]}]}]}
+    ];
     const graphql = new GraphQL();
     // graphql.toQuery(fields);
     // console.log(graphql);

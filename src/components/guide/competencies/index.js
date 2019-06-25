@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import screenWidth from "./helpers";
 import QuestionSequences from "../question-sequences/index";
+// import style from "./style";
 
 class Competencies extends Component {
   static defaultProps = {competencies: null}
@@ -25,18 +26,21 @@ class Competencies extends Component {
   selectBoxOrTabs() {
     if(screenWidth() > 500) {
       return (
-        this.state.competencies.map((competency) => (
-          <div id="badge-container" key={competency.id}>
-            <div
-              role="link"
-              tabIndex={0}
-              onKeyPress={(e) => this.displayedCompetency(e)}
-              onClick={(e) => this.displayedCompetency(e)}
-            >
-              {competency.id}
+        this.state.competencies.map((competency, index) => {
+          console.log(index);
+          return (
+            <div id="badge-container" key={competency.id}>
+              <div
+                role="link"
+                tabIndex={0}
+                onKeyPress={(e) => this.displayedCompetency(e)}
+                onClick={(e) => this.displayedCompetency(e)}
+              >
+                {competency.id}
+              </div>
             </div>
-          </div>
-        ))
+          );
+        })
       );
     } else {
       return (

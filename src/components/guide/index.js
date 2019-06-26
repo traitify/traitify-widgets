@@ -70,10 +70,10 @@ class Guide extends Component {
     if(smallScreen()) {
       return (
         <div>
-          <select value={this.state.displayedCompetency.name} onChange={(e) => this.displayCompetency(e)}>
+					<select value={this.state.displayedCompetency.name} className={style.mobileSelect} onChange={(e) => this.displayCompetency(e)}>
             {this.state.competencies.map((competency, index) => (<option value={competency.name}>{competency.name}</option>))}
           </select>
-          <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(this.state.displayedCompetency.name)}`} alt="Type Name badge" />
+					<p className={style.mobileBadge}><img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(this.state.displayedCompetency.name)}`} alt="{competency.name} badge"/></p>
         </div>
       );
     } else {
@@ -89,7 +89,7 @@ class Guide extends Component {
               name={competency.name}
             >
               <a href={`#tab-${index}`} value={competency.name}>
-                <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(competency.name)}`} alt="Type Name badge" value={competency.name} />
+                <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(competency.name)}`} alt="{competency.name} badge" value={competency.name} />
                 <br />
                 {competency.name}
               </a>

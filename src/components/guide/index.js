@@ -1,9 +1,9 @@
-/* eslint-disable */
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";
 import TraitifyClient from "lib/traitify-client";
 import GraphQL from "graphql/gql-client";
+import {dangerousProps} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
 import style from "./style";
 
@@ -39,20 +39,20 @@ class Guide extends Component {
       });
   }
   displayCompetency(competency) {
-    competency = typeof(competency) === "string" ? competency : competency.target.value;
+    const competencyName = typeof (competency) === "string" ? competency : competency.target.value;
     this.state.competencies.forEach((comp) => {
-      if(competency === comp.name) {
+      if(competencyName === comp.name) {
         this.setState({displayedCompetency: comp});
       }
     });
   }
   adaptability(adaptability) {
     if(!adaptability) { return; }
-    const {translate} = this.props
+    const {translate} = this.props;
 
     return (
       <div>
-        <h4>{translate("adaptability")}</h4>
+        <h4>{translate("question_adaptability")}</h4>
         <div>{adaptability}</div>
       </div>
     );
@@ -64,32 +64,44 @@ class Guide extends Component {
       case "Engaging with People": return "extraversion.png";
       case "Influencing People": return "agreeableness.png";
       case "Managing Pressure": return "emotional_stability.png";
+      default: return null;
     }
   }
   selectBoxOrTabs() {
+    const {displayedCompetency} = this.state;
+
     if(smallScreen()) {
       return (
         <div>
-					<select value={this.state.displayedCompetency.name} className={style.mobileSelect} onChange={(e) => this.displayCompetency(e)}>
-            {this.state.competencies.map((competency, index) => (<option value={competency.name}>{competency.name}</option>))}
+          <select
+            value={displayedCompetency.name}
+            className={style.mobileSelect}
+            onChange={(e) => this.displayCompetency(e)}
+          >
+            {this.state.competencies.map((competency) => (
+              <option value={competency.name}>{competency.name}</option>
+            ))
+            }
           </select>
-					<p className={style.mobileBadge}><img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(this.state.displayedCompetency.name)}`} alt="{competency.name} badge"/></p>
+          <p className={style.mobileBadge}>
+            <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(displayedCompetency.name)}`} alt={`${displayedCompetency.name} badge`} />
+          </p>
         </div>
       );
     } else {
       return (
         <ul className={style.tabs}>
           {this.state.competencies.map((competency, index) => (
-            <li
-              className={style.tabActive}
-              role="link"
-              tabIndex={0}
-              onKeyPress={(e) => this.displayCompetency(competency.name)}
-              onClick={(e) => this.displayCompetency(competency.name)}
-              name={competency.name}
-            >
-              <a href={`#tab-${index}`} value={competency.name}>
-                <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(competency.name)}`} alt="{competency.name} badge" value={competency.name} />
+            <li className={competency.name === displayedCompetency.name ? style.tabActive : null}>
+              <a
+                href={`#tab-${index}`}
+                value={competency.name}
+                tabIndex={0}
+                onKeyPress={() => this.displayCompetency(competency.name)}
+                onClick={() => this.displayCompetency(competency.name)}
+                name={competency.name}
+              >
+                <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(competency.name)}`} alt={`${competency.name} badge`} />
                 <br />
                 {competency.name}
               </a>
@@ -100,7 +112,7 @@ class Guide extends Component {
     }
   }
   render() {
-    const {translate} = this.props
+    const {translate} = this.props;
     if(this.state.competencies.length === 0) { this.setCompetencies(); return <div />; }
     const {displayedCompetency} = this.state;
 
@@ -111,16 +123,16 @@ class Guide extends Component {
         </div>
 
         <div className={style.tabsContent}>
-          <div id="tab-1" className={style.tabContentActive}>
+          <div className={style.tabContentActive}>
             <h2>{displayedCompetency.name}</h2>
             <p>{displayedCompetency.introduction}</p>
-            <p><a href="#">{translate("read_more")}</a></p>
+            <p><a href="#tab-1">{translate("read_more")}</a></p>
             <hr />
             {displayedCompetency.questionSequences.map((sequence) => (
               <div className="competency-type">
                 <h2>{sequence.name}</h2>
                 <p>{translate("guide_intro")}</p>
-                <p><em>{translate("guide_get_started_html")}</em></p>
+                <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
                 {sequence.questions.map((question) => (
                   <div className="questions">
                     <h3>{`Question ${question.order}`}</h3>

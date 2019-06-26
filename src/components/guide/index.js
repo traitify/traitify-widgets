@@ -52,10 +52,20 @@ class Guide extends Component {
 
     return (
       <div>
-        <h4>Have they developed a coping style?</h4>
-        <div>{translate("adaptability")}</div>
+        <h4>{translate("adaptability")}</h4>
+        <div>{adaptability}</div>
       </div>
     );
+  }
+  tabImage(tab) {
+    console.log(tab);
+    switch(tab) {
+      case "Solving Problems": return "openness.png";
+      case "Delivering Results": return "conscientiousness.png";
+      case "Engaging with People": return "extraversion.png";
+      case "Influencing People": return "agreeableness.png";
+      case "Managing Pressure": return "emotional_stability.png";
+    }
   }
   selectBoxOrTabs() {
     if(smallScreen()) {
@@ -77,7 +87,7 @@ class Guide extends Component {
               name={competency.name}
             >
               <a href={`#tab-${index}`} value={competency.name}>
-                <img src="//placehold.it/100x100" alt="Type Name badge" value={competency.name} />
+                <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(competency.name)}`} alt="Type Name badge" value={competency.name} />
                 <br />
                 {competency.name}
               </a>

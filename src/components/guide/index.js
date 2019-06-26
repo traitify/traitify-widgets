@@ -58,7 +58,6 @@ class Guide extends Component {
     );
   }
   tabImage(tab) {
-    console.log(tab);
     switch(tab) {
       case "Solving Problems": return "openness.png";
       case "Delivering Results": return "conscientiousness.png";
@@ -70,9 +69,12 @@ class Guide extends Component {
   selectBoxOrTabs() {
     if(smallScreen()) {
       return (
-        <select value={this.state.displayedCompetency.name} onChange={(e) => this.displayCompetency(e)}>
-          {this.state.competencies.map((competency, index) => (<option value={competency.name}>{competency.name}</option>))}
-        </select>
+        <div>
+          <select value={this.state.displayedCompetency.name} onChange={(e) => this.displayCompetency(e)}>
+            {this.state.competencies.map((competency, index) => (<option value={competency.name}>{competency.name}</option>))}
+          </select>
+          <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(this.state.displayedCompetency.name)}`} alt="Type Name badge" />
+        </div>
       );
     } else {
       return (

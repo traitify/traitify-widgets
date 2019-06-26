@@ -24,6 +24,8 @@
   "get_started": "",
   "green_career": "",
   "green_career_html": "",
+  "guide_intro": "",
+  "guide_get_started_html": "",
   "help": "",
   "instructions": "",
   "least_represented_traits": "",
@@ -40,9 +42,15 @@
   "personality_heading": "",
   "potential_benefits": "",
   "potential_pitfalls": "",
+  "question_adaptability": "",
+  "question_purpose": "",
   "radar_chart_label": "",
+<<<<<<< HEAD
   "really_me": "",
   "really_not_me": "",
+=======
+  "read_more": "",
+>>>>>>> translations
   "salary_mean": "",
   "salary_mean_html": "",
   "search": "",

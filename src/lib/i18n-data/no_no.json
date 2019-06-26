@@ -24,6 +24,8 @@
   "get_started": "Kom i gang",
   "green_career": "Grønn karriere",
   "green_career_html": "Den grønne økonomien vil føre til en endring i yrkets arbeidsbehov eller krav til arbeid og arbeidstakere som oppgaver, ferdigheter, kunnskaper og legitimasjon. Data fra <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+  "guide_intro": "Disse personlighetskarakteristikkene danner grunnlaget for å stille en bestemt rekkefølge av spørsmålene til hver av personlighetens typer. Det første spørsmålet ser ut til å bekrefte hva de skal være; den andre to utforske områder av mulig bekymring.",
+  "guide_get_started_html": "For å få ting i gang kan du like å begynne med <span>Spørsmål 1</span>",
   "help": "Hjelp",
   "instructions": "Bruksanvisning",
   "least_represented_traits": "Minst representert trekk",
@@ -40,9 +42,15 @@
   "personality_heading": "Din %{deck_name} personlighet er %{personality}",
   "potential_benefits": "Potensielle fordeler",
   "potential_pitfalls": "Potensielle fallgruver",
+  "question_adaptability": "Har de utviklet en coping-stil?",
+  "question_purpose": "Hva prøver du å finne ut?",
   "radar_chart_label": "Et diagram som viser resultatene dine. Se tekstversjonen nedenfor",
+<<<<<<< HEAD
   "really_me": "",
   "really_not_me": "",
+=======
+  "read_more": "Les mer",
+>>>>>>> translations
   "salary_mean": "Lønnsmiddel",
   "salary_mean_html": "Lønnen hvor halvparten av arbeidstakere i yrket tjente mer enn dette beløpet og halvt tjente mindre. Median lønnsdata er fra <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Søke",

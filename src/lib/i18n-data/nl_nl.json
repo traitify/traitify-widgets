@@ -24,6 +24,8 @@
   "get_started": "Begin",
   "green_career": "Groene carrière",
   "green_career_html": "De groene economie veroorzaakt verandering in de eisen voor beroepen of werk en de vereisten van werkvaardigheid op het gebied van taken, vaardigheden, kennis en credentials. Gegevens van <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+  "guide_intro": "Deze persoonlijkheidskenmerken vormen de basis voor het stellen van een bepaalde reeks vragen van elk van de persoonlijkheidstypes. De eerste vraag is om te kijken hoe ze zouden moeten zijn; de tweede twee onderzoeken gebieden van mogelijke zorg.",
+  "guide_get_started_html": "Om dingen op gang te brengen, zou je willen beginnen <span>Vraag 1</span>",
   "help": "Hulp",
   "instructions": "Instructies",
   "least_represented_traits": "Minst vertegenwoordigde eigenschappen",
@@ -40,9 +42,15 @@
   "personality_heading": "Uw %{deck_name} persoonlijkheid is %{personality}",
   "potential_benefits": "Potentiële voordelen",
   "potential_pitfalls": "Mogelijke valkuilen",
+  "question_adaptability": "Hebben ze een coping-stijl ontwikkeld?",
+  "question_purpose": "Wat probeer je te ontdekken?",
   "radar_chart_label": "Een grafiek met uw resultaten. Zie tekstversie hieronder",
+<<<<<<< HEAD
   "really_me": "",
   "really_not_me": "",
+=======
+  "read_more": "Lees verder",
+>>>>>>> translations
   "salary_mean": "Salarisgemiddelde",
   "salary_mean_html": "Het salaris waarbij de helft van de werknemers in het beroep meer verdiende dan dat bedrag en de helft minder verdiende. Gemiddelde salarisgegevens zijn afkomstig van <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Zoeken",

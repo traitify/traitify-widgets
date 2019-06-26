@@ -24,6 +24,8 @@
   "get_started": "Få startad",
   "green_career": "Grön karriär",
   "green_career_html": "Den gröna ekonomin ska orsaka en ändring i ockupationers krav för för för anställningbegäran eller arbete och arbetare liksom uppgifter, expertis, kunskap och vitsord. Data från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
+  "guide_intro": "Dessa personlighetskännetecken utgör grunden för att fråga en viss sekvens av frågor av var och en av personlighetens typer. Den första frågan ser ut att bekräfta vad de borde vara; den andra två utforska områden med möjlig oro.",
+  "guide_get_started_html": "För att få saker att gå kan du börja med <span>Fråga 1</span>",
   "help": "Hjälp",
   "instructions": "Anvisningar",
   "least_represented_traits": "Minst representerade egenskaper",
@@ -40,9 +42,15 @@
   "personality_heading": "Din personlighet %{deck_name} är %{personality}",
   "potential_benefits": "Möjliga fördelar",
   "potential_pitfalls": "Möjliga fallgropar",
+  "question_adaptability": "Har de utvecklat en coping-stil?",
+  "question_purpose": "Vad försöker du ta reda på?",
   "radar_chart_label": "Ett diagram som visar dina resultat. Se textversionen nedan",
+<<<<<<< HEAD
   "really_me": "",
   "really_not_me": "",
+=======
+  "read_more": "Läs mer",
+>>>>>>> translations
   "salary_mean": "Lönmedel",
   "salary_mean_html": "Timpenningen som halvan av arbetarna i ockupationen tjänade på mer än den belopp och halva som tjänades mindre. Median- timpenningdata är från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
   "search": "Sök",

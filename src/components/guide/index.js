@@ -10,7 +10,11 @@ import style from "./style";
 class Guide extends Component {
   constructor(props) {
     super(props);
-    this.state = {competencies: [], displayedCompetency: {}};
+    this.state = {
+      competencies: [],
+      displayedCompetency: {},
+      expandedIntro: false
+    };
   }
   static defaultProps = {assessmentID: null, traitify: null}
   static propTypes = {
@@ -95,7 +99,6 @@ class Guide extends Component {
             <li className={competency.name === displayedCompetency.name ? style.tabActive : null}>
               <a
                 href={`#tab-${index}`}
-                value={competency.name}
                 tabIndex={0}
                 onKeyPress={() => this.displayCompetency(competency.name)}
                 onClick={() => this.displayCompetency(competency.name)}
@@ -111,10 +114,31 @@ class Guide extends Component {
       );
     }
   }
+  handleReadMore() {
+    this.setState((prevState) => ({expandedIntro: !prevState.expandedIntro}));
+  }
+  expandedIntro(text) {
+    if(this.state.expandedIntro) {
+      return (
+        <p>{text}</p>
+      );
+    }
+  }
+  introduction() {
+    // const {translate} = this.props;
+    const {introduction} = this.state.displayedCompetency;
+
+    let intro = introduction.split(".", 1)[0];
+    intro = `${intro}.`;
+    let readMore = introduction.replace(intro, "");
+    readMore = readMore.trim();
+    return {intro, readMore};
+  }
   render() {
-    const {translate} = this.props;
     if(this.state.competencies.length === 0) { this.setCompetencies(); return <div />; }
     const {displayedCompetency} = this.state;
+    const {translate} = this.props;
+    const {intro, readMore} = this.introduction();
 
     return (
       <div className={style.tabsContainer}>
@@ -125,8 +149,18 @@ class Guide extends Component {
         <div className={style.tabsContent}>
           <div className={style.tabContentActive}>
             <h2>{displayedCompetency.name}</h2>
-            <p>{displayedCompetency.introduction}</p>
-            <p><a href="#tab-1">{translate("read_more")}</a></p>
+            {intro}
+            <p>
+              <a
+                href="#t"
+                tabIndex={0}
+                onClick={() => this.handleReadMore()}
+                onKeyPress={() => this.handleReadMore()}
+              >
+                {translate("read_more")}
+              </a>
+            </p>
+            {this.expandedIntro(readMore)}
             <hr />
             {displayedCompetency.questionSequences.map((sequence) => (
               <div className="competency-type">

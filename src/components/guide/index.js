@@ -169,7 +169,7 @@ class Guide extends Component {
                 <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
                 {sequence.questions.map((question) => (
                   <div className="questions">
-                    <h3>{`Question ${question.order}`}</h3>
+                    <h3 id={question.order === 1 ? "question-1" : null}>{`Question ${question.order}`}</h3>
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>
                     <div>{question.purpose}</div>

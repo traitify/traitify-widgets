@@ -25,7 +25,7 @@
   "green_career": "carreira verde",
   "green_career_html": "carreira verde html",
   "guide_intro": "Essas características de personalidade fornecem a base para fazer uma sequência particular de perguntas de cada um dos tipos de personalidade. A primeira questão é procurar confirmar como devem ser; os dois segundos exploram áreas de possível preocupação.",
-  "guide_get_started_html": "Para fazer as coisas acontecer, você pode começar com <span>Questão 1</span>",
+  "guide_get_started_html": "Para fazer as coisas acontecer, você pode começar com <a href='#question-1'>Questão 1</a>",
   "help": "Socorro",
   "instructions": "instruções",
   "least_represented_traits": "Atributos menos representados",

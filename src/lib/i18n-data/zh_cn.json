@@ -25,7 +25,7 @@
   "green_career": "绿色事业",
   "green_career_html": "绿色职业生涯html",
   "guide_intro": "这些人格特征为询问每个人格“类型”的特定问题序列提供了基础。第一个问题是要确认它们应该是什么样的;第二个探索可能引起关注的领域。",
-  "guide_get_started_html": "为了让事情顺利进行，您可能会想要开始 <span>问题1</span>",
+  "guide_get_started_html": "为了让事情顺利进行，您可能会想要开始 <a href='#question-1'>问题1</a>",
   "help": "救命",
   "instructions": "说明",
   "least_represented_traits": "最没有代表性的特性",

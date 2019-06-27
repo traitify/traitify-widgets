@@ -1,3 +1,4 @@
+/* eslint-disable */
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";
@@ -42,6 +43,16 @@ class Guide extends Component {
         this.setState({competencies, displayedCompetency: competencies[0]});
       });
   }
+  stringToListItems(entity) {
+    let entities = entity.replace("\n", "<br/>").split("<br/>");
+    entities = entities.map((e) => <li>{e}</li>);
+
+    return (
+      <ul>
+        {entities}
+      </ul>
+    );
+  }
   displayCompetency(competency) {
     const competencyName = typeof (competency) === "string" ? competency : competency.target.value;
     this.state.competencies.forEach((comp) => {
@@ -57,7 +68,7 @@ class Guide extends Component {
     return (
       <div>
         <h4>{translate("question_adaptability")}</h4>
-        <div>{adaptability}</div>
+        <div>{this.stringToListItems(adaptability)}</div>
       </div>
     );
   }
@@ -172,7 +183,7 @@ class Guide extends Component {
                     <h3 id={question.order === 1 ? "question-1" : null}>{`Question ${question.order}`}</h3>
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>
-                    <div>{question.purpose}</div>
+                    <div>{this.stringToListItems(question.purpose)}</div>
                     {this.adaptability(question.adaptability)}
                   </div>
                 ))}

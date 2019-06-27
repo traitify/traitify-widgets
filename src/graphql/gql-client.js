@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default class GraphQL {
   obj2arg = (function() {
     const _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
@@ -101,7 +102,7 @@ export default class GraphQL {
           let _iteratorError;
 
           try {
-            for(var _iterator = obj[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            for(let _iterator = obj[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
               const val = _step.value;
 
               if(fn(val, idx) === false)break;
@@ -233,14 +234,16 @@ export default class GraphQL {
       const toLiteral = function toLiteral(o) {
         const _getType = getType(o);
 
-        const obj = _getType.obj;
+        obj = _getType.obj;
 
         const type = _getType.type;
 
         const _ret = (function() {
+          const s = String(obj);
+          const objList = [];
+          const arrList = [];
           switch(type) {
             case ARRAY:
-              var arrList = [];
               utils.forEach(obj, (v) => {
                 const arrVal = toLiteral(v);
                 if(arrVal === NULL && keepNulls || arrVal && arrVal !== NULL) arrList.push(arrVal);
@@ -249,7 +252,6 @@ export default class GraphQL {
                 v: `[${arrList.join(",")}]`
               };
             case OBJECT:
-              var objList = [];
               utils.forEach(obj, (v, k) => {
                 const objVal = toLiteral(v);
                 if(objVal === NULL && keepNulls || objVal && objVal !== NULL) objList.push(`${k}:${objVal}`);
@@ -262,7 +264,6 @@ export default class GraphQL {
                 v: `"${obj.toISOString()}"`
               };
             case FLOAT:
-              var s = String(obj);
               return {
                 v: s.indexOf(".") === -1 ? `${s}.0` : s
               };

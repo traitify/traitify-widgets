@@ -1,4 +1,3 @@
-/* eslint-disable */
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";

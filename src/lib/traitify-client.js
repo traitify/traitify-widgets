@@ -2,7 +2,7 @@ import queryString from "query-string";
 
 export default class TraitifyClient {
   constructor() {
-    this.host = "https://api.stag.awse.traitify.com";
+    this.host = "https://api.traitify.com";
     this.version = "v1";
     this.oldIE = typeof XDomainRequest !== "undefined";
   }
@@ -72,7 +72,7 @@ export default class TraitifyClient {
     return promise;
   }
   graphqlQuery = (path, params) => {
-    const url = `${this.host}/${this.version}${path}`;
+    const url = `https://api.stag.awse.traitify.com/${this.version}${path}`;
     const xhr = new XMLHttpRequest();
 
     xhr.open("POST", url, true);

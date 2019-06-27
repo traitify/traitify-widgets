@@ -17,16 +17,13 @@ class Guide extends Component {
       expandedIntro: false
     };
   }
-  static defaultProps = {assessmentID: null, traitify: null}
+  static defaultProps = {assessmentID: null}
   static propTypes = {
     translate: PropTypes.func.isRequired,
-    assessmentID: PropTypes.string,
-    traitify: PropTypes.shape({
-      publicKey: PropTypes.string
-    })
+    assessmentID: PropTypes.string
   }
-  setGuide(obj = {}) {
-    let {params, fields} = obj;
+  setGuide(guideDetails = {}) {
+    let {params, fields} = guideDetails;
     const defaultParams = {assessmentId: this.props.assessmentID, localeKey: "en-US"};
     const defaultFields = [
       "deckId", "id", "name",
@@ -145,14 +142,7 @@ class Guide extends Component {
     return {intro, readMore};
   }
   render() {
-    if(this.state.errors.length > 0) {
-      return (
-        <div>
-          <p>One or more errors occurred processing your guide:</p>
-          {this.state.errors.map((error) => <li>{error.detail}</li>)}
-        </div>
-      );
-    }
+    if(this.state.errors.length > 0) { return <div />; }
     if(this.state.competencies.length === 0) { this.setGuide(); return <div />; }
     const {displayedCompetency} = this.state;
     const {translate} = this.props;
@@ -170,7 +160,7 @@ class Guide extends Component {
             {intro}
             <p>
               <a
-                href="#t"
+                href="#read-more"
                 tabIndex={0}
                 onClick={() => this.handleReadMore()}
                 onKeyPress={() => this.handleReadMore()}

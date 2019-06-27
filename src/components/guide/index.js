@@ -13,6 +13,7 @@ class Guide extends Component {
     this.state = {
       competencies: [],
       displayedCompetency: {},
+      errors: [],
       expandedIntro: false
     };
   }
@@ -37,6 +38,7 @@ class Guide extends Component {
     const graphql = new GraphQL();
     new TraitifyClient().graphqlQuery("/interview_guides/graphql", `{ guide(${graphql.toArgs(params)}) { ${graphql.toQuery(fields)} }}`)
       .then((response) => {
+        if(response.errors) { this.setState({errors: response.errors}); return; }
         const {competencies} = response.data.guide;
         this.setState({competencies, displayedCompetency: competencies[0]});
       });
@@ -143,6 +145,14 @@ class Guide extends Component {
     return {intro, readMore};
   }
   render() {
+    if(this.state.errors.length > 0) {
+      return (
+        <div>
+          <p>One or more errors occurred processing your guide:</p>
+          {this.state.errors.map((error) => <li>{error.detail}</li>)}
+        </div>
+      );
+    }
     if(this.state.competencies.length === 0) { this.setGuide(); return <div />; }
     const {displayedCompetency} = this.state;
     const {translate} = this.props;
@@ -176,7 +186,7 @@ class Guide extends Component {
                 <p>{translate("guide_intro")}</p>
                 <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
                 {sequence.questions.map((question) => (
-                  <div className="questions">
+                  <div className="questions" key={question.order}>
                     <h3 id={question.order === 1 ? "question-1" : null}>{`Question ${question.order}`}</h3>
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>

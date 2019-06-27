@@ -24,20 +24,19 @@ class Guide extends Component {
       publicKey: PropTypes.string
     })
   }
-  setCompetencies() {
-    const {assessmentID} = this.props;
-    const params = {
-      assessmentId: assessmentID,
-      localeKey: "en-US"
-    };
-    const fields = [
+  setGuide(obj = {}) {
+    let {params, fields} = obj;
+    const defaultParams = {assessmentId: this.props.assessmentID, localeKey: "en-US"};
+    const defaultFields = [
       "deckId", "id", "name",
       {competencies: ["id", "name", "introduction", "order", {questionSequences: ["id", "name", {questions: ["id", "text", "adaptability", "order", "purpose"]}]}]}
     ];
+    params = (params === undefined ? defaultParams : params);
+    fields = (fields === undefined ? defaultFields : fields);
+
     const graphql = new GraphQL();
     new TraitifyClient().graphqlQuery("/interview_guides/graphql", `{ guide(${graphql.toArgs(params)}) { ${graphql.toQuery(fields)} }}`)
       .then((response) => {
-        console.log(response.data);
         const {competencies} = response.data.guide;
         this.setState({competencies, displayedCompetency: competencies[0]});
       });
@@ -135,7 +134,6 @@ class Guide extends Component {
     }
   }
   introduction() {
-    // const {translate} = this.props;
     const {introduction} = this.state.displayedCompetency;
 
     let intro = introduction.split(".", 1)[0];
@@ -145,7 +143,7 @@ class Guide extends Component {
     return {intro, readMore};
   }
   render() {
-    if(this.state.competencies.length === 0) { this.setCompetencies(); return <div />; }
+    if(this.state.competencies.length === 0) { this.setGuide(); return <div />; }
     const {displayedCompetency} = this.state;
     const {translate} = this.props;
     const {intro, readMore} = this.introduction();

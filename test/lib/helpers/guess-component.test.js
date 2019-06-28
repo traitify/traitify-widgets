@@ -7,6 +7,7 @@ jest.mock("components", () => ({
     Dimensions: {name: "Dimensions"},
     PersonalityType: {name: "PersonalityType"}
   },
+  Guide: {name: "Guide"},
   Results: {name: "Results"},
   SlideDeck: {name: "SlideDeck"},
   TypeComponents: {
@@ -29,6 +30,12 @@ describe("Helpers", () => {
       const component = guessComponent("Results");
 
       expect(component.name).toBe("Results");
+    });
+
+    it("returns Guide", () => {
+      const component = guessComponent("Guide");
+
+      expect(component.name).toBe("Guide");
     });
 
     it("returns slide deck", () => {

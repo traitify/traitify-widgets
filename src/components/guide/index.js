@@ -137,8 +137,7 @@ class Guide extends Component {
 
     let intro = introduction.split(".", 1)[0];
     intro = `${intro}.`;
-    let readMore = introduction.replace(intro, "");
-    readMore = readMore.trim();
+    const readMore = introduction.replace(intro, "").trim();
     return {intro, readMore};
   }
   render() {

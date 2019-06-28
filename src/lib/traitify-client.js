@@ -76,8 +76,6 @@ export default class TraitifyClient {
     const xhr = new XMLHttpRequest();
 
     xhr.open("POST", url, true);
-    console.log(this.publicKey);
-    console.log(btoa(this.publicKey);
     xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}`)}`);
     xhr.setRequestHeader("Content-type", "application/graphql");
     xhr.setRequestHeader("Accept-language", "en-US");

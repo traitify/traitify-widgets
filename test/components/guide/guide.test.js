@@ -58,7 +58,7 @@ describe("Guide", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("matches snapshot on error", () => {
+  it("snapshot remains the same on error", () => {
     const component = (new ComponentHandler(<Component {...props} />));
     component.updateState({errors: ["did not successfully fetch guide"]});
     expect(component.tree).toMatchSnapshot();

@@ -8,7 +8,10 @@ describe("Guide", () => {
   beforeEach(() => {
     props = {
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      assessmentID: "bca3ab7c-8ed1-421f-a0ab-39d619efeee0"
+      assessmentID: "bca3ab7c-8ed1-421f-a0ab-39d619efeee0",
+      traitify: {
+        graphqlQuery: jest.fn().mockName("graphqlQuery").mockImplementation(() => (Promise.resolve()))
+      }
     };
   });
 
@@ -58,7 +61,7 @@ describe("Guide", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("snapshot remains the same on error", () => {
+  it("returns blank div on error", () => {
     const component = (new ComponentHandler(<Component {...props} />));
     component.updateState({errors: ["did not successfully fetch guide"]});
     expect(component.tree).toMatchSnapshot();

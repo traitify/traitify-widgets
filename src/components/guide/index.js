@@ -17,11 +17,10 @@ class Guide extends Component {
       expandedIntro: false
     };
   }
-  static defaultProps = {assessmentID: null}
   static propTypes = {
     translate: PropTypes.func.isRequired,
     traitify: TraitifyPropTypes.traitify.isRequired,
-    assessmentID: PropTypes.string
+    assessmentID: PropTypes.string.isRequired
   }
   adaptability(adaptability) {
     if(!adaptability) { return; }
@@ -117,7 +116,7 @@ class Guide extends Component {
   }
   stringToListItems(entity) {
     let entities = entity.replace("\n", "<br/>").split("<br/>");
-    entities = entities.map((e, i) => <li key={i}>{e}</li>);
+    entities = entities.map((e) => <li>{e}</li>);
 
     return (
       <ul>

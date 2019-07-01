@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";
 import TraitifyClient from "lib/traitify-client";
-import GraphQL from "graphql/gql-client";
+import guideQuery from "graphql/queries/guide";
 import {dangerousProps} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
 import style from "./style";
@@ -22,18 +22,10 @@ class Guide extends Component {
     translate: PropTypes.func.isRequired,
     assessmentID: PropTypes.string
   }
-  setGuide(guideDetails = {}) {
-    let {params, fields} = guideDetails;
-    const defaultParams = {assessmentId: this.props.assessmentID, localeKey: "en-US"};
-    const defaultFields = [
-      "deckId", "id", "name",
-      {competencies: ["id", "name", "introduction", "order", {questionSequences: ["id", "name", {questions: ["id", "text", "adaptability", "order", "purpose"]}]}]}
-    ];
-    params = (params === undefined ? defaultParams : params);
-    fields = (fields === undefined ? defaultFields : fields);
-
-    const graphql = new GraphQL();
-    new TraitifyClient().graphqlQuery("/interview_guides/graphql", `{ guide(${graphql.toArgs(params)}) { ${graphql.toQuery(fields)} }}`)
+  setGuide() {
+    const params = {assessmentId: this.props.assessmentID};
+    console.log(guideQuery({params}));
+    new TraitifyClient().graphqlQuery("/interview_guides/graphql", guideQuery({params}))
       .then((response) => {
         if(response.errors) { this.setState({errors: response.errors}); return; }
         const {competencies} = response.data.guide;

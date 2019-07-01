@@ -75,6 +75,11 @@ assessment.render("PersonalityDetails"); // Render just the details in the targe
 assessment.render("PersonalityBlend"); // Render just the Blend in the target element
 ```
 
+#### Interview Guide
+```
+assessment.render("Guide"); // Render just the Interview Guide in the target element
+```
+
 ### Careers Deck Components (career-deck)
 
 #### Render All Career Components
@@ -160,6 +165,7 @@ assessment.render("PersonalityHeading"); // Render just the archetype in the tar
     "PersonalityTraits": "#personality-traits",
     "Results": "#results",
     "Careers": "#careers",
+    "Guide": "#guide",
   });
 
   assessment.render();

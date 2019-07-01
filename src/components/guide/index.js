@@ -85,7 +85,10 @@ class Guide extends Component {
       return (
         <ul className={style.tabs}>
           {this.state.competencies.map((competency, index) => (
-            <li className={competency.name === displayedCompetency.name ? style.tabActive : null}>
+            <li
+              className={competency.name === displayedCompetency.name ? style.tabActive : null}
+              key={competency.id}
+            >
               <a
                 href={`#tab-${index}`}
                 tabIndex={0}
@@ -114,7 +117,7 @@ class Guide extends Component {
   }
   stringToListItems(entity) {
     let entities = entity.replace("\n", "<br/>").split("<br/>");
-    entities = entities.map((e) => <li>{e}</li>);
+    entities = entities.map((e, i) => <li key={i}>{e}</li>);
 
     return (
       <ul>
@@ -162,12 +165,12 @@ class Guide extends Component {
             {this.expandedIntro(readMore)}
             <hr />
             {displayedCompetency.questionSequences.map((sequence) => (
-              <div className="competency-type">
+              <div className="competency-type" key={sequence.id}>
                 <h2>{sequence.name}</h2>
                 <p>{translate("guide_intro")}</p>
                 <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
                 {sequence.questions.map((question) => (
-                  <div className="questions" key={question.order}>
+                  <div className="questions" key={question.id}>
                     <h3 id={question.order === 1 ? "question-1" : null}>{`Question ${question.order}`}</h3>
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import withTraitify from "lib/with-traitify";
-import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import {Component} from "react";
+import withTraitify from "lib/with-traitify";
 import guideQuery from "graphql/queries/guide";
 import {dangerousProps} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
@@ -23,33 +23,6 @@ class Guide extends Component {
     traitify: TraitifyPropTypes.traitify.isRequired,
     assessmentID: PropTypes.string
   }
-  setGuide() {
-    const params = {assessmentId: this.props.assessmentID};
-    this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
-      .then((response) => {
-        if(response.errors) { this.setState({errors: response.errors}); return; }
-        const {competencies} = response.data.guide;
-        this.setState({competencies, displayedCompetency: competencies[0]});
-      });
-  }
-  stringToListItems(entity) {
-    let entities = entity.replace("\n", "<br/>").split("<br/>");
-    entities = entities.map((e) => <li>{e}</li>);
-
-    return (
-      <ul>
-        {entities}
-      </ul>
-    );
-  }
-  displayCompetency(competency) {
-    const competencyName = typeof (competency) === "string" ? competency : competency.target.value;
-    this.state.competencies.forEach((comp) => {
-      if(competencyName === comp.name) {
-        this.setState({displayedCompetency: comp});
-      }
-    });
-  }
   adaptability(adaptability) {
     if(!adaptability) { return; }
     const {translate} = this.props;
@@ -61,15 +34,31 @@ class Guide extends Component {
       </div>
     );
   }
-  tabImage(tab) {
-    switch(tab) {
-      case "Solving Problems": return "openness.png";
-      case "Delivering Results": return "conscientiousness.png";
-      case "Engaging with People": return "extraversion.png";
-      case "Influencing People": return "agreeableness.png";
-      case "Managing Pressure": return "emotional_stability.png";
-      default: return null;
+  displayCompetency(competency) {
+    const competencyName = typeof (competency) === "string" ? competency : competency.target.value;
+    this.state.competencies.forEach((comp) => {
+      if(competencyName === comp.name) {
+        this.setState({displayedCompetency: comp});
+      }
+    });
+  }
+  expandedIntro(text) {
+    if(this.state.expandedIntro) {
+      return (
+        <p>{text}</p>
+      );
     }
+  }
+  handleReadMore() {
+    this.setState((prevState) => ({expandedIntro: !prevState.expandedIntro}));
+  }
+  introduction() {
+    const {introduction} = this.state.displayedCompetency;
+
+    let intro = introduction.split(".", 1)[0];
+    intro = `${intro}.`;
+    const readMore = introduction.replace(intro, "").trim();
+    return {intro, readMore};
   }
   selectBoxOrTabs() {
     const {displayedCompetency} = this.state;
@@ -114,23 +103,34 @@ class Guide extends Component {
       );
     }
   }
-  handleReadMore() {
-    this.setState((prevState) => ({expandedIntro: !prevState.expandedIntro}));
+  setGuide() {
+    const params = {assessmentId: this.props.assessmentID};
+    this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
+      .then((response) => {
+        if(response.errors) { this.setState({errors: response.errors}); return; }
+        const {competencies} = response.data.guide;
+        this.setState({competencies, displayedCompetency: competencies[0]});
+      });
   }
-  expandedIntro(text) {
-    if(this.state.expandedIntro) {
-      return (
-        <p>{text}</p>
-      );
-    }
-  }
-  introduction() {
-    const {introduction} = this.state.displayedCompetency;
+  stringToListItems(entity) {
+    let entities = entity.replace("\n", "<br/>").split("<br/>");
+    entities = entities.map((e) => <li>{e}</li>);
 
-    let intro = introduction.split(".", 1)[0];
-    intro = `${intro}.`;
-    const readMore = introduction.replace(intro, "").trim();
-    return {intro, readMore};
+    return (
+      <ul>
+        {entities}
+      </ul>
+    );
+  }
+  tabImage(tab) {
+    switch(tab) {
+      case "Solving Problems": return "openness.png";
+      case "Delivering Results": return "conscientiousness.png";
+      case "Engaging with People": return "extraversion.png";
+      case "Influencing People": return "agreeableness.png";
+      case "Managing Pressure": return "emotional_stability.png";
+      default: return null;
+    }
   }
   render() {
     if(this.state.errors.length > 0) { return <div />; }

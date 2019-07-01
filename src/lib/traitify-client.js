@@ -2,7 +2,7 @@ import queryString from "query-string";
 
 export default class TraitifyClient {
   constructor() {
-    this.host = "https://api.stag.awse.traitify.com";
+    this.host = "https://api.traitify.com";
     this.version = "v1";
     this.oldIE = typeof XDomainRequest !== "undefined";
   }
@@ -72,10 +72,11 @@ export default class TraitifyClient {
     return promise;
   }
   graphqlQuery = (path, params) => {
+    // TODO move to this.host when service deployed
     const url = `https://api.stag.awse.traitify.com/${this.version}${path}`;
     const xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
-    xhr.setRequestHeader("Authorization", `Basic ZGhtZ3NnMWQ2MmJxcDhpb2tqaTEzZnVobWY6eA==`);
+    xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
     xhr.setRequestHeader("Content-type", "application/graphql");
     xhr.setRequestHeader("Accept-language", "en-US");
     xhr.setRequestHeader("Accept", "*/*");

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
 import {Component} from "react";
-import TraitifyClient from "lib/traitify-client";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import guideQuery from "graphql/queries/guide";
 import {dangerousProps} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
@@ -20,12 +20,12 @@ class Guide extends Component {
   static defaultProps = {assessmentID: null}
   static propTypes = {
     translate: PropTypes.func.isRequired,
+    traitify: TraitifyPropTypes.traitify.isRequired,
     assessmentID: PropTypes.string
   }
   setGuide() {
     const params = {assessmentId: this.props.assessmentID};
-    console.log(guideQuery({params}));
-    new TraitifyClient().graphqlQuery("/interview_guides/graphql", guideQuery({params}))
+    this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
       .then((response) => {
         if(response.errors) { this.setState({errors: response.errors}); return; }
         const {competencies} = response.data.guide;

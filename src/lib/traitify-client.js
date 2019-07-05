@@ -23,6 +23,29 @@ export default class TraitifyClient {
     this.version = version;
     return this;
   }
+  handlePromise = (requestType, xhr, params) => {
+    const async = xhr;
+    const promise = new Promise((resolve, reject) => {
+      if(!this.online()) { return reject(); }
+      try {
+        async.onload = () => {
+          if(async.status === 404) {
+            reject(async.response || async.responseText);
+          } else {
+            resolve(JSON.parse(async.response || async.responseText));
+          }
+        };
+        async.onerror = () => { reject(async.response || async.responseText); };
+        async.ontimeout = () => { reject(async.response || async.responseText); };
+        const send = requestType === "graphql" ? () => { async.send(params); } : () => { xhr.send(JSON.stringify(params)); };
+
+        this.oldIE ? window.setTimeout(send, 0) : send();
+      } catch(error) { reject(error); }
+    });
+
+    promise.xhr = xhr;
+    return promise;
+  }
   ajax = (method, path, _params) => {
     let params;
     let url = `${this.host}/${this.version}${path}`;
@@ -49,27 +72,7 @@ export default class TraitifyClient {
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }
-    const promise = new Promise((resolve, reject) => {
-      if(!this.online()) { return reject(); }
-      try {
-        xhr.onload = () => {
-          if(xhr.status === 404) {
-            reject(xhr.response || xhr.responseText);
-          } else {
-            resolve(JSON.parse(xhr.response || xhr.responseText));
-          }
-        };
-        xhr.onerror = () => { reject(xhr.response || xhr.responseText); };
-        xhr.ontimeout = () => { reject(xhr.response || xhr.responseText); };
-
-        const send = () => { xhr.send(JSON.stringify(params)); };
-
-        this.oldIE ? window.setTimeout(send, 0) : send();
-      } catch(error) { reject(error); }
-    });
-
-    promise.xhr = xhr;
-    return promise;
+    return this.handlePromise("rest", xhr, params);
   }
   graphqlQuery = (path, params) => {
     // TODO move to this.host when service deployed
@@ -81,27 +84,7 @@ export default class TraitifyClient {
     xhr.setRequestHeader("Accept-language", "en-US");
     xhr.setRequestHeader("Accept", "*/*");
 
-    const promise = new Promise((resolve, reject) => {
-      if(!this.online()) { return reject(); }
-      try {
-        xhr.onload = () => {
-          if(xhr.status === 404) {
-            reject(xhr.response || xhr.responseText);
-          } else {
-            resolve(JSON.parse(xhr.response || xhr.responseText));
-          }
-        };
-        xhr.onerror = () => { reject(xhr.response || xhr.responseText); };
-        xhr.ontimeout = () => { reject(xhr.response || xhr.responseText); };
-
-        const send = () => { xhr.send(params); };
-
-        this.oldIE ? window.setTimeout(send, 0) : send();
-      } catch(error) { reject(error); }
-    });
-
-    promise.xhr = xhr;
-    return promise;
+    return this.handlePromise("graphql", xhr, params);
   }
   get = (path, params) => (this.ajax("GET", path, params))
   put = (path, params) => (this.ajax(this.oldIE ? "POST" : "PUT", path, params))

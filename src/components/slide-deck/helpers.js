@@ -1,8 +1,9 @@
 export function completedSlides(slides) {
-  return slides.filter(({response}) => (
-    response != null
-  )).map(({id, response, time_taken: timeTaken}) => ({
+  return slides.filter(({likert_response: likertResponse, response}) => (
+    likertResponse != null || response != null
+  )).map(({id, likert_response: likertResponse, response, time_taken: timeTaken}) => ({
     id,
+    likert_response: likertResponse,
     response,
     time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
   }));
@@ -40,13 +41,15 @@ export function isFullscreen() {
 }
 
 export function loadingIndex(slides) {
-  return slides.findIndex((slide) => (!slide.loaded && slide.response == null));
+  return slides.findIndex((slide) => (
+    !slide.loaded && slide.likert_response == null && slide.response == null
+  ));
 }
 
 export function mutable(data) { return data.map((item) => ({...item})); }
 
 export function slideIndex(slides) {
-  return slides.findIndex((slide) => (slide.response == null));
+  return slides.findIndex((slide) => (slide.likert_response == null && slide.response == null));
 }
 
 export function toggleFullscreen(options) {
@@ -96,6 +99,7 @@ export function getStateFromProps(props) {
     const slide = {..._slide};
     const completedSlide = storedSlides.find((s) => s.id === slide.id);
     if(completedSlide) {
+      slide.likert_response = completedSlide.likert_response;
       slide.response = completedSlide.response;
       slide.time_taken = completedSlide.time_taken;
     }

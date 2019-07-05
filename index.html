@@ -12,7 +12,8 @@
     <script src="/build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
-      Traitify.setHost("https://api.traitify.com");
+      Traitify.setHost("https://api.stag.awse.traitify.com");
+      Traitify.ui.options.imageHost = "https://cdn-stag.traitify.com";
 
       var widget;
 
@@ -76,6 +77,7 @@
       <select id="deck-name">
         <option value="big-five">Big Five</option>
         <option value="career-deck">Career Deck</option>
+        <option value="likert-cumulative-pomp-test">Likert Test</option>
         <option value="perseverance">Perseverance</option>
         <option value="persuasion">Persuasion</option>
       </select>

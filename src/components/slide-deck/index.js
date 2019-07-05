@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {camelCase} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {
@@ -25,6 +26,7 @@ class SlideDeck extends Component {
       id: PropTypes.string.isRequired,
       instructions: PropTypes.shape({instructional_text: PropTypes.string.isRequired}),
       locale_key: PropTypes.string.isRequired,
+      scoring_scale: PropTypes.string,
       slides: PropTypes.arrayOf(PropTypes.object).isRequired
     }),
     assessmentID: PropTypes.string.isRequired,
@@ -155,7 +157,8 @@ class SlideDeck extends Component {
     this.setState((state) => {
       const slides = mutable(state.slides);
 
-      slides[slideIndex(slides) - 1].response = null;
+      delete slides[slideIndex(slides) - 1].likert_response;
+      delete slides[slideIndex(slides) - 1].response;
 
       return {slides, startTime: Date.now()};
     }, this.fetchImages);
@@ -169,6 +172,25 @@ class SlideDeck extends Component {
   toggleFullscreen = () => {
     toggleFullscreen({current: this.state.isFullscreen, element: this.container});
   }
+  updateLikertSlide = (index, value) => {
+    this.setState((state) => {
+      this.props.ui.trigger(`SlideDeck.likert.${camelCase(value)}`, this);
+      this.props.ui.trigger("SlideDeck.updateSlide", this);
+
+      const slides = mutable(state.slides);
+      delete slides[index].response;
+      slides[index].likert_response = value;
+      slides[index].time_taken = Date.now() - state.startTime;
+
+      return {slides, startTime: Date.now()};
+    }, () => {
+      const {assessmentID, cache} = this.props;
+
+      cache.set(`slides.${assessmentID}`, completedSlides(this.state.slides));
+
+      if(isFinished(this.state.slides)) { this.finish(); }
+    });
+  }
   updateSlide = (index, value) => {
     this.setState((state) => {
       const key = value ? "me" : "notMe";
@@ -176,6 +198,7 @@ class SlideDeck extends Component {
       this.props.ui.trigger("SlideDeck.updateSlide", this);
 
       const slides = mutable(state.slides);
+      delete slides[index].likert_response;
       slides[index].response = value;
       slides[index].time_taken = Date.now() - state.startTime;
 
@@ -209,12 +232,14 @@ class SlideDeck extends Component {
             instructions={this.state.instructions}
             isComplete={finished}
             isFullscreen={this.state.isFullscreen}
+            isLikertScale={this.props.assessment && this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP"}
             showInstructions={this.state.showInstructions}
             slideIndex={slideIndex(this.state.slides)}
             slides={this.state.slides}
             start={this.hideInstructions}
             toggleFullscreen={this.toggleFullscreen}
             translate={this.props.translate}
+            updateLikertSlide={this.updateLikertSlide}
             updateSlide={this.updateSlide}
           />
         )}

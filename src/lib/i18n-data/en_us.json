@@ -41,6 +41,8 @@
   "potential_benefits": "Potential Benefits",
   "potential_pitfalls": "Potential Pitfalls",
   "radar_chart_label": "A chart displaying your results. See text version below",
+  "really_me": "Really Me",
+  "really_not_me": "Really Not Me",
   "salary_mean": "Salary Mean",
   "salary_mean_html": "The wage at which half of the workers in the occupation earned more than that amount and half earned less. Median wage data is from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Search",

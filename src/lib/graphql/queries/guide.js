@@ -1,4 +1,4 @@
-import GraphQL from "graphql/gql-client";
+import GraphQL from "../client";
 
 export default function guideQuery(guideDetails = {}) {
   let {params, fields} = guideDetails;

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
-import guideQuery from "graphql/queries/guide";
+import guideQuery from "lib/graphql/queries/guide";
 import {dangerousProps} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
 import style from "./style";
@@ -20,7 +20,11 @@ class Guide extends Component {
   static propTypes = {
     translate: PropTypes.func.isRequired,
     traitify: TraitifyPropTypes.traitify.isRequired,
+    airbrake: PropTypes.shape({notify: PropTypes.func}).isRequired,
     assessmentID: PropTypes.string.isRequired
+  }
+  componentDidMount() {
+    this.setGuide();
   }
   adaptability(adaptability) {
     if(!adaptability) { return; }
@@ -47,6 +51,17 @@ class Guide extends Component {
         <p>{text}</p>
       );
     }
+  }
+  processError() {
+    const {errors} = this.state;
+
+    this.props.airbrake.notify({
+      message: errors[0].message,
+      params: {
+        assessmentId: this.props.assessmentID,
+        publicKey: this.props.traitify.publicKey
+      }
+    });
   }
   handleReadMore() {
     this.setState((prevState) => ({expandedIntro: !prevState.expandedIntro}));
@@ -135,8 +150,8 @@ class Guide extends Component {
     }
   }
   render() {
-    if(this.state.errors.length > 0) { return <div />; }
-    if(this.state.competencies.length === 0) { this.setGuide(); return <div />; }
+    if(this.state.errors.length > 0) { this.processError(); return <div />; }
+    if(this.state.competencies.length === 0) { return <div />; }
     const {displayedCompetency} = this.state;
     const {translate} = this.props;
     const {intro, readMore} = this.introduction();
@@ -164,12 +179,12 @@ class Guide extends Component {
             {this.expandedIntro(readMore)}
             <hr />
             {displayedCompetency.questionSequences.map((sequence) => (
-              <div className="competency-type" key={sequence.id}>
+              <div key={sequence.id}>
                 <h2>{sequence.name}</h2>
                 <p>{translate("guide_intro")}</p>
                 <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
                 {sequence.questions.map((question) => (
-                  <div className="questions" key={question.id}>
+                  <div key={question.id}>
                     <h3 id={question.order === 1 ? "question-1" : null}>{`Question ${question.order}`}</h3>
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>

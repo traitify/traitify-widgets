@@ -17,11 +17,13 @@ class Guide extends Component {
       expandedIntro: false
     };
   }
+  static defaultProps = {assessment: null};
   static propTypes = {
-    translate: PropTypes.func.isRequired,
-    traitify: TraitifyPropTypes.traitify.isRequired,
     airbrake: PropTypes.shape({notify: PropTypes.func}).isRequired,
-    assessmentID: PropTypes.string.isRequired
+    assessment: PropTypes.shape({personality_types: PropTypes.array}),
+    assessmentID: PropTypes.string.isRequired,
+    translate: PropTypes.func.isRequired,
+    traitify: TraitifyPropTypes.traitify.isRequired
   }
   componentDidMount() {
     this.setGuide();
@@ -89,7 +91,7 @@ class Guide extends Component {
             }
           </select>
           <p className={style.mobileBadge}>
-            <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(displayedCompetency.name)}`} alt={`${displayedCompetency.name} badge`} />
+            <img src={this.tabImage(displayedCompetency.name)} alt={`${displayedCompetency.name} badge`} />
           </p>
         </div>
       );
@@ -108,7 +110,7 @@ class Guide extends Component {
                 onClick={() => this.displayCompetency(competency.name)}
                 name={competency.name}
               >
-                <img src={`https://cdn.traitify.com/assets/images/js/${this.tabImage(competency.name)}`} alt={`${competency.name} badge`} />
+                <img src={this.tabImage(competency.name)} alt={`${competency.name} badge`} />
                 <br />
                 {competency.name}
               </a>
@@ -142,16 +144,22 @@ class Guide extends Component {
     );
   }
   tabImage(tab) {
+    const {assessment} = this.props;
+    const badges = assessment.personality_types.map((type) => ({
+      image: type.personality_type.badge.image_medium, name: type.personality_type.name
+    }));
+
     switch(tab) {
-      case "Solving Problems": return "openness.png";
-      case "Delivering Results": return "conscientiousness.png";
-      case "Engaging with People": return "extraversion.png";
-      case "Influencing People": return "agreeableness.png";
-      case "Managing Pressure": return "emotional_stability.png";
+      case "Solving Problems": return badges.filter((badge) => badge.name === "Openness")[0].image;
+      case "Delivering Results": return badges.filter((badge) => badge.name === "Conscientiousness")[0].image;
+      case "Engaging with People": return badges.filter((badge) => badge.name === "Extraversion")[0].image;
+      case "Influencing People": return badges.filter((badge) => badge.name === "Agreeableness")[0].image;
+      case "Managing Pressure": return badges.filter((badge) => badge.name === "Emotional Stability")[0].image;
       default: return null;
     }
   }
   render() {
+    console.log(this.props);
     if(this.state.errors.length > 0) { return <div />; }
     if(this.state.competencies.length === 0) { return <div />; }
     const {displayedCompetency} = this.state;

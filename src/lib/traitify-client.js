@@ -24,26 +24,26 @@ export default class TraitifyClient {
     return this;
   }
   handlePromise = (requestType, xhr, params) => {
-    const async = xhr;
+    const xmlHttp = xhr;
     const promise = new Promise((resolve, reject) => {
       if(!this.online()) { return reject(); }
       try {
-        async.onload = () => {
-          if(async.status === 404) {
-            reject(async.response || async.responseText);
+        xmlHttp.onload = () => {
+          if(xmlHttp.status === 404) {
+            reject(xmlHttp.response || xmlHttp.responseText);
           } else {
-            resolve(JSON.parse(async.response || async.responseText));
+            resolve(JSON.parse(xmlHttp.response || xmlHttp.responseText));
           }
         };
-        async.onerror = () => { reject(async.response || async.responseText); };
-        async.ontimeout = () => { reject(async.response || async.responseText); };
-        const send = requestType === "graphql" ? () => { async.send(params); } : () => { xhr.send(JSON.stringify(params)); };
+        xmlHttp.onerror = () => { reject(xmlHttp.response || xmlHttp.responseText); };
+        xmlHttp.ontimeout = () => { reject(xmlHttp.response || xmlHttp.responseText); };
+        const send = requestType === "graphql" ? () => { xmlHttp.send(params); } : () => { xmlHttp.send(JSON.stringify(params)); };
 
         this.oldIE ? window.setTimeout(send, 0) : send();
       } catch(error) { reject(error); }
     });
 
-    promise.xhr = xhr;
+    promise.xhr = xmlHttp;
     return promise;
   }
   ajax = (method, path, _params) => {

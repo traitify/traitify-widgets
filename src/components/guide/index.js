@@ -52,9 +52,7 @@ class Guide extends Component {
       );
     }
   }
-  processError() {
-    const {errors} = this.state;
-
+  processError(errors) {
     this.props.airbrake.notify({
       message: errors[0].message,
       params: {
@@ -124,7 +122,11 @@ class Guide extends Component {
     const params = {assessmentId: this.props.assessmentID};
     this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
       .then((response) => {
-        if(response.errors) { this.setState({errors: response.errors}); return; }
+        if(response.errors) {
+          this.processError(response.errors);
+          this.setState({errors: response.errors});
+          return;
+        }
         const {competencies} = response.data.guide;
         this.setState({competencies, displayedCompetency: competencies[0]});
       });
@@ -150,7 +152,7 @@ class Guide extends Component {
     }
   }
   render() {
-    if(this.state.errors.length > 0) { this.processError(); return <div />; }
+    if(this.state.errors.length > 0) { return <div />; }
     if(this.state.competencies.length === 0) { return <div />; }
     const {displayedCompetency} = this.state;
     const {translate} = this.props;

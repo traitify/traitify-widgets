@@ -22,6 +22,7 @@ class Guide extends Component {
     airbrake: PropTypes.shape({notify: PropTypes.func}).isRequired,
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     assessmentID: PropTypes.string.isRequired,
+    locale: PropTypes.string.isRequired,
     translate: PropTypes.func.isRequired,
     traitify: TraitifyPropTypes.traitify.isRequired
   }
@@ -121,7 +122,7 @@ class Guide extends Component {
     }
   }
   setGuide() {
-    const params = {assessmentId: this.props.assessmentID};
+    const params = {assessmentId: this.props.assessmentID, localeKey: this.props.locale};
     this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
       .then((response) => {
         if(response.errors) {
@@ -159,9 +160,10 @@ class Guide extends Component {
     }
   }
   render() {
-    console.log(this.props);
     if(this.state.errors.length > 0) { return <div />; }
     if(this.state.competencies.length === 0) { return <div />; }
+    if(!this.props.assessment) { return <div />; }
+
     const {displayedCompetency} = this.state;
     const {translate} = this.props;
     const {intro, readMore} = this.introduction();

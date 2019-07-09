@@ -1,9 +1,8 @@
 import GraphQL from "../client";
 
 export default function guideQuery(guideDetails = {}) {
-  let {params, fields} = guideDetails;
-
-  params = Object.assign({localeKey: "en-US"}, params);
+  const {params} = guideDetails;
+  let {fields} = guideDetails;
 
   const defaultFields = [
     "deckId", "id", "name",

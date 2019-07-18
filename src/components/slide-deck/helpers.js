@@ -1,6 +1,6 @@
 export function completedSlides(slides) {
   return slides.filter(({likert_response: likertResponse, response}) => (
-    likertResponse != null || response != null
+    likertResponse || response != null
   )).map(({id, likert_response: likertResponse, response, time_taken: timeTaken}) => ({
     id,
     likert_response: likertResponse,
@@ -42,14 +42,14 @@ export function isFullscreen() {
 
 export function loadingIndex(slides) {
   return slides.findIndex((slide) => (
-    !slide.loaded && slide.likert_response == null && slide.response == null
+    !slide.loaded && !slide.likert_response && slide.response == null
   ));
 }
 
 export function mutable(data) { return data.map((item) => ({...item})); }
 
 export function slideIndex(slides) {
-  return slides.findIndex((slide) => (slide.likert_response == null && slide.response == null));
+  return slides.findIndex((slide) => (!slide.likert_response && slide.response == null));
 }
 
 export function toggleFullscreen(options) {

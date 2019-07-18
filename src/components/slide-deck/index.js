@@ -156,9 +156,10 @@ class SlideDeck extends Component {
   back = () => {
     this.setState((state) => {
       const slides = mutable(state.slides);
+      const index = slideIndex(slides) - 1;
 
-      delete slides[slideIndex(slides) - 1].likert_response;
-      delete slides[slideIndex(slides) - 1].response;
+      delete slides[index].likert_response;
+      delete slides[index].response;
 
       return {slides, startTime: Date.now()};
     }, this.fetchImages);
@@ -232,7 +233,7 @@ class SlideDeck extends Component {
             instructions={this.state.instructions}
             isComplete={finished}
             isFullscreen={this.state.isFullscreen}
-            isLikertScale={this.props.assessment && this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP"}
+            isLikertScale={this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP"}
             showInstructions={this.state.showInstructions}
             slideIndex={slideIndex(this.state.slides)}
             slides={this.state.slides}

@@ -299,9 +299,7 @@ describe("SlideDeck", () => {
       expect(component.instance.fetchImages).toHaveBeenCalled();
       expect(component.state.imageLoadingAttempts).toBe(0);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
-      expect(component.state.slides.filter((slide) => (
-        slide.image !== `http://localhost:8080/v1/images/${slide.id}?width=100&height=200`
-      ))).toHaveLength(0);
+      expect(component.state.slides.filter((slide) => !slide.image.includes("w=100&h=200"))).toHaveLength(0);
     });
 
     it("updates slides with image falling back to desktop image", () => {

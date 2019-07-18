@@ -41,6 +41,8 @@
   "potential_benefits": "Möjliga fördelar",
   "potential_pitfalls": "Möjliga fallgropar",
   "radar_chart_label": "Ett diagram som visar dina resultat. Se textversionen nedan",
+  "really_me": "",
+  "really_not_me": "",
   "salary_mean": "Lönmedel",
   "salary_mean_html": "Timpenningen som halvan av arbetarna i ockupationen tjänade på mer än den belopp och halva som tjänades mindre. Median- timpenningdata är från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
   "search": "Sök",

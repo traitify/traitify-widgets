@@ -1,3 +1,7 @@
+export function camelCase(string) {
+  return string.replace(/-([a-z])/g, (x) => (x[1].toUpperCase()));
+}
+
 export function careerOption(props, name) {
   if(props[name] != null) { return props[name]; }
   if(props.options

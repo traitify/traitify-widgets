@@ -11,12 +11,14 @@ export default class Slide extends Component {
     instructions: PropTypes.string,
     isComplete: PropTypes.bool.isRequired,
     isFullscreen: PropTypes.bool.isRequired,
+    isLikertScale: PropTypes.bool.isRequired,
     showInstructions: PropTypes.bool.isRequired,
     slideIndex: PropTypes.number.isRequired,
     slides: PropTypes.arrayOf(PropTypes.object).isRequired,
     start: PropTypes.func.isRequired,
     toggleFullscreen: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
+    updateLikertSlide: PropTypes.func.isRequired,
     updateSlide: PropTypes.func.isRequired
   }
   componentDidUpdate(prevProps) {
@@ -28,6 +30,10 @@ export default class Slide extends Component {
     const element = document.querySelector(`.${style.captionContainer}`);
     element && element.focus();
   }
+  respondLikertMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "ME"); }
+  respondLikertNotMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "NOT_ME"); }
+  respondLikertReallyMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "REALLY_ME"); }
+  respondLikertReallyNotMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "REALLY_NOT_ME"); }
   respondMe = () => { this.props.updateSlide(this.props.slideIndex, true); }
   respondNotMe = () => { this.props.updateSlide(this.props.slideIndex, false); }
   render() {
@@ -37,6 +43,7 @@ export default class Slide extends Component {
       instructions,
       isComplete,
       isFullscreen,
+      isLikertScale,
       showInstructions,
       slideIndex,
       slides,
@@ -94,7 +101,7 @@ export default class Slide extends Component {
     }
 
     return (
-      <div className={style.slideContainer}>
+      <div className={`${style.slideContainer} ${isLikertScale ? style.likertScale : ""}`}>
         <div className={style.captionContainer}>
           <div className={style.caption}>
             {currentSlide.caption}
@@ -106,14 +113,31 @@ export default class Slide extends Component {
         {activeSlides}
         {!showInstructions && (
           <div className={style.responseContainer}>
-            <div className={style.buttons}>
-              <button className={style.me} onClick={this.respondMe} type="button">
-                {translate("me")}
-              </button>
-              <button className={style.notMe} onClick={this.respondNotMe} type="button">
-                {translate("not_me")}
-              </button>
-            </div>
+            {isLikertScale ? (
+              <div className={style.buttons}>
+                <button className={`${style.notMe} ${style.reallyNotMe}`} onClick={this.respondLikertReallyNotMe} type="button">
+                  {translate("really_not_me")}
+                </button>
+                <button className={style.notMe} onClick={this.respondLikertNotMe} type="button">
+                  {translate("not_me")}
+                </button>
+                <button className={style.me} onClick={this.respondLikertMe} type="button">
+                  {translate("me")}
+                </button>
+                <button className={`${style.me} ${style.reallyMe}`} onClick={this.respondLikertReallyMe} type="button">
+                  {translate("really_me")}
+                </button>
+              </div>
+            ) : (
+              <div className={style.buttons}>
+                <button className={style.me} onClick={this.respondMe} type="button">
+                  {translate("me")}
+                </button>
+                <button className={style.notMe} onClick={this.respondNotMe} type="button">
+                  {translate("not_me")}
+                </button>
+              </div>
+            )}
           </div>
         )}
         {allowBack && (

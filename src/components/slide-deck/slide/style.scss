@@ -234,3 +234,55 @@
   }
   &.right{ left: 100%; }
 }
+.likertScale {
+  .responseContainer {
+    bottom: 0px;
+  }
+  .back, .fullscreen {
+    bottom: 110px;
+    @include mq(xs) {
+      bottom: 130px;
+    }
+    @include mq(m) {
+      bottom: 36px;
+    }
+  }
+  .buttons {
+    height: 100px;
+    margin-bottom: 0px;
+    width: auto;
+    .me, .notMe {
+      border: 0 solid white;
+      font-size: 18px;
+      height: 100px;
+      line-height: 32px;
+      vertical-align: top;
+
+      padding: 0 10px;
+      width: 25%;
+      @include mq(s) {
+        font-size: 24px;
+        line-height: 32px;
+        padding: 0 20px;
+      }
+      @include mq(m) {
+        width: 150px;
+      }
+    }
+    @include mq(m) {
+      margin-bottom: 10px;
+    }
+    .me {
+      border-left-width: 1px;
+    }
+    .notMe {
+      border-right-width: 1px;
+    }
+    .reallyMe {
+      border-left-width: 2px;
+    }
+    .reallyNotMe {
+      border-right-width: 2px;
+    }
+  }
+}

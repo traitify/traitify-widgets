@@ -11,6 +11,7 @@ class Guide extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      badges: [],
       competencies: [],
       displayedCompetency: {},
       errors: [],
@@ -28,6 +29,11 @@ class Guide extends Component {
   }
   componentDidMount() {
     this.setGuide();
+  }
+  componentDidUpdate(prevProps) {
+    if(this.props.locale !== prevProps.locale) {
+      this.setGuide();
+    }
   }
   adaptability(adaptability) {
     if(!adaptability) { return; }
@@ -70,8 +76,7 @@ class Guide extends Component {
   introduction() {
     const {introduction} = this.state.displayedCompetency;
 
-    let intro = introduction.split(".", 1)[0];
-    intro = `${intro}.`;
+    const intro = introduction.split("\n", 1)[0];
     const readMore = introduction.replace(intro, "").trim();
     return {intro, readMore};
   }
@@ -92,7 +97,7 @@ class Guide extends Component {
             }
           </select>
           <p className={style.mobileBadge}>
-            <img src={this.tabImage(displayedCompetency.name)} alt={`${displayedCompetency.name} badge`} />
+            <img src={this.tabBadge(displayedCompetency.name)} alt={`${displayedCompetency.name} badge`} />
           </p>
         </div>
       );
@@ -111,7 +116,7 @@ class Guide extends Component {
                 onClick={() => this.displayCompetency(competency.name)}
                 name={competency.name}
               >
-                <img src={this.tabImage(competency.name)} alt={`${competency.name} badge`} />
+                <img src={this.tabBadge(competency.name)} alt={`${competency.name} badge`} />
                 <br />
                 {competency.name}
               </a>
@@ -131,11 +136,22 @@ class Guide extends Component {
           return;
         }
         const {competencies} = response.data.guide;
-        this.setState({competencies, displayedCompetency: competencies[0]});
+        const badges = this.badges(competencies);
+        this.setState({badges, competencies, displayedCompetency: competencies[0]});
       });
   }
+  badges(competencies) {
+    const {assessment} = this.props;
+
+    return competencies.map((competency) => {
+      const personalityId = competency.questionSequences[0].personality_type_id;
+      const types = assessment.personality_types;
+      const personality = types.filter((type) => type.personality_type.id === personalityId)[0];
+      return {image: personality.personality_type.badge.image_medium, name: competency.name};
+    });
+  }
   stringToListItems(entity) {
-    let entities = entity.replace("\n", "<br/>").split("<br/>");
+    let entities = entity.split("\n");
     entities = entities.map((e) => <li>{e}</li>);
 
     return (
@@ -144,20 +160,8 @@ class Guide extends Component {
       </ul>
     );
   }
-  tabImage(tab) {
-    const {assessment} = this.props;
-    const badges = assessment.personality_types.map((type) => ({
-      image: type.personality_type.badge.image_medium, name: type.personality_type.name
-    }));
-
-    switch(tab) {
-      case "Solving Problems": return badges.filter((badge) => badge.name === "Openness")[0].image;
-      case "Delivering Results": return badges.filter((badge) => badge.name === "Conscientiousness")[0].image;
-      case "Engaging with People": return badges.filter((badge) => badge.name === "Extraversion")[0].image;
-      case "Influencing People": return badges.filter((badge) => badge.name === "Agreeableness")[0].image;
-      case "Managing Pressure": return badges.filter((badge) => badge.name === "Emotional Stability")[0].image;
-      default: return null;
-    }
+  tabBadge(tab) {
+    return this.state.badges.filter((badge) => badge.name === tab)[0].image;
   }
   render() {
     if(this.state.errors.length > 0) { return <div />; }

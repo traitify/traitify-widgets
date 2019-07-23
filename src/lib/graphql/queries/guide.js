@@ -5,8 +5,7 @@ export default function guideQuery(guideDetails = {}) {
   let {fields} = guideDetails;
 
   const defaultFields = [
-    "deckId", "id", "name",
-    {competencies: ["id", "name", "introduction", "order", {questionSequences: ["id", "name", {questions: ["id", "text", "adaptability", "order", "purpose"]}]}]}
+    {competencies: ["id", "name", "introduction", "order", {questionSequences: ["id", "name", "personality_type_id", {questions: ["id", "text", "adaptability", "order", "purpose"]}]}]}
   ];
   fields = (fields === undefined ? defaultFields : fields);
 

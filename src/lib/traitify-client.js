@@ -75,8 +75,7 @@ export default class TraitifyClient {
     return this.handlePromise("rest", xhr, params);
   }
   graphqlQuery = (path, params) => {
-    // TODO move to this.host when service deployed
-    const url = `https://api.stag.awse.traitify.com/${this.version}${path}`;
+    const url = `${this.host}/${this.version}${path}`;
     const xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);

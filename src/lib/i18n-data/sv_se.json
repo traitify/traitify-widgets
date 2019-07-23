@@ -45,12 +45,9 @@
   "question_adaptability": "Har de utvecklat en coping-stil?",
   "question_purpose": "Vad försöker du ta reda på?",
   "radar_chart_label": "Ett diagram som visar dina resultat. Se textversionen nedan",
-<<<<<<< HEAD
+  "read_more": "Läs mer",
   "really_me": "",
   "really_not_me": "",
-=======
-  "read_more": "Läs mer",
->>>>>>> translations
   "salary_mean": "Lönmedel",
   "salary_mean_html": "Timpenningen som halvan av arbetarna i ockupationen tjänade på mer än den belopp och halva som tjänades mindre. Median- timpenningdata är från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
   "search": "Sök",

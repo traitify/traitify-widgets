@@ -45,12 +45,9 @@
   "question_adaptability": "Har de utviklet en coping-stil?",
   "question_purpose": "Hva prøver du å finne ut?",
   "radar_chart_label": "Et diagram som viser resultatene dine. Se tekstversjonen nedenfor",
-<<<<<<< HEAD
+  "read_more": "Les mer",
   "really_me": "",
   "really_not_me": "",
-=======
-  "read_more": "Les mer",
->>>>>>> translations
   "salary_mean": "Lønnsmiddel",
   "salary_mean_html": "Lønnen hvor halvparten av arbeidstakere i yrket tjente mer enn dette beløpet og halvt tjente mindre. Median lønnsdata er fra <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Søke",

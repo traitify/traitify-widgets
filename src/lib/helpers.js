@@ -38,10 +38,6 @@ export function getDisplayName(Component) {
   return Component.displayName || Component.name || "Component";
 }
 
-export function listId() {
-  return Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
-}
-
 export function loadFont() {
   const fontURL = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600";
 

@@ -243,6 +243,11 @@ export default function withTraitify(WrappedComponent) {
         this.props.assessment && this.props.assessment.id
       );
 
+      this.addListener("assessmentId.update", (_, assessmentId) => {
+        console.log("called!");
+        this.safeSetState({assessmentID: assessmentId});
+      });
+
       if(assessmentID) { this.safeSetState({assessmentID}); }
     }
     setupAirbrake() {

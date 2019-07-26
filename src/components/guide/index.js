@@ -3,7 +3,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import guideQuery from "lib/graphql/queries/guide";
-import {dangerousProps, listId} from "lib/helpers";
+import {dangerousProps} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
 import style from "./style";
 
@@ -18,11 +18,10 @@ class Guide extends Component {
       expandedIntro: false
     };
   }
-  static defaultProps = {assessment: null};
+  static defaultProps = {assessment: null, assessmentID: null}
   static propTypes = {
-    airbrake: PropTypes.shape({notify: PropTypes.func}).isRequired,
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
-    assessmentID: PropTypes.string.isRequired,
+    assessmentID: PropTypes.string,
     locale: PropTypes.string.isRequired,
     translate: PropTypes.func.isRequired,
     traitify: TraitifyPropTypes.traitify.isRequired
@@ -32,6 +31,10 @@ class Guide extends Component {
   }
   componentDidUpdate(prevProps) {
     if(this.props.locale !== prevProps.locale) {
+      this.setGuide();
+    }
+
+    if(this.props.assessmentID !== prevProps.assessmentID) {
       this.setGuide();
     }
   }
@@ -60,15 +63,6 @@ class Guide extends Component {
         <p>{text}</p>
       );
     }
-  }
-  processError(errors) {
-    this.props.airbrake.notify({
-      message: errors[0].message,
-      params: {
-        assessmentId: this.props.assessmentID,
-        publicKey: this.props.traitify.publicKey
-      }
-    });
   }
   handleReadMore() {
     this.setState((prevState) => ({expandedIntro: !prevState.expandedIntro}));
@@ -131,7 +125,6 @@ class Guide extends Component {
     this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
       .then((response) => {
         if(response.errors) {
-          this.processError(response.errors);
           this.setState({errors: response.errors});
           return;
         }
@@ -152,7 +145,7 @@ class Guide extends Component {
   }
   stringToListItems(entity) {
     let entities = entity.split("\n");
-    entities = entities.map((e) => <li key={listId()}>{e}</li>);
+    entities = entities.map((e) => <li>{e}</li>);
 
     return (
       <ul>
@@ -201,7 +194,7 @@ class Guide extends Component {
                 <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
                 {sequence.questions.map((question) => (
                   <div key={question.id}>
-                    <h3 id={question.order === 1 ? "question-1" : null}>{`Question ${question.order}`}</h3>
+                    <h3 id={question.order === 1 ? "traitify-question-1" : null}>{`Question ${question.order}`}</h3>
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>
                     <div>{this.stringToListItems(question.purpose)}</div>

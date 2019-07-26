@@ -25,13 +25,9 @@ export default class TraitifyWidget {
     return this;
   }
   assessmentID(assessmentID) {
-    console.dir(this);
-    console.log("rhiaaaa");
     this.options.assessmentID = assessmentID;
-    // check if theres a target then update
-    // console.log(this.ui.trigger);
+
     if(this.ui.callbacks["assessmentid.update"]) {
-      console.log("thats a thing");
       this.ui.trigger("assessmentId.update", this, assessmentID);
     }
     return this;

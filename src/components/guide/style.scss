@@ -65,10 +65,9 @@
       @include rems(18);
     }
   }
-  a {
+  button {
     color: #A3A4A5;
-    display: block;
-    text-decoration: none;
+    font-size: 18px;
   }
   img {
     width: 100px;
@@ -78,7 +77,7 @@
     border-top: 3px solid #42B1D8;
     background: #fff;
     border-width: 3px 1px 0 1px;
-    a {
+    button {
       color: #333;
     }
   }
@@ -89,7 +88,7 @@
   padding: 20px 40px;
   border: 1px solid #ddd;
   border-width: 0 1px 1px;
-  h2, h3, span, a {
+  h2, h3, span, a, button {
     color: #42B1D8;
   }
   h2 {
@@ -121,6 +120,11 @@
     border: 0;
     background: #ddd;
     height: 1px;
+  }
+  button {
+    font-size: 16px;
+    text-decoration: underline;
+    padding: 0;
   }
 }
 

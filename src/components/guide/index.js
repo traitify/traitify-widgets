@@ -103,17 +103,18 @@ class Guide extends Component {
               className={competency.name === displayedCompetency.name ? style.tabActive : null}
               key={competency.id}
             >
-              <a
+              <button
                 href={`#tab-${index}`}
                 tabIndex={0}
                 onKeyPress={() => this.displayCompetency(competency.name)}
                 onClick={() => this.displayCompetency(competency.name)}
                 name={competency.name}
+                type="button"
               >
                 <img src={this.tabBadge(competency.name)} alt={`${competency.name} badge`} />
                 <br />
                 {competency.name}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -145,7 +146,8 @@ class Guide extends Component {
   }
   stringToListItems(entity) {
     let entities = entity.split("\n");
-    entities = entities.map((e) => <li>{e}</li>);
+    /* eslint-disable-next-line react/no-array-index-key */
+    entities = entities.map((e, i) => <li key={i}>{e}</li>);
 
     return (
       <ul>
@@ -176,14 +178,15 @@ class Guide extends Component {
             <h2>{displayedCompetency.name}</h2>
             {intro}
             <p>
-              <a
+              <button
                 href="#read-more"
+                type="button"
                 tabIndex={0}
                 onClick={() => this.handleReadMore()}
                 onKeyPress={() => this.handleReadMore()}
               >
                 {translate("read_more")}
-              </a>
+              </button>
             </p>
             {this.expandedIntro(readMore)}
             <hr />

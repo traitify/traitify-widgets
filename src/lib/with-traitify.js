@@ -244,7 +244,6 @@ export default function withTraitify(WrappedComponent) {
       );
 
       this.addListener("assessmentId.update", (_, assessmentId) => {
-        console.log("called!");
         this.safeSetState({assessmentID: assessmentId});
       });
 

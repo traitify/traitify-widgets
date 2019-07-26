@@ -3,7 +3,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
 import guideQuery from "lib/graphql/queries/guide";
-import {dangerousProps} from "lib/helpers";
+import {dangerousProps, listId} from "lib/helpers";
 import smallScreen from "./helpers/helpers";
 import style from "./style";
 
@@ -152,7 +152,7 @@ class Guide extends Component {
   }
   stringToListItems(entity) {
     let entities = entity.split("\n");
-    entities = entities.map((e) => <li>{e}</li>);
+    entities = entities.map((e) => <li key={listId()}>{e}</li>);
 
     return (
       <ul>

@@ -94,9 +94,7 @@
     "@babel/polyfill": "^7.2.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.12",
     "@fortawesome/free-solid-svg-icons": "^5.6.3",
-    "airbrake-js": "^1.6.2",
     "color": "^3.1.0",
-    "cross-fetch": "^2.2.3",
     "graphql-obj2arg": "^0.1.0",
     "prop-types": "^15.6.2",
     "query-string": "^5.1.1",
@@ -108,7 +106,6 @@
   },
   "dependenciesNotes": {
     "ajv": "peer-dependency of ajv-keywords",
-    "cross-fetch": "peer-dependency of airbrake-js",
     "query-string": "Version 6+ is written in ES6 and not transpiled"
   }
 }

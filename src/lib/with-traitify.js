@@ -1,4 +1,3 @@
-import Airbrake from "airbrake-js";
 import PropTypes from "prop-types";
 import {Component} from "react";
 import {getDisplayName, loadFont} from "lib/helpers";
@@ -8,7 +7,6 @@ export default function withTraitify(WrappedComponent) {
   return class TraitifyComponent extends Component {
     static displayName = `Traitify${getDisplayName(WrappedComponent)}`
     static defaultProps = {
-      airbrake: null,
       assessment: null,
       assessmentID: null,
       cache: null,
@@ -18,7 +16,6 @@ export default function withTraitify(WrappedComponent) {
       ui: null
     }
     static propTypes = {
-      airbrake: PropTypes.instanceOf(Airbrake),
       assessment: PropTypes.shape({
         deck_id: PropTypes.string,
         id: PropTypes.string,
@@ -49,7 +46,6 @@ export default function withTraitify(WrappedComponent) {
         locale: null
       };
       this.setupTraitify();
-      this.setupAirbrake();
       this.setupCache();
       this.setupI18n();
       this.setAssessmentID();
@@ -89,17 +85,7 @@ export default function withTraitify(WrappedComponent) {
       Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
     }
     componentDidCatch(error, info) {
-      this.airbrake && this.airbrake.notify({
-        error,
-        params: {
-          info,
-          session: {
-            host: this.traitify.host,
-            publicKey: this.traitify.publicKey
-          }
-        }
-      });
-
+      this.ui.trigger("error", this, {error, info});
       this.setState({error});
     }
     addListener = (_key, callback) => {
@@ -245,40 +231,6 @@ export default function withTraitify(WrappedComponent) {
 
       if(assessmentID) { this.safeSetState({assessmentID}); }
     }
-    setupAirbrake() {
-      if(this.getOption("disableAirbrake")) { return; }
-
-      this.airbrake = this.props.airbrake;
-      if(this.airbrake) { return; }
-
-      this.airbrake = new Airbrake({
-        ignoreWindowError: true,
-        projectId: "141848",
-        projectKey: "c48de83d0f02ea6d598b491878c0c57e",
-        unwrapConsole: true
-      });
-      this.airbrake.addFilter((notice) => {
-        let environment;
-        const {host} = window.location;
-
-        if(host.includes("lvh.me:3000")) {
-          environment = "development";
-        } else if(host.includes("stag.traitify.com")) {
-          environment = "staging";
-        } else if(host.includes("traitify.com")) {
-          environment = "production";
-        } else {
-          environment = "client";
-        }
-
-        /* eslint-disable no-param-reassign */
-        notice.context.environment = environment;
-        notice.context.version = this.traitify.__version__;
-        /* eslint-enable no-param-reassign */
-
-        return notice;
-      });
-    }
     setupCache() {
       this.cache = this.props.cache || {
         get(key) {
@@ -374,7 +326,6 @@ export default function withTraitify(WrappedComponent) {
     }
     render() {
       const {
-        airbrake,
         cache,
         followDeck,
         getAssessment,
@@ -391,7 +342,6 @@ export default function withTraitify(WrappedComponent) {
       const options = {
         ...props,
         ...state,
-        airbrake,
         cache,
         followDeck,
         getAssessment,

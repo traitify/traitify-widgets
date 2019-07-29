@@ -1,11 +1,9 @@
 /* eslint no-console: "off" */
-import Airbrake from "airbrake-js";
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";
 import DummyComponent from "support/dummy-component";
 import Traitify from "support/traitify";
 
-jest.mock("airbrake-js");
 jest.mock("lib/helpers", () => ({
   getDisplayName: jest.fn((component) => component.name).mockName("getDisplayName"),
   loadFont: jest.fn().mockName("loadFont")
@@ -25,8 +23,6 @@ describe("withTraitify", () => {
   let traitify;
 
   beforeEach(() => {
-    Airbrake.mockClear();
-
     Component = withTraitify(DummyComponent);
     traitify = new Traitify();
   });
@@ -82,79 +78,12 @@ describe("withTraitify", () => {
     });
   });
 
-  describe("airbrake", () => {
-    it("gets disabled", () => {
-      component = new ComponentHandler(<Component disableAirbrake={true} traitify={traitify} />);
-
-      expect(getDummyComponent().props.airbrake).toBeUndefined();
-    });
-
-    it("passes prop", () => {
-      component = new ComponentHandler(<Component traitify={traitify} />);
-
-      expect(getDummyComponent().props.airbrake).toBeInstanceOf(Airbrake);
-    });
-
-    it("passes through prop", () => {
-      const airbrake = new Airbrake();
-      component = new ComponentHandler(<Component airbrake={airbrake} traitify={traitify} />);
-
-      expect(Airbrake.mock.instances).toHaveLength(1);
-    });
-
-    it("catches errors", () => {
+  describe("error handler", () => {
+    it("emits errors", () => {
       component = new ComponentHandler(<Component traitify={traitify} />);
       component.instance.componentDidCatch();
 
-      expect(getDummyComponent().props.airbrake.notify).toHaveBeenCalled();
-    });
-
-    describe("filters errors", () => {
-      let filter;
-      let originalLocation;
-
-      beforeAll(() => {
-        originalLocation = window.location;
-        delete window.location;
-        Object.defineProperty(window, "location", {writable: true, value: {}});
-      });
-
-      beforeEach(() => {
-        component = new ComponentHandler(<Component traitify={traitify} />);
-        filter = getDummyComponent().props.airbrake.addFilter.mock.calls[0][0];
-      });
-
-      afterAll(() => {
-        Object.defineProperty(window, "location", {writable: false, value: originalLocation});
-      });
-
-      it("adds environment for development", () => {
-        window.location.host = "app.lvh.me:3000";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("development");
-      });
-
-      it("adds environment for staging", () => {
-        window.location.host = "app.stag.traitify.com";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("staging");
-      });
-
-      it("adds environment for production", () => {
-        window.location.host = "app.traitify.com";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("production");
-      });
-
-      it("adds environment for client", () => {
-        window.location.host = "www.tomify.me";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("client");
-      });
+      // TODO
     });
   });
 

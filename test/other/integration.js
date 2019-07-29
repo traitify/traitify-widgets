@@ -8,7 +8,6 @@ describe("Integration", () => {
       // const widgetElement = createElement();
       // const traitify = new Traitify();
 
-      // ui.options.disableAirbrake = true;
       // ui.component().target(widgetElement).render();
       // render(<Default ui={ui} />);
 

@@ -68,15 +68,6 @@ let config = {
       }
     ]
   },
-  // Node section fixes the following issues that come from using AirbrakeJS
-  //   https://github.com/request/request/issues/1529
-  //   https://github.com/airbrake/airbrake-js/issues/320
-  node: {
-    console: true,
-    fs: "empty",
-    net: "empty",
-    tls: "empty"
-  },
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",

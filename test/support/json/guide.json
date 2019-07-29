@@ -1,0 +1,186 @@
+{
+  "data": {
+    "guide": {
+      "name": "Big Five Assessment Interview Guide",
+      "id": "1721288a-bc44-45d9-84c3-aefee753cac0",
+      "deckId": "big-five",
+      "competencies": [
+        {
+          "questionSequences": [
+            {
+              "questions": [
+                {
+                  "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+                  "purpose": "Do they talk about a number of different ways of approaching the problem?\nAre their ideas new, original or different in any way? Do they test new ideas against what seems feasible,\nboth now and in the longer term? Producing new ideas but checking their viability, and implementing\nbalanced and timely solutions, are all aspects of the open-minded/pragmatic character.\nAnd to probe into possible issues with being open-minded/pragmatic:",
+                  "order": 1,
+                  "id": "d17d709a-d0e7-44fb-80f4-d74abae028ac",
+                  "adaptability": null
+                },
+                {
+                  "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example\nof a time when you had to be practical and realistic, and work to a fixed set of rules.",
+                  "purpose": "How comfortable are they working in a step-by-step manner? Is there a\ntension between this and wanting to try something new? Does this 'conflict' sometimes show itself in taking\na very cautious approach?",
+                  "order": 2,
+                  "id": "6986c696-e0ff-4bea-be46-5820e6567516",
+                  "adaptability": "Do they recognize that sometimes the best approach is to use an\nexisting procedure, or to be far less cautious and try something radically different? Can they give an example\nof using either of these extremes? What do they do to stop themselves getting stuck on the 'middle way' of\ndoing things?"
+                },
+                {
+                  "text": "(Your results suggest you are a grounded person but also someone who thinks about future\npossibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar\nsituation in the past. What happened and what did you do?",
+                  "purpose": "Do they sometimes not learn from the past? Do they move on too quickly\nwithout consolidating what they have learned? Do they sometimes override their experience because they\nthink they need to demonstrate original thought?",
+                  "order": 3,
+                  "id": "48e8be30-b4ac-4918-98c1-378ebe15460b",
+                  "adaptability": "Do they know they sometimes confuse knowledge with foresight?\nCan they provide an example of sticking with experience, and the tried-and-tested, even though they\nwanted to try something fresh?"
+                }
+              ],
+              "name": "Open-Minded/Pragmatic People",
+              "id": "539d7970-34ae-4da0-95bc-b5b5af38be1e"
+            }
+          ],
+          "order": 1,
+          "name": "Solving Problems",
+          "introduction": "At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects\nand challenges, how receptive they are to new or different information or approaches, and the way this\ninfluences their decision making.\nThe benefits of being open-minded are likely to include approaching problems in original ways, making\nquick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.\nIn contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations. They are likely to have a fine eye for detail, be results\noriented, and able to bring experience to bear on a problem. Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex\nbetween different options, capable of seeing situations at different levels of detail, and as bringing healthy\ncaution to decision making.\nThese personality characteristics provide the basis for asking a particular sequence of questions of each\nof the personality 'types'. The first question is looking to confirm what they should be like; the second two\nexplore areas of possible concern.",
+          "id": "157f0ecf-69e6-4007-a27c-d6f35de92565"
+        },
+        {
+          "questionSequences": [
+            {
+              "questions": [
+                {
+                  "text": "Describe a situation where you needed to work in a highly organized and systematic way.",
+                  "purpose": "How comfortable are they working within obvious constraints? Do they\nrecognize when some constraints are unnecessary? How well do they manage process and task, and the\nneed to regularly revisit the ordering of tasks? Adopting a 'tight/loose' approach to work and realizing the\ndegree of planning that is needed at any given moment, and regularly re-prioritizing what needs to be done\nwith an eye on the end goal, are all aspects of the focused/flexible character.\nAnd to probe into possible issues with being focused/flexible:",
+                  "order": 1,
+                  "id": "d27e9727-30c5-4802-9902-3855d0965825",
+                  "adaptability": null
+                },
+                {
+                  "text": "(Your results suggest you are an organized person.) Tell me about a time when you needed to\nact quickly at work, without having a plan of action.",
+                  "purpose": "Are they slow to decide which way to jump: act immediately or stop and\nmake a plan? Do they spend too long weighing things up? Does the fact they know they can switch between\ndifferent approaches mean they leave things open for too long?",
+                  "order": 2,
+                  "id": "1843efb8-a2e2-4cfe-961f-74843606a1f2",
+                  "adaptability": "Do they recognize they may be slow to select a suitable style or\napproach? Can they give examples of pivoting between different ways of responding? How do they achieve\na balanced approach?"
+                },
+                {
+                  "text": "(Your results suggest you need to fully commit to a task to do your best work.) Can you think of\na time when you didn't have a sense of ownership and this affected your work? What did it feel like?",
+                  "purpose": "Do they manage the energy they put into tasks? Do they hold back if they\ncannot commit or see the point in doing something? Are they distracted by the fact that they do not feel\nfully on-board?",
+                  "order": 3,
+                  "id": "7bb9820a-c12e-4aca-ae52-e3c0c17e8344",
+                  "adaptability": "Can they override the need to feel fully invested in a task before\ngiving it their full attention? Can they provide an example of committing without ownership, e.g. completing\na task for someone else, or putting all their energy into a task they personally would not have started?"
+                }
+              ],
+              "name": "Focused/Flexible People",
+              "id": "d5be0424-d794-4e0b-8329-34922a9356a5"
+            }
+          ],
+          "order": 2,
+          "name": "Delivering Results",
+          "introduction": "At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and\nattention toward completing tasks. The level of self-discipline, dedication, orderliness and reliability are all\nhallmarks of the organized person.\nThe benefits of being focused are likely to include obvious things like creating a structure for work and\nbeing task focused; but also having a pride in doing a job well, paying attention over the long term, and\nbeing disciplined even when work is routine or 'boring'. In contrast someone who is flexible probably prefers\nto approach tasks in a dynamic manner, quickly reacting to things as they occur, side-stepping anything\nthat isn't of personal interest, in order to achieve rapid results. Those who are a mixture of both (focused/\nflexible) are best described as able to focus on the process and the goal, and allocating their energies in a\nmeasured way while continually reviewing what needs to be done next.\nThese personality characteristics provide the basis for asking a particular sequence of questions of each\nof the personality 'types'. The first question is looking to confirm what they should be like; the second two\nexplore areas of possible concern.",
+          "id": "a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        },
+        {
+          "questionSequences": [
+            {
+              "questions": [
+                {
+                  "text": "How would you describe the way you approach working by yourself at work?",
+                  "purpose": "How content are they working independently? Do they seem to prefer to\nwork through things in their own head? (Before asking anyone else) Do they appear to control the 'access'\nother people have to them? Being 'self-contained', thoughtful and reflective, and wanting to be in control of\nhow/when people have access to them, should all be aspects of an introverted character.\nAnd to probe into possible issues with being introverted:",
+                  "order": 1,
+                  "id": "735ef620-af7a-4aa4-b1b5-36dc84a3c4bc",
+                  "adaptability": null
+                },
+                {
+                  "text": "(Your results suggest that you like to work by yourself.) Tell me about how you deal with new\npeople in a work situation.",
+                  "purpose": "How comfortable are they approaching or working with other people?\nAre they likely to come across as being a bit cool or detached? Are they likely to concentrate on the task and\nforget about the other people?",
+                  "order": 2,
+                  "id": "718e91d4-66d4-4ac0-b177-4590bf9431cc",
+                  "adaptability": "Do they recognize that working with new people is not what they\nwould prefer, but they have a way of dealing with it? Can they describe this to you? What interpersonal skills\ndo they use?"
+                },
+                {
+                  "text": "(Your results suggest that you like to think things through before acting.) Can you describe a\nwork situation where you have 'over-thought' what needed to be done? What was the situation? What was\nthe result?",
+                  "purpose": "Do they get stuck in the thinking or analysis 'phase' and find it difficult to\nmove forward? Do they find it hard to act instinctively?",
+                  "order": 3,
+                  "id": "87d5e9a8-5328-4c79-8fd5-2dc382af58ae",
+                  "adaptability": "Do they know they might need to be more proactive? Can they\nprovide an example of being more action oriented? How do they break out of being too much 'inside' their\nown head?"
+                }
+              ],
+              "name": "Introverted People",
+              "id": "f7b63658-9ab5-4e05-8ca4-d021e07ec574"
+            }
+          ],
+          "order": 3,
+          "name": "Engaging with People",
+          "introduction": "At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in\ndeveloping relationships with others - customers, clients, work groups or colleagues.\nThe benefits of being extraverted are likely to include being people oriented, approachable, fun loving,\nenergetic, fast to act, and 'full on'. In contrast someone who is introverted probably prefers to work\nindependently, and is more likely to be dispassionate, thoughtful and measured, to think before acting\nand to stand back. Those who are a mixture of both (extroverted/introverted) are best described as socially\nskilled, quick to connect, energetic, thoughtful and action oriented, and enthusiastic.\nThese personality characteristics provide the basis for asking a particular sequence of questions of each\nof the personality 'types'. The first question is looking to confirm what they should be like; the second two\nexplore areas of possible concern.",
+          "id": "5064521c-1028-40d4-8baa-dfeff734406f"
+        },
+        {
+          "questionSequences": [
+            {
+              "questions": [
+                {
+                  "text": "Tell me how you go about making sure other people at work know where you stand on a\nparticular activity/task/topic? (This could be in a team or group, with a work colleague, a customer etc.)",
+                  "purpose": "Do they assert their point of view? Do they freely speak their mind? Do\nthey question and not accept everything at face value? Are they willing to take an unpopular stance? Using\ntheir questioning abilities to get to the root of an issue, even if it makes other people uncomfortable, while\nbeing honest, transparent and dispassionate, should all be aspects of the independent character.",
+                  "order": 1,
+                  "id": "46bb9048-c9cb-491d-809f-e7a1e8a43ecf",
+                  "adaptability": null
+                },
+                {
+                  "text": "(Your results suggest you can be quite a competitive character.) Tell me a work situation where\nyou found it was necessary to be far more collaborative.",
+                  "purpose": "Can they accept working to other people’s rules? Do they value cooperation\nand see its value? Are they willing to join in on equal terms with other people?",
+                  "order": 2,
+                  "id": "24350602-1d64-40cb-98cb-25cd286db330",
+                  "adaptability": "Do they see that wanting a 'personal win' can be to the detriment of\nthe team or group? Can they give an example of letting someone else take the lead, or make the decisions,\neven though they thought they were better placed to do it?"
+                },
+                {
+                  "text": "(Your results suggest you like to 'do your own thing'.) Tell me about a work situation where this\nhas worked but has also caused some problems.",
+                  "purpose": "Do they tend to follow their own agenda? Does this mean they miss\nimportant signals from other people? Has this approach damaged working relationships?",
+                  "order": 3,
+                  "id": "e47be73e-64d7-4f1a-9d45-d97014c4117e",
+                  "adaptability": "Have they developed a mature appreciation of needing to work\ncooperatively with other people? What's their best example of this? Do they see that it is sometimes\nnecessary to 'give in' for the good of everyone else?"
+                }
+              ],
+              "name": "Independent People",
+              "id": "81490905-0e63-4a24-92b1-f9c2abbf7446"
+            }
+          ],
+          "order": 4,
+          "name": "Influencing People",
+          "introduction": "At the top level, Influencing People (A) concerns the way someone balances their emotional understanding\nof other people, and their respect for differing viewpoints, with the style in which they try to influence or\nnegotiate with them.\nThe benefits of being agreeable are likely to include accommodating other people's points of view, tuning\ninto their particular wavelength, starting from a position of trust, being non-confrontational, and steadily\nworking towards harmonious outcomes. In contrast someone who is independent will probably be\nquestioning and challenge assumptions, will speak their mind, be competitive, and try and influence others\nin a direct and impersonal manner. Those who are a mixture of both (agreeable/independent) are best\ndescribed as natural negotiators, as they will take a realistic view of others, but will also adopt a relational\nstyle and search for a 'win-win' outcome.\nThese personality characteristics provide the basis for asking a particular sequence of questions of each\nof the personality 'types'. The first question is looking to confirm what they should be like; the second two\nexplore areas of possible concern.",
+          "id": "b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        },
+        {
+          "questionSequences": [
+            {
+              "questions": [
+                {
+                  "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+                  "purpose": "Do they appear to respond with the appropriate level of concern? Are\nthey able to deal with things in a calm and upbeat way? Do they keep their feelings under control? Reacting\nto situations in a proportionate way, but keeping an eye on what might change, and having a predictably\nreliable and controlled manner, should all be aspects of the resilient/reflexive character.\nAnd to probe into possible issues with being resilient/reflexive:",
+                  "order": 1,
+                  "id": "8a3d9a16-95d6-4ff4-97a9-e89a654c9460",
+                  "adaptability": null
+                },
+                {
+                  "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when\nbeing even-tempered has not acted in your favor.",
+                  "purpose": "Does their dependable (emotional) style mean they do not show their true\nfeelings? Do they sometimes seem a bit unconcerned or unresponsive? Are they slow to rouse, whatever\nthe situation?",
+                  "order": 2,
+                  "id": "a8959ee9-6dc0-4155-98a1-41905dab04be",
+                  "adaptability": "Do they realize that other people may need to see/hear, rather more\nfrequently, how they actually feel about something? Have they worked out a way of increasing their energy\nlevel when needed?"
+                },
+                {
+                  "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think\nof a time when you should have responded more actively to something like a negative comment?",
+                  "purpose": "Do they take well-meant criticism or feedback seriously enough? Do they\nseek or avoid feedback? Do they see comments, even negative or critical ones, as a way of helping them to\nimprove at work?",
+                  "order": 3,
+                  "id": "ede3a4fa-24d0-4943-a2cb-70d8b51fa1ec",
+                  "adaptability": "Do they fully acknowledge that feedback can be useful comment\nrather than personal criticism? Can they provide an example of immediately acting on feedback from\nsomeone else - even though it was difficult to accept?"
+                }
+              ],
+              "name": "Resilient/Reflexive People",
+              "id": "626ef574-23c7-4e17-90af-4381bcd0d17e"
+            }
+          ],
+          "order": 5,
+          "name": "Managing Pressure",
+          "introduction": "At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and\nthe way in which they control their emotions and underlying tension in order to stay on task and cope with\neveryday challenges.\nThe benefits of being resilient are likely to include remaining calm in difficult situations, quickly getting\nover criticism, keeping feelings under control, and not being easily discouraged. In contrast someone who\nis reflexive will probably be more of a worrier, but also highly tuned in to the world; likely to take things\nto heart but be able to use tension to drive their work forward. They are also likely to be attuned to other\npeople's emotional states. Those who are a mixture of both (resilient/reflexive) are best described as even\ntempered but responsive, realistic about criticism, able to actively manage their feelings, and to cope with\nmost eventualities.\nThese personality characteristics provide the basis for asking a particular sequence of questions of each\nof the personality 'types'. The first question is looking to confirm what they should be like; the second two\nexplore areas of possible concern.",
+          "id": "26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        }
+      ]
+    }
+  }
+}

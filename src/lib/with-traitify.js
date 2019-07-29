@@ -243,11 +243,11 @@ export default function withTraitify(WrappedComponent) {
         this.props.assessment && this.props.assessment.id
       );
 
+      if(assessmentID) { this.safeSetState({assessmentID}); }
+
       this.addListener("assessmentId.update", (_, assessmentId) => {
         this.safeSetState({assessmentID: assessmentId});
       });
-
-      if(assessmentID) { this.safeSetState({assessmentID}); }
     }
     setupAirbrake() {
       if(this.getOption("disableAirbrake")) { return; }

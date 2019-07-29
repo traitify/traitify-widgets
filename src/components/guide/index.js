@@ -98,14 +98,12 @@ class Guide extends Component {
     } else {
       return (
         <ul className={style.tabs}>
-          {this.state.competencies.map((competency, index) => (
+          {this.state.competencies.map((competency) => (
             <li
               className={competency.name === displayedCompetency.name ? style.tabActive : null}
               key={competency.id}
             >
               <button
-                href={`#tab-${index}`}
-                tabIndex={0}
                 onKeyPress={() => this.displayCompetency(competency.name)}
                 onClick={() => this.displayCompetency(competency.name)}
                 name={competency.name}
@@ -159,12 +157,12 @@ class Guide extends Component {
     return this.state.badges.filter((badge) => badge.name === tab)[0].image;
   }
   render() {
+    const {translate, assessment} = this.props;
     if(this.state.errors.length > 0) { return <div />; }
     if(this.state.competencies.length === 0) { return <div />; }
-    if(!this.props.assessment) { return <div />; }
+    if(!assessment || assessment.assessment_type !== "DIMENSION_BASED") { return <div />; }
 
     const {displayedCompetency} = this.state;
-    const {translate} = this.props;
     const {intro, readMore} = this.introduction();
 
     return (
@@ -179,9 +177,7 @@ class Guide extends Component {
             {intro}
             <p>
               <button
-                href="#read-more"
                 type="button"
-                tabIndex={0}
                 onClick={() => this.handleReadMore()}
                 onKeyPress={() => this.handleReadMore()}
               >

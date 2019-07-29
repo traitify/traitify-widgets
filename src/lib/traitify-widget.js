@@ -31,8 +31,9 @@ export default class TraitifyWidget {
 
     if(this.ui.callbacks["assessmentid.update"]) {
       this.ui.trigger("assessmentId.update", this, assessmentID);
-      return this;
     }
+
+    return this;
   }
   destroy() {
     Object.keys(this.options.targets).forEach((name) => {

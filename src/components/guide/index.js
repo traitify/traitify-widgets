@@ -160,7 +160,7 @@ class Guide extends Component {
     const {translate, assessment} = this.props;
     if(this.state.errors.length > 0) { return <div />; }
     if(this.state.competencies.length === 0) { return <div />; }
-    if(!assessment || !assessment.assessment_type === "DIMENSION_BASED") { return <div />; }
+    if(!assessment || assessment.assessment_type !== "DIMENSION_BASED") { return <div />; }
 
     const {displayedCompetency} = this.state;
     const {intro, readMore} = this.introduction();

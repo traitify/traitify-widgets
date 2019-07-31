@@ -8,7 +8,7 @@ import jaJP from "lib/i18n-data/ja_jp.json";
 import nlNL from "lib/i18n-data/nl_nl.json";
 import noNO from "lib/i18n-data/no_no.json";
 import ptBR from "lib/i18n-data/pt_br.json";
-import ruRu from "lib/i18n-data/sv_se.json";
+import ruRu from "lib/i18n-data/ru_ru.json";
 import svSE from "lib/i18n-data/sv_se.json";
 import zhCN from "lib/i18n-data/zh_cn.json";
 

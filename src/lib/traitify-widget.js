@@ -28,6 +28,8 @@ export default class TraitifyWidget {
     if(this.options.assessmentID === assessmentID) { return this; }
 
     this.options.assessmentID = assessmentID;
+
+    return this;
   }
   destroy() {
     Object.keys(this.options.targets).forEach((name) => {

@@ -29,10 +29,6 @@ export default class TraitifyWidget {
 
     this.options.assessmentID = assessmentID;
 
-    if(this.ui.callbacks["assessmentid.update"]) {
-      this.ui.trigger("assessmentId.update", this, assessmentID);
-    }
-
     return this;
   }
   destroy() {

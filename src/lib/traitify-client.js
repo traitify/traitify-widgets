@@ -57,6 +57,18 @@ export default class TraitifyClient {
     } else {
       params = _params;
     }
+
+    if(path.includes("graphql")) {
+      xhr = new XMLHttpRequest();
+      xhr.open(method, url, true);
+      xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
+      xhr.setRequestHeader("Content-type", "application/graphql");
+      xhr.setRequestHeader("Accept-language", "en-US");
+      xhr.setRequestHeader("Accept", "*/*");
+
+      return this.handlePromise("graphql", xhr, params);
+    }
+
     if(this.oldIE) {
       url += url.indexOf("?") === -1 ? "?" : "&";
       url += queryString.stringify({
@@ -73,17 +85,6 @@ export default class TraitifyClient {
       xhr.setRequestHeader("Accept", "application/json");
     }
     return this.handlePromise("rest", xhr, params);
-  }
-  graphqlQuery = (path, params) => {
-    const url = `${this.host}/${this.version}${path}`;
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
-    xhr.setRequestHeader("Content-type", "application/graphql");
-    xhr.setRequestHeader("Accept-language", "en-US");
-    xhr.setRequestHeader("Accept", "*/*");
-
-    return this.handlePromise("graphql", xhr, params);
   }
   get = (path, params) => (this.ajax("GET", path, params))
   put = (path, params) => (this.ajax(this.oldIE ? "POST" : "PUT", path, params))

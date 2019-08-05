@@ -121,7 +121,7 @@ class Guide extends Component {
   }
   setGuide() {
     const params = {assessmentId: this.props.assessmentID, localeKey: this.props.locale};
-    this.props.traitify.graphqlQuery("/interview_guides/graphql", guideQuery({params}))
+    this.props.traitify.post("/interview_guides/graphql", guideQuery({params}))
       .then((response) => {
         if(response.errors) {
           this.setState({errors: response.errors});

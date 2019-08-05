@@ -1,4 +1,5 @@
 import {
+  camelCase,
   careerOption,
   dangerousProps,
   detailWithPerspective,
@@ -8,6 +9,20 @@ import {
 import assessment from "support/json/assessment/dimension-based.json";
 
 describe("Helpers", () => {
+  describe("camelCase", () => {
+    it("replaces hyphens", () => {
+      const value = camelCase("really-not-me");
+
+      expect(value).toBe("reallyNotMe");
+    });
+
+    it("replaces underscores", () => {
+      const value = camelCase("REALLY_NOT_ME");
+
+      expect(value).toBe("reallyNotMe");
+    });
+  });
+
   describe("careerOption", () => {
     const options = {careerOptions: {perPage: 20}};
     const ui = {options: {careerOptions: {perPage: 30}}};

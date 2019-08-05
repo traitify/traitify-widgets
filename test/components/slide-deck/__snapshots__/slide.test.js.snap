@@ -1,5 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Slide likert scale renders component 1`] = `
+<div
+  className="undefined undefined"
+>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        className="undefined undefined"
+        onClick={[Function]}
+        type="button"
+      >
+        really_not_me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        className="undefined undefined"
+        onClick={[Function]}
+        type="button"
+      >
+        really_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Slide renders back button 1`] = `
 <div
   className="undefined "

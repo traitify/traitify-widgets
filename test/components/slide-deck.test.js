@@ -457,6 +457,57 @@ describe("SlideDeck", () => {
       });
     });
 
+    describe("updateLikertSlide", () => {
+      it("updates slides", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        const {startTime, slides} = component.state;
+        component.updateState({
+          slides: slides.map((slide, index) => ({
+            ...slide,
+            likert_response: index > slides.length / 2 ? null : "REALLY_ME"
+          }))
+        });
+        const previousLength = completedSlides(component.state.slides).length;
+        const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.response;
+        component.instance.finish = jest.fn().mockName("finish");
+        component.instance.updateLikertSlide(previousLength, "REALLY_NOT_ME");
+
+        expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
+        expect(component.state.slides[previousLength]).toEqual({
+          ...lastSlide,
+          likert_response: "REALLY_NOT_ME",
+          time_taken: expect.any(Number)
+        });
+        expect(component.state.startTime).not.toBe(startTime);
+        expect(component.instance.finish).not.toHaveBeenCalled();
+      });
+
+      it("finishes", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        const {slides} = component.state;
+        component.updateState({
+          slides: slides.map((slide, index) => ({
+            ...slide,
+            likert_response: index === slides.length - 1 ? null : "REALLY_NOT_ME"
+          }))
+        });
+        const previousLength = completedSlides(component.state.slides).length;
+        const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.response;
+        component.instance.finish = jest.fn().mockName("finish");
+        component.instance.updateLikertSlide(previousLength, "REALLY_ME");
+
+        expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
+        expect(component.state.slides[previousLength]).toEqual({
+          ...lastSlide,
+          likert_response: "REALLY_ME",
+          time_taken: expect.any(Number)
+        });
+        expect(component.instance.finish).toHaveBeenCalled();
+      });
+    });
+
     describe("updateSlide", () => {
       it("updates slides", () => {
         const component = new ComponentHandler(<Component {...props} />);

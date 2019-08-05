@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import guideQuery from "lib/graphql/queries/guide";
 import {getDisplayName, loadFont} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
@@ -43,6 +44,8 @@ export default function withTraitify(WrappedComponent) {
         deckID: null,
         error: null,
         followingDeck: null,
+        followingGuide: null,
+        guide: null,
         locale: null
       };
       this.setupTraitify();
@@ -80,12 +83,26 @@ export default function withTraitify(WrappedComponent) {
       if(this.state.followingDeck && (changes.deckID || changes.locale)) {
         this.updateDeck({oldID: prevState.deckID, oldLocale: prevState.locale});
       }
+
+      if(this.state.followingGuide) {
+        const oldAssessmentState = prevState.assessment || {};
+        const oldAssessmentID = oldAssessmentState.id;
+        const newAssessmentState = this.state.assessment || {};
+        const assessmentChanged = oldAssessmentID !== newAssessmentState.id;
+        const oldAssessmentTypes = oldAssessmentState.personality_types || [];
+        const newAssessmentTypes = newAssessmentState.personality_types || [];
+        changes.results = oldAssessmentTypes.length !== newAssessmentTypes.length;
+
+        if(assessmentChanged || changes.locale || changes.results) {
+          this.updateGuide({oldID: oldAssessmentID, oldLocale: prevState.locale});
+        }
+      }
     }
     componentWillUnmount() {
       Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
     }
     componentDidCatch(error, info) {
-      this.ui.trigger("error", this, {error, info});
+      this.ui.trigger("Component.error", this, {error, info});
       this.setState({error});
     }
     addListener = (_key, callback) => {
@@ -106,6 +123,10 @@ export default function withTraitify(WrappedComponent) {
     followDeck = () => {
       this.setState({followingDeck: true});
       this.updateDeck();
+    }
+    followGuide = () => {
+      this.setState({followingGuide: true});
+      this.updateGuide();
     }
     getAssessment = (options = {}) => {
       const {assessmentID, locale} = this.state;
@@ -195,6 +216,61 @@ export default function withTraitify(WrappedComponent) {
 
       return this.ui.requests[key];
     }
+    getGuide = (options = {}) => {
+      const {assessment, locale} = this.state;
+      const assessmentID = (assessment || {}).id;
+      if(!assessmentID) { return Promise.resolve(); }
+
+      const key = `${locale}.guide.${assessmentID}`;
+      const hasData = (data) => (
+        data && data.locale_key
+          && data.assessment_id === assessmentID
+          && data.locale_key.toLowerCase() === locale
+          && data.competencies
+          && data.competencies.length > 0
+      );
+      const setGuide = (data) => (
+        new Promise((resolve) => {
+          this.setState({guide: data}, () => (resolve(data)));
+          this.ui.trigger(key, this, data);
+        })
+      );
+
+      let {guide} = this.state;
+      if(hasData(guide)) { return setGuide(guide); }
+
+      guide = this.cache.get(key);
+      if(hasData(guide)) { return setGuide(guide); }
+
+      if(this.ui.requests[key] && !options.force) {
+        return this.ui.requests[key];
+      }
+
+      const query = {...this.getOption("guideQuery") || {}};
+      query.params = {...query.params, assessmentId: assessmentID, localeKey: locale};
+
+      this.ui.requests[key] = this.traitify.post(
+        "/interview_guides/graphql",
+        guideQuery(query)
+      ).then((_data) => {
+        const _guide = (_data.data || {}).guide;
+        const data = {..._guide};
+        if(!data.assessment_id) { data.assessment_id = assessmentID; }
+        if(!data.locale_key) { data.locale_key = locale; }
+        if(hasData(data)) {
+          this.cache.set(key, data);
+          setGuide(data);
+        } else {
+          delete this.ui.requests[key];
+        }
+      }).catch((error) => {
+        console.warn(error); // eslint-disable-line no-console
+
+        delete this.ui.requests[key];
+      });
+
+      return this.ui.requests[key];
+    }
     getListener = (key) => (this.listeners[key.toLowerCase()])
     getOption = (name) => {
       const {props, ui} = this;
@@ -205,11 +281,13 @@ export default function withTraitify(WrappedComponent) {
       if(ui && ui.options[name] != null) { return ui.options[name]; }
     }
     isReady = (type) => {
-      const {assessment, deck} = this.state;
+      const {assessment, deck, guide} = this.state;
 
       switch(type) {
         case "deck":
           return !!((deck && !!deck.name));
+        case "guide":
+          return !!((guide && (guide.competencies || []).length > 0));
         case "results":
           return !!(assessment && (assessment.personality_types || []).length > 0);
         case "slides":
@@ -286,6 +364,7 @@ export default function withTraitify(WrappedComponent) {
           this.setState({
             assessment,
             assessmentID: assessment.id,
+            assessmentType: assessment.assessment_type,
             deck: null,
             deckID: assessment.deck_id
           });
@@ -324,10 +403,39 @@ export default function withTraitify(WrappedComponent) {
         }
       }
     }
+    updateGuide(options = {}) {
+      const {assessment, locale} = this.state;
+      const assessmentID = (assessment || {}).id;
+
+      if(options.oldID || options.oldLocale) {
+        const oldAssessmentID = options.oldID || assessmentID;
+        const oldLocale = options.oldLocale || locale;
+        const key = `${oldLocale}.guide.${oldAssessmentID}`;
+
+        this.removeListener(key);
+      }
+
+      if(!assessmentID) { return; }
+      if(assessment.assessment_type !== "DIMENSION_BASED") { return; }
+
+      const key = `${locale}.guide.${assessmentID}`;
+
+      this.addListener(key, (_, guide) => {
+        this.setState({guide});
+      });
+
+      const currentValue = this.ui.current[key];
+      if(currentValue != null) {
+        this.getListener(key)(null, currentValue);
+      } else {
+        this.getGuide();
+      }
+    }
     render() {
       const {
         cache,
         followDeck,
+        followGuide,
         getAssessment,
         getOption,
         isReady,
@@ -344,6 +452,7 @@ export default function withTraitify(WrappedComponent) {
         ...state,
         cache,
         followDeck,
+        followGuide,
         getAssessment,
         getOption,
         locale,

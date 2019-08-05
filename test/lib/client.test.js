@@ -6,7 +6,7 @@ import {
   XMLHttpRequestMock
 } from "support/xhr";
 
-const responseJSON = "[{\"name\": \"Neo\"}]";
+const responseJSON = `[{"name": "Neo"}]`;
 
 describe("Client", () => {
   let client;
@@ -120,6 +120,44 @@ describe("Client", () => {
   describe("ajax", () => {
     beforeEach(() => {
       client.setPublicKey("xyz");
+    });
+
+    describe("graphql", () => {
+      let OriginalXMLHttpRequest;
+      let params;
+
+      beforeAll(() => {
+        OriginalXMLHttpRequest = XMLHttpRequest;
+        global.XMLHttpRequest = XMLHttpRequestMock;
+      });
+
+      beforeEach(() => {
+        XMLHttpRequest.mockClear();
+        Object.values(xhrMocks).forEach((mock) => mock.mockClear());
+
+        params = `{ guide(localeKey:"en-US",assessmentId:"xyz") { name competencies { id name } }}`;
+        client.post("/interview_guides/graphql", params);
+      });
+
+      afterAll(() => {
+        global.XMLHttpRequest = OriginalXMLHttpRequest;
+      });
+
+      it("includes authorization", () => {
+        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Authorization", `Basic ${btoa("xyz:x")}`);
+      });
+
+      it("includes headers", () => {
+        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Content-type", "application/graphql");
+        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Accept", "*/*");
+      });
+
+      it("passes params", () => {
+        const url = xhrMocks.open.mock.calls[0][1];
+
+        expect(url).toEqual("https://api.traitify.com/v1/interview_guides/graphql");
+        expect(xhrMocks.send).toHaveBeenCalledWith(params);
+      });
     });
 
     describe("with oldIE", () => {

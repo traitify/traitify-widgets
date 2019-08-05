@@ -63,7 +63,6 @@ export default class TraitifyClient {
       xhr.open(method, url, true);
       xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
       xhr.setRequestHeader("Content-type", "application/graphql");
-      xhr.setRequestHeader("Accept-language", "en-US");
       xhr.setRequestHeader("Accept", "*/*");
 
       return this.handlePromise("graphql", xhr, params);
@@ -84,6 +83,7 @@ export default class TraitifyClient {
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }
+
     return this.handlePromise("rest", xhr, params);
   }
   get = (path, params) => (this.ajax("GET", path, params))

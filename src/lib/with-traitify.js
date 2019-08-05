@@ -244,10 +244,6 @@ export default function withTraitify(WrappedComponent) {
       );
 
       if(assessmentID) { this.safeSetState({assessmentID}); }
-
-      this.addListener("assessmentId.update", (_, assessmentId) => {
-        this.safeSetState({assessmentID: assessmentId});
-      });
     }
     setupAirbrake() {
       if(this.getOption("disableAirbrake")) { return; }

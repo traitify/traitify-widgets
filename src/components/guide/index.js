@@ -135,7 +135,6 @@ class Guide extends Component {
               <button
                 type="button"
                 onClick={this.toggleExpandedIntro}
-                onKeyPress={this.toggleExpandedIntro}
               >
                 {translate("read_more")}
               </button>

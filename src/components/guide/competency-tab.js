@@ -23,7 +23,6 @@ export default class CompetencyTab extends Component {
     return (
       <li className={competency.id === displayedCompetency.id ? style.tabActive : null}>
         <button
-          onKeyPress={this.displayCompetency}
           onClick={this.displayCompetency}
           name={competency.name}
           type="button"

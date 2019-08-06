@@ -226,7 +226,7 @@ describe("Client", () => {
           xhr.responseText = "Error: Not Found";
           xhr.onload();
 
-          expect(response).rejects.toEqual("Error: Not Found");
+          return expect(response).rejects.toEqual("Error: Not Found");
         });
 
         it("returns timeout error", () => {

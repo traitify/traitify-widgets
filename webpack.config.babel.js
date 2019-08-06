@@ -40,9 +40,10 @@ let config = {
             loader: "css-loader",
             options:  {
               sourceMap: cssMaps,
-              modules: true,
+              modules: {
+                localIdentName: "traitify--[path]--[local]"
+              },
               importLoaders: 2,
-              localIdentName: "traitify--[path]--[local]"
             }
           },
           {
@@ -50,7 +51,7 @@ let config = {
             options: {
               sourceMap: cssMaps,
               plugins: function() {
-                return [autoprefixer({ browsers: "last 2 versions" })]
+                return [autoprefixer()]
               }
             }
           },
@@ -99,7 +100,8 @@ const compatibility = ie || process.env.MODE === "compatibility";
 const browser = compatibility || process.env.MODE === "browser";
 
 if(browser){
-  config.entry.unshift("@babel/polyfill");
+  config.entry.unshift("core-js/stable");
+  config.entry.unshift("regenerator-runtime/runtime");
   config.output.libraryExport = "default";
 }
 if(compatibility){ config.entry[1] = "./compatibility.js"; }

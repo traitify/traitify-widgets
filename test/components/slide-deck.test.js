@@ -244,6 +244,7 @@ describe("SlideDeck", () => {
     let componentDidUpdate;
     let originalAddEventListener;
     let originalRemoveEventListener;
+    let originalInnerWidth;
 
     beforeAll(() => {
       originalAddEventListener = window.addEventListener;
@@ -257,6 +258,7 @@ describe("SlideDeck", () => {
     });
 
     beforeEach(() => {
+      originalInnerWidth = window.innerWidth;
       componentDidUpdate = jest.spyOn(Component.prototype, "componentDidUpdate");
     });
 
@@ -264,6 +266,7 @@ describe("SlideDeck", () => {
       componentDidUpdate.mockRestore();
       window.addEventListener.mockClear();
       window.removeEventListener.mockClear();
+      window.innerWidth = originalInnerWidth;
     });
 
     afterAll(() => {
@@ -302,6 +305,22 @@ describe("SlideDeck", () => {
       expect(component.state.slides.filter((slide) => (
         slide.image !== `http://localhost:8080/v1/images/${slide.id}?width=100&height=200`
       ))).toHaveLength(0);
+    });
+
+    it("updates slides with likert sizing", () => {
+      window.innerWidth = 100;
+      componentDidUpdate.mockImplementation(() => {});
+      props.assessment.scoring_scale = "LIKERT_CUMULATIVE_POMP";
+      const component = new ComponentHandler(<Component {...props} />);
+      props.getOption.mockImplementationOnce(() => "http://localhost:8080");
+      component.instance.container = {clientHeight: 200, clientWidth: 100};
+      component.instance.fetchImages = jest.fn().mockName("fetchImages");
+      component.instance.resizeImages();
+
+      expect(component.instance.fetchImages).toHaveBeenCalled();
+      expect(component.state.imageLoadingAttempts).toBe(0);
+      expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
+      expect(component.state.slides.filter((slide) => !slide.image.includes("w=100&h=126"))).toHaveLength(0);
     });
 
     it("updates slides with image falling back to desktop image", () => {

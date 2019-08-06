@@ -127,8 +127,13 @@ class SlideDeck extends Component {
       if(!this.container) { return; }
 
       const width = this.container.clientWidth;
-      const height = this.container.clientHeight;
+      let height = this.container.clientHeight;
       const imageHost = props.getOption("imageHost");
+      const isLikertScale = this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP";
+      if(window.innerWidth <= 768 && isLikertScale) {
+        height -= 74;
+      }
+
       const slides = state.slides.map((slide) => ({
         ...slide,
         loaded: false,

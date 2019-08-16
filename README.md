@@ -75,11 +75,6 @@ assessment.render("PersonalityDetails"); // Render just the details in the targe
 assessment.render("PersonalityBlend"); // Render just the Blend in the target element
 ```
 
-#### Interview Guide
-```
-assessment.render("Guide"); // Render just the Interview Guide in the target element
-```
-
 ### Careers Deck Components (career-deck)
 
 #### Render All Career Components
@@ -155,6 +150,12 @@ assessment.render("Radar"); // Render just the Radar graph in the target element
 #### Personality Heading
 ```
 assessment.render("PersonalityHeading"); // Render just the archetype in the target element
+```
+
+### Interview Guide
+#### Interview questions for big-five assessments
+```
+assessment.render("Guide"); // Given an assessmentID with results, render just the Interview in the target element
 ```
 
 ### Render multiple components in specific elements

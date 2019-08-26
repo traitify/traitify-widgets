@@ -27,7 +27,7 @@ export default {
   "nl-nl": nlNL,
   "no-no": noNO,
   "pt-br": ptBR,
-  "pt-pt": ptBR,
+  "pt-pt": ptPT,
   "ru-ru": ruRU,
   "sv-se": svSE,
   "zh-cn": zhCN

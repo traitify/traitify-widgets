@@ -1,6 +1,6 @@
 import enUS from "lib/i18n-data/en_us.json";
 import enGB from "lib/i18n-data/en_gb.json";
-import esEC from "lib/i18n-data/es_us.json";
+import esEC from "lib/i18n-data/es_ec.json";
 import esUS from "lib/i18n-data/es_us.json";
 import frCA from "lib/i18n-data/fr_ca.json";
 import frFR from "lib/i18n-data/fr_fr.json";
@@ -9,7 +9,7 @@ import jaJP from "lib/i18n-data/ja_jp.json";
 import nlNL from "lib/i18n-data/nl_nl.json";
 import noNO from "lib/i18n-data/no_no.json";
 import ptBR from "lib/i18n-data/pt_br.json";
-import ptPT from "lib/i18n-data/pt_br.json";
+import ptPT from "lib/i18n-data/pt_pt.json";
 import ruRU from "lib/i18n-data/ru_ru.json";
 import svSE from "lib/i18n-data/sv_se.json";
 import zhCN from "lib/i18n-data/zh_cn.json";

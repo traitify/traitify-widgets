@@ -1,69 +1,211 @@
 import {Component} from "components/guide/index";
+import CompetencySelect from "components/guide/competency-select";
+import CompetencyTab from "components/guide/competency-tab";
 import ComponentHandler from "support/component-handler";
-import response from "support/json/guide.json";
+import assessment from "support/json/assessment/dimension-based.json";
+import guideResponse from "support/json/guide.json";
+
+jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Guide", () => {
   let props;
 
   beforeEach(() => {
     props = {
+      assessment,
+      followGuide: jest.fn().mockName("followGuide"),
+      guide: {
+        assessment_id: "xyz",
+        locale_key: "es-US",
+        ...guideResponse.data.guide
+      },
+      isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      assessmentID: "bca3ab7c-8ed1-421f-a0ab-39d619efeee0",
-      traitify: {
-        graphqlQuery: jest.fn().mockName("graphqlQuery").mockImplementation(() => (Promise.resolve()))
+      ui: {
+        current: {},
+        off: jest.fn().mockName("off"),
+        on: jest.fn().mockName("on"),
+        trigger: jest.fn().mockName("trigger")
       }
     };
   });
 
-  it("formats introduction", () => {
-    const component = (new ComponentHandler(<Component {...props} />));
-    component.updateState(
-      {
-        competencies: response.data.guide.competencies,
-        displayedCompetency: response.data.guide.competencies[0]
-      }
-    );
-    const introduction = component.instance.introduction();
+  describe("callbacks", () => {
+    it("triggers initialization", () => {
+      const component = new ComponentHandler(<Component {...props} />);
 
-    expect(introduction.intro).toBe("At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects\nand challenges, how receptive they are to new or different information or approaches, and the way this\ninfluences their decision making.");
-    expect(introduction.readMore).toBe("The benefits of being open-minded are likely to include approaching problems in original ways, making\nquick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.\nIn contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations. They are likely to have a fine eye for detail, be results\noriented, and able to bring experience to bear on a problem. Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex\nbetween different options, capable of seeing situations at different levels of detail, and as bringing healthy\ncaution to decision making.\nThese personality characteristics provide the basis for asking a particular sequence of questions of each\nof the personality 'types'. The first question is looking to confirm what they should be like; the second two\nexplore areas of possible concern.");
+      expect(props.ui.trigger).toHaveBeenCalledWith("Guide.initialized", component.instance);
+    });
+
+    it("triggers update", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.updateProps();
+
+      expect(props.ui.trigger).toHaveBeenCalledWith("Guide.updated", component.instance);
+    });
   });
 
-  it("handles displayedCompetency", () => {
-    const component = (new ComponentHandler(<Component {...props} />));
-    component.updateState(
-      {
-        competencies: response.data.guide.competencies,
-        displayedCompetency: response.data.guide.competencies[0]
-      }
-    );
-    expect(component.state.displayedCompetency.name).toBe("Solving Problems");
+  describe("update", () => {
+    it("sets the guide data if the guide's assessment ID changes", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.instance.setGuide = jest.fn().mockName("setGuide");
+      component.updateProps({guide: {...component.props.guide, assessment_id: "abc"}});
 
-    component.instance.displayCompetency("Delivering Results");
-    expect(component.state.displayedCompetency.name).toBe("Delivering Results");
+      expect(component.instance.setGuide).toHaveBeenCalled();
+    });
 
-    component.instance.displayCompetency({target: {value: "Engaging with People"}});
-    expect(component.state.displayedCompetency.name).toBe("Engaging with People");
+    it("sets the guide data if the guide's locale changes", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.instance.setGuide = jest.fn().mockName("setGuide");
+      component.updateProps({guide: {...component.props.guide, locale_key: "en-US"}});
 
-    component.instance.displayCompetency("some invalid competency");
-    expect(component.state.displayedCompetency.name).toBe("Engaging with People");
+      expect(component.instance.setGuide).toHaveBeenCalled();
+    });
+
+    it("sets the guide data if the guide's removed", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.instance.setGuide = jest.fn().mockName("setGuide");
+      component.updateProps({guide: null});
+
+      expect(component.instance.setGuide).toHaveBeenCalled();
+    });
   });
 
-  it("matches snapshot on success", () => {
-    const component = (new ComponentHandler(<Component {...props} />));
-    component.updateState(
-      {
-        competencies: response.data.guide.competencies,
-        displayedCompetency: response.data.guide.competencies[0]
-      }
-    );
+  describe("setGuide", () => {
+    let componentDidUpdate;
+
+    beforeEach(() => {
+      componentDidUpdate = jest.spyOn(Component.prototype, "componentDidUpdate");
+      componentDidUpdate.mockImplementation(() => {});
+    });
+
+    afterEach(() => {
+      componentDidUpdate.mockRestore();
+    });
+
+    it("sets the guide data", () => {
+      const competenciesLength = props.guide.competencies.length;
+      const component = new ComponentHandler(<Component {...props} />);
+      component.instance.setGuide();
+
+      expect(component.state.badges).toHaveLength(competenciesLength);
+      expect(component.state.competencies).toHaveLength(competenciesLength);
+      expect(component.state.displayedCompetency).toBeDefined();
+    });
+
+    it("removes the guide data if the guide's removed", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.updateProps({guide: null});
+      component.instance.setGuide();
+
+      expect(component.state.badges).toHaveLength(0);
+      expect(component.state.competencies).toHaveLength(0);
+      expect(component.state.displayedCompetency).toBeNull();
+    });
+  });
+
+  describe("competency select", () => {
+    beforeEach(() => {
+      props = {
+        competencies: props.guide.competencies,
+        displayedCompetency: props.guide.competencies[0],
+        displayCompetency: jest.fn().mockName("displayCompetency"),
+        tabBadge: jest.fn().mockName("tabBadge")
+      };
+    });
+
+    it("renders component", () => {
+      const component = new ComponentHandler(<CompetencySelect {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("calls displayCompetency prop with id", () => {
+      const component = new ComponentHandler(<CompetencySelect {...props} />);
+      const {id} = props.competencies[1];
+      component.instance.displayCompetency({target: {value: id}});
+
+      expect(props.displayCompetency).toHaveBeenCalledWith(id);
+    });
+  });
+
+  describe("competency tab", () => {
+    beforeEach(() => {
+      props = {
+        competency: props.guide.competencies[1],
+        displayedCompetency: props.guide.competencies[0],
+        displayCompetency: jest.fn().mockName("displayCompetency"),
+        tabBadge: jest.fn().mockName("tabBadge")
+      };
+    });
+
+    it("renders component", () => {
+      const component = new ComponentHandler(<CompetencyTab {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("calls displayCompetency prop with id", () => {
+      const component = new ComponentHandler(<CompetencyTab {...props} />);
+      component.instance.displayCompetency();
+
+      expect(props.displayCompetency).toHaveBeenCalledWith(props.competency.id);
+    });
+  });
+
+  it("follows the guide", () => {
+    new ComponentHandler(<Component {...props} />);
+
+    expect(props.followGuide).toHaveBeenCalled();
+  });
+
+  it("toggles expanded intro", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    component.instance.componentDidUpdate({});
+    component.instance.toggleExpandedIntro();
+
+    expect(component.state.showExpandedIntro).toBe(true);
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("updates displayedCompetency", () => {
+    const {competencies} = props.guide;
+    const component = new ComponentHandler(<Component {...props} />);
+    component.instance.componentDidUpdate({});
+
+    expect(component.state.displayedCompetency.id).toBe(competencies[0].id);
+
+    component.instance.displayCompetency(competencies[1].id);
+    expect(component.state.displayedCompetency.id).toBe(competencies[1].id);
+  });
+
+  it("renders component", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    component.instance.componentDidUpdate({});
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("returns blank div on error", () => {
-    const component = (new ComponentHandler(<Component {...props} />));
-    component.updateState({errors: ["did not successfully fetch guide"]});
+  it("renders nothing if guide not ready", () => {
+    props.guide = null;
+    props.isReady.mockImplementation((value) => value !== "guide");
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if results not ready", () => {
+    props.assessment = null;
+    props.isReady.mockImplementation((value) => value !== "results");
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if no competencies", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    component.updateState({competencies: []});
+
     expect(component.tree).toMatchSnapshot();
   });
 });

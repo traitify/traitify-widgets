@@ -1,96 +1,182 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Guide matches snapshot on success 1`] = `
+exports[`Guide competency select renders component 1`] = `
+<div>
+  <select
+    onChange={[Function]}
+    value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+  >
+    <option
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+    >
+      Solving Problems
+    </option>
+    <option
+      value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+    >
+      Delivering Results
+    </option>
+    <option
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      Engaging with People
+    </option>
+    <option
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+    >
+      Influencing People
+    </option>
+    <option
+      value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+    >
+      Managing Pressure
+    </option>
+  </select>
+  <p>
+    <img
+      alt="Solving Problems badge"
+    />
+  </p>
+</div>
+`;
+
+exports[`Guide competency tab renders component 1`] = `
+<li
+  className={null}
+>
+  <button
+    name="Delivering Results"
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="Delivering Results badge"
+    />
+    <br />
+    Delivering Results
+  </button>
+</li>
+`;
+
+exports[`Guide renders component 1`] = `
 <div>
   <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+      </select>
+      <p>
+        <img
+          alt="Solving Problems badge"
+          src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+        />
+      </p>
+    </div>
     <ul>
       <li>
-        <a
-          href="#tab-0"
+        <button
           name="Solving Problems"
           onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
+          type="button"
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/assets/images/js/openness.png"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
           />
           <br />
           Solving Problems
-        </a>
+        </button>
       </li>
       <li
         className={null}
       >
-        <a
-          href="#tab-1"
+        <button
           name="Delivering Results"
           onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
+          type="button"
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/assets/images/js/conscientiousness.png"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
           />
           <br />
           Delivering Results
-        </a>
+        </button>
       </li>
       <li
         className={null}
       >
-        <a
-          href="#tab-2"
+        <button
           name="Engaging with People"
           onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
+          type="button"
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/assets/images/js/extraversion.png"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
           />
           <br />
           Engaging with People
-        </a>
+        </button>
       </li>
       <li
         className={null}
       >
-        <a
-          href="#tab-3"
+        <button
           name="Influencing People"
           onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
+          type="button"
         >
           <img
             alt="Influencing People badge"
-            src="https://cdn.traitify.com/assets/images/js/agreeableness.png"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
           />
           <br />
           Influencing People
-        </a>
+        </button>
       </li>
       <li
         className={null}
       >
-        <a
-          href="#tab-4"
+        <button
           name="Managing Pressure"
           onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
+          type="button"
         >
           <img
             alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/assets/images/js/emotional_stability.png"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
           />
           <br />
           Managing Pressure
-        </a>
+        </button>
       </li>
     </ul>
   </div>
@@ -99,23 +185,17 @@ exports[`Guide matches snapshot on success 1`] = `
       <h2>
         Solving Problems
       </h2>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects
-and challenges, how receptive they are to new or different information or approaches, and the way this
-influences their decision making.
+      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
       <p>
-        <a
-          href="#read-more"
+        <button
           onClick={[Function]}
-          onKeyPress={[Function]}
-          tabIndex={0}
+          type="button"
         >
           read_more
-        </a>
+        </button>
       </p>
       <hr />
-      <div
-        className="competency-type"
-      >
+      <div>
         <h2>
           Open-Minded/Pragmatic People
         </h2>
@@ -131,9 +211,7 @@ influences their decision making.
             }
           />
         </p>
-        <div
-          className="questions"
-        >
+        <div>
           <h3
             id="traitify-question-1"
           >
@@ -151,25 +229,25 @@ influences their decision making.
                 Do they talk about a number of different ways of approaching the problem?
               </li>
               <li>
-                Are their ideas new, original or different in any way? Do they test new ideas against what seems feasible,
-both now and in the longer term? Producing new ideas but checking their viability, and implementing
-balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
-And to probe into possible issues with being open-minded/pragmatic:
+                Are their ideas new, original or different in any way?
+              </li>
+              <li>
+                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+              </li>
+              <li>
+                And to probe into possible issues with being open-minded/pragmatic.
               </li>
             </ul>
           </div>
         </div>
-        <div
-          className="questions"
-        >
+        <div>
           <h3
             id={null}
           >
             Question 2
           </h3>
           <p>
-            (Your results suggest you like to think about new ideas and possibilities). Give me an example
-of a time when you had to be practical and realistic, and work to a fixed set of rules.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </p>
           <h4>
             question_purpose
@@ -177,11 +255,13 @@ of a time when you had to be practical and realistic, and work to a fixed set of
           <div>
             <ul>
               <li>
-                How comfortable are they working in a step-by-step manner? Is there a
+                How comfortable are they working in a step-by-step manner?
               </li>
               <li>
-                tension between this and wanting to try something new? Does this 'conflict' sometimes show itself in taking
-a very cautious approach?
+                Is there a tension between this and wanting to try something new?
+              </li>
+              <li>
+                Does this 'conflict' sometimes show itself in taking a very cautious approach?
               </li>
             </ul>
           </div>
@@ -192,29 +272,26 @@ a very cautious approach?
             <div>
               <ul>
                 <li>
-                  Do they recognize that sometimes the best approach is to use an
+                  Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
                 </li>
                 <li>
-                  existing procedure, or to be far less cautious and try something radically different? Can they give an example
-of using either of these extremes? What do they do to stop themselves getting stuck on the 'middle way' of
-doing things?
+                  Can they give an example of using either of these extremes?
+                </li>
+                <li>
+                  What do they do to stop themselves getting stuck on the 'middle way' of doing things?
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div
-          className="questions"
-        >
+        <div>
           <h3
             id={null}
           >
             Question 3
           </h3>
           <p>
-            (Your results suggest you are a grounded person but also someone who thinks about future
-possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar
-situation in the past. What happened and what did you do?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </p>
           <h4>
             question_purpose
@@ -222,11 +299,13 @@ situation in the past. What happened and what did you do?
           <div>
             <ul>
               <li>
-                Do they sometimes not learn from the past? Do they move on too quickly
+                Do they sometimes not learn from the past?
               </li>
               <li>
-                without consolidating what they have learned? Do they sometimes override their experience because they
-think they need to demonstrate original thought?
+                Do they move on too quickly without consolidating what they have learned?
+              </li>
+              <li>
+                Do they sometimes override their experience because they think they need to demonstrate original thought?
               </li>
             </ul>
           </div>
@@ -240,8 +319,7 @@ think they need to demonstrate original thought?
                   Do they know they sometimes confuse knowledge with foresight?
                 </li>
                 <li>
-                  Can they provide an example of sticking with experience, and the tried-and-tested, even though they
-wanted to try something fresh?
+                  Can they provide an example of sticking with experience, and the tried-and-tested, even though they wanted to try something fresh?
                 </li>
               </ul>
             </div>
@@ -253,4 +331,289 @@ wanted to try something fresh?
 </div>
 `;
 
-exports[`Guide returns blank div on error 1`] = `<div />`;
+exports[`Guide renders nothing if guide not ready 1`] = `null`;
+
+exports[`Guide renders nothing if no competencies 1`] = `null`;
+
+exports[`Guide renders nothing if results not ready 1`] = `null`;
+
+exports[`Guide toggles expanded intro 1`] = `
+<div>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+      </select>
+      <p>
+        <img
+          alt="Solving Problems badge"
+          src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+        />
+      </p>
+    </div>
+    <ul>
+      <li>
+        <button
+          name="Solving Problems"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className={null}
+      >
+        <button
+          name="Delivering Results"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+      <li
+        className={null}
+      >
+        <button
+          name="Engaging with People"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className={null}
+      >
+        <button
+          name="Influencing People"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+      <li
+        className={null}
+      >
+        <button
+          name="Managing Pressure"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div>
+      <h2>
+        Solving Problems
+      </h2>
+      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
+      <p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          read_more
+        </button>
+      </p>
+      <p>
+        The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
+In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
+They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
+Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
+These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
+The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
+      </p>
+      <hr />
+      <div>
+        <h2>
+          Open-Minded/Pragmatic People
+        </h2>
+        <p>
+          guide_intro
+        </p>
+        <p>
+          <em
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "guide_get_started_html",
+              }
+            }
+          />
+        </p>
+        <div>
+          <h3
+            id="traitify-question-1"
+          >
+            Question 1
+          </h3>
+          <p>
+            Tell me how you would go about solving a work problem you have not encountered before.
+          </p>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                Do they talk about a number of different ways of approaching the problem?
+              </li>
+              <li>
+                Are their ideas new, original or different in any way?
+              </li>
+              <li>
+                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+              </li>
+              <li>
+                And to probe into possible issues with being open-minded/pragmatic.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3
+            id={null}
+          >
+            Question 2
+          </h3>
+          <p>
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+          </p>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                How comfortable are they working in a step-by-step manner?
+              </li>
+              <li>
+                Is there a tension between this and wanting to try something new?
+              </li>
+              <li>
+                Does this 'conflict' sometimes show itself in taking a very cautious approach?
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>
+              question_adaptability
+            </h4>
+            <div>
+              <ul>
+                <li>
+                  Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
+                </li>
+                <li>
+                  Can they give an example of using either of these extremes?
+                </li>
+                <li>
+                  What do they do to stop themselves getting stuck on the 'middle way' of doing things?
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3
+            id={null}
+          >
+            Question 3
+          </h3>
+          <p>
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+          </p>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                Do they sometimes not learn from the past?
+              </li>
+              <li>
+                Do they move on too quickly without consolidating what they have learned?
+              </li>
+              <li>
+                Do they sometimes override their experience because they think they need to demonstrate original thought?
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>
+              question_adaptability
+            </h4>
+            <div>
+              <ul>
+                <li>
+                  Do they know they sometimes confuse knowledge with foresight?
+                </li>
+                <li>
+                  Can they provide an example of sticking with experience, and the tried-and-tested, even though they wanted to try something fresh?
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

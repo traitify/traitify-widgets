@@ -24,7 +24,7 @@ describe("UI", () => {
 
   describe("constructor", () => {
     it("has default imageHost", () => {
-      expect(ui.options.imageHost).toBe("https://images.traitify.com");
+      expect(ui.options.imageHost).toBe("https://traitify.imgix.net");
     });
 
     it("copies i18n from Traitify", () => {

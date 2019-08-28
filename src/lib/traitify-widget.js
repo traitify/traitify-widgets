@@ -25,8 +25,6 @@ export default class TraitifyWidget {
     return this;
   }
   assessmentID(assessmentID) {
-    if(this.options.assessmentID === assessmentID) { return this; }
-
     this.options.assessmentID = assessmentID;
 
     return this;

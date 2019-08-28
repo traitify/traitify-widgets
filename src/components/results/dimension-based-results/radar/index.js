@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import Chart from "lib/helpers/canvas-radar-chart";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import Chart from "lib/helpers/canvas-radar-chart";
 import style from "./style";
 
 const dataMapper = (assessment) => {

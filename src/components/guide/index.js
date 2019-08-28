@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import TraitifyPropTypes from "lib/helpers/prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
-import guideQuery from "lib/graphql/queries/guide";
 import {dangerousProps} from "lib/helpers";
-import smallScreen from "./helpers/helpers";
+import TraitifyPropTypes from "lib/helpers/prop-types";
+import withTraitify from "lib/with-traitify";
+import CompetencySelect from "./competency-select";
+import CompetencyTab from "./competency-tab";
 import style from "./style";
 
 class Guide extends Component {
@@ -13,164 +13,120 @@ class Guide extends Component {
     this.state = {
       badges: [],
       competencies: [],
-      displayedCompetency: {},
-      errors: [],
-      expandedIntro: false
+      displayedCompetency: null,
+      showExpandedIntro: false
     };
   }
-  static defaultProps = {assessment: null, assessmentID: null}
+  static defaultProps = {assessment: null, guide: null}
   static propTypes = {
-    assessment: PropTypes.shape({personality_types: PropTypes.array}),
-    assessmentID: PropTypes.string,
-    locale: PropTypes.string.isRequired,
+    assessment: PropTypes.shape({
+      assessment_type: PropTypes.string,
+      personality_types: PropTypes.array
+    }),
+    followGuide: PropTypes.func.isRequired,
+    guide: PropTypes.shape({
+      assessment_id: PropTypes.string.isRequired,
+      competencies: PropTypes.array.isRequired,
+      locale_key: PropTypes.string.isRequired
+    }),
+    isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
-    traitify: TraitifyPropTypes.traitify.isRequired
+    ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.setGuide();
+    this.props.ui.trigger("Guide.initialized", this);
+    this.props.followGuide();
   }
   componentDidUpdate(prevProps) {
-    if(this.props.locale !== prevProps.locale) {
-      this.setGuide();
-    }
+    this.props.ui.trigger("Guide.updated", this);
 
-    if(this.props.assessmentID !== prevProps.assessmentID) {
-      this.setGuide();
-    }
-  }
-  adaptability(adaptability) {
-    if(!adaptability) { return; }
-    const {translate} = this.props;
+    const guide = this.props.guide || {};
+    const prevGuide = prevProps.guide || {};
+    const changes = {
+      assessment: guide.assessment_id !== prevGuide.assessment_id,
+      locale: guide.locale_key !== prevGuide.locale_key
+    };
 
-    return (
-      <div>
-        <h4>{translate("question_adaptability")}</h4>
-        <div>{this.stringToListItems(adaptability)}</div>
-      </div>
-    );
-  }
-  displayCompetency(competency) {
-    const competencyName = typeof (competency) === "string" ? competency : competency.target.value;
-    this.state.competencies.forEach((comp) => {
-      if(competencyName === comp.name) {
-        this.setState({displayedCompetency: comp});
-      }
-    });
-  }
-  expandedIntro(text) {
-    if(this.state.expandedIntro) {
-      return (
-        <p>{text}</p>
-      );
-    }
-  }
-  handleReadMore() {
-    this.setState((prevState) => ({expandedIntro: !prevState.expandedIntro}));
-  }
-  introduction() {
-    const {introduction} = this.state.displayedCompetency;
-
-    const intro = introduction.split("\n", 1)[0];
-    const readMore = introduction.replace(intro, "").trim();
-    return {intro, readMore};
-  }
-  selectBoxOrTabs() {
-    const {displayedCompetency} = this.state;
-
-    if(smallScreen()) {
-      return (
-        <div>
-          <select
-            value={displayedCompetency.name}
-            className={style.mobileSelect}
-            onChange={(e) => this.displayCompetency(e)}
-          >
-            {this.state.competencies.map((competency) => (
-              <option value={competency.name}>{competency.name}</option>
-            ))
-            }
-          </select>
-          <p className={style.mobileBadge}>
-            <img src={this.tabBadge(displayedCompetency.name)} alt={`${displayedCompetency.name} badge`} />
-          </p>
-        </div>
-      );
-    } else {
-      return (
-        <ul className={style.tabs}>
-          {this.state.competencies.map((competency) => (
-            <li
-              className={competency.name === displayedCompetency.name ? style.tabActive : null}
-              key={competency.id}
-            >
-              <button
-                onKeyPress={() => this.displayCompetency(competency.name)}
-                onClick={() => this.displayCompetency(competency.name)}
-                name={competency.name}
-                type="button"
-              >
-                <img src={this.tabBadge(competency.name)} alt={`${competency.name} badge`} />
-                <br />
-                {competency.name}
-              </button>
-            </li>
-          ))}
-        </ul>
-      );
-    }
-  }
-  setGuide() {
-    const params = {assessmentId: this.props.assessmentID, localeKey: this.props.locale};
-    this.props.traitify.post("/interview_guides/graphql", guideQuery({params}))
-      .then((response) => {
-        if(response.errors) {
-          this.setState({errors: response.errors});
-          return;
-        }
-        const {competencies} = response.data.guide;
-        const badges = this.badges(competencies);
-        this.setState({badges, competencies, displayedCompetency: competencies[0]});
-      });
+    if(changes.assessment || changes.locale) { this.setGuide(); }
   }
   badges(competencies) {
     const {assessment} = this.props;
 
     return competencies.map((competency) => {
-      const personalityId = competency.questionSequences[0].personality_type_id;
+      const personalityID = competency.questionSequences[0].personality_type_id;
       const types = assessment.personality_types;
-      const personality = types.filter((type) => type.personality_type.id === personalityId)[0];
-      return {image: personality.personality_type.badge.image_medium, name: competency.name};
+      const personality = types.find((type) => type.personality_type.id === personalityID);
+
+      return {competencyID: competency.id, image: personality.personality_type.badge.image_medium};
     });
+  }
+  displayCompetency = (competencyID) => {
+    this.setState(({competencies}) => {
+      const displayedCompetency = competencies.find((competency) => competency.id === competencyID);
+
+      return displayedCompetency && {displayedCompetency};
+    });
+  }
+  introduction() {
+    const {introduction} = this.state.displayedCompetency;
+    const intro = introduction.split("\n", 1)[0];
+    const readMore = introduction.replace(intro, "").trim();
+
+    return {intro, readMore};
+  }
+  setGuide() {
+    if(!this.props.guide) {
+      return this.setState({badges: [], competencies: [], displayedCompetency: null});
+    }
+
+    const {competencies} = this.props.guide;
+    const badges = this.badges(competencies);
+
+    this.setState({badges, competencies, displayedCompetency: {...competencies[0]}});
   }
   stringToListItems(entity) {
     let entities = entity.split("\n");
     /* eslint-disable-next-line react/no-array-index-key */
     entities = entities.map((e, i) => <li key={i}>{e}</li>);
 
-    return (
-      <ul>
-        {entities}
-      </ul>
-    );
+    return (<ul>{entities}</ul>);
   }
-  tabBadge(tab) {
-    return this.state.badges.filter((badge) => badge.name === tab)[0].image;
+  tabBadge = (id) => (
+    this.state.badges.find((badge) => badge.competencyID === id).image
+  )
+  toggleExpandedIntro = () => {
+    this.setState((prevState) => ({showExpandedIntro: !prevState.showExpandedIntro}));
   }
   render() {
-    const {translate, assessment} = this.props;
-    if(this.state.errors.length > 0) { return <div />; }
-    if(this.state.competencies.length === 0) { return <div />; }
-    if(!assessment || assessment.assessment_type !== "DIMENSION_BASED") { return <div />; }
+    if(!this.props.isReady("guide")) { return null; }
+    if(!this.props.isReady("results")) { return null; }
+    if(this.state.competencies.length === 0) { return null; }
 
-    const {displayedCompetency} = this.state;
+    const {translate} = this.props;
+    const {competencies, displayedCompetency, showExpandedIntro} = this.state;
     const {intro, readMore} = this.introduction();
 
     return (
       <div className={style.tabsContainer}>
         <div className={style.tabContainer}>
-          {this.selectBoxOrTabs()}
+          <CompetencySelect
+            competencies={competencies}
+            displayedCompetency={displayedCompetency}
+            displayCompetency={this.displayCompetency}
+            tabBadge={this.tabBadge}
+          />
+          <ul className={style.tabs}>
+            {competencies.map((competency) => (
+              <CompetencyTab
+                key={competency.id}
+                competency={competency}
+                displayedCompetency={displayedCompetency}
+                displayCompetency={this.displayCompetency}
+                tabBadge={this.tabBadge}
+              />
+            ))}
+          </ul>
         </div>
-
         <div className={style.tabsContent}>
           <div className={style.tabContentActive}>
             <h2>{displayedCompetency.name}</h2>
@@ -178,13 +134,12 @@ class Guide extends Component {
             <p>
               <button
                 type="button"
-                onClick={() => this.handleReadMore()}
-                onKeyPress={() => this.handleReadMore()}
+                onClick={this.toggleExpandedIntro}
               >
                 {translate("read_more")}
               </button>
             </p>
-            {this.expandedIntro(readMore)}
+            {showExpandedIntro && (<p>{readMore}</p>)}
             <hr />
             {displayedCompetency.questionSequences.map((sequence) => (
               <div key={sequence.id}>
@@ -197,7 +152,12 @@ class Guide extends Component {
                     <p>{question.text}</p>
                     <h4>{translate("question_purpose")}</h4>
                     <div>{this.stringToListItems(question.purpose)}</div>
-                    {this.adaptability(question.adaptability)}
+                    {question.adaptability && (
+                      <div>
+                        <h4>{translate("question_adaptability")}</h4>
+                        <div>{this.stringToListItems(question.adaptability)}</div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

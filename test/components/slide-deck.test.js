@@ -302,9 +302,7 @@ describe("SlideDeck", () => {
       expect(component.instance.fetchImages).toHaveBeenCalled();
       expect(component.state.imageLoadingAttempts).toBe(0);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
-      expect(component.state.slides.filter((slide) => (
-        slide.image !== `http://localhost:8080/v1/images/${slide.id}?width=100&height=200`
-      ))).toHaveLength(0);
+      expect(component.state.slides.filter((slide) => !slide.image.includes("w=100&h=200"))).toHaveLength(0);
     });
 
     it("updates slides with likert sizing", () => {
@@ -475,6 +473,57 @@ describe("SlideDeck", () => {
         expect(component.state.isFullscreen).toBe(true);
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.fullscreen", component.instance, true);
         expect(component.instance.resizeImages).toHaveBeenCalled();
+      });
+    });
+
+    describe("updateLikertSlide", () => {
+      it("updates slides", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        const {startTime, slides} = component.state;
+        component.updateState({
+          slides: slides.map((slide, index) => ({
+            ...slide,
+            likert_response: index > slides.length / 2 ? null : "REALLY_ME"
+          }))
+        });
+        const previousLength = completedSlides(component.state.slides).length;
+        const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.response;
+        component.instance.finish = jest.fn().mockName("finish");
+        component.instance.updateLikertSlide(previousLength, "REALLY_NOT_ME");
+
+        expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
+        expect(component.state.slides[previousLength]).toEqual({
+          ...lastSlide,
+          likert_response: "REALLY_NOT_ME",
+          time_taken: expect.any(Number)
+        });
+        expect(component.state.startTime).not.toBe(startTime);
+        expect(component.instance.finish).not.toHaveBeenCalled();
+      });
+
+      it("finishes", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        const {slides} = component.state;
+        component.updateState({
+          slides: slides.map((slide, index) => ({
+            ...slide,
+            likert_response: index === slides.length - 1 ? null : "REALLY_NOT_ME"
+          }))
+        });
+        const previousLength = completedSlides(component.state.slides).length;
+        const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.response;
+        component.instance.finish = jest.fn().mockName("finish");
+        component.instance.updateLikertSlide(previousLength, "REALLY_ME");
+
+        expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
+        expect(component.state.slides[previousLength]).toEqual({
+          ...lastSlide,
+          likert_response: "REALLY_ME",
+          time_taken: expect.any(Number)
+        });
+        expect(component.instance.finish).toHaveBeenCalled();
       });
     });
 

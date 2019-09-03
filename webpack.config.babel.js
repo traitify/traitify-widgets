@@ -104,7 +104,7 @@ if(browser){
   config.entry.unshift("regenerator-runtime/runtime");
   config.output.libraryExport = "default";
 }
-if(compatibility){ config.entry[1] = "./compatibility.js"; }
+if(compatibility){ config.entry[2] = "./compatibility.js"; }
 if(ie){
   config.devServer.inline = false;
   delete config.devtool;

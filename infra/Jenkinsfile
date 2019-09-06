@@ -9,7 +9,7 @@ pipeline{
         stage("get dependencies") {
             steps{
                 dir('private') {
-                    deleteDir
+                    deleteDir()
                     git ( 
                         url: 'https://github.com/traitify/chef-widgets-private.git', 
                         credentialsId: '5d46047f-0d3d-4836-9fc5-e370dfc25c09', 

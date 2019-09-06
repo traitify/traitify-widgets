@@ -20,11 +20,7 @@ pipeline{
                 }
             }
         }
-        // all work is done from the private jenkinsfile
-        stage("import private jenkinsfile") {
-            steps{
-                load 'private/infra/Jenkinsfile'
-            }
-        }
     }
+    // all work is done from the private jenkinsfile
+    load 'private/infra/Jenkinsfile'
 }

@@ -3,7 +3,6 @@ pipeline{
     options { 
         buildDiscarder( logRotator( numToKeepStr: '5') )
         disableConcurrentBuilds()
-        skipDefaultCheckout()
     }
     stages {
          // run our build

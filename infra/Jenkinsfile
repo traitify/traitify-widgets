@@ -12,7 +12,7 @@ pipeline{
                     job: 'App-Build_traitify-widgets-private',
                     parameters: [
                         string( name: "TRAITIFY_WIDGETS_HASH", value: "${GIT_COMMIT}"),
-                        choice( name: "TRAITIFY_WIDGETS_BRANCH_NAME", value: "${BRANCH_NAME}")
+                        string( name: "TRAITIFY_WIDGETS_BRANCH_NAME", value: "${BRANCH_NAME}")
                     ]
                 )
             }

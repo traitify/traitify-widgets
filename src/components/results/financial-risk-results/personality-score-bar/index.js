@@ -24,7 +24,24 @@ class PersonalityScoreBar extends Component {
 
     return (
       <div className={style.scoreBar}>
-        Score Bar {score}
+        <h1>Financial Risk Score: <span>{score}</span></h1>
+        <div className={style.scoreBarBar}>
+          <div className={style.scoreBarLegend}>
+            <div className={style.scoreBarLegendLow}>0</div>
+            <div className={style.scoreBarLegendHigh}>100</div>
+          </div>
+          <div className={style.scoreBarRange}>
+            <div className={style.scoreBarLow}> </div>
+            <div className={style.scoreBarLowMed}> </div>
+            <div className={style.scoreBarMedHigh}> </div>
+            <div className={style.scoreBarHigh}> </div>
+          </div>
+          <div className={style.scoreBarIndicators}>
+            <div className={style.scoreBarIndicatorLow}> </div>
+            <div className={style.scoreBarIndicator} style={{marginLeft: `${score}%`}}> </div>
+            <div className={style.scoreBarIndicatorHigh}> </div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,30 @@
 @import "~style/helpers";
 
-.dimensions {
+.dimension {
   @extend %widgetContainer;
+  @extend %cf;
+  clear: both;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.dimensionHigher {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @extend %cf;
+  li {
+    background: #eee;
+    padding: 10px;
+    color: $black;
+    border-radius: 5px;
+    width: 24%;
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 2%;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
 }

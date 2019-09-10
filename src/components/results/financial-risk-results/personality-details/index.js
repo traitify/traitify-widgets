@@ -24,11 +24,13 @@ class PersonalityDetails extends Component {
 
     return (
       <div className={style.details}>
-        <div className={style.detail}>
-          Detail 1
+        <div className={style.detailsLife}>
+          <h2>The Neutral Financial Risk Style in everyday life:</h2>
+          <p>You are unenthused by a lack of change in life and thrive with unpredictability.</p>
         </div>
-        <div className={style.detail}>
-          Detail 2
+        <div className={style.detailsFinancial}>
+          <h2>The Neutral Financial Risk Style in financial decisions:</h2>
+          <p>You are unenthused by a lack of change in life and thrive with unpredictability.</p>
         </div>
       </div>
     );

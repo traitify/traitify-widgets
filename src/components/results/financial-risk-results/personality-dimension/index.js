@@ -21,7 +21,18 @@ class PersonalityDimension extends Component {
   render() {
     return (
       <li className={style.dimension}>
-        Dimension
+        The li above needs 2 styles:<br />
+        - border: 3px solid BADGE_COLOR<br />
+        - background: rgba(BADGE_COLOR_RGB, 10%)<br />
+
+        <h2>Name <span>|</span> Score</h2>
+
+        <p>The span in the h2 above needs 1 style:<br />- color: BADGE_COLOR</p>
+
+        <ul className={style.dimensionHigher}>
+          <li>misplaces items</li>
+          <li>Each li in this list needs 1 style:<br />- background: rgba(BADGE_COLOR_RGB, 50%)</li>
+        </ul>
       </li>
     );
   }

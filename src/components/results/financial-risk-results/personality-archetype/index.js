@@ -24,7 +24,15 @@ class PersonalityArchetype extends Component {
 
     return (
       <div className={style.archetype}>
-        Archetype
+        <div className={style.archetypeStyle}>
+          <img src="//placehold.it/80x80" alt="INSERT Archetype Name" />
+          <h2>Your Financial Risk style is <span>Neutral</span></h2>
+          <p>Your assessment results show that your Financial Risk Style is Neutral.</p>
+        </div>
+        <div className={style.archetypeMeaning}>
+          <h2>What does this tell me?</h2>
+          <p>Your financial risk style is influenced by your life circumstances.</p>
+        </div>
       </div>
     );
   }

@@ -24,7 +24,15 @@ class PersonalityTakeaways extends Component {
 
     return (
       <div className={style.takeaways}>
-        Takeaways
+        <h2>Key Takeaways of Neutral Financial Risk Style</h2>
+        <ul>
+          <li>Not unusual to want to &quot;sleep on it&quot; before a decision</li>
+          <li>Worry about making a financial mistake</li>
+          <li>Expect mixed results</li>
+          <li>Tend to second-guess themselvees</li>
+          <li>Follow, but question, professional advice</li>
+          <li>Want to be pleasantly surprised</li>
+        </ul>
       </div>
     );
   }

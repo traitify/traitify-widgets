@@ -2,6 +2,34 @@
 
 .details {
   @extend %widgetContainer;
+  @extend %cf;
 }
-.detail {
+.detailsLife {
+  background: $lightblue;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  @include mq(m) {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+    padding: 20px;
+  }
+  h2 {
+    color: $blue;
+  }
+}
+.detailsFinancial {
+  background: $lightgreen;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  @include mq(m) {
+    float: left;
+    width: 49%;
+    padding: 20px;
+  }
+  h2 {
+    color: $green;
+  }
 }

@@ -14,11 +14,16 @@
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
+  @include rems(16);
   @include mq(m) {
     float: left;
     width: 49%;
     margin-right: 2%;
     padding: 20px;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    @include rems(18);
   }
   img {
     float: left;
@@ -37,12 +42,18 @@
   }
 }
 .archetypeMeaning {
+  padding: 20px;
   margin-bottom: 20px;
+  @include rems(16);
   @include mq(m) {
     float: left;
     width: 49%;
+    @include rems(17);
   }
   h2 {
     margin-top: 30px;
+  }
+  @include mq(xl) {
+    @include rems(18);
   }
 }

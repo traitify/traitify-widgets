@@ -7,12 +7,12 @@
 }
 h1 {
   font-weight: normal;
-  @include rems(30);
+  @include rems(26);
   @include mq(m) {
-    @include rems(36);
+    @include rems(33);
   }
   @include mq(xl) {
-    @include rems(40);
+    @include rems(36);
   }
   span {
     font-weight: bold;
@@ -29,8 +29,11 @@ h1 {
 .scoreBarLegend {
   width: 100%;
   color: $black;
-  @include rems(20);
   @extend %cf;
+  @include rems(20);
+  @include mq(xl) {
+    @include rems(24);
+  }
 }
 .scoreBarLegendLow {
   float: left;

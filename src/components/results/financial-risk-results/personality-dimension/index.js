@@ -32,10 +32,26 @@ class PersonalityDimension extends Component {
     //   Mark it as required in propTypes
     //   remove `|| "Score"`
     return (
-      <li className={style.dimension} style={{background: rgba(color, 10), borderTop: `3px solid ${color}`}}>
+      <li className={style.dimension} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`}}>
         <h2>{name} <span style={{color}}>|</span> {level || "Score"}</h2>
+
+        <h3>Those with higher information Orientation will tend to be more willing...</h3>
+        <p>This client&quot;s {level || "Score"} {name} means that they are blah blah.</p>
+
+        <h3>Characteristics common in higher Information Orientation:</h3>
         <ul className={style.dimensionHigher}>
           <li style={{background: rgba(color, 50)}}>misplaces items</li>
+          <li style={{background: rgba(color, 50)}}>misplaces items</li>
+          <li style={{background: rgba(color, 50)}}>misplaces items</li>
+          <li style={{background: rgba(color, 50)}}>misplaces items</li>
+        </ul>
+
+        <h3>Characteristics common in lower Information Orientation:</h3>
+        <ul className={style.dimensionLower}>
+          <li>misplaces items</li>
+          <li>successfully complete multi-step projects</li>
+          <li>misplaces items</li>
+          <li>prefer wrapping things up rather than leaving them open-ended</li>
         </ul>
       </li>
     );

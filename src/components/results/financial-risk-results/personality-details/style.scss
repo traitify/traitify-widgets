@@ -9,11 +9,16 @@
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
+  @include rems(16);
   @include mq(m) {
     float: left;
     width: 49%;
     margin-right: 2%;
     padding: 20px;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    @include rems(18);
   }
   h2 {
     color: $blue;
@@ -24,10 +29,14 @@
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
+  @include rems(16);
   @include mq(m) {
     float: left;
     width: 49%;
-    padding: 20px;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    @include rems(18);
   }
   h2 {
     color: $green;

@@ -25,22 +25,41 @@
     padding: 20px;
     text-align: center;
     float: left;
-    width: 31%;
+    width: 49%;
     margin-left: 2%;
-    height: 135px;
+    height: 180px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    &:nth-of-type(1) {
+    @include rems(16);
+    &:first-of-type {
       margin-left: 0;
     }
-    &:nth-of-type(4) {
+    &:nth-of-type(2n + 1) {
       margin-left: 0;
+    }
+    @include mq(m) {
+      width: 32%;
+      margin-left: 2%;
+      height: 135px;
+      @include rems(17);
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:nth-of-type(2n + 1) {
+        margin-left: 2%;
+      }
+      &:nth-of-type(3n + 1) {
+        margin-left: 0;
+      }
     }
     @include mq(xl) {
       width: 15%;
-      &:nth-of-type(4) {
+      &:nth-of-type(3n + 1) {
         margin-left: 2%;
+      }
+      &:first-of-type {
+        margin-left: 0;
       }
     }
   }

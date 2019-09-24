@@ -4,19 +4,19 @@
   @extend %widgetContainer;
   @extend %cf;
   margin-bottom: 20px;
-}
-h1 {
-  font-weight: normal;
-  @include rems(26);
-  @include mq(m) {
-    @include rems(33);
-  }
-  @include mq(xl) {
-    @include rems(36);
-  }
-  span {
-    font-weight: bold;
-    color: $blue;
+  h1 {
+    font-weight: normal;
+    @include rems(26);
+    @include mq(m) {
+      @include rems(33);
+    }
+    @include mq(xl) {
+      @include rems(36);
+    }
+    span {
+      font-weight: bold;
+      color: $blue;
+    }
   }
 }
 

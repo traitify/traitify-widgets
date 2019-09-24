@@ -8,6 +8,14 @@ exports[`Results renders dimension based results 1`] = `
 </div>
 `;
 
+exports[`Results renders financial risk results 1`] = `
+<div
+  className="mock"
+>
+  Financial Risk
+</div>
+`;
+
 exports[`Results renders nothing if not ready 1`] = `null`;
 
 exports[`Results renders type based results 1`] = `

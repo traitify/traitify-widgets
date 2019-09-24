@@ -1,0 +1,66 @@
+@import "~style/helpers";
+
+.takeaways {
+  @extend %widgetContainer;
+  @extend %cf;
+  margin-bottom: 10px;
+  h2 {
+    text-align: center;
+    color: $blue;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+    background: #4d53d6;
+    background: -moz-linear-gradient(137deg, #4d85d6 0%, #4d53d6 100%);
+    background: -webkit-linear-gradient(137deg,#4d85d6 0%,#4d53d6 100%);
+    background: linear-gradient(137deg, #4d85d6 0%,#4d53d6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d85d6', endColorstr='#4d53d6',GradientType=1 );
+    color: $white;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    float: left;
+    width: 49%;
+    margin-left: 2%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include rems(16);
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:nth-of-type(2n + 1) {
+      margin-left: 0;
+    }
+    @include mq(m) {
+      width: 32%;
+      margin-left: 2%;
+      height: 135px;
+      @include rems(17);
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:nth-of-type(2n + 1) {
+        margin-left: 2%;
+      }
+      &:nth-of-type(3n + 1) {
+        margin-left: 0;
+      }
+    }
+    @include mq(xl) {
+      width: 15%;
+      &:nth-of-type(3n + 1) {
+        margin-left: 2%;
+      }
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}

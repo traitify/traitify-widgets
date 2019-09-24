@@ -1,0 +1,80 @@
+@import "~style/helpers";
+
+.dimension {
+  @extend %widgetContainer;
+  @extend %cf;
+  clear: both;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  h2, h3 {
+    font-weight: normal;
+  }
+  h2 {
+    @include rems(26);
+    @include mq(m) {
+      @include rems(33);
+    }
+    @include mq(xl) {
+      @include rems(36);
+    }
+  }
+  h3 {
+    @include rems(20);
+    @include mq(m) {
+      @include rems(24);
+    }
+    @include mq(xl) {
+      @include rems(28);
+    }
+  }
+  p {
+    margin-bottom: 40px;
+    @include rems(16);
+    @include mq(m) {
+      @include rems(17);
+    }
+    @include mq(xl) {
+      @include rems(18);
+    }
+  }
+}
+
+.characteristics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @extend %cf;
+  li {
+    background: #eee;
+    padding: 10px;
+    color: $black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include rems(16);
+    @include mq(m) {
+      width: 49%;
+      float: left;
+      height: 70px;
+      margin-left: 2%;
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:nth-of-type(3) {
+        margin-left: 0;
+      }
+      @include rems(17);
+    }
+    @include mq(xl) {
+      width: 23.5%;
+      &:nth-of-type(3) {
+        margin-left: 2%;
+      }
+      @include rems(18);
+    }
+  }
+}

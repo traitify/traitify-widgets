@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDimensions renders component 1`] = `
+<ul>
+  <div
+    className="mock"
+  >
+    Personality Dimension - 
+    Internalized Positivity
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension - 
+    Adventurousness
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension - 
+    Systematic Resourcefulness
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension - 
+    Connectedness
+  </div>
+</ul>
+`;
+
+exports[`PersonalityDimensions renders nothing if not ready 1`] = `null`;

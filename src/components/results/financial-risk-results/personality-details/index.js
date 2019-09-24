@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {detailWithPerspective, detailsWithPerspective} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
@@ -8,6 +9,7 @@ class PersonalityDetails extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({archetype: PropTypes.object}),
+    getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
@@ -20,17 +22,29 @@ class PersonalityDetails extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
-    // const personality = this.props.assessment.archetype || {};
+    const personality = this.props.assessment.archetype;
+    if(!personality) { return null; }
+    const options = {base: personality, perspective: this.props.getOption("perspective")};
 
     return (
       <div className={style.details}>
         <div className={style.detailsLife}>
-          <h2>The Neutral Financial Risk Style in everyday life:</h2>
-          <p>You are unenthused by a lack of change in life and thrive with unpredictability.</p>
+          <h2>The {personality.name} Financial Risk Style in everyday life:</h2>
+          <p>{detailWithPerspective({...options, name: "Everyday Life Title"})}</p>
+          <ul>
+            {detailsWithPerspective({...options, name: "Everyday Life Detail"}).map((detail) => (
+              <li key={detail}>{detail}</li>
+            ))}
+          </ul>
         </div>
         <div className={style.detailsFinancial}>
-          <h2>The Neutral Financial Risk Style in financial decisions:</h2>
-          <p>You are unenthused by a lack of change in life and thrive with unpredictability.</p>
+          <h2>The {personality.name} Financial Risk Style in financial decisions:</h2>
+          <p>{detailWithPerspective({...options, name: "Financial Decisions Title"})}</p>
+          <ul>
+            {detailsWithPerspective({...options, name: "Financial Decisions Detail"}).map((detail) => (
+              <li key={detail}>{detail}</li>
+            ))}
+          </ul>
         </div>
       </div>
     );

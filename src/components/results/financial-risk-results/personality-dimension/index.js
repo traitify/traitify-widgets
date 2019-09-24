@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {detailWithPerspective} from "lib/helpers";
 import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -7,12 +8,14 @@ import style from "./style";
 
 class PersonalityDimension extends Component {
   static propTypes = {
+    getOption: PropTypes.func.isRequired,
     type: PropTypes.shape({
       personality_type: PropTypes.shape({
         badge: PropTypes.shape({
           color_1: PropTypes.string.isRequired
         }).isRequired,
-        level: PropTypes.string,
+        details: PropTypes.array.isRequired,
+        level: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired
       }).isRequired
     }).isRequired,
@@ -25,33 +28,38 @@ class PersonalityDimension extends Component {
     this.props.ui.trigger("PersonalityDimension.updated", this);
   }
   render() {
-    const {type: {personality_type: {badge, level, name}}} = this.props;
+    const {type: {personality_type: {badge, details, level, name}}} = this.props;
     const color = `#${badge.color_1}`;
+    const characteristics = details.filter(({title}) => (title === "Characteristics")).map(({body}) => body);
+    if(characteristics.length === 0) { return null; }
 
-    // TODO: Once level is added to API
-    //   Mark it as required in propTypes
-    //   remove `|| "Score"`
+    const headers = {
+      Low: [
+        `Those with lower ${name} will tend to be less willing to take on greater financial risk`,
+        `Characteristics common in lower ${name}`
+      ],
+      Medium: [
+        `Those with medium ${name} will tend to be less willing to take on greater financial risk`,
+        `Characteristics common in medium ${name}`
+      ],
+      High: [
+        `Those with higher ${name} will tend to be more willing to take on greater financial risk`,
+        `Characteristics common in higher ${name}`
+      ]
+    }[level];
+    const perspective = this.props.getOption("perspective");
+    const options = {base: {details}, perspective};
+
     return (
       <li className={style.dimension} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`}}>
-        <h2>{name} <span style={{color}}>|</span> {level || "Score"}</h2>
-
-        <h3>Those with higher information Orientation will tend to be more willing...</h3>
-        <p>This client&quot;s {level || "Score"} {name} means that they are blah blah.</p>
-
-        <h3>Characteristics common in higher Information Orientation:</h3>
-        <ul className={style.dimensionHigher}>
-          <li style={{background: rgba(color, 50)}}>misplaces items</li>
-          <li style={{background: rgba(color, 50)}}>misplaces items</li>
-          <li style={{background: rgba(color, 50)}}>misplaces items</li>
-          <li style={{background: rgba(color, 50)}}>misplaces items</li>
-        </ul>
-
-        <h3>Characteristics common in lower Information Orientation:</h3>
-        <ul className={style.dimensionLower}>
-          <li>misplaces items</li>
-          <li>successfully complete multi-step projects</li>
-          <li>misplaces items</li>
-          <li>prefer wrapping things up rather than leaving them open-ended</li>
+        <h2>{name} <span style={{color}}>|</span> {level}</h2>
+        <h3>{headers[0]}</h3>
+        <p>{detailWithPerspective({...options, name: "description"})}</p>
+        <h3>{headers[1]}</h3>
+        <ul className={style.characteristics}>
+          {characteristics.map((characteristic) => (
+            <li key={characteristic} style={{background: rgba(color, 50)}}>{characteristic}</li>
+          ))}
         </ul>
       </li>
     );

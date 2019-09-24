@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {detailWithPerspective} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
@@ -8,6 +9,7 @@ class PersonalityArchetype extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({archetype: PropTypes.object}),
+    getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
@@ -20,18 +22,23 @@ class PersonalityArchetype extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
-    // const personality = this.props.assessment.archetype || {};
+    const personality = this.props.assessment.archetype;
+    if(!personality) { return null; }
+    const badge = personality.details.find(({title}) => title === "Badge").body;
+    const perspective = this.props.getOption("perspective");
+    const options = {base: personality, perspective};
+    const pronoun = perspective === "thirdPerson" ? "Their" : "Your";
 
     return (
       <div className={style.archetype}>
         <div className={style.archetypeStyle}>
-          <img src="//placehold.it/80x80" alt="INSERT Archetype Name" />
-          <h2>Your Financial Risk style is <span>Neutral</span></h2>
-          <p>Your assessment results show that your Financial Risk Style is Neutral.</p>
+          <img alt={personality.name} src={badge} />
+          <h2>{pronoun} Financial Risk style is <span>{personality.name}</span></h2>
+          <p>{detailWithPerspective({...options, name: "Description"})}</p>
         </div>
         <div className={style.archetypeMeaning}>
           <h2>What does this tell me?</h2>
-          <p>Your financial risk style is influenced by your life circumstances.</p>
+          <p>{detailWithPerspective({...options, name: "Analysis"})}</p>
         </div>
       </div>
     );

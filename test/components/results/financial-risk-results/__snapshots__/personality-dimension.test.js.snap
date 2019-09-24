@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDimension renders component 1`] = `
+<li
+  style={
+    Object {
+      "background": "rgba(208,210,211,0.1)",
+      "borderTop": "5px solid #d0d2d3",
+    }
+  }
+>
+  <h2>
+    Internalized Positivity
+     
+    <span
+      style={
+        Object {
+          "color": "#d0d2d3",
+        }
+      }
+    >
+      |
+    </span>
+     
+    Low
+  </h2>
+  <h3>
+    Those with lower Internalized Positivity will tend to be less willing to take on greater financial risk
+  </h3>
+  <p>
+    description
+  </p>
+  <h3>
+    Characteristics common in lower Internalized Positivity
+  </h3>
+  <ul>
+    <li
+      style={
+        Object {
+          "background": "rgba(208,210,211,0.5)",
+        }
+      }
+    >
+      Find daily life stressful
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(208,210,211,0.5)",
+        }
+      }
+    >
+      Find it hard to stay focused
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(208,210,211,0.5)",
+        }
+      }
+    >
+      Not boastful
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(208,210,211,0.5)",
+        }
+      }
+    >
+      Often feel down
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(208,210,211,0.5)",
+        }
+      }
+    >
+      Procrastinate
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(208,210,211,0.5)",
+        }
+      }
+    >
+      Prone to worry
+    </li>
+  </ul>
+</li>
+`;
+
+exports[`PersonalityDimension renders nothing if no characteristics 1`] = `null`;

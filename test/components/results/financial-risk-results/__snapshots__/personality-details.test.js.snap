@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDetails renders component 1`] = `
+<div>
+  <div>
+    <h2>
+      The 
+      Conservative
+       Financial Risk Style in everyday life:
+    </h2>
+    <p>
+      Everyday Life Title
+    </p>
+    <ul>
+      <li>
+        Everyday Life Detail
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h2>
+      The 
+      Conservative
+       Financial Risk Style in financial decisions:
+    </h2>
+    <p>
+      Financial Decisions Title
+    </p>
+    <ul>
+      <li>
+        Financial Decisions Detail
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityDetails renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityDetails renders nothing if not ready 1`] = `null`;

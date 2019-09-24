@@ -20,18 +20,19 @@ class PersonalityTakeaways extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
-    // const personality = this.props.assessment.archetype || {};
+    const personality = this.props.assessment.archetype;
+    if(!personality) { return null; }
+
+    const takeaways = personality.details.filter(({title}) => (title === "Takeaways")).map(({body}) => body);
+    if(takeaways.length === 0) { return null; }
 
     return (
       <div className={style.takeaways}>
-        <h2>Key Takeaways of Neutral Financial Risk Style</h2>
+        <h2>Key Takeaways of {personality.name} Financial Risk Style</h2>
         <ul>
-          <li>Not unusual to want to &quot;sleep on it&quot; before a decision</li>
-          <li>Worry about making a financial mistake</li>
-          <li>Expect mixed results</li>
-          <li>Tend to second-guess themselvees</li>
-          <li>Follow, but question, professional advice</li>
-          <li>Want to be pleasantly surprised</li>
+          {takeaways.map((takeaway) => (
+            <li key={takeaway}>{takeaway}</li>
+          ))}
         </ul>
       </div>
     );

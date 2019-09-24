@@ -2,6 +2,7 @@ import {Component} from "components/results";
 import ComponentHandler from "support/component-handler";
 
 jest.mock("components/results/dimension-based-results", () => (() => (<div className="mock">Dimension Based</div>)));
+jest.mock("components/results/financial-risk-results", () => (() => (<div className="mock">Financial Risk</div>)));
 jest.mock("components/results/type-based-results", () => (() => (<div className="mock">Type Based</div>)));
 jest.mock("lib/with-traitify");
 
@@ -34,6 +35,15 @@ describe("Results", () => {
 
   it("renders dimension based results", () => {
     const assessment = {assessment_type: "DIMENSION_BASED"};
+    const component = new ComponentHandler(
+      <Component assessment={assessment} isReady={() => (true)} ui={ui} />
+    );
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders financial risk results", () => {
+    const assessment = {assessment_type: "DIMENSION_BASED", scoring_scale: "LIKERT_CUMULATIVE_POMP"};
     const component = new ComponentHandler(
       <Component assessment={assessment} isReady={() => (true)} ui={ui} />
     );

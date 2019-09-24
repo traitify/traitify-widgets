@@ -3,6 +3,7 @@ import {
   careerOption,
   dangerousProps,
   detailWithPerspective,
+  detailsWithPerspective,
   getDisplayName,
   loadFont
 } from "lib/helpers";
@@ -101,6 +102,28 @@ describe("Helpers", () => {
       expect(value).toBe(detail.body);
     });
 
+    it("falls back to opposing titlelized detail", () => {
+      const {details} = options.base;
+      const detail = details.find((d) => (d.title === "third_person_description"));
+      options.base = {...options.base, details: [...details, {...detail, title: "Third Person Description"}]};
+      options.perspective = "firstPerson";
+      options.name = "Description";
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(detail.body);
+    });
+
+    it("falls back to titlelized detail", () => {
+      const {details} = options.base;
+      const detail = details.find((d) => (d.title === "third_person_description"));
+      options.base = {...options.base, details: [...details, {...detail, title: "First Person Description"}]};
+      options.perspective = "firstPerson";
+      options.name = "Description";
+      const value = detailWithPerspective(options);
+
+      expect(value).toBe(detail.body);
+    });
+
     it("falls back to third person", () => {
       const detail = options.base.details.find((d) => (d.title === "third_person_description"));
       const details = options.base.details.filter((d) => (d.title !== "first_person_description"));
@@ -126,6 +149,80 @@ describe("Helpers", () => {
       const value = detailWithPerspective(options);
 
       expect(value).toBe(options.base.description);
+    });
+  });
+
+  describe("detailsWithPerspective", () => {
+    let options;
+
+    beforeEach(() => {
+      options = {
+        base: assessment.personality_types[0].personality_type,
+        name: "description"
+      };
+    });
+
+    it("defaults to first person", () => {
+      const details = options.base.details.filter((d) => (d.title === "first_person_description"));
+      const value = detailsWithPerspective(options);
+
+      expect(value).toEqual(details.map(({body}) => body));
+    });
+
+    it("shows third person", () => {
+      options.perspective = "thirdPerson";
+      const details = options.base.details.filter((d) => (d.title === "third_person_description"));
+      const value = detailsWithPerspective(options);
+
+      expect(value).toEqual(details.map(({body}) => body));
+    });
+
+    it("falls back to opposing titlelized detail", () => {
+      const {details} = options.base;
+      const detail = details.find((d) => (d.title === "third_person_description"));
+      options.base = {
+        ...options.base,
+        details: [...details, {...detail, title: "Third Person Description"}]
+      };
+      options.perspective = "firstPerson";
+      options.name = "Description";
+      const value = detailsWithPerspective(options);
+
+      expect(value).toEqual([detail.body]);
+    });
+
+    it("falls back to titlelized detail", () => {
+      const {details} = options.base;
+      const detail = details.find((d) => (d.title === "third_person_description"));
+      options.base = {
+        ...options.base,
+        details: [...details, {...detail, title: "First Person Description"}]
+      };
+      options.perspective = "firstPerson";
+      options.name = "Description";
+      const value = detailsWithPerspective(options);
+
+      expect(value).toEqual([detail.body]);
+    });
+
+    it("falls back to third person", () => {
+      const detail = options.base.details.find((d) => (d.title === "third_person_description"));
+      const details = options.base.details.filter((d) => (d.title !== "first_person_description"));
+      options.base = {...options.base, details};
+      options.perspective = "firstPerson";
+      const value = detailsWithPerspective(options);
+
+      expect(value).toEqual([detail.body]);
+    });
+
+    it("falls back to first person", () => {
+      const detail = options.base.details.find((d) => (d.title === "first_person_description"));
+      const details = options.base.details.filter((d) => (d.title !== "third_person_description"));
+      options.base = {...options.base, details};
+      options.perspective = "thirdPerson";
+      const value = detailsWithPerspective(options);
+
+      expect(value).toEqual([detail.body]);
     });
   });
 

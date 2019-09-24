@@ -40,7 +40,7 @@
   }
 }
 
-.dimensionHigher, .dimensionLower {
+.characteristics {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -77,8 +77,4 @@
       @include rems(18);
     }
   }
-}
-.dimensionLower li {
-  background: #d9d5dd;
-  color: $black;
 }

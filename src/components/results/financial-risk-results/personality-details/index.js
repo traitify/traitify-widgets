@@ -29,7 +29,7 @@ class PersonalityDetails extends Component {
     return (
       <div className={style.details}>
         <div className={style.detailsLife}>
-          <h2>The {personality.name} Financial Risk Style in everyday life:</h2>
+          <h2>This style in everyday life:</h2>
           <p>{detailWithPerspective({...options, name: "Everyday Life Title"})}</p>
           <ul>
             {detailsWithPerspective({...options, name: "Everyday Life Detail"}).map((detail) => (
@@ -38,7 +38,7 @@ class PersonalityDetails extends Component {
           </ul>
         </div>
         <div className={style.detailsFinancial}>
-          <h2>The {personality.name} Financial Risk Style in financial decisions:</h2>
+          <h2>This style in financial decisions:</h2>
           <p>{detailWithPerspective({...options, name: "Financial Decisions Title"})}</p>
           <ul>
             {detailsWithPerspective({...options, name: "Financial Decisions Detail"}).map((detail) => (

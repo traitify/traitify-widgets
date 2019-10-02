@@ -5,7 +5,10 @@
   @extend %widgetContainer;
 
   position: relative;
-  min-height: $minHeight;
+  min-height: 100vh;
+  @include mq(m) {
+    min-height: $minHeight;
+  }
 
   &:fullscreen {
     position: fixed;

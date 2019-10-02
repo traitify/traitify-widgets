@@ -4,9 +4,7 @@ exports[`PersonalityDetails renders component 1`] = `
 <div>
   <div>
     <h2>
-      The 
-      Conservative
-       Financial Risk Style in everyday life:
+      This style in everyday life:
     </h2>
     <p>
       Everyday Life Title
@@ -19,9 +17,7 @@ exports[`PersonalityDetails renders component 1`] = `
   </div>
   <div>
     <h2>
-      The 
-      Conservative
-       Financial Risk Style in financial decisions:
+      This style in financial decisions:
     </h2>
     <p>
       Financial Decisions Title

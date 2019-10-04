@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Helpers DangerousHTML renders component 1`] = `
+<div
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Something <em>Dangerous</em>",
+    }
+  }
+/>
+`;
+
+exports[`Helpers DangerousHTML renders tag 1`] = `
+<h1
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "Something <em>Dangerous</em>",
+    }
+  }
+/>
+`;

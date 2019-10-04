@@ -1,9 +1,9 @@
 import {icon as getIcon} from "@fortawesome/fontawesome-svg-core";
-import {dangerousProps} from "lib/helpers";
+import DangerousHTML from "lib/helpers/dangerous-html";
 
 export default function Icon(_props) {
   const {icon: iconName, ...props} = _props;
-  const iconHTML = getIcon(iconName).html[0];
+  const html = getIcon(iconName).html[0];
 
-  return <span {...dangerousProps({html: iconHTML})} {...props} />;
+  return <DangerousHTML html={html} tag="span" {...props} />;
 }

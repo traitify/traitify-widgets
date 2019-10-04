@@ -7,63 +7,62 @@ jest.mock("components/results/type-based-results", () => (() => (<div className=
 jest.mock("lib/with-traitify");
 
 describe("Results", () => {
-  let ui;
+  let props;
 
   beforeEach(() => {
-    ui = {
-      current: {},
-      off: jest.fn().mockName("off"),
-      on: jest.fn().mockName("on"),
-      trigger: jest.fn().mockName("trigger")
+    props = {
+      isReady: jest.fn().mockName("isReady").mockReturnValue(false),
+      getOption: jest.fn().mockName("getOption"),
+      ui: {
+        current: {},
+        off: jest.fn().mockName("off"),
+        on: jest.fn().mockName("on"),
+        trigger: jest.fn().mockName("trigger")
+      }
     };
   });
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      const component = new ComponentHandler(<Component isReady={() => (false)} ui={ui} />);
+      const component = new ComponentHandler(<Component {...props} />);
 
-      expect(ui.trigger).toHaveBeenCalledWith("Results.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Results.initialized", component.instance);
     });
 
     it("triggers update", () => {
-      const component = new ComponentHandler(<Component isReady={() => (false)} ui={ui} />);
+      const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(ui.trigger).toHaveBeenCalledWith("Results.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Results.updated", component.instance);
     });
   });
 
   it("renders dimension based results", () => {
-    const assessment = {assessment_type: "DIMENSION_BASED"};
-    const component = new ComponentHandler(
-      <Component assessment={assessment} isReady={() => (true)} ui={ui} />
-    );
+    props.assessment = {assessment_type: "DIMENSION_BASED"};
+    props.isReady.mockReturnValue(true);
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders financial risk results", () => {
-    const assessment = {assessment_type: "DIMENSION_BASED", scoring_scale: "LIKERT_CUMULATIVE_POMP"};
-    const component = new ComponentHandler(
-      <Component assessment={assessment} isReady={() => (true)} ui={ui} />
-    );
+    props.assessment = {assessment_type: "DIMENSION_BASED", scoring_scale: "LIKERT_CUMULATIVE_POMP"};
+    props.isReady.mockReturnValue(true);
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders type based results", () => {
-    const assessment = {assessment_type: "TYPE_BASED"};
-    const component = new ComponentHandler(
-      <Component assessment={assessment} isReady={() => (true)} ui={ui} />
-    );
+    props.assessment = {assessment_type: "TYPE_BASED"};
+    props.isReady.mockReturnValue(true);
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if not ready", () => {
-    const component = new ComponentHandler(
-      <Component isReady={() => (false)} ui={ui} />
-    );
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

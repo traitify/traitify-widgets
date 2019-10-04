@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {Component} from "react";
-import {dangerousProps} from "lib/helpers";
+import DangerousHTML from "lib/helpers/dangerous-html";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -116,25 +116,25 @@ class CareerModal extends Component {
                 <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faDollarSign} /> {translate("salary_mean")}:</h4>
-                    <p {...dangerousProps({html: translate("salary_mean_html")})} />
+                    <DangerousHTML html={translate("salary_mean_html")} tag="p" />
                   </li>
                   <li>
                     <h4><Icon icon={faChartBar} /> {translate("employment_growth")}:</h4>
-                    <p {...dangerousProps({html: translate("employment_growth_html")})} />
+                    <DangerousHTML html={translate("employment_growth_html")} tag="p" />
                   </li>
                   <li>
                     <h4><Icon icon={faGraduationCap} /> {translate("education")}:</h4>
-                    <p {...dangerousProps({html: translate("education_html")})} />
+                    <DangerousHTML html={translate("education_html")} tag="p" />
                   </li>
                 </ul>
                 <ul className={style.info}>
                   <li>
                     <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
-                    <p {...dangerousProps({html: translate("bright_future_html")})} />
+                    <DangerousHTML html={translate("bright_future_html")} tag="p" />
                   </li>
                   <li>
                     <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
-                    <p {...dangerousProps({html: translate("green_career_html")})} />
+                    <DangerousHTML html={translate("green_career_html")} tag="p" />
                   </li>
                 </ul>
                 <p className={style.center}>
@@ -152,7 +152,7 @@ class CareerModal extends Component {
             <p>{career.experience_level.experience}</p>
             <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
-            <p {...dangerousProps({html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})})} />
+            <DangerousHTML html={translate("match_rate_html", {match_rate: career.score.toFixed(1)})} tag="p" />
             <div ref={(customContent) => { this.customContent = customContent; }} />
           </div>
         </section>

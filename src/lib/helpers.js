@@ -1,10 +1,4 @@
-export function camelCase(string) {
-  return string.toLowerCase().replace(/(_|-)([a-z])/g, (x) => (x[1].toUpperCase()));
-}
-
-export function capitalize(string) {
-  return `${string[0].toUpperCase()}${string.slice(1)}`;
-}
+import {capitalize} from "lib/helpers/string";
 
 export function careerOption(props, name) {
   if(props[name] != null) { return props[name]; }
@@ -17,12 +11,6 @@ export function careerOption(props, name) {
     && props.ui.options.careerOptions
     && props.ui.options.careerOptions[name] != null
   ) { return props.ui.options.careerOptions[name]; }
-}
-
-export function dangerousProps(_props) {
-  const {html, ...props} = _props;
-
-  return {...props, dangerouslySetInnerHTML: {__html: html}};
 }
 
 export function detailWithPerspective(options) {

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import DangerousHTML from "lib/helpers/dangerous-html";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import {dangerousProps} from "lib/helpers";
 import style from "./style";
 
 class PersonalityHeading extends Component {
@@ -31,13 +31,11 @@ class PersonalityHeading extends Component {
 
     return (
       <div className={style.personality}>
-        <div
+        <DangerousHTML
           className={style.content}
-          {...dangerousProps({
-            html: this.props.translate("personality_heading", {
-              deck_name: this.props.deck.name,
-              personality: `<strong>${personality.name}</strong>`
-            })
+          html={this.props.translate("personality_heading", {
+            deck_name: this.props.deck.name,
+            personality: `<strong>${personality.name}</strong>`
           })}
         />
       </div>

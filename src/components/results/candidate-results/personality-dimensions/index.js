@@ -51,7 +51,7 @@ class PersonalityDimensions extends Component {
           </ul>
         )}
         {!disableDetails && (
-          <ul>
+          <ul className={style.details}>
             {types.map((type) => (
               <PersonalityDimensionDetails
                 key={type.personality_type.id}

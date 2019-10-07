@@ -22,4 +22,14 @@
     margin: 0;
     padding: 0;
   }
+  .details {
+    margin-top: 200px;
+    @include mq(m) {
+      margin-top: 220px;
+    }
+    @include mq(xl) {
+      margin-top: 40px;
+    }
+  }
 }
+

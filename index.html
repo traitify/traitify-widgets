@@ -10,6 +10,68 @@
     <div id="results"></div>
     <div id="careers"></div>
     <div id="guide"></div>
+    <style>
+      .row { margin: 15px; }
+    </style>
+    <div class="row">
+      <label htmlFor="deck-id">
+        Deck:
+        <select id="deck-id" name="deck-id">
+          <option value="big-five">Big Five</option>
+          <option value="career-deck">Career Deck</option>
+          <option value="core">Core</option>
+          <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
+          <option value="perseverance">Perseverance</option>
+          <option value="persuasion">Persuasion</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label htmlFor="locale">
+        Locale:
+        <select id="locale" name="locale">
+          <option value="zh-cn">Chinese</option>
+          <option value="ht-us">Creole</option>
+          <option value="nl-nl">Dutch</option>
+          <option value="en-us">English (US)</option>
+          <option value="en-gb">English (GB)</option>
+          <option value="fr-ca">French (Canadian)</option>
+          <option value="fr-fr">French (France)</option>
+          <option value="ja-jp">Japanese</option>
+          <option value="no-no">Norwegian</option>
+          <option value="pt-br">Portuguese (Brazil)</option>
+          <option value="pt-pt">Portuguese</option>
+          <option value="ru-ru">Russian</option>
+          <option value="es-us">Spanish</option>
+          <option value="es-ec">Spanish (Ecuador)</option>
+          <option value="sv-se">Swedish</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label htmlFor="perspective">
+        Perspective:
+        <select id="perspective" name="perspective">
+          <option value="">Default</option>
+          <option value="firstPerson">First Person</option>
+          <option value="thirdPerson">Third Person</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label htmlFor="view">
+        View:
+        <select id="view" name="view">
+          <option value="">Default</option>
+          <option value="candidate">Candidate</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <button onclick="createAssessment()">New Assessment</button>
+      <button onclick="refreshWidget()">Refresh Widget</button>
+      <button onclick="destroyWidget()">Destroy Widget</button>
+    </div>
     <script src="build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
@@ -18,26 +80,29 @@
       var widget;
 
       function createWidget(){
-        Traitify.ui.on("CareerModal.updated", function(context){
-          if(!context.customContent){ return; }
-          context.customContent.appendChild(document.createTextNode("I am custom content"));
-        });
+        var assessmentID = localStorage.getItem("assessment-id");
+        var deckID = localStorage.getItem("deck-id");
+        var locale = localStorage.getItem("locale");
+        var perspective = localStorage.getItem("perspective");
+        var view = localStorage.getItem("view");
+
+        if(!assessmentID){ return; }
 
         targets = {
           "SlideDeck": "#slide-deck",
-          "Guide": "#guide",
           "Results": "#results"
         }
-        if(localStorage.getItem("deck-id") == "career-deck") {
-          targets["Careers"] = "#careers";
-        }
+        if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
+        if(view !== "candidate") { targets["Guide"] = "#guide"; }
 
         widget = Traitify.ui.component();
-        widget.locale(localStorage.getItem("locale") || "en-us").assessmentID(localStorage.getItem("assessment-id"));
         widget
           .allowBack()
           .allowFullscreen()
-          .perspective("thirdPerson")
+          .assessmentID(assessmentID)
+          .perspective(perspective)
+          .locale(locale)
+          .view(view)
           .targets(targets);
         widget.render().then(function(){
           console.log("Rendered");
@@ -49,7 +114,7 @@
       function createAssessment(){
         Traitify.post("/assessments", {
           deck_id: document.querySelector("#deck-id").value,
-          locale_key: "en-us",
+          locale_key: document.querySelector("#locale").value,
           package_id: "cfc05114-b8af-43fb-af27-c175e0cc25ee"
         }).then(function(assessment){
           try{
@@ -62,56 +127,49 @@
         });
       }
 
-      function changeLocale(){
-        Traitify.ui.setLocale(document.querySelector("#locale").value);
-        localStorage.setItem("locale", document.querySelector("#locale").value);
-      }
-
       function destroyWidget(){
         if(widget){ widget.destroy(); }
       }
 
-      if(localStorage.getItem("assessment-id")){
-        createWidget();
-      }
-    </script>
+      function onChange(e){
+        let name = e.target.name;
+        let value = e.target.value;
 
-    <style>
-      .row { margin: 15px; }
-    </style>
-    <div class="row">
-      <select id="deck-id">
-        <option value="big-five">Big Five</option>
-        <option value="career-deck">Career Deck</option>
-        <option value="core">Core</option>
-        <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
-        <option value="perseverance">Perseverance</option>
-        <option value="persuasion">Persuasion</option>
-      </select>
-      <button onclick="createAssessment()">New Assessment</button>
-    </div>
-    <div class="row">
-      <select id="locale">
-        <option value="zh-cn">Chinese</option>
-        <option value="ht-us">Creole</option>
-        <option value="nl-nl">Dutch</option>
-        <option value="en-us" selected>English (US)</option>
-        <option value="en-gb">English (GB)</option>
-        <option value="fr-ca">French (Canadian)</option>
-        <option value="fr-fr">French (France)</option>
-        <option value="ja-jp">Japanese</option>
-        <option value="no-no">Norwegian</option>
-        <option value="pt-br">Portuguese (Brazil)</option>
-        <option value="pt-pt">Portuguese</option>
-        <option value="ru-ru">Russian</option>
-        <option value="es-us">Spanish</option>
-        <option value="es-ec">Spanish (Ecuador)</option>
-        <option value="sv-se">Swedish</option>
-      </select>
-      <button onclick="changeLocale()">Change Locale</button>
-    </div>
-    <div class="row">
-      <button onclick="destroyWidget()">Destroy Widget</button>
-    </div>
+        localStorage.setItem(name, value);
+        if(widget && name !== "deck-id") { widget[name](value); }
+      }
+
+      function refreshWidget(){
+        if(widget) { widget.refresh(); }
+      }
+
+      function setupOptions(){
+        var inputs = ["deck-id", "locale", "perspective", "view"];
+        for(var i = 0; i < inputs.length; i++) {
+          const name = inputs[i];
+          const element = document.querySelector("#" + name);
+          let value = localStorage.getItem(name);
+
+          if(!value) {
+            switch(name) {
+              case "deck-id":
+                value = "big-five";
+                localStorage.setItem(name, value);
+                break;
+              case "locale":
+                value = "en-us";
+                localStorage.setItem(name, value);
+                break;
+            }
+          }
+
+          if(value) { element.value = value; }
+          element.addEventListener("change", onChange);
+        }
+      }
+
+      setupOptions();
+      createWidget();
+    </script>
   </body>
 </html>

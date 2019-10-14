@@ -73,6 +73,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  view(view) {
+    this.options.view = view;
+
+    return this;
+  }
   render(componentName) {
     if(this.options.target) {
       this.options.targets[componentName || "Default"] = this.options.target;

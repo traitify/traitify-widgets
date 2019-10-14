@@ -36,7 +36,6 @@ class PersonalityDimensionColumn extends Component {
       case score <= 6: backgroundClass = "medium"; break;
       default: backgroundClass = "high";
     }
-    // TODO: Mobile View
 
     return (
       <li className={style.container}>

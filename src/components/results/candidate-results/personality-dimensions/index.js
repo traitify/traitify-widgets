@@ -39,8 +39,8 @@ class PersonalityDimensions extends Component {
     return (
       <div className={style.container}>
         <p>{this.props.translate("candidate_description_for_dimensions")}</p>
-        {!disableColumns && (
-          <ul className={style.columns}>
+        {!disableColumns && [
+          <ul key="columns" className={style.columns}>
             {types.map((type) => (
               <PersonalityDimensionColumn
                 key={type.personality_type.id}
@@ -48,8 +48,9 @@ class PersonalityDimensions extends Component {
                 {...this.props}
               />
             ))}
-          </ul>
-        )}
+          </ul>,
+          <div key="buffer" className={style.columnsBuffer} />
+        ]}
         {!disableDetails && (
           <ul className={style.details}>
             {types.map((type) => (

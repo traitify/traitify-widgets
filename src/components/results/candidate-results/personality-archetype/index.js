@@ -33,15 +33,13 @@ class PersonalityArchetype extends Component {
 
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
-    // TODO: Get badge from details
-    // const badge = personality.details.find(({title}) => title === "Badge").body;
-    const badge = "https://cdn.traitify.com/frtq/conservative_white.png";
+    const badge = personality.details.find(({title}) => title === "Badge");
     const options = {base: personality, perspective: "firstPerson"};
 
     return (
       <div className={style.container}>
         <div className={style.details}>
-          <img alt={personality.name} src={badge} />
+          {badge && <img alt={personality.name} src={badge.body} />}
           <DangerousHTML
             html={this.props.translate("personality_heading", {
               deck_name: this.props.deck.name,

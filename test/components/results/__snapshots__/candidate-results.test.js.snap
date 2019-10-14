@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CandidateResults renders results 1`] = `
+<section>
+  <div
+    className="mock"
+  >
+    Personality Archetype
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimensions
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Details
+  </div>
+</section>
+`;

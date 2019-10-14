@@ -23,10 +23,10 @@ class PersonalityDimensionDetails extends Component {
     ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {
-    this.props.ui.trigger("PersonalityDimension.initialized", this);
+    this.props.ui.trigger("PersonalityDimensionDetails.initialized", this);
   }
   componentDidUpdate() {
-    this.props.ui.trigger("PersonalityDimension.updated", this);
+    this.props.ui.trigger("PersonalityDimensionDetails.updated", this);
   }
   render() {
     const {translate, type: {personality_type: {badge, details, level, name}}} = this.props;

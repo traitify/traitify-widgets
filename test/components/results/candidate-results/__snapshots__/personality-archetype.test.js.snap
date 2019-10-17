@@ -11,7 +11,7 @@ exports[`PersonalityArchetype renders component 1`] = `
       }
     />
     <p>
-      Description
+      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>
   </div>
   <div>
@@ -41,7 +41,7 @@ exports[`PersonalityArchetype renders component with badge 1`] = `
       }
     />
     <p>
-      Description
+      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>
   </div>
   <div>

@@ -6,24 +6,24 @@ jest.mock("lib/helpers", () => ({detailWithPerspective: jest.fn().mockImplementa
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 const settings = [
-  {body: "Encourages peer support in pursuit of goals", title: "Settings"},
-  {body: "De-emphasizes competition among colleagues", title: "Settings"},
-  {body: "Often has a fast paced and energetic vibe", title: "Settings"},
-  {body: "Includes opportunities for large group discussions", title: "Settings"},
-  {body: "Values creativity", title: "Settings"},
-  {body: "Has opportunities for innovation and exploration", title: "Settings"},
-  {body: "Fueled by a sense of duty", title: "Settings"},
-  {body: "Prioritizes work quality", title: "Settings"},
-  {body: "Allows individuals to deal with their own setbacks", title: "Settings"},
-  {body: "Requires people to respond to challenges", title: "Settings"}
+  {body: "Encourages peer support in pursuit of goals", title: "Settings that Work for You"},
+  {body: "De-emphasizes competition among colleagues", title: "Settings that Work for You"},
+  {body: "Often has a fast paced and energetic vibe", title: "Settings that Work for You"},
+  {body: "Includes opportunities for large group discussions", title: "Settings that Work for You"},
+  {body: "Values creativity", title: "Settings that Work for You"},
+  {body: "Has opportunities for innovation and exploration", title: "Settings that Work for You"},
+  {body: "Fueled by a sense of duty", title: "Settings that Work for You"},
+  {body: "Prioritizes work quality", title: "Settings that Work for You"},
+  {body: "Allows individuals to deal with their own setbacks", title: "Settings that Work for You"},
+  {body: "Requires people to respond to challenges", title: "Settings that Work for You"}
 ];
 const tools = [
-  {body: "Compatible with many other personalities", title: "Tools"},
-  {body: "Sought after as a good person to dialogue with", title: "Tools"},
-  {body: "Work at a pace that suits everyone", title: "Tools"},
-  {body: "High energy, outgoing", title: "Tools"},
-  {body: "Comfortable in the limelight", title: "Tools"},
-  {body: "Have effective coping strategies for work stress", title: "Tools"}
+  {body: "Compatible with many other personalities", title: "Tools to Use"},
+  {body: "Sought after as a good person to dialogue with", title: "Tools to Use"},
+  {body: "Work at a pace that suits everyone", title: "Tools to Use"},
+  {body: "High energy, outgoing", title: "Tools to Use"},
+  {body: "Comfortable in the limelight", title: "Tools to Use"},
+  {body: "Have effective coping strategies for work stress", title: "Tools to Use"}
 ];
 
 const assessmentWith = (details) => ({

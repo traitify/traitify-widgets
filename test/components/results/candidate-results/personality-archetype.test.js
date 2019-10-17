@@ -3,7 +3,6 @@ import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 import deck from "support/json/deck/big-five.json";
 
-jest.mock("lib/helpers", () => ({detailWithPerspective: jest.fn().mockImplementation((options) => options.base[options.name] || options.name)}));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 const assessmentWithBadge = {

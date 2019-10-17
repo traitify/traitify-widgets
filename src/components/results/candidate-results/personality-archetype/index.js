@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import {detailWithPerspective} from "lib/helpers";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -34,7 +33,7 @@ class PersonalityArchetype extends Component {
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
     const badge = personality.details.find(({title}) => title === "Badge");
-    const options = {base: personality, perspective: "firstPerson"};
+    const description = personality.details.find(({title}) => title === "Candidate Description");
 
     return (
       <div className={style.container}>
@@ -47,7 +46,7 @@ class PersonalityArchetype extends Component {
             })}
             tag="h2"
           />
-          <p>{detailWithPerspective({...options, name: "Description"})}</p>
+          {description && <p>{description.body}</p>}
         </div>
         <div className={style.meaning}>
           <DangerousHTML html={this.props.translate("candidate_description_for_archetype_html")} tag="p" />

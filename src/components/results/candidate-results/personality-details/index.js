@@ -29,9 +29,8 @@ class PersonalityDetails extends Component {
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     let disableSettings = disabledComponents.includes("PersonalitySettings");
     let disableTools = disabledComponents.includes("PersonalityTools");
-
-    const settings = details.filter(({title}) => (title === "Settings")).map(({body}) => body);
-    const tools = details.filter(({title}) => (title === "Tools")).map(({body}) => body);
+    const settings = details.filter(({title}) => (title === "Settings that Work for You")).map(({body}) => body);
+    const tools = details.filter(({title}) => (title === "Tools to Use")).map(({body}) => body);
     if(settings.length === 0) { disableSettings = true; }
     if(tools.length === 0) { disableTools = true; }
     if(disableSettings && disableTools) { return null; }

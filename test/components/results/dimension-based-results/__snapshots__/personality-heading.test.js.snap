@@ -5,13 +5,7 @@ exports[`PersonalityHeading renders component 1`] = `
   <div
     dangerouslySetInnerHTML={
       Object {
-        "__html": Array [
-          "personality_heading",
-          Object {
-            "deck_name": "Big Five",
-            "personality": "<strong>Cohort</strong>",
-          },
-        ],
+        "__html": "personality_heading, [object Object]",
       }
     }
   />

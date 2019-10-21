@@ -1,0 +1,1339 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDimensions renders columns if details disabled 1`] = `
+<div>
+  <p>
+    candidate_description_for_dimensions, [object Object]
+  </p>
+  <ul>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.085)",
+              "border": "3px solid #29B770",
+            }
+          }
+        >
+          <img
+            alt="Agreeableness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+        </div>
+        <h3>
+          Agreeableness
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.085)",
+              "border": "3px solid #FFCC3B",
+            }
+          }
+        >
+          <img
+            alt="Extraversion badge, [object Object]"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+        </div>
+        <h3>
+          Extraversion
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(255,204,59,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.085)",
+              "border": "3px solid #F98B1C",
+            }
+          }
+        >
+          <img
+            alt="Conscientiousness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+        </div>
+        <h3>
+          Conscientiousness
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(249,139,28,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.085)",
+              "border": "3px solid #42B0DB",
+            }
+          }
+        >
+          <img
+            alt="Openness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+        </div>
+        <h3>
+          Openness
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(66,176,219,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.085)",
+              "border": "3px solid #ef615e",
+            }
+          }
+        >
+          <img
+            alt="Emotional Stability badge, [object Object]"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+        </div>
+        <h3>
+          Emotional Stability
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(239,97,94,0.1)",
+          }
+        }
+      />
+    </li>
+  </ul>
+  <div />
+</div>
+`;
+
+exports[`PersonalityDimensions renders component 1`] = `
+<div>
+  <p>
+    candidate_description_for_dimensions, [object Object]
+  </p>
+  <ul>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.085)",
+              "border": "3px solid #29B770",
+            }
+          }
+        >
+          <img
+            alt="Agreeableness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+        </div>
+        <h3>
+          Agreeableness
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.085)",
+              "border": "3px solid #FFCC3B",
+            }
+          }
+        >
+          <img
+            alt="Extraversion badge, [object Object]"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+        </div>
+        <h3>
+          Extraversion
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(255,204,59,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.085)",
+              "border": "3px solid #F98B1C",
+            }
+          }
+        >
+          <img
+            alt="Conscientiousness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+        </div>
+        <h3>
+          Conscientiousness
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(249,139,28,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.085)",
+              "border": "3px solid #42B0DB",
+            }
+          }
+        >
+          <img
+            alt="Openness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+        </div>
+        <h3>
+          Openness
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(66,176,219,0.1)",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div>
+        <div
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.085)",
+              "border": "3px solid #ef615e",
+            }
+          }
+        >
+          <img
+            alt="Emotional Stability badge, [object Object]"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+        </div>
+        <h3>
+          Emotional Stability
+        </h3>
+        <h2>
+          Medium
+        </h2>
+      </div>
+      <div
+        className="undefined undefined"
+        style={
+          Object {
+            "background": "rgba(239,97,94,0.1)",
+          }
+        }
+      />
+    </li>
+  </ul>
+  <div />
+  <ul>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.1)",
+          "borderTop": "5px solid #29B770",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Agreeableness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Agreeableness
+           
+          <span
+            style={
+              Object {
+                "color": "#29B770",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Forgiving style
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Looks for win-win outcome
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Negotiates with sensitivity
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Realistic view of others
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Recognises imperfection 
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Relational style
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(255,204,59,0.1)",
+          "borderTop": "5px solid #FFCC3B",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Extraversion badge, [object Object]"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Extraversion
+           
+          <span
+            style={
+              Object {
+                "color": "#FFCC3B",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You come across as someone who is comfortable in social situations, but who also knows when to withdraw for periods of quiet reflection. You are just as likely to be found lost in thought as you are lost in conversation! Generally, you're the kind of person who has a good idea of the amount of excitement you would like - however, you can find too much 'down-time' de-motivating.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Energetic
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Enthusiastic
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Fun oriented
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Quick to connect
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Socially skilled
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Thinks and acts
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(249,139,28,0.1)",
+          "borderTop": "5px solid #F98B1C",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Conscientiousness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Conscientiousness
+           
+          <span
+            style={
+              Object {
+                "color": "#F98B1C",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You seem to be the sort of person who prefers to weigh the extent to which tasks need to be structured, organized and planned. You are likely to be aware of the fact that at times things need to be approached methodically; at other times, action is more important than plans. You are likely to commit to tasks when you feel fully invested in the outcome, and it's this sense of ownership that gives you the confidence to do your best work.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Balanced work style
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Committed to shared outcome
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Continually prioritises goals
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Flexible work style
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Focuses on process and task
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Wants to achieve
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(66,176,219,0.1)",
+          "borderTop": "5px solid #42B0DB",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Openness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Openness
+           
+          <span
+            style={
+              Object {
+                "color": "#42B0DB",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You appear to take a balanced approach to solving problems. thinking of new and original ways of approaching situations, but not at the expense of ignoring well-established solutions, already known to work. Most likely, you will have an eye on whether something will be effective both now and in the future, juggling the facts and making changes that will stand the test of time.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Brings experience to strategy
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Flexible problem solver
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Pragmatic thinker
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Sees detail and bigger picture
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Tends to be cautious
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Works to maintain the system
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(239,97,94,0.1)",
+          "borderTop": "5px solid #ef615e",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Emotional Stability badge, [object Object]"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Emotional Stability
+           
+          <span
+            style={
+              Object {
+                "color": "#ef615e",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You look as if you respond to pressure in a relaxed way but also know when to take things seriously. You seem to be able to let minor irritations go. Your results indicate that you are someone who is generally calm, and not the sort to dwell on things, but who is also 'on guard' at times. By and large you probably feel well able to deal with most of what life hands you.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Aware of others’ emotional states
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Copes with most things
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Even tempered
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Low level of tension
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Manages feelings
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Takes onboard criticism
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`PersonalityDimensions renders details if columns disabled 1`] = `
+<div>
+  <p>
+    candidate_description_for_dimensions, [object Object]
+  </p>
+  <ul>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.1)",
+          "borderTop": "5px solid #29B770",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Agreeableness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Agreeableness
+           
+          <span
+            style={
+              Object {
+                "color": "#29B770",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Forgiving style
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Looks for win-win outcome
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Negotiates with sensitivity
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Realistic view of others
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Recognises imperfection 
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(41,183,112,0.5)",
+            }
+          }
+        >
+          Relational style
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(255,204,59,0.1)",
+          "borderTop": "5px solid #FFCC3B",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Extraversion badge, [object Object]"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Extraversion
+           
+          <span
+            style={
+              Object {
+                "color": "#FFCC3B",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You come across as someone who is comfortable in social situations, but who also knows when to withdraw for periods of quiet reflection. You are just as likely to be found lost in thought as you are lost in conversation! Generally, you're the kind of person who has a good idea of the amount of excitement you would like - however, you can find too much 'down-time' de-motivating.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Energetic
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Enthusiastic
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Fun oriented
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Quick to connect
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Socially skilled
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(255,204,59,0.5)",
+            }
+          }
+        >
+          Thinks and acts
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(249,139,28,0.1)",
+          "borderTop": "5px solid #F98B1C",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Conscientiousness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Conscientiousness
+           
+          <span
+            style={
+              Object {
+                "color": "#F98B1C",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You seem to be the sort of person who prefers to weigh the extent to which tasks need to be structured, organized and planned. You are likely to be aware of the fact that at times things need to be approached methodically; at other times, action is more important than plans. You are likely to commit to tasks when you feel fully invested in the outcome, and it's this sense of ownership that gives you the confidence to do your best work.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Balanced work style
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Committed to shared outcome
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Continually prioritises goals
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Flexible work style
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Focuses on process and task
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(249,139,28,0.5)",
+            }
+          }
+        >
+          Wants to achieve
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(66,176,219,0.1)",
+          "borderTop": "5px solid #42B0DB",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Openness badge, [object Object]"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Openness
+           
+          <span
+            style={
+              Object {
+                "color": "#42B0DB",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You appear to take a balanced approach to solving problems. thinking of new and original ways of approaching situations, but not at the expense of ignoring well-established solutions, already known to work. Most likely, you will have an eye on whether something will be effective both now and in the future, juggling the facts and making changes that will stand the test of time.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Brings experience to strategy
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Flexible problem solver
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Pragmatic thinker
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Sees detail and bigger picture
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Tends to be cautious
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(66,176,219,0.5)",
+            }
+          }
+        >
+          Works to maintain the system
+        </li>
+      </ul>
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(239,97,94,0.1)",
+          "borderTop": "5px solid #ef615e",
+        }
+      }
+    >
+      <div>
+        <p>
+          <img
+            alt="Emotional Stability badge, [object Object]"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+        </p>
+      </div>
+      <div>
+        <h2>
+          Emotional Stability
+           
+          <span
+            style={
+              Object {
+                "color": "#ef615e",
+              }
+            }
+          >
+            |
+          </span>
+           
+          Medium
+        </h2>
+        <h3>
+          candidate_heading_for_dimension, [object Object]
+        </h3>
+        <p>
+          You look as if you respond to pressure in a relaxed way but also know when to take things seriously. You seem to be able to let minor irritations go. Your results indicate that you are someone who is generally calm, and not the sort to dwell on things, but who is also 'on guard' at times. By and large you probably feel well able to deal with most of what life hands you.
+        </p>
+      </div>
+      <h3>
+        candidate_heading_for_benefits, [object Object]
+      </h3>
+      <ul>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Aware of others’ emotional states
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Copes with most things
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Even tempered
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Low level of tension
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Manages feelings
+        </li>
+        <li
+          style={
+            Object {
+              "background": "rgba(239,97,94,0.5)",
+            }
+          }
+        >
+          Takes onboard criticism
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`PersonalityDimensions renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityDimensions renders nothing if results not ready 1`] = `null`;

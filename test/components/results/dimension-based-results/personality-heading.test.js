@@ -14,7 +14,7 @@ describe("PersonalityHeading", () => {
       deck,
       followDeck: jest.fn().mockName("followDeck"),
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
-      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => [value, options]),
+      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       ui: {
         current: {},
         off: jest.fn().mockName("off"),

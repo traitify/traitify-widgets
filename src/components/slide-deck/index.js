@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import {camelCase} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import {camelCase} from "lib/helpers/string";
 import withTraitify from "lib/with-traitify";
 import {
   completedSlides,

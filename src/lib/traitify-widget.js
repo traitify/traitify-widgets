@@ -1,5 +1,6 @@
 import {render, unmountComponentAtNode} from "react-dom";
 import uuid from "uuid";
+import {unique} from "lib/helpers/array";
 import guessComponent from "lib/helpers/guess-component";
 
 export default class TraitifyWidget {
@@ -7,10 +8,17 @@ export default class TraitifyWidget {
     this.id = uuid();
     this.ui = ui;
     this.options = {allowInstructions: true, ...options};
+    this.options.disabledComponents = [...this.options.disabledComponents || []];
     this.options.targets = Object.assign({}, this.options.targets);
   }
   allowBack() {
     this.options.allowBack = true;
+
+    return this;
+  }
+  allowComponents(components) {
+    this.options.disabledComponents = this.options.disabledComponents
+      .filter((component) => !components.includes(component));
 
     return this;
   }
@@ -43,6 +51,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  disableComponents(components) {
+    this.options.disabledComponents = unique(this.options.disabledComponents.concat(components));
+
+    return this;
+  }
   disableFullscreen() {
     this.options.allowFullscreen = false;
 
@@ -70,11 +83,6 @@ export default class TraitifyWidget {
   }
   refresh() {
     this.render();
-
-    return this;
-  }
-  view(view) {
-    this.options.view = view;
 
     return this;
   }
@@ -121,6 +129,11 @@ export default class TraitifyWidget {
   }
   targets(targets) {
     this.options.targets = targets;
+
+    return this;
+  }
+  view(view) {
+    this.options.view = view;
 
     return this;
   }

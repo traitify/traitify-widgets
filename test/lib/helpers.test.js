@@ -1,7 +1,5 @@
 import {
-  camelCase,
   careerOption,
-  dangerousProps,
   detailWithPerspective,
   detailsWithPerspective,
   getDisplayName,
@@ -10,20 +8,6 @@ import {
 import assessment from "support/json/assessment/dimension-based.json";
 
 describe("Helpers", () => {
-  describe("camelCase", () => {
-    it("replaces hyphens", () => {
-      const value = camelCase("really-not-me");
-
-      expect(value).toBe("reallyNotMe");
-    });
-
-    it("replaces underscores", () => {
-      const value = camelCase("REALLY_NOT_ME");
-
-      expect(value).toBe("reallyNotMe");
-    });
-  });
-
   describe("careerOption", () => {
     const options = {careerOptions: {perPage: 20}};
     const ui = {options: {careerOptions: {perPage: 30}}};
@@ -60,20 +44,6 @@ describe("Helpers", () => {
 
     it("gives up", () => {
       expect(careerOption({}, "perPage")).toBeUndefined();
-    });
-  });
-
-  describe("dangerousProps", () => {
-    it("sets dangerouslySetInnerHTML", () => {
-      const props = dangerousProps({html: "<i>Danger</i>"});
-
-      expect(props).toEqual({dangerouslySetInnerHTML: {__html: "<i>Danger</i>"}});
-    });
-
-    it("returns extra props", () => {
-      const props = dangerousProps({className: "extra", html: "<i>Danger</i>"});
-
-      expect(props.className).toEqual("extra");
     });
   });
 

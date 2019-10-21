@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import {dangerousProps} from "lib/helpers";
+import DangerousHTML from "lib/helpers/dangerous-html";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import CompetencySelect from "./competency-select";
@@ -145,7 +145,7 @@ class Guide extends Component {
               <div key={sequence.id}>
                 <h2>{sequence.name}</h2>
                 <p>{translate("guide_intro")}</p>
-                <p><em {...dangerousProps({html: translate("guide_get_started_html")})} /></p>
+                <p><DangerousHTML html={translate("guide_get_started_html")} tag="em" /></p>
                 {sequence.questions.map((question) => (
                   <div key={question.id}>
                     <h3 id={question.order === 1 ? "traitify-question-1" : null}>{`Question ${question.order}`}</h3>

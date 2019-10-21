@@ -78,8 +78,8 @@
         margin-left: 2%;
       }
       &:nth-of-type(4n+1) {
-				margin-left: 0;
-			}
+        margin-left: 0;
+      }
       @include rems(18);
     }
   }

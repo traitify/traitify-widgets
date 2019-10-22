@@ -16,7 +16,6 @@ import {
 import PropTypes from "prop-types";
 import {Component} from "react";
 import DangerousHTML from "lib/helpers/dangerous-html";
-import {dangerousProps} from "lib/helpers";
 import HighChart from "components/highchart";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
@@ -167,10 +166,7 @@ class CareerModal extends Component {
             <p>{career.experience_level.experience}</p>
             <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
-<<<<<<< HEAD
             <DangerousHTML html={translate("match_rate_html", {match_rate: career.score.toFixed(1)})} tag="p" />
-=======
-            <p {...dangerousProps({html: translate("match_rate_html", {match_rate: career.score.toFixed(1)})})} />
             <div id="career__chart" className="career__chart">
               <HighChart
                 type="column"
@@ -186,7 +182,6 @@ class CareerModal extends Component {
                 }]}
               />
             </div>
->>>>>>> modal updates
             <div ref={(customContent) => { this.customContent = customContent; }} />
             <hr />
             <div>

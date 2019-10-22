@@ -176,7 +176,13 @@ class SlideDeck extends Component {
         error = response;
       }
 
-      this.setState({error, errorType: "request"});
+      const finishRequestAttempts = this.state.finishRequestAttempts + 1;
+
+      if(finishRequestAttempts > 1) {
+        this.setState({error, errorType: "request"});
+      } else {
+        this.setState({finished: false, finishRequestAttempts}, this.finish);
+      }
     });
   }
   // Event Methods

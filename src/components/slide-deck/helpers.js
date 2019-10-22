@@ -85,6 +85,7 @@ export function isReady(slides) {
 export function getStateFromProps(props) {
   const state = {
     finished: false,
+    finishRequestAttempts: 0,
     imageLoading: false,
     imageLoadingAttempts: 0,
     slides: [],

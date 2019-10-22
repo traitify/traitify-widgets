@@ -412,12 +412,34 @@ describe("SlideDeck", () => {
       expect(setState).toHaveBeenCalledWith({finished: true});
     });
 
+    it("retries request", async() => {
+      const component = new ComponentHandler(<Component {...props} />);
+      const slides = assessment.slides.map(({id}) => ({id, response: true, time_taken: -600}));
+      setState.mockClear();
+      completedSlides.mockReturnValueOnce(slides);
+      component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`);
+      component.instance.finish();
+
+      await flushPromises();
+
+      expect(props.getAssessment).not.toHaveBeenCalledWith();
+      expect(props.traitify.put).toHaveBeenCalledWith(
+        `/assessments/${component.props.assessmentID}/slides`,
+        slides
+      );
+      expect(setState).toHaveBeenCalledWith(
+        {finished: false, finishRequestAttempts: 1},
+        component.instance.finish
+      );
+    });
+
     it("catches json errors", async() => {
       const component = new ComponentHandler(<Component {...props} />);
       const slides = assessment.slides.map(({id}) => ({id, response: true, time_taken: -600}));
       setState.mockClear();
       completedSlides.mockReturnValueOnce(slides);
       component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`);
+      component.updateState({finishRequestAttempts: 1});
       component.instance.finish();
 
       await flushPromises();
@@ -436,6 +458,7 @@ describe("SlideDeck", () => {
       setState.mockClear();
       completedSlides.mockReturnValueOnce(slides);
       component.props.traitify.put.mockRejectedValueOnce("Oh no");
+      component.updateState({finishRequestAttempts: 1});
       component.instance.finish();
 
       await flushPromises();

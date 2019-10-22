@@ -34,6 +34,7 @@
   "guide_get_started_html": "To get things going you might like to start with <a href='#traitify-question-1'>Question 1</a>",
   "help": "Help",
   "instructions": "Instructions",
+  "job_links": "Job Links",
   "least_represented_traits": "Least Represented Traits",
   "loading": "Loading",
   "match_rate": "Match Rate",
@@ -62,5 +63,6 @@
   "slide_error": "Unable to load more slides at this time",
   "sort": "Sort",
   "title": "Title",
-  "try_again": "Click Here to Try Again"
+  "try_again": "Click Here to Try Again",
+  "view_on_onet": "View Career Details on O*Net"
 }

@@ -199,3 +199,40 @@ h2, h3, h4 {
     color: #00aeef !important;
   }
 }
+
+.btnPrimary {
+  background: #017fae;
+  color: #fff;
+  display: inline-block;
+  min-width: 155px;
+  padding: 6px 25px;
+  margin: 0 auto;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  font-size: 1.1em;
+  text-decoration: none;
+  cursor: pointer;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    background: darken(#017fae, 8%);
+    color: #fff;
+  }
+}
+
+.center {
+  text-align: center
+}
+
+.jobLink img {
+  width: initial;
+  margin-right: 5%;
+}
+
+.jobsLinks {
+  list-style: none;
+  margin: 0 10px 30px;
+  padding: 0;
+}

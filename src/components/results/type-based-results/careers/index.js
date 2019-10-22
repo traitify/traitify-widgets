@@ -20,7 +20,7 @@ class Careers extends Component {
   }
   render() {
     if(!this.props.isReady("results")) { return null; }
-
+    console.log(this.props, "fffff");
     return (
       <div className={style.container}>
         <CareerFilter {...this.props} />

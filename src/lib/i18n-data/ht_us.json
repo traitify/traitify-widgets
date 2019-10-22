@@ -34,6 +34,7 @@
   "guide_get_started_html": "Pou jwenn bagay sa yo pral ou ta ka renmen kòmanse ak <a href='#traitify-question-1'>kesyon 1</a>",
   "help": "Èd",
   "instructions": "Enstriksyon",
+  "job_links": "Job Lyen",
   "least_represented_traits": "Ki pi piti trete repwezante",
   "loading": "Loading",
   "match_rate": "Koresponn ak to",
@@ -62,5 +63,6 @@
   "slide_error": "Kapab chaje plis glisad nan moman sa a",
   "sort": "Sòt",
   "title": "Tit",
-  "try_again": "Klike la a eseye ankò"
+  "try_again": "Klike la a eseye ankò",
+  "view_on_onet": "Gade Detay Karyè sou O*Net"
 }

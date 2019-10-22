@@ -34,6 +34,7 @@
   "guide_get_started_html": "For å få ting i gang kan du like å begynne med <a href='#traitify-question-1'>Spørsmål 1</a>",
   "help": "Hjelp",
   "instructions": "Bruksanvisning",
+  "job_links": "Jobblenker",
   "least_represented_traits": "Minst representert trekk",
   "loading": "Laster",
   "match_rate": "Kampfrekvens",
@@ -62,5 +63,6 @@
   "slide_error": "Kan ikke laste flere lysbilder nå",
   "sort": "Sortere",
   "title": "Tittel",
-  "try_again": "Klikk her for å prøve igjen"
+  "try_again": "Klikk her for å prøve igjen",
+  "view_on_onet": "Vis karriereinformasjon om O*Net"
 }

@@ -34,6 +34,7 @@
   "guide_get_started_html": "物事を進めるために、あなたは始めたいと思います <a href='#traitify-question-1'>質問1</a>",
   "help": "助けて",
   "instructions": "説明書",
+  "job_links": "求人リンク",
   "least_represented_traits": "最も当てはまらない特徴",
   "loading": "ローディング",
   "match_rate": "一致率",
@@ -62,5 +63,6 @@
   "slide_error": "現在、これ以上スライドを読み込めません",
   "sort": "ソート",
   "title": "タイトル",
-  "try_again": "再試行する"
+  "try_again": "再試行する",
+  "view_on_onet": "キャリア詳細を表示 O*Net"
 }

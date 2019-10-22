@@ -151,7 +151,6 @@ class CareerModal extends Component {
                   </li>
                 </ul>
                 <p className={style.center}>
-                  fa
                   <button className={style.legendToggle} onClick={this.toggleLegend} title={translate("close")} type="button">{translate("close")}</button>
                 </p>
               </div>
@@ -167,7 +166,7 @@ class CareerModal extends Component {
             <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
             <DangerousHTML html={translate("match_rate_html", {match_rate: career.score.toFixed(1)})} tag="p" />
-            <div id="career__chart" className="career__chart">
+            <div>
               <HighChart
                 type="column"
                 xAxis={{type: "category"}}
@@ -185,7 +184,7 @@ class CareerModal extends Component {
             <div ref={(customContent) => { this.customContent = customContent; }} />
             <hr />
             <div>
-              <h3 className="heading"><i className="fa fa-external-link-square" /><Icon icon={faExternalLinkSquareAlt} /> {translate("job_links")}</h3>
+              <h3><Icon icon={faExternalLinkSquareAlt} /> {translate("job_links")}</h3>
               <ul className={style.jobsLinks}>
                 <li>
                   <a className={style.jobLink} href={`http://www.mynextmove.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="My Next Move">

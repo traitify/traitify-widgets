@@ -11,12 +11,12 @@ exports[`Loading renders component 1`] = `
 </div>
 `;
 
-exports[`Loading renders retry button if not loading 1`] = `
+exports[`Loading renders retry button if error 1`] = `
 <div>
   <div>
     <div>
       <div>
-        slide_error
+        Oh no
       </div>
       <button
         onClick={[MockFunction retry]}

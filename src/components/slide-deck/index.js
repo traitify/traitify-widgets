@@ -108,9 +108,19 @@ class SlideDeck extends Component {
         }, this.fetchImages);
       };
       img.onerror = () => {
-        this.setState((state) => (
-          {imageLoading: false, imageLoadingAttempts: state.imageLoadingAttempts + 1}
-        ), () => {
+        this.setState((state) => {
+          const newState = {
+            imageLoading: false,
+            imageLoadingAttempts: state.imageLoadingAttempts + 1
+          };
+
+          if(newState.imageLoadingAttempts >= 3) {
+            newState.error = this.props.translate("slide_error");
+            newState.errorType = "image";
+          }
+
+          return newState;
+        }, () => {
           setTimeout(this.fetchImages, 2000);
         });
       };
@@ -151,10 +161,22 @@ class SlideDeck extends Component {
 
     if(this.props.isReady("results")) { return; }
 
-    // TODO: If error, display it
-    this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, completedSlides(this.state.slides)).then((response) => {
+    this.props.traitify.put(
+      `/assessments/${this.props.assessmentID}/slides`,
+      completedSlides(this.state.slides)
+    ).then((response) => {
       this.props.ui.trigger("SlideDeck.finished", this, response);
       this.props.getAssessment({force: true});
+    }).catch((response) => {
+      let error;
+
+      try {
+        error = JSON.parse(response).errors[0];
+      } catch(e) {
+        error = response;
+      }
+
+      this.setState({error, errorType: "request"});
     });
   }
   // Event Methods
@@ -173,7 +195,18 @@ class SlideDeck extends Component {
     this.setState({showInstructions: false});
   }
   retry = () => {
-    this.setState({imageLoadingAttempts: 0}, this.fetchImages);
+    let callback;
+    const newState = {error: null, errorType: null};
+
+    if(this.state.errorType === "image") {
+      callback = this.fetchImages;
+      newState.imageLoadingAttempts = 0;
+    } else {
+      callback = this.finish;
+      newState.finished = false;
+    }
+
+    this.setState(newState, callback);
   }
   toggleFullscreen = () => {
     toggleFullscreen({current: this.state.isFullscreen, element: this.container});
@@ -227,7 +260,7 @@ class SlideDeck extends Component {
       <div className={style.widgetContainer} ref={(container) => { this.container = container; }}>
         {(finished || !ready) ? (
           <Loading
-            imageLoading={this.state.imageLoadingAttempts < 3}
+            error={this.state.error}
             retry={this.retry}
             translate={this.props.translate}
           />

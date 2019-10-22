@@ -125,32 +125,6 @@ class CareerModal extends Component {
             <p className={style.center}>
               <a className={style.btnPrimary} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title={translate("view_on_onet")}>{translate("view_on_onet")}</a>
             </p>
-            <hr />
-            <div>
-              <h3 className="heading"><i className="fa fa-external-link-square" /><Icon icon={faExternalLinkSquareAlt} /> {translate("job_links")}</h3>
-              <ul className={style.jobsLinks}>
-                <li>
-                  <a className={style.jobLink} href={`http://www.mynextmove.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="My Next Move">
-                    <img alt="My Next Move" src="https://cdn.traitify.com/assets/images/job-links/my-next-move.jpg" />
-                  </a>
-                </li>
-                <li>
-                  <a className={style.jobLink} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="O*Net Online">
-                    <img alt="O*Net Online" src="https://cdn.traitify.com/assets/images/job-links/o-net-2.jpg" />
-                  </a>
-                </li>
-                <li>
-                  <a className={style.jobLink} href={`http://www.miproximopaso.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="Mi Proximo Paso">
-                    <img alt="Mi Proximo Paso" src="https://cdn.traitify.com/assets/images/job-links/mi-proximo-paso.jpg" />
-                  </a>
-                </li>
-                <li>
-                  <a className={style.jobLink} href={`http://www.mynextmove.org/vets/profile/summary/${career.uuid}`} target="_blank" rel="noopener noreferrer" title="My Next Move for Veterans">
-                    <img alt="My Next Move for Veterans" src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg" />
-                  </a>
-                </li>
-              </ul>
-            </div>
             {showLegend && (
               <div className={style.legend}>
                 <ul className={style.info}>
@@ -214,6 +188,33 @@ class CareerModal extends Component {
             </div>
 >>>>>>> modal updates
             <div ref={(customContent) => { this.customContent = customContent; }} />
+            <hr />
+            <div>
+              <h3 className="heading"><i className="fa fa-external-link-square" /><Icon icon={faExternalLinkSquareAlt} /> {translate("job_links")}</h3>
+              <ul className={style.jobsLinks}>
+                <li>
+                  <a className={style.jobLink} href={`http://www.mynextmove.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="My Next Move">
+                    <img alt="My Next Move" src="https://cdn.traitify.com/assets/images/job-links/my-next-move.jpg" />
+                  </a>
+                </li>
+                <li>
+                  <a className={style.jobLink} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="O*Net Online">
+                    <img alt="O*Net Online" src="https://cdn.traitify.com/assets/images/job-links/o-net-2.jpg" />
+                  </a>
+                </li>
+                <li>
+                  <a className={style.jobLink} href={`http://www.miproximopaso.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="Mi Proximo Paso">
+                    <img alt="Mi Proximo Paso" src="https://cdn.traitify.com/assets/images/job-links/mi-proximo-paso.jpg" />
+                  </a>
+                </li>
+                <li>
+                  <a className={style.jobLink} href={`http://www.mynextmove.org/vets/profile/summary/${career.uuid}`} target="_blank" rel="noopener noreferrer" title="My Next Move for Veterans">
+                    <img alt="My Next Move for Veterans" src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr />
           </div>
         </section>
       </div>

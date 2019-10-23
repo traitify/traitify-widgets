@@ -82,7 +82,7 @@ export default class HighChart extends Component {
       },
       credits: {enabled: false},
       exporting: {enabled: false},
-      legend: {enabled: false},
+      legend: {},
       series: this.props.series
     };
   }
@@ -125,7 +125,7 @@ export default class HighChart extends Component {
     Object.assign(this.config.chart, this.props.chart);
   }
   configForLegend() {
-    this.config.legend = this.props.legend;
+    Object.assign(this.config.legend, this.props.legend);
   }
   configForTooltip() {
     this.config.tooltip = {};

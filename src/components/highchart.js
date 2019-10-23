@@ -62,7 +62,6 @@ export default class HighChart extends Component {
     if(this.props.legend) { this.configForLegend(); }
     if(this.props.xAxis) { this.configForX(); }
     if(this.props.yAxis) { this.configForY(); }
-    this.configForLegend();
     this.configForTooltip();
     this.setState({config: this.config});
   }
@@ -126,7 +125,7 @@ export default class HighChart extends Component {
     Object.assign(this.config.chart, this.props.chart);
   }
   configForLegend() {
-    Object.assign(this.config.legend, this.props.legend);
+    this.config.legend = this.props.legend;
   }
   configForTooltip() {
     this.config.tooltip = {};

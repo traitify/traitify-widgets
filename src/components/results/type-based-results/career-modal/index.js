@@ -26,10 +26,11 @@ class CareerModal extends Component {
   static propTypes = {
     assessment: PropTypes.shape({
       personality_traits: PropTypes.array
-    }).isRequired,
+    }),
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
+  static defaultProps = {assessment: null};
   constructor(props) {
     super(props);
 

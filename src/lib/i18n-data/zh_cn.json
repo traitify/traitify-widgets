@@ -34,6 +34,7 @@
   "guide_get_started_html": "为了让事情顺利进行，您可能会想要开始 <a href='#traitify-question-1'>问题1</a>",
   "help": "救命",
   "instructions": "说明",
+  "job_links": "职位链接",
   "least_represented_traits": "最没有代表性的特性",
   "loading": "装载",
   "match_rate": "匹配率",
@@ -62,5 +63,6 @@
   "slide_error": "目前无法加载更多幻灯片",
   "sort": "分类",
   "title": "标题",
-  "try_again": "单击此处重试"
+  "try_again": "单击此处重试",
+  "view_on_onet": "查看以下职业信息 O*Net"
 }

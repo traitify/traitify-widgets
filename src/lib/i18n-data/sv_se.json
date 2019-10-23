@@ -34,6 +34,7 @@
   "guide_get_started_html": "För att få saker att gå kan du börja med <a href='#traitify-question-1'>Fråga 1</a>",
   "help": "Hjälp",
   "instructions": "Anvisningar",
+  "job_links": "Ссылки на работу",
   "least_represented_traits": "Minst representerade egenskaper",
   "loading": "Ladda",
   "match_rate": "Matchfrekvens",
@@ -62,5 +63,6 @@
   "slide_error": "Det går inte att ladda fler bilder vid den här tiden",
   "sort": "Slag",
   "title": "Titel",
-  "try_again": "Klicka här för att försöka igen"
+  "try_again": "Klicka här för att försöka igen",
+  "view_on_onet": "Visa karriärinformation om O*Net"
 }

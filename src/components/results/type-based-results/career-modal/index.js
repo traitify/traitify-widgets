@@ -1,6 +1,7 @@
 import {
   faAdjust,
   faChartBar,
+  faExternalLinkSquareAlt,
   faCheckSquare,
   faDollarSign,
   faGlobeAmericas,
@@ -15,6 +16,7 @@ import {
 import PropTypes from "prop-types";
 import {Component} from "react";
 import DangerousHTML from "lib/helpers/dangerous-html";
+import HighChart from "components/highchart";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -22,9 +24,13 @@ import style from "./style";
 
 class CareerModal extends Component {
   static propTypes = {
+    assessment: PropTypes.shape({
+      personality_traits: PropTypes.array
+    }),
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
+  static defaultProps = {assessment: null};
   constructor(props) {
     super(props);
 
@@ -55,14 +61,19 @@ class CareerModal extends Component {
   toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); }
   render() {
     const {career, show, showLegend} = this.state;
-
     if(!show || !career) { return null; }
 
-    const {translate} = this.props;
+    const {assessment, translate} = this.props;
     let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
     salary = salary && `$${Math.round(salary)}`;
     let growth = career.employment_projection && career.employment_projection.percent_growth_2022;
     growth = growth && `${growth}%`;
+
+    const careerTraitIDs = career.personality_traits.map((trait) => trait.personality_trait.id);
+    const careerTraits = career.personality_traits.map((trait) => ({y: trait.weight, description: trait.personality_trait.definition, name: trait.personality_trait.name})); // eslint-disable-line max-len
+    const assessmentTraits = assessment.personality_traits
+      .filter((trait) => careerTraitIDs.includes(trait.personality_trait.id))
+      .map((trait) => ({y: Math.round((trait.score + 100) / 2), description: trait.personality_trait.definition, name: trait.personality_trait.name})); // eslint-disable-line max-len
 
     return (
       <div className={`${style.modal} ${style.container}`} role="dialog">
@@ -111,6 +122,9 @@ class CareerModal extends Component {
                 </div>
               </li>
             </ul>
+            <p className={style.center}>
+              <a className={style.btnPrimary} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title={translate("view_on_onet")}>{translate("view_on_onet")}</a>
+            </p>
             {showLegend && (
               <div className={style.legend}>
                 <ul className={style.info}>
@@ -153,7 +167,49 @@ class CareerModal extends Component {
             <hr />
             <h3 className={style.heading}><Icon icon={faAdjust} /> {translate("match_rate")}</h3>
             <DangerousHTML html={translate("match_rate_html", {match_rate: career.score.toFixed(1)})} tag="p" />
+            <div>
+              <HighChart
+                type="column"
+                xAxis={{type: "category"}}
+                chart={{marginRight: 50, marginLeft: 50}}
+                legend={{layout: "horizontal", align: "center", width: 500, itemStyle: {width: 300}, margin: 30}}
+                series={[{
+                  name: `${career.title} Traits`,
+                  data: careerTraits.sort((a, b) => ((a.name > b.name) ? 1 : -1))
+                }, {
+                  name: "Your Traits",
+                  data: assessmentTraits.sort((a, b) => ((a.name > b.name) ? 1 : -1))
+                }]}
+              />
+            </div>
             <div ref={(customContent) => { this.customContent = customContent; }} />
+            <hr />
+            <div>
+              <h3><Icon icon={faExternalLinkSquareAlt} /> {translate("job_links")}</h3>
+              <ul className={style.jobsLinks}>
+                <li>
+                  <a className={style.jobLink} href={`http://www.mynextmove.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="My Next Move">
+                    <img alt="My Next Move" src="https://cdn.traitify.com/assets/images/job-links/my-next-move.jpg" />
+                  </a>
+                </li>
+                <li>
+                  <a className={style.jobLink} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="O*Net Online">
+                    <img alt="O*Net Online" src="https://cdn.traitify.com/assets/images/job-links/o-net-2.jpg" />
+                  </a>
+                </li>
+                <li>
+                  <a className={style.jobLink} href={`http://www.miproximopaso.org/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="Mi Proximo Paso">
+                    <img alt="Mi Proximo Paso" src="https://cdn.traitify.com/assets/images/job-links/mi-proximo-paso.jpg" />
+                  </a>
+                </li>
+                <li>
+                  <a className={style.jobLink} href={`http://www.mynextmove.org/vets/profile/summary/${career.uuid}`} target="_blank" rel="noopener noreferrer" title="My Next Move for Veterans">
+                    <img alt="My Next Move for Veterans" src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <hr />
           </div>
         </section>
       </div>

@@ -34,6 +34,7 @@
   "guide_get_started_html": "Om dingen op gang te brengen, zou je willen beginnen <a href='#traitify-question-1'>Vraag 1</a>",
   "help": "Hulp",
   "instructions": "Instructies",
+  "job_links": "Taaklinks",
   "least_represented_traits": "Minst vertegenwoordigde eigenschappen",
   "loading": "Laden",
   "match_rate": "Match Rate",
@@ -62,5 +63,6 @@
   "slide_error": "Kan op dit moment geen dia's meer laden",
   "sort": "Sorteren",
   "title": "Titel",
-  "try_again": "Klik hier om het opnieuw te proberen"
+  "try_again": "Klik hier om het opnieuw te proberen",
+  "view_on_onet": "Bekijk Carrièredetails op O*Net"
 }

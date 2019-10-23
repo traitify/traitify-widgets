@@ -34,6 +34,7 @@
   "guide_get_started_html": "Pour commencer, vous voudrez peut-être commencer par <a href='#traitify-question-1'>Question 1</a>",
   "help": "Aidez-moi",
   "instructions": "Instructions",
+  "job_links": "Liens d'emploi",
   "least_represented_traits": "Traits les moins représentés",
   "loading": "Chargement",
   "match_rate": "Taux de correspondance",
@@ -62,5 +63,6 @@
   "slide_error": "Impossible de charger plus de diapositives pour le moment",
   "sort": "Trier",
   "title": "Titre",
-  "try_again": "Cliquez ici pour essayer à nouveau"
+  "try_again": "Cliquez ici pour essayer à nouveau",
+  "view_on_onet": "Voir les détails de carrière sur O*Net"
 }

@@ -27,6 +27,7 @@ class CareerModal extends Component {
     assessment: PropTypes.shape({
       personality_traits: PropTypes.array
     }),
+    isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   };
@@ -61,9 +62,10 @@ class CareerModal extends Component {
   toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); }
   render() {
     const {career, show, showLegend} = this.state;
+    const {assessment, isReady, translate} = this.props;
     if(!show || !career) { return null; }
+    if(!isReady("results")) { return null; }
 
-    const {assessment, translate} = this.props;
     let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
     salary = salary && `$${Math.round(salary)}`;
     let growth = career.employment_projection && career.employment_projection.percent_growth_2022;

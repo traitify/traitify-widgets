@@ -6,7 +6,6 @@ describe("Loading", () => {
 
   beforeEach(() => {
     props = {
-      imageLoading: true,
       retry: jest.fn().mockName("retry"),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value)
     };
@@ -18,8 +17,8 @@ describe("Loading", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders retry button if not loading", () => {
-    props.imageLoading = false;
+  it("renders retry button if error", () => {
+    props.error = "Oh no";
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

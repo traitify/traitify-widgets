@@ -205,7 +205,7 @@ class CareerModal extends Component {
                   </a>
                 </li>
                 <li>
-                  <a className={style.jobLink} href={`http://www.mynextmove.org/vets/profile/summary/${career.uuid}`} target="_blank" rel="noopener noreferrer" title="My Next Move for Veterans">
+                  <a className={style.jobLink} href={`http://www.mynextmove.org/vets/profile/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title="My Next Move for Veterans">
                     <img alt="My Next Move for Veterans" src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg" />
                   </a>
                 </li>

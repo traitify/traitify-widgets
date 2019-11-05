@@ -1,7 +1,9 @@
 import {Component} from "components/results/type-based-results/career-modal";
 import ComponentHandler from "support/component-handler";
+import assessment from "support/json/assessment/type-based.json";
 import careers from "support/json/careers.json";
 
+jest.mock("components/highchart", () => (() => (<div className="mock">Highchart</div>)));
 jest.mock("lib/helpers/icon", () => ((props) => (
   <div className="mock">Icon - {props.icon.iconName}</div>
 )));
@@ -14,6 +16,8 @@ describe("CareerModal", () => {
 
   beforeEach(() => {
     props = {
+      assessment,
+      isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
       ui: {
         current: {},
@@ -106,6 +110,15 @@ describe("CareerModal", () => {
   it("renders nothing if no career", () => {
     const component = new ComponentHandler(<Component {...props} />);
     component.updateState({show: true});
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if not ready", () => {
+    props.assessment = null;
+    props.isReady.mockReturnValue(false);
+    const component = new ComponentHandler(<Component {...props} />);
+    component.updateState({career, show: true});
 
     expect(component.tree).toMatchSnapshot();
   });

@@ -33,6 +33,7 @@ class PersonalityScoreBar extends Component {
           <div className={style.scoreBarRange}>
             <div className={style.scoreBarLow}> </div>
             <div className={style.scoreBarLowMed}> </div>
+            <div className={style.scoreBarMed}> </div>
             <div className={style.scoreBarMedHigh}> </div>
             <div className={style.scoreBarHigh}> </div>
           </div>

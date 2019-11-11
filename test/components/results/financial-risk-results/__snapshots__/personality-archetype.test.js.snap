@@ -2,7 +2,13 @@
 
 exports[`PersonalityArchetype renders component 1`] = `
 <div>
-  <div>
+  <div
+    style={
+      Object {
+        "background": "#4fe0c4",
+      }
+    }
+  >
     <img
       alt="Conservative"
       src="https://cdn.traitify.com/frtq/conservative.png"
@@ -35,7 +41,13 @@ exports[`PersonalityArchetype renders nothing if not ready 1`] = `null`;
 
 exports[`PersonalityArchetype renders perspective correctly 1`] = `
 <div>
-  <div>
+  <div
+    style={
+      Object {
+        "background": "#4fe0c4",
+      }
+    }
+  >
     <img
       alt="Conservative"
       src="https://cdn.traitify.com/frtq/conservative.png"

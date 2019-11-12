@@ -167,6 +167,16 @@ exports[`CareerModal renders component 1`] = `
           </div>
         </li>
       </ul>
+      <p>
+        <a
+          href="http://www.onetonline.org/link/summary/11-3051.05"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="view_on_onet"
+        >
+          view_on_onet
+        </a>
+      </p>
       <hr />
       <h3>
         <div
@@ -214,7 +224,82 @@ exports[`CareerModal renders component 1`] = `
           }
         }
       />
+      <div>
+        <div
+          className="mock"
+        >
+          Highchart
+        </div>
+      </div>
       <div />
+      <hr />
+      <div>
+        <h3>
+          <div
+            className="mock"
+          >
+            Icon - 
+            external-link-square-alt
+          </div>
+           
+          job_links
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="http://www.mynextmove.org/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="My Next Move"
+            >
+              <img
+                alt="My Next Move"
+                src="https://cdn.traitify.com/assets/images/job-links/my-next-move.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.onetonline.org/link/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="O*Net Online"
+            >
+              <img
+                alt="O*Net Online"
+                src="https://cdn.traitify.com/assets/images/job-links/o-net-2.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.miproximopaso.org/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Mi Proximo Paso"
+            >
+              <img
+                alt="Mi Proximo Paso"
+                src="https://cdn.traitify.com/assets/images/job-links/mi-proximo-paso.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.mynextmove.org/vets/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="My Next Move for Veterans"
+            >
+              <img
+                alt="My Next Move for Veterans"
+                src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr />
     </div>
   </section>
 </div>
@@ -387,6 +472,16 @@ exports[`CareerModal renders legend 1`] = `
           </div>
         </li>
       </ul>
+      <p>
+        <a
+          href="http://www.onetonline.org/link/summary/11-3051.05"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="view_on_onet"
+        >
+          view_on_onet
+        </a>
+      </p>
       <div>
         <ul>
           <li>
@@ -549,13 +644,90 @@ exports[`CareerModal renders legend 1`] = `
           }
         }
       />
+      <div>
+        <div
+          className="mock"
+        >
+          Highchart
+        </div>
+      </div>
       <div />
+      <hr />
+      <div>
+        <h3>
+          <div
+            className="mock"
+          >
+            Icon - 
+            external-link-square-alt
+          </div>
+           
+          job_links
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="http://www.mynextmove.org/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="My Next Move"
+            >
+              <img
+                alt="My Next Move"
+                src="https://cdn.traitify.com/assets/images/job-links/my-next-move.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.onetonline.org/link/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="O*Net Online"
+            >
+              <img
+                alt="O*Net Online"
+                src="https://cdn.traitify.com/assets/images/job-links/o-net-2.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.miproximopaso.org/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Mi Proximo Paso"
+            >
+              <img
+                alt="Mi Proximo Paso"
+                src="https://cdn.traitify.com/assets/images/job-links/mi-proximo-paso.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.mynextmove.org/vets/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="My Next Move for Veterans"
+            >
+              <img
+                alt="My Next Move for Veterans"
+                src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr />
     </div>
   </section>
 </div>
 `;
 
 exports[`CareerModal renders nothing if no career 1`] = `null`;
+
+exports[`CareerModal renders nothing if not ready 1`] = `null`;
 
 exports[`CareerModal renders nothing if not shown 1`] = `null`;
 
@@ -726,6 +898,16 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
           </div>
         </li>
       </ul>
+      <p>
+        <a
+          href="http://www.onetonline.org/link/summary/11-3051.05"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="view_on_onet"
+        >
+          view_on_onet
+        </a>
+      </p>
       <div>
         <ul>
           <li>
@@ -888,7 +1070,82 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
           }
         }
       />
+      <div>
+        <div
+          className="mock"
+        >
+          Highchart
+        </div>
+      </div>
       <div />
+      <hr />
+      <div>
+        <h3>
+          <div
+            className="mock"
+          >
+            Icon - 
+            external-link-square-alt
+          </div>
+           
+          job_links
+        </h3>
+        <ul>
+          <li>
+            <a
+              href="http://www.mynextmove.org/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="My Next Move"
+            >
+              <img
+                alt="My Next Move"
+                src="https://cdn.traitify.com/assets/images/job-links/my-next-move.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.onetonline.org/link/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="O*Net Online"
+            >
+              <img
+                alt="O*Net Online"
+                src="https://cdn.traitify.com/assets/images/job-links/o-net-2.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.miproximopaso.org/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Mi Proximo Paso"
+            >
+              <img
+                alt="Mi Proximo Paso"
+                src="https://cdn.traitify.com/assets/images/job-links/mi-proximo-paso.jpg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.mynextmove.org/vets/profile/summary/11-3051.05"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="My Next Move for Veterans"
+            >
+              <img
+                alt="My Next Move for Veterans"
+                src="https://cdn.traitify.com/assets/images/job-links/my-next-move-veterans.jpg"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr />
     </div>
   </section>
 </div>

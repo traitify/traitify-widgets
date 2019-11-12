@@ -46,9 +46,9 @@
   width: 100%;
   @extend %cf;
 }
-.scoreBarLow, .scoreBarLowMed, .scoreBarMedHigh, .scoreBarHigh {
+.scoreBarLow, .scoreBarLowMed, .scoreBarMed, .scoreBarMedHigh, .scoreBarHigh {
   float: left;
-  width: 25%;
+  width: 20%;
   height: 28px;
 }
 .scoreBarLow {
@@ -56,6 +56,9 @@
 }
 .scoreBarLowMed {
   background: $lowmed;
+}
+.scoreBarMed {
+  background: $med;
 }
 .scoreBarMedHigh {
   background: $medhigh;

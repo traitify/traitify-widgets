@@ -112,6 +112,8 @@
       }
 
       function createAssessment(){
+        destroyWidget();
+
         Traitify.post("/assessments", {
           deck_id: document.querySelector("#deck-id").value,
           locale_key: document.querySelector("#locale").value,

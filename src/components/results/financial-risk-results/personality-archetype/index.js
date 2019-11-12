@@ -25,13 +25,14 @@ class PersonalityArchetype extends Component {
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
     const badge = personality.details.find(({title}) => title === "Badge");
+    const color = personality.details.find(({title}) => title === "Color");
     const perspective = this.props.getOption("perspective");
     const options = {base: personality, perspective};
     const pronoun = perspective === "thirdPerson" ? "Their" : "Your";
 
     return (
       <div className={style.archetype}>
-        <div className={style.archetypeStyle}>
+        <div className={style.archetypeStyle} style={color && {background: color.body}}>
           {badge && <img alt={personality.name} src={badge.body} />}
           <h2>{pronoun} Financial Risk style is <span>{personality.name}</span></h2>
           <p>{detailWithPerspective({...options, name: "Description"})}</p>

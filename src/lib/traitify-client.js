@@ -23,6 +23,29 @@ export default class TraitifyClient {
     this.version = version;
     return this;
   }
+  handlePromise = (requestType, _xhr, params) => {
+    const xhr = _xhr;
+    const promise = new Promise((resolve, reject) => {
+      if(!this.online()) { return reject(); }
+      try {
+        xhr.onload = () => {
+          if(xhr.status >= 400) {
+            reject(xhr.response || xhr.responseText);
+          } else {
+            resolve(JSON.parse(xhr.response || xhr.responseText));
+          }
+        };
+        xhr.onerror = () => { reject(xhr.response || xhr.responseText); };
+        xhr.ontimeout = () => { reject(xhr.response || xhr.responseText); };
+        const send = requestType === "graphql" ? () => { xhr.send(params); } : () => { xhr.send(JSON.stringify(params)); };
+
+        this.oldIE ? window.setTimeout(send, 0) : send();
+      } catch(error) { reject(error); }
+    });
+
+    promise.xhr = xhr;
+    return promise;
+  }
   ajax = (method, path, _params) => {
     let params;
     let url = `${this.host}/${this.version}${path}`;
@@ -34,6 +57,17 @@ export default class TraitifyClient {
     } else {
       params = _params;
     }
+
+    if(path.includes("graphql")) {
+      xhr = new XMLHttpRequest();
+      xhr.open(method, url, true);
+      xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
+      xhr.setRequestHeader("Content-type", "application/graphql");
+      xhr.setRequestHeader("Accept", "*/*");
+
+      return this.handlePromise("graphql", xhr, params);
+    }
+
     if(this.oldIE) {
       url += url.indexOf("?") === -1 ? "?" : "&";
       url += queryString.stringify({
@@ -49,27 +83,8 @@ export default class TraitifyClient {
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }
-    const promise = new Promise((resolve, reject) => {
-      if(!this.online()) { return reject(); }
-      try {
-        xhr.onload = () => {
-          if(xhr.status === 404) {
-            reject(xhr.response || xhr.responseText);
-          } else {
-            resolve(JSON.parse(xhr.response || xhr.responseText));
-          }
-        };
-        xhr.onerror = () => { reject(xhr.response || xhr.responseText); };
-        xhr.ontimeout = () => { reject(xhr.response || xhr.responseText); };
 
-        const send = () => { xhr.send(JSON.stringify(params)); };
-
-        this.oldIE ? window.setTimeout(send, 0) : send();
-      } catch(error) { reject(error); }
-    });
-
-    promise.xhr = xhr;
-    return promise;
+    return this.handlePromise("rest", xhr, params);
   }
   get = (path, params) => (this.ajax("GET", path, params))
   put = (path, params) => (this.ajax(this.oldIE ? "POST" : "PUT", path, params))

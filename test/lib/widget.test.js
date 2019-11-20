@@ -37,6 +37,21 @@ describe("Widget", () => {
     });
   });
 
+  describe("allowComponents", () => {
+    it("returns widget", () => {
+      const returnValue = widget.allowComponents(["PersonalityArchetype"]);
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.options.disabledComponents = ["PersonalityArchetype", "PersonalitySettings"];
+      widget.allowComponents(["PersonalityArchetype"]);
+
+      expect(widget.options.disabledComponents).toEqual(["PersonalitySettings"]);
+    });
+  });
+
   describe("allowFullscreen", () => {
     it("returns widget", () => {
       const returnValue = widget.allowFullscreen();
@@ -117,6 +132,20 @@ describe("Widget", () => {
       widget.disableBack();
 
       expect(widget.options.allowBack).toBe(false);
+    });
+  });
+
+  describe("disableComponents", () => {
+    it("returns widget", () => {
+      const returnValue = widget.disableComponents(["PersonalityArchetype"]);
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.disableComponents(["PersonalityArchetype"]);
+
+      expect(widget.options.disabledComponents).toEqual(["PersonalityArchetype"]);
     });
   });
 
@@ -309,6 +338,20 @@ describe("Widget", () => {
       widget.targets({Results: "#results"});
 
       expect(widget.options.targets).toEqual({Results: "#results"});
+    });
+  });
+
+  describe("view", () => {
+    it("returns widget", () => {
+      const returnValue = widget.view("candidate");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.view("candidate");
+
+      expect(widget.options.view).toBe("candidate");
     });
   });
 });

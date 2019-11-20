@@ -1,0 +1,148 @@
+@import "~style/helpers";
+
+.container {
+  @extend %widgetContainer;
+  @extend %cf;
+  clear: both;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  h2, h3 {
+    font-weight: normal;
+  }
+  h2 {
+    margin-bottom: 10px;
+    @include rems(26);
+    @include mq(m) {
+      @include rems(33);
+    }
+    @include mq(xl) {
+      @include rems(36);
+    }
+  }
+  h3 {
+    @include rems(20);
+    @include mq(m) {
+      @include rems(24);
+    }
+    @include mq(xl) {
+      @include rems(28);
+    }
+  }
+  p {
+    margin-bottom: 40px;
+    @include rems(16);
+    @include mq(m) {
+      @include rems(17);
+    }
+    @include mq(xl) {
+      @include rems(18);
+    }
+  }
+}
+.benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @extend %cf;
+  li {
+    background: #eee;
+    padding: 10px;
+    color: $black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include rems(16);
+    @include mq(m) {
+      width: 49%;
+      float: left;
+      height: 70px;
+      margin-left: 2%;
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:nth-of-type(2n+1) {
+        margin-left: 0;
+      }
+      @include rems(17);
+    }
+    @include mq(xl) {
+      width: 23.5%;
+      &:nth-of-type(2n+1) {
+        margin-left: 2%;
+      }
+      &:nth-of-type(3) {
+        margin-left: 2%;
+      }
+      &:nth-of-type(4n+1) {
+        margin-left: 0;
+      }
+      @include rems(18);
+    }
+  }
+}
+.content {
+  @include mq(m) {
+    margin-left: 170px;
+    padding-top: 20px;
+    padding-right: 220px;
+    text-align: left;
+  }
+  h2 {
+    margin: 10px 0 0;
+    font-weight: normal;
+    text-align: center;
+    @include rems(26);
+    @include mq(m) {
+      text-align: left;
+    }
+    @include mq(l) {
+      @include rems(28);
+    }
+    @include mq(xl) {
+      @include rems(34);
+    }
+  }
+  p {
+    @include mq(m) {
+      @include rems(17);
+    }
+    @include mq(l) {
+      overflow: hidden;
+      @include rems(18);
+    }
+    @include mq(xl) {
+      @include rems(19);
+    }
+  }
+}
+.side {
+  clear: both;
+  text-align: center;
+  padding-top: 10px;
+  @include mq(m) {
+    float: left;
+    width: 130px;
+    margin: 20px 20px 0;
+  }
+  @include mq(l) {
+    width: 160px;
+    margin: 20px 60px 0 20px;
+  }
+  .icon {
+    margin: 0;
+    @include mq(m) {
+      margin-bottom: 10px;
+    }
+    img {
+      width: 50%;
+      max-width: 220px;
+      @include mq(m) {
+        width: 100%;
+      }
+    }
+  }
+}

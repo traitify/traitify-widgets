@@ -10,11 +10,11 @@ The widgets can be installed through our CDN or npm. Usage through the CDN will 
 ```
 <script src="https://cdn.traitify.com/js/v2/traitify.js"></script>
 <script>
-  Traitify.setHost('your host url');
-  Traitify.setPublicKey('your public key');
+  Traitify.setHost("your host url");
+  Traitify.setPublicKey("your public key");
 
   assessment = Traitify.ui.component();
-  assessment.assessmentID('an assessment id you have generated via a server side client');
+  assessment.assessmentID("an assessment id you have generated via a server side client");
   assessment.target("#the-id-of-the-target-you-wish-to-render-to");
   assessment.render();
 </script>
@@ -32,7 +32,7 @@ npm i --save traitify-widgets
 import traitify from "traitify-widgets";
 
 assessment = traitify.ui.component();
-assessment.assessmentID('an assessment id you have generated via a server side client');
+assessment.assessmentID("an assessment id you have generated via a server side client");
 assessment.target("#the-id-of-the-target-you-wish-to-render-to");
 assessment.render();
 ```
@@ -152,6 +152,12 @@ assessment.render("Radar"); // Render just the Radar graph in the target element
 assessment.render("PersonalityHeading"); // Render just the archetype in the target element
 ```
 
+### Interview Guide
+#### Interview questions for big-five assessments
+```
+assessment.render("Guide"); // Given an assessmentID with results, render just the Interview in the target element
+```
+
 ### Render multiple components in specific elements
 ```
   assessment.targets({
@@ -160,6 +166,7 @@ assessment.render("PersonalityHeading"); // Render just the archetype in the tar
     "PersonalityTraits": "#personality-traits",
     "Results": "#results",
     "Careers": "#careers",
+    "Guide": "#guide",
   });
 
   assessment.render();
@@ -258,10 +265,10 @@ We expose our JavaScript api client that you can use to make additional calls to
 ```
 <script src="https://cdn.traitify.com/js/v2/traitify.js"></script>
 <script>
-  Traitify.setHost('your host url');
-  Traitify.setPublicKey('your public key');
-  var assessmentId = 'an assessment id you have generated via a server side client';
-  Traitify.get('/assessments/' + assessmentId + '/matches/careers').then(function(career_matches){
+  Traitify.setHost("your host url");
+  Traitify.setPublicKey("your public key");
+  var assessmentId = "an assessment id you have generated via a server side client";
+  Traitify.get("/assessments/" + assessmentId + "/matches/careers").then(function(career_matches){
     console.log(career_matches);
   });
 </script>
@@ -286,4 +293,3 @@ npm run build
 
 - React: https://reactjs.org
 - Webpack: https://webpack.github.io
-

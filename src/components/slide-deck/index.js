@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import {camelCase} from "lib/helpers/string";
 import withTraitify from "lib/with-traitify";
 import {
   completedSlides,
@@ -25,6 +26,7 @@ class SlideDeck extends Component {
       id: PropTypes.string.isRequired,
       instructions: PropTypes.shape({instructional_text: PropTypes.string.isRequired}),
       locale_key: PropTypes.string.isRequired,
+      scoring_scale: PropTypes.string,
       slides: PropTypes.arrayOf(PropTypes.object).isRequired
     }),
     assessmentID: PropTypes.string.isRequired,
@@ -106,9 +108,19 @@ class SlideDeck extends Component {
         }, this.fetchImages);
       };
       img.onerror = () => {
-        this.setState((state) => (
-          {imageLoading: false, imageLoadingAttempts: state.imageLoadingAttempts + 1}
-        ), () => {
+        this.setState((state) => {
+          const newState = {
+            imageLoading: false,
+            imageLoadingAttempts: state.imageLoadingAttempts + 1
+          };
+
+          if(newState.imageLoadingAttempts >= 3) {
+            newState.error = this.props.translate("slide_error");
+            newState.errorType = "image";
+          }
+
+          return newState;
+        }, () => {
           setTimeout(this.fetchImages, 2000);
         });
       };
@@ -125,8 +137,13 @@ class SlideDeck extends Component {
       if(!this.container) { return; }
 
       const width = this.container.clientWidth;
-      const height = this.container.clientHeight;
+      let height = this.container.clientHeight;
       const imageHost = props.getOption("imageHost");
+      const isLikertScale = this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP";
+      if(window.innerWidth <= 768 && isLikertScale) {
+        height -= 74;
+      }
+
       const slides = state.slides.map((slide) => ({
         ...slide,
         loaded: false,
@@ -144,18 +161,38 @@ class SlideDeck extends Component {
 
     if(this.props.isReady("results")) { return; }
 
-    // TODO: If error, display it
-    this.props.traitify.put(`/assessments/${this.props.assessmentID}/slides`, completedSlides(this.state.slides)).then((response) => {
+    this.props.traitify.put(
+      `/assessments/${this.props.assessmentID}/slides`,
+      completedSlides(this.state.slides)
+    ).then((response) => {
       this.props.ui.trigger("SlideDeck.finished", this, response);
       this.props.getAssessment({force: true});
+    }).catch((response) => {
+      let error;
+
+      try {
+        error = JSON.parse(response).errors[0];
+      } catch(e) {
+        error = response;
+      }
+
+      const finishRequestAttempts = this.state.finishRequestAttempts + 1;
+
+      if(finishRequestAttempts > 1) {
+        this.setState({error, errorType: "request"});
+      } else {
+        this.setState({finished: false, finishRequestAttempts}, this.finish);
+      }
     });
   }
   // Event Methods
   back = () => {
     this.setState((state) => {
       const slides = mutable(state.slides);
+      const index = slideIndex(slides) - 1;
 
-      slides[slideIndex(slides) - 1].response = null;
+      delete slides[index].likert_response;
+      delete slides[index].response;
 
       return {slides, startTime: Date.now()};
     }, this.fetchImages);
@@ -164,10 +201,40 @@ class SlideDeck extends Component {
     this.setState({showInstructions: false});
   }
   retry = () => {
-    this.setState({imageLoadingAttempts: 0}, this.fetchImages);
+    let callback;
+    const newState = {error: null, errorType: null};
+
+    if(this.state.errorType === "image") {
+      callback = this.fetchImages;
+      newState.imageLoadingAttempts = 0;
+    } else {
+      callback = this.finish;
+      newState.finished = false;
+    }
+
+    this.setState(newState, callback);
   }
   toggleFullscreen = () => {
     toggleFullscreen({current: this.state.isFullscreen, element: this.container});
+  }
+  updateLikertSlide = (index, value) => {
+    this.setState((state) => {
+      this.props.ui.trigger(`SlideDeck.likert.${camelCase(value)}`, this);
+      this.props.ui.trigger("SlideDeck.updateSlide", this);
+
+      const slides = mutable(state.slides);
+      delete slides[index].response;
+      slides[index].likert_response = value;
+      slides[index].time_taken = Date.now() - state.startTime;
+
+      return {slides, startTime: Date.now()};
+    }, () => {
+      const {assessmentID, cache} = this.props;
+
+      cache.set(`slides.${assessmentID}`, completedSlides(this.state.slides));
+
+      if(isFinished(this.state.slides)) { this.finish(); }
+    });
   }
   updateSlide = (index, value) => {
     this.setState((state) => {
@@ -176,6 +243,7 @@ class SlideDeck extends Component {
       this.props.ui.trigger("SlideDeck.updateSlide", this);
 
       const slides = mutable(state.slides);
+      delete slides[index].likert_response;
       slides[index].response = value;
       slides[index].time_taken = Date.now() - state.startTime;
 
@@ -198,7 +266,7 @@ class SlideDeck extends Component {
       <div className={style.widgetContainer} ref={(container) => { this.container = container; }}>
         {(finished || !ready) ? (
           <Loading
-            imageLoading={this.state.imageLoadingAttempts < 3}
+            error={this.state.error}
             retry={this.retry}
             translate={this.props.translate}
           />
@@ -209,12 +277,14 @@ class SlideDeck extends Component {
             instructions={this.state.instructions}
             isComplete={finished}
             isFullscreen={this.state.isFullscreen}
+            isLikertScale={this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP"}
             showInstructions={this.state.showInstructions}
             slideIndex={slideIndex(this.state.slides)}
             slides={this.state.slides}
             start={this.hideInstructions}
             toggleFullscreen={this.toggleFullscreen}
             translate={this.props.translate}
+            updateLikertSlide={this.updateLikertSlide}
             updateSlide={this.updateSlide}
           />
         )}

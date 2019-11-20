@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDimensionDetails renders component 1`] = `
+<li
+  style={
+    Object {
+      "background": "rgba(41,183,112,0.1)",
+      "borderTop": "5px solid #29B770",
+    }
+  }
+>
+  <div>
+    <p>
+      <img
+        alt="Agreeableness undefined"
+        src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      />
+    </p>
+  </div>
+  <div>
+    <h2>
+      Agreeableness
+       
+      <span
+        style={
+          Object {
+            "color": "#29B770",
+          }
+        }
+      >
+        |
+      </span>
+       
+      Medium
+    </h2>
+    <h3 />
+    <p>
+      You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+    </p>
+  </div>
+  <h3 />
+  <ul>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.5)",
+        }
+      }
+    >
+      Forgiving style
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.5)",
+        }
+      }
+    >
+      Looks for win-win outcome
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.5)",
+        }
+      }
+    >
+      Negotiates with sensitivity
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.5)",
+        }
+      }
+    >
+      Realistic view of others
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.5)",
+        }
+      }
+    >
+      Recognises imperfection 
+    </li>
+    <li
+      style={
+        Object {
+          "background": "rgba(41,183,112,0.5)",
+        }
+      }
+    >
+      Relational style
+    </li>
+  </ul>
+</li>
+`;

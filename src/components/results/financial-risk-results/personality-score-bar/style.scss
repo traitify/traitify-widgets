@@ -1,0 +1,93 @@
+@import "~style/helpers";
+
+.scoreBar {
+  @extend %widgetContainer;
+  @extend %cf;
+  margin-bottom: 20px;
+  h1 {
+    font-weight: normal;
+    @include rems(26);
+    @include mq(m) {
+      @include rems(33);
+    }
+    @include mq(xl) {
+      @include rems(36);
+    }
+    span {
+      font-weight: bold;
+      color: $blue;
+    }
+  }
+}
+
+.scoreBarBar {
+  width: 100%;
+  padding: 0 20px;
+  @extend %cf;
+}
+
+.scoreBarLegend {
+  width: 100%;
+  color: $black;
+  @extend %cf;
+  @include rems(20);
+  @include mq(xl) {
+    @include rems(24);
+  }
+}
+.scoreBarLegendLow {
+  float: left;
+}
+.scoreBarLegendHigh {
+  float: right;
+}
+
+.scoreBarRange {
+  width: 100%;
+  @extend %cf;
+}
+.scoreBarLow, .scoreBarLowMed, .scoreBarMed, .scoreBarMedHigh, .scoreBarHigh {
+  float: left;
+  width: 20%;
+  height: 28px;
+}
+.scoreBarLow {
+  background: $low;
+}
+.scoreBarLowMed {
+  background: $lowmed;
+}
+.scoreBarMed {
+  background: $med;
+}
+.scoreBarMedHigh {
+  background: $medhigh;
+}
+.scoreBarHigh {
+  background: $high;
+}
+
+.scoreBarIndicators {
+  width: 100%;
+  @extend %cf;
+}
+.scoreBarIndicatorLow, .scoreBarIndicatorHigh {
+  width: 40px;
+  height: 40px;
+  background: $white;
+  border: 3px solid $low;
+  border-radius: 50%;
+  float: left;
+  margin-top: 10px;
+}
+.scoreBarIndicatorHigh {
+  border: 3px solid $high;
+  margin-top: -10px;
+  float: right;
+}
+.scoreBarIndicator {
+  display: block;
+  width: 48px;
+  height: 24px;
+  background: url("https://cdn.traitify.com/images/indicator.png") no-repeat;
+}

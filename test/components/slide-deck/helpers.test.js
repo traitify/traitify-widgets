@@ -98,6 +98,7 @@ describe("SlideDeck Helpers", () => {
 
       expect(result).toEqual({
         finished: false,
+        finishRequestAttempts: 0,
         imageLoading: false,
         imageLoadingAttempts: 0,
         slides: [],
@@ -111,6 +112,7 @@ describe("SlideDeck Helpers", () => {
 
       expect(result).toEqual({
         finished: false,
+        finishRequestAttempts: 0,
         imageLoading: false,
         imageLoadingAttempts: 0,
         slides: [],

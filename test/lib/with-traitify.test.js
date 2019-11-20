@@ -1,11 +1,9 @@
 /* eslint no-console: "off" */
-import Airbrake from "airbrake-js";
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";
 import DummyComponent from "support/dummy-component";
 import Traitify from "support/traitify";
 
-jest.mock("airbrake-js");
 jest.mock("lib/helpers", () => ({
   getDisplayName: jest.fn((component) => component.name).mockName("getDisplayName"),
   loadFont: jest.fn().mockName("loadFont")
@@ -17,16 +15,16 @@ const getDummyComponent = () => (
 );
 
 describe("withTraitify", () => {
-  const assessmentWithResults = {id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}]};
+  const assessmentWithResults = {assessment_type: "DIMENSION_BASED", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}]};
   const assessmentWithoutResults = {id: "abc", locale_key: "en-US", slides: [{name: "Snakes"}]};
   const deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
   const deckWithoutName = {id: "big-five", locale_key: "en-US"};
+  const guide = {assessment_id: "abc", competencies: [{name: "Under Pressure"}], locale_key: "en-US"};
+  const guideWithoutCompetencies = {...guide, competencies: []};
   let Component;
   let traitify;
 
   beforeEach(() => {
-    Airbrake.mockClear();
-
     Component = withTraitify(DummyComponent);
     traitify = new Traitify();
   });
@@ -82,79 +80,21 @@ describe("withTraitify", () => {
     });
   });
 
-  describe("airbrake", () => {
-    it("gets disabled", () => {
-      component = new ComponentHandler(<Component disableAirbrake={true} traitify={traitify} />);
-
-      expect(getDummyComponent().props.airbrake).toBeUndefined();
-    });
-
-    it("passes prop", () => {
+  describe("error handler", () => {
+    it("emits error", () => {
       component = new ComponentHandler(<Component traitify={traitify} />);
+      traitify.ui.trigger = jest.fn().mockName("trigger");
+      component.instance.componentDidCatch("uh oh", {oh: "no"});
 
-      expect(getDummyComponent().props.airbrake).toBeInstanceOf(Airbrake);
+      expect(traitify.ui.trigger).toHaveBeenCalledWith("Component.error", component.instance, {error: "uh oh", info: {oh: "no"}});
     });
 
-    it("passes through prop", () => {
-      const airbrake = new Airbrake();
-      component = new ComponentHandler(<Component airbrake={airbrake} traitify={traitify} />);
-
-      expect(Airbrake.mock.instances).toHaveLength(1);
-    });
-
-    it("catches errors", () => {
+    it("sets error", () => {
       component = new ComponentHandler(<Component traitify={traitify} />);
-      component.instance.componentDidCatch();
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.componentDidCatch("uh oh", {oh: "no"});
 
-      expect(getDummyComponent().props.airbrake.notify).toHaveBeenCalled();
-    });
-
-    describe("filters errors", () => {
-      let filter;
-      let originalLocation;
-
-      beforeAll(() => {
-        originalLocation = window.location;
-        delete window.location;
-        Object.defineProperty(window, "location", {writable: true, value: {}});
-      });
-
-      beforeEach(() => {
-        component = new ComponentHandler(<Component traitify={traitify} />);
-        filter = getDummyComponent().props.airbrake.addFilter.mock.calls[0][0];
-      });
-
-      afterAll(() => {
-        Object.defineProperty(window, "location", {writable: false, value: originalLocation});
-      });
-
-      it("adds environment for development", () => {
-        window.location.host = "app.lvh.me:3000";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("development");
-      });
-
-      it("adds environment for staging", () => {
-        window.location.host = "app.stag.traitify.com";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("staging");
-      });
-
-      it("adds environment for production", () => {
-        window.location.host = "app.traitify.com";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("production");
-      });
-
-      it("adds environment for client", () => {
-        window.location.host = "www.tomify.me";
-        const result = filter({context: {}});
-
-        expect(result.context.environment).toBe("client");
-      });
+      expect(component.instance.setState).toHaveBeenCalledWith({error: "uh oh"});
     });
   });
 
@@ -276,6 +216,40 @@ describe("withTraitify", () => {
       getDummyComponent().props.followDeck();
 
       expect(getDeck).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("followGuide", () => {
+    const getGuide = jest.fn().mockName("getGuide");
+
+    beforeEach(() => {
+      getGuide.mockClear();
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.updateGuide = function() {
+        if(!this.state.assessment) { return; }
+
+        getGuide();
+      };
+    });
+
+    it("gets guide when state gets assessment", () => {
+      getDummyComponent().props.followGuide();
+      component.updateState({assessment: assessmentWithResults});
+
+      expect(getGuide).toHaveBeenCalled();
+    });
+
+    it("gets guide if state has assessment", () => {
+      component.updateState({assessment: assessmentWithResults, guide});
+      getDummyComponent().props.followGuide();
+
+      expect(getGuide).toHaveBeenCalled();
+    });
+
+    it("doesn't get guide if state doesn't have assessment", () => {
+      getDummyComponent().props.followGuide();
+
+      expect(getGuide).not.toHaveBeenCalled();
     });
   });
 
@@ -485,7 +459,7 @@ describe("withTraitify", () => {
       traitify.ajax.mockReturnValue(Promise.resolve(deckWithoutLocale));
       component.updateState({deckID: deckWithoutLocale.id});
       component.instance.getDeck().then(() => {
-        expect(getDummyComponent().props.deck.locale_key).toBe(traitify.ui.options.locale);
+        expect(getDummyComponent().props.deck.locale_key).toBe(component.state.locale);
         done();
       });
     });
@@ -515,6 +489,146 @@ describe("withTraitify", () => {
       traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({deckID: deckWithoutName.id});
       component.instance.getDeck().then(() => {
+        expect(console.warn).toHaveBeenCalledWith("Error with request");
+        expect(traitify.ui.requests[key]).toBeUndefined();
+        done();
+      });
+    });
+  });
+
+  describe("getGuide", () => {
+    let cache;
+    let originalWarn;
+
+    beforeEach(() => {
+      originalWarn = console.warn;
+      console.warn = jest.fn().mockName("warn");
+      cache = {
+        get: jest.fn().mockName("get"),
+        set: jest.fn().mockName("set")
+      };
+      component = new ComponentHandler(<Component cache={cache} traitify={traitify} />);
+    });
+
+    afterEach(() => {
+      console.warn = originalWarn;
+    });
+
+    it("requires assessment", (done) => {
+      component.instance.getGuide().then(() => {
+        const {props} = getDummyComponent();
+
+        expect(props.guide).toBeNull();
+        expect(props.cache.get).not.toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("checks state", (done) => {
+      component.updateState({assessment: assessmentWithResults, guide});
+      component.instance.getGuide().then(() => {
+        const {props} = getDummyComponent();
+
+        expect(props.guide).toBe(guide);
+        expect(props.cache.get).not.toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("skips state if no competencies", (done) => {
+      component.updateState({assessment: assessmentWithResults, guide: guideWithoutCompetencies});
+      component.instance.getGuide().then(() => {
+        expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("checks cache", (done) => {
+      cache.get.mockReturnValue(guide);
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
+        const {props} = getDummyComponent();
+
+        expect(props.guide).toBe(guide);
+        expect(props.cache.get).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("skips cache if no competencies", (done) => {
+      cache.get.mockReturnValue(guideWithoutCompetencies);
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
+        expect(getDummyComponent().props.guide).not.toBe(guideWithoutCompetencies);
+        done();
+      });
+    });
+
+    it("sets cache if competencies", (done) => {
+      traitify.ajax.mockReturnValue(Promise.resolve({data: {guide}}));
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
+        expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("sets guide assessment ID if missing", (done) => {
+      const guideWithoutAssessmentID = {...guide, assessment_id: null};
+      traitify.ajax.mockReturnValue(
+        Promise.resolve({data: {guide: guideWithoutAssessmentID}})
+      );
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
+        expect(getDummyComponent().props.guide.assessment_id).toBe(component.state.assessment.id);
+        done();
+      });
+    });
+
+    it("sets guide locale if missing", (done) => {
+      const guideWithoutLocale = {...guide, locale_key: null};
+      traitify.ajax.mockReturnValue(Promise.resolve({data: {guide: guideWithoutLocale}}));
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
+        expect(getDummyComponent().props.guide.locale_key).toBe(component.state.locale);
+        done();
+      });
+    });
+
+    it("sets guide to blank if no data", (done) => {
+      traitify.ajax.mockReturnValue(Promise.resolve({}));
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
+        expect(getDummyComponent().props.guide).toBeNull();
+        done();
+      });
+    });
+
+    it("stops if there's an existing request", () => {
+      const key = `en-us.guide.${assessmentWithResults.id}`;
+      const request = new Promise(() => {});
+      traitify.ui.requests[key] = request;
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide();
+
+      expect(traitify.ui.requests[key]).toBe(request);
+    });
+
+    it("forces new request", () => {
+      const key = `en-us.guide.${assessmentWithResults.id}`;
+      const request = new Promise(() => {});
+      traitify.ui.requests[key] = request;
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide({force: true});
+
+      expect(traitify.ui.requests[key]).not.toBe(request);
+    });
+
+    it("catches error with request", (done) => {
+      const key = `en-us.guide.${assessmentWithResults.id}`;
+      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.getGuide().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
         done();
@@ -598,12 +712,17 @@ describe("withTraitify", () => {
       beforeEach(() => {
         component.updateState({
           assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
-          deck: {id: "big-five", name: "Big Five"}
+          deck: {id: "big-five", name: "Big Five"},
+          guide: {competencies: [{}]}
         });
       });
 
       it("checks deck", () => {
         expect(getDummyComponent().props.isReady("deck")).toBe(true);
+      });
+
+      it("checks guide", () => {
+        expect(getDummyComponent().props.isReady("guide")).toBe(true);
       });
 
       it("checks results", () => {
@@ -619,12 +738,17 @@ describe("withTraitify", () => {
       beforeEach(() => {
         component.updateState({
           assessment: {id: "abc"},
-          deck: {id: "big-five"}
+          deck: {id: "big-five"},
+          guide: {assessment_id: "abc"}
         });
       });
 
       it("checks deck", () => {
         expect(getDummyComponent().props.isReady("deck")).toBe(false);
+      });
+
+      it("checks guide", () => {
+        expect(getDummyComponent().props.isReady("guide")).toBe(false);
       });
 
       it("checks results", () => {
@@ -643,6 +767,10 @@ describe("withTraitify", () => {
 
       it("checks deck", () => {
         expect(getDummyComponent().props.isReady("deck")).toBe(false);
+      });
+
+      it("checks guide", () => {
+        expect(getDummyComponent().props.isReady("guide")).toBe(false);
       });
 
       it("checks results", () => {
@@ -868,6 +996,78 @@ describe("withTraitify", () => {
 
       expect(component.instance.setState).toHaveBeenCalled();
       expect(component.instance.getDeck).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("updateGuide", () => {
+    beforeEach(() => {
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.componentDidUpdate = jest.fn().mockName("componentDidUpdate");
+      component.instance.getGuide = jest.fn().mockName("getGuide");
+    });
+
+    it("removes old listener if guide changes", () => {
+      const key = `en-us.guide.${assessmentWithResults.id}`;
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateGuide({oldID: assessmentWithResults.id});
+
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
+    });
+
+    it("removes old listener if locale changes", () => {
+      const key = `es-us.guide.${assessmentWithResults.id}`;
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateGuide({oldLocale: "es-us"});
+
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
+    });
+
+    it("adds new listener", () => {
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.addListener = jest.fn().mockName("addListener");
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateGuide();
+
+      expect(component.instance.removeListener).not.toHaveBeenCalled();
+      expect(component.instance.addListener).toHaveBeenCalled();
+    });
+
+    it("gets guide if no current value", () => {
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateGuide();
+
+      expect(component.instance.getGuide).toHaveBeenCalled();
+      expect(component.instance.setState).not.toHaveBeenCalled();
+    });
+
+    it("uses current value", () => {
+      const key = `en-us.guide.${assessmentWithResults.id}`;
+      traitify.ui.current[key] = [{}, guide];
+      component.updateState({assessment: assessmentWithResults});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateGuide();
+
+      expect(component.instance.setState).toHaveBeenCalled();
+      expect(component.instance.getGuide).not.toHaveBeenCalled();
+    });
+
+    it("doesn't get guide if no assessment ID", () => {
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateGuide();
+
+      expect(component.instance.getGuide).not.toHaveBeenCalled();
+      expect(component.instance.setState).not.toHaveBeenCalled();
+    });
+
+    it("doesn't get guide if wrong assessment type", () => {
+      component.updateState({assessment: {...assessmentWithResults, assessment_type: "TYPE_BASED"}});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateGuide();
+
+      expect(component.instance.getGuide).not.toHaveBeenCalled();
+      expect(component.instance.setState).not.toHaveBeenCalled();
     });
   });
 });

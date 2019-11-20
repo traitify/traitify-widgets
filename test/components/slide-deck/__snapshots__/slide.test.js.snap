@@ -1,7 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Slide likert scale renders component 1`] = `
+<div
+  className="undefined undefined"
+>
+  <div>
+    <div>
+      Innovative
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt={null}
+    />
+  </div>
+  <div
+    className="undefined undefined"
+  >
+    <img
+      alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+    />
+  </div>
+  <div>
+    <div>
+      <button
+        className="undefined undefined"
+        onClick={[Function]}
+        type="button"
+      >
+        really_not_me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        not_me
+      </button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        me
+      </button>
+      <button
+        className="undefined undefined"
+        onClick={[Function]}
+        type="button"
+      >
+        really_me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Slide renders back button 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Short Cuts
@@ -66,7 +133,9 @@ exports[`Slide renders back button 1`] = `
 `;
 
 exports[`Slide renders back button unless first slide 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Innovative
@@ -115,7 +184,9 @@ exports[`Slide renders back button unless first slide 1`] = `
 `;
 
 exports[`Slide renders complete progress bar 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Innovative
@@ -164,7 +235,9 @@ exports[`Slide renders complete progress bar 1`] = `
 `;
 
 exports[`Slide renders component 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Innovative
@@ -213,7 +286,9 @@ exports[`Slide renders component 1`] = `
 `;
 
 exports[`Slide renders component with previous and next slides 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Short Cuts
@@ -269,7 +344,9 @@ exports[`Slide renders component with previous and next slides 1`] = `
 `;
 
 exports[`Slide renders component with previous slide 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Outgoing
@@ -318,7 +395,9 @@ exports[`Slide renders component with previous slide 1`] = `
 `;
 
 exports[`Slide renders fullscreen 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Innovative
@@ -372,7 +451,9 @@ exports[`Slide renders fullscreen 1`] = `
 `;
 
 exports[`Slide renders fullscreen button 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       Innovative
@@ -426,7 +507,9 @@ exports[`Slide renders fullscreen button 1`] = `
 `;
 
 exports[`Slide renders instructions 1`] = `
-<div>
+<div
+  className="undefined "
+>
   <div>
     <div>
       instructions

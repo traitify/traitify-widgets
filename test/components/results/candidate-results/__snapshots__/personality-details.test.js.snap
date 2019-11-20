@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDetails renders component 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#008dc7",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#008dc7",
+          }
+        }
+      >
+        candidate_heading_for_tools, [object Object]
+      </h4>
+      <ul>
+        <li>
+          Compatible with many other personalities
+        </li>
+        <li>
+          Sought after as a good person to dialogue with
+        </li>
+        <li>
+          Work at a pace that suits everyone
+        </li>
+        <li>
+          High energy, outgoing
+        </li>
+        <li>
+          Comfortable in the limelight
+        </li>
+        <li>
+          Have effective coping strategies for work stress
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#32be4b",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#32be4b",
+          }
+        }
+      >
+        candidate_heading_for_settings, [object Object]
+      </h4>
+      <ul>
+        <li>
+          Encourages peer support in pursuit of goals
+        </li>
+        <li>
+          De-emphasizes competition among colleagues
+        </li>
+        <li>
+          Often has a fast paced and energetic vibe
+        </li>
+        <li>
+          Includes opportunities for large group discussions
+        </li>
+        <li>
+          Values creativity
+        </li>
+        <li>
+          Has opportunities for innovation and exploration
+        </li>
+        <li>
+          Fueled by a sense of duty
+        </li>
+        <li>
+          Prioritizes work quality
+        </li>
+        <li>
+          Allows individuals to deal with their own setbacks
+        </li>
+        <li>
+          Requires people to respond to challenges
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`PersonalityDetails renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityDetails renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityDetails renders nothing if no details 1`] = `null`;
+
+exports[`PersonalityDetails renders nothing if results not ready 1`] = `null`;
+
+exports[`PersonalityDetails renders settings if no tools 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#32be4b",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#32be4b",
+          }
+        }
+      >
+        candidate_heading_for_settings, [object Object]
+      </h4>
+      <ul>
+        <li>
+          Encourages peer support in pursuit of goals
+        </li>
+        <li>
+          De-emphasizes competition among colleagues
+        </li>
+        <li>
+          Often has a fast paced and energetic vibe
+        </li>
+        <li>
+          Includes opportunities for large group discussions
+        </li>
+        <li>
+          Values creativity
+        </li>
+        <li>
+          Has opportunities for innovation and exploration
+        </li>
+        <li>
+          Fueled by a sense of duty
+        </li>
+        <li>
+          Prioritizes work quality
+        </li>
+        <li>
+          Allows individuals to deal with their own setbacks
+        </li>
+        <li>
+          Requires people to respond to challenges
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`PersonalityDetails renders settings if tools disabled 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#32be4b",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#32be4b",
+          }
+        }
+      >
+        candidate_heading_for_settings, [object Object]
+      </h4>
+      <ul>
+        <li>
+          Encourages peer support in pursuit of goals
+        </li>
+        <li>
+          De-emphasizes competition among colleagues
+        </li>
+        <li>
+          Often has a fast paced and energetic vibe
+        </li>
+        <li>
+          Includes opportunities for large group discussions
+        </li>
+        <li>
+          Values creativity
+        </li>
+        <li>
+          Has opportunities for innovation and exploration
+        </li>
+        <li>
+          Fueled by a sense of duty
+        </li>
+        <li>
+          Prioritizes work quality
+        </li>
+        <li>
+          Allows individuals to deal with their own setbacks
+        </li>
+        <li>
+          Requires people to respond to challenges
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`PersonalityDetails renders tools if no settings 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#008dc7",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#008dc7",
+          }
+        }
+      >
+        candidate_heading_for_tools, [object Object]
+      </h4>
+      <ul>
+        <li>
+          Compatible with many other personalities
+        </li>
+        <li>
+          Sought after as a good person to dialogue with
+        </li>
+        <li>
+          Work at a pace that suits everyone
+        </li>
+        <li>
+          High energy, outgoing
+        </li>
+        <li>
+          Comfortable in the limelight
+        </li>
+        <li>
+          Have effective coping strategies for work stress
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`PersonalityDetails renders tools if settings disabled 1`] = `
+<div>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "background": "#008dc7",
+          }
+        }
+      />
+      <h4
+        style={
+          Object {
+            "color": "#008dc7",
+          }
+        }
+      >
+        candidate_heading_for_tools, [object Object]
+      </h4>
+      <ul>
+        <li>
+          Compatible with many other personalities
+        </li>
+        <li>
+          Sought after as a good person to dialogue with
+        </li>
+        <li>
+          Work at a pace that suits everyone
+        </li>
+        <li>
+          High energy, outgoing
+        </li>
+        <li>
+          Comfortable in the limelight
+        </li>
+        <li>
+          Have effective coping strategies for work stress
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div />
+</div>
+`;

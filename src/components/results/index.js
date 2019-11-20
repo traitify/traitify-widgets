@@ -2,13 +2,19 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import TypeBasedResults from "./type-based-results";
+import CandidateResults from "./candidate-results";
 import DimensionBasedResults from "./dimension-based-results";
+import FinancialRiskResults from "./financial-risk-results";
+import TypeBasedResults from "./type-based-results";
 
 class Results extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({assessment_type: PropTypes.string}),
+    assessment: PropTypes.shape({
+      assessment_type: PropTypes.string,
+      scoring_scale: PropTypes.string
+    }),
+    getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
@@ -21,11 +27,15 @@ class Results extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
-    return (this.props.assessment.assessment_type === "TYPE_BASED") ? (
-      <TypeBasedResults {...this.props} />
-    ) : (
-      <DimensionBasedResults {...this.props} />
-    );
+    if(this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP") {
+      return <FinancialRiskResults {...this.props} />;
+    } else if(this.props.assessment.assessment_type === "TYPE_BASED") {
+      return <TypeBasedResults {...this.props} />;
+    } else if(this.props.getOption("view") === "candidate") {
+      return <CandidateResults {...this.props} />;
+    } else {
+      return <DimensionBasedResults {...this.props} />;
+    }
   }
 }
 

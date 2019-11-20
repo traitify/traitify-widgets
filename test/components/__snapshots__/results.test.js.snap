@@ -1,10 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Results renders candidate results 1`] = `
+<div
+  className="mock"
+>
+  Candidate
+</div>
+`;
+
 exports[`Results renders dimension based results 1`] = `
 <div
   className="mock"
 >
   Dimension Based
+</div>
+`;
+
+exports[`Results renders financial risk results 1`] = `
+<div
+  className="mock"
+>
+  Financial Risk
 </div>
 `;
 

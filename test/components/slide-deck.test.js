@@ -1,5 +1,6 @@
 import {Component} from "components/slide-deck";
 import ComponentHandler from "support/component-handler";
+import {flushPromises} from "support/helpers";
 import assessment from "support/json/assessment/with-slides.json";
 import * as helpers from "components/slide-deck/helpers";
 
@@ -238,12 +239,31 @@ describe("SlideDeck", () => {
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
       expect(setTimeout).toHaveBeenCalledWith(component.instance.fetchImages, 2000);
     });
+
+    it("handles repeated image error ", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.updateState({imageLoading: false, imageLoadingAttempts: 2});
+      createElement.mockClear();
+      setState.mockClear();
+      component.instance.fetchImages();
+      const image = createElement.mock.results[0].value;
+      image.onerror();
+
+      expect(setState).toHaveBeenCalled();
+      expect(component.state.error).not.toBeNull();
+      expect(component.state.errorType).toBe("image");
+      expect(component.state.imageLoading).toBe(false);
+      expect(component.state.imageLoadingAttempts).toBe(3);
+      expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
+      expect(setTimeout).toHaveBeenCalledWith(component.instance.fetchImages, 2000);
+    });
   });
 
   describe("resize", () => {
     let componentDidUpdate;
     let originalAddEventListener;
     let originalRemoveEventListener;
+    let originalInnerWidth;
 
     beforeAll(() => {
       originalAddEventListener = window.addEventListener;
@@ -257,6 +277,7 @@ describe("SlideDeck", () => {
     });
 
     beforeEach(() => {
+      originalInnerWidth = window.innerWidth;
       componentDidUpdate = jest.spyOn(Component.prototype, "componentDidUpdate");
     });
 
@@ -264,6 +285,7 @@ describe("SlideDeck", () => {
       componentDidUpdate.mockRestore();
       window.addEventListener.mockClear();
       window.removeEventListener.mockClear();
+      window.innerWidth = originalInnerWidth;
     });
 
     afterAll(() => {
@@ -299,9 +321,23 @@ describe("SlideDeck", () => {
       expect(component.instance.fetchImages).toHaveBeenCalled();
       expect(component.state.imageLoadingAttempts).toBe(0);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
-      expect(component.state.slides.filter((slide) => (
-        slide.image !== `http://localhost:8080/v1/images/${slide.id}?width=100&height=200`
-      ))).toHaveLength(0);
+      expect(component.state.slides.filter((slide) => !slide.image.includes("w=100&h=200"))).toHaveLength(0);
+    });
+
+    it("updates slides with likert sizing", () => {
+      window.innerWidth = 100;
+      componentDidUpdate.mockImplementation(() => {});
+      props.assessment.scoring_scale = "LIKERT_CUMULATIVE_POMP";
+      const component = new ComponentHandler(<Component {...props} />);
+      props.getOption.mockImplementationOnce(() => "http://localhost:8080");
+      component.instance.container = {clientHeight: 200, clientWidth: 100};
+      component.instance.fetchImages = jest.fn().mockName("fetchImages");
+      component.instance.resizeImages();
+
+      expect(component.instance.fetchImages).toHaveBeenCalled();
+      expect(component.state.imageLoadingAttempts).toBe(0);
+      expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
+      expect(component.state.slides.filter((slide) => !slide.image.includes("w=100&h=126"))).toHaveLength(0);
     });
 
     it("updates slides with image falling back to desktop image", () => {
@@ -357,24 +393,82 @@ describe("SlideDeck", () => {
       expect(setState).toHaveBeenCalledWith({finished: true});
     });
 
-    it("submits results", (done) => {
+    it("submits results", async() => {
       const component = new ComponentHandler(<Component {...props} />);
       const slides = assessment.slides.map(({id}) => ({id, response: true, time_taken: 600}));
       setState.mockClear();
       completedSlides.mockReturnValueOnce(slides);
-      component.props.traitify.put.mockResolvedValueOnce(Promise.resolve({status: "success"}));
+      component.props.traitify.put.mockResolvedValueOnce({status: "success"});
       component.instance.finish();
 
-      props.traitify.put.mock.results[0].value.then(() => {
-        expect(props.getAssessment).toHaveBeenCalledWith({force: true});
-        expect(props.traitify.put).toHaveBeenCalledWith(
-          `/assessments/${component.props.assessmentID}/slides`,
-          slides
-        );
-        expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.finished", component.instance, {status: "success"});
-        expect(setState).toHaveBeenCalledWith({finished: true});
-        done();
-      });
+      await flushPromises();
+
+      expect(props.getAssessment).toHaveBeenCalledWith({force: true});
+      expect(props.traitify.put).toHaveBeenCalledWith(
+        `/assessments/${component.props.assessmentID}/slides`,
+        slides
+      );
+      expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.finished", component.instance, {status: "success"});
+      expect(setState).toHaveBeenCalledWith({finished: true});
+    });
+
+    it("retries request", async() => {
+      const component = new ComponentHandler(<Component {...props} />);
+      const slides = assessment.slides.map(({id}) => ({id, response: true, time_taken: -600}));
+      setState.mockClear();
+      completedSlides.mockReturnValueOnce(slides);
+      component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`);
+      component.instance.finish();
+
+      await flushPromises();
+
+      expect(props.getAssessment).not.toHaveBeenCalledWith();
+      expect(props.traitify.put).toHaveBeenCalledWith(
+        `/assessments/${component.props.assessmentID}/slides`,
+        slides
+      );
+      expect(setState).toHaveBeenCalledWith(
+        {finished: false, finishRequestAttempts: 1},
+        component.instance.finish
+      );
+    });
+
+    it("catches json errors", async() => {
+      const component = new ComponentHandler(<Component {...props} />);
+      const slides = assessment.slides.map(({id}) => ({id, response: true, time_taken: -600}));
+      setState.mockClear();
+      completedSlides.mockReturnValueOnce(slides);
+      component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`);
+      component.updateState({finishRequestAttempts: 1});
+      component.instance.finish();
+
+      await flushPromises();
+
+      expect(props.getAssessment).not.toHaveBeenCalledWith();
+      expect(props.traitify.put).toHaveBeenCalledWith(
+        `/assessments/${component.props.assessmentID}/slides`,
+        slides
+      );
+      expect(setState).toHaveBeenCalledWith({error: "Oh no", errorType: "request"});
+    });
+
+    it("catches text errors", async() => {
+      const component = new ComponentHandler(<Component {...props} />);
+      const slides = assessment.slides.map(({id}) => ({id, response: true, time_taken: -600}));
+      setState.mockClear();
+      completedSlides.mockReturnValueOnce(slides);
+      component.props.traitify.put.mockRejectedValueOnce("Oh no");
+      component.updateState({finishRequestAttempts: 1});
+      component.instance.finish();
+
+      await flushPromises();
+
+      expect(props.getAssessment).not.toHaveBeenCalledWith();
+      expect(props.traitify.put).toHaveBeenCalledWith(
+        `/assessments/${component.props.assessmentID}/slides`,
+        slides
+      );
+      expect(setState).toHaveBeenCalledWith({error: "Oh no", errorType: "request"});
     });
   });
 
@@ -421,14 +515,34 @@ describe("SlideDeck", () => {
     });
 
     describe("retry", () => {
-      it("updates state and fetches images", () => {
+      it("fetches images", () => {
         const component = new ComponentHandler(<Component {...props} />);
         component.instance.fetchImages = jest.fn().mockName("fetchImages");
-        component.updateState({imageLoadingAttempts: 3});
+        component.updateState({
+          error: "Oh no!",
+          errorType: "image",
+          imageLoadingAttempts: 3
+        });
         component.instance.retry();
 
+        expect(component.state.error).toBeNull();
         expect(component.state.imageLoadingAttempts).toBe(0);
         expect(component.instance.fetchImages).toHaveBeenCalled();
+      });
+
+      it("submits slides", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        component.instance.finish = jest.fn().mockName("finish");
+        component.updateState({
+          error: "Oh no!",
+          errorType: "request",
+          finished: true
+        });
+        component.instance.retry();
+
+        expect(component.state.error).toBeNull();
+        expect(component.state.finished).toBe(false);
+        expect(component.instance.finish).toHaveBeenCalled();
       });
     });
 
@@ -456,6 +570,57 @@ describe("SlideDeck", () => {
         expect(component.state.isFullscreen).toBe(true);
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.fullscreen", component.instance, true);
         expect(component.instance.resizeImages).toHaveBeenCalled();
+      });
+    });
+
+    describe("updateLikertSlide", () => {
+      it("updates slides", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        const {startTime, slides} = component.state;
+        component.updateState({
+          slides: slides.map((slide, index) => ({
+            ...slide,
+            likert_response: index > slides.length / 2 ? null : "REALLY_ME"
+          }))
+        });
+        const previousLength = completedSlides(component.state.slides).length;
+        const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.response;
+        component.instance.finish = jest.fn().mockName("finish");
+        component.instance.updateLikertSlide(previousLength, "REALLY_NOT_ME");
+
+        expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
+        expect(component.state.slides[previousLength]).toEqual({
+          ...lastSlide,
+          likert_response: "REALLY_NOT_ME",
+          time_taken: expect.any(Number)
+        });
+        expect(component.state.startTime).not.toBe(startTime);
+        expect(component.instance.finish).not.toHaveBeenCalled();
+      });
+
+      it("finishes", () => {
+        const component = new ComponentHandler(<Component {...props} />);
+        const {slides} = component.state;
+        component.updateState({
+          slides: slides.map((slide, index) => ({
+            ...slide,
+            likert_response: index === slides.length - 1 ? null : "REALLY_NOT_ME"
+          }))
+        });
+        const previousLength = completedSlides(component.state.slides).length;
+        const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.response;
+        component.instance.finish = jest.fn().mockName("finish");
+        component.instance.updateLikertSlide(previousLength, "REALLY_ME");
+
+        expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
+        expect(component.state.slides[previousLength]).toEqual({
+          ...lastSlide,
+          likert_response: "REALLY_ME",
+          time_taken: expect.any(Number)
+        });
+        expect(component.instance.finish).toHaveBeenCalled();
       });
     });
 

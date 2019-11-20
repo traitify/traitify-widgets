@@ -11,12 +11,14 @@ describe("Slide", () => {
       getOption: jest.fn().mockName("getOption").mockReturnValue(false),
       isComplete: false,
       isFullscreen: false,
+      isLikertScale: false,
       showInstructions: false,
       slideIndex: 0,
       slides: assessment.slides,
       start: jest.fn().mockName("start"),
       toggleFullscreen: jest.fn().mockName("toggleFullscreen"),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
+      updateLikertSlide: jest.fn().mockName("updateLikertSlide"),
       updateSlide: jest.fn().mockName("updateSlide")
     };
   });
@@ -93,6 +95,56 @@ describe("Slide", () => {
 
       expect(focus).toHaveBeenCalled();
       expect(querySelector).toHaveBeenCalled();
+    });
+  });
+
+  describe("likert scale", () => {
+    beforeEach(() => {
+      props.isLikertScale = true;
+    });
+
+    describe("actions", () => {
+      describe("respondReallyNotMe", () => {
+        it("calls updateLikertSlide", () => {
+          const component = new ComponentHandler(<Component {...props} />);
+          component.instance.respondLikertReallyNotMe();
+
+          expect(props.updateLikertSlide).toHaveBeenCalledWith(props.slideIndex, "REALLY_NOT_ME");
+        });
+      });
+
+      describe("respondNotMe", () => {
+        it("calls updateLikertSlide", () => {
+          const component = new ComponentHandler(<Component {...props} />);
+          component.instance.respondLikertNotMe();
+
+          expect(props.updateLikertSlide).toHaveBeenCalledWith(props.slideIndex, "NOT_ME");
+        });
+      });
+
+      describe("respondMe", () => {
+        it("calls updateLikertSlide", () => {
+          const component = new ComponentHandler(<Component {...props} />);
+          component.instance.respondLikertMe();
+
+          expect(props.updateLikertSlide).toHaveBeenCalledWith(props.slideIndex, "ME");
+        });
+      });
+
+      describe("respondReallyMe", () => {
+        it("calls updateLikertSlide", () => {
+          const component = new ComponentHandler(<Component {...props} />);
+          component.instance.respondLikertReallyMe();
+
+          expect(props.updateLikertSlide).toHaveBeenCalledWith(props.slideIndex, "REALLY_ME");
+        });
+      });
+    });
+
+    it("renders component", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
     });
   });
 

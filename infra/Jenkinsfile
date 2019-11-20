@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    options { 
+        buildDiscarder( logRotator( numToKeepStr: '5') )
+        disableConcurrentBuilds()
+    }
+    stages {
+         // run our build
+        stage("trigger private build") {
+            steps{
+                build (
+                    // we always build regression
+                    job: 'App-Build/traitify-widgets-private/regression',
+                    parameters: [
+                        string( name: "TRAITIFY_WIDGETS_HASH", value: "${GIT_COMMIT}"),
+                        string( name: "TRAITIFY_WIDGETS_BRANCH_NAME", value: "${BRANCH_NAME}")
+                    ],
+                    propagate: true, 
+                    wait: true
+                )
+            }
+        }
+    }
+}

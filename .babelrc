@@ -5,13 +5,7 @@
     [
       "@babel/preset-env",
       {
-        "loose": true,
-        "targets": {
-          "browsers": [
-            "last 2 versions",
-            "ie >= 9"
-          ]
-        }
+        "loose": true
       }
     ]
   ],

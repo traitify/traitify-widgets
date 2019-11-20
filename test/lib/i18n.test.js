@@ -29,7 +29,7 @@ describe("I18n", () => {
     it("adds data to existing locale", () => {
       i18n.addTranslations("es-US", {tacos: "Yo quiero tacos"});
 
-      expect(i18n.data["es-us"].me).toBe("Yo");
+      expect(i18n.data["es-us"].me).toBe("Soy yo");
       expect(i18n.data["es-us"].tacos).toBe("Yo quiero tacos");
     });
 
@@ -48,7 +48,7 @@ describe("I18n", () => {
     it("copies data to new locale", () => {
       i18n.copyTranslations("es-US", "es-CU");
 
-      expect(i18n.data["es-cu"].me).toBe("Yo");
+      expect(i18n.data["es-cu"].me).toBe("Soy yo");
     });
 
     it("copies data to existing locale", () => {

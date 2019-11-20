@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class PersonalityType extends Component {

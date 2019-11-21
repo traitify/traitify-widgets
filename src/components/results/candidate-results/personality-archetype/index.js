@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+// TODO make this work, need PA updated for 3rd person
+// import {detailWithPerspective} from "lib/helpers";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -26,13 +28,13 @@ class PersonalityArchetype extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
     if(!this.props.isReady("deck")) { return null; }
-
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     if(disabledComponents.includes("PersonalityArchetype")) { return null; }
 
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
     const badge = personality.details.find(({title}) => title === "Badge");
+    // const description = detailWithPerspective({...options, name: "Candidate Description"});
     const description = personality.details.find(({title}) => title === "Candidate Description");
 
     return (

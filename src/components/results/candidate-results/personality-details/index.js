@@ -56,7 +56,7 @@ class PersonalityDetails extends Component {
           <div className={style.detail}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#ef615e"}} />
-              <h4 className={style.title} style={{color: "#ef615e"}}>{this.props.translate("candidate_heading_for_tools")}</h4>
+              <h4 className={style.title} style={{color: "#ef615e"}}>{this.props.translate("caution_zone")}</h4>
               <ul className={style.description}>
                 {cautions.map((caution) => (
                   <li key={caution}>{caution}</li>

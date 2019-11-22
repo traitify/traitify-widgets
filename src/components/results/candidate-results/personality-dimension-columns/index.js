@@ -9,7 +9,6 @@ class PersonalityDimensionColumns extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
-    getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
@@ -23,10 +22,6 @@ class PersonalityDimensionColumns extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
-    const disabledComponents = this.props.getOption("disabledComponents") || [];
-    const disableColumns = disabledComponents.includes("PersonalityDimensionColumns");
-    if(disableColumns) { return null; }
-
     const types = this.props.assessment.personality_types.sort((x, y) => {
       const xDetail = x.personality_type.details.find(({title}) => title === "Position") || {};
       const yDetail = y.personality_type.details.find(({title}) => title === "Position") || {};
@@ -37,18 +32,16 @@ class PersonalityDimensionColumns extends Component {
     return (
       <div className={style.container}>
         <p>{this.props.translate("candidate_description_for_dimensions")}</p>
-        {!disableColumns && [
-          <ul key="columns" className={style.columns}>
-            {types.map((type) => (
-              <PersonalityDimensionColumn
-                key={type.personality_type.id}
-                type={type}
-                {...this.props}
-              />
-            ))}
-          </ul>,
-          <div key="buffer" className={style.columnsBuffer} />
-        ]}
+        <ul key="columns" className={style.columns}>
+          {types.map((type) => (
+            <PersonalityDimensionColumn
+              key={type.personality_type.id}
+              type={type}
+              {...this.props}
+            />
+          ))}
+        </ul>
+        <div key="buffer" className={style.columnsBuffer} />
       </div>
     );
   }

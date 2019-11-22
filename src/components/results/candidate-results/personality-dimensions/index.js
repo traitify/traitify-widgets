@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import PersonalityDimensionColumn from "../personality-dimension-column";
+import PersonalityDimensionColumns from "../personality-dimension-columns";
 import PersonalityDimensionDetails from "../personality-dimension-details";
 import style from "./style";
 
@@ -38,19 +38,7 @@ class PersonalityDimensions extends Component {
 
     return (
       <div className={style.container}>
-        <p>{this.props.translate("candidate_description_for_dimensions")}</p>
-        {!disableColumns && [
-          <ul key="columns" className={style.columns}>
-            {types.map((type) => (
-              <PersonalityDimensionColumn
-                key={type.personality_type.id}
-                type={type}
-                {...this.props}
-              />
-            ))}
-          </ul>,
-          <div key="buffer" className={style.columnsBuffer} />
-        ]}
+        {!disableColumns && <PersonalityDimensionColumns {...this.props} />}
         {!disableDetails && (
           <ul className={style.details}>
             {types.map((type) => (

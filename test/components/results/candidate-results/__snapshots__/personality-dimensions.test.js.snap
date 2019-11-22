@@ -2,339 +2,344 @@
 
 exports[`PersonalityDimensions renders columns if details disabled 1`] = `
 <div>
-  <p>
-    candidate_description_for_dimensions, [object Object]
-  </p>
-  <ul>
-    <li>
-      <div>
+  <div>
+    <p>
+      candidate_description_for_dimensions, [object Object]
+    </p>
+    <ul>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(41,183,112,0.085)",
+                "border": "3px solid #29B770",
+              }
+            }
+          >
+            <img
+              alt="Agreeableness badge, [object Object]"
+              src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            />
+          </div>
+          <h3>
+            Agreeableness
+          </h3>
+          <h2>
+            Medium
+          </h2>
+        </div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(41,183,112,0.085)",
-              "border": "3px solid #29B770",
+              "background": "rgba(41,183,112,0.1)",
             }
           }
-        >
-          <img
-            alt="Agreeableness badge, [object Object]"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(255,204,59,0.085)",
+                "border": "3px solid #FFCC3B",
+              }
+            }
+          >
+            <img
+              alt="Extraversion badge, [object Object]"
+              src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            />
+          </div>
+          <h3>
+            Extraversion
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Agreeableness
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(41,183,112,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(255,204,59,0.085)",
-              "border": "3px solid #FFCC3B",
+              "background": "rgba(255,204,59,0.1)",
             }
           }
-        >
-          <img
-            alt="Extraversion badge, [object Object]"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(249,139,28,0.085)",
+                "border": "3px solid #F98B1C",
+              }
+            }
+          >
+            <img
+              alt="Conscientiousness badge, [object Object]"
+              src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            />
+          </div>
+          <h3>
+            Conscientiousness
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Extraversion
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(255,204,59,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(249,139,28,0.085)",
-              "border": "3px solid #F98B1C",
+              "background": "rgba(249,139,28,0.1)",
             }
           }
-        >
-          <img
-            alt="Conscientiousness badge, [object Object]"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(66,176,219,0.085)",
+                "border": "3px solid #42B0DB",
+              }
+            }
+          >
+            <img
+              alt="Openness badge, [object Object]"
+              src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            />
+          </div>
+          <h3>
+            Openness
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Conscientiousness
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(249,139,28,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(66,176,219,0.085)",
-              "border": "3px solid #42B0DB",
+              "background": "rgba(66,176,219,0.1)",
             }
           }
-        >
-          <img
-            alt="Openness badge, [object Object]"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(239,97,94,0.085)",
+                "border": "3px solid #ef615e",
+              }
+            }
+          >
+            <img
+              alt="Emotional Stability badge, [object Object]"
+              src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+            />
+          </div>
+          <h3>
+            Emotional Stability
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Openness
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(66,176,219,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(239,97,94,0.085)",
-              "border": "3px solid #ef615e",
+              "background": "rgba(239,97,94,0.1)",
             }
           }
-        >
-          <img
-            alt="Emotional Stability badge, [object Object]"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-        </div>
-        <h3>
-          Emotional Stability
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(239,97,94,0.1)",
-          }
-        }
-      />
-    </li>
-  </ul>
-  <div />
+        />
+      </li>
+    </ul>
+    <div />
+  </div>
 </div>
 `;
 
 exports[`PersonalityDimensions renders component 1`] = `
 <div>
-  <p>
-    candidate_description_for_dimensions, [object Object]
-  </p>
-  <ul>
-    <li>
-      <div>
+  <div>
+    <p>
+      candidate_description_for_dimensions, [object Object]
+    </p>
+    <ul>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(41,183,112,0.085)",
+                "border": "3px solid #29B770",
+              }
+            }
+          >
+            <img
+              alt="Agreeableness badge, [object Object]"
+              src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            />
+          </div>
+          <h3>
+            Agreeableness
+          </h3>
+          <h2>
+            Medium
+          </h2>
+        </div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(41,183,112,0.085)",
-              "border": "3px solid #29B770",
+              "background": "rgba(41,183,112,0.1)",
             }
           }
-        >
-          <img
-            alt="Agreeableness badge, [object Object]"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(255,204,59,0.085)",
+                "border": "3px solid #FFCC3B",
+              }
+            }
+          >
+            <img
+              alt="Extraversion badge, [object Object]"
+              src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            />
+          </div>
+          <h3>
+            Extraversion
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Agreeableness
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(41,183,112,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(255,204,59,0.085)",
-              "border": "3px solid #FFCC3B",
+              "background": "rgba(255,204,59,0.1)",
             }
           }
-        >
-          <img
-            alt="Extraversion badge, [object Object]"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(249,139,28,0.085)",
+                "border": "3px solid #F98B1C",
+              }
+            }
+          >
+            <img
+              alt="Conscientiousness badge, [object Object]"
+              src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            />
+          </div>
+          <h3>
+            Conscientiousness
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Extraversion
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(255,204,59,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(249,139,28,0.085)",
-              "border": "3px solid #F98B1C",
+              "background": "rgba(249,139,28,0.1)",
             }
           }
-        >
-          <img
-            alt="Conscientiousness badge, [object Object]"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(66,176,219,0.085)",
+                "border": "3px solid #42B0DB",
+              }
+            }
+          >
+            <img
+              alt="Openness badge, [object Object]"
+              src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            />
+          </div>
+          <h3>
+            Openness
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Conscientiousness
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(249,139,28,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(66,176,219,0.085)",
-              "border": "3px solid #42B0DB",
+              "background": "rgba(66,176,219,0.1)",
             }
           }
-        >
-          <img
-            alt="Openness badge, [object Object]"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
+        />
+      </li>
+      <li>
+        <div>
+          <div
+            style={
+              Object {
+                "background": "rgba(239,97,94,0.085)",
+                "border": "3px solid #ef615e",
+              }
+            }
+          >
+            <img
+              alt="Emotional Stability badge, [object Object]"
+              src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+            />
+          </div>
+          <h3>
+            Emotional Stability
+          </h3>
+          <h2>
+            Medium
+          </h2>
         </div>
-        <h3>
-          Openness
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(66,176,219,0.1)",
-          }
-        }
-      />
-    </li>
-    <li>
-      <div>
         <div
+          className="undefined undefined"
           style={
             Object {
-              "background": "rgba(239,97,94,0.085)",
-              "border": "3px solid #ef615e",
+              "background": "rgba(239,97,94,0.1)",
             }
           }
-        >
-          <img
-            alt="Emotional Stability badge, [object Object]"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-        </div>
-        <h3>
-          Emotional Stability
-        </h3>
-        <h2>
-          Medium
-        </h2>
-      </div>
-      <div
-        className="undefined undefined"
-        style={
-          Object {
-            "background": "rgba(239,97,94,0.1)",
-          }
-        }
-      />
-    </li>
-  </ul>
-  <div />
+        />
+      </li>
+    </ul>
+    <div />
+  </div>
   <ul>
     <li
       style={
         Object {
           "background": "rgba(41,183,112,0.1)",
           "borderTop": "5px solid #29B770",
+          "listStyle": "none",
         }
       }
     >
@@ -434,6 +439,7 @@ exports[`PersonalityDimensions renders component 1`] = `
         Object {
           "background": "rgba(255,204,59,0.1)",
           "borderTop": "5px solid #FFCC3B",
+          "listStyle": "none",
         }
       }
     >
@@ -533,6 +539,7 @@ exports[`PersonalityDimensions renders component 1`] = `
         Object {
           "background": "rgba(249,139,28,0.1)",
           "borderTop": "5px solid #F98B1C",
+          "listStyle": "none",
         }
       }
     >
@@ -632,6 +639,7 @@ exports[`PersonalityDimensions renders component 1`] = `
         Object {
           "background": "rgba(66,176,219,0.1)",
           "borderTop": "5px solid #42B0DB",
+          "listStyle": "none",
         }
       }
     >
@@ -731,6 +739,7 @@ exports[`PersonalityDimensions renders component 1`] = `
         Object {
           "background": "rgba(239,97,94,0.1)",
           "borderTop": "5px solid #ef615e",
+          "listStyle": "none",
         }
       }
     >
@@ -831,15 +840,13 @@ exports[`PersonalityDimensions renders component 1`] = `
 
 exports[`PersonalityDimensions renders details if columns disabled 1`] = `
 <div>
-  <p>
-    candidate_description_for_dimensions, [object Object]
-  </p>
   <ul>
     <li
       style={
         Object {
           "background": "rgba(41,183,112,0.1)",
           "borderTop": "5px solid #29B770",
+          "listStyle": "none",
         }
       }
     >
@@ -939,6 +946,7 @@ exports[`PersonalityDimensions renders details if columns disabled 1`] = `
         Object {
           "background": "rgba(255,204,59,0.1)",
           "borderTop": "5px solid #FFCC3B",
+          "listStyle": "none",
         }
       }
     >
@@ -1038,6 +1046,7 @@ exports[`PersonalityDimensions renders details if columns disabled 1`] = `
         Object {
           "background": "rgba(249,139,28,0.1)",
           "borderTop": "5px solid #F98B1C",
+          "listStyle": "none",
         }
       }
     >
@@ -1137,6 +1146,7 @@ exports[`PersonalityDimensions renders details if columns disabled 1`] = `
         Object {
           "background": "rgba(66,176,219,0.1)",
           "borderTop": "5px solid #42B0DB",
+          "listStyle": "none",
         }
       }
     >
@@ -1236,6 +1246,7 @@ exports[`PersonalityDimensions renders details if columns disabled 1`] = `
         Object {
           "background": "rgba(239,97,94,0.1)",
           "borderTop": "5px solid #ef615e",
+          "listStyle": "none",
         }
       }
     >

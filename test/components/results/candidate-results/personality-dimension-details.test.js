@@ -10,6 +10,7 @@ describe("PersonalityDimensionDetails", () => {
   beforeEach(() => {
     props = {
       translate: jest.fn().mockName("translate"),
+      getOption: jest.fn().mockName("getOption"),
       type: assessment.personality_types[0],
       ui: {
         current: {},

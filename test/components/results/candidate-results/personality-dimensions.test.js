@@ -66,7 +66,7 @@ describe("PersonalityDimensions", () => {
   });
 
   it("renders details if columns disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionColumns"]);
+    props.getOption.mockReturnValueOnce(["PersonalityDimensionColumns"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

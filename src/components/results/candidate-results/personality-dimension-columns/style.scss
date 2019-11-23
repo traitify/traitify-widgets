@@ -1,0 +1,29 @@
+@import "~style/helpers";
+
+.container {
+  @extend %widgetContainer;
+  .columns {
+    @extend %widgetContainer;
+    display: table;
+    margin-bottom: 20px;
+    table-layout: fixed;
+  }
+  p {
+    @include rems(16);
+    @include mq(m) {
+      @include rems(17);
+    }
+    @include mq(xl) {
+      @include rems(18);
+    }
+  }
+  .columnsBuffer {
+    margin-top: 200px;
+    @include mq(m) {
+      margin-top: 220px;
+    }
+    @include mq(xl) {
+      margin-top: 40px;
+    }
+  }
+}

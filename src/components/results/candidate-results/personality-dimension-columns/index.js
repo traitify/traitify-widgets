@@ -3,7 +3,7 @@ import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityDimensionColumn from "../personality-dimension-column";
-import style from "../personality-dimensions/style";
+import style from "./style";
 
 class PersonalityDimensionColumns extends Component {
   static defaultProps = {assessment: null}

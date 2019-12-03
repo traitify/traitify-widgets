@@ -7,7 +7,6 @@ import PersonalityDimensionDetails from "../personality-dimension-details";
 import style from "./style";
 
 class PersonalityDimensions extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     getOption: PropTypes.func.isRequired,
@@ -15,6 +14,7 @@ class PersonalityDimensions extends Component {
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     this.props.ui.trigger("PersonalityDimensions.initialized", this);
   }

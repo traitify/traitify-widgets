@@ -19,13 +19,13 @@ const dataChanged = (newAssessment, oldAssessment) => (
 );
 
 class Radar extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     window.addEventListener("resize", this.updateChart);
 

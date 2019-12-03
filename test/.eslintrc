@@ -4,6 +4,7 @@
   ],
   "rules": {
     "import/no-unresolved": "off", // TODO: Fix when jest import/resolver is fixed
+    "jest/no-test-callback": "off",
     "no-new": "off",
     "prefer-promise-reject-errors": "off",
     "react/prop-types": "off"

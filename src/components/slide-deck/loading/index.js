@@ -3,12 +3,12 @@ import {Component} from "react";
 import style from "./style.scss";
 
 export default class Loading extends Component {
-  static defaultProps = {error: null}
   static propTypes = {
     error: PropTypes.string,
     retry: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired
   }
+  static defaultProps = {error: null}
   render() {
     const {error, retry, translate} = this.props;
 

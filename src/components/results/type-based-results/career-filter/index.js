@@ -11,13 +11,13 @@ import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class CareerFilter extends Component {
-  static defaultProps = {options: null}
   static propTypes = {
     isReady: PropTypes.func.isRequired,
     options: PropTypes.shape({careerOptions: PropTypes.object}),
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {options: null}
   constructor(props) {
     super(props);
 

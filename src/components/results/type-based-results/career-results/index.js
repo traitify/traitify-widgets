@@ -7,7 +7,6 @@ import Career from "../career";
 import style from "./style";
 
 class CareerResults extends Component {
-  static defaultProps = {options: null}
   static propTypes = {
     assessmentID: PropTypes.string.isRequired,
     isReady: PropTypes.func.isRequired,
@@ -17,6 +16,7 @@ class CareerResults extends Component {
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {options: null}
   constructor(props) {
     super(props);
 

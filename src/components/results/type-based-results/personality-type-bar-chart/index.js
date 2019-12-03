@@ -6,13 +6,13 @@ import PersonalityTypeBar from "../personality-type-bar";
 import style from "./style";
 
 class PersonalityTypeBarChart extends Component {
-  static defaultProps = {assessment: null, assessmentID: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
     assessmentID: PropTypes.string,
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null, assessmentID: null}
   constructor(props) {
     super(props);
 

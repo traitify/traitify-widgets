@@ -5,7 +5,6 @@ import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class PersonalityDetails extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({archetype: PropTypes.object}),
     getOption: PropTypes.func.isRequired,
@@ -13,6 +12,7 @@ class PersonalityDetails extends Component {
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     this.props.ui.trigger("PersonalityDetails.initialized", this);
   }

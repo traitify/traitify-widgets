@@ -5,12 +5,12 @@ import withTraitify from "lib/with-traitify";
 import style from "./style";
 
 class PersonalityScoreBar extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({overall_score: PropTypes.number}),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     this.props.ui.trigger("PersonalityScoreBar.initialized", this);
   }

@@ -6,7 +6,6 @@ import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
 class PersonalityTraits extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_traits: PropTypes.array}),
     getOption: PropTypes.func.isRequired,
@@ -14,6 +13,7 @@ class PersonalityTraits extends Component {
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     this.props.ui.trigger("PersonalityTraits.initialized", this);
   }

@@ -8,7 +8,6 @@ import FinancialRiskResults from "./financial-risk-results";
 import TypeBasedResults from "./type-based-results";
 
 class Results extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({
       assessment_type: PropTypes.string,
@@ -18,6 +17,7 @@ class Results extends Component {
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     this.props.ui.trigger("Results.initialized", this);
   }

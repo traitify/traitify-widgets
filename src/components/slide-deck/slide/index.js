@@ -4,7 +4,6 @@ import Markdown from "react-markdown";
 import style from "./style";
 
 export default class Slide extends Component {
-  static defaultProps = {instructions: null}
   static propTypes = {
     back: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
@@ -21,6 +20,7 @@ export default class Slide extends Component {
     updateLikertSlide: PropTypes.func.isRequired,
     updateSlide: PropTypes.func.isRequired
   }
+  static defaultProps = {instructions: null}
   componentDidUpdate(prevProps) {
     const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
     const slideChanged = prevProps.slideIndex !== this.props.slideIndex;
@@ -97,7 +97,7 @@ export default class Slide extends Component {
       allowBack = getOption("allowBack") && slideIndex > 0;
       allowFullscreen = getOption("allowFullscreen");
       currentSlide = slides[slideIndex];
-      progress = isComplete ? 100 : slideIndex / slides.length * 100;
+      progress = isComplete ? 100 : (slideIndex / slides.length) * 100;
     }
 
     return (
@@ -146,7 +146,7 @@ export default class Slide extends Component {
           </button>
         )}
         {allowFullscreen && (
-          <button className={[style.fullscreen, isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={toggleFullscreen} type="button" />
+          <button aria-label="fullscreen" className={[style.fullscreen, isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={toggleFullscreen} type="button" />
         )}
       </div>
     );

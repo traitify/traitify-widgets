@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 
 export default class TypeButton extends Component {
-  static defaultProps = {children: null, className: null}
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -12,6 +11,7 @@ export default class TypeButton extends Component {
       score: PropTypes.number.isRequired
     }).isRequired
   }
+  static defaultProps = {children: null, className: null}
   setActive = () => {
     this.props.setActive(this.props.type);
   }

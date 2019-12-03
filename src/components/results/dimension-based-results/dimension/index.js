@@ -7,7 +7,6 @@ import {rgba} from "lib/helpers/color";
 import style from "./style";
 
 class Dimension extends Component {
-  static defaultProps = {assessmentID: null}
   static propTypes = {
     assessmentID: PropTypes.string,
     getOption: PropTypes.func.isRequired,
@@ -19,6 +18,7 @@ class Dimension extends Component {
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessmentID: null}
   constructor(props) {
     super(props);
 

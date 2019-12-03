@@ -9,7 +9,7 @@ export default class TraitifyWidget {
     this.ui = ui;
     this.options = {allowInstructions: true, ...options};
     this.options.disabledComponents = [...this.options.disabledComponents || []];
-    this.options.targets = Object.assign({}, this.options.targets);
+    this.options.targets = {...this.options.targets};
   }
   allowBack() {
     this.options.allowBack = true;

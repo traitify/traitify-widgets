@@ -26,14 +26,13 @@ export default class CompetencySelect extends Component {
     return (
       <div className={style.competencySelect}>
         <select
-          value={displayedCompetency.id}
           className={style.mobileSelect}
           onChange={this.displayCompetency}
+          value={displayedCompetency.id}
         >
           {competencies.map((competency) => (
             <option key={competency.id} value={competency.id}>{competency.name}</option>
-          ))
-          }
+          ))}
         </select>
         <p className={style.mobileBadge}>
           <img src={tabBadge(displayedCompetency.id)} alt={`${displayedCompetency.name} badge`} />

@@ -51,20 +51,6 @@ export default class HighChart extends Component {
   componentDidMount() {
     this.afterRender();
   }
-  afterRender() {
-    this.config = this.setConfig();
-    if(this.props.type === "radar") {
-      this.configForRadar();
-    } else if(this.props.type === "pie") {
-      this.configForPie();
-    }
-    if(this.props.chart) { this.configForChart(); }
-    if(this.props.legend) { this.configForLegend(); }
-    if(this.props.xAxis) { this.configForX(); }
-    if(this.props.yAxis) { this.configForY(); }
-    this.configForTooltip();
-    this.setState({config: this.config});
-  }
   setConfig() {
     return {
       chart: {
@@ -85,6 +71,20 @@ export default class HighChart extends Component {
       legend: {},
       series: this.props.series
     };
+  }
+  afterRender() {
+    this.config = this.setConfig();
+    if(this.props.type === "radar") {
+      this.configForRadar();
+    } else if(this.props.type === "pie") {
+      this.configForPie();
+    }
+    if(this.props.chart) { this.configForChart(); }
+    if(this.props.legend) { this.configForLegend(); }
+    if(this.props.xAxis) { this.configForX(); }
+    if(this.props.yAxis) { this.configForY(); }
+    this.configForTooltip();
+    this.setState({config: this.config});
   }
   configForRadar() {
     this.config.chart.type = "area";

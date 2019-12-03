@@ -6,13 +6,13 @@ import PersonalityTrait from "../personality-trait";
 import style from "./style";
 
 class PersonalityTraits extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_traits: PropTypes.array}),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   constructor(props) {
     super(props);
 

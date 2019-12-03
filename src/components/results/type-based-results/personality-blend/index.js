@@ -6,12 +6,12 @@ import PersonalityBadge from "../personality-badge";
 import style from "./style";
 
 class PersonalityBlend extends Component {
-  static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_blend: PropTypes.object}),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
+  static defaultProps = {assessment: null}
   componentDidMount() {
     this.props.ui.trigger("PersonalityBlend.initialized", this);
   }

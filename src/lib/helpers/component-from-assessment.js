@@ -4,10 +4,10 @@ import withTraitify from "lib/with-traitify";
 
 export default function componentFromAssessment(options) {
   class AssessmentComponent extends Component {
-    static defaultProps = {assessment: null}
     static propTypes = {
       assessment: PropTypes.shape({assessment_type: PropTypes.string.isRequired})
     }
+    static defaultProps = {assessment: null}
     constructor(props) {
       super(props);
 

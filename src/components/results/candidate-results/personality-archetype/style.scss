@@ -58,3 +58,28 @@
     margin: 0;
   }
 }
+.thirdPersonDetails {
+  @extend .details;
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  .personalityHeading, .personalityBody {
+    margin-top: 20px;
+  }
+  img {
+    height: 130px;
+    max-width: 130px;
+  }
+  div {
+    width: 45%;
+    border-right: 2px solid $white;
+  }
+  span {
+    display: inline-block;
+    width: 45%;
+  }
+  h2 {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}

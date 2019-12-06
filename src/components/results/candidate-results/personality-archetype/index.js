@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-// TODO make this work, need PA updated for 3rd person
-// import {detailWithPerspective} from "lib/helpers";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -15,6 +13,7 @@ class PersonalityArchetype extends Component {
     followDeck: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
+    options: PropTypes.shape({archetype: PropTypes.object}).isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
@@ -30,13 +29,15 @@ class PersonalityArchetype extends Component {
     if(!this.props.isReady("deck")) { return null; }
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     if(disabledComponents.includes("PersonalityArchetype")) { return null; }
-
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
     const badge = personality.details.find(({title}) => title === "Badge");
-    // const description = detailWithPerspective({...options, name: "Candidate Description"});
-    const description = personality.details.find(({title}) => title === "Candidate Description");
     const perspective = this.props.getOption("perspective");
+    const description = (
+      perspective === "thirdPerson"
+        ? personality.details.find(({title}) => title === "Hiring Manager Description")
+        : personality.details.find(({title}) => title === "Candidate Description")
+    );
 
     return (
       <div>

@@ -25,6 +25,7 @@ class Results extends Component {
     this.props.ui.trigger("Results.updated", this);
   }
   render() {
+    console.log(this.props);
     if(!this.props.isReady("results")) { return null; }
 
     if(this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP") {

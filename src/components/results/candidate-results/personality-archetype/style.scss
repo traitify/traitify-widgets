@@ -66,7 +66,6 @@
   @include mq(l) {
     flex-direction: row;
     div {
-      border-right: 2px solid $white;
       width: 45% !important;
       display: block !important;
     }
@@ -76,6 +75,14 @@
     }
   }
   flex-direction: column;
+  .cellTwo {
+    margin-top: 20px;
+    display: table-cell;
+  }
+  .cellOne {
+    display: table-cell;
+    border-right: 2px solid $white;
+  }
   .personalityHeading, .personalityBody {
     margin-top: 20px;
   }

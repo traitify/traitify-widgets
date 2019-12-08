@@ -45,7 +45,7 @@ class PersonalityArchetype extends Component {
           ? (
             <div className={style.container}>
               <div className={style.thirdPersonDetails}>
-                <div>
+                <div className={style.cellOne}>
                   {badge && <img alt={personality.name} src={badge.body} />}
                   <DangerousHTML
                     html={this.props.translate("personality_heading", {
@@ -57,7 +57,7 @@ class PersonalityArchetype extends Component {
                   />
                   <h2><span>{personality.name}</span></h2>
                 </div>
-                {description && <span className={style.personalityBody}>{description.body}</span>}
+                {description && <span className={style.cellTwo}>{description.body}</span>}
               </div>
             </div>
           )

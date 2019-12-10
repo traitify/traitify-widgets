@@ -45,19 +45,21 @@ class PersonalityArchetype extends Component {
           ? (
             <div className={style.container}>
               <div className={style.thirdPersonDetails}>
-                <div className={style.cellOne}>
+                <div className={style.itemOne}>
                   {badge && <img alt={personality.name} src={badge.body} />}
-                  <DangerousHTML
-                    html={this.props.translate("personality_heading", {
-                      deck_name: this.props.deck.name,
-                      personality: ""
-                    })}
-                    className={style.personalityHeading}
-                    tag="h2"
-                  />
-                  <h2><span>{personality.name}</span></h2>
+                  <div className={style.deckAndHeading}>
+                    <DangerousHTML
+                      html={this.props.translate("personality_heading", {
+                        deck_name: this.props.deck.name,
+                        personality: ""
+                      })}
+                      className={style.personalityHeading}
+                      tag="h2"
+                    />
+                    <h2><span>{personality.name}</span></h2>
+                  </div>
                 </div>
-                {description && <span className={style.cellTwo}>{description.body}</span>}
+                {description && <span className={style.itemTwo}>{description.body}</span>}
               </div>
             </div>
           )

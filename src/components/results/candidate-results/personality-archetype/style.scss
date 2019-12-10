@@ -60,45 +60,37 @@
 }
 .thirdPersonDetails {
   @extend .details;
-  width: 99%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   @include mq(l) {
-    flex-direction: row;
-    div {
-      width: 45% !important;
-      display: block !important;
+    display: inline;
+    .itemTwo {
+      width: 50%;
+      padding-left: 3%;
+      float: right;
+      padding-top: 30px;
+    }
+    .itemOne {
+      width: 45%;
+      display: inline-block;
+      border-right: 2px solid $white;
+    }
+    .deckAndHeading {
+      width: 100%;
+      padding-right: 5%;
     }
     span {
-      display: inline-block;
-      width: 45% !important;
+      display: inline;
+      width: 50%;
     }
-  }
-  flex-direction: column;
-  .cellTwo {
-    margin-top: 20px;
-    display: table-cell;
-  }
-  .cellOne {
-    display: table-cell;
-    border-right: 2px solid $white;
-  }
-  .personalityHeading, .personalityBody {
-    margin-top: 20px;
+    .personalityHeading {
+      padding-top: 20px;
+    }
   }
   img {
     height: 130px;
     max-width: 130px;
-  }
-  div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  span {
-    display: inline-block;
-    width: 100%;
   }
   h2 {
     margin-bottom: 0;

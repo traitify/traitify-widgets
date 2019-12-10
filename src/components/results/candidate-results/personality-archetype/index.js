@@ -27,8 +27,10 @@ class PersonalityArchetype extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
     if(!this.props.isReady("deck")) { return null; }
+
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     if(disabledComponents.includes("PersonalityArchetype")) { return null; }
+
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
     const badge = personality.details.find(({title}) => title === "Badge");

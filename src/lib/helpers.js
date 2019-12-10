@@ -15,7 +15,6 @@ export function careerOption(props, name) {
 
 export function detailWithPerspective(options) {
   const {base, name} = options;
-
   let perspective = (options.perspective || "firstPerson").replace("Person", "");
   let detail = base.details.find((d) => (d.title === `${perspective}_person_${name}`));
   detail = detail || base.details.find((d) => (d.title === `${capitalize(perspective)} Person ${name}`));

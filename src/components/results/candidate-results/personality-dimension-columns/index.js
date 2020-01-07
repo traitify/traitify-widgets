@@ -32,7 +32,7 @@ class PersonalityDimensionColumns extends Component {
     return (
       <div className={style.container}>
         <p>{this.props.translate("candidate_description_for_dimensions")}</p>
-        <ul key="columns" className={style.columns}>
+        <ul className={style.columns}>
           {types.map((type) => (
             <PersonalityDimensionColumn
               key={type.personality_type.id}

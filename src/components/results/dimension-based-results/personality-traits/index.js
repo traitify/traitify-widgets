@@ -31,14 +31,14 @@ class PersonalityTraits extends Component {
       <div className={style.traits}>
         <h4 className={style.title}>{this.props.translate("most_represented_traits")}</h4>
         {thirdPersonCheck && (
-          <div className={style.traits_definition}>{this.props.translate("most_represented_traits_definition")}</div>
+          <div className={style.traitsDefinition}>{this.props.translate("most_represented_traits_definition")}</div>
         )}
         {traits.slice(0, 5).map((trait) => (
           <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...this.props} />
         ))}
         <h4 className={style.title}>{this.props.translate("least_represented_traits")}</h4>
         {thirdPersonCheck && (
-          <div className={style.traits_definition}>{this.props.translate("least_represented_traits_definition")}</div>
+          <div className={style.traitsDefinition}>{this.props.translate("least_represented_traits_definition")}</div>
         )}
         {traits.slice(-5).map((trait) => (
           <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...this.props} />

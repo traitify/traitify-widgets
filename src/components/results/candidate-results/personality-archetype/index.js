@@ -42,31 +42,29 @@ class PersonalityArchetype extends Component {
     );
 
     return (
-      <div>
+      <div className={style.container}>
         {perspective === "thirdPerson"
           ? (
-            <div className={style.container}>
-              <div className={style.thirdPersonDetails}>
-                <div className={style.itemOne}>
-                  {badge && <img alt={personality.name} src={badge.body} />}
-                  <div className={style.deckAndHeading}>
-                    <DangerousHTML
-                      html={this.props.translate("personality_heading", {
-                        deck_name: this.props.deck.name,
-                        personality: ""
-                      })}
-                      className={style.personalityHeading}
-                      tag="h2"
-                    />
-                    <h2><span>{personality.name}</span></h2>
-                  </div>
+            <div className={style.thirdPersonDetails}>
+              <div className={style.itemOne}>
+                {badge && <img alt={personality.name} src={badge.body} />}
+                <div className={style.deckAndHeading}>
+                  <DangerousHTML
+                    html={this.props.translate("personality_heading", {
+                      deck_name: this.props.deck.name,
+                      personality: personality.name
+                    })}
+                    className={style.personalityHeading}
+                    tag="h2"
+                  />
+                  <h2><span>{personality.name}</span></h2>
                 </div>
-                {description && <span className={style.itemTwo}>{description.body}</span>}
               </div>
+              {description && <span className={style.itemTwo}>{description.body}</span>}
             </div>
           )
-          : (
-            <div className={style.container}>
+          : [
+            <div>
               <div className={style.details}>
                 {badge && <img alt={personality.name} src={badge.body} />}
                 <DangerousHTML
@@ -82,7 +80,7 @@ class PersonalityArchetype extends Component {
                 <DangerousHTML html={this.props.translate("candidate_description_for_archetype_html")} tag="p" />
               </div>
             </div>
-          )
+          ]
         }
       </div>
     );

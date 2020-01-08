@@ -41,7 +41,7 @@ class PersonalityDimensionColumns extends Component {
             />
           ))}
         </ul>
-        <div key="buffer" className={style.columnsBuffer} />
+        <div className={style.columnsBuffer} />
       </div>
     );
   }

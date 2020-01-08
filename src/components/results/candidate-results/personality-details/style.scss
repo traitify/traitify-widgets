@@ -43,7 +43,7 @@
   }
 }
 
-.detail6Columns {
+.detailColumn {
   @extend .detail;
   @include mq(l) {
     @include cols(6);

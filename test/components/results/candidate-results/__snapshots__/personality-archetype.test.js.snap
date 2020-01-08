@@ -3,27 +3,25 @@
 exports[`PersonalityArchetype renders component 1`] = `
 <div>
   <div>
-    <div>
-      <h2
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "personality_heading, [object Object]",
-          }
+    <h2
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "personality_heading, [object Object]",
         }
-      />
-      <p>
-        You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-      </p>
-    </div>
-    <div>
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "candidate_description_for_archetype_html, [object Object]",
-          }
+      }
+    />
+    <p>
+      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
+    </p>
+  </div>
+  <div>
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "candidate_description_for_archetype_html, [object Object]",
         }
-      />
-    </div>
+      }
+    />
   </div>
 </div>
 `;
@@ -31,31 +29,29 @@ exports[`PersonalityArchetype renders component 1`] = `
 exports[`PersonalityArchetype renders component with badge 1`] = `
 <div>
   <div>
-    <div>
-      <img
-        alt="Cohort"
-        src="https://cdn.traitify.com/frtq/conservative_white.png"
-      />
-      <h2
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "personality_heading, [object Object]",
-          }
+    <img
+      alt="Cohort"
+      src="https://cdn.traitify.com/frtq/conservative_white.png"
+    />
+    <h2
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "personality_heading, [object Object]",
         }
-      />
-      <p>
-        You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-      </p>
-    </div>
-    <div>
-      <p
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "candidate_description_for_archetype_html, [object Object]",
-          }
+      }
+    />
+    <p>
+      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
+    </p>
+  </div>
+  <div>
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "candidate_description_for_archetype_html, [object Object]",
         }
-      />
-    </div>
+      }
+    />
   </div>
 </div>
 `;

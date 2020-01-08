@@ -36,17 +36,17 @@ class PersonalityDetails extends Component {
     if(settings.length === 0) { disableSettings = true; }
     if(tools.length === 0) { disableTools = true; }
     if(disableSettings && disableTools) { return null; }
-    let detailColumn;
+    let detailClass;
     [!disableTools, perspective === "thirdPerson", !disableSettings].filter(Boolean).length > 2 ? (
-      detailColumn = style.detail
+      detailClass = style.detail
     ) : (
-      detailColumn = style.detail6Columns
+      detailClass = style.detailColumn
     );
 
     return (
       <div className={style.container}>
         {!disableTools && (
-          <div className={detailColumn}>
+          <div className={detailClass}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#008dc7"}} />
               <h4 className={style.title} style={{color: "#008dc7"}}>{this.props.translate("candidate_heading_for_tools")}</h4>
@@ -59,7 +59,7 @@ class PersonalityDetails extends Component {
           </div>
         )}
         {perspective === "thirdPerson" && (
-          <div className={detailColumn}>
+          <div className={detailClass}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#ef615e"}} />
               <h4 className={style.title} style={{color: "#ef615e"}}>{this.props.translate("caution_zone")}</h4>
@@ -72,7 +72,7 @@ class PersonalityDetails extends Component {
           </div>
         )}
         {!disableSettings && (
-          <div className={detailColumn}>
+          <div className={detailClass}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#32be4b"}} />
               <h4 className={style.title} style={{color: "#32be4b"}}>{this.props.translate("candidate_heading_for_settings")}</h4>

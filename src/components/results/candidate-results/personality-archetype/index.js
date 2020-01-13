@@ -52,7 +52,7 @@ class PersonalityArchetype extends Component {
                 <DangerousHTML
                   html={this.props.translate("personality_heading", {
                     deck_name: this.props.deck.name,
-                    personality: personality.name
+                    personality: `<br /><span>${personality.name}</span><br />`
                   })}
                   className={style.personalityHeading}
                   tag="h2"

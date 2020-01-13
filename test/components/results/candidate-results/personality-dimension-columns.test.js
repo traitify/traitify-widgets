@@ -13,6 +13,9 @@ describe("PersonalityDimensionColumns", () => {
       isReady: jest.fn().mockName("isReady"),
       translate: jest.fn().mockName("translate"),
       ui: {
+        current: {},
+        off: jest.fn().mockName("off"),
+        on: jest.fn().mockName("on"),
         trigger: jest.fn().mockName("trigger")
       }
     };

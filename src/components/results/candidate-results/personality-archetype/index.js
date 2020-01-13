@@ -40,12 +40,13 @@ class PersonalityArchetype extends Component {
         ? personality.details.find(({title}) => title === "Hiring Manager Description")
         : personality.details.find(({title}) => title === "Candidate Description")
     );
+    const splitIfPresent = description && style.itemOne;
 
     return (
       <div className={style.container}>
         {perspective === "thirdPerson" ? (
           <div className={style.thirdPersonDetails}>
-            <div className={style.itemOne}>
+            <div className={splitIfPresent}>
               {badge && <img alt={personality.name} src={badge.body} />}
               <div className={style.deckAndHeading}>
                 <DangerousHTML
@@ -76,8 +77,7 @@ class PersonalityArchetype extends Component {
           <div key="meaning" className={style.meaning}>
             <DangerousHTML html={this.props.translate("candidate_description_for_archetype_html")} tag="p" />
           </div>
-        ]
-        }
+        ]}
       </div>
     );
   }

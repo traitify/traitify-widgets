@@ -26,6 +26,7 @@ describe("PersonalityArchetype", () => {
       followDeck: jest.fn().mockName("followDeck"),
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
+      options: {},
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       ui: {
         current: {},

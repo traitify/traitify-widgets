@@ -57,7 +57,6 @@ class PersonalityArchetype extends Component {
                   className={style.personalityHeading}
                   tag="h2"
                 />
-                <h2><span>{personality.name}</span></h2>
               </div>
             </div>
             {description && <span className={style.itemTwo}>{description.body}</span>}

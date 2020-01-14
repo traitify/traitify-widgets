@@ -42,11 +42,6 @@ exports[`PersonalityArchetype renders component in third person 1`] = `
             }
           }
         />
-        <h2>
-          <span>
-            Cohort
-          </span>
-        </h2>
       </div>
     </div>
     <span>

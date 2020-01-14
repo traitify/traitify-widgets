@@ -3,7 +3,7 @@ import {Component} from "react";
 import Chart from "lib/helpers/canvas-radar-chart";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 const dataMapper = (assessment) => {
   if(!assessment || !assessment.personality_types) { return null; }

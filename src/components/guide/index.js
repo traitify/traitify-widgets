@@ -5,7 +5,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import CompetencySelect from "./competency-select";
 import CompetencyTab from "./competency-tab";
-import style from "./style";
+import style from "./style.scss";
 
 class Guide extends Component {
   static propTypes = {

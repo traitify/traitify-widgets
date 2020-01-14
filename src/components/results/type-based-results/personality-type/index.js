@@ -3,7 +3,7 @@ import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityBadge from "../personality-badge";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityType extends Component {
   static propTypes = {

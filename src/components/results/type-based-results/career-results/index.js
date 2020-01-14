@@ -4,7 +4,7 @@ import {careerOption} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Career from "../career";
-import style from "./style";
+import style from "./style.scss";
 
 class CareerResults extends Component {
   static propTypes = {

@@ -3,7 +3,7 @@ import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeBar from "../personality-type-bar";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityTypeBarChart extends Component {
   static propTypes = {

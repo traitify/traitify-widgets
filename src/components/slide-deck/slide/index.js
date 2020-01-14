@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
 import Markdown from "react-markdown";
-import style from "./style";
+import style from "./style.scss";
 
 export default class Slide extends Component {
   static propTypes = {

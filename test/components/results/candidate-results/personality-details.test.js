@@ -5,6 +5,10 @@ import assessment from "support/json/assessment/dimension-based.json";
 jest.mock("lib/helpers", () => ({detailWithPerspective: jest.fn().mockImplementation((options) => options.base[options.name] || options.name)}));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
+const cautions = [
+  {body: "Be Cautious", title: "Caution Zone"},
+  {body: "Of People", title: "Caution Zone"}
+];
 const settings = [
   {body: "Encourages peer support in pursuit of goals", title: "Settings that Work for You"},
   {body: "De-emphasizes competition among colleagues", title: "Settings that Work for You"},
@@ -35,7 +39,7 @@ describe("PersonalityDetails", () => {
 
   beforeEach(() => {
     props = {
-      assessment: assessmentWith([...settings, ...tools]),
+      assessment: assessmentWith([...cautions, ...settings, ...tools]),
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
@@ -64,6 +68,13 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders component", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component with cautions", () => {
+    props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

@@ -5,13 +5,14 @@ import deck from "support/json/deck/big-five.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-const assessmentWithBadge = {
+const assessmentWithDetails = {
   ...assessment,
   archetype: {
     ...assessment.archetype,
     details: [
       ...assessment.archetype.details,
-      {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"}
+      {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
+      {body: "Maybe just hire qualified candidats", title: "Hiring Manager Description"}
     ]
   }
 };
@@ -64,8 +65,16 @@ describe("PersonalityArchetype", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component in third person", () => {
+    props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
+    props.assessment = assessmentWithDetails;
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders component with badge", () => {
-    props.assessment = assessmentWithBadge;
+    props.assessment = assessmentWithDetails;
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

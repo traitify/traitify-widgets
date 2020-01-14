@@ -29,16 +29,24 @@ class PersonalityDetails extends Component {
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     let disableSettings = disabledComponents.includes("PersonalitySettings");
     let disableTools = disabledComponents.includes("PersonalityTools");
+    const perspective = this.props.getOption("perspective");
     const settings = details.filter(({title}) => (title === "Settings that Work for You")).map(({body}) => body);
     const tools = details.filter(({title}) => (title === "Tools to Use")).map(({body}) => body);
+    const cautions = details.filter(({title}) => (title === "Caution Zone")).map(({body}) => body);
     if(settings.length === 0) { disableSettings = true; }
     if(tools.length === 0) { disableTools = true; }
     if(disableSettings && disableTools) { return null; }
+    let detailClass;
+    [!disableTools, perspective === "thirdPerson", !disableSettings].filter(Boolean).length > 2 ? (
+      detailClass = style.detail
+    ) : (
+      detailClass = style.detailColumn
+    );
 
     return (
       <div className={style.container}>
         {!disableTools && (
-          <div className={style.detail}>
+          <div className={detailClass}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#008dc7"}} />
               <h4 className={style.title} style={{color: "#008dc7"}}>{this.props.translate("candidate_heading_for_tools")}</h4>
@@ -50,8 +58,21 @@ class PersonalityDetails extends Component {
             </div>
           </div>
         )}
+        {perspective === "thirdPerson" && (
+          <div className={detailClass}>
+            <div className={style.content}>
+              <div className={style.bar} style={{background: "#ef615e"}} />
+              <h4 className={style.title} style={{color: "#ef615e"}}>{this.props.translate("caution_zone")}</h4>
+              <ul className={style.description}>
+                {cautions.map((caution) => (
+                  <li key={caution}>{caution}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
         {!disableSettings && (
-          <div className={style.detail}>
+          <div className={detailClass}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#32be4b"}} />
               <h4 className={style.title} style={{color: "#32be4b"}}>{this.props.translate("candidate_heading_for_settings")}</h4>

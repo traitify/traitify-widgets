@@ -6,6 +6,7 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
     Object {
       "background": "rgba(41,183,112,0.1)",
       "borderTop": "5px solid #29B770",
+      "listStyle": "none",
     }
   }
 >

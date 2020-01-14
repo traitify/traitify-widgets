@@ -58,3 +58,42 @@
     margin: 0;
   }
 }
+.thirdPersonDetails {
+  @extend .details;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include mq(l) {
+    display: inline;
+    .itemTwo {
+      width: 50%;
+      padding-left: 3%;
+      float: right;
+      padding-top: 30px;
+    }
+    .itemOne {
+      width: 45%;
+      display: inline-block;
+      border-right: 2px solid $white;
+    }
+    .deckAndHeading {
+      width: 100%;
+      padding-right: 5%;
+    }
+    span {
+      display: inline;
+      width: 50%;
+    }
+    .personalityHeading {
+      padding-top: 20px;
+    }
+  }
+  img {
+    height: 130px;
+    max-width: 130px;
+  }
+  h2 {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}

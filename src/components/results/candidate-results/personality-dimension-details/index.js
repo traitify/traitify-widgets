@@ -8,6 +8,7 @@ import style from "./style";
 
 class PersonalityDimensionDetails extends Component {
   static propTypes = {
+    getOption: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     type: PropTypes.shape({
       personality_type: PropTypes.shape({
@@ -32,10 +33,11 @@ class PersonalityDimensionDetails extends Component {
     const {translate, type: {personality_type: {badge, details, level, name}}} = this.props;
     const color = `#${badge.color_1}`;
     const benefits = details.filter(({title}) => (title === "Benefits")).map(({body}) => body);
-    const options = {base: {details}, perspective: "firstPerson"};
+    const perspective = this.props.getOption("perspective") || "firstPerson";
+    const options = {base: {details}, perspective};
 
     return (
-      <li className={style.container} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`}}>
+      <li className={style.container} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`, listStyle: "none"}}>
         <div className={style.side}>
           <p className={style.icon}>
             <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
@@ -43,7 +45,9 @@ class PersonalityDimensionDetails extends Component {
         </div>
         <div className={style.content}>
           <h2>{name} <span style={{color}}>|</span> {level}</h2>
-          <h3>{translate("candidate_heading_for_dimension", {level, name})}</h3>
+          {perspective === "firstPerson" && (
+            <h3>{translate("candidate_heading_for_dimension", {level, name})}</h3>
+          )}
           <p className={style.description}>{detailWithPerspective({...options, name: "short_description"})}</p>
         </div>
         <h3>{translate("candidate_heading_for_benefits", {level, name})}</h3>

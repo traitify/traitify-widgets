@@ -26,6 +26,31 @@ exports[`PersonalityArchetype renders component 1`] = `
 </div>
 `;
 
+exports[`PersonalityArchetype renders component in third person 1`] = `
+<div>
+  <div>
+    <div>
+      <img
+        alt="Cohort"
+        src="https://cdn.traitify.com/frtq/conservative_white.png"
+      />
+      <div>
+        <h2
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "personality_heading, [object Object]",
+            }
+          }
+        />
+      </div>
+    </div>
+    <span>
+      Maybe just hire qualified candidats
+    </span>
+  </div>
+</div>
+`;
+
 exports[`PersonalityArchetype renders component with badge 1`] = `
 <div>
   <div>

@@ -13,6 +13,7 @@ class PersonalityArchetype extends Component {
     followDeck: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
+    options: PropTypes.shape({archetype: PropTypes.object}).isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
@@ -33,24 +34,49 @@ class PersonalityArchetype extends Component {
     const personality = this.props.assessment.archetype;
     if(!personality) { return null; }
     const badge = personality.details.find(({title}) => title === "Badge");
-    const description = personality.details.find(({title}) => title === "Candidate Description");
+    const perspective = this.props.getOption("perspective");
+    const description = (
+      perspective === "thirdPerson"
+        ? personality.details.find(({title}) => title === "Hiring Manager Description")
+        : personality.details.find(({title}) => title === "Candidate Description")
+    );
+    const splitIfPresent = description && style.itemOne;
 
     return (
       <div className={style.container}>
-        <div className={style.details}>
-          {badge && <img alt={personality.name} src={badge.body} />}
-          <DangerousHTML
-            html={this.props.translate("personality_heading", {
-              deck_name: this.props.deck.name,
-              personality: `<span>${personality.name}</span>`
-            })}
-            tag="h2"
-          />
-          {description && <p>{description.body}</p>}
-        </div>
-        <div className={style.meaning}>
-          <DangerousHTML html={this.props.translate("candidate_description_for_archetype_html")} tag="p" />
-        </div>
+        {perspective === "thirdPerson" ? (
+          <div className={style.thirdPersonDetails}>
+            <div className={splitIfPresent}>
+              {badge && <img alt={personality.name} src={badge.body} />}
+              <div className={style.deckAndHeading}>
+                <DangerousHTML
+                  html={this.props.translate("personality_heading", {
+                    deck_name: this.props.deck.name,
+                    personality: `<br /><span>${personality.name}</span><br />`
+                  })}
+                  className={style.personalityHeading}
+                  tag="h2"
+                />
+              </div>
+            </div>
+            {description && <span className={style.itemTwo}>{description.body}</span>}
+          </div>
+        ) : [
+          <div key="heading" className={style.details}>
+            {badge && <img alt={personality.name} src={badge.body} />}
+            <DangerousHTML
+              html={this.props.translate("personality_heading", {
+                deck_name: this.props.deck.name,
+                personality: `<span>${personality.name}</span>`
+              })}
+              tag="h2"
+            />
+            {description && <p>{description.body}</p>}
+          </div>,
+          <div key="meaning" className={style.meaning}>
+            <DangerousHTML html={this.props.translate("candidate_description_for_archetype_html")} tag="p" />
+          </div>
+        ]}
       </div>
     );
   }

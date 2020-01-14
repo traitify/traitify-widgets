@@ -13,6 +13,7 @@ describe("PersonalityTraits", () => {
   beforeEach(() => {
     props = {
       assessment,
+      getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
       ui: {
@@ -40,6 +41,13 @@ describe("PersonalityTraits", () => {
   });
 
   it("renders component", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component with translation definitions", () => {
+    props.getOption.mockReturnValueOnce("thirdPerson");
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

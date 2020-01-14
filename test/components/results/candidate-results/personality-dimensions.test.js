@@ -2,6 +2,7 @@ import {Component} from "components/results/candidate-results/personality-dimens
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 
+jest.mock("components/results/candidate-results/personality-dimension-details", () => (() => (<div className="mock">PersonalityDimensionDetails</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("PersonalityDimensions", () => {

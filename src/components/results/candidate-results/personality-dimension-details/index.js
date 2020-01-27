@@ -56,7 +56,7 @@ class PersonalityDimensionDetails extends Component {
         </div>
         <Benefits benefits={benefits} badge={badge} header={benefitsHeader} />
         {perspective === "thirdPerson" && (
-          <Pitfalls pitfalls={pitfalls} badge={badge} header="Room For Growth and Change" />
+          <Pitfalls pitfalls={pitfalls} badge={badge} header={translate("room_for_growth_and_change")} />
         )}
       </li>
     );

@@ -39,62 +39,64 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
       You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
     </p>
   </div>
-  <h3 />
-  <ul>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+  <div>
+    <h3 />
+    <ul>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Forgiving style
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Forgiving style
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Looks for win-win outcome
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Looks for win-win outcome
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Negotiates with sensitivity
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Negotiates with sensitivity
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Realistic view of others
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Realistic view of others
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Recognises imperfection 
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Recognises imperfection 
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Relational style
-    </li>
-  </ul>
+      >
+        Relational style
+      </li>
+    </ul>
+  </div>
 </li>
 `;

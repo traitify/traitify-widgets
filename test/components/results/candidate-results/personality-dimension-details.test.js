@@ -43,4 +43,12 @@ describe("PersonalityDimensionDetails", () => {
     const component = new ComponentHandler(<Component {...props} />);
     expect(component.tree).toMatchSnapshot();
   });
+
+  it("renders component with pitfalls", () => {
+    props.translate.mockReturnValue("Detail Header");
+    props.getOption.mockReturnValue("thirdPerson");
+
+    const component = new ComponentHandler(<Component {...props} />);
+    expect(component.tree).toMatchSnapshot();
+  });
 });

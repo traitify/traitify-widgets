@@ -8,7 +8,7 @@ export default function DetailsList(props) {
   return (
     <div>
       <h3>{header}</h3>
-      <ul className={style.detailsGroup}>
+      <ul className={style.detailsList}>
         {detailsList.map((detail) => (
           <li key={detail} style={{background: rgba(color, 50)}}>{detail}</li>
         ))}

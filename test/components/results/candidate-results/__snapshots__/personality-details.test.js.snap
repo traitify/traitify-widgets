@@ -184,7 +184,7 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
           }
         }
       >
-        candidate_heading_for_settings, [object Object]
+        candidate_heading_for_settings_third_person, [object Object]
       </h4>
       <ul>
         <li>

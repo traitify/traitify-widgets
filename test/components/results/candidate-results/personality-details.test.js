@@ -29,6 +29,30 @@ const tools = [
   {body: "Comfortable in the limelight", title: "Tools to Use"},
   {body: "Have effective coping strategies for work stress", title: "Tools to Use"}
 ];
+const thirdPersonCautions = [
+  {body: "Be Cautious", title: "Third Person Caution Zone"},
+  {body: "Of People", title: "Third Person Caution Zone"}
+];
+const thirdPersonSettings = [
+  {body: "Encourages peer support in pursuit of goals", title: "Third Person Settings that Work for Them"},
+  {body: "De-emphasizes competition among colleagues", title: "Third Person Settings that Work for Them"},
+  {body: "Often has a fast paced and energetic vibe", title: "Third Person Settings that Work for Them"},
+  {body: "Includes opportunities for large group discussions", title: "Third Person Settings that Work for Them"},
+  {body: "Values creativity", title: "Third Person Settings that Work for Them"},
+  {body: "Has opportunities for innovation and exploration", title: "Third Person Settings that Work for Them"},
+  {body: "Fueled by a sense of duty", title: "Third Person Settings that Work for Them"},
+  {body: "Prioritizes work quality", title: "Third Person Settings that Work for Them"},
+  {body: "Allows individuals to deal with their own setbacks", title: "Third Person Settings that Work for Them"},
+  {body: "Requires people to respond to challenges", title: "Third Person Settings that Work for Them"}
+];
+const thirdPersonTools = [
+  {body: "Compatible with many other personalities", title: "Third Person Tools to Use"},
+  {body: "Sought after as a good person to dialogue with", title: "Third Person Tools to Use"},
+  {body: "Work at a pace that suits everyone", title: "Third Person Tools to Use"},
+  {body: "High energy, outgoing", title: "Third Person Tools to Use"},
+  {body: "Comfortable in the limelight", title: "Third Person Tools to Use"},
+  {body: "Have effective coping strategies for work stress", title: "Third Person Tools to Use"}
+];
 
 const assessmentWith = (details) => ({
   ...assessment, archetype: {...assessment.archetype, details}
@@ -74,6 +98,9 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders component with cautions", () => {
+    const thirdPerson = [...thirdPersonCautions, ...thirdPersonSettings, ...thirdPersonTools];
+    props.assessment = assessmentWith(thirdPerson);
+
     props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
     const component = new ComponentHandler(<Component {...props} />);
 
@@ -117,7 +144,7 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders settings if tools disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityTools"]);
+    props.getOption.mockReturnValueOnce(["PersonalityTools"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -131,7 +158,7 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders tools if settings disabled", () => {
-    props.getOption.mockReturnValue(["PersonalitySettings"]);
+    props.getOption.mockReturnValueOnce(["PersonalitySettings"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

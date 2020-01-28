@@ -23,7 +23,6 @@ class PersonalityDimensions extends Component {
   }
   render() {
     if(!this.props.isReady("results")) { return null; }
-
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     const disableColumns = disabledComponents.includes("PersonalityDimensionColumns");
     const disableDetails = disabledComponents.includes("PersonalityDimensionDetails");

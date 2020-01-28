@@ -13,7 +13,7 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
   <div>
     <p>
       <img
-        alt="Agreeableness undefined"
+        alt="Agreeableness Detail Header"
         src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
       />
     </p>
@@ -34,67 +34,236 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
        
       Medium
     </h2>
-    <h3 />
+    <h3>
+      Detail Header
+    </h3>
     <p>
       You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
     </p>
   </div>
-  <h3 />
-  <ul>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+  <div>
+    <h3>
+      Detail Header
+    </h3>
+    <ul>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Forgiving style
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Forgiving style
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Looks for win-win outcome
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Looks for win-win outcome
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Negotiates with sensitivity
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Negotiates with sensitivity
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Realistic view of others
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Realistic view of others
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Recognises imperfection 
-    </li>
-    <li
-      style={
-        Object {
-          "background": "rgba(41,183,112,0.5)",
+      >
+        Recognises imperfection 
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
         }
-      }
-    >
-      Relational style
-    </li>
-  </ul>
+      >
+        Relational style
+      </li>
+    </ul>
+  </div>
+</li>
+`;
+
+exports[`PersonalityDimensionDetails renders component with pitfalls 1`] = `
+<li
+  style={
+    Object {
+      "background": "rgba(41,183,112,0.1)",
+      "borderTop": "5px solid #29B770",
+      "listStyle": "none",
+    }
+  }
+>
+  <div>
+    <p>
+      <img
+        alt="Agreeableness Detail Header"
+        src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      />
+    </p>
+  </div>
+  <div>
+    <h2>
+      Agreeableness
+       
+      <span
+        style={
+          Object {
+            "color": "#29B770",
+          }
+        }
+      >
+        |
+      </span>
+       
+      Medium
+    </h2>
+    <p>
+      The candidate’s view is that they are someone who has a mature and streetwise view of other people and their views. Their first instinct is likely to be to trust other people, but they do know that others can let them down. Thus, they are probably able to be direct, but are also able to temper their approach with sensitivity for what will keep relationships healthy and intact.
+    </p>
+  </div>
+  <div>
+    <h3>
+      Detail Header
+    </h3>
+    <ul>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        Forgiving style
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        Looks for win-win outcome
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        Negotiates with sensitivity
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        Realistic view of others
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        Recognises imperfection 
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        Relational style
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      Detail Header
+    </h3>
+    <ul>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        May appear too open-minded (to others)
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        May be viewed as a ‘pushover’ by others’
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        May let sympathy get in the way
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        May lose out to very assertive colleagues
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        May not always be objective enough
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(41,183,112,0.5)",
+          }
+        }
+      >
+        May not go for the optimal personal win
+      </li>
+    </ul>
+  </div>
 </li>
 `;

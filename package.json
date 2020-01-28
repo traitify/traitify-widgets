@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
@@ -77,7 +77,7 @@
     "file-loader": "^4.1.0",
     "jest": "^24.8.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.8.6",
     "replace-bundle-webpack-plugin": "^1.0.0",

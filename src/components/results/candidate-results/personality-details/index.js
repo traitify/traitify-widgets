@@ -25,14 +25,27 @@ class PersonalityDetails extends Component {
     const personality = this.props.assessment.archetype || {};
     const {details} = personality;
     if(!details) { return null; }
-
     const disabledComponents = this.props.getOption("disabledComponents") || [];
     let disableSettings = disabledComponents.includes("PersonalitySettings");
     let disableTools = disabledComponents.includes("PersonalityTools");
-    const perspective = this.props.getOption("perspective");
-    const settings = details.filter(({title}) => (title === "Settings that Work for You")).map(({body}) => body);
-    const tools = details.filter(({title}) => (title === "Tools to Use")).map(({body}) => body);
-    const cautions = details.filter(({title}) => (title === "Caution Zone")).map(({body}) => body);
+    const perspective = this.props.getOption("perspective") || "firstPerson";
+
+    let settings;
+    let settingsHeader;
+    let tools;
+    let cautions;
+    if(perspective === "firstPerson") {
+      settingsHeader = this.props.translate("candidate_heading_for_settings");
+      settings = details.filter(({title}) => (title === "Settings that Work for You")).map(({body}) => body);
+      tools = details.filter(({title}) => (title === "Tools to Use")).map(({body}) => body);
+      cautions = details.filter(({title}) => (title === "Caution Zone")).map(({body}) => body);
+    } else {
+      settingsHeader = this.props.translate("candidate_heading_for_settings_third_person");
+      settings = details.filter(({title}) => (title === "Third Person Settings that Work for Them")).map(({body}) => body);
+      tools = details.filter(({title}) => (title === "Third Person Tools to Use")).map(({body}) => body);
+      cautions = details.filter(({title}) => (title === "Third Person Caution Zone")).map(({body}) => body);
+    }
+
     if(settings.length === 0) { disableSettings = true; }
     if(tools.length === 0) { disableTools = true; }
     if(disableSettings && disableTools) { return null; }
@@ -75,7 +88,7 @@ class PersonalityDetails extends Component {
           <div className={detailClass}>
             <div className={style.content}>
               <div className={style.bar} style={{background: "#32be4b"}} />
-              <h4 className={style.title} style={{color: "#32be4b"}}>{this.props.translate("candidate_heading_for_settings")}</h4>
+              <h4 className={style.title} style={{color: "#32be4b"}}>{settingsHeader}</h4>
               <ul className={style.description}>
                 {settings.map((setting) => (
                   <li key={setting}>{setting}</li>

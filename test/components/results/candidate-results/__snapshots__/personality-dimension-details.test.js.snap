@@ -13,7 +13,7 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
   <div>
     <p>
       <img
-        alt="Agreeableness undefined"
+        alt="Agreeableness Detail Header"
         src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
       />
     </p>
@@ -34,13 +34,17 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
        
       Medium
     </h2>
-    <h3 />
+    <h3>
+      Detail Header
+    </h3>
     <p>
       You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
     </p>
   </div>
   <div>
-    <h3 />
+    <h3>
+      Detail Header
+    </h3>
     <ul>
       <li
         style={

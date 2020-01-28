@@ -23,12 +23,14 @@ describe("PersonalityDimensionDetails", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
+      props.translate.mockReturnValue("Detail Header");
       const component = new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith("PersonalityDimensionDetails.initialized", component.instance);
     });
 
     it("triggers update", () => {
+      props.translate.mockReturnValue("Detail Header");
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
@@ -37,8 +39,8 @@ describe("PersonalityDimensionDetails", () => {
   });
 
   it("renders component", () => {
+    props.translate.mockReturnValue("Detail Header");
     const component = new ComponentHandler(<Component {...props} />);
-
     expect(component.tree).toMatchSnapshot();
   });
 });

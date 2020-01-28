@@ -74,7 +74,7 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders component with cautions", () => {
-    props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
+    props.getOption.mockImplementation((key) => (key === "perspective" ? "firstPerson" : []));
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

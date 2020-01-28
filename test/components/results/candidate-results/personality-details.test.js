@@ -117,7 +117,7 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders settings if tools disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityTools"]);
+    props.getOption.mockReturnValueOnce(["PersonalityTools"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -131,7 +131,7 @@ describe("PersonalityDetails", () => {
   });
 
   it("renders tools if settings disabled", () => {
-    props.getOption.mockReturnValue(["PersonalitySettings"]);
+    props.getOption.mockReturnValueOnce(["PersonalitySettings"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

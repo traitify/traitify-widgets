@@ -11,6 +11,7 @@
   "candidate_heading_for_benefits": "%{level} potencial de benefícios na qualidade de %{name}",
   "candidate_heading_for_dimension": "O que minha classificação de %{level} potencial de %{name} significa para mim?",
   "candidate_heading_for_settings": "Ambientes nos quais você se encaixa",
+  "candidate_heading_for_settings_third_person": "Configurações que funcionam para eles",
   "candidate_heading_for_tools": "Ferramentas para uso",
   "caution_zone": "Zona de precaução",
   "close": "perto",

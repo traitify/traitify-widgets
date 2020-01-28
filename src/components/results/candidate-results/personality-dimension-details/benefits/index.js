@@ -22,6 +22,6 @@ Benefits.propTypes = {
   badge: PropTypes.shape({
     color_1: PropTypes.string.isRequired
   }).isRequired,
-  benefits: PropTypes.arrayOf(PropTypes.object).isRequired,
+  benefits: PropTypes.arrayOf(PropTypes.string).isRequired,
   header: PropTypes.string.isRequired
 };

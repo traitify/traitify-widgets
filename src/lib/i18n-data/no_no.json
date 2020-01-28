@@ -11,6 +11,7 @@
   "candidate_heading_for_benefits": "Potensielle fordeler med %{level} %{name}",
   "candidate_heading_for_dimension": "Hva betyr min %{level} %{name} for meg?",
   "candidate_heading_for_settings": "Innstillinger som fungerer for deg",
+  "candidate_heading_for_settings_third_person": "Innstillinger som fungerer for dem",
   "candidate_heading_for_tools": "Verktøy å bruke",
   "caution_zone": "Forsiktig sone",
   "close": "Lukk",

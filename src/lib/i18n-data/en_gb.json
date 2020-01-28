@@ -11,6 +11,7 @@
   "candidate_heading_for_benefits": "%{level} %{name} Potential Benefits",
   "candidate_heading_for_dimension": "What does my %{level} %{name} mean for me?",
   "candidate_heading_for_settings": "Settings That Work For You",
+  "candidate_heading_for_settings_third_person": "Settings That Work For Them",
   "candidate_heading_for_tools": "Tools To Use",
   "caution_zone": "Caution Zone",
   "close": "Close",

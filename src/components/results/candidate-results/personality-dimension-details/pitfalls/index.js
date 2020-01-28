@@ -22,6 +22,6 @@ Pitfalls.propTypes = {
   badge: PropTypes.shape({
     color_1: PropTypes.string.isRequired
   }).isRequired,
-  pitfalls: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pitfalls: PropTypes.arrayOf(PropTypes.string).isRequired,
   header: PropTypes.string.isRequired
 };

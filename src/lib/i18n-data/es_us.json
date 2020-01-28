@@ -11,6 +11,7 @@
   "candidate_heading_for_benefits": "Beneficios potenciales de %{level} %{name}",
   "candidate_heading_for_dimension": "¿Qué significa mi %{level} %{name} para mí?",
   "candidate_heading_for_settings": "Entornos adecuados para usted",
+  "candidate_heading_for_settings_third_person": "Configuraciones que funcionan para ellos",
   "candidate_heading_for_tools": "Herramientas para usar",
   "caution_zone": "Zona de precaución",
   "close": "Cerca",

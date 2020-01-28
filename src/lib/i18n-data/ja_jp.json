@@ -11,6 +11,7 @@
   "candidate_heading_for_benefits": "%{name}性が%{level}いことの潜在的な利点",
   "candidate_heading_for_dimension": "%{name}性が%{level}いことは、どのような意味を持ちますか？",
   "candidate_heading_for_settings": "適した環境",
+  "candidate_heading_for_settings_third_person": "それらに有効な設定",
   "candidate_heading_for_tools": "役に立つツール",
   "caution_zone": "注意ゾーン",
   "close": "閉じる",

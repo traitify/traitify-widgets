@@ -75,6 +75,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.1.0",
+    "handlebars": "^4.5.0",
     "jest": "^24.8.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.13.1",

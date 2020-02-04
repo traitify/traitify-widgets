@@ -17,5 +17,10 @@ exports[`CandidateResults renders results 1`] = `
   >
     Personality Details
   </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
 </section>
 `;

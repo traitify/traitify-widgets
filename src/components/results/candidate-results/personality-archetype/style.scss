@@ -64,25 +64,22 @@
   display: flex;
   flex-direction: column;
   @include mq(l) {
-    display: inline;
-    .itemTwo {
-      width: 50%;
-      padding-left: 3%;
-      float: right;
-      padding-top: 30px;
-    }
-    .itemOne {
-      width: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 20px 30px;
+    .badgeAndName {
+      width: 40%;
       display: inline-block;
+    }
+    .divider {
       border-right: 2px solid $white;
+      height: 120px;
     }
-    .deckAndHeading {
-      width: 100%;
-      padding-right: 5%;
-    }
-    span {
-      display: inline;
-      width: 50%;
+    .body {
+      width: 45%;
+      float: right;
     }
     .personalityHeading {
       padding-top: 20px;

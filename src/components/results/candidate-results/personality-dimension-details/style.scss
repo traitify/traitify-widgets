@@ -40,6 +40,9 @@
     }
   }
 }
+.detailsListContainer {
+  padding: 0 27px 0;
+}
 .detailsList {
   list-style: none;
   margin: 0;
@@ -88,7 +91,7 @@
   @include mq(m) {
     margin-left: 170px;
     padding-top: 20px;
-    padding-right: 220px;
+    padding-right: 27px;
     text-align: left;
   }
   h2 {

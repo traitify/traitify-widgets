@@ -40,7 +40,7 @@ class PersonalityArchetype extends Component {
         ? personality.details.find(({title}) => title === "Hiring Manager Description")
         : personality.details.find(({title}) => title === "Candidate Description")
     );
-    const splitIfPresent = description && style.itemOne;
+    const splitIfPresent = description && style.badgeAndName;
 
     return (
       <div className={style.container}>
@@ -48,18 +48,17 @@ class PersonalityArchetype extends Component {
           <div className={style.thirdPersonDetails}>
             <div className={splitIfPresent}>
               {badge && <img alt={personality.name} src={badge.body} />}
-              <div className={style.deckAndHeading}>
-                <DangerousHTML
-                  html={this.props.translate("personality_heading", {
-                    deck_name: this.props.deck.name,
-                    personality: `<br /><span>${personality.name}</span><br />`
-                  })}
-                  className={style.personalityHeading}
-                  tag="h2"
-                />
-              </div>
+              <DangerousHTML
+                html={this.props.translate("personality_heading", {
+                  deck_name: this.props.deck.name,
+                  personality: `<br /><span>${personality.name}</span><br />`
+                })}
+                className={style.personalityHeading}
+                tag="h2"
+              />
             </div>
-            {description && <span className={style.itemTwo}>{description.body}</span>}
+            {description && <span className={style.divider} />}
+            {description && <span className={style.body}>{description.body}</span>}
           </div>
         ) : [
           <div key="heading" className={style.details}>

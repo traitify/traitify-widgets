@@ -6,7 +6,7 @@ export default function DetailsList(props) {
   const {color, detailsList, header} = props;
 
   return (
-    <div>
+    <div className={style.detailsListContainer}>
       <h3>{header}</h3>
       <ul className={style.detailsList}>
         {detailsList.map((detail) => (

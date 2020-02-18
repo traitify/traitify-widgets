@@ -51,6 +51,7 @@
   "no_more_careers": "Нет больше карьеры",
   "not_me": "Не я",
   "personality_heading": "Ваша личность %{deck_name} - это %{personality}",
+  "personality_heading_third_person": "%{deck_name} личность: %{personality}",
   "potential_benefits": "Потенциальные выгоды",
   "potential_pitfalls": "Потенциальные ловушки",
   "question_adaptability": "Разработали ли они стиль совладания?",

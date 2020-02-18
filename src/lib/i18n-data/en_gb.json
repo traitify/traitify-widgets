@@ -51,6 +51,7 @@
   "no_more_careers": "No More Careers",
   "not_me": "Not Me",
   "personality_heading": "Your %{deck_name} Personality is %{personality}",
+  "personality_heading_third_person": "%{deck_name} Personality: %{personality}",
   "potential_benefits": "Potential Benefits",
   "potential_pitfalls": "Potential Pitfalls",
   "question_adaptability": "Have they developed a coping style?",

@@ -51,6 +51,7 @@
   "no_more_careers": "Ingen mer rusar",
   "not_me": "Inte mig",
   "personality_heading": "Din personlighet %{deck_name} är %{personality}",
+  "personality_heading_third_person": "%{deck_name} Personlighet: %{personality}",
   "potential_benefits": "Möjliga fördelar",
   "potential_pitfalls": "Möjliga fallgropar",
   "question_adaptability": "Har de utvecklat en coping-stil?",

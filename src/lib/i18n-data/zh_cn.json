@@ -51,6 +51,7 @@
   "no_more_careers": "没有更多的职业",
   "not_me": "不符合",
   "personality_heading": "您的 ％{deck_name} 个性是 ％{personality}",
+  "personality_heading_third_person": "%{deck_name} 个性 %{personality}",
   "potential_benefits": "潜在的好处",
   "potential_pitfalls": "潜在的陷阱",
   "question_adaptability": "他们开发了一种应对方式吗?",

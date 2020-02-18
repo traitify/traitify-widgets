@@ -51,6 +51,7 @@
   "no_more_careers": "Pa gen plis karyè",
   "not_me": "Se Pa Mwen",
   "personality_heading": "Pèsonalite %{deck_name} ou %{personality}",
+  "personality_heading_third_person": "%{deck_name} Pèsonalite: %{personality}",
   "potential_benefits": "Benefis Potansyèl",
   "potential_pitfalls": "Potansyèl Potansyèl Yo",
   "question_adaptability": "Eske yo te devlope yon fason pou siviv?",

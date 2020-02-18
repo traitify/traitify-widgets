@@ -51,6 +51,7 @@
   "no_more_careers": "これ以上のキャリア",
   "not_me": "私ではない",
   "personality_heading": "あなたの %{deck_name} 個性は %{personality} です",
+  "personality_heading_third_person": "%{deck_name} 人 %{personality}",
   "potential_benefits": "潜在的な利点",
   "potential_pitfalls": "潜在的な落とし穴",
   "question_adaptability": "彼らは対処スタイルを開発しましたか？",

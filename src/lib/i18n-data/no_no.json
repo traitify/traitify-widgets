@@ -51,6 +51,7 @@
   "no_more_careers": "Ingen flere karrierer",
   "not_me": "Ikke meg",
   "personality_heading": "Din %{deck_name} personlighet er %{personality}",
+  "personality_heading_third_person": "%{deck_name} Personlighet: %{personality}",
   "potential_benefits": "Potensielle fordeler",
   "potential_pitfalls": "Potensielle fallgruver",
   "question_adaptability": "Har de utviklet en coping-stil?",

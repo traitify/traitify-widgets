@@ -49,7 +49,7 @@ class PersonalityArchetype extends Component {
             <div className={splitIfPresent}>
               {badge && <img alt={personality.name} src={badge.body} />}
               <DangerousHTML
-                html={this.props.translate("personality_heading", {
+                html={this.props.translate("personality_heading_third_person", {
                   deck_name: this.props.deck.name,
                   personality: `<br /><span>${personality.name}</span><br />`
                 })}

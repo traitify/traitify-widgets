@@ -51,6 +51,7 @@
   "no_more_careers": "não mais carreiras",
   "not_me": "Não sou assim",
   "personality_heading": "Sua %{deck_name} personalidade é %{personality}",
+  "personality_heading_third_person": "%{deck_name} Personalidade: %{personality}",
   "potential_benefits": "benefícios potenciais",
   "potential_pitfalls": "armadilhas em potencial",
   "question_adaptability": "Eles desenvolveram um estilo de enfrentamento?",

@@ -51,6 +51,7 @@
   "no_more_careers": "Geen carrières meer",
   "not_me": "Niet Ik",
   "personality_heading": "Uw %{deck_name} persoonlijkheid is %{personality}",
+  "personality_heading_third_person": "%{deck_name} Persoonlijkheid: %{personality}",
   "potential_benefits": "Potentiële voordelen",
   "potential_pitfalls": "Mogelijke valkuilen",
   "question_adaptability": "Hebben ze een coping-stijl ontwikkeld?",

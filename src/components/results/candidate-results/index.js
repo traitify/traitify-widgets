@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import withTraitify from "lib/with-traitify";
 import Guide from "../../guide";
 import PersonalityArchetype from "./personality-archetype";
 import PersonalityDetails from "./personality-details";
 import PersonalityDimensions from "./personality-dimensions";
 import PersonalityTraits from "../dimension-based-results/personality-traits";
 
-export default class CandidateResults extends Component {
+class CandidateResults extends Component {
   static propTypes = {
     getOption: PropTypes.func.isRequired
   }
@@ -22,3 +23,5 @@ export default class CandidateResults extends Component {
     );
   }
 }
+
+export default withTraitify(CandidateResults);

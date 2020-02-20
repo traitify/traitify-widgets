@@ -8,8 +8,33 @@ jest.mock("components/results/dimension-based-results/personality-traits", () =>
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("CandidateResults", () => {
-  it("renders results", () => {
-    const component = new ComponentHandler(<Component />);
+  let props;
+
+  beforeEach(() => {
+    props = {
+      followGuide: jest.fn().mockName("followGuide").mockReturnValue(true),
+      isReady: jest.fn().mockName("isReady").mockReturnValue(true),
+      options: {},
+      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
+      ui: {
+        current: {},
+        off: jest.fn().mockName("off"),
+        on: jest.fn().mockName("on"),
+        trigger: jest.fn().mockName("trigger")
+      }
+    };
+  });
+
+  it("renders results in firstPerson", () => {
+    props.options.perspective = "firstPerson";
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders results in thirdPerson", () => {
+    props.options.perspective = "thirdPerson";
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

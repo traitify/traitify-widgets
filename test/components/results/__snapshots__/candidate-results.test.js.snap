@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CandidateResults renders results 1`] = `
+exports[`CandidateResults renders results in firstPerson 1`] = `
 <section>
   <div
     className="mock"
@@ -16,6 +16,36 @@ exports[`CandidateResults renders results 1`] = `
     className="mock"
   >
     Personality Details
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
+</section>
+`;
+
+exports[`CandidateResults renders results in thirdPerson 1`] = `
+<section>
+  <div
+    className="mock"
+  >
+    Personality Archetype
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimensions
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Details
+  </div>
+  <div
+    className="mock"
+  >
+    Guide
   </div>
   <div
     className="mock"

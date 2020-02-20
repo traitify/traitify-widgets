@@ -13,6 +13,7 @@ describe("CandidateResults", () => {
 
   beforeEach(() => {
     props = {
+      getOption: jest.fn().mockName("getOption").mockReturnValue("firstPerson"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       options: {},
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
@@ -26,14 +27,13 @@ describe("CandidateResults", () => {
   });
 
   it("renders results in firstPerson", () => {
-    props.options.perspective = "firstPerson";
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders results in thirdPerson", () => {
-    props.options.perspective = "thirdPerson";
+    props.getOption = jest.fn().mockName("getOption").mockReturnValue("thirdPerson");
     props.followGuide = jest.fn().mockName("followGuide").mockReturnValue(true);
     const component = new ComponentHandler(<Component {...props} />);
 

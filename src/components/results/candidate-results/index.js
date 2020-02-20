@@ -8,7 +8,7 @@ import PersonalityTraits from "../dimension-based-results/personality-traits";
 
 export default class CandidateResults extends Component {
   static propTypes = {
-    options: PropTypes.shape({perspective: PropTypes.string}).isRequired
+    getOption: PropTypes.func.isRequired
   }
   render() {
     return (
@@ -16,7 +16,7 @@ export default class CandidateResults extends Component {
         <PersonalityArchetype {...this.props} />
         <PersonalityDimensions {...this.props} />
         <PersonalityDetails {...this.props} />
-        {this.props.options.perspective === "thirdPerson" && <Guide {...this.props} />}
+        {this.props.getOption("perspective") === "thirdPerson" && <Guide {...this.props} />}
         <PersonalityTraits {...this.props} />
       </section>
     );

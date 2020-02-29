@@ -1,0 +1,24 @@
+@import "~style/helpers";
+
+.container {
+  .heading {
+    @include rems(16);
+    @include mq(m) {
+      @include rems(17);
+    }
+    @include mq(xl) {
+      @include rems(20);
+    }
+    color: #767676;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  .topPadding {
+    @extend .heading;
+    padding-top: 15px;
+  }
+  .lessBottomMargin {
+    @extend .topPadding;
+    margin-bottom: -10px;
+  }
+}

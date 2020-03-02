@@ -13,6 +13,9 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
   }
+  .paddingBottom {
+    padding-bottom: 20px;
+  }
   .paddingTop {
     @extend .heading;
     padding-top: 15px;

@@ -1,5 +1,6 @@
 import {
-  faThLarge
+  faThLarge,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import Icon from "lib/helpers/icon";
@@ -23,21 +24,21 @@ class CandidateResults extends Component {
 
     return (
       <section className={style.container}>
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_type")}</p>
+        <p className={style.heading}><Icon icon={faUser} /> {translate("personality_type")}</p>
         <PersonalityArchetype {...this.props} />
         <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
         <PersonalityDimensionColumns {...this.props} />
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
-        <PersonalityDimensionDetails {...this.props} />
-        <p className={style.lessMarginBottom}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
-        <PersonalityDetails {...this.props} />
         {getOption("perspective") === "thirdPerson" && (
-          <div>
+          <div className={style.paddingBottom}>
             <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
             <Guide {...this.props} />
           </div>
         )}
-        <p className={style.paddingTop}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
+        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
+        <PersonalityDimensionDetails {...this.props} />
+        <p className={style.lessMarginBottom}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
+        <PersonalityDetails {...this.props} />
+        <p className={style.paddingTop}><Icon icon={faThLarge} /> {translate("personality_traits")}</p>
         <PersonalityTraits {...this.props} />
       </section>
     );

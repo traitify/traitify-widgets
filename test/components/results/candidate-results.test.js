@@ -4,7 +4,8 @@ import ComponentHandler from "support/component-handler";
 jest.mock("components/guide", () => (() => (<div className="mock">Guide</div>)));
 jest.mock("components/results/candidate-results/personality-archetype", () => (() => (<div className="mock">Personality Archetype</div>)));
 jest.mock("components/results/candidate-results/personality-details", () => (() => (<div className="mock">Personality Details</div>)));
-jest.mock("components/results/candidate-results/personality-dimensions", () => (() => (<div className="mock">Personality Dimensions</div>)));
+jest.mock("components/results/candidate-results/personality-dimension-details", () => (() => (<div className="mock">Personality Dimension Details</div>)));
+jest.mock("components/results/candidate-results/personality-dimension-columns", () => (() => (<div className="mock">Personality Dimensions Columns</div>)));
 jest.mock("components/results/dimension-based-results/personality-traits", () => (() => (<div className="mock">Personality Traits</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 

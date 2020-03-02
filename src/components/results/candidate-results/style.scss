@@ -2,23 +2,23 @@
 
 .container {
   .heading {
-    @include rems(16);
+    @include rems(13);
     @include mq(m) {
-      @include rems(17);
+      @include rems(15);
     }
     @include mq(xl) {
-      @include rems(20);
+      @include rems(18);
     }
     color: #767676;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: normal;
   }
-  .topPadding {
+  .paddingTop {
     @extend .heading;
     padding-top: 15px;
   }
-  .lessBottomMargin {
-    @extend .topPadding;
+  .lessMarginBottom {
+    @extend .paddingTop;
     margin-bottom: -10px;
   }
 }

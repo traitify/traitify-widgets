@@ -9,7 +9,8 @@ import Guide from "../../guide";
 import style from "./style";
 import PersonalityArchetype from "./personality-archetype";
 import PersonalityDetails from "./personality-details";
-import PersonalityDimensions from "./personality-dimensions";
+import PersonalityDimensionDetails from "./personality-dimension-details";
+import PersonalityDimensionColumns from "./personality-dimension-columns";
 import PersonalityTraits from "../dimension-based-results/personality-traits";
 
 class CandidateResults extends Component {
@@ -25,8 +26,10 @@ class CandidateResults extends Component {
         <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_type")}</p>
         <PersonalityArchetype {...this.props} />
         <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
-        <PersonalityDimensions {...this.props} />
-        <p className={style.lessBottomMargin}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
+        <PersonalityDimensionColumns {...this.props} />
+        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
+        <PersonalityDimensionDetails {...this.props} />
+        <p className={style.lessMarginBottom}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
         <PersonalityDetails {...this.props} />
         {getOption("perspective") === "thirdPerson" && (
           <div>
@@ -34,7 +37,7 @@ class CandidateResults extends Component {
             <Guide {...this.props} />
           </div>
         )}
-        <p className={style.topPadding}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
+        <p className={style.paddingTop}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
         <PersonalityTraits {...this.props} />
       </section>
     );

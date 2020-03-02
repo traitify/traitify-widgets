@@ -28,26 +28,11 @@ class PersonalityDimensions extends Component {
     const disableDetails = disabledComponents.includes("PersonalityDimensionDetails");
     if(disableColumns && disableDetails) { return null; }
 
-    const types = this.props.assessment.personality_types.sort((x, y) => {
-      const xDetail = x.personality_type.details.find(({title}) => title === "Position") || {};
-      const yDetail = y.personality_type.details.find(({title}) => title === "Position") || {};
-
-      return (xDetail.body || 1) - (yDetail.body || 1);
-    });
-
     return (
       <div className={style.container}>
         {!disableColumns && <PersonalityDimensionColumns {...this.props} />}
         {!disableDetails && (
-          <ul className={style.details}>
-            {types.map((type) => (
-              <PersonalityDimensionDetails
-                key={type.personality_type.id}
-                type={type}
-                {...this.props}
-              />
-            ))}
-          </ul>
+          <PersonalityDimensionDetails {...this.props} />
         )}
       </div>
     );

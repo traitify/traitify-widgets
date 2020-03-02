@@ -3,16 +3,16 @@ import {
   faUser
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import Icon from "lib/helpers/icon";
 import {Component} from "react";
+import Icon from "lib/helpers/icon";
 import withTraitify from "lib/with-traitify";
 import Guide from "../../guide";
-import style from "./style";
 import PersonalityArchetype from "./personality-archetype";
 import PersonalityDetails from "./personality-details";
 import PersonalityDimensionDetails from "./personality-dimension-details";
 import PersonalityDimensionColumns from "./personality-dimension-columns";
 import PersonalityTraits from "../dimension-based-results/personality-traits";
+import style from "./style";
 
 class CandidateResults extends Component {
   static propTypes = {

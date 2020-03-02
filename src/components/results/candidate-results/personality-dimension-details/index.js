@@ -30,10 +30,10 @@ class PersonalityDimensionDetails extends Component {
     this.props.ui.trigger("PersonalityDimensionDetails.updated", this);
   }
   render() {
-    if(!this.props.assessment) { return null; }
-    const {translate} = this.props;
+    const {assessment, translate} = this.props;
+    if(!assessment) { return <div />; }
 
-    const types = this.props.assessment.personality_types.sort((x, y) => {
+    const types = assessment.personality_types.sort((x, y) => {
       const xDetail = x.personality_type.details.find(({title}) => title === "Position") || {};
       const yDetail = y.personality_type.details.find(({title}) => title === "Position") || {};
 

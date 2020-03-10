@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import Loading from "components/loading";
 import style from "./style.scss";
 
-export default class Loading extends Component {
+export default class NotReady extends Component {
   static defaultProps = {error: null}
   static propTypes = {
     error: PropTypes.string,
@@ -14,7 +15,7 @@ export default class Loading extends Component {
 
     return (
       <div className={style.cover}>
-        <div className={style.loading}>
+        <div className={style.loadingContainer}>
           {error ? (
             <div className={style.retry}>
               <div className={style.label}>{error}</div>
@@ -23,10 +24,7 @@ export default class Loading extends Component {
               </button>
             </div>
           ) : (
-            <div className={style.symbol}>
-              <i />
-              <i />
-            </div>
+            <Loading />
           )}
         </div>
       </div>

@@ -54,9 +54,7 @@ function Cognitive(props) {
   const [disability, setDisability] = useState(false);
   const [slideIndex, setSlideIndex] = useState(null);
   const [startTime, setStartTime] = useState(null);
-  const allowedTime = 60 * 1000 * (disability ? 6.5 : 5.0);
-  const timePassed = Date.now() - startTime;
-  const timeRemaining = allowedTime - timePassed;
+  const [timeLeft, setTimeLeft] = useState(null);
   const onSelect = (answer) => {
     dispatch({answer, slideIndex, type: "response"});
     setSlideIndex(slideIndex + 1);
@@ -76,6 +74,22 @@ function Cognitive(props) {
     setInitialSlides(defaultSlides);
   }, [props.assessment && props.assessment.slides]);
 
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const allowedTime = 60 * 1000 * (disability ? 6.5 : 5.0);
+      const timePassed = Date.now() - startTime;
+
+      return (allowedTime - timePassed) / 1000;
+    };
+
+    if(!startTime) { return; }
+    if(!timeLeft) { setTimeLeft(calculateTimeLeft()); }
+
+    setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  }, [startTime, timeLeft]);
+
   const slide = slides[slideIndex];
 
   useEffect(() => {
@@ -92,11 +106,13 @@ function Cognitive(props) {
   // TODO: Display error?
   // TODO: Retry?
   if(error) { console.log(error); }
-  console.log(slides.map(({answer: a}) => a));
+
+  const minutes = Math.floor((timeLeft / 60) % 60);
+  const seconds = Math.floor(timeLeft % 60);
 
   return (
     <div>
-      <div>{timeRemaining / 1000}</div>
+      <div>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
       <div>{slideIndex + 1} / {slides.length}</div>
       <div>Progress Bar</div>
       <Slide onSelect={onSelect} slide={slide} />

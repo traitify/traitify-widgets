@@ -1,5 +1,8 @@
+import {faClock} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import Loading from "components/loading";
+import Icon from "lib/helpers/icon";
 import withTraitify from "lib/with-traitify";
 import Instructions from "./instructions";
 import Slide from "./slide";
@@ -50,21 +53,35 @@ const defaultSlides = [
 ];
 
 function Cognitive(props) {
+  const disableTimeLimit = props.getOption("disableTimeLimit");
   const [initialSlides, setInitialSlides] = useState([]);
   const {dispatch, error, slides} = useSlidesLoader(initialSlides);
   const [disability, setDisability] = useState(false);
+  const [onlySkipped, setOnlySkipped] = useState(false);
   const [slideIndex, setSlideIndex] = useState(null);
   const [startTime, setStartTime] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
   const [timeLeft, setTimeLeft] = useState(null);
   const onSelect = (answer) => {
     dispatch({answer, slideIndex, type: "response"});
-    setSlideIndex(slideIndex + 1);
+    if(!onlySkipped) { return setSlideIndex(slideIndex + 1); }
+
+    const newSlideIndex = slides.findIndex((slide, index) => index > slideIndex && !slide.answer);
+    setSlideIndex(newSlideIndex === -1 ? slides.length + 1 : newSlideIndex);
   };
   const onStart = (options) => {
     if(options.disability) { setDisability(true); }
 
     setSlideIndex(0);
     setStartTime(Date.now());
+  };
+  const onSubmit = () => {
+    if(submitting) { return; }
+
+    setSubmitting(true);
+    setTimeLeft(0);
+    console.log("Submitting");
+    // TODO: Ajax
   };
 
   useEffect(() => {
@@ -76,8 +93,10 @@ function Cognitive(props) {
   }, [props.assessment && props.assessment.slides]);
 
   useEffect(() => {
+    if(disableTimeLimit) { return; }
+
     const calculateTimeLeft = () => {
-      const allowedTime = 60 * 1000 * (disability ? 6.5 : 5.0);
+      const allowedTime = 1000 * (disability ? 385 : 300);
       const timePassed = Date.now() - startTime;
 
       return (allowedTime - timePassed) / 1000;
@@ -87,7 +106,15 @@ function Cognitive(props) {
     if(!timeLeft) { setTimeLeft(calculateTimeLeft()); }
 
     setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+      if(submitting) { return; }
+
+      const newTimeLeft = calculateTimeLeft();
+
+      if(newTimeLeft > 0) {
+        setTimeLeft(newTimeLeft);
+      } else {
+        onSubmit();
+      }
     }, 1000);
   }, [startTime, timeLeft]);
 
@@ -96,13 +123,17 @@ function Cognitive(props) {
   useEffect(() => {
     if(slides.length === 0) { return; }
     if(slides.length !== slideIndex) { return; }
+    if(onlySkipped) { return onSubmit(); }
 
-    // TODO: Submit
-    console.log("Submitting");
+    setOnlySkipped(true);
+    const newSlideIndex = slides.findIndex(({answer}) => !answer);
+    if(newSlideIndex === -1) { return onSubmit(); }
+
+    setSlideIndex(newSlideIndex);
   }, [slides, slideIndex]);
 
   if(slideIndex === null) { return <Instructions onStart={onStart} />; }
-  if(!slide) { return <div>Loading Sign + Send me to results</div>; }
+  if(!slide) { return <Loading />; }
 
   // TODO: Display error?
   // TODO: Retry?
@@ -113,10 +144,15 @@ function Cognitive(props) {
 
   return (
     <div className={style.mainStatus}>
-      <div className={style.timer}>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
+      {!disableTimeLimit && (
+        <div className={style.timer}>
+          <Icon icon={faClock} />
+          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+        </div>
+      )}
       <div className={style.status}>{slideIndex + 1} / {slides.length}</div>
       <div className={style.progressBar}>
-        <div className={style.progress} />
+        <div className={style.progress} style={{width: `${100.0 * slideIndex / slides.length}%`}} />
       </div>
       <Slide onSelect={onSelect} slide={slide} />
     </div>
@@ -128,7 +164,8 @@ Cognitive.propTypes = {
   assessment: PropTypes.shape({
     id: PropTypes.string.isRequired,
     slides: PropTypes.arrayOf(PropTypes.object).isRequired
-  })
+  }),
+  getOption: PropTypes.func.isRequired
 };
 
 export {Cognitive as Component};

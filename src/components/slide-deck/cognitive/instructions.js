@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import {useState} from "react";
 import Demo from "./demo";
+import style from "./style.scss";
 
 function Instructions(props) {
   const [demo, setDemo] = useState(false);
@@ -10,7 +11,7 @@ function Instructions(props) {
 
   // TODO: Either text get from API or translate
   return (
-    <div>
+    <div className={style.instructions}>
       <h1>Cognitive Assessment</h1>
       <p>{"This assessment is about your ability to work out patterns and relationships between shapes. On each screen you will see a grid with different shapes in it. One shape is missing, as indicated by \"?\"."}</p>
       <p>
@@ -23,7 +24,7 @@ function Instructions(props) {
         Please select if you have a learning disability.
       </label>
       <p className="center">Find a time and place where you will not be interrupted during the test. Then click below to start the assessment process</p>
-      <button onClick={() => setDemo(true)} type="button">See example</button>
+      <button className={style.btnBlue} onClick={() => setDemo(true)} type="button">See Example</button>
     </div>
   );
 }

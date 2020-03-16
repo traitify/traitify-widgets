@@ -1,0 +1,128 @@
+@import "~style/helpers";
+@import "~style/variables";
+
+body {
+  background: #EFEFEF;
+  color: #333;
+  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+}
+.instructions {
+  background: white;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 85%;
+  border-radius: 5px;
+  @include rems(15);
+  h1 {
+    color: #3B8DBF;
+    margin-top: 0;
+    @include rems(26);
+  }
+}
+.btnBlue {
+  display: block;
+  width: 100%;
+  background: #3B8DBF;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  @include rems(20);
+}
+
+.question {
+  background: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+.choices {
+  clear: both;
+  background: #EFEFEF;
+  text-align: center;
+  padding: 15px 0 0;
+  width: 100%;
+  .choicesContainer {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  button {
+    width: 44%;
+    margin: 0 3%;
+    padding: 0;
+    border: 0;
+    margin-bottom: 15px;
+    background: #EFEFEF;
+    &:nth-of-type(3) {
+      clear: both;
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border: 3px solid black;
+    @include mq(m) {
+      max-width: 150px;
+    }
+  }
+  img.selected {
+    border: 3px solid #3B8DBF;
+  }
+}
+.buttons {
+  clear: both;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.btnSkip {
+  display: inline-block;
+  width: 50%;
+  background: #A0A0A0;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  @include rems(20);
+}
+.btnConfirm {
+  display: inline-block;
+  width: 50%;
+  background: #CCCCCC;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  @include rems(20);
+}
+
+.mainStatus {
+  background: white;
+}
+.timer {
+  float: left;
+  @include rems(14);
+}
+.status {
+  float: right;
+  @include rems(14);
+}
+.progressBar {
+  clear: both;
+  background: #EFEFEF;
+  width: 100%;
+  height: 10px;
+}
+.progress {
+  background: #2FB656;
+  width: 100%;
+  height: 10px;
+}

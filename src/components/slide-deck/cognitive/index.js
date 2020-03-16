@@ -4,6 +4,7 @@ import withTraitify from "lib/with-traitify";
 import Instructions from "./instructions";
 import Slide from "./slide";
 import {useSlidesLoader} from "./helpers";
+import style from "./style.scss";
 
 const defaultSlides = [
   {
@@ -111,10 +112,12 @@ function Cognitive(props) {
   const seconds = Math.floor(timeLeft % 60);
 
   return (
-    <div>
-      <div>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
-      <div>{slideIndex + 1} / {slides.length}</div>
-      <div>Progress Bar</div>
+    <div className={style.mainStatus}>
+      <div className={style.timer}>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
+      <div className={style.status}>{slideIndex + 1} / {slides.length}</div>
+      <div className={style.progressBar}>
+        <div className={style.progress} />
+      </div>
       <Slide onSelect={onSelect} slide={slide} />
     </div>
   );

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import Loading from "components/loading";
+import style from "./style.scss";
 
 function Slide({onSelect, slide}) {
   const [answer, setAnswer] = useState(null);
@@ -13,14 +14,22 @@ function Slide({onSelect, slide}) {
 
   return (
     <div>
-      <img alt="Question" src={slide.questionImage.url} />
-      {slide.responses.map(({id, image}) => (
-        <button key={id} onClick={() => setAnswer(id)} type="button">
-          <img alt="Response" src={image.url} />
-        </button>
-      ))}
-      <button onClick={onSkip} type="button">Skip</button>
-      <button disabled={!answer} onClick={answer && onConfirm} type="button">Confirm</button>
+      <div className={style.question}>
+        <img alt="Question" src={slide.questionImage.url} />
+      </div>
+      <div className={style.choices}>
+        <div className={style.choicesContainer}>
+          {slide.responses.map(({id, image}) => (
+            <button key={id} onClick={() => setAnswer(id)} type="button">
+              <img alt="Response" src={image.url} />
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className={style.buttons}>
+        <button onClick={onSkip} className={style.btnSkip} type="button">Skip</button>
+        <button disabled={!answer} className={style.btnConfirm} onClick={answer && onConfirm} type="button">Confirm</button>
+      </div>
     </div>
   );
 }

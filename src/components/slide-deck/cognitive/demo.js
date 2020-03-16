@@ -7,42 +7,42 @@ import {useSlidesLoader} from "./helpers";
 const defaultSlides = [
   {
     id: "s-1",
-    questionImage: {url: "https://via.placeholder.com/300?text=Test+Question+1"},
+    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+1"},
     responses: [
-      {id: "r-1", image: {url: "https://via.placeholder.com/100/008000?text=Response+A"}},
-      {id: "r-2", image: {url: "https://via.placeholder.com/100/0000FF?text=Response+B"}},
-      {id: "r-3", image: {url: "https://via.placeholder.com/100/FFFF00?text=Response+C"}},
-      {id: "r-4", image: {url: "https://via.placeholder.com/100/FF0000?text=Response+D"}}
+      {id: "r-1", image: {url: "https://via.placeholder.com/600/008000?text=Response+A"}},
+      {id: "r-2", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+B"}},
+      {id: "r-3", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+C"}},
+      {id: "r-4", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+D"}}
     ]
   },
   {
     id: "s-2",
-    questionImage: {url: "https://via.placeholder.com/300?text=Test+Question+2"},
+    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+2"},
     responses: [
-      {id: "r-5", image: {url: "https://via.placeholder.com/100/0000FF?text=Response+A"}},
-      {id: "r-6", image: {url: "https://via.placeholder.com/100/FFFF00?text=Response+B"}},
-      {id: "r-7", image: {url: "https://via.placeholder.com/100/FF0000?text=Response+C"}},
-      {id: "r-8", image: {url: "https://via.placeholder.com/100/008000?text=Response+D"}}
+      {id: "r-5", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+A"}},
+      {id: "r-6", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+B"}},
+      {id: "r-7", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+C"}},
+      {id: "r-8", image: {url: "https://via.placeholder.com/600/008000?text=Response+D"}}
     ]
   },
   {
     id: "s-3",
-    questionImage: {url: "https://via.placeholder.com/300?text=Test+Question+3"},
+    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+3"},
     responses: [
-      {id: "r-9", image: {url: "https://via.placeholder.com/100/FFFF00?text=Response+A"}},
-      {id: "r-10", image: {url: "https://via.placeholder.com/100/FF0000?text=Response+B"}},
-      {id: "r-11", image: {url: "https://via.placeholder.com/100/008000?text=Response+C"}},
-      {id: "r-12", image: {url: "https://via.placeholder.com/100/0000FF?text=Response+D"}}
+      {id: "r-9", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+A"}},
+      {id: "r-10", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+B"}},
+      {id: "r-11", image: {url: "https://via.placeholder.com/600/008000?text=Response+C"}},
+      {id: "r-12", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+D"}}
     ]
   },
   {
     id: "s-4",
-    questionImage: {url: "https://via.placeholder.com/300?text=Test+Question+4"},
+    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+4"},
     responses: [
-      {id: "r-13", image: {url: "https://via.placeholder.com/100/FF0000?text=Response+A"}},
-      {id: "r-14", image: {url: "https://via.placeholder.com/100/008000?text=Response+B"}},
-      {id: "r-15", image: {url: "https://via.placeholder.com/100/0000FF?text=Response+C"}},
-      {id: "r-16", image: {url: "https://via.placeholder.com/100/FFFF00?text=Response+D"}}
+      {id: "r-13", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+A"}},
+      {id: "r-14", image: {url: "https://via.placeholder.com/600/008000?text=Response+B"}},
+      {id: "r-15", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+C"}},
+      {id: "r-16", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+D"}}
     ]
   }
 ];

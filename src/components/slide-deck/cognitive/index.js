@@ -113,10 +113,12 @@ function Cognitive(props) {
 
   return (
     <div className={style.mainStatus}>
-      <div className={style.timer}>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
-      <div className={style.status}>{slideIndex + 1} / {slides.length}</div>
-      <div className={style.progressBar}>
-        <div className={style.progress} />
+      <div className={style.statusContainer}>
+        <div className={style.timer}>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
+        <div className={style.status}>{slideIndex + 1} / {slides.length}</div>
+        <div className={style.progressBar}>
+          <div className={style.progress} />
+        </div>
       </div>
       <Slide onSelect={onSelect} slide={slide} />
     </div>

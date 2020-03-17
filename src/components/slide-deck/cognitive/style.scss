@@ -107,6 +107,9 @@ body {
 .mainStatus {
   background: white;
 }
+.statusContainer {
+  padding: 0 20px;
+}
 .timer {
   float: left;
   @include rems(14);

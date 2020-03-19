@@ -32,6 +32,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  allowTimeLimit() {
+    this.options.disableTimeLimit = false;
+
+    return this;
+  }
   assessmentID(assessmentID) {
     this.options.assessmentID = assessmentID;
 
@@ -63,6 +68,11 @@ export default class TraitifyWidget {
   }
   disableInstructions() {
     this.options.allowInstructions = false;
+
+    return this;
+  }
+  disableTimeLimit() {
+    this.options.disableTimeLimit = true;
 
     return this;
   }

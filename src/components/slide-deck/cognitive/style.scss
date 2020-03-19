@@ -19,16 +19,6 @@ body {
     @include rems(26);
   }
 }
-.btnBlue {
-  display: block;
-  width: 100%;
-  background: #3B8DBF;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: 0;
-  @include rems(20);
-}
 
 .question {
   background: white;
@@ -82,26 +72,31 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  button {
+    display: inline-block;
+    width: 50%;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    @include rems(20);
+  }
+}
+.btnBlue {
+  display: block;
+  width: 100%;
+  background: #3B8DBF;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  @include rems(20);
+}
+.btnDisabled {
+  background: #CCCCCC;
 }
 .btnSkip {
-  display: inline-block;
-  width: 50%;
   background: #A0A0A0;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: 0;
-  @include rems(20);
-}
-.btnConfirm {
-  display: inline-block;
-  width: 50%;
-  background: #CCCCCC;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: 0;
-  @include rems(20);
 }
 
 .mainStatus {

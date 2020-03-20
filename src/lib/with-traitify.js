@@ -72,6 +72,7 @@ export default function withTraitify(WrappedComponent) {
 
       const changes = {
         assessmentID: prevState.assessmentID !== this.state.assessmentID,
+        deck: prevState.deck && !this.state.deck,
         deckID: prevState.deckID !== this.state.deckID,
         locale: prevState.locale !== this.state.locale
       };
@@ -80,7 +81,7 @@ export default function withTraitify(WrappedComponent) {
         this.updateAssessment({oldID: prevState.assessmentID, oldLocale: prevState.locale});
       }
 
-      if(this.state.followingDeck && (changes.deckID || changes.locale)) {
+      if(this.state.followingDeck && (changes.deck || changes.deckID || changes.locale)) {
         this.updateDeck({oldID: prevState.deckID, oldLocale: prevState.locale});
       }
 

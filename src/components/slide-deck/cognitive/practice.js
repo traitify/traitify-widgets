@@ -47,7 +47,7 @@ const defaultSlides = [
   }
 ];
 
-function Demo(props) {
+function Practice(props) {
   const [initialSlides, setInitialSlides] = useState([]);
   const [slideIndex, setSlideIndex] = useState(0);
   const {dispatch, error, slides} = useSlidesLoader(initialSlides);
@@ -83,8 +83,8 @@ function Demo(props) {
   );
 }
 
-Demo.propTypes = {
+Practice.propTypes = {
   onFinish: PropTypes.func.isRequired
 };
 
-export default Demo;
+export default Practice;

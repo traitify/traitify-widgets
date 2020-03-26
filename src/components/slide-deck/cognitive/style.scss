@@ -18,6 +18,12 @@ body {
     margin-top: 0;
     @include rems(26);
   }
+  video {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+  }
 }
 
 .question {

@@ -18,6 +18,9 @@ body {
     margin-top: 0;
     @include rems(26);
   }
+  p {
+    white-space: pre-wrap;
+  }
   video {
     width: 80%;
     max-width: 500px;

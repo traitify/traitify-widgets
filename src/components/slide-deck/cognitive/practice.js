@@ -2,83 +2,88 @@ import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import Loading from "components/loading";
 import Slide from "./slide";
-import {useSlidesLoader} from "./helpers";
-
-const defaultSlides = [
-  {
-    id: "s-1",
-    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+1"},
-    responses: [
-      {id: "r-1", image: {url: "https://via.placeholder.com/600/008000?text=Response+A"}},
-      {id: "r-2", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+B"}},
-      {id: "r-3", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+C"}},
-      {id: "r-4", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+D"}}
-    ]
-  },
-  {
-    id: "s-2",
-    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+2"},
-    responses: [
-      {id: "r-5", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+A"}},
-      {id: "r-6", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+B"}},
-      {id: "r-7", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+C"}},
-      {id: "r-8", image: {url: "https://via.placeholder.com/600/008000?text=Response+D"}}
-    ]
-  },
-  {
-    id: "s-3",
-    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+3"},
-    responses: [
-      {id: "r-9", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+A"}},
-      {id: "r-10", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+B"}},
-      {id: "r-11", image: {url: "https://via.placeholder.com/600/008000?text=Response+C"}},
-      {id: "r-12", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+D"}}
-    ]
-  },
-  {
-    id: "s-4",
-    questionImage: {url: "https://via.placeholder.com/600?text=Test+Question+4"},
-    responses: [
-      {id: "r-13", image: {url: "https://via.placeholder.com/600/FF0000?text=Response+A"}},
-      {id: "r-14", image: {url: "https://via.placeholder.com/600/008000?text=Response+B"}},
-      {id: "r-15", image: {url: "https://via.placeholder.com/600/0000FF?text=Response+C"}},
-      {id: "r-16", image: {url: "https://via.placeholder.com/600/FFFF00?text=Response+D"}}
-    ]
-  }
-];
+import {useQuestionsLoader} from "./helpers";
+import practiceQuestions from "./practice-questions";
+import style from "./style.scss";
 
 function Practice(props) {
-  const [initialSlides, setInitialSlides] = useState([]);
-  const [slideIndex, setSlideIndex] = useState(0);
-  const {dispatch, error, slides} = useSlidesLoader(initialSlides);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const {dispatch, error, questions} = useQuestionsLoader(practiceQuestions);
+  const onNext = () => setQuestionIndex(questionIndex + 1);
   const onSelect = (answer) => {
-    dispatch({answer, slideIndex, type: "response"});
-    setSlideIndex(slideIndex + 1);
+    dispatch({answer, questionIndex, type: "response"});
   };
 
   useEffect(() => {
-    // TODO: Get from API
-    setInitialSlides(defaultSlides);
-  }, []);
-
-  useEffect(() => {
-    if(slides.length === 0) { return; }
-    if(slides.length !== slideIndex) { return; }
+    if(questions.length === 0) { return; }
+    if(questions.length !== questionIndex) { return; }
 
     props.onFinish();
-  }, [slideIndex]);
+  }, [questionIndex]);
 
-  const slide = slides[slideIndex];
+  const question = questions[questionIndex];
 
-  if(!slide) { return <Loading />; }
+  if(!question) { return <Loading />; }
+  if(question.answer !== undefined) {
+    if(questionIndex === 0) {
+      const image = "https://cdn.traitify.com/images/cognitive/practice-1.mp4";
+      const text = "In this grid, the top shape in the first row is rotated 180 degrees and shown in the corresponding cell below. The shape that completes this grid is therefore the bottom right shape.";
+
+      return (
+        <div className={style.instructions}>
+          <h1>Answer Explanation</h1>
+          <p>{text}</p>
+          <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
+          <button className={style.btnBlue} onClick={onNext} type="button">Next Question</button>
+        </div>
+      );
+    }
+
+    if(questionIndex === 1) {
+      const image = "https://cdn.traitify.com/images/cognitive/practice-2.mp4";
+      const text = "In this grid, the number of lines shown for each shape increases by one along each row and down each column. Lines are added in a clockwise direction. The shape that completes this grid is therefore the top left shape.";
+
+      return (
+        <div className={style.instructions}>
+          <h1>Answer Explanation</h1>
+          <p>{text}</p>
+          <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
+          <button className={style.btnBlue} onClick={onNext} type="button">Next Question</button>
+        </div>
+      );
+    }
+
+    if(questionIndex === 2) {
+      const image = "https://cdn.traitify.com/images/cognitive/practice-3.mp4";
+      const text = "In the column on the right, the middle shape is made up of a larger version of the top shape with the bottom shape inside it. The shading of the top and bottom shapes is reversed in the middle shape. The shape that completes the grid is therefore the top right shape.";
+
+      return (
+        <div className={style.instructions}>
+          <h1>Answer Explanation</h1>
+          <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
+          <p>{text}</p>
+          <button className={style.btnBlue} onClick={onNext} type="button">Next</button>
+        </div>
+      );
+    }
+  }
 
   // TODO: Display error?
   // TODO: Retry?
   if(error) { console.log(error); }
 
+  const progress = 100.0 * (questionIndex + 1) / questions.length;
+
   return (
     <div>
-      <Slide onSelect={onSelect} slide={slides[slideIndex]} />
+      <div className={style.statusContainer}>
+        <div>Example Questions</div>
+        <div className={style.status}>{questionIndex + 1} / {questions.length}</div>
+        <div className={style.progressBar}>
+          <div className={style.progress} style={{width: `${progress}%`}} />
+        </div>
+      </div>
+      <Slide onSelect={onSelect} question={questions[questionIndex]} />
     </div>
   );
 }

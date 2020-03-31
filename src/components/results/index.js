@@ -28,8 +28,7 @@ class Results extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
-    // TODO: Check if Cognitive
-    if("cog") {
+    if(this.props.getOption("surveyType") === "cognitive") {
       return <CognitiveResults {...this.props} />;
     } else if(this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP") {
       return <FinancialRiskResults {...this.props} />;

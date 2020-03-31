@@ -1,14 +1,14 @@
-import {Component} from "components/slide-deck";
+import {Component} from "components/slide-deck/personality";
 import ComponentHandler from "support/component-handler";
 import {flushPromises} from "support/helpers";
 import assessment from "support/json/assessment/with-slides.json";
-import * as helpers from "components/slide-deck/helpers";
+import * as helpers from "components/slide-deck/personality/helpers";
 
-jest.mock("components/slide-deck/loading", () => (() => (<div className="mock">Loading</div>)));
-jest.mock("components/slide-deck/slide", () => (() => (<div className="mock">Slide</div>)));
+jest.mock("components/slide-deck/personality/not-ready", () => (() => (<div className="mock">NotReady</div>)));
+jest.mock("components/slide-deck/personality/slide", () => (() => (<div className="mock">Slide</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("SlideDeck", () => {
+describe("Personality", () => {
   let completedSlides;
   let finish;
   let getStateFromProps;

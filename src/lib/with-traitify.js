@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import guideQuery from "lib/graphql/queries/guide";
+import * as queries from "lib/graphql/queries";
 import {getDisplayName, loadFont} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
@@ -58,6 +58,8 @@ export default function withTraitify(WrappedComponent) {
 
       loadFont();
 
+      if(this.getOption("surveyType") === "cognitive") { return this.updateCognitiveAssessment(); }
+
       this.updateAssessment();
     }
     componentDidUpdate(prevProps, prevState) {
@@ -69,6 +71,8 @@ export default function withTraitify(WrappedComponent) {
       } else if(prevProps.assessmentID !== this.props.assessmentID) {
         this.setState({assessmentID: this.props.assessmentID});
       }
+
+      if(this.getOption("surveyType") === "cognitive") { return this.cognitiveDidUpdate(prevProps, prevState); }
 
       const changes = {
         assessmentID: prevState.assessmentID !== this.state.assessmentID,
@@ -120,6 +124,19 @@ export default function withTraitify(WrappedComponent) {
         this.state = {...this.state, ...state};
       }
     }
+    cognitiveDidUpdate(prevProps, prevState) {
+      const changes = {
+        assessmentID: prevState.assessmentID !== this.state.assessmentID,
+        locale: prevState.locale !== this.state.locale
+      };
+
+      if(changes.assessmentID || changes.locale) {
+        this.updateCognitiveAssessment({
+          oldID: prevState.assessmentID,
+          oldLocale: prevState.locale
+        });
+      }
+    }
     followDeck = () => {
       this.setState({followingDeck: true});
       this.updateDeck();
@@ -161,6 +178,54 @@ export default function withTraitify(WrappedComponent) {
         data: "archetype,blend,instructions,slides,types,traits",
         locale_key: locale
       }).then((data) => {
+        if(hasResults(data)) { this.cache.set(key, data); }
+
+        setAssessment(data);
+      }).catch((error) => {
+        console.warn(error); // eslint-disable-line no-console
+
+        delete this.ui.requests[key];
+      });
+
+      return this.ui.requests[key];
+    }
+    getCognitiveAssessment = (options = {}) => {
+      const {assessmentID, locale} = this.state;
+      if(!assessmentID) { return Promise.resolve(); }
+
+      const key = `${locale}.cognitive-assessment.${assessmentID}`;
+      // TODO: personality_types => ?
+      const hasResults = (data) => (
+        data && data.locale_key
+          && data.id === assessmentID
+          && data.locale_key.toLowerCase() === locale
+          && data.completed
+      );
+      const setAssessment = (data) => (
+        new Promise((resolve) => {
+          this.setState({assessment: data}, () => (resolve(data)));
+          this.ui.trigger(key, this, data);
+        })
+      );
+
+      let {assessment} = this.props;
+      if(hasResults(assessment)) { return setAssessment(assessment); }
+
+      assessment = this.cache.get(key);
+      if(hasResults(assessment)) { return setAssessment(assessment); }
+
+      if(this.ui.requests[key] && !options.force) {
+        return this.ui.requests[key];
+      }
+
+      const query = queries.cognitive.get({
+        params: {localeKey: locale, testId: assessmentID}
+      });
+
+      this.ui.requests[key] = this.traitify.post(
+        "/cognitive-tests/graphql",
+        query
+      ).then(({data: {cognitiveTest: data}}) => {
         if(hasResults(data)) { this.cache.set(key, data); }
 
         setAssessment(data);
@@ -251,7 +316,7 @@ export default function withTraitify(WrappedComponent) {
 
       this.ui.requests[key] = this.traitify.post(
         "/interview_guides/graphql",
-        guideQuery(query)
+        queries.guide(query)
       ).then((_data) => {
         const _guide = (_data.data || {}).guide;
         const data = {..._guide};
@@ -288,6 +353,8 @@ export default function withTraitify(WrappedComponent) {
           return !!((deck && !!deck.name));
         case "guide":
           return !!((guide && (guide.competencies || []).length > 0));
+        case "questions":
+          return !!(assessment && (assessment.questions || []).length > 0);
         case "results":
           return !!(assessment && (assessment.personality_types || []).length > 0);
         case "slides":
@@ -375,6 +442,34 @@ export default function withTraitify(WrappedComponent) {
           this.getListener(key)(null, currentValue);
         } else {
           this.getAssessment();
+        }
+      }
+    }
+    updateCognitiveAssessment(options = {}) {
+      const {assessmentID, locale} = this.state;
+
+      if(options.oldID || options.oldLocale) {
+        const oldAssessmentID = options.oldID || assessmentID;
+        const oldLocale = options.oldLocale || locale;
+        const key = `${oldLocale}.cognitive-assessment.${oldAssessmentID}`;
+
+        this.removeListener(key);
+      }
+      if(assessmentID) {
+        const key = `${locale}.cognitive-assessment.${assessmentID}`;
+
+        this.addListener(key, (_, assessment) => {
+          this.setState({
+            assessment,
+            assessmentID: assessment.id
+          });
+        });
+
+        const currentValue = this.ui.current[key];
+        if(currentValue != null) {
+          this.getListener(key)(null, currentValue);
+        } else {
+          this.getCognitiveAssessment();
         }
       }
     }

@@ -10,10 +10,10 @@ import {
   mutable,
   slideIndex,
   toggleFullscreen
-} from "components/slide-deck/helpers";
+} from "components/slide-deck/personality/helpers";
 import assessment from "support/json/assessment/with-slides.json";
 
-describe("SlideDeck Helpers", () => {
+describe("Helpers", () => {
   describe("completedSlides", () => {
     it("filters out incomplete slides", () => {
       const completedLength = Math.round(assessment.slides.length / 2);

@@ -5,10 +5,9 @@ import Cognitive from "./cognitive";
 import Personality from "./personality";
 
 class SlideDeck extends Component {
-  static propTypes = {isReady: PropTypes.func.isRequired}
+  static propTypes = {getOption: PropTypes.func.isRequired}
   render() {
-    // TODO: Find out how to differentiate
-    if(this.props.isReady) {
+    if(this.props.getOption("surveyType") === "cognitive") {
       return <Cognitive {...this.props} />;
     }
 

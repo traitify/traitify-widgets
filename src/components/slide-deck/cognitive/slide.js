@@ -4,23 +4,23 @@ import {useEffect, useState} from "react";
 import Loading from "components/loading";
 import style from "./style.scss";
 
-function Slide({onSelect, slide}) {
+function Slide({onSelect, question}) {
   const [answer, setAnswer] = useState(null);
   const onConfirm = () => onSelect(answer);
   const onSkip = () => window.confirm("Are you sure you want to skip?") && onSelect(null);
 
-  useEffect(() => setAnswer(null), [slide.id]);
+  useEffect(() => setAnswer(null), [question.id]);
 
-  if(!slide.loaded) { return <Loading />; }
+  if(!question.loaded) { return <Loading />; }
 
   return (
     <div>
       <div className={style.question}>
-        <img alt="Question" src={slide.questionImage.url} />
+        <img alt="Question" src={question.image.url} />
       </div>
       <div className={style.choices}>
         <div className={style.choicesContainer}>
-          {slide.responses.map(({id, image}) => (
+          {question.responses.map(({id, image}) => (
             <button key={id} onClick={() => setAnswer(id)} type="button">
               <img alt="Response" className={answer === id ? style.selected : null} src={image.url} />
             </button>
@@ -37,10 +37,10 @@ function Slide({onSelect, slide}) {
 
 Slide.propTypes = {
   onSelect: PropTypes.func.isRequired,
-  slide: PropTypes.shape({
+  question: PropTypes.shape({
     id: PropTypes.string.isRequired,
+    image: PropTypes.shape({url: PropTypes.string.isRequired}).isRequired,
     loaded: PropTypes.bool,
-    questionImage: PropTypes.shape({url: PropTypes.string.isRequired}).isRequired,
     responses: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,

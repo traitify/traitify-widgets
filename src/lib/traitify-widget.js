@@ -132,6 +132,11 @@ export default class TraitifyWidget {
 
     return Promise.all(promises);
   }
+  surveyType(surveyType) {
+    this.options.surveyType = surveyType.toLowerCase();
+
+    return this;
+  }
   target(target) {
     this.options.target = target;
 

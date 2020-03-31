@@ -9,14 +9,15 @@ function Instructions(props) {
 
   if(step === 1) {
     const image = "https://cdn.traitify.com/images/cognitive/instructions-1.mp4";
-    const text = "This assessment is about your ability to work out patterns and relationships between shapes.";
-    const text2 = `On each screen you will see a grid with different shapes in it. One shape is missing, as indicated by "?".`;
+    const text = [
+      "This assessment is about your ability to work out patterns and relationships between shapes.",
+      `On each screen you will see a grid with different shapes in it. One shape is missing, as indicated by "?".`
+    ];
 
     return (
       <div className={style.instructions}>
         <h1>Assessment Instructions</h1>
         <p>{text}</p>
-        <p>{text2}</p>
         <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
         <button className={style.btnBlue} onClick={() => setStep(2)} type="button">Next</button>
       </div>
@@ -26,16 +27,16 @@ function Instructions(props) {
   if(step === 2) {
     const disabilityText = "Please select if you have a learning disability.";
     const image = "https://cdn.traitify.com/images/cognitive/instructions-2.mp4";
-    const text = "Work out how the shapes in the grid are related to each other. Then pick which of the four shapes below the grid completes it.";
-    const text2 = `Once you've made your selection, please click on "Confirm" to advance.`;
-    const text3 = "Click below to see an example";
+    const text = [
+      "Work out how the shapes in the grid are related to each other. Then pick which of the four shapes below the grid completes it.",
+      `Once you've made your selection, please click on "Confirm" to advance.`,
+      "Click below to see an example"
+    ].join("\n\n");
 
     return (
       <div className={style.instructions}>
         <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
         <p>{text}</p>
-        <p>{text2}</p>
-        <p>{text3}</p>
         <label htmlFor="traitify-disability">
           <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
           {disabilityText}
@@ -60,7 +61,26 @@ function Instructions(props) {
     );
   }
 
-  return <Practice onFinish={() => props.onStart({disability})} />;
+  if(step === 4) {
+    return <Practice onFinish={() => setStep(5)} />;
+  }
+
+  const heading = "Get Ready For the Real Assessment";
+  const text = [
+    "The assessment is untimed but most people complete it within 30 minutes.",
+    "You should find a quiet place where you can give the assessment your full attention without being distracted.",
+    "You can skip questions if you need to but try to give an answer to each question.",
+    "Please complete the assessment in a single sitting."
+  ].join("\n\n");
+
+  return (
+    <div className={style.instructions}>
+      <h2>{heading}</h2>
+      <h3>Befoer you start...</h3>
+      <p>{text}</p>
+      <button className={style.btnBlue} onClick={() => props.onStart({disability})} type="button">Start Assessment</button>
+    </div>
+  );
 }
 
 Instructions.propTypes = {

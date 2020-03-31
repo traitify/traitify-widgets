@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading renders component 1`] = `
+exports[`NotReady renders component 1`] = `
 <div>
   <div>
     <div>
@@ -11,7 +11,7 @@ exports[`Loading renders component 1`] = `
 </div>
 `;
 
-exports[`Loading renders retry button if error 1`] = `
+exports[`NotReady renders retry button if error 1`] = `
 <div>
   <div>
     <div>

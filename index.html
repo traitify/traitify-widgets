@@ -14,6 +14,15 @@
       .row { margin: 15px; }
     </style>
     <div class="row">
+      <label htmlFor="survey-type">
+        Survey Type:
+        <select id="survey-type" name="survey-type">
+          <option value="cognitive">Cognitive</option>
+          <option value="personality">Personality</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
       <label htmlFor="deck-id">
         Deck:
         <select id="deck-id" name="deck-id">
@@ -75,7 +84,7 @@
     <script src="build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
-      Traitify.setHost("https://api.traitify.com");
+      Traitify.setHost("https://api.stag.awse.traitify.com");
 
       var widget;
 
@@ -84,6 +93,7 @@
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
+        var surveyType = localStorage.getItem("survey-type");
         var view = localStorage.getItem("view");
 
         if(!assessmentID){ return; }
@@ -100,8 +110,9 @@
           .allowBack()
           .allowFullscreen()
           .assessmentID(assessmentID)
-          .perspective(perspective)
           .locale(locale)
+          .perspective(perspective)
+          .surveyType(surveyType)
           .view(view)
           .targets(targets);
         widget.render().then(function(){
@@ -114,19 +125,39 @@
       function createAssessment(){
         destroyWidget();
 
-        Traitify.post("/assessments", {
-          deck_id: document.querySelector("#deck-id").value,
-          locale_key: document.querySelector("#locale").value,
-          package_id: "cfc05114-b8af-43fb-af27-c175e0cc25ee"
-        }).then(function(assessment){
-          try{
-            localStorage.setItem("assessment-id", assessment.id);
-            localStorage.setItem("deck-id", assessment.deck_id);
-          }catch(error){
-            console.log(error);
-          }
-          createWidget();
-        });
+        let surveyType = document.querySelector("#survey-type").value
+        if(surveyType === "cognitive") {
+          let query = Traitify.graphql.queries.cognitive.create({
+            params: {
+              localeKey: localStorage.getItem("locale"),
+              surveyId: "5723ab09-d2f1-4998-9c31-4be0af04ee99"
+            }
+          });
+          console.log(query);
+
+          Traitify.post("/cognitive-tests/graphql", query).then((response) => {
+            try{
+              localStorage.setItem("assessment-id", response.data.createCognitiveTest.id);
+            }catch(error){
+              console.log(error);
+            }
+            createWidget();
+          });
+        } else {
+          Traitify.post("/assessments", {
+            deck_id: document.querySelector("#deck-id").value,
+            locale_key: document.querySelector("#locale").value,
+            package_id: "cfc05114-b8af-43fb-af27-c175e0cc25ee"
+          }).then(function(assessment){
+            try{
+              localStorage.setItem("assessment-id", assessment.id);
+              localStorage.setItem("deck-id", assessment.deck_id);
+            }catch(error){
+              console.log(error);
+            }
+            createWidget();
+          });
+        }
       }
 
       function destroyWidget(){
@@ -138,7 +169,11 @@
         let value = e.target.value;
 
         localStorage.setItem(name, value);
-        if(widget && name !== "deck-id") { widget[name](value); }
+        if(widget && name !== "deck-id") {
+          if(name === "survey-type") { name = "surveyType"; }
+
+          widget[name](value);
+        }
       }
 
       function refreshWidget(){
@@ -146,7 +181,7 @@
       }
 
       function setupOptions(){
-        var inputs = ["deck-id", "locale", "perspective", "view"];
+        var inputs = ["deck-id", "locale", "perspective", "survey-type", "view"];
         for(var i = 0; i < inputs.length; i++) {
           const name = inputs[i];
           const element = document.querySelector("#" + name);
@@ -160,6 +195,10 @@
                 break;
               case "locale":
                 value = "en-us";
+                localStorage.setItem(name, value);
+                break;
+              case "survey-type":
+                value = "personality";
                 localStorage.setItem(name, value);
                 break;
             }

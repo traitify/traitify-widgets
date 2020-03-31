@@ -16,15 +16,15 @@ function loadImage({dispatch, imageType, url}) {
   img.src = url;
 }
 
-function loadSlides(slides, dispatch) {
-  const slide = slides.find(({loaded}) => !loaded);
-  if(!slide) { return; }
-  if(!slide.questionImage.loaded) {
-    loadImage({dispatch, imageType: "question", url: slide.questionImage.url});
+function loadQuestions(questions, dispatch) {
+  const question = questions.find(({loaded}) => !loaded);
+  if(!question || !question.image) { return; }
+  if(!question.image.loaded) {
+    loadImage({dispatch, imageType: "question", url: question.image.url});
     return;
   }
 
-  const response = slide.responses.find(({image: {loaded}}) => !loaded);
+  const response = question.responses.find(({image: {loaded}}) => !loaded);
   if(response) {
     loadImage({dispatch, imageType: "response", url: response.image.url});
   }
@@ -35,54 +35,53 @@ function reducer(state, action) {
     case "error":
       return {...state, error: action.error};
     case "imageLoaded": {
-      const slides = mutable(state.slides);
-      const slideIndex = slides.findIndex(({loaded}) => !loaded);
-      const slide = slides[slideIndex];
+      const questions = mutable(state.questions);
+      const questionIndex = questions.findIndex(({loaded}) => !loaded);
+      const question = questions[questionIndex];
 
       if(action.imageType === "question") {
-        slide.questionImage.loaded = true;
+        question.image.loaded = true;
       } else {
-        const responseIndex = slide.responses.findIndex(({image: {loaded}}) => !loaded);
+        const responseIndex = question.responses.findIndex(({image: {loaded}}) => !loaded);
 
-        slide.responses[responseIndex].image.loaded = true;
+        question.responses[responseIndex].image.loaded = true;
       }
 
-      const questionImageLoaded = slide.questionImage.loaded;
-      const responseIndex = slide.responses.findIndex(({image: {loaded}}) => !loaded);
+      const responseIndex = question.responses.findIndex(({image: {loaded}}) => !loaded);
       const responseImagesLoaded = responseIndex === -1;
 
-      slide.loaded = questionImageLoaded && responseImagesLoaded;
-      slides[slideIndex] = slide;
+      question.loaded = question.image.loaded && responseImagesLoaded;
+      questions[questionIndex] = question;
 
-      const loading = slides.findIndex(({loaded}) => !loaded) !== -1;
+      const loading = questions.findIndex(({loaded}) => !loaded) !== -1;
 
-      return {...state, error: null, imageLoading: false, loading, slides};
+      return {...state, error: null, imageLoading: false, loading, questions};
     }
     case "imageLoading":
       return {...state, imageLoading: true, loading: true};
     case "reset":
-      return {slides: action.slides};
+      return {questions: action.questions};
     case "response": {
-      const slides = mutable(state.slides);
-      slides[action.slideIndex].answer = action.answer;
+      const questions = mutable(state.questions);
+      questions[action.questionIndex].answer = action.answer;
 
-      return {...state, error: null, slides};
+      return {...state, error: null, questions};
     }
     default:
       return {...state};
   }
 }
 
-export function useSlidesLoader(initialSlides) {
+export function useQuestionsLoader(initialQuestions) {
   const [
-    {error, imageLoading, loading, slides},
+    {error, imageLoading, loading, questions},
     dispatch
-  ] = useReducer(reducer, {slides: initialSlides});
+  ] = useReducer(reducer, {questions: initialQuestions});
 
-  useEffect(() => dispatch({slides: initialSlides, type: "reset"}), [initialSlides]);
+  useEffect(() => dispatch({questions: initialQuestions, type: "reset"}), [initialQuestions]);
   useEffect(() => {
-    if(!imageLoading) { loadSlides(slides, dispatch); }
-  }, [imageLoading, slides]);
+    if(!imageLoading) { loadQuestions(questions, dispatch); }
+  }, [imageLoading, questions]);
 
-  return {error, dispatch, loading, slides};
+  return {error, dispatch, loading, questions};
 }

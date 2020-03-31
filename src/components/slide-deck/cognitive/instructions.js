@@ -74,7 +74,7 @@ function Instructions(props) {
   ].join("\n\n");
 
   return (
-    <div className={style.instructions}>
+    <div className={style.container}>
       <h2>{heading}</h2>
       <h3>Befoer you start...</h3>
       <p>{text}</p>

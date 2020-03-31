@@ -1,13 +1,20 @@
 @import "~style/helpers";
 @import "~style/variables";
 
-body {
-  background: #EFEFEF;
-  color: #333;
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-}
-.instructions {
+.container {
+  @extend %widgetContainer;
+
   background: white;
+  min-height: 100vh;
+  @include mq(m) {
+    min-height: $minHeight;
+  }
+}
+
+.instructions {
+  @extend .container;
+
+  background: #EFEFEF;
   padding: 20px;
   margin: 30px auto;
   max-width: 85%;
@@ -108,9 +115,6 @@ body {
   background: #A0A0A0;
 }
 
-.mainStatus {
-  background: white;
-}
 .statusContainer {
   padding: 0 20px;
 }

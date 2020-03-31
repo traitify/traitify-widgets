@@ -103,7 +103,7 @@ function Cognitive(props) {
   const progress = 100.0 * (questionIndex + 1) / questions.length;
 
   return (
-    <div className={style.mainStatus}>
+    <div className={style.container}>
       <div className={style.statusContainer}>
         {!disableTimeLimit && (
           <div className={style.timer}>

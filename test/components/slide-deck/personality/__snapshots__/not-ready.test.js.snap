@@ -4,8 +4,10 @@ exports[`NotReady renders component 1`] = `
 <div>
   <div>
     <div>
-      <i />
-      <i />
+      <div>
+        <i />
+        <i />
+      </div>
     </div>
   </div>
 </div>

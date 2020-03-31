@@ -75,7 +75,7 @@ function Practice(props) {
   const progress = 100.0 * (questionIndex + 1) / questions.length;
 
   return (
-    <div>
+    <div className={style.instructions}>
       <div className={style.statusContainer}>
         <div>Example Questions</div>
         <div className={style.status}>{questionIndex + 1} / {questions.length}</div>

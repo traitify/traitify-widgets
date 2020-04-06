@@ -1,11 +1,11 @@
 /* eslint-disable no-alert */
-/* eslint-disable no-console */
-// TODO: Remove no-console line
 import {faClock} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import Loading from "components/loading";
+import {update as updateQuery} from "lib/graphql/queries/cognitive";
 import Icon from "lib/helpers/icon";
+import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Instructions from "./instructions";
 import Slide from "./slide";
@@ -13,7 +13,8 @@ import {useQuestionsLoader} from "./helpers";
 import style from "./style.scss";
 
 function Cognitive(props) {
-  const disableTimeLimit = props.getOption("disableTimeLimit");
+  const {assessment, cache, getCognitiveAssessment, getOption, traitify, translate, ui} = props;
+  const disableTimeLimit = getOption("disableTimeLimit");
   const [initialQuestions, setInitialQuestions] = useState([]);
   const {dispatch, questions} = useQuestionsLoader(initialQuestions);
   const [disability, setDisability] = useState(false);
@@ -42,15 +43,37 @@ function Cognitive(props) {
 
     setSubmitting(true);
     setTimeLeft(0);
-    console.log("Submitting", questions);
-    // TODO: Ajax
+
+    const answers = questions.map((question) => (
+      question.answer ? ({
+        answerId: question.answer.answerId,
+        questionId: question.id,
+        skipped: question.answer.skipped,
+        timeTaken: Math.round(question.answer.timeTaken)
+      }) : ({questionId: question.id})
+    ));
+    const query = updateQuery({
+      params: {
+        answers,
+        testId: assessment.id,
+        totalTimeTaken: startTime ? Math.round((Date.now() - startTime) / 1000) : 0
+      }
+    });
+
+    traitify.post(
+      "/cognitive-tests/graphql", query
+    ).then(({data: {completeCognitiveTest: {message, success}}}) => {
+      console.log(success, message);
+      ui.trigger("SlideDeck.finished", {props}, {message, success});
+      getCognitiveAssessment({force: true});
+    });
   };
 
   useEffect(() => {
-    if(!props.assessment) { return; }
-    if(!props.assessment.questions) { return; }
+    if(!assessment) { return; }
+    if(!assessment.questions) { return; }
 
-    const cachedData = props.cache.get(`cognitive.${props.assessment.id}`);
+    const cachedData = cache.get(`cognitive.${assessment.id}`);
     if(cachedData) {
       setDisability(cachedData.disability);
       setOnlySkipped(cachedData.onlySkipped);
@@ -60,18 +83,18 @@ function Cognitive(props) {
       setInitialQuestions(cachedData.questions);
       setStartTime(cachedData.startTime);
     } else {
-      setInitialQuestions(props.assessment.questions);
+      setInitialQuestions(assessment.questions);
     }
   }, [
-    props.assessment && props.assessment.questions,
-    props.assessment && props.assessment.localeKey
+    assessment && assessment.questions,
+    assessment && assessment.localeKey
   ]);
 
   useEffect(() => {
-    if(!props.assessment) { return; }
+    if(!assessment) { return; }
     if(questions.length === 0) { return; }
 
-    props.cache.set(`cognitive.${props.assessment.id}`, {
+    cache.set(`cognitive.${assessment.id}`, {
       disability,
       onlySkipped,
       questions,
@@ -87,9 +110,9 @@ function Cognitive(props) {
     if(submitting) { return; }
 
     const calculateTimeLeft = () => {
-      const allowedTime = 1000 * (disability ? 385 : 300);
+      const timeAllowed = 1000 * assessment[disability ? "specialAllottedTime" : "allottedTime"];
       const timePassed = Date.now() - startTime;
-      const _timeLeft = (allowedTime - timePassed) / 1000;
+      const _timeLeft = (timeAllowed - timePassed) / 1000;
 
       return _timeLeft < 0 ? 0 : _timeLeft;
     };
@@ -121,7 +144,7 @@ function Cognitive(props) {
       .map(({index}) => index);
 
     if(skippedIndexes.length === 0) { return onSubmit(); }
-    if(window.confirm("You have some additional time, would you like to attempt the questions you skipped?")) {
+    if(window.confirm(translate("cognitive_confirm_retry"))) {
       setSkipped(skippedIndexes);
       setQuestionIndex(skippedIndexes[0]);
     } else {
@@ -131,7 +154,7 @@ function Cognitive(props) {
 
   const question = questions[questionIndex];
 
-  if(questionIndex === null) { return <Instructions onStart={onStart} />; }
+  if(questionIndex === null) { return <Instructions onStart={onStart} translate={translate} />; }
   if(!question || submitting) { return <Loading />; }
 
   const minutes = Math.floor((timeLeft / 60) % 60);
@@ -150,14 +173,14 @@ function Cognitive(props) {
           </div>
         )}
         <div className={style.status}>
-          {skipped && <span>Skipped Questions </span>}
+          {skipped && <span>{translate("cognitive_skipped_questions")} </span>}
           <span>{index + 1} / {total}</span>
         </div>
         <div className={style.progressBar}>
           <div className={style.progress} style={{width: `${progress}%`}} />
         </div>
       </div>
-      <Slide onSelect={onSelect} question={question} />
+      <Slide onSelect={onSelect} question={question} translate={translate} />
     </div>
   );
 }
@@ -165,15 +188,21 @@ function Cognitive(props) {
 Cognitive.defaultProps = {assessment: null};
 Cognitive.propTypes = {
   assessment: PropTypes.shape({
+    allottedTime: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
     localeKey: PropTypes.string.isRequired,
-    questions: PropTypes.arrayOf(PropTypes.object).isRequired
+    questions: PropTypes.arrayOf(PropTypes.object).isRequired,
+    specialAllottedTime: PropTypes.number.isRequired
   }),
   cache: PropTypes.shape({
     get: PropTypes.func.isRequired,
     set: PropTypes.func.isRequired
   }).isRequired,
-  getOption: PropTypes.func.isRequired
+  getCognitiveAssessment: PropTypes.func.isRequired,
+  getOption: PropTypes.func.isRequired,
+  traitify: TraitifyPropTypes.traitify.isRequired,
+  translate: PropTypes.func.isRequired,
+  ui: TraitifyPropTypes.ui.isRequired
 };
 
 export {Cognitive as Component};

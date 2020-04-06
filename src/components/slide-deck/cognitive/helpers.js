@@ -9,8 +9,6 @@ function loadImage({dispatch, imageType, url}) {
   const img = document.createElement("img");
   img.onload = () => dispatch({imageType, type: "imageLoaded"});
   img.onerror = () => {
-    // TODO: Delay?
-    // TODO: Retries?
     dispatch({error: "Image could not load", type: "error"});
   };
   img.src = url;

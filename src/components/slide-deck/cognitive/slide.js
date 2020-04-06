@@ -4,13 +4,13 @@ import {useEffect, useState} from "react";
 import Loading from "components/loading";
 import style from "./style.scss";
 
-function Slide({onSelect, question}) {
+function Slide({onSelect, question, translate}) {
   const [answerID, setAnswerID] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
   const timeTaken = (Date.now() - startTime) / 1000;
   const onConfirm = () => onSelect({answerId: answerID, timeTaken});
   const onSkip = () => {
-    if(!window.confirm("Are you sure you want to skip?")) { return; }
+    if(!window.confirm(translate("cognitive_confirm_skip"))) { return; }
 
     onSelect({skipped: true, timeTaken});
   };
@@ -25,20 +25,20 @@ function Slide({onSelect, question}) {
   return (
     <div>
       <div className={style.question}>
-        <img alt="Question" src={question.questionImage.url} />
+        <img alt={translate("cognitive_question_alt_text")} src={question.questionImage.url} />
       </div>
       <div className={style.choices}>
         <div className={style.choicesContainer}>
           {question.responses.map(({id, image}) => (
             <button key={id} onClick={() => setAnswerID(id)} type="button">
-              <img alt="Response" className={answerID === id ? style.selected : null} src={image.url} />
+              <img alt={translate("cognitive_response_alt_text")} className={answerID === id ? style.selected : null} src={image.url} />
             </button>
           ))}
         </div>
       </div>
       <div className={style.buttons}>
-        <button onClick={onSkip} className={style.btnSkip} type="button">Skip</button>
-        <button disabled={!answerID} className={style[answerID ? "btnBlue" : "btnDisabled"]} onClick={answerID && onConfirm} type="button">Confirm</button>
+        <button onClick={onSkip} className={style.btnSkip} type="button">{translate("cognitive_skip_button")}</button>
+        <button disabled={!answerID} className={style[answerID ? "btnBlue" : "btnDisabled"]} onClick={answerID && onConfirm} type="button">{translate("cognitive_confirm_button")}</button>
       </div>
     </div>
   );
@@ -56,7 +56,8 @@ Slide.propTypes = {
         image: PropTypes.shape({url: PropTypes.string.isRequired}).isRequired
       })
     )
-  }).isRequired
+  }).isRequired,
+  translate: PropTypes.func.isRequired
 };
 
 export default Slide;

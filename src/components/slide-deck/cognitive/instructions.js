@@ -76,7 +76,7 @@ function Instructions(props) {
   return (
     <div className={style.container}>
       <h2>{heading}</h2>
-      <h3>Befoer you start...</h3>
+      <h3>Before you start...</h3>
       <p>{text}</p>
       <button className={style.btnBlue} onClick={() => props.onStart({disability})} type="button">Start Assessment</button>
     </div>

@@ -8,7 +8,7 @@ import style from "./style.scss";
 
 function Practice(props) {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const {dispatch, error, questions} = useQuestionsLoader(practiceQuestions);
+  const {dispatch, questions} = useQuestionsLoader(practiceQuestions);
   const onNext = () => setQuestionIndex(questionIndex + 1);
   const onSelect = (answer) => {
     dispatch({answer, questionIndex, type: "response"});
@@ -24,7 +24,7 @@ function Practice(props) {
   const question = questions[questionIndex];
 
   if(!question) { return <Loading />; }
-  if(question.answer !== undefined) {
+  if(question.answer) {
     if(questionIndex === 0) {
       const image = "https://cdn.traitify.com/images/cognitive/practice-1.mp4";
       const text = "In this grid, the top shape in the first row is rotated 180 degrees and shown in the corresponding cell below. The shape that completes this grid is therefore the bottom right shape.";
@@ -67,10 +67,6 @@ function Practice(props) {
       );
     }
   }
-
-  // TODO: Display error?
-  // TODO: Retry?
-  if(error) { console.log(error); }
 
   const progress = 100.0 * (questionIndex + 1) / questions.length;
 

@@ -8,14 +8,15 @@ export function create({fields: _fields, params}) {
         "id",
         {
           answer: ["answerId", "skipped", "timeTaken"],
-          image: ["id", "url"]
+          questionImage: ["id", "url"],
+          responses: ["id", {image: ["id", "url"]}]
         }
       ]
     }
   ];
 
   if(!params.surveyId) {
-    console.warn("GraphQL - createCognitiveTest - Survey ID required");
+    console.warn("GraphQL - createCognitiveTest - Survey ID required"); // eslint-disable-line no-console
   }
 
   return {
@@ -38,7 +39,8 @@ export function get({fields: _fields, params}) {
         "id",
         {
           answer: ["answerId", "skipped", "timeTaken"],
-          image: ["id", "url"]
+          questionImage: ["id", "url"],
+          responses: ["id", {image: ["id", "url"]}]
         }
       ]
     }

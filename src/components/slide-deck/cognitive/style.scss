@@ -14,7 +14,6 @@
 .instructions {
   @extend .container;
 
-  background: #EFEFEF;
   padding: 20px;
   margin: 30px auto;
   max-width: 85%;
@@ -29,10 +28,11 @@
     white-space: pre-wrap;
   }
   video {
-    width: 80%;
-    max-width: 500px;
+    display: block;
     height: auto;
-    margin: 0 auto;
+    margin: 10px auto;
+    max-width: 500px;
+    width: 80%;
   }
 }
 
@@ -55,18 +55,19 @@
   padding: 15px 0 0;
   width: 100%;
   .choicesContainer {
-    max-width: 500px;
     margin: 0 auto;
   }
   button {
-    width: 44%;
-    margin: 0 3%;
-    padding: 0;
-    border: 0;
-    margin-bottom: 15px;
     background: #EFEFEF;
+    border: 0;
+    margin: 0 3%;
+    margin-bottom: 15px;
+    padding: 0;
     &:nth-of-type(3) {
       clear: both;
+    }
+    @include max-width(m) {
+      width: 44%;
     }
   }
   img {
@@ -90,23 +91,37 @@
   margin: 0 auto;
   button {
     display: inline-block;
-    width: 50%;
-    color: white;
     padding: 10px;
-    border-radius: 5px;
-    border: 0;
     @include rems(20);
+    @include max-width(m) {
+      width: 50%;
+    }
+    @include mq(m) {
+      border-radius: 5px;
+      border: 0;
+      margin: 20px 10px;
+    }
   }
 }
-.btnBlue {
-  display: block;
-  width: 100%;
-  background: #3B8DBF;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
+
+.btnDisabled,
+.btnBlue,
+.btnSkip {
   border: 0;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
   @include rems(20);
+  @include mq(m) {
+    width: 200px;
+  }
+}
+
+.btnBlue {
+  background: #3B8DBF;
 }
 .btnDisabled {
   background: #CCCCCC;

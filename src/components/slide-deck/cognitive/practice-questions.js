@@ -1,7 +1,7 @@
 export default [
   {
     id: "s-1",
-    image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-1/question.png"},
+    questionImage: {url: "https://cdn.traitify.com/images/cognitive/practice-question-1/question.png"},
     responses: [
       {id: "r-1", image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-1/response-1.png"}},
       {id: "r-2", image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-1/response-2.png"}},
@@ -11,7 +11,7 @@ export default [
   },
   {
     id: "s-2",
-    image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-2/question.png"},
+    questionImage: {url: "https://cdn.traitify.com/images/cognitive/practice-question-2/question.png"},
     responses: [
       {id: "r-5", image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-2/response-1.png"}},
       {id: "r-6", image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-2/response-2.png"}},
@@ -21,7 +21,7 @@ export default [
   },
   {
     id: "s-3",
-    image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-3/question.png"},
+    questionImage: {url: "https://cdn.traitify.com/images/cognitive/practice-question-3/question.png"},
     responses: [
       {id: "r-9", image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-3/response-1.png"}},
       {id: "r-10", image: {url: "https://cdn.traitify.com/images/cognitive/practice-question-3/response-2.png"}},

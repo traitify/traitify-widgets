@@ -16,32 +16,42 @@ function loadImage({dispatch, imageType, url}) {
   img.src = url;
 }
 
-function loadQuestions(questions, dispatch) {
+function loadQuestions({dispatch, questions}) {
   const question = questions.find(({loaded}) => !loaded);
-  if(!question || !question.image) { return; }
-  if(!question.image.loaded) {
-    loadImage({dispatch, imageType: "question", url: question.image.url});
-    return;
+  if(!question || !question.questionImage) { return; }
+  if(!question.questionImage.loaded) {
+    return loadImage({
+      dispatch,
+      imageType: "question",
+      url: question.questionImage.url
+    });
   }
 
   const response = question.responses.find(({image: {loaded}}) => !loaded);
   if(response) {
-    loadImage({dispatch, imageType: "response", url: response.image.url});
+    return loadImage({
+      dispatch,
+      imageType: "response",
+      url: response.image.url
+    });
   }
+
+  dispatch({type: "questionLoaded"});
 }
 
 function reducer(state, action) {
   switch(action.type) {
     case "error":
       return {...state, error: action.error};
-    case "imageLoaded": {
+    case "imageLoaded":
+    case "questionLoaded": {
       const questions = mutable(state.questions);
       const questionIndex = questions.findIndex(({loaded}) => !loaded);
       const question = questions[questionIndex];
 
       if(action.imageType === "question") {
-        question.image.loaded = true;
-      } else {
+        question.questionImage.loaded = true;
+      } else if(action.imageType === "response") {
         const responseIndex = question.responses.findIndex(({image: {loaded}}) => !loaded);
 
         question.responses[responseIndex].image.loaded = true;
@@ -50,7 +60,7 @@ function reducer(state, action) {
       const responseIndex = question.responses.findIndex(({image: {loaded}}) => !loaded);
       const responseImagesLoaded = responseIndex === -1;
 
-      question.loaded = question.image.loaded && responseImagesLoaded;
+      question.loaded = question.questionImage.loaded && responseImagesLoaded;
       questions[questionIndex] = question;
 
       const loading = questions.findIndex(({loaded}) => !loaded) !== -1;
@@ -60,7 +70,7 @@ function reducer(state, action) {
     case "imageLoading":
       return {...state, imageLoading: true, loading: true};
     case "reset":
-      return {questions: action.questions};
+      return {imageLoading: false, questions: action.questions};
     case "response": {
       const questions = mutable(state.questions);
       questions[action.questionIndex].answer = action.answer;
@@ -80,7 +90,7 @@ export function useQuestionsLoader(initialQuestions) {
 
   useEffect(() => dispatch({questions: initialQuestions, type: "reset"}), [initialQuestions]);
   useEffect(() => {
-    if(!imageLoading) { loadQuestions(questions, dispatch); }
+    if(!imageLoading) { loadQuestions({dispatch, questions}); }
   }, [imageLoading, questions]);
 
   return {error, dispatch, loading, questions};

@@ -1,12 +1,9 @@
 @import "~style/helpers";
 @import "~style/variables";
 
-body {
-  background: white;
-  color: #333;
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-}
-.completion {
+.results {
+  @extend %widgetContainer;
+
   padding: 0 20px;
   text-align: center;
   @include rems(18);

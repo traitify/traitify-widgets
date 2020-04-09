@@ -1,13 +1,14 @@
-import TestRenderer from "react-test-renderer";
+import {act, create} from "react-test-renderer";
 
 export default class ComponentHandler {
   constructor(element, options = {}) {
-    this.renderer = TestRenderer.create(element, options);
+    act(() => { this.renderer = create(element, options); });
   }
-  get instance() { return this.renderer.root.instance; }
+  get instance() { return this.renderer.root.instance || this.renderer.root; }
   get props() { return this.instance.props; }
   get state() { return this.instance.state; }
   get tree() { return this.renderer.toJSON(); }
+  act(run) { act(run); }
   unmount() { this.renderer.unmount(); }
   updateProps(props) {
     const Component = this.renderer.root.type;

@@ -102,8 +102,11 @@
           "SlideDeck": "#slide-deck",
           "Results": "#results"
         }
-        if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
-        if(view !== "candidate") { targets["Guide"] = "#guide"; }
+
+        if(surveyType !== "cognitive") {
+          if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
+          if(view !== "candidate") { targets["Guide"] = "#guide"; }
+        }
 
         widget = Traitify.ui.component();
         widget
@@ -133,7 +136,6 @@
               surveyId: "02bea8cb-f759-42c3-9eb0-38222d21f2d1"
             }
           });
-          console.log(query);
 
           Traitify.post("/cognitive-tests/graphql", query).then((response) => {
             try{
@@ -141,7 +143,7 @@
             }catch(error){
               console.log(error);
             }
-            createWidget();
+            setTimeout(createWidget, 500);
           });
         } else {
           Traitify.post("/assessments", {
@@ -155,7 +157,7 @@
             }catch(error){
               console.log(error);
             }
-            createWidget();
+            setTimeout(createWidget, 500);
           });
         }
       }

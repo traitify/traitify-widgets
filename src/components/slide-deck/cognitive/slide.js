@@ -7,7 +7,7 @@ import style from "./style.scss";
 function Slide({onSelect, question, translate}) {
   const [answerID, setAnswerID] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
-  const timeTaken = (Date.now() - startTime) / 1000;
+  const timeTaken = Date.now() - startTime;
   const onConfirm = () => onSelect({answerId: answerID, timeTaken});
   const onSkip = () => {
     if(!window.confirm(translate("cognitive_confirm_skip"))) { return; }

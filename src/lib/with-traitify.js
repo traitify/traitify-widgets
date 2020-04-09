@@ -194,11 +194,10 @@ export default function withTraitify(WrappedComponent) {
       if(!assessmentID) { return Promise.resolve(); }
 
       const key = `${locale}.cognitive-assessment.${assessmentID}`;
-      // TODO: personality_types => ?
       const hasResults = (data) => (
-        data && data.locale_key
+        data && data.localeKey
           && data.id === assessmentID
-          && data.locale_key.toLowerCase() === locale
+          && data.localeKey.toLowerCase() === locale
           && data.completed
       );
       const setAssessment = (data) => (
@@ -348,13 +347,22 @@ export default function withTraitify(WrappedComponent) {
     isReady = (type) => {
       const {assessment, deck, guide} = this.state;
 
+      if(this.getOption("surveyType") === "cognitive") {
+        switch(type) {
+          case "questions":
+            return !!(assessment && (assessment.questions || []).length > 0);
+          case "results":
+            return assessment && assessment.completed;
+          default:
+            return false;
+        }
+      }
+
       switch(type) {
         case "deck":
           return !!((deck && !!deck.name));
         case "guide":
           return !!((guide && (guide.competencies || []).length > 0));
-        case "questions":
-          return !!(assessment && (assessment.questions || []).length > 0);
         case "results":
           return !!(assessment && (assessment.personality_types || []).length > 0);
         case "slides":

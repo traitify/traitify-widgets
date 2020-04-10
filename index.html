@@ -12,6 +12,7 @@
     <div id="guide"></div>
     <style>
       .row { margin: 15px; }
+      .hide { display: none; }
     </style>
     <div class="row">
       <label htmlFor="survey-type">
@@ -19,6 +20,14 @@
         <select id="survey-type" name="survey-type">
           <option value="cognitive">Cognitive</option>
           <option value="personality">Personality</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label htmlFor="survey-id">
+        Survey:
+        <select id="survey-id" name="survey-id">
+          <option value="">None</option>
         </select>
       </label>
     </div>
@@ -89,12 +98,12 @@
       var widget;
 
       function createWidget(){
-        var assessmentID = localStorage.getItem("assessment-id");
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
         var surveyType = localStorage.getItem("survey-type");
         var view = localStorage.getItem("view");
+        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
 
         if(!assessmentID){ return; }
 
@@ -132,14 +141,14 @@
         if(surveyType === "cognitive") {
           let query = Traitify.graphql.queries.cognitive.create({
             params: {
-              localeKey: localStorage.getItem("locale"),
-              surveyId: "02bea8cb-f759-42c3-9eb0-38222d21f2d1"
+              localeKey: document.querySelector("#locale").value,
+              surveyId: document.querySelector("#survey-id").value
             }
           });
 
           Traitify.post("/cognitive-tests/graphql", query).then((response) => {
             try{
-              localStorage.setItem("assessment-id", response.data.createCognitiveTest.id);
+              localStorage.setItem("test-id", response.data.createCognitiveTest.id);
             }catch(error){
               console.log(error);
             }
@@ -171,22 +180,47 @@
         let value = e.target.value;
 
         localStorage.setItem(name, value);
-        if(widget && name !== "deck-id") {
+        if(widget && name !== "deck-id" && name !== "survey-id") {
           if(name === "survey-type") { name = "surveyType"; }
 
           widget[name](value);
         }
+
+        let type = localStorage.getItem("survey-type");
+        let element1 = document.querySelector(type == "cognitive" ? "#deck-id" : "#survey-id");
+        let element2 = document.querySelector(type == "cognitive" ? "#survey-id" : "#deck-id");
+        if(element1.closest && element1.classList) {
+          element1.closest(".row").classList.add("hide");
+          element2.closest(".row").classList.remove("hide");
+        }
       }
 
       function refreshWidget(){
-        if(widget) { widget.refresh(); }
+        if(widget) {
+          var deckID = localStorage.getItem("deck-id");
+          var surveyType = localStorage.getItem("survey-type");
+          var view = localStorage.getItem("view");
+          var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
+
+          targets = {
+            "SlideDeck": "#slide-deck",
+            "Results": "#results"
+          }
+
+          if(surveyType !== "cognitive") {
+            if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
+            if(view !== "candidate") { targets["Guide"] = "#guide"; }
+          }
+
+          widget.assessmentID(assessmentID).targets(targets).refresh();
+        }
       }
 
       function setupOptions(){
-        var inputs = ["deck-id", "locale", "perspective", "survey-type", "view"];
+        var inputs = ["deck-id", "locale", "perspective", "survey-id", "survey-type", "view"];
         for(var i = 0; i < inputs.length; i++) {
-          const name = inputs[i];
-          const element = document.querySelector("#" + name);
+          let name = inputs[i];
+          let element = document.querySelector("#" + name);
           let value = localStorage.getItem(name);
 
           if(!value) {
@@ -209,8 +243,103 @@
           if(value) { element.value = value; }
           element.addEventListener("change", onChange);
         }
+
+        let type = localStorage.getItem("survey-type");
+        let element1 = document.querySelector(type == "cognitive" ? "#deck-id" : "#survey-id");
+        let element2 = document.querySelector(type == "cognitive" ? "#survey-id" : "#deck-id");
+        if(element1.closest && element1.classList) {
+          element1.closest(".row").classList.add("hide");
+          element2.closest(".row").classList.remove("hide");
+        }
       }
 
+      function setupSurveys(){
+        // TODO: Fetch from API
+        let data = {
+          "data": {
+            "cognitiveSurveys": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "02bea8cb-f759-42c3-9eb0-38222d21f2d1",
+                    "key": "cognitive_test_2",
+                    "name": "test_2"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "037c3aee-f23e-446f-ba7f-6840f87cb388",
+                    "key": "cognitive_test_1",
+                    "name": "test_1"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "5f92f18c-5451-4b6c-9baf-c862c626bef4",
+                    "key": "cognitive_test_5",
+                    "name": "test_5"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "63890a4d-e5b0-45a5-83f5-ea697ba4d301",
+                    "key": "cognitive_test_4",
+                    "name": "test_4"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "92dcc23b-84e8-4fe0-8e96-7b4563f8b23f",
+                    "key": "cognitive_test_3",
+                    "name": "test_3"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "9c346933-b2ef-4ba3-928d-0cda2fdc0069",
+                    "key": "cognitive_test_7",
+                    "name": "test_7"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "dde28665-3ca6-49d3-aa45-043aab976909",
+                    "key": "cognitive_test_6",
+                    "name": "test_6"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "ec110d92-4edd-4317-8cc8-9fe2ef81c690",
+                    "key": "cognitive_test_8",
+                    "name": "test_8"
+                  }
+                }
+              ]
+            }
+          }
+        };
+
+        let values = [];
+        let select = document.querySelector("#survey-id");
+        data.data.cognitiveSurveys.edges.forEach(function(edge) {
+          let survey = edge.node;
+          let element = document.createElement("option");
+          values.push(survey.id);
+          element.value = survey.id;
+          element.appendChild(document.createTextNode([survey.name, survey.key, survey.id].join(" - ")));
+          select.appendChild(element);
+        });
+
+        let currentValue = localStorage.getItem("survey-id");
+        if(!values.includes || values.includes(currentValue)) {
+          select.value = currentValue;
+        } else {
+          select.value = values[0];
+        }
+      }
+
+      setupSurveys();
       setupOptions();
       createWidget();
     </script>

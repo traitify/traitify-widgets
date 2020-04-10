@@ -27,7 +27,6 @@
       <label htmlFor="survey-id">
         Survey:
         <select id="survey-id" name="survey-id">
-          <option value="">None</option>
         </select>
       </label>
     </div>
@@ -254,89 +253,29 @@
       }
 
       function setupSurveys(){
-        // TODO: Fetch from API
-        let data = {
-          "data": {
-            "cognitiveSurveys": {
-              "edges": [
-                {
-                  "node": {
-                    "id": "02bea8cb-f759-42c3-9eb0-38222d21f2d1",
-                    "key": "cognitive_test_2",
-                    "name": "test_2"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "037c3aee-f23e-446f-ba7f-6840f87cb388",
-                    "key": "cognitive_test_1",
-                    "name": "test_1"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "5f92f18c-5451-4b6c-9baf-c862c626bef4",
-                    "key": "cognitive_test_5",
-                    "name": "test_5"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "63890a4d-e5b0-45a5-83f5-ea697ba4d301",
-                    "key": "cognitive_test_4",
-                    "name": "test_4"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "92dcc23b-84e8-4fe0-8e96-7b4563f8b23f",
-                    "key": "cognitive_test_3",
-                    "name": "test_3"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "9c346933-b2ef-4ba3-928d-0cda2fdc0069",
-                    "key": "cognitive_test_7",
-                    "name": "test_7"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "dde28665-3ca6-49d3-aa45-043aab976909",
-                    "key": "cognitive_test_6",
-                    "name": "test_6"
-                  }
-                },
-                {
-                  "node": {
-                    "id": "ec110d92-4edd-4317-8cc8-9fe2ef81c690",
-                    "key": "cognitive_test_8",
-                    "name": "test_8"
-                  }
-                }
-              ]
-            }
+        let query = Traitify.graphql.queries.cognitive.surveys();
+
+        Traitify.post("/cognitive-tests/graphql", query).then((response) => {
+          let values = [];
+          let select = document.querySelector("#survey-id");
+
+          response.data.cognitiveSurveys.edges.forEach(function(edge) {
+            let survey = edge.node;
+            let element = document.createElement("option");
+
+            values.push(survey.id);
+            element.value = survey.id;
+            element.appendChild(document.createTextNode([survey.name, survey.key, survey.id].join(" - ")));
+            select.appendChild(element);
+          });
+
+          let currentValue = localStorage.getItem("survey-id");
+          if(!values.includes || values.includes(currentValue)) {
+            select.value = currentValue;
+          } else {
+            select.value = values[0];
           }
-        };
-
-        let values = [];
-        let select = document.querySelector("#survey-id");
-        data.data.cognitiveSurveys.edges.forEach(function(edge) {
-          let survey = edge.node;
-          let element = document.createElement("option");
-          values.push(survey.id);
-          element.value = survey.id;
-          element.appendChild(document.createTextNode([survey.name, survey.key, survey.id].join(" - ")));
-          select.appendChild(element);
         });
-
-        let currentValue = localStorage.getItem("survey-id");
-        if(!values.includes || values.includes(currentValue)) {
-          select.value = currentValue;
-        } else {
-          select.value = values[0];
-        }
       }
 
       setupSurveys();

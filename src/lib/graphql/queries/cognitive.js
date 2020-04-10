@@ -23,9 +23,7 @@ const defaultFields = [
   }
 ];
 
-export function create({fields: _fields, params}) {
-  const fields = _fields || defaultFields;
-
+export function create({fields, params}) {
   if(!params.surveyId) {
     console.warn("GraphQL - createCognitiveTest - Survey ID required"); // eslint-disable-line no-console
   }
@@ -34,7 +32,7 @@ export function create({fields: _fields, params}) {
     query: `
       mutation($localeKey: String, $surveyId: String!) {
         createCognitiveTest(localeKey: $localeKey, surveyId: $surveyId) {
-          ${toQuery(fields)}
+          ${toQuery(fields || defaultFields)}
         }
       }
     `,
@@ -42,14 +40,12 @@ export function create({fields: _fields, params}) {
   };
 }
 
-export function get({fields: _fields, params}) {
-  const fields = _fields || defaultFields;
-
+export function get({fields, params}) {
   return {
     query: `
       query cognitiveTest($localeKey: String, $testId: String!) {
         cognitiveTest(localeKey: $localeKey, testId: $testId) {
-          ${toQuery(fields)}
+          ${toQuery(fields || defaultFields)}
         }
       }
     `,
@@ -57,14 +53,26 @@ export function get({fields: _fields, params}) {
   };
 }
 
-export function update({fields: _fields, params}) {
-  const fields = _fields || ["message", "success"];
+export function surveys(options) {
+  const fields = options && options.fields;
 
+  return {
+    query: `
+      query {
+        cognitiveSurveys {
+          ${toQuery(fields || {edges: {node: ["id", "key", "name"]}})}
+        }
+      }
+    `
+  };
+}
+
+export function update({fields, params}) {
   return {
     query: `
       mutation($answers: [QuestionAnswer]!, $overallTimeTaken: Int!, $testId: String!) {
         completeCognitiveTest(answers: $answers, overallTimeTaken: $overallTimeTaken, testId: $testId) {
-          ${toQuery(fields)}
+          ${toQuery(fields || ["message", "success"])}
         }
       }
     `,

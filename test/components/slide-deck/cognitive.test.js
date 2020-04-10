@@ -128,7 +128,10 @@ describe("Personality", () => {
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
     const slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: props.assessment.questions[0].responses[0].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[0].id,
+      timeTaken: 600
+    }));
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -140,15 +143,24 @@ describe("Personality", () => {
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
     let slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: slide.props.question.responses[0].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[0].id,
+      timeTaken: 600
+    }));
     slide = component.instance.findByType(Slide);
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findByType(Slide);
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: slide.props.question.responses[1].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[1].id,
+      timeTaken: 600
+    }));
     slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: slide.props.question.responses[2].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[2].id,
+      timeTaken: 600
+    }));
 
     expect(component.tree).toMatchSnapshot();
     expect(window.confirm).toHaveBeenCalledTimes(1);
@@ -169,7 +181,10 @@ describe("Personality", () => {
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
     let slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: slide.props.question.responses[0].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[0].id,
+      timeTaken: 600
+    }));
     slide = component.instance.findByType(Slide);
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findByType(Slide);
@@ -192,7 +207,7 @@ describe("Personality", () => {
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
-    expect(() => component.instance.findByType(Slide)).toThrowError();
+    expect(() => component.instance.findByType(Slide)).toThrow();
   });
 
   it("renders skipped slides", () => {
@@ -202,11 +217,17 @@ describe("Personality", () => {
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
     let slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: slide.props.question.responses[0].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[0].id,
+      timeTaken: 600
+    }));
     slide = component.instance.findByType(Slide);
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findByType(Slide);
-    component.act(() => slide.props.onSelect({answerId: slide.props.question.responses[1].id, timeTaken: 600}));
+    component.act(() => slide.props.onSelect({
+      answerId: slide.props.question.responses[1].id,
+      timeTaken: 600
+    }));
 
     expect(component.tree).toMatchSnapshot();
     expect(window.confirm).toHaveBeenCalledTimes(1);
@@ -226,7 +247,7 @@ describe("Personality", () => {
     component.act(() => instructions.props.onStart({disability: false}));
 
     expect(component.tree).toMatchSnapshot();
-    expect(() => component.instance.findByType(Instructions)).toThrowError();
+    expect(() => component.instance.findByType(Instructions)).toThrow();
     expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: false,
       onlySkipped: false,
@@ -243,7 +264,7 @@ describe("Personality", () => {
     component.act(() => instructions.props.onStart({disability: true}));
 
     expect(component.tree).toMatchSnapshot();
-    expect(() => component.instance.findByType(Instructions)).toThrowError();
+    expect(() => component.instance.findByType(Instructions)).toThrow();
     expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: true,
       onlySkipped: false,
@@ -261,7 +282,7 @@ describe("Personality", () => {
     component.act(() => instructions.props.onStart({disability: true}));
 
     expect(component.tree).toMatchSnapshot();
-    expect(() => component.instance.findByType(Instructions)).toThrowError();
+    expect(() => component.instance.findByType(Instructions)).toThrow();
     expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: true,
       onlySkipped: false,

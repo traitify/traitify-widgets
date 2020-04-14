@@ -121,6 +121,7 @@
           .allowBack()
           .allowFullscreen()
           .assessmentID(assessmentID)
+          .disableTimeLimit()
           .locale(locale)
           .perspective(perspective)
           .surveyType(surveyType)
@@ -265,7 +266,7 @@
 
             values.push(survey.id);
             element.value = survey.id;
-            element.appendChild(document.createTextNode([survey.name, survey.key, survey.id].join(" - ")));
+            element.appendChild(document.createTextNode(survey.name));
             select.appendChild(element);
           });
 

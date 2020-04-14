@@ -30,9 +30,11 @@ function Slide({onSelect, question, translate}) {
       <div className={style.choices}>
         <div className={style.choicesContainer}>
           {question.responses.map(({id, image}) => (
-            <button key={id} onClick={() => setAnswerID(id)} type="button">
-              <img alt={translate("cognitive_response_alt_text")} className={answerID === id ? style.selected : null} src={image.url} />
-            </button>
+            <div key={id} className={style.choice}>
+              <button onClick={() => setAnswerID(id)} type="button">
+                <img alt={translate("cognitive_response_alt_text")} className={answerID === id ? style.selected : null} src={image.url} />
+              </button>
+            </div>
           ))}
         </div>
       </div>

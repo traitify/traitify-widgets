@@ -25,8 +25,8 @@ function Instructions({onStart, translate}) {
 
     return (
       <div className={style.instructions}>
-        <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
         <p>{translate("cognitive_instructions_step_2_text")}</p>
+        <video autoPlay={true} loop={true} muted={true}><source src={image} type="video/mp4" /></video>
         <label htmlFor="traitify-disability">
           <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
           {translate("cognitive_instructions_disability_text")}

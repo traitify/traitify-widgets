@@ -1,0 +1,97 @@
+@import "~style/helpers";
+
+.container {
+  @extend %widgetContainer;
+  @extend %cf;
+}
+.details {
+  background: #4d53d6;
+  background: -moz-linear-gradient(137deg, #4d85d6 0%, #4d53d6 100%);
+  background: -webkit-linear-gradient(137deg,#4d85d6 0%,#4d53d6 100%);
+  background: linear-gradient(137deg, #4d85d6 0%,#4d53d6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d85d6', endColorstr='#4d53d6',GradientType=1 );
+  color: $white;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  @include rems(16);
+  @include mq(m) {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+    padding: 20px;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    @include rems(18);
+  }
+  img {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    max-width: 80px;
+  }
+  h2 {
+    margin-top: 5px;
+  }
+  span {
+    font-weight: bold;
+    display: block;
+  }
+  p {
+    clear: both;
+  }
+}
+.meaning {
+  padding: 20px;
+  margin-bottom: 20px;
+  @include rems(16);
+  @include mq(m) {
+    float: left;
+    width: 49%;
+    @include rems(17);
+  }
+  @include mq(xl) {
+    @include rems(18);
+  }
+  p {
+    margin: 0;
+  }
+}
+.thirdPersonDetails {
+  @extend .details;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include mq(l) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 20px 30px;
+    .badgeAndName {
+      width: 40%;
+      display: inline-block;
+    }
+    .divider {
+      border-right: 2px solid $white;
+      height: 120px;
+    }
+    .body {
+      width: 45%;
+      float: right;
+    }
+    .personalityHeading {
+      padding-top: 20px;
+    }
+  }
+  img {
+    height: 130px;
+    max-width: 130px;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}

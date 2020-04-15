@@ -57,7 +57,7 @@ function Instructions({onStart, translate}) {
   }
 
   return (
-    <div className={style.container}>
+    <div className={style.instructions}>
       <h2>{translate("cognitive_instructions_step_5_heading")}</h2>
       <h3>{translate("cognitive_instructions_step_5_subheading")}</h3>
       <p>{translate("cognitive_instructions_step_5_text")}</p>

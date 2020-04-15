@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
 import withTraitify from "lib/with-traitify";
-import Guide from "../../guide";
 import PersonalityArchetype from "./personality-archetype";
-import PersonalityDetails from "./personality-details";
 import PersonalityDimensions from "./personality-dimensions";
+import PersonalitySkills from "./personality-skills";
+import PersonalityTips from "./personality-tips";
 import PersonalityTraits from "../dimension-based-results/personality-traits";
 
 class EdmResults extends Component {
@@ -15,9 +15,9 @@ class EdmResults extends Component {
     return (
       <section>
         <PersonalityArchetype {...this.props} />
+        <PersonalitySkills {...this.props} />
+        <PersonalityTips {...this.props} />
         <PersonalityDimensions {...this.props} />
-        <PersonalityDetails {...this.props} />
-        {this.props.getOption("perspective") === "thirdPerson" && <Guide {...this.props} />}
         <PersonalityTraits {...this.props} />
       </section>
     );

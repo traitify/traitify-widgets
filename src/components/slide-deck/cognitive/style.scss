@@ -83,7 +83,7 @@
     }
   }
   img.selected {
-    border: 3px solid #3B8DBF;
+    border: 6px solid #3B8DBF;
   }
 }
 .buttons {
@@ -135,23 +135,37 @@
 
 .statusContainer {
   padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .timer {
   float: left;
   @include rems(14);
+  @include mq(xl) {
+    @include rems(18);
+  }
 }
 .status {
   float: right;
   @include rems(14);
+  @include mq(xl) {
+    @include rems(18);
+  }
 }
 .progressBar {
   clear: both;
   background: #EFEFEF;
   width: 100%;
   height: 10px;
+  @include mq(xl) {
+    height: 20px;
+  }
 }
 .progress {
   background: #2FB656;
   width: 100%;
   height: 10px;
+  @include mq(xl) {
+    height: 20px;
+  }
 }

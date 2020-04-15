@@ -93,3 +93,11 @@ export function useQuestionsLoader(initialQuestions) {
 
   return {error, dispatch, loading, questions};
 }
+
+export const videoProps = {
+  autoPlay: true,
+  disableRemotePlayback: true,
+  loop: true,
+  muted: true,
+  playsInline: true
+};

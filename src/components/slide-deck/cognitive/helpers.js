@@ -96,7 +96,7 @@ export function useQuestionsLoader(initialQuestions) {
 
 export const videoProps = {
   autoPlay: true,
-  disableRemotePlayback: true,
+  disableremoteplayback: "true",
   loop: true,
   muted: true,
   playsInline: true

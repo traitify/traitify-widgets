@@ -14,7 +14,7 @@ function Instructions({onStart, translate}) {
       <div className={style.instructions}>
         <h1>{translate("cognitive_instructions_step_1_heading")}</h1>
         <p>{translate("cognitive_instructions_step_1_text")}</p>
-        <video autoPlay={true} loop={true} playsinline={true} muted={true}><source src={image} type="video/mp4" /></video>
+        <video autoPlay={true} loop={true} muted={true} playsInline={true}><source src={image} type="video/mp4" /></video>
         <button className={style.btnBlue} onClick={() => setStep(2)} type="button">{translate("cognitive_instructions_step_1_button")}</button>
       </div>
     );
@@ -26,7 +26,7 @@ function Instructions({onStart, translate}) {
     return (
       <div className={style.instructions}>
         <p>{translate("cognitive_instructions_step_2_text")}</p>
-        <video autoPlay={true} loop={true} playsinline={true} muted={true}><source src={image} type="video/mp4" /></video>
+        <video autoPlay={true} loop={true} muted={true} playsInline={true}><source src={image} type="video/mp4" /></video>
         <label htmlFor="traitify-disability">
           <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
           {translate("cognitive_instructions_disability_text")}
@@ -43,7 +43,7 @@ function Instructions({onStart, translate}) {
     return (
       <div className={style.instructions}>
         <h2>{translate("cognitive_instructions_step_3_heading")}</h2>
-        <video autoPlay={true} loop={true} playsinline={true} muted={true}><source src={image} type="video/mp4" /></video>
+        <video autoPlay={true} loop={true} muted={true} playsInline={true}><source src={image} type="video/mp4" /></video>
         <p>{translate("cognitive_instructions_step_3_text")}</p>
         <button className={style.btnBlue} onClick={() => setStep(4)} type="button">{translate("cognitive_instructions_step_3_button")}</button>
       </div>

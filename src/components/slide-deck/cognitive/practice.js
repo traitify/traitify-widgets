@@ -33,7 +33,7 @@ function Practice({onFinish, translate}) {
         <div className={style.instructions}>
           <h1>{translate("cognitive_practice_step_1_heading")}</h1>
           <p>{translate("cognitive_practice_step_1_text")}</p>
-          <video autoPlay={true} loop={true} muted={true} playsinline={true}><source src={image} type="video/mp4" /></video>
+          <video autoPlay={true} loop={true} muted={true} playsInline={true}><source src={image} type="video/mp4" /></video>
           <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_1_button")}</button>
         </div>
       );
@@ -46,7 +46,7 @@ function Practice({onFinish, translate}) {
         <div className={style.instructions}>
           <h1>{translate("cognitive_practice_step_2_heading")}</h1>
           <p>{translate("cognitive_practice_step_2_text")}</p>
-          <video autoPlay={true} loop={true} muted={true} playsinline={true}><source src={image} type="video/mp4" /></video>
+          <video autoPlay={true} loop={true} muted={true} playsInline={true}><source src={image} type="video/mp4" /></video>
           <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_2_button")}</button>
         </div>
       );
@@ -58,7 +58,7 @@ function Practice({onFinish, translate}) {
       return (
         <div className={style.instructions}>
           <h1>{translate("cognitive_practice_step_3_heading")}</h1>
-          <video autoPlay={true} loop={true} muted={true} playsinline={true}><source src={image} type="video/mp4" /></video>
+          <video autoPlay={true} loop={true} muted={true} playsInline={true}><source src={image} type="video/mp4" /></video>
           <p>{translate("cognitive_practice_step_3_text")}</p>
           <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_3_button")}</button>
         </div>

@@ -69,7 +69,7 @@ class PersonalitySkills extends Component {
               <option>Self Motivation</option>
             </select>
           </div>
-          <h3>Here are some useful tips that will help your performance while working from home</h3>
+          <h3>Here are some useful tips that will help your performance while working from home.</h3>
           <ul className={style.skills}>
             <li>Find ways to innovate. Does a remote workforce have needs that your company could fill?</li>
             <li>Check in on colleagues to help them meet daily goals if needed.</li>

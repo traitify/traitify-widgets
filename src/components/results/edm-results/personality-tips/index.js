@@ -25,7 +25,40 @@ class PersonalityTips extends Component {
 
     return (
       <div className={style.container}>
-        Tips
+        <ul className={style.tipsTabs}>
+          <li className={style.active}>
+            <button>
+              <div className={style.tipName}>Tools to Use</div>
+            </button>
+          </li>
+          <li>
+            <button>
+              <div className={style.tipName}>Room for Growth and Change</div>
+            </button>
+          </li>
+          <li>
+            <button>
+              <div className={style.tipName}>Settings That Work For You</div>
+            </button>
+          </li>
+        </ul>
+
+        <div className={style.tipsTabBox}>
+          <div className={style.formSelect}>
+            <select>
+              <option>Tools to Use</option>
+              <option>Room for Growth and Change</option>
+              <option>Settings That Work For You</option>
+            </select>
+          </div>
+          <ul className={style.tips}>
+            <li>Find ways to innovate. Does a remote workforce have needs that your company could fill?</li>
+            <li>Check in on colleagues to help them meet daily goals if needed.</li>
+            <li>Change your workspace from time to time. Work while standing to keep your energy up.</li>
+            <li>Send supportive messages to coworkers to help ensure everyone is motivated and productive.</li>
+            <li>You're naturally calm and steady. Be positive during video chats.</li>
+          </ul>
+        </div>
       </div>
     );
   }

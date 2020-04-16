@@ -54,6 +54,7 @@
 .skillsTabBox {
   border: 1px solid #E0E1E2;
   padding: 20px 0;
+  margin-bottom: 20px;
   @include mq(l) {
     border-width: 0 1px 1px;
   }

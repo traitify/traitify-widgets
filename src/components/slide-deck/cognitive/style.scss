@@ -77,7 +77,7 @@
     width: 100%;
     max-width: 100px;
     height: auto;
-    border: 3px solid black;
+    border: 3px solid #333333;
     @include mq(m) {
       max-width: 95px;
     }

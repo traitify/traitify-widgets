@@ -70,7 +70,7 @@ function Practice({onFinish, translate}) {
   const onSkip = () => window.alert(translate("cognitive_alert_skip"));
 
   return (
-    <div className={style.instructions}>
+    <div className={style.container}>
       <div className={style.statusContainer}>
         <div className={style.timer}>{translate("cognitive_practice_heading")}</div>
         <div className={style.status}>{questionIndex + 1} / {questions.length}</div>

@@ -42,7 +42,6 @@
   padding: 15px 0;
   width: 100%;
   img {
-    width: 80%;
     max-width: 300px;
     height: auto;
     margin: 0 auto;
@@ -56,13 +55,13 @@
   width: 100%;
   .choicesContainer {
     margin: 0 auto;
-    max-width: 250px;
+    max-width: 300px;
   }
   .choice {
     display: inline-block;
     margin: 0 3%;
     margin-bottom: 15px;
-    width: 44%;
+    width: 30%;
     &:nth-of-type(3) {
       clear: both;
     }
@@ -75,7 +74,7 @@
   img {
     display: block;
     width: 100%;
-    max-width: 100px;
+    max-width: 90px;
     height: auto;
     border: 3px solid #333333;
     @include mq(m) {

@@ -59,8 +59,7 @@
   }
   .choice {
     display: inline-block;
-    margin: 0 3%;
-    margin-bottom: 15px;
+    margin: 4%;
     width: 30%;
     &:nth-of-type(3) {
       clear: both;
@@ -74,12 +73,8 @@
   img {
     display: block;
     width: 100%;
-    max-width: 90px;
     height: auto;
     border: 3px solid #333333;
-    @include mq(m) {
-      max-width: 95px;
-    }
   }
   img.selected {
     border: 6px solid #3B8DBF;

@@ -15,8 +15,8 @@ function Instructions({onStart, translate}) {
     return (
       <div className={style.instructions}>
         <h1>{translate("cognitive_instructions_step_1_heading")}</h1>
-        <p>{translate("cognitive_instructions_step_1_text")}</p>
         <video {...videoProps}><source src={video} type="video/mp4" /></video>
+        <p>{translate("cognitive_instructions_step_1_text")}</p>
         <button className={style.btnBlue} onClick={() => setStep(2)} type="button">{translate("cognitive_instructions_step_1_button")}</button>
       </div>
     );

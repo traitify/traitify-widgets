@@ -32,8 +32,8 @@ function Practice({onFinish, translate}) {
       return (
         <div className={style.instructions}>
           <h1>{translate("cognitive_practice_step_1_heading")}</h1>
-          <p>{translate("cognitive_practice_step_1_text")}</p>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
+          <p>{translate("cognitive_practice_step_1_text")}</p>
           <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_1_button")}</button>
         </div>
       );
@@ -45,8 +45,8 @@ function Practice({onFinish, translate}) {
       return (
         <div className={style.instructions}>
           <h1>{translate("cognitive_practice_step_2_heading")}</h1>
-          <p>{translate("cognitive_practice_step_2_text")}</p>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
+          <p>{translate("cognitive_practice_step_2_text")}</p>
           <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_2_button")}</button>
         </div>
       );

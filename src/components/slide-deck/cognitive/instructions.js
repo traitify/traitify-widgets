@@ -23,45 +23,31 @@ function Instructions({onStart, translate}) {
   }
 
   if(step === 2) {
-    const video = "https://cdn.traitify.com/images/cognitive/instructions-2.mp4";
+    const video = "https://cdn.traitify.com/images/cognitive/practice-example.mp4";
 
     return (
       <div className={style.instructions}>
-        <p>{translate("cognitive_instructions_step_2_text")}</p>
+        <h2>{translate("cognitive_instructions_step_2_heading")}</h2>
         <video {...videoProps}><source src={video} type="video/mp4" /></video>
-        <label htmlFor="traitify-disability">
-          <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
-          {translate("cognitive_instructions_disability_text")}
-        </label>
-        <br /><br />
+        <p>{translate("cognitive_instructions_step_2_text")}</p>
         <button className={style.btnBlue} onClick={() => setStep(3)} type="button">{translate("cognitive_instructions_step_2_button")}</button>
       </div>
     );
   }
 
   if(step === 3) {
-    const video = "https://cdn.traitify.com/images/cognitive/practice-example.mp4";
-
-    return (
-      <div className={style.instructions}>
-        <h2>{translate("cognitive_instructions_step_3_heading")}</h2>
-        <video {...videoProps}><source src={video} type="video/mp4" /></video>
-        <p>{translate("cognitive_instructions_step_3_text")}</p>
-        <button className={style.btnBlue} onClick={() => setStep(4)} type="button">{translate("cognitive_instructions_step_3_button")}</button>
-      </div>
-    );
-  }
-
-  if(step === 4) {
-    return <Practice onFinish={() => setStep(5)} translate={translate} />;
+    return <Practice onFinish={() => setStep(4)} translate={translate} />;
   }
 
   return (
     <div className={style.instructions}>
-      <h2>{translate("cognitive_instructions_step_5_heading")}</h2>
-      <h3>{translate("cognitive_instructions_step_5_subheading")}</h3>
-      <p>{translate("cognitive_instructions_step_5_text")}</p>
-      <button className={style.btnBlue} onClick={() => onStart({disability})} type="button">{translate("cognitive_instructions_step_5_button")}</button>
+      <h2>{translate("cognitive_instructions_step_4_heading")}</h2>
+      <p>{translate("cognitive_instructions_step_4_text")}</p>
+      <label htmlFor="traitify-disability">
+        {translate("cognitive_instructions_disability_text")}
+        <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
+      </label>
+      <button className={style.btnBlue} onClick={() => onStart({disability})} type="button">{translate("cognitive_instructions_step_4_button")}</button>
     </div>
   );
 }

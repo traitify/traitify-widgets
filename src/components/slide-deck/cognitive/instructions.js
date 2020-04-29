@@ -13,7 +13,7 @@ function Instructions({onStart, translate}) {
     const video = "https://cdn.traitify.com/images/cognitive/instructions-1.mp4";
 
     return (
-      <div className={style.instructions}>
+      <div key="step-1" className={style.instructions}>
         <h1>{translate("cognitive_instructions_step_1_heading")}</h1>
         <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <p>{translate("cognitive_instructions_step_1_text")}</p>
@@ -26,7 +26,7 @@ function Instructions({onStart, translate}) {
     const video = "https://cdn.traitify.com/images/cognitive/practice-example.mp4";
 
     return (
-      <div className={style.instructions}>
+      <div key="step-2" className={style.instructions}>
         <h2>{translate("cognitive_instructions_step_2_heading")}</h2>
         <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <p>{translate("cognitive_instructions_step_2_text")}</p>
@@ -40,7 +40,7 @@ function Instructions({onStart, translate}) {
   }
 
   return (
-    <div className={style.instructions}>
+    <div key="step-4" className={style.instructions}>
       <h2>{translate("cognitive_instructions_step_4_heading")}</h2>
       <p>{translate("cognitive_instructions_step_4_text")}</p>
       <label htmlFor="traitify-disability">

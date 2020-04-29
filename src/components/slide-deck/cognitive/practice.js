@@ -30,7 +30,7 @@ function Practice({onFinish, translate}) {
       const video = "https://cdn.traitify.com/images/cognitive/practice-1.mp4";
 
       return (
-        <div className={style.instructions}>
+        <div key="question-0" className={style.instructions}>
           <h1>{translate("cognitive_practice_step_1_heading")}</h1>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
           <p>{translate("cognitive_practice_step_1_text")}</p>
@@ -43,7 +43,7 @@ function Practice({onFinish, translate}) {
       const video = "https://cdn.traitify.com/images/cognitive/practice-2.mp4";
 
       return (
-        <div className={style.instructions}>
+        <div key="question-1" className={style.instructions}>
           <h1>{translate("cognitive_practice_step_2_heading")}</h1>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
           <p>{translate("cognitive_practice_step_2_text")}</p>
@@ -56,7 +56,7 @@ function Practice({onFinish, translate}) {
       const video = "https://cdn.traitify.com/images/cognitive/practice-3.mp4";
 
       return (
-        <div className={style.instructions}>
+        <div key="question-2" className={style.instructions}>
           <h1>{translate("cognitive_practice_step_3_heading")}</h1>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
           <p>{translate("cognitive_practice_step_3_text")}</p>
@@ -70,7 +70,7 @@ function Practice({onFinish, translate}) {
   const onSkip = () => window.alert(translate("cognitive_alert_skip"));
 
   return (
-    <div className={style.container}>
+    <div key="practice" className={style.container}>
       <div className={style.statusContainer}>
         <div className={style.timer}>{translate("cognitive_practice_heading")}</div>
         <div className={style.status}>{questionIndex + 1} / {questions.length}</div>

@@ -16,7 +16,6 @@
 
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 800px;
   border-radius: 5px;
   @include rems(15);
   h1 {
@@ -89,9 +88,9 @@
 }
 .buttons {
   clear: both;
+  background: #EFEFEF;
   text-align: center;
   width: 100%;
-  max-width: 600px;
   margin: 0 auto;
   button {
     display: inline-block;
@@ -115,7 +114,7 @@
   border-radius: 5px;
   color: white;
   display: block;
-  margin: auto;
+  margin: 0 auto 40px;
   padding: 10px;
   width: 100%;
   @include rems(20);

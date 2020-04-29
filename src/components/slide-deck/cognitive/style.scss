@@ -7,7 +7,7 @@
   background: white;
   min-height: 100vh;
   @include mq(m) {
-    min-height: $minHeight;
+    min-height: 900px;
   }
 }
 

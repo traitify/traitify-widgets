@@ -24,6 +24,9 @@
     margin-top: 0;
     @include rems(26);
   }
+  h1, h2 {
+    text-align: center;
+  }
   label {
     display: block;
     margin-bottom: 10px;

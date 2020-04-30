@@ -1,15 +1,41 @@
-/* eslint-disable */
 import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
+const skills = [
+  {
+    image: "https://cdn.traitify.com/images/big5_home.png",
+    key: "working_from_home",
+    name: "Working From Home Tips"
+  },
+  {
+    image: "https://cdn.traitify.com/images/big5_stress.png",
+    key: "dealing_with_stress",
+    name: "Dealing With Stress"
+  },
+  {
+    image: "https://cdn.traitify.com/images/big5_communication.png",
+    key: "communication",
+    name: "Communication Tips"
+  },
+  {
+    image: "https://cdn.traitify.com/images/big5_teamwork.png",
+    key: "teamwork",
+    name: "Teamwork"
+  },
+  {
+    image: "https://cdn.traitify.com/images/big5_motivation.png",
+    key: "self_motivation",
+    name: "Self Motivation"
+  }
+];
+
 class PersonalitySkills extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({archetype: PropTypes.object}),
-    getOption: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
@@ -23,59 +49,40 @@ class PersonalitySkills extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
+    const {translate} = this.props;
+    const personality = this.props.assessment.archetype;
+    if(!personality) { return null; }
+
+    const activeSkill = skills[0];
+    const onChange = () => {};
+    const tips = personality.details
+      .filter(({title}) => (title === `Success Skills - ${activeSkill.name}`))
+      .map(({body}) => body);
+
     return (
       <div className={style.container}>
         <ul className={style.skillsTabs}>
-          <div className={style.featuredSkill}>Featured Skill</div>
-          <li className={style.active}>
-            <button>
-              <img src="https://cdn.traitify.com/images/big5_home.png" alt="Working From Home Tips" className={style.skillImage} />
-              <div className={style.skillName}>Working From Home Tips</div>
-            </button>
-          </li>
-          <li>
-            <button>
-              <img src="https://cdn.traitify.com/images/big5_stress.png" alt="Dealing With Stress" className={style.skillImage} />
-              <div className={style.skillName}>Dealing With Stress</div>
-            </button>
-          </li>
-          <li>
-            <button>
-              <img src="https://cdn.traitify.com/images/big5_communication.png" alt="Communication Tips" className={style.skillImage} />
-              <div className={style.skillName}>Communication Tips</div>
-            </button>
-          </li>
-          <li>
-            <button>
-              <img src="https://cdn.traitify.com/images/big5_teamwork.png" alt="Teamwork" className={style.skillImage} />
-              <div className={style.skillName}>Teamwork</div>
-            </button>
-          </li>
-          <li>
-            <button>
-              <img src="https://cdn.traitify.com/images/big5_motivation.png" alt="Self Motivation" className={style.skillImage} />
-              <div className={style.skillName}>Self Motivation</div>
-            </button>
-          </li>
+          <div className={style.featuredSkill}>{translate("featured_skill")}</div>
+          {skills.map(({image, key}) => (
+            <li key={key} className={activeSkill.key === key ? style.active : ""}>
+              <button type="button">
+                <img src={image} alt={translate(`skill_name_for_${key}`)} className={style.skillImage} />
+                <div className={style.skillName}>{translate(`skill_name_for_${key}`)}</div>
+              </button>
+            </li>
+          ))}
         </ul>
-
         <div className={style.skillsTabBox}>
           <div className={style.formSelect}>
-            <select>
-              <option>Working From Home Tips</option>
-              <option>Dealing With Stress</option>
-              <option>Communication Tips</option>
-              <option>Teamwork</option>
-              <option>Self Motivation</option>
+            <select onChange={onChange} value={activeSkill.key}>
+              {skills.map(({key}) => (
+                <option key={key} value={key}>{translate(`skill_name_for_${key}`)}</option>
+              ))}
             </select>
           </div>
-          <h3>Here are some useful tips that will help your performance while working from home.</h3>
+          <h3>{translate(`skill_heading_for_${activeSkill.key}`)}</h3>
           <ul className={style.skills}>
-            <li>Find ways to innovate. Does a remote workforce have needs that your company could fill?</li>
-            <li>Check in on colleagues to help them meet daily goals if needed.</li>
-            <li>Change your workspace from time to time. Work while standing to keep your energy up.</li>
-            <li>Send supportive messages to coworkers to help ensure everyone is motivated and productive.</li>
-            <li>You're naturally calm and steady. Be positive during video chats.</li>
+            {tips.map((tip) => (<li key={tip}>{tip}</li>))}
           </ul>
         </div>
       </div>

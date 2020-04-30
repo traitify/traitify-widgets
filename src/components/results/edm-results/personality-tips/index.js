@@ -1,9 +1,14 @@
-/* eslint-disable */
 import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
+
+const tipTypes = [
+  {disabledKey: "PersonalityTools", key: "tools", title: "Tools to Use"},
+  {disabledKey: "PersonalityRoom", key: "room", title: "Room for Growth and Change"},
+  {disabledKey: "PersonalitySettings", key: "settings", title: "Settings that Work for You"}
+];
 
 class PersonalityTips extends Component {
   static defaultProps = {assessment: null}
@@ -23,40 +28,46 @@ class PersonalityTips extends Component {
   render() {
     if(!this.props.isReady("results")) { return null; }
 
+    const {translate} = this.props;
+    const personality = this.props.assessment.archetype;
+    if(!personality) { return null; }
+
+    const disabledComponents = this.props.getOption("disabledComponents") || [];
+    const activeTipTypes = tipTypes.filter((type) => {
+      if(disabledComponents.includes(type.disabledKey)) { return false; }
+
+      return personality.details.find(({title}) => (title === type.title));
+    });
+    if(activeTipTypes.length === "") { return null; }
+
+    const activeType = activeTipTypes[0];
+    const onChange = () => {};
+    const tips = personality.details
+      .filter(({title}) => (title === activeType.title))
+      .map(({body}) => body);
+    const typeStyle = {width: `${100.0 / activeTipTypes.length}%`};
+
     return (
       <div className={style.container}>
         <ul className={style.tipsTabs}>
-          <li className={style.active}>
-            <button>
-              <div className={style.tipName}>Tools to Use</div>
-            </button>
-          </li>
-          <li>
-            <button>
-              <div className={style.tipName}>Room for Growth and Change</div>
-            </button>
-          </li>
-          <li>
-            <button>
-              <div className={style.tipName}>Settings That Work For You</div>
-            </button>
-          </li>
+          {activeTipTypes.map(({key}) => (
+            <li key={key} className={activeType.key === key ? style.active : ""} style={typeStyle}>
+              <button type="button">
+                <div className={style.tipName}>{translate(`tip_type_for_${key}`)}</div>
+              </button>
+            </li>
+          ))}
         </ul>
-
         <div className={style.tipsTabBox}>
           <div className={style.formSelect}>
-            <select>
-              <option>Tools to Use</option>
-              <option>Room for Growth and Change</option>
-              <option>Settings That Work For You</option>
+            <select onChange={onChange} value={activeType.key}>
+              {activeTipTypes.map(({key}) => (
+                <option key={key} value={key}>{translate(`tip_type_for_${key}`)}</option>
+              ))}
             </select>
           </div>
           <ul className={style.tips}>
-            <li>Find ways to innovate. Does a remote workforce have needs that your company could fill?</li>
-            <li>Check in on colleagues to help them meet daily goals if needed.</li>
-            <li>Change your workspace from time to time. Work while standing to keep your energy up.</li>
-            <li>Send supportive messages to coworkers to help ensure everyone is motivated and productive.</li>
-            <li>You're naturally calm and steady. Be positive during video chats.</li>
+            {tips.map((tip) => (<li key={tip}>{tip}</li>))}
           </ul>
         </div>
       </div>

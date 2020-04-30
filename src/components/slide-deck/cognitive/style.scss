@@ -6,7 +6,7 @@
 
   background: white;
   min-height: 100vh;
-  @include mq(m) {
+  @include mq(s) {
     min-height: $minHeight;
   }
 }
@@ -96,10 +96,10 @@
     display: inline-block;
     padding: 10px;
     @include rems(20);
-    @include max-width(m) {
+    @include max-width(s) {
       width: 50%;
     }
-    @include mq(m) {
+    @include mq(s) {
       border-radius: 5px;
       border: 0;
       margin: 20px 10px;
@@ -118,7 +118,7 @@
   padding: 10px;
   width: 100%;
   @include rems(20);
-  @include mq(m) {
+  @include mq(s) {
     width: 200px;
   }
 }

@@ -4,7 +4,7 @@ import {detailWithPerspective} from "lib/helpers";
 import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityTypeSlide extends Component {
   static propTypes = {

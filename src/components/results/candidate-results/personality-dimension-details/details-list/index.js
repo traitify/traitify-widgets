@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {rgba} from "lib/helpers/color";
-import style from "../style";
+import style from "../style.scss";
 
 export default function DetailsList(props) {
   const {color, detailsList, header} = props;

@@ -66,7 +66,7 @@ function Practice({onFinish, translate}) {
     }
   }
 
-  const progress = 100.0 * (questionIndex + 1) / questions.length;
+  const progress = (100.0 * (questionIndex + 1)) / questions.length;
   const onSkip = () => window.alert(translate("cognitive_alert_skip"));
 
   return (

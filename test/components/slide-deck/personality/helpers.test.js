@@ -262,7 +262,7 @@ describe("Helpers", () => {
 
     it("returns true if all slides loaded", () => {
       const result = isReady(
-        assessment.slides.map((slide) => ({...slide, loaded: true})),
+        assessment.slides.map((slide) => ({...slide, loaded: true}))
       );
 
       expect(result).toBe(true);
@@ -294,7 +294,7 @@ describe("Helpers", () => {
 
     it("returns -1 if all slides loaded", () => {
       const result = loadingIndex(
-        assessment.slides.map((slide) => ({...slide, loaded: true})),
+        assessment.slides.map((slide) => ({...slide, loaded: true}))
       );
 
       expect(result).toBe(-1);
@@ -325,7 +325,7 @@ describe("Helpers", () => {
 
     it("returns -1 if all slides are completed", () => {
       const result = slideIndex(
-        assessment.slides.map((slide) => ({...slide, response: true})),
+        assessment.slides.map((slide) => ({...slide, response: true}))
       );
 
       expect(result).toBe(-1);

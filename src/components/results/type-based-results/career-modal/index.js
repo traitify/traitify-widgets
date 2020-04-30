@@ -20,7 +20,7 @@ import HighChart from "components/highchart";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 class CareerModal extends Component {
   static propTypes = {

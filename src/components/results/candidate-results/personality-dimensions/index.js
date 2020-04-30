@@ -4,7 +4,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityDimensionColumns from "../personality-dimension-columns";
 import PersonalityDimensionDetails from "../personality-dimension-details";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityDimensions extends Component {
   static defaultProps = {assessment: null}

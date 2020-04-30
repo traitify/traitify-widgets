@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import style from "./style";
+import style from "./style.scss";
 
 export default class CompetencyTab extends Component {
   static propTypes = {

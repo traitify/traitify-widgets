@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
 import Markdown from "react-markdown";
-import style from "./style";
+import style from "./style.scss";
 
 export default class Slide extends Component {
   static defaultProps = {instructions: null}
@@ -97,7 +97,7 @@ export default class Slide extends Component {
       allowBack = getOption("allowBack") && slideIndex > 0;
       allowFullscreen = getOption("allowFullscreen");
       currentSlide = slides[slideIndex];
-      progress = isComplete ? 100 : slideIndex / slides.length * 100;
+      progress = isComplete ? 100 : (slideIndex / slides.length) * 100;
     }
 
     return (
@@ -146,7 +146,7 @@ export default class Slide extends Component {
           </button>
         )}
         {allowFullscreen && (
-          <button className={[style.fullscreen, isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={toggleFullscreen} type="button" />
+          <button aria-label="fullscreen" className={[style.fullscreen, isFullscreen ? style.fullscreenSmall : ""].join(" ")} onClick={toggleFullscreen} type="button" />
         )}
       </div>
     );

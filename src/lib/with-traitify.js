@@ -102,48 +102,12 @@ export default function withTraitify(WrappedComponent) {
         }
       }
     }
-    componentWillUnmount() {
-      Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
-    }
     componentDidCatch(error, info) {
       this.ui.trigger("Component.error", this, {error, info});
       this.setState({error});
     }
-    addListener = (_key, callback) => {
-      const key = _key.toLowerCase();
-
-      this.listeners = this.listeners || {};
-      this.listeners[key] = callback;
-      this.ui.on(key, callback);
-    }
-    // setState method that also works in the constructor
-    safeSetState = (state) => {
-      if(this.didMount) {
-        this.setState(state);
-      } else {
-        this.state = {...this.state, ...state};
-      }
-    }
-    cognitiveDidUpdate(prevProps, prevState) {
-      const changes = {
-        assessmentID: prevState.assessmentID !== this.state.assessmentID,
-        locale: prevState.locale !== this.state.locale
-      };
-
-      if(changes.assessmentID || changes.locale) {
-        this.updateCognitiveAssessment({
-          oldID: prevState.assessmentID,
-          oldLocale: prevState.locale
-        });
-      }
-    }
-    followDeck = () => {
-      this.setState({followingDeck: true});
-      this.updateDeck();
-    }
-    followGuide = () => {
-      this.setState({followingGuide: true});
-      this.updateGuide();
+    componentWillUnmount() {
+      Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
     }
     getAssessment = (options = {}) => {
       const {assessmentID, locale} = this.state;
@@ -344,39 +308,6 @@ export default function withTraitify(WrappedComponent) {
       if(options && options[name] != null) { return options[name]; }
       if(ui && ui.options[name] != null) { return ui.options[name]; }
     }
-    isReady = (type) => {
-      const {assessment, deck, guide} = this.state;
-
-      if(this.getOption("surveyType") === "cognitive") {
-        switch(type) {
-          case "questions":
-            return !!(assessment && (assessment.questions || []).length > 0);
-          case "results":
-            return assessment && assessment.completed;
-          default:
-            return false;
-        }
-      }
-
-      switch(type) {
-        case "deck":
-          return !!((deck && !!deck.name));
-        case "guide":
-          return !!((guide && (guide.competencies || []).length > 0));
-        case "results":
-          return !!(assessment && (assessment.personality_types || []).length > 0);
-        case "slides":
-          return !!(assessment && (assessment.slides || []).length > 0);
-        default:
-          return false;
-      }
-    }
-    removeListener = (_key) => {
-      const key = _key.toLowerCase();
-
-      this.ui.off(key, this.getListener(key));
-      delete this.listeners[key];
-    }
     setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
         this.props.assessment && this.props.assessment.id
@@ -421,6 +352,75 @@ export default function withTraitify(WrappedComponent) {
       if(!this.traitify) { throw new Error("Traitify must be passed as a prop or attached to window"); }
 
       this.ui = ui || this.traitify.ui;
+    }
+    addListener = (_key, callback) => {
+      const key = _key.toLowerCase();
+
+      this.listeners = this.listeners || {};
+      this.listeners[key] = callback;
+      this.ui.on(key, callback);
+    }
+    // setState method that also works in the constructor
+    safeSetState = (state) => {
+      if(this.didMount) {
+        this.setState(state);
+      } else {
+        this.state = {...this.state, ...state};
+      }
+    }
+    followDeck = () => {
+      this.setState({followingDeck: true});
+      this.updateDeck();
+    }
+    followGuide = () => {
+      this.setState({followingGuide: true});
+      this.updateGuide();
+    }
+    isReady = (type) => {
+      const {assessment, deck, guide} = this.state;
+
+      if(this.getOption("surveyType") === "cognitive") {
+        switch(type) {
+          case "questions":
+            return !!(assessment && (assessment.questions || []).length > 0);
+          case "results":
+            return assessment && assessment.completed;
+          default:
+            return false;
+        }
+      }
+
+      switch(type) {
+        case "deck":
+          return !!((deck && !!deck.name));
+        case "guide":
+          return !!((guide && (guide.competencies || []).length > 0));
+        case "results":
+          return !!(assessment && (assessment.personality_types || []).length > 0);
+        case "slides":
+          return !!(assessment && (assessment.slides || []).length > 0);
+        default:
+          return false;
+      }
+    }
+    removeListener = (_key) => {
+      const key = _key.toLowerCase();
+
+      this.ui.off(key, this.getListener(key));
+      delete this.listeners[key];
+    }
+    cognitiveDidUpdate(prevProps, prevState) {
+      const changes = {
+        assessmentID: prevState.assessmentID !== this.state.assessmentID,
+        locale: prevState.locale !== this.state.locale
+      };
+
+      if(changes.assessmentID || changes.locale) {
+        this.updateCognitiveAssessment({
+          oldID: prevState.assessmentID,
+          oldLocale: prevState.locale
+        });
+      }
     }
     updateAssessment(options = {}) {
       const {assessmentID, locale} = this.state;

@@ -155,36 +155,6 @@ class Personality extends Component {
       return {imageLoadingAttempts: 0, slides};
     }, this.fetchImages);
   }
-  finish() {
-    if(this.state.finished) { return; }
-    this.setState({finished: true});
-
-    if(this.props.isReady("results")) { return; }
-
-    this.props.traitify.put(
-      `/assessments/${this.props.assessmentID}/slides`,
-      completedSlides(this.state.slides)
-    ).then((response) => {
-      this.props.ui.trigger("SlideDeck.finished", this, response);
-      this.props.getAssessment({force: true});
-    }).catch((response) => {
-      let error;
-
-      try {
-        error = JSON.parse(response).errors[0];
-      } catch(e) {
-        error = response;
-      }
-
-      const finishRequestAttempts = this.state.finishRequestAttempts + 1;
-
-      if(finishRequestAttempts > 1) {
-        this.setState({error, errorType: "request"});
-      } else {
-        this.setState({finished: false, finishRequestAttempts}, this.finish);
-      }
-    });
-  }
   // Event Methods
   back = () => {
     this.setState((state) => {
@@ -254,6 +224,36 @@ class Personality extends Component {
       cache.set(`slides.${assessmentID}`, completedSlides(this.state.slides));
 
       if(isFinished(this.state.slides)) { this.finish(); }
+    });
+  }
+  finish() {
+    if(this.state.finished) { return; }
+    this.setState({finished: true});
+
+    if(this.props.isReady("results")) { return; }
+
+    this.props.traitify.put(
+      `/assessments/${this.props.assessmentID}/slides`,
+      completedSlides(this.state.slides)
+    ).then((response) => {
+      this.props.ui.trigger("SlideDeck.finished", this, response);
+      this.props.getAssessment({force: true});
+    }).catch((response) => {
+      let error;
+
+      try {
+        error = JSON.parse(response).errors[0];
+      } catch(e) {
+        error = response;
+      }
+
+      const finishRequestAttempts = this.state.finishRequestAttempts + 1;
+
+      if(finishRequestAttempts > 1) {
+        this.setState({error, errorType: "request"});
+      } else {
+        this.setState({finished: false, finishRequestAttempts}, this.finish);
+      }
     });
   }
   render() {

@@ -159,7 +159,7 @@ function Cognitive(props) {
 
   const index = skipped ? skipped.indexOf(questionIndex) : questionIndex;
   const total = skipped ? skipped.length : questions.length;
-  const progress = 100.0 * (index + 1) / total;
+  const progress = (100.0 * (index + 1)) / total;
 
   return (
     <div className={style.container}>

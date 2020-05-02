@@ -121,12 +121,13 @@
           .allowBack()
           .allowFullscreen()
           .assessmentID(assessmentID)
-          .disableTimeLimit()
           .locale(locale)
           .perspective(perspective)
           .surveyType(surveyType)
           .view(view)
           .targets(targets);
+        widget.options.slideDeck.specialTimeLimit = 1500;
+        widget.options.slideDeck.timeLimit = 1500;
         widget.render().then(function(){
           console.log("Rendered");
         }).catch(function(error){

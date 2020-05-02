@@ -1,20 +1,24 @@
 import guideQuery from "lib/graphql/queries/guide";
 
-describe("guide query", () => {
-  it("sets default params", () => {
-    const defaultQuery = guideQuery({params: {assessmentId: "xyz", localeKey: "es-US"}});
+describe("Graphql", () => {
+  describe("Queries", () => {
+    describe("Guide", () => {
+      describe("get", () => {
+        it("creates query", () => {
+          const query = guideQuery({
+            params: {assessmentId: "xyz", localeKey: "es-US"},
+            fields: ["name", {competencies: ["id", "name"]}]
+          });
 
-    expect(defaultQuery).toBe(`{ guide(assessmentId:"xyz",localeKey:"es-US") { competencies { id name introduction order questionSequences { id name personality_type_id questions { id text adaptability order purpose } } } }}`);
-  });
+          expect(query).toMatchSnapshot();
+        });
 
-  it("overrides default params", () => {
-    const fields = [
-      "name",
-      {competencies: ["id", "name"]}
-    ];
+        it("creates query with defaults", () => {
+          const query = guideQuery({params: {assessmentId: "xyz", localeKey: "es-US"}});
 
-    const query = guideQuery({params: {assessmentId: "xyz", localeKey: "es-US"}, fields});
-
-    expect(query).toBe(`{ guide(assessmentId:"xyz",localeKey:"es-US") { name competencies { id name } }}`);
+          expect(query).toMatchSnapshot();
+        });
+      });
+    });
   });
 });

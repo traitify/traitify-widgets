@@ -9,6 +9,7 @@ export default class TraitifyWidget {
     this.ui = ui;
     this.options = {allowInstructions: true, ...options};
     this.options.disabledComponents = [...this.options.disabledComponents || []];
+    this.options.slideDeck = {...this.options.slideDeck};
     this.options.targets = {...this.options.targets};
   }
   allowBack() {
@@ -29,11 +30,6 @@ export default class TraitifyWidget {
   }
   allowInstructions() {
     this.options.allowInstructions = true;
-
-    return this;
-  }
-  allowTimeLimit() {
-    this.options.disableTimeLimit = false;
 
     return this;
   }
@@ -68,11 +64,6 @@ export default class TraitifyWidget {
   }
   disableInstructions() {
     this.options.allowInstructions = false;
-
-    return this;
-  }
-  disableTimeLimit() {
-    this.options.disableTimeLimit = true;
 
     return this;
   }

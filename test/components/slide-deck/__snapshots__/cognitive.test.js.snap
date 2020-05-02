@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Personality renders instructions 1`] = `
+exports[`Cognitive renders instructions 1`] = `
 <div
   className="mock"
 >
@@ -8,7 +8,7 @@ exports[`Personality renders instructions 1`] = `
 </div>
 `;
 
-exports[`Personality renders loading after skipped slides finished 1`] = `
+exports[`Cognitive renders loading after skipped slides finished 1`] = `
 <div>
   <div>
     <i />
@@ -17,7 +17,7 @@ exports[`Personality renders loading after skipped slides finished 1`] = `
 </div>
 `;
 
-exports[`Personality renders loading after skipped slides skipped 1`] = `
+exports[`Cognitive renders loading after skipped slides skipped 1`] = `
 <div>
   <div>
     <i />
@@ -26,7 +26,7 @@ exports[`Personality renders loading after skipped slides skipped 1`] = `
 </div>
 `;
 
-exports[`Personality renders loading if questions finished 1`] = `
+exports[`Cognitive renders loading if questions finished 1`] = `
 <div>
   <div>
     <i />
@@ -35,9 +35,9 @@ exports[`Personality renders loading if questions finished 1`] = `
 </div>
 `;
 
-exports[`Personality renders nothing if results ready 1`] = `null`;
+exports[`Cognitive renders nothing if results ready 1`] = `null`;
 
-exports[`Personality renders skipped slides 1`] = `
+exports[`Cognitive renders skipped slides 1`] = `
 <div>
   <div>
     <div
@@ -74,7 +74,7 @@ exports[`Personality renders skipped slides 1`] = `
 </div>
 `;
 
-exports[`Personality renders slide 1`] = `
+exports[`Cognitive renders slide 1`] = `
 <div>
   <div>
     <div
@@ -107,7 +107,7 @@ exports[`Personality renders slide 1`] = `
 </div>
 `;
 
-exports[`Personality renders slide with disability 1`] = `
+exports[`Cognitive renders slide with disability 1`] = `
 <div>
   <div>
     <div
@@ -140,7 +140,7 @@ exports[`Personality renders slide with disability 1`] = `
 </div>
 `;
 
-exports[`Personality renders slide with time limit disabled 1`] = `
+exports[`Cognitive renders slide with time limit disabled 1`] = `
 <div>
   <div>
     <div>

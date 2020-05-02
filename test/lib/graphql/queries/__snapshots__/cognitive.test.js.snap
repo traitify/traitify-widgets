@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Graphql Queries Cognitive create creates mutation 1`] = `
+Object {
+  "query": "
+      mutation($localeKey: String, $surveyId: String!) {
+        createCognitiveTest(localeKey: $localeKey, surveyId: $surveyId) {
+          completed id questions { id }
+        }
+      }
+    ",
+  "variables": Object {
+    "localeKey": "en-US",
+    "surveyId": "abc",
+  },
+}
+`;
+
+exports[`Graphql Queries Cognitive create creates mutation with defaults 1`] = `
+Object {
+  "query": "
+      mutation($localeKey: String, $surveyId: String!) {
+        createCognitiveTest(localeKey: $localeKey, surveyId: $surveyId) {
+          allottedTime completed id localeKey name percentileScore rawScore specialAllottedTime surveyId surveyKey questions { id answer { answerId skipped timeTaken } questionImage { id url } responses { id image { id url } } }
+        }
+      }
+    ",
+  "variables": Object {
+    "localeKey": "en-US",
+    "surveyId": "abc",
+  },
+}
+`;
+
+exports[`Graphql Queries Cognitive get creates query 1`] = `
+Object {
+  "query": "
+      query cognitiveTest($localeKey: String, $testId: String!) {
+        cognitiveTest(localeKey: $localeKey, testId: $testId) {
+          completed id questions { id }
+        }
+      }
+    ",
+  "variables": Object {
+    "localeKey": "en-US",
+    "testId": "abc",
+  },
+}
+`;
+
+exports[`Graphql Queries Cognitive get creates query with defaults 1`] = `
+Object {
+  "query": "
+      query cognitiveTest($localeKey: String, $testId: String!) {
+        cognitiveTest(localeKey: $localeKey, testId: $testId) {
+          allottedTime completed id localeKey name percentileScore rawScore specialAllottedTime surveyId surveyKey questions { id answer { answerId skipped timeTaken } questionImage { id url } responses { id image { id url } } }
+        }
+      }
+    ",
+  "variables": Object {
+    "localeKey": "en-US",
+    "testId": "abc",
+  },
+}
+`;
+
+exports[`Graphql Queries Cognitive surveys creates query 1`] = `
+Object {
+  "query": "
+      query {
+        cognitiveSurveys {
+          edges { node { id } }
+        }
+      }
+    ",
+}
+`;
+
+exports[`Graphql Queries Cognitive surveys creates query with defaults 1`] = `
+Object {
+  "query": "
+      query {
+        cognitiveSurveys {
+          edges { node { id key name } }
+        }
+      }
+    ",
+}
+`;
+
+exports[`Graphql Queries Cognitive update creates mutation 1`] = `
+Object {
+  "query": "
+      mutation($answers: [QuestionAnswer]!, $overallTimeTaken: Int!, $testId: String!) {
+        completeCognitiveTest(answers: $answers, overallTimeTaken: $overallTimeTaken, testId: $testId) {
+          message
+        }
+      }
+    ",
+  "variables": Object {
+    "answers": Array [
+      Object {
+        "answerId": "a-1",
+        "questionId": "q-1",
+        "timeTaken": 100,
+      },
+    ],
+    "overallTimeTaken": 2500,
+    "testId": "abc",
+  },
+}
+`;
+
+exports[`Graphql Queries Cognitive update creates mutation with defaults 1`] = `
+Object {
+  "query": "
+      mutation($answers: [QuestionAnswer]!, $overallTimeTaken: Int!, $testId: String!) {
+        completeCognitiveTest(answers: $answers, overallTimeTaken: $overallTimeTaken, testId: $testId) {
+          message success
+        }
+      }
+    ",
+  "variables": Object {
+    "answers": Array [
+      Object {
+        "answerId": "a-1",
+        "questionId": "q-1",
+        "timeTaken": 100,
+      },
+    ],
+    "overallTimeTaken": 2500,
+    "testId": "abc",
+  },
+}
+`;

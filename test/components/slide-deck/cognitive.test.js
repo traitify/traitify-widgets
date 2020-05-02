@@ -9,7 +9,7 @@ jest.mock("components/slide-deck/cognitive/slide", () => (() => <div className="
 jest.mock("components/slide-deck/cognitive/timer", () => (() => <div className="mock">4:59</div>));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Personality", () => {
+describe("Cognitive", () => {
   const cacheKey = `cognitive.slide-deck.${assessment.id}`;
   let originalConfirm;
   let props;
@@ -276,7 +276,7 @@ describe("Personality", () => {
   });
 
   it("renders slide with time limit disabled", () => {
-    props.getOption.mockImplementation((value) => value === "disableTimeLimit");
+    props.getOption.mockImplementation((value, nestedValue) => value === "slideDeck" && nestedValue === "disableTimeLimit");
     const component = new ComponentHandler(<Component {...props} />);
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: true}));

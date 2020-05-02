@@ -23,7 +23,7 @@ function Cognitive(props) {
     translate,
     ui
   } = props;
-  const disableTimeLimit = getOption("disableTimeLimit");
+  const disableTimeLimit = getOption("slideDeck", "disableTimeLimit");
   const [initialQuestions, setInitialQuestions] = useState([]);
   const {dispatch, questions} = useQuestionsLoader(initialQuestions);
   const [disability, setDisability] = useState(false);
@@ -168,7 +168,11 @@ function Cognitive(props) {
           <Timer
             onFinish={onSubmit}
             startTime={startTime}
-            timeAllowed={assessment[disability ? "specialAllottedTime" : "allottedTime"]}
+            timeAllowed={
+              disability
+                ? getOption("slideDeck", "specialTimeLimit") || assessment.specialAllottedTime
+                : getOption("slideDeck", "timeLimit") || assessment.allottedTime
+            }
           />
         )}
         <div className={style.status}>

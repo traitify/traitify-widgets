@@ -24,10 +24,6 @@ const defaultFields = [
 ];
 
 export function create({fields, params}) {
-  if(!params.surveyId) {
-    console.warn("GraphQL - createCognitiveTest - Survey ID required"); // eslint-disable-line no-console
-  }
-
   return {
     query: `
       mutation($localeKey: String, $surveyId: String!) {

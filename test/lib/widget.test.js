@@ -80,20 +80,6 @@ describe("Widget", () => {
     });
   });
 
-  describe("allowTimeLimit", () => {
-    it("returns widget", () => {
-      const returnValue = widget.allowTimeLimit();
-
-      expect(returnValue).toEqual(widget);
-    });
-
-    it("updates option", () => {
-      widget.allowTimeLimit();
-
-      expect(widget.options.disableTimeLimit).toBe(false);
-    });
-  });
-
   describe("assessmentID", () => {
     it("returns widget", () => {
       const returnValue = widget.assessmentID("abc");
@@ -188,20 +174,6 @@ describe("Widget", () => {
       widget.disableInstructions();
 
       expect(widget.options.allowInstructions).toBe(false);
-    });
-  });
-
-  describe("disableTimeLimit", () => {
-    it("returns widget", () => {
-      const returnValue = widget.disableTimeLimit();
-
-      expect(returnValue).toEqual(widget);
-    });
-
-    it("updates option", () => {
-      widget.disableTimeLimit();
-
-      expect(widget.options.disableTimeLimit).toBe(true);
     });
   });
 
@@ -338,6 +310,20 @@ describe("Widget", () => {
         expect(render).toHaveBeenCalled();
         done();
       });
+    });
+  });
+
+  describe("surveyType", () => {
+    it("returns widget", () => {
+      const returnValue = widget.surveyType("cognitive");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.surveyType("cognitive");
+
+      expect(widget.options.surveyType).toBe("cognitive");
     });
   });
 

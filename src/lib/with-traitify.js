@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import * as queries from "lib/graphql/queries";
 import {getDisplayName, loadFont} from "lib/helpers";
+import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
 export default function withTraitify(WrappedComponent) {
@@ -300,13 +301,13 @@ export default function withTraitify(WrappedComponent) {
       return this.ui.requests[key];
     }
     getListener = (key) => (this.listeners[key.toLowerCase()])
-    getOption = (name) => {
+    getOption = (...keys) => {
       const {props, ui} = this;
-      const {[name]: prop, options} = props;
 
-      if(prop != null) { return prop; }
-      if(options && options[name] != null) { return options[name]; }
-      if(ui && ui.options[name] != null) { return ui.options[name]; }
+      if(keys.length > 1 && dig(props, keys.slice(1)) != null) { return dig(props, keys.slice(1)); }
+      if(dig(props, keys) != null) { return dig(props, keys); }
+      if(dig(props.options, keys) != null) { return dig(props.options, keys); }
+      if(ui && dig(ui.options, keys) != null) { return dig(ui.options, keys); }
     }
     setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
@@ -384,7 +385,7 @@ export default function withTraitify(WrappedComponent) {
           case "questions":
             return !!(assessment && (assessment.questions || []).length > 0);
           case "results":
-            return assessment && assessment.completed;
+            return !!(assessment && assessment.completed);
           default:
             return false;
         }

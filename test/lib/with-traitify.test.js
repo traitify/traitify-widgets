@@ -17,6 +17,8 @@ const getDummyComponent = () => (
 describe("withTraitify", () => {
   const assessmentWithResults = {assessment_type: "DIMENSION_BASED", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}]};
   const assessmentWithoutResults = {id: "abc", locale_key: "en-US", slides: [{name: "Snakes"}]};
+  const cognitiveAssessmentWithResults = {completed: true, id: "def", localeKey: "en-US", questions: [{id: "q-1"}]};
+  const cognitiveAssessmentWithoutResults = {completed: false, id: "def", localeKey: "en-US", questions: [{id: "q-1"}]};
   const deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
   const deckWithoutName = {id: "big-five", locale_key: "en-US"};
   const guide = {assessment_id: "abc", competencies: [{name: "Under Pressure"}], locale_key: "en-US"};
@@ -377,6 +379,141 @@ describe("withTraitify", () => {
     });
   });
 
+  describe("getCognitiveAssessment", () => {
+    let cache;
+    let originalWarn;
+
+    beforeEach(() => {
+      originalWarn = console.warn;
+      console.warn = jest.fn().mockName("warn");
+      cache = {
+        get: jest.fn().mockName("get"),
+        set: jest.fn().mockName("set")
+      };
+      component = new ComponentHandler(<Component cache={cache} surveyType="cognitive" traitify={traitify} />);
+      component.instance.updateCognitiveAssessment = function() {
+        if(!this.state.assessmentID) { return; }
+
+        const key = `${this.state.locale}.cognitive-assessment.${this.state.assessmentID}`;
+
+        this.listeners[key] = (_, assessment) => {
+          this.setState({
+            assessment,
+            assessmentID: assessment.id
+          });
+        };
+        this.traitify.ui.on(key, this.listeners[key]);
+      };
+    });
+
+    afterEach(() => {
+      console.warn = originalWarn;
+    });
+
+    it("requires assessmentID", (done) => {
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        const {props} = getDummyComponent();
+
+        expect(props.assessment).toBeNull();
+        expect(props.cache.get).not.toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("checks props", (done) => {
+      component.updateProps({assessment: cognitiveAssessmentWithResults});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        const {props} = getDummyComponent();
+
+        expect(props.assessment).toBe(cognitiveAssessmentWithResults);
+        expect(props.cache.get).not.toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("skips props if no results", (done) => {
+      component.updateProps({assessment: cognitiveAssessmentWithoutResults});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("checks cache", (done) => {
+      cache.get.mockReturnValue(cognitiveAssessmentWithResults);
+      component.updateProps({assessmentID: cognitiveAssessmentWithResults.id});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        const {props} = getDummyComponent();
+
+        expect(props.assessment).toBe(cognitiveAssessmentWithResults);
+        expect(props.cache.get).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("skips cache if no results", (done) => {
+      cache.get.mockReturnValue(cognitiveAssessmentWithoutResults);
+      component.updateProps({assessmentID: cognitiveAssessmentWithoutResults.id});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        expect(getDummyComponent().props.assessment).not.toBe(cognitiveAssessmentWithoutResults);
+        done();
+      });
+    });
+
+    it("sets cache if request results", (done) => {
+      traitify.ajax.mockReturnValue(Promise.resolve({
+        data: {cognitiveTest: cognitiveAssessmentWithResults}
+      }));
+      component.updateProps({assessmentID: cognitiveAssessmentWithResults.id});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("skips setting cache if no results", (done) => {
+      traitify.ajax.mockReturnValue(Promise.resolve({
+        data: {cognitiveTest: cognitiveAssessmentWithoutResults}
+      }));
+      component.updateProps({assessmentID: cognitiveAssessmentWithResults.id});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        expect(getDummyComponent().props.cache.set).not.toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("stops if there's an existing request", () => {
+      const key = `en-us.cognitive-assessment.${cognitiveAssessmentWithoutResults.id}`;
+      const request = new Promise(() => {});
+      traitify.ui.requests[key] = request;
+      component.updateProps({assessmentID: cognitiveAssessmentWithoutResults.id});
+      getDummyComponent().props.getCognitiveAssessment();
+
+      expect(traitify.ui.requests[key]).toBe(request);
+    });
+
+    it("forces new request", () => {
+      const key = `en-us.cognitive-assessment.${cognitiveAssessmentWithoutResults.id}`;
+      const request = new Promise(() => {});
+      traitify.ui.requests[key] = request;
+      component.updateProps({assessmentID: cognitiveAssessmentWithoutResults.id});
+      getDummyComponent().props.getCognitiveAssessment({force: true});
+
+      expect(traitify.ui.requests[key]).not.toBe(request);
+    });
+
+    it("catches error with request", (done) => {
+      const key = `en-us.cognitive-assessment.${cognitiveAssessmentWithoutResults.id}`;
+      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      component.updateProps({assessmentID: cognitiveAssessmentWithoutResults.id});
+      getDummyComponent().props.getCognitiveAssessment().then(() => {
+        expect(console.warn).toHaveBeenCalledWith("Error with request");
+        expect(traitify.ui.requests[key]).toBeUndefined();
+        done();
+      });
+    });
+  });
+
   describe("getDeck", () => {
     let cache;
     let originalWarn;
@@ -637,6 +774,43 @@ describe("withTraitify", () => {
   });
 
   describe("getOption", () => {
+    describe("nested", () => {
+      it("checks shallow prop", () => {
+        component = new ComponentHandler(<Component timeLimit={300} traitify={traitify} />);
+
+        expect(getDummyComponent().props.getOption("slideDeck", "timeLimit")).toBe(300);
+      });
+
+      it("checks prop", () => {
+        component = new ComponentHandler(
+          <Component slideDeck={{timeLimit: 300}} traitify={traitify} />
+        );
+
+        expect(getDummyComponent().props.getOption("slideDeck", "timeLimit")).toBe(300);
+      });
+
+      it("checks options", () => {
+        component = new ComponentHandler(
+          <Component options={{slideDeck: {timeLimit: 300}}} traitify={traitify} />
+        );
+
+        expect(getDummyComponent().props.getOption("slideDeck", "timeLimit")).toBe(300);
+      });
+
+      it("checks traitify ui", () => {
+        traitify.ui.options.slideDeck = {timeLimit: 300};
+        component = new ComponentHandler(<Component traitify={traitify} />);
+
+        expect(getDummyComponent().props.getOption("slideDeck", "timeLimit")).toBe(300);
+      });
+
+      it("gives up", () => {
+        component = new ComponentHandler(<Component traitify={traitify} />);
+
+        expect(getDummyComponent().props.getOption("slideDeck", "timeLimit")).toBeUndefined();
+      });
+    });
+
     it("checks prop", () => {
       component = new ComponentHandler(<Component allowBack={true} traitify={traitify} />);
 
@@ -704,85 +878,139 @@ describe("withTraitify", () => {
   });
 
   describe("isReady", () => {
-    beforeEach(() => {
-      component = new ComponentHandler(<Component traitify={traitify} />);
-    });
-
-    describe("is ready", () => {
+    describe("cognitive", () => {
       beforeEach(() => {
-        component.updateState({
-          assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
-          deck: {id: "big-five", name: "Big Five"},
-          guide: {competencies: [{}]}
+        component = new ComponentHandler(<Component surveyType="cognitive" traitify={traitify} />);
+      });
+
+      describe("is ready", () => {
+        beforeEach(() => {
+          component.updateState({assessment: {completed: true, id: "abc", questions: [{}]}});
+        });
+
+        it("checks questions", () => {
+          expect(getDummyComponent().props.isReady("questions")).toBe(true);
+        });
+
+        it("checks results", () => {
+          expect(getDummyComponent().props.isReady("results")).toBe(true);
         });
       });
 
-      it("checks deck", () => {
-        expect(getDummyComponent().props.isReady("deck")).toBe(true);
-      });
+      describe("half ready", () => {
+        beforeEach(() => {
+          component.updateState({assessment: {completed: false, id: "abc"}});
+        });
 
-      it("checks guide", () => {
-        expect(getDummyComponent().props.isReady("guide")).toBe(true);
-      });
+        it("checks questions", () => {
+          expect(getDummyComponent().props.isReady("questions")).toBe(false);
+        });
 
-      it("checks results", () => {
-        expect(getDummyComponent().props.isReady("results")).toBe(true);
-      });
-
-      it("checks slides", () => {
-        expect(getDummyComponent().props.isReady("slides")).toBe(true);
-      });
-    });
-
-    describe("half ready", () => {
-      beforeEach(() => {
-        component.updateState({
-          assessment: {id: "abc"},
-          deck: {id: "big-five"},
-          guide: {assessment_id: "abc"}
+        it("checks results", () => {
+          expect(getDummyComponent().props.isReady("results")).toBe(false);
         });
       });
 
-      it("checks deck", () => {
-        expect(getDummyComponent().props.isReady("deck")).toBe(false);
-      });
+      describe("isn't ready", () => {
+        beforeEach(() => {
+          component = new ComponentHandler(<Component surveyType="cognitive" traitify={traitify} />);
+        });
 
-      it("checks guide", () => {
-        expect(getDummyComponent().props.isReady("guide")).toBe(false);
-      });
+        it("checks questions", () => {
+          expect(getDummyComponent().props.isReady("questions")).toBe(false);
+        });
 
-      it("checks results", () => {
-        expect(getDummyComponent().props.isReady("results")).toBe(false);
-      });
+        it("checks results", () => {
+          expect(getDummyComponent().props.isReady("results")).toBe(false);
+        });
 
-      it("checks slides", () => {
-        expect(getDummyComponent().props.isReady("slides")).toBe(false);
+        it("checks default", () => {
+          expect(getDummyComponent().props.isReady()).toBe(false);
+        });
       });
     });
 
-    describe("isn't ready", () => {
+    describe("personality", () => {
       beforeEach(() => {
         component = new ComponentHandler(<Component traitify={traitify} />);
       });
 
-      it("checks deck", () => {
-        expect(getDummyComponent().props.isReady("deck")).toBe(false);
+      describe("is ready", () => {
+        beforeEach(() => {
+          component.updateState({
+            assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
+            deck: {id: "big-five", name: "Big Five"},
+            guide: {competencies: [{}]}
+          });
+        });
+
+        it("checks deck", () => {
+          expect(getDummyComponent().props.isReady("deck")).toBe(true);
+        });
+
+        it("checks guide", () => {
+          expect(getDummyComponent().props.isReady("guide")).toBe(true);
+        });
+
+        it("checks results", () => {
+          expect(getDummyComponent().props.isReady("results")).toBe(true);
+        });
+
+        it("checks slides", () => {
+          expect(getDummyComponent().props.isReady("slides")).toBe(true);
+        });
       });
 
-      it("checks guide", () => {
-        expect(getDummyComponent().props.isReady("guide")).toBe(false);
+      describe("half ready", () => {
+        beforeEach(() => {
+          component.updateState({
+            assessment: {id: "abc"},
+            deck: {id: "big-five"},
+            guide: {assessment_id: "abc"}
+          });
+        });
+
+        it("checks deck", () => {
+          expect(getDummyComponent().props.isReady("deck")).toBe(false);
+        });
+
+        it("checks guide", () => {
+          expect(getDummyComponent().props.isReady("guide")).toBe(false);
+        });
+
+        it("checks results", () => {
+          expect(getDummyComponent().props.isReady("results")).toBe(false);
+        });
+
+        it("checks slides", () => {
+          expect(getDummyComponent().props.isReady("slides")).toBe(false);
+        });
       });
 
-      it("checks results", () => {
-        expect(getDummyComponent().props.isReady("results")).toBe(false);
-      });
+      describe("isn't ready", () => {
+        beforeEach(() => {
+          component = new ComponentHandler(<Component traitify={traitify} />);
+        });
 
-      it("checks slides", () => {
-        expect(getDummyComponent().props.isReady("slides")).toBe(false);
-      });
+        it("checks deck", () => {
+          expect(getDummyComponent().props.isReady("deck")).toBe(false);
+        });
 
-      it("checks default", () => {
-        expect(getDummyComponent().props.isReady()).toBe(false);
+        it("checks guide", () => {
+          expect(getDummyComponent().props.isReady("guide")).toBe(false);
+        });
+
+        it("checks results", () => {
+          expect(getDummyComponent().props.isReady("results")).toBe(false);
+        });
+
+        it("checks slides", () => {
+          expect(getDummyComponent().props.isReady("slides")).toBe(false);
+        });
+
+        it("checks default", () => {
+          expect(getDummyComponent().props.isReady()).toBe(false);
+        });
       });
     });
   });
@@ -941,6 +1169,59 @@ describe("withTraitify", () => {
 
       expect(component.instance.setState).toHaveBeenCalled();
       expect(component.instance.getAssessment).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("updateCognitiveAssessment", () => {
+    beforeEach(() => {
+      component = new ComponentHandler(<Component surveyType="cognitive" traitify={traitify} />);
+      component.instance.componentDidUpdate = jest.fn().mockName("componentDidUpdate");
+      component.instance.getCognitiveAssessment = jest.fn().mockName("getCognitiveAssessment");
+    });
+
+    it("removes old listener if assessment changes", () => {
+      const key = `en-us.cognitive-assessment.${cognitiveAssessmentWithoutResults.id}`;
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateCognitiveAssessment({oldID: cognitiveAssessmentWithoutResults.id});
+
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
+    });
+
+    it("removes old listener if locale changes", () => {
+      const key = `es-us.cognitive-assessment.${cognitiveAssessmentWithoutResults.id}`;
+      component.updateState({assessmentID: cognitiveAssessmentWithoutResults.id});
+      component.instance.removeListener = jest.fn().mockName("removeListener");
+      component.instance.updateCognitiveAssessment({oldLocale: "es-us"});
+
+      expect(component.instance.removeListener).toHaveBeenCalledWith(key);
+    });
+
+    it("adds new listener", () => {
+      component.updateState({assessmentID: cognitiveAssessmentWithResults.id});
+      component.instance.addListener = jest.fn().mockName("addListener");
+      component.instance.updateCognitiveAssessment();
+
+      expect(component.instance.addListener).toHaveBeenCalled();
+    });
+
+    it("gets assessment if no current value", () => {
+      component.updateState({assessmentID: cognitiveAssessmentWithResults.id});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateCognitiveAssessment();
+
+      expect(component.instance.getCognitiveAssessment).toHaveBeenCalled();
+      expect(component.instance.setState).not.toHaveBeenCalled();
+    });
+
+    it("uses current value", () => {
+      const key = `en-us.cognitive-assessment.${cognitiveAssessmentWithResults.id}`;
+      traitify.ui.current[key] = [{}, cognitiveAssessmentWithResults];
+      component.updateState({assessmentID: cognitiveAssessmentWithResults.id});
+      component.instance.setState = jest.fn().mockName("setState");
+      component.instance.updateCognitiveAssessment();
+
+      expect(component.instance.setState).toHaveBeenCalled();
+      expect(component.instance.getCognitiveAssessment).not.toHaveBeenCalled();
     });
   });
 

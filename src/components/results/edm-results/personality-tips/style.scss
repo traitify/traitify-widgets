@@ -4,7 +4,7 @@
   @extend %widgetContainer;
 }
 
-.tipsTabs {
+.tabs {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -20,17 +20,17 @@
     padding: 15px;
   }
   li:nth-of-type(1) {
-    .tipName {
+    .name {
       color: #2491c1;
     }
   }
   li:nth-of-type(2) {
-    .tipName {
+    .name {
       color: #cb4e4e;
     }
   }
   li:nth-of-type(3) {
-    .tipName {
+    .name {
       color: #47bb55;
     }
   }
@@ -45,7 +45,7 @@
     border: 0;
   }
 }
-.tipName {
+.name {
   text-align: center;
   @include rems(20);
   @include mq(xl) {
@@ -53,7 +53,7 @@
   }
 }
 
-.tipsTabBox {
+.tab {
   border: 1px solid #E0E1E2;
   padding: 20px 0;
   margin-bottom: 20px;
@@ -88,7 +88,7 @@
     @include rems(16);
   }
 }
-.tips {
+.list {
   list-style: none;
   margin: 0;
   padding: 0;

@@ -4,7 +4,7 @@
   @extend %widgetContainer;
 }
 
-.skillsTabs {
+.tabs {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -32,18 +32,18 @@
     border: 0;
   }
 }
-.featuredSkill {
+.featured {
   background: #E6F9FF;
   width: 20%;
   text-align: center;
   padding: 5px 0;
 }
-.skillImage {
+.image {
   text-align: center;
   width: 150px;
   height: auto;
 }
-.skillName {
+.name {
   text-align: center;
   @include rems(18);
   @include mq(xl) {
@@ -51,7 +51,7 @@
   }
 }
 
-.skillsTabBox {
+.tab {
   border: 1px solid #E0E1E2;
   padding: 20px 0;
   margin-bottom: 20px;
@@ -97,7 +97,7 @@
     @include rems(16);
   }
 }
-.skills {
+.list {
   list-style: none;
   margin: 0;
   padding: 0;

@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
-import {Component} from "react";
+import {useState} from "react";
+import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
+import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-const skills = [
+const types = [
   {
     image: "https://cdn.traitify.com/images/big5_home.png",
     key: "working_from_home",
@@ -32,63 +34,61 @@ const skills = [
   }
 ];
 
-class PersonalitySkills extends Component {
-  static defaultProps = {assessment: null}
-  static propTypes = {
-    assessment: PropTypes.shape({archetype: PropTypes.object}),
-    isReady: PropTypes.func.isRequired,
-    translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired
-  }
-  componentDidMount() {
-    this.props.ui.trigger("PersonalitySkills.initialized", this);
-  }
-  componentDidUpdate() {
-    this.props.ui.trigger("PersonalitySkills.updated", this);
-  }
-  render() {
-    if(!this.props.isReady("results")) { return null; }
+function PersonalitySkills(props) {
+  const {assessment, isReady, translate, ui} = props;
+  const details = dig(assessment, ["archetype", "details"]) || [];
+  const [activeType, setActiveType] = useState(types[0]);
+  const state = {activeType};
 
-    const {translate} = this.props;
-    const personality = this.props.assessment.archetype;
-    if(!personality) { return null; }
+  useDidMount(() => { ui.trigger("PersonalitySkills.initialized", {props, state}); });
+  useDidUpdate(() => { ui.trigger("PersonalitySkills.updated", {props, state}); });
 
-    const activeSkill = skills[0];
-    const onChange = () => {};
-    const tips = personality.details
-      .filter(({title}) => (title === `Success Skills - ${activeSkill.name}`))
-      .map(({body}) => body);
+  const tips = details
+    .filter(({title}) => (title === `Success Skills - ${activeType.name}`))
+    .map(({body}) => body);
 
-    return (
-      <div className={style.container}>
-        <ul className={style.skillsTabs}>
-          <div className={style.featuredSkill}>{translate("featured_skill")}</div>
-          {skills.map(({image, key}) => (
-            <li key={key} className={activeSkill.key === key ? style.active : ""}>
-              <button type="button">
-                <img src={image} alt={translate(`skill_name_for_${key}`)} className={style.skillImage} />
-                <div className={style.skillName}>{translate(`skill_name_for_${key}`)}</div>
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className={style.skillsTabBox}>
-          <div className={style.formSelect}>
-            <select onChange={onChange} value={activeSkill.key}>
-              {skills.map(({key}) => (
-                <option key={key} value={key}>{translate(`skill_name_for_${key}`)}</option>
-              ))}
-            </select>
-          </div>
-          <h3>{translate(`skill_heading_for_${activeSkill.key}`)}</h3>
-          <ul className={style.skills}>
-            {tips.map((tip) => (<li key={tip}>{tip}</li>))}
-          </ul>
+  if(!isReady("results")) { return null; }
+  if(tips.length === 0) { return null; }
+
+  const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
+
+  return (
+    <div className={style.container}>
+      <ul className={style.tabs}>
+        <div className={style.featured}>{translate("featured_skill")}</div>
+        {types.map((type) => (
+          <li key={type.key} className={activeType.key === type.key ? style.active : ""}>
+            <button onClick={() => setActiveType(type)} type="button">
+              <img src={type.image} alt={translate(`skill_name_for_${type.key}`)} className={style.skillImage} />
+              <div className={style.name}>{translate(`skill_name_for_${type.key}`)}</div>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className={style.tab}>
+        <div className={style.formSelect}>
+          <select onChange={onChange} value={activeType.key}>
+            {types.map(({key}) => (
+              <option key={key} value={key}>{translate(`skill_name_for_${key}`)}</option>
+            ))}
+          </select>
         </div>
+        <h3>{translate(`skill_heading_for_${activeType.key}`)}</h3>
+        <ul className={style.list}>
+          {tips.map((tip) => (<li key={tip}>{tip}</li>))}
+        </ul>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+PersonalitySkills.defaultProps = {assessment: null};
+PersonalitySkills.propTypes = {
+  assessment: PropTypes.shape({archetype: PropTypes.object}),
+  isReady: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
+  ui: TraitifyPropTypes.ui.isRequired
+};
 
 export {PersonalitySkills as Component};
 export default withTraitify(PersonalitySkills);

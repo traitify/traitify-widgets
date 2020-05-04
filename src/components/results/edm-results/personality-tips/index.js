@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
-import {Component} from "react";
+import {useEffect, useState} from "react";
+import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
+import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
@@ -10,70 +12,71 @@ const tipTypes = [
   {disabledKey: "PersonalitySettings", key: "settings", title: "Settings that Work for You"}
 ];
 
-class PersonalityTips extends Component {
-  static defaultProps = {assessment: null}
-  static propTypes = {
-    assessment: PropTypes.shape({archetype: PropTypes.object}),
-    getOption: PropTypes.func.isRequired,
-    isReady: PropTypes.func.isRequired,
-    translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired
-  }
-  componentDidMount() {
-    this.props.ui.trigger("PersonalityTips.initialized", this);
-  }
-  componentDidUpdate() {
-    this.props.ui.trigger("PersonalityTips.updated", this);
-  }
-  render() {
-    if(!this.props.isReady("results")) { return null; }
+function PersonalityTips(props) {
+  const {assessment, getOption, isReady, translate, ui} = props;
+  const details = dig(assessment, ["archetype", "details"]) || [];
+  const [activeType, setActiveType] = useState(null);
+  const [types, setTypes] = useState([]);
+  const state = {activeType, types};
 
-    const {translate} = this.props;
-    const personality = this.props.assessment.archetype;
-    if(!personality) { return null; }
+  useDidMount(() => { ui.trigger("PersonalityTips.initialized", {props, state}); });
+  useDidUpdate(() => { ui.trigger("PersonalityTips.updated", {props, state}); });
+  useEffect(() => {
+    if(details.length === 0) { return; }
 
-    const disabledComponents = this.props.getOption("disabledComponents") || [];
-    const activeTipTypes = tipTypes.filter((type) => {
+    const disabledComponents = getOption("disabledComponents") || [];
+    const activeTypes = tipTypes.filter((type) => {
       if(disabledComponents.includes(type.disabledKey)) { return false; }
 
-      return personality.details.find(({title}) => (title === type.title));
+      return details.find(({title}) => (title === type.title));
     });
-    if(activeTipTypes.length === "") { return null; }
 
-    const activeType = activeTipTypes[0];
-    const onChange = () => {};
-    const tips = personality.details
-      .filter(({title}) => (title === activeType.title))
-      .map(({body}) => body);
-    const typeStyle = {width: `${100.0 / activeTipTypes.length}%`};
+    setTypes(activeTypes);
+    setActiveType(activeTypes[0]);
+  }, [details]);
 
-    return (
-      <div className={style.container}>
-        <ul className={style.tipsTabs}>
-          {activeTipTypes.map(({key}) => (
-            <li key={key} className={activeType.key === key ? style.active : ""} style={typeStyle}>
-              <button type="button">
-                <div className={style.tipName}>{translate(`tip_type_for_${key}`)}</div>
-              </button>
-            </li>
-          ))}
-        </ul>
-        <div className={style.tipsTabBox}>
-          <div className={style.formSelect}>
-            <select onChange={onChange} value={activeType.key}>
-              {activeTipTypes.map(({key}) => (
-                <option key={key} value={key}>{translate(`tip_type_for_${key}`)}</option>
-              ))}
-            </select>
-          </div>
-          <ul className={style.tips}>
-            {tips.map((tip) => (<li key={tip}>{tip}</li>))}
-          </ul>
+  if(!isReady("results")) { return null; }
+  if(!activeType) { return null; }
+
+  const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
+  const tips = details.filter(({title}) => (title === activeType.title)).map(({body}) => body);
+  const typeStyle = {width: `${100.0 / types.length}%`};
+
+  return (
+    <div className={style.container}>
+      <ul className={style.tabs}>
+        {types.map((type) => (
+          <li key={type.key} className={activeType.key === type.key ? style.active : ""} style={typeStyle}>
+            <button onClick={() => setActiveType(type)} type="button">
+              <div className={style.name}>{translate(`tip_type_for_${type.key}`)}</div>
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className={style.tab}>
+        <div className={style.formSelect}>
+          <select onChange={onChange} value={activeType.key}>
+            {types.map(({key}) => (
+              <option key={key} value={key}>{translate(`tip_type_for_${key}`)}</option>
+            ))}
+          </select>
         </div>
+        <ul className={style.list}>
+          {tips.map((tip) => (<li key={tip}>{tip}</li>))}
+        </ul>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+PersonalityTips.defaultProps = {assessment: null};
+PersonalityTips.propTypes = {
+  assessment: PropTypes.shape({archetype: PropTypes.object}),
+  getOption: PropTypes.func.isRequired,
+  isReady: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
+  ui: TraitifyPropTypes.ui.isRequired
+};
 
 export {PersonalityTips as Component};
 export default withTraitify(PersonalityTips);

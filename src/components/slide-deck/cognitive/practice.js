@@ -1,13 +1,18 @@
 /* eslint-disable jsx-a11y/media-has-caption, no-alert */
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import {useWindowSize} from "lib/helpers/hooks";
 import Loading from "components/loading";
 import Slide from "./slide";
 import {useQuestionsLoader, videoProps} from "./helpers";
 import practiceQuestions from "./practice-questions";
 import style from "./style.scss";
 
+const urlBase = "https://cdn.traitify.com/images/cognitive";
+
 function Practice({onFinish, translate}) {
+  const [width] = useWindowSize();
+  const [type, setType] = useState(width > 768 ? "h" : "v");
   const [questionIndex, setQuestionIndex] = useState(0);
   const {dispatch, questions} = useQuestionsLoader(practiceQuestions);
   const onNext = () => setQuestionIndex(questionIndex + 1);
@@ -15,6 +20,7 @@ function Practice({onFinish, translate}) {
     dispatch({answer, questionIndex, type: "response"});
   };
 
+  useEffect(() => { setType(width > 768 ? "h" : "v"); }, [width]);
   useEffect(() => {
     if(questions.length === 0) { return; }
     if(questions.length !== questionIndex) { return; }
@@ -27,10 +33,10 @@ function Practice({onFinish, translate}) {
   if(!question) { return <Loading />; }
   if(question.answer) {
     if(questionIndex === 0) {
-      const video = "https://cdn.traitify.com/images/cognitive/practice-1.mp4";
+      const video = `${urlBase}/practice-1-${type}.mp4`;
 
       return (
-        <div key="question-0" className={style.instructions}>
+        <div key={`question-0-${type}`} className={style.instructions}>
           <h1>{translate("cognitive_practice_step_1_heading")}</h1>
           <p>{translate("cognitive_practice_step_1_text")}</p>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
@@ -40,10 +46,10 @@ function Practice({onFinish, translate}) {
     }
 
     if(questionIndex === 1) {
-      const video = "https://cdn.traitify.com/images/cognitive/practice-2.mp4";
+      const video = `${urlBase}/practice-2-${type}.mp4`;
 
       return (
-        <div key="question-1" className={style.instructions}>
+        <div key={`question-1-${type}`} className={style.instructions}>
           <h1>{translate("cognitive_practice_step_2_heading")}</h1>
           <p>{translate("cognitive_practice_step_2_text")}</p>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>
@@ -53,10 +59,10 @@ function Practice({onFinish, translate}) {
     }
 
     if(questionIndex === 2) {
-      const video = "https://cdn.traitify.com/images/cognitive/practice-3.mp4";
+      const video = `${urlBase}/practice-3-${type}.mp4`;
 
       return (
-        <div key="question-2" className={style.instructions}>
+        <div key={`question-2-${type}`} className={style.instructions}>
           <h1>{translate("cognitive_practice_step_3_heading")}</h1>
           <p>{translate("cognitive_practice_step_3_text")}</p>
           <video {...videoProps}><source src={video} type="video/mp4" /></video>

@@ -214,6 +214,15 @@ describe("withTraitify", () => {
       expect(getDeck).toHaveBeenCalled();
     });
 
+    it("gets deck if state has deckID and deck is removed", () => {
+      getDummyComponent().props.followDeck();
+      component.updateState({deck, deckID: deck.id});
+      getDeck.mockClear();
+      component.updateState({deck: null});
+
+      expect(getDeck).toHaveBeenCalled();
+    });
+
     it("doesn't get deck if state doesn't have deckID", () => {
       getDummyComponent().props.followDeck();
 

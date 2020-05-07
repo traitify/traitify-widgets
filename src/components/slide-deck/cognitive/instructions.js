@@ -15,8 +15,8 @@ function Instructions({onStart, translate}) {
     return (
       <div key="step-1" className={style.instructions}>
         <h1>{translate("cognitive_instructions_step_1_heading")}</h1>
-        <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <p>{translate("cognitive_instructions_step_1_text")}</p>
+        <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <button className={style.btnBlue} onClick={() => setStep(2)} type="button">{translate("cognitive_instructions_step_1_button")}</button>
       </div>
     );
@@ -28,8 +28,8 @@ function Instructions({onStart, translate}) {
     return (
       <div key="step-2" className={style.instructions}>
         <h2>{translate("cognitive_instructions_step_2_heading")}</h2>
-        <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <p>{translate("cognitive_instructions_step_2_text")}</p>
+        <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <button className={style.btnBlue} onClick={() => setStep(3)} type="button">{translate("cognitive_instructions_step_2_button")}</button>
       </div>
     );

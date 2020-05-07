@@ -77,6 +77,7 @@ function Cognitive(props) {
     const query = updateQuery({
       params: {
         answers,
+        learningDisability: disability,
         overallTimeTaken: startTime ? Date.now() - startTime : 1,
         testId: assessment.id
       }

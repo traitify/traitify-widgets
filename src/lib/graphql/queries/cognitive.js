@@ -4,6 +4,7 @@ const defaultFields = [
   "allottedTime",
   "completed",
   "id",
+  "learningDisability",
   "localeKey",
   "name",
   "percentileScore",
@@ -66,8 +67,18 @@ export function surveys(options) {
 export function update({fields, params}) {
   return {
     query: `
-      mutation($answers: [QuestionAnswer]!, $overallTimeTaken: Int!, $testId: String!) {
-        completeCognitiveTest(answers: $answers, overallTimeTaken: $overallTimeTaken, testId: $testId) {
+      mutation(
+        $answers: [QuestionAnswer]!,
+        $learningDisability: Boolean,
+        $overallTimeTaken: Int!,
+        $testId: String!
+      ) {
+        completeCognitiveTest(
+          answers: $answers,
+          learningDisability: $learningDisability,
+          overallTimeTaken: $overallTimeTaken,
+          testId: $testId
+        ) {
           ${toQuery(fields || ["message", "success"])}
         }
       }

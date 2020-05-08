@@ -1,16 +1,13 @@
+import {dig} from "lib/helpers/object";
 import {capitalize} from "lib/helpers/string";
 
-export function careerOption(props, name) {
-  if(props[name] != null) { return props[name]; }
-  if(props.options
-    && props.options.careerOptions
-    && props.options.careerOptions[name] != null
-  ) { return props.options.careerOptions[name]; }
-  if(props.ui
-    && props.ui.options
-    && props.ui.options.careerOptions
-    && props.ui.options.careerOptions[name] != null
-  ) { return props.ui.options.careerOptions[name]; }
+export function careerOption(props, ...keys) {
+  const allKeys = ["careerOptions", ...keys];
+
+  if(dig(props, keys) != null) { return dig(props, keys); }
+  if(dig(props, allKeys) != null) { return dig(props, allKeys); }
+  if(dig(props, ["options", ...allKeys]) != null) { return dig(props, ["options", ...allKeys]); }
+  if(dig(props, ["ui", "options", ...allKeys]) != null) { return dig(props, ["ui", "options", ...allKeys]); }
 }
 
 export function detailWithPerspective(options) {

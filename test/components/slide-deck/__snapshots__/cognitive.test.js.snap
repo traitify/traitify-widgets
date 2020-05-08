@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cognitive renders instructions 1`] = `
+<div
+  className="mock"
+>
+  Instructions
+</div>
+`;
+
+exports[`Cognitive renders loading after skipped slides finished 1`] = `
+<div>
+  <div>
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Cognitive renders loading after skipped slides skipped 1`] = `
+<div>
+  <div>
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Cognitive renders loading if questions finished 1`] = `
+<div>
+  <div>
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Cognitive renders nothing if results ready 1`] = `null`;
+
+exports[`Cognitive renders skipped slides 1`] = `
+<div>
+  <div>
+    <div
+      className="mock"
+    >
+      4:59
+    </div>
+    <div>
+      <span>
+        cognitive_skipped_questions
+         
+      </span>
+      <span>
+        1
+         / 
+        1
+      </span>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Cognitive renders slide 1`] = `
+<div>
+  <div>
+    <div
+      className="mock"
+    >
+      4:59
+    </div>
+    <div>
+      <span>
+        1
+         / 
+        30
+      </span>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "3.3333333333333335%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Cognitive renders slide with disability 1`] = `
+<div>
+  <div>
+    <div
+      className="mock"
+    >
+      4:59
+    </div>
+    <div>
+      <span>
+        1
+         / 
+        30
+      </span>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "3.3333333333333335%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Cognitive renders slide with time limit disabled 1`] = `
+<div>
+  <div>
+    <div>
+      <span>
+        1
+         / 
+        30
+      </span>
+    </div>
+    <div>
+      <div
+        style={
+          Object {
+            "width": "3.3333333333333335%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;

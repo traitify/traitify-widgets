@@ -1,5 +1,5 @@
 import {render, unmountComponentAtNode} from "react-dom";
-import uuid from "uuid";
+import {v4 as uuid} from "uuid";
 import {unique} from "lib/helpers/array";
 import guessComponent from "lib/helpers/guess-component";
 
@@ -9,7 +9,8 @@ export default class TraitifyWidget {
     this.ui = ui;
     this.options = {allowInstructions: true, ...options};
     this.options.disabledComponents = [...this.options.disabledComponents || []];
-    this.options.targets = Object.assign({}, this.options.targets);
+    this.options.slideDeck = {...this.options.slideDeck};
+    this.options.targets = {...this.options.targets};
   }
   allowBack() {
     this.options.allowBack = true;
@@ -121,6 +122,11 @@ export default class TraitifyWidget {
     });
 
     return Promise.all(promises);
+  }
+  surveyType(surveyType) {
+    this.options.surveyType = surveyType.toLowerCase();
+
+    return this;
   }
   target(target) {
     this.options.target = target;

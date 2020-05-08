@@ -1,7 +1,7 @@
-import Component from "components/slide-deck/loading";
+import Component from "components/slide-deck/personality/not-ready";
 import ComponentHandler from "support/component-handler";
 
-describe("Loading", () => {
+describe("NotReady", () => {
   let props;
 
   beforeEach(() => {

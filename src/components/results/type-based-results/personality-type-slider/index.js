@@ -4,7 +4,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityTypeSlide from "../personality-type-slide";
 import TypeButton from "./type-button";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityTypeSlider extends Component {
   static defaultProps = {assessment: null}

@@ -32,8 +32,7 @@ let config = {
           {
             loader: "style-loader",
             options: {
-              sourceMap: cssMaps,
-              singleton: true
+              injectType: "singletonStyleTag"
             }
           },
           {

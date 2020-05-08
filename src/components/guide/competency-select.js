@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import style from "./style";
+import style from "./style.scss";
 
 export default class CompetencySelect extends Component {
   static propTypes = {
@@ -32,8 +32,7 @@ export default class CompetencySelect extends Component {
         >
           {competencies.map((competency) => (
             <option key={competency.id} value={competency.id}>{competency.name}</option>
-          ))
-          }
+          ))}
         </select>
         <p className={style.mobileBadge}>
           <img src={tabBadge(displayedCompetency.id)} alt={`${displayedCompetency.name} badge`} />

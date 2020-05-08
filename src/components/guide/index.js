@@ -5,18 +5,9 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import CompetencySelect from "./competency-select";
 import CompetencyTab from "./competency-tab";
-import style from "./style";
+import style from "./style.scss";
 
 class Guide extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      badges: [],
-      competencies: [],
-      displayedCompetency: null,
-      showExpandedIntro: false
-    };
-  }
   static defaultProps = {assessment: null, guide: null}
   static propTypes = {
     assessment: PropTypes.shape({
@@ -32,6 +23,15 @@ class Guide extends Component {
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      badges: [],
+      competencies: [],
+      displayedCompetency: null,
+      showExpandedIntro: false
+    };
   }
   componentDidMount() {
     this.props.ui.trigger("Guide.initialized", this);
@@ -49,6 +49,29 @@ class Guide extends Component {
 
     if(changes.assessment || changes.locale) { this.setGuide(); }
   }
+  setGuide() {
+    if(!this.props.guide) {
+      return this.setState({badges: [], competencies: [], displayedCompetency: null});
+    }
+
+    const {competencies} = this.props.guide;
+    const badges = this.badges(competencies);
+
+    this.setState({badges, competencies, displayedCompetency: {...competencies[0]}});
+  }
+  displayCompetency = (competencyID) => {
+    this.setState(({competencies}) => {
+      const displayedCompetency = competencies.find((competency) => competency.id === competencyID);
+
+      return displayedCompetency && {displayedCompetency};
+    });
+  }
+  tabBadge = (id) => (
+    this.state.badges.find((badge) => badge.competencyID === id).image
+  )
+  toggleExpandedIntro = () => {
+    this.setState((prevState) => ({showExpandedIntro: !prevState.showExpandedIntro}));
+  }
   badges(competencies) {
     const {assessment} = this.props;
 
@@ -60,13 +83,6 @@ class Guide extends Component {
       return {competencyID: competency.id, image: personality.personality_type.badge.image_medium};
     });
   }
-  displayCompetency = (competencyID) => {
-    this.setState(({competencies}) => {
-      const displayedCompetency = competencies.find((competency) => competency.id === competencyID);
-
-      return displayedCompetency && {displayedCompetency};
-    });
-  }
   introduction() {
     const {introduction} = this.state.displayedCompetency;
     const intro = introduction.split("\n", 1)[0];
@@ -74,28 +90,12 @@ class Guide extends Component {
 
     return {intro, readMore};
   }
-  setGuide() {
-    if(!this.props.guide) {
-      return this.setState({badges: [], competencies: [], displayedCompetency: null});
-    }
-
-    const {competencies} = this.props.guide;
-    const badges = this.badges(competencies);
-
-    this.setState({badges, competencies, displayedCompetency: {...competencies[0]}});
-  }
   stringToListItems(entity) {
     let entities = entity.split("\n");
     /* eslint-disable-next-line react/no-array-index-key */
     entities = entities.map((e, i) => <li key={i}>{e}</li>);
 
     return (<ul>{entities}</ul>);
-  }
-  tabBadge = (id) => (
-    this.state.badges.find((badge) => badge.competencyID === id).image
-  )
-  toggleExpandedIntro = () => {
-    this.setState((prevState) => ({showExpandedIntro: !prevState.showExpandedIntro}));
   }
   render() {
     if(!this.props.isReady("guide")) { return null; }

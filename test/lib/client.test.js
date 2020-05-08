@@ -149,7 +149,7 @@ describe("Client", () => {
 
       it("includes headers", () => {
         expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Content-type", "application/graphql");
-        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Accept", "*/*");
+        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Accept", "application/json");
       });
 
       it("passes params", () => {

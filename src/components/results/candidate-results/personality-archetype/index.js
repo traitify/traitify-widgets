@@ -3,7 +3,7 @@ import {Component} from "react";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityArchetype extends Component {
   static defaultProps = {assessment: null, deck: null}

@@ -1,0 +1,172 @@
+@import "~style/helpers";
+@import "~style/variables";
+
+.container {
+  @extend %widgetContainer;
+
+  background: white;
+  min-height: 100vh;
+  @include mq(s) {
+    min-height: $minHeight;
+  }
+}
+
+.instructions {
+  @extend .container;
+
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 5px;
+  @include rems(15);
+  h1 {
+    color: #3B8DBF;
+    @include rems(26);
+  }
+  h1, h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  p {
+    white-space: pre-wrap;
+  }
+  video {
+    display: block;
+    height: auto;
+    margin: 10px auto;
+    max-width: 500px;
+    width: 80%;
+  }
+}
+
+.question {
+  background: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  img {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+.choices {
+  clear: both;
+  background: #EFEFEF;
+  text-align: center;
+  padding: 15px 0 0;
+  width: 100%;
+  .choicesContainer {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .choice {
+    display: inline-block;
+    margin: 4%;
+    width: 30%;
+    &:nth-of-type(3) {
+      clear: both;
+    }
+  }
+  button {
+    background: #EFEFEF;
+    border: 0;
+    padding: 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 3px solid #333333;
+  }
+  img.selected {
+    border: 6px solid #3B8DBF;
+  }
+}
+.buttons {
+  clear: both;
+  background: #EFEFEF;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  button {
+    display: inline-block;
+    padding: 10px;
+    @include rems(20);
+    @include max-width(s) {
+      width: 50%;
+    }
+    @include mq(s) {
+      border-radius: 5px;
+      border: 0;
+      margin: 20px 10px;
+    }
+  }
+}
+
+.btnDisabled,
+.btnBlue,
+.btnSkip {
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  @include rems(20);
+  @include mq(s) {
+    width: 200px;
+  }
+}
+
+.btnBlue {
+  background: #3B8DBF;
+}
+.btnDisabled {
+  background: #CCCCCC;
+}
+.btnSkip {
+  background: #A0A0A0;
+}
+
+.statusContainer {
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.timer {
+  float: left;
+  @include rems(14);
+  @include mq(xl) {
+    @include rems(18);
+  }
+}
+.status {
+  float: right;
+  @include rems(14);
+  @include mq(xl) {
+    @include rems(18);
+  }
+}
+.progressBar {
+  clear: both;
+  background: #EFEFEF;
+  width: 100%;
+  height: 10px;
+  @include mq(xl) {
+    height: 20px;
+  }
+}
+.progress {
+  background: #2FB656;
+  width: 100%;
+  height: 10px;
+  @include mq(xl) {
+    height: 20px;
+  }
+}

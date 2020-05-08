@@ -1,4 +1,22 @@
 //     Mixins and helpers
+@mixin max-width($breakpoint) {
+  @if $breakpoint == xl {
+    @media (max-width: 71.25em) { @content ; } //1140
+  }
+  @else if $breakpoint == l {
+    @media (max-width: 60em) { @content ; } //960
+  }
+  @else if $breakpoint == m {
+    @media (max-width: 48em) { @content ; } //768
+  }
+  @else if $breakpoint == s {
+    @media (max-width: 35.5em) { @content ; } //568
+  }
+  @else if $breakpoint == xs {
+    @media (max-width: 30em) { @content ; } //480
+  }
+}
+
 @mixin mq($breakpoint) {
   @if $breakpoint == xxxxl {
     @media (min-width: 120em) { @content ; } //1920
@@ -229,12 +247,13 @@
 }
 
 %widgetContainer{
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+  color: #333;
   font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
-  color: #333;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   * {
     box-sizing: border-box;
   }

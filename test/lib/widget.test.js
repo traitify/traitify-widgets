@@ -313,6 +313,20 @@ describe("Widget", () => {
     });
   });
 
+  describe("surveyType", () => {
+    it("returns widget", () => {
+      const returnValue = widget.surveyType("cognitive");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.surveyType("cognitive");
+
+      expect(widget.options.surveyType).toBe("cognitive");
+    });
+  });
+
   describe("target", () => {
     it("returns widget", () => {
       const returnValue = widget.target("#results");

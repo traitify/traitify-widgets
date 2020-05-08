@@ -10,10 +10,10 @@ import {
   mutable,
   slideIndex,
   toggleFullscreen
-} from "components/slide-deck/helpers";
+} from "components/slide-deck/personality/helpers";
 import assessment from "support/json/assessment/with-slides.json";
 
-describe("SlideDeck Helpers", () => {
+describe("Helpers", () => {
   describe("completedSlides", () => {
     it("filters out incomplete slides", () => {
       const completedLength = Math.round(assessment.slides.length / 2);
@@ -262,7 +262,7 @@ describe("SlideDeck Helpers", () => {
 
     it("returns true if all slides loaded", () => {
       const result = isReady(
-        assessment.slides.map((slide) => ({...slide, loaded: true})),
+        assessment.slides.map((slide) => ({...slide, loaded: true}))
       );
 
       expect(result).toBe(true);
@@ -294,7 +294,7 @@ describe("SlideDeck Helpers", () => {
 
     it("returns -1 if all slides loaded", () => {
       const result = loadingIndex(
-        assessment.slides.map((slide) => ({...slide, loaded: true})),
+        assessment.slides.map((slide) => ({...slide, loaded: true}))
       );
 
       expect(result).toBe(-1);
@@ -325,7 +325,7 @@ describe("SlideDeck Helpers", () => {
 
     it("returns -1 if all slides are completed", () => {
       const result = slideIndex(
-        assessment.slides.map((slide) => ({...slide, response: true})),
+        assessment.slides.map((slide) => ({...slide, response: true}))
       );
 
       expect(result).toBe(-1);

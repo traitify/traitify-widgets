@@ -5,7 +5,7 @@ import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import DetailsList from "./details-list";
-import style from "./style";
+import style from "./style.scss";
 
 class PersonalityDimensionDetails extends Component {
   static propTypes = {

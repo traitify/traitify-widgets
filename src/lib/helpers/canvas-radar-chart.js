@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-param-reassign, no-self-assign */
 function configureLabels(options) {
   const labels = [];
 
@@ -51,7 +51,7 @@ function configureGrid(ctx, options) {
 
   for(let axis = 0; axis < options.labels.length; axis += 1) {
     grid.axes.push({
-      angle: (2 * Math.PI * axis / options.labels.length) + 1 / 2 * Math.PI
+      angle: (2 * Math.PI * (axis / options.labels.length)) + (1 / 2) * Math.PI
     });
   }
 
@@ -168,7 +168,7 @@ export default class CanvasRadarChart {
       this.ctx.lineWidth = data.pathLineWidth;
       this.ctx.beginPath();
       this.grid.axes.forEach((axis, index) => {
-        const value = this.grid.radius * data.values[index] / this.grid.options.max;
+        const value = this.grid.radius * (data.values[index] / this.grid.options.max);
         const x = this.grid.center.x + value * -Math.cos(axis.angle);
         const y = this.grid.center.y + value * -Math.sin(axis.angle);
         points.push({x, y});

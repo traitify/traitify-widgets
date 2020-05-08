@@ -443,6 +443,7 @@ exports[`Slide renders fullscreen 1`] = `
     </div>
   </div>
   <button
+    aria-label="fullscreen"
     className=" "
     onClick={[MockFunction toggleFullscreen]}
     type="button"
@@ -499,6 +500,7 @@ exports[`Slide renders fullscreen button 1`] = `
     </div>
   </div>
   <button
+    aria-label="fullscreen"
     className=" "
     onClick={[MockFunction toggleFullscreen]}
     type="button"

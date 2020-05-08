@@ -4,7 +4,7 @@ import {detailWithPerspective} from "lib/helpers";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import {rgba} from "lib/helpers/color";
-import style from "./style";
+import style from "./style.scss";
 
 class Dimension extends Component {
   static defaultProps = {assessmentID: null}

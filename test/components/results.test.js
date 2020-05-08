@@ -2,6 +2,7 @@ import {Component} from "components/results";
 import ComponentHandler from "support/component-handler";
 
 jest.mock("components/results/candidate-results", () => (() => (<div className="mock">Candidate</div>)));
+jest.mock("components/results/cognitive-results", () => (() => (<div className="mock">Cognitive</div>)));
 jest.mock("components/results/dimension-based-results", () => (() => (<div className="mock">Dimension Based</div>)));
 jest.mock("components/results/financial-risk-results", () => (() => (<div className="mock">Financial Risk</div>)));
 jest.mock("components/results/type-based-results", () => (() => (<div className="mock">Type Based</div>)));
@@ -41,6 +42,14 @@ describe("Results", () => {
   it("renders candidate results", () => {
     props.assessment = {assessment_type: "DIMENSION_BASED"};
     props.getOption.mockReturnValue("candidate");
+    props.isReady.mockReturnValue(true);
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders cognitive results", () => {
+    props.getOption.mockReturnValue("cognitive");
     props.isReady.mockReturnValue(true);
     const component = new ComponentHandler(<Component {...props} />);
 

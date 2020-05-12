@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import PersonalityDimensionColumns from "../personality-dimension-columns";
-import PersonalityDimensionDetails from "../personality-dimension-details";
+import PersonalityDimensionColumns from "components/results/personality/dimension/columns";
+import PersonalityDimensionDetails from "components/results/personality/dimension/details";
 import style from "./style";
 
-class PersonalityDimensions extends Component {
+class PersonalityDimensionList extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({personality_types: PropTypes.array}),
@@ -54,5 +54,5 @@ class PersonalityDimensions extends Component {
   }
 }
 
-export {PersonalityDimensions as Component};
-export default withTraitify(PersonalityDimensions);
+export {PersonalityDimensionList as Component};
+export default withTraitify(PersonalityDimensionList);

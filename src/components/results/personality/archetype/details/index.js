@@ -5,7 +5,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-class PersonalityArchetype extends Component {
+class PersonalityArchetypeDetails extends Component {
   static defaultProps = {assessment: null, deck: null}
   static propTypes = {
     assessment: PropTypes.shape({archetype: PropTypes.object}),
@@ -81,5 +81,5 @@ class PersonalityArchetype extends Component {
   }
 }
 
-export {PersonalityArchetype as Component};
-export default withTraitify(PersonalityArchetype);
+export {PersonalityArchetypeDetails as Component};
+export default withTraitify(PersonalityArchetypeDetails);

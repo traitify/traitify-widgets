@@ -1,16 +1,11 @@
-import PropTypes from "prop-types";
 import {Component} from "react";
-import withTraitify from "lib/with-traitify";
-import PersonalityArchetype from "./personality-archetype";
-import PersonalityDimensions from "./personality-dimensions";
-import PersonalitySkills from "./personality-skills";
-import PersonalityTips from "./personality-tips";
-import PersonalityTraits from "../dimension-based-results/personality-traits";
+import PersonalityArchetype from "components/results/personality/archetype/details";
+import PersonalityDimensions from "components/results/personality/dimension/list";
+import PersonalitySkills from "components/results/personality/archetype/skills";
+import PersonalityTips from "components/results/personality/archetype/tips";
+import PersonalityTraits from "components/results/personality/trait/list";
 
-class EdmResults extends Component {
-  static propTypes = {
-    getOption: PropTypes.func.isRequired
-  }
+export default class EdmResults extends Component {
   render() {
     return (
       <section>
@@ -23,5 +18,3 @@ class EdmResults extends Component {
     );
   }
 }
-
-export default withTraitify(EdmResults);

@@ -12,7 +12,7 @@ const tipTypes = [
   {disabledKey: "PersonalitySettings", key: "settings", title: "Settings that Work for You"}
 ];
 
-function PersonalityTips(props) {
+function PersonalityArchetypeTips(props) {
   const {assessment, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, ["archetype", "details"]) || [];
   const [activeType, setActiveType] = useState(null);
@@ -69,8 +69,8 @@ function PersonalityTips(props) {
   );
 }
 
-PersonalityTips.defaultProps = {assessment: null};
-PersonalityTips.propTypes = {
+PersonalityArchetypeTips.defaultProps = {assessment: null};
+PersonalityArchetypeTips.propTypes = {
   assessment: PropTypes.shape({archetype: PropTypes.object}),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
@@ -78,5 +78,5 @@ PersonalityTips.propTypes = {
   ui: TraitifyPropTypes.ui.isRequired
 };
 
-export {PersonalityTips as Component};
-export default withTraitify(PersonalityTips);
+export {PersonalityArchetypeTips as Component};
+export default withTraitify(PersonalityArchetypeTips);

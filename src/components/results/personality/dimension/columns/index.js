@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import PersonalityDimensionColumn from "components/results/personality/dimension/column";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import PersonalityDimensionColumn from "../personality-dimension-column";
 import style from "./style";
 
 class PersonalityDimensionColumns extends Component {

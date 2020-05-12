@@ -4,7 +4,7 @@ import {detailWithPerspective} from "lib/helpers";
 import {rgba} from "lib/helpers/color";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import DetailsList from "./details-list";
+import List from "./list";
 import style from "./style";
 
 class PersonalityDimensionDetails extends Component {
@@ -53,9 +53,9 @@ class PersonalityDimensionDetails extends Component {
           )}
           <p className={style.description}>{detailWithPerspective({...options, name: "short_description"})}</p>
         </div>
-        <DetailsList detailsList={benefits} color={color} header={benefitsHeader} />
+        <List detailsList={benefits} color={color} header={benefitsHeader} />
         {perspective === "thirdPerson" && (
-          <DetailsList detailsList={pitfalls} color={color} header={translate("room_for_growth_and_change")} />
+          <List detailsList={pitfalls} color={color} header={translate("room_for_growth_and_change")} />
         )}
       </li>
     );

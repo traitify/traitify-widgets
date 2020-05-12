@@ -34,7 +34,7 @@ const types = [
   }
 ];
 
-function PersonalitySkills(props) {
+function PersonalityArchetypeSkills(props) {
   const {assessment, isReady, translate, ui} = props;
   const details = dig(assessment, ["archetype", "details"]) || [];
   const [activeType, setActiveType] = useState(types[0]);
@@ -82,13 +82,13 @@ function PersonalitySkills(props) {
   );
 }
 
-PersonalitySkills.defaultProps = {assessment: null};
-PersonalitySkills.propTypes = {
+PersonalityArchetypeSkills.defaultProps = {assessment: null};
+PersonalityArchetypeSkills.propTypes = {
   assessment: PropTypes.shape({archetype: PropTypes.object}),
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };
 
-export {PersonalitySkills as Component};
-export default withTraitify(PersonalitySkills);
+export {PersonalityArchetypeSkills as Component};
+export default withTraitify(PersonalityArchetypeSkills);

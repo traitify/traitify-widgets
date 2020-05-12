@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import CandidateResults from "./candidate-results";
 import CognitiveResults from "./cognitive-results";
 import DimensionBasedResults from "./dimension-based-results";
-import EdmResults from "./edm-results";
+import EmployeeResults from "./employee-results";
 import FinancialRiskResults from "./financial-risk-results";
 import TypeBasedResults from "./type-based-results";
 
@@ -37,8 +37,8 @@ class Results extends Component {
       return <TypeBasedResults {...this.props} />;
     } else if(this.props.getOption("view") === "candidate") {
       return <CandidateResults {...this.props} />;
-    } else if(this.props.getOption("view") === "edm") {
-      return <EdmResults {...this.props} />;
+    } else if(this.props.getOption("view") === "employee") {
+      return <EmployeeResults {...this.props} />;
     } else {
       return <DimensionBasedResults {...this.props} />;
     }

@@ -5,5 +5,5 @@ export PersonalityDimensionDetails from "components/results/personality/dimensio
 export PersonalityDimensions from "components/results/personality/dimension/list";
 export PersonalitySkills from "components/results/personality/archetype/skills";
 export PersonalityTips from "components/results/personality/archetype/tips";
-import PersonalityTraits from "components/results/personality/trait/list";
-export EdmResults from "./index";
+export PersonalityTraits from "components/results/personality/trait/list";
+export EmployeeResults from "./index";

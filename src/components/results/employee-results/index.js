@@ -1,8 +1,7 @@
-import PersonalityArchetype from "components/results/personality/archetype/details";
+import PersonalityArchetype from "components/results/personality/archetype/heading";
 import PersonalityDimensions from "components/results/personality/dimension/list";
 import PersonalitySkills from "components/results/personality/archetype/skills";
 import PersonalityTips from "components/results/personality/archetype/tips";
-import PersonalityTraits from "components/results/personality/trait/list";
 
 export default function EmployeeResults(props) {
   return (
@@ -11,7 +10,6 @@ export default function EmployeeResults(props) {
       <PersonalitySkills {...props} />
       <PersonalityTips {...props} />
       <PersonalityDimensions {...props} />
-      <PersonalityTraits {...props} />
     </section>
   );
 }

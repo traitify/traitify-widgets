@@ -13,9 +13,9 @@ export default class ComponentHandler {
   updateProps(props) {
     const Component = this.renderer.root.type;
 
-    this.renderer.update(<Component {...{...this.props, ...props}} />);
+    act(() => { this.renderer.update(<Component {...{...this.props, ...props}} />); });
   }
   updateState(state) {
-    this.instance.setState(state);
+    act(() => { this.instance.setState(state); });
   }
 }

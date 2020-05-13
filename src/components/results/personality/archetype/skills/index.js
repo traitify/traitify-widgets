@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style";
 
-const types = [
+const skillTypes = [
   {
     image: "https://cdn.traitify.com/images/big5_home.png",
     key: "working_from_home",
@@ -35,22 +35,37 @@ const types = [
 ];
 
 function PersonalityArchetypeSkills(props) {
-  const {assessment, isReady, translate, ui} = props;
+  const {assessment, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, ["archetype", "details"]) || [];
-  const [activeType, setActiveType] = useState(types[0]);
-  const state = {activeType};
+  const [activeType, setActiveType] = useState(null);
+  const [types, setTypes] = useState([]);
+  const state = {activeType, types};
 
   useDidMount(() => { ui.trigger("PersonalitySkills.initialized", {props, state}); });
   useDidUpdate(() => { ui.trigger("PersonalitySkills.updated", {props, state}); });
+  useEffect(() => {
+    if(details.length === 0) { return; }
 
+    const disabledComponents = getOption("disabledComponents") || [];
+    const activeTypes = skillTypes.filter((type) => {
+      if(disabledComponents.includes(type.name)) { return false; }
+
+      return details.find(({title}) => (title === `Success Skills - ${type.name}`));
+    });
+
+    setTypes(activeTypes);
+    setActiveType(activeTypes[0]);
+  }, [details]);
+
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("PersonalitySkills")) { return null; }
+  if(!isReady("results")) { return null; }
+  if(!activeType) { return null; }
+
+  const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
   const tips = details
     .filter(({title}) => (title === `Success Skills - ${activeType.name}`))
     .map(({body}) => body);
-
-  if(!isReady("results")) { return null; }
-  if(tips.length === 0) { return null; }
-
-  const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
 
   return (
     <div className={style.container}>
@@ -85,6 +100,7 @@ function PersonalityArchetypeSkills(props) {
 PersonalityArchetypeSkills.defaultProps = {assessment: null};
 PersonalityArchetypeSkills.propTypes = {
   assessment: PropTypes.shape({archetype: PropTypes.object}),
+  getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired

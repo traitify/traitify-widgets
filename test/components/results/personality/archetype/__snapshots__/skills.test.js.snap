@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityArchetypeSkills renders component 1`] = `
+<div>
+  <ul>
+    <div>
+      featured_skill, [object Object]
+    </div>
+    <li>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_working_from_home, [object Object]"
+          src="https://cdn.traitify.com/images/big5_home.png"
+        />
+        <div>
+          skill_name_for_working_from_home, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_dealing_with_stress, [object Object]"
+          src="https://cdn.traitify.com/images/big5_stress.png"
+        />
+        <div>
+          skill_name_for_dealing_with_stress, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_communication, [object Object]"
+          src="https://cdn.traitify.com/images/big5_communication.png"
+        />
+        <div>
+          skill_name_for_communication, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_teamwork, [object Object]"
+          src="https://cdn.traitify.com/images/big5_teamwork.png"
+        />
+        <div>
+          skill_name_for_teamwork, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_self_motivation, [object Object]"
+          src="https://cdn.traitify.com/images/big5_motivation.png"
+        />
+        <div>
+          skill_name_for_self_motivation, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="working_from_home"
+      >
+        <option
+          value="working_from_home"
+        >
+          skill_name_for_working_from_home, [object Object]
+        </option>
+        <option
+          value="dealing_with_stress"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="communication"
+        >
+          skill_name_for_communication, [object Object]
+        </option>
+        <option
+          value="teamwork"
+        >
+          skill_name_for_teamwork, [object Object]
+        </option>
+        <option
+          value="self_motivation"
+        >
+          skill_name_for_self_motivation, [object Object]
+        </option>
+      </select>
+    </div>
+    <h3>
+      skill_heading_for_working_from_home, [object Object]
+    </h3>
+    <ul>
+      <li>
+        WFH Tip - 0
+      </li>
+      <li>
+        WFH Tip - 1
+      </li>
+      <li>
+        WFH Tip - 2
+      </li>
+      <li>
+        WFH Tip - 3
+      </li>
+      <li>
+        WFH Tip - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders component with available types 1`] = `
+<div>
+  <ul>
+    <div>
+      featured_skill, [object Object]
+    </div>
+    <li>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_dealing_with_stress, [object Object]"
+          src="https://cdn.traitify.com/images/big5_stress.png"
+        />
+        <div>
+          skill_name_for_dealing_with_stress, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_communication, [object Object]"
+          src="https://cdn.traitify.com/images/big5_communication.png"
+        />
+        <div>
+          skill_name_for_communication, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_teamwork, [object Object]"
+          src="https://cdn.traitify.com/images/big5_teamwork.png"
+        />
+        <div>
+          skill_name_for_teamwork, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_self_motivation, [object Object]"
+          src="https://cdn.traitify.com/images/big5_motivation.png"
+        />
+        <div>
+          skill_name_for_self_motivation, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="dealing_with_stress"
+      >
+        <option
+          value="dealing_with_stress"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="communication"
+        >
+          skill_name_for_communication, [object Object]
+        </option>
+        <option
+          value="teamwork"
+        >
+          skill_name_for_teamwork, [object Object]
+        </option>
+        <option
+          value="self_motivation"
+        >
+          skill_name_for_self_motivation, [object Object]
+        </option>
+      </select>
+    </div>
+    <h3>
+      skill_heading_for_dealing_with_stress, [object Object]
+    </h3>
+    <ul>
+      <li>
+        DWS Tip - 0
+      </li>
+      <li>
+        DWS Tip - 1
+      </li>
+      <li>
+        DWS Tip - 2
+      </li>
+      <li>
+        DWS Tip - 3
+      </li>
+      <li>
+        DWS Tip - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
+<div>
+  <ul>
+    <div>
+      featured_skill, [object Object]
+    </div>
+    <li>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_dealing_with_stress, [object Object]"
+          src="https://cdn.traitify.com/images/big5_stress.png"
+        />
+        <div>
+          skill_name_for_dealing_with_stress, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_communication, [object Object]"
+          src="https://cdn.traitify.com/images/big5_communication.png"
+        />
+        <div>
+          skill_name_for_communication, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_teamwork, [object Object]"
+          src="https://cdn.traitify.com/images/big5_teamwork.png"
+        />
+        <div>
+          skill_name_for_teamwork, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_self_motivation, [object Object]"
+          src="https://cdn.traitify.com/images/big5_motivation.png"
+        />
+        <div>
+          skill_name_for_self_motivation, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="dealing_with_stress"
+      >
+        <option
+          value="dealing_with_stress"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="communication"
+        >
+          skill_name_for_communication, [object Object]
+        </option>
+        <option
+          value="teamwork"
+        >
+          skill_name_for_teamwork, [object Object]
+        </option>
+        <option
+          value="self_motivation"
+        >
+          skill_name_for_self_motivation, [object Object]
+        </option>
+      </select>
+    </div>
+    <h3>
+      skill_heading_for_dealing_with_stress, [object Object]
+    </h3>
+    <ul>
+      <li>
+        DWS Tip - 0
+      </li>
+      <li>
+        DWS Tip - 1
+      </li>
+      <li>
+        DWS Tip - 2
+      </li>
+      <li>
+        DWS Tip - 3
+      </li>
+      <li>
+        DWS Tip - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = `
+<div>
+  <ul>
+    <div>
+      featured_skill, [object Object]
+    </div>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_working_from_home, [object Object]"
+          src="https://cdn.traitify.com/images/big5_home.png"
+        />
+        <div>
+          skill_name_for_working_from_home, [object Object]
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_dealing_with_stress, [object Object]"
+          src="https://cdn.traitify.com/images/big5_stress.png"
+        />
+        <div>
+          skill_name_for_dealing_with_stress, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_communication, [object Object]"
+          src="https://cdn.traitify.com/images/big5_communication.png"
+        />
+        <div>
+          skill_name_for_communication, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_teamwork, [object Object]"
+          src="https://cdn.traitify.com/images/big5_teamwork.png"
+        />
+        <div>
+          skill_name_for_teamwork, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_self_motivation, [object Object]"
+          src="https://cdn.traitify.com/images/big5_motivation.png"
+        />
+        <div>
+          skill_name_for_self_motivation, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="dealing_with_stress"
+      >
+        <option
+          value="working_from_home"
+        >
+          skill_name_for_working_from_home, [object Object]
+        </option>
+        <option
+          value="dealing_with_stress"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="communication"
+        >
+          skill_name_for_communication, [object Object]
+        </option>
+        <option
+          value="teamwork"
+        >
+          skill_name_for_teamwork, [object Object]
+        </option>
+        <option
+          value="self_motivation"
+        >
+          skill_name_for_self_motivation, [object Object]
+        </option>
+      </select>
+    </div>
+    <h3>
+      skill_heading_for_dealing_with_stress, [object Object]
+    </h3>
+    <ul>
+      <li>
+        DWS Tip - 0
+      </li>
+      <li>
+        DWS Tip - 1
+      </li>
+      <li>
+        DWS Tip - 2
+      </li>
+      <li>
+        DWS Tip - 3
+      </li>
+      <li>
+        DWS Tip - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] = `
+<div>
+  <ul>
+    <div>
+      featured_skill, [object Object]
+    </div>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_working_from_home, [object Object]"
+          src="https://cdn.traitify.com/images/big5_home.png"
+        />
+        <div>
+          skill_name_for_working_from_home, [object Object]
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_dealing_with_stress, [object Object]"
+          src="https://cdn.traitify.com/images/big5_stress.png"
+        />
+        <div>
+          skill_name_for_dealing_with_stress, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_communication, [object Object]"
+          src="https://cdn.traitify.com/images/big5_communication.png"
+        />
+        <div>
+          skill_name_for_communication, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_teamwork, [object Object]"
+          src="https://cdn.traitify.com/images/big5_teamwork.png"
+        />
+        <div>
+          skill_name_for_teamwork, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_self_motivation, [object Object]"
+          src="https://cdn.traitify.com/images/big5_motivation.png"
+        />
+        <div>
+          skill_name_for_self_motivation, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="dealing_with_stress"
+      >
+        <option
+          value="working_from_home"
+        >
+          skill_name_for_working_from_home, [object Object]
+        </option>
+        <option
+          value="dealing_with_stress"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="communication"
+        >
+          skill_name_for_communication, [object Object]
+        </option>
+        <option
+          value="teamwork"
+        >
+          skill_name_for_teamwork, [object Object]
+        </option>
+        <option
+          value="self_motivation"
+        >
+          skill_name_for_self_motivation, [object Object]
+        </option>
+      </select>
+    </div>
+    <h3>
+      skill_heading_for_dealing_with_stress, [object Object]
+    </h3>
+    <ul>
+      <li>
+        DWS Tip - 0
+      </li>
+      <li>
+        DWS Tip - 1
+      </li>
+      <li>
+        DWS Tip - 2
+      </li>
+      <li>
+        DWS Tip - 3
+      </li>
+      <li>
+        DWS Tip - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityArchetypeSkills renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityArchetypeSkills renders nothing if results not ready 1`] = `null`;

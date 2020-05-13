@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PersonalityArchetype renders component 1`] = `
+exports[`PersonalityArchetypeHeading renders component 1`] = `
 <div>
   <div>
     <h2
@@ -26,7 +26,7 @@ exports[`PersonalityArchetype renders component 1`] = `
 </div>
 `;
 
-exports[`PersonalityArchetype renders component in third person 1`] = `
+exports[`PersonalityArchetypeHeading renders component in third person 1`] = `
 <div>
   <div>
     <div>
@@ -50,7 +50,7 @@ exports[`PersonalityArchetype renders component in third person 1`] = `
 </div>
 `;
 
-exports[`PersonalityArchetype renders component with badge 1`] = `
+exports[`PersonalityArchetypeHeading renders component with badge 1`] = `
 <div>
   <div>
     <img
@@ -80,10 +80,10 @@ exports[`PersonalityArchetype renders component with badge 1`] = `
 </div>
 `;
 
-exports[`PersonalityArchetype renders nothing if deck not ready 1`] = `null`;
+exports[`PersonalityArchetypeHeading renders nothing if deck not ready 1`] = `null`;
 
-exports[`PersonalityArchetype renders nothing if disabled 1`] = `null`;
+exports[`PersonalityArchetypeHeading renders nothing if disabled 1`] = `null`;
 
-exports[`PersonalityArchetype renders nothing if no archetype 1`] = `null`;
+exports[`PersonalityArchetypeHeading renders nothing if no archetype 1`] = `null`;
 
-exports[`PersonalityArchetype renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityArchetypeHeading renders nothing if results not ready 1`] = `null`;

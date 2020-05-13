@@ -1,30 +1,38 @@
-import {Component} from "components/results/personality/archetype/heading";
+import {Component} from "components/results/personality/archetype/tips";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/dimension-based.json";
-import deck from "support/json/deck/big-five.json";
+import _assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-const assessmentWithDetails = {
-  ...assessment,
+const details = [];
+
+[
+  {body: "RGC", name: "Room for Growth and Change"},
+  {body: "SWY", name: "Settings that Work for You"},
+  {body: "TU", name: "Tools to Use"}
+].forEach((type) => {
+  Array.from(Array(5)).forEach((_, i) => {
+    details.push({body: `${type.body} - ${i}`, title: type.name});
+  });
+});
+
+const assessment = {
+  ..._assessment,
   archetype: {
-    ...assessment.archetype,
+    ..._assessment.archetype,
     details: [
-      ...assessment.archetype.details,
-      {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
-      {body: "Maybe just hire qualified candidats", title: "Hiring Manager Description"}
+      ..._assessment.archetype.details,
+      ...details
     ]
   }
 };
 
-describe("PersonalityArchetypeHeading", () => {
+describe("PersonalityArchetypeTips", () => {
   let props;
 
   beforeEach(() => {
     props = {
       assessment,
-      deck,
-      followDeck: jest.fn().mockName("followDeck"),
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       options: {},
@@ -43,7 +51,7 @@ describe("PersonalityArchetypeHeading", () => {
       new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
-        "PersonalityArchetype.initialized",
+        "PersonalityTips.initialized",
         expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
@@ -57,7 +65,7 @@ describe("PersonalityArchetypeHeading", () => {
       component.updateProps();
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
-        "PersonalityArchetype.updated",
+        "PersonalityTips.updated",
         expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
@@ -66,43 +74,52 @@ describe("PersonalityArchetypeHeading", () => {
     });
   });
 
-  it("follows the deck", () => {
-    new ComponentHandler(<Component {...props} />);
-
-    expect(props.followDeck).toHaveBeenCalled();
-  });
-
   it("renders component", () => {
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component in third person", () => {
-    props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
-    props.assessment = assessmentWithDetails;
+  it("renders component with available types", () => {
+    props.assessment = {
+      ...assessment,
+      archetype: {
+        ...assessment.archetype,
+        details: assessment.archetype.details.filter((detail) => (
+          detail.title !== "Tools to Use"
+        ))
+      }
+    };
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with badge", () => {
-    props.assessment = assessmentWithDetails;
+  it("renders component with enabled types", () => {
+    props.getOption.mockReturnValue(["PersonalityTools"]);
     const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders new type from clicking button", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    component.act(() => component.instance.findAllByType("button")[1].props.onClick());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders new type from selecting option", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    const select = component.instance.findByType("select");
+    const option = component.instance.findAllByType("option")[1];
+    component.act(() => select.props.onChange({target: option.props}));
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityArchetype"]);
-    const component = new ComponentHandler(<Component {...props} />);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders nothing if deck not ready", () => {
-    props.deck = null;
-    props.isReady.mockImplementation((value) => value !== "deck");
+    props.getOption.mockReturnValue(["PersonalityTips"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -121,5 +138,15 @@ describe("PersonalityArchetypeHeading", () => {
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if no tips", () => {
+    props.assessment = {
+      ...props.assessment,
+      archetype: {
+        ...props.assessment.archetype,
+        details: [] // TODO: Leave in other section details
+      }
+    };
   });
 });

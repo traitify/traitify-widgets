@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityArchetypeTips renders component 1`] = `
+<div>
+  <ul>
+    <li
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_tools, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_room, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_settings, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="tools"
+      >
+        <option
+          value="tools"
+        >
+          tip_type_for_tools, [object Object]
+        </option>
+        <option
+          value="room"
+        >
+          tip_type_for_room, [object Object]
+        </option>
+        <option
+          value="settings"
+        >
+          tip_type_for_settings, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul>
+      <li>
+        TU - 0
+      </li>
+      <li>
+        TU - 1
+      </li>
+      <li>
+        TU - 2
+      </li>
+      <li>
+        TU - 3
+      </li>
+      <li>
+        TU - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeTips renders component with available types 1`] = `
+<div>
+  <ul>
+    <li
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_room, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_settings, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="room"
+      >
+        <option
+          value="room"
+        >
+          tip_type_for_room, [object Object]
+        </option>
+        <option
+          value="settings"
+        >
+          tip_type_for_settings, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul>
+      <li>
+        RGC - 0
+      </li>
+      <li>
+        RGC - 1
+      </li>
+      <li>
+        RGC - 2
+      </li>
+      <li>
+        RGC - 3
+      </li>
+      <li>
+        RGC - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
+<div>
+  <ul>
+    <li
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_room, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_settings, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="room"
+      >
+        <option
+          value="room"
+        >
+          tip_type_for_room, [object Object]
+        </option>
+        <option
+          value="settings"
+        >
+          tip_type_for_settings, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul>
+      <li>
+        RGC - 0
+      </li>
+      <li>
+        RGC - 1
+      </li>
+      <li>
+        RGC - 2
+      </li>
+      <li>
+        RGC - 3
+      </li>
+      <li>
+        RGC - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
+<div>
+  <ul>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_tools, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_room, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_settings, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="room"
+      >
+        <option
+          value="tools"
+        >
+          tip_type_for_tools, [object Object]
+        </option>
+        <option
+          value="room"
+        >
+          tip_type_for_room, [object Object]
+        </option>
+        <option
+          value="settings"
+        >
+          tip_type_for_settings, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul>
+      <li>
+        RGC - 0
+      </li>
+      <li>
+        RGC - 1
+      </li>
+      <li>
+        RGC - 2
+      </li>
+      <li>
+        RGC - 3
+      </li>
+      <li>
+        RGC - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
+<div>
+  <ul>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_tools, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_room, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          tip_type_for_settings, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div>
+    <div>
+      <select
+        onChange={[Function]}
+        value="room"
+      >
+        <option
+          value="tools"
+        >
+          tip_type_for_tools, [object Object]
+        </option>
+        <option
+          value="room"
+        >
+          tip_type_for_room, [object Object]
+        </option>
+        <option
+          value="settings"
+        >
+          tip_type_for_settings, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul>
+      <li>
+        RGC - 0
+      </li>
+      <li>
+        RGC - 1
+      </li>
+      <li>
+        RGC - 2
+      </li>
+      <li>
+        RGC - 3
+      </li>
+      <li>
+        RGC - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeTips renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityArchetypeTips renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityArchetypeTips renders nothing if results not ready 1`] = `null`;

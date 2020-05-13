@@ -35,6 +35,8 @@ function PersonalityArchetypeTips(props) {
     setActiveType(activeTypes[0]);
   }, [details]);
 
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("PersonalityTips")) { return null; }
   if(!isReady("results")) { return null; }
   if(!activeType) { return null; }
 

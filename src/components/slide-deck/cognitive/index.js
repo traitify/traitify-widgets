@@ -66,7 +66,7 @@ function Cognitive(props) {
       question.answer ? ({
         answerId: question.answer.answerId,
         questionId: question.id,
-        skipped: question.answer.skipped,
+        skipped: question.answer.skipped || false,
         timeTaken: question.answer.timeTaken
       }) : ({
         questionId: question.id,
@@ -78,7 +78,7 @@ function Cognitive(props) {
       params: {
         answers,
         learningDisability: disability,
-        overallTimeTaken: startTime ? Date.now() - startTime : 1,
+        overallTimeTaken: Date.now() - startTime,
         testId: assessment.id
       }
     });

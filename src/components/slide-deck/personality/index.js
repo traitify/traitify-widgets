@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {mutable} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import {camelCase} from "lib/helpers/string";
 import withTraitify from "lib/with-traitify";
@@ -11,7 +12,6 @@ import {
   isFullscreen,
   isReady,
   loadingIndex,
-  mutable,
   slideIndex,
   toggleFullscreen
 } from "./helpers";

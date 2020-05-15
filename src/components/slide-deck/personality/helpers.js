@@ -1,5 +1,3 @@
-export * from "../helpers";
-
 export function completedSlides(slides) {
   return slides.filter(({likert_response: likertResponse, response}) => (
     likertResponse || response != null

@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityTraits renders component 1`] = `
+<div>
+  <h4>
+    most_represented_traits
+  </h4>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Steady
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Forgiving
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Can Delay Gratification
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Compassionate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Thrill-Seeking
+  </div>
+  <h4>
+    least_represented_traits
+  </h4>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Visionary
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Whimsical
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Deliberate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Orderliness
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Creative
+  </div>
+</div>
+`;
+
+exports[`PersonalityTraits renders component with translation definitions 1`] = `
+<div>
+  <h4>
+    most_represented_traits
+  </h4>
+  <div>
+    most_represented_traits_definition
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Steady
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Forgiving
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Can Delay Gratification
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Compassionate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Thrill-Seeking
+  </div>
+  <h4>
+    least_represented_traits
+  </h4>
+  <div>
+    least_represented_traits_definition
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Visionary
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Whimsical
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Deliberate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Orderliness
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Creative
+  </div>
+</div>
+`;
+
+exports[`PersonalityTraits renders nothing if not ready 1`] = `null`;

@@ -7,7 +7,6 @@ import {
   isFullscreen,
   isReady,
   loadingIndex,
-  mutable,
   slideIndex,
   toggleFullscreen
 } from "components/slide-deck/personality/helpers";
@@ -298,18 +297,6 @@ describe("Helpers", () => {
       );
 
       expect(result).toBe(-1);
-    });
-  });
-
-  describe("mutable", () => {
-    it("updating a slide doesn't update original", () => {
-      const slides = assessment.slides.map((slide) => ({...slide}));
-      const result = mutable(slides);
-      result[0].response = true;
-
-      expect(result).not.toEqual(slides);
-      expect(result[0]).not.toEqual(result[1]);
-      expect(result[0].response).not.toEqual(result[1].response);
     });
   });
 

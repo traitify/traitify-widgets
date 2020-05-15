@@ -9,8 +9,12 @@ exports[`Cognitive renders instructions 1`] = `
 `;
 
 exports[`Cognitive renders loading after skipped slides finished 1`] = `
-<div>
-  <div>
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
     <i />
     <i />
   </div>
@@ -18,8 +22,12 @@ exports[`Cognitive renders loading after skipped slides finished 1`] = `
 `;
 
 exports[`Cognitive renders loading after skipped slides skipped 1`] = `
-<div>
-  <div>
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
     <i />
     <i />
   </div>
@@ -27,8 +35,12 @@ exports[`Cognitive renders loading after skipped slides skipped 1`] = `
 `;
 
 exports[`Cognitive renders loading if questions finished 1`] = `
-<div>
-  <div>
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
     <i />
     <i />
   </div>
@@ -38,14 +50,20 @@ exports[`Cognitive renders loading if questions finished 1`] = `
 exports[`Cognitive renders nothing if results ready 1`] = `null`;
 
 exports[`Cognitive renders skipped slides 1`] = `
-<div>
-  <div>
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
     <div
       className="mock"
     >
       4:59
     </div>
-    <div>
+    <div
+      className="status"
+    >
       <span>
         cognitive_skipped_questions
          
@@ -56,8 +74,11 @@ exports[`Cognitive renders skipped slides 1`] = `
         1
       </span>
     </div>
-    <div>
+    <div
+      className="progressBar"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "100%",
@@ -80,22 +101,31 @@ exports[`Cognitive renders skipped slides 1`] = `
 `;
 
 exports[`Cognitive renders slide 1`] = `
-<div>
-  <div>
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
     <div
       className="mock"
     >
       4:59
     </div>
-    <div>
+    <div
+      className="status"
+    >
       <span>
         1
          / 
         30
       </span>
     </div>
-    <div>
+    <div
+      className="progressBar"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "3.3333333333333335%",
@@ -118,22 +148,31 @@ exports[`Cognitive renders slide 1`] = `
 `;
 
 exports[`Cognitive renders slide with disability 1`] = `
-<div>
-  <div>
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
     <div
       className="mock"
     >
       4:59
     </div>
-    <div>
+    <div
+      className="status"
+    >
       <span>
         1
          / 
         30
       </span>
     </div>
-    <div>
+    <div
+      className="progressBar"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "3.3333333333333335%",
@@ -156,17 +195,26 @@ exports[`Cognitive renders slide with disability 1`] = `
 `;
 
 exports[`Cognitive renders slide with time limit disabled 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="status"
+    >
       <span>
         1
          / 
         30
       </span>
     </div>
-    <div>
+    <div
+      className="progressBar"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "3.3333333333333335%",

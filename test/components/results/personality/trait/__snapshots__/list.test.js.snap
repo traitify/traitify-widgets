@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityTraits renders component 1`] = `
-<div>
-  <h4>
+<div
+  className="traits"
+>
+  <h4
+    className="title"
+  >
     most_represented_traits
   </h4>
   <div
@@ -35,7 +39,9 @@ exports[`PersonalityTraits renders component 1`] = `
     Trait - 
     Thrill-Seeking
   </div>
-  <h4>
+  <h4
+    className="title"
+  >
     least_represented_traits
   </h4>
   <div
@@ -72,11 +78,17 @@ exports[`PersonalityTraits renders component 1`] = `
 `;
 
 exports[`PersonalityTraits renders component with translation definitions 1`] = `
-<div>
-  <h4>
+<div
+  className="traits"
+>
+  <h4
+    className="title"
+  >
     most_represented_traits
   </h4>
-  <div>
+  <div
+    className="traitsDefinition"
+  >
     most_represented_traits_definition
   </div>
   <div
@@ -109,10 +121,14 @@ exports[`PersonalityTraits renders component with translation definitions 1`] = 
     Trait - 
     Thrill-Seeking
   </div>
-  <h4>
+  <h4
+    className="title"
+  >
     least_represented_traits
   </h4>
-  <div>
+  <div
+    className="traitsDefinition"
+  >
     least_represented_traits_definition
   </div>
   <div

@@ -2,7 +2,7 @@
 
 exports[`PersonalityTypeSlide renders component 1`] = `
 <li
-  className="undefined undefined"
+  className="slide middle"
   style={
     Object {
       "background": "rgba(50,191,76,0.085)",
@@ -10,6 +10,7 @@ exports[`PersonalityTypeSlide renders component 1`] = `
   }
 >
   <span
+    className="title"
     style={
       Object {
         "color": "#32BF4C",
@@ -28,7 +29,7 @@ exports[`PersonalityTypeSlide renders nothing if no active type 1`] = `null`;
 
 exports[`PersonalityTypeSlide renders type name correctly 1`] = `
 <li
-  className="undefined undefined"
+  className="slide middle"
   style={
     Object {
       "background": "rgba(50,191,76,0.085)",
@@ -36,6 +37,7 @@ exports[`PersonalityTypeSlide renders type name correctly 1`] = `
   }
 >
   <span
+    className="title"
     style={
       Object {
         "color": "#32BF4C",

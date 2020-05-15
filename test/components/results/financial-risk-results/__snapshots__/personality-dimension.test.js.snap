@@ -2,6 +2,7 @@
 
 exports[`PersonalityDimension renders component 1`] = `
 <li
+  className="dimension"
   style={
     Object {
       "background": "rgba(208,210,211,0.1)",
@@ -33,7 +34,9 @@ exports[`PersonalityDimension renders component 1`] = `
   <h3>
     Characteristics common in lower Internalized Positivity
   </h3>
-  <ul>
+  <ul
+    className="characteristics"
+  >
     <li
       style={
         Object {

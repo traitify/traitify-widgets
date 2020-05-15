@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityArchetype renders component 1`] = `
-<div>
-  <div>
+<div
+  className="container"
+>
+  <div
+    className="details"
+  >
     <h2
       dangerouslySetInnerHTML={
         Object {
@@ -14,7 +18,9 @@ exports[`PersonalityArchetype renders component 1`] = `
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>
   </div>
-  <div>
+  <div
+    className="meaning"
+  >
     <p
       dangerouslySetInnerHTML={
         Object {
@@ -27,14 +33,21 @@ exports[`PersonalityArchetype renders component 1`] = `
 `;
 
 exports[`PersonalityArchetype renders component in third person 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="thirdPersonDetails"
+  >
+    <div
+      className="badgeAndName"
+    >
       <img
         alt="Cohort"
         src="https://cdn.traitify.com/frtq/conservative_white.png"
       />
       <h2
+        className="personalityHeading"
         dangerouslySetInnerHTML={
           Object {
             "__html": "personality_heading_third_person, [object Object]",
@@ -42,8 +55,12 @@ exports[`PersonalityArchetype renders component in third person 1`] = `
         }
       />
     </div>
-    <span />
-    <span>
+    <span
+      className="divider"
+    />
+    <span
+      className="body"
+    >
       Maybe just hire qualified candidats
     </span>
   </div>
@@ -51,8 +68,12 @@ exports[`PersonalityArchetype renders component in third person 1`] = `
 `;
 
 exports[`PersonalityArchetype renders component with badge 1`] = `
-<div>
-  <div>
+<div
+  className="container"
+>
+  <div
+    className="details"
+  >
     <img
       alt="Cohort"
       src="https://cdn.traitify.com/frtq/conservative_white.png"
@@ -68,7 +89,9 @@ exports[`PersonalityArchetype renders component with badge 1`] = `
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>
   </div>
-  <div>
+  <div
+    className="meaning"
+  >
     <p
       dangerouslySetInnerHTML={
         Object {

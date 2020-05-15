@@ -2,6 +2,7 @@
 
 exports[`PersonalityTrait renders component 1`] = `
 <div
+  className="trait"
   style={
     Object {
       "background": "rgba(41,183,112,0.085)",
@@ -9,6 +10,7 @@ exports[`PersonalityTrait renders component 1`] = `
   }
 >
   <div
+    className="bar"
     style={
       Object {
         "background": "#29B770",
@@ -16,14 +18,21 @@ exports[`PersonalityTrait renders component 1`] = `
       }
     }
   />
-  <div>
+  <div
+    className="content"
+  >
     <img
       alt="Agreeableness"
+      className="icon"
       src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
     />
-    <h3>
+    <h3
+      className="name"
+    >
       Steady
-      <span>
+      <span
+        className="description"
+      >
         dependable, even and consistent
       </span>
     </h3>

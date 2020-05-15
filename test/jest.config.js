@@ -6,6 +6,9 @@ module.exports = {
     "scss",
     "js"
   ],
+  moduleNameMapper: {
+    "^.+\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  },
   modulePaths: [
     "<rootDir>/src/",
     "<rootDir>/test/"
@@ -16,7 +19,6 @@ module.exports = {
   ],
   testURL: "https://www.example.com",
   transform: {
-    "^.+\\.(css|less|scss|sass)$": "<rootDir>/test/support/css-transformer",
     "^.+\\.jsx?$": "babel-jest"
   }
 };

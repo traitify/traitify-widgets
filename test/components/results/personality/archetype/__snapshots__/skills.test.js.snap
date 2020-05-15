@@ -1,21 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityArchetypeSkills renders component 1`] = `
-<div>
-  <ul>
-    <div>
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <div
+      className="featured"
+    >
       featured_skill, [object Object]
     </div>
-    <li>
+    <li
+      className="active"
+    >
       <button
         onClick={[Function]}
         type="button"
       >
         <img
           alt="skill_name_for_working_from_home, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_home.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_working_from_home, [object Object]
         </div>
       </button>
@@ -29,9 +40,12 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
       >
         <img
           alt="skill_name_for_dealing_with_stress, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_stress.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
@@ -45,9 +59,12 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
       >
         <img
           alt="skill_name_for_communication, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_communication.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_communication, [object Object]
         </div>
       </button>
@@ -61,9 +78,12 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
       >
         <img
           alt="skill_name_for_teamwork, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_teamwork.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_teamwork, [object Object]
         </div>
       </button>
@@ -77,16 +97,23 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
       >
         <img
           alt="skill_name_for_self_motivation, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_motivation.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_self_motivation, [object Object]
         </div>
       </button>
     </li>
   </ul>
-  <div>
-    <div>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
       <select
         onChange={[Function]}
         value="working_from_home"
@@ -121,7 +148,9 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
     <h3>
       skill_heading_for_working_from_home, [object Object]
     </h3>
-    <ul>
+    <ul
+      className="list"
+    >
       <li>
         WFH Tip - 0
       </li>
@@ -143,21 +172,32 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
 `;
 
 exports[`PersonalityArchetypeSkills renders component with available types 1`] = `
-<div>
-  <ul>
-    <div>
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <div
+      className="featured"
+    >
       featured_skill, [object Object]
     </div>
-    <li>
+    <li
+      className="active"
+    >
       <button
         onClick={[Function]}
         type="button"
       >
         <img
           alt="skill_name_for_dealing_with_stress, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_stress.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
@@ -171,9 +211,12 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
       >
         <img
           alt="skill_name_for_communication, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_communication.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_communication, [object Object]
         </div>
       </button>
@@ -187,9 +230,12 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
       >
         <img
           alt="skill_name_for_teamwork, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_teamwork.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_teamwork, [object Object]
         </div>
       </button>
@@ -203,16 +249,23 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
       >
         <img
           alt="skill_name_for_self_motivation, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_motivation.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_self_motivation, [object Object]
         </div>
       </button>
     </li>
   </ul>
-  <div>
-    <div>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
       <select
         onChange={[Function]}
         value="dealing_with_stress"
@@ -242,7 +295,9 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
     <h3>
       skill_heading_for_dealing_with_stress, [object Object]
     </h3>
-    <ul>
+    <ul
+      className="list"
+    >
       <li>
         DWS Tip - 0
       </li>
@@ -264,21 +319,32 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
 `;
 
 exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
-<div>
-  <ul>
-    <div>
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <div
+      className="featured"
+    >
       featured_skill, [object Object]
     </div>
-    <li>
+    <li
+      className="active"
+    >
       <button
         onClick={[Function]}
         type="button"
       >
         <img
           alt="skill_name_for_dealing_with_stress, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_stress.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
@@ -292,9 +358,12 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
       >
         <img
           alt="skill_name_for_communication, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_communication.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_communication, [object Object]
         </div>
       </button>
@@ -308,9 +377,12 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
       >
         <img
           alt="skill_name_for_teamwork, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_teamwork.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_teamwork, [object Object]
         </div>
       </button>
@@ -324,16 +396,23 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
       >
         <img
           alt="skill_name_for_self_motivation, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_motivation.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_self_motivation, [object Object]
         </div>
       </button>
     </li>
   </ul>
-  <div>
-    <div>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
       <select
         onChange={[Function]}
         value="dealing_with_stress"
@@ -363,7 +442,9 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
     <h3>
       skill_heading_for_dealing_with_stress, [object Object]
     </h3>
-    <ul>
+    <ul
+      className="list"
+    >
       <li>
         DWS Tip - 0
       </li>
@@ -385,9 +466,15 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
 `;
 
 exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = `
-<div>
-  <ul>
-    <div>
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <div
+      className="featured"
+    >
       featured_skill, [object Object]
     </div>
     <li
@@ -399,23 +486,31 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
       >
         <img
           alt="skill_name_for_working_from_home, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_home.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_working_from_home, [object Object]
         </div>
       </button>
     </li>
-    <li>
+    <li
+      className="active"
+    >
       <button
         onClick={[Function]}
         type="button"
       >
         <img
           alt="skill_name_for_dealing_with_stress, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_stress.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
@@ -429,9 +524,12 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
       >
         <img
           alt="skill_name_for_communication, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_communication.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_communication, [object Object]
         </div>
       </button>
@@ -445,9 +543,12 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
       >
         <img
           alt="skill_name_for_teamwork, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_teamwork.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_teamwork, [object Object]
         </div>
       </button>
@@ -461,16 +562,23 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
       >
         <img
           alt="skill_name_for_self_motivation, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_motivation.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_self_motivation, [object Object]
         </div>
       </button>
     </li>
   </ul>
-  <div>
-    <div>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
       <select
         onChange={[Function]}
         value="dealing_with_stress"
@@ -505,7 +613,9 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
     <h3>
       skill_heading_for_dealing_with_stress, [object Object]
     </h3>
-    <ul>
+    <ul
+      className="list"
+    >
       <li>
         DWS Tip - 0
       </li>
@@ -527,9 +637,15 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
 `;
 
 exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] = `
-<div>
-  <ul>
-    <div>
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <div
+      className="featured"
+    >
       featured_skill, [object Object]
     </div>
     <li
@@ -541,23 +657,31 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
       >
         <img
           alt="skill_name_for_working_from_home, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_home.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_working_from_home, [object Object]
         </div>
       </button>
     </li>
-    <li>
+    <li
+      className="active"
+    >
       <button
         onClick={[Function]}
         type="button"
       >
         <img
           alt="skill_name_for_dealing_with_stress, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_stress.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
@@ -571,9 +695,12 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
       >
         <img
           alt="skill_name_for_communication, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_communication.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_communication, [object Object]
         </div>
       </button>
@@ -587,9 +714,12 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
       >
         <img
           alt="skill_name_for_teamwork, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_teamwork.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_teamwork, [object Object]
         </div>
       </button>
@@ -603,16 +733,23 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
       >
         <img
           alt="skill_name_for_self_motivation, [object Object]"
+          className="skillImage"
           src="https://cdn.traitify.com/images/big5_motivation.png"
         />
-        <div>
+        <div
+          className="name"
+        >
           skill_name_for_self_motivation, [object Object]
         </div>
       </button>
     </li>
   </ul>
-  <div>
-    <div>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
       <select
         onChange={[Function]}
         value="dealing_with_stress"
@@ -647,7 +784,9 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
     <h3>
       skill_heading_for_dealing_with_stress, [object Object]
     </h3>
-    <ul>
+    <ul
+      className="list"
+    >
       <li>
         DWS Tip - 0
       </li>

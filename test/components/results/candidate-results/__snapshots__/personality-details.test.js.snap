@@ -1,10 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityDetails renders component 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="detailColumn"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#008dc7",
@@ -12,6 +19,7 @@ exports[`PersonalityDetails renders component 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#008dc7",
@@ -20,7 +28,9 @@ exports[`PersonalityDetails renders component 1`] = `
       >
         candidate_heading_for_tools, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Compatible with many other personalities
         </li>
@@ -42,9 +52,14 @@ exports[`PersonalityDetails renders component 1`] = `
       </ul>
     </div>
   </div>
-  <div>
-    <div>
+  <div
+    className="detailColumn"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#32be4b",
@@ -52,6 +67,7 @@ exports[`PersonalityDetails renders component 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#32be4b",
@@ -60,7 +76,9 @@ exports[`PersonalityDetails renders component 1`] = `
       >
         candidate_heading_for_settings, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Encourages peer support in pursuit of goals
         </li>
@@ -94,15 +112,24 @@ exports[`PersonalityDetails renders component 1`] = `
       </ul>
     </div>
   </div>
-  <div />
+  <div
+    className="clearfix"
+  />
 </div>
 `;
 
 exports[`PersonalityDetails renders component with cautions 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="detail"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#008dc7",
@@ -110,6 +137,7 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#008dc7",
@@ -118,7 +146,9 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
       >
         candidate_heading_for_tools, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Compatible with many other personalities
         </li>
@@ -140,9 +170,14 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
       </ul>
     </div>
   </div>
-  <div>
-    <div>
+  <div
+    className="detail"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#ef615e",
@@ -150,6 +185,7 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#ef615e",
@@ -158,7 +194,9 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
       >
         caution_zone, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Be Cautious
         </li>
@@ -168,9 +206,14 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
       </ul>
     </div>
   </div>
-  <div>
-    <div>
+  <div
+    className="detail"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#32be4b",
@@ -178,6 +221,7 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#32be4b",
@@ -186,7 +230,9 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
       >
         candidate_heading_for_settings_third_person, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Encourages peer support in pursuit of goals
         </li>
@@ -220,7 +266,9 @@ exports[`PersonalityDetails renders component with cautions 1`] = `
       </ul>
     </div>
   </div>
-  <div />
+  <div
+    className="clearfix"
+  />
 </div>
 `;
 
@@ -233,10 +281,17 @@ exports[`PersonalityDetails renders nothing if no details 1`] = `null`;
 exports[`PersonalityDetails renders nothing if results not ready 1`] = `null`;
 
 exports[`PersonalityDetails renders settings if no tools 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="detailColumn"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#32be4b",
@@ -244,6 +299,7 @@ exports[`PersonalityDetails renders settings if no tools 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#32be4b",
@@ -252,7 +308,9 @@ exports[`PersonalityDetails renders settings if no tools 1`] = `
       >
         candidate_heading_for_settings, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Encourages peer support in pursuit of goals
         </li>
@@ -286,15 +344,24 @@ exports[`PersonalityDetails renders settings if no tools 1`] = `
       </ul>
     </div>
   </div>
-  <div />
+  <div
+    className="clearfix"
+  />
 </div>
 `;
 
 exports[`PersonalityDetails renders settings if tools disabled 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="detailColumn"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#32be4b",
@@ -302,6 +369,7 @@ exports[`PersonalityDetails renders settings if tools disabled 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#32be4b",
@@ -310,7 +378,9 @@ exports[`PersonalityDetails renders settings if tools disabled 1`] = `
       >
         candidate_heading_for_settings, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Encourages peer support in pursuit of goals
         </li>
@@ -344,15 +414,24 @@ exports[`PersonalityDetails renders settings if tools disabled 1`] = `
       </ul>
     </div>
   </div>
-  <div />
+  <div
+    className="clearfix"
+  />
 </div>
 `;
 
 exports[`PersonalityDetails renders tools if no settings 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="detailColumn"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#008dc7",
@@ -360,6 +439,7 @@ exports[`PersonalityDetails renders tools if no settings 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#008dc7",
@@ -368,7 +448,9 @@ exports[`PersonalityDetails renders tools if no settings 1`] = `
       >
         candidate_heading_for_tools, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Compatible with many other personalities
         </li>
@@ -390,15 +472,24 @@ exports[`PersonalityDetails renders tools if no settings 1`] = `
       </ul>
     </div>
   </div>
-  <div />
+  <div
+    className="clearfix"
+  />
 </div>
 `;
 
 exports[`PersonalityDetails renders tools if settings disabled 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="container"
+>
+  <div
+    className="detailColumn"
+  >
+    <div
+      className="content"
+    >
       <div
+        className="bar"
         style={
           Object {
             "background": "#008dc7",
@@ -406,6 +497,7 @@ exports[`PersonalityDetails renders tools if settings disabled 1`] = `
         }
       />
       <h4
+        className="title"
         style={
           Object {
             "color": "#008dc7",
@@ -414,7 +506,9 @@ exports[`PersonalityDetails renders tools if settings disabled 1`] = `
       >
         candidate_heading_for_tools, [object Object]
       </h4>
-      <ul>
+      <ul
+        className="description"
+      >
         <li>
           Compatible with many other personalities
         </li>
@@ -436,6 +530,8 @@ exports[`PersonalityDetails renders tools if settings disabled 1`] = `
       </ul>
     </div>
   </div>
-  <div />
+  <div
+    className="clearfix"
+  />
 </div>
 `;

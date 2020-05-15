@@ -1,12 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityDimensionColumns renders component 1`] = `
-<div>
+<div
+  className="container"
+>
   <p />
-  <ul>
-    <li>
+  <ul
+    className="columns"
+  >
+    <li
+      className="container"
+    >
       <div>
         <div
+          className="icon"
           style={
             Object {
               "background": "rgba(41,183,112,0.085)",
@@ -27,7 +34,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="undefined undefined"
+        className="background medium"
         style={
           Object {
             "background": "rgba(41,183,112,0.1)",
@@ -35,9 +42,12 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         }
       />
     </li>
-    <li>
+    <li
+      className="container"
+    >
       <div>
         <div
+          className="icon"
           style={
             Object {
               "background": "rgba(255,204,59,0.085)",
@@ -58,7 +68,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="undefined undefined"
+        className="background medium"
         style={
           Object {
             "background": "rgba(255,204,59,0.1)",
@@ -66,9 +76,12 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         }
       />
     </li>
-    <li>
+    <li
+      className="container"
+    >
       <div>
         <div
+          className="icon"
           style={
             Object {
               "background": "rgba(249,139,28,0.085)",
@@ -89,7 +102,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="undefined undefined"
+        className="background medium"
         style={
           Object {
             "background": "rgba(249,139,28,0.1)",
@@ -97,9 +110,12 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         }
       />
     </li>
-    <li>
+    <li
+      className="container"
+    >
       <div>
         <div
+          className="icon"
           style={
             Object {
               "background": "rgba(66,176,219,0.085)",
@@ -120,7 +136,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="undefined undefined"
+        className="background medium"
         style={
           Object {
             "background": "rgba(66,176,219,0.1)",
@@ -128,9 +144,12 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         }
       />
     </li>
-    <li>
+    <li
+      className="container"
+    >
       <div>
         <div
+          className="icon"
           style={
             Object {
               "background": "rgba(239,97,94,0.085)",
@@ -151,7 +170,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="undefined undefined"
+        className="background medium"
         style={
           Object {
             "background": "rgba(239,97,94,0.1)",
@@ -160,6 +179,8 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
       />
     </li>
   </ul>
-  <div />
+  <div
+    className="columnsBuffer"
+  />
 </div>
 `;

@@ -1,44 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityScoreBar renders component 1`] = `
-<div>
+<div
+  className="scoreBar"
+>
   <h1>
     Financial Risk Score: 
     <span>
       41.57
     </span>
   </h1>
-  <div>
-    <div>
-      <div>
+  <div
+    className="scoreBarBar"
+  >
+    <div
+      className="scoreBarLegend"
+    >
+      <div
+        className="scoreBarLegendLow"
+      >
         0
       </div>
-      <div>
+      <div
+        className="scoreBarLegendHigh"
+      >
         100
       </div>
     </div>
-    <div>
-      <div>
-         
-      </div>
-      <div>
-         
-      </div>
-      <div>
-         
-      </div>
-      <div>
-         
-      </div>
-      <div>
-         
-      </div>
-    </div>
-    <div>
-      <div>
+    <div
+      className="scoreBarRange"
+    >
+      <div
+        className="scoreBarLow"
+      >
          
       </div>
       <div
+        className="scoreBarLowMed"
+      >
+         
+      </div>
+      <div
+        className="scoreBarMed"
+      >
+         
+      </div>
+      <div
+        className="scoreBarMedHigh"
+      >
+         
+      </div>
+      <div
+        className="scoreBarHigh"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="scoreBarIndicators"
+    >
+      <div
+        className="scoreBarIndicatorLow"
+      >
+         
+      </div>
+      <div
+        className="scoreBarIndicator"
         style={
           Object {
             "marginLeft": "41.57%",
@@ -47,7 +74,9 @@ exports[`PersonalityScoreBar renders component 1`] = `
       >
          
       </div>
-      <div>
+      <div
+        className="scoreBarIndicatorHigh"
+      >
          
       </div>
     </div>

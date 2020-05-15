@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityHeading renders component 1`] = `
-<div>
+<div
+  className="personality"
+>
   <div
+    className="content"
     dangerouslySetInnerHTML={
       Object {
         "__html": "personality_heading, [object Object]",

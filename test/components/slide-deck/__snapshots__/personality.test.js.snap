@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Personality renders component 1`] = `
-<div>
+<div
+  className="widgetContainer"
+>
   <div
     className="mock"
   >
@@ -11,7 +13,9 @@ exports[`Personality renders component 1`] = `
 `;
 
 exports[`Personality renders loading if finished 1`] = `
-<div>
+<div
+  className="widgetContainer"
+>
   <div
     className="mock"
   >
@@ -21,7 +25,9 @@ exports[`Personality renders loading if finished 1`] = `
 `;
 
 exports[`Personality renders loading if not ready 1`] = `
-<div>
+<div
+  className="widgetContainer"
+>
   <div
     className="mock"
   >

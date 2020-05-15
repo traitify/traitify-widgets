@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Guide competency select renders component 1`] = `
-<div>
+<div
+  className="competencySelect"
+>
   <select
+    className="mobileSelect"
     onChange={[Function]}
     value="157f0ecf-69e6-4007-a27c-d6f35de92565"
   >
@@ -32,7 +35,9 @@ exports[`Guide competency select renders component 1`] = `
       Managing Pressure
     </option>
   </select>
-  <p>
+  <p
+    className="mobileBadge"
+  >
     <img
       alt="Solving Problems badge"
     />
@@ -59,10 +64,17 @@ exports[`Guide competency tab renders component 1`] = `
 `;
 
 exports[`Guide renders component 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
       <select
+        className="mobileSelect"
         onChange={[Function]}
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
@@ -92,15 +104,21 @@ exports[`Guide renders component 1`] = `
           Managing Pressure
         </option>
       </select>
-      <p>
+      <p
+        className="mobileBadge"
+      >
         <img
           alt="Solving Problems badge"
           src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
         />
       </p>
     </div>
-    <ul>
-      <li>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tabActive"
+      >
         <button
           name="Solving Problems"
           onClick={[Function]}
@@ -180,8 +198,12 @@ exports[`Guide renders component 1`] = `
       </li>
     </ul>
   </div>
-  <div>
-    <div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
       <h2>
         Solving Problems
       </h2>
@@ -338,10 +360,17 @@ exports[`Guide renders nothing if no competencies 1`] = `null`;
 exports[`Guide renders nothing if results not ready 1`] = `null`;
 
 exports[`Guide toggles expanded intro 1`] = `
-<div>
-  <div>
-    <div>
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
       <select
+        className="mobileSelect"
         onChange={[Function]}
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
@@ -371,15 +400,21 @@ exports[`Guide toggles expanded intro 1`] = `
           Managing Pressure
         </option>
       </select>
-      <p>
+      <p
+        className="mobileBadge"
+      >
         <img
           alt="Solving Problems badge"
           src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
         />
       </p>
     </div>
-    <ul>
-      <li>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tabActive"
+      >
         <button
           name="Solving Problems"
           onClick={[Function]}
@@ -459,8 +494,12 @@ exports[`Guide toggles expanded intro 1`] = `
       </li>
     </ul>
   </div>
-  <div>
-    <div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
       <h2>
         Solving Problems
       </h2>

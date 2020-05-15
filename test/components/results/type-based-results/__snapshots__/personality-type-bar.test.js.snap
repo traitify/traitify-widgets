@@ -2,9 +2,10 @@
 
 exports[`PersonalityTypeBar renders component 1`] = `
 <li
-  className="undefined "
+  className="bar "
 >
   <button
+    className="score"
     onClick={[Function]}
     onFocus={[Function]}
     onMouseOver={[Function]}
@@ -22,6 +23,7 @@ exports[`PersonalityTypeBar renders component 1`] = `
     </span>
   </button>
   <button
+    className="label"
     onClick={[Function]}
     onFocus={[Function]}
     onMouseOver={[Function]}

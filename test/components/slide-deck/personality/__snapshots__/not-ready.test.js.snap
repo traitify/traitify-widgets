@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotReady renders component 1`] = `
-<div>
-  <div>
-    <div>
-      <div>
+<div
+  className="cover"
+>
+  <div
+    className="loadingContainer"
+  >
+    <div
+      className="loadingContainer"
+    >
+      <div
+        className="loading"
+      >
         <i />
         <i />
       </div>
@@ -14,13 +22,22 @@ exports[`NotReady renders component 1`] = `
 `;
 
 exports[`NotReady renders retry button if error 1`] = `
-<div>
-  <div>
-    <div>
-      <div>
+<div
+  className="cover"
+>
+  <div
+    className="loadingContainer"
+  >
+    <div
+      className="retry"
+    >
+      <div
+        className="label"
+      >
         Oh no
       </div>
       <button
+        className="link"
         onClick={[MockFunction retry]}
         type="button"
       >

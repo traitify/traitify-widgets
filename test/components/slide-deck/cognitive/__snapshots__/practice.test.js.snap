@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Practice actions finishes 1`] = `
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 1 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="timer"
+    >
+      cognitive_practice_heading
+    </div>
+    <div
+      className="status"
+    >
+      1
+       / 
+      3
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          Object {
+            "width": "33.333333333333336%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 1 explanation 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_1_heading
+  </h1>
+  <p>
+    cognitive_practice_step_1_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-1-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Practice renders question 2 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="timer"
+    >
+      cognitive_practice_heading
+    </div>
+    <div
+      className="status"
+    >
+      2
+       / 
+      3
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          Object {
+            "width": "66.66666666666667%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 2 explanation 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_2_heading
+  </h1>
+  <p>
+    cognitive_practice_step_2_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-2-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_2_button
+  </button>
+</div>
+`;
+
+exports[`Practice renders question 3 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="timer"
+    >
+      cognitive_practice_heading
+    </div>
+    <div
+      className="status"
+    >
+      3
+       / 
+      3
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 3 explanation 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_3_heading
+  </h1>
+  <p>
+    cognitive_practice_step_3_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-3-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_3_button
+  </button>
+</div>
+`;
+
+exports[`Practice videos horizontal renders component 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_1_heading
+  </h1>
+  <p>
+    cognitive_practice_step_1_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-1-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Practice videos horizontal updates to vertical 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_1_heading
+  </h1>
+  <p>
+    cognitive_practice_step_1_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-1-v.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Practice videos vertical renders component 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_1_heading
+  </h1>
+  <p>
+    cognitive_practice_step_1_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-1-v.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Practice videos vertical updates to horizontal 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_practice_step_1_heading
+  </h1>
+  <p>
+    cognitive_practice_step_1_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-1-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_practice_step_1_button
+  </button>
+</div>
+`;

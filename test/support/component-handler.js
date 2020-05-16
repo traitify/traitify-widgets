@@ -1,5 +1,7 @@
 import {act, create} from "react-test-renderer";
 
+export {act};
+
 export default class ComponentHandler {
   constructor(element, options = {}) {
     this.ref = element.ref;

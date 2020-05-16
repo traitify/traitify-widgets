@@ -4,6 +4,7 @@ import Slide from "components/slide-deck/cognitive/slide";
 import Timer from "components/slide-deck/cognitive/timer";
 import ComponentHandler from "support/component-handler";
 import {flushPromises} from "support/helpers";
+import {useWindowMock} from "support/mocks";
 import assessment from "support/json/assessment/cognitive.json";
 
 jest.mock("components/slide-deck/cognitive/instructions", () => (() => <div className="mock">Instructions</div>));
@@ -13,14 +14,12 @@ jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Cognitive", () => {
   const cacheKey = `cognitive.slide-deck.${assessment.id}`;
-  let originalConfirm;
   let props;
   const lastUpdate = () => props.ui.trigger.mock.calls[props.ui.trigger.mock.calls.length - 1][1];
 
-  beforeEach(() => {
-    originalConfirm = window.confirm;
-    window.confirm = jest.fn().mockName("confirm");
+  useWindowMock("confirm");
 
+  beforeEach(() => {
     props = {
       assessment,
       cache: {
@@ -43,10 +42,6 @@ describe("Cognitive", () => {
         trigger: jest.fn().mockName("trigger")
       }
     };
-  });
-
-  afterEach(() => {
-    window.confirm = originalConfirm;
   });
 
   describe("callbacks", () => {

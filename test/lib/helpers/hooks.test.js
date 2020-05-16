@@ -1,6 +1,7 @@
 import {createRef, forwardRef} from "react";
 import {useDidMount, useDidUpdate, useWindowSize} from "lib/helpers/hooks";
 import ComponentHandler from "support/component-handler";
+import {useResizeMock} from "support/mocks";
 
 describe("Helpers", () => {
   describe("useDidMount", () => {
@@ -100,28 +101,12 @@ describe("Helpers", () => {
     });
 
     describe("values", () => {
-      let originalResizeTo;
+      useResizeMock();
 
       const Component = forwardRef((_, ref) => {
         ref.current = useWindowSize(); // eslint-disable-line no-param-reassign
 
         return null;
-      });
-
-      beforeAll(() => {
-        originalResizeTo = window.resizeTo;
-        window.resizeTo = function resizeTo(width, height) {
-          Object.assign(this, {
-            innerWidth: width,
-            innerHeight: height,
-            outerWidth: width,
-            outerHeight: height
-          }).dispatchEvent(new this.Event("resize"));
-        };
-      });
-
-      afterAll(() => {
-        window.resizeTo = originalResizeTo;
       });
 
       it("returns current window size", () => {

@@ -1,6 +1,7 @@
 import Component from "components/slide-deck/cognitive/slide";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/cognitive.json";
+import {useWindowMock} from "support/mocks";
 
 const defaultQuestions = assessment.questions.slice(1, 3);
 const loadedQuestions = defaultQuestions.map((question) => ({...question, loaded: true}));
@@ -49,16 +50,7 @@ describe("Slide", () => {
   });
 
   describe("skip", () => {
-    let originalConfirm;
-
-    beforeEach(() => {
-      originalConfirm = window.confirm;
-      window.confirm = jest.fn().mockName("confirm");
-    });
-
-    afterEach(() => {
-      window.confirm = originalConfirm;
-    });
+    useWindowMock("confirm");
 
     it("calls select", () => {
       window.confirm.mockReturnValue(true);

@@ -148,10 +148,13 @@ describe("PersonalityArchetypeTips", () => {
       ...props.assessment,
       archetype: {
         ...props.assessment.archetype,
-        details: props.assessment.archetype.details.filter((title) => (
+        details: props.assessment.archetype.details.filter(({title}) => (
           !tipTypes.map((type) => type.title).includes(title)
         ))
       }
     };
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
   });
 });

@@ -21,6 +21,11 @@ exports[`PersonalityArchetypeTips renders component 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#2491c1",
+            }
+          }
         >
           tip_type_for_tools, [object Object]
         </div>
@@ -40,6 +45,11 @@ exports[`PersonalityArchetypeTips renders component 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
         >
           tip_type_for_room, [object Object]
         </div>
@@ -59,6 +69,11 @@ exports[`PersonalityArchetypeTips renders component 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
         >
           tip_type_for_settings, [object Object]
         </div>
@@ -136,6 +151,11 @@ exports[`PersonalityArchetypeTips renders component with available types 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
         >
           tip_type_for_room, [object Object]
         </div>
@@ -155,6 +175,11 @@ exports[`PersonalityArchetypeTips renders component with available types 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
         >
           tip_type_for_settings, [object Object]
         </div>
@@ -227,6 +252,11 @@ exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
         >
           tip_type_for_room, [object Object]
         </div>
@@ -246,6 +276,11 @@ exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
         >
           tip_type_for_settings, [object Object]
         </div>
@@ -318,6 +353,11 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#2491c1",
+            }
+          }
         >
           tip_type_for_tools, [object Object]
         </div>
@@ -337,6 +377,11 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
         >
           tip_type_for_room, [object Object]
         </div>
@@ -356,6 +401,11 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
         >
           tip_type_for_settings, [object Object]
         </div>
@@ -433,6 +483,11 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#2491c1",
+            }
+          }
         >
           tip_type_for_tools, [object Object]
         </div>
@@ -452,6 +507,11 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
         >
           tip_type_for_room, [object Object]
         </div>
@@ -471,6 +531,11 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
       >
         <div
           className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
         >
           tip_type_for_settings, [object Object]
         </div>
@@ -530,5 +595,7 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
 exports[`PersonalityArchetypeTips renders nothing if disabled 1`] = `null`;
 
 exports[`PersonalityArchetypeTips renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityArchetypeTips renders nothing if no tips 1`] = `null`;
 
 exports[`PersonalityArchetypeTips renders nothing if results not ready 1`] = `null`;

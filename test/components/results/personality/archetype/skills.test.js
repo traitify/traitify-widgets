@@ -6,17 +6,19 @@ jest.mock("lib/with-traitify", () => ((value) => value));
 
 const details = [];
 
-[
-  {body: "WFH Tip", name: "Working From Home Tips"},
-  {body: "DWS Tip", name: "Dealing With Stress"},
-  {body: "C Tip", name: "Communication Tips"},
-  {body: "T Tip", name: "Teamwork"},
-  {body: "SM Tip", name: "Self Motivation"}
-].forEach((type) => {
-  Array.from(Array(5)).forEach((_, i) => {
-    details.push({
-      body: `${type.body} - ${i}`,
-      title: `Success Skills - ${type.name}`
+_assessment.personality_types.forEach(({personality_type: dimension}) => {
+  [
+    {body: "WFH Tip", name: "Working From Home"},
+    {body: "DWS Tip", name: "Dealing With Stress"},
+    {body: "C Tip", name: "Communication"},
+    {body: "T Tip", name: "Teamwork"},
+    {body: "Hot Tip", name: "Habits to Build"}
+  ].forEach((type) => {
+    Array.from(Array(5)).forEach(() => {
+      details.push({
+        body: `${type.body} for ${dimension.name}`,
+        title: `${type.name} Success Skills ${dimension.name}`
+      });
     });
   });
 });
@@ -91,7 +93,7 @@ describe("PersonalityArchetypeSkills", () => {
       archetype: {
         ...assessment.archetype,
         details: assessment.archetype.details.filter((detail) => (
-          detail.title !== "Success Skills - Working From Home Tips"
+          !detail.title.startsWith("Working From Home Success Skills")
         ))
       }
     };
@@ -101,7 +103,7 @@ describe("PersonalityArchetypeSkills", () => {
   });
 
   it("renders component with enabled types", () => {
-    props.getOption.mockReturnValue(["Working From Home Tips"]);
+    props.getOption.mockReturnValue(["Working From Home"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -145,13 +147,18 @@ describe("PersonalityArchetypeSkills", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if no tips", () => {
+  it("renders nothing if no skills", () => {
     props.assessment = {
       ...props.assessment,
       archetype: {
         ...props.assessment.archetype,
-        details: [] // TODO: Leave in other section details
+        details: props.assessment.archetype.details.filter(({title}) => (
+          !title.includes("Success Skills")
+        ))
       }
     };
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
   });
 });

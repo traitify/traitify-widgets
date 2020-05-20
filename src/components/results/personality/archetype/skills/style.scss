@@ -98,6 +98,8 @@
   }
 }
 .list {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -111,20 +113,12 @@
     @include mq(m) {
       width: 49%;
       margin: 0 0.5% 15px;
-      min-height: 125px;
       @include rems(20);
     }
     @include mq(l) {
       width: 19%;
       margin: 0 0.5%;
-      min-height: 350px;
       @include rems(22);
-    }
-    @include mq(xxl) {
-      min-height: 250px;
-    }
-    @include mq(xxl-2) {
-      min-height: 200px;
     }
   }
 }

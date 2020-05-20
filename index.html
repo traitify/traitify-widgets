@@ -114,7 +114,7 @@
 
         if(surveyType !== "cognitive") {
           if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
-          if(view !== "candidate") { targets["Guide"] = "#guide"; }
+          if(!view) { targets["Guide"] = "#guide"; }
         }
 
         widget = Traitify.ui.component();

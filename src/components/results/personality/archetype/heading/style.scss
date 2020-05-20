@@ -43,7 +43,6 @@
   }
 }
 .meaning {
-  padding: 20px;
   margin-bottom: 20px;
   @include rems(16);
   @include mq(m) {
@@ -55,43 +54,13 @@
     @include rems(18);
   }
   p {
+    padding: 20px;
     margin: 0;
   }
-}
-.thirdPersonDetails {
-  @extend .details;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  @include mq(l) {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 30px 20px 30px;
-    .badgeAndName {
-      width: 40%;
-      display: inline-block;
-    }
-    .divider {
-      border-right: 2px solid $white;
-      height: 120px;
-    }
-    .body {
-      width: 45%;
-      float: right;
-    }
-    .personalityHeading {
-      padding-top: 20px;
-    }
-  }
-  img {
-    height: 130px;
-    max-width: 130px;
-    margin-bottom: 0;
-  }
-  h2 {
-    margin-bottom: 0;
-    margin-right: 0;
+  video {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
   }
 }

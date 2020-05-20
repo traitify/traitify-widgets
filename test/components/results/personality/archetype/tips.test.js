@@ -5,14 +5,15 @@ import _assessment from "support/json/assessment/dimension-based.json";
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 const details = [];
+const tipTypes = [
+  {body: "CZ", title: "Caution Zone"},
+  {body: "SWY", title: "Settings that Work for You"},
+  {body: "TU", title: "Tools to Use"}
+];
 
-[
-  {body: "RGC", name: "Room for Growth and Change"},
-  {body: "SWY", name: "Settings that Work for You"},
-  {body: "TU", name: "Tools to Use"}
-].forEach((type) => {
+tipTypes.forEach((type) => {
   Array.from(Array(5)).forEach((_, i) => {
-    details.push({body: `${type.body} - ${i}`, title: type.name});
+    details.push({body: `${type.body} - ${i}`, title: type.title});
   });
 });
 
@@ -26,6 +27,8 @@ const assessment = {
     ]
   }
 };
+
+const mockOptions = (fn, options) => fn.mockImplementation((value) => options[value]);
 
 describe("PersonalityArchetypeTips", () => {
   let props;
@@ -96,7 +99,7 @@ describe("PersonalityArchetypeTips", () => {
   });
 
   it("renders component with enabled types", () => {
-    props.getOption.mockReturnValue(["PersonalityTools"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityTools"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -119,7 +122,7 @@ describe("PersonalityArchetypeTips", () => {
   });
 
   it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityTips"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityTips"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -145,7 +148,9 @@ describe("PersonalityArchetypeTips", () => {
       ...props.assessment,
       archetype: {
         ...props.assessment.archetype,
-        details: [] // TODO: Leave in other section details
+        details: props.assessment.archetype.details.filter((title) => (
+          !tipTypes.map((type) => type.title).includes(title)
+        ))
       }
     };
   });

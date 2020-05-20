@@ -187,19 +187,19 @@ exports[`PersonalityArchetypeTips renders component with available types 1`] = `
       className="list"
     >
       <li>
-        RGC - 0
+        CZ - 0
       </li>
       <li>
-        RGC - 1
+        CZ - 1
       </li>
       <li>
-        RGC - 2
+        CZ - 2
       </li>
       <li>
-        RGC - 3
+        CZ - 3
       </li>
       <li>
-        RGC - 4
+        CZ - 4
       </li>
     </ul>
   </div>
@@ -278,19 +278,19 @@ exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
       className="list"
     >
       <li>
-        RGC - 0
+        CZ - 0
       </li>
       <li>
-        RGC - 1
+        CZ - 1
       </li>
       <li>
-        RGC - 2
+        CZ - 2
       </li>
       <li>
-        RGC - 3
+        CZ - 3
       </li>
       <li>
-        RGC - 4
+        CZ - 4
       </li>
     </ul>
   </div>
@@ -393,19 +393,19 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
       className="list"
     >
       <li>
-        RGC - 0
+        CZ - 0
       </li>
       <li>
-        RGC - 1
+        CZ - 1
       </li>
       <li>
-        RGC - 2
+        CZ - 2
       </li>
       <li>
-        RGC - 3
+        CZ - 3
       </li>
       <li>
-        RGC - 4
+        CZ - 4
       </li>
     </ul>
   </div>
@@ -508,19 +508,19 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
       className="list"
     >
       <li>
-        RGC - 0
+        CZ - 0
       </li>
       <li>
-        RGC - 1
+        CZ - 1
       </li>
       <li>
-        RGC - 2
+        CZ - 2
       </li>
       <li>
-        RGC - 3
+        CZ - 3
       </li>
       <li>
-        RGC - 4
+        CZ - 4
       </li>
     </ul>
   </div>

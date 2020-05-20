@@ -19,7 +19,7 @@ function PersonalityDimensionDetails(props) {
   const pitfalls = details.filter(({title}) => (title === "Pitfalls")).map(({body}) => body);
   const perspective = getOption("perspective") || "firstPerson";
   const options = {base: {details}, perspective};
-  const benefitsHeader = perspective === "firstPerson" ? translate("candidate_heading_for_benefits", {level, name}) : translate("potential_benefits");
+  const benefitsHeader = perspective === "firstPerson" ? translate("dimension_heading_for_benefits", {level, name}) : translate("potential_benefits");
 
   return (
     <li className={style.container} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`, listStyle: "none"}}>
@@ -31,7 +31,7 @@ function PersonalityDimensionDetails(props) {
       <div className={style.content}>
         <h2>{name} <span style={{color}}>|</span> {level}</h2>
         {perspective === "firstPerson" && (
-          <h3>{translate("candidate_heading_for_dimension", {level, name})}</h3>
+          <h3>{translate("dimension_heading", {level, name})}</h3>
         )}
         <p className={style.description}>{detailWithPerspective({...options, name: "short_description"})}</p>
       </div>

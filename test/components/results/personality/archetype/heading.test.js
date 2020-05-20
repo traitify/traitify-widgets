@@ -5,24 +5,21 @@ import deck from "support/json/deck/big-five.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-const assessmentWithDetails = {
-  ...assessment,
-  archetype: {
-    ...assessment.archetype,
-    details: [
-      ...assessment.archetype.details,
-      {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
-      {body: "Maybe just hire qualified candidats", title: "Hiring Manager Description"}
-    ]
-  }
-};
+const details = [
+  ...assessment.archetype.details,
+  {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
+  {body: "Maybe just hire qualified candidates", title: "Hiring Manager Description"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/Upholder.mp4", title: "Video"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/Upholder.vtt", title: "Video - Text Track"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/Upholder.jpg", title: "Video - Thumbnail"}
+];
 
 describe("PersonalityArchetypeHeading", () => {
   let props;
 
   beforeEach(() => {
     props = {
-      assessment,
+      assessment: {...assessment, archetype: {...assessment.archetype, details}},
       deck,
       followDeck: jest.fn().mockName("followDeck"),
       getOption: jest.fn().mockName("getOption"),
@@ -80,14 +77,33 @@ describe("PersonalityArchetypeHeading", () => {
 
   it("renders component in third person", () => {
     props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
-    props.assessment = assessmentWithDetails;
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with badge", () => {
-    props.assessment = assessmentWithDetails;
+  it("renders component without badge", () => {
+    props.assessment = {
+      ...assessment,
+      archetype: {
+        ...assessment.archetype,
+        details: details.filter((detail) => detail.title !== "Badge")
+      }
+    };
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders explanation text as fallback for video", () => {
+    props.assessment = {
+      ...assessment,
+      archetype: {
+        ...assessment.archetype,
+        details: details.filter(({title}) => !title.startsWith("Video"))
+      }
+    };
+
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

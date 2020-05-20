@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import {sortByTypePosition} from "lib/helpers";
+import {rgba} from "lib/helpers/color";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
@@ -10,7 +12,7 @@ const skillTypes = [
   {
     image: "https://cdn.traitify.com/images/big5_home.png",
     key: "working_from_home",
-    name: "Working From Home Tips"
+    name: "Working From Home"
   },
   {
     image: "https://cdn.traitify.com/images/big5_stress.png",
@@ -20,7 +22,7 @@ const skillTypes = [
   {
     image: "https://cdn.traitify.com/images/big5_communication.png",
     key: "communication",
-    name: "Communication Tips"
+    name: "Communication"
   },
   {
     image: "https://cdn.traitify.com/images/big5_teamwork.png",
@@ -29,8 +31,8 @@ const skillTypes = [
   },
   {
     image: "https://cdn.traitify.com/images/big5_motivation.png",
-    key: "self_motivation",
-    name: "Self Motivation"
+    key: "habits",
+    name: "Habits to Build"
   }
 ];
 
@@ -50,7 +52,7 @@ function PersonalityArchetypeSkills(props) {
     const activeTypes = skillTypes.filter((type) => {
       if(disabledComponents.includes(type.name)) { return false; }
 
-      return details.find(({title}) => (title === `Success Skills - ${type.name}`));
+      return details.find(({title}) => (title.startsWith(`${type.name} Success Skills`)));
     });
 
     setTypes(activeTypes);
@@ -63,9 +65,13 @@ function PersonalityArchetypeSkills(props) {
   if(!activeType) { return null; }
 
   const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
-  const tips = details
-    .filter(({title}) => (title === `Success Skills - ${activeType.name}`))
-    .map(({body}) => body);
+  const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} Success Skills`));
+  const dimensions = sortByTypePosition(assessment.personality_types);
+  const tips = [];
+  dimensions.forEach(({personality_type: {badge, name}}) => {
+    const tip = typeTips.find(({title}) => title.endsWith(name));
+    if(tip) { tips.push({body: tip.body, color: `#${badge.color_1}`}); }
+  });
 
   return (
     <div className={style.container}>
@@ -74,7 +80,7 @@ function PersonalityArchetypeSkills(props) {
         {types.map((type) => (
           <li key={type.key} className={activeType.key === type.key ? style.active : ""}>
             <button onClick={() => setActiveType(type)} type="button">
-              <img src={type.image} alt={translate(`skill_name_for_${type.key}`)} className={style.skillImage} />
+              <img src={type.image} alt={translate(`skill_name_for_${type.key}`)} className={style.image} />
               <div className={style.name}>{translate(`skill_name_for_${type.key}`)}</div>
             </button>
           </li>
@@ -90,7 +96,9 @@ function PersonalityArchetypeSkills(props) {
         </div>
         <h3>{translate(`skill_heading_for_${activeType.key}`)}</h3>
         <ul className={style.list}>
-          {tips.map((tip) => (<li key={tip}>{tip}</li>))}
+          {tips.map(({body, color}) => (
+            <li key={body} style={{background: rgba(color, 10)}}>{body}</li>
+          ))}
         </ul>
       </div>
     </div>
@@ -99,7 +107,7 @@ function PersonalityArchetypeSkills(props) {
 
 PersonalityArchetypeSkills.defaultProps = {assessment: null};
 PersonalityArchetypeSkills.propTypes = {
-  assessment: PropTypes.shape({archetype: PropTypes.object}),
+  assessment: PropTypes.shape({archetype: PropTypes.object, personality_types: PropTypes.array}),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

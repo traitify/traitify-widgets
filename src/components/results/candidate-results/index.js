@@ -1,27 +1,25 @@
 import PropTypes from "prop-types";
-import {Component} from "react";
 import withTraitify from "lib/with-traitify";
-import Guide from "../../guide";
-import PersonalityArchetype from "./personality-archetype";
-import PersonalityDetails from "./personality-details";
-import PersonalityDimensions from "./personality-dimensions";
-import PersonalityTraits from "../dimension-based-results/personality-traits";
+import Guide from "components/results/guide";
+import PersonalityArchetype from "components/results/personality/archetype/heading";
+import PersonalityDimensions from "components/results/personality/dimension/list";
+import PersonalityTips from "components/results/personality/archetype/tips";
+import PersonalityTraits from "components/results/personality/trait/list";
 
-class CandidateResults extends Component {
-  static propTypes = {
-    getOption: PropTypes.func.isRequired
-  }
-  render() {
-    return (
-      <section>
-        <PersonalityArchetype {...this.props} />
-        <PersonalityDimensions {...this.props} />
-        <PersonalityDetails {...this.props} />
-        {this.props.getOption("perspective") === "thirdPerson" && <Guide {...this.props} />}
-        <PersonalityTraits {...this.props} />
-      </section>
-    );
-  }
+function CandidateResults(props) {
+  return (
+    <section>
+      <PersonalityArchetype {...props} />
+      <PersonalityTips {...props} />
+      <PersonalityDimensions {...props} />
+      {props.getOption("perspective") === "thirdPerson" && <Guide {...props} />}
+      <PersonalityTraits {...props} />
+    </section>
+  );
 }
+
+CandidateResults.propTypes = {
+  getOption: PropTypes.func.isRequired
+};
 
 export default withTraitify(CandidateResults);

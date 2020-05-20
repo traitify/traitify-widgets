@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
+import PersonalityDimensionColumns from "components/results/personality/dimension/columns";
+import PersonalityDimensionDetails from "components/results/personality/dimension/details";
+import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import PersonalityDimensionColumns from "components/results/personality/dimension/columns";
-import PersonalityDimensionDetails from "components/results/personality/dimension/details";
-import style from "./style";
+import style from "./style.scss";
 
 function PersonalityDimensionList(props) {
   const {assessment, getOption, isReady, ui} = props;
@@ -19,12 +20,7 @@ function PersonalityDimensionList(props) {
   const disableDetails = disabledComponents.includes("PersonalityDimensionDetails");
   if(disableColumns && disableDetails) { return null; }
 
-  const types = assessment.personality_types.sort((x, y) => {
-    const xDetail = x.personality_type.details.find(({title}) => title === "Position") || {};
-    const yDetail = y.personality_type.details.find(({title}) => title === "Position") || {};
-
-    return (xDetail.body || 1) - (yDetail.body || 1);
-  });
+  const types = sortByTypePosition(assessment.personality_types);
 
   return (
     <div className={style.container}>

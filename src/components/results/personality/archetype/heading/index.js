@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import PropTypes from "prop-types";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
@@ -23,47 +24,43 @@ function PersonalityArchetypeHeading(props) {
   if(disabledComponents.includes("PersonalityArchetype")) { return null; }
 
   const badge = personality.details.find(({title}) => title === "Badge");
-  const perspective = getOption("perspective");
-  const description = (
-    perspective === "thirdPerson"
-      ? personality.details.find(({title}) => title === "Hiring Manager Description")
-      : personality.details.find(({title}) => title === "Candidate Description")
-  );
+  const video = personality.details.find(({title}) => title === "Video");
+  const videoThumbnail = personality.details.find(({title}) => title === "Video - Thumbnail");
+  const videoTrack = personality.details.find(({title}) => title === "Video - Text Track");
+  let description;
+  let headingKey;
+
+  if(getOption("perspective") === "thirdPerson") {
+    description = personality.details.find(({title}) => title === "Hiring Manager Description");
+    headingKey = "personality_heading_third_person";
+  } else {
+    description = personality.details.find(({title}) => title === "Candidate Description");
+    headingKey = "personality_heading";
+  }
 
   return (
     <div className={style.container}>
-      {perspective === "thirdPerson" ? (
-        <div className={style.thirdPersonDetails}>
-          <div className={description && style.badgeAndName}>
-            {badge && <img alt={personality.name} src={badge.body} />}
-            <DangerousHTML
-              html={translate("personality_heading_third_person", {
-                deck_name: deck.name,
-                personality: `<br /><span>${personality.name}</span><br />`
-              })}
-              className={style.personalityHeading}
-              tag="h2"
-            />
-          </div>
-          {description && <span className={style.divider} />}
-          {description && <span className={style.body}>{description.body}</span>}
-        </div>
-      ) : [
-        <div key="heading" className={style.details}>
-          {badge && <img alt={personality.name} src={badge.body} />}
-          <DangerousHTML
-            html={translate("personality_heading", {
-              deck_name: deck.name,
-              personality: `<span>${personality.name}</span>`
-            })}
-            tag="h2"
-          />
-          {description && <p>{description.body}</p>}
-        </div>,
-        <div key="meaning" className={style.meaning}>
-          <DangerousHTML html={translate("candidate_description_for_archetype_html")} tag="p" />
-        </div>
-      ]}
+      <div className={style.details}>
+        {badge && <img alt={personality.name} src={badge.body} />}
+        <DangerousHTML
+          html={translate(headingKey, {
+            deck_name: deck.name,
+            personality: `<span>${personality.name}</span>`
+          })}
+          tag="h2"
+        />
+        <p>{description.body}</p>
+      </div>
+      <div className={style.meaning}>
+        {video ? (
+          <video controls={true} playsInline={true} poster={videoThumbnail && videoThumbnail.body}>
+            <source src={video.body} type="video/mp4" />
+            {videoTrack && <track kind="captions" src={videoTrack.body} />}
+          </video>
+        ) : (
+          <DangerousHTML html={translate("archetype_description_html")} tag="p" />
+        )}
+      </div>
     </div>
   );
 }

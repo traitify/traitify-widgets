@@ -8,7 +8,7 @@ exports[`PersonalityDimensionList renders columns if details disabled 1`] = `
     className="container"
   >
     <p>
-      candidate_description_for_dimensions, [object Object]
+      dimension_description, [object Object]
     </p>
     <ul
       className="columns"
@@ -199,7 +199,7 @@ exports[`PersonalityDimensionList renders component 1`] = `
     className="container"
   >
     <p>
-      candidate_description_for_dimensions, [object Object]
+      dimension_description, [object Object]
     </p>
     <ul
       className="columns"

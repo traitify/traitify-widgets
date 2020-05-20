@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import PersonalityDimensionColumn from "components/results/personality/dimension/column";
+import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -14,16 +15,11 @@ function PersonalityDimensionColumns(props) {
 
   if(!isReady("results")) { return null; }
 
-  const types = assessment.personality_types.sort((x, y) => {
-    const xDetail = x.personality_type.details.find(({title}) => title === "Position") || {};
-    const yDetail = y.personality_type.details.find(({title}) => title === "Position") || {};
-
-    return (xDetail.body || 1) - (yDetail.body || 1);
-  });
+  const types = sortByTypePosition(assessment.personality_types);
 
   return (
     <div className={style.container}>
-      <p>{translate("candidate_description_for_dimensions")}</p>
+      <p>{translate("dimension_description")}</p>
       <ul className={style.columns}>
         {types.map((type) => (
           <PersonalityDimensionColumn

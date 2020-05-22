@@ -41,14 +41,16 @@ function PersonalityArchetypeHeading(props) {
   return (
     <div className={style.container}>
       <div className={style.details}>
-        {badge && <img alt={personality.name} src={badge.body} />}
-        <DangerousHTML
-          html={translate(headingKey, {
-            deck_name: deck.name,
-            personality: `<span>${personality.name}</span>`
-          })}
-          tag="h2"
-        />
+        <div>
+          {badge && <img alt={personality.name} src={badge.body} />}
+          <DangerousHTML
+            html={translate(headingKey, {
+              deck_name: deck.name,
+              personality: `<span>${personality.name}</span>`
+            })}
+            tag="h2"
+          />
+        </div>
         <p>{description.body}</p>
       </div>
       <div className={style.meaning}>

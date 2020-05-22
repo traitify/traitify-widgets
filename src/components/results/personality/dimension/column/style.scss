@@ -5,6 +5,10 @@
   padding: 60px 10px 30px 10px;
   position: relative;
   text-align: center;
+  > div:not(.background) {
+    position: relative;
+    z-index: 1;
+  }
   .icon {
     display: inline-block;
     width: 40px;
@@ -70,7 +74,6 @@
   left: 10px;
   right: 10px;
   bottom: 0;
-  z-index: -1;
   &.low { top: 50%; }
   &.medium { top: 25%; }
   &.high { top: 0; }

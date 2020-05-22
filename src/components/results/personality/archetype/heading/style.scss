@@ -3,30 +3,42 @@
 .container {
   @extend %widgetContainer;
   @extend %cf;
+
+  @include mq(m) {
+    display: flex;
+  }
 }
 .details {
   background: #4d53d6;
   background: -moz-linear-gradient(137deg, #4d85d6 0%, #4d53d6 100%);
   background: -webkit-linear-gradient(137deg,#4d85d6 0%,#4d53d6 100%);
   background: linear-gradient(137deg, #4d85d6 0%,#4d53d6 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d85d6', endColorstr='#4d53d6',GradientType=1 );
-  color: $white;
   border-radius: 5px;
-  padding: 20px;
+  color: $white;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d85d6', endColorstr='#4d53d6',GradientType=1 );
   margin-bottom: 20px;
+  padding: 20px;
   @include rems(16);
   @include mq(m) {
-    float: left;
-    width: 49%;
-    margin-right: 2%;
-    padding: 20px;
+    display: flex;
+    flex: auto;
+    flex-basis: 0;
+    flex-direction: column;
+    margin-right: 20px;
     @include rems(17);
+  }
+  @include mq(l) {
+    padding: 20px;
   }
   @include mq(xl) {
     @include rems(18);
   }
+  div {
+    align-items: flex-start;
+    display: flex;
+  }
   img {
-    float: left;
+    flex: initial;
     margin-right: 20px;
     margin-bottom: 20px;
     max-width: 80px;
@@ -39,15 +51,21 @@
     display: block;
   }
   p {
-    clear: both;
+    @include mq(m) {
+      display: flex;
+      margin: 0;
+      flex-grow: 1;
+      flex-flow: column;
+      justify-content: center;
+    }
   }
 }
 .meaning {
   margin-bottom: 20px;
   @include rems(16);
   @include mq(m) {
-    float: left;
-    width: 49%;
+    flex: auto;
+    flex-basis: 0;
     @include rems(17);
   }
   @include mq(xl) {

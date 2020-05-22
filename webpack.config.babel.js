@@ -12,6 +12,10 @@ let config = {
   },
   devtool: "source-map",
   entry: ["./index.js"],
+  externals : {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  },
   mode: env,
   module: {
     rules: [
@@ -102,6 +106,7 @@ if(browser){
   config.entry.unshift("core-js/stable");
   config.entry.unshift("regenerator-runtime/runtime");
   config.output.libraryExport = "default";
+  delete config.externals;
 }
 if(compatibility){ config.entry[2] = "./compatibility.js"; }
 if(ie){

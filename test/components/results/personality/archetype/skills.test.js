@@ -8,16 +8,16 @@ const details = [];
 
 _assessment.personality_types.forEach(({personality_type: dimension}) => {
   [
-    {body: "WFH Tip", name: "Working From Home"},
+    {body: "EA Tip", name: "Everyday Adjustments"},
     {body: "DWS Tip", name: "Dealing With Stress"},
     {body: "C Tip", name: "Communication"},
     {body: "T Tip", name: "Teamwork"},
-    {body: "Hot Tip", name: "Habits to Build"}
+    {body: "Hot Tip", name: "Habits To Build"}
   ].forEach((type) => {
     Array.from(Array(5)).forEach(() => {
       details.push({
         body: `${type.body} for ${dimension.name}`,
-        title: `${type.name} Success Skills ${dimension.name}`
+        title: `${type.name} - Success Skills - ${dimension.name}`
       });
     });
   });
@@ -93,7 +93,7 @@ describe("PersonalityArchetypeSkills", () => {
       archetype: {
         ...assessment.archetype,
         details: assessment.archetype.details.filter((detail) => (
-          !detail.title.startsWith("Working From Home Success Skills")
+          !detail.title.startsWith("Everyday Adjustments - Success Skills")
         ))
       }
     };
@@ -103,7 +103,7 @@ describe("PersonalityArchetypeSkills", () => {
   });
 
   it("renders component with enabled types", () => {
-    props.getOption.mockReturnValue(["Working From Home"]);
+    props.getOption.mockReturnValue(["Everyday Adjustments"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

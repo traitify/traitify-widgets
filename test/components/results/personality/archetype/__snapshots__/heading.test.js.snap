@@ -7,17 +7,19 @@ exports[`PersonalityArchetypeHeading renders component 1`] = `
   <div
     className="details"
   >
-    <img
-      alt="Cohort"
-      src="https://cdn.traitify.com/frtq/conservative_white.png"
-    />
-    <h2
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "personality_heading, [object Object]",
+    <div>
+      <img
+        alt="Cohort"
+        src="https://cdn.traitify.com/frtq/conservative_white.png"
+      />
+      <h2
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "personality_heading, [object Object]",
+          }
         }
-      }
-    />
+      />
+    </div>
     <p>
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>
@@ -50,17 +52,19 @@ exports[`PersonalityArchetypeHeading renders component in third person 1`] = `
   <div
     className="details"
   >
-    <img
-      alt="Cohort"
-      src="https://cdn.traitify.com/frtq/conservative_white.png"
-    />
-    <h2
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "personality_heading_third_person, [object Object]",
+    <div>
+      <img
+        alt="Cohort"
+        src="https://cdn.traitify.com/frtq/conservative_white.png"
+      />
+      <h2
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "personality_heading_third_person, [object Object]",
+          }
         }
-      }
-    />
+      />
+    </div>
     <p>
       Maybe just hire qualified candidates
     </p>
@@ -93,13 +97,15 @@ exports[`PersonalityArchetypeHeading renders component without badge 1`] = `
   <div
     className="details"
   >
-    <h2
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "personality_heading, [object Object]",
+    <div>
+      <h2
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "personality_heading, [object Object]",
+          }
         }
-      }
-    />
+      />
+    </div>
     <p>
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>
@@ -132,17 +138,19 @@ exports[`PersonalityArchetypeHeading renders explanation text as fallback for vi
   <div
     className="details"
   >
-    <img
-      alt="Cohort"
-      src="https://cdn.traitify.com/frtq/conservative_white.png"
-    />
-    <h2
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "personality_heading, [object Object]",
+    <div>
+      <img
+        alt="Cohort"
+        src="https://cdn.traitify.com/frtq/conservative_white.png"
+      />
+      <h2
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "personality_heading, [object Object]",
+          }
         }
-      }
-    />
+      />
+    </div>
     <p>
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
     </p>

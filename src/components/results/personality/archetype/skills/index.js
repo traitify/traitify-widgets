@@ -11,9 +11,16 @@ import style from "./style";
 const skillTypes = [
   {
     image: "https://cdn.traitify.com/images/big5_home.png",
+    key: "everyday_adjustments",
+    name: "Everyday Adjustments"
+  },
+  /* The data is still in the API
+  {
+    image: "https://cdn.traitify.com/images/big5_home.png",
     key: "working_from_home",
     name: "Working From Home"
   },
+  */
   {
     image: "https://cdn.traitify.com/images/big5_stress.png",
     key: "dealing_with_stress",
@@ -32,7 +39,7 @@ const skillTypes = [
   {
     image: "https://cdn.traitify.com/images/big5_motivation.png",
     key: "habits",
-    name: "Habits to Build"
+    name: "Habits To Build"
   }
 ];
 
@@ -52,7 +59,7 @@ function PersonalityArchetypeSkills(props) {
     const activeTypes = skillTypes.filter((type) => {
       if(disabledComponents.includes(type.name)) { return false; }
 
-      return details.find(({title}) => (title.startsWith(`${type.name} Success Skills`)));
+      return details.find(({title}) => (title.startsWith(`${type.name} - Success Skills`)));
     });
 
     setTypes(activeTypes);
@@ -65,7 +72,7 @@ function PersonalityArchetypeSkills(props) {
   if(!activeType) { return null; }
 
   const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
-  const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} Success Skills`));
+  const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
   const dimensions = sortByTypePosition(assessment.personality_types);
   const tips = [];
   dimensions.forEach(({personality_type: {badge, name}}) => {

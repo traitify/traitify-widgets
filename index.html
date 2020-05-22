@@ -139,16 +139,16 @@
       function createAssessment(){
         destroyWidget();
 
-        let surveyType = document.querySelector("#survey-type").value
+        var surveyType = document.querySelector("#survey-type").value
         if(surveyType === "cognitive") {
-          let query = Traitify.graphql.queries.cognitive.create({
+          var query = Traitify.graphql.queries.cognitive.create({
             params: {
               localeKey: document.querySelector("#locale").value,
               surveyId: document.querySelector("#survey-id").value
             }
           });
 
-          Traitify.post("/cognitive-tests/graphql", query).then((response) => {
+          Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
             try{
               localStorage.setItem("test-id", response.data.createCognitiveTest.id);
             }catch(error){
@@ -178,8 +178,8 @@
       }
 
       function onChange(e){
-        let name = e.target.name;
-        let value = e.target.value;
+        var name = e.target.name;
+        var value = e.target.value;
 
         localStorage.setItem(name, value);
         if(widget && name !== "deck-id" && name !== "survey-id") {
@@ -188,9 +188,9 @@
           widget[name](value);
         }
 
-        let type = localStorage.getItem("survey-type");
-        let element1 = document.querySelector(type == "cognitive" ? "#deck-id" : "#survey-id");
-        let element2 = document.querySelector(type == "cognitive" ? "#survey-id" : "#deck-id");
+        var type = localStorage.getItem("survey-type");
+        var element1 = document.querySelector(type == "cognitive" ? "#deck-id" : "#survey-id");
+        var element2 = document.querySelector(type == "cognitive" ? "#survey-id" : "#deck-id");
         if(element1.closest && element1.classList) {
           element1.closest(".row").classList.add("hide");
           element2.closest(".row").classList.remove("hide");
@@ -221,9 +221,9 @@
       function setupOptions(){
         var inputs = ["deck-id", "locale", "perspective", "survey-id", "survey-type", "view"];
         for(var i = 0; i < inputs.length; i++) {
-          let name = inputs[i];
-          let element = document.querySelector("#" + name);
-          let value = localStorage.getItem(name);
+          var name = inputs[i];
+          var element = document.querySelector("#" + name);
+          var value = localStorage.getItem(name);
 
           if(!value) {
             switch(name) {
@@ -246,9 +246,9 @@
           element.addEventListener("change", onChange);
         }
 
-        let type = localStorage.getItem("survey-type");
-        let element1 = document.querySelector(type == "cognitive" ? "#deck-id" : "#survey-id");
-        let element2 = document.querySelector(type == "cognitive" ? "#survey-id" : "#deck-id");
+        var type = localStorage.getItem("survey-type");
+        var element1 = document.querySelector(type == "cognitive" ? "#deck-id" : "#survey-id");
+        var element2 = document.querySelector(type == "cognitive" ? "#survey-id" : "#deck-id");
         if(element1.closest && element1.classList) {
           element1.closest(".row").classList.add("hide");
           element2.closest(".row").classList.remove("hide");
@@ -256,15 +256,15 @@
       }
 
       function setupSurveys(){
-        let query = Traitify.graphql.queries.cognitive.surveys();
+        var query = Traitify.graphql.queries.cognitive.surveys();
 
-        Traitify.post("/cognitive-tests/graphql", query).then((response) => {
-          let values = [];
-          let select = document.querySelector("#survey-id");
+        Traitify.post("/cognitive-tests/graphql", query).then(function(response)  {
+          var values = [];
+          var select = document.querySelector("#survey-id");
 
           response.data.cognitiveSurveys.edges.forEach(function(edge) {
-            let survey = edge.node;
-            let element = document.createElement("option");
+            var survey = edge.node;
+            var element = document.createElement("option");
 
             values.push(survey.id);
             element.value = survey.id;
@@ -272,7 +272,7 @@
             select.appendChild(element);
           });
 
-          let currentValue = localStorage.getItem("survey-id");
+          var currentValue = localStorage.getItem("survey-id");
           if(!values.includes || values.includes(currentValue)) {
             select.value = currentValue;
           } else {

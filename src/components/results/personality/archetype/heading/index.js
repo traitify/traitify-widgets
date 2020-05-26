@@ -55,7 +55,7 @@ function PersonalityArchetypeHeading(props) {
       </div>
       <div className={style.meaning}>
         {video ? (
-          <video controls={true} playsInline={true} poster={videoThumbnail && videoThumbnail.body}>
+          <video controls={true} playsInline={true} poster={videoThumbnail && videoThumbnail.body} crossOrigin="anonymous">
             <source src={video.body} type="video/mp4" />
             {videoTrack && <track kind="captions" src={videoTrack.body} />}
           </video>

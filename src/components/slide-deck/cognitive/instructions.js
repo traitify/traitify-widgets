@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import DangerousHTML from "lib/helpers/dangerous-html";
 import {useWindowSize} from "lib/helpers/hooks";
 import Practice from "./practice";
 import {videoProps} from "./helpers";
@@ -10,7 +11,6 @@ const urlBase = "https://cdn.traitify.com/images/cognitive";
 
 function Instructions({onStart, translate}) {
   const [width] = useWindowSize();
-  const [disability, setDisability] = useState(false);
   const [step, setStep] = useState(1);
   const [type, setType] = useState(width > 768 ? "h" : "v");
 
@@ -49,12 +49,8 @@ function Instructions({onStart, translate}) {
   return (
     <div key="step-4" className={style.instructions}>
       <h2>{translate("cognitive_instructions_step_4_heading")}</h2>
-      <p>{translate("cognitive_instructions_step_4_text")}</p>
-      <label htmlFor="traitify-disability">
-        {translate("cognitive_instructions_disability_text")}
-        <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
-      </label>
-      <button className={style.btnBlue} onClick={() => onStart({disability})} type="button">{translate("cognitive_instructions_step_4_button")}</button>
+      <DangerousHTML html={translate("cognitive_instructions_step_4_html")} />
+      <button className={style.btnBlue} onClick={() => onStart({disability: false})} type="button">{translate("cognitive_instructions_step_4_button")}</button>
     </div>
   );
 }

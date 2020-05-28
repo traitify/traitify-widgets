@@ -71,6 +71,11 @@ exports[`Cognitive renders skipped slides 1`] = `
   >
     Slide
   </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
 </div>
 `;
 
@@ -98,6 +103,11 @@ exports[`Cognitive renders slide 1`] = `
         }
       />
     </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
   </div>
   <div
     className="mock"
@@ -137,6 +147,11 @@ exports[`Cognitive renders slide with disability 1`] = `
   >
     Slide
   </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
 </div>
 `;
 
@@ -159,6 +174,11 @@ exports[`Cognitive renders slide with time limit disabled 1`] = `
         }
       />
     </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
   </div>
   <div
     className="mock"

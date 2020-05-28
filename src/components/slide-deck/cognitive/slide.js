@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Loading from "components/loading";
 import style from "./style.scss";
 
-function Slide({onSelect, onSkip: _onSkip, question, translate}) {
+function Slide({className, onSelect, onSkip: _onSkip, question, translate}) {
   const [answerID, setAnswerID] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
   const timeTaken = Date.now() - startTime;
@@ -24,9 +24,9 @@ function Slide({onSelect, onSkip: _onSkip, question, translate}) {
   if(!question.loaded) { return <Loading />; }
 
   return (
-    <div>
+    <div className={className}>
       <div className={style.question}>
-        <img alt={translate("cognitive_question_alt_text")} src={question.questionImage.url} />
+        <img key={question.id} alt={translate("cognitive_question_alt_text")} src={question.questionImage.url} />
       </div>
       <div className={style.choices}>
         <div className={style.choicesContainer}>
@@ -47,8 +47,9 @@ function Slide({onSelect, onSkip: _onSkip, question, translate}) {
   );
 }
 
-Slide.defaultProps = {onSkip: null};
+Slide.defaultProps = {className: "", onSkip: null};
 Slide.propTypes = {
+  className: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
   onSkip: PropTypes.func,
   question: PropTypes.shape({

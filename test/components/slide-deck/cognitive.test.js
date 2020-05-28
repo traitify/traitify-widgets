@@ -127,7 +127,7 @@ describe("Cognitive", () => {
     const component = new ComponentHandler(<Component {...props} />);
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
-    const slide = component.instance.findByType(Slide);
+    const slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
@@ -142,21 +142,21 @@ describe("Cognitive", () => {
     const component = new ComponentHandler(<Component {...props} />);
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
-    let slide = component.instance.findByType(Slide);
+    let slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[1].id,
       timeTaken: 600
     }));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[2].id,
       timeTaken: 600
@@ -180,14 +180,14 @@ describe("Cognitive", () => {
     const component = new ComponentHandler(<Component {...props} />);
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
-    let slide = component.instance.findByType(Slide);
+    let slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
 
     expect(component.tree).toMatchSnapshot();
@@ -216,14 +216,14 @@ describe("Cognitive", () => {
     const component = new ComponentHandler(<Component {...props} />);
     const instructions = component.instance.findByType(Instructions);
     component.act(() => instructions.props.onStart({disability: false}));
-    let slide = component.instance.findByType(Slide);
+    let slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
-    slide = component.instance.findByType(Slide);
+    slide = component.instance.findAllByType(Slide)[0];
     component.act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[1].id,
       timeTaken: 600

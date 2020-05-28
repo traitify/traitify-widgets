@@ -58,7 +58,7 @@
   clear: both;
   background: #EFEFEF;
   text-align: center;
-  padding: 15px 0 0;
+  padding: 0;
   width: 100%;
   .choicesContainer {
     margin: 0 auto;
@@ -103,7 +103,7 @@
     @include mq(s) {
       border-radius: 5px;
       border: 0;
-      margin: 20px 10px;
+      margin: 0 10px 20px;
     }
   }
 }

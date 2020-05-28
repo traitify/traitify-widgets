@@ -153,6 +153,7 @@ function Cognitive(props) {
   }, [questions, questionIndex]);
 
   const question = questions[questionIndex];
+  const nextQuestion = questions[questionIndex + 1];
 
   if(isReady("results")) { return null; }
   if(questionIndex === null) { return <Instructions onStart={onStart} translate={translate} />; }
@@ -185,6 +186,14 @@ function Cognitive(props) {
         </div>
       </div>
       <Slide onSelect={onSelect} question={question} translate={translate} />
+      {nextQuestion && (
+        <Slide
+          className={style.hide}
+          onSelect={onSelect}
+          question={nextQuestion}
+          translate={translate}
+        />
+      )}
     </div>
   );
 }

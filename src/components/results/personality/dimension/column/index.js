@@ -3,7 +3,7 @@ import {rgba} from "lib/helpers/color";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 function PersonalityDimensionColumn(props) {
   const {translate, type: {personality_type: {badge, level, name}, score}, ui} = props;

@@ -599,3 +599,234 @@ exports[`PersonalityArchetypeTips renders nothing if no archetype 1`] = `null`;
 exports[`PersonalityArchetypeTips renders nothing if no tips 1`] = `null`;
 
 exports[`PersonalityArchetypeTips renders nothing if results not ready 1`] = `null`;
+
+exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <li
+      className="active"
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="name"
+          style={
+            Object {
+              "color": "#2491c1",
+            }
+          }
+        >
+          tip_type_for_tools, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
+        >
+          tip_type_for_caution_zone, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
+      <select
+        onChange={[Function]}
+        value="tools"
+      >
+        <option
+          value="tools"
+        >
+          tip_type_for_tools, [object Object]
+        </option>
+        <option
+          value="caution_zone"
+        >
+          tip_type_for_caution_zone, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul
+      className="list"
+    >
+      <li>
+        TP TU - 0
+      </li>
+      <li>
+        TP TU - 1
+      </li>
+      <li>
+        TP TU - 2
+      </li>
+      <li>
+        TP TU - 3
+      </li>
+      <li>
+        TP TU - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thirdPerson tips 1`] = `
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <li
+      className="active"
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="name"
+          style={
+            Object {
+              "color": "#2491c1",
+            }
+          }
+        >
+          tip_type_for_tools, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="name"
+          style={
+            Object {
+              "color": "#cb4e4e",
+            }
+          }
+        >
+          tip_type_for_room, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
+        >
+          tip_type_for_settings, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
+      <select
+        onChange={[Function]}
+        value="tools"
+      >
+        <option
+          value="tools"
+        >
+          tip_type_for_tools, [object Object]
+        </option>
+        <option
+          value="room"
+        >
+          tip_type_for_room, [object Object]
+        </option>
+        <option
+          value="settings"
+        >
+          tip_type_for_settings, [object Object]
+        </option>
+      </select>
+    </div>
+    <ul
+      className="list"
+    >
+      <li>
+        TU - 0
+      </li>
+      <li>
+        TU - 1
+      </li>
+      <li>
+        TU - 2
+      </li>
+      <li>
+        TU - 3
+      </li>
+      <li>
+        TU - 4
+      </li>
+    </ul>
+  </div>
+</div>
+`;

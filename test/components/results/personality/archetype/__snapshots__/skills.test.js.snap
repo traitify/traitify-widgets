@@ -201,6 +201,198 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
 </div>
 `;
 
+exports[`PersonalityArchetypeSkills renders component with available dimension skills 1`] = `
+<div
+  className="container"
+>
+  <ul
+    className="tabs"
+  >
+    <div
+      className="featured"
+    >
+      featured_skill, [object Object]
+    </div>
+    <li
+      className="active"
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_everyday_adjustments, [object Object]"
+          className="image"
+          src="https://cdn.traitify.com/images/big5_home.png"
+        />
+        <div
+          className="name"
+        >
+          skill_name_for_everyday_adjustments, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_dealing_with_stress, [object Object]"
+          className="image"
+          src="https://cdn.traitify.com/images/big5_stress.png"
+        />
+        <div
+          className="name"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_communication, [object Object]"
+          className="image"
+          src="https://cdn.traitify.com/images/big5_communication.png"
+        />
+        <div
+          className="name"
+        >
+          skill_name_for_communication, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_teamwork, [object Object]"
+          className="image"
+          src="https://cdn.traitify.com/images/big5_teamwork.png"
+        />
+        <div
+          className="name"
+        >
+          skill_name_for_teamwork, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="skill_name_for_habits, [object Object]"
+          className="image"
+          src="https://cdn.traitify.com/images/big5_motivation.png"
+        />
+        <div
+          className="name"
+        >
+          skill_name_for_habits, [object Object]
+        </div>
+      </button>
+    </li>
+  </ul>
+  <div
+    className="tab"
+  >
+    <div
+      className="formSelect"
+    >
+      <select
+        onChange={[Function]}
+        value="everyday_adjustments"
+      >
+        <option
+          value="everyday_adjustments"
+        >
+          skill_name_for_everyday_adjustments, [object Object]
+        </option>
+        <option
+          value="dealing_with_stress"
+        >
+          skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="communication"
+        >
+          skill_name_for_communication, [object Object]
+        </option>
+        <option
+          value="teamwork"
+        >
+          skill_name_for_teamwork, [object Object]
+        </option>
+        <option
+          value="habits"
+        >
+          skill_name_for_habits, [object Object]
+        </option>
+      </select>
+    </div>
+    <h3>
+      skill_heading_for_everyday_adjustments, [object Object]
+    </h3>
+    <ul
+      className="list"
+    >
+      <li
+        style={
+          Object {
+            "background": "rgba(255,204,59,0.1)",
+          }
+        }
+      >
+        EA Tip for Extraversion
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(249,139,28,0.1)",
+          }
+        }
+      >
+        EA Tip for Conscientiousness
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(66,176,219,0.1)",
+          }
+        }
+      >
+        EA Tip for Openness
+      </li>
+      <li
+        style={
+          Object {
+            "background": "rgba(239,97,94,0.1)",
+          }
+        }
+      >
+        EA Tip for Emotional Stability
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`PersonalityArchetypeSkills renders component with available types 1`] = `
 <div
   className="container"

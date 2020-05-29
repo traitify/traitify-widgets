@@ -1,11 +1,11 @@
 import {render, unmountComponentAtNode} from "react-dom";
-import {v4 as uuid} from "uuid";
+import createUUID from "uuid";
 import {unique} from "lib/helpers/array";
 import guessComponent from "lib/helpers/guess-component";
 
 export default class TraitifyWidget {
   constructor(ui, options = {}) {
-    this.id = uuid();
+    this.id = createUUID();
     this.ui = ui;
     this.options = {allowInstructions: true, ...options};
     this.options.disabledComponents = [...this.options.disabledComponents || []];

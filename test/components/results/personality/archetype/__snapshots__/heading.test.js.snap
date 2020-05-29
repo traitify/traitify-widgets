@@ -29,6 +29,7 @@ exports[`PersonalityArchetypeHeading renders component 1`] = `
   >
     <video
       controls={true}
+      crossOrigin="anonymous"
       playsInline={true}
       poster="https://cdn.traitify.com/content/archetype-videos/Upholder.jpg"
     >
@@ -74,6 +75,7 @@ exports[`PersonalityArchetypeHeading renders component in third person 1`] = `
   >
     <video
       controls={true}
+      crossOrigin="anonymous"
       playsInline={true}
       poster="https://cdn.traitify.com/content/archetype-videos/Upholder.jpg"
     >
@@ -115,6 +117,7 @@ exports[`PersonalityArchetypeHeading renders component without badge 1`] = `
   >
     <video
       controls={true}
+      crossOrigin="anonymous"
       playsInline={true}
       poster="https://cdn.traitify.com/content/archetype-videos/Upholder.jpg"
     >

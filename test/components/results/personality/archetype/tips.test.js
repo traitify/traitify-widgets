@@ -5,15 +5,24 @@ import _assessment from "support/json/assessment/dimension-based.json";
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 const details = [];
-const tipTypes = [
-  {body: "CZ", title: "Caution Zone"},
-  {body: "SWY", title: "Settings that Work for You"},
-  {body: "TU", title: "Tools to Use"}
-];
+const tipTypes = {
+  firstPerson: [
+    {body: "CZ", title: "Caution Zone"},
+    {body: "SWY", title: "Settings that Work for You"},
+    {body: "TU", title: "Tools to Use"}
+  ],
+  thirdPerson: [
+    {body: "TP CZ", title: "Third Person Caution Zone"},
+    {body: "TP SWY", title: "Third Person Settings that Work for You"},
+    {body: "TP TU", title: "Third Person Tools to Use"}
+  ]
+};
 
-tipTypes.forEach((type) => {
-  Array.from(Array(5)).forEach((_, i) => {
-    details.push({body: `${type.body} - ${i}`, title: type.title});
+Object.keys(tipTypes).forEach((perspective) => {
+  tipTypes[perspective].forEach((type) => {
+    Array.from(Array(5)).forEach((_, i) => {
+      details.push({body: `${type.body} - ${i}`, title: type.title});
+    });
   });
 });
 
@@ -74,6 +83,34 @@ describe("PersonalityArchetypeTips", () => {
           state: expect.any(Object)
         })
       );
+    });
+  });
+
+  describe("thirdPerson", () => {
+    beforeEach(() => {
+      mockOptions(props.getOption, {perspective: "thirdPerson"});
+    });
+
+    it("renders component", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders firstPerson tips if no thirdPerson tips", () => {
+      const typeKeys = tipTypes.thirdPerson.map((type) => type.title);
+      props.assessment = {
+        ...props.assessment,
+        archetype: {
+          ...props.assessment.archetype,
+          details: props.assessment.archetype.details.filter(({title}) => (
+            !typeKeys.includes(title)
+          ))
+        }
+      };
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
     });
   });
 
@@ -144,12 +181,17 @@ describe("PersonalityArchetypeTips", () => {
   });
 
   it("renders nothing if no tips", () => {
+    const typeKeys = [];
+    Object.keys(tipTypes).forEach((perspective) => {
+      tipTypes[perspective].forEach((type) => typeKeys.push(type.title));
+    });
+
     props.assessment = {
       ...props.assessment,
       archetype: {
         ...props.assessment.archetype,
         details: props.assessment.archetype.details.filter(({title}) => (
-          !tipTypes.map((type) => type.title).includes(title)
+          !typeKeys.includes(title)
         ))
       }
     };

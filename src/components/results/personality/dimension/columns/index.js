@@ -4,7 +4,7 @@ import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 function PersonalityDimensionColumns(props) {
   const {assessment, isReady, translate, ui} = props;

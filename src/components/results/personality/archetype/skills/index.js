@@ -6,7 +6,7 @@ import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 const skillTypes = [
   {

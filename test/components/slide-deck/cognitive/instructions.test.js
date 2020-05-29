@@ -32,10 +32,10 @@ describe("Instructions", () => {
     });
 
     it("passes disability", () => {
-      component.act(() => component.instance.findByProps({id: "traitify-disability"}).props.onChange());
+      // Simulate clicking disability checkbox if it is added back
       component.act(() => component.findByText("cognitive_instructions_step_4_button").props.onClick());
 
-      expect(props.onStart).toHaveBeenCalledWith({disability: true});
+      expect(props.onStart).toHaveBeenCalledWith({disability: false});
     });
   });
 

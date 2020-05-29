@@ -3,7 +3,7 @@ import PersonalityTrait from "components/results/personality/trait/details";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 function PersonalityTraitList(props) {
   const {assessment, getOption, isReady, translate, ui} = props;

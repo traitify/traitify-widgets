@@ -87,6 +87,22 @@ describe("PersonalityArchetypeSkills", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with available dimension skills", () => {
+    const missingDimension = props.assessment.personality_types[0].personality_type;
+    props.assessment = {
+      ...assessment,
+      archetype: {
+        ...assessment.archetype,
+        details: assessment.archetype.details.filter((detail) => (
+          !detail.title.endsWith(missingDimension.name)
+        ))
+      }
+    };
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders component with available types", () => {
     props.assessment = {
       ...assessment,

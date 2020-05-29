@@ -79,21 +79,13 @@ exports[`Instructions renders step 4 1`] = `
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <p>
-    cognitive_instructions_step_4_text
-  </p>
-  <label
-    htmlFor="traitify-disability"
-  >
-    cognitive_instructions_disability_text
-    <input
-      checked={false}
-      id="traitify-disability"
-      name="disability"
-      onChange={[Function]}
-      type="checkbox"
-    />
-  </label>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_4_html",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}

@@ -5,7 +5,7 @@ import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import List from "./list";
-import style from "./style";
+import style from "./style.scss";
 
 function PersonalityDimensionDetails(props) {
   const {getOption, translate, type: {personality_type: {badge, details, level, name}}, ui} = props;

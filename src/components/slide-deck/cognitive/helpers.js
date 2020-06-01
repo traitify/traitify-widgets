@@ -1,9 +1,7 @@
 import {useEffect, useReducer} from "react";
-import {mutable} from "../helpers";
+import {mutable} from "lib/helpers/object";
 
-export * from "../helpers";
-
-function loadImage({dispatch, imageType, url}) {
+export function loadImage({dispatch, imageType, url}) {
   dispatch({type: "imageLoading"});
 
   const img = document.createElement("img");
@@ -14,7 +12,7 @@ function loadImage({dispatch, imageType, url}) {
   img.src = url;
 }
 
-function loadQuestions({dispatch, questions}) {
+export function loadQuestions({dispatch, questions}) {
   const question = questions.find(({loaded}) => !loaded);
   if(!question || !question.questionImage) { return; }
   if(!question.questionImage.loaded) {
@@ -37,7 +35,7 @@ function loadQuestions({dispatch, questions}) {
   dispatch({type: "questionLoaded"});
 }
 
-function reducer(state, action) {
+export function reducer(state, action) {
   switch(action.type) {
     case "error":
       return {...state, error: action.error};

@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityTypeSlider renders back button 1`] = `
-<div>
+<div
+  className="slider"
+>
   <button
-    className={null}
+    className="back"
     onClick={[Function]}
     type="button"
   >
@@ -60,9 +62,11 @@ exports[`PersonalityTypeSlider renders back button 1`] = `
 `;
 
 exports[`PersonalityTypeSlider renders both buttons 1`] = `
-<div>
+<div
+  className="slider"
+>
   <button
-    className={null}
+    className="back"
     onClick={[Function]}
     type="button"
   >
@@ -116,7 +120,7 @@ exports[`PersonalityTypeSlider renders both buttons 1`] = `
     </div>
   </ul>
   <button
-    className={null}
+    className="next"
     onClick={[Function]}
     type="button"
   >
@@ -129,7 +133,9 @@ exports[`PersonalityTypeSlider renders both buttons 1`] = `
 `;
 
 exports[`PersonalityTypeSlider renders component 1`] = `
-<div>
+<div
+  className="slider"
+>
   <ul>
     <div
       className="mock"
@@ -178,7 +184,9 @@ exports[`PersonalityTypeSlider renders component 1`] = `
 `;
 
 exports[`PersonalityTypeSlider renders next button 1`] = `
-<div>
+<div
+  className="slider"
+>
   <ul>
     <div
       className="mock"
@@ -224,7 +232,7 @@ exports[`PersonalityTypeSlider renders next button 1`] = `
     </div>
   </ul>
   <button
-    className={null}
+    className="next"
     onClick={[Function]}
     type="button"
   >

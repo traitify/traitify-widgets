@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
@@ -76,10 +76,13 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "file-loader": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.2",
     "mkdirp": "^1.0.4",
     "node-sass": "^4.14.0",
     "postcss-loader": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
     "replace-bundle-webpack-plugin": "^1.0.0",
     "sass-loader": "^8.0.2",
@@ -103,14 +106,17 @@
     "highcharts-react-official": "^3.0.0",
     "prop-types": "^15.7.2",
     "query-string": "^5.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
     "regenerator-runtime": "^0.13.5",
-    "uuid": "^8.0.0"
+    "uuid": "^3.4.0"
   },
   "dependenciesNotes": {
     "ajv": "peer-dependency of ajv-keywords",
-    "query-string": "Version 6+ is written in ES6 and not transpiled"
+    "query-string": "Version 6+ is written in ES6 and not transpiled",
+    "uuid": "Version 4+ are incompatible with IE 9/10"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }

@@ -7,13 +7,12 @@ import style from "./style.scss";
 function Slide({className, onSelect, onSkip: _onSkip, question, translate}) {
   const [answerID, setAnswerID] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
-  const timeTaken = Date.now() - startTime;
-  const onConfirm = () => onSelect({answerId: answerID, timeTaken});
+  const onConfirm = () => onSelect({answerId: answerID, timeTaken: Date.now() - startTime});
   const onSkip = () => {
-    if(_onSkip) { return _onSkip({timeTaken}); }
+    if(_onSkip) { return _onSkip({timeTaken: Date.now() - startTime}); }
     if(!window.confirm(translate("cognitive_confirm_skip"))) { return; }
 
-    onSelect({skipped: true, timeTaken});
+    onSelect({skipped: true, timeTaken: Date.now() - startTime});
   };
 
   useEffect(() => {

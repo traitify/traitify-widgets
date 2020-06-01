@@ -22,7 +22,6 @@ function Practice({onFinish, translate}) {
 
   useEffect(() => { setType(width > 768 ? "h" : "v"); }, [width]);
   useEffect(() => {
-    if(questions.length === 0) { return; }
     if(questions.length !== questionIndex) { return; }
 
     onFinish();
@@ -32,44 +31,17 @@ function Practice({onFinish, translate}) {
 
   if(!question) { return <Loading />; }
   if(question.answer) {
-    if(questionIndex === 0) {
-      const video = `${urlBase}/practice-1-${type}.mp4`;
+    const number = questionIndex + 1;
+    const video = `${urlBase}/practice-${number}-${type}.mp4`;
 
-      return (
-        <div key={`question-0-${type}`} className={style.instructions}>
-          <h1>{translate("cognitive_practice_step_1_heading")}</h1>
-          <p>{translate("cognitive_practice_step_1_text")}</p>
-          <video {...videoProps}><source src={video} type="video/mp4" /></video>
-          <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_1_button")}</button>
-        </div>
-      );
-    }
-
-    if(questionIndex === 1) {
-      const video = `${urlBase}/practice-2-${type}.mp4`;
-
-      return (
-        <div key={`question-1-${type}`} className={style.instructions}>
-          <h1>{translate("cognitive_practice_step_2_heading")}</h1>
-          <p>{translate("cognitive_practice_step_2_text")}</p>
-          <video {...videoProps}><source src={video} type="video/mp4" /></video>
-          <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_2_button")}</button>
-        </div>
-      );
-    }
-
-    if(questionIndex === 2) {
-      const video = `${urlBase}/practice-3-${type}.mp4`;
-
-      return (
-        <div key={`question-2-${type}`} className={style.instructions}>
-          <h1>{translate("cognitive_practice_step_3_heading")}</h1>
-          <p>{translate("cognitive_practice_step_3_text")}</p>
-          <video {...videoProps}><source src={video} type="video/mp4" /></video>
-          <button className={style.btnBlue} onClick={onNext} type="button">{translate("cognitive_practice_step_3_button")}</button>
-        </div>
-      );
-    }
+    return (
+      <div key={`question-${number}-${type}`} className={style.instructions}>
+        <h1>{translate(`cognitive_practice_step_${number}_heading`)}</h1>
+        <p>{translate(`cognitive_practice_step_${number}_text`)}</p>
+        <video {...videoProps}><source src={video} type="video/mp4" /></video>
+        <button className={style.btnBlue} onClick={onNext} type="button">{translate(`cognitive_practice_step_${number}_button`)}</button>
+      </div>
+    );
   }
 
   const progress = (100.0 * (questionIndex + 1)) / questions.length;

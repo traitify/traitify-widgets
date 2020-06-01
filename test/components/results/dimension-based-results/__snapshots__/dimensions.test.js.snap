@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dimensions renders component 1`] = `
-<ul>
+<ul
+  className="dimensions"
+>
   <div
     className="mock"
   >

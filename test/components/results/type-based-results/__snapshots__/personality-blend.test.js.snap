@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityBlend renders component 1`] = `
-<div>
+<div
+  className="blend"
+>
   <div
     className="mock"
   >
@@ -14,10 +16,14 @@ exports[`PersonalityBlend renders component 1`] = `
     Badge - 
     Analyzer
   </div>
-  <h3>
+  <h3
+    className="name"
+  >
     Naturalist/Analyzer
   </h3>
-  <p>
+  <p
+    className="description"
+  >
     You bring a natural curiosity to the world and are always interested in expanding your mind to learn new things.  You feel most at ease when experiencing the natural world, and you try to be outdoors as much as possible.  You enjoy an evening with friends, filled with good company and interesting and meaningful discussions yet are equally happy on a hiking, camping or canoeing trip.  Your friends appreciate your ideas and deep thinking.  You are happiest when spending time with others in small, comfortable groups or when working alone. You thrive when you have time to recharge in the natural world.
   </p>
 </div>

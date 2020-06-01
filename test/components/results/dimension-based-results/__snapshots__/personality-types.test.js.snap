@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityTypes renders component 1`] = `
-<ul>
+<ul
+  className="types"
+>
   <div
     className="mock"
   >

@@ -1,18 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CareerFilter renders component 1`] = `
-<div>
+<div
+  className="container"
+>
   <form
     onSubmit={[Function]}
   >
     <ul>
-      <li>
+      <li
+        className="search"
+      >
         <label
+          className="label"
           htmlFor="traitify-career-search"
         >
           search
         </label>
         <input
+          className="field"
           id="traitify-career-search"
           name="search"
           onChange={[Function]}
@@ -22,7 +28,9 @@ exports[`CareerFilter renders component 1`] = `
         />
       </li>
       <li>
-        <div>
+        <div
+          className="fieldGroup"
+        >
           <button
             onClick={[Function]}
             type="button"
@@ -30,10 +38,12 @@ exports[`CareerFilter renders component 1`] = `
             filter
           </button>
           <ul
-            className="undefined "
+            className="formGroup "
           >
             <div>
-              <li>
+              <li
+                className="groupTitle"
+              >
                 sort
               </li>
               <li>
@@ -43,6 +53,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-sort-match-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-sort-match"
                     name="sort"
                     onChange={[Function]}
@@ -69,6 +80,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-sort-title-label"
                     checked={false}
+                    className="check"
                     id="traitify-career-sort-title"
                     name="sort"
                     onChange={[Function]}
@@ -90,7 +102,9 @@ exports[`CareerFilter renders component 1`] = `
               </li>
             </div>
             <div>
-              <li>
+              <li
+                className="groupTitle"
+              >
                 experience_level
               </li>
               <li>
@@ -100,6 +114,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-1-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-1"
                     name="experience_level"
                     onChange={[Function]}
@@ -126,6 +141,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-2-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-2"
                     name="experience_level"
                     onChange={[Function]}
@@ -152,6 +168,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-3-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-3"
                     name="experience_level"
                     onChange={[Function]}
@@ -178,6 +195,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-4-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-4"
                     name="experience_level"
                     onChange={[Function]}
@@ -204,6 +222,7 @@ exports[`CareerFilter renders component 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-5-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-5"
                     name="experience_level"
                     onChange={[Function]}
@@ -225,7 +244,9 @@ exports[`CareerFilter renders component 1`] = `
               </li>
             </div>
             <div>
-              <li>
+              <li
+                className="center"
+              >
                 <input
                   type="submit"
                   value="search"
@@ -242,18 +263,24 @@ exports[`CareerFilter renders component 1`] = `
 `;
 
 exports[`CareerFilter renders component with different icons and style 1`] = `
-<div>
+<div
+  className="container"
+>
   <form
     onSubmit={[Function]}
   >
     <ul>
-      <li>
+      <li
+        className="search"
+      >
         <label
+          className="label"
           htmlFor="traitify-career-search"
         >
           search
         </label>
         <input
+          className="field"
           id="traitify-career-search"
           name="search"
           onChange={[Function]}
@@ -263,7 +290,9 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
         />
       </li>
       <li>
-        <div>
+        <div
+          className="fieldGroup"
+        >
           <button
             onClick={[Function]}
             type="button"
@@ -271,10 +300,12 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
             filter
           </button>
           <ul
-            className="undefined undefined"
+            className="formGroup block"
           >
             <div>
-              <li>
+              <li
+                className="groupTitle"
+              >
                 sort
               </li>
               <li>
@@ -284,6 +315,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-sort-match-label"
                     checked={false}
+                    className="check"
                     id="traitify-career-sort-match"
                     name="sort"
                     onChange={[Function]}
@@ -310,6 +342,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-sort-title-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-sort-title"
                     name="sort"
                     onChange={[Function]}
@@ -331,7 +364,9 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
               </li>
             </div>
             <div>
-              <li>
+              <li
+                className="groupTitle"
+              >
                 experience_level
               </li>
               <li>
@@ -341,6 +376,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-1-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-1"
                     name="experience_level"
                     onChange={[Function]}
@@ -367,6 +403,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-2-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-2"
                     name="experience_level"
                     onChange={[Function]}
@@ -393,6 +430,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-3-label"
                     checked={true}
+                    className="check"
                     id="traitify-career-level-3"
                     name="experience_level"
                     onChange={[Function]}
@@ -419,6 +457,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-4-label"
                     checked={false}
+                    className="check"
                     id="traitify-career-level-4"
                     name="experience_level"
                     onChange={[Function]}
@@ -445,6 +484,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                   <input
                     aria-labelledby="traitify-career-level-5-label"
                     checked={false}
+                    className="check"
                     id="traitify-career-level-5"
                     name="experience_level"
                     onChange={[Function]}
@@ -466,7 +506,9 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
               </li>
             </div>
             <div>
-              <li>
+              <li
+                className="center"
+              >
                 <input
                   type="submit"
                   value="search"

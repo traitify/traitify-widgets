@@ -2,14 +2,21 @@
 
 exports[`Slide likert scale renders component 1`] = `
 <div
-  className="undefined undefined"
+  className="slideContainer likertScale"
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Innovative
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "0%",
@@ -19,42 +26,48 @@ exports[`Slide likert scale renders component 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
-        className="undefined undefined"
+        className="notMe reallyNotMe"
         onClick={[Function]}
         type="button"
       >
         really_not_me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
         not_me
       </button>
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="undefined undefined"
+        className="me reallyMe"
         onClick={[Function]}
         type="button"
       >
@@ -67,14 +80,21 @@ exports[`Slide likert scale renders component 1`] = `
 
 exports[`Slide renders back button 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Short Cuts
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "1.36986301369863%",
@@ -84,35 +104,41 @@ exports[`Slide renders back button 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide left"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt={null}
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -121,6 +147,7 @@ exports[`Slide renders back button 1`] = `
     </div>
   </div>
   <button
+    className="back"
     onClick={[MockFunction back]}
     type="button"
   >
@@ -134,14 +161,21 @@ exports[`Slide renders back button 1`] = `
 
 exports[`Slide renders back button unless first slide 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Innovative
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "0%",
@@ -151,28 +185,34 @@ exports[`Slide renders back button unless first slide 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -185,14 +225,21 @@ exports[`Slide renders back button unless first slide 1`] = `
 
 exports[`Slide renders complete progress bar 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Innovative
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "100%",
@@ -202,28 +249,34 @@ exports[`Slide renders complete progress bar 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -236,14 +289,21 @@ exports[`Slide renders complete progress bar 1`] = `
 
 exports[`Slide renders component 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Innovative
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "0%",
@@ -253,28 +313,34 @@ exports[`Slide renders component 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -287,14 +353,21 @@ exports[`Slide renders component 1`] = `
 
 exports[`Slide renders component with previous and next slides 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Short Cuts
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "1.36986301369863%",
@@ -304,35 +377,41 @@ exports[`Slide renders component with previous and next slides 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide left"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt={null}
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -345,14 +424,21 @@ exports[`Slide renders component with previous and next slides 1`] = `
 
 exports[`Slide renders component with previous slide 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Outgoing
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "98.63013698630137%",
@@ -362,28 +448,34 @@ exports[`Slide renders component with previous slide 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide left"
   >
     <img
       alt="A photo of an older man trying to pour cereal from an empty container into his bowl as a boy eats from a full bowl of cereal and milk sitting next to him."
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -396,14 +488,21 @@ exports[`Slide renders component with previous slide 1`] = `
 
 exports[`Slide renders fullscreen 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Innovative
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "0%",
@@ -413,28 +512,34 @@ exports[`Slide renders fullscreen 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -444,7 +549,7 @@ exports[`Slide renders fullscreen 1`] = `
   </div>
   <button
     aria-label="fullscreen"
-    className=" "
+    className="fullscreen fullscreenSmall"
     onClick={[MockFunction toggleFullscreen]}
     type="button"
   />
@@ -453,14 +558,21 @@ exports[`Slide renders fullscreen 1`] = `
 
 exports[`Slide renders fullscreen button 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       Innovative
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "0%",
@@ -470,28 +582,34 @@ exports[`Slide renders fullscreen button 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
     <img
       alt={null}
     />
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
     />
   </div>
-  <div>
-    <div>
+  <div
+    className="responseContainer"
+  >
+    <div
+      className="buttons"
+    >
       <button
+        className="me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
+        className="notMe"
         onClick={[Function]}
         type="button"
       >
@@ -501,7 +619,7 @@ exports[`Slide renders fullscreen button 1`] = `
   </div>
   <button
     aria-label="fullscreen"
-    className=" "
+    className="fullscreen "
     onClick={[MockFunction toggleFullscreen]}
     type="button"
   />
@@ -510,14 +628,21 @@ exports[`Slide renders fullscreen button 1`] = `
 
 exports[`Slide renders instructions 1`] = `
 <div
-  className="undefined "
+  className="slideContainer "
 >
-  <div>
-    <div>
+  <div
+    className="captionContainer"
+  >
+    <div
+      className="caption"
+    >
       instructions
     </div>
-    <div>
+    <div
+      className="progressContainer"
+    >
       <div
+        className="progress"
         style={
           Object {
             "width": "0%",
@@ -527,16 +652,23 @@ exports[`Slide renders instructions 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide middle"
   >
-    <div>
-      <div>
+    <div
+      className="instructionsSlide"
+    >
+      <div
+        className="instructionsText"
+      >
         <p>
           Click me or not me
         </p>
       </div>
-      <div>
+      <div
+        className="instructionsStart"
+      >
         <button
+          className="instructionsButton"
           onClick={[MockFunction start]}
           type="button"
         >
@@ -547,7 +679,7 @@ exports[`Slide renders instructions 1`] = `
     </div>
   </div>
   <div
-    className="undefined undefined"
+    className="slide right"
   >
     <img
       alt={null}

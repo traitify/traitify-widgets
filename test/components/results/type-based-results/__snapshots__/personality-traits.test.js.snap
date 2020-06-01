@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityTraits renders component 1`] = `
-<div>
+<div
+  className="traits"
+>
   <div
     className="mock"
   >
@@ -50,8 +52,11 @@ exports[`PersonalityTraits renders component 1`] = `
     Trait - 
     Steady
   </div>
-  <p>
+  <p
+    className="center"
+  >
     <button
+      className="toggle"
       onClick={[Function]}
       type="button"
     >
@@ -62,7 +67,9 @@ exports[`PersonalityTraits renders component 1`] = `
 `;
 
 exports[`PersonalityTraits renders more traits 1`] = `
-<div>
+<div
+  className="traits"
+>
   <div
     className="mock"
   >
@@ -399,8 +406,11 @@ exports[`PersonalityTraits renders more traits 1`] = `
     Trait - 
     Decisive
   </div>
-  <p>
+  <p
+    className="center"
+  >
     <button
+      className="toggle"
       onClick={[Function]}
       type="button"
     >

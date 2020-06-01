@@ -1,7 +1,10 @@
 import {Component} from "components/slide-deck/cognitive";
 import Instructions from "components/slide-deck/cognitive/instructions";
 import Slide from "components/slide-deck/cognitive/slide";
+import Timer from "components/slide-deck/cognitive/timer";
 import ComponentHandler from "support/component-handler";
+import {flushPromises} from "support/helpers";
+import {useWindowMock} from "support/mocks";
 import assessment from "support/json/assessment/cognitive.json";
 
 jest.mock("components/slide-deck/cognitive/instructions", () => (() => <div className="mock">Instructions</div>));
@@ -11,14 +14,12 @@ jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Cognitive", () => {
   const cacheKey = `cognitive.slide-deck.${assessment.id}`;
-  let originalConfirm;
   let props;
   const lastUpdate = () => props.ui.trigger.mock.calls[props.ui.trigger.mock.calls.length - 1][1];
 
-  beforeEach(() => {
-    originalConfirm = window.confirm;
-    window.confirm = jest.fn().mockName("confirm");
+  useWindowMock("confirm");
 
+  beforeEach(() => {
     props = {
       assessment,
       cache: {
@@ -41,10 +42,6 @@ describe("Cognitive", () => {
         trigger: jest.fn().mockName("trigger")
       }
     };
-  });
-
-  afterEach(() => {
-    window.confirm = originalConfirm;
   });
 
   describe("callbacks", () => {
@@ -90,7 +87,7 @@ describe("Cognitive", () => {
         onlySkipped: true,
         questions: [assessment.questions[0]],
         questionIndex: 1,
-        skipped: true,
+        skipped: [],
         startTime: Date.now()
       };
       props.cache.get.mockReturnValue(state);
@@ -113,6 +110,89 @@ describe("Cognitive", () => {
 
       expect(props.cache.get).toHaveBeenCalled();
       expect(lastUpdate().state.initialQuestions).toBe(assessment.questions);
+    });
+  });
+
+  describe("submit", () => {
+    let component;
+    let slide;
+    let onFinish;
+    let originalDate;
+
+    beforeAll(() => {
+      originalDate = Date.now;
+    });
+
+    beforeEach(() => {
+      const now = Date.now();
+      Date.now = jest.fn().mockName("now").mockReturnValue(now);
+
+      props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 1)};
+      component = new ComponentHandler(<Component {...props} />);
+      component.act(() => (
+        component.instance.findByType(Instructions).props.onStart({disability: false})
+      ));
+      slide = component.instance.findByType(Slide);
+      onFinish = component.instance.findByType(Timer).props.onFinish;
+
+      Date.now = Date.now.mockReturnValue(now + 2000);
+    });
+
+    afterAll(() => {
+      Date.now = originalDate;
+    });
+
+    it("does nothing if already submitted", () => {
+      component.act(() => slide.props.onSelect({
+        answerId: slide.props.question.responses[0].id,
+        timeTaken: 600
+      }));
+      props.traitify.post.mockClear();
+      onFinish();
+
+      expect(props.traitify.post).not.toHaveBeenCalled();
+    });
+
+    it("does nothing if results ready", () => {
+      props.isReady.mockReturnValue(true);
+      component.act(() => slide.props.onSelect({
+        answerId: slide.props.question.responses[0].id,
+        timeTaken: 600
+      }));
+
+      expect(props.traitify.post).not.toHaveBeenCalled();
+    });
+
+    it("submits query", () => {
+      component.act(() => slide.props.onSelect({
+        answerId: slide.props.question.responses[0].id,
+        timeTaken: 600
+      }));
+
+      expect(props.traitify.post).toMatchSnapshot();
+    });
+
+    it("submits query with fallbacks", () => {
+      onFinish();
+
+      expect(props.traitify.post).toMatchSnapshot();
+    });
+
+    it("updates cached state", async() => {
+      component.act(() => slide.props.onSelect({
+        answerId: slide.props.question.responses[0].id,
+        timeTaken: 600
+      }));
+
+      await flushPromises();
+
+      expect(props.cache.set).toHaveBeenCalledWith(
+        `${assessment.localeKey.toLowerCase()}.cognitive-assessment.${assessment.id}`,
+        expect.objectContaining({
+          completed: true, id: props.assessment.id
+        })
+      );
+      expect(props.getCognitiveAssessment).toHaveBeenCalled();
     });
   });
 
@@ -203,7 +283,7 @@ describe("Cognitive", () => {
   });
 
   it("renders nothing if results ready", () => {
-    props.isReady.mockImplementation(() => true);
+    props.isReady.mockReturnValue(true);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

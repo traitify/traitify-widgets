@@ -16,26 +16,26 @@ describe("Instructions", () => {
   });
 
   describe("start", () => {
-    let component;
-
-    beforeEach(() => {
-      component = new ComponentHandler(<Component {...props} />);
+    it("calls onStart", () => {
+      const component = new ComponentHandler(<Component {...props} />);
       component.act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
       component.act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
       component.act(() => component.instance.findByType(Practice).props.onFinish());
-    });
-
-    it("calls onStart", () => {
       component.act(() => component.findByText("cognitive_instructions_step_4_button").props.onClick());
 
       expect(props.onStart).toHaveBeenCalledWith({disability: false});
     });
 
     it("passes disability", () => {
-      // Simulate clicking disability checkbox if it is added back
+      props.captureLearningDisability = true;
+      const component = new ComponentHandler(<Component {...props} />);
+      component.act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
+      component.act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+      component.act(() => component.instance.findByType(Practice).props.onFinish());
+      component.act(() => component.instance.findByType("input").props.onChange());
       component.act(() => component.findByText("cognitive_instructions_step_4_button").props.onClick());
 
-      expect(props.onStart).toHaveBeenCalledWith({disability: false});
+      expect(props.onStart).toHaveBeenCalledWith({disability: true});
     });
   });
 

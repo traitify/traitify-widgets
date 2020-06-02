@@ -9,8 +9,9 @@ import style from "./style.scss";
 
 const urlBase = "https://cdn.traitify.com/images/cognitive";
 
-function Instructions({onStart, translate}) {
+function Instructions({captureLearningDisability, onStart, translate}) {
   const [width] = useWindowSize();
+  const [disability, setDisability] = useState(false);
   const [step, setStep] = useState(1);
   const [type, setType] = useState(width > 768 ? "h" : "v");
 
@@ -50,12 +51,20 @@ function Instructions({onStart, translate}) {
     <div key="step-4" className={style.instructions}>
       <h2>{translate("cognitive_instructions_step_4_heading")}</h2>
       <DangerousHTML html={translate("cognitive_instructions_step_4_html")} />
-      <button className={style.btnBlue} onClick={() => onStart({disability: false})} type="button">{translate("cognitive_instructions_step_4_button")}</button>
+      {captureLearningDisability && (
+        <label htmlFor="traitify-disability">
+          {translate("cognitive_instructions_disability_text")}
+          <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
+        </label>
+      )}
+      <button className={style.btnBlue} onClick={() => onStart({disability})} type="button">{translate("cognitive_instructions_step_4_button")}</button>
     </div>
   );
 }
 
+Instructions.defaultProps = {captureLearningDisability: false};
 Instructions.propTypes = {
+  captureLearningDisability: PropTypes.bool,
   onStart: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired
 };

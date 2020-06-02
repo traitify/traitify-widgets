@@ -23,6 +23,7 @@ function Cognitive(props) {
     translate,
     ui
   } = props;
+  const captureLearningDisability = getOption("slideDeck", "captureLearningDisability");
   const disableTimeLimit = getOption("slideDeck", "disableTimeLimit");
   const [initialQuestions, setInitialQuestions] = useState([]);
   const {dispatch, questions} = useQuestionsLoader(initialQuestions);
@@ -156,7 +157,15 @@ function Cognitive(props) {
   const nextQuestion = questions[questionIndex + 1];
 
   if(isReady("results")) { return null; }
-  if(questionIndex === null) { return <Instructions onStart={onStart} translate={translate} />; }
+  if(questionIndex === null) {
+    return (
+      <Instructions
+        captureLearningDisability={captureLearningDisability}
+        onStart={onStart}
+        translate={translate}
+      />
+    );
+  }
   if(!question || submitting.current) { return <Loading />; }
 
   const index = skipped ? skipped.indexOf(questionIndex) : questionIndex;

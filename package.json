@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
@@ -79,7 +79,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.2",
     "mkdirp": "^1.0.4",
-    "node-sass": "^4.14.0",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -91,7 +91,7 @@
     "url-loader": "^2.3.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependenciesNotes": {
     "eslint-plugin-jest": "next version depends on a package that adds a peer-dependency of typescript"

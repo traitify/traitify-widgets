@@ -1,5 +1,6 @@
 import {Component} from "components/results/personality/archetype/tips";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 import _assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
@@ -36,8 +37,6 @@ const assessment = {
     ]
   }
 };
-
-const mockOptions = (fn, options) => fn.mockImplementation((value) => options[value]);
 
 describe("PersonalityArchetypeTips", () => {
   let props;

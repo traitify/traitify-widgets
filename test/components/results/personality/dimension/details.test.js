@@ -1,5 +1,6 @@
 import {Component} from "components/results/personality/dimension/details";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
@@ -54,8 +55,15 @@ describe("PersonalityDimensionDetails", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with pitfalls", () => {
-    props.getOption.mockReturnValue("thirdPerson");
+  it("renders component in third person", () => {
+    mockOptions(props.getOption, {perspective: "thirdPerson"});
+
+    const component = new ComponentHandler(<Component {...props} />);
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component without pitfalls", () => {
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityPitfalls"]});
 
     const component = new ComponentHandler(<Component {...props} />);
     expect(component.tree).toMatchSnapshot();

@@ -7,12 +7,16 @@ import PersonalityTips from "components/results/personality/archetype/tips";
 import PersonalityTraits from "components/results/personality/trait/list";
 
 function CandidateResults(props) {
+  let disabledComponents = props.getOption("disabledComponents") || [];
+  const thirdPerson = props.getOption("perspective") === "thirdPerson";
+  if(!thirdPerson) { disabledComponents = [...disabledComponents, "PersonalityPitfalls"]; }
+
   return (
     <section>
       <PersonalityArchetype {...props} />
       <PersonalityTips {...props} />
-      <PersonalityDimensions {...props} />
-      {props.getOption("perspective") === "thirdPerson" && <Guide {...props} />}
+      <PersonalityDimensions {...props} disabledComponents={disabledComponents} />
+      {thirdPerson && <Guide {...props} />}
       <PersonalityTraits {...props} />
     </section>
   );

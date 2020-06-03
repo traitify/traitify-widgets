@@ -20,6 +20,8 @@ function PersonalityDimensionDetails(props) {
   const perspective = getOption("perspective") || "firstPerson";
   const options = {base: {details}, perspective};
   const benefitsHeader = perspective === "firstPerson" ? translate("dimension_heading_for_benefits", {level, name}) : translate("potential_benefits");
+  const disabledComponents = getOption("disabledComponents") || [];
+  const disablePitfalls = disabledComponents.includes("PersonalityPitfalls");
 
   return (
     <li className={style.container} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`, listStyle: "none"}}>
@@ -36,7 +38,7 @@ function PersonalityDimensionDetails(props) {
         <p className={style.description}>{detailWithPerspective({...options, name: "short_description"})}</p>
       </div>
       <List color={color} details={benefits} header={benefitsHeader} />
-      {perspective === "thirdPerson" && (
+      {!disablePitfalls && (
         <List color={color} details={pitfalls} header={translate("room_for_growth_and_change")} />
       )}
     </li>

@@ -27,12 +27,19 @@
     text-align: center;
     margin-top: 0;
   }
+  input {
+    margin-left: 5px;
+  }
   label {
     display: block;
     margin-bottom: 10px;
   }
   p {
     white-space: pre-wrap;
+  }
+  ul {
+    margin: 15px 0;
+    padding-left: 40px;
   }
   video {
     display: block;

@@ -18,13 +18,10 @@ function Instructions({captureLearningDisability, onStart, translate}) {
   useEffect(() => { setType(width > 768 ? "h" : "v"); }, [width]);
 
   if(step === 1) {
-    const video = `${urlBase}/instructions-${type}.mp4`;
-
     return (
       <div key={`step-1-${type}`} className={style.instructions}>
         <h1>{translate("cognitive_instructions_step_1_heading")}</h1>
         <p>{translate("cognitive_instructions_step_1_text")}</p>
-        <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <button className={style.btnBlue} onClick={() => setStep(2)} type="button">{translate("cognitive_instructions_step_1_button")}</button>
       </div>
     );

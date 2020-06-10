@@ -10,18 +10,6 @@ exports[`Instructions renders step 1 1`] = `
   <p>
     cognitive_instructions_step_1_text
   </p>
-  <video
-    autoPlay={true}
-    disableremoteplayback="true"
-    loop={true}
-    muted={true}
-    playsInline={true}
-  >
-    <source
-      src="https://cdn.traitify.com/images/cognitive/instructions-h.mp4"
-      type="video/mp4"
-    />
-  </video>
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -106,18 +94,6 @@ exports[`Instructions videos horizontal renders component 1`] = `
   <p>
     cognitive_instructions_step_1_text
   </p>
-  <video
-    autoPlay={true}
-    disableremoteplayback="true"
-    loop={true}
-    muted={true}
-    playsInline={true}
-  >
-    <source
-      src="https://cdn.traitify.com/images/cognitive/instructions-h.mp4"
-      type="video/mp4"
-    />
-  </video>
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -138,18 +114,6 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
   <p>
     cognitive_instructions_step_1_text
   </p>
-  <video
-    autoPlay={true}
-    disableremoteplayback="true"
-    loop={true}
-    muted={true}
-    playsInline={true}
-  >
-    <source
-      src="https://cdn.traitify.com/images/cognitive/instructions-v.mp4"
-      type="video/mp4"
-    />
-  </video>
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -170,18 +134,6 @@ exports[`Instructions videos vertical renders component 1`] = `
   <p>
     cognitive_instructions_step_1_text
   </p>
-  <video
-    autoPlay={true}
-    disableremoteplayback="true"
-    loop={true}
-    muted={true}
-    playsInline={true}
-  >
-    <source
-      src="https://cdn.traitify.com/images/cognitive/instructions-v.mp4"
-      type="video/mp4"
-    />
-  </video>
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -202,18 +154,6 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
   <p>
     cognitive_instructions_step_1_text
   </p>
-  <video
-    autoPlay={true}
-    disableremoteplayback="true"
-    loop={true}
-    muted={true}
-    playsInline={true}
-  >
-    <source
-      src="https://cdn.traitify.com/images/cognitive/instructions-h.mp4"
-      type="video/mp4"
-    />
-  </video>
   <button
     className="btnBlue"
     onClick={[Function]}

@@ -14,7 +14,7 @@
   "cognitive_confirm_skip": "Are you sure you want to skip?",
   "cognitive_instructions_disability_text": "Please select if you have a learning disability.",
   "cognitive_instructions_step_1_button": "View Example",
-  "cognitive_instructions_step_1_heading": "Traitify Cognitive Assessment Instructions",
+  "cognitive_instructions_step_1_heading": "Instructions",
   "cognitive_instructions_step_1_text": "We would like you to work out how different shapes are related to each other.\n\nOn each screen you will see a grid with a missing shape, as shown by a '?'. Below the grid are four further shapes, one of which replaces the '?' to complete the grid.\n\nOnce the exercise begins, pick the shape from below each grid that completes it, then click ‘Confirm’ to move to the next question.\n\nYou may also skip the question by clicking ‘Skip’. When you are ready, click on 'View Example' to see an example.",
   "cognitive_instructions_step_2_button": "Start Practice",
   "cognitive_instructions_step_2_heading": "Here's an example",

@@ -22,6 +22,8 @@
   "cognitive_instructions_step_4_button": "Start",
   "cognitive_instructions_step_4_heading": "Before you start...",
   "cognitive_instructions_step_4_html": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 30 questions in the exercise and you have 25 minutes to complete as many as you can.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>",
+  "cognitive_practice_answer_correct": "You answered correctly.",
+  "cognitive_practice_answer_incorrect": "You answered incorrectly.",
   "cognitive_practice_heading": "Practice Questions",
   "cognitive_practice_step_1_button": "Next Question",
   "cognitive_practice_step_1_heading": "Answer Explanation",

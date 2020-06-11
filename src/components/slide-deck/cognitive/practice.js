@@ -31,12 +31,14 @@ function Practice({onFinish, translate}) {
 
   if(!question) { return <Loading />; }
   if(question.answer) {
+    const answer = question.answer.answerId === question.correctAnswerID ? "correct" : "incorrect";
     const number = questionIndex + 1;
     const video = `${urlBase}/practice-${number}-${type}.mp4`;
 
     return (
       <div key={`question-${number}-${type}`} className={style.instructions}>
         <h1>{translate(`cognitive_practice_step_${number}_heading`)}</h1>
+        <p className={style.center}>{translate(`cognitive_practice_answer_${answer}`)}</p>
         <p>{translate(`cognitive_practice_step_${number}_text`)}</p>
         <video {...videoProps}><source src={video} type="video/mp4" /></video>
         <button className={style.btnBlue} onClick={onNext} type="button">{translate(`cognitive_practice_step_${number}_button`)}</button>

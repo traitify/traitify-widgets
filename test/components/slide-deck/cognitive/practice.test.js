@@ -96,7 +96,7 @@ describe("Practice", () => {
 
   it("renders question 1 explanation", () => {
     const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => selectAnswer({component, index: 1}));
+    component.act(() => selectAnswer({component, index: 3}));
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();

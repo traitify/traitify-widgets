@@ -1,5 +1,6 @@
 export default [
   {
+    correctAnswerID: "r-4",
     id: "s-1",
     questionImage: {url: "https://cdn.traitify.com/images/cognitive/practice-question-1/question.png"},
     responses: [
@@ -10,6 +11,7 @@ export default [
     ]
   },
   {
+    correctAnswerID: "r-5",
     id: "s-2",
     questionImage: {url: "https://cdn.traitify.com/images/cognitive/practice-question-2/question.png"},
     responses: [
@@ -20,6 +22,7 @@ export default [
     ]
   },
   {
+    correctAnswerID: "r-10",
     id: "s-3",
     questionImage: {url: "https://cdn.traitify.com/images/cognitive/practice-question-3/question.png"},
     responses: [

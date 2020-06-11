@@ -60,6 +60,11 @@ exports[`Practice renders question 1 explanation 1`] = `
   <h1>
     cognitive_practice_step_1_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_correct
+  </p>
   <p>
     cognitive_practice_step_1_text
   </p>
@@ -132,6 +137,11 @@ exports[`Practice renders question 2 explanation 1`] = `
   <h1>
     cognitive_practice_step_2_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
   <p>
     cognitive_practice_step_2_text
   </p>
@@ -204,6 +214,11 @@ exports[`Practice renders question 3 explanation 1`] = `
   <h1>
     cognitive_practice_step_3_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
   <p>
     cognitive_practice_step_3_text
   </p>
@@ -236,6 +251,11 @@ exports[`Practice videos horizontal renders component 1`] = `
   <h1>
     cognitive_practice_step_1_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
   <p>
     cognitive_practice_step_1_text
   </p>
@@ -268,6 +288,11 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
   <h1>
     cognitive_practice_step_1_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
   <p>
     cognitive_practice_step_1_text
   </p>
@@ -300,6 +325,11 @@ exports[`Practice videos vertical renders component 1`] = `
   <h1>
     cognitive_practice_step_1_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
   <p>
     cognitive_practice_step_1_text
   </p>
@@ -332,6 +362,11 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
   <h1>
     cognitive_practice_step_1_heading
   </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
   <p>
     cognitive_practice_step_1_text
   </p>

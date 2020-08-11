@@ -77,7 +77,7 @@ export default class TraitifyClient {
     } else {
       xhr = new XMLHttpRequest();
       xhr.open(method, url, true);
-      // xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
+      xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
       xhr.setRequestHeader("Content-type", typeof params === "string" ? "application/graphql" : "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }

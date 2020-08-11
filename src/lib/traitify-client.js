@@ -58,7 +58,14 @@ export default class TraitifyClient {
     } else {
       params = _params;
     }
-
+    // TODO remove conditional after cognitive and interview services
+    // are setup to handle auth from a query param
+    if(url.includes("assessment")) {
+      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += queryString.stringify({
+        authorization: this.publicKey
+      });
+    }
     if(this.oldIE) {
       url += url.indexOf("?") === -1 ? "?" : "&";
       url += queryString.stringify({
@@ -70,7 +77,7 @@ export default class TraitifyClient {
     } else {
       xhr = new XMLHttpRequest();
       xhr.open(method, url, true);
-      xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
+      // xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
       xhr.setRequestHeader("Content-type", typeof params === "string" ? "application/graphql" : "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }

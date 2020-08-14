@@ -52,7 +52,7 @@ export default class TraitifyClient {
     let url = `${this.host}/${this.version}${path}`;
     let xhr;
     if(_params && ["get", "delete"].includes(method.toLowerCase())) {
-      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += url.includes("?") ? "&" : "?";
       url += queryString.stringify(_params);
       params = null;
     } else {
@@ -61,7 +61,7 @@ export default class TraitifyClient {
     // TODO remove conditional after cognitive and interview services
     // are setup to handle auth from a query param
     if(url.includes("assessment")) {
-      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += url.includes("?") ? "&" : "?";
       url += queryString.stringify({
         authorization: this.publicKey
       });

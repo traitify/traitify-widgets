@@ -67,7 +67,7 @@ export default class TraitifyClient {
       });
     }
     if(this.oldIE) {
-      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += url.includes("?") ? "&" : "?";
       url += queryString.stringify({
         authorization: this.publicKey,
         reset_cache: (new Date()).getTime()

@@ -84,6 +84,142 @@ exports[`Instructions renders step 4 1`] = `
 </div>
 `;
 
+exports[`Instructions time trial default timed renders step 1 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_trial_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default timed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_timed_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default untimed renders step 1 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_trial_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default untimed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_untimed_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial minimal timed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_timed_minimal_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial minimal untimed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_untimed_minimal_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
 exports[`Instructions videos horizontal renders component 1`] = `
 <div
   className="instructions"

@@ -17,9 +17,6 @@
     }
   },
   plugins: ["babel", "jest"],
-  rules: {
-    "import/export": "off"
-  },
   settings: {
     "import/resolver": "webpack",
     react: {version: "detect"}

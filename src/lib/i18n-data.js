@@ -1,3 +1,4 @@
+import deDE from "lib/i18n-data/de_de.json";
 import enUS from "lib/i18n-data/en_us.json";
 import enGB from "lib/i18n-data/en_gb.json";
 import esEC from "lib/i18n-data/es_ec.json";
@@ -15,6 +16,7 @@ import svSE from "lib/i18n-data/sv_se.json";
 import zhCN from "lib/i18n-data/zh_cn.json";
 
 export default {
+  "de-de": deDE,
   "en-us": enUS,
   "en-gb": enGB,
   "es-ec": esEC,

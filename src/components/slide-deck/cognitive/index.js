@@ -23,7 +23,6 @@ function Cognitive(props) {
     translate,
     ui
   } = props;
-  const captureLearningDisability = getOption("slideDeck", "captureLearningDisability");
   const disableTimeLimit = getOption("slideDeck", "disableTimeLimit");
   const [initialQuestions, setInitialQuestions] = useState([]);
   const {dispatch, questions} = useQuestionsLoader(initialQuestions);
@@ -160,8 +159,10 @@ function Cognitive(props) {
   if(questionIndex === null) {
     return (
       <Instructions
-        captureLearningDisability={captureLearningDisability}
+        captureLearningDisability={getOption("slideDeck", "captureLearningDisability")}
+        initialLearningDisability={getOption("slideDeck", "initialLearningDisability")}
         onStart={onStart}
+        options={getOption("slideDeck") || {}}
         translate={translate}
       />
     );

@@ -21,20 +21,29 @@ class CandidateResults extends Component {
   }
   render() {
     const {getOption, translate} = this.props;
+    const allowHeaders = getOption("allowHeaders");
 
     return (
       <section className={style.container}>
-        <p className={style.heading}><Icon icon={faUser} /> {translate("personality_type")}</p>
+        {allowHeaders && (
+          <p className={style.heading}><Icon icon={faUser} /> {translate("personality_type")}</p>
+        )}
         <PersonalityArchetype {...this.props} />
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
+        {allowHeaders && (
+          <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
+        )}
         <PersonalityDimensionColumns {...this.props} />
         {getOption("perspective") === "thirdPerson" && (
           <div className={style.paddingBottom}>
-            <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
+            {allowHeaders && (
+              <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
+            )}
             <Guide {...this.props} />
           </div>
         )}
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
+        {allowHeaders && (
+          <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
+        )}
         <PersonalityDimensionDetails {...this.props} />
         <p className={style.lessMarginBottom}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
         <PersonalityDetails {...this.props} />

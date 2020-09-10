@@ -7,7 +7,7 @@ export default class TraitifyWidget {
   constructor(ui, options = {}) {
     this.id = uuid();
     this.ui = ui;
-    this.options = {allowInstructions: true, ...options};
+    this.options = {allowInstructions: true, allowHeaders: false, ...options};
     this.options.disabledComponents = [...this.options.disabledComponents || []];
     this.options.targets = Object.assign({}, this.options.targets);
   }
@@ -24,6 +24,11 @@ export default class TraitifyWidget {
   }
   allowFullscreen() {
     this.options.allowFullscreen = true;
+
+    return this;
+  }
+  allowHeaders() {
+    this.options.allowHeaders = true;
 
     return this;
   }

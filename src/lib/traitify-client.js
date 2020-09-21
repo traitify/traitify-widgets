@@ -23,7 +23,8 @@ export default class TraitifyClient {
     this.version = version;
     return this;
   }
-  handlePromise = (requestType, _xhr, params) => {
+  handlePromise = (requestType, _xhr, _params) => {
+    const params = typeof _params === "string" ? _params : JSON.stringify(_params);
     const xhr = _xhr;
     const promise = new Promise((resolve, reject) => {
       if(!this.online()) { return reject(); }
@@ -37,7 +38,7 @@ export default class TraitifyClient {
         };
         xhr.onerror = () => { reject(xhr.response || xhr.responseText); };
         xhr.ontimeout = () => { reject(xhr.response || xhr.responseText); };
-        const send = requestType === "graphql" ? () => { xhr.send(params); } : () => { xhr.send(JSON.stringify(params)); };
+        const send = () => { xhr.send(params); };
 
         this.oldIE ? window.setTimeout(send, 0) : send();
       } catch(error) { reject(error); }
@@ -51,25 +52,22 @@ export default class TraitifyClient {
     let url = `${this.host}/${this.version}${path}`;
     let xhr;
     if(_params && ["get", "delete"].includes(method.toLowerCase())) {
-      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += url.includes("?") ? "&" : "?";
       url += queryString.stringify(_params);
       params = null;
     } else {
       params = _params;
     }
-
-    if(path.includes("graphql")) {
-      xhr = new XMLHttpRequest();
-      xhr.open(method, url, true);
-      xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
-      xhr.setRequestHeader("Content-type", "application/graphql");
-      xhr.setRequestHeader("Accept", "*/*");
-
-      return this.handlePromise("graphql", xhr, params);
+    // TODO remove conditional after cognitive and interview services
+    // are setup to handle auth from a query param
+    if(url.includes("assessment")) {
+      url += url.includes("?") ? "&" : "?";
+      url += queryString.stringify({
+        authorization: this.publicKey
+      });
     }
-
     if(this.oldIE) {
-      url += url.indexOf("?") === -1 ? "?" : "&";
+      url += url.includes("?") ? "&" : "?";
       url += queryString.stringify({
         authorization: this.publicKey,
         reset_cache: (new Date()).getTime()
@@ -80,7 +78,7 @@ export default class TraitifyClient {
       xhr = new XMLHttpRequest();
       xhr.open(method, url, true);
       xhr.setRequestHeader("Authorization", `Basic ${btoa(`${this.publicKey}:x`)}`);
-      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.setRequestHeader("Content-type", typeof params === "string" ? "application/graphql" : "application/json");
       xhr.setRequestHeader("Accept", "application/json");
     }
 

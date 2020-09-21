@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityTakeaways renders component 1`] = `
-<div>
+<div
+  className="takeaways"
+>
   <h2>
     Key Takeaways of 
     Conservative

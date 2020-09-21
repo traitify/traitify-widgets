@@ -43,14 +43,6 @@ export default class HighChart extends Component {
   componentDidMount() {
     this.afterRender();
   }
-  afterRender() {
-    this.config = this.setConfig();
-    Object.assign(this.config.chart, this.props.chart);
-    Object.assign(this.config.legend, this.props.legend);
-    Object.assign(this.config.xAxis, this.props.xAxis);
-    this.configForTooltip();
-    this.setState({config: this.config});
-  }
   setConfig() {
     return {
       chart: {
@@ -70,6 +62,14 @@ export default class HighChart extends Component {
       legend: {},
       series: this.props.series
     };
+  }
+  afterRender() {
+    this.config = this.setConfig();
+    Object.assign(this.config.chart, this.props.chart);
+    Object.assign(this.config.legend, this.props.legend);
+    Object.assign(this.config.xAxis, this.props.xAxis);
+    this.configForTooltip();
+    this.setState({config: this.config});
   }
   configForTooltip() {
     this.config.tooltip = {

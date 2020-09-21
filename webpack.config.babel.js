@@ -12,6 +12,20 @@ let config = {
   },
   devtool: "source-map",
   entry: ["./index.js"],
+  externals : {
+    "react": {
+      root: "React",
+      commonjs2: "react",
+      commonjs: "react",
+      amd: "react"
+    },
+    "react-dom": {
+      root: "ReactDOM",
+      commonjs2: "react-dom",
+      commonjs: "react-dom",
+      amd: "react-dom"
+    }
+  },
   mode: env,
   module: {
     rules: [
@@ -32,8 +46,7 @@ let config = {
           {
             loader: "style-loader",
             options: {
-              sourceMap: cssMaps,
-              singleton: true
+              injectType: "singletonStyleTag"
             }
           },
           {
@@ -103,6 +116,7 @@ if(browser){
   config.entry.unshift("core-js/stable");
   config.entry.unshift("regenerator-runtime/runtime");
   config.output.libraryExport = "default";
+  delete config.externals;
 }
 if(compatibility){ config.entry[2] = "./compatibility.js"; }
 if(ie){

@@ -8,11 +8,27 @@ exports[`Results renders candidate results 1`] = `
 </div>
 `;
 
+exports[`Results renders cognitive results 1`] = `
+<div
+  className="mock"
+>
+  Cognitive
+</div>
+`;
+
 exports[`Results renders dimension based results 1`] = `
 <div
   className="mock"
 >
   Dimension Based
+</div>
+`;
+
+exports[`Results renders employee results 1`] = `
+<div
+  className="mock"
+>
+  Employee
 </div>
 `;
 

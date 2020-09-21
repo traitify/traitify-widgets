@@ -1,0 +1,27 @@
+@import "~style/helpers";
+@import "~style/variables";
+
+.results {
+  @extend %widgetContainer;
+
+  padding: 0 20px;
+  text-align: center;
+  @include rems(18);
+  a, a:visited {
+    color: #3B8DBF;
+    text-decoration: none;
+  }
+  img {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 200px;
+  }
+  h1 {
+    color: #3B8DBF;
+    margin-top: 0;
+    @include rems(26);
+  }
+  p {
+    @include rems(15);
+  }
+}

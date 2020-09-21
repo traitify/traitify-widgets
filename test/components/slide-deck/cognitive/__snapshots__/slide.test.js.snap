@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slide renders component 1`] = `
+<div
+  className=""
+>
+  <div
+    className="question"
+  >
+    <img
+      alt="cognitive_question_alt_text"
+      src="https://cdn.traitify.com/images/cognitive_tests/10017/q.png"
+    />
+  </div>
+  <div
+    className="choices"
+  >
+    <div
+      className="choicesContainer"
+    >
+      <div
+        className="choice"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="cognitive_response_alt_text"
+            className={null}
+            src="https://cdn.traitify.com/images/cognitive_tests/10017/a.png"
+          />
+        </button>
+      </div>
+      <div
+        className="choice"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="cognitive_response_alt_text"
+            className={null}
+            src="https://cdn.traitify.com/images/cognitive_tests/10017/o1.png"
+          />
+        </button>
+      </div>
+      <div
+        className="choice"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="cognitive_response_alt_text"
+            className={null}
+            src="https://cdn.traitify.com/images/cognitive_tests/10017/o3.png"
+          />
+        </button>
+      </div>
+      <div
+        className="choice"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="cognitive_response_alt_text"
+            className={null}
+            src="https://cdn.traitify.com/images/cognitive_tests/10017/o2.png"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="buttons"
+  >
+    <button
+      className="btnSkip"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_skip_button
+    </button>
+    <button
+      className="btnDisabled"
+      disabled={true}
+      onClick={null}
+      type="button"
+    >
+      cognitive_confirm_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Slide renders loading 1`] = `
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
+    <i />
+    <i />
+  </div>
+</div>
+`;

@@ -16,7 +16,7 @@ exports[`CandidateResults renders results in firstPerson 1`] = `
   <div
     className="mock"
   >
-    Personality Archetype
+    Personality Archetype Heading
   </div>
   <p>
     <span
@@ -32,7 +32,11 @@ exports[`CandidateResults renders results in firstPerson 1`] = `
   <div
     className="mock"
   >
+<<<<<<< HEAD
     Personality Dimensions Columns
+=======
+    Personality Archetype Tips
+>>>>>>> master
   </div>
   <p>
     <span
@@ -64,7 +68,7 @@ exports[`CandidateResults renders results in firstPerson 1`] = `
   <div
     className="mock"
   >
-    Personality Details
+    Personality Dimension List
   </div>
   <p>
     <span
@@ -101,7 +105,7 @@ exports[`CandidateResults renders results in thirdPerson 1`] = `
   <div
     className="mock"
   >
-    Personality Archetype
+    Personality Archetype Heading
   </div>
   <p>
     <span
@@ -117,7 +121,11 @@ exports[`CandidateResults renders results in thirdPerson 1`] = `
   <div
     className="mock"
   >
+<<<<<<< HEAD
     Personality Dimensions Columns
+=======
+    Personality Archetype Tips
+>>>>>>> master
   </div>
   <div>
     <p>
@@ -151,7 +159,11 @@ exports[`CandidateResults renders results in thirdPerson 1`] = `
   <div
     className="mock"
   >
+<<<<<<< HEAD
     Personality Dimension Details
+=======
+    Personality Dimension List
+>>>>>>> master
   </div>
   <p>
     <span

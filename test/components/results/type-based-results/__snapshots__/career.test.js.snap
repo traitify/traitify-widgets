@@ -2,6 +2,7 @@
 
 exports[`Career renders component 1`] = `
 <button
+  className="container"
   onClick={[Function]}
   type="button"
 >
@@ -9,18 +10,30 @@ exports[`Career renders component 1`] = `
     alt="Methane/Landfill Gas Collection System Operators"
     src="https://cdn.traitify.com/careers/d7da4259-9f10-4121-b0ca-7534b3ee2d3b_methane-landfill-gas-collection-system-operators"
   />
-  <div>
-    <h2>
+  <div
+    className="content"
+  >
+    <h2
+      className="title"
+    >
       Methane/Landfill Gas Collection System Operators
     </h2>
-    <p>
+    <p
+      className="description"
+    >
       Direct daily operations, maintenance, or repair of landfill gas projects, including maintenance of daily logs, determination of service priorities, and compliance with reporting requirements.
     </p>
-    <h3>
+    <h3
+      className="subtitle"
+    >
       experience_level
     </h3>
-    <ol>
-      <li />
+    <ol
+      className="experience"
+    >
+      <li
+        className="active"
+      />
       <li
         className=""
       />
@@ -34,20 +47,30 @@ exports[`Career renders component 1`] = `
         className=""
       />
     </ol>
-    <h3>
+    <h3
+      className="subtitle"
+    >
       education
     </h3>
-    <p>
+    <p
+      className="education"
+    >
       experience_level_1
     </p>
-    <h3>
+    <h3
+      className="subtitle"
+    >
       match_rate
-      <i>
+      <i
+        className="matchRatePercent"
+      >
         66
         %
       </i>
     </h3>
-    <div>
+    <div
+      className="matchRate"
+    >
       <span
         data-match-rate="65.52296205600837%"
         style={

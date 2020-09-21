@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radar renders component 1`] = `
-<div>
-  <div>
+<div
+  className="radar"
+>
+  <div
+    className="radarContainer"
+  >
     <canvas
       aria-label="radar_chart_label"
       height="700"

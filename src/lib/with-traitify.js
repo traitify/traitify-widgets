@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import guideQuery from "lib/graphql/queries/guide";
+import * as queries from "lib/graphql/queries";
 import {getDisplayName, loadFont} from "lib/helpers";
+import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
 export default function withTraitify(WrappedComponent) {
@@ -58,6 +59,8 @@ export default function withTraitify(WrappedComponent) {
 
       loadFont();
 
+      if(this.getOption("surveyType") === "cognitive") { return this.updateCognitiveAssessment(); }
+
       this.updateAssessment();
     }
     componentDidUpdate(prevProps, prevState) {
@@ -70,8 +73,11 @@ export default function withTraitify(WrappedComponent) {
         this.setState({assessmentID: this.props.assessmentID});
       }
 
+      if(this.getOption("surveyType") === "cognitive") { return this.cognitiveDidUpdate(prevProps, prevState); }
+
       const changes = {
         assessmentID: prevState.assessmentID !== this.state.assessmentID,
+        deck: prevState.deck && !this.state.deck,
         deckID: prevState.deckID !== this.state.deckID,
         locale: prevState.locale !== this.state.locale
       };
@@ -80,7 +86,7 @@ export default function withTraitify(WrappedComponent) {
         this.updateAssessment({oldID: prevState.assessmentID, oldLocale: prevState.locale});
       }
 
-      if(this.state.followingDeck && (changes.deckID || changes.locale)) {
+      if(this.state.followingDeck && (changes.deck || changes.deckID || changes.locale)) {
         this.updateDeck({oldID: prevState.deckID, oldLocale: prevState.locale});
       }
 
@@ -98,35 +104,12 @@ export default function withTraitify(WrappedComponent) {
         }
       }
     }
-    componentWillUnmount() {
-      Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
-    }
     componentDidCatch(error, info) {
       this.ui.trigger("Component.error", this, {error, info});
       this.setState({error});
     }
-    addListener = (_key, callback) => {
-      const key = _key.toLowerCase();
-
-      this.listeners = this.listeners || {};
-      this.listeners[key] = callback;
-      this.ui.on(key, callback);
-    }
-    // setState method that also works in the constructor
-    safeSetState = (state) => {
-      if(this.didMount) {
-        this.setState(state);
-      } else {
-        this.state = {...this.state, ...state};
-      }
-    }
-    followDeck = () => {
-      this.setState({followingDeck: true});
-      this.updateDeck();
-    }
-    followGuide = () => {
-      this.setState({followingGuide: true});
-      this.updateGuide();
+    componentWillUnmount() {
+      Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
     }
     getAssessment = (options = {}) => {
       const {assessmentID, locale} = this.state;
@@ -161,6 +144,53 @@ export default function withTraitify(WrappedComponent) {
         data: "archetype,blend,instructions,slides,types,traits",
         locale_key: locale
       }).then((data) => {
+        if(hasResults(data)) { this.cache.set(key, data); }
+
+        setAssessment(data);
+      }).catch((error) => {
+        console.warn(error); // eslint-disable-line no-console
+
+        delete this.ui.requests[key];
+      });
+
+      return this.ui.requests[key];
+    }
+    getCognitiveAssessment = (options = {}) => {
+      const {assessmentID, locale} = this.state;
+      if(!assessmentID) { return Promise.resolve(); }
+
+      const key = `${locale}.cognitive-assessment.${assessmentID}`;
+      const hasResults = (data) => (
+        data && data.localeKey
+          && data.id === assessmentID
+          && data.localeKey.toLowerCase() === locale
+          && data.completed
+      );
+      const setAssessment = (data) => (
+        new Promise((resolve) => {
+          this.setState({assessment: data}, () => (resolve(data)));
+          this.ui.trigger(key, this, data);
+        })
+      );
+
+      let {assessment} = this.props;
+      if(hasResults(assessment)) { return setAssessment(assessment); }
+
+      assessment = this.cache.get(key);
+      if(hasResults(assessment)) { return setAssessment(assessment); }
+
+      if(this.ui.requests[key] && !options.force) {
+        return this.ui.requests[key];
+      }
+
+      const query = queries.cognitive.get({
+        params: {localeKey: locale, testId: assessmentID}
+      });
+
+      this.ui.requests[key] = this.traitify.post(
+        "/cognitive-tests/graphql",
+        query
+      ).then(({data: {cognitiveTest: data}}) => {
         if(hasResults(data)) { this.cache.set(key, data); }
 
         setAssessment(data);
@@ -251,7 +281,7 @@ export default function withTraitify(WrappedComponent) {
 
       this.ui.requests[key] = this.traitify.post(
         "/interview_guides/graphql",
-        guideQuery(query)
+        queries.guide(query)
       ).then((_data) => {
         const _guide = (_data.data || {}).guide;
         const data = {..._guide};
@@ -272,35 +302,13 @@ export default function withTraitify(WrappedComponent) {
       return this.ui.requests[key];
     }
     getListener = (key) => (this.listeners[key.toLowerCase()])
-    getOption = (name) => {
+    getOption = (...keys) => {
       const {props, ui} = this;
-      const {[name]: prop, options} = props;
 
-      if(prop != null) { return prop; }
-      if(options && options[name] != null) { return options[name]; }
-      if(ui && ui.options[name] != null) { return ui.options[name]; }
-    }
-    isReady = (type) => {
-      const {assessment, deck, guide} = this.state;
-
-      switch(type) {
-        case "deck":
-          return !!((deck && !!deck.name));
-        case "guide":
-          return !!((guide && (guide.competencies || []).length > 0));
-        case "results":
-          return !!(assessment && (assessment.personality_types || []).length > 0);
-        case "slides":
-          return !!(assessment && (assessment.slides || []).length > 0);
-        default:
-          return false;
-      }
-    }
-    removeListener = (_key) => {
-      const key = _key.toLowerCase();
-
-      this.ui.off(key, this.getListener(key));
-      delete this.listeners[key];
+      if(keys.length > 1 && dig(props, keys.slice(1)) != null) { return dig(props, keys.slice(1)); }
+      if(dig(props, keys) != null) { return dig(props, keys); }
+      if(dig(props.options, keys) != null) { return dig(props.options, keys); }
+      if(ui && dig(ui.options, keys) != null) { return dig(ui.options, keys); }
     }
     setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
@@ -347,6 +355,75 @@ export default function withTraitify(WrappedComponent) {
 
       this.ui = ui || this.traitify.ui;
     }
+    addListener = (_key, callback) => {
+      const key = _key.toLowerCase();
+
+      this.listeners = this.listeners || {};
+      this.listeners[key] = callback;
+      this.ui.on(key, callback);
+    }
+    // setState method that also works in the constructor
+    safeSetState = (state) => {
+      if(this.didMount) {
+        this.setState(state);
+      } else {
+        this.state = {...this.state, ...state};
+      }
+    }
+    followDeck = () => {
+      this.setState({followingDeck: true});
+      this.updateDeck();
+    }
+    followGuide = () => {
+      this.setState({followingGuide: true});
+      this.updateGuide();
+    }
+    isReady = (type) => {
+      const {assessment, deck, guide} = this.state;
+
+      if(this.getOption("surveyType") === "cognitive") {
+        switch(type) {
+          case "questions":
+            return !!(assessment && (assessment.questions || []).length > 0);
+          case "results":
+            return !!(assessment && assessment.completed);
+          default:
+            return false;
+        }
+      }
+
+      switch(type) {
+        case "deck":
+          return !!((deck && !!deck.name));
+        case "guide":
+          return !!((guide && (guide.competencies || []).length > 0));
+        case "results":
+          return !!(assessment && (assessment.personality_types || []).length > 0);
+        case "slides":
+          return !!(assessment && (assessment.slides || []).length > 0);
+        default:
+          return false;
+      }
+    }
+    removeListener = (_key) => {
+      const key = _key.toLowerCase();
+
+      this.ui.off(key, this.getListener(key));
+      delete this.listeners[key];
+    }
+    cognitiveDidUpdate(prevProps, prevState) {
+      const changes = {
+        assessmentID: prevState.assessmentID !== this.state.assessmentID,
+        locale: prevState.locale !== this.state.locale
+      };
+
+      if(changes.assessmentID || changes.locale) {
+        this.updateCognitiveAssessment({
+          oldID: prevState.assessmentID,
+          oldLocale: prevState.locale
+        });
+      }
+    }
     updateAssessment(options = {}) {
       const {assessmentID, locale} = this.state;
 
@@ -375,6 +452,34 @@ export default function withTraitify(WrappedComponent) {
           this.getListener(key)(null, currentValue);
         } else {
           this.getAssessment();
+        }
+      }
+    }
+    updateCognitiveAssessment(options = {}) {
+      const {assessmentID, locale} = this.state;
+
+      if(options.oldID || options.oldLocale) {
+        const oldAssessmentID = options.oldID || assessmentID;
+        const oldLocale = options.oldLocale || locale;
+        const key = `${oldLocale}.cognitive-assessment.${oldAssessmentID}`;
+
+        this.removeListener(key);
+      }
+      if(assessmentID) {
+        const key = `${locale}.cognitive-assessment.${assessmentID}`;
+
+        this.addListener(key, (_, assessment) => {
+          this.setState({
+            assessment,
+            assessmentID: assessment.id
+          });
+        });
+
+        const currentValue = this.ui.current[key];
+        if(currentValue != null) {
+          this.getListener(key)(null, currentValue);
+        } else {
+          this.getCognitiveAssessment();
         }
       }
     }
@@ -437,6 +542,7 @@ export default function withTraitify(WrappedComponent) {
         followDeck,
         followGuide,
         getAssessment,
+        getCognitiveAssessment,
         getOption,
         isReady,
         props,
@@ -454,6 +560,7 @@ export default function withTraitify(WrappedComponent) {
         followDeck,
         followGuide,
         getAssessment,
+        getCognitiveAssessment,
         getOption,
         locale,
         isReady,

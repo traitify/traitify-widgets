@@ -1,14 +1,20 @@
-import GraphQL from "../client";
+import toArgs from "../to-args";
+import toQuery from "../to-query";
 
-export default function guideQuery(guideDetails) {
-  const {params} = guideDetails;
-  let {fields} = guideDetails;
-
-  const defaultFields = [
-    {competencies: ["id", "name", "introduction", "order", {questionSequences: ["id", "name", "personality_type_id", {questions: ["id", "text", "adaptability", "order", "purpose"]}]}]}
+export default function guideQuery({fields: _fields, params}) {
+  const fields = _fields || [
+    {
+      competencies: [
+        "id", "name", "introduction", "order",
+        {
+          questionSequences: [
+            "id", "name", "personality_type_id",
+            {questions: ["id", "text", "adaptability", "order", "purpose"]}
+          ]
+        }
+      ]
+    }
   ];
-  fields = (fields === undefined ? defaultFields : fields);
 
-  const graphql = new GraphQL();
-  return `{ guide(${graphql.toArgs(params)}) { ${graphql.toQuery(fields)} }}`;
+  return `{ guide(${toArgs(params)}) { ${toQuery(fields)} }}`;
 }

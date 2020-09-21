@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityDetails renders component 1`] = `
-<div>
-  <div>
+<div
+  className="details"
+>
+  <div
+    className="detailsLife"
+  >
     <h2>
       This style in everyday life:
     </h2>
@@ -15,7 +19,9 @@ exports[`PersonalityDetails renders component 1`] = `
       </li>
     </ul>
   </div>
-  <div>
+  <div
+    className="detailsFinancial"
+  >
     <h2>
       This style in financial decisions:
     </h2>

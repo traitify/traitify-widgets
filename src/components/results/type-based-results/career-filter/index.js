@@ -8,7 +8,7 @@ import {careerOption} from "lib/helpers";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import style from "./style";
+import style from "./style.scss";
 
 class CareerFilter extends Component {
   static defaultProps = {options: null}

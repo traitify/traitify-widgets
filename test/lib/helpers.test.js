@@ -24,6 +24,18 @@ describe("Helpers", () => {
       expect(careerOption(props, "perPage")).toBe(10);
     });
 
+    it("checks career options prop", () => {
+      const props = {careerOptions: {perPage: 10}};
+
+      expect(careerOption(props, "perPage")).toBe(10);
+    });
+
+    it("prioritizes career options prop", () => {
+      const props = {careerOptions: {perPage: 10}, options};
+
+      expect(careerOption(props, "perPage")).toBe(10);
+    });
+
     it("checks options", () => {
       const props = {options};
 

@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityDetails renders component 1`] = `
-<div>
-  <div>
+<div
+  className="details"
+>
+  <div
+    className="complements"
+  >
     <h4>
       complements
     </h4>
@@ -11,7 +15,9 @@ exports[`PersonalityDetails renders component 1`] = `
 
     </p>
   </div>
-  <div>
+  <div
+    className="conflicts"
+  >
     <h4>
       conflicts
     </h4>
@@ -19,7 +25,9 @@ exports[`PersonalityDetails renders component 1`] = `
       You are versatile because while you have your own work preferences, you work well with all types of people.  You appreciate the leadership of Visionaries and the helping hand a Mentor is always willing to provide.  However, you may find it challenging to share a workspace with your Inventor colleagues.  Their creative process can often lead to a chaotic work process and environment, which doesn't always jive with your thoughtful yet reserved approach.
     </p>
   </div>
-  <div>
+  <div
+    className="environments"
+  >
     <h4>
       best_work_environments
     </h4>
@@ -46,8 +54,12 @@ exports[`PersonalityDetails renders nothing if no details 1`] = `null`;
 exports[`PersonalityDetails renders nothing if not ready 1`] = `null`;
 
 exports[`PersonalityDetails renders top personality if no blend 1`] = `
-<div>
-  <div>
+<div
+  className="details"
+>
+  <div
+    className="environments"
+  >
     <h4>
       best_work_environments
     </h4>
@@ -82,8 +94,12 @@ exports[`PersonalityDetails renders top personality if no blend 1`] = `
 `;
 
 exports[`PersonalityDetails skips environments section if no environments 1`] = `
-<div>
-  <div>
+<div
+  className="details"
+>
+  <div
+    className="complements"
+  >
     <h4>
       complements
     </h4>
@@ -92,7 +108,9 @@ exports[`PersonalityDetails skips environments section if no environments 1`] = 
 
     </p>
   </div>
-  <div>
+  <div
+    className="conflicts"
+  >
     <h4>
       conflicts
     </h4>
@@ -104,8 +122,12 @@ exports[`PersonalityDetails skips environments section if no environments 1`] = 
 `;
 
 exports[`PersonalityDetails skips section if no detail 1`] = `
-<div>
-  <div>
+<div
+  className="details"
+>
+  <div
+    className="environments"
+  >
     <h4>
       best_work_environments
     </h4>

@@ -1,33 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SlideDeck renders component 1`] = `
-<div>
-  <div
-    className="mock"
-  >
-    Slide
-  </div>
+exports[`SlideDeck renders cognitive 1`] = `
+<div
+  className="mock"
+>
+  Cognitive
 </div>
 `;
 
-exports[`SlideDeck renders loading if finished 1`] = `
-<div>
-  <div
-    className="mock"
-  >
-    Loading
-  </div>
+exports[`SlideDeck renders personality 1`] = `
+<div
+  className="mock"
+>
+  Personality
 </div>
 `;
-
-exports[`SlideDeck renders loading if not ready 1`] = `
-<div>
-  <div
-    className="mock"
-  >
-    Loading
-  </div>
-</div>
-`;
-
-exports[`SlideDeck renders nothing if results ready 1`] = `null`;

@@ -149,7 +149,7 @@ describe("Client", () => {
 
       it("includes headers", () => {
         expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Content-type", "application/graphql");
-        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Accept", "*/*");
+        expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Accept", "application/json");
       });
 
       it("passes params", () => {
@@ -269,10 +269,17 @@ describe("Client", () => {
       });
 
       describe("request", () => {
-        it("includes authorization", () => {
+        it("includes authorization through headers", () => {
           client.ajax("GET", "/profiles", {locale_key: "en-us"});
 
           expect(xhrMocks.setRequestHeader).toHaveBeenCalledWith("Authorization", `Basic ${btoa("xyz:x")}`);
+        });
+
+        it("includes authorization through query string", () => {
+          client.ajax("GET", "/assessments", {locale_key: "en-us"});
+          const url = xhrMocks.open.mock.calls[0][1];
+
+          expect(url).toContain("authorization=xyz");
         });
 
         it("includes headers", () => {

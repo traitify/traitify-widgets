@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dimension renders component 1`] = `
-<li>
+<li
+  className="dimension"
+>
   <div
+    className="main"
     style={
       Object {
         "background": "rgba(41,183,112,0.085)",
@@ -10,8 +13,12 @@ exports[`Dimension renders component 1`] = `
       }
     }
   >
-    <div>
-      <p>
+    <div
+      className="side"
+    >
+      <p
+        className="icon"
+      >
         <img
           alt=""
           ariahidden="true"
@@ -19,8 +26,12 @@ exports[`Dimension renders component 1`] = `
         />
       </p>
     </div>
-    <div>
-      <h2>
+    <div
+      className="content"
+    >
+      <h2
+        className="title"
+      >
         Agreeableness
          
         <span
@@ -37,11 +48,16 @@ exports[`Dimension renders component 1`] = `
          - 
         Medium
       </h2>
-      <p>
+      <p
+        className="description"
+      >
         Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
       </p>
-      <p>
+      <p
+        className="triggerButton"
+      >
         <button
+          className="trigger"
           onClick={[Function]}
           style={
             Object {
@@ -57,8 +73,11 @@ exports[`Dimension renders component 1`] = `
 `;
 
 exports[`Dimension with index of 0 shows content by default 1`] = `
-<li>
+<li
+  className="dimension"
+>
   <div
+    className="main"
     style={
       Object {
         "background": "rgba(41,183,112,0.085)",
@@ -66,8 +85,12 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
       }
     }
   >
-    <div>
-      <p>
+    <div
+      className="side"
+    >
+      <p
+        className="icon"
+      >
         <img
           alt=""
           ariahidden="true"
@@ -75,8 +98,12 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
         />
       </p>
     </div>
-    <div>
-      <h2>
+    <div
+      className="content"
+    >
+      <h2
+        className="title"
+      >
         Agreeableness
          
         <span
@@ -93,11 +120,16 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
          - 
         Medium
       </h2>
-      <p>
+      <p
+        className="description"
+      >
         Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
       </p>
-      <p>
+      <p
+        className="triggerButton"
+      >
         <button
+          className="trigger"
           onClick={[Function]}
           style={
             Object {
@@ -109,22 +141,33 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
       </p>
     </div>
   </div>
-  <div>
+  <div
+    className="details"
+  >
     <div
+      className="content"
       style={
         Object {
           "background": "rgba(41,183,112,0.3)",
         }
       }
     >
-      <div>
+      <div
+        className="extendedDesc"
+      >
         <h3 />
-        <p>
+        <p
+          className="description"
+        >
           Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
         </p>
       </div>
-      <div>
-        <h4 />
+      <div
+        className="detail"
+      >
+        <h4
+          className="benefits"
+        />
         <ul>
           <li>
             Forgiving style
@@ -146,8 +189,12 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
           </li>
         </ul>
       </div>
-      <div>
-        <h4 />
+      <div
+        className="detail"
+      >
+        <h4
+          className="pitfalls"
+        />
         <ul>
           <li>
             May appear too open-minded (to others)
@@ -175,8 +222,11 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
 `;
 
 exports[`Dimension with non-zero index hides content by default 1`] = `
-<li>
+<li
+  className="dimension"
+>
   <div
+    className="main"
     style={
       Object {
         "background": "rgba(41,183,112,0.085)",
@@ -184,8 +234,12 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
       }
     }
   >
-    <div>
-      <p>
+    <div
+      className="side"
+    >
+      <p
+        className="icon"
+      >
         <img
           alt=""
           ariahidden="true"
@@ -193,8 +247,12 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
         />
       </p>
     </div>
-    <div>
-      <h2>
+    <div
+      className="content"
+    >
+      <h2
+        className="title"
+      >
         Agreeableness
          
         <span
@@ -211,11 +269,16 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
          - 
         Medium
       </h2>
-      <p>
+      <p
+        className="description"
+      >
         Influencing people (Agreeableness) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
       </p>
-      <p>
+      <p
+        className="triggerButton"
+      >
         <button
+          className="trigger"
           onClick={[Function]}
           style={
             Object {

@@ -5,7 +5,7 @@ import withTraitify from "lib/with-traitify";
 import CareerFilter from "../career-filter";
 import CareerModal from "../career-modal";
 import CareerResults from "../career-results";
-import style from "./style";
+import style from "./style.scss";
 
 class Careers extends Component {
   static propTypes = {

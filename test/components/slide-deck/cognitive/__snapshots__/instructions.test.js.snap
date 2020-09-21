@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions renders step 1 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions renders step 2 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_2_heading
+  </h2>
+  <p>
+    cognitive_instructions_step_2_text
+  </p>
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_2_button
+  </button>
+</div>
+`;
+
+exports[`Instructions renders step 3 1`] = `
+<div
+  className="mock"
+>
+  Practice
+</div>
+`;
+
+exports[`Instructions renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_4_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default timed renders step 1 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_trial_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default timed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_timed_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default untimed renders step 1 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_trial_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial default untimed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_untimed_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial minimal timed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_timed_minimal_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions time trial minimal untimed renders step 4 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_4_untimed_minimal_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions videos horizontal renders component 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions videos horizontal updates to vertical 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions videos vertical renders component 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;
+
+exports[`Instructions videos vertical updates to horizontal 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    cognitive_instructions_step_1_heading
+  </h1>
+  <p>
+    cognitive_instructions_step_1_text
+  </p>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_1_button
+  </button>
+</div>
+`;

@@ -2,6 +2,7 @@
 
 exports[`PersonalityType renders component 1`] = `
 <li
+  className="type"
   style={
     Object {
       "borderLeft": "5px solid #29B770",
@@ -9,16 +10,23 @@ exports[`PersonalityType renders component 1`] = `
   }
 >
   <div
+    className="main"
     style={
       Object {
         "background": "rgba(41,183,112,0.085)",
       }
     }
   >
-    <div>
-      <h2>
+    <div
+      className="content"
+    >
+      <h2
+        className="title"
+      >
         Agreeableness
-        <span>
+        <span
+          className="score"
+        >
           6
            - 
           Medium

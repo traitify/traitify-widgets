@@ -1,20 +1,27 @@
-import TestRenderer from "react-test-renderer";
+import {act, create} from "react-test-renderer";
+
+export {act};
 
 export default class ComponentHandler {
   constructor(element, options = {}) {
-    this.renderer = TestRenderer.create(element, options);
+    this.ref = element.ref;
+
+    act(() => { this.renderer = create(element, options); });
   }
-  get instance() { return this.renderer.root.instance; }
+  get instance() { return this.renderer.root.instance || this.renderer.root; }
   get props() { return this.instance.props; }
   get state() { return this.instance.state; }
   get tree() { return this.renderer.toJSON(); }
+  act(run) { act(run); }
+  findByText(text) { return this.instance.find((element) => element.children[0] === text); }
   unmount() { this.renderer.unmount(); }
-  updateProps(props) {
+  updateProps(newProps) {
     const Component = this.renderer.root.type;
+    const props = {...this.props, ...newProps};
 
-    this.renderer.update(<Component {...{...this.props, ...props}} />);
+    act(() => { this.renderer.update(<Component ref={this.ref} {...props} />); });
   }
   updateState(state) {
-    this.instance.setState(state);
+    act(() => { this.instance.setState(state); });
   }
 }

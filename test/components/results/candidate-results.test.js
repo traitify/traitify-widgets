@@ -1,12 +1,13 @@
 import Component from "components/results/candidate-results";
+import PersonalityDimensions from "components/results/personality/dimension/list";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 
-jest.mock("components/guide", () => (() => (<div className="mock">Guide</div>)));
-jest.mock("components/results/candidate-results/personality-archetype", () => (() => (<div className="mock">Personality Archetype</div>)));
-jest.mock("components/results/candidate-results/personality-details", () => (() => (<div className="mock">Personality Details</div>)));
-jest.mock("components/results/candidate-results/personality-dimension-details", () => (() => (<div className="mock">Personality Dimension Details</div>)));
-jest.mock("components/results/candidate-results/personality-dimension-columns", () => (() => (<div className="mock">Personality Dimensions Columns</div>)));
-jest.mock("components/results/dimension-based-results/personality-traits", () => (() => (<div className="mock">Personality Traits</div>)));
+jest.mock("components/results/guide", () => (() => (<div className="mock">Guide</div>)));
+jest.mock("components/results/personality/archetype/heading", () => (() => (<div className="mock">Personality Archetype Heading</div>)));
+jest.mock("components/results/personality/archetype/tips", () => (() => (<div className="mock">Personality Archetype Tips</div>)));
+jest.mock("components/results/personality/dimension/list", () => (() => (<div className="mock">Personality Dimension List</div>)));
+jest.mock("components/results/personality/trait/list", () => (() => (<div className="mock">Personality Traits</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("CandidateResults", () => {
@@ -14,7 +15,7 @@ describe("CandidateResults", () => {
 
   beforeEach(() => {
     props = {
-      getOption: jest.fn().mockName("getOption").mockReturnValue("firstPerson"),
+      getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       options: {},
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
@@ -28,16 +29,21 @@ describe("CandidateResults", () => {
   });
 
   it("renders results in firstPerson", () => {
+    mockOptions(props.getOption, {perspective: "firstPerson"});
     const component = new ComponentHandler(<Component {...props} />);
+    const dimensions = component.instance.findByType(PersonalityDimensions);
 
     expect(component.tree).toMatchSnapshot();
+    expect(dimensions.props.disabledComponents).toEqual(expect.arrayContaining(["PersonalityPitfalls"]));
   });
 
   it("renders results in thirdPerson", () => {
-    props.getOption = jest.fn().mockName("getOption").mockReturnValue("thirdPerson");
+    mockOptions(props.getOption, {perspective: "thirdPerson"});
     props.followGuide = jest.fn().mockName("followGuide").mockReturnValue(true);
     const component = new ComponentHandler(<Component {...props} />);
+    const dimensions = component.instance.findByType(PersonalityDimensions);
 
     expect(component.tree).toMatchSnapshot();
+    expect(dimensions.props.disabledComponents).not.toEqual(expect.arrayContaining(["PersonalityPitfalls"]));
   });
 });

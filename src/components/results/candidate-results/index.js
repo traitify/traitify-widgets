@@ -3,17 +3,20 @@ import {
   faUser
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import Icon from "lib/helpers/icon";
 import withTraitify from "lib/with-traitify";
 import Guide from "components/results/guide";
 import PersonalityArchetype from "components/results/personality/archetype/heading";
 import PersonalityDimensions from "components/results/personality/dimension/list";
 import PersonalityTips from "components/results/personality/archetype/tips";
 import PersonalityTraits from "components/results/personality/trait/list";
-import style from "./style";
+import style from "./style.scss";
 
 function CandidateResults(props) {
-  let disabledComponents = props.getOption("disabledComponents") || [];
-  const thirdPerson = props.getOption("perspective") === "thirdPerson";
+  const {getOption, translate} = props;
+  let disabledComponents = getOption("disabledComponents") || [];
+  const allowHeaders = getOption("allowHeaders");
+  const thirdPerson = getOption("perspective") === "thirdPerson";
   if(!thirdPerson) { disabledComponents = [...disabledComponents, "PersonalityPitfalls"]; }
 
   return (
@@ -47,7 +50,8 @@ function CandidateResults(props) {
 }
 
 CandidateResults.propTypes = {
-  getOption: PropTypes.func.isRequired
+  getOption: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired
 };
 
 export default withTraitify(CandidateResults);

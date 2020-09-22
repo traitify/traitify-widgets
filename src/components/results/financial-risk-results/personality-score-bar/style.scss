@@ -3,6 +3,7 @@
 .scoreBar {
   @extend %widgetContainer;
   @extend %cf;
+  margin-top: 30px;
   margin-bottom: 20px;
   h1 {
     font-weight: normal;

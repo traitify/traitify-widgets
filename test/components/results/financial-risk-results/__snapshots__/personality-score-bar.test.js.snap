@@ -4,57 +4,27 @@ exports[`PersonalityScoreBar renders component 1`] = `
 <div
   className="scoreBar"
 >
-  <h1>
-    Financial Risk Score: 
-    <span>
-      41.57
-    </span>
-  </h1>
   <div
     className="scoreBarBar"
   >
-    <div
-      className="scoreBarLegend"
-    >
-      <div
-        className="scoreBarLegendLow"
-      >
-        0
-      </div>
-      <div
-        className="scoreBarLegendHigh"
-      >
-        100
-      </div>
-    </div>
     <div
       className="scoreBarRange"
     >
       <div
         className="scoreBarLow"
-      >
-         
-      </div>
+      />
       <div
         className="scoreBarLowMed"
-      >
-         
-      </div>
+      />
       <div
         className="scoreBarMed"
-      >
-         
-      </div>
+      />
       <div
         className="scoreBarMedHigh"
-      >
-         
-      </div>
+      />
       <div
         className="scoreBarHigh"
-      >
-         
-      </div>
+      />
     </div>
     <div
       className="scoreBarIndicators"
@@ -68,7 +38,7 @@ exports[`PersonalityScoreBar renders component 1`] = `
         className="scoreBarIndicator"
         style={
           Object {
-            "marginLeft": "41.57%",
+            "marginLeft": "48%",
           }
         }
       >

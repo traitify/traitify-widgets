@@ -7,7 +7,15 @@ import style from "./style.scss";
 class PersonalityScoreBar extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({overall_score: PropTypes.number}),
+    assessment: PropTypes.shape({
+      archetype: PropTypes.shape({
+        details: PropTypes.arrayOf(PropTypes.shape({
+          body: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        }))
+      }),
+      overall_score: PropTypes.number
+    }),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
@@ -19,27 +27,38 @@ class PersonalityScoreBar extends Component {
   }
   render() {
     if(!this.props.isReady("results")) { return null; }
+    const indicatorMargin = () => {
+      const riskLevel = this.props.assessment.archetype.details.find((detail) => detail.title === "risk_level").body;
 
-    const score = this.props.assessment.overall_score;
+      switch(riskLevel) {
+        case "conservative":
+          return "8";
+        case "measured":
+          return "28";
+        case "neutral":
+          return "48";
+        case "receptive":
+          return "68";
+        case "aggressive":
+          return "88";
+        default:
+          return "0";
+      }
+    };
 
     return (
       <div className={style.scoreBar}>
-        <h1>Financial Risk Score: <span>{score}</span></h1>
         <div className={style.scoreBarBar}>
-          <div className={style.scoreBarLegend}>
-            <div className={style.scoreBarLegendLow}>0</div>
-            <div className={style.scoreBarLegendHigh}>100</div>
-          </div>
           <div className={style.scoreBarRange}>
-            <div className={style.scoreBarLow}> </div>
-            <div className={style.scoreBarLowMed}> </div>
-            <div className={style.scoreBarMed}> </div>
-            <div className={style.scoreBarMedHigh}> </div>
-            <div className={style.scoreBarHigh}> </div>
+            <div className={style.scoreBarLow} />
+            <div className={style.scoreBarLowMed} />
+            <div className={style.scoreBarMed} />
+            <div className={style.scoreBarMedHigh} />
+            <div className={style.scoreBarHigh} />
           </div>
           <div className={style.scoreBarIndicators}>
             <div className={style.scoreBarIndicatorLow}> </div>
-            <div className={style.scoreBarIndicator} style={{marginLeft: `${score}%`}}> </div>
+            <div className={style.scoreBarIndicator} style={{marginLeft: `${indicatorMargin()}%`}}> </div>
             <div className={style.scoreBarIndicatorHigh}> </div>
           </div>
         </div>

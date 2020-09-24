@@ -1897,6 +1897,10 @@
       {
         "title": "Third Person Financial Decisions Title",
         "body": "This individual prefers to have a plan for their financial decisions that indicates what will be done quarter by quarter, including notes about mitigating circumstances and alternative plans. Some other characteristics of their approach to financial decisions:"
+      },
+      {
+        "title": "risk_level",
+        "body": "neutral"
       }
     ],
     "environments": [],

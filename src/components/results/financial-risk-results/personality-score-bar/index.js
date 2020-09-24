@@ -27,8 +27,11 @@ class PersonalityScoreBar extends Component {
   }
   render() {
     if(!this.props.isReady("results")) { return null; }
+    const personality = this.props.assessment.archetype;
+    if(!personality) { return null; }
+
     const indicatorMargin = () => {
-      const riskLevel = this.props.assessment.archetype.details.find((detail) => detail.title === "risk_level").body;
+      const riskLevel = personality.details.find((detail) => detail.title === "risk_level").body;
 
       switch(riskLevel) {
         case "conservative":

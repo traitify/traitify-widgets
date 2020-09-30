@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CognitiveResults renders components 1`] = `
+<section
+  className="results"
+>
+  <img
+    alt="Brain"
+    src="https://cdn.traitify.com/images/cognitive/brain.png"
+  />
+  <h1>
+    cognitive_results_heading
+  </h1>
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_results_html",
+      }
+    }
+  />
+</section>
+`;

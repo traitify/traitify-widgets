@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CandidateResults renders results in firstPerson 1`] = `
+<section>
+  <div
+    className="mock"
+  >
+    Personality Archetype Heading
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Tips
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension List
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
+</section>
+`;
+
+exports[`CandidateResults renders results in thirdPerson 1`] = `
+<section>
+  <div
+    className="mock"
+  >
+    Personality Archetype Heading
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Tips
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension List
+  </div>
+  <div>
+    <div
+      className="mock"
+    >
+      Guide
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
+</section>
+`;

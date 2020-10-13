@@ -51,7 +51,7 @@ function PersonalityArchetypeHeading(props) {
             tag="h2"
           />
         </div>
-        <p>{description.body}</p>
+        {description && <p>{description.body}</p>}
       </div>
       <div className={style.meaning}>
         {video ? (

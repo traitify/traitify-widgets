@@ -10,7 +10,7 @@ import PersonalityArchetype from "components/results/personality/archetype/headi
 import PersonalityDimensions from "components/results/personality/dimension/list";
 import PersonalityTips from "components/results/personality/archetype/tips";
 import PersonalityTraits from "components/results/personality/trait/list";
-import style from "./style.scss";
+import style from "../style.scss";
 
 function CandidateResults(props) {
   const {getOption, translate} = props;

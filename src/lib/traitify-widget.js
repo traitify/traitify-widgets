@@ -67,6 +67,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  disableHeaders() {
+    this.options.allowHeaders = false;
+
+    return this;
+  }
   disableInstructions() {
     this.options.allowInstructions = false;
 

@@ -24,7 +24,7 @@ describe("TypeBasedResults", () => {
   });
 
   it("renders results with headers", () => {
-    props.getOption = jest.fn().mockName("getOption").mockReturnValue(true);
+    props.getOption = props.getOption.mockReturnValue(true);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

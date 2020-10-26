@@ -5,6 +5,7 @@
   @extend %cf;
   margin-top: 30px;
   margin-bottom: 20px;
+  clear: both;
   h1 {
     font-weight: normal;
     @include rems(26);

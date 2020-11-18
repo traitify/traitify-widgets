@@ -1,0 +1,14 @@
+@import "~style/helpers";
+
+.container {
+  @extend %widgetContainer;
+
+  padding: 20px 0px;
+  text-align: center;
+
+  .canvasContainer {
+    height: auto;
+    margin: 0px auto;
+    max-width: 100%;
+  }
+}

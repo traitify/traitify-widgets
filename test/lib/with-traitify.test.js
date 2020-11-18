@@ -237,27 +237,27 @@ describe("withTraitify", () => {
       getGuide.mockClear();
       component = new ComponentHandler(<Component traitify={traitify} />);
       component.instance.updateGuide = function() {
-        if(!this.state.assessment) { return; }
+        if(!this.state.assessmentID) { return; }
 
         getGuide();
       };
     });
 
-    it("gets guide when state gets assessment", () => {
+    it("gets guide when state gets assessmentID", () => {
       getDummyComponent().props.followGuide();
-      component.updateState({assessment: assessmentWithResults});
+      component.updateState({assessmentID: assessmentWithResults.id});
 
       expect(getGuide).toHaveBeenCalled();
     });
 
-    it("gets guide if state has assessment", () => {
-      component.updateState({assessment: assessmentWithResults, guide});
+    it("gets guide if state has assessmentID", () => {
+      component.updateState({assessmentID: assessmentWithResults.id});
       getDummyComponent().props.followGuide();
 
       expect(getGuide).toHaveBeenCalled();
     });
 
-    it("doesn't get guide if state doesn't have assessment", () => {
+    it("doesn't get guide if state doesn't have assessmentID", () => {
       getDummyComponent().props.followGuide();
 
       expect(getGuide).not.toHaveBeenCalled();

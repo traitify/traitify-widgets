@@ -1,173 +1,169 @@
+import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import {Component} from "react";
-import DangerousHTML from "lib/helpers/dangerous-html";
+import {useEffect, useState} from "react";
+import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
+import Icon from "lib/helpers/icon";
+import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import CompetencySelect from "./competency-select";
-import CompetencyTab from "./competency-tab";
 import style from "./style.scss";
 
-class Guide extends Component {
-  static defaultProps = {assessment: null, guide: null}
-  static propTypes = {
-    assessment: PropTypes.shape({
-      assessment_type: PropTypes.string,
-      personality_types: PropTypes.array
-    }),
-    followGuide: PropTypes.func.isRequired,
-    guide: PropTypes.shape({
-      assessment_id: PropTypes.string.isRequired,
-      competencies: PropTypes.array.isRequired,
-      locale_key: PropTypes.string.isRequired
-    }),
-    isReady: PropTypes.func.isRequired,
-    translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired
-  }
-  constructor(props) {
-    super(props);
-    this.state = {
-      badges: [],
-      competencies: [],
-      displayedCompetency: null,
-      showExpandedIntro: false
-    };
-  }
-  componentDidMount() {
-    this.props.ui.trigger("Guide.initialized", this);
-    this.props.followGuide();
-  }
-  componentDidUpdate(prevProps) {
-    this.props.ui.trigger("Guide.updated", this);
+const toList = (entity) => (
+  /* eslint-disable-next-line react/no-array-index-key */
+  <ul>{entity.split("\n").map((e, i) => <li key={i}>{e}</li>)}</ul>
+);
 
-    const guide = this.props.guide || {};
-    const prevGuide = prevProps.guide || {};
-    const changes = {
-      assessment: guide.assessment_id !== prevGuide.assessment_id,
-      locale: guide.locale_key !== prevGuide.locale_key
-    };
+function Question({question, translate}) {
+  const [showContent, setShowContent] = useState(question.order === 1);
 
-    if(changes.assessment || changes.locale) { this.setGuide(); }
-  }
-  setGuide() {
-    if(!this.props.guide) {
-      return this.setState({badges: [], competencies: [], displayedCompetency: null});
+  return (
+    <div className={style.question}>
+      <h3 id={question.order === 1 ? "traitify-question-1" : null}>{`Question ${question.order}`}</h3>
+      <button onClick={() => setShowContent(!showContent)} type="button">
+        <span className={style.questionText}>{question.text}</span>
+        <Icon className={style.questionIcon} icon={showContent ? faChevronUp : faChevronDown} />
+      </button>
+      {showContent && (
+        <>
+          <h4>{translate("question_purpose")}</h4>
+          <div>{toList(question.purpose)}</div>
+          {question.adaptability && (
+            <div>
+              <h4>{translate("question_adaptability")}</h4>
+              <div>{toList(question.adaptability)}</div>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+Question.propTypes = {
+  question: PropTypes.shape({
+    adaptability: PropTypes.string,
+    order: PropTypes.number.isRequired,
+    purpose: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+  }).isRequired,
+  translate: PropTypes.func.isRequired
+};
+
+function Guide(props) {
+  const {assessment, followGuide, guide, isReady, translate, ui} = props;
+  const competencies = dig(guide, ["competencies"]) || [];
+  const types = dig(assessment, ["personality_types"]) || [];
+  const data = competencies.map((competency) => {
+    if(types.length === 0) { return competency; }
+
+    const typeID = competency.questionSequences[0].personality_type_id;
+    const {personality_type: {badge}, score} = types
+      .find(({personality_type: {id}}) => id === typeID);
+    let rank;
+
+    switch(true) {
+      case score <= 3: rank = "low"; break;
+      case score <= 6: rank = "medium"; break;
+      default: rank = "high";
     }
 
-    const {competencies} = this.props.guide;
-    const badges = this.badges(competencies);
+    return {...competency, badge: badge.image_medium, rank, score};
+  }, {}).sort(({score: scoreA}, {score: scoreB}) => scoreA - scoreB);
+  const [activeCompetency, setActiveCompetency] = useState(data[0]);
+  const [showExpandedIntro, setShowExpandedIntro] = useState(false);
+  const state = {activeCompetency, showExpandedIntro};
 
-    this.setState({badges, competencies, displayedCompetency: {...competencies[0]}});
-  }
-  displayCompetency = (competencyID) => {
-    this.setState(({competencies}) => {
-      const displayedCompetency = competencies.find((competency) => competency.id === competencyID);
+  useDidMount(() => { ui.trigger("Guide.initialized", {props, state}); });
+  useDidMount(() => { followGuide(); });
+  useDidUpdate(() => { ui.trigger("Guide.updated", {props, state}); });
+  useEffect(() => {
+    if(data.length === 0) { return; }
 
-      return displayedCompetency && {displayedCompetency};
-    });
-  }
-  tabBadge = (id) => (
-    this.state.badges.find((badge) => badge.competencyID === id).image
-  )
-  toggleExpandedIntro = () => {
-    this.setState((prevState) => ({showExpandedIntro: !prevState.showExpandedIntro}));
-  }
-  badges(competencies) {
-    const {assessment} = this.props;
+    setActiveCompetency(data[0]);
+  }, [dig(assessment, ["id"]), dig(guide, ["assessment_id"]), dig(guide, ["locale_key"])]);
 
-    return competencies.map((competency) => {
-      const personalityID = competency.questionSequences[0].personality_type_id;
-      const types = assessment.personality_types;
-      const personality = types.find((type) => type.personality_type.id === personalityID);
+  if(!isReady("guide")) { return null; }
+  if(!isReady("results")) { return null; }
+  if(!activeCompetency) { return null; }
+  if(competencies.length === 0) { return null; }
 
-      return {competencyID: competency.id, image: personality.personality_type.badge.image_medium};
-    });
-  }
-  introduction() {
-    const {introduction} = this.state.displayedCompetency;
-    const intro = introduction.split("\n", 1)[0];
-    const readMore = introduction.replace(intro, "").trim();
+  const showCompetency = (newID) => setActiveCompetency(data.find(({id}) => newID === id));
+  const [intro, ...expandedIntro] = activeCompetency.introduction.split("\n");
+  const onChange = ({target: {value}}) => showCompetency(value);
 
-    return {intro, readMore};
-  }
-  stringToListItems(entity) {
-    let entities = entity.split("\n");
-    /* eslint-disable-next-line react/no-array-index-key */
-    entities = entities.map((e, i) => <li key={i}>{e}</li>);
-
-    return (<ul>{entities}</ul>);
-  }
-  render() {
-    if(!this.props.isReady("guide")) { return null; }
-    if(!this.props.isReady("results")) { return null; }
-    if(this.state.competencies.length === 0) { return null; }
-
-    const {translate} = this.props;
-    const {competencies, displayedCompetency, showExpandedIntro} = this.state;
-    const {intro, readMore} = this.introduction();
-
-    return (
-      <div className={style.tabsContainer}>
-        <div className={style.tabContainer}>
-          <CompetencySelect
-            competencies={competencies}
-            displayedCompetency={displayedCompetency}
-            displayCompetency={this.displayCompetency}
-            tabBadge={this.tabBadge}
-          />
-          <ul className={style.tabs}>
-            {competencies.map((competency) => (
-              <CompetencyTab
-                key={competency.id}
-                competency={competency}
-                displayedCompetency={displayedCompetency}
-                displayCompetency={this.displayCompetency}
-                tabBadge={this.tabBadge}
-              />
-            ))}
-          </ul>
+  return (
+    <div className={style.tabsContainer}>
+      <div className={style.tabContainer}>
+        <div className={style.competencySelect}>
+          <select className={style.mobileSelect} onChange={onChange} value={activeCompetency.id}>
+            {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
+          </select>
+          <p className={style.mobileBadge}>
+            <img src={activeCompetency.badge} alt={`${activeCompetency.name} badge`} />
+          </p>
         </div>
-        <div className={style.tabsContent}>
-          <div className={style.tabContentActive}>
-            <h2>{displayedCompetency.name}</h2>
-            {intro}
-            <p>
-              <button
-                type="button"
-                onClick={this.toggleExpandedIntro}
-              >
-                {translate("read_more")}
-              </button>
-            </p>
-            {showExpandedIntro && (<p>{readMore}</p>)}
-            <hr />
-            {displayedCompetency.questionSequences.map((sequence) => (
-              <div key={sequence.id}>
-                <h2>{sequence.name}</h2>
-                <p>{translate("guide_intro")}</p>
-                <p><DangerousHTML html={translate("guide_get_started_html")} tag="em" /></p>
-                {sequence.questions.map((question) => (
-                  <div key={question.id}>
-                    <h3 id={question.order === 1 ? "traitify-question-1" : null}>{`Question ${question.order}`}</h3>
-                    <p>{question.text}</p>
-                    <h4>{translate("question_purpose")}</h4>
-                    <div>{this.stringToListItems(question.purpose)}</div>
-                    {question.adaptability && (
-                      <div>
-                        <h4>{translate("question_adaptability")}</h4>
-                        <div>{this.stringToListItems(question.adaptability)}</div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+        <ul className={style.tabs}>
+          {data.map(({badge, id, name, rank}) => {
+            const classes = [
+              style[rank],
+              style.tab,
+              id === activeCompetency.id && style.tabActive
+            ].filter(Boolean);
+
+            return (
+              <li key={id} className={classes.join(" ")}>
+                <button onClick={() => showCompetency(id)} name={name} type="button">
+                  <img src={badge} alt={`${name} badge`} />
+                  <br />
+                  {name}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className={style.tabsContent}>
+        <div className={style.tabContentActive}>
+          <h2>{activeCompetency.name}</h2>
+          {intro}
+          <p>
+            <button onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
+              {translate("read_more")}
+            </button>
+          </p>
+          {showExpandedIntro && <p>{expandedIntro.join("\n").trim()}</p>}
+          <hr />
+          {activeCompetency.questionSequences.map((sequence) => (
+            <div key={sequence.id}>
+              <h2>{sequence.name}</h2>
+              <p>{translate("guide_intro")}</p>
+              {sequence.questions.map((question) => (
+                <Question key={question.id} question={question} translate={translate} />
+              ))}
+            </div>
+          ))}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+Guide.defaultProps = {assessment: null, guide: null};
+Guide.propTypes = {
+  assessment: PropTypes.shape({
+    assessment_type: PropTypes.string,
+    personality_types: PropTypes.array
+  }),
+  followGuide: PropTypes.func.isRequired,
+  guide: PropTypes.shape({
+    assessment_id: PropTypes.string.isRequired,
+    competencies: PropTypes.array.isRequired,
+    locale_key: PropTypes.string.isRequired
+  }),
+  isReady: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
+  ui: TraitifyPropTypes.ui.isRequired
+};
 
 export {Guide as Component};
 export default withTraitify(Guide);

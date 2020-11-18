@@ -5,5 +5,6 @@ export PersonalityDimensionColumn from "components/results/personality/dimension
 export PersonalityDimensionColumns from "components/results/personality/dimension/columns";
 export PersonalityDimensionDetails from "components/results/personality/dimension/details";
 export PersonalityDimensions from "components/results/personality/dimension/list";
+export PersonalityRecommendationChart from "components/results/personality/recommendation/chart";
 export PersonalityTraits from "components/results/personality/trait/list";
 export CandidateResults from "./index";

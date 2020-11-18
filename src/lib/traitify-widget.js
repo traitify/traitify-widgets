@@ -38,6 +38,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  benchmarkID(benchmarkID) {
+    this.options.benchmarkID = benchmarkID;
+
+    return this;
+  }
   destroy() {
     Object.keys(this.options.targets).forEach((name) => {
       if(this.options.targets[name] instanceof Element) {

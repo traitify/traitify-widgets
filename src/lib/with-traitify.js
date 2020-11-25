@@ -11,6 +11,7 @@ export default function withTraitify(WrappedComponent) {
     static defaultProps = {
       assessment: null,
       assessmentID: null,
+      benchmarkID: null,
       cache: null,
       locale: null,
       options: null,
@@ -20,13 +21,15 @@ export default function withTraitify(WrappedComponent) {
     static propTypes = {
       assessment: PropTypes.shape({
         deck_id: PropTypes.string,
-        id: PropTypes.string,
+        id: PropTypes.string.isRequired,
         locale_key: PropTypes.string,
         personality_types: PropTypes.array,
+        profile_ids: PropTypes.arrayOf(PropTypes.string.isRequired),
         recommendation: PropTypes.shape({recommendation_id: PropTypes.string}),
         slides: PropTypes.array
       }),
       assessmentID: PropTypes.string,
+      benchmarkID: PropTypes.string,
       cache: PropTypes.shape({
         get: PropTypes.func.isRequired,
         set: PropTypes.func.isRequired
@@ -80,6 +83,10 @@ export default function withTraitify(WrappedComponent) {
       }
 
       if(this.getOption("surveyType") === "cognitive") { return this.cognitiveDidUpdate(prevProps, prevState); }
+
+      if(prevProps.benchmarkID !== this.props.benchmarkID) {
+        this.setState({benchmarkID: this.props.benchmarkID});
+      }
 
       const changes = {
         assessment: prevState.assessment !== this.state.assessment,
@@ -506,7 +513,7 @@ export default function withTraitify(WrappedComponent) {
             assessmentType: assessment.assessment_type,
             deck: null,
             deckID: assessment.deck_id,
-            profileID: assessment.profile_ids[0]
+            profileID: assessment.profile_ids ? assessment.profile_ids[0] : null
           };
 
           if(!this.getOption("benchmarkID")) {

@@ -112,7 +112,7 @@ function Guide(props) {
 
             return (
               <li key={id} className={classes.join(" ")}>
-                <button onClick={() => showCompetency(id)} name={name} type="button">
+                <button onClick={() => showCompetency(id)} type="button">
                   <img src={badge} alt={`${name} badge`} />
                   <br />
                   {name}

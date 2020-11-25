@@ -63,6 +63,7 @@ function PersonalityRecommendationChart(props) {
     chart.current.render();
   }, [
     dig(assessment, ["personality_types", 0, "personality_type", "name"]),
+    dig(benchmark, ["id"]),
     dig(benchmark, ["rankings", 0, "description"])
   ]);
 

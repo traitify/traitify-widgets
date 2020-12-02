@@ -56,7 +56,9 @@ function Guide(props) {
   const data = competencies.map((competency) => {
     if(types.length === 0) { return competency; }
 
-    const typeID = competency.questionSequences[0].personality_type_id;
+    // TODO: Remove `personality_type_id` once caches have expired
+    const questionSequence = competency.questionSequences[0];
+    const typeID = questionSequence.personality_type_id || questionSequence.personalityTypeId;
     const {personality_type: {badge}, score} = types
       .find(({personality_type: {id}}) => id === typeID);
     let rank;

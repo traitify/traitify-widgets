@@ -42,6 +42,7 @@ function configureLabels({columns}) {
   return columns.map(({label}) => ({
     fillStyle: "#222222",
     font: "22px Arial",
+    fontSize: 22,
     ...label
   }));
 }
@@ -71,6 +72,8 @@ export default class StackedChart {
     const {canvas} = this.ctx;
 
     canvas.width = canvas.width; /* eslint-disable-line no-self-assign */
+
+    this.destroyed = true;
   }
   render() {
     this.renderGrid();
@@ -147,17 +150,27 @@ export default class StackedChart {
       label.img = new Image();
       label.img.src = label.image;
       label.img.onload = () => {
+        if(this.destroyed) { return; }
+
         const x = base.left + options.barWidth * (index + 0.5);
         const y = base.bottom + 10;
         this.ctx.drawImage(label.img, x - label.img.width / 2, y);
         this.ctx.fillStyle = label.fillStyle;
-        this.ctx.font = label.font;
+        this.ctx.font = `bold ${label.font}`;
         this.ctx.textBaseline = "top";
         this.ctx.fillText(
-          label.text,
-          x - this.ctx.measureText(label.text).width / 2,
+          label.heading,
+          x - this.ctx.measureText(label.heading).width / 2,
           y + label.img.height + 5
         );
+        if(label.text) {
+          this.ctx.font = `italic ${label.font}`;
+          this.ctx.fillText(
+            label.text,
+            x - this.ctx.measureText(label.text).width / 2,
+            y + label.img.height + 5 + label.fontSize + 2
+          );
+        }
       };
     });
     /* eslint-enable no-param-reassign */

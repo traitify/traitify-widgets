@@ -25,13 +25,23 @@ const colorFromRange = ({match_score: score}) => {
 };
 
 function PersonalityRecommendationChart(props) {
-  const {assessment, benchmark, followBenchmark, isReady, translate, ui} = props;
+  const {
+    assessment,
+    benchmark,
+    followBenchmark,
+    followGuide,
+    guide,
+    isReady,
+    translate,
+    ui
+  } = props;
   const state = {};
   const canvas = useRef(null);
   const chart = useRef(null);
 
   useDidMount(() => { ui.trigger("PersonalityRecommendationChart.initialized", {props, state}); });
   useDidMount(() => { followBenchmark(); });
+  useDidMount(() => { followGuide(); });
   useDidUpdate(() => { ui.trigger("PersonalityRecommendationChart.updated", {props, state}); });
   useEffect(() => {
     if(chart.current) { chart.current.destroy(); }
@@ -44,6 +54,13 @@ function PersonalityRecommendationChart(props) {
     const line = {data: []};
 
     sortByTypePosition(assessment.personality_types).forEach(({personality_type: type, score}) => {
+      const competency = (dig(guide, ["competencies"]) || []).find(({questionSequences}) => {
+        // TODO: Remove `personality_type_id` once caches have expired
+        const questionSequence = questionSequences[0];
+        const typeID = questionSequence.personality_type_id || questionSequence.personalityTypeId;
+
+        return typeID === type.id;
+      });
       const rangeType = benchmark.range_types.find(({id}) => id === type.id);
       const typeRange = rangeType.ranges
         .find((range) => score >= range.min_score && score <= range.max_score);
@@ -54,7 +71,11 @@ function PersonalityRecommendationChart(props) {
           max: range.max_score,
           min: range.min_score
         })),
-        label: {text: type.name, image: type.badge.image_small}
+        label: {
+          heading: type.name,
+          text: competency && competency.name,
+          image: type.badge.image_small
+        }
       });
       line.data.push({color: colorFromRange(typeRange), score});
     });
@@ -64,7 +85,8 @@ function PersonalityRecommendationChart(props) {
   }, [
     dig(assessment, ["personality_types", 0, "personality_type", "name"]),
     dig(benchmark, ["id"]),
-    dig(benchmark, ["rankings", 0, "description"])
+    dig(benchmark, ["rankings", 0, "description"]),
+    dig(guide, ["competencies", 0, "name"])
   ]);
 
   useLayoutEffect(() => {
@@ -89,11 +111,13 @@ function PersonalityRecommendationChart(props) {
   );
 }
 
-PersonalityRecommendationChart.defaultProps = {assessment: null, benchmark: null};
+PersonalityRecommendationChart.defaultProps = {assessment: null, benchmark: null, guide: null};
 PersonalityRecommendationChart.propTypes = {
   assessment: PropTypes.shape({personality_types: PropTypes.array}),
   benchmark: PropTypes.shape({range_types: PropTypes.array}),
   followBenchmark: PropTypes.func.isRequired,
+  followGuide: PropTypes.func.isRequired,
+  guide: PropTypes.shape({competencies: PropTypes.array}),
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired

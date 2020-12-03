@@ -49,7 +49,7 @@
   "not_me": "私ではない",
   "personality_advice": "人格アドバイス",
   "personality_breakdown": "性格内訳",
-  "personality_blend": "",
+  "personality_blend": "パーソナリティブレンド",
   "personality_details": "人格の詳細",
   "personality_heading": "あなたの %{deck_name} 個性は %{personality} です",
   "personality_heading_third_person": "%{deck_name} 人 %{personality}",

@@ -42,10 +42,12 @@ exports[`CandidateResults renders results in thirdPerson 1`] = `
   >
     Personality Dimension List
   </div>
-  <div
-    className="mock"
-  >
-    Guide
+  <div>
+    <div
+      className="mock"
+    >
+      Guide
+    </div>
   </div>
   <div
     className="mock"

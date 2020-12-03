@@ -248,6 +248,11 @@ Here is a list of the available locales (`en-us` is the default):
   assessment.allowFullscreen();
 ```
 
+### Allow the user to view section results section headers
+```
+  assessment.allowHeaders();
+```
+
 ### Render results using specific perspective
 \* currently only the `big-five` assessment has perspective content
 ```

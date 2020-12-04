@@ -1,4 +1,5 @@
 import {
+  faColumns,
   faThLarge,
   faUser
 } from "@fortawesome/free-solid-svg-icons";
@@ -7,17 +8,37 @@ import Icon from "lib/helpers/icon";
 import withTraitify from "lib/with-traitify";
 import Guide from "components/results/guide";
 import PersonalityArchetype from "components/results/personality/archetype/heading";
-import PersonalityDimensions from "components/results/personality/dimension/list";
 import PersonalityTips from "components/results/personality/archetype/tips";
+import PersonalityDimensions from "components/results/personality/dimension/list";
+import PersonalityRecommendationChart from "components/results/personality/recommendation/chart";
 import PersonalityTraits from "components/results/personality/trait/list";
 import style from "../style.scss";
 
 function CandidateResults(props) {
   const {getOption, translate} = props;
-  let disabledComponents = getOption("disabledComponents") || [];
   const allowHeaders = getOption("allowHeaders");
-  const thirdPerson = getOption("perspective") === "thirdPerson";
-  if(!thirdPerson) { disabledComponents = [...disabledComponents, "PersonalityPitfalls"]; }
+  const disabledComponents = getOption("disabledComponents") || [];
+
+  if(getOption("perspective") === "thirdPerson") {
+    return (
+      <section>
+        {allowHeaders && (
+          <>
+            <p className={style.heading}><Icon icon={faColumns} /> {translate("recommendation_chart_heading")}</p>
+            <p>{translate("recommendation_chart_description")}</p>
+          </>
+        )}
+        <PersonalityRecommendationChart {...props} />
+        {allowHeaders && (
+          <>
+            <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
+            <p>{translate("interview_guide_description")}</p>
+          </>
+        )}
+        <Guide {...props} />
+      </section>
+    );
+  }
 
   return (
     <section>
@@ -32,15 +53,7 @@ function CandidateResults(props) {
       {allowHeaders && (
         <p className={style.lessMarginBottom}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
       )}
-      <PersonalityDimensions {...props} disabledComponents={disabledComponents} />
-      {thirdPerson && (
-        <div>
-          {allowHeaders && (
-            <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
-          )}
-          <Guide {...props} />
-        </div>
-      )}
+      <PersonalityDimensions {...props} disabledComponents={[...disabledComponents, "PersonalityPitfalls"]} />
       {allowHeaders && (
         <p className={style.paddingTop}><Icon icon={faThLarge} /> {translate("personality_traits")}</p>
       )}

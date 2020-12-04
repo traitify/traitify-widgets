@@ -11,6 +11,7 @@ export default function withTraitify(WrappedComponent) {
     static defaultProps = {
       assessment: null,
       assessmentID: null,
+      benchmarkID: null,
       cache: null,
       locale: null,
       options: null,
@@ -20,12 +21,15 @@ export default function withTraitify(WrappedComponent) {
     static propTypes = {
       assessment: PropTypes.shape({
         deck_id: PropTypes.string,
-        id: PropTypes.string,
+        id: PropTypes.string.isRequired,
         locale_key: PropTypes.string,
         personality_types: PropTypes.array,
+        profile_ids: PropTypes.arrayOf(PropTypes.string.isRequired),
+        recommendation: PropTypes.shape({recommendation_id: PropTypes.string}),
         slides: PropTypes.array
       }),
       assessmentID: PropTypes.string,
+      benchmarkID: PropTypes.string,
       cache: PropTypes.shape({
         get: PropTypes.func.isRequired,
         set: PropTypes.func.isRequired
@@ -41,18 +45,23 @@ export default function withTraitify(WrappedComponent) {
       this.state = {
         assessment: null,
         assessmentID: null,
+        benchmark: null,
+        benchmarkID: null,
         deck: null,
         deckID: null,
         error: null,
+        followingBenchmark: null,
         followingDeck: null,
         followingGuide: null,
         guide: null,
-        locale: null
+        locale: null,
+        profileID: null
       };
       this.setupTraitify();
       this.setupCache();
       this.setupI18n();
       this.setAssessmentID();
+      this.setBenchmarkID();
     }
     componentDidMount() {
       this.didMount = true;
@@ -75,8 +84,15 @@ export default function withTraitify(WrappedComponent) {
 
       if(this.getOption("surveyType") === "cognitive") { return this.cognitiveDidUpdate(prevProps, prevState); }
 
+      if(prevProps.benchmarkID !== this.props.benchmarkID) {
+        this.setState({benchmarkID: this.props.benchmarkID});
+      }
+
       const changes = {
+        assessment: prevState.assessment !== this.state.assessment,
         assessmentID: prevState.assessmentID !== this.state.assessmentID,
+        benchmark: prevState.benchmark !== this.state.benchmark,
+        benchmarkID: prevState.benchmarkID !== this.state.benchmarkID,
         deck: prevState.deck && !this.state.deck,
         deckID: prevState.deckID !== this.state.deckID,
         locale: prevState.locale !== this.state.locale
@@ -86,22 +102,19 @@ export default function withTraitify(WrappedComponent) {
         this.updateAssessment({oldID: prevState.assessmentID, oldLocale: prevState.locale});
       }
 
+      if(
+        this.state.followingBenchmark
+        && (changes.benchmark || changes.benchmarkID || changes.locale)
+      ) {
+        this.updateBenchmark({oldID: prevState.benchmarkID, oldLocale: prevState.locale});
+      }
+
       if(this.state.followingDeck && (changes.deck || changes.deckID || changes.locale)) {
         this.updateDeck({oldID: prevState.deckID, oldLocale: prevState.locale});
       }
 
-      if(this.state.followingGuide) {
-        const oldAssessmentState = prevState.assessment || {};
-        const oldAssessmentID = oldAssessmentState.id;
-        const newAssessmentState = this.state.assessment || {};
-        const assessmentChanged = oldAssessmentID !== newAssessmentState.id;
-        const oldAssessmentTypes = oldAssessmentState.personality_types || [];
-        const newAssessmentTypes = newAssessmentState.personality_types || [];
-        changes.results = oldAssessmentTypes.length !== newAssessmentTypes.length;
-
-        if(assessmentChanged || changes.locale || changes.results) {
-          this.updateGuide({oldID: oldAssessmentID, oldLocale: prevState.locale});
-        }
+      if(this.state.followingGuide && (changes.assessment || changes.locale)) {
+        this.updateGuide({oldID: prevState.assessment?.id, oldLocale: prevState.locale});
       }
     }
     componentDidCatch(error, info) {
@@ -141,12 +154,57 @@ export default function withTraitify(WrappedComponent) {
       }
 
       this.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
-        data: "archetype,blend,instructions,slides,types,traits",
+        data: "archetype,blend,instructions,recommendation,slides,types,traits",
         locale_key: locale
       }).then((data) => {
         if(hasResults(data)) { this.cache.set(key, data); }
 
         setAssessment(data);
+      }).catch((error) => {
+        console.warn(error); // eslint-disable-line no-console
+
+        delete this.ui.requests[key];
+      });
+
+      return this.ui.requests[key];
+    }
+    getBenchmark = (options = {}) => {
+      const {benchmarkID, locale} = this.state;
+      if(!benchmarkID) { return Promise.resolve(); }
+
+      const key = `${locale}.benchmark.${benchmarkID}`;
+      const hasData = (data) => (
+        data && data.locale_key
+          && data.id === benchmarkID
+          && data.locale_key.toLowerCase() === locale
+          && data.name
+      );
+      const setBenchmark = (data) => (
+        new Promise((resolve) => {
+          this.setState({benchmark: data}, () => (resolve(data)));
+          this.ui.trigger(key, this, data);
+        })
+      );
+
+      let {benchmark} = this.state;
+      if(hasData(benchmark)) { return setBenchmark(benchmark); }
+
+      benchmark = this.cache.get(key);
+      if(hasData(benchmark)) { return setBenchmark(benchmark); }
+
+      if(this.ui.requests[key] && !options.force) {
+        return this.ui.requests[key];
+      }
+
+      this.ui.requests[key] = this.traitify.get(`/assessments/recommendations/${benchmarkID}`, {
+        locale_key: locale
+      }).then((data) => {
+        if(hasData(data)) {
+          this.cache.set(key, data);
+          setBenchmark(data);
+        } else {
+          delete this.ui.requests[key];
+        }
       }).catch((error) => {
         console.warn(error); // eslint-disable-line no-console
 
@@ -305,10 +363,12 @@ export default function withTraitify(WrappedComponent) {
     getOption = (...keys) => {
       const {props, ui} = this;
 
-      if(keys.length > 1 && dig(props, keys.slice(1)) != null) { return dig(props, keys.slice(1)); }
-      if(dig(props, keys) != null) { return dig(props, keys); }
-      if(dig(props.options, keys) != null) { return dig(props.options, keys); }
-      if(ui && dig(ui.options, keys) != null) { return dig(ui.options, keys); }
+      if(keys.length > 1 && dig(props, ...keys.slice(1)) != null) {
+        return dig(props, ...keys.slice(1));
+      }
+      if(dig(props, ...keys) != null) { return dig(props, ...keys); }
+      if(dig(props.options, ...keys) != null) { return dig(props.options, ...keys); }
+      if(ui && dig(ui.options, ...keys) != null) { return dig(ui.options, ...keys); }
     }
     setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
@@ -316,6 +376,11 @@ export default function withTraitify(WrappedComponent) {
       );
 
       if(assessmentID) { this.safeSetState({assessmentID}); }
+    }
+    setBenchmarkID() {
+      const benchmarkID = this.getOption("benchmarkID");
+
+      if(benchmarkID) { this.safeSetState({benchmarkID}); }
     }
     setupCache() {
       this.cache = this.props.cache || {
@@ -370,6 +435,10 @@ export default function withTraitify(WrappedComponent) {
         this.state = {...this.state, ...state};
       }
     }
+    followBenchmark = () => {
+      this.setState({followingBenchmark: true});
+      this.updateBenchmark();
+    }
     followDeck = () => {
       this.setState({followingDeck: true});
       this.updateDeck();
@@ -379,7 +448,7 @@ export default function withTraitify(WrappedComponent) {
       this.updateGuide();
     }
     isReady = (type) => {
-      const {assessment, deck, guide} = this.state;
+      const {assessment, benchmark, deck, guide} = this.state;
 
       if(this.getOption("surveyType") === "cognitive") {
         switch(type) {
@@ -393,6 +462,8 @@ export default function withTraitify(WrappedComponent) {
       }
 
       switch(type) {
+        case "benchmark":
+          return !!((benchmark && !!benchmark.name));
         case "deck":
           return !!((deck && !!deck.name));
         case "guide":
@@ -438,13 +509,25 @@ export default function withTraitify(WrappedComponent) {
         const key = `${locale}.assessment.${assessmentID}`;
 
         this.addListener(key, (_, assessment) => {
-          this.setState({
+          const newState = {
             assessment,
             assessmentID: assessment.id,
             assessmentType: assessment.assessment_type,
             deck: null,
-            deckID: assessment.deck_id
-          });
+            deckID: assessment.deck_id,
+            profileID: assessment.profile_ids ? assessment.profile_ids[0] : null
+          };
+
+          if(!this.getOption("benchmarkID")) {
+            const recommendation = assessment.recommendation
+              || dig(assessment, "recommendations", 0)
+              || {};
+
+            newState.benchmark = null;
+            newState.benchmarkID = recommendation.recommendation_id;
+          }
+
+          this.setState(newState);
         });
 
         const currentValue = this.ui.current[key];
@@ -453,6 +536,32 @@ export default function withTraitify(WrappedComponent) {
         } else {
           this.getAssessment();
         }
+      }
+    }
+    updateBenchmark(options = {}) {
+      const {benchmarkID, locale} = this.state;
+
+      if(options.oldID || options.oldLocale) {
+        const oldBenchmarkID = options.oldID || benchmarkID;
+        const oldLocale = options.oldLocale || locale;
+        const key = `${oldLocale}.benchmark.${oldBenchmarkID}`;
+
+        this.removeListener(key);
+      }
+
+      if(!benchmarkID) { return; }
+
+      const key = `${locale}.benchmark.${benchmarkID}`;
+
+      this.addListener(key, (_, benchmark) => {
+        this.setState({benchmark});
+      });
+
+      const currentValue = this.ui.current[key];
+      if(currentValue != null) {
+        this.getListener(key)(null, currentValue);
+      } else {
+        this.getBenchmark();
       }
     }
     updateCognitiveAssessment(options = {}) {
@@ -539,6 +648,7 @@ export default function withTraitify(WrappedComponent) {
     render() {
       const {
         cache,
+        followBenchmark,
         followDeck,
         followGuide,
         getAssessment,
@@ -557,6 +667,7 @@ export default function withTraitify(WrappedComponent) {
         ...props,
         ...state,
         cache,
+        followBenchmark,
         followDeck,
         followGuide,
         getAssessment,

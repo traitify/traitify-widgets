@@ -33,7 +33,6 @@
   @extend %widgetContainer;
   background: white;
   color: #333;
-  border: 1px solid #ddd;
 }
 .tabContainer {
   float: left;
@@ -73,18 +72,26 @@
     background: transparent;
     color: #A3A4A5;
     font-size: 18px;
-    background: transparent;
   }
   img {
     width: 100px;
     height: auto;
   }
+  .tab {
+    border-top: 10px solid #42B1D8;
+    border-width: 10px 1px 1px 1px;
+    margin-top: 20px;
+    &.high { border-top-color: #29B770; }
+    &.low { border-top-color: #EF615E; }
+    &.medium { border-top-color: #FFCC3B; }
+  }
   .tabActive {
-    border-top: 3px solid #42B1D8;
     background: #fff;
-    border-width: 3px 1px 0 1px;
+    border-bottom-width: 0;
+    margin-top: 0;
     button {
       color: #333;
+      margin-top: 20px;
     }
   }
   @include mq(m) {
@@ -131,6 +138,7 @@
     height: 1px;
   }
   button {
+    background: transparent;
     font-size: 16px;
     text-decoration: underline;
     padding: 0;
@@ -142,4 +150,29 @@
 }
 .tab {
   display: none;
+}
+
+.question {
+  button {
+    align-items: center;
+    background: $lightblue;
+    display: flex;
+    padding: 20px;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+    .questionIcon {
+      color: $black;
+      font-size: 36px;
+    }
+    .questionText {
+      flex-grow: 1;
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+  }
+  h3 {
+    color: $black;
+  }
 }

@@ -31,7 +31,7 @@ describe("Helpers", () => {
       createElementSpy = jest.spyOn(document, "createElement");
       mockImageLoaded = () => {
         const result = createElementSpy.mock.results[0];
-        const onLoad = dig(result, ["value", "onload"]);
+        const onLoad = dig(result, "value", "onload");
 
         onLoad && onLoad();
       };
@@ -328,7 +328,7 @@ describe("Helpers", () => {
       createElementSpy = jest.spyOn(document, "createElement");
       mockImageLoaded = () => {
         const result = createElementSpy.mock.results[0];
-        const onLoad = dig(result, ["value", "onload"]);
+        const onLoad = dig(result, "value", "onload");
 
         onLoad && onLoad();
       };

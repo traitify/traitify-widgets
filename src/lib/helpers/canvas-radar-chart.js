@@ -19,7 +19,7 @@ function configureData(options) {
   options.data.forEach((set) => {
     data.push({
       fill: false,
-      fillStyle: set.color || " rgba(5, 143, 196, 0.25)",
+      fillStyle: set.color || "rgba(5, 143, 196, 0.25)",
       pathLineWidth: 4,
       pathStrokeStyle: set.color || "#058fc4",
       pointFillStyle: set.color || "#058fc4",

@@ -15,8 +15,8 @@ const getDummyComponent = () => (
 );
 
 describe("withTraitify", () => {
-  const assessmentWithResults = {assessment_type: "DIMENSION_BASED", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}]};
-  const assessmentWithoutResults = {id: "abc", locale_key: "en-US", slides: [{name: "Snakes"}]};
+  const assessmentWithResults = {assessment_type: "DIMENSION_BASED", deck_id: "big-five", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}], profile_ids: ["p-1"]};
+  const assessmentWithoutResults = {deck_id: "big-five", id: "abc", locale_key: "en-US", profile_ids: ["p-1"], slides: [{name: "Snakes"}]};
   const cognitiveAssessmentWithResults = {completed: true, id: "def", localeKey: "en-US", questions: [{id: "q-1"}]};
   const cognitiveAssessmentWithoutResults = {completed: false, id: "def", localeKey: "en-US", questions: [{id: "q-1"}]};
   const deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
@@ -251,7 +251,7 @@ describe("withTraitify", () => {
     });
 
     it("gets guide if state has assessment", () => {
-      component.updateState({assessment: assessmentWithResults, guide});
+      component.updateState({assessment: assessmentWithResults});
       getDummyComponent().props.followGuide();
 
       expect(getGuide).toHaveBeenCalled();
@@ -1171,7 +1171,7 @@ describe("withTraitify", () => {
 
     it("uses current value", () => {
       const key = `en-us.assessment.${assessmentWithResults.id}`;
-      traitify.ui.current[key] = [{}, assessmentWithResults];
+      traitify.ui.current[key] = assessmentWithResults;
       component.updateState({assessmentID: assessmentWithResults.id});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateAssessment();
@@ -1224,7 +1224,7 @@ describe("withTraitify", () => {
 
     it("uses current value", () => {
       const key = `en-us.cognitive-assessment.${cognitiveAssessmentWithResults.id}`;
-      traitify.ui.current[key] = [{}, cognitiveAssessmentWithResults];
+      traitify.ui.current[key] = cognitiveAssessmentWithResults;
       component.updateState({assessmentID: cognitiveAssessmentWithResults.id});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateCognitiveAssessment();
@@ -1279,7 +1279,7 @@ describe("withTraitify", () => {
 
     it("uses current value", () => {
       const key = `en-us.deck.${deck.id}`;
-      traitify.ui.current[key] = [{}, deck];
+      traitify.ui.current[key] = deck;
       component.updateState({deckID: deck.id});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateDeck();
@@ -1334,7 +1334,7 @@ describe("withTraitify", () => {
 
     it("uses current value", () => {
       const key = `en-us.guide.${assessmentWithResults.id}`;
-      traitify.ui.current[key] = [{}, guide];
+      traitify.ui.current[key] = guide;
       component.updateState({assessment: assessmentWithResults});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateGuide();

@@ -22,8 +22,8 @@ function Instructions({
   const [step, setStep] = useState(1);
   const [type, setType] = useState(width > 768 ? "h" : "v");
   const timeTrial = !!options.timeTrial;
-  const minimal = dig(options, ["timeTrial", "minimal"]) === true;
-  const timed = dig(options, ["timeTrial", "timed"]) === true;
+  const minimal = dig(options, "timeTrial", "minimal") === true;
+  const timed = dig(options, "timeTrial", "timed") === true;
 
   useEffect(() => { setType(width > 768 ? "h" : "v"); }, [width]);
   useEffect(() => { if(minimal) { setStep(4); } }, [minimal]);

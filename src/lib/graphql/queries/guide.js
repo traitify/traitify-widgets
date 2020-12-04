@@ -8,7 +8,7 @@ export default function guideQuery({fields: _fields, params}) {
         "id", "name", "introduction", "order",
         {
           questionSequences: [
-            "id", "name", "personality_type_id",
+            "id", "name", "personalityTypeId",
             {questions: ["id", "text", "adaptability", "order", "purpose"]}
           ]
         }

@@ -30,29 +30,12 @@ exports[`CandidateResults renders results in thirdPerson 1`] = `
   <div
     className="mock"
   >
-    Personality Archetype Heading
+    Personality Recommendation Chart
   </div>
   <div
     className="mock"
   >
-    Personality Archetype Tips
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Dimension List
-  </div>
-  <div>
-    <div
-      className="mock"
-    >
-      Guide
-    </div>
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Traits
+    Guide
   </div>
 </section>
 `;

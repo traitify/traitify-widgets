@@ -2,7 +2,7 @@
 import CanvasRadarChart from "lib/helpers/canvas-radar-chart";
 
 describe("Helpers", () => {
-  describe("canvasRadarChart", () => {
+  describe("CanvasRadarChart", () => {
     let chart;
     let ctx;
     let options;

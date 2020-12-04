@@ -1,4 +1,5 @@
 import {
+  faColumns,
   faThLarge,
   faUser
 } from "@fortawesome/free-solid-svg-icons";
@@ -21,9 +22,18 @@ function CandidateResults(props) {
   if(getOption("perspective") === "thirdPerson") {
     return (
       <section>
+        {allowHeaders && (
+          <>
+            <p className={style.heading}><Icon icon={faColumns} /> {translate("recommendation_chart_heading")}</p>
+            <p>{translate("recommendation_chart_description")}</p>
+          </>
+        )}
         <PersonalityRecommendationChart {...props} />
         {allowHeaders && (
-          <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
+          <>
+            <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
+            <p>{translate("interview_guide_description")}</p>
+          </>
         )}
         <Guide {...props} />
       </section>

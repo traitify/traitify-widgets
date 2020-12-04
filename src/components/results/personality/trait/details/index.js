@@ -31,6 +31,16 @@ function PersonalityTraitDetails(props) {
 
 PersonalityTraitDetails.propTypes = {
   trait: PropTypes.shape({
+    definition: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    personality_type: PropTypes.shape({
+      badge: PropTypes.shape({
+        color_1: PropTypes.string.isRequired,
+        image_medium: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+      }),
+      name: PropTypes.string.isRequired
+    }),
     personality_trait: PropTypes.object.isRequired
   }).isRequired,
   ui: TraitifyPropTypes.ui.isRequired

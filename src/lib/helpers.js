@@ -4,10 +4,10 @@ import {capitalize} from "lib/helpers/string";
 export function careerOption(props, ...keys) {
   const allKeys = ["careerOptions", ...keys];
 
-  if(dig(props, keys) != null) { return dig(props, keys); }
-  if(dig(props, allKeys) != null) { return dig(props, allKeys); }
-  if(dig(props, ["options", ...allKeys]) != null) { return dig(props, ["options", ...allKeys]); }
-  if(dig(props, ["ui", "options", ...allKeys]) != null) { return dig(props, ["ui", "options", ...allKeys]); }
+  if(dig(props, ...keys) != null) { return dig(props, ...keys); }
+  if(dig(props, ...allKeys) != null) { return dig(props, ...allKeys); }
+  if(dig(props, "options", ...allKeys) != null) { return dig(props, "options", ...allKeys); }
+  if(dig(props, "ui", "options", ...allKeys) != null) { return dig(props, "ui", "options", ...allKeys); }
 }
 
 export function detailWithPerspective(options) {

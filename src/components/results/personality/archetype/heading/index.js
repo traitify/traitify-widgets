@@ -9,7 +9,7 @@ import style from "./style.scss";
 
 function PersonalityArchetypeHeading(props) {
   const {assessment, deck, followDeck, getOption, isReady, translate, ui} = props;
-  const personality = dig(assessment, ["archetype"]);
+  const personality = dig(assessment, "archetype");
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityArchetype.initialized", {props, state}); });

@@ -25,9 +25,9 @@ function configureGrid(ctx, options) {
   grid.base.left = 50;
   grid.base.right = ctx.canvas.width;
   grid.base.top = 0;
-  grid.options.barHeight = (grid.base.bottom - grid.base.top) / grid.options.lines;
+  grid.options.barHeight = (grid.base.bottom - grid.base.top) / (grid.options.lines - 1);
   grid.options.barWidth = (grid.base.right - grid.base.left) / options.columns.length;
-  grid.axes = Array(grid.options.lines).fill().map((_, i) => (i)).map((index) => ({
+  grid.axes = Array(grid.options.lines - 1).fill().map((_, i) => (i + 1)).map((index) => ({
     base: {
       x: grid.base.left,
       y: grid.base.top + (grid.options.lines - index - 1) * grid.options.barHeight
@@ -61,7 +61,7 @@ function configureLine({line}) {
 }
 
 export default class StackedChart {
-  constructor(ctx, options = {}) {
+  constructor(ctx, options) {
     this.ctx = ctx;
     this.columns = configureColumns(options);
     this.grid = configureGrid(ctx, options);
@@ -83,7 +83,6 @@ export default class StackedChart {
     this.resize();
   }
   resize() {
-    // TODO: Height should be 1 screensize
     const {canvas} = this.ctx;
     const container = canvas.parentNode;
     const newWidth = container.clientWidth;

@@ -1,7 +1,7 @@
 import {Component} from "components/results/guide/index";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
-import guideResponse from "support/json/guide.json";
+import guide from "support/json/guide.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
@@ -16,7 +16,7 @@ describe("Guide", () => {
       guide: {
         assessment_id: "xyz",
         locale_key: "es-US",
-        ...guideResponse.data.guide
+        ...guide
       },
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),

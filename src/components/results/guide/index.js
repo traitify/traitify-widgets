@@ -51,8 +51,8 @@ Question.propTypes = {
 
 function Guide(props) {
   const {assessment, followGuide, guide, isReady, translate, ui} = props;
-  const competencies = dig(guide, ["competencies"]) || [];
-  const types = dig(assessment, ["personality_types"]) || [];
+  const competencies = dig(guide, "competencies") || [];
+  const types = dig(assessment, "personality_types") || [];
   const data = competencies.map((competency) => {
     if(types.length === 0) { return competency; }
 
@@ -82,7 +82,7 @@ function Guide(props) {
     if(data.length === 0) { return; }
 
     setActiveCompetency(data[0]);
-  }, [dig(assessment, ["id"]), dig(guide, ["assessment_id"]), dig(guide, ["locale_key"])]);
+  }, [dig(assessment, "id"), dig(guide, "assessment_id"), dig(guide, "locale_key")]);
 
   if(!isReady("guide")) { return null; }
   if(!isReady("results")) { return null; }

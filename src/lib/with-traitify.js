@@ -363,10 +363,12 @@ export default function withTraitify(WrappedComponent) {
     getOption = (...keys) => {
       const {props, ui} = this;
 
-      if(keys.length > 1 && dig(props, keys.slice(1)) != null) { return dig(props, keys.slice(1)); }
-      if(dig(props, keys) != null) { return dig(props, keys); }
-      if(dig(props.options, keys) != null) { return dig(props.options, keys); }
-      if(ui && dig(ui.options, keys) != null) { return dig(ui.options, keys); }
+      if(keys.length > 1 && dig(props, ...keys.slice(1)) != null) {
+        return dig(props, ...keys.slice(1));
+      }
+      if(dig(props, ...keys) != null) { return dig(props, ...keys); }
+      if(dig(props.options, ...keys) != null) { return dig(props.options, ...keys); }
+      if(ui && dig(ui.options, ...keys) != null) { return dig(ui.options, ...keys); }
     }
     setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
@@ -517,8 +519,12 @@ export default function withTraitify(WrappedComponent) {
           };
 
           if(!this.getOption("benchmarkID")) {
+            const recommendation = assessment.recommendation
+              || dig(assessment, "recommendations", 0)
+              || {};
+
             newState.benchmark = null;
-            newState.benchmarkID = (assessment.recommendation || {}).recommendation_id;
+            newState.benchmarkID = recommendation.recommendation_id;
           }
 
           this.setState(newState);

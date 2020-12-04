@@ -54,7 +54,7 @@ function PersonalityRecommendationChart(props) {
     const line = {data: []};
 
     sortByTypePosition(assessment.personality_types).forEach(({personality_type: type, score}) => {
-      const competency = (dig(guide, ["competencies"]) || []).find(({questionSequences}) => {
+      const competency = (dig(guide, "competencies") || []).find(({questionSequences}) => {
         // TODO: Remove `personality_type_id` once caches have expired
         const questionSequence = questionSequences[0];
         const typeID = questionSequence.personality_type_id || questionSequence.personalityTypeId;
@@ -68,8 +68,8 @@ function PersonalityRecommendationChart(props) {
       columns.push({
         data: rangeType.ranges.map((range) => ({
           color: backgroundColorFromRange(range),
-          max: range.max_score,
-          min: range.min_score
+          max: range.max_score <= 10 ? range.max_score : 10,
+          min: range.min_score > 0 ? range.min_score : 1
         })),
         label: {
           heading: type.name,
@@ -83,10 +83,10 @@ function PersonalityRecommendationChart(props) {
     chart.current = new Chart(ctx, {columns, line});
     chart.current.render();
   }, [
-    dig(assessment, ["personality_types", 0, "personality_type", "name"]),
-    dig(benchmark, ["id"]),
-    dig(benchmark, ["rankings", 0, "description"]),
-    dig(guide, ["competencies", 0, "name"])
+    dig(assessment, "personality_types", 0, "personality_type", "name"),
+    dig(benchmark, "id"),
+    dig(benchmark, "rankings", 0, "description"),
+    dig(guide, "competencies", 0, "name")
   ]);
 
   useLayoutEffect(() => {

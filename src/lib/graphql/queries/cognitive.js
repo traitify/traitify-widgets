@@ -52,15 +52,17 @@ export function get({fields, params}) {
 
 export function surveys(options) {
   const fields = options && options.fields;
+  const params = options && options.params;
 
   return {
     query: `
-      query {
-        cognitiveSurveys {
+      query($first: Int = 50) {
+        cognitiveSurveys(first: $first) {
           ${toQuery(fields || {edges: {node: ["id", "key", "name"]}})}
         }
       }
-    `
+    `,
+    variables: params
   };
 }
 

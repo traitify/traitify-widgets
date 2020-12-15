@@ -67,24 +67,26 @@ Object {
 exports[`Graphql Queries Cognitive surveys creates query 1`] = `
 Object {
   "query": "
-      query {
-        cognitiveSurveys {
+      query($first: Int = 50) {
+        cognitiveSurveys(first: $first) {
           edges { node { id } }
         }
       }
     ",
+  "variables": undefined,
 }
 `;
 
 exports[`Graphql Queries Cognitive surveys creates query with defaults 1`] = `
 Object {
   "query": "
-      query {
-        cognitiveSurveys {
+      query($first: Int = 50) {
+        cognitiveSurveys(first: $first) {
           edges { node { id key name } }
         }
       }
     ",
+  "variables": undefined,
 }
 `;
 

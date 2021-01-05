@@ -12,3 +12,5 @@ export function mutable(object) {
     Object.entries(object).map(([key, value]) => [key, mutable(value)])
   );
 }
+
+export function toQueryString(object) { return new URLSearchParams(object).toString(); }

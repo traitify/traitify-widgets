@@ -8,7 +8,16 @@ import style from "./style.scss";
 class PersonalityTypeBarChart extends Component {
   static defaultProps = {assessment: null, assessmentID: null}
   static propTypes = {
-    assessment: PropTypes.shape({personality_types: PropTypes.array}),
+    assessment: PropTypes.shape({
+      personality_types: PropTypes.arrayOf(
+        PropTypes.shape({
+          personality_type: PropTypes.shape({
+            id: PropTypes.string.isRequired
+          }).isRequired,
+          score: PropTypes.number.isRequired
+        }).isRequired
+      )
+    }),
     assessmentID: PropTypes.string,
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired

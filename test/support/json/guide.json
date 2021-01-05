@@ -26,7 +26,7 @@
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?\nCan they provide an example of sticking with experience, and the tried-and-tested, even though they wanted to try something fresh?"
             }
           ],
-          "personality_type_id": "462b8063-69f4-4b50-990b-8daee93e8616",
+          "personalityTypeId": "462b8063-69f4-4b50-990b-8daee93e8616",
           "name": "Open-Minded\/Pragmatic People",
           "id": "539d7970-34ae-4da0-95bc-b5b5af38be1e"
         }
@@ -62,7 +62,7 @@
               "adaptability": "Do they see that systems, processes and details are important for efficient working?\nCan they tell you about times when they have focused, laser-like, on a single approach? (Even if they found it tedious!)"
             }
           ],
-          "personality_type_id": "05596127-4fdd-4d22-8ae7-530d42d225eb",
+          "personalityTypeId": "05596127-4fdd-4d22-8ae7-530d42d225eb",
           "name": "Flexible People",
           "id": "aaace40e-1faa-4d41-aed0-c6d057a393e4"
         }
@@ -98,7 +98,7 @@
               "adaptability": "Do they know they sometimes read situations the wrong way?\nCan they provide an example?\nHow do they decide whether to turn up the social\/action oriented side of their character, or turn it down?"
             }
           ],
-          "personality_type_id": "f702b455-2c0e-433c-a274-b01b68ae29ba",
+          "personalityTypeId": "f702b455-2c0e-433c-a274-b01b68ae29ba",
           "name": "Extraverted\/Introverted People",
           "id": "2149aba7-d6df-4720-82f5-cb9cf7adbdab"
         }
@@ -134,7 +134,7 @@
               "adaptability": "Can they see that sometimes a hands-off style is needed?\nCan they give an example of recognizing that some people will never be friends but are able to work together?"
             }
           ],
-          "personality_type_id": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
+          "personalityTypeId": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
           "name": "Agreeable\/Independent People",
           "id": "d2f4c4d4-576b-4e2c-80e0-6112adf00602"
         }
@@ -170,7 +170,7 @@
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?\nCan they provide an example of immediately acting on feedback from someone else - even though it was difficult to accept?"
             }
           ],
-          "personality_type_id": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
+          "personalityTypeId": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
           "name": "Resilient\/Reflexive People",
           "id": "626ef574-23c7-4e17-90af-4381bcd0d17e"
         }

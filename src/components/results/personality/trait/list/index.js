@@ -40,7 +40,24 @@ function PersonalityTraitList(props) {
 
 PersonalityTraitList.defaultProps = {assessment: null};
 PersonalityTraitList.propTypes = {
-  assessment: PropTypes.shape({personality_traits: PropTypes.array}),
+  assessment: PropTypes.shape({
+    personality_traits: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_trait: PropTypes.shape({
+          definition: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          personality_type: PropTypes.shape({
+            badge: PropTypes.shape({
+              color_1: PropTypes.string.isRequired,
+              image_medium: PropTypes.string.isRequired
+            }),
+            name: PropTypes.string.isRequired
+          })
+        }).isRequired
+      }).isRequired
+    )
+  }),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

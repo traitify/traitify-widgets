@@ -8,7 +8,9 @@ export default class TypeButton extends Component {
     className: PropTypes.string,
     setActive: PropTypes.func.isRequired,
     type: PropTypes.shape({
-      personality_type: PropTypes.object.isRequired,
+      personality_type: PropTypes.shape({
+        id: PropTypes.string.isRequired
+      }).isRequired,
       score: PropTypes.number.isRequired
     }).isRequired
   }

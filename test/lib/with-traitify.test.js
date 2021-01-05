@@ -16,7 +16,7 @@ const getDummyComponent = () => (
 
 describe("withTraitify", () => {
   const assessmentWithResults = {assessment_type: "DIMENSION_BASED", deck_id: "big-five", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}], profile_ids: ["p-1"]};
-  const assessmentWithoutResults = {deck_id: "big-five", id: "abc", locale_key: "en-US", profile_ids: ["p-1"], slides: [{name: "Snakes"}]};
+  const assessmentWithoutResults = {deck_id: "big-five", id: "abc", locale_key: "en-US", profile_ids: ["p-1"], slides: [{caption: "Snakes"}]};
   const cognitiveAssessmentWithResults = {completed: true, id: "def", localeKey: "en-US", questions: [{id: "q-1"}]};
   const cognitiveAssessmentWithoutResults = {completed: false, id: "def", localeKey: "en-US", questions: [{id: "q-1"}]};
   const deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};

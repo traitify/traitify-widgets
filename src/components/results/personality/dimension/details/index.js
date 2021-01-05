@@ -54,7 +54,12 @@ PersonalityDimensionDetails.propTypes = {
         color_1: PropTypes.string.isRequired,
         image_medium: PropTypes.string.isRequired
       }).isRequired,
-      details: PropTypes.array.isRequired,
+      details: PropTypes.arrayOf(
+        PropTypes.shape({
+          body: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired,
       level: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired
     }).isRequired

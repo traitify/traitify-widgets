@@ -7,7 +7,17 @@ import style from "./style.scss";
 class PersonalityTakeaways extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({archetype: PropTypes.object}),
+    assessment: PropTypes.shape({
+      archetype: PropTypes.shape({
+        details: PropTypes.arrayOf(
+          PropTypes.shape({
+            body: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired
+          }).isRequired
+        ).isRequired,
+        name: PropTypes.string.isRequired
+      })
+    }),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }

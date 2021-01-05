@@ -154,12 +154,39 @@ Guide.defaultProps = {assessment: null, guide: null};
 Guide.propTypes = {
   assessment: PropTypes.shape({
     assessment_type: PropTypes.string,
-    personality_types: PropTypes.array
+    personality_types: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_type: PropTypes.shape({
+          badge: PropTypes.shape({
+            image_medium: PropTypes.string.isRequired
+          }).isRequired,
+          id: PropTypes.string.isRequired
+        }).isRequired,
+        score: PropTypes.number.isRequired
+      }).isRequired
+    )
   }),
   followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({
     assessment_id: PropTypes.string.isRequired,
-    competencies: PropTypes.array.isRequired,
+    competencies: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        questionSequences: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            personalityTypeId: PropTypes.string.isRequired,
+            questions: PropTypes.arrayOf(
+              PropTypes.shape({
+                id: PropTypes.string.isRequired
+              }).isRequired
+            ).isRequired
+          }).isRequired
+        ).isRequired
+      }).isRequired
+    ).isRequired,
     locale_key: PropTypes.string.isRequired
   }),
   isReady: PropTypes.func.isRequired,

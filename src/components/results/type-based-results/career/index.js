@@ -8,7 +8,9 @@ class Career extends Component {
   static propTypes = {
     career: PropTypes.shape({
       description: PropTypes.string.isRequired,
-      experience_level: PropTypes.object.isRequired,
+      experience_level: PropTypes.shape({
+        id: PropTypes.number.isRequired
+      }).isRequired,
       picture: PropTypes.string.isRequired,
       score: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired

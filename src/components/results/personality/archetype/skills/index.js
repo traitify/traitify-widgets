@@ -114,7 +114,26 @@ function PersonalityArchetypeSkills(props) {
 
 PersonalityArchetypeSkills.defaultProps = {assessment: null};
 PersonalityArchetypeSkills.propTypes = {
-  assessment: PropTypes.shape({archetype: PropTypes.object, personality_types: PropTypes.array}),
+  assessment: PropTypes.shape({
+    archetype: PropTypes.shape({
+      details: PropTypes.arrayOf(
+        PropTypes.shape({
+          body: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired
+    }),
+    personality_types: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_type: PropTypes.shape({
+          badge: PropTypes.shape({
+            color_1: PropTypes.string.isRequired
+          }).isRequired,
+          name: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
+    )
+  }),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

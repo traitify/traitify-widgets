@@ -8,7 +8,15 @@ import style from "./style.scss";
 class PersonalityTraits extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({personality_traits: PropTypes.array}),
+    assessment: PropTypes.shape({
+      personality_traits: PropTypes.arrayOf(
+        PropTypes.shape({
+          personality_trait: PropTypes.shape({
+            id: PropTypes.string.isRequired
+          }).isRequired
+        })
+      )
+    }),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired

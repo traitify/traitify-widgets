@@ -14,7 +14,20 @@ class Dimension extends Component {
     index: PropTypes.number.isRequired,
     translate: PropTypes.func.isRequired,
     type: PropTypes.shape({
-      personality_type: PropTypes.object.isRequired,
+      personality_type: PropTypes.shape({
+        badge: PropTypes.shape({
+          color_1: PropTypes.string.isRequired,
+          image_medium: PropTypes.string.isRequired
+        }).isRequired,
+        details: PropTypes.arrayOf(
+          PropTypes.shape({
+            body: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired
+          })
+        ).isRequired,
+        level: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+      }).isRequired,
       score: PropTypes.number.isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired

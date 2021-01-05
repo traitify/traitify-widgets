@@ -1,4 +1,3 @@
-import autoprefixer from "autoprefixer";
 import path from "path";
 import webpack from "webpack";
 
@@ -62,10 +61,10 @@ let config = {
           {
             loader: "postcss-loader",
             options: {
+              postcssOptions: {
+                plugins: ["autoprefixer"]
+              },
               sourceMap: cssMaps,
-              plugins: function() {
-                return [autoprefixer()]
-              }
             }
           },
           {
@@ -78,7 +77,7 @@ let config = {
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-        loader: env === "production" ? "file-loader" : "url-loader"
+        type: 'asset/resource'
       }
     ]
   },

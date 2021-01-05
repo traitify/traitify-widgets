@@ -8,8 +8,36 @@ class PersonalityDetails extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
     assessment: PropTypes.shape({
-      personality_blend: PropTypes.object,
-      personality_types: PropTypes.array.isRequired
+      personality_blend: PropTypes.shape({
+        details: PropTypes.arrayOf(
+          PropTypes.shape({
+            body: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired
+          }).isRequired
+        ),
+        environments: PropTypes.arrayOf(
+          PropTypes.shape({
+            name: PropTypes.string.isRequired
+          }).isRequired
+        )
+      }),
+      personality_types: PropTypes.arrayOf(
+        PropTypes.shape({
+          personality_type: PropTypes.shape({
+            details: PropTypes.arrayOf(
+              PropTypes.shape({
+                body: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired
+              }).isRequired
+            ),
+            environments: PropTypes.arrayOf(
+              PropTypes.shape({
+                name: PropTypes.string.isRequired
+              }).isRequired
+            )
+          }).isRequired
+        }).isRequired
+      ).isRequired
     }),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,

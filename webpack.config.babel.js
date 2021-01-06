@@ -1,3 +1,4 @@
+import ESLintPlugin from "eslint-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
 
@@ -32,11 +33,6 @@ let config = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader"
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
       },
       {
         test: /\.(scss|css)$/,
@@ -90,6 +86,7 @@ let config = {
     umdNamedDefine: true
   },
   plugins: [
+    new ESLintPlugin({extensions: ["js", "jsx"]}),
     new webpack.ProvidePlugin({"React": "react"}),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(process.env.npm_package_version)

@@ -94,6 +94,7 @@ let config = {
   ],
   resolve: {
     extensions: [".jsx", ".js", ".json", ".scss"],
+    fallback: {path: require.resolve('path-browserify')}, // Needed for react-markdown until we can drop IE 11
     modules: [
       path.resolve(__dirname, "src"),
       path.resolve(__dirname, "node_modules")

@@ -12,6 +12,7 @@
     "build:compatibility": "cross-env MODE=compatibility NODE_ENV=production webpack  --progress",
     "dev": "cross-env MODE=browser webpack serve",
     "dev:compatibility": "cross-env MODE=compatibility webpack serve",
+    "dev:ie": "cross-env MODE=ie webpack serve",
     "dev:secure": "cross-env MODE=browser webpack serve --https",
     "lint": "eslint {src,test}",
     "lint:fix": "eslint {src,test} --fix",
@@ -97,19 +98,18 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@types/react": "^17.0.0",
     "color": "^3.1.3",
     "core-js": "^3.8.2",
     "graphql-obj2arg": "^0.1.0",
     "highcharts": "^8.2.2",
     "highcharts-react-official": "^3.0.0",
     "prop-types": "^15.7.2",
-    "react-markdown": "^5.0.3",
+    "react-markdown": "^4.3.1",
     "regenerator-runtime": "^0.13.7",
     "uuid": "^3.4.0"
   },
   "dependenciesNotes": {
-    "@types/react": "peer-dependency of react-markdown",
+    "react-markdown": "Version 5+ are incompatible with IE 11",
     "uuid": "Version 4+ are incompatible with IE 9/10"
   },
   "peerDependencies": {

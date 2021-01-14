@@ -8,17 +8,5 @@
   ],
   globals: {
     XDomainRequest: true
-  },
-  parser: "babel-eslint",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-      modules: true
-    }
-  },
-  plugins: ["babel", "jest"],
-  settings: {
-    "import/resolver": "webpack",
-    react: {version: "detect"}
   }
 }

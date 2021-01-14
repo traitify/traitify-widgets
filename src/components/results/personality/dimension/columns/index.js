@@ -36,7 +36,15 @@ function PersonalityDimensionColumns(props) {
 
 PersonalityDimensionColumns.defaultProps = {assessment: null};
 PersonalityDimensionColumns.propTypes = {
-  assessment: PropTypes.shape({personality_types: PropTypes.array}),
+  assessment: PropTypes.shape({
+    personality_types: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_type: PropTypes.shape({
+          id: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
+    )
+  }),
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired

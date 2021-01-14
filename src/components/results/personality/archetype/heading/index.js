@@ -69,12 +69,21 @@ function PersonalityArchetypeHeading(props) {
 
 PersonalityArchetypeHeading.defaultProps = {assessment: null, deck: null};
 PersonalityArchetypeHeading.propTypes = {
-  assessment: PropTypes.shape({archetype: PropTypes.object}),
+  assessment: PropTypes.shape({
+    archetype: PropTypes.shape({
+      details: PropTypes.arrayOf(
+        PropTypes.shape({
+          body: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired,
+      name: PropTypes.string.isRequired
+    })
+  }),
   deck: PropTypes.shape({name: PropTypes.string.isRequired}),
   followDeck: PropTypes.func.isRequired,
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
-  options: PropTypes.shape({archetype: PropTypes.object}).isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

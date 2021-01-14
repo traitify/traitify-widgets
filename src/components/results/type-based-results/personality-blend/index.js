@@ -8,7 +8,24 @@ import style from "./style.scss";
 class PersonalityBlend extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({personality_blend: PropTypes.object}),
+    assessment: PropTypes.shape({
+      personality_blend: PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        personality_type_1: PropTypes.shape({
+          badge: PropTypes.shape({
+            color_1: PropTypes.string.isRequired,
+            image_medium: PropTypes.string.isRequired
+          }).isRequired
+        }),
+        personality_type_2: PropTypes.shape({
+          badge: PropTypes.shape({
+            color_1: PropTypes.string.isRequired,
+            image_medium: PropTypes.string.isRequired
+          }).isRequired
+        })
+      })
+    }),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }

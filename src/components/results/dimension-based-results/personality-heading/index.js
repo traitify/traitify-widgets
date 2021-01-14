@@ -8,7 +8,11 @@ import style from "./style.scss";
 class PersonalityHeading extends Component {
   static defaultProps = {assessment: null, deck: null}
   static propTypes = {
-    assessment: PropTypes.shape({archetype: PropTypes.object}),
+    assessment: PropTypes.shape({
+      archetype: PropTypes.shape({
+        name: PropTypes.string.isRequired
+      })
+    }),
     deck: PropTypes.shape({name: PropTypes.string.isRequired}),
     followDeck: PropTypes.func.isRequired,
     isReady: PropTypes.func.isRequired,

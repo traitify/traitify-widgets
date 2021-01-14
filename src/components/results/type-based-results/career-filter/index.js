@@ -14,7 +14,13 @@ class CareerFilter extends Component {
   static defaultProps = {options: null}
   static propTypes = {
     isReady: PropTypes.func.isRequired,
-    options: PropTypes.shape({careerOptions: PropTypes.object}),
+    options: PropTypes.shape({
+      careerOptions: PropTypes.shape({
+        experienceLevels: PropTypes.arrayOf(
+          PropTypes.number.isRequired
+        )
+      })
+    }),
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }

@@ -113,11 +113,49 @@ function PersonalityRecommendationChart(props) {
 
 PersonalityRecommendationChart.defaultProps = {assessment: null, benchmark: null, guide: null};
 PersonalityRecommendationChart.propTypes = {
-  assessment: PropTypes.shape({personality_types: PropTypes.array}),
-  benchmark: PropTypes.shape({range_types: PropTypes.array}),
+  assessment: PropTypes.shape({
+    personality_types: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_type: PropTypes.shape({
+          name: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
+    )
+  }),
+  benchmark: PropTypes.shape({
+    id: PropTypes.string,
+    range_types: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        ranges: PropTypes.arrayOf(
+          PropTypes.shape({
+            match_score: PropTypes.number.isRequired,
+            max_score: PropTypes.number.isRequired,
+            min_score: PropTypes.number.isRequired
+          }).isRequired
+        ).isRequired
+      }).isRequired
+    ),
+    rankings: PropTypes.arrayOf(
+      PropTypes.shape({
+        description: PropTypes.string.isRequired
+      }).isRequired
+    )
+  }),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
-  guide: PropTypes.shape({competencies: PropTypes.array}),
+  guide: PropTypes.shape({
+    competencies: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        questionSequences: PropTypes.arrayOf(
+          PropTypes.shape({
+            personalityTypeId: PropTypes.string
+          }).isRequired
+        ).isRequired
+      }).isRequired
+    )
+  }),
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired

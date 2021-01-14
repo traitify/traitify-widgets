@@ -21,7 +21,19 @@ const dataChanged = (newAssessment, oldAssessment) => (
 class Radar extends Component {
   static defaultProps = {assessment: null}
   static propTypes = {
-    assessment: PropTypes.shape({personality_types: PropTypes.array}),
+    assessment: PropTypes.shape({
+      personality_types: PropTypes.arrayOf(
+        PropTypes.shape({
+          personality_type: PropTypes.shape({
+            badge: PropTypes.shape({
+              image_small: PropTypes.string.isRequired
+            }).isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired,
+          score: PropTypes.number.isRequired
+        }).isRequired
+      )
+    }),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired

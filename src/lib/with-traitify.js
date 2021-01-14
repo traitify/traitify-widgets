@@ -19,15 +19,36 @@ export default function withTraitify(WrappedComponent) {
       ui: null
     }
     static propTypes = {
-      assessment: PropTypes.shape({
-        deck_id: PropTypes.string,
-        id: PropTypes.string.isRequired,
-        locale_key: PropTypes.string,
-        personality_types: PropTypes.array,
-        profile_ids: PropTypes.arrayOf(PropTypes.string.isRequired),
-        recommendation: PropTypes.shape({recommendation_id: PropTypes.string}),
-        slides: PropTypes.array
-      }),
+      assessment: PropTypes.oneOfType([
+        PropTypes.shape({ // Cognitive
+          id: PropTypes.string.isRequired,
+          locale_key: PropTypes.string,
+          profile_ids: PropTypes.arrayOf(PropTypes.string.isRequired),
+          recommendation: PropTypes.shape({recommendation_id: PropTypes.string}),
+          slides: PropTypes.arrayOf(
+            PropTypes.shape({
+              caption: PropTypes.string.isRequired
+            }).isRequired
+          )
+        }),
+        PropTypes.shape({ // Personality
+          deck_id: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          locale_key: PropTypes.string,
+          personality_types: PropTypes.arrayOf(
+            PropTypes.shape({
+              personality_type: PropTypes.shape({
+                name: PropTypes.string.isRequired
+              }).isRequired
+            }).isRequired
+          ).isRequired,
+          profile_ids: PropTypes.arrayOf(PropTypes.string.isRequired),
+          recommendation: PropTypes.shape({recommendation_id: PropTypes.string}),
+          slides: PropTypes.arrayOf(PropTypes.shape({
+            caption: PropTypes.string.isRequired
+          }).isRequired)
+        })
+      ]),
       assessmentID: PropTypes.string,
       benchmarkID: PropTypes.string,
       cache: PropTypes.shape({

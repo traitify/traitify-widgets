@@ -42,7 +42,15 @@ function PersonalityDimensionList(props) {
 
 PersonalityDimensionList.defaultProps = {assessment: null};
 PersonalityDimensionList.propTypes = {
-  assessment: PropTypes.shape({personality_types: PropTypes.array}),
+  assessment: PropTypes.shape({
+    personality_types: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_type: PropTypes.shape({
+          id: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
+    )
+  }),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

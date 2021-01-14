@@ -6,7 +6,7 @@ const traitify = PropTypes.shape({
 });
 
 const ui = PropTypes.shape({
-  current: PropTypes.object.isRequired,
+  current: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   off: PropTypes.func.isRequired,
   on: PropTypes.func.isRequired,
   trigger: PropTypes.func.isRequired

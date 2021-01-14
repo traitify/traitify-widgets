@@ -78,7 +78,7 @@ export default class Slide extends Component {
         <div key="instructions" className={`${style.slide} ${style.middle}`}>
           <div className={style.instructionsSlide}>
             <div className={style.instructionsText}>
-              <Markdown source={instructions} />
+              <Markdown>{instructions}</Markdown>
             </div>
             <div className={style.instructionsStart}>
               <button className={style.instructionsButton} onClick={start} type="button">

@@ -8,7 +8,12 @@ import style from "./style.scss";
 class PersonalityBadge extends Component {
   static propTypes = {
     translate: PropTypes.func.isRequired,
-    type: PropTypes.shape({badge: PropTypes.object.isRequired}).isRequired,
+    type: PropTypes.shape({
+      badge: PropTypes.shape({
+        color_1: PropTypes.string.isRequired,
+        image_medium: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }
   componentDidMount() {

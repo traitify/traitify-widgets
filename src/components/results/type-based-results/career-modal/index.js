@@ -25,7 +25,16 @@ import style from "./style.scss";
 class CareerModal extends Component {
   static propTypes = {
     assessment: PropTypes.shape({
-      personality_traits: PropTypes.array
+      personality_traits: PropTypes.arrayOf(
+        PropTypes.shape({
+          personality_trait: PropTypes.shape({
+            definition: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired
+          }).isRequired,
+          score: PropTypes.number.isRequired
+        })
+      )
     }),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
@@ -72,10 +81,18 @@ class CareerModal extends Component {
     growth = growth && `${growth}%`;
 
     const careerTraitIDs = career.personality_traits.map((trait) => trait.personality_trait.id);
-    const careerTraits = career.personality_traits.map((trait) => ({y: trait.weight, description: trait.personality_trait.definition, name: trait.personality_trait.name})); // eslint-disable-line max-len
+    const careerTraits = career.personality_traits.map((trait) => ({
+      description: trait.personality_trait.definition,
+      name: trait.personality_trait.name,
+      y: trait.weight
+    }));
     const assessmentTraits = assessment.personality_traits
       .filter((trait) => careerTraitIDs.includes(trait.personality_trait.id))
-      .map((trait) => ({y: Math.round((trait.score + 100) / 2), description: trait.personality_trait.definition, name: trait.personality_trait.name})); // eslint-disable-line max-len
+      .map((trait) => ({
+        description: trait.personality_trait.definition,
+        name: trait.personality_trait.name,
+        y: Math.round((trait.score + 100) / 2)
+      }));
 
     return (
       <div className={`${style.modal} ${style.container}`} role="dialog">

@@ -8,7 +8,17 @@ import style from "./style.scss";
 class PersonalityTrait extends Component {
   static propTypes = {
     trait: PropTypes.shape({
-      personality_trait: PropTypes.object.isRequired
+      personality_trait: PropTypes.shape({
+        definition: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        personality_type: PropTypes.shape({
+          badge: PropTypes.shape({
+            color_1: PropTypes.string.isRequired,
+            image_medium: PropTypes.string.isRequired
+          }).isRequired,
+          name: PropTypes.string.isRequired
+        }).isRequired
+      }).isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
   }

@@ -12,7 +12,11 @@ class CareerResults extends Component {
     assessmentID: PropTypes.string.isRequired,
     isReady: PropTypes.func.isRequired,
     locale: PropTypes.string.isRequired,
-    options: PropTypes.shape({careerOptions: PropTypes.object}),
+    options: PropTypes.shape({
+      careerOptions: PropTypes.shape({
+        perPage: PropTypes.number
+      })
+    }),
     traitify: TraitifyPropTypes.traitify.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired

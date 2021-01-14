@@ -10,7 +10,13 @@ class PersonalityTypeSlide extends Component {
   static propTypes = {
     getOption: PropTypes.func.isRequired,
     type: PropTypes.shape({
-      personality_type: PropTypes.object.isRequired,
+      personality_type: PropTypes.shape({
+        badge: PropTypes.shape({
+          color_1: PropTypes.string.isRequired
+        }).isRequired,
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+      }).isRequired,
       score: PropTypes.number.isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired

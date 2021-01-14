@@ -87,7 +87,16 @@ function PersonalityArchetypeTips(props) {
 
 PersonalityArchetypeTips.defaultProps = {assessment: null};
 PersonalityArchetypeTips.propTypes = {
-  assessment: PropTypes.shape({archetype: PropTypes.object}),
+  assessment: PropTypes.shape({
+    archetype: PropTypes.shape({
+      details: PropTypes.arrayOf(
+        PropTypes.shape({
+          body: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired
+    })
+  }),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

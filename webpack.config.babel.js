@@ -1,4 +1,4 @@
-import autoprefixer from "autoprefixer";
+import ESLintPlugin from "eslint-webpack-plugin";
 import path from "path";
 import webpack from "webpack";
 
@@ -35,11 +35,6 @@ let config = {
         loader: "babel-loader"
       },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
-      {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
@@ -62,10 +57,10 @@ let config = {
           {
             loader: "postcss-loader",
             options: {
+              postcssOptions: {
+                plugins: ["autoprefixer"]
+              },
               sourceMap: cssMaps,
-              plugins: function() {
-                return [autoprefixer()]
-              }
             }
           },
           {
@@ -78,7 +73,7 @@ let config = {
       },
       {
         test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-        loader: env === "production" ? "file-loader" : "url-loader"
+        type: 'asset/resource'
       }
     ]
   },
@@ -91,6 +86,7 @@ let config = {
     umdNamedDefine: true
   },
   plugins: [
+    new ESLintPlugin({extensions: ["js", "jsx"]}),
     new webpack.ProvidePlugin({"React": "react"}),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(process.env.npm_package_version)
@@ -98,6 +94,7 @@ let config = {
   ],
   resolve: {
     extensions: [".jsx", ".js", ".json", ".scss"],
+    fallback: {path: require.resolve('path-browserify')}, // Needed for react-markdown until we can drop IE 11
     modules: [
       path.resolve(__dirname, "src"),
       path.resolve(__dirname, "node_modules")

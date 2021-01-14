@@ -1,4 +1,4 @@
-import queryString from "query-string";
+import {toQueryString} from "lib/helpers/object";
 
 export default class TraitifyClient {
   constructor() {
@@ -53,7 +53,7 @@ export default class TraitifyClient {
     let xhr;
     if(_params && ["get", "delete"].includes(method.toLowerCase())) {
       url += url.includes("?") ? "&" : "?";
-      url += queryString.stringify(_params);
+      url += toQueryString(_params);
       params = null;
     } else {
       params = _params;
@@ -62,16 +62,11 @@ export default class TraitifyClient {
     // are setup to handle auth from a query param
     if(url.includes("assessment")) {
       url += url.includes("?") ? "&" : "?";
-      url += queryString.stringify({
-        authorization: this.publicKey
-      });
+      url += toQueryString({authorization: this.publicKey});
     }
     if(this.oldIE) {
       url += url.includes("?") ? "&" : "?";
-      url += queryString.stringify({
-        authorization: this.publicKey,
-        reset_cache: (new Date()).getTime()
-      });
+      url += toQueryString({authorization: this.publicKey, reset_cache: (new Date()).getTime()});
       xhr = new XDomainRequest();
       xhr.open(method, url);
     } else {

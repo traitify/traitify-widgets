@@ -17,7 +17,6 @@
   text-align: center;
   padding: 20px;
   margin: 0 auto;
-  max-width: 800px;
   border-radius: 5px;
 
   @include rems(15);
@@ -38,6 +37,10 @@
   }
   p {
     white-space: pre-wrap;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 3em;
   }
   ul {
     margin: 15px 0;
@@ -110,7 +113,7 @@
   button {
     display: inline-block;
     padding: 10px;
-    width: 25%;
+    width: 150px;
     @include rems(20);
     @include max-width(s) {
       width: 50%;
@@ -173,9 +176,6 @@
   background: #EFEFEF;
   width: 100%;
   height: 10px;
-  @include mq(xl) {
-    height: 20px;
-  }
 }
 .progress {
   background: #2FB656;

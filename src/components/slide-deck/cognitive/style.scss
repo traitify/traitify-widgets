@@ -7,7 +7,7 @@
   background: white;
   min-height: 100vh;
   @include mq(s) {
-    min-height: $minHeight;
+    min-height: 620px;
   }
 }
 
@@ -17,7 +17,6 @@
   text-align: center;
   padding: 20px;
   margin: 0 auto;
-  border-radius: 5px;
 
   @include rems(15);
   h1 {

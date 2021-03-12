@@ -7,7 +7,9 @@ exports[`Instructions renders step 1 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
+  <p
+    className="padBottom"
+  >
     cognitive_instructions_step_1_text
   </p>
   <button
@@ -227,7 +229,9 @@ exports[`Instructions videos horizontal renders component 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
+  <p
+    className="padBottom"
+  >
     cognitive_instructions_step_1_text
   </p>
   <button
@@ -247,7 +251,9 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
+  <p
+    className="padBottom"
+  >
     cognitive_instructions_step_1_text
   </p>
   <button
@@ -267,7 +273,9 @@ exports[`Instructions videos vertical renders component 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
+  <p
+    className="padBottom"
+  >
     cognitive_instructions_step_1_text
   </p>
   <button
@@ -287,7 +295,9 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
+  <p
+    className="padBottom"
+  >
     cognitive_instructions_step_1_text
   </p>
   <button

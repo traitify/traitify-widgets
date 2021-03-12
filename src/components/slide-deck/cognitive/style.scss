@@ -36,15 +36,21 @@
     margin-bottom: 10px;
   }
   p {
-    white-space: pre-wrap;
     max-width: 800px;
-    text-align: center;
+    white-space: pre-wrap;
     margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  p.padBottom {
     padding-bottom: 3em;
   }
   ul {
     margin: 15px 0;
     padding-left: 40px;
+    li {
+      list-style-position: inside;
+    }
   }
   video {
     border: 2px solid $gray;

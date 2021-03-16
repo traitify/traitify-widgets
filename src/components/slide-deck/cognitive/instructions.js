@@ -35,7 +35,7 @@ function Instructions({
         {timeTrial ? (
           <p>{translate(`cognitive_instructions_trial_step_1_text`)}</p>
         ) : (
-          <p>{translate("cognitive_instructions_step_1_text")}</p>
+          <p className={style.padBottom}>{translate("cognitive_instructions_step_1_text")}</p>
         )}
         <button className={style.btnBlue} onClick={() => setStep(2)} type="button">{translate("cognitive_instructions_step_1_button")}</button>
       </div>

@@ -7,23 +7,22 @@
   background: white;
   min-height: 100vh;
   @include mq(s) {
-    min-height: $minHeight;
+    min-height: 620px;
   }
 }
 
 .instructions {
   @extend .container;
 
+  text-align: center;
   padding: 20px;
   margin: 0 auto;
-  max-width: 800px;
-  border-radius: 5px;
   @include rems(15);
   h1 {
-    color: #3B8DBF;
     @include rems(26);
   }
   h1, h2 {
+    color: #3B8DBF;
     text-align: center;
     margin-top: 0;
   }
@@ -35,13 +34,24 @@
     margin-bottom: 10px;
   }
   p {
+    max-width: 800px;
     white-space: pre-wrap;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  p.padBottom {
+    padding-bottom: 3em;
   }
   ul {
     margin: 15px 0;
     padding-left: 40px;
+    li {
+      list-style-position: inside;
+    }
   }
   video {
+    border: 2px solid $gray;
     display: block;
     height: auto;
     margin: 10px auto;
@@ -73,8 +83,12 @@
   }
   .choice {
     display: inline-block;
-    margin: 4%;
+    margin: 2%;
     width: 30%;
+    &:nth-child(-n+2) {
+      margin-top: 4%;
+      margin-bottom: 0;
+    }
     &:nth-of-type(3) {
       clear: both;
     }
@@ -103,6 +117,7 @@
   button {
     display: inline-block;
     padding: 10px;
+    width: 150px;
     @include rems(20);
     @include max-width(s) {
       width: 50%;
@@ -165,9 +180,6 @@
   background: #EFEFEF;
   width: 100%;
   height: 10px;
-  @include mq(xl) {
-    height: 20px;
-  }
 }
 .progress {
   background: #2FB656;

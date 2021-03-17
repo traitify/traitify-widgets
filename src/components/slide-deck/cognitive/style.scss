@@ -14,10 +14,12 @@
 .instructions {
   @extend .container;
 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   padding: 20px;
-  margin: 0 auto;
-  @include rems(15);
+  @include rems(18);
   h1 {
     @include rems(26);
   }
@@ -44,8 +46,9 @@
     padding-bottom: 3em;
   }
   ul {
-    margin: 15px 0;
+    margin-bottom: 1em;
     padding-left: 40px;
+    text-align: left;
     li {
       list-style-position: inside;
     }
@@ -137,7 +140,6 @@
   border-radius: 5px;
   color: white;
   display: block;
-  margin: auto;
   padding: 10px;
   width: 100%;
   @include rems(20);

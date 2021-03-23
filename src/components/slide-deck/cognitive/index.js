@@ -195,7 +195,7 @@ function Cognitive(props) {
           <div className={style.progress} style={{width: `${progress}%`}} />
         </div>
       </div>
-      <Slide onSelect={onSelect} question={question} translate={translate} />
+      <Slide className={style.slideContainer} onSelect={onSelect} question={question} translate={translate} />
       {nextQuestion && (
         <Slide
           className={style.hide}

@@ -63,7 +63,7 @@
   "read_more": "Läs mer",
   "really_me": "Verkligen mig",
   "really_not_me": "Verkligen inte jag",
-  "recommendation_chart_description": "Nedan ser du kandidatens personlighetsresultat jämfört med intervallen för mest lämplig för var och en av Big Five-dimensionerna. Poängen visas i grönt, gult och rött för att indikera kategorierna ”Föredragen”, ”Acceptabel” och ”Potentiell risk”. Intervallen varierar beroende på jobb. De baseras på flera informationsobjekt som kan innefatta publicerade studier, information från USA:s arbetsdepartement samt befattningsbeskrivningar och intervjuer från personer som har kunskap om jobbet.",
+  "recommendation_chart_description": "Nedan kan du se resultatet av kandidaternas personlighetstest uppdelat utifrån de fem huvudsakliga personlighetsdimensionerna (the Big Five). Poängen är färgkodad för att indikera bäst lämpad (grön), vilket följs av gul och röd. Dessa intervall ändras i förhållande till det erbjudna jobbet. De baseras på åtskilliga olika informationskällor och kan inkludera publicerade studier, befattningsbeskrivningar och intervjuer med personer som är väl insatta i arbetet.",
   "recommendation_chart_heading": "Lämplighetsanalys",
   "room_for_growth_and_change": "Rum för tillväxt och förändring",
   "salary_mean": "Lönmedel",

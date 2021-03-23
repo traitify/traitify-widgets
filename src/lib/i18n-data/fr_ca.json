@@ -63,7 +63,7 @@
   "read_more": "Lire la suite",
   "really_me": "Vraiment moi",
   "really_not_me": "Vraiment pas moi",
-  "recommendation_chart_description": "Ci-dessous figurent les résultats du test de personnalité du candidat par rapport aux plages les mieux adaptées pour chacune des cinq grandes dimensions. Les scores sont affichés en vert, en jaune et en rouge pour indiquer les catégories « Préférence », « Acceptable » et « Risque potentiel ». Ces plages varient pour chaque poste. Elles sont basées sur plusieurs éléments d’information, qui peuvent comprendre des recherches publiées, des informations du Département américain du travail, ainsi que des descriptions de poste et des entretiens avec des personnes qui connaissent bien le poste.",
+  "recommendation_chart_description": "Vous pouvez voir ci-dessous les résultats concernant la personnalité du candidat, décomposés selon chacune des dimensions du modèle de personnalité à cinq facteurs. Les notes sont identifiées par un code couleur afin d’indiquer les plages dans lesquelles le candidat convient le mieux (vert), puis jaune et rouge. Ces plages varient pour chaque emploi. Elles sont fondées sur plusieurs renseignements qui peuvent inclure des recherches publiées, des descriptions de poste et des entretiens avec des personnes qui connaissent bien l’emploi.",
   "recommendation_chart_heading": "Répartition de l’adéquation",
   "room_for_growth_and_change": "Place à la croissance et au changement",
   "salary_mean": "Salaire moyen",

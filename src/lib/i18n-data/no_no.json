@@ -63,7 +63,7 @@
   "read_more": "Les mer",
   "really_me": "Egentlig meg",
   "really_not_me": "Egentlig ikke meg",
-  "recommendation_chart_description": "Nedenfor kan du se kandidatens personlighetsresultater sammenlignet med de best egnede områdene for hver av de fem store dimensjonene. Poeng vises i grønt, gult og rødt for å indikere kategoriene \"Foretrukket\", \"Akseptabel\" og \"Potensiell risiko\". Disse områdene varierer for hver jobb. De er basert på flere opplysninger som kan omfatte publisert forskning, US Labor Department informasjon, og stillingsbeskrivelser og intervjuer fra personer som er kjent med jobben.",
+  "recommendation_chart_description": "Nedenfor kan du se kandidatens personlighetsresultater fordelt på hver av de fem store dimensjonene. Poengene er fargekodet for å indikere de best egnede områdene (grønt), etterfulgt av gult og rødt. Disse områdene varierer for hver jobb. De er basert på flere opplysninger som kan omfatte publisert forskning, stillingsbeskrivelser og intervjuer med folk som er kjent med jobben.",
   "recommendation_chart_heading": "Passer sammenbrudd",
   "room_for_growth_and_change": "Rom for vekst og endring",
   "salary_mean": "Lønnsmiddel",

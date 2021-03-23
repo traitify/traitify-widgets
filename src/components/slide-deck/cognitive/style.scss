@@ -68,7 +68,9 @@
 }
 
 .slideContainer {
-  height: 100vh;
+  @include max-width(s) {
+    height: 100vh;
+  }
   padding-top: 1em;
 }
 .question {

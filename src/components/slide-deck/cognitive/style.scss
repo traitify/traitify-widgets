@@ -18,8 +18,8 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 20px;
-  @include rems(18);
+  padding: 5px 15px 15px 15px;
+  @include rems(15);
   h1 {
     @include rems(26);
   }
@@ -42,13 +42,17 @@
     margin-bottom: 1em;
     text-align: center;
   }
+  p:last-of-type {
+    margin-bottom: 0.5em;
+  }
   p.padBottom {
     padding-bottom: 3em;
   }
   ul {
-    margin-bottom: 1em;
-    padding-left: 40px;
     text-align: left;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 0;
     li {
       list-style-position: inside;
     }
@@ -57,17 +61,24 @@
     border: 2px solid $gray;
     display: block;
     height: auto;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
     max-width: 500px;
     width: 80%;
   }
 }
 
+.slideContainer {
+  @include max-width(s) {
+    height: 100vh;
+  }
+  padding-top: 1em;
+}
 .question {
   background: white;
   text-align: center;
   padding: 0;
   width: 100%;
+  min-height: 40%;
   img {
     max-width: 300px;
     height: auto;
@@ -80,6 +91,9 @@
   text-align: center;
   padding: 0;
   width: 100%;
+  min-height: 35%;
+  display: flex;
+  align-items: center;
   .choicesContainer {
     margin: 0 auto;
     max-width: 300px;
@@ -159,7 +173,7 @@
 }
 
 .statusContainer {
-  padding: 0 20px;
+  padding: 10px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -187,7 +201,4 @@
   background: #2FB656;
   width: 100%;
   height: 10px;
-  @include mq(xl) {
-    height: 20px;
-  }
 }

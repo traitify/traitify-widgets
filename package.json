@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "1.8.2",
+  "version": "1.8.3-alpha1",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",

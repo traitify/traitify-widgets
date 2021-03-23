@@ -63,7 +63,7 @@
   "read_more": "Lee mas",
   "really_me": "A mi realmente",
   "really_not_me": "A mi no realmente",
-  "recommendation_chart_description": "A continuación se muestran los resultados de la personalidad del candidato en comparación con los rangos más adecuados para cada una de las Cinco Grandes (Big Five) dimensiones. Las puntuaciones se muestran en verde, amarillo y rojo para indicar las categorías “Preferente”, “Aceptable” y “Riesgo potencial”. Estos rangos varían para cada trabajo. Se basan en varios datos, como pueden ser investigaciones publicadas, información del Departamento de Trabajo de los Estados Unidos y descripciones de puestos y entrevistas laborales de personas que están familiarizadas con el trabajo.",
+  "recommendation_chart_description": "A continuación puede ver los resultados de la personalidad del candidato desglosados según cada una de las Cinco grandes dimensiones. Los puntajes están codificados por color para indicar los rangos de mejor adecuación (verde), seguido por amarillo y rojo. Estos rangos varían para cada puesto. Se basan en distintos tipos de información que pueden incluir investigación publicada, descripciones del puesto y entrevistas con personas que están familiarizadas con el puesto.",
   "recommendation_chart_heading": "Desglose del ajuste",
   "room_for_growth_and_change": "Espacio para el crecimiento y el cambio",
   "salary_mean": "Salario medio",

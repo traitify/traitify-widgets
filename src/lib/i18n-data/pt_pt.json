@@ -63,7 +63,7 @@
   "read_more": "consulte Mais informação",
   "really_me": "realmente eu",
   "really_not_me": "realmente eu não",
-  "recommendation_chart_description": "Encontra abaixo os resultados da personalidade do candidato e a respetiva comparação aos intervalos mais adequados para cada uma das Cinco Grandes dimensões. As classificações são apresentadas a verde, amarelo e vermelho para indicar as categorias de \"Preferido\", \"Aceitável\" e \"Possível risco\". Estes intervalos variam consoante o trabalho. Baseiam-se em várias informações que podem incluir trabalhos de investigação publicados, informações do Departamento de Trabalho dos EUA e descrições de funções e entrevistas de pessoas familiarizadas com o trabalho.",
+  "recommendation_chart_description": "Encontra abaixo os resultados de personalidade do candidato distribuídos por cada uma das dimensões do Big Five. As pontuações estão codificadas por cores para indicar os intervalos de maior adequação (verde), seguidos por amarelo e vermelho. Estes intervalos variam consoante a função e baseiam-se em várias informações, como artigos de investigação publicados, descrições de funções e entrevistas a pessoas familiarizadas com a função.",
   "recommendation_chart_heading": "Detalhes da Adequação",
   "room_for_growth_and_change": "Espaço para Crescimento e Mudança",
   "salary_mean": "média salarial",

@@ -63,7 +63,7 @@
   "read_more": "Read More",
   "really_me": "Really Me",
   "really_not_me": "Really Not Me",
-  "recommendation_chart_description": "Below, you can see the candidate's personality results compared to the best-fit ranges for each of the Big Five dimensions. Scores are shown in green, yellow, and red to indicate \"Preferred,\" \"Acceptable,\" and \"Potential Risk\" categories. These ranges vary for each job. They are based on several pieces of information that may include published research, US Labor Department information, and job descriptions and interviews from people who are familiar with the job.",
+  "recommendation_chart_description": "Below, you can see the candidate's personality results broken down by each of the Big Five dimensions. Scores are color-coded to indicate the best-fit ranges (green), followed by yellow and red. These ranges vary for each job. They are based on several pieces of information that may include published research, job descriptions, and interviews with people who are familiar with the job.",
   "recommendation_chart_heading": "Fit Breakdown",
   "room_for_growth_and_change": "Room for Growth and Change",
   "salary_mean": "Salary Mean",

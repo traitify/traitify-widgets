@@ -5,7 +5,6 @@
   @extend %widgetContainer;
 
   background: white;
-  min-height: 100vh;
   @include max-width(s) {
     min-height: 90vh;
   }

@@ -5,9 +5,13 @@
   @extend %widgetContainer;
 
   background: white;
-  min-height: 100vh;
-  @include mq(s) {
-    min-height: 620px;
+}
+
+.practiceContainer {
+  @extend .container;
+
+  @include max-width(s) {
+    min-height: 90vh;
   }
 }
 
@@ -17,9 +21,11 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: end;
   text-align: center;
-  padding: 20px;
-  @include rems(18);
+  height: 650px;
+  padding: 5px 15px 15px 15px;
+  @include rems(16);
   h1 {
     @include rems(26);
   }
@@ -33,22 +39,22 @@
   }
   label {
     display: block;
-    margin-bottom: 10px;
   }
   p {
     max-width: 800px;
     white-space: pre-wrap;
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     text-align: center;
   }
   p.padBottom {
     padding-bottom: 3em;
   }
   ul {
-    margin-bottom: 1em;
-    padding-left: 40px;
     text-align: left;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    padding: 0;
     li {
       list-style-position: inside;
     }
@@ -57,17 +63,33 @@
     border: 2px solid $gray;
     display: block;
     height: auto;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
     max-width: 500px;
     width: 80%;
   }
+
+  @include max-width(s) {
+    @include rems(14);
+    min-height: 90vh;
+
+    h1, h2 {
+      margin-bottom: 0.25em;
+    }
+    p {
+      margin-bottom: 0.25em;
+    }
+  }
 }
 
+.slideContainer {
+  padding-top: 1em;
+}
 .question {
   background: white;
   text-align: center;
   padding: 0;
   width: 100%;
+  min-height: 40%;
   img {
     max-width: 300px;
     height: auto;
@@ -80,6 +102,8 @@
   text-align: center;
   padding: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
   .choicesContainer {
     margin: 0 auto;
     max-width: 300px;
@@ -159,7 +183,7 @@
 }
 
 .statusContainer {
-  padding: 0 20px;
+  padding: 10px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -187,7 +211,4 @@
   background: #2FB656;
   width: 100%;
   height: 10px;
-  @include mq(xl) {
-    height: 20px;
-  }
 }

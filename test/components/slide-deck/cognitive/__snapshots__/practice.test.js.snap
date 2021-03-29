@@ -15,7 +15,7 @@ exports[`Practice actions finishes 1`] = `
 
 exports[`Practice renders question 1 1`] = `
 <div
-  className="container"
+  className="practiceContainer"
 >
   <div
     className="statusContainer"
@@ -92,7 +92,7 @@ exports[`Practice renders question 1 explanation 1`] = `
 
 exports[`Practice renders question 2 1`] = `
 <div
-  className="container"
+  className="practiceContainer"
 >
   <div
     className="statusContainer"
@@ -169,7 +169,7 @@ exports[`Practice renders question 2 explanation 1`] = `
 
 exports[`Practice renders question 3 1`] = `
 <div
-  className="container"
+  className="practiceContainer"
 >
   <div
     className="statusContainer"

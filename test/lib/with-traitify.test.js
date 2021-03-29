@@ -948,9 +948,14 @@ describe("withTraitify", () => {
         beforeEach(() => {
           component.updateState({
             assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
+            benchmark: {name: "Developer", range_types: [{id: "xyz"}]},
             deck: {id: "big-five", name: "Big Five"},
             guide: {competencies: [{}]}
           });
+        });
+
+        it("checks benchmark", () => {
+          expect(getDummyComponent().props.isReady("benchmark")).toBe(true);
         });
 
         it("checks deck", () => {
@@ -974,9 +979,14 @@ describe("withTraitify", () => {
         beforeEach(() => {
           component.updateState({
             assessment: {id: "abc"},
+            benchmark: {name: "Developer"},
             deck: {id: "big-five"},
             guide: {assessment_id: "abc"}
           });
+        });
+
+        it("checks benchmark", () => {
+          expect(getDummyComponent().props.isReady("benchmark")).toBe(false);
         });
 
         it("checks deck", () => {
@@ -999,6 +1009,10 @@ describe("withTraitify", () => {
       describe("isn't ready", () => {
         beforeEach(() => {
           component = new ComponentHandler(<Component traitify={traitify} />);
+        });
+
+        it("checks benchmark", () => {
+          expect(getDummyComponent().props.isReady("benchmark")).toBe(false);
         });
 
         it("checks deck", () => {

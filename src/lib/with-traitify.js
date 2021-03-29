@@ -484,9 +484,9 @@ export default function withTraitify(WrappedComponent) {
 
       switch(type) {
         case "benchmark":
-          return !!((benchmark && !!benchmark.name));
+          return !!(benchmark && benchmark.name && (benchmark.range_types || []).length > 0);
         case "deck":
-          return !!((deck && !!deck.name));
+          return !!(deck && deck.name);
         case "guide":
           return !!((guide && (guide.competencies || []).length > 0));
         case "results":

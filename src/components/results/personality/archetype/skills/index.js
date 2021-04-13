@@ -10,21 +10,14 @@ import style from "./style.scss";
 
 const skillTypes = [
   {
-    image: "https://cdn.traitify.com/images/big5_home.png",
-    key: "everyday_adjustments",
-    name: "Everyday Adjustments"
-  },
-  /* The data is still in the API
-  {
-    image: "https://cdn.traitify.com/images/big5_home.png",
-    key: "working_from_home",
-    name: "Working From Home"
-  },
-  */
-  {
     image: "https://cdn.traitify.com/images/big5_stress.png",
     key: "dealing_with_stress",
     name: "Dealing With Stress"
+  },
+  {
+    image: "https://cdn.traitify.com/images/big5_leading.png",
+    key: "leading_others",
+    name: "Leading Others"
   },
   {
     image: "https://cdn.traitify.com/images/big5_communication.png",

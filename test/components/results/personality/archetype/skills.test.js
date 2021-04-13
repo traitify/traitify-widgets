@@ -10,6 +10,7 @@ _assessment.personality_types.forEach(({personality_type: dimension}) => {
   [
     {body: "EA Tip", name: "Everyday Adjustments"},
     {body: "DWS Tip", name: "Dealing With Stress"},
+    {body: "L Tip", name: "Leading Others"},
     {body: "C Tip", name: "Communication"},
     {body: "T Tip", name: "Teamwork"},
     {body: "Hot Tip", name: "Habits To Build"}
@@ -109,7 +110,7 @@ describe("PersonalityArchetypeSkills", () => {
       archetype: {
         ...assessment.archetype,
         details: assessment.archetype.details.filter((detail) => (
-          !detail.title.startsWith("Everyday Adjustments - Success Skills")
+          !detail.title.startsWith("Dealing With Stress - Success Skills")
         ))
       }
     };
@@ -119,7 +120,7 @@ describe("PersonalityArchetypeSkills", () => {
   });
 
   it("renders component with enabled types", () => {
-    props.getOption.mockReturnValue(["Everyday Adjustments"]);
+    props.getOption.mockReturnValue(["Dealing With Stress"]);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

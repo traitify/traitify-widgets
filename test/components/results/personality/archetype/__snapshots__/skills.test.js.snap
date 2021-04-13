@@ -20,14 +20,14 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
         type="button"
       >
         <img
-          alt="skill_name_for_everyday_adjustments, [object Object]"
+          alt="skill_name_for_dealing_with_stress, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_home.png"
+          src="https://cdn.traitify.com/images/big5_stress.png"
         />
         <div
           className="name"
         >
-          skill_name_for_everyday_adjustments, [object Object]
+          skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
     </li>
@@ -39,14 +39,14 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
         type="button"
       >
         <img
-          alt="skill_name_for_dealing_with_stress, [object Object]"
+          alt="skill_name_for_leading_others, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_stress.png"
+          src="https://cdn.traitify.com/images/big5_leading.png"
         />
         <div
           className="name"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </div>
       </button>
     </li>
@@ -116,17 +116,17 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
     >
       <select
         onChange={[Function]}
-        value="everyday_adjustments"
+        value="dealing_with_stress"
       >
-        <option
-          value="everyday_adjustments"
-        >
-          skill_name_for_everyday_adjustments, [object Object]
-        </option>
         <option
           value="dealing_with_stress"
         >
           skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="leading_others"
+        >
+          skill_name_for_leading_others, [object Object]
         </option>
         <option
           value="communication"
@@ -146,7 +146,7 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
       </select>
     </div>
     <h3>
-      skill_heading_for_everyday_adjustments, [object Object]
+      skill_heading_for_dealing_with_stress, [object Object]
     </h3>
     <ul
       className="list"
@@ -158,7 +158,7 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
           }
         }
       >
-        EA Tip for Agreeableness
+        DWS Tip for Agreeableness
       </li>
       <li
         style={
@@ -167,7 +167,7 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
           }
         }
       >
-        EA Tip for Extraversion
+        DWS Tip for Extraversion
       </li>
       <li
         style={
@@ -176,7 +176,7 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
           }
         }
       >
-        EA Tip for Conscientiousness
+        DWS Tip for Conscientiousness
       </li>
       <li
         style={
@@ -185,7 +185,7 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
           }
         }
       >
-        EA Tip for Openness
+        DWS Tip for Openness
       </li>
       <li
         style={
@@ -194,7 +194,7 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
           }
         }
       >
-        EA Tip for Emotional Stability
+        DWS Tip for Emotional Stability
       </li>
     </ul>
   </div>
@@ -221,14 +221,14 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
         type="button"
       >
         <img
-          alt="skill_name_for_everyday_adjustments, [object Object]"
+          alt="skill_name_for_dealing_with_stress, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_home.png"
+          src="https://cdn.traitify.com/images/big5_stress.png"
         />
         <div
           className="name"
         >
-          skill_name_for_everyday_adjustments, [object Object]
+          skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
     </li>
@@ -240,14 +240,14 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
         type="button"
       >
         <img
-          alt="skill_name_for_dealing_with_stress, [object Object]"
+          alt="skill_name_for_leading_others, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_stress.png"
+          src="https://cdn.traitify.com/images/big5_leading.png"
         />
         <div
           className="name"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </div>
       </button>
     </li>
@@ -317,17 +317,17 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
     >
       <select
         onChange={[Function]}
-        value="everyday_adjustments"
+        value="dealing_with_stress"
       >
-        <option
-          value="everyday_adjustments"
-        >
-          skill_name_for_everyday_adjustments, [object Object]
-        </option>
         <option
           value="dealing_with_stress"
         >
           skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="leading_others"
+        >
+          skill_name_for_leading_others, [object Object]
         </option>
         <option
           value="communication"
@@ -347,7 +347,7 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
       </select>
     </div>
     <h3>
-      skill_heading_for_everyday_adjustments, [object Object]
+      skill_heading_for_dealing_with_stress, [object Object]
     </h3>
     <ul
       className="list"
@@ -359,7 +359,7 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
           }
         }
       >
-        EA Tip for Extraversion
+        DWS Tip for Extraversion
       </li>
       <li
         style={
@@ -368,7 +368,7 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
           }
         }
       >
-        EA Tip for Conscientiousness
+        DWS Tip for Conscientiousness
       </li>
       <li
         style={
@@ -377,7 +377,7 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
           }
         }
       >
-        EA Tip for Openness
+        DWS Tip for Openness
       </li>
       <li
         style={
@@ -386,7 +386,7 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
           }
         }
       >
-        EA Tip for Emotional Stability
+        DWS Tip for Emotional Stability
       </li>
     </ul>
   </div>
@@ -413,14 +413,14 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
         type="button"
       >
         <img
-          alt="skill_name_for_dealing_with_stress, [object Object]"
+          alt="skill_name_for_leading_others, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_stress.png"
+          src="https://cdn.traitify.com/images/big5_leading.png"
         />
         <div
           className="name"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </div>
       </button>
     </li>
@@ -490,12 +490,12 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
     >
       <select
         onChange={[Function]}
-        value="dealing_with_stress"
+        value="leading_others"
       >
         <option
-          value="dealing_with_stress"
+          value="leading_others"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </option>
         <option
           value="communication"
@@ -515,7 +515,7 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
       </select>
     </div>
     <h3>
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_leading_others, [object Object]
     </h3>
     <ul
       className="list"
@@ -527,7 +527,7 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
           }
         }
       >
-        DWS Tip for Agreeableness
+        L Tip for Agreeableness
       </li>
       <li
         style={
@@ -536,7 +536,7 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
           }
         }
       >
-        DWS Tip for Extraversion
+        L Tip for Extraversion
       </li>
       <li
         style={
@@ -545,7 +545,7 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
           }
         }
       >
-        DWS Tip for Conscientiousness
+        L Tip for Conscientiousness
       </li>
       <li
         style={
@@ -554,7 +554,7 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
           }
         }
       >
-        DWS Tip for Openness
+        L Tip for Openness
       </li>
       <li
         style={
@@ -563,7 +563,7 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
           }
         }
       >
-        DWS Tip for Emotional Stability
+        L Tip for Emotional Stability
       </li>
     </ul>
   </div>
@@ -590,14 +590,14 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
         type="button"
       >
         <img
-          alt="skill_name_for_dealing_with_stress, [object Object]"
+          alt="skill_name_for_leading_others, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_stress.png"
+          src="https://cdn.traitify.com/images/big5_leading.png"
         />
         <div
           className="name"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </div>
       </button>
     </li>
@@ -667,12 +667,12 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
     >
       <select
         onChange={[Function]}
-        value="dealing_with_stress"
+        value="leading_others"
       >
         <option
-          value="dealing_with_stress"
+          value="leading_others"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </option>
         <option
           value="communication"
@@ -692,7 +692,7 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
       </select>
     </div>
     <h3>
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_leading_others, [object Object]
     </h3>
     <ul
       className="list"
@@ -704,7 +704,7 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
           }
         }
       >
-        DWS Tip for Agreeableness
+        L Tip for Agreeableness
       </li>
       <li
         style={
@@ -713,7 +713,7 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
           }
         }
       >
-        DWS Tip for Extraversion
+        L Tip for Extraversion
       </li>
       <li
         style={
@@ -722,7 +722,7 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
           }
         }
       >
-        DWS Tip for Conscientiousness
+        L Tip for Conscientiousness
       </li>
       <li
         style={
@@ -731,7 +731,7 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
           }
         }
       >
-        DWS Tip for Openness
+        L Tip for Openness
       </li>
       <li
         style={
@@ -740,7 +740,7 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
           }
         }
       >
-        DWS Tip for Emotional Stability
+        L Tip for Emotional Stability
       </li>
     </ul>
   </div>
@@ -767,14 +767,14 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
         type="button"
       >
         <img
-          alt="skill_name_for_everyday_adjustments, [object Object]"
+          alt="skill_name_for_dealing_with_stress, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_home.png"
+          src="https://cdn.traitify.com/images/big5_stress.png"
         />
         <div
           className="name"
         >
-          skill_name_for_everyday_adjustments, [object Object]
+          skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
     </li>
@@ -786,14 +786,14 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
         type="button"
       >
         <img
-          alt="skill_name_for_dealing_with_stress, [object Object]"
+          alt="skill_name_for_leading_others, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_stress.png"
+          src="https://cdn.traitify.com/images/big5_leading.png"
         />
         <div
           className="name"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </div>
       </button>
     </li>
@@ -863,17 +863,17 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
     >
       <select
         onChange={[Function]}
-        value="dealing_with_stress"
+        value="leading_others"
       >
-        <option
-          value="everyday_adjustments"
-        >
-          skill_name_for_everyday_adjustments, [object Object]
-        </option>
         <option
           value="dealing_with_stress"
         >
           skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="leading_others"
+        >
+          skill_name_for_leading_others, [object Object]
         </option>
         <option
           value="communication"
@@ -893,7 +893,7 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
       </select>
     </div>
     <h3>
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_leading_others, [object Object]
     </h3>
     <ul
       className="list"
@@ -905,7 +905,7 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
           }
         }
       >
-        DWS Tip for Agreeableness
+        L Tip for Agreeableness
       </li>
       <li
         style={
@@ -914,7 +914,7 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
           }
         }
       >
-        DWS Tip for Extraversion
+        L Tip for Extraversion
       </li>
       <li
         style={
@@ -923,7 +923,7 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
           }
         }
       >
-        DWS Tip for Conscientiousness
+        L Tip for Conscientiousness
       </li>
       <li
         style={
@@ -932,7 +932,7 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
           }
         }
       >
-        DWS Tip for Openness
+        L Tip for Openness
       </li>
       <li
         style={
@@ -941,7 +941,7 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
           }
         }
       >
-        DWS Tip for Emotional Stability
+        L Tip for Emotional Stability
       </li>
     </ul>
   </div>
@@ -968,14 +968,14 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
         type="button"
       >
         <img
-          alt="skill_name_for_everyday_adjustments, [object Object]"
+          alt="skill_name_for_dealing_with_stress, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_home.png"
+          src="https://cdn.traitify.com/images/big5_stress.png"
         />
         <div
           className="name"
         >
-          skill_name_for_everyday_adjustments, [object Object]
+          skill_name_for_dealing_with_stress, [object Object]
         </div>
       </button>
     </li>
@@ -987,14 +987,14 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
         type="button"
       >
         <img
-          alt="skill_name_for_dealing_with_stress, [object Object]"
+          alt="skill_name_for_leading_others, [object Object]"
           className="image"
-          src="https://cdn.traitify.com/images/big5_stress.png"
+          src="https://cdn.traitify.com/images/big5_leading.png"
         />
         <div
           className="name"
         >
-          skill_name_for_dealing_with_stress, [object Object]
+          skill_name_for_leading_others, [object Object]
         </div>
       </button>
     </li>
@@ -1064,17 +1064,17 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
     >
       <select
         onChange={[Function]}
-        value="dealing_with_stress"
+        value="leading_others"
       >
-        <option
-          value="everyday_adjustments"
-        >
-          skill_name_for_everyday_adjustments, [object Object]
-        </option>
         <option
           value="dealing_with_stress"
         >
           skill_name_for_dealing_with_stress, [object Object]
+        </option>
+        <option
+          value="leading_others"
+        >
+          skill_name_for_leading_others, [object Object]
         </option>
         <option
           value="communication"
@@ -1094,7 +1094,7 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
       </select>
     </div>
     <h3>
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_leading_others, [object Object]
     </h3>
     <ul
       className="list"
@@ -1106,7 +1106,7 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
           }
         }
       >
-        DWS Tip for Agreeableness
+        L Tip for Agreeableness
       </li>
       <li
         style={
@@ -1115,7 +1115,7 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
           }
         }
       >
-        DWS Tip for Extraversion
+        L Tip for Extraversion
       </li>
       <li
         style={
@@ -1124,7 +1124,7 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
           }
         }
       >
-        DWS Tip for Conscientiousness
+        L Tip for Conscientiousness
       </li>
       <li
         style={
@@ -1133,7 +1133,7 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
           }
         }
       >
-        DWS Tip for Openness
+        L Tip for Openness
       </li>
       <li
         style={
@@ -1142,7 +1142,7 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
           }
         }
       >
-        DWS Tip for Emotional Stability
+        L Tip for Emotional Stability
       </li>
     </ul>
   </div>

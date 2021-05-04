@@ -1,5 +1,6 @@
 import Component from "components/slide-deck/cognitive/practice";
 import Slide from "components/slide-deck/cognitive/slide";
+import {defaultExplanations, defaultQuestions} from "components/slide-deck/cognitive/instructions-defaults";
 import ComponentHandler, {act} from "support/component-handler";
 import {useResizeMock, useWindowMock} from "support/mocks";
 
@@ -17,6 +18,8 @@ describe("Practice", () => {
   beforeEach(() => {
     props = {
       onFinish: jest.fn().mockName("onFinish"),
+      practiceExplanations: defaultExplanations,
+      practiceQuestions: defaultQuestions,
       translate: jest.fn().mockName("translate").mockImplementation((value) => value)
     };
   });
@@ -85,6 +88,45 @@ describe("Practice", () => {
         expect(component.tree).toMatchSnapshot();
       });
     });
+  });
+
+  it("renders custom questions", () => {
+    props.practiceExplanations = [
+      {button: "First Button", heading: "First Heading", text: "First Text"},
+      {
+        button: "Second Button",
+        heading: "Second Heading",
+        text: "Second Text",
+        video: "https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      }
+    ];
+    props.practiceQuestions = [1, 3].map((answer, index) => ({
+      correctAnswerID: `r-${index}-${answer}`,
+      id: `s-${index}`,
+      questionImage: {url: `https://cdn.traitify.com/images/cognitive/practice-question-${index + 1}/question.png`},
+      responses: [1, 2, 3, 4].map((response) => ({
+        id: `r-${index}-${response}`,
+        image: {url: `https://cdn.traitify.com/images/cognitive/practice-question-${index + 1}/response-${response}.png`}
+      }))
+    }));
+
+    const component = new ComponentHandler(<Component {...props} />);
+    expect(component.tree).toMatchSnapshot();
+    expect(props.onFinish).not.toHaveBeenCalled();
+
+    component.act(() => selectAnswer({component, index: 3}));
+    expect(component.tree).toMatchSnapshot();
+
+    component.act(() => component.findByText("First Button").props.onClick());
+    expect(component.tree).toMatchSnapshot();
+    expect(props.onFinish).not.toHaveBeenCalled();
+
+    component.act(() => selectAnswer({component, index: 3}));
+    expect(component.tree).toMatchSnapshot();
+
+    component.act(() => component.findByText("Second Button").props.onClick());
+    expect(component.tree).toMatchSnapshot();
+    expect(props.onFinish).toHaveBeenCalled();
   });
 
   it("renders question 1", () => {

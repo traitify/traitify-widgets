@@ -21,11 +21,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   text-align: center;
   height: 650px;
   padding: 5px 15px 15px 15px;
   @include rems(16);
+  button { margin-top: 0.5em; }
   h1 {
     @include rems(26);
   }
@@ -39,16 +40,6 @@
   }
   label {
     display: block;
-  }
-  p {
-    max-width: 800px;
-    white-space: pre-wrap;
-    margin: 0 auto;
-    margin-bottom: 0.5em;
-    text-align: center;
-  }
-  p.padBottom {
-    padding-bottom: 3em;
   }
   ul {
     text-align: left;
@@ -66,6 +57,14 @@
     margin: 10px auto 20px auto;
     max-width: 500px;
     width: 80%;
+  }
+
+  .text {
+    max-width: 800px;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+    text-align: center;
   }
 
   @include max-width(s) {

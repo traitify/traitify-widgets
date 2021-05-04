@@ -1,16 +1,14 @@
 /* eslint-disable jsx-a11y/media-has-caption, no-alert */
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import DangerousHTML from "lib/helpers/dangerous-html";
 import {useWindowSize} from "lib/helpers/hooks";
 import Loading from "components/loading";
 import Slide from "./slide";
 import {useQuestionsLoader, videoProps} from "./helpers";
-import practiceQuestions from "./practice-questions";
 import style from "./style.scss";
 
-const urlBase = "https://cdn.traitify.com/images/cognitive";
-
-function Practice({onFinish, translate}) {
+function Practice({onFinish, practiceExplanations, practiceQuestions, translate}) {
   const [width] = useWindowSize();
   const [type, setType] = useState(width > 768 ? "h" : "v");
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -27,21 +25,22 @@ function Practice({onFinish, translate}) {
     onFinish();
   }, [questionIndex]);
 
+  const explanation = practiceExplanations[questionIndex];
+  const instructionOptions = {translate, type};
   const question = questions[questionIndex];
 
   if(!question) { return <Loading />; }
   if(question.answer) {
     const answer = question.answer.answerId === question.correctAnswerID ? "correct" : "incorrect";
-    const number = questionIndex + 1;
-    const video = `${urlBase}/practice-${number}-${type}.mp4`;
+    const {button, heading, text, video} = typeof explanation === "function" ? explanation(instructionOptions) : explanation;
 
     return (
-      <div key={`question-${number}-${type}`} className={style.instructions}>
-        <h1>{translate(`cognitive_practice_step_${number}_heading`)}</h1>
+      <div key={`question-${questionIndex + 1}-${type}`} className={style.instructions}>
+        <h1>{heading}</h1>
         <p className={style.center}>{translate(`cognitive_practice_answer_${answer}`)}</p>
-        <p>{translate(`cognitive_practice_step_${number}_text`)}</p>
-        <video {...videoProps}><source src={video} type="video/mp4" /></video>
-        <button className={style.btnBlue} onClick={onNext} type="button">{translate(`cognitive_practice_step_${number}_button`)}</button>
+        {text && <DangerousHTML className={style.text} html={text} />}
+        {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
+        <button className={style.btnBlue} onClick={onNext} type="button">{button}</button>
       </div>
     );
   }
@@ -70,6 +69,29 @@ function Practice({onFinish, translate}) {
 
 Practice.propTypes = {
   onFinish: PropTypes.func.isRequired,
+  practiceExplanations: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.func.isRequired,
+      PropTypes.shape({
+        button: PropTypes.string.isRequired,
+        heading: PropTypes.string.isRequired,
+        text: PropTypes.string,
+        video: PropTypes.string
+      }).isRequired
+    ]).isRequired
+  ).isRequired,
+  practiceQuestions: PropTypes.arrayOf(
+    PropTypes.shape({
+      correctAnswerID: PropTypes.string.isRequired,
+      questionImage: PropTypes.shape({url: PropTypes.string.isRequired}).isRequired,
+      responses: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          image: PropTypes.shape({url: PropTypes.string.isRequired}).isRequired
+        }).isRequired
+      ).isRequired
+    }).isRequired
+  ).isRequired,
   translate: PropTypes.func.isRequired
 };
 

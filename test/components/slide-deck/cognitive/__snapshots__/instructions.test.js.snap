@@ -1,5 +1,162 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Instructions renders custom examples 1`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    First Heading
+  </h1>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "First Text",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    First Button
+  </button>
+</div>
+`;
+
+exports[`Instructions renders custom examples 2`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    Second Heading
+  </h2>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Second Text",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    Second Button
+  </button>
+</div>
+`;
+
+exports[`Instructions renders custom examples 3`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    Third Heading
+  </h2>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Third Text",
+      }
+    }
+  />
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    Third Button
+  </button>
+</div>
+`;
+
+exports[`Instructions renders custom examples 4`] = `
+<div
+  className="mock"
+>
+  Practice
+</div>
+`;
+
+exports[`Instructions renders custom examples 5`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    cognitive_instructions_step_4_heading
+  </h2>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_4_html",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    cognitive_instructions_step_4_button
+  </button>
+</div>
+`;
+
+exports[`Instructions renders custom instructions 1`] = `
+<div
+  className="instructions"
+>
+  <h2>
+    Custom Instructions
+  </h2>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<ul><li>Some Text</li></ul>",
+      }
+    }
+  />
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    Goodbye
+  </button>
+</div>
+`;
+
 exports[`Instructions renders step 1 1`] = `
 <div
   className="instructions"
@@ -7,11 +164,14 @@ exports[`Instructions renders step 1 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p
-    className="padBottom"
-  >
-    cognitive_instructions_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -29,9 +189,14 @@ exports[`Instructions renders step 2 1`] = `
   <h2>
     cognitive_instructions_step_2_heading
   </h2>
-  <p>
-    cognitive_instructions_step_2_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_2_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -70,6 +235,7 @@ exports[`Instructions renders step 4 1`] = `
     cognitive_instructions_step_4_heading
   </h2>
   <div
+    className="text"
     dangerouslySetInnerHTML={
       Object {
         "__html": "cognitive_instructions_step_4_html",
@@ -93,9 +259,14 @@ exports[`Instructions time trial default timed renders step 1 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
-    cognitive_instructions_trial_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -114,6 +285,7 @@ exports[`Instructions time trial default timed renders step 4 1`] = `
     cognitive_instructions_step_4_heading
   </h2>
   <div
+    className="text"
     dangerouslySetInnerHTML={
       Object {
         "__html": "cognitive_instructions_trial_step_4_timed_html",
@@ -137,9 +309,14 @@ exports[`Instructions time trial default untimed renders step 1 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p>
-    cognitive_instructions_trial_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_trial_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -158,6 +335,7 @@ exports[`Instructions time trial default untimed renders step 4 1`] = `
     cognitive_instructions_step_4_heading
   </h2>
   <div
+    className="text"
     dangerouslySetInnerHTML={
       Object {
         "__html": "cognitive_instructions_trial_step_4_untimed_html",
@@ -182,6 +360,7 @@ exports[`Instructions time trial minimal timed renders step 4 1`] = `
     cognitive_instructions_step_4_heading
   </h2>
   <div
+    className="text"
     dangerouslySetInnerHTML={
       Object {
         "__html": "cognitive_instructions_trial_step_4_timed_minimal_html",
@@ -206,6 +385,7 @@ exports[`Instructions time trial minimal untimed renders step 4 1`] = `
     cognitive_instructions_step_4_heading
   </h2>
   <div
+    className="text"
     dangerouslySetInnerHTML={
       Object {
         "__html": "cognitive_instructions_trial_step_4_untimed_minimal_html",
@@ -229,11 +409,14 @@ exports[`Instructions videos horizontal renders component 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p
-    className="padBottom"
-  >
-    cognitive_instructions_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -251,11 +434,14 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p
-    className="padBottom"
-  >
-    cognitive_instructions_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -273,11 +459,14 @@ exports[`Instructions videos vertical renders component 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p
-    className="padBottom"
-  >
-    cognitive_instructions_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}
@@ -295,11 +484,14 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <p
-    className="padBottom"
-  >
-    cognitive_instructions_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_instructions_step_1_text",
+      }
+    }
+  />
   <button
     className="btnBlue"
     onClick={[Function]}

@@ -13,6 +13,171 @@ exports[`Practice actions finishes 1`] = `
 </div>
 `;
 
+exports[`Practice renders custom questions 1`] = `
+<div
+  className="practiceContainer"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="timer"
+    >
+      cognitive_practice_heading
+    </div>
+    <div
+      className="status"
+    >
+      1
+       / 
+      2
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          Object {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 2`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    First Heading
+  </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "First Text",
+      }
+    }
+  />
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    First Button
+  </button>
+</div>
+`;
+
+exports[`Practice renders custom questions 3`] = `
+<div
+  className="practiceContainer"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="timer"
+    >
+      cognitive_practice_heading
+    </div>
+    <div
+      className="status"
+    >
+      2
+       / 
+      2
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 4`] = `
+<div
+  className="instructions"
+>
+  <h1>
+    Second Heading
+  </h1>
+  <p
+    className="center"
+  >
+    cognitive_practice_answer_incorrect
+  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Second Text",
+      }
+    }
+  />
+  <video
+    autoPlay={true}
+    disableremoteplayback="true"
+    loop={true}
+    muted={true}
+    playsInline={true}
+  >
+    <source
+      src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <button
+    className="btnBlue"
+    onClick={[Function]}
+    type="button"
+  >
+    Second Button
+  </button>
+</div>
+`;
+
+exports[`Practice renders custom questions 5`] = `
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
 exports[`Practice renders question 1 1`] = `
 <div
   className="practiceContainer"
@@ -65,9 +230,14 @@ exports[`Practice renders question 1 explanation 1`] = `
   >
     cognitive_practice_answer_correct
   </p>
-  <p>
-    cognitive_practice_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_1_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -142,9 +312,14 @@ exports[`Practice renders question 2 explanation 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <p>
-    cognitive_practice_step_2_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_2_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -219,9 +394,14 @@ exports[`Practice renders question 3 explanation 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <p>
-    cognitive_practice_step_3_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_3_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -256,9 +436,14 @@ exports[`Practice videos horizontal renders component 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <p>
-    cognitive_practice_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_1_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -293,9 +478,14 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <p>
-    cognitive_practice_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_1_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -330,9 +520,14 @@ exports[`Practice videos vertical renders component 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <p>
-    cognitive_practice_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_1_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"
@@ -367,9 +562,14 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <p>
-    cognitive_practice_step_1_text
-  </p>
+  <div
+    className="text"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "cognitive_practice_step_1_text",
+      }
+    }
+  />
   <video
     autoPlay={true}
     disableremoteplayback="true"

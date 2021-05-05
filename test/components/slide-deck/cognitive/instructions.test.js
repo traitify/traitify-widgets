@@ -175,6 +175,54 @@ describe("Instructions", () => {
     });
   });
 
+  it("renders custom examples", () => {
+    props.options = {
+      practiceExamples: [
+        {button: "First Button", heading: "First Heading", text: "First Text"},
+        {button: "Second Button", heading: "Second Heading", text: "Second Text"},
+        {
+          button: "Third Button",
+          heading: "Third Heading",
+          text: "Third Text",
+          video: "https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        }
+      ]
+    };
+
+    const component = new ComponentHandler(<Component {...props} />);
+    expect(component.tree).toMatchSnapshot();
+
+    component.act(() => component.findByText("First Button").props.onClick());
+    expect(component.tree).toMatchSnapshot();
+
+    component.act(() => component.findByText("Second Button").props.onClick());
+    expect(component.tree).toMatchSnapshot();
+
+    component.act(() => component.findByText("Third Button").props.onClick());
+    expect(component.tree).toMatchSnapshot();
+
+    component.act(() => component.instance.findByType(Practice).props.onFinish());
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders custom instructions", () => {
+    props.options = {
+      finalInstruction: {
+        button: "Goodbye",
+        heading: "Custom Instructions",
+        text: "<ul><li>Some Text</li></ul>",
+        video: "https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      }
+    };
+
+    const component = new ComponentHandler(<Component {...props} />);
+    component.act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
+    component.act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+    component.act(() => component.instance.findByType(Practice).props.onFinish());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders step 1", () => {
     const component = new ComponentHandler(<Component {...props} />);
 

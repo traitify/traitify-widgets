@@ -24,12 +24,10 @@ export default function withTraitify(WrappedComponent) {
           id: PropTypes.string.isRequired,
           locale_key: PropTypes.string,
           profile_ids: PropTypes.arrayOf(PropTypes.string.isRequired),
-          recommendation: PropTypes.shape({recommendation_id: PropTypes.string}),
-          slides: PropTypes.arrayOf(
-            PropTypes.shape({
-              caption: PropTypes.string.isRequired
-            }).isRequired
-          )
+          questions: PropTypes.arrayOf(
+            PropTypes.shape({id: PropTypes.string.isRequired}).isRequired
+          ),
+          recommendation: PropTypes.shape({recommendation_id: PropTypes.string})
         }),
         PropTypes.shape({ // Personality
           deck_id: PropTypes.string.isRequired,
@@ -474,6 +472,7 @@ export default function withTraitify(WrappedComponent) {
       if(this.getOption("surveyType") === "cognitive") {
         switch(type) {
           case "questions":
+          case "slides":
             return !!(assessment && (assessment.questions || []).length > 0);
           case "results":
             return !!(assessment && assessment.completed);

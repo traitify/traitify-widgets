@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import HighCharts from "highcharts";
-import HighChartsReact from "highcharts-react-official";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
-export default class HighChart extends Component {
+export default class Highchart extends Component {
   static propTypes = {
     chart: PropTypes.shape({
       type: PropTypes.string
@@ -83,8 +83,8 @@ export default class HighChart extends Component {
   }
   render() {
     return (
-      <HighChartsReact
-        highcharts={HighCharts}
+      <HighchartsReact
+        highcharts={Highcharts}
         options={this.state.config}
       />
     );

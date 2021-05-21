@@ -27,7 +27,7 @@ exports[`PersonalityType renders component 1`] = `
         <span
           className="score"
         >
-          6
+          9
            - 
           Medium
         </span>

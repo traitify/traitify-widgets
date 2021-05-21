@@ -44,7 +44,7 @@ exports[`Dimension renders component 1`] = `
           |
         </span>
          
-        6
+        9
          - 
         Medium
       </h2>
@@ -116,7 +116,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
           |
         </span>
          
-        6
+        9
          - 
         Medium
       </h2>
@@ -265,7 +265,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
           |
         </span>
          
-        6
+        9
          - 
         Medium
       </h2>

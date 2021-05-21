@@ -30,7 +30,7 @@ describe("PersonalityRecommendationChart", () => {
       assessment,
       benchmark,
       followBenchmark: jest.fn().mockName("followBenchmark"),
-      followGuide: jest.fn().mockName("followBenchmark"),
+      followGuide: jest.fn().mockName("followGuide"),
       guide,
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),

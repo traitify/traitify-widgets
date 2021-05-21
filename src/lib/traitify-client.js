@@ -58,8 +58,8 @@ export default class TraitifyClient {
     } else {
       params = _params;
     }
-    // TODO remove conditional after cognitive and interview services
-    // are setup to handle auth from a query param
+    // TODO: remove conditional after cognitive and interview services
+    //   are setup to handle auth from a query param
     if(url.includes("assessment")) {
       url += url.includes("?") ? "&" : "?";
       url += toQueryString({authorization: this.publicKey});

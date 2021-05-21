@@ -34,7 +34,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="background medium"
+        className="background high"
         style={
           Object {
             "background": "rgba(41,183,112,0.1)",
@@ -170,7 +170,7 @@ exports[`PersonalityDimensionColumns renders component 1`] = `
         </h2>
       </div>
       <div
-        className="background medium"
+        className="background low"
         style={
           Object {
             "background": "rgba(239,97,94,0.1)",

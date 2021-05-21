@@ -54,13 +54,9 @@ function PersonalityRecommendationChart(props) {
     const line = {data: []};
 
     sortByTypePosition(assessment.personality_types).forEach(({personality_type: type, score}) => {
-      const competency = (dig(guide, "competencies") || []).find(({questionSequences}) => {
-        // TODO: Remove `personality_type_id` once caches have expired
-        const questionSequence = questionSequences[0];
-        const typeID = questionSequence.personality_type_id || questionSequence.personalityTypeId;
-
-        return typeID === type.id;
-      });
+      const competency = (dig(guide, "competencies") || []).find(({questionSequences}) => (
+        questionSequences[0].personalityTypeId === type.id
+      ));
       const rangeType = benchmark.range_types.find(({id}) => id === type.id);
       const typeRange = rangeType.ranges
         .find((range) => score >= range.min_score && score <= range.max_score);

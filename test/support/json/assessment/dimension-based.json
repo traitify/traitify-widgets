@@ -96,8 +96,8 @@
         "personality_traits": [],
         "level": "Medium"
       },
-      "score": 6,
-      "standard_score": 62.962963
+      "score": 9,
+      "standard_score": 92.962963
     },
     {
       "personality_type": {
@@ -190,7 +190,7 @@
         "level": "Medium"
       },
       "score": 5,
-      "standard_score": 40.158733
+      "standard_score": 50.158733
     },
     {
       "personality_type": {
@@ -468,8 +468,8 @@
         "personality_traits": [],
         "level": "Medium"
       },
-      "score": 4,
-      "standard_score": 35
+      "score": 3,
+      "standard_score": 33
     }
   ],
   "personality_traits": [

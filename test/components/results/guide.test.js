@@ -1,6 +1,7 @@
 import {Component} from "components/results/guide/index";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
+import benchmark from "support/json/benchmark.json";
 import guide from "support/json/guide.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
@@ -12,6 +13,8 @@ describe("Guide", () => {
   beforeEach(() => {
     props = {
       assessment,
+      benchmark,
+      followBenchmark: jest.fn().mockName("followBenchmark"),
       followGuide: jest.fn().mockName("followGuide"),
       guide: {
         assessment_id: "xyz",
@@ -97,6 +100,12 @@ describe("Guide", () => {
     });
   });
 
+  it("follows the benchmark", () => {
+    new ComponentHandler(<Component {...props} />);
+
+    expect(props.followBenchmark).toHaveBeenCalled();
+  });
+
   it("follows the guide", () => {
     new ComponentHandler(<Component {...props} />);
 
@@ -110,6 +119,13 @@ describe("Guide", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("toggles question content", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    component.act(() => component.instance.findAllByProps({className: "questionText"})[2].parent.props.onClick());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("updates activeCompetency", () => {
     const component = new ComponentHandler(<Component {...props} />);
     const alt = `${props.guide.competencies[1].name} badge`;
@@ -118,7 +134,23 @@ describe("Guide", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("updates activeCompetency through select", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+    const value = props.guide.competencies[1].id;
+    component.act(() => component.instance.findByType("select").props.onChange({target: {value}}));
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders component", () => {
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component if benchmark not ready", () => {
+    props.benchmark = null;
+    props.isReady.mockImplementation((value) => value !== "benchmark");
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

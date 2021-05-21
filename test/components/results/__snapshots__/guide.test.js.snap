@@ -13,8 +13,23 @@ exports[`Guide renders component 1`] = `
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
         <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
@@ -25,28 +40,13 @@ exports[`Guide renders component 1`] = `
         >
           Delivering Results
         </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
       </select>
       <p
         className="mobileBadge"
       >
         <img
-          alt="Solving Problems badge"
-          src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
         />
       </p>
     </div>
@@ -54,52 +54,12 @@ exports[`Guide renders component 1`] = `
       className="tabs"
     >
       <li
-        className="medium tab tabActive"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="medium tab"
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -114,7 +74,32 @@ exports[`Guide renders component 1`] = `
         </button>
       </li>
       <li
-        className="medium tab"
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -128,6 +113,46 @@ exports[`Guide renders component 1`] = `
           Influencing People
         </button>
       </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
     </ul>
   </div>
   <div
@@ -137,9 +162,9 @@ exports[`Guide renders component 1`] = `
       className="tabContentActive"
     >
       <h2>
-        Solving Problems
+        Engaging with People
       </h2>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
       <p>
         <button
           onClick={[Function]}
@@ -151,7 +176,7 @@ exports[`Guide renders component 1`] = `
       <hr />
       <div>
         <h2>
-          Open-Minded/Pragmatic People
+          Extraverted/Introverted People
         </h2>
         <p>
           guide_intro
@@ -171,7 +196,7 @@ exports[`Guide renders component 1`] = `
             <span
               className="questionText"
             >
-              Tell me how you would go about solving a work problem you have not encountered before.
+              How would you describe the way in which you deal with new people in a work situation?
             </span>
             <span
               className="questionIcon"
@@ -188,16 +213,22 @@ exports[`Guide renders component 1`] = `
           <div>
             <ul>
               <li>
-                Do they talk about a number of different ways of approaching the problem?
+                How comfortable are they approaching new people (work colleagues, customers etc)?
               </li>
               <li>
-                Are their ideas new, original or different in any way?
+                What sort of interpersonal skills do they describe using?
               </li>
               <li>
-                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+                How much energy do they invest in trying to connect with other people?
               </li>
               <li>
-                And to probe into possible issues with being open-minded/pragmatic.
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
               </li>
             </ul>
           </div>
@@ -217,7 +248,7 @@ exports[`Guide renders component 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
             </span>
             <span
               className="questionIcon"
@@ -244,7 +275,297 @@ exports[`Guide renders component 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Guide renders component if benchmark not ready 1`] = `
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
+      <select
+        className="mobileSelect"
+        onChange={[Function]}
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+      </select>
+      <p
+        className="mobileBadge"
+      >
+        <img
+          alt="Managing Pressure badge"
+          src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+        />
+      </p>
+    </div>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
+      <h2>
+        Managing Pressure
+      </h2>
+      At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and the way in which they control their emotions and underlying tension in order to stay on task and cope with everyday challenges.
+      <p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          read_more
+        </button>
+      </p>
+      <hr />
+      <div>
+        <h2>
+          Resilient/Reflexive People
+        </h2>
+        <p>
+          guide_intro
+        </p>
+        <div
+          className="question"
+        >
+          <h3
+            id="traitify-question-1"
+          >
+            Question 1
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              Tell me about dealing with a highly pressured and difficult work situation.
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                Do they appear to respond with the appropriate level of concern?
+              </li>
+              <li>
+                Are they able to deal with things in a calm and upbeat way?
+              </li>
+              <li>
+                Do they keep their feelings under control?
+              </li>
+              <li>
+                Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
+              </li>
+              <li>
+                And to probe into possible issues with being resilient/reflexive.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 2
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 3
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?
             </span>
             <span
               className="questionIcon"
@@ -281,8 +602,23 @@ exports[`Guide toggles expanded intro 1`] = `
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
         <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
@@ -293,28 +629,13 @@ exports[`Guide toggles expanded intro 1`] = `
         >
           Delivering Results
         </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
       </select>
       <p
         className="mobileBadge"
       >
         <img
-          alt="Solving Problems badge"
-          src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
         />
       </p>
     </div>
@@ -322,52 +643,12 @@ exports[`Guide toggles expanded intro 1`] = `
       className="tabs"
     >
       <li
-        className="medium tab tabActive"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="medium tab"
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -382,7 +663,32 @@ exports[`Guide toggles expanded intro 1`] = `
         </button>
       </li>
       <li
-        className="medium tab"
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -396,6 +702,46 @@ exports[`Guide toggles expanded intro 1`] = `
           Influencing People
         </button>
       </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
     </ul>
   </div>
   <div
@@ -405,9 +751,9 @@ exports[`Guide toggles expanded intro 1`] = `
       className="tabContentActive"
     >
       <h2>
-        Solving Problems
+        Engaging with People
       </h2>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
       <p>
         <button
           onClick={[Function]}
@@ -417,17 +763,13 @@ exports[`Guide toggles expanded intro 1`] = `
         </button>
       </p>
       <p>
-        The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
-In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
-They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
-Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
+        The benefits of being extraverted are likely to include being people oriented, approachable, fun loving, energetic, fast to act, and 'full on'. In contrast someone who is introverted probably prefers to work independently, and is more likely to be dispassionate, thoughtful and measured, to think before acting and to stand back. Those who are a mixture of both (extroverted/introverted) are best described as socially skilled, quick to connect, energetic, thoughtful and action oriented, and enthusiastic.
+These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <hr />
       <div>
         <h2>
-          Open-Minded/Pragmatic People
+          Extraverted/Introverted People
         </h2>
         <p>
           guide_intro
@@ -447,7 +789,7 @@ The first question is looking to confirm what they should be like; the second tw
             <span
               className="questionText"
             >
-              Tell me how you would go about solving a work problem you have not encountered before.
+              How would you describe the way in which you deal with new people in a work situation?
             </span>
             <span
               className="questionIcon"
@@ -464,16 +806,22 @@ The first question is looking to confirm what they should be like; the second tw
           <div>
             <ul>
               <li>
-                Do they talk about a number of different ways of approaching the problem?
+                How comfortable are they approaching new people (work colleagues, customers etc)?
               </li>
               <li>
-                Are their ideas new, original or different in any way?
+                What sort of interpersonal skills do they describe using?
               </li>
               <li>
-                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+                How much energy do they invest in trying to connect with other people?
               </li>
               <li>
-                And to probe into possible issues with being open-minded/pragmatic.
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
               </li>
             </ul>
           </div>
@@ -493,7 +841,7 @@ The first question is looking to confirm what they should be like; the second tw
             <span
               className="questionText"
             >
-              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
             </span>
             <span
               className="questionIcon"
@@ -520,7 +868,7 @@ The first question is looking to confirm what they should be like; the second tw
             <span
               className="questionText"
             >
-              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
             </span>
             <span
               className="questionIcon"
@@ -531,6 +879,333 @@ The first question is looking to confirm what they should be like; the second tw
               }
             />
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Guide toggles question content 1`] = `
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
+      <select
+        className="mobileSelect"
+        onChange={[Function]}
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+      </select>
+      <p
+        className="mobileBadge"
+      >
+        <img
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+        />
+      </p>
+    </div>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
+      <h2>
+        Engaging with People
+      </h2>
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+      <p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          read_more
+        </button>
+      </p>
+      <hr />
+      <div>
+        <h2>
+          Extraverted/Introverted People
+        </h2>
+        <p>
+          guide_intro
+        </p>
+        <div
+          className="question"
+        >
+          <h3
+            id="traitify-question-1"
+          >
+            Question 1
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              How would you describe the way in which you deal with new people in a work situation?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                How comfortable are they approaching new people (work colleagues, customers etc)?
+              </li>
+              <li>
+                What sort of interpersonal skills do they describe using?
+              </li>
+              <li>
+                How much energy do they invest in trying to connect with other people?
+              </li>
+              <li>
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 2
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 3
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                Do they misjudge situations?
+              </li>
+              <li>
+                Do they sometimes think and are then slow to act, or vice versa?
+              </li>
+              <li>
+                Do they tend to 'sit on the fence'?
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>
+              question_adaptability
+            </h4>
+            <div>
+              <ul>
+                <li>
+                  Do they know they sometimes read situations the wrong way?
+                </li>
+                <li>
+                  Can they provide an example?
+                </li>
+                <li>
+                  How do they decide whether to turn up the social/action oriented side of their character, or turn it down?
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -551,8 +1226,23 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
         <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
@@ -563,28 +1253,13 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         >
           Delivering Results
         </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
       </select>
       <p
         className="mobileBadge"
       >
         <img
-          alt="Updated Name badge"
-          src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
         />
       </p>
     </div>
@@ -592,52 +1267,12 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       className="tabs"
     >
       <li
-        className="medium tab tabActive"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Updated Name badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Updated Name
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="medium tab"
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -652,7 +1287,32 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         </button>
       </li>
       <li
-        className="medium tab"
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -666,6 +1326,46 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
           Influencing People
         </button>
       </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Updated Name badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Updated Name
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
     </ul>
   </div>
   <div
@@ -675,9 +1375,9 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       className="tabContentActive"
     >
       <h2>
-        Updated Name
+        Engaging with People
       </h2>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
       <p>
         <button
           onClick={[Function]}
@@ -689,7 +1389,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <hr />
       <div>
         <h2>
-          Open-Minded/Pragmatic People
+          Extraverted/Introverted People
         </h2>
         <p>
           guide_intro
@@ -709,7 +1409,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
             <span
               className="questionText"
             >
-              Tell me how you would go about solving a work problem you have not encountered before.
+              How would you describe the way in which you deal with new people in a work situation?
             </span>
             <span
               className="questionIcon"
@@ -726,16 +1426,22 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
           <div>
             <ul>
               <li>
-                Do they talk about a number of different ways of approaching the problem?
+                How comfortable are they approaching new people (work colleagues, customers etc)?
               </li>
               <li>
-                Are their ideas new, original or different in any way?
+                What sort of interpersonal skills do they describe using?
               </li>
               <li>
-                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+                How much energy do they invest in trying to connect with other people?
               </li>
               <li>
-                And to probe into possible issues with being open-minded/pragmatic.
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
               </li>
             </ul>
           </div>
@@ -755,7 +1461,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
             <span
               className="questionText"
             >
-              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
             </span>
             <span
               className="questionIcon"
@@ -782,7 +1488,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
             <span
               className="questionText"
             >
-              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
             </span>
             <span
               className="questionIcon"
@@ -813,17 +1519,12 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
         >
-          Updated Name
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
+          Engaging with People
         </option>
         <option
           value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -831,22 +1532,27 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
           Managing Pressure
         </option>
         <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
           value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
         >
           Influencing People
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
         </option>
       </select>
       <p
         className="mobileBadge"
       >
         <img
-          alt="Solving Problems badge"
-          src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
         />
       </p>
     </div>
@@ -854,52 +1560,12 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       className="tabs"
     >
       <li
-        className="medium tab tabActive"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Updated Name badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Updated Name
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="medium tab"
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -914,7 +1580,32 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
         </button>
       </li>
       <li
-        className="medium tab"
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -928,6 +1619,46 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
           Influencing People
         </button>
       </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
     </ul>
   </div>
   <div
@@ -937,9 +1668,9 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       className="tabContentActive"
     >
       <h2>
-        Solving Problems
+        Engaging with People
       </h2>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
       <p>
         <button
           onClick={[Function]}
@@ -951,7 +1682,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <hr />
       <div>
         <h2>
-          Open-Minded/Pragmatic People
+          Extraverted/Introverted People
         </h2>
         <p>
           guide_intro
@@ -971,7 +1702,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
             <span
               className="questionText"
             >
-              Tell me how you would go about solving a work problem you have not encountered before.
+              How would you describe the way in which you deal with new people in a work situation?
             </span>
             <span
               className="questionIcon"
@@ -988,16 +1719,22 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
           <div>
             <ul>
               <li>
-                Do they talk about a number of different ways of approaching the problem?
+                How comfortable are they approaching new people (work colleagues, customers etc)?
               </li>
               <li>
-                Are their ideas new, original or different in any way?
+                What sort of interpersonal skills do they describe using?
               </li>
               <li>
-                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+                How much energy do they invest in trying to connect with other people?
               </li>
               <li>
-                And to probe into possible issues with being open-minded/pragmatic.
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
               </li>
             </ul>
           </div>
@@ -1017,7 +1754,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
             </span>
             <span
               className="questionIcon"
@@ -1044,7 +1781,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
             </span>
             <span
               className="questionIcon"
@@ -1062,7 +1799,298 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
 </div>
 `;
 
-exports[`Guide update sets the guide data if the guide's removed 1`] = `null`;
+exports[`Guide update sets the guide data if the guide's removed 1`] = `
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
+      <select
+        className="mobileSelect"
+        onChange={[Function]}
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+      </select>
+      <p
+        className="mobileBadge"
+      >
+        <img
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+        />
+      </p>
+    </div>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
+      <h2>
+        Engaging with People
+      </h2>
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+      <p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          read_more
+        </button>
+      </p>
+      <hr />
+      <div>
+        <h2>
+          Extraverted/Introverted People
+        </h2>
+        <p>
+          guide_intro
+        </p>
+        <div
+          className="question"
+        >
+          <h3
+            id="traitify-question-1"
+          >
+            Question 1
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              How would you describe the way in which you deal with new people in a work situation?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                How comfortable are they approaching new people (work colleagues, customers etc)?
+              </li>
+              <li>
+                What sort of interpersonal skills do they describe using?
+              </li>
+              <li>
+                How much energy do they invest in trying to connect with other people?
+              </li>
+              <li>
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 2
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 3
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
 
 exports[`Guide updates activeCompetency 1`] = `
 <div
@@ -1080,6 +2108,21 @@ exports[`Guide updates activeCompetency 1`] = `
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
         <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
@@ -1088,21 +2131,6 @@ exports[`Guide updates activeCompetency 1`] = `
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
         >
           Delivering Results
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
         </option>
       </select>
       <p
@@ -1118,52 +2146,12 @@ exports[`Guide updates activeCompetency 1`] = `
       className="tabs"
     >
       <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="medium tab tabActive"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="medium tab"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="medium tab"
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -1178,7 +2166,32 @@ exports[`Guide updates activeCompetency 1`] = `
         </button>
       </li>
       <li
-        className="medium tab"
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
       >
         <button
           onClick={[Function]}
@@ -1190,6 +2203,336 @@ exports[`Guide updates activeCompetency 1`] = `
           />
           <br />
           Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
+      <h2>
+        Delivering Results
+      </h2>
+      At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
+      <p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          read_more
+        </button>
+      </p>
+      <hr />
+      <div>
+        <h2>
+          Flexible People
+        </h2>
+        <p>
+          guide_intro
+        </p>
+        <div
+          className="question"
+        >
+          <h3
+            id="traitify-question-1"
+          >
+            Question 1
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                Are they able to adapt to situations?
+              </li>
+              <li>
+                Can they change direction of thought (and travel) quickly?
+              </li>
+              <li>
+                Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
+              </li>
+              <li>
+                Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
+              </li>
+              <li>
+                And to probe into possible issues with being flexible.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 2
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 3
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Guide updates activeCompetency through select 1`] = `
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
+      <select
+        className="mobileSelect"
+        onChange={[Function]}
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+      </select>
+      <p
+        className="mobileBadge"
+      >
+        <img
+          alt="Delivering Results badge"
+          src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+        />
+      </p>
+    </div>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "black",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
         </button>
       </li>
     </ul>

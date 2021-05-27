@@ -111,7 +111,12 @@ function Guide(props) {
 
     setData(sortedData);
     setActiveCompetency(sortedData[0]);
-  }, [dig(assessment, "id"), dig(guide, "assessment_id"), dig(guide, "locale_key")]);
+  }, [
+    dig(assessment, "id"),
+    dig(benchmark, "id"),
+    dig(guide, "assessment_id"),
+    dig(guide, "locale_key")
+  ]);
 
   if(!isReady("guide")) { return null; }
   if(!isReady("results")) { return null; }

@@ -1213,6 +1213,299 @@ exports[`Guide toggles question content 1`] = `
 </div>
 `;
 
+exports[`Guide update sets the guide data if the benchmark changes 1`] = `
+<div
+  className="tabsContainer"
+>
+  <div
+    className="tabContainer"
+  >
+    <div
+      className="competencySelect"
+    >
+      <select
+        className="mobileSelect"
+        onChange={[Function]}
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+      </select>
+      <p
+        className="mobileBadge"
+      >
+        <img
+          alt="Influencing People badge"
+          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+        />
+      </p>
+    </div>
+    <ul
+      className="tabs"
+    >
+      <li
+        className="tab tabActive"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="tabsContent"
+  >
+    <div
+      className="tabContentActive"
+    >
+      <h2>
+        Influencing People
+      </h2>
+      At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+      <p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          read_more
+        </button>
+      </p>
+      <hr />
+      <div>
+        <h2>
+          Agreeable/Independent People
+        </h2>
+        <p>
+          guide_intro
+        </p>
+        <div
+          className="question"
+        >
+          <h3
+            id="traitify-question-1"
+          >
+            Question 1
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+          <h4>
+            question_purpose
+          </h4>
+          <div>
+            <ul>
+              <li>
+                Are they tuned into other people's thoughts and feelings?
+              </li>
+              <li>
+                How accommodating are they?
+              </li>
+              <li>
+                Do they use a realistic but sympathetic style?
+              </li>
+              <li>
+                Do they push their case in an open and sensitive way?
+              </li>
+              <li>
+                Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
+              </li>
+              <li>
+                And to probe into possible issues with being agreeable/independent.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 2
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="question"
+        >
+          <h3
+            id={null}
+          >
+            Question 3
+          </h3>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="questionText"
+            >
+              (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            </span>
+            <span
+              className="questionIcon"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Guide update sets the guide data if the guide's assessment ID changes 1`] = `
 <div
   className="tabsContainer"

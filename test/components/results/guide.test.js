@@ -66,6 +66,21 @@ describe("Guide", () => {
   });
 
   describe("update", () => {
+    it("sets the guide data if the benchmark changes", () => {
+      const component = new ComponentHandler(<Component {...props} />);
+      component.updateProps({
+        benchmark: {
+          ...benchmark,
+          id: "updated-benchmark",
+          range_types: benchmark.range_types.map((rangeType) => ({
+            ...rangeType, ranges: [{match_score: 5, max_score: 10, min_score: 0}]
+          }))
+        }
+      });
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
     it("sets the guide data if the guide's assessment ID changes", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps({

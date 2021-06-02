@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  text-align: center;
   height: 650px;
   padding: 5px 15px 15px 15px;
   @include rems(16);
@@ -63,7 +62,6 @@
     white-space: pre-wrap;
     margin: 0 auto;
     margin-bottom: 0.5em;
-    text-align: center;
   }
 
   @include max-width(s) {

@@ -263,6 +263,37 @@ Here is a list of the available locales (`en-us` is the default):
   assessment.perspective("thirdPerson");
 ```
 
+## Reports
+
+Set the perspective and view options to display our Big Five Personality Reports.
+
+### Big Five Hiring Manager Report
+
+```
+assessment.perspective("thirdPerson");
+assessment.view("candidate");
+```
+
+This report also makes use of a benchmark/recommendation. It will default to the benchmark used to create an assessment. To use a different benchmark, you can pass the ID as an option.
+
+```
+assessment.benchmarkID(benchmarkID);
+```
+
+### Big Five Candidate Report
+
+```
+assessment.perspective("firstPerson");
+assessment.view("candidate");
+```
+
+### Engage Employee Report
+
+```
+assessment.perspective("thirdPerson");
+assessment.view("employee");
+```
+
 ## Traitify Client
 We expose our JavaScript api client that you can use to make additional calls to our API from the client side. We make available `get`, `put`, and `post` functions. These methods will use the api key and url you configured when you initialized the Traitify library. Here is an example that returns career matches for a `career-deck` assessment. Further documentation on the API methods available can be found at https://app.traitify.com/developer/documentation.
 

@@ -12,9 +12,6 @@
     "import/resolver": {
       "jest": {
         "jestConfigFile": "./test/jest.config.js"
-      },
-      "webpack": {
-        "config": "webpack.config.babel.js"
       }
     }
   }

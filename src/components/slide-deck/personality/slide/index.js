@@ -1,6 +1,6 @@
+import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
 import {Component} from "react";
-import Markdown from "react-markdown";
 import style from "./style.scss";
 
 export default class Slide extends Component {
@@ -78,7 +78,7 @@ export default class Slide extends Component {
         <div key="instructions" className={`${style.slide} ${style.middle}`}>
           <div className={style.instructionsSlide}>
             <div className={style.instructionsText}>
-              <Markdown>{instructions}</Markdown>
+              <Markdown>{instructions || ""}</Markdown>
             </div>
             <div className={style.instructionsStart}>
               <button className={style.instructionsButton} onClick={start} type="button">

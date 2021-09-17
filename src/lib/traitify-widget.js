@@ -1,5 +1,5 @@
 import {render, unmountComponentAtNode} from "react-dom";
-import createUUID from "uuid";
+import {v4 as createUUID} from "uuid";
 import {unique} from "lib/helpers/array";
 import guessComponent from "lib/helpers/guess-component";
 

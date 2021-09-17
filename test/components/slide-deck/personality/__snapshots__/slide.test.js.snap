@@ -660,9 +660,9 @@ exports[`Slide renders instructions 1`] = `
       <div
         className="instructionsText"
       >
-        <p>
+        <span>
           Click me or not me
-        </p>
+        </span>
       </div>
       <div
         className="instructionsStart"

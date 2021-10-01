@@ -1,4 +1,7 @@
 module.exports = {
+  collectCoverageFrom: [
+    "<rootDir>/src/**/*.js"
+  ],
   globals: {
     VERSION: "0.0.0-test"
   },

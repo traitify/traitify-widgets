@@ -136,9 +136,6 @@
     #{$property}: $rem;
   }
 }
-@function rem($val) {
-  @return #{$val / 16}rem;
-}
 
 /*     Grid components     */
 @mixin cols($i: 12, $total: 12) {
@@ -249,18 +246,16 @@
 %widgetContainer{
   box-sizing: border-box;
   color: #333;
-  font: 100%/1.5 "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font: 100%/1.5 "Source Sans Pro", "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
   width: 100%;
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
   button {
     border: none;
     border-radius: 0;
     cursor: pointer;
-    font-family: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+    font-family: "Source Sans Pro", "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
   }
 }

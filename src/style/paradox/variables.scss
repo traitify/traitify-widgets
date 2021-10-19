@@ -1,0 +1,19 @@
+$breakpoint-xl: 71.25em; // 1140px
+$breakpoint-lg: 60em; // 960px
+$breakpoint-md: 48em; // 768px
+$breakpoint-sm: 35.5em; // 568px
+$breakpoint-xs: 30em; // 480px
+$breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl
+);
+
+$font-size: 16;
+$min-height: 600px;
+
+// Colors
+$black: #000000;
+$white: #FFFFFF;

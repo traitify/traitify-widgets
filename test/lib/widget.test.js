@@ -355,6 +355,20 @@ describe("Widget", () => {
     });
   });
 
+  describe("theme", () => {
+    it("returns widget", () => {
+      const returnValue = widget.theme("paradox");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.theme("paradox");
+
+      expect(widget.options.theme).toBe("paradox");
+    });
+  });
+
   describe("view", () => {
     it("returns widget", () => {
       const returnValue = widget.view("candidate");

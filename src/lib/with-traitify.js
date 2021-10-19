@@ -5,7 +5,9 @@ import {getDisplayName, loadFont} from "lib/helpers";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
-export default function withTraitify(WrappedComponent) {
+const fonts = {paradox: "https://fonts.googleapis.com/css?family=Open+Sans"};
+
+export default function withTraitify(WrappedComponent, themeComponents = {}) {
   return class TraitifyComponent extends Component {
     static displayName = `Traitify${getDisplayName(WrappedComponent)}`
     static defaultProps = {
@@ -85,7 +87,7 @@ export default function withTraitify(WrappedComponent) {
     componentDidMount() {
       this.didMount = true;
 
-      loadFont();
+      loadFont(fonts[this.getOption("theme")]);
 
       if(this.getOption("surveyType") === "cognitive") { return this.updateCognitiveAssessment(); }
 
@@ -700,7 +702,9 @@ export default function withTraitify(WrappedComponent) {
         ui
       };
 
-      return <WrappedComponent {...options} />;
+      const ThemeComponent = themeComponents[getOption("theme")] || WrappedComponent;
+
+      return <ThemeComponent {...options} />;
     }
   };
 }

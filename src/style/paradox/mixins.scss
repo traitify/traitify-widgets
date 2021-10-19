@@ -1,0 +1,18 @@
+@mixin max-width($name) {
+  $value: map-get($breakpoints, $name);
+
+  @media(max-width: $value) { @content; }
+}
+
+@mixin min-width($name) {
+  $value: map-get($breakpoints, $name);
+
+  @media(min-width: $value) { @content; }
+}
+
+// TODO: Do I need this?
+@mixin rems($px-size) {
+  $rem-size: $px-size / $font-size;
+  font-size: $px-size + px;
+  font-size: $rem-size + rem;
+}

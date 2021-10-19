@@ -1,7 +1,7 @@
 /* eslint no-console: "off" */
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";
-import DummyComponent from "support/dummy-component";
+import DummyComponent, {OtherComponent} from "support/dummy-components";
 import Traitify from "support/traitify";
 
 jest.mock("lib/helpers", () => ({
@@ -10,9 +10,8 @@ jest.mock("lib/helpers", () => ({
 }));
 
 let component;
-const getDummyComponent = () => (
-  component.renderer.root.findByType(DummyComponent).instance
-);
+const getComponent = (Component) => component.renderer.root.findByType(Component);
+const getDummyComponent = () => getComponent(DummyComponent);
 
 describe("withTraitify", () => {
   const assessmentWithResults = {assessment_type: "DIMENSION_BASED", deck_id: "big-five", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}], profile_ids: ["p-1"]};
@@ -1098,6 +1097,44 @@ describe("withTraitify", () => {
       component.instance.setAssessmentID();
 
       expect(component.state.assessmentID).toBeNull();
+    });
+  });
+
+  describe("theme", () => {
+    describe("with theme component", () => {
+      beforeEach(() => {
+        Component = withTraitify(DummyComponent, {paradox: OtherComponent});
+      });
+
+      it("renders default component", () => {
+        component = new ComponentHandler(<Component traitify={traitify} />);
+
+        expect(component.child.type).toBe(DummyComponent);
+      });
+
+      it("renders theme component", () => {
+        component = new ComponentHandler(<Component theme="paradox" traitify={traitify} />);
+
+        expect(component.child.type).toBe(OtherComponent);
+      });
+    });
+
+    describe("without theme component", () => {
+      beforeEach(() => {
+        Component = withTraitify(DummyComponent);
+      });
+
+      it("renders default component", () => {
+        component = new ComponentHandler(<Component traitify={traitify} />);
+
+        expect(component.child.type).toBe(DummyComponent);
+      });
+
+      it("renders fallback component", () => {
+        component = new ComponentHandler(<Component theme="paradox" traitify={traitify} />);
+
+        expect(component.child.type).toBe(DummyComponent);
+      });
     });
   });
 

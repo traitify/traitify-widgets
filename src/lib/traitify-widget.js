@@ -153,6 +153,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  theme(theme) {
+    this.options.theme = theme;
+
+    return this;
+  }
   view(view) {
     this.options.view = view;
 

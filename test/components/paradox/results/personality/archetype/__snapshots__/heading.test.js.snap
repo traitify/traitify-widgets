@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PersonalityArchetypeHeading renders component 1`] = `
+exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component in third person 1`] = `
 <div
   className="container"
 >
@@ -10,55 +10,11 @@ exports[`PersonalityArchetypeHeading renders component 1`] = `
     <div>
       <img
         alt="Cohort"
-        src="https://cdn.traitify.com/frtq/conservative_white.png"
+        className={null}
+        src="https://cdn.traitify.com/frtq/paradox/conservative_white.png"
       />
-      <h2
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "personality_heading, [object Object]",
-          }
-        }
-      />
-    </div>
-    <p>
-      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-    </p>
-  </div>
-  <div
-    className="meaning"
-  >
-    <video
-      controls={true}
-      crossOrigin="anonymous"
-      playsInline={true}
-      poster="https://cdn.traitify.com/content/archetype-videos/upholder.jpg"
-    >
-      <source
-        src="https://cdn.traitify.com/content/archetype-videos/upholder.mp4"
-        type="video/mp4"
-      />
-      <track
-        kind="captions"
-        src="https://cdn.traitify.com/content/archetype-videos/upholder.vtt"
-      />
-    </video>
-  </div>
-</div>
-`;
-
-exports[`PersonalityArchetypeHeading renders component in third person 1`] = `
-<div
-  className="container"
->
-  <div
-    className="details"
-  >
-    <div>
-      <img
-        alt="Cohort"
-        src="https://cdn.traitify.com/frtq/conservative_white.png"
-      />
-      <h2
+      <div
+        className="heading"
         dangerouslySetInnerHTML={
           Object {
             "__html": "personality_heading_third_person, [object Object]",
@@ -77,22 +33,22 @@ exports[`PersonalityArchetypeHeading renders component in third person 1`] = `
       controls={true}
       crossOrigin="anonymous"
       playsInline={true}
-      poster="https://cdn.traitify.com/content/archetype-videos/upholder.jpg"
+      poster="https://cdn.traitify.com/content/archetype-videos/paradox/upholder.jpg"
     >
       <source
-        src="https://cdn.traitify.com/content/archetype-videos/upholder.mp4"
+        src="https://cdn.traitify.com/content/archetype-videos/paradox/upholder.mp4"
         type="video/mp4"
       />
       <track
         kind="captions"
-        src="https://cdn.traitify.com/content/archetype-videos/upholder.vtt"
+        src="https://cdn.traitify.com/content/archetype-videos/paradox/upholder.vtt"
       />
     </video>
   </div>
 </div>
 `;
 
-exports[`PersonalityArchetypeHeading renders component without badge 1`] = `
+exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without Paradox data 1`] = `
 <div
   className="container"
 >
@@ -100,7 +56,13 @@ exports[`PersonalityArchetypeHeading renders component without badge 1`] = `
     className="details"
   >
     <div>
-      <h2
+      <img
+        alt="Cohort"
+        className="fallback"
+        src="https://cdn.traitify.com/frtq/conservative_white.png"
+      />
+      <div
+        className="heading"
         dangerouslySetInnerHTML={
           Object {
             "__html": "personality_heading, [object Object]",
@@ -134,7 +96,50 @@ exports[`PersonalityArchetypeHeading renders component without badge 1`] = `
 </div>
 `;
 
-exports[`PersonalityArchetypeHeading renders explanation text as fallback for video 1`] = `
+exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without badge 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="details"
+  >
+    <div>
+      <div
+        className="heading"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "personality_heading, [object Object]",
+          }
+        }
+      />
+    </div>
+    <p>
+      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
+    </p>
+  </div>
+  <div
+    className="meaning"
+  >
+    <video
+      controls={true}
+      crossOrigin="anonymous"
+      playsInline={true}
+      poster="https://cdn.traitify.com/content/archetype-videos/upholder.jpg"
+    >
+      <source
+        src="https://cdn.traitify.com/content/archetype-videos/upholder.mp4"
+        type="video/mp4"
+      />
+      <track
+        kind="captions"
+        src="https://cdn.traitify.com/content/archetype-videos/upholder.vtt"
+      />
+    </video>
+  </div>
+</div>
+`;
+
+exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without video 1`] = `
 <div
   className="container"
 >
@@ -144,9 +149,11 @@ exports[`PersonalityArchetypeHeading renders explanation text as fallback for vi
     <div>
       <img
         alt="Cohort"
+        className="fallback"
         src="https://cdn.traitify.com/frtq/conservative_white.png"
       />
-      <h2
+      <div
+        className="heading"
         dangerouslySetInnerHTML={
           Object {
             "__html": "personality_heading, [object Object]",
@@ -172,10 +179,58 @@ exports[`PersonalityArchetypeHeading renders explanation text as fallback for vi
 </div>
 `;
 
-exports[`PersonalityArchetypeHeading renders nothing if deck not ready 1`] = `null`;
+exports[`Paradox.PersonalityArchetypeHeading renders component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="details"
+  >
+    <div>
+      <img
+        alt="Cohort"
+        className={null}
+        src="https://cdn.traitify.com/frtq/paradox/conservative_white.png"
+      />
+      <div
+        className="heading"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "personality_heading, [object Object]",
+          }
+        }
+      />
+    </div>
+    <p>
+      You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
+    </p>
+  </div>
+  <div
+    className="meaning"
+  >
+    <video
+      controls={true}
+      crossOrigin="anonymous"
+      playsInline={true}
+      poster="https://cdn.traitify.com/content/archetype-videos/paradox/upholder.jpg"
+    >
+      <source
+        src="https://cdn.traitify.com/content/archetype-videos/paradox/upholder.mp4"
+        type="video/mp4"
+      />
+      <track
+        kind="captions"
+        src="https://cdn.traitify.com/content/archetype-videos/paradox/upholder.vtt"
+      />
+    </video>
+  </div>
+</div>
+`;
 
-exports[`PersonalityArchetypeHeading renders nothing if disabled 1`] = `null`;
+exports[`Paradox.PersonalityArchetypeHeading renders nothing if deck not ready 1`] = `null`;
 
-exports[`PersonalityArchetypeHeading renders nothing if no archetype 1`] = `null`;
+exports[`Paradox.PersonalityArchetypeHeading renders nothing if disabled 1`] = `null`;
 
-exports[`PersonalityArchetypeHeading renders nothing if results not ready 1`] = `null`;
+exports[`Paradox.PersonalityArchetypeHeading renders nothing if no archetype 1`] = `null`;
+
+exports[`Paradox.PersonalityArchetypeHeading renders nothing if results not ready 1`] = `null`;

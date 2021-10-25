@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Traitify Widgets</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <link href="data:," rel="icon"> <!-- Skip Favicon -->
   </head>
   <body>
     <div id="slide-deck"></div>
@@ -11,8 +12,10 @@
     <div id="careers"></div>
     <div id="guide"></div>
     <style>
+      #results { margin: 12px; }
       .row { margin: 15px; }
       .hide { display: none; }
+      @media(min-width: 60em) { #results { margin: 48px; } }
     </style>
     <div class="row">
       <label htmlFor="survey-type">
@@ -77,6 +80,15 @@
       </label>
     </div>
     <div class="row">
+      <label htmlFor="theme">
+        Theme:
+        <select id="theme" name="theme">
+          <option value="">Default</option>
+          <option value="paradox">Paradox</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
       <label htmlFor="view">
         View:
         <select id="view" name="view">
@@ -103,6 +115,7 @@
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
         var surveyType = localStorage.getItem("survey-type");
+        var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
 
@@ -128,6 +141,7 @@
           .locale(locale)
           .perspective(perspective)
           .surveyType(surveyType)
+          .theme(theme)
           .view(view)
           .targets(targets);
         widget.options.slideDeck.captureLearningDisability = true;
@@ -205,6 +219,7 @@
         if(widget) {
           var deckID = localStorage.getItem("deck-id");
           var surveyType = localStorage.getItem("survey-type");
+          var theme = localStorage.getItem("theme");
           var view = localStorage.getItem("view");
           var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
 
@@ -223,7 +238,7 @@
       }
 
       function setupOptions(){
-        var inputs = ["deck-id", "locale", "perspective", "survey-id", "survey-type", "view"];
+        var inputs = ["deck-id", "locale", "perspective", "survey-id", "survey-type", "theme", "view"];
         for(var i = 0; i < inputs.length; i++) {
           var name = inputs[i];
           var element = document.querySelector("#" + name);

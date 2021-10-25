@@ -1,30 +1,38 @@
-import {Component} from "components/results/personality/archetype/heading";
+import {Component} from "components/paradox/results/personality/archetype/heading";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 import deck from "support/json/deck/big-five.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-const details = [
+const newDetails = [
+  {body: "https://cdn.traitify.com/frtq/paradox/conservative_white.png", title: "Paradox - Badge"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/paradox/upholder.mp4", title: "Paradox - Video"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/paradox/upholder.vtt", title: "Paradox - Video - Text Track"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/paradox/upholder.jpg", title: "Paradox - Video - Thumbnail"}
+];
+
+const oldDetails = [
   ...assessment.archetype.details,
-  {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
   {body: "Maybe just hire qualified candidates", title: "Hiring Manager Description"},
+  {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
   {body: "https://cdn.traitify.com/content/archetype-videos/upholder.mp4", title: "Video"},
   {body: "https://cdn.traitify.com/content/archetype-videos/upholder.vtt", title: "Video - Text Track"},
   {body: "https://cdn.traitify.com/content/archetype-videos/upholder.jpg", title: "Video - Thumbnail"}
 ];
 
-describe("PersonalityArchetypeHeading", () => {
+const details = [...oldDetails, ...newDetails];
+
+describe("Paradox.PersonalityArchetypeHeading", () => {
   let props;
 
   beforeEach(() => {
     props = {
-      assessment: {...assessment, archetype: {...assessment.archetype, details}},
+      assessment: {...assessment, archetype: {...assessment.archetype, details: [...details]}},
       deck,
       followDeck: jest.fn().mockName("followDeck"),
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
-      options: {},
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       ui: {
         current: {},
@@ -63,6 +71,36 @@ describe("PersonalityArchetypeHeading", () => {
     });
   });
 
+  describe("fallbacks", () => {
+    it("renders component in third person", () => {
+      props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders component without badge", () => {
+      props.assessment.archetype.details = details.filter(({title}) => !title.includes("Badge"));
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders component without Paradox data", () => {
+      props.assessment.archetype.details = [...oldDetails];
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders component without video", () => {
+      props.assessment.archetype.details = details.filter(({title}) => !title.includes("Video"));
+      const component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+  });
+
   it("follows the deck", () => {
     new ComponentHandler(<Component {...props} />);
 
@@ -70,40 +108,6 @@ describe("PersonalityArchetypeHeading", () => {
   });
 
   it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders component in third person", () => {
-    props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
-    const component = new ComponentHandler(<Component {...props} />);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders component without badge", () => {
-    props.assessment = {
-      ...assessment,
-      archetype: {
-        ...assessment.archetype,
-        details: details.filter((detail) => detail.title !== "Badge")
-      }
-    };
-    const component = new ComponentHandler(<Component {...props} />);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders explanation text as fallback for video", () => {
-    props.assessment = {
-      ...assessment,
-      archetype: {
-        ...assessment.archetype,
-        details: details.filter(({title}) => !title.startsWith("Video"))
-      }
-    };
-
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

@@ -11,9 +11,21 @@ $breakpoints: (
   xl: $breakpoint-xl
 );
 
-$font-size: 16;
+// Colors
+$black: #555555;
+$blue: #25C9D0;
+$gray: #D6D6D6;
+$white: #FFFFFF;
+
+// Other - Paradox likes multiples of 8
+$border-radius: 16px;
+$border: $gray;
+$buffer: 16px; // Default padding/margin
+$buffer-lg: 24px;
+$buffer-heading: $buffer * 2;
+$buffer-section: $buffer * 3;
+$font-size: 16px;
+$font-size-heading: 20px;
 $min-height: 600px;
 
-// Colors
-$black: #000000;
-$white: #FFFFFF;
+// TODO: Transition for header underline => Personality Details

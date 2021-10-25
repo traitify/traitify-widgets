@@ -1,20 +1,23 @@
 @import "./variables.scss";
+@import "./extends.scss";
 @import "./mixins.scss";
 
-:global {
-  .widgetContainer {
-    color: #333;
-    font: 100%/1.5 "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    &, * { box-sizing: border-box; }
-    button {
-      border: none;
-      border-radius: 0;
-      cursor: pointer;
-      font-family: "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
-    }
-  }
+// When choosing between extend vs mixin:
+// - Mixins generate fresh CSS within that selector
+// - Extends uses one block of CSS with multiple selectors
+// - Extends may often be the right choice to reduce size
+
+// SCSS Order and Spacing - Alphabetical within each category
+// - @extend
+// - - whitespace
+// - attributes
+// - - whitespace
+// - @include
+// - special selectors (>, &)
+// - ids
+// - classes
+// - elements
+
+.widget {
+  @extend %container;
 }

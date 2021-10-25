@@ -1,0 +1,66 @@
+@import "~style/paradox/helpers";
+
+// TODO: Transition for header underline => Personality Details
+.container {
+  @extend %container;
+  @extend %box;
+
+  margin-bottom: $buffer-section;
+}
+.dropdown {
+  appearance: none;
+  background: none;
+  border: 1px solid $gray;
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: $buffer;
+  padding: 0 $buffer;
+  width: 100%;
+
+  @include min-width(lg) { display: none; }
+}
+.list {
+  margin: 0;
+  padding: 0;
+
+  @include min-width(lg) {
+    column-count: 2;
+    column-gap: $buffer * 2;
+  }
+  > div {
+    border: 1px solid $gray;
+    border-radius: 4px;
+    margin-bottom: $buffer;
+    padding: $buffer;
+    text-align: center;
+
+    @include min-width(lg) {
+      break-inside: avoid;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      margin-bottom: $buffer-lg;
+    }
+  }
+}
+.tabs {
+  display: none;
+
+  @include min-width(lg) {
+    border-bottom: 1px solid $gray;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $buffer-lg;
+  }
+  button {
+    @extend %heading;
+
+    margin-bottom: -3px;
+    padding: $buffer $buffer * 2;
+
+    &.active {
+      border-bottom: 5px solid $blue;
+      color: $blue;
+    }
+  }
+}

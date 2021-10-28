@@ -1,3 +1,16 @@
+@import "./mixins/tabs.scss";
+
+@mixin heading() {
+  font-size: $font-size-heading;
+  font-weight: 600;
+}
+
+@mixin buffer($property) {
+  #{$property}: $buffer;
+
+  @include min-width("lg") { #{$property}: $buffer-lg; }
+}
+
 @mixin max-width($name) {
   $value: map-get($breakpoints, $name);
 

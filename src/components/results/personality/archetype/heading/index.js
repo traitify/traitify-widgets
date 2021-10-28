@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import PropTypes from "prop-types";
-import Paradox from "components/paradox/results/personality/archetype/heading";
+import {Component as Paradox} from "components/paradox/results/personality/archetype/heading";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";

@@ -1,0 +1,89 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+}
+.content {
+  @extend %box;
+
+  &.first { border-top-left-radius: 0px; }
+  &.last { border-top-right-radius: 0px; }
+  a, button,  span { color: $blue; }
+  button {
+    text-decoration: underline;
+    padding: 0;
+  }
+  hr {
+    background: $border-color;
+    border: none;
+    height: $border-width;
+    @include buffer("margin-bottom");
+  }
+  li { margin-top: $buffer * 0.5; }
+  ul {
+    margin: 0;
+    padding-left: $buffer-lg;
+  }
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("md") { display: none; }
+}
+.heading {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
+}
+.icon { color: $blue; }
+.question {
+  @extend %box;
+
+  @include buffer("margin-bottom");
+  .h2 {
+    color: $blue;
+    @include buffer("margin-top");
+  }
+  button {
+    border: $border-width solid $border-color;
+    border-radius: $border-radius-sm;
+    padding: $buffer * 0.5;
+
+    .icon { color: $black; }
+  }
+}
+.tabs {
+  display: flex;
+
+  @include activeTab($active: ".active", $circle: "span", $square: "&");
+  @include max-width("lg") { display: none; }
+  button {
+    @extend %heading-lg;
+
+    flex: 1 1 0%;
+    padding: $buffer;
+    text-align: center;
+  }
+}
+.text {
+  align-items: center;
+  display: flex;
+
+  > .icon {
+    display: none;
+
+    @include min-width("md") { display: initial; }
+  }
+  div {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: $buffer;
+
+    @include min-width("md") {
+      font-weight: normal;
+      margin-left: $buffer;
+    }
+  }
+}

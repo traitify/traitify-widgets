@@ -51,7 +51,7 @@ exports[`PersonalityArchetypeTips renders component 1`] = `
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       TU - 0
@@ -111,7 +111,7 @@ exports[`PersonalityArchetypeTips renders component with available types 1`] = `
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       CZ - 0
@@ -171,7 +171,7 @@ exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       CZ - 0
@@ -243,7 +243,7 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       CZ - 0
@@ -315,7 +315,7 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       CZ - 0
@@ -383,7 +383,7 @@ exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       TP TU - 0
@@ -455,7 +455,7 @@ exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thi
     </option>
   </select>
   <div
-    className="list"
+    className="content"
   >
     <div>
       TU - 0

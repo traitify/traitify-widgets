@@ -49,10 +49,10 @@ export default class TraitifyWidget {
     return this;
   }
   destroy() {
-    Object.keys(this.options.targets).forEach((name) => {
-      if(this.options.targets[name] instanceof Element) {
-        unmountComponentAtNode(this.options.targets[name]);
-      }
+    Object.keys(this.options.renderedTargets || {}).forEach((name) => {
+      const target = this.options.renderedTargets[name];
+
+      if(target && target.isConnected) { unmountComponentAtNode(target); }
     });
 
     return this;
@@ -126,8 +126,7 @@ export default class TraitifyWidget {
 
         const target = this.options.targets[name];
         if(!target) { return reject(new Error(`Could not select target for ${name}`)); }
-
-        unmountComponentAtNode(target);
+        if(target.isConnected) { unmountComponentAtNode(target); }
 
         resolve(render(
           <Component widgetID={this.id} options={this.options} ui={this.ui} />,
@@ -135,6 +134,14 @@ export default class TraitifyWidget {
         ));
       }));
     });
+
+    Object.keys(this.options.renderedTargets || {}).forEach((name) => {
+      if(this.options.targets[name]) { return; }
+
+      const target = this.options.renderedTargets[name];
+      if(target && target.isConnected) { unmountComponentAtNode(target); }
+    });
+    this.options.renderedTargets = {...this.options.targets};
 
     return Promise.all(promises);
   }

@@ -17,12 +17,14 @@ $blue: #25C9D0;
 $gray: #D6D6D6;
 $white: #FFFFFF;
 
-// Other - Paradox likes multiples of 8
+// Paradox likes multiples of 8
+$border-color: $gray;
 $border-radius: 16px;
-$border: $gray;
+$border-radius-sm: 4px;
+$border-width: 1px;
 $buffer: 16px; // Default padding/margin
 $buffer-lg: 24px;
-$buffer-heading: $buffer * 2;
+$buffer-heading: $buffer;
 $buffer-section: $buffer * 3;
 $font-size: 16px;
 $font-size-heading: 24px;

@@ -11,6 +11,14 @@ jest.mock("lib/helpers/guess-component", () => (
   )).mockName("guessComponent")
 ));
 
+const createElement = (options = {}) => ({
+  firstChild: {nodeName: "div"},
+  isConnected: true,
+  nodeName: "div",
+  removeChild: jest.fn().mockName("removeChild").mockImplementation(function() { this.firstChild = null; }),
+  ...options
+});
+
 describe("Widget", () => {
   let ui;
   let widget;
@@ -18,6 +26,7 @@ describe("Widget", () => {
   beforeEach(() => {
     guessComponent.mockClear();
     render.mockClear();
+    unmountComponentAtNode.mockClear();
 
     ui = {on: jest.fn(), traitify: jest.fn()};
     widget = new Widget(ui);
@@ -95,10 +104,6 @@ describe("Widget", () => {
   });
 
   describe("destroy", () => {
-    beforeEach(() => {
-      unmountComponentAtNode.mockClear();
-    });
-
     it("returns widget", () => {
       const returnValue = widget.destroy();
 
@@ -113,8 +118,8 @@ describe("Widget", () => {
     });
 
     it("unmounts targets", () => {
-      const div = document.createElement("div");
-      widget.options.targets = {Default: div};
+      const div = createElement();
+      widget.options.renderedTargets = {Default: div};
       widget.destroy();
 
       expect(unmountComponentAtNode).toHaveBeenCalledWith(div);
@@ -245,7 +250,7 @@ describe("Widget", () => {
     beforeAll(() => {
       originalQuerySelector = document.querySelector;
       document.querySelector = jest.fn((selector) => (
-        selector && selector !== "#not-found" && selector
+        selector && selector !== "#not-found" && createElement()
       )).mockName("querySelector");
     });
 
@@ -295,19 +300,40 @@ describe("Widget", () => {
       };
       widget.render().then(() => {
         expect(render).toHaveBeenCalledTimes(3);
+        expect(widget.options.renderedTargets).toEqual({
+          PersonalityBlend: expect.any(Object),
+          PersonalityTraits: expect.any(Object),
+          PersonalityTypes: expect.any(Object)
+        });
         done();
       });
     });
 
     it("removes dom target's children", (done) => {
-      const removeChild = jest.fn(function() { this.firstChild = null; });
-      widget.options.target = {
-        removeChild,
-        firstChild: {nodeName: "div"},
-        nodeName: "div"
-      };
+      widget.options.target = createElement();
       widget.render().then(() => {
+        expect(unmountComponentAtNode).toHaveBeenCalled();
         expect(render).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("removes old target's children", (done) => {
+      widget.options.target = createElement();
+      widget.options.renderedTargets = {Default: widget.options.target, Results: createElement()};
+      widget.render().then(() => {
+        expect(unmountComponentAtNode).toHaveBeenCalledTimes(2);
+        expect(render).toHaveBeenCalledTimes(1);
+        done();
+      });
+    });
+
+    it("removes only connected targets", (done) => {
+      widget.options.target = createElement();
+      widget.options.renderedTargets = {Results: createElement({isConnected: false})};
+      widget.render().then(() => {
+        expect(unmountComponentAtNode).toHaveBeenCalledTimes(1);
+        expect(render).toHaveBeenCalledTimes(1);
         done();
       });
     });

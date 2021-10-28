@@ -76,7 +76,7 @@ function PersonalityArchetypeTips(props) {
           <option key={key} value={key}>{translate(`tip_type_for_${key}`)}</option>
         ))}
       </select>
-      <div className={style.list}>
+      <div className={style.content}>
         {tips.map((tip) => <div key={tip}>{tip}</div>)}
       </div>
     </div>

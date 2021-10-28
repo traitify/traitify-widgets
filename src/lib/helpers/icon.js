@@ -2,8 +2,9 @@ import {icon as getIcon} from "@fortawesome/fontawesome-svg-core";
 import DangerousHTML from "lib/helpers/dangerous-html";
 
 export default function Icon(_props) {
-  const {icon: iconName, ...props} = _props;
+  const {className: _class, icon: iconName, ...props} = _props;
+  const className = [_class, "traitify--icon-fa"].filter(Boolean).join(" ");
   const html = getIcon(iconName).html[0];
 
-  return <DangerousHTML html={html} tag="span" {...props} />;
+  return <DangerousHTML className={className} html={html} tag="span" {...props} />;
 }

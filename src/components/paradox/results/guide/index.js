@@ -1,7 +1,6 @@
-import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
+import {faChevronDown, faChevronUp, faQuestion} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {Component as Paradox} from "components/paradox/results/guide";
 import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import Icon from "lib/helpers/icon";
@@ -40,20 +39,22 @@ function Question({question, translate}) {
 
   return (
     <div className={style.question}>
-      <h3 id={question.order === 1 ? "traitify-question-1" : null}>{`Question ${question.order}`}</h3>
-      <button onClick={() => setShowContent(!showContent)} type="button">
-        <span className={style.questionText}>{question.text}</span>
-        <Icon className={style.questionIcon} icon={showContent ? faChevronUp : faChevronDown} />
-      </button>
+      <div className={style.text}>
+        <Icon className={style.icon} icon={faQuestion} />
+        <div>{question.text}</div>
+        <button onClick={() => setShowContent(!showContent)} type="button">
+          <Icon className={style.icon} icon={showContent ? faChevronUp : faChevronDown} />
+        </button>
+      </div>
       {showContent && (
         <>
-          <h4>{translate("question_purpose")}</h4>
+          <div className={style.h2}>{translate("question_purpose")}</div>
           <div>{toList(question.purpose)}</div>
           {question.adaptability && (
-            <div>
-              <h4>{translate("question_adaptability")}</h4>
+            <>
+              <div className={style.h2}>{translate("question_adaptability")}</div>
               <div>{toList(question.adaptability)}</div>
-            </div>
+            </>
           )}
         </>
       )}
@@ -126,58 +127,49 @@ function Guide(props) {
   const showCompetency = (newID) => setActiveCompetency(data.find(({id}) => newID === id));
   const [intro, ...expandedIntro] = activeCompetency.introduction.split("\n");
   const onChange = ({target: {value}}) => showCompetency(value);
+  const index = data.indexOf(activeCompetency);
+  const contentClass = [
+    style.content,
+    index === 0 && style.first,
+    index === data.length - 1 && style.last
+  ].filter(Boolean).join(" ");
 
   return (
-    <div className={style.tabsContainer}>
-      <div className={style.tabContainer}>
-        <div className={style.competencySelect}>
-          <select className={style.mobileSelect} onChange={onChange} value={activeCompetency.id}>
-            {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
-          </select>
-          <p className={style.mobileBadge}>
-            <img src={activeCompetency.badge} alt={`${activeCompetency.name} badge`} />
-          </p>
-        </div>
-        <ul className={style.tabs}>
-          {data.map(({badge, color, id, name}) => {
-            const classes = [
-              style.tab,
-              id === activeCompetency.id && style.tabActive
-            ].filter(Boolean);
-
-            return (
-              <li key={id} className={classes.join(" ")} style={{borderTopColor: color}}>
-                <button onClick={() => showCompetency(id)} type="button">
-                  <img src={badge} alt={`${name} badge`} />
-                  <br />
-                  {name}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+    <div className={style.container}>
+      <div className={style.tabs}>
+        {data.map(({id, name}) => (
+          <button
+            key={id}
+            className={id === activeCompetency.id ? style.active : ""}
+            onClick={() => showCompetency(id)}
+            type="button"
+          >
+            <span>{name}</span>
+          </button>
+        ))}
       </div>
-      <div className={style.tabsContent}>
-        <div className={style.tabContentActive}>
-          <h2>{activeCompetency.name}</h2>
-          {intro}
-          <p>
-            <button onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
-              {translate("read_more")}
-            </button>
-          </p>
-          {showExpandedIntro && <p>{expandedIntro.join("\n").trim()}</p>}
-          <hr />
-          {activeCompetency.questionSequences.map((sequence) => (
-            <div key={sequence.id}>
-              <h2>{sequence.name}</h2>
-              <p>{translate("guide_intro")}</p>
-              {sequence.questions.map((question) => (
-                <Question key={question.id} question={question} translate={translate} />
-              ))}
-            </div>
-          ))}
-        </div>
+      <div className={contentClass}>
+        <select className={style.dropdown} onChange={onChange} value={activeCompetency.id}>
+          {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
+        </select>
+        <div className={style.heading}>{activeCompetency.name}</div>
+        {intro}
+        <p>
+          <button onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
+            {translate("read_more")}
+          </button>
+        </p>
+        {showExpandedIntro && <p>{expandedIntro.join("\n").trim()}</p>}
+        <hr />
+        {activeCompetency.questionSequences.map((sequence) => (
+          <div key={sequence.id}>
+            <div className={style.heading}>{sequence.name}</div>
+            <p>{translate("guide_intro")}</p>
+            {sequence.questions.map((question) => (
+              <Question key={question.id} question={question} translate={translate} />
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -244,4 +236,4 @@ Guide.propTypes = {
 };
 
 export {Guide as Component};
-export default withTraitify(Guide, {paradox: Paradox});
+export default withTraitify(Guide);

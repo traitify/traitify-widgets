@@ -7,15 +7,21 @@
     <link href="data:," rel="icon"> <!-- Skip Favicon -->
   </head>
   <body>
-    <div id="slide-deck"></div>
-    <div id="results"></div>
-    <div id="careers"></div>
-    <div id="guide"></div>
+    <div class="row">
+      <div id="slide-deck"></div>
+      <div id="results"></div>
+      <div id="careers"></div>
+      <div id="guide"></div>
+    </div>
     <style>
-      #results { margin: 12px; }
-      .row { margin: 15px; }
+      .row { margin: 12px; }
       .hide { display: none; }
-      @media(min-width: 60em) { #results { margin: 48px; } }
+      @media(min-width: 60em) {
+        .row {
+          margin-left: 48px;
+          margin-right: 48px;
+        }
+      }
     </style>
     <div class="row">
       <label htmlFor="survey-type">
@@ -99,6 +105,17 @@
       </label>
     </div>
     <div class="row">
+      Additional Components
+      <label htmlFor="show-careers">
+        <input id="show-careers" name="show-careers" type="checkbox" />
+        Careers
+      </label>
+      <label htmlFor="show-guide">
+        <input id="show-guide" name="show-guide" type="checkbox" />
+        Guide
+      </label>
+    </div>
+    <div class="row">
       <button onclick="createAssessment()">New Assessment</button>
       <button onclick="refreshWidget()">Refresh Widget</button>
       <button onclick="destroyWidget()">Destroy Widget</button>
@@ -114,6 +131,8 @@
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
+        var showCareers = localStorage.getItem("show-careers");
+        var showGuide = localStorage.getItem("show-guide");
         var surveyType = localStorage.getItem("survey-type");
         var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
@@ -127,8 +146,8 @@
         }
 
         if(surveyType !== "cognitive") {
-          if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
-          if(!view) { targets["Guide"] = "#guide"; }
+          if(showCareers) { targets["Careers"] = "#careers"; }
+          if(showGuide) { targets["Guide"] = "#guide"; }
         }
 
         widget = Traitify.ui.component();
@@ -197,10 +216,11 @@
 
       function onChange(e){
         var name = e.target.name;
-        var value = e.target.value;
+        var value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
 
-        localStorage.setItem(name, value);
-        if(widget && name !== "deck-id" && name !== "survey-id") {
+        value ? localStorage.setItem(name, value) : localStorage.removeItem(name);
+
+        if(widget && !["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
           if(name === "survey-type") { name = "surveyType"; }
 
           widget[name](value);
@@ -218,6 +238,8 @@
       function refreshWidget(){
         if(widget) {
           var deckID = localStorage.getItem("deck-id");
+          var showCareers = localStorage.getItem("show-careers");
+          var showGuide = localStorage.getItem("show-guide");
           var surveyType = localStorage.getItem("survey-type");
           var theme = localStorage.getItem("theme");
           var view = localStorage.getItem("view");
@@ -229,8 +251,8 @@
           }
 
           if(surveyType !== "cognitive") {
-            if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
-            if(view !== "candidate") { targets["Guide"] = "#guide"; }
+            if(showCareers) { targets["Careers"] = "#careers"; }
+            if(showGuide) { targets["Guide"] = "#guide"; }
           }
 
           widget.assessmentID(assessmentID).targets(targets).refresh();
@@ -238,7 +260,17 @@
       }
 
       function setupOptions(){
-        var inputs = ["deck-id", "locale", "perspective", "survey-id", "survey-type", "theme", "view"];
+        var inputs = [
+          "deck-id",
+          "locale",
+          "perspective",
+          "show-careers",
+          "show-guide",
+          "survey-id",
+          "survey-type",
+          "theme",
+          "view"
+        ];
         for(var i = 0; i < inputs.length; i++) {
           var name = inputs[i];
           var element = document.querySelector("#" + name);
@@ -261,7 +293,7 @@
             }
           }
 
-          if(value) { element.value = value; }
+          if(value) { element.type === "checkbox" ? element.checked = true : element.value = value; }
           element.addEventListener("change", onChange);
         }
 

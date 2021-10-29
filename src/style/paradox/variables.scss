@@ -15,7 +15,13 @@ $breakpoints: (
 $black: #555555;
 $blue: #25C9D0;
 $gray: #D6D6D6;
+$green: #3BCEAC;
+$green-light: #89E2CD;
+$red: #FE6D73;
+$red-light: #FEA7AB;
 $white: #FFFFFF;
+$yellow: #F9BC4F;
+$yellow-light: #FBD288;
 
 // Paradox likes multiples of 8
 $border-color: $gray;
@@ -27,5 +33,6 @@ $buffer-lg: 24px;
 $buffer-heading: $buffer;
 $buffer-section: $buffer * 3;
 $font-size: 16px;
+$font-size-sm: 12px;
 $font-size-heading: 24px;
 $min-height: 600px;

@@ -27,7 +27,7 @@ Object.keys(tipTypes).forEach((perspective) => {
   });
 });
 
-describe("PersonalityArchetypeTips", () => {
+describe("Paradox.PersonalityArchetypeTips", () => {
   let props;
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import {Component} from "components/results/guide/index";
+import {Component} from "components/paradox/results/guide/index";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
@@ -6,7 +6,7 @@ import guide from "support/json/guide.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Guide", () => {
+describe("Paradox.Guide", () => {
   let props;
   let updatedCompetencies;
 
@@ -136,15 +136,21 @@ describe("Guide", () => {
 
   it("toggles question content", () => {
     const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => component.instance.findAllByProps({className: "questionText"})[2].parent.props.onClick());
+    const question = props.guide.competencies[2].questionSequences[0].questions[1];
+    const button = component.findByText(question.text, {exact: false})
+      .parent.findByType("button");
+    component.act(() => button.props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("updates activeCompetency", () => {
     const component = new ComponentHandler(<Component {...props} />);
-    const alt = `${props.guide.competencies[1].name} badge`;
-    component.act(() => component.instance.findByProps({alt}).parent.props.onClick());
+    const text = props.guide.competencies[1].name;
+    const button = component.instance
+      .find((element) => element.children[0] === text && element.type === "span")
+      .parent;
+    component.act(() => button.props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });

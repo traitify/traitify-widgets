@@ -15,7 +15,16 @@ export default class ComponentHandler {
   get state() { return this.instance.state; }
   get tree() { return this.renderer.toJSON(); }
   act(run) { act(run); }
-  findByText(text) { return this.base.find((element) => element.children[0] === text); }
+  findByText(text, options = {}) {
+    const {exact} = {exact: true, ...options};
+    if(exact) { return this.base.find((element) => element.children[0] === text); }
+
+    return this.base.find((element) => (
+      element.children[0]
+      && element.children[0].includes
+      && element.children[0].includes(text)
+    ));
+  }
   unmount() { this.renderer.unmount(); }
   updateProps(newProps) {
     const Component = this.base.type;

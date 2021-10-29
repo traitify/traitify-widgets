@@ -1,40 +1,36 @@
 @mixin activeTabSide($side, $circle: "span", $square: "&") {
   $direction: "after";
-  $not: "last-child";
   $otherSide: "left";
 
   @if($side == "left") {
     $direction: "before";
-    $not: "first-child";
     $otherSide: "right";
   }
 
-  $length: $border-radius;
+  $length: $border-radius-sm;
   $radius: $length * 2;
 
-  &:not(:#{$not}) {
-    #{$circle}:#{$direction},
-    #{$square}:#{$direction} {
-      background: $white;
-      bottom: 0;
-      content: "";
-      position: absolute;
-    }
-    #{$circle}:#{$direction} {
-      #{$side}: ($radius * -1) - $border-width;
-      border-#{$otherSide}: $border-width solid $border-color;
-      border-bottom: $border-width solid $border-color;
-      border-bottom-#{$otherSide}-radius: $border-radius;
-      height: $radius;
-      width: $radius;
-      z-index: 2;
-    }
-    #{$square}:#{$direction} {
-      #{$side}: $length * -1;
-      height: $length;
-      width: $length;
-      z-index: 1;
-    }
+  #{$circle}:#{$direction},
+  #{$square}:#{$direction} {
+    background: $white;
+    bottom: 0;
+    content: "";
+    position: absolute;
+  }
+  #{$circle}:#{$direction} {
+    #{$side}: ($radius * -1) - $border-width;
+    border-#{$otherSide}: $border-width solid $border-color;
+    border-bottom: $border-width solid $border-color;
+    border-bottom-#{$otherSide}-radius: $border-radius-sm;
+    height: $radius;
+    width: $radius;
+    z-index: 2;
+  }
+  #{$square}:#{$direction} {
+    #{$side}: $length * -1;
+    height: $length;
+    width: $length;
+    z-index: 1;
   }
 }
 
@@ -43,8 +39,8 @@
     background: $white;
     border: $border-width solid $border-color;
     border-bottom-width: 0;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius-sm;
+    border-top-right-radius: $border-radius-sm;
     margin-bottom: $border-width * -1;
     margin-top: 0;
     position: relative;

@@ -9,7 +9,7 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
+const colors = {high: style.high, low: style.low, medium: style.medium, other: style.other};
 const colorFrom = ({benchmark, score, typeID}) => {
   if(!benchmark) {
     if(score <= 3) { return colors.low; }
@@ -29,16 +29,20 @@ const colorFrom = ({benchmark, score, typeID}) => {
   return colors.other;
 };
 
-const toList = (entity) => (
-  /* eslint-disable-next-line react/no-array-index-key */
-  <ul>{entity.split("\n").map((e, i) => <li key={i}>{e}</li>)}</ul>
-);
+function List({data}) {
+  return (
+    /* eslint-disable-next-line react/no-array-index-key */
+    <ul>{data.split("\n").map((e, i) => <li key={i}>{e}</li>)}</ul>
+  );
+}
+
+List.propTypes = {data: PropTypes.string.isRequired};
 
 function Question({question, translate}) {
   const [showContent, setShowContent] = useState(question.order === 1);
 
   return (
-    <div className={style.question}>
+    <div className={[style.question, showContent && style.open].filter(Boolean).join(" ")}>
       <div className={style.text}>
         <Icon className={style.icon} icon={faQuestion} />
         <div>{question.text}</div>
@@ -49,11 +53,11 @@ function Question({question, translate}) {
       {showContent && (
         <>
           <div className={style.h2}>{translate("question_purpose")}</div>
-          <div>{toList(question.purpose)}</div>
+          <List data={question.purpose} />
           {question.adaptability && (
             <>
               <div className={style.h2}>{translate("question_adaptability")}</div>
-              <div>{toList(question.adaptability)}</div>
+              <List data={question.adaptability} />
             </>
           )}
         </>
@@ -137,10 +141,10 @@ function Guide(props) {
   return (
     <div className={style.container}>
       <div className={style.tabs}>
-        {data.map(({id, name}) => (
+        {data.map(({color, id, name}) => (
           <button
             key={id}
-            className={id === activeCompetency.id ? style.active : ""}
+            className={[id === activeCompetency.id && style.active, color].filter(Boolean).join(" ")}
             onClick={() => showCompetency(id)}
             type="button"
           >
@@ -152,10 +156,10 @@ function Guide(props) {
         <select className={style.dropdown} onChange={onChange} value={activeCompetency.id}>
           {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
         </select>
-        <div className={style.heading}>{activeCompetency.name}</div>
+        <div className={[style.heading, activeCompetency.color].join(" ")}>{activeCompetency.name}</div>
         {intro}
         <p>
-          <button onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
+          <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
             {translate("read_more")}
           </button>
         </p>
@@ -181,12 +185,7 @@ Guide.propTypes = {
     assessment_type: PropTypes.string,
     personality_types: PropTypes.arrayOf(
       PropTypes.shape({
-        personality_type: PropTypes.shape({
-          badge: PropTypes.shape({
-            image_medium: PropTypes.string.isRequired
-          }).isRequired,
-          id: PropTypes.string.isRequired
-        }).isRequired,
+        personality_type: PropTypes.shape({id: PropTypes.string.isRequired}).isRequired,
         score: PropTypes.number.isRequired
       }).isRequired
     )

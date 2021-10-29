@@ -8,13 +8,20 @@
 .content {
   @extend %box;
 
-  &.first { border-top-left-radius: 0px; }
-  &.last { border-top-right-radius: 0px; }
-  a, button,  span { color: $blue; }
-  button {
-    text-decoration: underline;
-    padding: 0;
+  .heading {
+    @include max-width("lg") {
+      &.high, &.low, &.medium, &.other {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: $buffer * 0.5;
+      }
+      &.high { text-decoration-color: $green; }
+      &.low { text-decoration-color: $red; }
+      &.medium { text-decoration-color: $yellow; }
+      &.other { text-decoration-color: $black; }
+    }
   }
+  a, button,  span { color: $blue; }
   hr {
     background: $border-color;
     border: none;
@@ -30,11 +37,10 @@
 .dropdown {
   @extend %dropdown;
 
-  @include min-width("md") { display: none; }
+  @include min-width("lg") { display: none; }
 }
 .heading {
-  @extend %heading;
-
+  font-weight: bold;
   margin-bottom: $buffer-heading;
 }
 .icon { color: $blue; }
@@ -42,6 +48,10 @@
   @extend %box;
 
   @include buffer("margin-bottom");
+  &.open {
+    .icon { color: $blue; }
+    button { border-color: $blue; }
+  }
   .h2 {
     color: $blue;
     @include buffer("margin-top");
@@ -54,17 +64,46 @@
     .icon { color: $black; }
   }
 }
+.readMore {
+  font-size: $font-size-sm;
+  text-decoration: underline;
+  padding: 0;
+}
 .tabs {
   display: flex;
+  justify-content: center;
+  padding-left: $buffer * 4;
+  padding-right: $buffer * 4;
 
   @include activeTab($active: ".active", $circle: "span", $square: "&");
   @include max-width("lg") { display: none; }
-  button {
-    @extend %heading-lg;
+  .active {
+    &.high span { border-bottom-color: $green; }
+    &.low span { border-bottom-color: $red; }
+    &.medium span { border-bottom-color: $yellow; }
+    &.other span { border-bottom-color: $black; }
 
-    flex: 1 1 0%;
-    padding: $buffer;
+    span { border-bottom: 1px solid $gray; }
+  }
+  button {
+    flex: 0 1 auto;
+    max-width: 200px;
+    padding-bottom: 0;
+    padding-left: $buffer-lg;
+    padding-right: $buffer-lg;
+    padding-top: $buffer;
     text-align: center;
+    width: 100%;
+
+    span {
+      display: block;
+      padding-bottom: $buffer;
+
+      @include min-width("xl") {
+        margin: auto;
+        max-width: 70%; // Forces text on 2 lines
+      }
+    }
   }
 }
 .text {
@@ -73,16 +112,17 @@
 
   > .icon {
     display: none;
+    font-weight: bold;
+    font-size: $font-size-heading;
 
-    @include min-width("md") { display: initial; }
+    @include min-width("lg") { display: initial; }
   }
   div {
     flex-grow: 1;
     font-weight: bold;
     margin-right: $buffer;
 
-    @include min-width("md") {
-      font-weight: normal;
+    @include min-width("lg") {
       margin-left: $buffer;
     }
   }

@@ -1,2590 +1,140 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Guide renders component 1`] = `
+exports[`Paradox.Guide renders component 1`] = `
 <div
-  className="tabsContainer"
+  className="container"
 >
   <div
-    className="tabContainer"
+    className="tabs"
   >
-    <div
-      className="competencySelect"
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
     >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
         Engaging with People
-      </h2>
-      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Extraverted/Introverted People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              How would you describe the way in which you deal with new people in a work situation?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                How comfortable are they approaching new people (work colleagues, customers etc)?
-              </li>
-              <li>
-                What sort of interpersonal skills do they describe using?
-              </li>
-              <li>
-                How much energy do they invest in trying to connect with other people?
-              </li>
-              <li>
-                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
-              </li>
-              <li>
-                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
-              </li>
-              <li>
-                And to probe into possible issues with being extraverted/introverted.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide renders component if benchmark not ready 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
+      </option>
+      <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Managing Pressure badge"
-          src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
         Managing Pressure
-      </h2>
-      At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and the way in which they control their emotions and underlying tension in order to stay on task and cope with everyday challenges.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Resilient/Reflexive People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              Tell me about dealing with a highly pressured and difficult work situation.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                Do they appear to respond with the appropriate level of concern?
-              </li>
-              <li>
-                Are they able to deal with things in a calm and upbeat way?
-              </li>
-              <li>
-                Do they keep their feelings under control?
-              </li>
-              <li>
-                Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
-              </li>
-              <li>
-                And to probe into possible issues with being resilient/reflexive.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide renders nothing if guide not ready 1`] = `null`;
-
-exports[`Guide renders nothing if no competencies 1`] = `null`;
-
-exports[`Guide renders nothing if results not ready 1`] = `null`;
-
-exports[`Guide toggles expanded intro 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
-        Engaging with People
-      </h2>
-      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <p>
-        The benefits of being extraverted are likely to include being people oriented, approachable, fun loving, energetic, fast to act, and 'full on'. In contrast someone who is introverted probably prefers to work independently, and is more likely to be dispassionate, thoughtful and measured, to think before acting and to stand back. Those who are a mixture of both (extroverted/introverted) are best described as socially skilled, quick to connect, energetic, thoughtful and action oriented, and enthusiastic.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Extraverted/Introverted People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              How would you describe the way in which you deal with new people in a work situation?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                How comfortable are they approaching new people (work colleagues, customers etc)?
-              </li>
-              <li>
-                What sort of interpersonal skills do they describe using?
-              </li>
-              <li>
-                How much energy do they invest in trying to connect with other people?
-              </li>
-              <li>
-                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
-              </li>
-              <li>
-                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
-              </li>
-              <li>
-                And to probe into possible issues with being extraverted/introverted.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide toggles question content 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
-        Engaging with People
-      </h2>
-      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Extraverted/Introverted People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              How would you describe the way in which you deal with new people in a work situation?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                How comfortable are they approaching new people (work colleagues, customers etc)?
-              </li>
-              <li>
-                What sort of interpersonal skills do they describe using?
-              </li>
-              <li>
-                How much energy do they invest in trying to connect with other people?
-              </li>
-              <li>
-                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
-              </li>
-              <li>
-                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
-              </li>
-              <li>
-                And to probe into possible issues with being extraverted/introverted.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                Do they misjudge situations?
-              </li>
-              <li>
-                Do they sometimes think and are then slow to act, or vice versa?
-              </li>
-              <li>
-                Do they tend to 'sit on the fence'?
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4>
-              question_adaptability
-            </h4>
-            <div>
-              <ul>
-                <li>
-                  Do they know they sometimes read situations the wrong way?
-                </li>
-                <li>
-                  Can they provide an example?
-                </li>
-                <li>
-                  How do they decide whether to turn up the social/action oriented side of their character, or turn it down?
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide update sets the guide data if the benchmark changes 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
+      </option>
+      <option
         value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
       >
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Influencing People badge"
-          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
         Influencing People
-      </h2>
-      At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Agreeable/Independent People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                Are they tuned into other people's thoughts and feelings?
-              </li>
-              <li>
-                How accommodating are they?
-              </li>
-              <li>
-                Do they use a realistic but sympathetic style?
-              </li>
-              <li>
-                Do they push their case in an open and sensitive way?
-              </li>
-              <li>
-                Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
-              </li>
-              <li>
-                And to probe into possible issues with being agreeable/independent.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide update sets the guide data if the guide's assessment ID changes 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Updated Name
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Updated Name badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Updated Name
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
-        Engaging with People
-      </h2>
-      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Extraverted/Introverted People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              How would you describe the way in which you deal with new people in a work situation?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                How comfortable are they approaching new people (work colleagues, customers etc)?
-              </li>
-              <li>
-                What sort of interpersonal skills do they describe using?
-              </li>
-              <li>
-                How much energy do they invest in trying to connect with other people?
-              </li>
-              <li>
-                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
-              </li>
-              <li>
-                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
-              </li>
-              <li>
-                And to probe into possible issues with being extraverted/introverted.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
-        Engaging with People
-      </h2>
-      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Extraverted/Introverted People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              How would you describe the way in which you deal with new people in a work situation?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                How comfortable are they approaching new people (work colleagues, customers etc)?
-              </li>
-              <li>
-                What sort of interpersonal skills do they describe using?
-              </li>
-              <li>
-                How much energy do they invest in trying to connect with other people?
-              </li>
-              <li>
-                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
-              </li>
-              <li>
-                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
-              </li>
-              <li>
-                And to probe into possible issues with being extraverted/introverted.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide update sets the guide data if the guide's removed 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
-        Engaging with People
-      </h2>
-      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-      <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
-      </p>
-      <hr />
-      <div>
-        <h2>
-          Extraverted/Introverted People
-        </h2>
-        <p>
-          guide_intro
-        </p>
-        <div
-          className="question"
-        >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              How would you describe the way in which you deal with new people in a work situation?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                How comfortable are they approaching new people (work colleagues, customers etc)?
-              </li>
-              <li>
-                What sort of interpersonal skills do they describe using?
-              </li>
-              <li>
-                How much energy do they invest in trying to connect with other people?
-              </li>
-              <li>
-                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
-              </li>
-              <li>
-                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
-              </li>
-              <li>
-                And to probe into possible issues with being extraverted/introverted.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-        <div
-          className="question"
-        >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            <span
-              className="questionText"
-            >
-              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Guide updates activeCompetency 1`] = `
-<div
-  className="tabsContainer"
->
-  <div
-    className="tabContainer"
-  >
-    <div
-      className="competencySelect"
-    >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
+        Solving Problems
+      </option>
+      <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Delivering Results badge"
-          src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
-    >
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="tabsContent"
-  >
-    <div
-      className="tabContentActive"
-    >
-      <h2>
         Delivering Results
-      </h2>
-      At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Engaging with People
+    </div>
+    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Extraverted/Introverted People
+      </div>
       <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
+        guide_intro
       </p>
-      <hr />
-      <div>
-        <h2>
-          Flexible People
-        </h2>
-        <p>
-          guide_intro
-        </p>
+      <div
+        className="question open"
+      >
         <div
-          className="question"
+          className="text"
         >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            How would you describe the way in which you deal with new people in a work situation?
+          </div>
           <button
             onClick={[Function]}
             type="button"
           >
             <span
-              className="questionText"
-            >
-              Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
+              className="icon traitify--icon-fa"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
@@ -2592,48 +142,56 @@ exports[`Guide updates activeCompetency 1`] = `
               }
             />
           </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                Are they able to adapt to situations?
-              </li>
-              <li>
-                Can they change direction of thought (and travel) quickly?
-              </li>
-              <li>
-                Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
-              </li>
-              <li>
-                Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
-              </li>
-              <li>
-                And to probe into possible issues with being flexible.
-              </li>
-            </ul>
-          </div>
         </div>
         <div
-          className="question"
+          className="h2"
         >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they approaching new people (work colleagues, customers etc)?
+          </li>
+          <li>
+            What sort of interpersonal skills do they describe using?
+          </li>
+          <li>
+            How much energy do they invest in trying to connect with other people?
+          </li>
+          <li>
+            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+          </li>
+          <li>
+            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+          </li>
+          <li>
+            And to probe into possible issues with being extraverted/introverted.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+          </div>
           <button
             onClick={[Function]}
             type="button"
           >
             <span
-              className="questionText"
-            >
-              (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
+              className="icon traitify--icon-fa"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
@@ -2642,25 +200,30 @@ exports[`Guide updates activeCompetency 1`] = `
             />
           </button>
         </div>
+      </div>
+      <div
+        className="question"
+      >
         <div
-          className="question"
+          className="text"
         >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+          </div>
           <button
             onClick={[Function]}
             type="button"
           >
             <span
-              className="questionText"
-            >
-              (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
+              className="icon traitify--icon-fa"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
@@ -2675,206 +238,141 @@ exports[`Guide updates activeCompetency 1`] = `
 </div>
 `;
 
-exports[`Guide updates activeCompetency through select 1`] = `
+exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
 <div
-  className="tabsContainer"
+  className="container"
 >
   <div
-    className="tabContainer"
+    className="tabs"
   >
-    <div
-      className="competencySelect"
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
     >
-      <select
-        className="mobileSelect"
-        onChange={[Function]}
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-      >
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
-        </option>
-        <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-        >
-          Managing Pressure
-        </option>
-        <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
-      </select>
-      <p
-        className="mobileBadge"
-      >
-        <img
-          alt="Delivering Results badge"
-          src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-        />
-      </p>
-    </div>
-    <ul
-      className="tabs"
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
     >
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#FFCC3B",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#29B770",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "black",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-    </ul>
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
   </div>
   <div
-    className="tabsContent"
+    className="content first"
   >
-    <div
-      className="tabContentActive"
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
     >
-      <h2>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
         Delivering Results
-      </h2>
-      At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Managing Pressure
+    </div>
+    At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and the way in which they control their emotions and underlying tension in order to stay on task and cope with everyday challenges.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Resilient/Reflexive People
+      </div>
       <p>
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          read_more
-        </button>
+        guide_intro
       </p>
-      <hr />
-      <div>
-        <h2>
-          Flexible People
-        </h2>
-        <p>
-          guide_intro
-        </p>
+      <div
+        className="question open"
+      >
         <div
-          className="question"
+          className="text"
         >
-          <h3
-            id="traitify-question-1"
-          >
-            Question 1
-          </h3>
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            Tell me about dealing with a highly pressured and difficult work situation.
+          </div>
           <button
             onClick={[Function]}
             type="button"
           >
             <span
-              className="questionText"
-            >
-              Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
+              className="icon traitify--icon-fa"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
@@ -2882,48 +380,53 @@ exports[`Guide updates activeCompetency through select 1`] = `
               }
             />
           </button>
-          <h4>
-            question_purpose
-          </h4>
-          <div>
-            <ul>
-              <li>
-                Are they able to adapt to situations?
-              </li>
-              <li>
-                Can they change direction of thought (and travel) quickly?
-              </li>
-              <li>
-                Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
-              </li>
-              <li>
-                Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
-              </li>
-              <li>
-                And to probe into possible issues with being flexible.
-              </li>
-            </ul>
-          </div>
         </div>
         <div
-          className="question"
+          className="h2"
         >
-          <h3
-            id={null}
-          >
-            Question 2
-          </h3>
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            Do they appear to respond with the appropriate level of concern?
+          </li>
+          <li>
+            Are they able to deal with things in a calm and upbeat way?
+          </li>
+          <li>
+            Do they keep their feelings under control?
+          </li>
+          <li>
+            Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
+          </li>
+          <li>
+            And to probe into possible issues with being resilient/reflexive.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.
+          </div>
           <button
             onClick={[Function]}
             type="button"
           >
             <span
-              className="questionText"
-            >
-              (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
-            </span>
-            <span
-              className="questionIcon traitify--icon-fa"
+              className="icon traitify--icon-fa"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
@@ -2932,25 +435,1970 @@ exports[`Guide updates activeCompetency through select 1`] = `
             />
           </button>
         </div>
+      </div>
+      <div
+        className="question"
+      >
         <div
-          className="question"
+          className="text"
         >
-          <h3
-            id={null}
-          >
-            Question 3
-          </h3>
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?
+          </div>
           <button
             onClick={[Function]}
             type="button"
           >
             <span
-              className="questionText"
-            >
-              (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
-            </span>
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide renders nothing if guide not ready 1`] = `null`;
+
+exports[`Paradox.Guide renders nothing if no competencies 1`] = `null`;
+
+exports[`Paradox.Guide renders nothing if results not ready 1`] = `null`;
+
+exports[`Paradox.Guide toggles expanded intro 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Engaging with People
+    </div>
+    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <p>
+      The benefits of being extraverted are likely to include being people oriented, approachable, fun loving, energetic, fast to act, and 'full on'. In contrast someone who is introverted probably prefers to work independently, and is more likely to be dispassionate, thoughtful and measured, to think before acting and to stand back. Those who are a mixture of both (extroverted/introverted) are best described as socially skilled, quick to connect, energetic, thoughtful and action oriented, and enthusiastic.
+These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Extraverted/Introverted People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            How would you describe the way in which you deal with new people in a work situation?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
             <span
-              className="questionIcon traitify--icon-fa"
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they approaching new people (work colleagues, customers etc)?
+          </li>
+          <li>
+            What sort of interpersonal skills do they describe using?
+          </li>
+          <li>
+            How much energy do they invest in trying to connect with other people?
+          </li>
+          <li>
+            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+          </li>
+          <li>
+            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+          </li>
+          <li>
+            And to probe into possible issues with being extraverted/introverted.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide toggles question content 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Engaging with People
+    </div>
+    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Extraverted/Introverted People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            How would you describe the way in which you deal with new people in a work situation?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they approaching new people (work colleagues, customers etc)?
+          </li>
+          <li>
+            What sort of interpersonal skills do they describe using?
+          </li>
+          <li>
+            How much energy do they invest in trying to connect with other people?
+          </li>
+          <li>
+            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+          </li>
+          <li>
+            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+          </li>
+          <li>
+            And to probe into possible issues with being extraverted/introverted.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they working alone?
+          </li>
+          <li>
+            Are they likely to be frustrated because they cannot employ their face-to-face social skills?
+          </li>
+          <li>
+            Do they get bored with apparently low energy situations?
+          </li>
+        </ul>
+        <div
+          className="h2"
+        >
+          question_adaptability
+        </div>
+        <ul>
+          <li>
+            Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
+          </li>
+          <li>
+            Can they describe how they handle working alone?
+          </li>
+          <li>
+            How do they keep themselves mentally engaged?
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+    >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Influencing People
+    </div>
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Agreeable/Independent People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            Are they tuned into other people's thoughts and feelings?
+          </li>
+          <li>
+            How accommodating are they?
+          </li>
+          <li>
+            Do they use a realistic but sympathetic style?
+          </li>
+          <li>
+            Do they push their case in an open and sensitive way?
+          </li>
+          <li>
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
+          </li>
+          <li>
+            And to probe into possible issues with being agreeable/independent.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide update sets the guide data if the guide's assessment ID changes 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Updated Name
+      </span>
+    </button>
+    <button
+      className="other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Updated Name
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Engaging with People
+    </div>
+    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Extraverted/Introverted People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            How would you describe the way in which you deal with new people in a work situation?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they approaching new people (work colleagues, customers etc)?
+          </li>
+          <li>
+            What sort of interpersonal skills do they describe using?
+          </li>
+          <li>
+            How much energy do they invest in trying to connect with other people?
+          </li>
+          <li>
+            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+          </li>
+          <li>
+            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+          </li>
+          <li>
+            And to probe into possible issues with being extraverted/introverted.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide update sets the guide data if the guide's locale changes 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Engaging with People
+    </div>
+    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Extraverted/Introverted People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            How would you describe the way in which you deal with new people in a work situation?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they approaching new people (work colleagues, customers etc)?
+          </li>
+          <li>
+            What sort of interpersonal skills do they describe using?
+          </li>
+          <li>
+            How much energy do they invest in trying to connect with other people?
+          </li>
+          <li>
+            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+          </li>
+          <li>
+            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+          </li>
+          <li>
+            And to probe into possible issues with being extraverted/introverted.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content first"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="5064521c-1028-40d4-8baa-dfeff734406f"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading low"
+    >
+      Engaging with People
+    </div>
+    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Extraverted/Introverted People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            How would you describe the way in which you deal with new people in a work situation?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            How comfortable are they approaching new people (work colleagues, customers etc)?
+          </li>
+          <li>
+            What sort of interpersonal skills do they describe using?
+          </li>
+          <li>
+            How much energy do they invest in trying to connect with other people?
+          </li>
+          <li>
+            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+          </li>
+          <li>
+            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+          </li>
+          <li>
+            And to probe into possible issues with being extraverted/introverted.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide updates activeCompetency 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="active other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content last"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading other"
+    >
+      Delivering Results
+    </div>
+    At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Flexible People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            Are they able to adapt to situations?
+          </li>
+          <li>
+            Can they change direction of thought (and travel) quickly?
+          </li>
+          <li>
+            Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
+          </li>
+          <li>
+            Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
+          </li>
+          <li>
+            And to probe into possible issues with being flexible.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.Guide updates activeCompetency through select 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Managing Pressure
+      </span>
+    </button>
+    <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="high"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Solving Problems
+      </span>
+    </button>
+    <button
+      className="active other"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Delivering Results
+      </span>
+    </button>
+  </div>
+  <div
+    className="content last"
+  >
+    <select
+      className="dropdown"
+      onChange={[Function]}
+      value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+    >
+      <option
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
+      >
+        Engaging with People
+      </option>
+      <option
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      >
+        Managing Pressure
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        Solving Problems
+      </option>
+      <option
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+      >
+        Delivering Results
+      </option>
+    </select>
+    <div
+      className="heading other"
+    >
+      Delivering Results
+    </div>
+    At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
+    <p>
+      <button
+        className="readMore"
+        onClick={[Function]}
+        type="button"
+      >
+        read_more
+      </button>
+    </p>
+    <hr />
+    <div>
+      <div
+        className="heading"
+      >
+        Flexible People
+      </div>
+      <p>
+        guide_intro
+      </p>
+      <div
+        className="question open"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+        <div
+          className="h2"
+        >
+          question_purpose
+        </div>
+        <ul>
+          <li>
+            Are they able to adapt to situations?
+          </li>
+          <li>
+            Can they change direction of thought (and travel) quickly?
+          </li>
+          <li>
+            Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
+          </li>
+          <li>
+            Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
+          </li>
+          <li>
+            And to probe into possible issues with being flexible.
+          </li>
+        </ul>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",
+                }
+              }
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        className="question"
+      >
+        <div
+          className="text"
+        >
+          <span
+            className="icon traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"question\\" class=\\"svg-inline--fa fa-question fa-w-12\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z\\"></path></svg>",
+              }
+            }
+          />
+          <div>
+            (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
+          </div>
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <span
+              className="icon traitify--icon-fa"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z\\"></path></svg>",

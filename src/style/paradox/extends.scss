@@ -6,20 +6,32 @@
   @include theme("border-color", "border-color");
 }
 
-%container {
-  @each $name, $value in $theme-variables {
-    --private-traitify-#{$name}: var(--traitify-#{$name}, #{$value});
+:global(.traitify--color-scheme-auto) {
+  %container {
+    @media(prefers-color-scheme: dark) { @include -set-variables($color-scheme-dark); }
   }
+}
 
-  @include theme("color", "black");
+:global(.traitify--color-scheme-dark) {
+  %container { @include -set-variables($color-scheme-dark); }
+}
+
+%container {
   font: 400 #{$font-size}/1.5 "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   margin: 0;
   width: 100%;
 
+  @include -set-variables($color-scheme-light);
+  @include theme("color", "text-color");
+  @include theme("background", "background-color");
   :global(.traitify--icon-fa) {
     svg { display: block; }
   }
   &, * { box-sizing: border-box; }
+  &:global(.traitify--color-scheme-auto) {
+    @media(prefers-color-scheme: dark) { @include -set-variables($color-scheme-dark); }
+  }
+  &:global(.traitify--color-scheme-dark) { @include -set-variables($color-scheme-dark); }
   button {
     color: inherit;
     font: inherit;
@@ -71,7 +83,7 @@
         border-bottom: 5px solid;
 
         @include theme("border-bottom-color", "blue");
-        @include theme("color", "blue");
+        @include theme("color", "theme-color");
       }
     }
   }

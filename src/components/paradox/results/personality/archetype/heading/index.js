@@ -40,7 +40,7 @@ const getData = ({personality, perspective}) => {
 };
 
 function PersonalityArchetypeHeading(props) {
-  const {assessment, deck, followDeck, getOption, isReady, translate, ui} = props;
+  const {assessment, deck, element, followDeck, getOption, isReady, translate, ui} = props;
   const personality = dig(assessment, "archetype");
   const state = {};
 
@@ -64,7 +64,7 @@ function PersonalityArchetypeHeading(props) {
   } = getData({personality, perspective: getOption("perspective")});
 
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={element}>
       <div className={style.details}>
         <div>
           {badge.url && (
@@ -98,7 +98,7 @@ function PersonalityArchetypeHeading(props) {
   );
 }
 
-PersonalityArchetypeHeading.defaultProps = {assessment: null, deck: null};
+PersonalityArchetypeHeading.defaultProps = {assessment: null, deck: null, element: null};
 PersonalityArchetypeHeading.propTypes = {
   assessment: PropTypes.shape({
     archetype: PropTypes.shape({
@@ -112,6 +112,7 @@ PersonalityArchetypeHeading.propTypes = {
     })
   }),
   deck: PropTypes.shape({name: PropTypes.string.isRequired}),
+  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
   followDeck: PropTypes.func.isRequired,
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,

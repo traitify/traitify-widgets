@@ -3,6 +3,7 @@
 .container {
   @extend %container;
 
+  background: none;
   margin-bottom: $buffer-section;
 
   @include min-width("md") { display: flex; }
@@ -20,6 +21,7 @@
     @include min-width("lg") {
       &:first-of-type { margin-right: $buffer-lg; }
     }
+    @include theme("background", "background-color");
   }
 }
 
@@ -46,7 +48,7 @@
     &.fallback {
       border-radius: 50%;
 
-      @include theme("background", "blue");
+      @include theme("background", "theme-color");
     }
   }
   p {
@@ -62,7 +64,7 @@
     display: block;
     font-weight: bold;
 
-    @include theme("color", "blue");
+    @include theme("color", "theme-color");
   }
 }
 .meaning {

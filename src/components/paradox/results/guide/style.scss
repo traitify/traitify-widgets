@@ -15,13 +15,13 @@
         text-decoration-thickness: 3px;
         text-underline-offset: $buffer * 0.5;
       }
-      &.high { @include theme("text-decoration-color", "green"); }
-      &.low { @include theme("text-decoration-color", "red"); }
-      &.medium { @include theme("text-decoration-color", "yellow"); }
-      &.other { @include theme("text-decoration-color", "black"); }
+      &.high { @include theme("text-decoration-color", "rank-high"); }
+      &.low { @include theme("text-decoration-color", "rank-low"); }
+      &.medium { @include theme("text-decoration-color", "rank-medium"); }
+      &.other { @include theme("text-decoration-color", "rank-other"); }
     }
   }
-  a, button,  span { @include theme("color", "blue"); }
+  a, button,  span { @include theme("color", "theme-color"); }
   hr {
     border: none;
     height: $border-width;
@@ -44,18 +44,18 @@
   font-weight: bold;
   margin-bottom: $buffer-heading;
 }
-.icon { @include theme("color", "blue"); }
+.icon { @include theme("color", "theme-color"); }
 .question {
   @extend %box;
 
   @include buffer("margin-bottom");
   &.open {
-    .icon { @include theme("color", "blue"); }
-    button { @include theme("border-color", "blue"); }
+    .icon { @include theme("color", "theme-color"); }
+    button { @include theme("border-color", "theme-color"); }
   }
   .h2 {
     @include buffer("margin-top");
-    @include theme("color", "blue");
+    @include theme("color", "theme-color");
   }
   button {
     border: $border-width solid;
@@ -63,7 +63,7 @@
     padding: $buffer * 0.5;
 
     @include theme("border-color", "border-color");
-    .icon { @include theme("color", "black"); }
+    .icon { @include theme("color", "text-color"); }
   }
 }
 .readMore {
@@ -80,10 +80,10 @@
   @include activeTab($active: ".active", $circle: "span", $square: "&");
   @include max-width("lg") { display: none; }
   .active {
-    &.high span { @include theme("border-bottom-color", "green"); }
-    &.low span { @include theme("border-bottom-color", "red"); }
-    &.medium span { @include theme("border-bottom-color", "yellow"); }
-    &.other span { @include theme("border-bottom-color", "black"); }
+    &.high span { @include theme("border-bottom-color", "rank-high"); }
+    &.low span { @include theme("border-bottom-color", "rank-low"); }
+    &.medium span { @include theme("border-bottom-color", "rank-medium"); }
+    &.other span { @include theme("border-bottom-color", "rank-other"); }
 
     span { border-bottom: 1px solid; }
   }

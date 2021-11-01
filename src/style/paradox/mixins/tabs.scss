@@ -16,7 +16,7 @@
     content: "";
     position: absolute;
 
-    @include theme("background", "white");
+    @include theme("background", "background-color");
   }
   #{$circle}:#{$direction} {
     #{$side}: ($radius * -1) - $border-width;
@@ -51,7 +51,7 @@
 
     @include activeTabSide("left", $circle: $circle, $square: $square);
     @include activeTabSide("right", $circle: $circle, $square: $square);
-    @include theme("background", "white");
+    @include theme("background", "background-color");
     @include theme("border-color", "border-color");
   }
 }

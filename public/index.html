@@ -14,12 +14,22 @@
       <div id="guide"></div>
     </div>
     <style>
+      .dark {
+        background: #555555;
+        color: #FFFFFF;
+      }
       .row { margin: 12px; }
       .hide { display: none; }
       @media(min-width: 60em) {
         .row {
           margin-left: 48px;
           margin-right: 48px;
+        }
+      }
+      @media(prefers-color-scheme: dark) {
+        .auto {
+          background: #555555;
+          color: #FFFFFF;
         }
       }
     </style>
@@ -49,6 +59,17 @@
           <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
           <option value="perseverance">Perseverance</option>
           <option value="persuasion">Persuasion</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label htmlFor="color-scheme">
+        Color Scheme:
+        <select id="color-scheme" name="color-scheme">
+          <option value="">Default</option>
+          <option value="auto">Auto</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
         </select>
       </label>
     </div>
@@ -128,6 +149,7 @@
       var widget;
 
       function createWidget(){
+        var colorScheme = localStorage.getItem("color-scheme");
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
@@ -137,7 +159,6 @@
         var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-
         if(!assessmentID){ return; }
 
         targets = {
@@ -157,6 +178,7 @@
           .allowHeaders()
           .allowInstructions()
           .assessmentID(assessmentID)
+          .colorScheme(colorScheme)
           .locale(locale)
           .perspective(perspective)
           .surveyType(surveyType)
@@ -171,6 +193,8 @@
         }).catch(function(error){
           console.log(error);
         });
+
+        updateColorScheme();
       }
 
       function createAssessment(){
@@ -221,6 +245,7 @@
         value ? localStorage.setItem(name, value) : localStorage.removeItem(name);
 
         if(widget && !["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
+          if(name === "color-scheme") { name = "colorScheme"; }
           if(name === "survey-type") { name = "surveyType"; }
 
           widget[name](value);
@@ -237,12 +262,9 @@
 
       function refreshWidget(){
         if(widget) {
-          var deckID = localStorage.getItem("deck-id");
           var showCareers = localStorage.getItem("show-careers");
           var showGuide = localStorage.getItem("show-guide");
           var surveyType = localStorage.getItem("survey-type");
-          var theme = localStorage.getItem("theme");
-          var view = localStorage.getItem("view");
           var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
 
           targets = {
@@ -256,11 +278,14 @@
           }
 
           widget.assessmentID(assessmentID).targets(targets).refresh();
+
+          updateColorScheme();
         }
       }
 
       function setupOptions(){
         var inputs = [
+          "color-scheme",
           "deck-id",
           "locale",
           "perspective",
@@ -328,6 +353,20 @@
             select.value = currentValue;
           } else {
             select.value = values[0];
+          }
+        });
+      }
+
+      function updateColorScheme(){
+        var colorScheme = localStorage.getItem("color-scheme") || "light";
+        var theme = localStorage.getItem("theme");
+        if(theme !== "paradox") { colorScheme = "light"; }
+
+        ["auto", "dark", "light"].forEach((scheme) => {
+          if(document.body.classList.contains(scheme)) {
+            if(colorScheme !== scheme) { document.body.classList.remove(scheme); }
+          } else {
+            if(colorScheme === scheme) { document.body.classList.add(scheme); }
           }
         });
       }

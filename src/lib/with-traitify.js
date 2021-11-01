@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {Component} from "react";
+import {Component, createRef} from "react";
 import * as queries from "lib/graphql/queries";
 import {getDisplayName, loadFont} from "lib/helpers";
 import {dig} from "lib/helpers/object";
@@ -79,6 +79,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         locale: null,
         profileID: null
       };
+      this.element = createRef();
       this.setupTraitify();
       this.setupCache();
       this.setupI18n();
@@ -93,6 +94,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       if(this.getOption("surveyType") === "cognitive") { return this.updateCognitiveAssessment(); }
 
       this.updateAssessment();
+      this.updateColorScheme();
     }
     componentDidUpdate(prevProps, prevState) {
       const newAssessment = this.props.assessment || {};
@@ -138,6 +140,8 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       if(this.state.followingGuide && (changes.assessment || changes.locale)) {
         this.updateGuide({oldID: prevState.assessment?.id, oldLocale: prevState.locale});
       }
+
+      this.updateColorScheme();
     }
     componentDidCatch(error, info) {
       this.ui.trigger("Component.error", this, {error, info});
@@ -644,6 +648,21 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         }
       }
     }
+    updateColorScheme() {
+      if(!this.element.current) { return; }
+
+      const colorScheme = this.getOption("colorScheme") || "light";
+
+      ["auto", "dark", "light"].forEach((scheme) => {
+        const className = `traitify--color-scheme-${scheme}`;
+
+        if(this.element.current.classList.contains(className)) {
+          if(colorScheme !== scheme) { this.element.current.classList.remove(className); }
+        } else {
+          if(colorScheme === scheme) { this.element.current.classList.add(className); }
+        }
+      });
+    }
     updateDeck(options = {}) {
       const {deckID, locale} = this.state;
 
@@ -702,6 +721,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     render() {
       const {
         cache,
+        element,
         followBenchmark,
         followDeck,
         followGuide,
@@ -715,12 +735,14 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         ui
       } = this;
 
+      const ThemeComponent = themeComponents[getOption("theme")] || WrappedComponent;
       const {i18n, options: {locale}} = ui;
       const translate = i18n.translate.bind(null, locale);
       const options = {
         ...props,
         ...state,
         cache,
+        element,
         followBenchmark,
         followDeck,
         followGuide,
@@ -733,8 +755,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         translate,
         ui
       };
-
-      const ThemeComponent = themeComponents[getOption("theme")] || WrappedComponent;
 
       return <ThemeComponent {...options} />;
     }

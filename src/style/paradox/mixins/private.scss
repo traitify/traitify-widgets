@@ -1,0 +1,7 @@
+// Private mixins to be used in extends or other mixins
+
+@mixin -set-variables($variables) {
+  @each $name, $value in $variables {
+    --private-traitify-#{$name}: var(--traitify-#{$name}, #{$value});
+  }
+}

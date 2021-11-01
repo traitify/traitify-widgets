@@ -1,4 +1,5 @@
 @import "./mixins/tabs.scss";
+@import "./mixins/private.scss";
 
 @mixin heading() {
   font-size: $font-size-heading;
@@ -24,6 +25,6 @@
 }
 
 @mixin theme($prop, $name) {
-  #{$prop}: map-get($theme-variables, $name);
+  #{$prop}: map-get($color-scheme-default, $name);
   #{$prop}: var(--private-traitify-#{$name});
 }

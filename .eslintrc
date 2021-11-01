@@ -8,5 +8,8 @@
   ],
   globals: {
     XDomainRequest: true
+  },
+  rules: {
+    "no-lonely-if": "off"
   }
 }

@@ -24,7 +24,7 @@ $font-size-sm: 12px;
 $font-size-heading: 24px;
 $min-height: 600px;
 
-// Private - To be used through $theme-variables
+// Private - To be used through color scheme
 $-black: #555555;
 $-blue: #25C9D0;
 $-gray: #D6D6D6;
@@ -37,18 +37,33 @@ $-yellow: #F9BC4F;
 $-yellow-light: #FBD288;
 
 $-border-color: $-gray;
+$-theme-color: $-blue;
 
-// Add variables that may change with the theme
-$theme-variables: (
+// Add variables that may change with the color scheme
+$color-scheme-dark: (
+  "background-color": $-black,
   "border-color": $-border-color,
-  "black": $-black,
-  "blue": $-blue,
-  "gray": $-gray,
-  "green": $-green,
-  "green-light": $-green-light,
-  "red": $-red,
-  "red-light": $-red-light,
-  "white": $-white,
-  "yellow": $-yellow,
-  "yellow-light": $-yellow-light
+  "rank-high": $-green,
+  "rank-high-light": $-green-light,
+  "rank-low": $-red,
+  "rank-low-light": $-red-light,
+  "rank-medium": $-yellow,
+  "rank-medium-light": $-yellow-light,
+  "rank-other": $-white,
+  "text-color": $-white,
+  "theme-color": $-theme-color
 );
+$color-scheme-light: (
+  "background-color": $-white,
+  "border-color": $-border-color,
+  "rank-high": $-green,
+  "rank-high-light": $-green-light,
+  "rank-low": $-red,
+  "rank-low-light": $-red-light,
+  "rank-medium": $-yellow,
+  "rank-medium-light": $-yellow-light,
+  "rank-other": $-black,
+  "text-color": $-black,
+  "theme-color": $-theme-color
+);
+$color-scheme-default: $color-scheme-light;

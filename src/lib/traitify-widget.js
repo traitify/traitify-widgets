@@ -48,6 +48,11 @@ export default class TraitifyWidget {
 
     return this;
   }
+  colorScheme(colorScheme) {
+    this.options.colorScheme = colorScheme;
+
+    return this;
+  }
   destroy() {
     Object.keys(this.options.renderedTargets || {}).forEach((name) => {
       const target = this.options.renderedTargets[name];

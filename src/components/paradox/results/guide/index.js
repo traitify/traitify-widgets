@@ -80,6 +80,7 @@ function Guide(props) {
   const {
     assessment,
     benchmark,
+    element,
     followBenchmark,
     followGuide,
     guide,
@@ -139,7 +140,7 @@ function Guide(props) {
   ].filter(Boolean).join(" ");
 
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={element}>
       <div className={style.tabs}>
         {data.map(({color, id, name}) => (
           <button
@@ -179,7 +180,7 @@ function Guide(props) {
   );
 }
 
-Guide.defaultProps = {assessment: null, benchmark: null, guide: null};
+Guide.defaultProps = {assessment: null, benchmark: null, element: null, guide: null};
 Guide.propTypes = {
   assessment: PropTypes.shape({
     assessment_type: PropTypes.string,
@@ -205,6 +206,7 @@ Guide.propTypes = {
       }).isRequired
     )
   }),
+  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({

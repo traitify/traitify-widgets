@@ -20,7 +20,7 @@ const tipTypes = {
 };
 
 function PersonalityArchetypeTips(props) {
-  const {assessment, getOption, isReady, translate, ui} = props;
+  const {assessment, element, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, "archetype", "details") || [];
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
@@ -58,7 +58,7 @@ function PersonalityArchetypeTips(props) {
   const tips = details.filter(({title}) => (title === activeType.apiKey)).map(({body}) => body);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={element}>
       <div className={style.tabs}>
         {types.map((type) => (
           <button
@@ -83,7 +83,7 @@ function PersonalityArchetypeTips(props) {
   );
 }
 
-PersonalityArchetypeTips.defaultProps = {assessment: null};
+PersonalityArchetypeTips.defaultProps = {assessment: null, element: null};
 PersonalityArchetypeTips.propTypes = {
   assessment: PropTypes.shape({
     archetype: PropTypes.shape({
@@ -95,6 +95,7 @@ PersonalityArchetypeTips.propTypes = {
       ).isRequired
     })
   }),
+  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

@@ -1,12 +1,17 @@
 %box {
-  border: $border-width solid $border-color;
+  border: $border-width solid;
   border-radius: $border-radius-sm;
 
   @include buffer("padding");
+  @include theme("border-color", "border-color");
 }
 
 %container {
-  color: $black;
+  @each $name, $value in $theme-variables {
+    --private-traitify-#{$name}: var(--traitify-#{$name}, #{$value});
+  }
+
+  @include theme("color", "black");
   font: 400 #{$font-size}/1.5 "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
   margin: 0;
   width: 100%;
@@ -27,13 +32,15 @@
 }
 
 %dropdown {
-  border: $border-width solid $border-color;
+  border: $border-width solid;
   display: block;
   height: 36px;
   line-height: 36px;
   margin-bottom: $buffer;
   padding: 0 $buffer;
   width: 100%;
+
+  @include theme("border-color", "border-color");
 }
 
 %heading { @include heading(); }
@@ -48,11 +55,12 @@
 @include min-width("lg") {
   %heading-lg { @include heading(); }
   %tabs-lg {
-    border-bottom: $border-width solid $border-color;
+    border-bottom: $border-width solid;
     display: flex;
     justify-content: space-between;
     margin-bottom: $buffer-lg;
 
+    @include theme("border-bottom-color", "border-color");
     button {
       @extend %heading-lg;
 
@@ -60,8 +68,10 @@
       padding: $buffer $buffer * 2;
 
       &.active {
-        border-bottom: 5px solid $blue;
-        color: $blue;
+        border-bottom: 5px solid;
+
+        @include theme("border-bottom-color", "blue");
+        @include theme("color", "blue");
       }
     }
   }

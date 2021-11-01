@@ -44,8 +44,9 @@
     max-width: 80px;
 
     &.fallback {
-      background: $blue;
       border-radius: 50%;
+
+      @include theme("background", "blue");
     }
   }
   p {
@@ -58,9 +59,10 @@
     }
   }
   span {
-    color: $blue;
     display: block;
     font-weight: bold;
+
+    @include theme("color", "blue");
   }
 }
 .meaning {

@@ -15,18 +15,19 @@
         text-decoration-thickness: 3px;
         text-underline-offset: $buffer * 0.5;
       }
-      &.high { text-decoration-color: $green; }
-      &.low { text-decoration-color: $red; }
-      &.medium { text-decoration-color: $yellow; }
-      &.other { text-decoration-color: $black; }
+      &.high { @include theme("text-decoration-color", "green"); }
+      &.low { @include theme("text-decoration-color", "red"); }
+      &.medium { @include theme("text-decoration-color", "yellow"); }
+      &.other { @include theme("text-decoration-color", "black"); }
     }
   }
-  a, button,  span { color: $blue; }
+  a, button,  span { @include theme("color", "blue"); }
   hr {
-    background: $border-color;
     border: none;
     height: $border-width;
+
     @include buffer("margin-bottom");
+    @include theme("background", "border-color");
   }
   li { margin-top: $buffer * 0.5; }
   ul {
@@ -43,25 +44,26 @@
   font-weight: bold;
   margin-bottom: $buffer-heading;
 }
-.icon { color: $blue; }
+.icon { @include theme("color", "blue"); }
 .question {
   @extend %box;
 
   @include buffer("margin-bottom");
   &.open {
-    .icon { color: $blue; }
-    button { border-color: $blue; }
+    .icon { @include theme("color", "blue"); }
+    button { @include theme("border-color", "blue"); }
   }
   .h2 {
-    color: $blue;
     @include buffer("margin-top");
+    @include theme("color", "blue");
   }
   button {
-    border: $border-width solid $border-color;
+    border: $border-width solid;
     border-radius: $border-radius-sm;
     padding: $buffer * 0.5;
 
-    .icon { color: $black; }
+    @include theme("border-color", "border-color");
+    .icon { @include theme("color", "black"); }
   }
 }
 .readMore {
@@ -78,12 +80,12 @@
   @include activeTab($active: ".active", $circle: "span", $square: "&");
   @include max-width("lg") { display: none; }
   .active {
-    &.high span { border-bottom-color: $green; }
-    &.low span { border-bottom-color: $red; }
-    &.medium span { border-bottom-color: $yellow; }
-    &.other span { border-bottom-color: $black; }
+    &.high span { @include theme("border-bottom-color", "green"); }
+    &.low span { @include theme("border-bottom-color", "red"); }
+    &.medium span { @include theme("border-bottom-color", "yellow"); }
+    &.other span { @include theme("border-bottom-color", "black"); }
 
-    span { border-bottom: 1px solid $gray; }
+    span { border-bottom: 1px solid; }
   }
   button {
     flex: 0 1 auto;

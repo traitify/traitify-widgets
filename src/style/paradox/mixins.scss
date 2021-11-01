@@ -5,10 +5,10 @@
   font-weight: 600;
 }
 
-@mixin buffer($property) {
-  #{$property}: $buffer;
+@mixin buffer($prop) {
+  #{$prop}: $buffer;
 
-  @include min-width("lg") { #{$property}: $buffer-lg; }
+  @include min-width("lg") { #{$prop}: $buffer-lg; }
 }
 
 @mixin max-width($name) {
@@ -21,4 +21,9 @@
   $value: map-get($breakpoints, $name);
 
   @media(min-width: $value) { @content; }
+}
+
+@mixin theme($prop, $name) {
+  #{$prop}: map-get($theme-variables, $name);
+  #{$prop}: var(--private-traitify-#{$name});
 }

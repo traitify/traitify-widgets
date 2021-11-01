@@ -12,19 +12,23 @@
 
   #{$circle}:#{$direction},
   #{$square}:#{$direction} {
-    background: $white;
     bottom: 0;
     content: "";
     position: absolute;
+
+    @include theme("background", "white");
   }
   #{$circle}:#{$direction} {
     #{$side}: ($radius * -1) - $border-width;
-    border-#{$otherSide}: $border-width solid $border-color;
-    border-bottom: $border-width solid $border-color;
+    border-#{$otherSide}: $border-width solid;
+    border-bottom: $border-width solid;
     border-bottom-#{$otherSide}-radius: $border-radius-sm;
     height: $radius;
     width: $radius;
     z-index: 2;
+
+    @include theme("border-#{$otherSide}-color", "border-color");
+    @include theme("border-bottom-color", "border-color");
   }
   #{$square}:#{$direction} {
     #{$side}: $length * -1;
@@ -36,8 +40,7 @@
 
 @mixin activeTab($active: ".active", $circle: "span", $square: "&") {
   #{$active} {
-    background: $white;
-    border: $border-width solid $border-color;
+    border: $border-width solid;
     border-bottom-width: 0;
     border-top-left-radius: $border-radius-sm;
     border-top-right-radius: $border-radius-sm;
@@ -48,5 +51,7 @@
 
     @include activeTabSide("left", $circle: $circle, $square: $square);
     @include activeTabSide("right", $circle: $circle, $square: $square);
+    @include theme("background", "white");
+    @include theme("border-color", "border-color");
   }
 }

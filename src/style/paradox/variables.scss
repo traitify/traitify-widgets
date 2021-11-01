@@ -11,20 +11,7 @@ $breakpoints: (
   xl: $breakpoint-xl
 );
 
-// Colors
-$black: #555555;
-$blue: #25C9D0;
-$gray: #D6D6D6;
-$green: #3BCEAC;
-$green-light: #89E2CD;
-$red: #FE6D73;
-$red-light: #FEA7AB;
-$white: #FFFFFF;
-$yellow: #F9BC4F;
-$yellow-light: #FBD288;
-
 // Paradox likes multiples of 8
-$border-color: $gray;
 $border-radius: 16px;
 $border-radius-sm: 4px;
 $border-width: 1px;
@@ -36,3 +23,32 @@ $font-size: 16px;
 $font-size-sm: 12px;
 $font-size-heading: 24px;
 $min-height: 600px;
+
+// Private - To be used through $theme-variables
+$-black: #555555;
+$-blue: #25C9D0;
+$-gray: #D6D6D6;
+$-green: #3BCEAC;
+$-green-light: #89E2CD;
+$-red: #FE6D73;
+$-red-light: #FEA7AB;
+$-white: #FFFFFF;
+$-yellow: #F9BC4F;
+$-yellow-light: #FBD288;
+
+$-border-color: $-gray;
+
+// Add variables that may change with the theme
+$theme-variables: (
+  "border-color": $-border-color,
+  "black": $-black,
+  "blue": $-blue,
+  "gray": $-gray,
+  "green": $-green,
+  "green-light": $-green-light,
+  "red": $-red,
+  "red-light": $-red-light,
+  "white": $-white,
+  "yellow": $-yellow,
+  "yellow-light": $-yellow-light
+);

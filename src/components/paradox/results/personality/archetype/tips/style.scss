@@ -16,7 +16,7 @@
     column-gap: $buffer * 2;
   }
   > div {
-    border: $border-width solid $border-color;
+    border: $border-width solid;
     border-radius: $border-radius-sm;
     margin-bottom: $buffer;
     padding: $buffer;
@@ -28,6 +28,7 @@
       grid-template-rows: 1fr auto;
       margin-bottom: $buffer-lg;
     }
+    @include theme("border-color", "border-color");
   }
 }
 .dropdown {

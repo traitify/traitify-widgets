@@ -50,6 +50,7 @@ $color-scheme-dark: (
   "rank-medium": $-yellow,
   "rank-medium-light": $-yellow-light,
   "rank-other": $-white,
+  "rank-other-light": $-gray,
   "text-color": $-white,
   "theme-color": $-theme-color
 );
@@ -63,6 +64,7 @@ $color-scheme-light: (
   "rank-medium": $-yellow,
   "rank-medium-light": $-yellow-light,
   "rank-other": $-black,
+  "rank-other-light": $-black,
   "text-color": $-black,
   "theme-color": $-theme-color
 );

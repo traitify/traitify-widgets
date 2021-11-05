@@ -61,6 +61,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       traitify: TraitifyPropTypes.traitify,
       ui: TraitifyPropTypes.ui
     }
+    static getDerivedStateFromError(error) { return {error}; }
     constructor(props) {
       super(props);
 
@@ -94,7 +95,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       if(this.getOption("surveyType") === "cognitive") { return this.updateCognitiveAssessment(); }
 
       this.updateAssessment();
-      this.updateColorScheme();
     }
     componentDidUpdate(prevProps, prevState) {
       const newAssessment = this.props.assessment || {};
@@ -145,7 +145,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     }
     componentDidCatch(error, info) {
       this.ui.trigger("Component.error", this, {error, info});
-      this.setState({error});
     }
     componentWillUnmount() {
       Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
@@ -487,6 +486,10 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         this.state = {...this.state, ...state};
       }
     }
+    setElement = (element) => {
+      this.element.current = element;
+      this.updateColorScheme();
+    }
     followBenchmark = () => {
       this.setState({followingBenchmark: true});
       this.updateBenchmark();
@@ -721,7 +724,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     render() {
       const {
         cache,
-        element,
         followBenchmark,
         followDeck,
         followGuide,
@@ -730,6 +732,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         getOption,
         isReady,
         props,
+        setElement,
         state,
         traitify,
         ui
@@ -742,7 +745,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         ...props,
         ...state,
         cache,
-        element,
+        element: setElement,
         followBenchmark,
         followDeck,
         followGuide,
@@ -755,6 +758,8 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         translate,
         ui
       };
+
+      if(state.error) { return null; }
 
       return <ThemeComponent {...options} />;
     }

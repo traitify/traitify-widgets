@@ -112,7 +112,10 @@ PersonalityArchetypeHeading.propTypes = {
     })
   }),
   deck: PropTypes.shape({name: PropTypes.string.isRequired}),
-  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
+  element: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({current: PropTypes.instanceOf(Element)})
+  ]),
   followDeck: PropTypes.func.isRequired,
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,

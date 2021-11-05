@@ -1,4 +1,5 @@
 {
+  "acceptable": "Acceptable",
   "archetype_description_html": "This assessment helps you understand the components of your personality. Just as our bodies are composed of different organ systems, we can think of our personalities as having separate, equally important parts.<br /><br />Although we might feel and behave a little differently from one day to the next, or even from one situation to the next, we all typically display higher or lower levels of five core dimensions. All five dimensions shape who we are, just like all the parts of our bodies work together to keep us healthy.",
   "back": "Back",
   "badge": "Badge",
@@ -95,6 +96,8 @@
   "personality_type": "Personalty Type",
   "potential_benefits": "Potential Benefits",
   "potential_pitfalls": "Potential Pitfalls",
+  "potential_risk": "Potential Risk",
+  "preferred": "Preferred",
   "question_adaptability": "Have they developed a coping style?",
   "question_purpose": "What are you trying to find out?",
   "radar_chart_label": "A chart displaying your results. See text version below",

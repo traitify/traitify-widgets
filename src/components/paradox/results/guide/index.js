@@ -1,33 +1,13 @@
 import {faChevronDown, faChevronUp, faQuestion} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {sortByTypePosition} from "lib/helpers";
+import {combine} from "lib/helpers/combine-data";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import Icon from "lib/helpers/icon";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
-
-const colors = {high: style.high, low: style.low, medium: style.medium, other: style.other};
-const colorFrom = ({benchmark, score, typeID}) => {
-  if(!benchmark) {
-    if(score <= 3) { return colors.low; }
-    if(score <= 6) { return colors.medium; }
-
-    return colors.high;
-  }
-
-  const range = benchmark
-    .range_types.find(({id}) => id === typeID)
-    .ranges.find(({max_score: max, min_score: min}) => score >= min && score <= max);
-
-  if(range.match_score === 5) { return colors.low; }
-  if(range.match_score === 10) { return colors.medium; }
-  if(range.match_score === 20) { return colors.high; }
-
-  return colors.other;
-};
 
 function List({data}) {
   return (
@@ -100,24 +80,13 @@ function Guide(props) {
   useEffect(() => {
     const competencies = dig(guide, "competencies") || [];
     const types = dig(assessment, "personality_types") || [];
-
     if(competencies.length === 0 || types.length === 0) { return; }
 
-    const _data = sortByTypePosition(types).map(({personality_type: {badge, id}, score}) => {
-      const color = colorFrom({benchmark, score, typeID: id});
-      const competency = competencies
-        .find(({questionSequences}) => questionSequences[0].personalityTypeId === id);
+    const _data = combine({benchmark, guide, types})
+      .map(({competency, rank, score}) => ({...competency, rank, score}));
 
-      return {...competency, badge: badge.image_medium, color, score};
-    });
-
-    const sortedData = _data.filter(({color}) => color === colors.low);
-    sortedData.push(..._data.filter(({color}) => color === colors.medium));
-    sortedData.push(..._data.filter(({color}) => color === colors.high));
-    sortedData.push(..._data.filter(({color}) => color === colors.other));
-
-    setData(sortedData);
-    setActiveCompetency(sortedData[0]);
+    setData(_data);
+    setActiveCompetency(_data[0]);
   }, [
     dig(assessment, "id"),
     dig(benchmark, "id"),
@@ -142,10 +111,10 @@ function Guide(props) {
   return (
     <div className={style.container} ref={element}>
       <div className={style.tabs}>
-        {data.map(({color, id, name}) => (
+        {data.map(({id, name, rank}) => (
           <button
             key={id}
-            className={[id === activeCompetency.id && style.active, color].filter(Boolean).join(" ")}
+            className={[id === activeCompetency.id && style.active, style[rank]].filter(Boolean).join(" ")}
             onClick={() => showCompetency(id)}
             type="button"
           >
@@ -157,7 +126,7 @@ function Guide(props) {
         <select className={style.dropdown} onChange={onChange} value={activeCompetency.id}>
           {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
         </select>
-        <div className={[style.heading, activeCompetency.color].join(" ")}>{activeCompetency.name}</div>
+        <div className={[style.heading, style[activeCompetency.rank]].join(" ")}>{activeCompetency.name}</div>
         {intro}
         <p>
           <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
@@ -206,7 +175,10 @@ Guide.propTypes = {
       }).isRequired
     )
   }),
-  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
+  element: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({current: PropTypes.instanceOf(Element)})
+  ]),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({

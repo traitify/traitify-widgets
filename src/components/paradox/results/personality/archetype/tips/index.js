@@ -95,7 +95,10 @@ PersonalityArchetypeTips.propTypes = {
       ).isRequired
     })
   }),
-  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
+  element: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({current: PropTypes.instanceOf(Element)})
+  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

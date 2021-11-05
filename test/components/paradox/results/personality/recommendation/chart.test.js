@@ -1,4 +1,4 @@
-import {Component} from "components/paradox/results/guide/index";
+import {Component} from "components/paradox/results/personality/recommendation/chart";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
@@ -6,7 +6,7 @@ import guide from "support/json/guide.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("Paradox.Guide", () => {
+describe("Paradox.PersonalityRecommendationChart", () => {
   let props;
 
   beforeEach(() => {
@@ -36,7 +36,7 @@ describe("Paradox.Guide", () => {
       new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
-        "Guide.initialized",
+        "PersonalityRecommendationChart.initialized",
         expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
@@ -50,7 +50,7 @@ describe("Paradox.Guide", () => {
       component.updateProps();
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
-        "Guide.updated",
+        "PersonalityRecommendationChart.updated",
         expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
@@ -69,7 +69,7 @@ describe("Paradox.Guide", () => {
       ];
     });
 
-    it("sets the guide data if the benchmark changes", () => {
+    it("sets the data if the benchmark changes", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         benchmark: {
@@ -84,7 +84,7 @@ describe("Paradox.Guide", () => {
       expect(component.tree).toMatchSnapshot();
     });
 
-    it("sets the guide data if the guide's assessment ID changes", () => {
+    it("sets the data if the guide's assessment ID changes", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         guide: {
@@ -97,7 +97,7 @@ describe("Paradox.Guide", () => {
       expect(component.tree).toMatchSnapshot();
     });
 
-    it("sets the guide data if the guide's locale changes", () => {
+    it("sets the data if the guide's locale changes", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         guide: {
@@ -110,7 +110,7 @@ describe("Paradox.Guide", () => {
       expect(component.tree).toMatchSnapshot();
     });
 
-    it("sets the guide data if the guide's removed", () => {
+    it("sets the data if the guide's removed", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateProps({guide: null});
 
@@ -128,42 +128,6 @@ describe("Paradox.Guide", () => {
     new ComponentHandler(<Component {...props} />);
 
     expect(props.followGuide).toHaveBeenCalled();
-  });
-
-  it("toggles expanded intro", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => component.findByText("read_more").props.onClick());
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("toggles question content", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    const question = props.guide.competencies[2].questionSequences[0].questions[1];
-    const button = component.findByText(question.text, {exact: false})
-      .parent.findByType("button");
-    component.act(() => button.props.onClick());
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("updates activeCompetency", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    const text = props.guide.competencies[1].name;
-    const button = component.instance
-      .find((element) => element.children[0] === text && element.type === "span")
-      .parent;
-    component.act(() => button.props.onClick());
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("updates activeCompetency through select", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    const value = props.guide.competencies[1].id;
-    component.act(() => component.instance.findByType("select").props.onChange({target: {value}}));
-
-    expect(component.tree).toMatchSnapshot();
   });
 
   it("renders component", () => {

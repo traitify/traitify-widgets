@@ -75,6 +75,20 @@ describe("Widget", () => {
     });
   });
 
+  describe("allowHeaders", () => {
+    it("returns widget", () => {
+      const returnValue = widget.allowHeaders();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.allowHeaders();
+
+      expect(widget.options.allowHeaders).toBe(true);
+    });
+  });
+
   describe("allowInstructions", () => {
     it("returns widget", () => {
       const returnValue = widget.allowInstructions();
@@ -103,6 +117,34 @@ describe("Widget", () => {
     });
   });
 
+  describe("benchmarkID", () => {
+    it("returns widget", () => {
+      const returnValue = widget.benchmarkID("b-id");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.benchmarkID("b-id");
+
+      expect(widget.options.benchmarkID).toBe("b-id");
+    });
+  });
+
+  describe("colorScheme", () => {
+    it("returns widget", () => {
+      const returnValue = widget.colorScheme("auto");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.colorScheme("auto");
+
+      expect(widget.options.colorScheme).toBe("auto");
+    });
+  });
+
   describe("destroy", () => {
     it("returns widget", () => {
       const returnValue = widget.destroy();
@@ -110,8 +152,15 @@ describe("Widget", () => {
       expect(returnValue).toEqual(widget);
     });
 
+    it("ignores disconnected targets", () => {
+      widget.options.renderedTargets = {Default: {...createElement(), isConnected: false}};
+      widget.destroy();
+
+      expect(unmountComponentAtNode).not.toHaveBeenCalled();
+    });
+
     it("ignores invalid targets", () => {
-      widget.options.targets = {Default: "#not-found"};
+      widget.options.renderedTargets = {Default: null};
       widget.destroy();
 
       expect(unmountComponentAtNode).not.toHaveBeenCalled();
@@ -165,6 +214,20 @@ describe("Widget", () => {
       widget.disableFullscreen();
 
       expect(widget.options.allowFullscreen).toBe(false);
+    });
+  });
+
+  describe("disableHeaders", () => {
+    it("returns widget", () => {
+      const returnValue = widget.disableHeaders();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.disableHeaders();
+
+      expect(widget.options.allowHeaders).toBe(false);
     });
   });
 

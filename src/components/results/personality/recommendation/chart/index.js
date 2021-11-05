@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {useEffect, useLayoutEffect, useRef} from "react";
+import {Component as Paradox} from "components/paradox/results/personality/recommendation/chart";
 import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
@@ -158,4 +159,4 @@ PersonalityRecommendationChart.propTypes = {
 };
 
 export {PersonalityRecommendationChart as Component};
-export default withTraitify(PersonalityRecommendationChart);
+export default withTraitify(PersonalityRecommendationChart, {paradox: Paradox});

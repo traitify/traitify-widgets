@@ -93,7 +93,9 @@ exports[`Paradox.Guide renders component 1`] = `
       Engaging with People
     </div>
     At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -101,7 +103,7 @@ exports[`Paradox.Guide renders component 1`] = `
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -109,9 +111,11 @@ exports[`Paradox.Guide renders component 1`] = `
       >
         Extraverted/Introverted People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -331,7 +335,9 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       Managing Pressure
     </div>
     At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and the way in which they control their emotions and underlying tension in order to stay on task and cope with everyday challenges.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -339,7 +345,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -347,9 +353,11 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       >
         Resilient/Reflexive People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -572,7 +580,9 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       Engaging with People
     </div>
     At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -580,11 +590,13 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       >
         read_more
       </button>
-    </p>
-    <p>
+    </div>
+    <div
+      className="p"
+    >
       The benefits of being extraverted are likely to include being people oriented, approachable, fun loving, energetic, fast to act, and 'full on'. In contrast someone who is introverted probably prefers to work independently, and is more likely to be dispassionate, thoughtful and measured, to think before acting and to stand back. Those who are a mixture of both (extroverted/introverted) are best described as socially skilled, quick to connect, energetic, thoughtful and action oriented, and enthusiastic.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -592,9 +604,11 @@ These personality characteristics provide the basis for asking a particular sequ
       >
         Extraverted/Introverted People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -814,7 +828,9 @@ exports[`Paradox.Guide toggles question content 1`] = `
       Engaging with People
     </div>
     At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -822,7 +838,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -830,9 +846,11 @@ exports[`Paradox.Guide toggles question content 1`] = `
       >
         Extraverted/Introverted People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -1084,7 +1102,9 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       Influencing People
     </div>
     At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -1092,7 +1112,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -1100,9 +1120,11 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       >
         Agreeable/Independent People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -1322,7 +1344,9 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       Engaging with People
     </div>
     At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -1330,7 +1354,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -1338,9 +1362,11 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       >
         Extraverted/Introverted People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -1560,7 +1586,9 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       Engaging with People
     </div>
     At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -1568,7 +1596,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -1576,9 +1604,11 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       >
         Extraverted/Introverted People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -1798,7 +1828,9 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       Engaging with People
     </div>
     At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -1806,7 +1838,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -1814,9 +1846,11 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       >
         Extraverted/Introverted People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -2036,7 +2070,9 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       Delivering Results
     </div>
     At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -2044,7 +2080,7 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -2052,9 +2088,11 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       >
         Flexible People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >
@@ -2271,7 +2309,9 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       Delivering Results
     </div>
     At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
-    <p>
+    <div
+      className="p"
+    >
       <button
         className="readMore"
         onClick={[Function]}
@@ -2279,7 +2319,7 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       >
         read_more
       </button>
-    </p>
+    </div>
     <hr />
     <div>
       <div
@@ -2287,9 +2327,11 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       >
         Flexible People
       </div>
-      <p>
+      <div
+        className="p"
+      >
         guide_intro
-      </p>
+      </div>
       <div
         className="question open"
       >

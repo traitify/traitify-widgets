@@ -1,27 +1,15 @@
 @import "~style/helpers";
 
-.container {
-  .heading {
-    @include rems(13);
-    @include mq(m) {
-      @include rems(15);
-    }
-    @include mq(xl) {
-      @include rems(18);
-    }
-    color: #767676;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
+.heading {
+  @include rems(13);
+  @include mq(m) {
+    @include rems(15);
   }
-  .paddingBottom {
-    padding-bottom: 20px;
+  @include mq(xl) {
+    @include rems(18);
   }
-  .paddingTop {
-    @extend .heading;
-    padding-top: 15px;
-  }
-  .lessMarginBottom {
-    @extend .paddingTop;
-    margin-bottom: -10px;
-  }
+  color: #767676;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 25px;
+  text-transform: uppercase;
 }

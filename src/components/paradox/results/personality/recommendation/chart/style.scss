@@ -27,6 +27,11 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
   @extend %container;
 
   margin-bottom: $buffer-section;
+
+  &.combined {
+    @include buffer("margin-bottom");
+    .name { display: none; }
+  }
 }
 .horizontal, .vertical {
   .active {

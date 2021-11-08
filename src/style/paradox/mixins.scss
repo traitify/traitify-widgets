@@ -1,15 +1,15 @@
 @import "./mixins/tabs.scss";
 @import "./mixins/private.scss";
 
-@mixin heading() {
-  font-size: $font-size-heading;
-  font-weight: 600;
-}
-
 @mixin buffer($prop) {
   #{$prop}: $buffer;
 
   @include min-width("lg") { #{$prop}: $buffer-lg; }
+}
+
+@mixin heading() {
+  font-size: $font-size-heading;
+  font-weight: 600;
 }
 
 @mixin max-width($name) {

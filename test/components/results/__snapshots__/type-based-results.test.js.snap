@@ -28,7 +28,7 @@ exports[`TypeBasedResults renders results 1`] = `
 exports[`TypeBasedResults renders results with headers 1`] = `
 <section>
   <p
-    className="paddingTop"
+    className="heading"
   >
     <span
       className="traitify--icon-fa"
@@ -47,7 +47,7 @@ exports[`TypeBasedResults renders results with headers 1`] = `
     Personality Base
   </div>
   <p
-    className="paddingTop"
+    className="heading"
   >
     <span
       className="traitify--icon-fa"
@@ -66,7 +66,7 @@ exports[`TypeBasedResults renders results with headers 1`] = `
     Personality Types
   </div>
   <p
-    className="paddingTop"
+    className="heading"
   >
     <span
       className="traitify--icon-fa"
@@ -85,7 +85,7 @@ exports[`TypeBasedResults renders results with headers 1`] = `
     Personality Traits
   </div>
   <p
-    className="paddingTop"
+    className="heading"
   >
     <span
       className="traitify--icon-fa"

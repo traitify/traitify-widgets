@@ -18,6 +18,7 @@ function PersonalityRecommendationChart(props) {
   const {
     assessment,
     benchmark,
+    combined,
     element,
     followBenchmark,
     followGuide,
@@ -54,7 +55,7 @@ function PersonalityRecommendationChart(props) {
   const length = Math.max(...data.map(({data: points}) => points.length));
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={element}>
       <div className={style.ranks}>
         {ranks.map(({key, rank}) => <div key={key} className={style[rank]}>{translate(key)}</div>)}
       </div>
@@ -107,6 +108,7 @@ function PersonalityRecommendationChart(props) {
 PersonalityRecommendationChart.defaultProps = {
   assessment: null,
   benchmark: null,
+  combined: false,
   element: null,
   guide: null
 };
@@ -140,6 +142,7 @@ PersonalityRecommendationChart.propTypes = {
       }).isRequired
     )
   }),
+  combined: PropTypes.bool,
   element: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({current: PropTypes.instanceOf(Element)})

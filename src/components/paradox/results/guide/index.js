@@ -60,6 +60,7 @@ function Guide(props) {
   const {
     assessment,
     benchmark,
+    combined,
     element,
     followBenchmark,
     followGuide,
@@ -109,7 +110,7 @@ function Guide(props) {
   ].filter(Boolean).join(" ");
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={element}>
       <div className={style.tabs}>
         {data.map(({id, name, rank}) => (
           <button
@@ -128,17 +129,17 @@ function Guide(props) {
         </select>
         <div className={[style.heading, style[activeCompetency.rank]].join(" ")}>{activeCompetency.name}</div>
         {intro}
-        <p>
+        <div className={style.p}>
           <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
             {translate("read_more")}
           </button>
-        </p>
-        {showExpandedIntro && <p>{expandedIntro.join("\n").trim()}</p>}
+        </div>
+        {showExpandedIntro && <div className={style.p}>{expandedIntro.join("\n").trim()}</div>}
         <hr />
         {activeCompetency.questionSequences.map((sequence) => (
           <div key={sequence.id}>
             <div className={style.heading}>{sequence.name}</div>
-            <p>{translate("guide_intro")}</p>
+            <div className={style.p}>{translate("guide_intro")}</div>
             {sequence.questions.map((question) => (
               <Question key={question.id} question={question} translate={translate} />
             ))}
@@ -149,7 +150,13 @@ function Guide(props) {
   );
 }
 
-Guide.defaultProps = {assessment: null, benchmark: null, element: null, guide: null};
+Guide.defaultProps = {
+  assessment: null,
+  benchmark: null,
+  combined: false,
+  element: null,
+  guide: null
+};
 Guide.propTypes = {
   assessment: PropTypes.shape({
     assessment_type: PropTypes.string,
@@ -175,6 +182,7 @@ Guide.propTypes = {
       }).isRequired
     )
   }),
+  combined: PropTypes.bool,
   element: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({current: PropTypes.instanceOf(Element)})

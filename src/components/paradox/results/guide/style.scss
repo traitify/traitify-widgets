@@ -4,6 +4,8 @@
   @extend %container;
 
   margin-bottom: $buffer-section;
+
+  &.combined { margin-bottom: 0; }
 }
 .content {
   @extend %box;
@@ -45,10 +47,12 @@
   margin-bottom: $buffer-heading;
 }
 .icon { @include theme("color", "theme-color"); }
+.p { margin: $buffer 0; }
 .question {
   @extend %box;
 
   @include buffer("margin-bottom");
+  &:last-of-type { margin-bottom: 0; }
   &.open {
     .icon { @include theme("color", "theme-color"); }
     button { @include theme("border-color", "theme-color"); }
@@ -100,6 +104,7 @@
     span {
       display: block;
       padding-bottom: $buffer;
+      text-align: center;
 
       @include min-width("xl") {
         margin: auto;

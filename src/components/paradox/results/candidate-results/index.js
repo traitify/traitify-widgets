@@ -1,12 +1,5 @@
-import {
-  faColumns,
-  faThLarge,
-  faUser
-} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import Icon from "lib/helpers/icon";
 import withTraitify from "lib/with-traitify";
-import {Component as Paradox} from "components/paradox/results/candidate-results";
 import Guide from "components/results/guide";
 import PersonalityArchetype from "components/results/personality/archetype/heading";
 import PersonalityTips from "components/results/personality/archetype/tips";
@@ -22,42 +15,28 @@ function CandidateResults(props) {
 
   if(getOption("perspective") === "thirdPerson") {
     return (
-      <section>
+      <section className={[style.container, style.box].join(" ")}>
         {allowHeaders && (
           <>
-            <p className={style.heading}><Icon icon={faColumns} /> {translate("recommendation_chart_heading")}</p>
-            <p>{translate("recommendation_chart_description")}</p>
+            <div className={style.heading}>{translate("recommendation_chart_heading")}</div>
+            <div>{translate("recommendation_chart_description")}</div>
           </>
         )}
-        <PersonalityRecommendationChart {...props} />
-        {allowHeaders && (
-          <>
-            <p className={style.heading}><Icon icon={faThLarge} /> {translate("interview_guide_heading")}</p>
-            <p>{translate("interview_guide_description")}</p>
-          </>
-        )}
-        <Guide {...props} />
+        <PersonalityRecommendationChart combined={true} {...props} />
+        <Guide combined={true} {...props} />
       </section>
     );
   }
 
   return (
-    <section>
-      {allowHeaders && (
-        <p className={style.heading}><Icon icon={faUser} /> {translate("personality_type")}</p>
-      )}
+    <section className={style.container}>
+      {allowHeaders && <div className={style.heading}>{translate("personality_type")}</div>}
       <PersonalityArchetype {...props} />
-      {allowHeaders && (
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
-      )}
+      {allowHeaders && <div className={style.heading}>{translate("personality_details")}</div>}
       <PersonalityTips {...props} />
-      {allowHeaders && (
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_advice")}</p>
-      )}
+      {allowHeaders && <div className={style.heading}>{translate("personality_advice")}</div>}
       <PersonalityDimensions {...props} disabledComponents={[...disabledComponents, "PersonalityPitfalls"]} />
-      {allowHeaders && (
-        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_traits")}</p>
-      )}
+      {allowHeaders && <div className={style.heading}>{translate("personality_traits")}</div>}
       <PersonalityTraits {...props} />
     </section>
   );
@@ -69,4 +48,4 @@ CandidateResults.propTypes = {
 };
 
 export {CandidateResults as Component};
-export default withTraitify(CandidateResults, {paradox: Paradox});
+export default withTraitify(CandidateResults);

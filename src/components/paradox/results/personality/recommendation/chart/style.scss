@@ -31,6 +31,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
   &.combined {
     @include buffer("margin-bottom");
     .name { display: none; }
+    .ranks { @include buffer("margin-top"); }
   }
 }
 .horizontal, .vertical {
@@ -234,7 +235,9 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
 
     @include min-width("xl") {
       left: calc(50% - #{$v-column-width * 2.5 + $v-pill-width});
+      left: max(calc(50% - #{$v-column-width * 2.5 + $v-pill-width}), 0px);
       right: calc(50% - #{$v-column-width * 2.5});
+      right: max(calc(50% - #{$v-column-width * 2.5}), 0px);
     }
     @include theme("color", "border-color");
     &::before {

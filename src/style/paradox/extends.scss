@@ -76,11 +76,13 @@
 
       margin-bottom: -3px;
       padding: $buffer $buffer * 2;
+      text-align: center;
 
       &.active {
         border-bottom: 5px solid;
+        padding-bottom: $buffer - 5px;
 
-        @include theme("border-bottom-color", "blue");
+        @include theme("border-bottom-color", "theme-color");
         @include theme("color", "theme-color");
       }
     }

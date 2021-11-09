@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {Component as Paradox} from "components/paradox/results/personality/archetype/skills";
 import {sortByTypePosition} from "lib/helpers";
-import {rgba} from "lib/helpers/color";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
@@ -11,34 +9,49 @@ import style from "./style.scss";
 
 const skillTypes = [
   {
-    image: "https://cdn.traitify.com/images/big5_stress.png",
+    image: {
+      active: "https://cdn.traitify.com/widgets/skills/stress-blue.png",
+      default: "https://cdn.traitify.com/widgets/skills/stress-default.png"
+    },
     key: "dealing_with_stress",
     name: "Dealing With Stress"
   },
   {
-    image: "https://cdn.traitify.com/images/big5_leading.png",
+    image: {
+      active: "https://cdn.traitify.com/widgets/skills/leading-blue.png",
+      default: "https://cdn.traitify.com/widgets/skills/leading-default.png"
+    },
     key: "leading_others",
     name: "Leading Others"
   },
   {
-    image: "https://cdn.traitify.com/images/big5_communication.png",
+    image: {
+      active: "https://cdn.traitify.com/widgets/skills/chat-blue.png",
+      default: "https://cdn.traitify.com/widgets/skills/chat-default.png"
+    },
     key: "communication",
     name: "Communication"
   },
   {
-    image: "https://cdn.traitify.com/images/big5_teamwork.png",
+    image: {
+      active: "https://cdn.traitify.com/widgets/skills/teamwork-blue.png",
+      default: "https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+    },
     key: "teamwork",
     name: "Teamwork"
   },
   {
-    image: "https://cdn.traitify.com/images/big5_motivation.png",
+    image: {
+      active: "https://cdn.traitify.com/widgets/skills/build-blue.png",
+      default: "https://cdn.traitify.com/widgets/skills/build-default.png"
+    },
     key: "habits",
     name: "Habits To Build"
   }
 ];
 
 function PersonalityArchetypeSkills(props) {
-  const {assessment, getOption, isReady, translate, ui} = props;
+  const {assessment, element, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, "archetype", "details") || [];
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
@@ -53,7 +66,7 @@ function PersonalityArchetypeSkills(props) {
     const activeTypes = skillTypes.filter((type) => {
       if(disabledComponents.includes(type.name)) { return false; }
 
-      return details.find(({title}) => (title.startsWith(`${type.name} - Success Skills`)));
+      return details.find(({title}) => title.startsWith(`${type.name} - Success Skills`));
     });
 
     setTypes(activeTypes);
@@ -67,46 +80,45 @@ function PersonalityArchetypeSkills(props) {
 
   const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
   const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
-  const dimensions = sortByTypePosition(assessment.personality_types);
   const tips = [];
-  dimensions.forEach(({personality_type: {badge, name}}) => {
+  sortByTypePosition(assessment.personality_types).forEach(({personality_type: {name}}) => {
     const tip = typeTips.find(({title}) => title.endsWith(name));
-    if(tip) { tips.push({body: tip.body, color: `#${badge.color_1}`}); }
+    if(tip) { tips.push(tip.body); }
   });
 
   return (
-    <div className={style.container}>
-      <ul className={style.tabs}>
-        <div className={style.featured}>{translate("featured_skill")}</div>
+    <div className={style.container} ref={element}>
+      <div className={style.tabs}>
         {types.map((type) => (
-          <li key={type.key} className={activeType.key === type.key ? style.active : ""}>
-            <button onClick={() => setActiveType(type)} type="button">
-              <img src={type.image} alt={translate(`skill_name_for_${type.key}`)} className={style.image} />
-              <div className={style.name}>{translate(`skill_name_for_${type.key}`)}</div>
-            </button>
-          </li>
+          <button
+            key={type.key}
+            className={activeType.key === type.key ? style.active : ""}
+            onClick={() => setActiveType(type)}
+            type="button"
+          >
+            <img
+              alt={translate(`skill_name_for_${type.key}`)}
+              className={style.image}
+              src={type.image[activeType.key === type.key ? "active" : "default"]}
+            />
+            <div>{translate(`skill_name_for_${type.key}`)}</div>
+          </button>
         ))}
-      </ul>
-      <div className={style.tab}>
-        <div className={style.formSelect}>
-          <select onChange={onChange} value={activeType.key}>
-            {types.map(({key}) => (
-              <option key={key} value={key}>{translate(`skill_name_for_${key}`)}</option>
-            ))}
-          </select>
-        </div>
-        <h3>{translate(`skill_heading_for_${activeType.key}`)}</h3>
-        <ul className={style.list}>
-          {tips.map(({body, color}) => (
-            <li key={body} style={{background: rgba(color, 10)}}>{body}</li>
-          ))}
-        </ul>
+      </div>
+      <select className={style.dropdown} onChange={onChange} value={activeType.key}>
+        {types.map(({key}) => (
+          <option key={key} value={key}>{translate(`skill_name_for_${key}`)}</option>
+        ))}
+      </select>
+      <div className={style.content}>
+        <div className={style.heading}>{translate(`skill_heading_for_${activeType.key}`)}</div>
+        {tips.map((tip) => <div key={tip} className={style.tip}>{tip}</div>)}
       </div>
     </div>
   );
 }
 
-PersonalityArchetypeSkills.defaultProps = {assessment: null};
+PersonalityArchetypeSkills.defaultProps = {assessment: null, element: null};
 PersonalityArchetypeSkills.propTypes = {
   assessment: PropTypes.shape({
     archetype: PropTypes.shape({
@@ -128,6 +140,10 @@ PersonalityArchetypeSkills.propTypes = {
       }).isRequired
     )
   }),
+  element: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({current: PropTypes.instanceOf(Element)})
+  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
@@ -135,4 +151,4 @@ PersonalityArchetypeSkills.propTypes = {
 };
 
 export {PersonalityArchetypeSkills as Component};
-export default withTraitify(PersonalityArchetypeSkills, {paradox: Paradox});
+export default withTraitify(PersonalityArchetypeSkills);

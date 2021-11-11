@@ -144,6 +144,13 @@ describe("Paradox.PersonalityRecommendationChart", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with combined prop", () => {
+    props.combined = true;
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if guide not ready", () => {
     props.guide = null;
     props.isReady.mockImplementation((value) => value !== "guide");

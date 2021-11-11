@@ -54,6 +54,7 @@
 }
 
 %heading { @include heading(); }
+%paragraph { margin: $buffer 0; }
 
 %shadow-box {
   border-radius: $border-radius;
@@ -74,13 +75,13 @@
     button {
       @extend %heading-lg;
 
-      margin-bottom: -3px;
+      margin-bottom: ($border-width-xl + $border-width) * -0.5;
       padding: $buffer $buffer * 2;
       text-align: center;
 
       &.active {
-        border-bottom: 5px solid;
-        padding-bottom: $buffer - 5px;
+        border-bottom: $border-width-xl solid;
+        padding-bottom: $buffer - $border-width-xl;
 
         @include theme("border-bottom-color", "theme-color");
         @include theme("color", "theme-color");

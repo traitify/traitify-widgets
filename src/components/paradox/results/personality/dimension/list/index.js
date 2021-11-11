@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import {Component as Paradox} from "components/paradox/results/personality/dimension/list";
 import PersonalityDimensionChart from "components/results/personality/dimension/chart";
 import PersonalityDimensionDetails from "components/results/personality/dimension/details";
 import {sortByTypePosition} from "lib/helpers";
@@ -9,7 +8,7 @@ import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
 function PersonalityDimensionList(props) {
-  const {assessment, getOption, isReady, ui} = props;
+  const {assessment, element, getOption, isReady, ui} = props;
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityDimensions.initialized", {props, state}); });
@@ -25,10 +24,10 @@ function PersonalityDimensionList(props) {
   const types = sortByTypePosition(assessment.personality_types);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={element}>
       {!disableChart && <PersonalityDimensionChart {...props} />}
       {!disableDetails && (
-        <ul className={style.details}>
+        <div>
           {types.map((type) => (
             <PersonalityDimensionDetails
               key={type.personality_type.id}
@@ -36,13 +35,13 @@ function PersonalityDimensionList(props) {
               {...props}
             />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
 }
 
-PersonalityDimensionList.defaultProps = {assessment: null};
+PersonalityDimensionList.defaultProps = {assessment: null, element: null};
 PersonalityDimensionList.propTypes = {
   assessment: PropTypes.shape({
     personality_types: PropTypes.arrayOf(
@@ -53,6 +52,10 @@ PersonalityDimensionList.propTypes = {
       }).isRequired
     )
   }),
+  element: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({current: PropTypes.instanceOf(Element)})
+  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
@@ -60,4 +63,4 @@ PersonalityDimensionList.propTypes = {
 };
 
 export {PersonalityDimensionList as Component};
-export default withTraitify(PersonalityDimensionList, {paradox: Paradox});
+export default withTraitify(PersonalityDimensionList);

@@ -82,7 +82,7 @@ function PersonalityArchetypeHeading(props) {
             })}
           />
         </div>
-        {description && <p>{description}</p>}
+        {description && <div className={style.p}>{description}</div>}
       </div>
       <div className={style.meaning}>
         {video.url ? (

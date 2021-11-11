@@ -22,9 +22,11 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component in thir
         }
       />
     </div>
-    <p>
+    <div
+      className="p"
+    >
       Maybe just hire qualified candidates
-    </p>
+    </div>
   </div>
   <div
     className="meaning"
@@ -70,9 +72,11 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
         }
       />
     </div>
-    <p>
+    <div
+      className="p"
+    >
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-    </p>
+    </div>
   </div>
   <div
     className="meaning"
@@ -113,9 +117,11 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
         }
       />
     </div>
-    <p>
+    <div
+      className="p"
+    >
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-    </p>
+    </div>
   </div>
   <div
     className="meaning"
@@ -161,9 +167,11 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
         }
       />
     </div>
-    <p>
+    <div
+      className="p"
+    >
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-    </p>
+    </div>
   </div>
   <div
     className="meaning"
@@ -201,9 +209,11 @@ exports[`Paradox.PersonalityArchetypeHeading renders component 1`] = `
         }
       />
     </div>
-    <p>
+    <div
+      className="p"
+    >
       You can get lost in your work, appreciating the value of devoting expertise to the execution of a task. You are at ease working in your own way, on your own terms.
-    </p>
+    </div>
   </div>
   <div
     className="meaning"

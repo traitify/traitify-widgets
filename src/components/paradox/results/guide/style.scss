@@ -14,7 +14,7 @@
     @include max-width("lg") {
       &.high, &.low, &.medium, &.other {
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: $border-width-lg;
         text-underline-offset: $buffer * 0.5;
       }
       &.high { @include theme("text-decoration-color", "rank-high"); }
@@ -47,7 +47,7 @@
   margin-bottom: $buffer-heading;
 }
 .icon { @include theme("color", "theme-color"); }
-.p { margin: $buffer 0; }
+.p { @extend %paragraph; }
 .question {
   @extend %box;
 
@@ -89,7 +89,7 @@
     &.medium span { @include theme("border-bottom-color", "rank-medium"); }
     &.other span { @include theme("border-bottom-color", "rank-other"); }
 
-    span { border-bottom: 1px solid; }
+    span { border-bottom: $border-width solid; }
   }
   button {
     flex: 0 1 auto;

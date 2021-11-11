@@ -24,7 +24,7 @@ assessment.personality_types.forEach(({personality_type: dimension}) => {
   });
 });
 
-describe("PersonalityArchetypeSkills", () => {
+describe("Paradox.PersonalityArchetypeSkills", () => {
   let props;
 
   beforeEach(() => {

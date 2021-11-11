@@ -16,6 +16,11 @@ const rankFromRange = ({match_score: score}) => {
   return "other";
 };
 
+export function findCompetency({guide, typeID}) {
+  return (dig(guide, "competencies") || [])
+    .find(({questionSequences}) => questionSequences[0].personalityTypeId === typeID);
+}
+
 export function combine({benchmark, guide, order, types}) {
   const data = sortByTypePosition(types).map(({personality_type: type, score}) => {
     const rawRanges = benchmark
@@ -29,8 +34,7 @@ export function combine({benchmark, guide, order, types}) {
     const range = ranges.find(({max, min}) => score >= min && score <= max);
 
     return {
-      competency: (dig(guide, "competencies") || [])
-        .find(({questionSequences}) => questionSequences[0].personalityTypeId === type.id),
+      competency: findCompetency({guide, typeID: type.id}),
       rank: range ? range.rank : "other",
       range,
       ranges,

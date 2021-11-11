@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="p"
+  >
+    dimension_description, [object Object]
+  </div>
+  <div
+    className="horizontal"
+  >
+    <div
+      className="row high"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Influencing People
+        </div>
+        <div>
+          Agreeableness
+        </div>
+      </div>
+      <img
+        alt="Agreeableness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      />
+    </div>
+    <div
+      className="row medium"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Engaging with People
+        </div>
+        <div>
+          Extraversion
+        </div>
+      </div>
+      <img
+        alt="Extraversion badge, [object Object]"
+        src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+      />
+    </div>
+    <div
+      className="row medium"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Delivering Results
+        </div>
+        <div>
+          Conscientiousness
+        </div>
+      </div>
+      <img
+        alt="Conscientiousness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+      />
+    </div>
+    <div
+      className="row medium"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Solving Problems
+        </div>
+        <div>
+          Openness
+        </div>
+      </div>
+      <img
+        alt="Openness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+      />
+    </div>
+    <div
+      className="row low"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Managing Pressure
+        </div>
+        <div>
+          Emotional Stability
+        </div>
+      </div>
+      <img
+        alt="Emotional Stability badge, [object Object]"
+        src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+      />
+    </div>
+    <div
+      className="scale"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+  <div
+    className="vertical"
+  >
+    <div
+      className="scale"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+    <div
+      className="column high"
+    >
+      <img
+        alt="Agreeableness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      />
+      <div
+        className="heading"
+      >
+        Influencing People
+      </div>
+      <div
+        className="heading"
+      >
+        Agreeableness
+      </div>
+    </div>
+    <div
+      className="column medium"
+    >
+      <img
+        alt="Extraversion badge, [object Object]"
+        src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+      />
+      <div
+        className="heading"
+      >
+        Engaging with People
+      </div>
+      <div
+        className="heading"
+      >
+        Extraversion
+      </div>
+    </div>
+    <div
+      className="column medium"
+    >
+      <img
+        alt="Conscientiousness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+      />
+      <div
+        className="heading"
+      >
+        Delivering Results
+      </div>
+      <div
+        className="heading"
+      >
+        Conscientiousness
+      </div>
+    </div>
+    <div
+      className="column medium"
+    >
+      <img
+        alt="Openness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+      />
+      <div
+        className="heading"
+      >
+        Solving Problems
+      </div>
+      <div
+        className="heading"
+      >
+        Openness
+      </div>
+    </div>
+    <div
+      className="column low"
+    >
+      <img
+        alt="Emotional Stability badge, [object Object]"
+        src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+      />
+      <div
+        className="heading"
+      >
+        Managing Pressure
+      </div>
+      <div
+        className="heading"
+      >
+        Emotional Stability
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="p"
+  >
+    dimension_description, [object Object]
+  </div>
+  <div
+    className="horizontal"
+  >
+    <div
+      className="row high"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Agreeableness
+        </div>
+      </div>
+      <img
+        alt="Agreeableness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      />
+    </div>
+    <div
+      className="row medium"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Extraversion
+        </div>
+      </div>
+      <img
+        alt="Extraversion badge, [object Object]"
+        src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+      />
+    </div>
+    <div
+      className="row medium"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Conscientiousness
+        </div>
+      </div>
+      <img
+        alt="Conscientiousness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+      />
+    </div>
+    <div
+      className="row medium"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Openness
+        </div>
+      </div>
+      <img
+        alt="Openness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+      />
+    </div>
+    <div
+      className="row low"
+    >
+      <div
+        className="label"
+      >
+        <div>
+          Emotional Stability
+        </div>
+      </div>
+      <img
+        alt="Emotional Stability badge, [object Object]"
+        src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+      />
+    </div>
+    <div
+      className="scale"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+  <div
+    className="vertical"
+  >
+    <div
+      className="scale"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+    <div
+      className="column high"
+    >
+      <img
+        alt="Agreeableness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      />
+      <div
+        className="heading"
+      >
+        Agreeableness
+      </div>
+    </div>
+    <div
+      className="column medium"
+    >
+      <img
+        alt="Extraversion badge, [object Object]"
+        src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+      />
+      <div
+        className="heading"
+      >
+        Extraversion
+      </div>
+    </div>
+    <div
+      className="column medium"
+    >
+      <img
+        alt="Conscientiousness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+      />
+      <div
+        className="heading"
+      >
+        Conscientiousness
+      </div>
+    </div>
+    <div
+      className="column medium"
+    >
+      <img
+        alt="Openness badge, [object Object]"
+        src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+      />
+      <div
+        className="heading"
+      >
+        Openness
+      </div>
+    </div>
+    <div
+      className="column low"
+    >
+      <img
+        alt="Emotional Stability badge, [object Object]"
+        src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+      />
+      <div
+        className="heading"
+      >
+        Emotional Stability
+      </div>
+    </div>
+  </div>
+</div>
+`;

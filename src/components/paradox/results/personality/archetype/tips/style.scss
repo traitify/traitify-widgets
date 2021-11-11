@@ -1,6 +1,5 @@
 @import "~style/paradox/helpers";
 
-// TODO: Transition for header underline => Personality Details
 .container {
   @extend %container;
   @extend %shadow-box;
@@ -18,16 +17,10 @@
   > div {
     border: $border-width solid;
     border-radius: $border-radius-sm;
-    margin-bottom: $buffer;
     padding: $buffer;
     text-align: center;
 
-    @include min-width("lg") {
-      break-inside: avoid;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      margin-bottom: $buffer-lg;
-    }
+    @include buffer("margin-bottom");
     @include theme("border-color", "border-color");
   }
 }

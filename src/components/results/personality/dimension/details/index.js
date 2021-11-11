@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import {Component as Paradox} from "components/paradox/results/personality/dimension/details";
 import {detailWithPerspective} from "lib/helpers";
 import {rgba} from "lib/helpers/color";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
@@ -68,4 +69,4 @@ PersonalityDimensionDetails.propTypes = {
 };
 
 export {PersonalityDimensionDetails as Component};
-export default withTraitify(PersonalityDimensionDetails);
+export default withTraitify(PersonalityDimensionDetails, {paradox: Paradox});

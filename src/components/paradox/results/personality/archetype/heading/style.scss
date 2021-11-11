@@ -39,6 +39,15 @@
     font-size: $font-size-heading;
     margin-top: 5px;
   }
+  .p {
+    @include min-width("md") {
+      display: flex;
+      flex-grow: 1;
+      flex-flow: column;
+      justify-content: center;
+      margin: 0;
+    }
+  }
   img {
     flex: initial;
     margin-right: 20px;
@@ -49,15 +58,6 @@
       border-radius: 50%;
 
       @include theme("background", "theme-color");
-    }
-  }
-  p {
-    @include min-width("md") {
-      display: flex;
-      flex-grow: 1;
-      flex-flow: column;
-      justify-content: center;
-      margin: 0;
     }
   }
   span {

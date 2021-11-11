@@ -67,8 +67,8 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
   }
   .chart { flex: 0 0 auto; }
   .grid {
-    border-bottom: 1px solid;
-    border-left: 1px solid;
+    border-bottom: $border-width solid;
+    border-left: $border-width solid;
     padding: $h-grid-buffer-y $h-grid-buffer-x-sm;
 
     @include min-width("sm") {
@@ -241,7 +241,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
     }
     @include theme("color", "border-color");
     &::before {
-      border-right: 1px solid;
+      border-right: $border-width solid;
       bottom: 0;
       content: "";
       display: block;

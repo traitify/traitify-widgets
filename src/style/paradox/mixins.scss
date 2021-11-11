@@ -7,6 +7,14 @@
   @include min-width("lg") { #{$prop}: $buffer-lg; }
 }
 
+// Currently requires an unscoped context
+@mixin colorSchemeDark() {
+  :global(.traitify--color-scheme-auto) {
+    @media(prefers-color-scheme: dark) { @content; }
+  }
+  :global(.traitify--color-scheme-dark) { @content; }
+}
+
 @mixin heading() {
   font-size: $font-size-heading;
   font-weight: 600;

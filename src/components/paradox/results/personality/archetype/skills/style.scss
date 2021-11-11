@@ -8,7 +8,7 @@
 }
 .content {
   @include max-width("lg") {
-    border-top: 3px solid;
+    border-top: $border-width-lg solid;
     margin-top: $buffer;
     padding-top: $buffer;
 
@@ -42,4 +42,13 @@
 
   @include buffer("margin-bottom");
   @include theme("border-color", "border-color");
+}
+
+@include colorSchemeDark() {
+  .tabs img {
+    border-radius: $border-radius-sm;
+    margin-bottom: $buffer;
+
+    @include theme("background-color", "text-color");
+  }
 }

@@ -147,6 +147,8 @@ PersonalityRecommendationChart.propTypes = {
     PropTypes.func,
     PropTypes.shape({current: PropTypes.instanceOf(Element)})
   ]),
+  followBenchmark: PropTypes.func.isRequired,
+  followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({
     assessment_id: PropTypes.string.isRequired,
     competencies: PropTypes.arrayOf(
@@ -157,8 +159,6 @@ PersonalityRecommendationChart.propTypes = {
     ).isRequired,
     locale_key: PropTypes.string.isRequired
   }),
-  followBenchmark: PropTypes.func.isRequired,
-  followGuide: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired

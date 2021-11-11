@@ -39,8 +39,8 @@ const getData = ({personality, perspective}) => {
   return data;
 };
 
-function PersonalityArchetypeHeading(props) {
-  const {assessment, deck, element, followDeck, getOption, isReady, translate, ui} = props;
+function PersonalityArchetypeHeading({element, ...props}) {
+  const {assessment, deck, followDeck, getOption, isReady, translate, ui} = props;
   const personality = dig(assessment, "archetype");
   const state = {};
 

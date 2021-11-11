@@ -1,0 +1,38 @@
+@import "~style/paradox/helpers";
+
+.bar {
+  height: $buffer * 0.5;
+
+  @include min-width(xl) { height: $buffer; }
+}
+.container {
+  @include buffer("margin-bottom");
+  &:last-child { margin-bottom: 0; }
+}
+.content {
+  align-items: center;
+  display: flex;
+  padding: $buffer-lg;
+
+  img {
+    width: 65px;
+
+    @include buffer("margin-right");
+  }
+}
+.description {
+  display: block;
+  font-size: $font-size;
+
+  @include min-width(sm) {
+    display: inline-block;
+    margin-left: $buffer;
+
+    &::before {
+      content: "-";
+      display: inline-block;
+      margin-right: $buffer;
+    }
+  }
+}
+.heading { font-size: $font-size-heading; }

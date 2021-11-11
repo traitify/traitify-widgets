@@ -19,8 +19,8 @@ const tipTypes = {
   ]
 };
 
-function PersonalityArchetypeTips(props) {
-  const {assessment, element, getOption, isReady, translate, ui} = props;
+function PersonalityArchetypeTips({element, ...props}) {
+  const {assessment, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, "archetype", "details") || [];
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);

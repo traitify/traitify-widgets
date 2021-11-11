@@ -8,8 +8,8 @@ import style from "./style.scss";
 
 const ranks = ["other", "low", "medium", "high"];
 
-function PersonalityDimensionChart(props) {
-  const {assessment, element, followGuide, guide, isReady, translate, ui} = props;
+function PersonalityDimensionChart({element, ...props}) {
+  const {assessment, followGuide, guide, isReady, translate, ui} = props;
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityDimensionChart.initialized", {props, state}); });

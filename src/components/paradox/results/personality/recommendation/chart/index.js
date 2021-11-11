@@ -14,12 +14,11 @@ const ranks = [
   {key: "potential_risk", rank: "low"}
 ];
 
-function PersonalityRecommendationChart(props) {
+function PersonalityRecommendationChart({element, ...props}) {
   const {
     assessment,
     benchmark,
     combined,
-    element,
     followBenchmark,
     followGuide,
     guide,

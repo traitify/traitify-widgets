@@ -7,8 +7,8 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-function PersonalityDimensionList(props) {
-  const {assessment, element, getOption, isReady, ui} = props;
+function PersonalityDimensionList({element, ...props}) {
+  const {assessment, getOption, isReady, ui} = props;
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityDimensions.initialized", {props, state}); });

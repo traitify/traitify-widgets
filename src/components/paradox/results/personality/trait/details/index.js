@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
-import {Component as Paradox} from "components/paradox/results/personality/trait/details";
 import {rgba} from "lib/helpers/color";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-function PersonalityTraitDetails(props) {
+function PersonalityTraitDetails({element, ...props}) {
   const {trait: {personality_trait: trait}, ui} = props;
   const state = {};
 
@@ -17,20 +16,25 @@ function PersonalityTraitDetails(props) {
   const color = `#${type.badge.color_1}`;
 
   return (
-    <div className={style.trait} style={{background: rgba(color, 8.5)}}>
-      <div className={style.bar} style={{width: "100%", background: color}} />
+    <div className={style.container} ref={element} style={{background: rgba(color, 8.5)}}>
+      <div className={style.bar} style={{background: color}} />
       <div className={style.content}>
-        <img src={type.badge.image_medium} alt={type.name} className={style.icon} />
-        <h3 className={style.name}>
+        <img alt={type.name} src={type.badge.image_medium} />
+        <div className={style.heading}>
           {trait.name}
           <span className={style.description}>{trait.definition}</span>
-        </h3>
+        </div>
       </div>
     </div>
   );
 }
 
+PersonalityTraitDetails.defaultProps = {element: null};
 PersonalityTraitDetails.propTypes = {
+  element: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({current: PropTypes.instanceOf(Element)})
+  ]),
   trait: PropTypes.shape({
     personality_trait: PropTypes.shape({
       definition: PropTypes.string.isRequired,
@@ -48,4 +52,4 @@ PersonalityTraitDetails.propTypes = {
 };
 
 export {PersonalityTraitDetails as Component};
-export default withTraitify(PersonalityTraitDetails, {paradox: Paradox});
+export default withTraitify(PersonalityTraitDetails);

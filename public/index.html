@@ -12,6 +12,7 @@
       <div id="results"></div>
       <div id="careers"></div>
       <div id="guide"></div>
+      <div id="traits"></div>
     </div>
     <style>
       .dark {
@@ -135,6 +136,10 @@
         <input id="show-guide" name="show-guide" type="checkbox" />
         Guide
       </label>
+      <label htmlFor="show-traits">
+        <input id="show-traits" name="show-traits" type="checkbox" />
+        Traits
+      </label>
     </div>
     <div class="row">
       <button onclick="createAssessment()">New Assessment</button>
@@ -146,30 +151,22 @@
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
+      var additionalComponents = ["careers", "guide", "traits"];
       var widget;
 
       function createWidget(){
+        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
+        if(!assessmentID){ return; }
+
         var colorScheme = localStorage.getItem("color-scheme");
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
-        var showCareers = localStorage.getItem("show-careers");
-        var showGuide = localStorage.getItem("show-guide");
+        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
+        var targets = setTargets();
         var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
-        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-        if(!assessmentID){ return; }
-
-        targets = {
-          "SlideDeck": "#slide-deck",
-          "Results": "#results"
-        }
-
-        if(surveyType !== "cognitive") {
-          if(showCareers) { targets["Careers"] = "#careers"; }
-          if(showGuide) { targets["Guide"] = "#guide"; }
-        }
 
         widget = Traitify.ui.component();
         widget
@@ -262,25 +259,30 @@
 
       function refreshWidget(){
         if(widget) {
-          var showCareers = localStorage.getItem("show-careers");
-          var showGuide = localStorage.getItem("show-guide");
           var surveyType = localStorage.getItem("survey-type");
           var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-
-          targets = {
-            "SlideDeck": "#slide-deck",
-            "Results": "#results"
-          }
-
-          if(surveyType !== "cognitive") {
-            if(showCareers) { targets["Careers"] = "#careers"; }
-            if(showGuide) { targets["Guide"] = "#guide"; }
-          }
+          var targets = setTargets();
 
           widget.assessmentID(assessmentID).targets(targets).refresh();
 
           updateColorScheme();
         }
+      }
+
+      function setTargets(){
+        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
+        var surveyType = localStorage.getItem("survey-type");
+        var targets = {
+          "SlideDeck": "#slide-deck",
+          "Results": "#results"
+        };
+
+        if(surveyType === "cognitive") { return targets; }
+        if(show.careers) { targets["Careers"] = "#careers"; }
+        if(show.guide) { targets["Guide"] = "#guide"; }
+        if(show.traits) { targets["Candidate.PersonalityTraits"] = "#traits"; }
+
+        return targets;
       }
 
       function setupOptions(){
@@ -289,13 +291,13 @@
           "deck-id",
           "locale",
           "perspective",
-          "show-careers",
-          "show-guide",
           "survey-id",
           "survey-type",
           "theme",
           "view"
         ];
+        additionalComponents.forEach((name) => inputs.push(`show-${name}`));
+
         for(var i = 0; i < inputs.length; i++) {
           var name = inputs[i];
           var element = document.querySelector("#" + name);

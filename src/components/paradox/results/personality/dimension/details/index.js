@@ -6,10 +6,9 @@ import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-function PersonalityDimensionDetails(props) {
+function PersonalityDimensionDetails({element, ...props}) {
   const {
     getOption,
-    element,
     followGuide,
     guide,
     translate,

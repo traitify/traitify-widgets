@@ -6,7 +6,7 @@ import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
 const fonts = {paradox: "https://fonts.googleapis.com/css?family=Open+Sans"};
-const imagePacks = {paradox: "minimal"};
+const imagePacks = {paradox: "white"};
 
 export default function withTraitify(WrappedComponent, themeComponents = {}) {
   return class TraitifyComponent extends Component {

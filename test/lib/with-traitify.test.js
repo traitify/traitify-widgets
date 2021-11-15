@@ -1,7 +1,7 @@
 /* eslint no-console: "off" */
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";
-import DummyComponent from "support/dummy-component";
+import DummyComponent, {ErrorComponent, OtherComponent} from "support/dummy-components";
 import Traitify from "support/traitify";
 
 jest.mock("lib/helpers", () => ({
@@ -10,9 +10,8 @@ jest.mock("lib/helpers", () => ({
 }));
 
 let component;
-const getDummyComponent = () => (
-  component.renderer.root.findByType(DummyComponent).instance
-);
+const getComponent = (Component) => component.renderer.root.findByType(Component);
+const getDummyComponent = () => getComponent(DummyComponent);
 
 describe("withTraitify", () => {
   const assessmentWithResults = {assessment_type: "DIMENSION_BASED", deck_id: "big-five", id: "abc", locale_key: "en-US", personality_types: [{name: "Openness"}], profile_ids: ["p-1"]};
@@ -83,20 +82,28 @@ describe("withTraitify", () => {
   });
 
   describe("error handler", () => {
-    it("emits error", () => {
-      component = new ComponentHandler(<Component traitify={traitify} />);
-      traitify.ui.trigger = jest.fn().mockName("trigger");
-      component.instance.componentDidCatch("uh oh", {oh: "no"});
+    let createError;
+    let originalError;
 
-      expect(traitify.ui.trigger).toHaveBeenCalledWith("Component.error", component.instance, {error: "uh oh", info: {oh: "no"}});
+    beforeEach(() => {
+      originalError = console.error; // Required to hide console.error from React
+      console.error = jest.fn().mockName("error");
+      Component = withTraitify(ErrorComponent);
+      createError = () => "uh oh";
+      traitify.ui.trigger = jest.fn().mockName("trigger");
+      component = new ComponentHandler(<Component createError={createError} traitify={traitify} />);
+    });
+
+    afterEach(() => {
+      console.error = originalError;
+    });
+
+    it("emits error", () => {
+      expect(traitify.ui.trigger).toHaveBeenCalledWith("Component.error", component.instance, {error: "uh oh", info: expect.any(Object)});
     });
 
     it("sets error", () => {
-      component = new ComponentHandler(<Component traitify={traitify} />);
-      component.instance.setState = jest.fn().mockName("setState");
-      component.instance.componentDidCatch("uh oh", {oh: "no"});
-
-      expect(component.instance.setState).toHaveBeenCalledWith({error: "uh oh"});
+      expect(component.state.error).toBe("uh oh");
     });
   });
 
@@ -1101,6 +1108,63 @@ describe("withTraitify", () => {
     });
   });
 
+  describe("setElement", () => {
+    let element;
+
+    beforeEach(() => {
+      element = document.createElement("div");
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.updateColorScheme = jest.fn().mockName("updateColorScheme");
+      component.instance.setElement(element);
+    });
+
+    it("calls element related methods", () => {
+      expect(component.instance.updateColorScheme).toHaveBeenCalled();
+    });
+
+    it("sets element", () => {
+      expect(component.instance.element.current).toBe(element);
+    });
+  });
+
+  describe("theme", () => {
+    describe("with theme component", () => {
+      beforeEach(() => {
+        Component = withTraitify(DummyComponent, {paradox: OtherComponent});
+      });
+
+      it("renders default component", () => {
+        component = new ComponentHandler(<Component traitify={traitify} />);
+
+        expect(component.child.type).toBe(DummyComponent);
+      });
+
+      it("renders theme component", () => {
+        component = new ComponentHandler(<Component theme="paradox" traitify={traitify} />);
+
+        expect(component.child.type).toBe(OtherComponent);
+      });
+    });
+
+    describe("without theme component", () => {
+      beforeEach(() => {
+        Component = withTraitify(DummyComponent);
+      });
+
+      it("renders default component", () => {
+        component = new ComponentHandler(<Component traitify={traitify} />);
+
+        expect(component.child.type).toBe(DummyComponent);
+      });
+
+      it("renders fallback component", () => {
+        component = new ComponentHandler(<Component theme="paradox" traitify={traitify} />);
+
+        expect(component.child.type).toBe(DummyComponent);
+      });
+    });
+  });
+
   describe("traitify", () => {
     let originalError;
 
@@ -1245,6 +1309,59 @@ describe("withTraitify", () => {
 
       expect(component.instance.setState).toHaveBeenCalled();
       expect(component.instance.getCognitiveAssessment).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("updateColorScheme", () => {
+    beforeEach(() => {
+      component = new ComponentHandler(<Component traitify={traitify} />);
+      component.instance.element.current = document.createElement("div");
+      component.instance.getOption = jest.fn().mockName("getOption");
+    });
+
+    it("adds initial class", () => {
+      component.instance.getOption.mockReturnValue("auto");
+      component.instance.updateColorScheme();
+
+      expect(component.instance.element.current.classList).toContain("traitify--color-scheme-auto");
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-dark");
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-light");
+    });
+
+    it("defaults to light", () => {
+      component.instance.updateColorScheme();
+
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-auto");
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-dark");
+      expect(component.instance.element.current.classList).toContain("traitify--color-scheme-light");
+    });
+
+    it("keeps current value", () => {
+      component.instance.getOption.mockReturnValue("auto");
+      component.instance.updateColorScheme();
+      component.instance.updateColorScheme();
+
+      expect(component.instance.element.current.classList).toContain("traitify--color-scheme-auto");
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-dark");
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-light");
+    });
+
+    it("removes previous value", () => {
+      component.instance.getOption.mockReturnValue("auto");
+      component.instance.updateColorScheme();
+      component.instance.getOption.mockReturnValue("dark");
+      component.instance.updateColorScheme();
+
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-auto");
+      expect(component.instance.element.current.classList).toContain("traitify--color-scheme-dark");
+      expect(component.instance.element.current.classList).not.toContain("traitify--color-scheme-light");
+    });
+
+    it("skips if no element", () => {
+      component.instance.element.current = null;
+      component.instance.updateColorScheme();
+
+      expect(component.instance.getOption).not.toHaveBeenCalled();
     });
   });
 

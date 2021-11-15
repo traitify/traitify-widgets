@@ -1,0 +1,36 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+}
+.content {
+  margin: 0;
+  padding: 0;
+
+  @include min-width("lg") {
+    column-count: 2;
+    column-gap: $buffer * 2;
+  }
+  > div {
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    padding: $buffer;
+    text-align: center;
+
+    @include buffer("margin-bottom");
+    @include theme("border-color", "border-color");
+  }
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("lg") { display: none; }
+}
+.tabs {
+  @extend %tabs-lg;
+
+  @include max-width("lg") { display: none; }
+}

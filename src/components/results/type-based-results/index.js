@@ -18,19 +18,19 @@ function TypeBasedResults(props) {
   return (
     <section>
       {allowHeaders && (
-        <p className={style.paddingTop}><Icon icon={faUser} /> {translate("personality_blend")}</p>
+        <p className={style.heading}><Icon icon={faUser} /> {translate("personality_blend")}</p>
       )}
       <PersonalityBase {...props} />
       {allowHeaders && (
-        <p className={style.paddingTop}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
+        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_breakdown")}</p>
       )}
       <PersonalityTypes {...props} />
       {allowHeaders && (
-        <p className={style.paddingTop}><Icon icon={faUser} /> {translate("personality_traits")}</p>
+        <p className={style.heading}><Icon icon={faUser} /> {translate("personality_traits")}</p>
       )}
       <PersonalityTraits {...props} />
       {allowHeaders && (
-        <p className={style.paddingTop}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
+        <p className={style.heading}><Icon icon={faThLarge} /> {translate("personality_details")}</p>
       )}
       <PersonalityDetails {...props} />
     </section>

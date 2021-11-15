@@ -1,17 +1,15 @@
-import {Component} from "components/results/personality/dimension/columns";
+import {Component} from "components/paradox/results/personality/trait/details";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("PersonalityDimensionColumns", () => {
+describe("Paradox.PersonalityTrait", () => {
   let props;
 
   beforeEach(() => {
     props = {
-      assessment,
-      isReady: jest.fn().mockName("isReady"),
-      translate: jest.fn().mockName("translate"),
+      trait: assessment.personality_traits[0],
       ui: {
         current: {},
         off: jest.fn().mockName("off"),
@@ -26,7 +24,7 @@ describe("PersonalityDimensionColumns", () => {
       new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
-        "PersonalityDimensionColumns.initialized",
+        "PersonalityTrait.initialized",
         expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
@@ -40,7 +38,7 @@ describe("PersonalityDimensionColumns", () => {
       component.updateProps();
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
-        "PersonalityDimensionColumns.updated",
+        "PersonalityTrait.updated",
         expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
@@ -50,7 +48,6 @@ describe("PersonalityDimensionColumns", () => {
   });
 
   it("renders component", () => {
-    props.isReady.mockReturnValue(true);
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

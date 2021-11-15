@@ -9,9 +9,9 @@ const details = [
   ...assessment.archetype.details,
   {body: "https://cdn.traitify.com/frtq/conservative_white.png", title: "Badge"},
   {body: "Maybe just hire qualified candidates", title: "Hiring Manager Description"},
-  {body: "https://cdn.traitify.com/content/archetype-videos/Upholder.mp4", title: "Video"},
-  {body: "https://cdn.traitify.com/content/archetype-videos/Upholder.vtt", title: "Video - Text Track"},
-  {body: "https://cdn.traitify.com/content/archetype-videos/Upholder.jpg", title: "Video - Thumbnail"}
+  {body: "https://cdn.traitify.com/content/archetype-videos/upholder.mp4", title: "Video"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/upholder.vtt", title: "Video - Text Track"},
+  {body: "https://cdn.traitify.com/content/archetype-videos/upholder.jpg", title: "Video - Thumbnail"}
 ];
 
 describe("PersonalityArchetypeHeading", () => {

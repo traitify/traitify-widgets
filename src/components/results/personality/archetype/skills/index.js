@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import {Component as Paradox} from "components/paradox/results/personality/archetype/skills";
 import {sortByTypePosition} from "lib/helpers";
 import {rgba} from "lib/helpers/color";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
@@ -134,4 +135,4 @@ PersonalityArchetypeSkills.propTypes = {
 };
 
 export {PersonalityArchetypeSkills as Component};
-export default withTraitify(PersonalityArchetypeSkills);
+export default withTraitify(PersonalityArchetypeSkills, {paradox: Paradox});

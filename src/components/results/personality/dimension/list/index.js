@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import PersonalityDimensionColumns from "components/results/personality/dimension/columns";
+import {Component as Paradox} from "components/paradox/results/personality/dimension/list";
+import PersonalityDimensionChart from "components/results/personality/dimension/chart";
 import PersonalityDimensionDetails from "components/results/personality/dimension/details";
 import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
@@ -16,15 +17,16 @@ function PersonalityDimensionList(props) {
 
   if(!isReady("results")) { return null; }
   const disabledComponents = getOption("disabledComponents") || [];
-  const disableColumns = disabledComponents.includes("PersonalityDimensionColumns");
+  const disableChart = disabledComponents
+    .some((c) => ["PersonalityDimensionChart", "PersonalityDimensionColumns"].includes(c));
   const disableDetails = disabledComponents.includes("PersonalityDimensionDetails");
-  if(disableColumns && disableDetails) { return null; }
+  if(disableChart && disableDetails) { return null; }
 
   const types = sortByTypePosition(assessment.personality_types);
 
   return (
     <div className={style.container}>
-      {!disableColumns && <PersonalityDimensionColumns {...props} />}
+      {!disableChart && <PersonalityDimensionChart {...props} />}
       {!disableDetails && (
         <ul className={style.details}>
           {types.map((type) => (
@@ -58,4 +60,4 @@ PersonalityDimensionList.propTypes = {
 };
 
 export {PersonalityDimensionList as Component};
-export default withTraitify(PersonalityDimensionList);
+export default withTraitify(PersonalityDimensionList, {paradox: Paradox});

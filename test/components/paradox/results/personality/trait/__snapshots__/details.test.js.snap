@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paradox.PersonalityTrait renders component 1`] = `
+<div
+  className="container"
+  style={
+    Object {
+      "background": "rgba(41,183,112,0.085)",
+    }
+  }
+>
+  <div
+    className="bar"
+    style={
+      Object {
+        "background": "#29B770",
+      }
+    }
+  />
+  <div
+    className="content"
+  >
+    <img
+      alt="Agreeableness"
+      src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+    />
+    <div
+      className="heading"
+    >
+      Steady
+      <span
+        className="description"
+      >
+        dependable, even and consistent
+      </span>
+    </div>
+  </div>
+</div>
+`;

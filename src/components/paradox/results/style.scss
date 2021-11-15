@@ -1,0 +1,13 @@
+@import "~style/paradox/helpers";
+
+.box {
+  @extend %box;
+
+  margin-bottom: $buffer-section;
+}
+.container { @extend %container; }
+.heading {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
+}

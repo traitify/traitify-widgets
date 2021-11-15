@@ -1,0 +1,136 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+
+  &.combined { margin-bottom: 0; }
+}
+.content {
+  @extend %box;
+
+  .heading {
+    @include max-width("lg") {
+      &.high, &.low, &.medium, &.other {
+        text-decoration: underline;
+        text-decoration-thickness: $border-width-lg;
+        text-underline-offset: $buffer * 0.5;
+      }
+      &.high { @include theme("text-decoration-color", "rank-high"); }
+      &.low { @include theme("text-decoration-color", "rank-low"); }
+      &.medium { @include theme("text-decoration-color", "rank-medium"); }
+      &.other { @include theme("text-decoration-color", "rank-other"); }
+    }
+  }
+  a, button,  span { @include theme("color", "theme-color"); }
+  hr {
+    border: none;
+    height: $border-width;
+
+    @include buffer("margin-bottom");
+    @include theme("background", "border-color");
+  }
+  li { margin-top: $buffer * 0.5; }
+  ul {
+    margin: 0;
+    padding-left: $buffer-lg;
+  }
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("lg") { display: none; }
+}
+.heading {
+  font-weight: bold;
+  margin-bottom: $buffer-heading;
+}
+.icon { @include theme("color", "theme-color"); }
+.p { @extend %paragraph; }
+.question {
+  @extend %box;
+
+  @include buffer("margin-bottom");
+  &:last-of-type { margin-bottom: 0; }
+  &.open {
+    .icon { @include theme("color", "theme-color"); }
+    button { @include theme("border-color", "theme-color"); }
+  }
+  .h2 {
+    @include buffer("margin-top");
+    @include theme("color", "theme-color");
+  }
+  button {
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    padding: $buffer * 0.5;
+
+    @include theme("border-color", "border-color");
+    .icon { @include theme("color", "text-color"); }
+  }
+}
+.readMore {
+  font-size: $font-size-sm;
+  padding: 0;
+  text-decoration: underline;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  padding-left: $buffer * 4;
+  padding-right: $buffer * 4;
+
+  @include activeTab($active: ".active", $circle: "span", $square: "&");
+  @include max-width("lg") { display: none; }
+  .active {
+    &.high span { @include theme("border-bottom-color", "rank-high"); }
+    &.low span { @include theme("border-bottom-color", "rank-low"); }
+    &.medium span { @include theme("border-bottom-color", "rank-medium"); }
+    &.other span { @include theme("border-bottom-color", "rank-other"); }
+
+    span { border-bottom: $border-width solid; }
+  }
+  button {
+    flex: 0 1 auto;
+    max-width: 200px;
+    padding-bottom: 0;
+    padding-left: $buffer-lg;
+    padding-right: $buffer-lg;
+    padding-top: $buffer;
+    text-align: center;
+    width: 100%;
+
+    span {
+      display: block;
+      padding-bottom: $buffer;
+      text-align: center;
+
+      @include min-width("xl") {
+        margin: auto;
+        max-width: 70%; // Forces text on 2 lines
+      }
+    }
+  }
+}
+.text {
+  align-items: center;
+  display: flex;
+
+  > .icon {
+    display: none;
+    font-weight: bold;
+    font-size: $font-size-heading;
+
+    @include min-width("lg") { display: initial; }
+  }
+  div {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: $buffer;
+
+    @include min-width("lg") {
+      margin-left: $buffer;
+    }
+  }
+}

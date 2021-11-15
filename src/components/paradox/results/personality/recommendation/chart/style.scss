@@ -1,0 +1,261 @@
+@import "~style/paradox/helpers";
+
+$h-grid-buffer-x: $buffer;
+$h-grid-buffer-x-sm: $h-grid-buffer-x * 0.5;
+$h-grid-buffer-y: $buffer;
+$h-row-buffer-y: $buffer * 2;
+$h-row-height: 200px;
+$h-pill-buffer-x: $buffer * 0.5;
+$h-pill-buffer-x-sm: $h-pill-buffer-x * 0.5;
+$h-pill-height: 50px;
+$h-pill-width: 16px;
+$h-pill-active-height: 90px;
+$h-pill-active-width: 24px;
+$h-pill-active-buffer-x: ($h-pill-active-width - $h-pill-width) * -0.5;
+$h-pill-active-buffer-y: ($h-pill-active-height - $h-pill-height) * -0.5;
+$v-column-buffer-x: $buffer * 4;
+$v-column-width: 200px;
+$v-pill-buffer-y: $buffer * 0.5;
+$v-pill-height: 16px;
+$v-pill-width: 50px;
+$v-pill-active-height: 22px;
+$v-pill-active-width: 90px;
+$v-pill-active-buffer-x: ($v-pill-active-width - $v-pill-width) * -0.5;
+$v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+
+  &.combined {
+    @include buffer("margin-bottom");
+    .name { display: none; }
+    .ranks { @include buffer("margin-top"); }
+  }
+}
+.horizontal, .vertical {
+  .active {
+    &.high::before { @include theme("background", "rank-high"); }
+    &.low::before { @include theme("background", "rank-low"); }
+    &.medium::before { @include theme("background", "rank-medium"); }
+    &.other::before { @include theme("background", "rank-other"); }
+  }
+  .high { @include theme("background", "rank-high-light"); }
+  .low { @include theme("background", "rank-low-light"); }
+  .medium { @include theme("background", "rank-medium-light"); }
+  .other { @include theme("background", "rank-other-light"); }
+}
+.horizontal {
+  display: flex;
+  justify-content: center;
+
+  @include min-width("lg") { display: none; }
+  .active {
+    &.high, &.low, &.medium, &.other {
+      &::before {
+        border-radius: $border-radius;
+        content: "";
+        display: block;
+        height: $h-pill-active-height;
+        margin-left: $h-pill-active-buffer-x;
+        margin-top: $h-pill-active-buffer-y;
+        position: absolute;
+        width: $h-pill-active-width;
+      }
+    }
+  }
+  .chart { flex: 0 0 auto; }
+  .grid {
+    border-bottom: $border-width solid;
+    border-left: $border-width solid;
+    padding: $h-grid-buffer-y $h-grid-buffer-x-sm;
+
+    @include min-width("sm") {
+      padding-left: $h-grid-buffer-x;
+      padding-right: $h-grid-buffer-x;
+    }
+    @include theme("border-bottom-color", "border-color");
+    @include theme("border-left-color", "border-color");
+  }
+  .high, .low, .medium, .other {
+    border-radius: $border-radius;
+    height: $h-pill-height;
+    margin-left: $h-pill-buffer-x-sm;
+    margin-right: $h-pill-buffer-x-sm;
+    position: relative;
+    width: $h-pill-width;
+
+    @include min-width("sm") {
+      margin-left: $h-pill-buffer-x;
+      margin-right: $h-pill-buffer-x;
+    }
+  }
+  .labels {
+    flex: 0 1 auto;
+    padding: $h-grid-buffer-y $h-grid-buffer-x-sm;
+
+    @include min-width("sm") {
+      padding-left: $h-grid-buffer-x;
+      padding-right: $h-grid-buffer-x;
+    }
+    > div {
+      align-items: center;
+      display: flex;
+      font-weight: bold;
+      height: $h-pill-height + 2 * $h-row-buffer-y;
+    }
+  }
+  .row {
+    display: flex;
+    padding-bottom: $h-row-buffer-y;
+    padding-top: $h-row-buffer-y;
+    text-align: center;
+
+  }
+  .scale {
+    display: flex;
+    padding-top: $buffer * 0.5;
+    padding-left: $h-grid-buffer-x-sm;
+    text-align: center;
+
+    @include min-width("sm") { padding-left: $h-grid-buffer-x; }
+    @include theme("color", "border-color");
+    > div {
+      margin-left: $h-pill-buffer-x-sm;
+      margin-right: $h-pill-buffer-x-sm;
+      width: $h-pill-width;
+
+      @include min-width("sm") {
+        margin-left: $h-pill-buffer-x;
+        margin-right: $h-pill-buffer-x;
+      }
+    }
+  }
+}
+.ranks {
+  @extend %heading;
+
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: $buffer-lg * 2;
+
+  @include max-width("sm") { font-size: $font-size; }
+  div::before {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 20px;
+    margin: $buffer * 0.5 auto;
+    width: 20px;
+  }
+  .high::before { @include theme("background", "rank-high"); }
+  .low::before { @include theme("background", "rank-low"); }
+  .medium::before { @include theme("background", "rank-medium"); }
+}
+.vertical {
+  display: flex;
+  justify-content: center;
+  padding-left: $v-column-buffer-x;
+  padding-right: $v-column-buffer-x;
+  position: relative;
+
+  @include max-width("lg") { display: none; }
+  .active {
+    &.high, &.low, &.medium, &.other {
+      &::before {
+        border-radius: $border-radius;
+        content: "";
+        display: block;
+        height: $v-pill-active-height;
+        margin-left: $v-pill-active-buffer-x;
+        margin-top: $v-pill-active-buffer-y;
+        position: absolute;
+        width: $v-pill-active-width;
+      }
+    }
+  }
+  .column {
+    flex: 0 1 auto;
+    max-width: $v-column-width;
+    padding-bottom: 0;
+    padding-left: $buffer-lg;
+    padding-right: $buffer-lg;
+    text-align: center;
+    width: 100%;
+  }
+  .high, .low, .medium, .other {
+    border-radius: $border-radius;
+    height: $v-pill-height;
+    margin: $v-pill-buffer-y auto;
+    position: relative;
+    width: $v-pill-width;
+  }
+  .label {
+    height: $v-pill-height + $v-pill-buffer-y;
+    line-height: $v-pill-height + $v-pill-buffer-y;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      border-radius: $border-radius;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: $v-pill-width + $buffer;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &:first-child { margin-top: $v-pill-buffer-y * 0.5; }
+    &:hover {
+      &::after {
+        opacity: 0.25;
+
+        @include theme("background", "border-color");
+      }
+      span { font-size: $font-size-heading; }
+    }
+  }
+  .name {
+    font-weight: bold;
+    margin-top: $buffer-lg;
+
+    @include min-width("xl") {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 70%; // Forces text on 2 lines
+    }
+  }
+  .scale {
+    left: $v-column-buffer-x - ($v-pill-width + $buffer);
+    position: absolute;
+    right: $v-column-buffer-x;
+    top: 0;
+
+    @include min-width("xl") {
+      left: calc(50% - #{$v-column-width * 2.5 + $v-pill-width});
+      left: max(calc(50% - #{$v-column-width * 2.5 + $v-pill-width}), 0px);
+      right: calc(50% - #{$v-column-width * 2.5});
+      right: max(calc(50% - #{$v-column-width * 2.5}), 0px);
+    }
+    @include theme("color", "border-color");
+    &::before {
+      border-right: $border-width solid;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: $v-pill-width;
+      position: absolute;
+      top: $v-pill-buffer-y * 0.5;
+
+      @include theme("border-right-color", "border-color");
+    }
+    span {
+      display: block;
+      padding-right: $buffer;
+      text-align: right;
+      width: $v-pill-width;
+    }
+  }
+}

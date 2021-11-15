@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
-import {Component} from "react";
+import {Component, createRef} from "react";
 import * as queries from "lib/graphql/queries";
 import {getDisplayName, loadFont} from "lib/helpers";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
-export default function withTraitify(WrappedComponent) {
+const fonts = {paradox: "https://fonts.googleapis.com/css?family=Open+Sans"};
+const imagePacks = {paradox: "minimal"};
+
+export default function withTraitify(WrappedComponent, themeComponents = {}) {
   return class TraitifyComponent extends Component {
     static displayName = `Traitify${getDisplayName(WrappedComponent)}`
     static defaultProps = {
@@ -58,6 +61,7 @@ export default function withTraitify(WrappedComponent) {
       traitify: TraitifyPropTypes.traitify,
       ui: TraitifyPropTypes.ui
     }
+    static getDerivedStateFromError(error) { return {error}; }
     constructor(props) {
       super(props);
 
@@ -76,6 +80,7 @@ export default function withTraitify(WrappedComponent) {
         locale: null,
         profileID: null
       };
+      this.element = createRef();
       this.setupTraitify();
       this.setupCache();
       this.setupI18n();
@@ -85,7 +90,7 @@ export default function withTraitify(WrappedComponent) {
     componentDidMount() {
       this.didMount = true;
 
-      loadFont();
+      loadFont(fonts[this.getOption("theme")]);
 
       if(this.getOption("surveyType") === "cognitive") { return this.updateCognitiveAssessment(); }
 
@@ -135,10 +140,11 @@ export default function withTraitify(WrappedComponent) {
       if(this.state.followingGuide && (changes.assessment || changes.locale)) {
         this.updateGuide({oldID: prevState.assessment?.id, oldLocale: prevState.locale});
       }
+
+      this.updateColorScheme();
     }
     componentDidCatch(error, info) {
       this.ui.trigger("Component.error", this, {error, info});
-      this.setState({error});
     }
     componentWillUnmount() {
       Object.keys(this.listeners).forEach((key) => { this.removeListener(key); });
@@ -147,7 +153,7 @@ export default function withTraitify(WrappedComponent) {
       const {assessmentID, locale} = this.state;
       if(!assessmentID) { return Promise.resolve(); }
 
-      const key = `${locale}.assessment.${assessmentID}`;
+      const key = this.getCacheKey("assessment", {id: assessmentID});
       const hasResults = (data) => (
         data && data.locale_key
           && data.id === assessmentID
@@ -168,14 +174,17 @@ export default function withTraitify(WrappedComponent) {
       assessment = this.cache.get(key);
       if(hasResults(assessment)) { return setAssessment(assessment); }
 
-      if(this.ui.requests[key] && !options.force) {
-        return this.ui.requests[key];
-      }
+      if(this.ui.requests[key] && !options.force) { return this.ui.requests[key]; }
 
-      this.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, {
+      const imagePack = imagePacks[this.getOption("theme")] || this.ui.options.imagePack;
+      const params = {
         data: "archetype,blend,instructions,recommendation,slides,types,traits",
         locale_key: locale
-      }).then((data) => {
+      };
+
+      if(imagePack) { params.image_pack = imagePack; }
+
+      this.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, params).then((data) => {
         if(hasResults(data)) { this.cache.set(key, data); }
 
         setAssessment(data);
@@ -191,7 +200,7 @@ export default function withTraitify(WrappedComponent) {
       const {benchmarkID, locale} = this.state;
       if(!benchmarkID) { return Promise.resolve(); }
 
-      const key = `${locale}.benchmark.${benchmarkID}`;
+      const key = this.getCacheKey("benchmark");
       const hasData = (data) => (
         data && data.locale_key
           && data.id === benchmarkID
@@ -232,11 +241,34 @@ export default function withTraitify(WrappedComponent) {
 
       return this.ui.requests[key];
     }
+    getCacheKey(type, options = {}) {
+      let {id} = options;
+      const locale = options.locale || this.state.locale;
+      const keys = [];
+
+      // Add it to keys if something can't be identified from response data (like image pack)
+      switch(type) {
+        case "assessment":
+          id = id || this.state.assessmentID;
+          keys.push(imagePacks[this.getOption("theme")] || this.ui.options.imagePack);
+          break;
+        case "benchmark":
+          id = id || this.state.benchmarkID;
+          break;
+        case "deck":
+          id = id || this.state.deckID;
+          break;
+        default:
+          id = id || this.state.assessmentID;
+      }
+
+      return [locale, type, id, ...keys].filter(Boolean).join(".");
+    }
     getCognitiveAssessment = (options = {}) => {
       const {assessmentID, locale} = this.state;
       if(!assessmentID) { return Promise.resolve(); }
 
-      const key = `${locale}.cognitive-assessment.${assessmentID}`;
+      const key = this.getCacheKey("cognitive-assessment");
       const hasResults = (data) => (
         data && data.localeKey
           && data.id === assessmentID
@@ -283,7 +315,7 @@ export default function withTraitify(WrappedComponent) {
       const {deckID, locale} = this.state;
       if(!deckID) { return Promise.resolve(); }
 
-      const key = `${locale}.deck.${deckID}`;
+      const key = this.getCacheKey("deck");
       const hasData = (data) => (
         data && data.locale_key
           && data.id === deckID
@@ -328,7 +360,7 @@ export default function withTraitify(WrappedComponent) {
       const assessmentID = (assessment || {}).id;
       if(!assessmentID) { return Promise.resolve(); }
 
-      const key = `${locale}.guide.${assessmentID}`;
+      const key = this.getCacheKey("guide", {id: assessmentID});
       const hasData = (data) => (
         data && data.locale_key
           && data.assessment_id === assessmentID
@@ -454,6 +486,10 @@ export default function withTraitify(WrappedComponent) {
         this.state = {...this.state, ...state};
       }
     }
+    setElement = (element) => {
+      this.element.current = element;
+      this.updateColorScheme();
+    }
     followBenchmark = () => {
       this.setState({followingBenchmark: true});
       this.updateBenchmark();
@@ -519,14 +555,15 @@ export default function withTraitify(WrappedComponent) {
       const {assessmentID, locale} = this.state;
 
       if(options.oldID || options.oldLocale) {
-        const oldAssessmentID = options.oldID || assessmentID;
-        const oldLocale = options.oldLocale || locale;
-        const key = `${oldLocale}.assessment.${oldAssessmentID}`;
+        const key = this.getCacheKey("assessment", {
+          id: options.oldID || assessmentID,
+          locale: options.oldLocale || locale
+        });
 
         this.removeListener(key);
       }
       if(assessmentID) {
-        const key = `${locale}.assessment.${assessmentID}`;
+        const key = this.getCacheKey("assessment", {id: assessmentID, locale});
 
         this.addListener(key, (_, assessment) => {
           const newState = {
@@ -562,16 +599,17 @@ export default function withTraitify(WrappedComponent) {
       const {benchmarkID, locale} = this.state;
 
       if(options.oldID || options.oldLocale) {
-        const oldBenchmarkID = options.oldID || benchmarkID;
-        const oldLocale = options.oldLocale || locale;
-        const key = `${oldLocale}.benchmark.${oldBenchmarkID}`;
+        const key = this.getCacheKey("benchmark", {
+          id: options.oldID || benchmarkID,
+          locale: options.oldLocale || locale
+        });
 
         this.removeListener(key);
       }
 
       if(!benchmarkID) { return; }
 
-      const key = `${locale}.benchmark.${benchmarkID}`;
+      const key = this.getCacheKey("benchmark", {id: benchmarkID, locale});
 
       this.addListener(key, (_, benchmark) => {
         this.setState({benchmark});
@@ -588,14 +626,15 @@ export default function withTraitify(WrappedComponent) {
       const {assessmentID, locale} = this.state;
 
       if(options.oldID || options.oldLocale) {
-        const oldAssessmentID = options.oldID || assessmentID;
-        const oldLocale = options.oldLocale || locale;
-        const key = `${oldLocale}.cognitive-assessment.${oldAssessmentID}`;
+        const key = this.getCacheKey("cognitive-assessment", {
+          id: options.oldID || assessmentID,
+          locale: options.oldLocale || locale
+        });
 
         this.removeListener(key);
       }
       if(assessmentID) {
-        const key = `${locale}.cognitive-assessment.${assessmentID}`;
+        const key = this.getCacheKey("cognitive-assessment", {id: assessmentID, locale});
 
         this.addListener(key, (_, assessment) => {
           this.setState({
@@ -612,18 +651,34 @@ export default function withTraitify(WrappedComponent) {
         }
       }
     }
+    updateColorScheme() {
+      if(!this.element.current) { return; }
+
+      const colorScheme = this.getOption("colorScheme") || "light";
+
+      ["auto", "dark", "light"].forEach((scheme) => {
+        const className = `traitify--color-scheme-${scheme}`;
+
+        if(this.element.current.classList.contains(className)) {
+          if(colorScheme !== scheme) { this.element.current.classList.remove(className); }
+        } else {
+          if(colorScheme === scheme) { this.element.current.classList.add(className); }
+        }
+      });
+    }
     updateDeck(options = {}) {
       const {deckID, locale} = this.state;
 
       if(options.oldID || options.oldLocale) {
-        const oldDeckID = options.oldID || deckID;
-        const oldLocale = options.oldLocale || locale;
-        const key = `${oldLocale}.deck.${oldDeckID}`;
+        const key = this.getCacheKey("deck", {
+          id: options.oldID || deckID,
+          locale: options.oldLocale || locale
+        });
 
         this.removeListener(key);
       }
       if(deckID) {
-        const key = `${locale}.deck.${deckID}`;
+        const key = this.getCacheKey("deck", {id: deckID, locale});
 
         this.addListener(key, (_, deck) => {
           this.setState({deck});
@@ -642,9 +697,10 @@ export default function withTraitify(WrappedComponent) {
       const assessmentID = (assessment || {}).id;
 
       if(options.oldID || options.oldLocale) {
-        const oldAssessmentID = options.oldID || assessmentID;
-        const oldLocale = options.oldLocale || locale;
-        const key = `${oldLocale}.guide.${oldAssessmentID}`;
+        const key = this.getCacheKey("guide", {
+          id: options.oldID || assessmentID,
+          locale: options.oldLocale || locale
+        });
 
         this.removeListener(key);
       }
@@ -652,7 +708,7 @@ export default function withTraitify(WrappedComponent) {
       if(!assessmentID) { return; }
       if(assessment.assessment_type !== "DIMENSION_BASED") { return; }
 
-      const key = `${locale}.guide.${assessmentID}`;
+      const key = this.getCacheKey("guide", {id: assessmentID, locale});
 
       this.addListener(key, (_, guide) => {
         this.setState({guide});
@@ -676,17 +732,20 @@ export default function withTraitify(WrappedComponent) {
         getOption,
         isReady,
         props,
+        setElement,
         state,
         traitify,
         ui
       } = this;
 
+      const ThemeComponent = themeComponents[getOption("theme")] || WrappedComponent;
       const {i18n, options: {locale}} = ui;
       const translate = i18n.translate.bind(null, locale);
       const options = {
         ...props,
         ...state,
         cache,
+        element: setElement,
         followBenchmark,
         followDeck,
         followGuide,
@@ -700,7 +759,9 @@ export default function withTraitify(WrappedComponent) {
         ui
       };
 
-      return <WrappedComponent {...options} />;
+      if(state.error) { return null; }
+
+      return <ThemeComponent {...options} />;
     }
   };
 }

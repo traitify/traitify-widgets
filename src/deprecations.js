@@ -6,7 +6,7 @@ export default function(traitify) {
   };
   traitify.request = function(method, _path, params) {
     let path = _path;
-    if(this.ui.options.imagePack) {
+    if(this.ui.options.imagePack && path.indexOf("image_pack") < 0) {
       path += (path.indexOf("?") === -1) ? "?" : "&";
       path += `image_pack=${this.ui.options.imagePack}`;
     }

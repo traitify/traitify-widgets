@@ -1,0 +1,17 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+
+  > div:first-of-type { @include buffer("margin-bottom"); }
+}
+.heading {
+  @extend %heading;
+
+  font-size: $font-size;
+  margin-bottom: $buffer-heading;
+}
+.p { @extend %paragraph; }

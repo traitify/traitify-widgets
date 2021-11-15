@@ -4,15 +4,35 @@
     <meta charset="utf-8">
     <title>Traitify Widgets</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <link href="data:," rel="icon"> <!-- Skip Favicon -->
   </head>
   <body>
-    <div id="slide-deck"></div>
-    <div id="results"></div>
-    <div id="careers"></div>
-    <div id="guide"></div>
+    <div class="row">
+      <div id="slide-deck"></div>
+      <div id="results"></div>
+      <div id="careers"></div>
+      <div id="guide"></div>
+      <div id="traits"></div>
+    </div>
     <style>
-      .row { margin: 15px; }
+      .dark {
+        background: #555555;
+        color: #FFFFFF;
+      }
+      .row { margin: 12px; }
       .hide { display: none; }
+      @media(min-width: 960px) {
+        .row {
+          margin-left: 48px;
+          margin-right: 48px;
+        }
+      }
+      @media(prefers-color-scheme: dark) {
+        .auto {
+          background: #555555;
+          color: #FFFFFF;
+        }
+      }
     </style>
     <div class="row">
       <label htmlFor="survey-type">
@@ -40,6 +60,17 @@
           <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
           <option value="perseverance">Perseverance</option>
           <option value="persuasion">Persuasion</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label htmlFor="color-scheme">
+        Color Scheme:
+        <select id="color-scheme" name="color-scheme">
+          <option value="">Default</option>
+          <option value="auto">Auto</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
         </select>
       </label>
     </div>
@@ -77,6 +108,15 @@
       </label>
     </div>
     <div class="row">
+      <label htmlFor="theme">
+        Theme:
+        <select id="theme" name="theme">
+          <option value="">Default</option>
+          <option value="paradox">Paradox</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
       <label htmlFor="view">
         View:
         <select id="view" name="view">
@@ -84,6 +124,21 @@
           <option value="candidate">Candidate</option>
           <option value="employee">Employee</option>
         </select>
+      </label>
+    </div>
+    <div class="row">
+      Additional Components
+      <label htmlFor="show-careers">
+        <input id="show-careers" name="show-careers" type="checkbox" />
+        Careers
+      </label>
+      <label htmlFor="show-guide">
+        <input id="show-guide" name="show-guide" type="checkbox" />
+        Guide
+      </label>
+      <label htmlFor="show-traits">
+        <input id="show-traits" name="show-traits" type="checkbox" />
+        Traits
       </label>
     </div>
     <div class="row">
@@ -96,27 +151,22 @@
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
+      var additionalComponents = ["careers", "guide", "traits"];
       var widget;
 
       function createWidget(){
+        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
+        if(!assessmentID){ return; }
+
+        var colorScheme = localStorage.getItem("color-scheme");
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
+        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
+        var targets = setTargets();
+        var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
-        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-
-        if(!assessmentID){ return; }
-
-        targets = {
-          "SlideDeck": "#slide-deck",
-          "Results": "#results"
-        }
-
-        if(surveyType !== "cognitive") {
-          if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
-          if(!view) { targets["Guide"] = "#guide"; }
-        }
 
         widget = Traitify.ui.component();
         widget
@@ -125,9 +175,11 @@
           .allowHeaders()
           .allowInstructions()
           .assessmentID(assessmentID)
+          .colorScheme(colorScheme)
           .locale(locale)
           .perspective(perspective)
           .surveyType(surveyType)
+          .theme(theme)
           .view(view)
           .targets(targets);
         widget.options.slideDeck.captureLearningDisability = true;
@@ -138,6 +190,8 @@
         }).catch(function(error){
           console.log(error);
         });
+
+        updateColorScheme();
       }
 
       function createAssessment(){
@@ -183,10 +237,12 @@
 
       function onChange(e){
         var name = e.target.name;
-        var value = e.target.value;
+        var value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
 
-        localStorage.setItem(name, value);
-        if(widget && name !== "deck-id" && name !== "survey-id") {
+        value ? localStorage.setItem(name, value) : localStorage.removeItem(name);
+
+        if(widget && !["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
+          if(name === "color-scheme") { name = "colorScheme"; }
           if(name === "survey-type") { name = "surveyType"; }
 
           widget[name](value);
@@ -203,27 +259,45 @@
 
       function refreshWidget(){
         if(widget) {
-          var deckID = localStorage.getItem("deck-id");
           var surveyType = localStorage.getItem("survey-type");
-          var view = localStorage.getItem("view");
           var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-
-          targets = {
-            "SlideDeck": "#slide-deck",
-            "Results": "#results"
-          }
-
-          if(surveyType !== "cognitive") {
-            if(deckID == "career-deck") { targets["Careers"] = "#careers"; }
-            if(view !== "candidate") { targets["Guide"] = "#guide"; }
-          }
+          var targets = setTargets();
 
           widget.assessmentID(assessmentID).targets(targets).refresh();
+
+          updateColorScheme();
         }
       }
 
+      function setTargets(){
+        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
+        var surveyType = localStorage.getItem("survey-type");
+        var targets = {
+          "SlideDeck": "#slide-deck",
+          "Results": "#results"
+        };
+
+        if(surveyType === "cognitive") { return targets; }
+        if(show.careers) { targets["Careers"] = "#careers"; }
+        if(show.guide) { targets["Guide"] = "#guide"; }
+        if(show.traits) { targets["Candidate.PersonalityTraits"] = "#traits"; }
+
+        return targets;
+      }
+
       function setupOptions(){
-        var inputs = ["deck-id", "locale", "perspective", "survey-id", "survey-type", "view"];
+        var inputs = [
+          "color-scheme",
+          "deck-id",
+          "locale",
+          "perspective",
+          "survey-id",
+          "survey-type",
+          "theme",
+          "view"
+        ];
+        additionalComponents.forEach((name) => inputs.push(`show-${name}`));
+
         for(var i = 0; i < inputs.length; i++) {
           var name = inputs[i];
           var element = document.querySelector("#" + name);
@@ -246,7 +320,7 @@
             }
           }
 
-          if(value) { element.value = value; }
+          if(value) { element.type === "checkbox" ? element.checked = true : element.value = value; }
           element.addEventListener("change", onChange);
         }
 
@@ -281,6 +355,20 @@
             select.value = currentValue;
           } else {
             select.value = values[0];
+          }
+        });
+      }
+
+      function updateColorScheme(){
+        var colorScheme = localStorage.getItem("color-scheme") || "light";
+        var theme = localStorage.getItem("theme");
+        if(theme !== "paradox") { colorScheme = "light"; }
+
+        ["auto", "dark", "light"].forEach((scheme) => {
+          if(document.body.classList.contains(scheme)) {
+            if(colorScheme !== scheme) { document.body.classList.remove(scheme); }
+          } else {
+            if(colorScheme === scheme) { document.body.classList.add(scheme); }
           }
         });
       }

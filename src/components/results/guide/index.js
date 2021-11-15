@@ -1,6 +1,7 @@
 import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import {Component as Paradox} from "components/paradox/results/guide";
 import {sortByTypePosition} from "lib/helpers";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import Icon from "lib/helpers/icon";
@@ -243,4 +244,4 @@ Guide.propTypes = {
 };
 
 export {Guide as Component};
-export default withTraitify(Guide);
+export default withTraitify(Guide, {paradox: Paradox});

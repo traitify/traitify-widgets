@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paradox.EmployeeResults allowHeaders renders component 1`] = `
+<section
+  className="container"
+>
+  <div
+    className="heading"
+  >
+    personality_type, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Heading
+  </div>
+  <div
+    className="heading"
+  >
+    success_skills, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Skills
+  </div>
+  <div
+    className="heading"
+  >
+    personality_tips, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Tips
+  </div>
+  <div
+    className="heading"
+  >
+    personality_breakdown, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension List
+  </div>
+</section>
+`;
+
+exports[`Paradox.EmployeeResults renders component 1`] = `
+<section
+  className="container"
+>
+  <div
+    className="mock"
+  >
+    Personality Archetype Heading
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Skills
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Tips
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension List
+  </div>
+</section>
+`;

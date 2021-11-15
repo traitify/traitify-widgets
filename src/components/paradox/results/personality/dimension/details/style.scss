@@ -1,0 +1,72 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  @include buffer("margin-bottom");
+}
+.details {
+  display: grid;
+  gap: $buffer;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include min-width("lg") { grid-template-columns: repeat(4, 1fr); }
+  > div {
+    align-items: center;
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    display: flex;
+    justify-content: center;
+    padding: $buffer;
+    padding-bottom: $buffer * 1.5;
+    position: relative;
+    text-align: center;
+
+    @include theme("border-color", "border-color");
+    &:after {
+      border-bottom: $border-width-lg solid;
+      bottom: $buffer * 0.5;
+      content: "";
+      left: $buffer;
+      position: absolute;
+      right: $buffer;
+
+      @include theme("border-color", "theme-color");
+    }
+  }
+}
+.header {
+  margin-bottom: $buffer-heading;
+  text-align: center;
+
+  img { width: 75px; }
+  .divider { display: none; }
+
+  @include min-width("lg") {
+    display: flex;
+
+    img {
+      height: $font-size-heading * 1.5;
+      margin-right: $buffer;
+      width: auto;
+    }
+    .divider {
+      display: inline-block;
+      margin-left: $buffer;
+      margin-right: $buffer;
+    }
+    .name { font-weight: bold; }
+  }
+}
+.heading {
+  font-weight: bold;
+  margin-top: $buffer-lg;
+  margin-bottom: $buffer-heading;
+}
+.name {
+  font-size: $font-size-heading;
+
+  &:first-of-type { font-weight: bold; }
+}
+.p { @extend %paragraph; }

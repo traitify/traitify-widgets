@@ -1,0 +1,73 @@
+$breakpoint-xl: 1140px; // 71.25em
+$breakpoint-lg: 960px; // 60em
+$breakpoint-md: 768px; // 48em
+$breakpoint-sm: 568px; // 35.5em
+$breakpoint-xs: 480px; // 30em
+$breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl
+);
+
+// Paradox likes multiples of 8
+$border-radius: 16px;
+$border-radius-sm: 4px;
+$border-width: 1px;
+$border-width-lg: 3px;
+$border-width-xl: 5px;
+$buffer: 16px; // Default padding/margin
+$buffer-lg: 24px;
+$buffer-heading: $buffer;
+$buffer-section: $buffer * 3;
+$font-size: 16px;
+$font-size-sm: 12px;
+$font-size-heading: 24px;
+$min-height: 600px;
+
+// Private - To be used through color scheme
+$-black: #555555;
+$-blue: #25C9D0;
+$-gray: #D6D6D6;
+$-green: #3BCEAC;
+$-green-light: #89E2CD;
+$-red: #FE6D73;
+$-red-light: #FEA7AB;
+$-white: #FFFFFF;
+$-yellow: #F9BC4F;
+$-yellow-light: #FBD288;
+
+$-border-color: $-gray;
+$-theme-color: $-blue;
+
+// Add variables that may change with the color scheme
+$color-scheme-dark: (
+  "background-color": $-black,
+  "border-color": $-border-color,
+  "rank-high": $-green,
+  "rank-high-light": $-green-light,
+  "rank-low": $-red,
+  "rank-low-light": $-red-light,
+  "rank-medium": $-yellow,
+  "rank-medium-light": $-yellow-light,
+  "rank-other": $-white,
+  "rank-other-light": $-gray,
+  "text-color": $-white,
+  "theme-color": $-theme-color
+);
+$color-scheme-light: (
+  "background-color": $-white,
+  "border-color": $-border-color,
+  "rank-high": $-green,
+  "rank-high-light": $-green-light,
+  "rank-low": $-red,
+  "rank-low-light": $-red-light,
+  "rank-medium": $-yellow,
+  "rank-medium-light": $-yellow-light,
+  "rank-other": $-black,
+  "rank-other-light": $-black,
+  "text-color": $-black,
+  "theme-color": $-theme-color
+);
+$color-scheme-default: $color-scheme-light;

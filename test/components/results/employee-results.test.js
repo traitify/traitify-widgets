@@ -8,8 +8,17 @@ jest.mock("components/results/personality/dimension/list", () => (() => (<div cl
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("EmployeeResults", () => {
-  it("renders components", () => {
-    const component = new ComponentHandler(<Component />);
+  let props;
+
+  beforeEach(() => {
+    props = {
+      getOption: jest.fn().mockName("getOption"),
+      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`)
+    };
+  });
+
+  it("renders component", () => {
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

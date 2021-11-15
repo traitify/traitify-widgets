@@ -1,0 +1,57 @@
+@mixin activeTabSide($side, $circle: "span", $square: "&") {
+  $direction: "after";
+  $otherSide: "left";
+
+  @if($side == "left") {
+    $direction: "before";
+    $otherSide: "right";
+  }
+
+  $length: $border-radius-sm;
+  $radius: $length * 2;
+
+  #{$circle}:#{$direction},
+  #{$square}:#{$direction} {
+    bottom: 0;
+    content: "";
+    position: absolute;
+
+    @include theme("background", "background-color");
+  }
+  #{$circle}:#{$direction} {
+    #{$side}: ($radius * -1) - $border-width;
+    border-#{$otherSide}: $border-width solid;
+    border-bottom: $border-width solid;
+    border-bottom-#{$otherSide}-radius: $border-radius-sm;
+    height: $radius;
+    width: $radius;
+    z-index: 2;
+
+    @include theme("border-#{$otherSide}-color", "border-color");
+    @include theme("border-bottom-color", "border-color");
+  }
+  #{$square}:#{$direction} {
+    #{$side}: $length * -1;
+    height: $length;
+    width: $length;
+    z-index: 1;
+  }
+}
+
+@mixin activeTab($active: ".active", $circle: "span", $square: "&") {
+  #{$active} {
+    border: $border-width solid;
+    border-bottom-width: 0;
+    border-top-left-radius: $border-radius-sm;
+    border-top-right-radius: $border-radius-sm;
+    margin-bottom: $border-width * -1;
+    margin-top: 0;
+    position: relative;
+    z-index: 3;
+
+    @include activeTabSide("left", $circle: $circle, $square: $square);
+    @include activeTabSide("right", $circle: $circle, $square: $square);
+    @include theme("background", "background-color");
+    @include theme("border-color", "border-color");
+  }
+}

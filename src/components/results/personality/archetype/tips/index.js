@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import {Component as Paradox} from "components/paradox/results/personality/archetype/tips";
 import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
@@ -104,4 +105,4 @@ PersonalityArchetypeTips.propTypes = {
 };
 
 export {PersonalityArchetypeTips as Component};
-export default withTraitify(PersonalityArchetypeTips);
+export default withTraitify(PersonalityArchetypeTips, {paradox: Paradox});

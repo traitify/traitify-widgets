@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paradox.CandidateResults allowHeaders renders component 1`] = `
+<section
+  className="container"
+>
+  <div
+    className="heading"
+  >
+    personality_type, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Heading
+  </div>
+  <div
+    className="heading"
+  >
+    personality_details, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Tips
+  </div>
+  <div
+    className="heading"
+  >
+    personality_advice, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension List
+  </div>
+  <div
+    className="heading"
+  >
+    personality_traits, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
+</section>
+`;
+
+exports[`Paradox.CandidateResults allowHeaders renders component in third person 1`] = `
+<section
+  className="container box"
+>
+  <div
+    className="heading"
+  >
+    recommendation_chart_heading, [object Object]
+  </div>
+  <div>
+    recommendation_chart_description, [object Object]
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Recommendation Chart
+  </div>
+  <div
+    className="mock"
+  >
+    Guide
+  </div>
+</section>
+`;
+
+exports[`Paradox.CandidateResults renders component 1`] = `
+<section
+  className="container"
+>
+  <div
+    className="mock"
+  >
+    Personality Archetype Heading
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Archetype Tips
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Dimension List
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Traits
+  </div>
+</section>
+`;
+
+exports[`Paradox.CandidateResults renders component in third person 1`] = `
+<section
+  className="container box"
+>
+  <div
+    className="mock"
+  >
+    Personality Recommendation Chart
+  </div>
+  <div
+    className="mock"
+  >
+    Guide
+  </div>
+</section>
+`;

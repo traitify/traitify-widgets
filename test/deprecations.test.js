@@ -66,6 +66,16 @@ describe("Deprecations", () => {
       expect(traitify.ajax).toHaveBeenCalledWith(method, `${path}&image_pack=linear`, null, params);
     });
 
+    it("passes the image pack only once", () => {
+      const method = "post";
+      const params = {deck_id: "career-deck"};
+      const path = "/assessments?locale=en-us&image_pack=linear";
+      traitify.ui.options.imagePack = "linear";
+      traitify.request(method, path, params);
+
+      expect(traitify.ajax).toHaveBeenCalledWith(method, path, null, params);
+    });
+
     it("returns the request", () => {
       traitify.ajax.mockReturnValue("request");
       const returnValue = traitify.request("post", "/assessments", {});

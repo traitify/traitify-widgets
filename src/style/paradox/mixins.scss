@@ -1,0 +1,38 @@
+@import "./mixins/tabs.scss";
+@import "./mixins/private.scss";
+
+@mixin buffer($prop) {
+  #{$prop}: $buffer;
+
+  @include min-width("lg") { #{$prop}: $buffer-lg; }
+}
+
+// Currently requires an unscoped context
+@mixin colorSchemeDark() {
+  :global(.traitify--color-scheme-auto) {
+    @media(prefers-color-scheme: dark) { @content; }
+  }
+  :global(.traitify--color-scheme-dark) { @content; }
+}
+
+@mixin heading() {
+  font-size: $font-size-heading;
+  font-weight: 600;
+}
+
+@mixin max-width($name) {
+  $value: map-get($breakpoints, $name);
+
+  @media(max-width: $value) { @content; }
+}
+
+@mixin min-width($name) {
+  $value: map-get($breakpoints, $name);
+
+  @media(min-width: $value) { @content; }
+}
+
+@mixin theme($prop, $name) {
+  #{$prop}: map-get($color-scheme-default, $name);
+  #{$prop}: var(--private-traitify-#{$name});
+}

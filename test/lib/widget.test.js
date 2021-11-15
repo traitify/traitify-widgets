@@ -11,6 +11,14 @@ jest.mock("lib/helpers/guess-component", () => (
   )).mockName("guessComponent")
 ));
 
+const createElement = (options = {}) => ({
+  firstChild: {nodeName: "div"},
+  isConnected: true,
+  nodeName: "div",
+  removeChild: jest.fn().mockName("removeChild").mockImplementation(function() { this.firstChild = null; }),
+  ...options
+});
+
 describe("Widget", () => {
   let ui;
   let widget;
@@ -18,6 +26,7 @@ describe("Widget", () => {
   beforeEach(() => {
     guessComponent.mockClear();
     render.mockClear();
+    unmountComponentAtNode.mockClear();
 
     ui = {on: jest.fn(), traitify: jest.fn()};
     widget = new Widget(ui);
@@ -66,6 +75,20 @@ describe("Widget", () => {
     });
   });
 
+  describe("allowHeaders", () => {
+    it("returns widget", () => {
+      const returnValue = widget.allowHeaders();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.allowHeaders();
+
+      expect(widget.options.allowHeaders).toBe(true);
+    });
+  });
+
   describe("allowInstructions", () => {
     it("returns widget", () => {
       const returnValue = widget.allowInstructions();
@@ -94,27 +117,58 @@ describe("Widget", () => {
     });
   });
 
-  describe("destroy", () => {
-    beforeEach(() => {
-      unmountComponentAtNode.mockClear();
+  describe("benchmarkID", () => {
+    it("returns widget", () => {
+      const returnValue = widget.benchmarkID("b-id");
+
+      expect(returnValue).toEqual(widget);
     });
 
+    it("updates option", () => {
+      widget.benchmarkID("b-id");
+
+      expect(widget.options.benchmarkID).toBe("b-id");
+    });
+  });
+
+  describe("colorScheme", () => {
+    it("returns widget", () => {
+      const returnValue = widget.colorScheme("auto");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.colorScheme("auto");
+
+      expect(widget.options.colorScheme).toBe("auto");
+    });
+  });
+
+  describe("destroy", () => {
     it("returns widget", () => {
       const returnValue = widget.destroy();
 
       expect(returnValue).toEqual(widget);
     });
 
+    it("ignores disconnected targets", () => {
+      widget.options.renderedTargets = {Default: {...createElement(), isConnected: false}};
+      widget.destroy();
+
+      expect(unmountComponentAtNode).not.toHaveBeenCalled();
+    });
+
     it("ignores invalid targets", () => {
-      widget.options.targets = {Default: "#not-found"};
+      widget.options.renderedTargets = {Default: null};
       widget.destroy();
 
       expect(unmountComponentAtNode).not.toHaveBeenCalled();
     });
 
     it("unmounts targets", () => {
-      const div = document.createElement("div");
-      widget.options.targets = {Default: div};
+      const div = createElement();
+      widget.options.renderedTargets = {Default: div};
       widget.destroy();
 
       expect(unmountComponentAtNode).toHaveBeenCalledWith(div);
@@ -160,6 +214,20 @@ describe("Widget", () => {
       widget.disableFullscreen();
 
       expect(widget.options.allowFullscreen).toBe(false);
+    });
+  });
+
+  describe("disableHeaders", () => {
+    it("returns widget", () => {
+      const returnValue = widget.disableHeaders();
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.disableHeaders();
+
+      expect(widget.options.allowHeaders).toBe(false);
     });
   });
 
@@ -245,7 +313,7 @@ describe("Widget", () => {
     beforeAll(() => {
       originalQuerySelector = document.querySelector;
       document.querySelector = jest.fn((selector) => (
-        selector && selector !== "#not-found" && selector
+        selector && selector !== "#not-found" && createElement()
       )).mockName("querySelector");
     });
 
@@ -295,19 +363,40 @@ describe("Widget", () => {
       };
       widget.render().then(() => {
         expect(render).toHaveBeenCalledTimes(3);
+        expect(widget.options.renderedTargets).toEqual({
+          PersonalityBlend: expect.any(Object),
+          PersonalityTraits: expect.any(Object),
+          PersonalityTypes: expect.any(Object)
+        });
         done();
       });
     });
 
     it("removes dom target's children", (done) => {
-      const removeChild = jest.fn(function() { this.firstChild = null; });
-      widget.options.target = {
-        removeChild,
-        firstChild: {nodeName: "div"},
-        nodeName: "div"
-      };
+      widget.options.target = createElement();
       widget.render().then(() => {
+        expect(unmountComponentAtNode).toHaveBeenCalled();
         expect(render).toHaveBeenCalled();
+        done();
+      });
+    });
+
+    it("removes old target's children", (done) => {
+      widget.options.target = createElement();
+      widget.options.renderedTargets = {Default: widget.options.target, Results: createElement()};
+      widget.render().then(() => {
+        expect(unmountComponentAtNode).toHaveBeenCalledTimes(2);
+        expect(render).toHaveBeenCalledTimes(1);
+        done();
+      });
+    });
+
+    it("removes only connected targets", (done) => {
+      widget.options.target = createElement();
+      widget.options.renderedTargets = {Results: createElement({isConnected: false})};
+      widget.render().then(() => {
+        expect(unmountComponentAtNode).toHaveBeenCalledTimes(1);
+        expect(render).toHaveBeenCalledTimes(1);
         done();
       });
     });
@@ -352,6 +441,20 @@ describe("Widget", () => {
       widget.targets({Results: "#results"});
 
       expect(widget.options.targets).toEqual({Results: "#results"});
+    });
+  });
+
+  describe("theme", () => {
+    it("returns widget", () => {
+      const returnValue = widget.theme("paradox");
+
+      expect(returnValue).toEqual(widget);
+    });
+
+    it("updates option", () => {
+      widget.theme("paradox");
+
+      expect(widget.options.theme).toBe("paradox");
     });
   });
 

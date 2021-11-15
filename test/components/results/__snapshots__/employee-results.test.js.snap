@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmployeeResults renders components 1`] = `
+exports[`EmployeeResults renders component 1`] = `
 <section>
   <div
     className="mock"

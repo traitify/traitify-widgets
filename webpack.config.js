@@ -9,6 +9,9 @@ module.exports = (_env) => {
   let config = {
     context: path.resolve(__dirname, "src"),
     devServer: {
+      client: {
+        overlay: {errors: true, warnings: false}
+      },
       devMiddleware: {
         publicPath: "/build/"
       }
@@ -89,7 +92,7 @@ module.exports = (_env) => {
       umdNamedDefine: true
     },
     plugins: [
-      new ESLintPlugin({extensions: ["js", "jsx"]}),
+      new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
       new webpack.ProvidePlugin({"React": "react"}),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(process.env.npm_package_version)

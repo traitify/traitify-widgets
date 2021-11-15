@@ -21,6 +21,7 @@
     text-align: center;
 
     @include buffer("margin-bottom");
+    @include min-width("lg") { break-inside: avoid; }
     @include theme("border-color", "border-color");
   }
 }

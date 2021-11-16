@@ -23,13 +23,11 @@ function Question({question, translate}) {
 
   return (
     <div className={[style.question, showContent && style.open].filter(Boolean).join(" ")}>
-      <div className={style.text}>
-        <Icon className={style.icon} icon={faQuestion} />
-        <div>{question.text}</div>
-        <button onClick={() => setShowContent(!showContent)} type="button">
-          <Icon className={style.icon} icon={showContent ? faChevronUp : faChevronDown} />
-        </button>
-      </div>
+      <button onClick={() => setShowContent(!showContent)} type="button">
+        <Icon className={style.questionMark} icon={faQuestion} />
+        <div className={style.text}>{question.text}</div>
+        <Icon className={style.arrow} icon={showContent ? faChevronUp : faChevronDown} />
+      </button>
       {showContent && (
         <>
           <div className={style.h2}>{translate("question_purpose")}</div>
@@ -102,12 +100,6 @@ function Guide(props) {
   const showCompetency = (newID) => setActiveCompetency(data.find(({id}) => newID === id));
   const [intro, ...expandedIntro] = activeCompetency.introduction.split("\n");
   const onChange = ({target: {value}}) => showCompetency(value);
-  const index = data.indexOf(activeCompetency);
-  const contentClass = [
-    style.content,
-    index === 0 && style.first,
-    index === data.length - 1 && style.last
-  ].filter(Boolean).join(" ");
 
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={element}>
@@ -123,7 +115,7 @@ function Guide(props) {
           </button>
         ))}
       </div>
-      <div className={contentClass}>
+      <div className={style.content}>
         <select className={style.dropdown} onChange={onChange} value={activeCompetency.id}>
           {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
         </select>

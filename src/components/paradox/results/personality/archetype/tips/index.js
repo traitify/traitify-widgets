@@ -52,6 +52,7 @@ function PersonalityArchetypeTips({element, ...props}) {
   if(!isReady("results")) { return null; }
   if(!activeType) { return null; }
 
+  const allowHeaders = getOption("allowHeaders");
   const onChange = ({target: {value}}) => (
     setActiveType(types.find(({translationKey}) => translationKey === value))
   );
@@ -59,6 +60,7 @@ function PersonalityArchetypeTips({element, ...props}) {
 
   return (
     <div className={style.container} ref={element}>
+      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_tips")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button

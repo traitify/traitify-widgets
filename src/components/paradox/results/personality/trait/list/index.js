@@ -14,12 +14,14 @@ function PersonalityTraitList({element, ...props}) {
 
   if(!isReady("results")) { return null; }
 
+  const allowHeaders = getOption("allowHeaders");
   const perspective = getOption("perspective") || "firstPerson";
   const thirdPerson = perspective === "thirdPerson";
   const traits = assessment.personality_traits;
 
   return (
     <div className={style.container} ref={element}>
+      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_traits")}</div>}
       <div>
         <div className={style.heading}>{translate("most_represented_traits")}</div>
         {thirdPerson && (

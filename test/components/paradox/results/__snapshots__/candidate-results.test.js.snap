@@ -5,19 +5,9 @@ exports[`Paradox.CandidateResults allowHeaders renders component 1`] = `
   className="container"
 >
   <div
-    className="heading"
-  >
-    personality_type, [object Object]
-  </div>
-  <div
     className="mock"
   >
     Personality Archetype Heading
-  </div>
-  <div
-    className="heading"
-  >
-    personality_details, [object Object]
   </div>
   <div
     className="mock"
@@ -25,19 +15,9 @@ exports[`Paradox.CandidateResults allowHeaders renders component 1`] = `
     Personality Archetype Tips
   </div>
   <div
-    className="heading"
-  >
-    personality_advice, [object Object]
-  </div>
-  <div
     className="mock"
   >
     Personality Dimension List
-  </div>
-  <div
-    className="heading"
-  >
-    personality_traits, [object Object]
   </div>
   <div
     className="mock"
@@ -52,7 +32,7 @@ exports[`Paradox.CandidateResults allowHeaders renders component in third person
   className="container box"
 >
   <div
-    className="heading"
+    className="sectionHeading"
   >
     recommendation_chart_heading, [object Object]
   </div>

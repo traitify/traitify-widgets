@@ -28,15 +28,16 @@ Object.keys(tipTypes).forEach((perspective) => {
 });
 
 describe("Paradox.PersonalityArchetypeTips", () => {
+  let options;
   let props;
 
   beforeEach(() => {
+    options = {};
     props = {
       assessment: {...assessment, archetype: {...assessment.archetype, details: [...details]}},
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
-      options: {},
-      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
+      translate: jest.fn().mockName("translate").mockImplementation((value, _options = {}) => `${value}, ${_options}`),
       ui: {
         current: {},
         off: jest.fn().mockName("off"),
@@ -76,7 +77,7 @@ describe("Paradox.PersonalityArchetypeTips", () => {
 
   describe("thirdPerson", () => {
     beforeEach(() => {
-      mockOptions(props.getOption, {perspective: "thirdPerson"});
+      mockOptions(props.getOption, {...options, perspective: "thirdPerson"});
     });
 
     it("renders component", () => {
@@ -108,7 +109,14 @@ describe("Paradox.PersonalityArchetypeTips", () => {
   });
 
   it("renders component with enabled types", () => {
-    mockOptions(props.getOption, {disabledComponents: ["PersonalityTools"]});
+    mockOptions(props.getOption, {...options, disabledComponents: ["PersonalityTools"]});
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component with headers", () => {
+    mockOptions(props.getOption, {...options, allowHeaders: true});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -131,7 +139,7 @@ describe("Paradox.PersonalityArchetypeTips", () => {
   });
 
   it("renders nothing if disabled", () => {
-    mockOptions(props.getOption, {disabledComponents: ["PersonalityTips"]});
+    mockOptions(props.getOption, {...options, disabledComponents: ["PersonalityTips"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

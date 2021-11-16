@@ -7,18 +7,11 @@ import withTraitify from "lib/with-traitify";
 import style from "../style.scss";
 
 function EmployeeResults({element, ...props}) {
-  const {getOption, translate} = props;
-  const allowHeaders = getOption("allowHeaders");
-
   return (
     <section className={style.container} ref={element}>
-      {allowHeaders && <div className={style.heading}>{translate("personality_type")}</div>}
       <PersonalityArchetype {...props} />
-      {allowHeaders && <div className={style.heading}>{translate("success_skills")}</div>}
       <PersonalitySkills {...props} />
-      {allowHeaders && <div className={style.heading}>{translate("personality_tips")}</div>}
       <PersonalityTips {...props} />
-      {allowHeaders && <div className={style.heading}>{translate("personality_breakdown")}</div>}
       <PersonalityDimensions {...props} />
     </section>
   );
@@ -29,9 +22,7 @@ EmployeeResults.propTypes = {
   element: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
-  getOption: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired
+  ])
 };
 
 export {EmployeeResults as Component};

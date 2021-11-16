@@ -18,6 +18,11 @@
 // - classes
 // - elements
 
+.sectionHeading {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
+}
 .widget {
   @extend %container;
 }

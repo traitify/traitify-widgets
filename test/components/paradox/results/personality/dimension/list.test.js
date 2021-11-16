@@ -1,5 +1,6 @@
 import {Component} from "components/paradox/results/personality/dimension/list";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("components/results/personality/dimension/details", () => (() => (<div className="mock">PersonalityDimensionDetails</div>)));
@@ -57,8 +58,15 @@ describe("Paradox.PersonalityDimensionList", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with headers", () => {
+    mockOptions(props.getOption, {allowHeaders: true});
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionDetails", "PersonalityDimensionChart"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityDimensionDetails", "PersonalityDimensionChart"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -73,21 +81,21 @@ describe("Paradox.PersonalityDimensionList", () => {
   });
 
   it("renders chart if details disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionDetails"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityDimensionDetails"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders details if chart disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionChart"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityDimensionChart"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders details if columns disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionColumns"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityDimensionColumns"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

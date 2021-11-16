@@ -1,0 +1,18 @@
+@import "~style/helpers";
+@import "~style/variables";
+
+.container {
+  @extend %widgetContainer;
+
+  position: relative;
+  min-height: 100vh;
+  @include mq(m) {
+    min-height: $minHeight;
+  }
+
+  &:fullscreen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+  }
+}

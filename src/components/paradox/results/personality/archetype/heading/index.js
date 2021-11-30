@@ -2,9 +2,10 @@
 import PropTypes from "prop-types";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import {getDetail} from "lib/helpers/details";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 

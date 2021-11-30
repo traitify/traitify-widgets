@@ -1,4 +1,4 @@
-export function useResizeMock() {
+export default function useResizeMock() {
   let originalResizeTo;
 
   beforeAll(() => {
@@ -16,19 +16,5 @@ export function useResizeMock() {
 
   afterAll(() => {
     window.resizeTo = originalResizeTo;
-  });
-}
-
-export function useWindowMock(key) {
-  let original;
-
-  beforeEach(() => {
-    original = window[key];
-
-    window[key] = jest.fn().mockName(key);
-  });
-
-  afterEach(() => {
-    window[key] = original;
   });
 }

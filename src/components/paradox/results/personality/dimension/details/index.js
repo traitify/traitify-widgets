@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import {detailWithPerspective} from "lib/helpers";
 import {findCompetency} from "lib/helpers/combine-data";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 

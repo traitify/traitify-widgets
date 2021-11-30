@@ -2,7 +2,8 @@ import Component from "components/slide-deck/cognitive/practice";
 import Slide from "components/slide-deck/cognitive/slide";
 import {defaultExplanations, defaultQuestions} from "components/slide-deck/cognitive/instructions-defaults";
 import ComponentHandler, {act} from "support/component-handler";
-import {useResizeMock, useWindowMock} from "support/mocks";
+import useResizeMock from "support/hooks/use-resize-mock";
+import useWindowMock from "support/hooks/use-window-mock";
 
 jest.mock("components/slide-deck/cognitive/slide", () => (() => <div className="mock">Slide</div>));
 

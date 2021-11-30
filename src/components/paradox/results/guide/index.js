@@ -2,10 +2,11 @@ import {faChevronDown, faChevronUp, faQuestion} from "@fortawesome/free-solid-sv
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import {combine} from "lib/helpers/combine-data";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import Icon from "lib/helpers/icon";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 

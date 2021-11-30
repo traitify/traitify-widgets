@@ -9,7 +9,6 @@ export default class Slide extends Component {
     back: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
     instructions: PropTypes.string,
-    isComplete: PropTypes.bool.isRequired,
     isFullscreen: PropTypes.bool.isRequired,
     isLikertScale: PropTypes.bool.isRequired,
     showInstructions: PropTypes.bool.isRequired,
@@ -41,7 +40,6 @@ export default class Slide extends Component {
       back,
       getOption,
       instructions,
-      isComplete,
       isFullscreen,
       isLikertScale,
       showInstructions,
@@ -97,7 +95,7 @@ export default class Slide extends Component {
       allowBack = getOption("allowBack") && slideIndex > 0;
       allowFullscreen = getOption("allowFullscreen");
       currentSlide = slides[slideIndex];
-      progress = isComplete ? 100 : (slideIndex / slides.length) * 100;
+      progress = (slideIndex / slides.length) * 100;
     }
 
     return (

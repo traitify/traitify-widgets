@@ -3,8 +3,9 @@ import {Component as Paradox} from "components/paradox/results/personality/dimen
 import PersonalityDimensionChart from "components/results/personality/dimension/chart";
 import PersonalityDimensionDetails from "components/results/personality/dimension/details";
 import {sortByTypePosition} from "lib/helpers";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 

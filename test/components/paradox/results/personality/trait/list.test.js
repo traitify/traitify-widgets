@@ -1,5 +1,6 @@
 import {Component} from "components/paradox/results/personality/trait/list";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("components/results/personality/trait/details", () => ((props) => (
@@ -59,8 +60,15 @@ describe("Paradox.PersonalityTraits", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with headers", () => {
+    mockOptions(props.getOption, {allowHeaders: true});
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders component with translation definitions", () => {
-    props.getOption.mockReturnValueOnce("thirdPerson");
+    mockOptions(props.getOption, {perspective: "thirdPerson"});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

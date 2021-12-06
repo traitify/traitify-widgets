@@ -1,5 +1,6 @@
 import {Component} from "components/paradox/results/personality/archetype/skills";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
@@ -32,7 +33,6 @@ describe("Paradox.PersonalityArchetypeSkills", () => {
       assessment: {...assessment, archetype: {...assessment.archetype, details: [...details]}},
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
-      options: {},
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       ui: {
         current: {},
@@ -95,7 +95,14 @@ describe("Paradox.PersonalityArchetypeSkills", () => {
   });
 
   it("renders component with enabled types", () => {
-    props.getOption.mockReturnValue(["Dealing With Stress"]);
+    mockOptions(props.getOption, {disabledComponents: ["Dealing With Stress"]});
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component with headers", () => {
+    mockOptions(props.getOption, {allowHeaders: true});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
@@ -118,7 +125,7 @@ describe("Paradox.PersonalityArchetypeSkills", () => {
   });
 
   it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalitySkills"]);
+    mockOptions(props.getOption, {disabledComponents: ["PersonalitySkills"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

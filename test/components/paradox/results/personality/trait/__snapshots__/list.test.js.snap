@@ -81,6 +81,92 @@ exports[`Paradox.PersonalityTraits renders component 1`] = `
 </div>
 `;
 
+exports[`Paradox.PersonalityTraits renders component with headers 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="sectionHeading"
+  >
+    personality_traits
+  </div>
+  <div>
+    <div
+      className="heading"
+    >
+      most_represented_traits
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Steady
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Forgiving
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Can Delay Gratification
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Compassionate
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Thrill-Seeking
+    </div>
+  </div>
+  <div>
+    <div
+      className="heading"
+    >
+      least_represented_traits
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Visionary
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Whimsical
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Deliberate
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Orderliness
+    </div>
+    <div
+      className="mock"
+    >
+      Trait - 
+      Creative
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Paradox.PersonalityTraits renders component with translation definitions 1`] = `
 <div
   className="container"

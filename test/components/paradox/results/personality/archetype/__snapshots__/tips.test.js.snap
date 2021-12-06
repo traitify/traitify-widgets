@@ -192,6 +192,83 @@ exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1
 </div>
 `;
 
+exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="sectionHeading"
+  >
+    personality_tips, [object Object]
+  </div>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      tip_type_for_tools, [object Object]
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      tip_type_for_room, [object Object]
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      tip_type_for_settings, [object Object]
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="tools"
+  >
+    <option
+      value="tools"
+    >
+      tip_type_for_tools, [object Object]
+    </option>
+    <option
+      value="room"
+    >
+      tip_type_for_room, [object Object]
+    </option>
+    <option
+      value="settings"
+    >
+      tip_type_for_settings, [object Object]
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div>
+      TU - 0
+    </div>
+    <div>
+      TU - 1
+    </div>
+    <div>
+      TU - 2
+    </div>
+    <div>
+      TU - 3
+    </div>
+    <div>
+      TU - 4
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 1`] = `
 <div
   className="container"

@@ -18,7 +18,7 @@ function CandidateResults({element, ...props}) {
       <section className={[style.container, style.box].join(" ")} ref={element}>
         {allowHeaders && (
           <>
-            <div className={style.heading}>{translate("recommendation_chart_heading")}</div>
+            <div className={style.sectionHeading}>{translate("recommendation_chart_heading")}</div>
             <div>{translate("recommendation_chart_description")}</div>
           </>
         )}
@@ -30,13 +30,9 @@ function CandidateResults({element, ...props}) {
 
   return (
     <section className={style.container} ref={element}>
-      {allowHeaders && <div className={style.heading}>{translate("personality_type")}</div>}
       <PersonalityArchetype {...props} />
-      {allowHeaders && <div className={style.heading}>{translate("personality_details")}</div>}
       <PersonalityTips {...props} />
-      {allowHeaders && <div className={style.heading}>{translate("personality_advice")}</div>}
       <PersonalityDimensions {...props} disabledComponents={[...disabledComponents, "PersonalityPitfalls"]} />
-      {allowHeaders && <div className={style.heading}>{translate("personality_traits")}</div>}
       <PersonalityTraits {...props} />
     </section>
   );

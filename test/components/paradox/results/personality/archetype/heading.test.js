@@ -1,5 +1,6 @@
 import {Component} from "components/paradox/results/personality/archetype/heading";
 import ComponentHandler from "support/component-handler";
+import {mockOptions} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 import deck from "support/json/deck/big-five.json";
 
@@ -24,16 +25,18 @@ const oldDetails = [
 const details = [...oldDetails, ...newDetails];
 
 describe("Paradox.PersonalityArchetypeHeading", () => {
+  let options;
   let props;
 
   beforeEach(() => {
+    options = {};
     props = {
       assessment: {...assessment, archetype: {...assessment.archetype, details: [...details]}},
       deck,
       followDeck: jest.fn().mockName("followDeck"),
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
-      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
+      translate: jest.fn().mockName("translate").mockImplementation((value, _options = {}) => `${value}, ${_options}`),
       ui: {
         current: {},
         off: jest.fn().mockName("off"),
@@ -73,7 +76,7 @@ describe("Paradox.PersonalityArchetypeHeading", () => {
 
   describe("fallbacks", () => {
     it("renders component in third person", () => {
-      props.getOption.mockImplementation((key) => (key === "perspective" ? "thirdPerson" : []));
+      mockOptions(props.getOption, {...options, perspective: "thirdPerson"});
       const component = new ComponentHandler(<Component {...props} />);
 
       expect(component.tree).toMatchSnapshot();
@@ -113,8 +116,15 @@ describe("Paradox.PersonalityArchetypeHeading", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with headers", () => {
+    mockOptions(props.getOption, {...options, allowHeaders: true});
+    const component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityArchetype"]);
+    mockOptions(props.getOption, {...options, disabledComponents: ["PersonalityArchetype"]});
     const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

@@ -8,7 +8,7 @@ import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
 function PersonalityDimensionList({element, ...props}) {
-  const {assessment, getOption, isReady, ui} = props;
+  const {assessment, getOption, isReady, translate, ui} = props;
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityDimensions.initialized", {props, state}); });
@@ -21,10 +21,12 @@ function PersonalityDimensionList({element, ...props}) {
   const disableDetails = disabledComponents.includes("PersonalityDimensionDetails");
   if(disableChart && disableDetails) { return null; }
 
+  const allowHeaders = getOption("allowHeaders");
   const types = sortByTypePosition(assessment.personality_types);
 
   return (
     <div className={style.container} ref={element}>
+      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
       {!disableChart && <PersonalityDimensionChart {...props} />}
       {!disableDetails && (
         <div>

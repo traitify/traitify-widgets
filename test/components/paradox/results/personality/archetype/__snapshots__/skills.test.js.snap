@@ -541,6 +541,157 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
 </div>
 `;
 
+exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="sectionHeading"
+  >
+    success_skills, [object Object]
+  </div>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="skill_name_for_dealing_with_stress, [object Object]"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
+      />
+      <div>
+        skill_name_for_dealing_with_stress, [object Object]
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="skill_name_for_leading_others, [object Object]"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-default.png"
+      />
+      <div>
+        skill_name_for_leading_others, [object Object]
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="skill_name_for_communication, [object Object]"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        skill_name_for_communication, [object Object]
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="skill_name_for_teamwork, [object Object]"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        skill_name_for_teamwork, [object Object]
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="skill_name_for_habits, [object Object]"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        skill_name_for_habits, [object Object]
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="dealing_with_stress"
+  >
+    <option
+      value="dealing_with_stress"
+    >
+      skill_name_for_dealing_with_stress, [object Object]
+    </option>
+    <option
+      value="leading_others"
+    >
+      skill_name_for_leading_others, [object Object]
+    </option>
+    <option
+      value="communication"
+    >
+      skill_name_for_communication, [object Object]
+    </option>
+    <option
+      value="teamwork"
+    >
+      skill_name_for_teamwork, [object Object]
+    </option>
+    <option
+      value="habits"
+    >
+      skill_name_for_habits, [object Object]
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      skill_heading_for_dealing_with_stress, [object Object]
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking button 1`] = `
 <div
   className="container"

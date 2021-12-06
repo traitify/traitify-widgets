@@ -78,6 +78,7 @@ function PersonalityArchetypeSkills({element, ...props}) {
   if(!isReady("results")) { return null; }
   if(!activeType) { return null; }
 
+  const allowHeaders = getOption("allowHeaders");
   const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
   const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
   const tips = [];
@@ -88,6 +89,7 @@ function PersonalityArchetypeSkills({element, ...props}) {
 
   return (
     <div className={style.container} ref={element}>
+      {allowHeaders && <div className={style.sectionHeading}>{translate("success_skills")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button

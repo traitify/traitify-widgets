@@ -8,14 +8,14 @@ import PersonalityRecommendationChart from "components/results/personality/recom
 import PersonalityTraits from "components/results/personality/trait/list";
 import style from "../style.scss";
 
-function CandidateResults({element, ...props}) {
+function CandidateResults({setElement, ...props}) {
   const {getOption, translate} = props;
   const allowHeaders = getOption("allowHeaders");
   const disabledComponents = getOption("disabledComponents") || [];
 
   if(getOption("perspective") === "thirdPerson") {
     return (
-      <section className={[style.container, style.box].join(" ")} ref={element}>
+      <section className={[style.container, style.box].join(" ")} ref={setElement}>
         {allowHeaders && (
           <>
             <div className={style.sectionHeading}>{translate("recommendation_chart_heading")}</div>
@@ -29,7 +29,7 @@ function CandidateResults({element, ...props}) {
   }
 
   return (
-    <section className={style.container} ref={element}>
+    <section className={style.container} ref={setElement}>
       <PersonalityArchetype {...props} />
       <PersonalityTips {...props} />
       <PersonalityDimensions {...props} disabledComponents={[...disabledComponents, "PersonalityPitfalls"]} />
@@ -38,13 +38,9 @@ function CandidateResults({element, ...props}) {
   );
 }
 
-CandidateResults.defaultProps = {element: null};
 CandidateResults.propTypes = {
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   getOption: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired
 };
 

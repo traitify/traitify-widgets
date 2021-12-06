@@ -37,6 +37,7 @@ describe("Paradox.PersonalityArchetypeTips", () => {
       assessment: {...assessment, archetype: {...assessment.archetype, details: [...details]}},
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value, _options = {}) => `${value}, ${_options}`),
       ui: {
         current: {},

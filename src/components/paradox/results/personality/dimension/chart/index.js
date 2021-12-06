@@ -9,7 +9,7 @@ import style from "./style.scss";
 
 const ranks = ["other", "low", "medium", "high"];
 
-function PersonalityDimensionChart({element, ...props}) {
+function PersonalityDimensionChart({setElement, ...props}) {
   const {assessment, followGuide, guide, isReady, translate, ui} = props;
   const state = {};
 
@@ -24,7 +24,7 @@ function PersonalityDimensionChart({element, ...props}) {
   const data = combine({guide, order: "types", types: assessment.personality_types});
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       <div className={style.p}>{translate("dimension_description")}</div>
       <div className={style.horizontal}>
         {data.map(({competency, rank, type: {badge, name, id}}) => (
@@ -56,7 +56,7 @@ function PersonalityDimensionChart({element, ...props}) {
   );
 }
 
-PersonalityDimensionChart.defaultProps = {assessment: null, element: null, guide: null};
+PersonalityDimensionChart.defaultProps = {assessment: null, guide: null};
 PersonalityDimensionChart.propTypes = {
   assessment: PropTypes.shape({
     personality_types: PropTypes.arrayOf(
@@ -70,10 +70,6 @@ PersonalityDimensionChart.propTypes = {
       }).isRequired
     )
   }),
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({
     assessment_id: PropTypes.string.isRequired,
@@ -98,6 +94,7 @@ PersonalityDimensionChart.propTypes = {
     locale_key: PropTypes.string.isRequired
   }),
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

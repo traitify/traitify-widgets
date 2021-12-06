@@ -9,6 +9,7 @@ describe("Paradox.PersonalityTrait", () => {
 
   beforeEach(() => {
     props = {
+      setElement: jest.fn().mockName("setElement"),
       trait: assessment.personality_traits[0],
       ui: {
         current: {},

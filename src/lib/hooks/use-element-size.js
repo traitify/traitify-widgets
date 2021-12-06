@@ -15,7 +15,7 @@ export default function useElementSize(element) {
     updateSize();
 
     return () => window.removeEventListener("resize", updateSize);
-  }, []);
+  }, [element]);
 
   return size;
 }

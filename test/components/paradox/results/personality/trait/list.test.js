@@ -16,6 +16,7 @@ describe("Paradox.PersonalityTraits", () => {
       assessment,
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
       ui: {
         current: {},

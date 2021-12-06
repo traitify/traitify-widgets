@@ -21,6 +21,7 @@ describe("Paradox.Guide", () => {
         ...guide
       },
       isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
       ui: {
         current: {},

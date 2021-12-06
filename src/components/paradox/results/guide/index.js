@@ -55,12 +55,11 @@ Question.propTypes = {
   translate: PropTypes.func.isRequired
 };
 
-function Guide(props) {
+function Guide({setElement, ...props}) {
   const {
     assessment,
     benchmark,
     combined,
-    element,
     followBenchmark,
     followGuide,
     guide,
@@ -103,7 +102,7 @@ function Guide(props) {
   const onChange = ({target: {value}}) => showCompetency(value);
 
   return (
-    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={element}>
+    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>
       <div className={style.tabs}>
         {data.map(({id, name, rank}) => (
           <button
@@ -147,7 +146,6 @@ Guide.defaultProps = {
   assessment: null,
   benchmark: null,
   combined: false,
-  element: null,
   guide: null
 };
 Guide.propTypes = {
@@ -176,10 +174,6 @@ Guide.propTypes = {
     )
   }),
   combined: PropTypes.bool,
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({
@@ -205,6 +199,7 @@ Guide.propTypes = {
     locale_key: PropTypes.string.isRequired
   }),
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

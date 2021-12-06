@@ -15,12 +15,14 @@
       <div id="traits"></div>
     </div>
     <style>
+      .additional-option { display: block; margin: 12px; }
       .dark {
         background: #555555;
         color: #FFFFFF;
       }
-      .row { margin: 12px; }
+      .flex { display: flex; }
       .hide { display: none; }
+      .row { margin: 12px; }
       @media(min-width: 960px) {
         .row {
           margin-left: 48px;
@@ -34,112 +36,103 @@
         }
       }
     </style>
-    <div class="row">
-      <label htmlFor="survey-type">
-        Survey Type:
-        <select id="survey-type" name="survey-type">
-          <option value="cognitive">Cognitive</option>
-          <option value="personality">Personality</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="survey-id">
-        Survey:
-        <select id="survey-id" name="survey-id">
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="deck-id">
-        Deck:
-        <select id="deck-id" name="deck-id">
-          <option value="big-five">Big Five</option>
-          <option value="career-deck">Career Deck</option>
-          <option value="core">Core</option>
-          <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
-          <option value="perseverance">Perseverance</option>
-          <option value="persuasion">Persuasion</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="color-scheme">
-        Color Scheme:
-        <select id="color-scheme" name="color-scheme">
-          <option value="">Default</option>
-          <option value="auto">Auto</option>
-          <option value="dark">Dark</option>
-          <option value="light">Light</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="locale">
-        Locale:
-        <select id="locale" name="locale">
-          <option value="zh-cn">Chinese</option>
-          <option value="ht-us">Creole</option>
-          <option value="nl-nl">Dutch</option>
-          <option value="en-us">English (US)</option>
-          <option value="en-gb">English (GB)</option>
-          <option value="fr-ca">French (Canadian)</option>
-          <option value="fr-fr">French (France)</option>
-          <option value="de-de">German</option>
-          <option value="ja-jp">Japanese</option>
-          <option value="no-no">Norwegian</option>
-          <option value="pt-br">Portuguese (Brazil)</option>
-          <option value="pt-pt">Portuguese</option>
-          <option value="ru-ru">Russian</option>
-          <option value="es-us">Spanish</option>
-          <option value="es-ec">Spanish (Ecuador)</option>
-          <option value="sv-se">Swedish</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="perspective">
-        Perspective:
-        <select id="perspective" name="perspective">
-          <option value="">Default</option>
-          <option value="firstPerson">First Person</option>
-          <option value="thirdPerson">Third Person</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="theme">
-        Theme:
-        <select id="theme" name="theme">
-          <option value="">Default</option>
-          <option value="paradox">Paradox</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="view">
-        View:
-        <select id="view" name="view">
-          <option value="">Default</option>
-          <option value="candidate">Candidate</option>
-          <option value="employee">Employee</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      Additional Components
-      <label htmlFor="show-careers">
-        <input id="show-careers" name="show-careers" type="checkbox" />
-        Careers
-      </label>
-      <label htmlFor="show-guide">
-        <input id="show-guide" name="show-guide" type="checkbox" />
-        Guide
-      </label>
-      <label htmlFor="show-traits">
-        <input id="show-traits" name="show-traits" type="checkbox" />
-        Traits
-      </label>
+    <div class="flex">
+      <div class="column">
+        <div class="row">
+          <label htmlFor="survey-type">
+            Survey Type:
+            <select id="survey-type" name="survey-type">
+              <option value="cognitive">Cognitive</option>
+              <option value="personality">Personality</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="survey-id">
+            Survey:
+            <select id="survey-id" name="survey-id">
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="deck-id">
+            Deck:
+            <select id="deck-id" name="deck-id">
+              <option value="big-five">Big Five</option>
+              <option value="career-deck">Career Deck</option>
+              <option value="core">Core</option>
+              <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
+              <option value="perseverance">Perseverance</option>
+              <option value="persuasion">Persuasion</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="color-scheme">
+            Color Scheme:
+            <select id="color-scheme" name="color-scheme">
+              <option value="">Default</option>
+              <option value="auto">Auto</option>
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="locale">
+            Locale:
+            <select id="locale" name="locale">
+              <option value="zh-cn">Chinese</option>
+              <option value="ht-us">Creole</option>
+              <option value="nl-nl">Dutch</option>
+              <option value="en-us">English (US)</option>
+              <option value="en-gb">English (GB)</option>
+              <option value="fr-ca">French (Canadian)</option>
+              <option value="fr-fr">French (France)</option>
+              <option value="de-de">German</option>
+              <option value="ja-jp">Japanese</option>
+              <option value="no-no">Norwegian</option>
+              <option value="pt-br">Portuguese (Brazil)</option>
+              <option value="pt-pt">Portuguese</option>
+              <option value="ru-ru">Russian</option>
+              <option value="es-us">Spanish</option>
+              <option value="es-ec">Spanish (Ecuador)</option>
+              <option value="sv-se">Swedish</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="perspective">
+            Perspective:
+            <select id="perspective" name="perspective">
+              <option value="">Default</option>
+              <option value="firstPerson">First Person</option>
+              <option value="thirdPerson">Third Person</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="theme">
+            Theme:
+            <select id="theme" name="theme">
+              <option value="">Default</option>
+              <option value="paradox">Paradox</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="view">
+            View:
+            <select id="view" name="view">
+              <option value="">Default</option>
+              <option value="candidate">Candidate</option>
+              <option value="employee">Employee</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="column" id="additional">
+      </div>
     </div>
     <div class="row">
       <button onclick="createAssessment()">New Assessment</button>
@@ -151,8 +144,24 @@
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
-      var additionalComponents = ["careers", "guide", "traits"];
+      var additionalComponents = {careers: "Careers", guide: "Guide", traits: "Traits"};
+      var additionalOptions = {allowBack: "Allow Back", allowFullscreen: "Allow Fullscreen", allowHeaders: "Allow Headers", allowInstructions: "Allow Instructions"};
+      var defaultValues = {
+        "deck-id": "big-five",
+        locale: "en-us",
+        "survey-type": "personality"
+      };
       var widget;
+
+      function booleanFrom(value, fallback) {
+        if(value == "true") { return true; }
+        if(value == "false") { return false; }
+        if(value == true) { return true; }
+        if(value == false) { return false; }
+        if(fallback == undefined) { return false; }
+
+        return fallback;
+      }
 
       function createWidget(){
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
@@ -162,7 +171,7 @@
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
-        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
+        var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
         var targets = setTargets();
         var theme = localStorage.getItem("theme");
@@ -170,10 +179,6 @@
 
         widget = Traitify.ui.component();
         widget
-          .allowBack()
-          .allowFullscreen()
-          .allowHeaders()
-          .allowInstructions()
           .assessmentID(assessmentID)
           .colorScheme(colorScheme)
           .locale(locale)
@@ -182,6 +187,19 @@
           .theme(theme)
           .view(view)
           .targets(targets);
+
+        Object.keys(additionalOptions).forEach((name) => {
+          let value = localStorage.getItem(name);
+          console.log(name, value);
+
+          if(value == null) { return; }
+          if(name.startsWith("allow")) {
+            widget[booleanFrom(value) ? name : name.replace("allow", "disable")]();
+          } else {
+            widget[name](value);
+          }
+        });
+
         widget.options.slideDeck.captureLearningDisability = true;
         widget.options.slideDeck.disableTimeLimit = true;
         widget.options.slideDeck.initialLearningDisability = true;
@@ -231,21 +249,24 @@
         }
       }
 
-      function destroyWidget(){
-        if(widget){ widget.destroy(); }
-      }
+      function destroyWidget() { if(widget){ widget.destroy(); } }
 
-      function onChange(e){
+      function onChange(e) {
         var name = e.target.name;
         var value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
 
-        value ? localStorage.setItem(name, value) : localStorage.removeItem(name);
+        value == "" ? localStorage.removeItem(name) : localStorage.setItem(name, value);
 
         if(widget && !["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
           if(name === "color-scheme") { name = "colorScheme"; }
           if(name === "survey-type") { name = "surveyType"; }
+          if(name.startsWith("allow")) {
+            if(value == "") { value = name == "allowInstructions"; }
 
-          widget[name](value);
+            widget[value ? name : name.replace("allow", "disable")]();
+          } else {
+            widget[name](value);
+          }
         }
 
         var type = localStorage.getItem("survey-type");
@@ -270,7 +291,7 @@
       }
 
       function setTargets(){
-        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
+        var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
         var targets = {
           "SlideDeck": "#slide-deck",
@@ -285,6 +306,61 @@
         return targets;
       }
 
+      function setupAdditionalComponents() {
+        var inputs = [];
+        var element = document.createElement("div");
+        element.appendChild(document.createTextNode("Additional Components: "));
+        element.className = "row";
+        Object.keys(additionalComponents).forEach((key) => {
+          var id = `show-${key}`;
+          var label = document.createElement("label");
+          var input = document.createElement("input");
+          input.id = id;
+          input.name = id;
+          input.type = "checkbox";
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(additionalComponents[key]));
+          label.htmlFor = id;
+          element.appendChild(label);
+          inputs.push(id);
+        });
+
+        document.querySelector("#additional").appendChild(element);
+
+        return inputs;
+      }
+
+      function setupAdditionalOptions() {
+        var element = document.createElement("div");
+        var inputs = [];
+        var options = [["Default", ""], ["Yes", true], ["No", false]];
+        element.appendChild(document.createTextNode("Additional Options: "));
+        element.className = "row";
+        Object.keys(additionalOptions).forEach((key) => {
+          var id = key;
+          var label = document.createElement("label");
+          var select = document.createElement("select");
+          select.id = id;
+          select.name = id;
+          options.forEach((item) => {
+            var option = document.createElement("option");
+            option.appendChild(document.createTextNode(item[0]));
+            option.value = item[1];
+            select.appendChild(option);
+          });
+          label.appendChild(document.createTextNode(`${additionalOptions[key]}: `));
+          label.appendChild(select);
+          label.className = "additional-option";
+          label.htmlFor = id;
+          element.appendChild(label);
+          inputs.push(id);
+        });
+
+        document.querySelector("#additional").appendChild(element);
+
+        return inputs;
+      }
+
       function setupOptions(){
         var inputs = [
           "color-scheme",
@@ -296,31 +372,21 @@
           "theme",
           "view"
         ];
-        additionalComponents.forEach((name) => inputs.push(`show-${name}`));
+
+        inputs.push(...setupAdditionalComponents());
+        inputs.push(...setupAdditionalOptions());
 
         for(var i = 0; i < inputs.length; i++) {
           var name = inputs[i];
           var element = document.querySelector("#" + name);
           var value = localStorage.getItem(name);
 
-          if(!value) {
-            switch(name) {
-              case "deck-id":
-                value = "big-five";
-                localStorage.setItem(name, value);
-                break;
-              case "locale":
-                value = "en-us";
-                localStorage.setItem(name, value);
-                break;
-              case "survey-type":
-                value = "personality";
-                localStorage.setItem(name, value);
-                break;
-            }
+          if(value == null && defaultValues.hasOwnProperty(name)) {
+            value = defaultValues[name];
+            localStorage.setItem(name, value);
           }
 
-          if(value) { element.type === "checkbox" ? element.checked = true : element.value = value; }
+          if(value != null) { element.type === "checkbox" ? element.checked = booleanFrom(value) : element.value = value; }
           element.addEventListener("change", onChange);
         }
 

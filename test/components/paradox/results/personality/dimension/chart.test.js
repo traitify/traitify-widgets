@@ -18,6 +18,7 @@ describe("Paradox.PersonalityDimensionChart", () => {
         ...guide
       },
       isReady: jest.fn().mockName("isReady"),
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       ui: {
         current: {},

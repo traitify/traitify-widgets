@@ -14,7 +14,7 @@ import style from "./style.scss";
 
 const maxRetries = 2;
 
-function Personality({element: _element, ...props}) {
+function Personality({element, setElement, ...props}) {
   const {
     assessment,
     cache,
@@ -26,28 +26,24 @@ function Personality({element: _element, ...props}) {
     translate,
     ui
   } = props;
-  const fallbackElement = useRef(null);
-  const element = _element || fallbackElement;
   const {error, dispatch, ready, slideIndex, slides} = useSlideLoader({element, translate});
-  const [fullscreen, toggleFullscreen] = useFullscreen(element.current);
-  const [instructions, setInstructions] = useState(false);
+  const [fullscreen, toggleFullscreen] = useFullscreen(element);
+  const [instructions, setInstructions] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
   const [submitAttempts, setSubmitAttempts] = useState(0);
   const [submitError, setSubmitError] = useState(null);
   const submitting = useRef(false);
 
-  const completedSlides = slice(
-    slides.filter(({response}) => response != null),
-    ["id", "response", "time_taken"]
-  );
+  const completedSlides = slides.filter(({response}) => response != null)
+    .map((slide) => slice(slide, ["id", "response", "time_taken"]));
   const finished = slides.length > 0 && slides.length === completedSlides.length;
   const likertScale = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const resultsReady = isReady("results");
   const state = {
     finished,
     fullscreen,
-    slides,
-    showInstructions
+    showInstructions,
+    slides
   };
 
   useDidMount(() => { ui.trigger("SlideDeck.initialized", {props, state}); });
@@ -91,10 +87,15 @@ function Personality({element: _element, ...props}) {
     const text = dig(assessment, "instructions", "instructional_text");
 
     setInstructions(text);
-    setShowInstructions(text && show);
+    setShowInstructions(show && !!text);
   }, [dig(assessment, "instructions")]);
 
-  useEffect(() => { cache.set(getCacheKey("slide-deck"), {slides}); }, [slides]);
+  useEffect(() => {
+    if(completedSlides.length === 0) { return; }
+
+    cache.set(getCacheKey("slide-deck"), {slides: completedSlides});
+  }, [completedSlides]);
+
   useEffect(() => {
     if(!finished) { return; }
     if(resultsReady) { return; }
@@ -143,28 +144,30 @@ function Personality({element: _element, ...props}) {
     dispatch({index, response: value, type: "answer"});
 
     const key = likertScale ? `likert.${camelCase(value)}` : camelCase(value ? "me" : "not-me");
-    ui.trigger(`SlideDeck.${key}`, this);
-    ui.trigger("SlideDeck.updateSlide", this);
+    ui.trigger(`SlideDeck.${key}`, {props, state});
+    ui.trigger("SlideDeck.updateSlide", {props, state});
   };
 
   return (
-    <div className={style.container} ref={element}>
-      {(finished || ready) ? (
+    <div className={style.container} ref={setElement}>
+      {(finished || !ready) ? (
         <NotReady error={submitError || error} retry={retry} translate={translate} />
       ) : (
         <Slide
-          back={() => dispatch({type: "back"})}
-          getOption={getOption}
-          instructions={instructions}
-          isFullscreen={fullscreen}
-          isLikertScale={likertScale}
-          showInstructions={showInstructions}
-          slideIndex={slideIndex}
-          slides={slides}
-          start={() => setShowInstructions(false)}
-          toggleFullscreen={toggleFullscreen}
-          translate={translate}
-          updateSlide={updateSlide}
+          {...{
+            back: () => dispatch({type: "back"}),
+            fullscreen,
+            getOption,
+            instructions,
+            likertScale,
+            showInstructions,
+            slideIndex,
+            slides,
+            start: () => setShowInstructions(false),
+            toggleFullscreen,
+            translate,
+            updateSlide
+          }}
         />
       )}
     </div>
@@ -184,11 +187,12 @@ Personality.propTypes = {
     get: PropTypes.func.isRequired,
     set: PropTypes.func.isRequired
   }).isRequired,
-  element: PropTypes.shape({current: PropTypes.instanceOf(Element)}),
+  element: PropTypes.instanceOf(Element),
   getAssessment: PropTypes.func.isRequired,
   getCacheKey: PropTypes.func.isRequired,
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   traitify: TraitifyPropTypes.traitify.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired

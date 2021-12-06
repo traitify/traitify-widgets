@@ -8,7 +8,7 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-function PersonalityDimensionList({element, ...props}) {
+function PersonalityDimensionList({setElement, ...props}) {
   const {assessment, getOption, isReady, translate, ui} = props;
   const state = {};
 
@@ -26,7 +26,7 @@ function PersonalityDimensionList({element, ...props}) {
   const types = sortByTypePosition(assessment.personality_types);
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       {allowHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
       {!disableChart && <PersonalityDimensionChart {...props} />}
       {!disableDetails && (
@@ -44,7 +44,7 @@ function PersonalityDimensionList({element, ...props}) {
   );
 }
 
-PersonalityDimensionList.defaultProps = {assessment: null, element: null};
+PersonalityDimensionList.defaultProps = {assessment: null};
 PersonalityDimensionList.propTypes = {
   assessment: PropTypes.shape({
     personality_types: PropTypes.arrayOf(
@@ -55,12 +55,9 @@ PersonalityDimensionList.propTypes = {
       }).isRequired
     )
   }),
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

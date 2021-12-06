@@ -18,6 +18,7 @@ describe("Paradox.PersonalityDimensionDetails", () => {
         locale_key: assessment.locale_key,
         ...guide
       },
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       type: assessment.personality_types[0],
       ui: {

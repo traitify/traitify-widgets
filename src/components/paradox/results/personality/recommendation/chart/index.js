@@ -15,7 +15,7 @@ const ranks = [
   {key: "potential_risk", rank: "low"}
 ];
 
-function PersonalityRecommendationChart({element, ...props}) {
+function PersonalityRecommendationChart({setElement, ...props}) {
   const {
     assessment,
     benchmark,
@@ -55,7 +55,7 @@ function PersonalityRecommendationChart({element, ...props}) {
   const length = Math.max(...data.map(({data: points}) => points.length));
 
   return (
-    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={element}>
+    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>
       <div className={style.ranks}>
         {ranks.map(({key, rank}) => <div key={key} className={style[rank]}>{translate(key)}</div>)}
       </div>
@@ -109,7 +109,6 @@ PersonalityRecommendationChart.defaultProps = {
   assessment: null,
   benchmark: null,
   combined: false,
-  element: null,
   guide: null
 };
 PersonalityRecommendationChart.propTypes = {
@@ -143,10 +142,6 @@ PersonalityRecommendationChart.propTypes = {
     )
   }),
   combined: PropTypes.bool,
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
   guide: PropTypes.shape({
@@ -160,6 +155,7 @@ PersonalityRecommendationChart.propTypes = {
     locale_key: PropTypes.string.isRequired
   }),
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

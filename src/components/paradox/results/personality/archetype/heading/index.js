@@ -40,7 +40,7 @@ const getData = ({personality, perspective}) => {
   return data;
 };
 
-function PersonalityArchetypeHeading({element, ...props}) {
+function PersonalityArchetypeHeading({setElement, ...props}) {
   const {assessment, deck, followDeck, getOption, isReady, translate, ui} = props;
   const personality = dig(assessment, "archetype");
   const state = {};
@@ -65,7 +65,7 @@ function PersonalityArchetypeHeading({element, ...props}) {
   } = getData({personality, perspective: getOption("perspective")});
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       <div className={style.details}>
         <div>
           {badge.url && (
@@ -99,7 +99,7 @@ function PersonalityArchetypeHeading({element, ...props}) {
   );
 }
 
-PersonalityArchetypeHeading.defaultProps = {assessment: null, deck: null, element: null};
+PersonalityArchetypeHeading.defaultProps = {assessment: null, deck: null};
 PersonalityArchetypeHeading.propTypes = {
   assessment: PropTypes.shape({
     archetype: PropTypes.shape({
@@ -113,13 +113,10 @@ PersonalityArchetypeHeading.propTypes = {
     })
   }),
   deck: PropTypes.shape({name: PropTypes.string.isRequired}),
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   followDeck: PropTypes.func.isRequired,
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

@@ -21,6 +21,7 @@ describe("Paradox.CandidateResults", () => {
       followGuide: jest.fn().mockName("followGuide"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
       options: {},
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
       ui: {
         current: {},

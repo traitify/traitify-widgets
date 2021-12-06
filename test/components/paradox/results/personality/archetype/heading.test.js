@@ -36,6 +36,7 @@ describe("Paradox.PersonalityArchetypeHeading", () => {
       followDeck: jest.fn().mockName("followDeck"),
       getOption: jest.fn().mockName("getOption"),
       isReady: jest.fn().mockName("isReady").mockReturnValue(true),
+      setElement: jest.fn().mockName("setElement"),
       translate: jest.fn().mockName("translate").mockImplementation((value, _options = {}) => `${value}, ${_options}`),
       ui: {
         current: {},

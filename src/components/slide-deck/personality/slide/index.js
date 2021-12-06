@@ -100,6 +100,8 @@ export default class Slide extends Component {
       progress = isComplete ? 100 : (slideIndex / slides.length) * 100;
     }
 
+    const globalClass = "traitify--response-button";
+
     return (
       <div className={`${style.slideContainer} ${isLikertScale ? style.likertScale : ""}`}>
         <div className={style.captionContainer}>
@@ -115,25 +117,25 @@ export default class Slide extends Component {
           <div className={style.responseContainer}>
             {isLikertScale ? (
               <div className={style.buttons}>
-                <button className={`${style.notMe} ${style.reallyNotMe}`} onClick={this.respondLikertReallyNotMe} type="button">
+                <button className={`${globalClass} ${style.notMe} ${style.reallyNotMe}`} onClick={this.respondLikertReallyNotMe} type="button">
                   {translate("really_not_me")}
                 </button>
-                <button className={style.notMe} onClick={this.respondLikertNotMe} type="button">
+                <button className={`${globalClass} ${style.notMe}`} onClick={this.respondLikertNotMe} type="button">
                   {translate("not_me")}
                 </button>
-                <button className={style.me} onClick={this.respondLikertMe} type="button">
+                <button className={`${globalClass} ${style.me}`} onClick={this.respondLikertMe} type="button">
                   {translate("me")}
                 </button>
-                <button className={`${style.me} ${style.reallyMe}`} onClick={this.respondLikertReallyMe} type="button">
+                <button className={`${globalClass} ${style.me} ${style.reallyMe}`} onClick={this.respondLikertReallyMe} type="button">
                   {translate("really_me")}
                 </button>
               </div>
             ) : (
               <div className={style.buttons}>
-                <button className={style.me} onClick={this.respondMe} type="button">
+                <button className={`${globalClass} ${style.me}`} onClick={this.respondMe} type="button">
                   {translate("me")}
                 </button>
-                <button className={style.notMe} onClick={this.respondNotMe} type="button">
+                <button className={`${globalClass} ${style.notMe}`} onClick={this.respondNotMe} type="button">
                   {translate("not_me")}
                 </button>
               </div>

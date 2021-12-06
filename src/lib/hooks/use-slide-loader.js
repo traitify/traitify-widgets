@@ -63,10 +63,10 @@ export function reduceActions(state, action) {
     case "reset": {
       const {cachedSlides, getImageURL, slides: _slides} = action;
       const slides = mutable(_slides).map(({likert_response: likertResponse, ...slide}) => {
-        const storedSlide = cachedSlides.find(({id}) => id === slide.id);
+        const cachedSlide = cachedSlides.find(({id}) => id === slide.id);
 
-        return storedSlide
-          ? {...slide, response: storedSlide.response, time_taken: storedSlide.time_taken}
+        return cachedSlide
+          ? {...slide, response: cachedSlide.response, time_taken: cachedSlide.time_taken}
           : {...slide, response: likertResponse || slide.response};
       }).map((slide) => ({...slide, image: getImageURL({size: state.size, slide}), loaded: false}));
 

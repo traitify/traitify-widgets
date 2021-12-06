@@ -1,18 +1,15 @@
-@import "~style/helpers";
-@import "~style/variables";
+@import "~style/paradox/helpers";
 
 .container {
-  @extend %widgetContainer;
+  @extend %container;
 
-  position: relative;
   min-height: 100vh;
-  @include mq(m) {
-    min-height: $minHeight;
-  }
+  position: relative;
 
+  @include min-width(md) { min-height: $min-height; }
   &:fullscreen {
+    bottom: 0;
     position: fixed;
     top: 0;
-    bottom: 0;
   }
 }

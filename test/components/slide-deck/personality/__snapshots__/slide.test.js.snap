@@ -46,28 +46,28 @@ exports[`Slide likert scale renders component 1`] = `
       className="buttons"
     >
       <button
-        className="notMe reallyNotMe"
+        className="traitify--response-button notMe reallyNotMe"
         onClick={[Function]}
         type="button"
       >
         really_not_me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
         not_me
       </button>
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="me reallyMe"
+        className="traitify--response-button me reallyMe"
         onClick={[Function]}
         type="button"
       >
@@ -131,14 +131,14 @@ exports[`Slide renders back button 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -205,14 +205,14 @@ exports[`Slide renders back button unless first slide 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -269,14 +269,14 @@ exports[`Slide renders complete progress bar 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -333,14 +333,14 @@ exports[`Slide renders component 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -404,14 +404,14 @@ exports[`Slide renders component with previous and next slides 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -468,14 +468,14 @@ exports[`Slide renders component with previous slide 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -532,14 +532,14 @@ exports[`Slide renders fullscreen 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >
@@ -602,14 +602,14 @@ exports[`Slide renders fullscreen button 1`] = `
       className="buttons"
     >
       <button
-        className="me"
+        className="traitify--response-button me"
         onClick={[Function]}
         type="button"
       >
         me
       </button>
       <button
-        className="notMe"
+        className="traitify--response-button notMe"
         onClick={[Function]}
         type="button"
       >

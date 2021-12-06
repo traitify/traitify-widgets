@@ -8,8 +8,16 @@ jest.mock("components/results/personality/dimension/list", () => (() => (<div cl
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Paradox.EmployeeResults", () => {
+  let props;
+
+  beforeEach(() => {
+    props = {
+      setElement: jest.fn().mockName("setElement")
+    };
+  });
+
   it("renders component", () => {
-    const component = new ComponentHandler(<Component />);
+    const component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

@@ -5,13 +5,21 @@ import useResizeMock from "support/hooks/use-resize-mock";
 import useWindowMock from "support/hooks/use-window-mock";
 
 describe("useElementSize", () => {
+  let component;
+  let element;
+  let size;
+  const Component = (props) => {
+    size.current = useElementSize(props.element);
+
+    return null;
+  };
+
+  beforeEach(() => {
+    element = {clientHeight: 800, clientWidth: 600};
+    size = createRef(null);
+  });
+
   describe("listeners", () => {
-    function Component() {
-      useElementSize();
-
-      return null;
-    }
-
     useWindowMock("addEventListener");
     useWindowMock("removeEventListener");
 
@@ -22,29 +30,26 @@ describe("useElementSize", () => {
     });
 
     it("removes resize event listener", () => {
-      const component = new ComponentHandler(<Component />);
+      component = new ComponentHandler(<Component />);
       component.unmount();
 
+      expect(window.removeEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
+    });
+
+    it("updates listeners for new element", () => {
+      component = new ComponentHandler(<Component />);
+      window.addEventListener.mockClear();
+      window.removeEventListener.mockClear();
+      component.updateProps({element});
+
+      expect(size.current).toEqual([600, 800]);
+      expect(window.addEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
       expect(window.removeEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
     });
   });
 
   describe("values", () => {
-    let component;
-    let element;
-    let size;
-    const Component = (props) => {
-      size.current = useElementSize(props.element);
-
-      return null;
-    };
-
     useResizeMock();
-
-    beforeEach(() => {
-      element = {clientHeight: 800, clientWidth: 600};
-      size = createRef(null);
-    });
 
     it("returns blank size", () => {
       component = new ComponentHandler(<Component />);

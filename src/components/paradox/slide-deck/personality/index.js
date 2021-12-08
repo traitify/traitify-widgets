@@ -1,15 +1,22 @@
+import {
+  faChevronLeft,
+  faCompressArrowsAlt,
+  faExpandArrowsAlt
+} from "@fortawesome/free-solid-svg-icons";
+import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
+import Loading from "components/loading";
+import Icon from "lib/helpers/icon";
+import {dig, slice, toQueryString} from "lib/helpers/object";
+import TraitifyPropTypes from "lib/helpers/prop-types";
+import {camelCase} from "lib/helpers/string";
 import useDidMount from "lib/hooks/use-did-mount";
 import useDidUpdate from "lib/hooks/use-did-update";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import useSlideLoader from "lib/hooks/use-slide-loader";
-import {dig, slice, toQueryString} from "lib/helpers/object";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import {camelCase} from "lib/helpers/string";
 import withTraitify from "lib/with-traitify";
-import NotReady from "./not-ready";
-import Slide from "./slide";
+import Image from "./image";
 import style from "./style.scss";
 
 const maxRetries = 2;
@@ -26,7 +33,15 @@ function Personality({element, setElement, ...props}) {
     translate,
     ui
   } = props;
-  const {error, dispatch, ready, slideIndex, slides} = useSlideLoader({element, translate});
+  const caption = useRef(null);
+  const image = useRef(null);
+  const {
+    error,
+    dispatch,
+    ready,
+    slideIndex,
+    slides
+  } = useSlideLoader({element: image.current, translate});
   const [fullscreen, toggleFullscreen] = useFullscreen(element);
   const [instructions, setInstructions] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
@@ -127,19 +142,22 @@ function Personality({element, setElement, ...props}) {
         newError = response;
       }
 
-      setSubmitAttempts(submitAttempts + 1);
-      if(submitAttempts >= maxRetries) { setSubmitError(newError); }
+      setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
+      if(submitAttempts >= maxRetries) { setSubmitError(newError || "Error Submitting"); }
     });
   }, [finished, submitAttempts]);
 
+  useLayoutEffect(() => {
+    if(!caption.current) { return; }
+
+    caption.current.focus();
+  }, [showInstructions, slideIndex]);
+
   if(resultsReady) { return null; }
 
-  const retry = () => {
-    if(!submitError) { return dispatch({action: "retry"}); }
-
-    setSubmitAttempts(0);
-    setSubmitError(null);
-  };
+  const back = () => dispatch({type: "back"});
+  const content = {};
+  const currentSlide = slides[slideIndex];
   const updateSlide = (index, value) => {
     dispatch({index, response: value, type: "answer"});
 
@@ -148,28 +166,100 @@ function Personality({element, setElement, ...props}) {
     ui.trigger("SlideDeck.updateSlide", {props, state});
   };
 
+  if(submitError || error) {
+    const retry = () => {
+      if(!submitError) { return dispatch({type: "retry"}); }
+
+      setSubmitAttempts(0);
+      setSubmitError(null);
+    };
+
+    content.caption = submitError || error;
+    content.image = (
+      <div className={style.error}>
+        <button className={style.link} onClick={retry} type="button">
+          {translate("try_again")}
+        </button>
+      </div>
+    );
+  } else if(showInstructions) {
+    content.caption = translate("instructions");
+    content.image = (
+      <>
+        <div className={`${style.slide} ${style.middle}`}>
+          <div className={style.instructionsSlide}>
+            <div className={style.instructionsText}>
+              <Markdown>{instructions}</Markdown>
+            </div>
+            <button className={style.instructionsButton} onClick={() => setShowInstructions(false)} type="button">
+              {translate("get_started")}
+            </button>
+          </div>
+        </div>
+        {currentSlide && <Image key={currentSlide.id} orientation="right" slide={currentSlide} />}
+      </>
+    );
+  } else if(!ready || finished) {
+    content.caption = translate("loading");
+    content.image = <div className={style.loading}><Loading /></div>;
+  } else {
+    const lastSlide = slides[slideIndex - 1];
+    const nextSlide = slides[slideIndex + 1];
+    const progress = slides.length > 0 ? (slideIndex / slides.length) * 100 : 0;
+
+    content.caption = currentSlide.caption;
+    content.enabled = true;
+    content.image = (
+      <>
+        <div className={style.progress} style={{width: `${progress}%`}} />
+        {lastSlide && <Image key={lastSlide.id} orientation="left" slide={lastSlide} />}
+        <Image key={currentSlide.id} orientation="middle" slide={currentSlide} />
+        {nextSlide && <Image key={nextSlide.id} orientation="right" slide={nextSlide} />}
+        {getOption("allowBack") && slideIndex > 0 && (
+          <button className={style.back} onClick={back} type="button">
+            <Icon alt={translate("back")} icon={faChevronLeft} />
+          </button>
+        )}
+        {getOption("allowFullscreen") && (
+          <button className={style.fullscreen} onClick={toggleFullscreen} type="button">
+            <Icon icon={fullscreen ? faCompressArrowsAlt : faExpandArrowsAlt} />
+          </button>
+        )}
+      </>
+    );
+  }
+
+  const buttonClass = [
+    "traitify--response-button",
+    style.response,
+    !content.enabled && style.btnDisabled
+  ].filter(Boolean).join(" ");
+  const buttons = likertScale ? [
+    {key: "really_not_me", response: "REALLY_NOT_ME"},
+    {key: "not_me", response: "NOT_ME"},
+    {key: "me", response: "ME"},
+    {key: "really_me", response: "REALLY_ME"}
+  ] : [
+    {key: "me", response: true},
+    {key: "not_me", response: false}
+  ];
+
   return (
-    <div className={style.container} ref={setElement}>
-      {(finished || !ready) ? (
-        <NotReady error={submitError || error} retry={retry} translate={translate} />
-      ) : (
-        <Slide
-          {...{
-            back: () => dispatch({type: "back"}),
-            fullscreen,
-            getOption,
-            instructions,
-            likertScale,
-            showInstructions,
-            slideIndex,
-            slides,
-            start: () => setShowInstructions(false),
-            toggleFullscreen,
-            translate,
-            updateSlide
-          }}
-        />
-      )}
+    <div className={[style.container, likertScale && style.likertScale].filter(Boolean).join(" ")} ref={setElement}>
+      <div className={style.caption} ref={caption} tabIndex="-1">{content.caption}</div>
+      <div className={style.image} ref={image}>{content.image}</div>
+      <div className={style.buttons}>
+        {buttons.map(({key, response}) => (
+          <button
+            key={key}
+            className={[buttonClass, style[camelCase(key)]].join(" ")}
+            onClick={content.enabled && (() => updateSlide(slideIndex, response))}
+            type="button"
+          >
+            {translate(key)}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

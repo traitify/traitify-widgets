@@ -1,8 +1,57 @@
 @import "~style/paradox/helpers";
 
+.buttons, .caption { flex: 0 0; }
+.buttons {
+  margin: $buffer auto;
+
+  .me {
+    border-bottom-left-radius: $border-radius-sm;
+    border-top-left-radius: $border-radius-sm;
+
+    @include theme("background-color", "me-color");
+    &:active, &:hover { @include theme("background-color", "me-active-color"); }
+  }
+  .notMe {
+    border-bottom-right-radius: $border-radius-sm;
+    border-top-right-radius: $border-radius-sm;
+
+    @include theme("background-color", "not-me-color");
+    &:active, &:hover { @include theme("background-color", "not-me-active-color"); }
+  }
+  .response {
+    display: inline-block;
+    font-size: 20px;
+    margin: 1px;
+    padding: $buffer * 0.5;
+    text-align: center;
+    width: 150px;
+
+    @include theme("color", "button-color");
+    &:focus {
+      outline-offset: -1px;
+      outline-style: solid;
+      outline-width: 1px;
+    }
+  }
+  button.btnDisabled {
+    &:active, &:hover { @include theme("background-color", "inactive-color"); }
+  }
+}
+.caption {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
+  text-align: center;
+
+  @include theme("color", "text-color");
+  &:focus, &:focus-visible { outline: none; }
+}
 .container {
   @extend %container;
 
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   min-height: 100vh;
   position: relative;
 
@@ -12,4 +61,166 @@
     position: fixed;
     top: 0;
   }
+  .back, .fullscreen {
+    border-radius: $border-radius-sm;
+    bottom: 100px;
+    height: 40px;
+    opacity: 0.7;
+    padding: $buffer * 0.5;
+    position: absolute;
+    width: 40px;
+    z-index: 1;
+
+    @include min-width(xs) { bottom: 36px; }
+    @include theme("color", "button-color");
+    @include theme("background-color", "progress-bar-color");
+    &:hover{ opacity: 1; }
+    svg {
+      height: 100%;
+      margin: auto;
+      width: auto;
+    }
+  }
+  .back {
+    margin-right: 110px;
+    right: 50%;
+
+    @include min-width(xs) {
+      left: 30px;
+      margin-right: 0;
+      right: auto;
+    }
+  }
+  .fullscreen {
+    left: 50%;
+    margin-left: 110px;
+
+    @include min-width(xs) {
+      left: auto;
+      margin-left: 0;
+      right: 30px;
+    }
+  }
 }
+.error, .loading {
+  height: 100%;
+
+  @include theme("background-color", "inactive-color");
+}
+.error {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.image {
+  border-radius: $border-radius;
+  flex: 1 1 0;
+  overflow: hidden;
+  position: relative;
+}
+/*
+// TODO: Likert
+.likertScale {
+  .buttons {
+    .me, .reallyMe {
+      @include theme("background-color", "me-color");
+      &:active, &:hover { @include theme("background-color", "me-active-color"); }
+    }
+    .me { border-left-width: 1px; }
+    .notMe { border-right-width: 1px; }
+    .notMe, .reallyNotMe {
+      @include theme("background-color", "not-me-color");
+      &:active, &:hover { @include theme("background-color", "not-me-active-color"); }
+    }
+    .reallyMe { border-left-width: 2px; }
+    .reallyNotMe { border-right-width: 2px; }
+    .response {
+      border: 0 solid white;
+      max-width: 25%;
+      vertical-align: top;
+      width: 150px;
+    }
+  }
+}
+*/
+.progress {
+  height: $border-width-xl;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: width 0.3s;
+  width: 0%;
+  z-index: 1;
+
+  @include theme("background-color", "progress-bar-color");
+}
+.slide {
+  bottom: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+
+  &.left { left: 0%; }
+  &.middle {
+    transition: left 0.3s;
+    left: 0%;
+  }
+  &.right { left: 100%; }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/*
+// TODO: Move or Remove
+$instructions-active-color: #318b40;
+$instructions-color: #3ca94e;
+
+.instructionsButton {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  background: #3ca94e;
+  background: $instructions-color;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 70px;
+  cursor: pointer;
+
+  &:hover {
+    background: $instructions-active-color;
+  }
+  @include min-width(lg) {
+    font-size: 32px;
+    padding: 10px 80px;
+  }
+}
+.instructionsSlide {
+  background: url("https://cdn.traitify.com/assets/images/js/instructions_slide.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 70px 20px 0;
+}
+.instructionsStart {
+  text-align: center;
+}
+.instructionsText {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  @include min-width(md) {
+    margin: 0 auto 30px;
+  }
+  @include min-width(lg) {
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+  }
+  h1 { margin: 10px 0; }
+}
+*/

@@ -24,7 +24,7 @@ $buffer-section: $buffer * 3;
 $font-size: 16px;
 $font-size-sm: 12px;
 $font-size-heading: 24px;
-$min-height: 600px;
+$min-height: 800px;
 
 // Private - To be used through color scheme
 $-black: #555555;
@@ -49,10 +49,13 @@ $-theme-color: $-blue;
 $color-scheme-dark: (
   "background-color": $-black,
   "border-color": $-border-color,
+  "button-color": $-white,
+  "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
   "me-color": $-traitify-blue,
   "not-me-active-color": $-traitify-red-dark,
   "not-me-color": $-traitify-red,
+  "progress-bar-color": $-theme-color,
   "rank-high": $-green,
   "rank-high-light": $-green-light,
   "rank-low": $-red,
@@ -67,10 +70,13 @@ $color-scheme-dark: (
 $color-scheme-light: (
   "background-color": $-white,
   "border-color": $-border-color,
+  "button-color": $-white,
+  "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
   "me-color": $-traitify-blue,
   "not-me-active-color": $-traitify-red-dark,
   "not-me-color": $-traitify-red,
+  "progress-bar-color": $-theme-color,
   "rank-high": $-green,
   "rank-high-light": $-green-light,
   "rank-low": $-red,

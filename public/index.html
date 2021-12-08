@@ -190,7 +190,6 @@
 
         Object.keys(additionalOptions).forEach((name) => {
           let value = localStorage.getItem(name);
-          console.log(name, value);
 
           if(value == null) { return; }
           if(name.startsWith("allow")) {
@@ -263,7 +262,7 @@
           if(name.startsWith("allow")) {
             if(value == "") { value = name == "allowInstructions"; }
 
-            widget[value ? name : name.replace("allow", "disable")]();
+            widget[booleanFrom(value) ? name : name.replace("allow", "disable")]();
           } else {
             widget[name](value);
           }

@@ -186,15 +186,11 @@ function Personality({element, setElement, ...props}) {
     content.caption = translate("instructions");
     content.image = (
       <>
-        <div className={`${style.slide} ${style.middle}`}>
-          <div className={style.instructionsSlide}>
-            <div className={style.instructionsText}>
-              <Markdown>{instructions}</Markdown>
-            </div>
-            <button className={style.instructionsButton} onClick={() => setShowInstructions(false)} type="button">
-              {translate("get_started")}
-            </button>
-          </div>
+        <div className={[style.instructions, style.slide, style.middle].join(" ")}>
+          <Markdown className={style.markdown}>{instructions}</Markdown>
+          <button onClick={() => setShowInstructions(false)} type="button">
+            {translate("get_started")}
+          </button>
         </div>
         {currentSlide && <Image key={currentSlide.id} orientation="right" slide={currentSlide} />}
       </>
@@ -212,7 +208,7 @@ function Personality({element, setElement, ...props}) {
     content.image = (
       <>
         <div className={style.progress} style={{width: `${progress}%`}} />
-        {lastSlide && <Image key={lastSlide.id} orientation="left" slide={lastSlide} />}
+        {dig(lastSlide, "loaded") && <Image key={lastSlide.id} orientation="left" slide={lastSlide} />}
         <Image key={currentSlide.id} orientation="middle" slide={currentSlide} />
         {nextSlide && <Image key={nextSlide.id} orientation="right" slide={nextSlide} />}
         {getOption("allowBack") && slideIndex > 0 && (

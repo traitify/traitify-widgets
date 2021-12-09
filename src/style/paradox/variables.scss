@@ -24,7 +24,8 @@ $buffer-section: $buffer * 3;
 $font-size: 16px;
 $font-size-sm: 12px;
 $font-size-heading: 24px;
-$min-height: 800px;
+$line-height: 1.5;
+$min-height: 750px;
 
 // Private - To be used through color scheme
 $-black: #555555;
@@ -49,7 +50,6 @@ $-theme-color: $-blue;
 $color-scheme-dark: (
   "background-color": $-black,
   "border-color": $-border-color,
-  "button-color": $-white,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
   "me-color": $-traitify-blue,
@@ -65,12 +65,12 @@ $color-scheme-dark: (
   "rank-other": $-white,
   "rank-other-light": $-gray,
   "text-color": $-white,
+  "text-color-light": $-white,
   "theme-color": $-theme-color
 );
 $color-scheme-light: (
   "background-color": $-white,
   "border-color": $-border-color,
-  "button-color": $-white,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
   "me-color": $-traitify-blue,
@@ -86,6 +86,7 @@ $color-scheme-light: (
   "rank-other": $-black,
   "rank-other-light": $-black,
   "text-color": $-black,
+  "text-color-light": $-white,
   "theme-color": $-theme-color
 );
 $color-scheme-default: $color-scheme-light;

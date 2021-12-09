@@ -3,7 +3,7 @@
 .bar {
   height: $buffer * 0.5;
 
-  @include min-width(xl) { height: $buffer; }
+  @include min-width("xl") { height: $buffer; }
 }
 .container {
   @include buffer("margin-bottom");
@@ -24,7 +24,7 @@
   display: block;
   font-size: $font-size;
 
-  @include min-width(sm) {
+  @include min-width("sm") {
     display: inline-block;
     margin-left: $buffer;
 

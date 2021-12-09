@@ -105,7 +105,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         this.setState({assessmentID: this.props.assessmentID});
       }
 
-      if(prevState.element !== this.state.element) { this.updateColorScheme(); }
       if(this.getOption("surveyType") === "cognitive") { return this.cognitiveDidUpdate(prevProps, prevState); }
 
       if(prevProps.benchmarkID !== this.props.benchmarkID) {
@@ -140,6 +139,8 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       if(this.state.followingGuide && (changes.assessment || changes.locale)) {
         this.updateGuide({oldID: prevState.assessment?.id, oldLocale: prevState.locale});
       }
+
+      this.updateColorScheme(); // Performed every time to because React may remove side-effects
     }
     componentDidCatch(error, info) {
       this.ui.trigger("Component.error", this, {error, info});

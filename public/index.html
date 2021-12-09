@@ -15,15 +15,15 @@
       <div id="traits"></div>
     </div>
     <style>
-      .additional-option { display: block; margin: 12px; }
       .dark {
         background: #555555;
         color: #FFFFFF;
       }
-      .flex { display: flex; }
       .hide { display: none; }
       .row { margin: 12px; }
+      .row .row { display: block; margin: 12px; }
       @media(min-width: 960px) {
+        .flex { display: flex; }
         .row {
           margin-left: 48px;
           margin-right: 48px;
@@ -135,9 +135,13 @@
       </div>
     </div>
     <div class="row">
-      <button onclick="createAssessment()">New Assessment</button>
       <button onclick="refreshWidget()">Refresh Widget</button>
       <button onclick="destroyWidget()">Destroy Widget</button>
+    </div>
+    <div class="row" id="params">
+    </div>
+    <div class="row">
+      <button onclick="createAssessment()">New Assessment</button>
     </div>
     <script src="build/traitify.js"></script>
     <script>
@@ -163,9 +167,9 @@
         return fallback;
       }
 
-      function createWidget(){
+      function createWidget() {
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-        if(!assessmentID){ return; }
+        if(!assessmentID) { return; }
 
         var colorScheme = localStorage.getItem("color-scheme");
         var deckID = localStorage.getItem("deck-id");
@@ -202,16 +206,16 @@
         widget.options.slideDeck.captureLearningDisability = true;
         widget.options.slideDeck.disableTimeLimit = true;
         widget.options.slideDeck.initialLearningDisability = true;
-        widget.render().then(function(){
+        widget.render().then(function() {
           console.log("Rendered");
-        }).catch(function(error){
+        }).catch(function(error) {
           console.log(error);
         });
 
         updateColorScheme();
       }
 
-      function createAssessment(){
+      function createAssessment() {
         destroyWidget();
 
         var surveyType = document.querySelector("#survey-type").value
@@ -224,23 +228,27 @@
           });
 
           Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
-            try{
+            try {
               localStorage.setItem("test-id", response.data.createCognitiveTest.id);
-            }catch(error){
+            } catch(error) {
               console.log(error);
             }
             setTimeout(createWidget, 500);
           });
         } else {
-          Traitify.post("/assessments", {
+          var params = {
             deck_id: document.querySelector("#deck-id").value,
-            locale_key: document.querySelector("#locale").value,
-            package_id: "cfc05114-b8af-43fb-af27-c175e0cc25ee"
-          }).then(function(assessment){
-            try{
+            locale_key: document.querySelector("#locale").value
+          };
+          var customParams = JSON.parse(localStorage.getItem("params") || "{}");
+          Object.keys(customParams).filter((key) => customParams[key])
+            .forEach((key) => params[key] = customParams[key]);
+
+          Traitify.post("/assessments", params).then(function(assessment) {
+            try {
               localStorage.setItem("assessment-id", assessment.id);
               localStorage.setItem("deck-id", assessment.deck_id);
-            }catch(error){
+            }catch(error) {
               console.log(error);
             }
             setTimeout(createWidget, 500);
@@ -248,7 +256,7 @@
         }
       }
 
-      function destroyWidget() { if(widget){ widget.destroy(); } }
+      function destroyWidget() { if(widget) { widget.destroy(); } }
 
       function onChange(e) {
         var name = e.target.name;
@@ -277,19 +285,19 @@
         }
       }
 
-      function refreshWidget(){
-        if(widget) {
-          var surveyType = localStorage.getItem("survey-type");
-          var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-          var targets = setTargets();
+      function refreshWidget() {
+        if(!widget) { return; }
 
-          widget.assessmentID(assessmentID).targets(targets).refresh();
+        var surveyType = localStorage.getItem("survey-type");
+        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
+        var targets = setTargets();
 
-          updateColorScheme();
-        }
+        widget.assessmentID(assessmentID).targets(targets).refresh();
+
+        updateColorScheme();
       }
 
-      function setTargets(){
+      function setTargets() {
         var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
         var targets = {
@@ -349,7 +357,7 @@
           });
           label.appendChild(document.createTextNode(`${additionalOptions[key]}: `));
           label.appendChild(select);
-          label.className = "additional-option";
+          label.className = "row";
           label.htmlFor = id;
           element.appendChild(label);
           inputs.push(id);
@@ -360,7 +368,7 @@
         return inputs;
       }
 
-      function setupOptions(){
+      function setupOptions() {
         var inputs = [
           "color-scheme",
           "deck-id",
@@ -398,10 +406,56 @@
         }
       }
 
-      function setupSurveys(){
+      function setupParams() {
+        var saveParams = () => {
+          var params = {};
+          document.querySelectorAll("#params input:not(#new-param-input)").forEach((input) => {
+            params[input.name] = input.value;
+          });
+
+          localStorage.setItem("params", JSON.stringify(params));
+        };
+
+        var addParam = (name, value) => {
+          var id = `param-${name}`;
+          if(document.querySelector(`#${id}`)) { return; }
+
+          document.querySelector("#new-param").insertAdjacentHTML("beforebegin", `
+            <label class="row" for="${id}-input" id="${id}">
+              ${name}: <input id="${id}-input" name="${name}" value="${value}"><button type="button">X</button>
+            </label>
+          `);
+          document.querySelector(`#${id}-input`).addEventListener("change", saveParams);
+          document.querySelector(`#${id} button`).addEventListener("click", (e) => {
+            e.currentTarget.parentElement.remove();
+
+            saveParams();
+          });
+        };
+
+        document.querySelector("#params").appendChild(document.createTextNode("Params: "));
+        document.querySelector("#params").insertAdjacentHTML("beforeend", `
+          <label class="row" for="new-param-input" id="new-param">
+            New Param: <input id="new-param-input" name="new-param-input"><button type="button">Add</button>
+          </label>
+        `);
+        document.querySelector("#new-param button").addEventListener("click", (e) => {
+          var target = e.currentTarget.parentElement.querySelector("input");
+          if(target.value) {
+            addParam(target.value, "");
+            saveParams();
+          }
+          target.value = "";
+        });
+
+        var params = JSON.parse(localStorage.getItem("params") || "{}");
+        Object.keys(params).forEach((key) => addParam(key, params[key]));
+      }
+
+      function setupSurveys() {
         var query = Traitify.graphql.queries.cognitive.surveys();
 
-        Traitify.post("/cognitive-tests/graphql", query).then(function(response)  {
+        Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
           var values = [];
           var select = document.querySelector("#survey-id");
 
@@ -424,7 +478,7 @@
         });
       }
 
-      function updateColorScheme(){
+      function updateColorScheme() {
         var colorScheme = localStorage.getItem("color-scheme") || "light";
         var theme = localStorage.getItem("theme");
         if(theme !== "paradox") { colorScheme = "light"; }
@@ -438,6 +492,7 @@
         });
       }
 
+      setupParams();
       setupSurveys();
       setupOptions();
       createWidget();

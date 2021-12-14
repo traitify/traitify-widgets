@@ -1,4 +1,3 @@
-/* eslint-disable max-len, no-unused-vars, jest/no-focused-tests */
 import {useState} from "react";
 import {Component} from "components/paradox/slide-deck/personality";
 import {times} from "lib/helpers/array";

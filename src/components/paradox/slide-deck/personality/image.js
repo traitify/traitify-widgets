@@ -12,7 +12,7 @@ function Image({orientation, slide}) {
 Image.propTypes = {
   orientation: PropTypes.string.isRequired,
   slide: PropTypes.shape({
-    alternative_text: PropTypes.string.isRequired,
+    alternative_text: PropTypes.string,
     image: PropTypes.string.isRequired
   }).isRequired
 };

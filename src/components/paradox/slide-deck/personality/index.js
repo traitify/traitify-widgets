@@ -55,9 +55,13 @@ function Personality({element, setElement, ...props}) {
   const likertScale = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const resultsReady = isReady("results");
   const state = {
+    dispatch,
+    error,
     finished,
     fullscreen,
+    ready,
     showInstructions,
+    slideIndex,
     slides
   };
 
@@ -65,7 +69,8 @@ function Personality({element, setElement, ...props}) {
   useDidUpdate(() => { ui.trigger("SlideDeck.updated", {props, state}); });
   useDidUpdate(() => { ui.trigger("SlideDeck.fullscreen", {props, state}, fullscreen); }, [fullscreen]);
   useEffect(() => {
-    if(!dig(assessment, "slides")) { return; }
+    if(!assessment) { return; }
+    if(assessment.slides.length === 0) { return; }
 
     const cachedData = cache.get(getCacheKey("slide-deck")) || {};
     const getImageURL = ({size, slide}) => {
@@ -201,7 +206,7 @@ function Personality({element, setElement, ...props}) {
   } else {
     const lastSlide = slides[slideIndex - 1];
     const nextSlide = slides[slideIndex + 1];
-    const progress = slides.length > 0 ? (slideIndex / slides.length) * 100 : 0;
+    const progress = (slideIndex / slides.length) * 100;
 
     content.caption = currentSlide.caption;
     content.enabled = true;

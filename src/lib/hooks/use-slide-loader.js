@@ -110,7 +110,7 @@ export default function useSlideLoader({element, translate}) {
     dispatch
   ] = useReducer(reducer, {...defaultState, ready: false, size, slideIndex: -1, slides: []});
 
-  useEffect(() => { dispatch({size, type: "resize"}); }, [size]);
+  useEffect(() => { dispatch({size, type: "resize"}); }, [...size]);
   useEffect(() => {
     if(imageLoading) { return; }
     if(imageLoadingAttempts > maxRetries) { return; }

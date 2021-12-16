@@ -7,7 +7,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
   <div
     className="p"
   >
-    dimension_description, [object Object]
+    dimension_description
   </div>
   <div
     className="horizontal"
@@ -26,7 +26,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Agreeableness badge, [object Object]"
+        alt="Agreeableness badge"
         src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
       />
     </div>
@@ -44,7 +44,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Extraversion badge, [object Object]"
+        alt="Extraversion badge"
         src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
       />
     </div>
@@ -62,7 +62,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Conscientiousness badge, [object Object]"
+        alt="Conscientiousness badge"
         src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
       />
     </div>
@@ -80,7 +80,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Openness badge, [object Object]"
+        alt="Openness badge"
         src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
       />
     </div>
@@ -98,7 +98,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Emotional Stability badge, [object Object]"
+        alt="Emotional Stability badge"
         src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
       />
     </div>
@@ -126,7 +126,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column high"
     >
       <img
-        alt="Agreeableness badge, [object Object]"
+        alt="Agreeableness badge"
         src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
       />
       <div
@@ -144,7 +144,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Extraversion badge, [object Object]"
+        alt="Extraversion badge"
         src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
       />
       <div
@@ -162,7 +162,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Conscientiousness badge, [object Object]"
+        alt="Conscientiousness badge"
         src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
       />
       <div
@@ -180,7 +180,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Openness badge, [object Object]"
+        alt="Openness badge"
         src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
       />
       <div
@@ -198,7 +198,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column low"
     >
       <img
-        alt="Emotional Stability badge, [object Object]"
+        alt="Emotional Stability badge"
         src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
       />
       <div
@@ -223,7 +223,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
   <div
     className="p"
   >
-    dimension_description, [object Object]
+    dimension_description
   </div>
   <div
     className="horizontal"
@@ -239,7 +239,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Agreeableness badge, [object Object]"
+        alt="Agreeableness badge"
         src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
       />
     </div>
@@ -254,7 +254,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Extraversion badge, [object Object]"
+        alt="Extraversion badge"
         src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
       />
     </div>
@@ -269,7 +269,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Conscientiousness badge, [object Object]"
+        alt="Conscientiousness badge"
         src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
       />
     </div>
@@ -284,7 +284,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Openness badge, [object Object]"
+        alt="Openness badge"
         src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
       />
     </div>
@@ -299,7 +299,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Emotional Stability badge, [object Object]"
+        alt="Emotional Stability badge"
         src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
       />
     </div>
@@ -327,7 +327,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column high"
     >
       <img
-        alt="Agreeableness badge, [object Object]"
+        alt="Agreeableness badge"
         src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
       />
       <div
@@ -340,7 +340,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Extraversion badge, [object Object]"
+        alt="Extraversion badge"
         src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
       />
       <div
@@ -353,7 +353,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Conscientiousness badge, [object Object]"
+        alt="Conscientiousness badge"
         src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
       />
       <div
@@ -366,7 +366,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Openness badge, [object Object]"
+        alt="Openness badge"
         src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
       />
       <div
@@ -379,7 +379,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column low"
     >
       <img
-        alt="Emotional Stability badge, [object Object]"
+        alt="Emotional Stability badge"
         src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
       />
       <div
@@ -391,3 +391,5 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
   </div>
 </div>
 `;
+
+exports[`Paradox.PersonalityDimensionChart renders nothing if results not ready 1`] = `null`;

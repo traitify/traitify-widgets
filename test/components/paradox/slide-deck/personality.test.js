@@ -3,7 +3,7 @@ import {Component} from "components/paradox/slide-deck/personality";
 import {times} from "lib/helpers/array";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler, {act} from "support/component-handler";
-import {flushPromises, mockOptions} from "support/helpers";
+import {flushPromises, mockOptions, mockProps} from "support/helpers";
 import useGlobalMock from "support/hooks/use-global-mock";
 import assessment from "support/json/assessment/with-slides.json";
 
@@ -46,28 +46,10 @@ describe("Personality", () => {
 
     options = {imageHost: "img.com"};
     props = {
-      assessment,
-      cache: {
-        get: jest.fn().mockName("get"),
-        set: jest.fn().mockName("set")
-      },
-      getAssessment: jest.fn().mockName("getAssessment"),
-      getCacheKey: jest.fn().mockName("getCacheKey").mockImplementation((key) => key),
-      getOption: jest.fn().mockName("getOption"),
-      isReady: jest.fn().mockName("isReady").mockImplementation(() => false),
-      setElement: jest.fn().mockName("setElement"),
-      traitify: {
-        get: jest.fn().mockName("get"),
-        put: jest.fn().mockName("put")
-      },
-      translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
+      ...mockProps(["cache", "getAssessment", "getCacheKey", "getOption", "isReady", "setElement", "traitify", "translate", "ui"]),
+      assessment
     };
+    props.isReady.mockReturnValue(false);
 
     mockOptions(props.getOption, {...options});
   });

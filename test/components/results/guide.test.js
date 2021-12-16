@@ -1,5 +1,6 @@
 import {Component} from "components/results/guide/index";
 import ComponentHandler from "support/component-handler";
+import {mockProps} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
 import guide from "support/json/guide.json";
@@ -7,27 +8,19 @@ import guide from "support/json/guide.json";
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Guide", () => {
+  let component;
   let props;
   let updatedCompetencies;
 
   beforeEach(() => {
     props = {
+      ...mockProps(["followBenchmark", "followGuide", "isReady", "translate", "ui"]),
       assessment,
       benchmark,
-      followBenchmark: jest.fn().mockName("followBenchmark"),
-      followGuide: jest.fn().mockName("followGuide"),
       guide: {
         assessment_id: "xyz",
         locale_key: "es-US",
         ...guide
-      },
-      isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
-      translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
       }
     };
 
@@ -51,7 +44,7 @@ describe("Guide", () => {
     });
 
     it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       props.ui.trigger.mockClear();
       component.updateProps();
 
@@ -67,7 +60,7 @@ describe("Guide", () => {
 
   describe("update", () => {
     it("sets the guide data if the benchmark changes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         benchmark: {
           ...benchmark,
@@ -82,7 +75,7 @@ describe("Guide", () => {
     });
 
     it("sets the guide data if the guide's assessment ID changes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         guide: {
           ...component.props.guide,
@@ -95,7 +88,7 @@ describe("Guide", () => {
     });
 
     it("sets the guide data if the guide's locale changes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         guide: {
           ...component.props.guide,
@@ -108,7 +101,7 @@ describe("Guide", () => {
     });
 
     it("sets the guide data if the guide's removed", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({guide: null});
 
       expect(component.tree).toMatchSnapshot();
@@ -128,21 +121,21 @@ describe("Guide", () => {
   });
 
   it("toggles expanded intro", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
     component.act(() => component.findByText("read_more").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("toggles question content", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
     component.act(() => component.instance.findAllByProps({className: "questionText"})[2].parent.props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("updates activeCompetency", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
     const alt = `${props.guide.competencies[1].name} badge`;
     component.act(() => component.instance.findByProps({alt}).parent.props.onClick());
 
@@ -150,7 +143,7 @@ describe("Guide", () => {
   });
 
   it("updates activeCompetency through select", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
     const value = props.guide.competencies[1].id;
     component.act(() => component.instance.findByType("select").props.onChange({target: {value}}));
 
@@ -158,7 +151,7 @@ describe("Guide", () => {
   });
 
   it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -166,7 +159,7 @@ describe("Guide", () => {
   it("renders component if benchmark not ready", () => {
     props.benchmark = null;
     props.isReady.mockImplementation((value) => value !== "benchmark");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -174,7 +167,7 @@ describe("Guide", () => {
   it("renders nothing if guide not ready", () => {
     props.guide = null;
     props.isReady.mockImplementation((value) => value !== "guide");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -182,14 +175,14 @@ describe("Guide", () => {
   it("renders nothing if results not ready", () => {
     props.assessment = null;
     props.isReady.mockImplementation((value) => value !== "results");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if no competencies", () => {
     props.guide.competencies = [];
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

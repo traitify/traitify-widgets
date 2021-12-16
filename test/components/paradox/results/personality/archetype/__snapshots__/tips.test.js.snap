@@ -12,21 +12,21 @@ exports[`Paradox.PersonalityArchetypeTips renders component 1`] = `
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -37,17 +37,17 @@ exports[`Paradox.PersonalityArchetypeTips renders component 1`] = `
     <option
       value="tools"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </option>
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div
@@ -84,14 +84,14 @@ exports[`Paradox.PersonalityArchetypeTips renders component with available types
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -102,12 +102,12 @@ exports[`Paradox.PersonalityArchetypeTips renders component with available types
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div
@@ -144,14 +144,14 @@ exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -162,12 +162,12 @@ exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div
@@ -199,7 +199,7 @@ exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
   <div
     className="sectionHeading"
   >
-    personality_tips, [object Object]
+    personality_tips
   </div>
   <div
     className="tabs"
@@ -209,21 +209,21 @@ exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -234,17 +234,17 @@ exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
     <option
       value="tools"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </option>
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div
@@ -281,21 +281,21 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </button>
     <button
       className="active"
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -306,17 +306,17 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 
     <option
       value="tools"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </option>
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div
@@ -353,21 +353,21 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from selecting option
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </button>
     <button
       className="active"
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -378,17 +378,17 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from selecting option
     <option
       value="tools"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </option>
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div
@@ -433,14 +433,14 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders component 1`] = `
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_caution_zone, [object Object]
+      tip_type_for_caution_zone
     </button>
   </div>
   <select
@@ -451,12 +451,12 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders component 1`] = `
     <option
       value="tools"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </option>
     <option
       value="caution_zone"
     >
-      tip_type_for_caution_zone, [object Object]
+      tip_type_for_caution_zone
     </option>
   </select>
   <div
@@ -493,21 +493,21 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders firstPerson tips i
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </button>
   </div>
   <select
@@ -518,17 +518,17 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders firstPerson tips i
     <option
       value="tools"
     >
-      tip_type_for_tools, [object Object]
+      tip_type_for_tools
     </option>
     <option
       value="room"
     >
-      tip_type_for_room, [object Object]
+      tip_type_for_room
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings, [object Object]
+      tip_type_for_settings
     </option>
   </select>
   <div

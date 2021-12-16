@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paradox.ManagerResults allowHeaders renders component 1`] = `
+<section
+  className="container box"
+>
+  <div
+    className="sectionHeading"
+  >
+    recommendation_chart_heading
+  </div>
+  <div>
+    recommendation_chart_description
+  </div>
+  <div
+    className="mock"
+  >
+    Personality Recommendation Chart
+  </div>
+  <div
+    className="mock"
+  >
+    Guide
+  </div>
+</section>
+`;
+
+exports[`Paradox.ManagerResults renders component 1`] = `
+<section
+  className="container box"
+>
+  <div
+    className="mock"
+  >
+    Personality Recommendation Chart
+  </div>
+  <div
+    className="mock"
+  >
+    Guide
+  </div>
+</section>
+`;

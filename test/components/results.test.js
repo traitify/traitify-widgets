@@ -6,10 +6,12 @@ jest.mock("components/results/cognitive-results", () => (() => (<div className="
 jest.mock("components/results/dimension-based-results", () => (() => (<div className="mock">Dimension Based</div>)));
 jest.mock("components/results/employee-results", () => (() => (<div className="mock">Employee</div>)));
 jest.mock("components/results/financial-risk-results", () => (() => (<div className="mock">Financial Risk</div>)));
+jest.mock("components/results/manager-results", () => (() => (<div className="mock">Manager</div>)));
 jest.mock("components/results/type-based-results", () => (() => (<div className="mock">Type Based</div>)));
 jest.mock("lib/with-traitify");
 
 describe("Results", () => {
+  let component;
   let props;
 
   beforeEach(() => {
@@ -27,16 +29,22 @@ describe("Results", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Results.initialized", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Results.initialized", expect.objectContaining({
+        props: expect.any(Object),
+        state: expect.any(Object)
+      }));
     });
 
     it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith("Results.updated", component.instance);
+      expect(props.ui.trigger).toHaveBeenCalledWith("Results.updated", expect.objectContaining({
+        props: expect.any(Object),
+        state: expect.any(Object)
+      }));
     });
   });
 
@@ -44,7 +52,7 @@ describe("Results", () => {
     props.assessment = {assessment_type: "DIMENSION_BASED"};
     props.getOption.mockReturnValue("candidate");
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -52,7 +60,7 @@ describe("Results", () => {
   it("renders cognitive results", () => {
     props.getOption.mockReturnValue("cognitive");
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -60,7 +68,7 @@ describe("Results", () => {
   it("renders dimension based results", () => {
     props.assessment = {assessment_type: "DIMENSION_BASED"};
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -69,7 +77,7 @@ describe("Results", () => {
     props.assessment = {assessment_type: "DIMENSION_BASED"};
     props.getOption.mockReturnValue("employee");
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -77,7 +85,16 @@ describe("Results", () => {
   it("renders financial risk results", () => {
     props.assessment = {assessment_type: "DIMENSION_BASED", scoring_scale: "LIKERT_CUMULATIVE_POMP"};
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders manager results", () => {
+    props.assessment = {assessment_type: "DIMENSION_BASED"};
+    props.getOption.mockReturnValue("manager");
+    props.isReady.mockReturnValue(true);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -85,13 +102,13 @@ describe("Results", () => {
   it("renders type based results", () => {
     props.assessment = {assessment_type: "TYPE_BASED"};
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if not ready", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

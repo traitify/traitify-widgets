@@ -1,21 +1,19 @@
-import Component from "components/results/employee-results";
+import Component from "components/paradox/results/manager-results";
 import ComponentHandler from "support/component-handler";
 import {mockOptions, mockProps} from "support/helpers";
 
-jest.mock("components/results/personality/archetype/heading", () => (() => (<div className="mock">Personality Archetype Heading</div>)));
-jest.mock("components/results/personality/archetype/skills", () => (() => (<div className="mock">Personality Archetype Skills</div>)));
-jest.mock("components/results/personality/archetype/tips", () => (() => (<div className="mock">Personality Archetype Tips</div>)));
-jest.mock("components/results/personality/dimension/list", () => (() => (<div className="mock">Personality Dimension List</div>)));
+jest.mock("components/results/guide", () => (() => (<div className="mock">Guide</div>)));
+jest.mock("components/results/personality/recommendation/chart", () => (() => (<div className="mock">Personality Recommendation Chart</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("EmployeeResults", () => {
+describe("Paradox.ManagerResults", () => {
   let component;
   let options;
   let props;
 
   beforeEach(() => {
     options = {};
-    props = mockProps(["getOption", "translate"]);
+    props = mockProps(["getOption", "isReady", "setElement", "translate", "ui"]);
   });
 
   describe("allowHeaders", () => {

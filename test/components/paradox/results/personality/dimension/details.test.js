@@ -1,38 +1,30 @@
 import {Component} from "components/paradox/results/personality/dimension/details";
 import ComponentHandler from "support/component-handler";
-import {mockOptions} from "support/helpers";
+import {mockOptions, mockProps} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 import guide from "support/json/guide.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Paradox.PersonalityDimensionDetails", () => {
+  let component;
   let props;
 
   beforeEach(() => {
     props = {
-      followGuide: jest.fn().mockName("followGuide"),
-      getOption: jest.fn().mockName("getOption"),
+      ...mockProps(["followGuide", "getOption", "setElement", "translate", "ui"]),
       guide: {
         assessment_id: assessment.id,
         locale_key: assessment.locale_key,
         ...guide
       },
-      setElement: jest.fn().mockName("setElement"),
-      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
-      type: assessment.personality_types[0],
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
+      type: assessment.personality_types[0]
     };
   });
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
         "PersonalityDimensionDetails.initialized",
@@ -44,7 +36,7 @@ describe("Paradox.PersonalityDimensionDetails", () => {
     });
 
     it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       props.ui.trigger.mockClear();
       component.updateProps();
 
@@ -59,28 +51,29 @@ describe("Paradox.PersonalityDimensionDetails", () => {
   });
 
   it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
+
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders component in third person", () => {
     mockOptions(props.getOption, {perspective: "thirdPerson"});
+    component = new ComponentHandler(<Component {...props} />);
 
-    const component = new ComponentHandler(<Component {...props} />);
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders component without guide", () => {
     props.guide = null;
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders component without pitfalls", () => {
     mockOptions(props.getOption, {disabledComponents: ["PersonalityPitfalls"]});
+    component = new ComponentHandler(<Component {...props} />);
 
-    const component = new ComponentHandler(<Component {...props} />);
     expect(component.tree).toMatchSnapshot();
   });
 });

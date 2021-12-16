@@ -17,7 +17,7 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component in thir
         className="heading"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "personality_heading_third_person, [object Object]",
+            "__html": "personality_heading_third_person - {\\"deck_name\\":\\"Big Five\\",\\"personality\\":\\"<span>Cohort</span>\\"}",
           }
         }
       />
@@ -67,7 +67,7 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
         className="heading"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "personality_heading, [object Object]",
+            "__html": "personality_heading - {\\"deck_name\\":\\"Big Five\\",\\"personality\\":\\"<span>Cohort</span>\\"}",
           }
         }
       />
@@ -112,7 +112,7 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
         className="heading"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "personality_heading, [object Object]",
+            "__html": "personality_heading - {\\"deck_name\\":\\"Big Five\\",\\"personality\\":\\"<span>Cohort</span>\\"}",
           }
         }
       />
@@ -162,7 +162,7 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
         className="heading"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "personality_heading, [object Object]",
+            "__html": "personality_heading - {\\"deck_name\\":\\"Big Five\\",\\"personality\\":\\"<span>Cohort</span>\\"}",
           }
         }
       />
@@ -179,7 +179,7 @@ exports[`Paradox.PersonalityArchetypeHeading fallbacks renders component without
     <p
       dangerouslySetInnerHTML={
         Object {
-          "__html": "archetype_description_html, [object Object]",
+          "__html": "archetype_description_html",
         }
       }
     />
@@ -204,7 +204,7 @@ exports[`Paradox.PersonalityArchetypeHeading renders component 1`] = `
         className="heading"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "personality_heading, [object Object]",
+            "__html": "personality_heading - {\\"deck_name\\":\\"Big Five\\",\\"personality\\":\\"<span>Cohort</span>\\"}",
           }
         }
       />
@@ -254,7 +254,7 @@ exports[`Paradox.PersonalityArchetypeHeading renders component with headers 1`] 
         className="heading"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "personality_heading, [object Object]",
+            "__html": "personality_heading - {\\"deck_name\\":\\"Big Five\\",\\"personality\\":\\"<span>Cohort</span>\\"}",
           }
         }
       />

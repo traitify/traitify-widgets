@@ -40,6 +40,14 @@ exports[`Results renders financial risk results 1`] = `
 </div>
 `;
 
+exports[`Results renders manager results 1`] = `
+<div
+  className="mock"
+>
+  Manager
+</div>
+`;
+
 exports[`Results renders nothing if not ready 1`] = `null`;
 
 exports[`Results renders type based results 1`] = `

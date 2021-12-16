@@ -1,28 +1,24 @@
 import {Component} from "components/paradox/results/personality/trait/details";
 import ComponentHandler from "support/component-handler";
+import {mockProps} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Paradox.PersonalityTrait", () => {
+  let component;
   let props;
 
   beforeEach(() => {
     props = {
-      setElement: jest.fn().mockName("setElement"),
-      trait: assessment.personality_traits[0],
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
+      ...mockProps(["setElement", "ui"]),
+      trait: assessment.personality_traits[0]
     };
   });
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
         "PersonalityTrait.initialized",
@@ -34,7 +30,7 @@ describe("Paradox.PersonalityTrait", () => {
     });
 
     it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       props.ui.trigger.mockClear();
       component.updateProps();
 
@@ -49,7 +45,7 @@ describe("Paradox.PersonalityTrait", () => {
   });
 
   it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

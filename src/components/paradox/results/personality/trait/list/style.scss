@@ -13,5 +13,6 @@
 
   font-size: $font-size;
   margin-bottom: $buffer-heading;
+  margin-top: $buffer-heading;
 }
 .p { @extend %paragraph; }

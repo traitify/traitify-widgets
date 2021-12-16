@@ -67,6 +67,13 @@ describe("Paradox.PersonalityTraits", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders nothing if disabled", () => {
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityTraits"]});
+    component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if not ready", () => {
     props.assessment = null;
     props.isReady.mockImplementation(() => false);

@@ -13,6 +13,8 @@ function PersonalityTraitList({setElement, ...props}) {
   useDidMount(() => { ui.trigger("PersonalityTraits.initialized", {props, state}); });
   useDidUpdate(() => { ui.trigger("PersonalityTraits.updated", {props, state}); });
 
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("PersonalityTraits")) { return null; }
   if(!isReady("results")) { return null; }
 
   const allowHeaders = getOption("allowHeaders");

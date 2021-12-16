@@ -1,6 +1,6 @@
 import {Component} from "components/paradox/results/personality/recommendation/chart";
 import ComponentHandler from "support/component-handler";
-import {mockProps} from "support/helpers";
+import {mockOptions, mockProps} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
 import guide from "support/json/guide.json";
@@ -13,7 +13,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
 
   beforeEach(() => {
     props = {
-      ...mockProps(["followBenchmark", "followGuide", "isReady", "setElement", "translate", "ui"]),
+      ...mockProps(["followBenchmark", "followGuide", "getOption", "isReady", "setElement", "translate", "ui"]),
       assessment,
       benchmark,
       guide: {
@@ -139,6 +139,13 @@ describe("Paradox.PersonalityRecommendationChart", () => {
 
   it("renders component with combined prop", () => {
     props.combined = true;
+    component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if disabled", () => {
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityRecommendationChart"]});
     component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

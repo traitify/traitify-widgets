@@ -22,6 +22,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     combined,
     followBenchmark,
     followGuide,
+    getOption,
     guide,
     isReady,
     translate,
@@ -48,6 +49,8 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     dig(guide, "locale_key")
   ]);
 
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("PersonalityRecommendationChart")) { return null; }
   if(!isReady("guide")) { return null; }
   if(!isReady("results")) { return null; }
   if(data.length === 0) { return null; }
@@ -144,6 +147,7 @@ PersonalityRecommendationChart.propTypes = {
   combined: PropTypes.bool,
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
+  getOption: PropTypes.func.isRequired,
   guide: PropTypes.shape({
     assessment_id: PropTypes.string.isRequired,
     competencies: PropTypes.arrayOf(

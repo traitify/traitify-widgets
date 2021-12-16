@@ -705,6 +705,8 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
 </div>
 `;
 
+exports[`Paradox.Guide renders nothing if disabled 1`] = `null`;
+
 exports[`Paradox.Guide renders nothing if guide not ready 1`] = `null`;
 
 exports[`Paradox.Guide renders nothing if no competencies 1`] = `null`;

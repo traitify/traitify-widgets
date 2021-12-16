@@ -1,4 +1,5 @@
 import Component from "components/paradox/results/candidate-results";
+import PersonalityDimensions from "components/results/personality/dimension/list";
 import ComponentHandler from "support/component-handler";
 import {mockProps} from "support/helpers";
 
@@ -13,12 +14,14 @@ describe("Paradox.CandidateResults", () => {
   let props;
 
   beforeEach(() => {
-    props = mockProps(["setElement"]);
+    props = mockProps(["getOption", "setElement"]);
   });
 
   it("renders component", () => {
     component = new ComponentHandler(<Component {...props} />);
+    const dimensions = component.instance.findByType(PersonalityDimensions);
 
     expect(component.tree).toMatchSnapshot();
+    expect(dimensions.props.disabledComponents).toEqual(expect.arrayContaining(["PersonalityPitfalls"]));
   });
 });

@@ -15,22 +15,45 @@ describe("CandidateResults", () => {
   let component;
   let options;
   let props;
+  const getDimensionComponent = () => component.instance.findByType(PersonalityDimensions);
 
   beforeEach(() => {
-    options = {};
+    options = {perspective: "firstPerson"};
     props = mockProps(["getOption", "followBenchmark", "followGuide", "isReady", "translate", "ui"]);
+
+    mockOptions(props.getOption, options);
   });
 
-  it("renders results in firstPerson", () => {
-    mockOptions(props.getOption, {...options, perspective: "firstPerson"});
+  describe("allowHeaders", () => {
+    beforeEach(() => {
+      options = {...options, allowHeaders: true};
+
+      mockOptions(props.getOption, options);
+    });
+
+    it("renders component", () => {
+      component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+      expect(getDimensionComponent().props.disabledComponents).toEqual(expect.arrayContaining(["PersonalityPitfalls"]));
+    });
+
+    it("renders component in thirdPerson", () => {
+      mockOptions(props.getOption, {...options, perspective: "thirdPerson"});
+      component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+  });
+
+  it("renders component", () => {
     component = new ComponentHandler(<Component {...props} />);
-    const dimensions = component.instance.findByType(PersonalityDimensions);
 
     expect(component.tree).toMatchSnapshot();
-    expect(dimensions.props.disabledComponents).toEqual(expect.arrayContaining(["PersonalityPitfalls"]));
+    expect(getDimensionComponent().props.disabledComponents).toEqual(expect.arrayContaining(["PersonalityPitfalls"]));
   });
 
-  it("renders results in thirdPerson", () => {
+  it("renders component in thirdPerson", () => {
     mockOptions(props.getOption, {...options, perspective: "thirdPerson"});
     component = new ComponentHandler(<Component {...props} />);
 

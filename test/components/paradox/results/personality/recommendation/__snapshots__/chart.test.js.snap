@@ -1602,6 +1602,8 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
 </div>
 `;
 
+exports[`Paradox.PersonalityRecommendationChart renders nothing if disabled 1`] = `null`;
+
 exports[`Paradox.PersonalityRecommendationChart renders nothing if guide not ready 1`] = `null`;
 
 exports[`Paradox.PersonalityRecommendationChart renders nothing if no competencies 1`] = `null`;

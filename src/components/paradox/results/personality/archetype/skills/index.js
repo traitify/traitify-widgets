@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import {sortByTypePosition} from "lib/helpers";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
@@ -50,7 +51,7 @@ const skillTypes = [
   }
 ];
 
-function PersonalityArchetypeSkills({element, ...props}) {
+function PersonalityArchetypeSkills({setElement, ...props}) {
   const {assessment, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, "archetype", "details") || [];
   const [activeType, setActiveType] = useState(null);
@@ -88,7 +89,7 @@ function PersonalityArchetypeSkills({element, ...props}) {
   });
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       {allowHeaders && <div className={style.sectionHeading}>{translate("success_skills")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
@@ -120,7 +121,7 @@ function PersonalityArchetypeSkills({element, ...props}) {
   );
 }
 
-PersonalityArchetypeSkills.defaultProps = {assessment: null, element: null};
+PersonalityArchetypeSkills.defaultProps = {assessment: null};
 PersonalityArchetypeSkills.propTypes = {
   assessment: PropTypes.shape({
     archetype: PropTypes.shape({
@@ -142,12 +143,9 @@ PersonalityArchetypeSkills.propTypes = {
       }).isRequired
     )
   }),
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

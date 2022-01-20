@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CognitiveResults renders components 1`] = `
+exports[`CognitiveResults renders component 1`] = `
 <section
   className="results"
 >

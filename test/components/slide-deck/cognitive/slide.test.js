@@ -1,7 +1,7 @@
 import Component from "components/slide-deck/cognitive/slide";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/cognitive.json";
-import {useWindowMock} from "support/mocks";
+import useWindowMock from "support/hooks/use-window-mock";
 
 const defaultQuestions = assessment.questions.slice(1, 3);
 const loadedQuestions = defaultQuestions.map((question) => ({...question, loaded: true}));

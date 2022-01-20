@@ -13,12 +13,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
       type="button"
     >
       <img
-        alt="skill_name_for_dealing_with_stress, [object Object]"
+        alt="skill_name_for_dealing_with_stress"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
       />
       <div>
-        skill_name_for_dealing_with_stress, [object Object]
+        skill_name_for_dealing_with_stress
       </div>
     </button>
     <button
@@ -27,12 +27,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-default.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -41,12 +41,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -55,12 +55,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -69,12 +69,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -86,27 +86,27 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
     <option
       value="dealing_with_stress"
     >
-      skill_name_for_dealing_with_stress, [object Object]
+      skill_name_for_dealing_with_stress
     </option>
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -115,7 +115,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
     <div
       className="heading"
     >
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_dealing_with_stress
     </div>
     <div
       className="tip"
@@ -159,12 +159,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
       type="button"
     >
       <img
-        alt="skill_name_for_dealing_with_stress, [object Object]"
+        alt="skill_name_for_dealing_with_stress"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
       />
       <div>
-        skill_name_for_dealing_with_stress, [object Object]
+        skill_name_for_dealing_with_stress
       </div>
     </button>
     <button
@@ -173,12 +173,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-default.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -187,12 +187,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -201,12 +201,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -215,12 +215,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -232,27 +232,27 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
     <option
       value="dealing_with_stress"
     >
-      skill_name_for_dealing_with_stress, [object Object]
+      skill_name_for_dealing_with_stress
     </option>
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -261,7 +261,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
     <div
       className="heading"
     >
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_dealing_with_stress
     </div>
     <div
       className="tip"
@@ -300,12 +300,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -314,12 +314,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -328,12 +328,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -342,12 +342,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -359,22 +359,22 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -383,7 +383,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
     <div
       className="heading"
     >
-      skill_heading_for_leading_others, [object Object]
+      skill_heading_for_leading_others
     </div>
     <div
       className="tip"
@@ -427,12 +427,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -441,12 +441,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -455,12 +455,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -469,12 +469,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -486,22 +486,22 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -510,7 +510,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
     <div
       className="heading"
     >
-      skill_heading_for_leading_others, [object Object]
+      skill_heading_for_leading_others
     </div>
     <div
       className="tip"
@@ -548,7 +548,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
   <div
     className="sectionHeading"
   >
-    success_skills, [object Object]
+    success_skills
   </div>
   <div
     className="tabs"
@@ -559,12 +559,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
       type="button"
     >
       <img
-        alt="skill_name_for_dealing_with_stress, [object Object]"
+        alt="skill_name_for_dealing_with_stress"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
       />
       <div>
-        skill_name_for_dealing_with_stress, [object Object]
+        skill_name_for_dealing_with_stress
       </div>
     </button>
     <button
@@ -573,12 +573,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-default.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -587,12 +587,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -601,12 +601,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -615,12 +615,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -632,27 +632,27 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
     <option
       value="dealing_with_stress"
     >
-      skill_name_for_dealing_with_stress, [object Object]
+      skill_name_for_dealing_with_stress
     </option>
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -661,7 +661,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
     <div
       className="heading"
     >
-      skill_heading_for_dealing_with_stress, [object Object]
+      skill_heading_for_dealing_with_stress
     </div>
     <div
       className="tip"
@@ -705,12 +705,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
       type="button"
     >
       <img
-        alt="skill_name_for_dealing_with_stress, [object Object]"
+        alt="skill_name_for_dealing_with_stress"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/stress-default.png"
       />
       <div>
-        skill_name_for_dealing_with_stress, [object Object]
+        skill_name_for_dealing_with_stress
       </div>
     </button>
     <button
@@ -719,12 +719,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -733,12 +733,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -747,12 +747,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -761,12 +761,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -778,27 +778,27 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
     <option
       value="dealing_with_stress"
     >
-      skill_name_for_dealing_with_stress, [object Object]
+      skill_name_for_dealing_with_stress
     </option>
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -807,7 +807,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
     <div
       className="heading"
     >
-      skill_heading_for_leading_others, [object Object]
+      skill_heading_for_leading_others
     </div>
     <div
       className="tip"
@@ -851,12 +851,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
       type="button"
     >
       <img
-        alt="skill_name_for_dealing_with_stress, [object Object]"
+        alt="skill_name_for_dealing_with_stress"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/stress-default.png"
       />
       <div>
-        skill_name_for_dealing_with_stress, [object Object]
+        skill_name_for_dealing_with_stress
       </div>
     </button>
     <button
@@ -865,12 +865,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
       type="button"
     >
       <img
-        alt="skill_name_for_leading_others, [object Object]"
+        alt="skill_name_for_leading_others"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
       />
       <div>
-        skill_name_for_leading_others, [object Object]
+        skill_name_for_leading_others
       </div>
     </button>
     <button
@@ -879,12 +879,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
       type="button"
     >
       <img
-        alt="skill_name_for_communication, [object Object]"
+        alt="skill_name_for_communication"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/chat-default.png"
       />
       <div>
-        skill_name_for_communication, [object Object]
+        skill_name_for_communication
       </div>
     </button>
     <button
@@ -893,12 +893,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
       type="button"
     >
       <img
-        alt="skill_name_for_teamwork, [object Object]"
+        alt="skill_name_for_teamwork"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
       />
       <div>
-        skill_name_for_teamwork, [object Object]
+        skill_name_for_teamwork
       </div>
     </button>
     <button
@@ -907,12 +907,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
       type="button"
     >
       <img
-        alt="skill_name_for_habits, [object Object]"
+        alt="skill_name_for_habits"
         className="image"
         src="https://cdn.traitify.com/widgets/skills/build-default.png"
       />
       <div>
-        skill_name_for_habits, [object Object]
+        skill_name_for_habits
       </div>
     </button>
   </div>
@@ -924,27 +924,27 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
     <option
       value="dealing_with_stress"
     >
-      skill_name_for_dealing_with_stress, [object Object]
+      skill_name_for_dealing_with_stress
     </option>
     <option
       value="leading_others"
     >
-      skill_name_for_leading_others, [object Object]
+      skill_name_for_leading_others
     </option>
     <option
       value="communication"
     >
-      skill_name_for_communication, [object Object]
+      skill_name_for_communication
     </option>
     <option
       value="teamwork"
     >
-      skill_name_for_teamwork, [object Object]
+      skill_name_for_teamwork
     </option>
     <option
       value="habits"
     >
-      skill_name_for_habits, [object Object]
+      skill_name_for_habits
     </option>
   </select>
   <div
@@ -953,7 +953,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
     <div
       className="heading"
     >
-      skill_heading_for_leading_others, [object Object]
+      skill_heading_for_leading_others
     </div>
     <div
       className="tip"

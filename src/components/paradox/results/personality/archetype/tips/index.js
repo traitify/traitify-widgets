@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
@@ -19,7 +20,7 @@ const tipTypes = {
   ]
 };
 
-function PersonalityArchetypeTips({element, ...props}) {
+function PersonalityArchetypeTips({setElement, ...props}) {
   const {assessment, getOption, isReady, translate, ui} = props;
   const details = dig(assessment, "archetype", "details") || [];
   const [activeType, setActiveType] = useState(null);
@@ -59,7 +60,7 @@ function PersonalityArchetypeTips({element, ...props}) {
   const tips = details.filter(({title}) => (title === activeType.apiKey)).map(({body}) => body);
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       {allowHeaders && <div className={style.sectionHeading}>{translate("personality_tips")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
@@ -85,7 +86,7 @@ function PersonalityArchetypeTips({element, ...props}) {
   );
 }
 
-PersonalityArchetypeTips.defaultProps = {assessment: null, element: null};
+PersonalityArchetypeTips.defaultProps = {assessment: null};
 PersonalityArchetypeTips.propTypes = {
   assessment: PropTypes.shape({
     archetype: PropTypes.shape({
@@ -97,12 +98,9 @@ PersonalityArchetypeTips.propTypes = {
       ).isRequired
     })
   }),
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

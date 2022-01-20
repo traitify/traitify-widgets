@@ -17,7 +17,7 @@
 }
 
 %container {
-  font: 400 #{$font-size}/1.5 "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font: 400 #{$font-size}/#{$line-height} "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
 
   @include -set-variables($color-scheme-light);
   @include theme("color", "text-color");

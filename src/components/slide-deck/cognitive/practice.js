@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import DangerousHTML from "lib/helpers/dangerous-html";
-import {useWindowSize} from "lib/helpers/hooks";
+import useWindowSize from "lib/hooks/use-window-size";
 import Loading from "components/loading";
 import Slide from "./slide";
 import {useQuestionsLoader, videoProps} from "./helpers";

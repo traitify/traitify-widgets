@@ -18,7 +18,11 @@ module.exports = {
   ],
   rootDir: "..",
   setupFiles: [
-    "<rootDir>/test/support/test-helper.js"
+    "<rootDir>/test/support/setup/babel.js",
+    "<rootDir>/test/support/setup/react.js"
+  ],
+  setupFilesAfterEnv: [
+    "<rootDir>/test/support/setup/extend.js"
   ],
   testURL: "https://www.example.com",
   transform: {

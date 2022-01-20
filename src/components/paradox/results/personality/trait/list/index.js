@@ -1,17 +1,20 @@
 import PropTypes from "prop-types";
 import PersonalityTrait from "components/results/personality/trait/details";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-function PersonalityTraitList({element, ...props}) {
+function PersonalityTraitList({setElement, ...props}) {
   const {assessment, getOption, isReady, translate, ui} = props;
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityTraits.initialized", {props, state}); });
   useDidUpdate(() => { ui.trigger("PersonalityTraits.updated", {props, state}); });
 
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("PersonalityTraits")) { return null; }
   if(!isReady("results")) { return null; }
 
   const allowHeaders = getOption("allowHeaders");
@@ -20,7 +23,7 @@ function PersonalityTraitList({element, ...props}) {
   const traits = assessment.personality_traits;
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       {allowHeaders && <div className={style.sectionHeading}>{translate("personality_traits")}</div>}
       <div>
         <div className={style.heading}>{translate("most_represented_traits")}</div>
@@ -44,7 +47,7 @@ function PersonalityTraitList({element, ...props}) {
   );
 }
 
-PersonalityTraitList.defaultProps = {assessment: null, element: null};
+PersonalityTraitList.defaultProps = {assessment: null};
 PersonalityTraitList.propTypes = {
   assessment: PropTypes.shape({
     personality_traits: PropTypes.arrayOf(
@@ -64,12 +67,9 @@ PersonalityTraitList.propTypes = {
       }).isRequired
     )
   }),
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   getOption: PropTypes.func.isRequired,
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

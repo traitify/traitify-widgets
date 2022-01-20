@@ -258,4 +258,6 @@ exports[`Paradox.PersonalityTraits renders component with translation definition
 </div>
 `;
 
+exports[`Paradox.PersonalityTraits renders nothing if disabled 1`] = `null`;
+
 exports[`Paradox.PersonalityTraits renders nothing if not ready 1`] = `null`;

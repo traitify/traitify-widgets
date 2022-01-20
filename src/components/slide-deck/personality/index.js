@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {Component as Paradox} from "components/paradox/slide-deck/personality";
 import {mutable} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import {camelCase} from "lib/helpers/string";
@@ -294,4 +295,4 @@ class Personality extends Component {
 }
 
 export {Personality as Component};
-export default withTraitify(Personality);
+export default withTraitify(Personality, {paradox: Paradox});

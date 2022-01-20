@@ -8,7 +8,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
     className="header"
   >
     <img
-      alt="Agreeableness badge, [object Object]"
+      alt="Agreeableness badge"
       src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
     />
     <div
@@ -30,7 +30,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   <div
     className="heading"
   >
-    dimension_heading, [object Object]
+    dimension_heading - {"level":"Medium","name":"Agreeableness"}
   </div>
   <div
     className="p"
@@ -40,7 +40,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   <div
     className="heading"
   >
-    dimension_heading_for_benefits, [object Object]
+    dimension_heading_for_benefits - {"level":"Medium","name":"Agreeableness"}
   </div>
   <div
     className="details"
@@ -67,7 +67,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   <div
     className="heading"
   >
-    room_for_growth_and_change, [object Object]
+    room_for_growth_and_change
   </div>
   <div
     className="details"
@@ -102,7 +102,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
     className="header"
   >
     <img
-      alt="Agreeableness badge, [object Object]"
+      alt="Agreeableness badge"
       src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
     />
     <div
@@ -129,7 +129,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
   <div
     className="heading"
   >
-    potential_benefits, [object Object]
+    potential_benefits
   </div>
   <div
     className="details"
@@ -156,7 +156,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
   <div
     className="heading"
   >
-    room_for_growth_and_change, [object Object]
+    room_for_growth_and_change
   </div>
   <div
     className="details"
@@ -191,7 +191,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
     className="header"
   >
     <img
-      alt="Agreeableness badge, [object Object]"
+      alt="Agreeableness badge"
       src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
     />
     <div
@@ -203,7 +203,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   <div
     className="heading"
   >
-    dimension_heading, [object Object]
+    dimension_heading - {"level":"Medium","name":"Agreeableness"}
   </div>
   <div
     className="p"
@@ -213,7 +213,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   <div
     className="heading"
   >
-    dimension_heading_for_benefits, [object Object]
+    dimension_heading_for_benefits - {"level":"Medium","name":"Agreeableness"}
   </div>
   <div
     className="details"
@@ -240,7 +240,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   <div
     className="heading"
   >
-    room_for_growth_and_change, [object Object]
+    room_for_growth_and_change
   </div>
   <div
     className="details"
@@ -275,7 +275,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
     className="header"
   >
     <img
-      alt="Agreeableness badge, [object Object]"
+      alt="Agreeableness badge"
       src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
     />
     <div
@@ -297,7 +297,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
   <div
     className="heading"
   >
-    dimension_heading, [object Object]
+    dimension_heading - {"level":"Medium","name":"Agreeableness"}
   </div>
   <div
     className="p"
@@ -307,7 +307,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
   <div
     className="heading"
   >
-    dimension_heading_for_benefits, [object Object]
+    dimension_heading_for_benefits - {"level":"Medium","name":"Agreeableness"}
   </div>
   <div
     className="details"

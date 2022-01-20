@@ -81,7 +81,6 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-test-renderer": "^16.14.0",
-    "replace-bundle-webpack-plugin": "^1.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",

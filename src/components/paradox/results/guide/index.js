@@ -2,10 +2,11 @@ import {faChevronDown, faChevronUp, faQuestion} from "@fortawesome/free-solid-sv
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import {combine} from "lib/helpers/combine-data";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import Icon from "lib/helpers/icon";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
@@ -54,14 +55,14 @@ Question.propTypes = {
   translate: PropTypes.func.isRequired
 };
 
-function Guide(props) {
+function Guide({setElement, ...props}) {
   const {
     assessment,
     benchmark,
     combined,
-    element,
     followBenchmark,
     followGuide,
+    getOption,
     guide,
     isReady,
     translate,
@@ -93,6 +94,8 @@ function Guide(props) {
     dig(guide, "locale_key")
   ]);
 
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("InterviewGuide")) { return null; }
   if(!isReady("guide")) { return null; }
   if(!isReady("results")) { return null; }
   if(!activeCompetency) { return null; }
@@ -102,7 +105,7 @@ function Guide(props) {
   const onChange = ({target: {value}}) => showCompetency(value);
 
   return (
-    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={element}>
+    <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>
       <div className={style.tabs}>
         {data.map(({id, name, rank}) => (
           <button
@@ -146,7 +149,6 @@ Guide.defaultProps = {
   assessment: null,
   benchmark: null,
   combined: false,
-  element: null,
   guide: null
 };
 Guide.propTypes = {
@@ -175,12 +177,9 @@ Guide.propTypes = {
     )
   }),
   combined: PropTypes.bool,
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,
+  getOption: PropTypes.func.isRequired,
   guide: PropTypes.shape({
     assessment_id: PropTypes.string.isRequired,
     competencies: PropTypes.arrayOf(
@@ -204,6 +203,7 @@ Guide.propTypes = {
     locale_key: PropTypes.string.isRequired
   }),
   isReady: PropTypes.func.isRequired,
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   ui: TraitifyPropTypes.ui.isRequired
 };

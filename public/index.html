@@ -19,9 +19,11 @@
         background: #555555;
         color: #FFFFFF;
       }
-      .row { margin: 12px; }
       .hide { display: none; }
+      .row { margin: 12px; }
+      .row .row { display: block; margin: 12px; }
       @media(min-width: 960px) {
+        .flex { display: flex; }
         .row {
           margin-left: 48px;
           margin-right: 48px;
@@ -34,135 +36,147 @@
         }
       }
     </style>
-    <div class="row">
-      <label htmlFor="survey-type">
-        Survey Type:
-        <select id="survey-type" name="survey-type">
-          <option value="cognitive">Cognitive</option>
-          <option value="personality">Personality</option>
-        </select>
-      </label>
+    <div class="flex">
+      <div class="column">
+        <div class="row">
+          <label htmlFor="survey-type">
+            Survey Type:
+            <select id="survey-type" name="survey-type">
+              <option value="cognitive">Cognitive</option>
+              <option value="personality">Personality</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="survey-id">
+            Survey:
+            <select id="survey-id" name="survey-id">
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="deck-id">
+            Deck:
+            <select id="deck-id" name="deck-id">
+              <option value="big-five">Big Five</option>
+              <option value="career-deck">Career Deck</option>
+              <option value="core">Core</option>
+              <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
+              <option value="perseverance">Perseverance</option>
+              <option value="persuasion">Persuasion</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="color-scheme">
+            Color Scheme:
+            <select id="color-scheme" name="color-scheme">
+              <option value="">Default</option>
+              <option value="auto">Auto</option>
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="locale">
+            Locale:
+            <select id="locale" name="locale">
+              <option value="zh-cn">Chinese</option>
+              <option value="ht-us">Creole</option>
+              <option value="nl-nl">Dutch</option>
+              <option value="en-us">English (US)</option>
+              <option value="en-gb">English (GB)</option>
+              <option value="fr-ca">French (Canadian)</option>
+              <option value="fr-fr">French (France)</option>
+              <option value="de-de">German</option>
+              <option value="ja-jp">Japanese</option>
+              <option value="no-no">Norwegian</option>
+              <option value="pt-br">Portuguese (Brazil)</option>
+              <option value="pt-pt">Portuguese</option>
+              <option value="ru-ru">Russian</option>
+              <option value="es-us">Spanish</option>
+              <option value="es-ec">Spanish (Ecuador)</option>
+              <option value="sv-se">Swedish</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="perspective">
+            Perspective:
+            <select id="perspective" name="perspective">
+              <option value="">Default</option>
+              <option value="firstPerson">First Person</option>
+              <option value="thirdPerson">Third Person</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="theme">
+            Theme:
+            <select id="theme" name="theme">
+              <option value="">Default</option>
+              <option value="paradox">Paradox</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label htmlFor="view">
+            View:
+            <select id="view" name="view">
+              <option value="">Default</option>
+              <option value="candidate">Candidate</option>
+              <option value="employee">Employee</option>
+              <option value="manager">Manager</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="column" id="additional">
+      </div>
     </div>
     <div class="row">
-      <label htmlFor="survey-id">
-        Survey:
-        <select id="survey-id" name="survey-id">
-        </select>
-      </label>
+      <button onclick="refreshWidget()">Refresh Widget</button>
+      <button onclick="destroyWidget()">Destroy Widget</button>
     </div>
-    <div class="row">
-      <label htmlFor="deck-id">
-        Deck:
-        <select id="deck-id" name="deck-id">
-          <option value="big-five">Big Five</option>
-          <option value="career-deck">Career Deck</option>
-          <option value="core">Core</option>
-          <option value="financial-risk-tolerance-2.0">Financial Risk Tolerance</option>
-          <option value="perseverance">Perseverance</option>
-          <option value="persuasion">Persuasion</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="color-scheme">
-        Color Scheme:
-        <select id="color-scheme" name="color-scheme">
-          <option value="">Default</option>
-          <option value="auto">Auto</option>
-          <option value="dark">Dark</option>
-          <option value="light">Light</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="locale">
-        Locale:
-        <select id="locale" name="locale">
-          <option value="zh-cn">Chinese</option>
-          <option value="ht-us">Creole</option>
-          <option value="nl-nl">Dutch</option>
-          <option value="en-us">English (US)</option>
-          <option value="en-gb">English (GB)</option>
-          <option value="fr-ca">French (Canadian)</option>
-          <option value="fr-fr">French (France)</option>
-          <option value="de-de">German</option>
-          <option value="ja-jp">Japanese</option>
-          <option value="no-no">Norwegian</option>
-          <option value="pt-br">Portuguese (Brazil)</option>
-          <option value="pt-pt">Portuguese</option>
-          <option value="ru-ru">Russian</option>
-          <option value="es-us">Spanish</option>
-          <option value="es-ec">Spanish (Ecuador)</option>
-          <option value="sv-se">Swedish</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="perspective">
-        Perspective:
-        <select id="perspective" name="perspective">
-          <option value="">Default</option>
-          <option value="firstPerson">First Person</option>
-          <option value="thirdPerson">Third Person</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="theme">
-        Theme:
-        <select id="theme" name="theme">
-          <option value="">Default</option>
-          <option value="paradox">Paradox</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      <label htmlFor="view">
-        View:
-        <select id="view" name="view">
-          <option value="">Default</option>
-          <option value="candidate">Candidate</option>
-          <option value="employee">Employee</option>
-        </select>
-      </label>
-    </div>
-    <div class="row">
-      Additional Components
-      <label htmlFor="show-careers">
-        <input id="show-careers" name="show-careers" type="checkbox" />
-        Careers
-      </label>
-      <label htmlFor="show-guide">
-        <input id="show-guide" name="show-guide" type="checkbox" />
-        Guide
-      </label>
-      <label htmlFor="show-traits">
-        <input id="show-traits" name="show-traits" type="checkbox" />
-        Traits
-      </label>
+    <div class="row" id="params">
     </div>
     <div class="row">
       <button onclick="createAssessment()">New Assessment</button>
-      <button onclick="refreshWidget()">Refresh Widget</button>
-      <button onclick="destroyWidget()">Destroy Widget</button>
     </div>
     <script src="build/traitify.js"></script>
     <script>
       Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
       Traitify.setHost("https://api.traitify.com");
 
-      var additionalComponents = ["careers", "guide", "traits"];
+      var additionalComponents = {careers: "Careers", guide: "Guide", traits: "Traits"};
+      var additionalOptions = {allowBack: "Allow Back", allowFullscreen: "Allow Fullscreen", allowHeaders: "Allow Headers", allowInstructions: "Allow Instructions"};
+      var defaultValues = {
+        "deck-id": "big-five",
+        locale: "en-us",
+        "survey-type": "personality"
+      };
       var widget;
 
-      function createWidget(){
+      function booleanFrom(value, fallback) {
+        if(value == "true") { return true; }
+        if(value == "false") { return false; }
+        if(value == true) { return true; }
+        if(value == false) { return false; }
+        if(fallback == undefined) { return false; }
+
+        return fallback;
+      }
+
+      function createWidget() {
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-        if(!assessmentID){ return; }
+        if(!assessmentID) { return; }
 
         var colorScheme = localStorage.getItem("color-scheme");
         var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
-        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
+        var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
         var targets = setTargets();
         var theme = localStorage.getItem("theme");
@@ -170,10 +184,6 @@
 
         widget = Traitify.ui.component();
         widget
-          .allowBack()
-          .allowFullscreen()
-          .allowHeaders()
-          .allowInstructions()
           .assessmentID(assessmentID)
           .colorScheme(colorScheme)
           .locale(locale)
@@ -182,19 +192,31 @@
           .theme(theme)
           .view(view)
           .targets(targets);
+
+        Object.keys(additionalOptions).forEach((name) => {
+          let value = localStorage.getItem(name);
+
+          if(value == null) { return; }
+          if(name.startsWith("allow")) {
+            widget[booleanFrom(value) ? name : name.replace("allow", "disable")]();
+          } else {
+            widget[name](value);
+          }
+        });
+
         widget.options.slideDeck.captureLearningDisability = true;
         widget.options.slideDeck.disableTimeLimit = true;
         widget.options.slideDeck.initialLearningDisability = true;
-        widget.render().then(function(){
+        widget.render().then(function() {
           console.log("Rendered");
-        }).catch(function(error){
+        }).catch(function(error) {
           console.log(error);
         });
 
         updateColorScheme();
       }
 
-      function createAssessment(){
+      function createAssessment() {
         destroyWidget();
 
         var surveyType = document.querySelector("#survey-type").value
@@ -207,23 +229,27 @@
           });
 
           Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
-            try{
+            try {
               localStorage.setItem("test-id", response.data.createCognitiveTest.id);
-            }catch(error){
+            } catch(error) {
               console.log(error);
             }
             setTimeout(createWidget, 500);
           });
         } else {
-          Traitify.post("/assessments", {
+          var params = {
             deck_id: document.querySelector("#deck-id").value,
-            locale_key: document.querySelector("#locale").value,
-            package_id: "cfc05114-b8af-43fb-af27-c175e0cc25ee"
-          }).then(function(assessment){
-            try{
+            locale_key: document.querySelector("#locale").value
+          };
+          var customParams = JSON.parse(localStorage.getItem("params") || "{}");
+          Object.keys(customParams).filter((key) => customParams[key])
+            .forEach((key) => params[key] = customParams[key]);
+
+          Traitify.post("/assessments", params).then(function(assessment) {
+            try {
               localStorage.setItem("assessment-id", assessment.id);
               localStorage.setItem("deck-id", assessment.deck_id);
-            }catch(error){
+            }catch(error) {
               console.log(error);
             }
             setTimeout(createWidget, 500);
@@ -231,21 +257,24 @@
         }
       }
 
-      function destroyWidget(){
-        if(widget){ widget.destroy(); }
-      }
+      function destroyWidget() { if(widget) { widget.destroy(); } }
 
-      function onChange(e){
+      function onChange(e) {
         var name = e.target.name;
         var value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
 
-        value ? localStorage.setItem(name, value) : localStorage.removeItem(name);
+        value == "" ? localStorage.removeItem(name) : localStorage.setItem(name, value);
 
         if(widget && !["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
           if(name === "color-scheme") { name = "colorScheme"; }
           if(name === "survey-type") { name = "surveyType"; }
+          if(name.startsWith("allow")) {
+            if(value == "") { value = name == "allowInstructions"; }
 
-          widget[name](value);
+            widget[booleanFrom(value) ? name : name.replace("allow", "disable")]();
+          } else {
+            widget[name](value);
+          }
         }
 
         var type = localStorage.getItem("survey-type");
@@ -257,20 +286,20 @@
         }
       }
 
-      function refreshWidget(){
-        if(widget) {
-          var surveyType = localStorage.getItem("survey-type");
-          var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-          var targets = setTargets();
+      function refreshWidget() {
+        if(!widget) { return; }
 
-          widget.assessmentID(assessmentID).targets(targets).refresh();
+        var surveyType = localStorage.getItem("survey-type");
+        var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
+        var targets = setTargets();
 
-          updateColorScheme();
-        }
+        widget.assessmentID(assessmentID).targets(targets).refresh();
+
+        updateColorScheme();
       }
 
-      function setTargets(){
-        var show = additionalComponents.reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
+      function setTargets() {
+        var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
         var surveyType = localStorage.getItem("survey-type");
         var targets = {
           "SlideDeck": "#slide-deck",
@@ -285,7 +314,62 @@
         return targets;
       }
 
-      function setupOptions(){
+      function setupAdditionalComponents() {
+        var inputs = [];
+        var element = document.createElement("div");
+        element.appendChild(document.createTextNode("Additional Components: "));
+        element.className = "row";
+        Object.keys(additionalComponents).forEach((key) => {
+          var id = `show-${key}`;
+          var label = document.createElement("label");
+          var input = document.createElement("input");
+          input.id = id;
+          input.name = id;
+          input.type = "checkbox";
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(additionalComponents[key]));
+          label.htmlFor = id;
+          element.appendChild(label);
+          inputs.push(id);
+        });
+
+        document.querySelector("#additional").appendChild(element);
+
+        return inputs;
+      }
+
+      function setupAdditionalOptions() {
+        var element = document.createElement("div");
+        var inputs = [];
+        var options = [["Default", ""], ["Yes", true], ["No", false]];
+        element.appendChild(document.createTextNode("Additional Options: "));
+        element.className = "row";
+        Object.keys(additionalOptions).forEach((key) => {
+          var id = key;
+          var label = document.createElement("label");
+          var select = document.createElement("select");
+          select.id = id;
+          select.name = id;
+          options.forEach((item) => {
+            var option = document.createElement("option");
+            option.appendChild(document.createTextNode(item[0]));
+            option.value = item[1];
+            select.appendChild(option);
+          });
+          label.appendChild(document.createTextNode(`${additionalOptions[key]}: `));
+          label.appendChild(select);
+          label.className = "row";
+          label.htmlFor = id;
+          element.appendChild(label);
+          inputs.push(id);
+        });
+
+        document.querySelector("#additional").appendChild(element);
+
+        return inputs;
+      }
+
+      function setupOptions() {
         var inputs = [
           "color-scheme",
           "deck-id",
@@ -296,31 +380,21 @@
           "theme",
           "view"
         ];
-        additionalComponents.forEach((name) => inputs.push(`show-${name}`));
+
+        inputs.push(...setupAdditionalComponents());
+        inputs.push(...setupAdditionalOptions());
 
         for(var i = 0; i < inputs.length; i++) {
           var name = inputs[i];
           var element = document.querySelector("#" + name);
           var value = localStorage.getItem(name);
 
-          if(!value) {
-            switch(name) {
-              case "deck-id":
-                value = "big-five";
-                localStorage.setItem(name, value);
-                break;
-              case "locale":
-                value = "en-us";
-                localStorage.setItem(name, value);
-                break;
-              case "survey-type":
-                value = "personality";
-                localStorage.setItem(name, value);
-                break;
-            }
+          if(value == null && defaultValues.hasOwnProperty(name)) {
+            value = defaultValues[name];
+            localStorage.setItem(name, value);
           }
 
-          if(value) { element.type === "checkbox" ? element.checked = true : element.value = value; }
+          if(value != null) { element.type === "checkbox" ? element.checked = booleanFrom(value) : element.value = value; }
           element.addEventListener("change", onChange);
         }
 
@@ -333,10 +407,56 @@
         }
       }
 
-      function setupSurveys(){
+      function setupParams() {
+        var saveParams = () => {
+          var params = {};
+          document.querySelectorAll("#params input:not(#new-param-input)").forEach((input) => {
+            params[input.name] = input.value;
+          });
+
+          localStorage.setItem("params", JSON.stringify(params));
+        };
+
+        var addParam = (name, value) => {
+          var id = `param-${name}`;
+          if(document.querySelector(`#${id}`)) { return; }
+
+          document.querySelector("#new-param").insertAdjacentHTML("beforebegin", `
+            <label class="row" for="${id}-input" id="${id}">
+              ${name}: <input id="${id}-input" name="${name}" value="${value}"><button type="button">X</button>
+            </label>
+          `);
+          document.querySelector(`#${id}-input`).addEventListener("change", saveParams);
+          document.querySelector(`#${id} button`).addEventListener("click", (e) => {
+            e.currentTarget.parentElement.remove();
+
+            saveParams();
+          });
+        };
+
+        document.querySelector("#params").appendChild(document.createTextNode("Params: "));
+        document.querySelector("#params").insertAdjacentHTML("beforeend", `
+          <label class="row" for="new-param-input" id="new-param">
+            New Param: <input id="new-param-input" name="new-param-input"><button type="button">Add</button>
+          </label>
+        `);
+        document.querySelector("#new-param button").addEventListener("click", (e) => {
+          var target = e.currentTarget.parentElement.querySelector("input");
+          if(target.value) {
+            addParam(target.value, "");
+            saveParams();
+          }
+          target.value = "";
+        });
+
+        var params = JSON.parse(localStorage.getItem("params") || "{}");
+        Object.keys(params).forEach((key) => addParam(key, params[key]));
+      }
+
+      function setupSurveys() {
         var query = Traitify.graphql.queries.cognitive.surveys();
 
-        Traitify.post("/cognitive-tests/graphql", query).then(function(response)  {
+        Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
           var values = [];
           var select = document.querySelector("#survey-id");
 
@@ -359,7 +479,7 @@
         });
       }
 
-      function updateColorScheme(){
+      function updateColorScheme() {
         var colorScheme = localStorage.getItem("color-scheme") || "light";
         var theme = localStorage.getItem("theme");
         if(theme !== "paradox") { colorScheme = "light"; }
@@ -373,6 +493,7 @@
         });
       }
 
+      setupParams();
       setupSurveys();
       setupOptions();
       createWidget();

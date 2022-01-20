@@ -1,35 +1,17 @@
 import PropTypes from "prop-types";
 import withTraitify from "lib/with-traitify";
-import Guide from "components/results/guide";
 import PersonalityArchetype from "components/results/personality/archetype/heading";
 import PersonalityTips from "components/results/personality/archetype/tips";
 import PersonalityDimensions from "components/results/personality/dimension/list";
-import PersonalityRecommendationChart from "components/results/personality/recommendation/chart";
 import PersonalityTraits from "components/results/personality/trait/list";
 import style from "../style.scss";
 
-function CandidateResults({element, ...props}) {
-  const {getOption, translate} = props;
-  const allowHeaders = getOption("allowHeaders");
+function CandidateResults({setElement, ...props}) {
+  const {getOption} = props;
   const disabledComponents = getOption("disabledComponents") || [];
 
-  if(getOption("perspective") === "thirdPerson") {
-    return (
-      <section className={[style.container, style.box].join(" ")} ref={element}>
-        {allowHeaders && (
-          <>
-            <div className={style.sectionHeading}>{translate("recommendation_chart_heading")}</div>
-            <div>{translate("recommendation_chart_description")}</div>
-          </>
-        )}
-        <PersonalityRecommendationChart combined={true} {...props} />
-        <Guide combined={true} {...props} />
-      </section>
-    );
-  }
-
   return (
-    <section className={style.container} ref={element}>
+    <section className={style.container} ref={setElement}>
       <PersonalityArchetype {...props} />
       <PersonalityTips {...props} />
       <PersonalityDimensions {...props} disabledComponents={[...disabledComponents, "PersonalityPitfalls"]} />
@@ -38,14 +20,9 @@ function CandidateResults({element, ...props}) {
   );
 }
 
-CandidateResults.defaultProps = {element: null};
 CandidateResults.propTypes = {
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   getOption: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired
+  setElement: PropTypes.func.isRequired
 };
 
 export {CandidateResults as Component};

@@ -2,8 +2,8 @@
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import DangerousHTML from "lib/helpers/dangerous-html";
-import {useWindowSize} from "lib/helpers/hooks";
 import {dig} from "lib/helpers/object";
+import useWindowSize from "lib/hooks/use-window-size";
 import {
   defaultExamples,
   defaultExplanations,

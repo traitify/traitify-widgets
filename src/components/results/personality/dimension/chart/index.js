@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import {Component as Paradox} from "components/paradox/results/personality/dimension/chart";
 import PersonalityDimensionColumn from "components/results/personality/dimension/column";
 import {sortByTypePosition} from "lib/helpers";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 

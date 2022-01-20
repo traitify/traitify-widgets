@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import {detailWithPerspective} from "lib/helpers";
 import {findCompetency} from "lib/helpers/combine-data";
-import {useDidMount, useDidUpdate} from "lib/helpers/hooks";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-function PersonalityDimensionDetails({element, ...props}) {
+function PersonalityDimensionDetails({setElement, ...props}) {
   const {
     getOption,
     followGuide,
@@ -31,7 +32,7 @@ function PersonalityDimensionDetails({element, ...props}) {
   const disablePitfalls = disabledComponents.includes("PersonalityPitfalls");
 
   return (
-    <div className={style.container} ref={element}>
+    <div className={style.container} ref={setElement}>
       <div className={style.header}>
         <img alt={`${name} ${translate("badge")}`} src={badge.image_medium} />
         {competency && (
@@ -59,12 +60,8 @@ function PersonalityDimensionDetails({element, ...props}) {
   );
 }
 
-PersonalityDimensionDetails.defaultProps = {element: null, guide: null};
+PersonalityDimensionDetails.defaultProps = {guide: null};
 PersonalityDimensionDetails.propTypes = {
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ]),
   followGuide: PropTypes.func.isRequired,
   getOption: PropTypes.func.isRequired,
   guide: PropTypes.shape({
@@ -77,6 +74,7 @@ PersonalityDimensionDetails.propTypes = {
     ).isRequired,
     locale_key: PropTypes.string.isRequired
   }),
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   type: PropTypes.shape({
     personality_type: PropTypes.shape({

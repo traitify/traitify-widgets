@@ -6,9 +6,9 @@ import PersonalityTips from "components/results/personality/archetype/tips";
 import withTraitify from "lib/with-traitify";
 import style from "../style.scss";
 
-function EmployeeResults({element, ...props}) {
+function EmployeeResults({setElement, ...props}) {
   return (
-    <section className={style.container} ref={element}>
+    <section className={style.container} ref={setElement}>
       <PersonalityArchetype {...props} />
       <PersonalitySkills {...props} />
       <PersonalityTips {...props} />
@@ -17,12 +17,8 @@ function EmployeeResults({element, ...props}) {
   );
 }
 
-EmployeeResults.defaultProps = {element: null};
 EmployeeResults.propTypes = {
-  element: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({current: PropTypes.instanceOf(Element)})
-  ])
+  setElement: PropTypes.func.isRequired
 };
 
 export {EmployeeResults as Component};

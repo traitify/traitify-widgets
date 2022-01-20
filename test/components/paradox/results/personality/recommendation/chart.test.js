@@ -1,5 +1,6 @@
 import {Component} from "components/paradox/results/personality/recommendation/chart";
 import ComponentHandler from "support/component-handler";
+import {mockOptions, mockProps} from "support/helpers";
 import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
 import guide from "support/json/guide.json";
@@ -7,33 +8,25 @@ import guide from "support/json/guide.json";
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Paradox.PersonalityRecommendationChart", () => {
+  let component;
   let props;
 
   beforeEach(() => {
     props = {
+      ...mockProps(["followBenchmark", "followGuide", "getOption", "isReady", "setElement", "translate", "ui"]),
       assessment,
       benchmark,
-      followBenchmark: jest.fn().mockName("followBenchmark"),
-      followGuide: jest.fn().mockName("followGuide"),
       guide: {
         assessment_id: "xyz",
         locale_key: "es-US",
         ...guide
-      },
-      isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
-      translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
       }
     };
   });
 
   describe("callbacks", () => {
     it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
 
       expect(props.ui.trigger).toHaveBeenCalledWith(
         "PersonalityRecommendationChart.initialized",
@@ -45,7 +38,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
     });
 
     it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       props.ui.trigger.mockClear();
       component.updateProps();
 
@@ -70,7 +63,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
     });
 
     it("sets the data if the benchmark changes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         benchmark: {
           ...benchmark,
@@ -85,7 +78,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
     });
 
     it("sets the data if the guide's assessment ID changes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         guide: {
           ...component.props.guide,
@@ -98,7 +91,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
     });
 
     it("sets the data if the guide's locale changes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({
         guide: {
           ...component.props.guide,
@@ -111,7 +104,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
     });
 
     it("sets the data if the guide's removed", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+      component = new ComponentHandler(<Component {...props} />);
       component.updateProps({guide: null});
 
       expect(component.tree).toMatchSnapshot();
@@ -131,7 +124,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
   });
 
   it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -139,14 +132,21 @@ describe("Paradox.PersonalityRecommendationChart", () => {
   it("renders component if benchmark not ready", () => {
     props.benchmark = null;
     props.isReady.mockImplementation((value) => value !== "benchmark");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders component with combined prop", () => {
     props.combined = true;
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if disabled", () => {
+    mockOptions(props.getOption, {disabledComponents: ["PersonalityRecommendationChart"]});
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -154,7 +154,7 @@ describe("Paradox.PersonalityRecommendationChart", () => {
   it("renders nothing if guide not ready", () => {
     props.guide = null;
     props.isReady.mockImplementation((value) => value !== "guide");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -162,14 +162,14 @@ describe("Paradox.PersonalityRecommendationChart", () => {
   it("renders nothing if results not ready", () => {
     props.assessment = null;
     props.isReady.mockImplementation((value) => value !== "results");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if no competencies", () => {
     props.guide.competencies = [];
-    const component = new ComponentHandler(<Component {...props} />);
+    component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();
   });

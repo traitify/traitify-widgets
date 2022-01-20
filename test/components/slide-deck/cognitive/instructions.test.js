@@ -1,7 +1,7 @@
 import Component from "components/slide-deck/cognitive/instructions";
 import Practice from "components/slide-deck/cognitive/practice";
 import ComponentHandler, {act} from "support/component-handler";
-import {useResizeMock} from "support/mocks";
+import useResizeMock from "support/hooks/use-resize-mock";
 
 jest.mock("components/slide-deck/cognitive/practice", () => (() => <div className="mock">Practice</div>));
 

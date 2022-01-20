@@ -4,7 +4,7 @@ import Slide from "components/slide-deck/cognitive/slide";
 import Timer from "components/slide-deck/cognitive/timer";
 import ComponentHandler from "support/component-handler";
 import {flushPromises} from "support/helpers";
-import {useWindowMock} from "support/mocks";
+import useWindowMock from "support/hooks/use-window-mock";
 import assessment from "support/json/assessment/cognitive.json";
 
 jest.mock("components/slide-deck/cognitive/instructions", () => (() => <div className="mock">Instructions</div>));

@@ -5,7 +5,7 @@ import {getDisplayName, loadFont} from "lib/helpers";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 
-const fonts = {paradox: "https://fonts.googleapis.com/css?family=Open+Sans"};
+const fonts = {paradox: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700"};
 const imagePacks = {paradox: "white"};
 
 export default function withTraitify(WrappedComponent, themeComponents = {}) {

@@ -50,6 +50,7 @@ $-theme-color: $-blue;
 $color-scheme-dark: (
   "background-color": $-black,
   "border-color": $-border-color,
+  "fullscreen-color": $-black,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
   "me-color": $-traitify-blue,
@@ -68,9 +69,11 @@ $color-scheme-dark: (
   "text-color-light": $-white,
   "theme-color": $-theme-color
 );
+
 $color-scheme-light: (
   "background-color": $-white,
   "border-color": $-border-color,
+  "fullscreen-color": $-black,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
   "me-color": $-traitify-blue,

@@ -26,17 +26,17 @@
     @include min-width("sm") {
       font-size: $font-size * 1.25;
       line-height: $line-height;
-      margin: 1px;
+      margin: 5px;
       padding: $buffer;
       max-width: 150px;
 
       &:first-child {
-        border-bottom-left-radius: $border-radius-sm;
-        border-top-left-radius: $border-radius-sm;
+        border-radius: $border-radius-sm;
+        border-radius: $border-radius-sm;
       }
       &:last-child {
-        border-bottom-right-radius: $border-radius-sm;
-        border-top-right-radius: $border-radius-sm;
+        border-radius: $border-radius-sm;
+        border-radius: $border-radius-sm;
       }
     }
     @include theme("color", "text-color-light");
@@ -86,7 +86,7 @@
     z-index: 1;
 
     @include theme("color", "text-color-light");
-    @include theme("background-color", "progress-bar-color");
+    @include theme("background-color", "fullscreen-color");
     &:hover{ opacity: 1; }
     svg {
       height: 100%;

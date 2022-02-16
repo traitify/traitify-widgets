@@ -40,7 +40,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     const types = dig(assessment, "personality_types") || [];
     if(competencies.length === 0 || types.length === 0) { return; }
 
-    setData(createColumns({benchmark, guide, types}));
+    setData(createColumns({benchmark, guide, order: "types", types}));
   }, [
     dig(assessment, "personality_types", 0, "personality_type", "name"),
     dig(benchmark, "id"),

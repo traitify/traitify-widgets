@@ -107,6 +107,45 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
       />
       <div
+        className="active medium"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Influencing People
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="medium"
+      />
+      <div
         className="low"
       />
       <div
@@ -146,61 +185,22 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
+        className="active other"
       />
       <div
         className="low"
@@ -214,7 +214,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
       <div
         className="name"
       >
-        Influencing People
+        Delivering Results
       </div>
     </div>
     <div
@@ -263,25 +263,25 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="active other"
+        className="medium"
       />
       <div
-        className="low"
+        className="active low"
       />
       <div
         className="low"
@@ -292,7 +292,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
       <div
         className="name"
       >
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
   </div>
@@ -303,19 +303,19 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
       className="labels"
     >
       <div>
+        Influencing People
+      </div>
+      <div>
         Engaging with People
       </div>
       <div>
-        Managing Pressure
-      </div>
-      <div>
-        Influencing People
+        Delivering Results
       </div>
       <div>
         Solving Problems
       </div>
       <div>
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
     <div
@@ -324,74 +324,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
       <div
         className="grid"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="medium"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-        </div>
         <div
           className="row"
         >
@@ -421,6 +353,74 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
           />
           <div
             className="active medium"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
           />
           <div
             className="medium"
@@ -470,25 +470,25 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
           />
           <div
-            className="low"
+            className="active low"
           />
           <div
-            className="active other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
             className="medium"
@@ -641,162 +641,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         className="high"
       />
       <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Engaging with People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Delivering Results
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Solving Problems
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-      />
-      <div
         className="active high"
       />
       <div
@@ -829,6 +673,162 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         Influencing People
       </div>
     </div>
+    <div
+      className="column"
+    >
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="active medium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Engaging with People
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="active medium"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Delivering Results
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="active medium"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Solving Problems
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="active low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Managing Pressure
+      </div>
+    </div>
   </div>
   <div
     className="horizontal"
@@ -837,7 +837,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
       className="labels"
     >
       <div>
-        Managing Pressure
+        Influencing People
       </div>
       <div>
         Engaging with People
@@ -849,7 +849,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         Solving Problems
       </div>
       <div>
-        Influencing People
+        Managing Pressure
       </div>
     </div>
     <div
@@ -858,142 +858,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
       <div
         className="grid"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="active medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-        </div>
         <div
           className="row"
         >
@@ -1023,6 +887,142 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
           />
           <div
             className="active high"
+          />
+          <div
+            className="high"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="active medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="medium"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
           />
           <div
             className="high"
@@ -1175,6 +1175,45 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
       />
       <div
+        className="active medium"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Influencing People
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="medium"
+      />
+      <div
         className="low"
       />
       <div
@@ -1214,61 +1253,22 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
+        className="active other"
       />
       <div
         className="low"
@@ -1282,7 +1282,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
       <div
         className="name"
       >
-        Influencing People
+        Delivering Results
       </div>
     </div>
     <div
@@ -1331,25 +1331,25 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="active other"
+        className="medium"
       />
       <div
-        className="low"
+        className="active low"
       />
       <div
         className="low"
@@ -1360,7 +1360,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
       <div
         className="name"
       >
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
   </div>
@@ -1371,19 +1371,19 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
       className="labels"
     >
       <div>
+        Influencing People
+      </div>
+      <div>
         Engaging with People
       </div>
       <div>
-        Managing Pressure
-      </div>
-      <div>
-        Influencing People
+        Delivering Results
       </div>
       <div>
         Solving Problems
       </div>
       <div>
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
     <div
@@ -1392,74 +1392,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
       <div
         className="grid"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="medium"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-        </div>
         <div
           className="row"
         >
@@ -1489,6 +1421,74 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
           />
           <div
             className="active medium"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
           />
           <div
             className="medium"
@@ -1538,25 +1538,25 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
           />
           <div
-            className="low"
+            className="active low"
           />
           <div
-            className="active other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
             className="medium"
@@ -2251,6 +2251,45 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
+        className="active medium"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Influencing People
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="medium"
+      />
+      <div
         className="low"
       />
       <div
@@ -2290,61 +2329,22 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
+        className="active other"
       />
       <div
         className="low"
@@ -2358,7 +2358,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="name"
       >
-        Influencing People
+        Delivering Results
       </div>
     </div>
     <div
@@ -2407,25 +2407,25 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="active other"
+        className="medium"
       />
       <div
-        className="low"
+        className="active low"
       />
       <div
         className="low"
@@ -2436,7 +2436,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="name"
       >
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
   </div>
@@ -2447,19 +2447,19 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       className="labels"
     >
       <div>
+        Influencing People
+      </div>
+      <div>
         Engaging with People
       </div>
       <div>
-        Managing Pressure
-      </div>
-      <div>
-        Influencing People
+        Delivering Results
       </div>
       <div>
         Updated Name
       </div>
       <div>
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
     <div
@@ -2468,74 +2468,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="grid"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="medium"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-        </div>
         <div
           className="row"
         >
@@ -2565,6 +2497,74 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
           />
           <div
             className="active medium"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
           />
           <div
             className="medium"
@@ -2614,25 +2614,25 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
           />
           <div
-            className="low"
+            className="active low"
           />
           <div
-            className="active other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
             className="medium"
@@ -2785,6 +2785,45 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
+        className="active medium"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Influencing People
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="medium"
+      />
+      <div
         className="low"
       />
       <div
@@ -2824,61 +2863,22 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
+        className="active other"
       />
       <div
         className="low"
@@ -2892,7 +2892,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="name"
       >
-        Influencing People
+        Delivering Results
       </div>
     </div>
     <div
@@ -2941,25 +2941,25 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="active other"
+        className="medium"
       />
       <div
-        className="low"
+        className="active low"
       />
       <div
         className="low"
@@ -2970,7 +2970,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="name"
       >
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
   </div>
@@ -2981,19 +2981,19 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       className="labels"
     >
       <div>
+        Influencing People
+      </div>
+      <div>
         Engaging with People
       </div>
       <div>
-        Managing Pressure
-      </div>
-      <div>
-        Influencing People
+        Delivering Results
       </div>
       <div>
         Solving Problems
       </div>
       <div>
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
     <div
@@ -3002,74 +3002,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="grid"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="medium"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-        </div>
         <div
           className="row"
         >
@@ -3099,6 +3031,74 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
           />
           <div
             className="active medium"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
           />
           <div
             className="medium"
@@ -3148,25 +3148,25 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
           />
           <div
-            className="low"
+            className="active low"
           />
           <div
-            className="active other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
             className="medium"
@@ -3319,6 +3319,45 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
+        className="active medium"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="high"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="low"
+      />
+      <div
+        className="name"
+      >
+        Influencing People
+      </div>
+    </div>
+    <div
+      className="column"
+    >
+      <div
+        className="medium"
+      />
+      <div
         className="low"
       />
       <div
@@ -3358,61 +3397,22 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
+        className="other"
       />
       <div
-        className="medium"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-      />
-      <div
-        className="active medium"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
-      />
-      <div
-        className="high"
+        className="active other"
       />
       <div
         className="low"
@@ -3426,7 +3426,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="name"
       >
-        Influencing People
+        Delivering Results
       </div>
     </div>
     <div
@@ -3475,25 +3475,25 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="other"
+        className="medium"
       />
       <div
-        className="active other"
+        className="medium"
       />
       <div
-        className="low"
+        className="active low"
       />
       <div
         className="low"
@@ -3504,7 +3504,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="name"
       >
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
   </div>
@@ -3515,19 +3515,19 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       className="labels"
     >
       <div>
+        Influencing People
+      </div>
+      <div>
         Engaging with People
       </div>
       <div>
-        Managing Pressure
-      </div>
-      <div>
-        Influencing People
+        Delivering Results
       </div>
       <div>
         Solving Problems
       </div>
       <div>
-        Delivering Results
+        Managing Pressure
       </div>
     </div>
     <div
@@ -3536,74 +3536,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
       <div
         className="grid"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="high"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="medium"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-          <div
-            className="medium"
-          />
-        </div>
         <div
           className="row"
         >
@@ -3633,6 +3565,74 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
           />
           <div
             className="active medium"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="medium"
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
+          />
+          <div
+            className="other"
           />
           <div
             className="medium"
@@ -3682,25 +3682,25 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
           />
           <div
-            className="low"
+            className="active low"
           />
           <div
-            className="active other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
-            className="other"
+            className="medium"
           />
           <div
             className="medium"

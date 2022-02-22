@@ -13,7 +13,7 @@ function ManagerResults({setElement, ...props}) {
       {allowHeaders && (
         <>
           <div className={style.sectionHeading}>{translate("recommendation_chart_heading")}</div>
-          <p>{translate("recommendation_chart_description")}</p>
+          <div className={style.p}>{translate("recommendation_chart_description")}</div>
         </>
       )}
       <PersonalityRecommendationChart combined={true} {...props} />

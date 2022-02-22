@@ -9,9 +9,9 @@ exports[`Paradox.ManagerResults allowHeaders renders component 1`] = `
   >
     recommendation_chart_heading
   </div>
-  <div>
+  <p>
     recommendation_chart_description
-  </div>
+  </p>
   <div
     className="mock"
   >

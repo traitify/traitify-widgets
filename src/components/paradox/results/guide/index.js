@@ -82,7 +82,7 @@ function Guide({setElement, ...props}) {
     const types = dig(assessment, "personality_types") || [];
     if(competencies.length === 0 || types.length === 0) { return; }
 
-    const _data = combine({benchmark, guide, types})
+    const _data = combine({benchmark, guide, order: "types", types})
       .map(({competency, rank, score}) => ({...competency, rank, score}));
 
     setData(_data);

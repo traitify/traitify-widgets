@@ -8,12 +8,12 @@ exports[`Paradox.Guide renders component 1`] = `
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -22,16 +22,16 @@ exports[`Paradox.Guide renders component 1`] = `
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -44,12 +44,12 @@ exports[`Paradox.Guide renders component 1`] = `
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -59,22 +59,22 @@ exports[`Paradox.Guide renders component 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -82,17 +82,17 @@ exports[`Paradox.Guide renders component 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -109,7 +109,7 @@ exports[`Paradox.Guide renders component 1`] = `
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -134,7 +134,7 @@ exports[`Paradox.Guide renders component 1`] = `
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -152,22 +152,22 @@ exports[`Paradox.Guide renders component 1`] = `
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -189,7 +189,7 @@ exports[`Paradox.Guide renders component 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -219,7 +219,7 @@ exports[`Paradox.Guide renders component 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -244,12 +244,12 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
     className="tabs"
   >
     <button
-      className="active low"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Managing Pressure
+        Influencing People
       </span>
     </button>
     <button
@@ -280,12 +280,12 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       </span>
     </button>
     <button
-      className="high"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -295,12 +295,12 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
       >
-        Managing Pressure
+        Influencing People
       </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
@@ -318,17 +318,17 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
         Solving Problems
       </option>
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Influencing People
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading high"
     >
-      Managing Pressure
+      Influencing People
     </div>
-    At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and the way in which they control their emotions and underlying tension in order to stay on task and cope with everyday challenges.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -345,7 +345,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       <div
         className="heading"
       >
-        Resilient/Reflexive People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -370,7 +370,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
           <div
             className="text"
           >
-            Tell me about dealing with a highly pressured and difficult work situation.
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -388,19 +388,22 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
         </div>
         <ul>
           <li>
-            Do they appear to respond with the appropriate level of concern?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            Are they able to deal with things in a calm and upbeat way?
+            How accommodating are they?
           </li>
           <li>
-            Do they keep their feelings under control?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            And to probe into possible issues with being resilient/reflexive.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
+          </li>
+          <li>
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -422,7 +425,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -452,7 +455,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -477,12 +480,12 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -491,16 +494,16 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -513,12 +516,12 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -528,22 +531,22 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -551,17 +554,17 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -578,7 +581,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -603,7 +606,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -621,22 +624,22 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -658,7 +661,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -688,7 +691,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -721,12 +724,12 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -735,16 +738,16 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -757,12 +760,12 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -772,22 +775,22 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -795,17 +798,17 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -820,15 +823,18 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
     <div
       className="p"
     >
-      The benefits of being extraverted are likely to include being people oriented, approachable, fun loving, energetic, fast to act, and 'full on'. In contrast someone who is introverted probably prefers to work independently, and is more likely to be dispassionate, thoughtful and measured, to think before acting and to stand back. Those who are a mixture of both (extroverted/introverted) are best described as socially skilled, quick to connect, energetic, thoughtful and action oriented, and enthusiastic.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
+      The benefits of being agreeable are likely to include accommodating other people's points of view, tuning into their particular wavelength, starting from a position of trust, being non-confrontational, and steadily working towards harmonious outcomes.
+In contrast someone who is independent will probably be questioning and challenge assumptions, will speak their mind, be competitive, and try and influence others in a direct and impersonal manner.
+Those who are a mixture of both (agreeable/independent) are best described as natural negotiators, as they will take a realistic view of others, but will also adopt a relational style and search for a 'win-win' outcome.
+These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
+The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
     </div>
     <hr />
     <div>
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -853,7 +859,7 @@ These personality characteristics provide the basis for asking a particular sequ
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -871,22 +877,22 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -908,7 +914,7 @@ These personality characteristics provide the basis for asking a particular sequ
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -938,7 +944,7 @@ These personality characteristics provide the basis for asking a particular sequ
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -963,12 +969,12 @@ exports[`Paradox.Guide toggles question content 1`] = `
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -977,16 +983,16 @@ exports[`Paradox.Guide toggles question content 1`] = `
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -999,12 +1005,12 @@ exports[`Paradox.Guide toggles question content 1`] = `
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -1014,22 +1020,22 @@ exports[`Paradox.Guide toggles question content 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -1037,17 +1043,17 @@ exports[`Paradox.Guide toggles question content 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -1064,7 +1070,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -1089,7 +1095,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1107,22 +1113,22 @@ exports[`Paradox.Guide toggles question content 1`] = `
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -1144,7 +1150,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1162,13 +1168,13 @@ exports[`Paradox.Guide toggles question content 1`] = `
         </div>
         <ul>
           <li>
-            How comfortable are they working alone?
+            Are they too open-minded and accepting of different opinions?
           </li>
           <li>
-            Are they likely to be frustrated because they cannot employ their face-to-face social skills?
+            While they recognize that no one is perfect, do they let sympathy get in the way of action?
           </li>
           <li>
-            Do they get bored with apparently low energy situations?
+            Do they sometimes lose out to more assertive colleagues?
           </li>
         </ul>
         <div
@@ -1178,13 +1184,13 @@ exports[`Paradox.Guide toggles question content 1`] = `
         </div>
         <ul>
           <li>
-            Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
+            Do they recognize that it can be important to be more objective and less people-oriented?
           </li>
           <li>
-            Can they describe how they handle working alone?
+            Can they give an example of being more hard edged?
           </li>
           <li>
-            How do they keep themselves mentally engaged?
+            How did this feel?
           </li>
         </ul>
       </div>
@@ -1206,7 +1212,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1467,12 +1473,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -1481,16 +1487,16 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -1503,12 +1509,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -1518,22 +1524,22 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -1541,17 +1547,17 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
         Updated Name
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -1568,7 +1574,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -1593,7 +1599,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1611,22 +1617,22 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -1648,7 +1654,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1678,7 +1684,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1703,12 +1709,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -1717,16 +1723,16 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -1739,12 +1745,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -1754,22 +1760,22 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -1777,17 +1783,17 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -1804,7 +1810,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -1829,7 +1835,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1847,22 +1853,22 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -1884,7 +1890,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1914,7 +1920,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1939,12 +1945,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
     className="tabs"
   >
     <button
-      className="active low"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Engaging with People
+        Influencing People
       </span>
     </button>
     <button
@@ -1953,16 +1959,16 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       type="button"
     >
       <span>
-        Managing Pressure
+        Engaging with People
       </span>
     </button>
     <button
-      className="medium"
+      className="other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -1975,12 +1981,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       </span>
     </button>
     <button
-      className="other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -1990,22 +1996,22 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="5064521c-1028-40d4-8baa-dfeff734406f"
+      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
     >
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
       <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -2013,17 +2019,17 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading medium"
     >
-      Engaging with People
+      Influencing People
     </div>
-    At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
+    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
     <div
       className="p"
     >
@@ -2040,7 +2046,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       <div
         className="heading"
       >
-        Extraverted/Introverted People
+        Agreeable/Independent People
       </div>
       <div
         className="p"
@@ -2065,7 +2071,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
           <div
             className="text"
           >
-            How would you describe the way in which you deal with new people in a work situation?
+            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -2083,22 +2089,22 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
         </div>
         <ul>
           <li>
-            How comfortable are they approaching new people (work colleagues, customers etc)?
+            Are they tuned into other people's thoughts and feelings?
           </li>
           <li>
-            What sort of interpersonal skills do they describe using?
+            How accommodating are they?
           </li>
           <li>
-            How much energy do they invest in trying to connect with other people?
+            Do they use a realistic but sympathetic style?
           </li>
           <li>
-            Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+            Do they push their case in an open and sensitive way?
           </li>
           <li>
-            Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+            Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
           </li>
           <li>
-            And to probe into possible issues with being extraverted/introverted.
+            And to probe into possible issues with being agreeable/independent.
           </li>
         </ul>
       </div>
@@ -2120,7 +2126,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
+            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -2150,7 +2156,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
           <div
             className="text"
           >
-            (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
+            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -2175,6 +2181,15 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
     className="tabs"
   >
     <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
       className="low"
       onClick={[Function]}
       type="button"
@@ -2184,21 +2199,12 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       </span>
     </button>
     <button
-      className="low"
+      className="active other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Managing Pressure
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -2211,12 +2217,12 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       </span>
     </button>
     <button
-      className="active other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -2229,19 +2235,19 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
     >
       <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -2249,9 +2255,9 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div
@@ -2408,6 +2414,15 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
     className="tabs"
   >
     <button
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
       className="low"
       onClick={[Function]}
       type="button"
@@ -2417,21 +2432,12 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       </span>
     </button>
     <button
-      className="low"
+      className="active other"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Managing Pressure
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Influencing People
+        Delivering Results
       </span>
     </button>
     <button
@@ -2444,12 +2450,12 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       </span>
     </button>
     <button
-      className="active other"
+      className="low"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Delivering Results
+        Managing Pressure
       </span>
     </button>
   </div>
@@ -2462,19 +2468,19 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
     >
       <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
+      </option>
+      <option
         value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
         Engaging with People
       </option>
       <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
       >
-        Managing Pressure
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
+        Delivering Results
       </option>
       <option
         value="157f0ecf-69e6-4007-a27c-d6f35de92565"
@@ -2482,9 +2488,9 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
         Solving Problems
       </option>
       <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
       >
-        Delivering Results
+        Managing Pressure
       </option>
     </select>
     <div

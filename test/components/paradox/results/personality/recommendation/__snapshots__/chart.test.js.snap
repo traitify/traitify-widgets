@@ -5,25 +5,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
   className="container"
 >
   <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
-  <div
     className="vertical"
   >
     <div
@@ -539,25 +520,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
   className="container"
 >
   <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
-  <div
     className="vertical"
   >
     <div
@@ -1072,25 +1034,6 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
 <div
   className="container combined"
 >
-  <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
   <div
     className="vertical"
   >
@@ -1615,25 +1558,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
   className="container"
 >
   <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
-  <div
     className="vertical"
   >
     <div
@@ -2148,25 +2072,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
 <div
   className="container"
 >
-  <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
   <div
     className="vertical"
   >
@@ -2683,25 +2588,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
   className="container"
 >
   <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
-  <div
     className="vertical"
   >
     <div
@@ -3216,25 +3102,6 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
 <div
   className="container"
 >
-  <div
-    className="ranks"
-  >
-    <div
-      className="high"
-    >
-      preferred
-    </div>
-    <div
-      className="medium"
-    >
-      acceptable
-    </div>
-    <div
-      className="low"
-    >
-      potential_risk
-    </div>
-  </div>
   <div
     className="vertical"
   >

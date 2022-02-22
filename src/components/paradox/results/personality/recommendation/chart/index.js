@@ -9,11 +9,11 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-const ranks = [
-  {key: "preferred", rank: "high"},
-  {key: "acceptable", rank: "medium"},
-  {key: "potential_risk", rank: "low"}
-];
+// const ranks = [
+//   {key: "preferred", rank: "high"},
+//   {key: "acceptable", rank: "medium"},
+//   {key: "potential_risk", rank: "low"}
+// ];
 
 function PersonalityRecommendationChart({setElement, ...props}) {
   const {
@@ -25,7 +25,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     getOption,
     guide,
     isReady,
-    translate,
+    // translate,
     ui
   } = props;
   const [data, setData] = useState([]);
@@ -59,9 +59,9 @@ function PersonalityRecommendationChart({setElement, ...props}) {
 
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>
-      <div className={style.ranks}>
+      {/* <div className={style.ranks}>
         {ranks.map(({key, rank}) => <div key={key} className={style[rank]}>{translate(key)}</div>)}
-      </div>
+      </div> */}
       <div className={style.vertical}>
         <div className={style.scale}>
           {times(length).map((index) => (

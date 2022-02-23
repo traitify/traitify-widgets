@@ -79,7 +79,7 @@ function Cognitive(props) {
       params: {
         answers,
         learningDisability: disability,
-        overallTimeTaken: Date.now() - startTime,
+        overallTimeTaken: (Date.now() - startTime) / 1000,
         testId: assessment.id
       }
     });
@@ -152,7 +152,6 @@ function Cognitive(props) {
       return onSubmit();
     }
   }, [questions, questionIndex]);
-
   const question = questions[questionIndex];
   const nextQuestion = questions[questionIndex + 1];
 

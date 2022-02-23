@@ -79,7 +79,7 @@ function Cognitive(props) {
       params: {
         answers,
         learningDisability: disability,
-        overallTimeTaken: (Date.now() - startTime) / 1000,
+        overallTimeTaken: parseInt((Date.now() - startTime) / 1000, 10),
         testId: assessment.id
       }
     });

@@ -20,7 +20,7 @@ function List({data}) {
 List.propTypes = {data: PropTypes.string.isRequired};
 
 function Question({question, translate}) {
-  const [showContent, setShowContent] = useState(question.order === 1);
+  const [showContent, setShowContent] = useState(false);
 
   return (
     <div className={[style.question, showContent && style.open].filter(Boolean).join(" ")}>
@@ -129,7 +129,7 @@ function Guide({setElement, ...props}) {
             {translate("read_more")}
           </button>
         </div>
-        {showExpandedIntro && <div className={style.p}>{expandedIntro.join("\n").trim()}</div>}
+        {showExpandedIntro && <div className={`${style.p} ${style.expandedIntro}`}>{expandedIntro.join("\n").trim()}</div>}
         <hr />
         {activeCompetency.questionSequences.map((sequence) => (
           <div key={sequence.id}>

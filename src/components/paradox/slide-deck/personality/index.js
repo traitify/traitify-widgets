@@ -272,7 +272,9 @@ Personality.propTypes = {
     instructions: PropTypes.shape({instructional_text: PropTypes.string.isRequired}),
     locale_key: PropTypes.string.isRequired,
     scoring_scale: PropTypes.string,
-    slides: PropTypes.arrayOf(PropTypes.object).isRequired
+    slides: PropTypes.arrayOf(
+      PropTypes.shape({id: PropTypes.string.isRequired})
+    ).isRequired
   }),
   cache: PropTypes.shape({
     get: PropTypes.func.isRequired,

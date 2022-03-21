@@ -10,7 +10,7 @@ const imagePacks = {paradox: "white"};
 
 export default function withTraitify(WrappedComponent, themeComponents = {}) {
   return class TraitifyComponent extends Component {
-    static displayName = `Traitify${getDisplayName(WrappedComponent)}`
+    static displayName = `Traitify${getDisplayName(WrappedComponent)}`;
     static defaultProps = {
       assessment: null,
       assessmentID: null,
@@ -20,7 +20,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       options: null,
       traitify: null,
       ui: null
-    }
+    };
     static propTypes = {
       assessment: PropTypes.oneOfType([
         PropTypes.shape({ // Cognitive
@@ -60,7 +60,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       options: PropTypes.shape({locale: PropTypes.string}),
       traitify: TraitifyPropTypes.traitify,
       ui: TraitifyPropTypes.ui
-    }
+    };
     static getDerivedStateFromError(error) { return {error}; }
     constructor(props) {
       super(props);
@@ -197,7 +197,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    }
+    };
     getBenchmark = (options = {}) => {
       const {benchmarkID, locale} = this.state;
       if(!benchmarkID) { return Promise.resolve(); }
@@ -242,7 +242,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    }
+    };
     getCacheKey = (type, options = {}) => {
       let {id} = options;
       const locale = options.locale || this.state.locale;
@@ -265,7 +265,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       }
 
       return [locale, type, id, ...keys].filter(Boolean).join(".");
-    }
+    };
     getCognitiveAssessment = (options = {}) => {
       const {assessmentID, locale} = this.state;
       if(!assessmentID) { return Promise.resolve(); }
@@ -312,7 +312,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    }
+    };
     getDeck = (options = {}) => {
       const {deckID, locale} = this.state;
       if(!deckID) { return Promise.resolve(); }
@@ -356,7 +356,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    }
+    };
     getGuide = (options = {}) => {
       const {assessment, locale} = this.state;
       const assessmentID = (assessment || {}).id;
@@ -411,8 +411,8 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    }
-    getListener = (key) => (this.listeners[key.toLowerCase()])
+    };
+    getListener = (key) => (this.listeners[key.toLowerCase()]);
     getOption = (...keys) => {
       const {props, ui} = this;
 
@@ -422,7 +422,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       if(dig(props, ...keys) != null) { return dig(props, ...keys); }
       if(dig(props.options, ...keys) != null) { return dig(props.options, ...keys); }
       if(ui && dig(ui.options, ...keys) != null) { return dig(ui.options, ...keys); }
-    }
+    };
     setAssessmentID() {
       const assessmentID = this.getOption("assessmentID") || (
         this.props.assessment && this.props.assessment.id
@@ -479,7 +479,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       this.listeners = this.listeners || {};
       this.listeners[key] = callback;
       this.ui.on(key, callback);
-    }
+    };
     // setState method that also works in the constructor
     safeSetState = (state) => {
       if(this.didMount) {
@@ -487,20 +487,20 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       } else {
         this.state = {...this.state, ...state};
       }
-    }
-    setElement = (element) => { this.setState({element}); }
+    };
+    setElement = (element) => { this.setState({element}); };
     followBenchmark = () => {
       this.setState({followingBenchmark: true});
       this.updateBenchmark();
-    }
+    };
     followDeck = () => {
       this.setState({followingDeck: true});
       this.updateDeck();
-    }
+    };
     followGuide = () => {
       this.setState({followingGuide: true});
       this.updateGuide();
-    }
+    };
     isReady = (type) => {
       const {assessment, benchmark, deck, guide} = this.state;
 
@@ -530,13 +530,13 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         default:
           return false;
       }
-    }
+    };
     removeListener = (_key) => {
       const key = _key.toLowerCase();
 
       this.ui.off(key, this.getListener(key));
       delete this.listeners[key];
-    }
+    };
     cognitiveDidUpdate(prevProps, prevState) {
       const changes = {
         assessmentID: prevState.assessmentID !== this.state.assessmentID,

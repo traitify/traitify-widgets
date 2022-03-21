@@ -14,15 +14,15 @@ export default class TraitifyClient {
       this.host = `${window.location.protocol}//${this.host}`;
     }
     return this;
-  }
+  };
   setPublicKey = (key) => {
     this.publicKey = key;
     return this;
-  }
+  };
   setVersion = (version) => {
     this.version = version;
     return this;
-  }
+  };
   handlePromise = (requestType, _xhr, _params) => {
     const params = typeof _params === "string" ? _params : JSON.stringify(_params);
     const xhr = _xhr;
@@ -46,7 +46,7 @@ export default class TraitifyClient {
 
     promise.xhr = xhr;
     return promise;
-  }
+  };
   ajax = (method, path, _params) => {
     let params;
     let url = `${this.host}/${this.version}${path}`;
@@ -78,9 +78,9 @@ export default class TraitifyClient {
     }
 
     return this.handlePromise("rest", xhr, params);
-  }
-  get = (path, params) => (this.ajax("GET", path, params))
-  put = (path, params) => (this.ajax(this.oldIE ? "POST" : "PUT", path, params))
-  post = (path, params) => (this.ajax("POST", path, params))
-  delete = (path, params) => (this.ajax("DELETE", path, params))
+  };
+  get = (path, params) => (this.ajax("GET", path, params));
+  put = (path, params) => (this.ajax(this.oldIE ? "POST" : "PUT", path, params));
+  post = (path, params) => (this.ajax("POST", path, params));
+  delete = (path, params) => (this.ajax("DELETE", path, params));
 }

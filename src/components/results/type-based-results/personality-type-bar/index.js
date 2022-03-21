@@ -20,7 +20,7 @@ class PersonalityTypeBar extends Component {
       score: PropTypes.number.isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -41,11 +41,11 @@ class PersonalityTypeBar extends Component {
   }
   getActiveType = () => {
     this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
-  }
+  };
   setActive = () => {
     this.props.ui.trigger("PersonalityTypeBar.changeType", this, this.props.type);
     this.props.ui.trigger("Assessment.activeType", this, this.props.type);
-  }
+  };
   render() {
     const type = this.props.type.personality_type;
     const title = type.name;

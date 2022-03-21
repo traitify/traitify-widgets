@@ -4,9 +4,10 @@ import ComponentHandler from "support/component-handler";
 jest.mock("lib/with-traitify", () => ((Component) => (Component)));
 
 const dimensionAssessment = {assessment_type: "DIMENSION_BASED"};
-const DimensionComponent = () => (<div className="dimension">Personality Types</div>);
 const typeAssessment = {assessment_type: "TYPE_BASED"};
-const TypeComponent = () => (<div className="type">Personality Types</div>);
+
+function DimensionComponent() { return <div className="dimension">Personality Types</div>; }
+function TypeComponent() { return <div className="type">Personality Types</div>; }
 
 describe("Helpers", () => {
   let Component;

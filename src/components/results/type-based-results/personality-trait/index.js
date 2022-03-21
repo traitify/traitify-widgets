@@ -22,7 +22,7 @@ class PersonalityTrait extends Component {
       score: PropTypes.number.isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("PersonalityTrait.initialized", this);
   }

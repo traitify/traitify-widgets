@@ -8,11 +8,12 @@ describe("useElementSize", () => {
   let component;
   let element;
   let size;
-  const Component = (props) => {
+
+  function Component(props) {
     size.current = useElementSize(props.element);
 
     return null;
-  };
+  }
 
   beforeEach(() => {
     element = {clientHeight: 800, clientWidth: 600};

@@ -4,12 +4,12 @@ import Loading from "components/loading";
 import style from "./style.scss";
 
 export default class NotReady extends Component {
-  static defaultProps = {error: null}
+  static defaultProps = {error: null};
   static propTypes = {
     error: PropTypes.string,
     retry: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired
-  }
+  };
   render() {
     const {error, retry, translate} = this.props;
 

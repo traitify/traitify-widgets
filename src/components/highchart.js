@@ -26,13 +26,13 @@ export default class Highchart extends Component {
     xAxis: PropTypes.shape({
       title: PropTypes.string
     })
-  }
+  };
   static defaultProps = {
     legend: null,
     xAxis: null,
     title: null,
     type: null
-  }
+  };
   constructor(props) {
     super(props);
 

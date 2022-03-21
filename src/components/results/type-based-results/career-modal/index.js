@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-class-component-methods */
 import {
   faAdjust,
   faChartBar,
@@ -64,11 +65,11 @@ class CareerModal extends Component {
     this.props.ui.off("CareerModal.hide", this.hide);
     this.props.ui.off("CareerModal.show", this.show);
   }
-  close = () => { this.props.ui.trigger("CareerModal.hide", this); }
-  hide = () => { this.setState({show: false}); }
-  setCareer = () => { this.setState({career: this.props.ui.current["CareerModal.career"]}); }
-  show = () => { this.setState({show: true}); }
-  toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); }
+  close = () => { this.props.ui.trigger("CareerModal.hide", this); };
+  hide = () => { this.setState({show: false}); };
+  setCareer = () => { this.setState({career: this.props.ui.current["CareerModal.career"]}); };
+  show = () => { this.setState({show: true}); };
+  toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); };
   render() {
     const {career, show, showLegend} = this.state;
     const {assessment, isReady, translate} = this.props;

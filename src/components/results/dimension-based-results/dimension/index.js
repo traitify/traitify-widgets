@@ -7,7 +7,7 @@ import {rgba} from "lib/helpers/color";
 import style from "./style.scss";
 
 class Dimension extends Component {
-  static defaultProps = {assessmentID: null}
+  static defaultProps = {assessmentID: null};
   static propTypes = {
     assessmentID: PropTypes.string,
     getOption: PropTypes.func.isRequired,
@@ -31,7 +31,7 @@ class Dimension extends Component {
       score: PropTypes.number.isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ class Dimension extends Component {
   trigger = () => {
     this.props.ui.trigger("Dimension.showContent", this, this.props.type.personality_type);
     this.setState((state) => ({showContent: !state.showContent}));
-  }
+  };
   render() {
     const type = this.props.type.personality_type;
     const color = `#${type.badge.color_1}`;

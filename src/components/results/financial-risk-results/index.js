@@ -10,7 +10,7 @@ import PersonalityTakeaways from "./personality-takeaways";
 class FinancialRiskResults extends Component {
   static propTypes = {
     getOption: PropTypes.func.isRequired
-  }
+  };
   render() {
     const perspective = this.props.getOption("perspective") || "firstPerson";
 

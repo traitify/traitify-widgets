@@ -25,7 +25,7 @@ class PersonalityDimension extends Component {
       }).isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("PersonalityDimension.initialized", this);
   }

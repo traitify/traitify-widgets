@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-class-component-methods */
 import {
   faCheckSquare,
   faSquare
@@ -11,7 +12,7 @@ import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
 class CareerFilter extends Component {
-  static defaultProps = {options: null}
+  static defaultProps = {options: null};
   static propTypes = {
     isReady: PropTypes.func.isRequired,
     options: PropTypes.shape({
@@ -23,7 +24,7 @@ class CareerFilter extends Component {
     }),
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -51,15 +52,15 @@ class CareerFilter extends Component {
         ...props.ui.current["Careers.mergeParams"]
       }
     }));
-  }
+  };
   toggleFilters = () => {
     this.setState((state) => ({showFilters: !state.showFilters}));
-  }
+  };
   updateParams = () => {
     this.setState({
       params: {...this.props.ui.current["Careers.updateParams"]}
     });
-  }
+  };
   onChange = (e) => {
     const {name, value} = e.target;
 
@@ -70,7 +71,7 @@ class CareerFilter extends Component {
 
       return {params};
     });
-  }
+  };
   onExperienceChange = (e) => {
     const value = +e.target.value;
     const defaultLevels = careerOption(this.props, "experienceLevels") || [1, 2, 3, 4, 5];
@@ -91,7 +92,7 @@ class CareerFilter extends Component {
 
       return {params};
     });
-  }
+  };
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -101,7 +102,7 @@ class CareerFilter extends Component {
     });
 
     return false;
-  }
+  };
   render() {
     if(!this.props.isReady("results")) { return null; }
 

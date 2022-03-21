@@ -30,11 +30,11 @@ describe("useSlideLoader", () => {
     let elements;
     let state;
 
-    const Component = (props) => {
+    function Component(props) {
       state.current = useSlideLoader(props);
 
       return null;
-    };
+    }
 
     useGlobalMock(document, "createElement");
 

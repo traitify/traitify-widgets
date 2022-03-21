@@ -31,11 +31,12 @@ describe("useWindowSize", () => {
 
   describe("values", () => {
     let size;
-    const Component = () => {
+
+    function Component() {
       size.current = useWindowSize();
 
       return null;
-    };
+    }
 
     useResizeMock();
 

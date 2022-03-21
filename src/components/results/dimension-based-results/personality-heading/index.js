@@ -6,7 +6,7 @@ import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
 class PersonalityHeading extends Component {
-  static defaultProps = {assessment: null, deck: null}
+  static defaultProps = {assessment: null, deck: null};
   static propTypes = {
     assessment: PropTypes.shape({
       archetype: PropTypes.shape({
@@ -18,7 +18,7 @@ class PersonalityHeading extends Component {
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("PersonalityHeading.initialized", this);
     this.props.followDeck();

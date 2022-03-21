@@ -6,7 +6,7 @@ import PersonalityBadge from "../personality-badge";
 import style from "./style.scss";
 
 class PersonalityBlend extends Component {
-  static defaultProps = {assessment: null}
+  static defaultProps = {assessment: null};
   static propTypes = {
     assessment: PropTypes.shape({
       personality_blend: PropTypes.shape({
@@ -28,7 +28,7 @@ class PersonalityBlend extends Component {
     }),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("PersonalityBlend.initialized", this);
   }

@@ -151,7 +151,9 @@ class CareerFilter extends Component {
                           <label htmlFor={`traitify-career-level-${level}`}>
                             <input aria-labelledby={`traitify-career-level-${level}-label`} checked={checked} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={this.onExperienceChange} value={level} />
                             <Icon icon={checked ? faCheckSquare : faSquare} />
-                            <span id={`traitify-career-level-${level}-label`}>{translate(`experience_level_${level}`)}</span>
+                            <span id={`traitify-career-level-${level}-label`}>
+                              {translate(`experience_level_${level}`)}
+                            </span>
                           </label>
                         </li>
                       );

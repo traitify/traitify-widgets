@@ -115,7 +115,9 @@ class CareerModal extends Component {
               </li>
               <li>
                 <h4><Icon icon={faGraduationCap} /> {translate("education")}:</h4>
-                <div className={`${style.infoText} ${style.education}`}>{translate(`experience_level_${career.experience_level.id}`)}</div>
+                <div className={`${style.infoText} ${style.education}`}>
+                  {translate(`experience_level_${career.experience_level.id}`)}
+                </div>
               </li>
             </ul>
             <ul className={style.info}>

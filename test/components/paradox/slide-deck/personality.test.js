@@ -574,7 +574,9 @@ describe("Personality", () => {
 
       it("automatically retries request", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => { component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`); });
+        component.act(() => {
+          component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`);
+        });
         component.act(() => { component.props.traitify.put.mockResolvedValueOnce({status: "success"}); });
 
         await completeSlides();
@@ -604,7 +606,9 @@ describe("Personality", () => {
 
       it("renders json error", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => { component.props.traitify.put.mockRejectedValue(`{"errors": ["Oh no", "Not good"]}`); });
+        component.act(() => {
+          component.props.traitify.put.mockRejectedValue(`{"errors": ["Oh no", "Not good"]}`);
+        });
 
         await completeSlides();
         await retry();

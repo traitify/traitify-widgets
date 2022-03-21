@@ -183,7 +183,10 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       if(imagePack) { params.image_pack = imagePack; }
 
-      this.ui.requests[key] = this.traitify.get(`/assessments/${assessmentID}`, params).then((data) => {
+      this.ui.requests[key] = this.traitify.get(
+        `/assessments/${assessmentID}`,
+        params
+      ).then((data) => {
         if(hasResults(data)) { this.cache.set(key, data); }
 
         setAssessment(data);

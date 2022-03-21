@@ -81,7 +81,8 @@ function PersonalityArchetypeSkills({setElement, ...props}) {
 
   const allowHeaders = getOption("allowHeaders");
   const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
-  const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
+  const typeTips = details
+    .filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
   const tips = [];
   sortByTypePosition(assessment.personality_types).forEach(({personality_type: {name}}) => {
     const tip = typeTips.find(({title}) => title.endsWith(name));

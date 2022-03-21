@@ -56,7 +56,10 @@ class PersonalityDimension extends Component {
     const options = {base: {details}, perspective};
 
     return (
-      <li className={style.dimension} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`}}>
+      <li
+        className={style.dimension}
+        style={{background: rgba(color, 10), borderTop: `5px solid ${color}`}}
+      >
         <h2>{name} <span style={{color}}>|</span> {level}</h2>
         <h3>{headers[0]}</h3>
         <p>{detailWithPerspective({...options, name: "description"})}</p>

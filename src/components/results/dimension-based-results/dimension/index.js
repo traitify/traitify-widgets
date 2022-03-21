@@ -67,7 +67,10 @@ class Dimension extends Component {
 
     return (
       <li className={style.dimension}>
-        <div className={style.main} style={{background: rgba(color, 8.5), borderLeft: `5px solid ${color}`}}>
+        <div
+          className={style.main}
+          style={{background: rgba(color, 8.5), borderLeft: `5px solid ${color}`}}
+        >
           <div className={style.side}>
             <p className={style.icon}>
               <img src={type.badge.image_medium} alt="" ariahidden="true" />

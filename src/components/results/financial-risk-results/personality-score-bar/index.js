@@ -35,17 +35,17 @@ class PersonalityScoreBar extends Component {
 
       switch(riskLevel) {
         case "conservative":
-          return "8";
+          return "8%";
         case "measured":
-          return "28";
+          return "28%";
         case "neutral":
-          return "48";
+          return "48%";
         case "receptive":
-          return "68";
+          return "68%";
         case "aggressive":
-          return "88";
+          return "88%";
         default:
-          return "0";
+          return "0%";
       }
     };
 
@@ -61,7 +61,7 @@ class PersonalityScoreBar extends Component {
           </div>
           <div className={style.scoreBarIndicators}>
             <div className={style.scoreBarIndicatorLow}> </div>
-            <div className={style.scoreBarIndicator} style={{marginLeft: `${indicatorMargin()}%`}}> </div>
+            <div className={style.scoreBarIndicator} style={{marginLeft: indicatorMargin()}}> </div>
             <div className={style.scoreBarIndicatorHigh}> </div>
           </div>
         </div>

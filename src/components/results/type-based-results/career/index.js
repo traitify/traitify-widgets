@@ -44,7 +44,9 @@ class Career extends Component {
             ))}
           </ol>
           <h3 className={style.subtitle}>{translate("education")}</h3>
-          <p className={style.education}>{translate(`experience_level_${career.experience_level.id}`)}</p>
+          <p className={style.education}>
+            {translate(`experience_level_${career.experience_level.id}`)}
+          </p>
           <h3 className={style.subtitle}>
             {translate("match_rate")}
             <i className={style.matchRatePercent}>{Math.round(career.score)}%</i>

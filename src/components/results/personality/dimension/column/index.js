@@ -24,13 +24,19 @@ function PersonalityDimensionColumn(props) {
   return (
     <li className={style.container}>
       <div>
-        <div className={style.icon} style={{border: `3px solid ${color}`, background: rgba(color, 8.5)}}>
+        <div
+          className={style.icon}
+          style={{border: `3px solid ${color}`, background: rgba(color, 8.5)}}
+        >
           <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
         </div>
         <h3>{name}</h3>
         <h2>{level}</h2>
       </div>
-      <div className={`${style.background} ${style[backgroundClass]}`} style={{background: rgba(color, 10)}} />
+      <div
+        className={`${style.background} ${style[backgroundClass]}`}
+        style={{background: rgba(color, 10)}}
+      />
     </li>
   );
 }

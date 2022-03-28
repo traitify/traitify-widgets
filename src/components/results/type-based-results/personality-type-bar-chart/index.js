@@ -6,7 +6,7 @@ import PersonalityTypeBar from "../personality-type-bar";
 import style from "./style.scss";
 
 class PersonalityTypeBarChart extends Component {
-  static defaultProps = {assessment: null, assessmentID: null}
+  static defaultProps = {assessment: null, assessmentID: null};
   static propTypes = {
     assessment: PropTypes.shape({
       personality_types: PropTypes.arrayOf(
@@ -21,7 +21,7 @@ class PersonalityTypeBarChart extends Component {
     assessmentID: PropTypes.string,
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -46,7 +46,7 @@ class PersonalityTypeBarChart extends Component {
   }
   getActiveType = () => {
     this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
-  }
+  };
   activate() {
     if(!this.props.isReady("results")) { return; }
     if(this.state.activeType) { return; }

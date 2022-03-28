@@ -84,9 +84,7 @@ function Cognitive(props) {
       }
     });
 
-    traitify.post(
-      "/cognitive-tests/graphql", query
-    ).then(() => {
+    traitify.post("/cognitive-tests/graphql", query).then(() => {
       ui.trigger("SlideDeck.finished", {props, state});
       // If actual results are shown, use this, but for now it won't work because the API is async
       // getCognitiveAssessment({force: true});
@@ -219,7 +217,9 @@ Cognitive.propTypes = {
     allottedTime: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
     localeKey: PropTypes.string.isRequired,
-    questions: PropTypes.arrayOf(PropTypes.object).isRequired,
+    questions: PropTypes.arrayOf(
+      PropTypes.shape({id: PropTypes.string.isRequired})
+    ).isRequired,
     specialAllottedTime: PropTypes.number.isRequired
   }),
   cache: PropTypes.shape({

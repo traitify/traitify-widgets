@@ -4,7 +4,7 @@ import {Component} from "react";
 import style from "./style.scss";
 
 export default class Slide extends Component {
-  static defaultProps = {instructions: null}
+  static defaultProps = {instructions: null};
   static propTypes = {
     back: PropTypes.func.isRequired,
     getOption: PropTypes.func.isRequired,
@@ -14,13 +14,15 @@ export default class Slide extends Component {
     isLikertScale: PropTypes.bool.isRequired,
     showInstructions: PropTypes.bool.isRequired,
     slideIndex: PropTypes.number.isRequired,
-    slides: PropTypes.arrayOf(PropTypes.object).isRequired,
+    slides: PropTypes.arrayOf(
+      PropTypes.shape({id: PropTypes.string.isRequired})
+    ).isRequired,
     start: PropTypes.func.isRequired,
     toggleFullscreen: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     updateLikertSlide: PropTypes.func.isRequired,
     updateSlide: PropTypes.func.isRequired
-  }
+  };
   componentDidUpdate(prevProps) {
     const instructionsChanged = prevProps.showInstructions !== this.props.showInstructions;
     const slideChanged = prevProps.slideIndex !== this.props.slideIndex;
@@ -30,12 +32,12 @@ export default class Slide extends Component {
     const element = document.querySelector(`.${style.captionContainer}`);
     element && element.focus();
   }
-  respondLikertMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "ME"); }
-  respondLikertNotMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "NOT_ME"); }
-  respondLikertReallyMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "REALLY_ME"); }
-  respondLikertReallyNotMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "REALLY_NOT_ME"); }
-  respondMe = () => { this.props.updateSlide(this.props.slideIndex, true); }
-  respondNotMe = () => { this.props.updateSlide(this.props.slideIndex, false); }
+  respondLikertMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "ME"); };
+  respondLikertNotMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "NOT_ME"); };
+  respondLikertReallyMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "REALLY_ME"); };
+  respondLikertReallyNotMe = () => { this.props.updateLikertSlide(this.props.slideIndex, "REALLY_NOT_ME"); };
+  respondMe = () => { this.props.updateSlide(this.props.slideIndex, true); };
+  respondNotMe = () => { this.props.updateSlide(this.props.slideIndex, false); };
   render() {
     const {
       back,

@@ -38,11 +38,12 @@ describe("useFullscreen", () => {
     let component;
     let element;
     let value;
-    const Component = (props) => {
+
+    function Component(props) {
       value.current = useFullscreen(props.element);
 
       return null;
-    };
+    }
 
     beforeEach(() => {
       element = {clientHeight: 800, clientWidth: 600};

@@ -17,7 +17,7 @@ class Career extends Component {
     }).isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("Career.initialized", this);
   }
@@ -27,7 +27,7 @@ class Career extends Component {
   openModal = () => {
     this.props.ui.trigger("CareerModal.career", this, this.props.career);
     this.props.ui.trigger("CareerModal.show", this);
-  }
+  };
   render() {
     const {career, translate} = this.props;
 
@@ -44,7 +44,9 @@ class Career extends Component {
             ))}
           </ol>
           <h3 className={style.subtitle}>{translate("education")}</h3>
-          <p className={style.education}>{translate(`experience_level_${career.experience_level.id}`)}</p>
+          <p className={style.education}>
+            {translate(`experience_level_${career.experience_level.id}`)}
+          </p>
           <h3 className={style.subtitle}>
             {translate("match_rate")}
             <i className={style.matchRatePercent}>{Math.round(career.score)}%</i>

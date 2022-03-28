@@ -1,18 +1,16 @@
-{
-  "extends": [
-    "plugin:jest/recommended"
-  ],
-  "rules": {
+module.exports = {
+  extends: ["plugin:jest/recommended"],
+  rules: {
     "import/no-unresolved": "off", // TODO: Fix when jest import/resolver is fixed
     "no-new": "off",
     "prefer-promise-reject-errors": "off",
     "react/prop-types": "off"
   },
-  "settings": {
+  settings: {
     "import/resolver": {
-      "jest": {
-        "jestConfigFile": "./test/jest.config.js"
+      jest: {
+        jestConfigFile: "./test/jest.config.js"
       }
     }
   }
-}
+};

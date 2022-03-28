@@ -19,7 +19,7 @@ const dataChanged = (newAssessment, oldAssessment) => (
 );
 
 class Radar extends Component {
-  static defaultProps = {assessment: null}
+  static defaultProps = {assessment: null};
   static propTypes = {
     assessment: PropTypes.shape({
       personality_types: PropTypes.arrayOf(
@@ -37,7 +37,7 @@ class Radar extends Component {
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     window.addEventListener("resize", this.updateChart);
 
@@ -77,18 +77,18 @@ class Radar extends Component {
     const ctx = this.canvas.getContext("2d");
     this.chart = new Chart(ctx, options);
     this.chart.render();
-  }
+  };
   destroyChart = () => {
     if(!this.chart) { return; }
 
     this.chart.destroy();
     this.chart = null;
-  }
+  };
   updateChart = () => {
     if(!this.chart) { return this.createChart(); }
 
     this.chart.resize();
-  }
+  };
   render() {
     if(!this.props.isReady("results")) { return null; }
 

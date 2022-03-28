@@ -66,7 +66,9 @@ function PersonalityArchetypeTips(props) {
         {types.map((type) => (
           <li key={type.translationKey} className={activeType.translationKey === type.translationKey ? style.active : ""} style={typeStyle}>
             <button onClick={() => setActiveType(type)} type="button">
-              <div className={style.name} style={{color: type.color}}>{translate(`tip_type_for_${type.translationKey}`)}</div>
+              <div className={style.name} style={{color: type.color}}>
+                {translate(`tip_type_for_${type.translationKey}`)}
+              </div>
             </button>
           </li>
         ))}

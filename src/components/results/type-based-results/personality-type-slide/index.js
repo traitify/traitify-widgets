@@ -20,7 +20,7 @@ class PersonalityTypeSlide extends Component {
       score: PropTypes.number.isRequired
     }).isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -41,7 +41,7 @@ class PersonalityTypeSlide extends Component {
   }
   getActiveType = () => {
     this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
-  }
+  };
   render() {
     const {activeType} = this.state;
     const type = this.props.type.personality_type;

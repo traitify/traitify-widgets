@@ -7,7 +7,7 @@ import TypeButton from "./type-button";
 import style from "./style.scss";
 
 class PersonalityTypeSlider extends Component {
-  static defaultProps = {assessment: null}
+  static defaultProps = {assessment: null};
   static propTypes = {
     assessment: PropTypes.shape({
       personality_types: PropTypes.arrayOf(
@@ -21,7 +21,7 @@ class PersonalityTypeSlider extends Component {
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -42,11 +42,11 @@ class PersonalityTypeSlider extends Component {
   }
   getActiveType = () => {
     this.setState({activeType: this.props.ui.current["Assessment.activeType"]});
-  }
+  };
   setActive = (type) => {
     this.props.ui.trigger("PersonalityTypeSlider.changeType", this, type);
     this.props.ui.trigger("Assessment.activeType", this, type);
-  }
+  };
   render() {
     if(!this.props.isReady("results")) { return null; }
 

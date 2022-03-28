@@ -6,7 +6,7 @@ import PersonalityBlend from "../personality-blend";
 import PersonalityType from "../personality-type";
 
 class PersonalityBase extends Component {
-  static defaultProps = {assessment: null}
+  static defaultProps = {assessment: null};
   static propTypes = {
     assessment: PropTypes.shape({
       personality_blend: PropTypes.shape({
@@ -36,7 +36,7 @@ class PersonalityBase extends Component {
     }),
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("PersonalityBase.initialized", this);
   }

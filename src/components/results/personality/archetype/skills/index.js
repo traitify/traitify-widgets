@@ -67,7 +67,8 @@ function PersonalityArchetypeSkills(props) {
   if(!activeType) { return null; }
 
   const onChange = ({target: {value}}) => setActiveType(types.find((type) => type.key === value));
-  const typeTips = details.filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
+  const typeTips = details
+    .filter(({title}) => title.startsWith(`${activeType.name} - Success Skills`));
   const dimensions = sortByTypePosition(assessment.personality_types);
   const tips = [];
   dimensions.forEach(({personality_type: {badge, name}}) => {
@@ -82,7 +83,11 @@ function PersonalityArchetypeSkills(props) {
         {types.map((type) => (
           <li key={type.key} className={activeType.key === type.key ? style.active : ""}>
             <button onClick={() => setActiveType(type)} type="button">
-              <img src={type.image} alt={translate(`skill_name_for_${type.key}`)} className={style.image} />
+              <img
+                alt={translate(`skill_name_for_${type.key}`)}
+                className={style.image}
+                src={type.image}
+              />
               <div className={style.name}>{translate(`skill_name_for_${type.key}`)}</div>
             </button>
           </li>

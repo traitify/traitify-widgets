@@ -21,14 +21,16 @@ import Slide from "./slide";
 import style from "./style.scss";
 
 class Personality extends Component {
-  static defaultProps = {assessment: null}
+  static defaultProps = {assessment: null};
   static propTypes = {
     assessment: PropTypes.shape({
       id: PropTypes.string.isRequired,
       instructions: PropTypes.shape({instructional_text: PropTypes.string.isRequired}),
       locale_key: PropTypes.string.isRequired,
       scoring_scale: PropTypes.string,
-      slides: PropTypes.arrayOf(PropTypes.object).isRequired
+      slides: PropTypes.arrayOf(
+        PropTypes.shape({id: PropTypes.string.isRequired})
+      ).isRequired
     }),
     assessmentID: PropTypes.string.isRequired,
     cache: PropTypes.shape({
@@ -41,7 +43,7 @@ class Personality extends Component {
     traitify: TraitifyPropTypes.traitify.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -126,13 +128,13 @@ class Personality extends Component {
         });
       };
     });
-  }
+  };
   fullscreenToggled = () => {
     this.setState({isFullscreen: isFullscreen()}, () => {
       this.props.ui.trigger("SlideDeck.fullscreen", this, this.state.isFullscreen);
       this.resizeImages();
     });
-  }
+  };
   resizeImages = () => {
     this.setState((state, props) => {
       if(!this.container) { return; }
@@ -155,7 +157,7 @@ class Personality extends Component {
 
       return {imageLoadingAttempts: 0, slides};
     }, this.fetchImages);
-  }
+  };
   // Event Methods
   back = () => {
     this.setState((state) => {
@@ -167,10 +169,10 @@ class Personality extends Component {
 
       return {slides, startTime: Date.now()};
     }, this.fetchImages);
-  }
+  };
   hideInstructions = () => {
     this.setState({showInstructions: false});
-  }
+  };
   retry = () => {
     let callback;
     const newState = {error: null, errorType: null};
@@ -184,10 +186,10 @@ class Personality extends Component {
     }
 
     this.setState(newState, callback);
-  }
+  };
   toggleFullscreen = () => {
     toggleFullscreen({current: this.state.isFullscreen, element: this.container});
-  }
+  };
   updateLikertSlide = (index, value) => {
     this.setState((state) => {
       this.props.ui.trigger(`SlideDeck.likert.${camelCase(value)}`, this);
@@ -206,7 +208,7 @@ class Personality extends Component {
 
       if(isFinished(this.state.slides)) { this.finish(); }
     });
-  }
+  };
   updateSlide = (index, value) => {
     this.setState((state) => {
       const key = value ? "me" : "notMe";
@@ -226,7 +228,7 @@ class Personality extends Component {
 
       if(isFinished(this.state.slides)) { this.finish(); }
     });
-  }
+  };
   finish() {
     if(this.state.finished) { return; }
     this.setState({finished: true});

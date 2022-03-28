@@ -7,7 +7,7 @@ import Career from "../career";
 import style from "./style.scss";
 
 class CareerResults extends Component {
-  static defaultProps = {options: null}
+  static defaultProps = {options: null};
   static propTypes = {
     assessmentID: PropTypes.string.isRequired,
     isReady: PropTypes.func.isRequired,
@@ -20,7 +20,7 @@ class CareerResults extends Component {
     traitify: TraitifyPropTypes.traitify.isRequired,
     translate: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   constructor(props) {
     super(props);
 
@@ -76,7 +76,7 @@ class CareerResults extends Component {
       const previousRequest = this.props.ui.current["Careers.request"];
       previousRequest && previousRequest.xhr && previousRequest.xhr.abort();
     }
-  }
+  };
   fetch = () => {
     const fetchParams = this.props.ui.current["Careers.fetch"];
 
@@ -108,28 +108,28 @@ class CareerResults extends Component {
         });
       })
     );
-  }
+  };
   fetching = () => {
     this.setState({fetching: this.props.ui.current["Careers.fetching"]});
-  }
+  };
   mergeParams = () => {
     this.props.ui.trigger("Careers.fetch", this, {
       ...this.props.ui.current["Careers.fetch"],
       ...this.props.ui.current["Careers.mergeParams"]
     });
-  }
+  };
   showMore = () => {
     if(this.props.ui.current["Careers.fetching"]) { return; }
     const params = this.props.ui.current["Careers.fetch"] || {};
     const page = (params.page || 1) + 1;
 
     this.props.ui.trigger("Careers.mergeParams", this, {page});
-  }
+  };
   updateParams = () => {
     this.props.ui.trigger("Careers.fetch", this, {
       ...this.props.ui.current["Careers.updateParams"]
     });
-  }
+  };
   render() {
     if(!this.props.isReady("results")) { return null; }
 

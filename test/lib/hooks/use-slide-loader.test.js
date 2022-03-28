@@ -30,11 +30,11 @@ describe("useSlideLoader", () => {
     let elements;
     let state;
 
-    const Component = (props) => {
+    function Component(props) {
       state.current = useSlideLoader(props);
 
       return null;
-    };
+    }
 
     useGlobalMock(document, "createElement");
 
@@ -412,7 +412,12 @@ describe("useSlideLoader", () => {
           slides: [
             {...slides[0], image: `${slides[0].image}&size=${size[0]}+${size[1]}`, loaded: false},
             {...slides[1], image: `${slides[1].image}&size=${size[0]}+${size[1]}`, loaded: false},
-            {...slides[2], image: `${slides[2].image}&size=${size[0]}+${size[1]}`, loaded: false, response: undefined}
+            {
+              ...slides[2],
+              image: `${slides[2].image}&size=${size[0]}+${size[1]}`,
+              loaded: false,
+              response: undefined
+            }
           ],
           startTime: Date.now()
         });
@@ -447,9 +452,21 @@ describe("useSlideLoader", () => {
           imageLoadingAttempts: 0,
           size,
           slides: [
-            {...combinedSlides[0], image: `${slides[0].image}&size=${size[0]}+${size[1]}`, loaded: false},
-            {...combinedSlides[1], image: `${slides[1].image}&size=${size[0]}+${size[1]}`, loaded: false},
-            {...combinedSlides[2], image: `${slides[2].image}&size=${size[0]}+${size[1]}`, loaded: false}
+            {
+              ...combinedSlides[0],
+              image: `${slides[0].image}&size=${size[0]}+${size[1]}`,
+              loaded: false
+            },
+            {
+              ...combinedSlides[1],
+              image: `${slides[1].image}&size=${size[0]}+${size[1]}`,
+              loaded: false
+            },
+            {
+              ...combinedSlides[2],
+              image: `${slides[2].image}&size=${size[0]}+${size[1]}`,
+              loaded: false
+            }
           ],
           startTime: Date.now()
         });

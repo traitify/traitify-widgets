@@ -7,7 +7,7 @@ import PersonalityTypeSlider from "../personality-type-slider";
 class PersonalityTypes extends Component {
   static propTypes = {
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("PersonalityTypes.initialized", this);
   }

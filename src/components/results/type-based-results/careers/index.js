@@ -11,7 +11,7 @@ class Careers extends Component {
   static propTypes = {
     isReady: PropTypes.func.isRequired,
     ui: TraitifyPropTypes.ui.isRequired
-  }
+  };
   componentDidMount() {
     this.props.ui.trigger("Careers.initialized", this);
   }

@@ -84,6 +84,7 @@ module.exports = (_env) => {
       ]
     },
     output: {
+      globalObject: "this",
       path: path.resolve(__dirname, "build"),
       publicPath: "/",
       filename: "traitify.js",

@@ -35,5 +35,5 @@ export default class I18n {
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);
-  }
+  };
 }

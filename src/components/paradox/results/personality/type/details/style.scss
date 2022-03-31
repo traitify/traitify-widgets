@@ -1,0 +1,19 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("lg") { display: none; }
+}
+.p { @extend %paragraph; }
+.tabs {
+  @extend %tabs-lg;
+
+  @include max-width("lg") { display: none; }
+}

@@ -37,6 +37,8 @@
   "least_represented_traits": "最も当てはまらない特徴",
   "least_represented_traits_definition": "これらの特性は、この候補者の合計回答の下位3分の1のスコアを受け取りました。このリストの外観は、残りの特性と比較したこの個人のこれらの特性の相対的な位置のみを反映しています。これは、ある候補者と別の候補者によって表示されるある特性の範囲を比較するために使用できる情報を提供しません。",
   "loading": "ローディング",
+  "location": "位置",
+  "location_placeholder": "例: Baltimore, MD",
   "match_rate": "一致率",
   "match_rate_html": "このキャリアはあなたの性格と <span>%{match_rate} <span>%.",
   "me": "私",

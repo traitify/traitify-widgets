@@ -6,13 +6,12 @@
 
   margin-bottom: $buffer-section;
 
-  > div:first-of-type { @include buffer("margin-bottom"); }
-}
-.heading {
-  @extend %heading;
+  .toggle {
+    display: block;
+    margin: 0 auto;
+    padding: $buffer * 0.5 $buffer;
 
-  font-size: $font-size;
-  margin-bottom: $buffer-heading;
-  margin-top: $buffer-heading;
+    @include theme("background", "inactive-color");
+  }
 }
 .p { @extend %paragraph; }

@@ -13,18 +13,18 @@ const detailTypes = [
   {apiKey: "Environments", disableKey: "PersonalityEnvironments", translationKey: "best_work_environments"}
 ];
 
-function PersonalityTypeDetails({setElement, ...props}) {
-  const {assessment, getOption, translate, type: _personality, ui} = props;
+function PersonalityBaseDetails({setElement, ...props}) {
+  const {assessment, getOption, personality: _personality, translate, ui} = props;
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
-  const state = {activeType, types};
-
-  const disabledComponents = getOption("disabledComponents") || [];
   const personality = _personality || dig(assessment, "personality_blend")
     || dig(assessment, "personality_types", 0, "personality_type");
+  const state = {activeType, personality, types};
 
-  useDidMount(() => { ui.trigger("PersonalityTypeDetails.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityTypeDetails.updated", {props, state}); });
+  const disabledComponents = getOption("disabledComponents") || [];
+
+  useDidMount(() => { ui.trigger("PersonalityBaseDetails.initialized", {props, state}); });
+  useDidUpdate(() => { ui.trigger("PersonalityBaseDetails.updated", {props, state}); });
   useEffect(() => {
     if(!personality) { return; }
     if(personality.details.length === 0) { return; }
@@ -97,8 +97,8 @@ const personalityPropType = PropTypes.shape({
   ).isRequired
 });
 
-PersonalityTypeDetails.defaultProps = {assessment: null, type: null};
-PersonalityTypeDetails.propTypes = {
+PersonalityBaseDetails.defaultProps = {assessment: null, personality: null};
+PersonalityBaseDetails.propTypes = {
   assessment: PropTypes.shape({
     personality_blend: personalityPropType,
     personality_types: PropTypes.arrayOf(
@@ -106,11 +106,11 @@ PersonalityTypeDetails.propTypes = {
     )
   }),
   getOption: PropTypes.func.isRequired,
+  personality: personalityPropType,
   setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  type: personalityPropType,
   ui: TraitifyPropTypes.ui.isRequired
 };
 
-export {PersonalityTypeDetails as Component};
-export default withTraitify(PersonalityTypeDetails);
+export {PersonalityBaseDetails as Component};
+export default withTraitify(PersonalityBaseDetails);

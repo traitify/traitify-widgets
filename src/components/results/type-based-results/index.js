@@ -3,6 +3,7 @@ import {
   faUser
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import {Component as Paradox} from "components/paradox/results/type-based-results";
 import Icon from "lib/helpers/icon";
 import withTraitify from "lib/with-traitify";
 import PersonalityBase from "./personality-base";
@@ -42,4 +43,4 @@ TypeBasedResults.propTypes = {
   translate: PropTypes.func.isRequired
 };
 
-export default withTraitify(TypeBasedResults);
+export default withTraitify(TypeBasedResults, {paradox: Paradox});

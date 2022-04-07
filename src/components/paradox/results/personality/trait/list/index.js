@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import {useState} from "react";
 import PersonalityTrait from "components/results/personality/trait/details";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import useDidMount from "lib/hooks/use-did-mount";
@@ -8,6 +9,7 @@ import style from "./style.scss";
 
 function PersonalityTraitList({setElement, ...props}) {
   const {assessment, getOption, isReady, translate, ui} = props;
+  const [showMore, setShowMore] = useState(false);
   const state = {};
 
   useDidMount(() => { ui.trigger("PersonalityTraits.initialized", {props, state}); });
@@ -18,30 +20,24 @@ function PersonalityTraitList({setElement, ...props}) {
   if(!isReady("results")) { return null; }
 
   const allowHeaders = getOption("allowHeaders");
-  const perspective = getOption("perspective") || "firstPerson";
-  const thirdPerson = perspective === "thirdPerson";
-  const traits = assessment.personality_traits;
+  const text = translate(showMore ? "show_less" : "show_more");
+  let traits = assessment.personality_traits;
+
+  if(!showMore) { traits = traits.slice(0, 8); }
 
   return (
     <div className={style.container} ref={setElement}>
-      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_traits")}</div>}
-      <div>
-        <div className={style.heading}>{translate("most_represented_traits")}</div>
-        {thirdPerson && (
-          <div className={style.p}>{translate("most_represented_traits_definition")}</div>
-        )}
-        {traits.slice(0, 5).map((trait) => (
-          <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...props} />
-        ))}
-      </div>
-      <div>
-        <div className={style.heading}>{translate("least_represented_traits")}</div>
-        {thirdPerson && (
-          <div className={style.p}>{translate("least_represented_traits_definition")}</div>
-        )}
-        {traits.slice(-5).map((trait) => (
-          <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...props} />
-        ))}
+      {allowHeaders && (
+        <>
+          <div className={style.sectionHeading}>{translate("personality_traits")}</div>
+          <div className={style.p}>{translate("personality_traits_description")}</div>
+        </>
+      )}
+      {traits.map((trait) => (
+        <PersonalityTrait key={trait.personality_trait.id} trait={trait} {...props} />
+      ))}
+      <div className={style.center}>
+        <button className={style.toggle} onClick={() => setShowMore(!showMore)} type="button">{text}</button>
       </div>
     </div>
   );

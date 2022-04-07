@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {Component as Paradox} from "components/paradox/results/personality/base/heading";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import PersonalityBlend from "../personality-blend";
@@ -55,4 +56,4 @@ class PersonalityBase extends Component {
 }
 
 export {PersonalityBase as Component};
-export default withTraitify(PersonalityBase);
+export default withTraitify(PersonalityBase, {paradox: Paradox});

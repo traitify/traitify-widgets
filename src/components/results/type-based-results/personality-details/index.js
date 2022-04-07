@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
-import {Component as Paradox} from "components/paradox/results/personality/type/details";
+import {Component as Paradox} from "components/paradox/results/personality/base/details";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";

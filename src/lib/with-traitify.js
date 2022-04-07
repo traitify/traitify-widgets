@@ -4,6 +4,7 @@ import * as queries from "lib/graphql/queries";
 import {getDisplayName, loadFont} from "lib/helpers";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import themeAssessment from "lib/helpers/theme-assessment";
 
 const fonts = {paradox: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700"};
 const imagePacks = {paradox: "white"};
@@ -160,12 +161,14 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
           && data.personality_types
           && data.personality_types.length > 0
       );
-      const setAssessment = (data) => (
-        new Promise((resolve) => {
+      const setAssessment = (_data) => {
+        const data = themeAssessment({data: _data, theme: this.getOption("theme")});
+
+        return new Promise((resolve) => {
           this.setState({assessment: data}, () => (resolve(data)));
           this.ui.trigger(key, this, data);
-        })
-      );
+        });
+      };
 
       let {assessment} = this.props;
       if(hasResults(assessment)) { return setAssessment(assessment); }

@@ -26,6 +26,17 @@ const blendToVideo = (blend) => {
 const nameToBadge = (name, {style} = {style: "black"}) => (
   `${baseURL}/badges/${style}/${name.toLowerCase()}.png`
 );
+const nameToColor = (name) => (
+  {
+    "Action-Taker": "FF9B71",
+    "Analyzer": "37A9E9",
+    "Inventor": "89E2CD",
+    "Mentor": "FE6d73",
+    "Naturalist": "38D27A",
+    "Planner": "FABC50",
+    "Visionary": "AE8bE2"
+  }[name]
+);
 const themeType = (type) => {
   if(!type) { return type; }
 
@@ -33,7 +44,10 @@ const themeType = (type) => {
   if(!name) { return type; }
 
   const blackBadge = nameToBadge(name);
+  const color = nameToColor(name);
   const {badge} = type;
+  if(color) { badge.color_1 = color; }
+
   badge.image_large = blackBadge;
   badge.image_medium = blackBadge;
   badge.image_small = blackBadge;

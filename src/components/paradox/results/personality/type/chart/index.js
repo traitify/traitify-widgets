@@ -29,6 +29,8 @@ function PersonalityTypeChart({setElement, ...props}) {
     setActiveType(data[0]);
   }, [dig(assessment, "personality_types")]);
 
+  const disabledComponents = getOption("disabledComponents") || [];
+  if(disabledComponents.includes("PersonalityTypes")) { return null; }
   if(!activeType) { return null; }
 
   const allowHeaders = getOption("allowHeaders");

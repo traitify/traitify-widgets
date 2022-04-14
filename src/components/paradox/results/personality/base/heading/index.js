@@ -65,7 +65,6 @@ function PersonalityBaseHeading({setElement, ...props}) {
   const disabledComponents = getOption("disabledComponents") || [];
   if(disabledComponents.includes("PersonalityHeading")) { return null; }
   if(!data) { return null; }
-  if(!personality) { return null; }
 
   const {
     badge,
@@ -81,10 +80,10 @@ function PersonalityBaseHeading({setElement, ...props}) {
         <div className={style.header}>
           {badge.url && (
             <div className={style.badge}>
-              <img alt={badge.image_1.alt} src={badge.image_1.url} />
+              <img alt={badge.alt} src={badge.url} />
             </div>
           )}
-          {badge.image_1.url && (
+          {badge.image_1 && (
             <div className={style.badge}>
               <img alt={badge.image_1.alt} src={badge.image_1.url} />
               <div className={style.badgeDivider} />

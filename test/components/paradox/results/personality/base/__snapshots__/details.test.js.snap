@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityTypeDetails fallbacks renders component with blend 1`] = `
+exports[`Paradox.PersonalityBaseDetails fallbacks renders component with blend 1`] = `
 <div
   className="container"
 >
@@ -61,7 +61,7 @@ exports[`Paradox.PersonalityTypeDetails fallbacks renders component with blend 1
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails fallbacks renders component with types 1`] = `
+exports[`Paradox.PersonalityBaseDetails fallbacks renders component with types 1`] = `
 <div
   className="container"
 >
@@ -121,7 +121,7 @@ exports[`Paradox.PersonalityTypeDetails fallbacks renders component with types 1
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails renders component 1`] = `
+exports[`Paradox.PersonalityBaseDetails renders component 1`] = `
 <div
   className="container"
 >
@@ -181,7 +181,7 @@ exports[`Paradox.PersonalityTypeDetails renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails renders component with headers 1`] = `
+exports[`Paradox.PersonalityBaseDetails renders component with headers 1`] = `
 <div
   className="container"
 >
@@ -246,7 +246,7 @@ exports[`Paradox.PersonalityTypeDetails renders component with headers 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails renders component with no environments 1`] = `
+exports[`Paradox.PersonalityBaseDetails renders component with no environments 1`] = `
 <div
   className="container"
 >
@@ -306,7 +306,7 @@ exports[`Paradox.PersonalityTypeDetails renders component with no environments 1
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails renders new type from clicking button 1`] = `
+exports[`Paradox.PersonalityBaseDetails renders new type from clicking button 1`] = `
 <div
   className="container"
 >
@@ -366,7 +366,7 @@ exports[`Paradox.PersonalityTypeDetails renders new type from clicking button 1`
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails renders new type from selecting option 1`] = `
+exports[`Paradox.PersonalityBaseDetails renders new type from selecting option 1`] = `
 <div
   className="container"
 >
@@ -432,8 +432,8 @@ exports[`Paradox.PersonalityTypeDetails renders new type from selecting option 1
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeDetails renders nothing if disabled 1`] = `null`;
+exports[`Paradox.PersonalityBaseDetails renders nothing if disabled 1`] = `null`;
 
-exports[`Paradox.PersonalityTypeDetails renders nothing if no details 1`] = `null`;
+exports[`Paradox.PersonalityBaseDetails renders nothing if no details 1`] = `null`;
 
-exports[`Paradox.PersonalityTypeDetails renders nothing if results not ready 1`] = `null`;
+exports[`Paradox.PersonalityBaseDetails renders nothing if results not ready 1`] = `null`;

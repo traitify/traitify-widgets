@@ -13,15 +13,16 @@ const baseURL = "https://cdn.traitify.com/widgets/career-deck";
 const blendToVideo = (blend) => {
   const name1 = idToName[blend.personality_type_1.id];
   const name2 = idToName[blend.personality_type_2.id];
-  if(!name1 || !name2) { return; }
+  if(!name1) { return; }
 
-  const names = [name1, name2].map((name) => name.toLowerCase()).sort();
+  const names = [name1, name2].map((name) => name.toLowerCase());
+  const videoURL = `${baseURL}/blends/${names.join("_")}`;
 
-  // TODO: Sort? Do we remove it or do they have videos in both orders
-  // TODO: Actually put videos here
-  // TODO: captions, thumbnail
-  if(names) { return "https://cdn.traitify.com/content/paradox-archetype-videos/GamesmanV2.mp4"; }
-  return `${baseURL}/videos/${names.join("/")}.mp4`;
+  return {
+    captions: `${videoURL}/captions.vtt`,
+    thumbnail: `${videoURL}/thumbnail.jpg`,
+    url: `${videoURL}/video.mp4`
+  };
 };
 const nameToBadge = (name, {style} = {style: "black"}) => (
   `${baseURL}/badges/${style}/${name.toLowerCase()}.png`
@@ -46,8 +47,8 @@ const themeType = (type) => {
   const blackBadge = nameToBadge(name);
   const color = nameToColor(name);
   const {badge} = type;
-  if(color) { badge.color_1 = color; }
 
+  badge.color_1 = color;
   badge.image_large = blackBadge;
   badge.image_medium = blackBadge;
   badge.image_small = blackBadge;
@@ -61,7 +62,11 @@ const themeBlend = (blend) => {
   const details = blend.details || [];
   const video = blendToVideo(blend);
 
-  if(video) { details.push({body: video, title: "Paradox - Video"}); }
+  if(video) {
+    details.push({body: video.url, title: "Paradox - Video"});
+    details.push({body: video.captions, title: "Paradox - Video - Text Track"});
+    details.push({body: video.thumbnail, title: "Paradox - Video - Thumbnail"});
+  }
 
   return {
     ...blend,

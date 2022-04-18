@@ -49,7 +49,7 @@ function CareerInfo({assessment, translate, career}) {
             <div className={`${style.infoText} ${style.salary}`}>{salary}</div>
           </li>
           <li>
-            <h4>{translate("salary_mean")}:</h4>
+            <h4>{translate("local_salary")}:</h4>
           </li>
           <li>
             <h4>{translate("employment_growth")}:</h4>

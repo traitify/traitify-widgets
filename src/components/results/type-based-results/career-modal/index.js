@@ -94,19 +94,43 @@ class CareerModal extends Component {
             </div>
             <div className={style.content}>
               <div className={style.contentTabs}>
-                <div className={isSelected("career") ? style.navButtonActive : style.navButton} onClick={() => selectTab("career")}>
+                <div
+                  className={isSelected("career") ? style.navButtonActive : style.navButton}
+                  onClick={() => selectTab("career")}
+                  onKeyDown={() => selectTab("career")}
+                  role="button"
+                  tabIndex={0}
+                >
                   Career Info
                   <hr className={isSelected("career") ? style.blueDivider : style.grayDivider} />
                 </div>
-                <div className={isSelected("clubs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("clubs")}>
+                <div
+                  className={isSelected("clubs") ? style.navButtonActive : style.navButton}
+                  onClick={() => selectTab("clubs")}
+                  onKeyDown={() => selectTab("career")}
+                  role="button"
+                  tabIndex={0}
+                >
                   Clubs
                   <hr className={isSelected("clubs") ? style.blueDivider : style.grayDivider} />
                 </div>
-                <div className={isSelected("majors") ? style.navButtonActive : style.navButton} onClick={() => selectTab("majors")}>
+                <div
+                  className={isSelected("majors") ? style.navButtonActive : style.navButton}
+                  onClick={() => selectTab("majors")}
+                  onKeyDown={() => selectTab("career")}
+                  role="button"
+                  tabIndex={0}
+                >
                   Majors
                   <hr className={isSelected("majors") ? style.blueDivider : style.grayDivider} />
                 </div>
-                <div className={isSelected("jobs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("jobs")}>
+                <div
+                  className={isSelected("jobs") ? style.navButtonActive : style.navButton}
+                  onClick={() => selectTab("jobs")}
+                  onKeyDown={() => selectTab("career")}
+                  role="button"
+                  tabIndex={0}
+                >
                   Jobs
                   <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
                 </div>

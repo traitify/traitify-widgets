@@ -37,6 +37,7 @@
   "least_represented_traits": "Traços menos representados",
   "least_represented_traits_definition": "Essas características receberam pontuações no terço inferior das respostas totais do candidato. A aparência nesta lista reflete apenas a posição relativa dessas características para esse indivíduo, comparada às características restantes. Isso não fornece informações que podem ser usadas para comparar a extensão de uma característica exibida por um candidato versus outra.",
   "loading": "Carregando",
+  "local_salary": "Salário Local",
   "location": "Localização",
   "location_placeholder": "ex. Baltimore, MD",
   "match_rate": "taxa de correspondência",

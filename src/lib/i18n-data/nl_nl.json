@@ -37,6 +37,7 @@
   "least_represented_traits": "Minst vertegenwoordigde eigenschappen",
   "least_represented_traits_definition": "Deze eigenschappen hebben scores ontvangen in het onderste derde deel van de totale antwoorden van deze kandidaat. De weergave op deze lijst geeft alleen de relatieve positie van deze eigenschappen voor deze persoon weer vergeleken met de resterende eigenschappen. Dit biedt geen informatie die kan worden gebruikt om de omvang van een eigenschap die wordt weergegeven door een kandidaat versus een andere te vergelijken.",
   "loading": "Laden",
+  "local_salary": "Lokaal Salaris",
   "location": "Plaats",
   "location_placeholder": "ex. Baltimore, MD",
   "match_rate": "Match Rate",

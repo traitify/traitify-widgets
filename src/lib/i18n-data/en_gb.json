@@ -39,7 +39,7 @@
   "loading": "Loading",
   "location": "Location",
   "location_placeholder": "ex. Baltimore, MD",
-  "match_rate": "Match Rate",
+  "match_rate": "Match",
   "match_rate_html": "This career matches your personality by <span>%{match_rate}<span>%.",
   "me": "Me",
   "more_information": "More information about these values",

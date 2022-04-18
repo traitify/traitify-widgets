@@ -2,6 +2,9 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import HighchartsMore from "highcharts/highcharts-more";
+
+HighchartsMore(Highcharts);
 
 export default class Highchart extends Component {
   static propTypes = {

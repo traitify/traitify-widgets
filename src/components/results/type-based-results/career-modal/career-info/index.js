@@ -12,6 +12,7 @@ import DangerousHTML from "lib/helpers/dangerous-html";
 import HighChart from "components/highchart";
 import Icon from "lib/helpers/icon";
 import {useState} from "react";
+import PropTypes from "prop-types";
 import style from "./style.scss";
 
 function CareerInfo({assessment, translate, career}) {
@@ -159,3 +160,46 @@ function CareerInfo({assessment, translate, career}) {
   );
 }
 export default CareerInfo;
+
+CareerInfo.propTypes = {
+  assessment: PropTypes.shape({
+    personality_traits: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_trait: PropTypes.shape({
+          definition: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired
+        }).isRequired,
+        score: PropTypes.number.isRequired
+      })
+    )
+  }).isRequired,
+  career: PropTypes.shape({
+    bright_outlooks: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.string.isRequired,
+    employment_projection: PropTypes.shape({
+      percent_growth_2022: PropTypes.number.isRequired
+    }).isRequired,
+    experience_level: PropTypes.shape({
+      experience: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired
+    }).isRequired,
+    green_categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    id: PropTypes.string.isRequired,
+    personality_traits: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_trait: PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          definition: PropTypes.string.isRequired
+        }).isRequired,
+        weight: PropTypes.number.isRequired
+      }).isRequired
+    ),
+    picture: PropTypes.string.isRequired,
+    salary_projection: PropTypes.shape({annual_salary_mean: PropTypes.number}),
+    score: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired
+  }).isRequired,
+  translate: PropTypes.func.isRequired
+};

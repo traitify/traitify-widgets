@@ -32,30 +32,54 @@ class Career extends Component {
     const {career, translate} = this.props;
 
     return (
-      <button className={style.container} onClick={this.openModal} type="button">
-        <img alt={career.title} src={career.picture} />
-        <div className={style.content}>
-          <h2 className={style.title}>{career.title}</h2>
-          <p className={style.description}>{career.description}</p>
-          <h3 className={style.subtitle}>{translate("experience_level")}</h3>
-          <ol className={style.experience}>
-            {[1, 2, 3, 4, 5].map((level) => (
-              <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
-            ))}
-          </ol>
-          <h3 className={style.subtitle}>{translate("education")}</h3>
-          <p className={style.education}>
-            {translate(`experience_level_${career.experience_level.id}`)}
-          </p>
-          <h3 className={style.subtitle}>
-            {translate("match_rate")}
-            <i className={style.matchRatePercent}>{Math.round(career.score)}%</i>
-          </h3>
-          <div className={style.matchRate}>
-            <span data-match-rate={`${career.score}%`} style={{width: `${career.score}%`}} />
+      <div className={style.container} id={style.container}>
+        <div className={style.careerContainer}>
+          <img alt={career.title} src={career.picture} />
+          <div className={style.careerDetails}>
+            <div className={style.title}>{career.title}</div>
+            <div className={style.description}>{career.description}</div>
           </div>
         </div>
-      </button>
+        <hr className={style.grayDivider} />
+        <div className={style.content}>
+          <div className={style.statsContainer}>
+            <div className={style.upperBox}>
+              <div className={style.innerContent}>
+                <h3 className={style.subtitle}>
+                  {`${translate("match_rate")}:`}
+                  <i className={style.matchRatePercent}>{Math.round(career.score)}%</i>
+                </h3>
+                <div className={style.matchRate}>
+                  <span data-match-rate={`${career.score}%`} style={{width: `${career.score}%`}} />
+                </div>
+              </div>
+              <div className={style.innerContent}>
+                <div>
+                  <h3 className={style.subtitleFull}>{`${translate("experience_level")}:`}</h3>
+                  <ol className={style.experience}>
+                    {[1, 2, 3, 4, 5].map((level) => (
+                      <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
+                    ))}
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <div className={style.lowerBox}>
+              <div className={style.innerContent}>
+                <div className={style.education}>
+                  <h3 className={style.subtitleFull}>{`${translate("education")}:`}</h3>
+                  <h3 className={style.subtitleFull}>
+                    {`${translate(`experience_level_${career.experience_level.id}`)}:`}
+                  </h3>
+                </div>
+              </div>
+              <div className={style.learnMore}>
+                <button type="button" onClick={this.openModal}>Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -9,8 +9,9 @@
   padding: 0;
   width: 262px;
   z-index: 1;
+  
   @include mq(xs) {
-    margin: 0 1.5% 3%;
+    margin: 0 0% 3%;
     @include cols(6);
     width: 47%;
     padding: 0;
@@ -20,16 +21,27 @@
   }
   @include mq(xl) {
     width: 23%;
-    margin: 0 1% 2%;
+    margin: 0 1% 1.5%;
   }
-  img { width: 100%; }
+  img { 
+    margin: 0px 20px 0px 0px;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+  }
   &[type="button"] {
     border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 100%
   }
+}
+#container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 100%
 }
 
 .content {
-  padding: 0 10px 15px;
   @include mq(m) {
     padding: 0 15px 20px;
   }
@@ -38,45 +50,61 @@
 
 .title {
   color: #333;
-  font-weight: normal;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 10px;
   @include rems(14);
+
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+
   @include mq(m) {
-    height: 48px; // font-size * line-height * lines to show
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block; /* Fallback for non-webkit */
-    display: -webkit-box;
     @include rems(16);
   }
 }
 
 .description {
   line-height: 1.25;
+  text-align: left;
   @include rems(12);
-  @include mq(m) {
-    line-height: 1.35;
-    height: 57px;
+
+  line-height: 1.35;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
+
+  @include mq(m) {
     @include rems(14);
   }
 }
 
 .subtitle {
   @extend %cf;
+  width: 80%;
   color: #333;
   font-weight: 400;
-  margin-bottom: 0;
+  margin: 0;
+
   @include rems(13);
+
+  @include mq(xs) {
+    margin-top: initial;
+  }
   @include mq(m) {
     @include rems(15);
   }
+}
+
+.subtitleFull {
+  @extend .subtitle;
+  width: 100%;
 }
 
 .experience {
@@ -88,11 +116,13 @@
     background: #ddd;
     border: 2px solid #ddd;
     padding: 5px;
-    margin-right: 1px;
+    margin-right: 3px;
+    border-radius: 3px;
   }
   li.active {
-    background: #27b6f1;
-    border: 2px solid darken(#27b6f1, 5%);
+    background: $paradox-blue;
+    border: 2px solid $paradox-blue;
+    border-radius: 3px;
   }
 }
 
@@ -105,20 +135,22 @@
 }
 
 .matchRate {
-  width: 100%;
+  width: 80%;
   height: 15px;
   background: #ddd;
   margin-top: 2px;
+  border-radius: 3px;
   span {
     display: block;
-    background: #3ca94e;
+    background: #89e2cd;
     height: 15px;
+    border-radius: 4px;
   }
   span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
-    background: #f8ea06;
+    background: #fbd288;
   }
   span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
-    background: #ca4c49;
+    background: #fda7ab;
   }
 }
 
@@ -131,3 +163,109 @@
     @include rems(15);
   }
 }
+
+.upperBox {
+  display: flex;
+  width: 100%;
+  padding: 10px 0px;
+
+  @include mq(xs) {
+    width: 50%;
+    padding-right: 10px
+  }
+
+  .innerContent{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq(xs) {
+      width: 50%;
+    }
+  }
+}
+
+.lowerBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 0px;
+
+  @include mq(xs) {
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  div {
+    @include mq(xs) {
+      width: 100%;
+    }
+  }
+
+  .innerContent{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mq(xs) {
+      width: 50%;
+    }
+  }
+}
+
+.learnMore {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+
+  @include mq(xs) {
+    width: 50% !important;
+  }
+  button {
+    padding: 10px 10%;
+    color: $white;
+    background-color: $paradox-blue;
+    border-radius: 4px !important;
+  }
+}
+
+.grayDivider {
+    color: #555555;
+    width: 95%;
+    margin: 10px auto 10px;
+    line-height: inherit;
+    clear: both;
+    user-select: none;
+    break-after: page;
+    border: 1px solid #e8e8ec;
+  }
+
+  .education { 
+    width: 100%;
+    padding-left: 10%;
+
+    @include mq(xs) {
+      padding-left: initial;
+      width: initial;
+    }
+  }
+
+  .careerContainer {
+    display: flex;
+    margin:  20px;
+  }
+
+  .careerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .statsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }

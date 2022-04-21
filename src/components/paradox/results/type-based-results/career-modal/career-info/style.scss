@@ -1,4 +1,4 @@
-@import "~style/helpers";
+@import "~style/paradox/helpers";
 .info {
   list-style: none;
   margin: 0 10px 0;
@@ -46,12 +46,15 @@
     width: 45%;
   }
 }
+.contentTop {
+  padding: 0px 10px;
+}
 .center {
   text-align: center
 }
 
 .btnPrimary {
-  background: $paradox-blue;
+  background: $-paradox-blue;
   color: #fff;
   display: inline-block;
   min-width: 155px;
@@ -144,8 +147,8 @@
     border-radius: 3px;
   }
   li.active {
-    background: $paradox-blue;
-    border: 2px solid $paradox-blue;
+    background: $-paradox-blue;
+    border: 2px solid $-paradox-blue;
     border-radius: 3px;
   }
 }

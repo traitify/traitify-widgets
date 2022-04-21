@@ -36,7 +36,8 @@ class CareerModal extends Component {
     this.state = {
       career: null,
       show: false,
-      selectedTab: "career"
+      selectedTab: "career",
+      showDropdown: false
     };
   }
   componentDidMount() {
@@ -58,6 +59,7 @@ class CareerModal extends Component {
   setCareer = () => { this.setState({career: this.props.ui.current["CareerModal.career"]}); };
   show = () => { this.setState({show: true}); };
   toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); };
+
   render() {
     const {career, show} = this.state;
     const {assessment, isReady, translate} = this.props;
@@ -73,8 +75,12 @@ class CareerModal extends Component {
     const getSelected = () => tabs[this.state.selectedTab];
     const selectTab = (tabName) => { this.setState({selectedTab: tabName}); };
     const isSelected = (tabName) => this.state.selectedTab === tabName;
-    
-    console.log(career);
+    const toggleShowDropdown = () => { this.setState({showDropdown: !this.state.showDropdown}); };
+    const selectDropdown = (tabName) => {
+      selectTab(tabName);
+      toggleShowDropdown();
+    }
+
     return (
       <div className={`${style.modal} ${style.container}`} role="dialog">
         <section className={style.modalContainer}>
@@ -135,7 +141,17 @@ class CareerModal extends Component {
                   Jobs
                   <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
                 </div>
-                <button type="button" className={style.navDropdown}>{getSelected()}</button>
+                <div className={style.dropdownContainer}>
+                  <button type="button" className={style.dropdownButton} onClick={() => toggleShowDropdown()}>{getSelected()}</button>
+                  {this.state.showDropdown && (
+                    <div className={ style.dropdown}> 
+                      {!isSelected("career") && <div className={style.dropdownItem} onClick={() => selectDropdown("career")}>Career Info</div>}
+                      {!isSelected("clubs") && <div className={style.dropdownItem} onClick={() => selectDropdown("clubs")}>Clubs </div>}
+                      {!isSelected("majors") && <div className={style.dropdownItem} onClick={() => selectDropdown("majors")}>Majors</div>}
+                      {!isSelected("jobs") && <div className={style.dropdownItem} onClick={() => selectDropdown("jobs")}>Jobs</div>}
+                    </div>
+                  )}
+                </div>
               </div>
               {isSelected("career") && <CareerInfo assessment={assessment} translate={translate} career={career} />}
               {isSelected("clubs") && <Clubs />}

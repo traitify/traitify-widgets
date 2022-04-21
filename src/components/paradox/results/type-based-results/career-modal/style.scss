@@ -1,0 +1,430 @@
+@import "~style/helpers";
+
+.modal {
+  background: rgba(0,0,0,0.85);
+  color: #333;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+  transition: top 300ms ease-in-out;
+
+  .close {
+    color: #000;
+    float: right;
+    // padding: 5px 10px 10px;
+    cursor: pointer;
+    @include rems(20);
+  }
+}
+.modalContainer {
+  @include mq(m) {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    left: 50%;
+    margin: 70px -250px 0;
+  }
+}
+.modalContent {
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px 20px 10px;
+  text-align: left;
+}
+
+.container {
+  @extend %widgetContainer;
+  .modalContainer {
+    @include mq(m) {
+      max-width: 650px;
+      margin: 70px -325px 0;
+    }
+    @include mq(l) {
+      max-width: 800px;
+      margin: 70px -400px 0;
+    }
+    @include mq(xl) {
+      max-width: 1000px;
+      margin: 70px -500px 0;
+    }
+  }
+  hr {
+    clear: both;
+    margin: 20px 0;
+  }
+  h4 {
+    margin: 0;
+    @include rems(15);
+    @include mq(m) {
+      @include rems(17);
+    }
+  }
+  p {
+    padding: 0 10px;
+    @include rems(14);
+    @include mq(m) {
+      @include rems(16);
+    }
+  }
+  img {
+    float: right;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    margin-right: 20px;
+    @include mq (xs) {
+      // width: 45%;
+    }
+    @include mq(m) {
+      float: left;
+     
+    }
+    @include mq(xl) {
+      // width: 15%;
+    }
+  }
+
+  .grayDivider {
+    color: #555555;
+    width: 100%;
+    margin: 10px auto 20px;
+    line-height: inherit;
+    clear: both;
+    user-select: none;
+    break-after: page;
+    border: 1px solid #e8e8ec;
+    border-radius: 2px;
+  }
+  .blueDivider {
+    @extend .grayDivider;
+    border: 2px solid $paradox-blue;
+  }
+}
+
+h2, h3, h4 {
+  font-weight: normal;
+}
+.title {
+  margin: 0;
+  
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 10px;
+
+  @include rems(14);
+  @include mq(m) {
+    @include rems(16);
+  }
+}
+.description {
+  line-height: 1.25;
+  text-align: left;
+  @include rems(12);
+  @include mq(m) {
+    @include rems(14);
+    line-height: 1.4;
+  }
+}
+.info {
+  list-style: none;
+  margin: 0 10px 0;
+  padding: 0;
+  @include rems(15);
+  @include mq(m) {
+    @include rems(17);
+  }
+  @include mq(l) {
+    float: left;
+    width: 48%;
+    margin: 0 1% 0;
+  }
+  li {
+    display: block;
+    width: 100%;
+    margin: 0 0 5px;
+    @include mq(l) {
+      margin-bottom: 25px;
+    }
+    h4 {
+      display: inline-block;
+      width: 49%;
+      margin: 0;
+      @include mq(l) {
+        width: 52%;
+      }
+      i {
+        display: none;
+        @include mq(l) {
+          display: inline-block;
+          width: 30px;
+          text-align: center;
+          @include rems(20);
+        }
+      }
+    }
+  }
+}
+.infoText {
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+  @include mq(l) {
+    width: 45%;
+  }
+}
+.legend {
+  clear: both;
+  float: left;
+  margin-bottom: 25px;
+  padding-top: 20px;
+  background: lighten(#ca4c49, 44%);
+  border: 1px solid #ca4c49;
+  p {
+    margin-top: 0;
+  }
+}
+.legendToggle {
+  background: #ca4c49;
+  color: #fff;
+  padding: 5px 8px;
+}
+.experience {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    background: #ddd;
+    border: 2px solid #ddd;
+    padding: 5px;
+    margin-right: 3px;
+    border-radius: 3px;
+  }
+  li.active {
+    background: $paradox-blue;
+    border: 2px solid $paradox-blue;
+    border-radius: 3px;
+  }
+}
+
+.check {
+  float: left;
+  display: block;
+  opacity: 0;
+  + span svg {
+    color: #d6d6d6;
+  }
+  &:checked + span svg {
+    color: #00aeef;
+  }
+  &:focus + span svg {
+    color: #00aeef;
+  }
+  &:checked:focus + span svg {
+    color: #00aeef !important;
+  }
+}
+
+.btnPrimary {
+  background: #017fae;
+  color: #fff;
+  display: inline-block;
+  min-width: 155px;
+  padding: 6px 25px;
+  margin: 0 auto;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  font-size: 1.1em;
+  text-decoration: none;
+  cursor: pointer;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    background: darken(#017fae, 8%);
+    color: #fff;
+  }
+}
+
+.center {
+  text-align: center
+}
+
+.jobLink img {
+  width: initial;
+  margin-right: 5%;
+}
+
+.jobsLinks {
+  list-style: none;
+  margin: 0 10px 30px;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.careerContainer {
+  display: flex;
+}
+.careerDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding: 10px 0px;
+  margin: 30px 20px 20px 20px;
+  border-radius: 10px;
+
+}
+.contentTabs {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+
+  .navButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    width: 25%;
+    display: none;
+    cursor: pointer;
+
+    @include mq(m) {
+      display: flex;
+    }
+  }
+  .navButtonActive {
+    @extend .navButton;
+    color: $paradox-blue;
+  }
+
+  .navDropdown {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 42px;
+    background: $white url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 96% 50%;
+    background-size: 17px;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    color: #4e4e4e;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+    font-style: normal;
+
+    @include mq(m) {
+      display: none;
+    }
+  }
+}
+.contentTop {
+  padding: 10px;
+}
+.contentBottom {
+  padding: 0px 10px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftContainer {
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+
+  @include mq(m){
+    width: 50%;
+    border-bottom: none;
+    border-right: 1px solid #ddd;
+    margin-bottom: 0;
+  }
+}
+.rightContainer {
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+
+  @include mq(m){
+    width: 50%;
+  }
+}
+
+.subtitle {
+  @extend %cf;
+  width: 80%;
+  color: #333;
+  font-weight: 400;
+  margin: 0;
+
+  @include rems(13);
+
+  @include mq(xs) {
+    margin-top: initial;
+  }
+  @include mq(m) {
+    @include rems(15);
+  }
+}
+.subtitleFull {
+  @extend .subtitle;
+  width: 100%;
+}
+
+.experienceContainer {
+  padding-bottom: 10px;
+}
+
+.matchRate {
+  width: 100%;
+  height: 15px;
+  background: #ddd;
+  margin-top: 2px;
+  border-radius: 3px;
+  span {
+    display: block;
+    background: #89e2cd;
+    height: 15px;
+    border-radius: 4px;
+  }
+  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
+    background: #fbd288;
+  }
+  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
+    background: #fda7ab;
+  }
+}
+
+.matchRatePercent {
+  font-style: normal;
+  font-weight: 300;
+  float: right;
+  @include rems(13);
+  @include mq(m) {
+    @include rems(15);
+  }
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}

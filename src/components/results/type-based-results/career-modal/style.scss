@@ -17,7 +17,7 @@
   .close {
     color: #000;
     float: right;
-    // padding: 5px 10px 10px;
+    padding: 5px 10px 10px;
     cursor: pointer;
     @include rems(20);
   }
@@ -32,7 +32,6 @@
   }
 }
 .modalContent {
-  border-radius: 10px;
   background: #fff;
   padding: 20px 20px 10px;
   text-align: left;
@@ -74,36 +73,15 @@
   }
   img {
     float: right;
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    margin-right: 20px;
-    @include mq (xs) {
-      // width: 45%;
-    }
+    width: 40%;
+    margin: 0 0 20px 20px;
     @include mq(m) {
       float: left;
-     
+      margin: 0 20px 20px 0;
     }
     @include mq(xl) {
-      // width: 15%;
+      width: 30%;
     }
-  }
-
-  .grayDivider {
-    color: #555555;
-    width: 100%;
-    margin: 10px auto 20px;
-    line-height: inherit;
-    clear: both;
-    user-select: none;
-    break-after: page;
-    border: 1px solid #e8e8ec;
-    border-radius: 2px;
-  }
-  .blueDivider {
-    @extend .grayDivider;
-    border: 2px solid $paradox-blue;
   }
 }
 
@@ -112,22 +90,15 @@ h2, h3, h4 {
 }
 .title {
   margin: 0;
-  
-  font-weight: 500;
-  text-align: left;
-  margin-bottom: 10px;
-
-  @include rems(14);
+  padding: 0 10px;
+  @include rems(18);
   @include mq(m) {
-    @include rems(16);
+    @include rems(20);
   }
 }
 .description {
   line-height: 1.25;
-  text-align: left;
-  @include rems(12);
   @include mq(m) {
-    @include rems(14);
     line-height: 1.4;
   }
 }
@@ -196,20 +167,18 @@ h2, h3, h4 {
 }
 .experience {
   padding: 0;
-  margin: 0;
+  margin: 0 10px;
   list-style: none;
   li {
     display: inline-block;
     background: #ddd;
     border: 2px solid #ddd;
     padding: 5px;
-    margin-right: 3px;
-    border-radius: 3px;
+    margin-right: 1px;
   }
   li.active {
-    background: $paradox-blue;
-    border: 2px solid $paradox-blue;
-    border-radius: 3px;
+    background: #27b6f1;
+    border: 2px solid darken(#27b6f1, 5%);
   }
 }
 
@@ -266,165 +235,4 @@ h2, h3, h4 {
   list-style: none;
   margin: 0 10px 30px;
   padding: 0;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.careerContainer {
-  display: flex;
-}
-.careerDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  padding: 10px 0px;
-  margin: 30px 20px 20px 20px;
-  border-radius: 10px;
-
-}
-.contentTabs {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 10px;
-
-  .navButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    width: 25%;
-    display: none;
-    cursor: pointer;
-
-    @include mq(m) {
-      display: flex;
-    }
-  }
-  .navButtonActive {
-    @extend .navButton;
-    color: $paradox-blue;
-  }
-
-  .navDropdown {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 42px;
-    background: $white url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 96% 50%;
-    background-size: 17px;
-    border: 1px solid $gray;
-    border-radius: 5px;
-    color: #4e4e4e;
-    padding-left: 15px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    text-align: left;
-    font-style: normal;
-
-    @include mq(m) {
-      display: none;
-    }
-  }
-}
-.contentTop {
-  padding: 10px;
-}
-.contentBottom {
-  padding: 0px 10px 10px 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.leftContainer {
-  padding: 10px;
-  width: 100%;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-
-  @include mq(m){
-    width: 50%;
-    border-bottom: none;
-    border-right: 1px solid #ddd;
-    margin-bottom: 0;
-  }
-}
-.rightContainer {
-  width: 100%;
-  padding: 10px 10px 10px 20px;
-
-  @include mq(m){
-    width: 50%;
-  }
-}
-
-.subtitle {
-  @extend %cf;
-  width: 80%;
-  color: #333;
-  font-weight: 400;
-  margin: 0;
-
-  @include rems(13);
-
-  @include mq(xs) {
-    margin-top: initial;
-  }
-  @include mq(m) {
-    @include rems(15);
-  }
-}
-.subtitleFull {
-  @extend .subtitle;
-  width: 100%;
-}
-
-.experienceContainer {
-  padding-bottom: 10px;
-}
-
-.matchRate {
-  width: 100%;
-  height: 15px;
-  background: #ddd;
-  margin-top: 2px;
-  border-radius: 3px;
-  span {
-    display: block;
-    background: #89e2cd;
-    height: 15px;
-    border-radius: 4px;
-  }
-  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
-    background: #fbd288;
-  }
-  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
-    background: #fda7ab;
-  }
-}
-
-.matchRatePercent {
-  font-style: normal;
-  font-weight: 300;
-  float: right;
-  @include rems(13);
-  @include mq(m) {
-    @include rems(15);
-  }
-}
-
-.chartContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 10px;
-  width: 100%;
 }

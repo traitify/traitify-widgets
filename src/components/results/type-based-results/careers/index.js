@@ -5,6 +5,7 @@ import withTraitify from "lib/with-traitify";
 import CareerFilter from "../career-filter";
 import CareerModal from "../career-modal";
 import CareerResults from "../career-results";
+import {Component as Paradox} from "components/paradox/results/type-based-results/careers"
 import style from "./style.scss";
 
 class Careers extends Component {
@@ -32,4 +33,4 @@ class Careers extends Component {
 }
 
 export {Careers as Component};
-export default withTraitify(Careers);
+export default withTraitify(Careers, {paradox: Paradox});

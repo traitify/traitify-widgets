@@ -121,12 +121,7 @@ class CareerFilter extends Component {
               <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
               <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={this.onChange} />
             </li>
-            <li className={style.searchLocation}>
-              <label className={style.label} htmlFor="traitify-career-search">{translate("location")}</label>
-              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("location")} type="text" onChange={this.onChange} />
-            </li>
             <li>
-              <label className={style.filterLabel} htmlFor="traitify-career-search">{translate("filter")}</label>
               <div className={style.fieldGroup}>
                 <button onClick={this.toggleFilters} type="button">{translate("filter")}</button>
                 <ul className={`${style.formGroup} ${showFilters ? style.block : ""}`}>

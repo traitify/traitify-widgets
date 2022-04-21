@@ -1,4 +1,4 @@
-@import "~style/helpers";
+@import "~style/paradox/helpers";
 
 .container {
   @extend %widgetContainer;
@@ -84,12 +84,12 @@
       }
     }
     .fieldGroup {
-      background: $white url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
+      background: $-white url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
       background-size: 17px;
       margin-top: 10px;
       height: 42px;
       position: relative;
-      border: 1px solid $gray;
+      border: 1px solid $-gray;
       border-radius: 5px;
 
       @include mq(l) {
@@ -105,7 +105,7 @@
     }
     .career-filter-fields {
       input.field {
-        background: $white url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
+        background: $-white url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
         background-size: 17px 17px;
         padding-right: 10px;
         text-indent: 22px;
@@ -212,7 +212,7 @@
       padding: 6px 25px;
       min-width: 150px;
       text-align: center;
-      border: 1px solid $gray;
+      border: 1px solid $-gray;
       border-radius: 5px;
       margin: 10px auto 0;
       cursor: pointer;

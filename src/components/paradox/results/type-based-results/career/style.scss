@@ -1,4 +1,4 @@
-@import "~style/helpers";
+@import "~style/paradox/helpers";
 
 .container {
   @extend %widgetContainer;
@@ -120,8 +120,8 @@
     border-radius: 3px;
   }
   li.active {
-    background: $paradox-blue;
-    border: 2px solid $paradox-blue;
+    background: $-paradox-blue;
+    border: 2px solid $-paradox-blue;
     border-radius: 3px;
   }
 }
@@ -225,8 +225,8 @@
   }
   button {
     padding: 10px 10%;
-    color: $white;
-    background-color: $paradox-blue;
+    color: $-white;
+    background-color: $-paradox-blue;
     border-radius: 4px !important;
   }
 }

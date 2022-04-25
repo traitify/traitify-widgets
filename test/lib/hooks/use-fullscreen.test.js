@@ -1,4 +1,5 @@
 import {createRef} from "react";
+import {act} from "react-test-renderer";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
 import useWindowMock from "support/hooks/use-window-mock";
@@ -25,7 +26,7 @@ describe("useFullscreen", () => {
 
     it("removes fullscreen event listeners", () => {
       const component = new ComponentHandler(<Component />);
-      component.unmount();
+      act(() => { component.unmount(); });
 
       expect(window.removeEventListener).toHaveBeenCalledWith("fullscreenchange", expect.any(Function));
       expect(window.removeEventListener).toHaveBeenCalledWith("webkitfullscreenchange", expect.any(Function));

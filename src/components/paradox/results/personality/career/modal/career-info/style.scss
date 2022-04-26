@@ -4,10 +4,10 @@
   margin: 0 10px 0;
   padding: 0;
   @include rems(15);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(17);
   }
-  @include mq(l) {
+  @include min-width(lg) {
     float: left;
     width: 48%;
     margin: 0 1% 0;
@@ -16,19 +16,19 @@
     display: block;
     width: 100%;
     margin: 0 0 5px;
-    @include mq(l) {
+    @include min-width(lg) {
       margin-bottom: 25px;
     }
     h4 {
       display: inline-block;
       width: 49%;
       margin: 0;
-      @include mq(l) {
+      @include min-width(lg) {
         width: 52%;
       }
       i {
         display: none;
-        @include mq(l) {
+        @include min-width(lg) {
           display: inline-block;
           width: 30px;
           text-align: center;
@@ -42,7 +42,7 @@
   display: inline-block;
   width: 49%;
   text-align: right;
-  @include mq(l) {
+  @include min-width(lg) {
     width: 45%;
   }
 }
@@ -66,7 +66,7 @@
   font-size: 0.8em;
   text-decoration: none;
 
-  @include mq(xs) {
+  @include min-width(xs) {
     font-size: 1.1em;
   }
   cursor: pointer;
@@ -96,7 +96,7 @@
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
 
-  @include mq(m){
+  @include min-width(md){
     width: 50%;
     border-bottom: none;
     border-right: 1px solid #ddd;
@@ -107,7 +107,7 @@
   width: 100%;
   padding: 10px 10px 10px 20px;
 
-  @include mq(m){
+  @include min-width(md){
     width: 50%;
   }
 }
@@ -123,10 +123,10 @@
 
   @include rems(13);
 
-  @include mq(xs) {
+  @include min-width(xs) {
     margin-top: initial;
   }
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(15);
   }
 }
@@ -178,7 +178,7 @@
   font-weight: 300;
   float: right;
   @include rems(13);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(15);
   }
 }

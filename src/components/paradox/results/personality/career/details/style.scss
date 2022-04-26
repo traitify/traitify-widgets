@@ -10,16 +10,16 @@
   width: 262px;
   z-index: 1;
   
-  @include mq(xs) {
+  @include min-width(xs) {
     margin: 0 0% 3%;
     @include cols(6);
     width: 47%;
     padding: 0;
   }
-  @include mq(m) {
+  @include min-width(md) {
     width: 30%;
   }
-  @include mq(xl) {
+  @include min-width(xl) {
     width: 23%;
     margin: 0 1% 1.5%;
   }
@@ -42,7 +42,7 @@
 }
 
 .content {
-  @include mq(m) {
+  @include min-width(md) {
     padding: 0 15px 20px;
   }
   text-align: left;
@@ -62,7 +62,7 @@
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;
 
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(16);
   }
 }
@@ -80,7 +80,7 @@
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
 
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(14);
   }
 }
@@ -94,10 +94,10 @@
 
   @include rems(13);
 
-  @include mq(xs) {
+  @include min-width(xs) {
     margin-top: initial;
   }
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(15);
   }
 }
@@ -129,7 +129,7 @@
 .education {
   margin: 0;
   @include rems(12);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(14);
   }
 }
@@ -159,7 +159,7 @@
   font-weight: 300;
   float: right;
   @include rems(13);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(15);
   }
 }
@@ -169,7 +169,7 @@
   width: 100%;
   padding: 10px 0px;
 
-  @include mq(xs) {
+  @include min-width(xs) {
     width: 50%;
     padding-right: 10px
   }
@@ -179,7 +179,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include mq(xs) {
+    @include min-width(xs) {
       width: 50%;
     }
   }
@@ -191,13 +191,13 @@
   justify-content: space-between;
   padding: 10px 0px;
 
-  @include mq(xs) {
+  @include min-width(xs) {
     width: 50%;
     padding-left: 10px;
   }
 
   div {
-    @include mq(xs) {
+    @include min-width(xs) {
       width: 100%;
     }
   }
@@ -207,7 +207,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include mq(xs) {
+    @include min-width(xs) {
       width: 50%;
     }
   }
@@ -220,7 +220,7 @@
   justify-content: center;
   border-radius: 4px;
 
-  @include mq(xs) {
+  @include min-width(xs) {
     width: 50% !important;
   }
   button {
@@ -246,7 +246,7 @@
     width: 100%;
     padding-left: 10%;
 
-    @include mq(xs) {
+    @include min-width(xs) {
       padding-left: initial;
       width: initial;
     }

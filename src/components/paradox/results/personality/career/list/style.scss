@@ -1,9 +1,9 @@
-@import "~style/helpers";
+@import "~style/paradox/helpers";
 
 .container {
   @extend %widgetContainer;
   @extend %cf;
-  @include mq(l) {
+  @include min-width(lg) {
     min-height: 520px;
     @include cols(9.5);
     float: right;
@@ -11,8 +11,8 @@
   }
 }
 .more {
-  color: $black;
-  background: $gray;
+  color: $-black;
+  background: $-gray;
   display: inline-block;
   min-width: 155px;
   padding: 6px 25px;
@@ -22,5 +22,5 @@
   cursor: pointer;
   text-decoration: none;
   @include rems(22);
-  &:hover { background: $gray-hover; }
+  &:hover { background: $-gray-hover; }
 }

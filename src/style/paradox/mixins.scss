@@ -1,50 +1,6 @@
 @import "./mixins/tabs.scss";
 @import "./mixins/private.scss";
 
-@mixin mq($breakpoint) {
-  @if $breakpoint == xxxxl {
-    @media (min-width: 120em) { @content ; } //1920
-  }
-  @else if $breakpoint == xxxl-2 {
-    @media (min-width: 105em) { @content ; } //1680
-  }
-  @else if $breakpoint == xxxl {
-    @media (min-width: 90em) { @content ; } //1440
-  }
-  @else if $breakpoint == xxl {
-    @media (min-width: 80em) { @content ; } //1280
-  }
-  @else if $breakpoint == xl {
-    @media (min-width: 71.25em) { @content ; } //1140
-  }
-  @else if $breakpoint == l-2 {
-    @media (min-width: 64em) { @content ; } //1024
-  }
-  @else if $breakpoint == l {
-    @media (min-width: 60em) { @content ; } //960
-  }
-  @else if $breakpoint == m {
-    @media (min-width: 48em) { @content ; } //768
-  }
-  @else if $breakpoint == s {
-    @media (min-width: 35.5em) { @content ; } //568
-  }
-  @else if $breakpoint == xs {
-    @media (min-width: 30em) { @content ; } //480
-  }
-  @else if $breakpoint == 2x {
-    @media
-    only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-      @content;
-    } //retina
-  }
-}
-
 @mixin buffer($prop) {
   #{$prop}: $buffer;
 

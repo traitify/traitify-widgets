@@ -23,7 +23,7 @@
   }
 }
 .modalContainer {
-  @include mq(m) {
+  @include min-width(md) {
     width: 100%;
     max-width: 500px;
     position: relative;
@@ -41,15 +41,15 @@
 .container {
   @extend %widgetContainer;
   .modalContainer {
-    @include mq(m) {
+    @include min-width(md) {
       max-width: 650px;
       margin: 70px -325px 0;
     }
-    @include mq(l) {
+    @include min-width(lg) {
       max-width: 800px;
       margin: 70px -400px 0;
     }
-    @include mq(xl) {
+    @include min-width(xl) {
       max-width: 1000px;
       margin: 70px -500px 0;
     }
@@ -61,14 +61,14 @@
   h4 {
     margin: 0;
     @include rems(15);
-    @include mq(m) {
+    @include min-width(md) {
       @include rems(17);
     }
   }
   p {
     padding: 0 10px;
     @include rems(14);
-    @include mq(m) {
+    @include min-width(md) {
       @include rems(16);
     }
   }
@@ -78,14 +78,14 @@
     width: 100px;
     border-radius: 10px;
     margin-right: 20px;
-    @include mq (xs) {
+    @include min-width (xs) {
       // width: 45%;
     }
-    @include mq(m) {
+    @include min-width(md) {
       float: left;
      
     }
-    @include mq(xl) {
+    @include min-width(xl) {
       // width: 15%;
     }
   }
@@ -118,7 +118,7 @@ h2, h3, h4 {
   margin-bottom: 10px;
 
   @include rems(14);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(16);
   }
 }
@@ -126,7 +126,7 @@ h2, h3, h4 {
   line-height: 1.25;
   text-align: left;
   @include rems(12);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(14);
     line-height: 1.4;
   }
@@ -136,10 +136,10 @@ h2, h3, h4 {
   margin: 0 10px 0;
   padding: 0;
   @include rems(15);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(17);
   }
-  @include mq(l) {
+  @include min-width(lg) {
     float: left;
     width: 48%;
     margin: 0 1% 0;
@@ -148,19 +148,19 @@ h2, h3, h4 {
     display: block;
     width: 100%;
     margin: 0 0 5px;
-    @include mq(l) {
+    @include min-width(lg) {
       margin-bottom: 25px;
     }
     h4 {
       display: inline-block;
       width: 49%;
       margin: 0;
-      @include mq(l) {
+      @include min-width(lg) {
         width: 52%;
       }
       i {
         display: none;
-        @include mq(l) {
+        @include min-width(lg) {
           display: inline-block;
           width: 30px;
           text-align: center;
@@ -174,7 +174,7 @@ h2, h3, h4 {
   display: inline-block;
   width: 49%;
   text-align: right;
-  @include mq(l) {
+  @include min-width(lg) {
     width: 45%;
   }
 }
@@ -305,7 +305,7 @@ h2, h3, h4 {
     display: none;
     cursor: pointer;
 
-    @include mq(m) {
+    @include min-width(md) {
       display: flex;
     }
   }
@@ -320,7 +320,7 @@ h2, h3, h4 {
     flex-direction: column;
     width: 100%;
 
-    @include mq(m) {
+    @include min-width(md) {
       display: none;
     }
 
@@ -374,7 +374,7 @@ h2, h3, h4 {
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
 
-  @include mq(m){
+  @include min-width(md){
     width: 50%;
     border-bottom: none;
     border-right: 1px solid #ddd;
@@ -385,7 +385,7 @@ h2, h3, h4 {
   width: 100%;
   padding: 10px 10px 10px 20px;
 
-  @include mq(m){
+  @include min-width(md){
     width: 50%;
   }
 }
@@ -399,10 +399,10 @@ h2, h3, h4 {
 
   @include rems(13);
 
-  @include mq(xs) {
+  @include min-width(xs) {
     margin-top: initial;
   }
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(15);
   }
 }
@@ -440,7 +440,7 @@ h2, h3, h4 {
   font-weight: 300;
   float: right;
   @include rems(13);
-  @include mq(m) {
+  @include min-width(md) {
     @include rems(15);
   }
 }

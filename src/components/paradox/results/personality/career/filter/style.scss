@@ -4,10 +4,10 @@
   @extend %widgetContainer;
   @extend %cf;
   margin-bottom: 10px;
-  @include mq(l) {
+  @include min-width(lg) {
     @include cols(2.5);
   }
-  @include mq(xl) {
+  @include min-width(xl) {
     max-width: 234px;
   }
   form {
@@ -18,7 +18,7 @@
     box-shadow: 0px 1px 6px gainsboro;
     margin-bottom: 30px;
 
-    @include mq(l) {
+    @include min-width(lg) {
       box-shadow: none;
       padding: initial;
       margin-bottom: initial;
@@ -44,10 +44,10 @@
         margin-top: 0;
         clear: none;
       }
-      @include mq(m) {
+      @include min-width(md) {
         width: 33.33%;
       }
-      @include mq(l) {
+      @include min-width(lg) {
         width: 100%;
         padding-right: 0;
       }
@@ -56,7 +56,7 @@
     .label {
       display: block;
 
-      @include mq(l) {
+      @include min-width(lg) {
         text-transform: uppercase;
         padding-left: 0;
         margin-left: -3px;
@@ -65,7 +65,7 @@
     }
     .filterLabel {
       @extend .label;
-      @include mq(l) {
+      @include min-width(lg) {
         display: none;
       }
     }
@@ -79,7 +79,7 @@
       background: #e2e2e2;
       color: #333;
       width: 100%;
-      @include mq(l) {
+      @include min-width(lg) {
         margin-left: -5px;
       }
     }
@@ -92,7 +92,7 @@
       border: 1px solid $-gray;
       border-radius: 5px;
 
-      @include mq(l) {
+      @include min-width(lg) {
         background: #fff;
         height: auto;
         border: 0;
@@ -111,14 +111,14 @@
         text-indent: 22px;
         border-radius: 4px;
         margin-top: 10px;
-        @include mq(l) {
+        @include min-width(lg) {
           @include rems(16);
         }
       }
     }
     .search {
       @extend .career-filter-fields;
-      @include mq(l) {
+      @include min-width(lg) {
         margin-bottom: 18px !important;
       }
     }
@@ -126,11 +126,11 @@
       @extend .career-filter-fields;
       display: none; 
     
-      @include mq(m){
+      @include min-width(md){
         display: initial;
         clear: none;
       }
-      @include mq(l) {
+      @include min-width(lg) {
         margin-bottom: 3px;
         clear: both;
       }
@@ -150,12 +150,12 @@
     font-size: 16px;
     border: 0;
     margin: 0;
-    @include mq(l) {
+    @include min-width(lg) {
       display: none;
     }
   }
   .check:checked + span:before {
-    @include mq(l) {
+    @include min-width(lg) {
       color: #3ca94e;
     }
   }
@@ -170,7 +170,7 @@
     margin: 0;
     border: 1px solid #e2e2e2;
     @include rems(13);
-    @include mq(l) {
+    @include min-width(lg) {
       display: block;
       z-index: 0;
       border: 0;
@@ -193,7 +193,7 @@
       height: 38px;
       line-height: 38px;
       padding-left: 3px;
-      @include mq(l) {
+      @include min-width(lg) {
         background: #fff;
         text-transform: uppercase;
         margin-top: 15px;
@@ -217,7 +217,7 @@
       margin: 10px auto 0;
       cursor: pointer;
       @include rems(18);
-      @include mq(l) {
+      @include min-width(lg) {
         margin: 20px 0 0;
       }
     }

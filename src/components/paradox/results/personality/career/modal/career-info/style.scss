@@ -54,8 +54,8 @@
 }
 
 .btnPrimary {
-  background: $-paradox-blue;
-  color: #fff;
+  background: $-blue;
+  color: $-white;
   display: inline-block;
   min-width: 155px;
   padding: 6px 25px;
@@ -71,18 +71,17 @@
   }
   cursor: pointer;
   &:visited {
-    color: #fff;
+    color: $-white;
   }
   &:hover {
-    background: darken(#017fae, 8%);
-    color: #fff;
+    background: darken($-blue, 8%);
+    color: $-white;
   }
 }
 
 .legendToggle {
-  background: #ffffff;
+  background: $-white;
   color: #8e8e8e;
-  // padding: 5px 8px;
 }
 .contentBottom {
   padding: 0px 10px 10px 10px;
@@ -93,13 +92,13 @@
 .leftContainer {
   padding: 10px;
   width: 100%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $-white;
   margin-bottom: 10px;
 
   @include min-width(md){
     width: 50%;
     border-bottom: none;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid $-white;
     margin-bottom: 0;
   }
 }
@@ -139,15 +138,15 @@
   list-style: none;
   li {
     display: inline-block;
-    background: #ddd;
-    border: 2px solid #ddd;
+    background: $-white;
+    border: 2px solid $-white;
     padding: 5px;
     margin-right: 3px;
     border-radius: 3px;
   }
   li.active {
-    background: $-paradox-blue;
-    border: 2px solid $-paradox-blue;
+    background: $-blue;
+    border: 2px solid $-blue;
     border-radius: 3px;
   }
 }
@@ -204,16 +203,16 @@
   display: block;
   opacity: 0;
   + span svg {
-    color: #d6d6d6;
+    color: $-white;
   }
   &:checked + span svg {
-    color: #00aeef;
+    color: $-blue;
   }
   &:focus + span svg {
-    color: #00aeef;
+    color: $-blue;
   }
   &:checked:focus + span svg {
-    color: #00aeef !important;
+    color: $-blue !important;
   }
 }
 
@@ -234,8 +233,7 @@
   float: left;
   margin: 20px 0px 25px 0px;
   padding-top: 20px;
-  background: lighten(#ca4c49, 44%);
-  border: 1px solid #ca4c49;
+  border: 1px solid $-blue;
   p {
     margin-top: 0;
   }

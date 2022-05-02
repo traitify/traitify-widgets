@@ -95,7 +95,7 @@
   }
   .blueDivider {
     @extend .grayDivider;
-    border: 2px solid $-paradox-blue;
+    border: 2px solid $-blue;
   }
 }
 
@@ -122,148 +122,10 @@ h2, h3, h4 {
     line-height: 1.4;
   }
 }
-.info {
-  list-style: none;
-  margin: 0 10px 0;
-  padding: 0;
-  @include rems(15);
-  @include min-width(md) {
-    @include rems(17);
-  }
-  @include min-width(lg) {
-    float: left;
-    width: 48%;
-    margin: 0 1% 0;
-  }
-  li {
-    display: block;
-    width: 100%;
-    margin: 0 0 5px;
-    @include min-width(lg) {
-      margin-bottom: 25px;
-    }
-    h4 {
-      display: inline-block;
-      width: 49%;
-      margin: 0;
-      @include min-width(lg) {
-        width: 52%;
-      }
-      i {
-        display: none;
-        @include min-width(lg) {
-          display: inline-block;
-          width: 30px;
-          text-align: center;
-          @include rems(20);
-        }
-      }
-    }
-  }
-}
-.infoText {
-  display: inline-block;
-  width: 49%;
-  text-align: right;
-  @include min-width(lg) {
-    width: 45%;
-  }
-}
-.legend {
-  clear: both;
-  float: left;
-  margin-bottom: 25px;
-  padding-top: 20px;
-  background: lighten(#ca4c49, 44%);
-  border: 1px solid #ca4c49;
-  p {
-    margin-top: 0;
-  }
-}
-.legendToggle {
-  background: #ca4c49;
-  color: #fff;
-  padding: 5px 8px;
-}
-.experience {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  li {
-    display: inline-block;
-    background: #ddd;
-    border: 2px solid #ddd;
-    padding: 5px;
-    margin-right: 3px;
-    border-radius: 3px;
-  }
-  li.active {
-    background: $-paradox-blue;
-    border: 2px solid $-paradox-blue;
-    border-radius: 3px;
-  }
-}
-
-.check {
-  float: left;
-  display: block;
-  opacity: 0;
-  + span svg {
-    color: #d6d6d6;
-  }
-  &:checked + span svg {
-    color: #00aeef;
-  }
-  &:focus + span svg {
-    color: #00aeef;
-  }
-  &:checked:focus + span svg {
-    color: #00aeef !important;
-  }
-}
-
-.btnPrimary {
-  background: #017fae;
-  color: #fff;
-  display: inline-block;
-  min-width: 155px;
-  padding: 6px 25px;
-  margin: 0 auto;
-  text-align: center;
-  border: 0;
-  border-radius: 0;
-  font-size: 1.1em;
-  text-decoration: none;
-  cursor: pointer;
-  &:visited {
-    color: #fff;
-  }
-  &:hover {
-    background: darken(#017fae, 8%);
-    color: #fff;
-  }
-}
-
-.center {
-  text-align: center
-}
-
-.jobLink img {
-  width: initial;
-  margin-right: 5%;
-}
-
-.jobsLinks {
-  list-style: none;
-  margin: 0 10px 30px;
-  padding: 0;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
 }
-
 .careerContainer {
   display: flex;
 }
@@ -272,7 +134,6 @@ h2, h3, h4 {
   flex-direction: column;
   justify-content: center;
 }
-
 .content {
   display: flex;
   flex-direction: column;
@@ -302,7 +163,7 @@ h2, h3, h4 {
   }
   .navButtonActive {
     @extend .navButton;
-    color: $-paradox-blue;
+    color: $-blue;
   }
 
   .dropdownContainer {
@@ -349,98 +210,4 @@ h2, h3, h4 {
       font-style: normal;
     }
   }
-}
-
-.contentTop {
-  padding: 10px;
-}
-.contentBottom {
-  padding: 0px 10px 10px 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.leftContainer {
-  padding: 10px;
-  width: 100%;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-
-  @include min-width(md){
-    width: 50%;
-    border-bottom: none;
-    border-right: 1px solid #ddd;
-    margin-bottom: 0;
-  }
-}
-.rightContainer {
-  width: 100%;
-  padding: 10px 10px 10px 20px;
-
-  @include min-width(md){
-    width: 50%;
-  }
-}
-
-.subtitle {
-  @extend %cf;
-  width: 80%;
-  color: #333;
-  font-weight: 400;
-  margin: 0;
-
-  @include rems(13);
-
-  @include min-width(xs) {
-    margin-top: initial;
-  }
-  @include min-width(md) {
-    @include rems(15);
-  }
-}
-.subtitleFull {
-  @extend .subtitle;
-  width: 100%;
-}
-
-.experienceContainer {
-  padding-bottom: 10px;
-}
-
-.matchRate {
-  width: 100%;
-  height: 15px;
-  background: #ddd;
-  margin-top: 2px;
-  border-radius: 3px;
-  span {
-    display: block;
-    background: #89e2cd;
-    height: 15px;
-    border-radius: 4px;
-  }
-  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
-    background: #fbd288;
-  }
-  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
-    background: #fda7ab;
-  }
-}
-
-.matchRatePercent {
-  font-style: normal;
-  font-weight: 300;
-  float: right;
-  @include rems(13);
-  @include min-width(md) {
-    @include rems(15);
-  }
-}
-
-.chartContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 10px;
-  width: 100%;
 }

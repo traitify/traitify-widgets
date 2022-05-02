@@ -31,13 +31,13 @@
     height: 100px;
   }
   &[type="button"] {
-    border: 1px solid #ddd;
+    border: 1px solid $-white;
     border-radius: 10px;
     width: 100%
   }
 }
 #container {
-  border: 1px solid #ddd;
+  border: 1px solid $-white;
   border-radius: 10px;
   width: 100%
 }
@@ -112,15 +112,15 @@
   list-style: none;
   li {
     display: inline-block;
-    background: #ddd;
-    border: 2px solid #ddd;
+    background: $-white;
+    border: 2px solid $-white;
     padding: 5px;
     margin-right: 3px;
     border-radius: 3px;
   }
   li.active {
-    background: $-paradox-blue;
-    border: 2px solid $-paradox-blue;
+    background: $-blue;
+    border: 2px solid $-blue;
     border-radius: 3px;
   }
 }
@@ -136,7 +136,7 @@
 .matchRate {
   width: 80%;
   height: 15px;
-  background: #ddd;
+  background: $-white;
   margin-top: 2px;
   border-radius: 3px;
   span {
@@ -225,7 +225,7 @@
   button {
     padding: 10px 10%;
     color: $-white;
-    background-color: $-paradox-blue;
+    background-color: $-blue;
     border-radius: 4px !important;
   }
 }

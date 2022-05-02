@@ -234,12 +234,12 @@
     color: #d6d6d6;
   }
   &:checked + span svg {
-    color: #25C9D0;
+    color: $-blue;
   }
   &:focus + span svg {
-    color: #25C9D0;
+    color: $-blue;
   }
   &:checked:focus + span svg {
-    color: #25C9D0 !important;
+    color: $-blue !important;
   }
 }

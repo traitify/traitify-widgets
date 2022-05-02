@@ -25,6 +25,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
 
 .container {
   @extend %container;
+  @extend %icon-block;
 
   margin-bottom: $buffer-section;
 

@@ -5,5 +5,8 @@
 
   margin-bottom: $buffer-section;
 }
-.container { @extend %container; }
+.container { 
+  @extend %container; 
+  @extend %icon-block;
+}
 .p { @extend %paragraph; }

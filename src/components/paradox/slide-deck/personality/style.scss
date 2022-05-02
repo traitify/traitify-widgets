@@ -62,6 +62,7 @@
 }
 .container {
   @extend %container;
+  @extend %icon-block;
 
   display: flex;
   flex-direction: column;

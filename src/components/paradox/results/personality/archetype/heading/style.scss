@@ -2,6 +2,7 @@
 
 .container {
   @extend %container;
+  @extend %icon-block;
 
   background: none;
   margin-bottom: $buffer-section;

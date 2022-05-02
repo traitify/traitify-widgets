@@ -25,4 +25,5 @@
 }
 .widget {
   @extend %container;
+  @extend %icon-block;
 }

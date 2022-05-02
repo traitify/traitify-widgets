@@ -21,7 +21,7 @@ import HighChart from "components/highchart";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
-import {Component as Paradox} from "components/paradox/results/personality/career/modal"
+import {Component as Paradox} from "components/paradox/results/personality/career/modal";
 import style from "./style.scss";
 
 class CareerModal extends Component {

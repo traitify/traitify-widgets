@@ -3,8 +3,9 @@
 .container {
   @extend %widgetContainer;
   @extend %cf;
+  @extend %container;
+
   display: block;
-  background-color: #fff;
   margin: 0 auto 5%;
   padding: 0;
   width: 262px;
@@ -49,7 +50,6 @@
 }
 
 .title {
-  color: #333;
   font-weight: 500;
   text-align: left;
   margin-bottom: 10px;
@@ -88,7 +88,6 @@
 .subtitle {
   @extend %cf;
   width: 80%;
-  color: #333;
   font-weight: 400;
   margin: 0;
 
@@ -232,40 +231,40 @@
 }
 
 .grayDivider {
-    color: #555555;
-    width: 95%;
-    margin: 10px auto 10px;
-    line-height: inherit;
-    clear: both;
-    user-select: none;
-    break-after: page;
-    border: 1px solid #e8e8ec;
-  }
+  color: #555555;
+  width: 95%;
+  margin: 10px auto 10px;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: 1px solid #e8e8ec;
+}
 
-  .education { 
-    width: 100%;
-    padding-left: 10%;
+.education { 
+  width: 100%;
+  padding-left: 10%;
 
-    @include min-width(xs) {
-      padding-left: initial;
-      width: initial;
-    }
+  @include min-width(xs) {
+    padding-left: initial;
+    width: initial;
   }
+}
 
-  .careerContainer {
-    display: flex;
-    margin:  20px;
-  }
+.careerContainer {
+  display: flex;
+  margin:  20px;
+}
 
-  .careerDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .statsContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-  }
+.careerDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}

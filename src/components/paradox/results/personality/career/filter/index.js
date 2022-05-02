@@ -23,7 +23,8 @@ class CareerFilter extends Component {
       })
     }),
     translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired
+    ui: TraitifyPropTypes.ui.isRequired,
+    setElement: PropTypes.func.isRequired
   };
   constructor(props) {
     super(props);
@@ -107,14 +108,14 @@ class CareerFilter extends Component {
     if(!this.props.isReady("results")) { return null; }
 
     const {params, showFilters} = this.state;
-    const {translate} = this.props;
+    const {translate, setElement} = this.props;
     const experienceLevels = careerOption(this.props, "experienceLevels") || [1, 2, 3, 4, 5];
     const currentExperienceLevels = params.experience_levels || experienceLevels;
     const currentSort = params.sort || "match";
     const currentSearch = params.search || "";
 
     return (
-      <div className={style.container}>
+      <div className={style.container} ref={setElement}>
         <form onSubmit={this.onSubmit}>
           <ul>
             <li className={style.search}>

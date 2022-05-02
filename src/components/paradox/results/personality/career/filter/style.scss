@@ -3,6 +3,8 @@
 .container {
   @extend %widgetContainer;
   @extend %cf;
+  @extend %container;
+
   margin-bottom: 10px;
   @include min-width(lg) {
     @include cols(2.5);
@@ -84,7 +86,7 @@
       }
     }
     .fieldGroup {
-      background: $-white url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
+      background: url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
       background-size: 17px;
       margin-top: 10px;
       height: 42px;
@@ -93,7 +95,6 @@
       border-radius: 5px;
 
       @include min-width(lg) {
-        background: #fff;
         height: auto;
         border: 0;
       }
@@ -105,7 +106,8 @@
     }
     .career-filter-fields {
       input.field {
-        background: $-white url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
+        @include theme(color, "text-color");
+        background: url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
         background-size: 17px 17px;
         padding-right: 10px;
         text-indent: 22px;
@@ -140,7 +142,6 @@
 .fieldGroup {
   button {
     font-style: normal;
-    color: #4e4e4e;
     text-align: left;
     padding-left: 15px;
     display: block;
@@ -158,6 +159,9 @@
     @include min-width(lg) {
       color: #3ca94e;
     }
+  }
+  .center { 
+    text-align: center;
   }
   .field {
     margin-left: 0;
@@ -181,20 +185,17 @@
       width: 100%;
       margin: 0;
       padding: 0 0 5px;
-      background: #fff;
       &.hidden {
         display: none;
       }
     }
     &.block { display: block; }
     .groupTitle {
-      background: #e2e2e2;
       font-weight: 400;
       height: 38px;
       line-height: 38px;
       padding-left: 3px;
       @include min-width(lg) {
-        background: #fff;
         text-transform: uppercase;
         margin-top: 15px;
         @include rems(18);
@@ -206,9 +207,9 @@
       }
     }
     [type="submit"] {
+      @include theme("color", "text-color");
       background: transparent;
-      color: #333;
-      display: 1lock;
+      display: block;
       padding: 6px 25px;
       min-width: 150px;
       text-align: center;

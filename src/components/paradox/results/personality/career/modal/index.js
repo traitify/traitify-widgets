@@ -27,7 +27,8 @@ class CareerModal extends Component {
     }),
     isReady: PropTypes.func.isRequired,
     translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired
+    ui: TraitifyPropTypes.ui.isRequired,
+    setElement: PropTypes.func.isRequired
   };
   static defaultProps = {assessment: null};
   constructor(props) {
@@ -59,10 +60,9 @@ class CareerModal extends Component {
   setCareer = () => { this.setState({career: this.props.ui.current["CareerModal.career"]}); };
   show = () => { this.setState({show: true}); };
   toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); };
-
   render() {
     const {career, show} = this.state;
-    const {assessment, isReady, translate} = this.props;
+    const {assessment, isReady, translate, setElement} = this.props;
     if(!show || !career) { return null; }
     if(!isReady("results")) { return null; }
 
@@ -75,14 +75,16 @@ class CareerModal extends Component {
     const getSelected = () => tabs[this.state.selectedTab];
     const selectTab = (tabName) => { this.setState({selectedTab: tabName}); };
     const isSelected = (tabName) => this.state.selectedTab === tabName;
-    const toggleShowDropdown = () => { this.setState({showDropdown: !this.state.showDropdown}); };
+    const toggleShowDropdown = () => {
+      this.setState((prevState) => ({showDropdown: !prevState.showDropdown}));
+    };
     const selectDropdown = (tabName) => {
       selectTab(tabName);
       toggleShowDropdown();
-    }
+    };
 
     return (
-      <div className={`${style.modal} ${style.container}`} role="dialog">
+      <div className={`${style.modal} ${style.container}`} role="dialog" ref={setElement}>
         <section className={style.modalContainer}>
           <div className={style.modalContent}>
             <div className={style.header}>
@@ -101,54 +103,38 @@ class CareerModal extends Component {
             </div>
             <div className={style.content}>
               <div className={style.contentTabs}>
-                <div
-                  className={isSelected("career") ? style.navButtonActive : style.navButton}
-                  onClick={() => selectTab("career")}
-                  onKeyDown={() => selectTab("career")}
-                  role="button"
-                  tabIndex={0}
-                >
+                <ModalTab className={isSelected("career") ? style.navButtonActive : style.navButton} onClick={() => selectTab("career")}>
                   Career Info
                   <hr className={isSelected("career") ? style.blueDivider : style.grayDivider} />
-                </div>
-                <div
-                  className={isSelected("clubs") ? style.navButtonActive : style.navButton}
-                  onClick={() => selectTab("clubs")}
-                  onKeyDown={() => selectTab("career")}
-                  role="button"
-                  tabIndex={0}
-                >
+                </ModalTab>
+                <ModalTab className={isSelected("clubs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("clubs")}>
                   Clubs
                   <hr className={isSelected("clubs") ? style.blueDivider : style.grayDivider} />
-                </div>
-                <div
-                  className={isSelected("majors") ? style.navButtonActive : style.navButton}
-                  onClick={() => selectTab("majors")}
-                  onKeyDown={() => selectTab("career")}
-                  role="button"
-                  tabIndex={0}
-                >
+                </ModalTab>
+                <ModalTab className={isSelected("majors") ? style.navButtonActive : style.navButton} onClick={() => selectTab("majors")}>
                   Majors
                   <hr className={isSelected("majors") ? style.blueDivider : style.grayDivider} />
-                </div>
-                <div
-                  className={isSelected("jobs") ? style.navButtonActive : style.navButton}
-                  onClick={() => selectTab("jobs")}
-                  onKeyDown={() => selectTab("career")}
-                  role="button"
-                  tabIndex={0}
-                >
+                </ModalTab>
+                <ModalTab className={isSelected("jobs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("jobs")}>
                   Jobs
                   <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
-                </div>
+                </ModalTab>
                 <div className={style.dropdownContainer}>
                   <button type="button" className={style.dropdownButton} onClick={() => toggleShowDropdown()}>{getSelected()}</button>
                   {this.state.showDropdown && (
-                    <div className={ style.dropdown}> 
-                      {!isSelected("career") && <div className={style.dropdownItem} onClick={() => selectDropdown("career")}>Career Info</div>}
-                      {!isSelected("clubs") && <div className={style.dropdownItem} onClick={() => selectDropdown("clubs")}>Clubs </div>}
-                      {!isSelected("majors") && <div className={style.dropdownItem} onClick={() => selectDropdown("majors")}>Majors</div>}
-                      {!isSelected("jobs") && <div className={style.dropdownItem} onClick={() => selectDropdown("jobs")}>Jobs</div>}
+                    <div className={style.dropdown}>
+                      {!isSelected("career") && (
+                        <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("career")}>Career Info</ModalTab>
+                      )}
+                      {!isSelected("clubs") && (
+                        <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("clubs")}>Clubs</ModalTab>
+                      )}
+                      {!isSelected("majors") && (
+                        <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("majors")}>Majors</ModalTab>
+                      )}
+                      {!isSelected("jobs") && (
+                        <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("jobs")}>Jobs</ModalTab>
+                      )}
                     </div>
                   )}
                 </div>
@@ -164,5 +150,24 @@ class CareerModal extends Component {
     );
   }
 }
+
+function ModalTab({className, onClick, children}) {
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+      onKeyDown={onClick}
+      role="button"
+      tabIndex={0}
+    >
+      {children}
+    </div>
+  );
+}
+ModalTab.propTypes = {
+  className: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
+};
 export {CareerModal as Component};
 export default withTraitify(CareerModal);

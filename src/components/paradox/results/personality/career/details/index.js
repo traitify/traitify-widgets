@@ -16,7 +16,8 @@ class Career extends Component {
       title: PropTypes.string.isRequired
     }).isRequired,
     translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired
+    ui: TraitifyPropTypes.ui.isRequired,
+    setElement: PropTypes.func.isRequired
   };
   componentDidMount() {
     this.props.ui.trigger("Career.initialized", this);
@@ -29,10 +30,10 @@ class Career extends Component {
     this.props.ui.trigger("CareerModal.show", this);
   };
   render() {
-    const {career, translate} = this.props;
+    const {career, translate, setElement} = this.props;
 
     return (
-      <div className={style.container} id={style.container}>
+      <div className={style.container} id={style.container} ref={setElement}>
         <div className={style.careerContainer}>
           <img alt={career.title} src={career.picture} />
           <div className={style.careerDetails}>
@@ -83,6 +84,5 @@ class Career extends Component {
     );
   }
 }
-
 export {Career as Component};
 export default withTraitify(Career);

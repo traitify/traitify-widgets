@@ -168,6 +168,7 @@
   }
   .formGroup {
     @extend %cf;
+    @include theme("background", "background-color");
     display: none;
     z-index: 50;
     position: relative;

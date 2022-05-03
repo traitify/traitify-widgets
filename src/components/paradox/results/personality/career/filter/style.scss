@@ -1,5 +1,9 @@
 @import "~style/paradox/helpers";
 
+:global(.traitify--icon-fa) {
+  svg { display: initial !important; }
+};
+
 .container {
   @extend %widgetContainer;
   @extend %cf;
@@ -207,6 +211,7 @@
         margin-left: 5px;
       }
     }
+  
     [type="submit"] {
       @include theme("color", "text-color");
       background: transparent;

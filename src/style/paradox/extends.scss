@@ -22,6 +22,9 @@
   @include -set-variables($color-scheme-light);
   @include theme("color", "text-color");
   @include theme("background", "background-color");
+  :global(.traitify--icon-fa) {
+    svg { display: block; }
+  };
   &, * { box-sizing: border-box; }
   &:global(.traitify--color-scheme-auto) {
     @media(prefers-color-scheme: dark) { @include -set-variables($color-scheme-dark); }
@@ -36,12 +39,6 @@
     cursor: pointer;
     text-align: inherit;
   }
-}
-
-%icon-block {
-  :global(.traitify--icon-fa) {
-    svg { display: block; }
-  };
 }
 
 %dropdown {

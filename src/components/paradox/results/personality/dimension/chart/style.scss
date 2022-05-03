@@ -6,7 +6,6 @@ $v-cell-height: 75px;
 
 .container {
   @extend %container;
-  @extend %icon-block;
 
   margin-bottom: $buffer-section;
 }

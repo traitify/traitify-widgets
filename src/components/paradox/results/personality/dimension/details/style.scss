@@ -3,7 +3,6 @@
 .container {
   @extend %box;
   @extend %container;
-  @extend %icon-block;
 
   @include buffer("margin-bottom");
   &:last-of-type { margin-bottom: 0; }

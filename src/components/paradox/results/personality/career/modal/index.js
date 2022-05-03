@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-class-component-methods */
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import {Component} from "react";
+import {useEffect, useState} from "react";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
@@ -11,86 +11,61 @@ import Clubs from "./clubs";
 import Jobs from "./jobs";
 import Majors from "./majors";
 
-class CareerModal extends Component {
-  static propTypes = {
-    assessment: PropTypes.shape({
-      personality_traits: PropTypes.arrayOf(
-        PropTypes.shape({
-          personality_trait: PropTypes.shape({
-            definition: PropTypes.string.isRequired,
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired
-          }).isRequired,
-          score: PropTypes.number.isRequired
-        })
-      )
-    }),
-    isReady: PropTypes.func.isRequired,
-    translate: PropTypes.func.isRequired,
-    ui: TraitifyPropTypes.ui.isRequired,
-    setElement: PropTypes.func.isRequired
+function CareerModal(props) {
+  const [career, setCareer] = useState(null);
+  const [show, setShow] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("career");
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const {assessment, isReady, translate, setElement, ui} = props;
+
+  const tabs = {
+    career: "Career Info",
+    clubs: "Clubs",
+    majors: "Majors",
+    jobs: "Jobs"
   };
-  static defaultProps = {assessment: null};
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      career: null,
-      show: false,
-      selectedTab: "career",
-      showDropdown: false
-    };
-  }
-  componentDidMount() {
-    this.props.ui.trigger("CareerModal.initialized", this);
-    this.props.ui.on("CareerModal.career", this.setCareer);
-    this.props.ui.on("CareerModal.hide", this.hide);
-    this.props.ui.on("CareerModal.show", this.show);
-  }
-  componentDidUpdate() {
-    this.props.ui.trigger("CareerModal.updated", this);
-  }
-  componentWillUnmount() {
-    this.props.ui.off("CareerModal.career", this.setCareer);
-    this.props.ui.off("CareerModal.hide", this.hide);
-    this.props.ui.off("CareerModal.show", this.show);
-  }
-  close = () => { this.props.ui.trigger("CareerModal.hide", this); };
-  hide = () => { this.setState({show: false}); };
-  setCareer = () => { this.setState({career: this.props.ui.current["CareerModal.career"]}); };
-  show = () => { this.setState({show: true}); };
-  toggleLegend = () => { this.setState((state) => ({showLegend: !state.showLegend})); };
-  render() {
-    const {career, show} = this.state;
-    const {assessment, isReady, translate, setElement} = this.props;
-    if(!show || !career) { return null; }
-    if(!isReady("results")) { return null; }
+  const close = () => { ui.trigger("CareerModal.hide", {props}); };
+  const hide = () => { setShow(false); };
+  const updateCareer = () => { setCareer(ui.current["CareerModal.career"]); };
+  const enableShow = () => { setShow(true); };
 
-    const tabs = {
-      career: "Career Info",
-      clubs: "Clubs",
-      majors: "Majors",
-      jobs: "Jobs"
-    };
-    const getSelected = () => tabs[this.state.selectedTab];
-    const selectTab = (tabName) => { this.setState({selectedTab: tabName}); };
-    const isSelected = (tabName) => this.state.selectedTab === tabName;
-    const toggleShowDropdown = () => {
-      this.setState((prevState) => ({showDropdown: !prevState.showDropdown}));
-    };
-    const selectDropdown = (tabName) => {
-      selectTab(tabName);
-      toggleShowDropdown();
-    };
+  const getSelected = () => tabs[selectedTab];
+  const selectTab = (tabName) => { setSelectedTab(tabName); };
+  const isSelected = (tabName) => selectedTab === tabName;
+  const toggleShowDropdown = () => { setShowDropdown(!showDropdown); };
+  const selectDropdown = (tabName) => {
+    selectTab(tabName);
+    toggleShowDropdown();
+  };
 
-    return (
+  useEffect(() => {
+    ui.trigger("CareerModal.initialized", {props});
+    ui.on("CareerModal.career", updateCareer);
+    ui.on("CareerModal.hide", hide);
+    ui.on("CareerModal.show", enableShow);
+
+    return () => {
+      ui.off("CareerModal.career", updateCareer);
+      ui.off("CareerModal.hide", hide);
+      ui.off("CareerModal.show", enableShow);
+    };
+  }, []);
+
+  useEffect(() => {
+    ui.trigger("CareerModal.updated", {props});
+  });
+
+  return (
+    (show && career) && isReady("results") && (
       <div className={`${style.modal} ${style.container}`} role="dialog" ref={setElement}>
         <section className={style.modalContainer}>
           <div className={style.modalContent}>
             <div className={style.header}>
               <div>Career Details</div>
               <div>
-                <Icon aria-label={translate("close")} className={style.close} icon={faTimes} onClick={this.close} tabIndex="-1" />
+                <Icon aria-label={translate("close")} className={style.close} icon={faTimes} onClick={close} tabIndex="-1" />
               </div>
             </div>
             <hr className={style.grayDivider} />
@@ -121,7 +96,7 @@ class CareerModal extends Component {
                 </ModalTab>
                 <div className={style.dropdownContainer}>
                   <button type="button" className={style.dropdownButton} onClick={() => toggleShowDropdown()}>{getSelected()}</button>
-                  {this.state.showDropdown && (
+                  {showDropdown && (
                     <div className={style.dropdown}>
                       {!isSelected("career") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("career")}>Career Info</ModalTab>
@@ -147,9 +122,30 @@ class CareerModal extends Component {
           </div>
         </section>
       </div>
-    );
-  }
+    )
+  );
 }
+CareerModal.propTypes = {
+  assessment: PropTypes.shape({
+    personality_traits: PropTypes.arrayOf(
+      PropTypes.shape({
+        personality_trait: PropTypes.shape({
+          definition: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired
+        }).isRequired,
+        score: PropTypes.number.isRequired
+      })
+    )
+  }),
+  isReady: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
+  ui: TraitifyPropTypes.ui.isRequired,
+  setElement: PropTypes.func.isRequired
+};
+CareerModal.defaultProps = {
+  assessment: null
+};
 
 function ModalTab({className, onClick, children}) {
   return (

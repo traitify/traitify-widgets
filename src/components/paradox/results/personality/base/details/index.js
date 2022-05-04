@@ -41,7 +41,7 @@ function PersonalityBaseDetails({setElement, ...props}) {
         }
 
         return {...type, data: data.length > 1 ? data : data[0]};
-      });
+      }).filter(({data}) => data);
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);

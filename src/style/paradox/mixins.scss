@@ -15,13 +15,6 @@
   :global(.traitify--color-scheme-dark) { @content; }
 }
 
-@mixin cols($i: 12, $total: 12) {
-  float: left;
-  padding: 0 $gutter/2;
-  width: ($i / $total) * 100%;
-  box-sizing: border-box;
-}
-
 @mixin heading() {
   font-size: $font-size-heading;
   font-weight: 600;

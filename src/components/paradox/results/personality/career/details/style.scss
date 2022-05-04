@@ -13,7 +13,7 @@
   
   @include min-width(xs) {
     margin: 0 0% 3%;
-    @include cols(6);
+    float: left;
     width: 47%;
     padding: 0;
   }
@@ -228,6 +228,7 @@
     color: $-white;
     background-color: $-blue;
     border-radius: 4px !important;
+    white-space: nowrap;
   }
 }
 

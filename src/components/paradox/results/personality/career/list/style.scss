@@ -5,7 +5,7 @@
   @extend %cf;
   @include min-width(lg) {
     min-height: 520px;
-    @include cols(9.5);
+    width: (9.5 / 12) * 100%;
     float: right;
     padding: 0;
   }

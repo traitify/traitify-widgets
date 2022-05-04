@@ -267,13 +267,6 @@ exports[`Paradox.PersonalityBaseDetails renders component with no environments 1
     >
       conflicts
     </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      best_work_environments
-    </button>
   </div>
   <select
     className="dropdown"
@@ -289,11 +282,6 @@ exports[`Paradox.PersonalityBaseDetails renders component with no environments 1
       value="conflicts"
     >
       conflicts
-    </option>
-    <option
-      value="best_work_environments"
-    >
-      best_work_environments
     </option>
   </select>
   <div>

@@ -5,6 +5,9 @@ import ComponentHandler from "support/component-handler";
 import {mockOptions, mockProps} from "support/helpers";
 import _assessment from "support/json/assessment/type-based.json";
 
+jest.mock("lib/helpers/icon", () => ((props) => (
+  <div className="mock">Icon - {props.icon.iconName}</div>
+)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Paradox.PersonalityBaseHeading", () => {
@@ -70,6 +73,26 @@ describe("Paradox.PersonalityBaseHeading", () => {
     });
   });
 
+  describe("perspective", () => {
+    beforeEach(() => {
+      options.perspective = "thirdPerson";
+      mockOptions(props.getOption, {...options});
+    });
+
+    it("renders component", () => {
+      component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders component with careers link", () => {
+      mockOptions(props.getOption, {...options, careersLink: "/careers"});
+      component = new ComponentHandler(<Component {...props} />);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+  });
+
   describe("themed", () => {
     beforeEach(() => {
       props.assessment = themeAssessment({data: props.assessment, theme: "paradox"});
@@ -104,8 +127,8 @@ describe("Paradox.PersonalityBaseHeading", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component in third person", () => {
-    mockOptions(props.getOption, {...options, perspective: "thirdPerson"});
+  it("renders component with careers link", () => {
+    mockOptions(props.getOption, {...options, careersLink: "/careers"});
     component = new ComponentHandler(<Component {...props} />);
 
     expect(component.tree).toMatchSnapshot();

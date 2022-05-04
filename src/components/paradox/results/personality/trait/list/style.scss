@@ -9,9 +9,8 @@
   .toggle {
     display: block;
     margin: 0 auto;
-    padding: $buffer * 0.5 $buffer;
 
-    @include theme("background", "inactive-color");
+    @include buttonDark("inactive-color");
   }
 }
 .p { @extend %paragraph; }

@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/media-has-caption */
+import {faBriefcase} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import {getDetail} from "lib/helpers/details";
 import {times} from "lib/helpers/array";
+import Icon from "lib/helpers/icon";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import useDidMount from "lib/hooks/use-did-mount";
@@ -50,6 +52,9 @@ const getData = ({personality, perspective}) => {
 function PersonalityBaseHeading({setElement, ...props}) {
   const {assessment, getOption, personality: _personality, translate, ui} = props;
   const [data, setData] = useState(null);
+  const perspective = getOption("perspective");
+  const careersLink = (dig(assessment, "deck_id") || "").includes("career")
+    && getOption("careersLink");
   const personality = _personality || dig(assessment, "personality_blend")
     || dig(assessment, "personality_types", 0, "personality_type");
   const state = {personality};
@@ -59,7 +64,7 @@ function PersonalityBaseHeading({setElement, ...props}) {
   useEffect(() => {
     if(!personality) { return; }
 
-    setData(getData({personality, perspective: getOption("perspective")}));
+    setData(getData({personality, perspective}));
   }, [personality]);
 
   const disabledComponents = getOption("disabledComponents") || [];
@@ -76,33 +81,41 @@ function PersonalityBaseHeading({setElement, ...props}) {
 
   return (
     <div className={style.container} ref={setElement}>
-      <div className={style.details}>
-        <div className={style.header}>
-          {badge.url && (
-            <div className={style.badge}>
-              <img alt={badge.alt} src={badge.url} />
-            </div>
-          )}
-          {badge.image_1 && (
-            <div className={style.badge}>
-              <img alt={badge.image_1.alt} src={badge.image_1.url} />
-              <div className={style.badgeDivider} />
-              <img alt={badge.image_2.alt} src={badge.image_2.url} />
-            </div>
-          )}
-          <DangerousHTML
-            className={style.heading}
-            html={translate(headingKey, {personality: `<span>${name}</span>`})}
-          />
+      <div className={style.row}>
+        <div className={style.details}>
+          <div className={style.header}>
+            {badge.url && (
+              <div className={style.badge}>
+                <img alt={badge.alt} src={badge.url} />
+              </div>
+            )}
+            {badge.image_1 && (
+              <div className={style.badge}>
+                <img alt={badge.image_1.alt} src={badge.image_1.url} />
+                <div className={style.badgeDivider} />
+                <img alt={badge.image_2.alt} src={badge.image_2.url} />
+              </div>
+            )}
+            <DangerousHTML
+              className={style.heading}
+              html={translate(headingKey, {personality: `<span>${name}</span>`})}
+            />
+          </div>
+          {description && <div className={style.p}>{description}</div>}
         </div>
-        {description && <div className={style.p}>{description}</div>}
+        {video.url && (
+          <div className={style.meaning}>
+            <video controls={true} playsInline={true} poster={video.thumbnail} crossOrigin="anonymous">
+              <source src={video.url} type="video/mp4" />
+              {video.track && <track kind="captions" src={video.track} />}
+            </video>
+          </div>
+        )}
       </div>
-      {video.url && (
-        <div className={style.meaning}>
-          <video controls={true} playsInline={true} poster={video.thumbnail} crossOrigin="anonymous">
-            <source src={video.url} type="video/mp4" />
-            {video.track && <track kind="captions" src={video.track} />}
-          </video>
+      {careersLink && (
+        <div className={style.careersLink}>
+          <div>{translate(`careers_link_heading${perspective === "thirdPerson" ? "_third_person" : ""}`)}</div>
+          <a href={careersLink}><Icon icon={faBriefcase} /> {translate("career_matches")}</a>
         </div>
       )}
     </div>

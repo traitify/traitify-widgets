@@ -5,12 +5,6 @@
   @extend %shadow-box;
 
   margin-bottom: $buffer-section;
-
-  @include min-width("md") { display: flex; }
-
-  .details, .meaning {
-    @include min-width("md") { flex: 1; }
-  }
 }
 .badge {
   display: flex;
@@ -30,6 +24,32 @@
     @include theme("background", "text-color");
   }
   img { max-width: 75px; }
+}
+.careersLink {
+  border-top: $border-width solid;
+  font-weight: bold;
+  margin-top: $buffer * 2;
+  padding-bottom: $buffer-lg - $buffer;
+  padding-top: $buffer-lg;
+  text-align: center;
+
+  @include theme("border-top-color", "border-color");
+  @include min-width("md") {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  a {
+    font-weight: normal;
+    display: inline-block;
+    margin-top: $buffer;
+
+    @include buttonDark("theme-color");
+    @include min-width("md") { margin-top: 0; }
+
+    :global(.traitify--icon-fa) svg { display: inline-block; }
+  }
 }
 .details {
   margin-bottom: $buffer;
@@ -86,5 +106,12 @@
     height: auto;
     margin: 0 auto;
     max-width: 100%;
+  }
+}
+.row {
+  @include min-width("md") { display: flex; }
+
+  .details, .meaning {
+    @include min-width("md") { flex: 1; }
   }
 }

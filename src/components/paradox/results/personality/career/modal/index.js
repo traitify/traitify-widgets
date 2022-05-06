@@ -18,6 +18,7 @@ function CareerModal(props) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const {assessment, isReady, translate, setElement, ui} = props;
+  const {clubs, majors, jobs} = career || {};
 
   const tabs = {
     career: "Career Info",
@@ -82,18 +83,24 @@ function CareerModal(props) {
                   Career Info
                   <hr className={isSelected("career") ? style.blueDivider : style.grayDivider} />
                 </ModalTab>
-                <ModalTab className={isSelected("clubs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("clubs")}>
-                  Clubs
-                  <hr className={isSelected("clubs") ? style.blueDivider : style.grayDivider} />
-                </ModalTab>
-                <ModalTab className={isSelected("majors") ? style.navButtonActive : style.navButton} onClick={() => selectTab("majors")}>
-                  Majors
-                  <hr className={isSelected("majors") ? style.blueDivider : style.grayDivider} />
-                </ModalTab>
-                <ModalTab className={isSelected("jobs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("jobs")}>
-                  Jobs
-                  <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
-                </ModalTab>
+                {clubs && (
+                  <ModalTab className={isSelected("clubs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("clubs")}>
+                    Clubs
+                    <hr className={isSelected("clubs") ? style.blueDivider : style.grayDivider} />
+                  </ModalTab>
+                )}
+                {majors && (
+                  <ModalTab className={isSelected("majors") ? style.navButtonActive : style.navButton} onClick={() => selectTab("majors")}>
+                    Majors
+                    <hr className={isSelected("majors") ? style.blueDivider : style.grayDivider} />
+                  </ModalTab>
+                )}
+                {jobs && (
+                  <ModalTab className={isSelected("jobs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("jobs")}>
+                    Jobs
+                    <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
+                  </ModalTab>
+                )}
                 <div className={style.dropdownContainer}>
                   <button type="button" className={style.dropdownButton} onClick={() => toggleShowDropdown()}>{getSelected()}</button>
                   {showDropdown && (
@@ -101,13 +108,13 @@ function CareerModal(props) {
                       {!isSelected("career") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("career")}>Career Info</ModalTab>
                       )}
-                      {!isSelected("clubs") && (
+                      {clubs && !isSelected("clubs") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("clubs")}>Clubs</ModalTab>
                       )}
-                      {!isSelected("majors") && (
+                      {majors && !isSelected("majors") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("majors")}>Majors</ModalTab>
                       )}
-                      {!isSelected("jobs") && (
+                      {jobs && !isSelected("jobs") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("jobs")}>Jobs</ModalTab>
                       )}
                     </div>
@@ -115,9 +122,9 @@ function CareerModal(props) {
                 </div>
               </div>
               {isSelected("career") && <CareerInfo assessment={assessment} translate={translate} career={career} />}
-              {isSelected("clubs") && <Clubs />}
-              {isSelected("majors") && <Majors majors={career.majors} />}
-              {isSelected("jobs") && <Jobs />}
+              {clubs && isSelected("clubs") && <Clubs clubs={clubs} />}
+              {majors && isSelected("majors") && <Majors majors={majors} />}
+              {jobs && isSelected("jobs") && <Jobs jobs={jobs} />}
             </div>
           </div>
         </section>

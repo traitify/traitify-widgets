@@ -2,6 +2,21 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  padding-left: 20px;
+  padding: 0px 30px;
+
+  .club {
+    padding-bottom: 15px;
+
+    .title {
+      font-weight: 500;
+      padding-bottom: 5px;
+
+      @include rems(16);
+    }
+    .description {
+      @include rems(14);
+    }
+  }
 }

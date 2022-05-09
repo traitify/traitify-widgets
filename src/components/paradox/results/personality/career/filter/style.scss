@@ -1,0 +1,254 @@
+@import "~style/paradox/helpers";
+
+:global(.traitify--icon-fa) {
+  svg { display: initial !important; }
+};
+
+.container {
+  @extend %widgetContainer;
+  @extend %cf;
+  @extend %container;
+
+  margin-bottom: 10px;
+  @include min-width(lg) {
+    float: left;
+    padding: 0 20px;
+    width: (2.5 / 12) * 100%;
+  }
+  @include min-width(xl) {
+    max-width: 234px;
+  }
+  form {
+    width: 100%;
+    padding: 30px 10px 30px 18px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 6px gainsboro;
+    margin-bottom: 30px;
+
+    @include min-width(lg) {
+      box-shadow: none;
+      padding: initial;
+      margin-bottom: initial;
+    }
+
+    clear: both;
+    @extend %cf;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      clear: both;
+      text-align: left;
+      float: left;
+      width: 50%;
+      padding-right: 2%;
+      margin: 0;
+      &:last-of-type {
+        @extend %cf;
+        padding-right: 0;
+        margin-top: 0;
+        clear: none;
+      }
+      @include min-width(md) {
+        width: 33.33%;
+      }
+      @include min-width(lg) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+
+    .label {
+      display: block;
+
+      @include min-width(lg) {
+        text-transform: uppercase;
+        padding-left: 0;
+        margin-left: -3px;
+        @include rems(18);
+      }
+    }
+    .filterLabel {
+      @extend .label;
+      @include min-width(lg) {
+        display: none;
+      }
+    }
+    .field {
+      display: inline-block;
+      padding: 8px 12px;
+      height: 42px;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      -webkit-appearance: none;
+      background: #e2e2e2;
+      color: #333;
+      width: 100%;
+      @include min-width(lg) {
+        margin-left: -5px;
+      }
+    }
+    .fieldGroup {
+      background: url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
+      background-size: 17px;
+      margin-top: 10px;
+      height: 42px;
+      position: relative;
+      border: 1px solid $-gray;
+      border-radius: 5px;
+
+      @include min-width(lg) {
+        height: auto;
+        border: 0;
+      }
+      ul {
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+    }
+    .career-filter-fields {
+      input.field {
+        @include theme(color, "text-color");
+        background: url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
+        background-size: 17px 17px;
+        padding-right: 10px;
+        text-indent: 22px;
+        border-radius: 4px;
+        margin-top: 10px;
+        @include min-width(lg) {
+          @include rems(16);
+        }
+      }
+    }
+    .search {
+      @extend .career-filter-fields;
+      @include min-width(lg) {
+        margin-bottom: 18px !important;
+      }
+    }
+    .searchLocation {
+      @extend .career-filter-fields;
+      display: none; 
+    
+      @include min-width(md){
+        display: initial;
+        clear: none;
+      }
+      @include min-width(lg) {
+        margin-bottom: 3px;
+        clear: both;
+      }
+    }
+  }
+}
+.fieldGroup {
+  button {
+    font-style: normal;
+    text-align: left;
+    padding-left: 15px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 16px;
+    border: 0;
+    margin: 0;
+    @include min-width(lg) {
+      display: none;
+    }
+  }
+  .check:checked + span:before {
+    @include min-width(lg) {
+      color: #3ca94e;
+    }
+  }
+  .center { 
+    text-align: center;
+  }
+  .field {
+    margin-left: 0;
+  }
+  .formGroup {
+    @extend %cf;
+    @include theme("background", "background-color");
+    display: none;
+    z-index: 50;
+    position: relative;
+    margin: 0;
+    border: 1px solid #e2e2e2;
+    @include rems(13);
+    @include min-width(lg) {
+      display: block;
+      z-index: 0;
+      border: 0;
+      @include rems(16);
+    }
+    li {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0 0 5px;
+      &.hidden {
+        display: none;
+      }
+    }
+    &.block { display: block; }
+    .groupTitle {
+      font-weight: 400;
+      height: 38px;
+      line-height: 38px;
+      padding-left: 3px;
+      @include min-width(lg) {
+        white-space: nowrap;
+        text-transform: uppercase;
+        margin-top: 15px;
+        @include rems(18);
+      }
+    }
+    label {
+      span:last-of-type {
+        margin-left: 5px;
+      }
+    }
+  
+    [type="submit"] {
+      @include theme("color", "text-color");
+      background: transparent;
+      display: block;
+      padding: 6px 25px;
+      min-width: 150px;
+      text-align: center;
+      border: 1px solid $-gray;
+      border-radius: 5px;
+      margin: 10px auto 0;
+      cursor: pointer;
+      @include rems(18);
+      @include min-width(lg) {
+        margin: 20px 0 0;
+      }
+    }
+  }
+}
+.check {
+  cursor: pointer;
+  float: left;
+  display: block;
+  opacity: 0;
+  width: 0;
+  + span svg {
+    color: #d6d6d6;
+  }
+  &:checked + span svg {
+    color: $-blue;
+  }
+  &:focus + span svg {
+    color: $-blue;
+  }
+  &:checked:focus + span svg {
+    color: $-blue !important;
+  }
+}

@@ -1,3 +1,6 @@
+$breakpoint-xxxxl: 1920px; // 120em
+$breakpoint-xxxl: 1440px; // 90em
+$breakpoint-xxl: 1280px; // 80em
 $breakpoint-xl: 1140px; // 71.25em
 $breakpoint-lg: 960px; // 60em
 $breakpoint-md: 768px; // 48em
@@ -8,7 +11,10 @@ $breakpoints: (
   sm: $breakpoint-sm,
   md: $breakpoint-md,
   lg: $breakpoint-lg,
-  xl: $breakpoint-xl
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl,
+  xxxl: $breakpoint-xxxl,
+  xxxxl: $breakpoint-xxxxl
 );
 
 // Paradox likes multiples of 8
@@ -22,15 +28,18 @@ $buffer-lg: 24px;
 $buffer-heading: $buffer;
 $buffer-section: $buffer * 3;
 $font-size: 16px;
+$-font-size: 16;
 $font-size-sm: 12px;
 $font-size-heading: 24px;
 $line-height: 1.5;
 $min-height: 750px;
 
 // Private - To be used through color scheme
+$-white: #FFFFFF;
 $-black: #555555;
 $-blue: #25C9D0;
 $-gray: #D6D6D6;
+$-gray-hover: #EAEAEA;
 $-green: #3BCEAC;
 $-green-light: #89E2CD;
 $-red: #FE6D73;
@@ -49,6 +58,7 @@ $-theme-color: $-blue;
 // Add variables that may change with the color scheme
 $color-scheme-dark: (
   "background-color": $-black,
+  "border-color-light": $-white,
   "border-color": $-border-color,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
@@ -73,6 +83,7 @@ $color-scheme-dark: (
 $color-scheme-light: (
   "background-color": $-white,
   "border-color": $-border-color,
+  "border-color-light": $-gray,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,

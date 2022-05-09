@@ -1,0 +1,240 @@
+@import "~style/paradox/helpers";
+.info {
+  list-style: none;
+  margin: 0 10px 0;
+  padding: 0;
+  @include rems(15);
+  @include min-width(md) {
+    @include rems(17);
+  }
+  @include min-width(lg) {
+    float: left;
+    width: 48%;
+    margin: 0 1% 0;
+  }
+  li {
+    display: block;
+    width: 100%;
+    margin: 0 0 5px;
+    @include min-width(lg) {
+      margin-bottom: 25px;
+    }
+    h4 {
+      display: inline-block;
+      width: 49%;
+      margin: 0;
+      @include min-width(lg) {
+        width: 52%;
+      }
+      i {
+        display: none;
+        @include min-width(lg) {
+          display: inline-block;
+          width: 30px;
+          text-align: center;
+          @include rems(20);
+        }
+      }
+    }
+  }
+}
+.infoText {
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+  @include min-width(lg) {
+    width: 45%;
+  }
+}
+.contentTop {
+  padding: 0px 10px;
+}
+.center {
+  text-align: center
+}
+
+.btnPrimary {
+  background: $-blue;
+  color: $-white;
+  display: inline-block;
+  min-width: 155px;
+  padding: 6px 25px;
+  margin-right: 5px;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.8em;
+  text-decoration: none;
+
+  @include min-width(xs) {
+    font-size: 1.1em;
+  }
+  cursor: pointer;
+  &:visited {
+    color: $-white;
+  }
+  &:hover {
+    background: darken($-blue, 8%);
+    color: $-white;
+  }
+}
+
+.legendToggle {
+  background: $-white;
+  color: #8e8e8e;
+}
+.contentBottom {
+  padding: 0px 10px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftContainer {
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid $-white;
+  margin-bottom: 10px;
+
+  @include min-width(md){
+    width: 50%;
+    border-bottom: none;
+    border-right: 1px solid $-white;
+    margin-bottom: 0;
+  }
+}
+.rightContainer {
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+
+  @include min-width(md){
+    width: 50%;
+  }
+}
+.experienceContainer {
+  padding-bottom: 10px;
+}
+.subtitle {
+  @extend %cf;
+  width: 80%;
+  font-weight: 400;
+  margin: 0;
+
+  @include rems(13);
+
+  @include min-width(xs) {
+    margin-top: initial;
+  }
+  @include min-width(md) {
+    @include rems(15);
+  }
+}
+.subtitleFull {
+  @extend .subtitle;
+  width: 100%;
+}
+.experience {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    background: $-white;
+    border: 2px solid $-white;
+    padding: 5px;
+    margin-right: 3px;
+    border-radius: 3px;
+  }
+  li.active {
+    background: $-blue;
+    border: 2px solid $-blue;
+    border-radius: 3px;
+  }
+}
+
+.matchRate {
+  width: 100%;
+  height: 15px;
+  background: #ddd;
+  margin-top: 2px;
+  border-radius: 3px;
+  span {
+    display: block;
+    background: #89e2cd;
+    height: 15px;
+    border-radius: 4px;
+  }
+  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
+    background: #fbd288;
+  }
+  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
+    background: #fda7ab;
+  }
+}
+
+.matchRatePercent {
+  font-style: normal;
+  font-weight: 300;
+  float: right;
+  @include rems(13);
+  @include min-width(md) {
+    @include rems(15);
+  }
+}
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+.grayDivider {
+  color: #555555;
+  width: 100%;
+  margin: 10px auto 20px;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: 1px solid #e8e8ec;
+  border-radius: 2px;
+}
+.check {
+  float: left;
+  display: block;
+  opacity: 0;
+  + span svg {
+    color: $-white;
+  }
+  &:checked + span svg {
+    color: $-blue;
+  }
+  &:focus + span svg {
+    color: $-blue;
+  }
+  &:checked:focus + span svg {
+    color: $-blue !important;
+  }
+}
+
+.questionBtn {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.careerHelp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.legend {
+  clear: both;
+  float: left;
+  margin: 20px 0px 25px 0px;
+  padding-top: 20px;
+  border: 1px solid $-blue;
+  p {
+    margin-top: 0;
+  }
+}

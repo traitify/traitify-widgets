@@ -31,6 +31,7 @@ function CareerModal(props) {
   const hide = () => { setShow(false); };
   const updateCareer = () => { setCareer(ui.current["CareerModal.career"]); };
   const enableShow = () => { setShow(true); };
+
   const getSelected = () => tabs[selectedTab];
   const selectTab = (tabName) => { setSelectedTab(tabName); };
   const isSelected = (tabName) => selectedTab === tabName;

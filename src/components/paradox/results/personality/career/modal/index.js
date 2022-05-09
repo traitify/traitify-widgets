@@ -31,7 +31,6 @@ function CareerModal(props) {
   const hide = () => { setShow(false); };
   const updateCareer = () => { setCareer(ui.current["CareerModal.career"]); };
   const enableShow = () => { setShow(true); };
-
   const getSelected = () => tabs[selectedTab];
   const selectTab = (tabName) => { setSelectedTab(tabName); };
   const isSelected = (tabName) => selectedTab === tabName;
@@ -83,19 +82,19 @@ function CareerModal(props) {
                   Career Info
                   <hr className={isSelected("career") ? style.blueDivider : style.grayDivider} />
                 </ModalTab>
-                {clubs && (
+                {clubs?.length > 0 && (
                   <ModalTab className={isSelected("clubs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("clubs")}>
                     Clubs
                     <hr className={isSelected("clubs") ? style.blueDivider : style.grayDivider} />
                   </ModalTab>
                 )}
-                {majors && (
+                {majors?.length > 0 && (
                   <ModalTab className={isSelected("majors") ? style.navButtonActive : style.navButton} onClick={() => selectTab("majors")}>
                     Majors
                     <hr className={isSelected("majors") ? style.blueDivider : style.grayDivider} />
                   </ModalTab>
                 )}
-                {jobs && (
+                {jobs?.length > 0 && (
                   <ModalTab className={isSelected("jobs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("jobs")}>
                     Jobs
                     <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
@@ -108,13 +107,13 @@ function CareerModal(props) {
                       {!isSelected("career") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("career")}>Career Info</ModalTab>
                       )}
-                      {clubs && !isSelected("clubs") && (
+                      {clubs?.length > 0 && !isSelected("clubs") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("clubs")}>Clubs</ModalTab>
                       )}
-                      {majors && !isSelected("majors") && (
+                      {majors?.length > 0 && !isSelected("majors") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("majors")}>Majors</ModalTab>
                       )}
-                      {jobs && !isSelected("jobs") && (
+                      {jobs?.length > 0 && !isSelected("jobs") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("jobs")}>Jobs</ModalTab>
                       )}
                     </div>
@@ -122,9 +121,9 @@ function CareerModal(props) {
                 </div>
               </div>
               {isSelected("career") && <CareerInfo assessment={assessment} translate={translate} career={career} />}
-              {clubs && isSelected("clubs") && <Clubs clubs={clubs} />}
-              {majors && isSelected("majors") && <Majors majors={majors} />}
-              {jobs && isSelected("jobs") && <Jobs jobs={jobs} />}
+              {clubs?.length > 0 && isSelected("clubs") && <Clubs clubs={clubs} />}
+              {majors?.length > 0 && isSelected("majors") && <Majors majors={majors} />}
+              {jobs?.length > 0 && isSelected("jobs") && <Jobs jobs={jobs} />}
             </div>
           </div>
         </section>

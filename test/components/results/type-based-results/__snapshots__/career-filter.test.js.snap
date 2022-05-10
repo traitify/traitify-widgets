@@ -64,7 +64,7 @@ exports[`CareerFilter renders component 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-sort-match-label"
@@ -125,7 +125,7 @@ exports[`CareerFilter renders component 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-1-label"
@@ -152,7 +152,7 @@ exports[`CareerFilter renders component 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-2-label"
@@ -179,7 +179,7 @@ exports[`CareerFilter renders component 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-3-label"
@@ -206,7 +206,7 @@ exports[`CareerFilter renders component 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-4-label"
@@ -233,7 +233,7 @@ exports[`CareerFilter renders component 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-5-label"
@@ -353,7 +353,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-sort-title-label"
@@ -387,7 +387,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-1-label"
@@ -414,7 +414,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-2-label"
@@ -441,7 +441,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
                     className="mock"
                   >
                     Icon - 
-                    check-square
+                    square-check
                   </div>
                   <span
                     id="traitify-career-level-3-label"

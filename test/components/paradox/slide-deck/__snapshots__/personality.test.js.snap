@@ -239,7 +239,7 @@ exports[`Personality actions fullscreen shows button 1`] = `
       type="button"
     >
       <span>
-        expand-arrows-alt
+        maximize
       </span>
     </button>
   </div>
@@ -307,7 +307,7 @@ exports[`Personality actions fullscreen triggers action 1`] = `
       type="button"
     >
       <span>
-        compress-arrows-alt
+        minimize
       </span>
     </button>
   </div>
@@ -375,7 +375,7 @@ exports[`Personality actions fullscreen untriggers action 1`] = `
       type="button"
     >
       <span>
-        expand-arrows-alt
+        maximize
       </span>
     </button>
   </div>

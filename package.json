@@ -21,7 +21,8 @@
     "prestart": "npm run build",
     "pretest": "npm run lint",
     "test": "jest --config test/jest.config.js --coverage",
-    "test:watch": "jest --config test/jest.config.js --watch"
+    "test:watch": "jest --config test/jest.config.js --watch",
+    "test:updateSnap": "jest --config test/jest.config.js --updateSnapshot"
   },
   "keywords": [
     "traitify",

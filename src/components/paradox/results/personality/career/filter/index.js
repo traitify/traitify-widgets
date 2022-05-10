@@ -20,6 +20,7 @@ function CareerFilter(props) {
   const currentExperienceLevels = params.experience_levels || experienceLevels;
   const currentSort = params.sort || "match";
   const currentSearch = params.search || "";
+  const currentLocation = params.location || "";
 
   const customContent = useRef();
 
@@ -105,7 +106,7 @@ function CareerFilter(props) {
             </li>
             <li className={style.searchLocation}>
               <label className={style.label} htmlFor="traitify-career-search">{translate("location")}</label>
-              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("location")} type="text" onChange={onChange} />
+              <input className={style.field} value={currentLocation} id="traitify-career-search" name="location" placeholder={translate("location")} type="text" onChange={onChange} />
             </li>
             <li>
               <label className={style.filterLabel} htmlFor="traitify-career-search">{translate("filter")}</label>

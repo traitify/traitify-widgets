@@ -5,8 +5,15 @@
 };
 
 .container {
-  @extend %cf;
   @extend %container;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 
   margin-bottom: 10px;
   @include min-width(lg) {
@@ -18,6 +25,14 @@
     max-width: 234px;
   }
   form {
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+
     width: 100%;
     padding: 30px 10px 30px 18px;
     margin-top: 15px;
@@ -32,7 +47,7 @@
     }
 
     clear: both;
-    @extend %cf;
+    
     ul {
       list-style: none;
       margin: 0;
@@ -46,7 +61,14 @@
       padding-right: 2%;
       margin: 0;
       &:last-of-type {
-        @extend %cf;
+        &:before, &:after {
+          content: " ";
+          display: table;
+        }
+        &:after {
+          clear: both;
+        }
+
         padding-right: 0;
         margin-top: 0;
         clear: none;
@@ -67,7 +89,8 @@
         text-transform: uppercase;
         padding-left: 0;
         margin-left: -3px;
-        @include rems(18);
+        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
     .filterLabel {
@@ -119,7 +142,8 @@
         border-radius: 4px;
         margin-top: 10px;
         @include min-width(lg) {
-          @include rems(16);
+          font-size: 16px;
+          font-size: 1rem;
         }
       }
     }
@@ -172,19 +196,28 @@
     margin-left: 0;
   }
   .formGroup {
-    @extend %cf;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+
     @include theme("background", "background-color");
     display: none;
     z-index: 50;
     position: relative;
     margin: 0;
     border: 1px solid #e2e2e2;
-    @include rems(13);
+    font-size: 13px;
+    font-size: 0.8125rem;
     @include min-width(lg) {
       display: block;
       z-index: 0;
       border: 0;
-      @include rems(16);
+      font-size: 16px;
+      font-size: 1rem;
     }
     li {
       display: block;
@@ -205,7 +238,8 @@
         white-space: nowrap;
         text-transform: uppercase;
         margin-top: 15px;
-        @include rems(18);
+        font-size: 18px;
+        font-size: 1.125rem;
       }
     }
     label {
@@ -225,7 +259,8 @@
       border-radius: 5px;
       margin: 10px auto 0;
       cursor: pointer;
-      @include rems(18);
+      font-size: 18px;
+      font-size: 1.125rem;
       @include min-width(lg) {
         margin: 20px 0 0;
       }

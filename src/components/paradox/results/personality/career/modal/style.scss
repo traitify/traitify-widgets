@@ -17,7 +17,8 @@
   .close {
     float: right;
     cursor: pointer;
-    @include rems(20);
+    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 .modalContainer {
@@ -58,16 +59,20 @@
   }
   h4 {
     margin: 0;
-    @include rems(15);
+    font-size: 15px;
+    font-size: 0.9375rem;
     @include min-width(md) {
-      @include rems(17);
+      font-size: 17px;
+      font-size: 1.0625rem;
     }
   }
   p {
     padding: 0 10px;
-    @include rems(14);
+    font-size: 14px;
+    font-size: 0.875rem;
     @include min-width(md) {
-      @include rems(16);
+      font-size: 16px;
+      font-size: 1rem;
     }
   }
   img {
@@ -107,17 +112,21 @@ h2, h3, h4 {
   text-align: left;
   margin-bottom: 10px;
 
-  @include rems(14);
+  font-size: 14px;
+  font-size: 0.875rem;
   @include min-width(md) {
-    @include rems(16);
+    font-size: 16px;
+    font-size: 1rem;
   }
 }
 .description {
   line-height: 1.25;
   text-align: left;
-  @include rems(12);
+  font-size: 12px;
+  font-size: 0.75rem;
   @include min-width(md) {
-    @include rems(14);
+    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.4;
   }
 }

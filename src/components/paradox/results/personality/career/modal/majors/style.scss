@@ -13,10 +13,12 @@
       font-weight: 500;
       padding-bottom: 5px;
 
-      @include rems(16);
+      font-size: 16px;
+      font-size: 1rem;
     }
     .description {
-      @include rems(14);
+      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 }

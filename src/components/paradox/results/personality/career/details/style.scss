@@ -1,8 +1,15 @@
 @import "~style/paradox/helpers";
 
 .container {
-  @extend %cf;
   @extend %container;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 
   display: block;
   margin: 0 auto 5%;
@@ -53,7 +60,9 @@
   font-weight: 500;
   text-align: left;
   margin-bottom: 10px;
-  @include rems(14);
+
+  font-size: 14px;
+  font-size: 0.875rem;
 
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -63,14 +72,17 @@
   display: -webkit-box;
 
   @include min-width(md) {
-    @include rems(16);
+    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 .description {
   line-height: 1.25;
   text-align: left;
-  @include rems(12);
+
+  font-size: 12px;
+  font-size: 0.75rem;
 
   line-height: 1.35;
     -webkit-line-clamp: 3;
@@ -81,23 +93,33 @@
     display: -webkit-box;
 
   @include min-width(md) {
-    @include rems(14);
+    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 
 .subtitle {
-  @extend %cf;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
   width: 80%;
   font-weight: 400;
   margin: 0;
 
-  @include rems(13);
+  font-size: 13px;
+  font-size: 0.8125rem;
 
   @include min-width(xs) {
     margin-top: initial;
   }
   @include min-width(md) {
-    @include rems(15);
+    font-size: 15px;
+    font-size: 0.9375rem;
   }
 }
 
@@ -127,9 +149,11 @@
 
 .education {
   margin: 0;
-  @include rems(12);
+  font-size: 12px;
+  font-size: 0.75rem;
   @include min-width(md) {
-    @include rems(14);
+    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 
@@ -157,9 +181,11 @@
   font-style: normal;
   font-weight: 300;
   float: right;
-  @include rems(13);
+  font-size: 13px;
+  font-size: 0.8125rem;
   @include min-width(md) {
-    @include rems(15);
+    font-size: 15px;
+    font-size: 0.9375rem;
   }
 }
 

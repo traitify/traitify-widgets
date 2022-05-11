@@ -1,6 +1,3 @@
-$breakpoint-xxxxl: 1920px; // 120em
-$breakpoint-xxxl: 1440px; // 90em
-$breakpoint-xxl: 1280px; // 80em
 $breakpoint-xl: 1140px; // 71.25em
 $breakpoint-lg: 960px; // 60em
 $breakpoint-md: 768px; // 48em
@@ -12,9 +9,6 @@ $breakpoints: (
   md: $breakpoint-md,
   lg: $breakpoint-lg,
   xl: $breakpoint-xl,
-  xxl: $breakpoint-xxl,
-  xxxl: $breakpoint-xxxl,
-  xxxxl: $breakpoint-xxxxl
 );
 
 // Paradox likes multiples of 8

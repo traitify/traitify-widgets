@@ -32,19 +32,19 @@
   }
   img { 
     margin: 0px 20px 0px 0px;
-    border-radius: 10px;
+    border-radius: $border-radius-sm * 2.5;
     width: 100px;
     height: 100px;
   }
   &[type="button"] {
     border: 1px solid $-white;
-    border-radius: 10px;
+    border-radius: $border-radius-sm * 2.5;
     width: 100%
   }
 }
 #container {
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: $border-radius-sm * 2.5;
   width: 100%;
   @include theme(border-color,"border-color-light");
 }
@@ -138,12 +138,12 @@
     border: 2px solid $-white;
     padding: 5px;
     margin-right: 3px;
-    border-radius: 3px;
+    border-radius: $border-radius-sm;
   }
   li.active {
     background: $-blue;
     border: 2px solid $-blue;
-    border-radius: 3px;
+    border-radius: $border-radius-sm;
   }
 }
 
@@ -162,12 +162,12 @@
   height: 15px;
   background: $-white;
   margin-top: 2px;
-  border-radius: 3px;
+  border-radius: $border-radius-sm;
   span {
     display: block;
     background: #89e2cd;
     height: 15px;
-    border-radius: 4px;
+    border-radius: $border-radius-sm;
   }
   span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
     background: #fbd288;
@@ -242,7 +242,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: $border-radius-sm;
   
     @include min-width(xs) {
       width: 50% !important;
@@ -251,7 +251,7 @@
       padding: 10px 10%;
       color: $-white;
       background-color: $-blue;
-      border-radius: 4px !important;
+      border-radius: $border-radius-sm !important;
       white-space: nowrap;
     }
   }

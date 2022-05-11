@@ -30,7 +30,6 @@
   }
 }
 .container {
-  @extend %widgetContainer;
   @extend %container;
   
   .modalContainer {

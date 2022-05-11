@@ -5,7 +5,6 @@
 };
 
 .container {
-  @extend %widgetContainer;
   @extend %cf;
   @extend %container;
 

@@ -12,7 +12,7 @@ function CareerResults(props) {
   const [fetching, setFetching] = useState(false);
   const [moreCareers, setMoreCareers] = useState(false);
 
-  const {assessmentID, locale, isReady, traitify, translate, ui} = props;
+  const {assessmentID, locale, isReady, traitify, translate, ui, setElement} = props;
 
   const prevProps = {
     assessmentID: usePrevious(assessmentID),
@@ -128,7 +128,7 @@ function CareerResults(props) {
 
   return (
     isReady("results") && (
-      <div className={style.container}>
+      <div className={style.container} ref={setElement}>
         {careers.map((_career) => {
           const {career, score} = _career;
 
@@ -159,7 +159,8 @@ CareerResults.propTypes = {
   }),
   traitify: TraitifyPropTypes.traitify.isRequired,
   translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
+  ui: TraitifyPropTypes.ui.isRequired,
+  setElement: PropTypes.func.isRequired
 };
 CareerResults.defaultProps = {
   options: null

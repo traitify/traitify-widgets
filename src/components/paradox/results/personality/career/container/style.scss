@@ -1,7 +1,7 @@
-@import "~style/helpers";
+@import "~style/paradox/helpers";
 
 .container {
-  @extend %widgetContainer;
+  @extend %container;
   margin: 0 auto 85px;
   text-align: center;
 

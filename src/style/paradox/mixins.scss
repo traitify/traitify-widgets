@@ -99,19 +99,3 @@
   width: 1px;
 }
 
-%widgetContainer{
-  box-sizing: border-box;
-  color: #333;
-  font: 100%/1.5 "Source Sans Pro", "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  * { box-sizing: border-box; }
-  button {
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-    font-family: "Source Sans Pro", "Open Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
-  }
-}

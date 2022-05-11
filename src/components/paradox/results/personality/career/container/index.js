@@ -8,7 +8,7 @@ import CareerResults from "../list";
 import style from "./style.scss";
 
 function Careers(props) {
-  const {ui, isReady} = props;
+  const {ui, isReady, setElement} = props;
 
   useEffect(() => {
     ui.trigger("Careers.initialized", {props});
@@ -19,7 +19,7 @@ function Careers(props) {
 
   return (
     isReady("results") && (
-      <div className={style.container}>
+      <div className={style.container} ref={setElement}>
         <CareerFilter {...props} />
         <CareerResults {...props} />
         <CareerModal {...props} />
@@ -29,7 +29,8 @@ function Careers(props) {
 }
 Careers.propTypes = {
   isReady: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
+  ui: TraitifyPropTypes.ui.isRequired,
+  setElement: PropTypes.func.isRequired
 };
 export {Careers as Component};
 export default withTraitify(Careers);

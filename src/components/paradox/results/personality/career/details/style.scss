@@ -1,7 +1,6 @@
 @import "~style/paradox/helpers";
 
 .container {
-  @extend %widgetContainer;
   @extend %cf;
   @extend %container;
 
@@ -211,24 +210,24 @@
       width: 50%;
     }
   }
-}
 
-.learnMore {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-
-  @include min-width(xs) {
-    width: 50% !important;
-  }
-  button {
-    padding: 10px 10%;
-    color: $-white;
-    background-color: $-blue;
-    border-radius: 4px !important;
-    white-space: nowrap;
+  .learnMore {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  
+    @include min-width(xs) {
+      width: 50% !important;
+    }
+    button {
+      padding: 10px 10%;
+      color: $-white;
+      background-color: $-blue;
+      border-radius: 4px !important;
+      white-space: nowrap;
+    }
   }
 }
 

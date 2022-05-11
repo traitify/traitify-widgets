@@ -1,7 +1,7 @@
 @import "~style/paradox/helpers";
 
 .container {
-  @extend %widgetContainer;
+  @extend %container;
   @extend %cf;
   @include min-width(lg) {
     min-height: 520px;
@@ -9,18 +9,19 @@
     float: right;
     padding: 0;
   }
-}
-.more {
-  color: $-black;
-  background: $-gray;
-  display: inline-block;
-  min-width: 155px;
-  padding: 6px 25px;
-  margin: 0 auto;
-  text-align: center;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
-  @include rems(22);
-  &:hover { background: $-gray-hover; }
+
+  .more {
+    color: $-black;
+    background: $-gray;
+    display: inline-block;
+    min-width: 155px;
+    padding: 6px 25px;
+    margin: 0 auto;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    @include rems(22);
+    &:hover { background: $-gray-hover; }
+  }  
 }

@@ -50,8 +50,8 @@
 }
 
 .content {
-  @include min-width(md) {
-    padding: 0 15px 20px;
+  @include min-width(xs) {
+    padding: 0 $buffer $buffer;
   }
   text-align: left;
 }
@@ -134,8 +134,8 @@
   list-style: none;
   li {
     display: inline-block;
-    background: $-white;
-    border: 2px solid $-white;
+    background: $-gray-hover;
+    border: 2px solid $-gray-hover;
     padding: 5px;
     margin-right: 3px;
     border-radius: $border-radius-sm;
@@ -160,7 +160,7 @@
 .matchRate {
   width: 80%;
   height: 15px;
-  background: $-white;
+  background: $-gray-hover;
   margin-top: 2px;
   border-radius: $border-radius-sm;
   span {

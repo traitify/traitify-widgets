@@ -2,7 +2,7 @@
 
 .container {
   @extend %container;
-  margin: 0 auto 85px;
+  margin: 0 auto $buffer-sm * 11;
   text-align: center;
 
   &:after {

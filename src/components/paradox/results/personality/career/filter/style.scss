@@ -34,7 +34,7 @@
     }
 
     width: 100%;
-    padding: 30px 10px 30px 18px;
+    padding: ($buffer-sm * 4) $buffer ($buffer-sm * 4) $buffer;
     margin-top: 15px;
     border-radius: $border-radius-sm * 2.5;
     box-shadow: 0px 1px 6px gainsboro;

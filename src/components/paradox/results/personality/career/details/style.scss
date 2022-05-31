@@ -3,6 +3,7 @@
 .container {
   @extend %container;
 
+  // TODO: Remove
   &:before, &:after {
     content: " ";
     display: table;
@@ -16,7 +17,7 @@
   padding: 0;
   width: 262px;
   z-index: 1;
-  
+
   @include min-width(xs) {
     margin: 0 0% 3%;
     float: left;

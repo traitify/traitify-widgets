@@ -15,7 +15,7 @@ import {useState} from "react";
 import PropTypes from "prop-types";
 import style from "./style.scss";
 
-function CareerInfo({assessment, translate, career}) {
+function CareerModalInfo({assessment, translate, career}) {
   const [showLegend, setShowLegend] = useState(false);
 
   let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
@@ -159,9 +159,8 @@ function CareerInfo({assessment, translate, career}) {
     </div>
   );
 }
-export default CareerInfo;
 
-CareerInfo.propTypes = {
+CareerModalInfo.propTypes = {
   assessment: PropTypes.shape({
     personality_traits: PropTypes.arrayOf(
       PropTypes.shape({
@@ -203,3 +202,5 @@ CareerInfo.propTypes = {
   }).isRequired,
   translate: PropTypes.func.isRequired
 };
+
+export default CareerModalInfo;

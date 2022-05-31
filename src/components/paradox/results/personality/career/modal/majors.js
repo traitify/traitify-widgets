@@ -3,9 +3,9 @@ import style from "./style.scss";
 
 function Majors({majors}) {
   return (
-    <div className={style.container}>
+    <div className={style.list}>
       {majors.map((major) => (
-        <div className={style.major} key={major.id}>
+        <div className={style.listItem} key={major.id}>
           <div className={style.title}>{major.title}</div>
           <div className={style.description}>{major.description}</div>
         </div>
@@ -13,7 +13,6 @@ function Majors({majors}) {
     </div>
   );
 }
-export default Majors;
 
 Majors.propTypes = {
   majors: PropTypes.arrayOf(
@@ -23,3 +22,5 @@ Majors.propTypes = {
     })
   ).isRequired
 };
+
+export default Majors;

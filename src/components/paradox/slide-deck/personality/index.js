@@ -1,7 +1,7 @@
 import {
   faChevronLeft,
-  faCompressArrowsAlt,
-  faExpandArrowsAlt
+  faMaximize,
+  faMinimize
 } from "@fortawesome/free-solid-svg-icons";
 import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
@@ -223,7 +223,7 @@ function Personality({element, setElement, ...props}) {
         )}
         {getOption("allowFullscreen") && (
           <button className={style.fullscreen} onClick={toggleFullscreen} type="button">
-            <Icon icon={fullscreen ? faCompressArrowsAlt : faExpandArrowsAlt} />
+            <Icon icon={fullscreen ? faMinimize : faMaximize} />
           </button>
         )}
       </>

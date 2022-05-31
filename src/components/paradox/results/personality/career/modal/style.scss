@@ -18,7 +18,6 @@
     float: right;
     cursor: pointer;
     font-size: 20px;
-    font-size: 1.25rem;
   }
 }
 .modalContainer {
@@ -32,7 +31,7 @@
 }
 .container {
   @extend %container;
-  
+
   .modalContainer {
     @include theme("background", "background-color");
     @include theme("color", "text-color");
@@ -60,19 +59,15 @@
   h4 {
     margin: 0;
     font-size: 15px;
-    font-size: 0.9375rem;
     @include min-width(md) {
       font-size: 17px;
-      font-size: 1.0625rem;
     }
   }
   p {
     padding: 0 10px;
     font-size: 14px;
-    font-size: 0.875rem;
     @include min-width(md) {
       font-size: 16px;
-      font-size: 1rem;
     }
   }
   img {
@@ -114,20 +109,16 @@ h2, h3, h4 {
   margin-bottom: 10px;
 
   font-size: 14px;
-  font-size: 0.875rem;
   @include min-width(md) {
     font-size: 16px;
-    font-size: 1rem;
   }
 }
 .description {
   line-height: 1.25;
   text-align: left;
   font-size: 12px;
-  font-size: 0.75rem;
   @include min-width(md) {
     font-size: 14px;
-    font-size: 0.875rem;
     line-height: 1.4;
   }
 }
@@ -219,4 +210,16 @@ h2, h3, h4 {
       font-style: normal;
     }
   }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 $buffer;
+  width: 100%;
+}
+.listItem {
+  padding-bottom: $buffer;
+
+  .description { font-size: $font-size-sm; }
+  .title { font-weight: 500; }
 }

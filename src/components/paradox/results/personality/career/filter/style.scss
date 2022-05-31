@@ -1,12 +1,9 @@
 @import "~style/paradox/helpers";
 
-:global(.traitify--icon-fa) {
-  svg { display: initial !important; }
-};
-
 .container {
   @extend %container;
 
+  // TODO: Remove
   &:before, &:after {
     content: " ";
     display: table;
@@ -47,7 +44,7 @@
     }
 
     clear: both;
-    
+
     ul {
       list-style: none;
       margin: 0;
@@ -247,8 +244,7 @@
         margin-left: 5px;
       }
     }
-  
-    [type="submit"] {
+    button {
       @include theme("color", "text-color");
       background: transparent;
       display: block;

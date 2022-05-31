@@ -2,9 +2,11 @@
 
 .container {
   @extend %container;
+
   margin: 0 auto $buffer-sm * 11;
   text-align: center;
 
+  // TODO: Remove
   &:after {
     content: "";
     display: block;

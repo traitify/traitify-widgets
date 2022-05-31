@@ -7,7 +7,7 @@ import withTraitify from "lib/with-traitify";
 import Career from "../details";
 import style from "./style.scss";
 
-function CareerResults(props) {
+function CareerList(props) {
   const [careers, setCareers] = useState([]);
   const [fetching, setFetching] = useState(false);
   const [moreCareers, setMoreCareers] = useState(false);
@@ -148,7 +148,9 @@ function CareerResults(props) {
     )
   );
 }
-CareerResults.propTypes = {
+
+CareerList.defaultProps = {options: null};
+CareerList.propTypes = {
   assessmentID: PropTypes.string.isRequired,
   isReady: PropTypes.func.isRequired,
   locale: PropTypes.string.isRequired,
@@ -157,13 +159,11 @@ CareerResults.propTypes = {
       perPage: PropTypes.number
     })
   }),
+  setElement: PropTypes.func.isRequired,
   traitify: TraitifyPropTypes.traitify.isRequired,
   translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired,
-  setElement: PropTypes.func.isRequired
+  ui: TraitifyPropTypes.ui.isRequired
 };
-CareerResults.defaultProps = {
-  options: null
-};
-export {CareerResults as Component};
-export default withTraitify(CareerResults);
+
+export {CareerList as Component};
+export default withTraitify(CareerList);

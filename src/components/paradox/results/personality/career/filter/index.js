@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-class-component-methods */
 import {
   faCheckSquare,
   faSquare
@@ -8,39 +7,39 @@ import {useEffect, useRef, useState} from "react";
 import {careerOption} from "lib/helpers";
 import Icon from "lib/helpers/icon";
 import TraitifyPropTypes from "lib/helpers/prop-types";
+import useDidMount from "lib/hooks/use-did-mount";
+import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
 function CareerFilter(props) {
+  const {isReady, translate, setElement, ui} = props;
   const [params, setParams] = useState({});
   const [showFilters, setShowFilters] = useState(false);
+  const customContent = useRef();
+  const state = {};
 
-  const {isReady, translate, setElement, ui} = props;
+  useDidMount(() => { ui.trigger("CareerFilter.initialized", {props, state}); });
+  useDidUpdate(() => { ui.trigger("CareerFilter.updated", {props, state}); });
+  useEffect(() => {
+    const mergeParams = () => setParams({...params, ...ui.current["Careers.mergeParams"]});
+    const updateParams = () => setParams({...ui.current["Careers.updateParams"]});
+
+    ui.on("Careers.mergeParams", mergeParams);
+    ui.on("Careers.updateParams", updateParams);
+
+    return () => {
+      ui.off("Careers.mergeParams", mergeParams);
+      ui.off("Careers.updateParams", updateParams);
+    };
+  }, []);
+
   const experienceLevels = careerOption(props, "experienceLevels") || [1, 2, 3, 4, 5];
   const currentExperienceLevels = params.experience_levels || experienceLevels;
   const currentSort = params.sort || "match";
   const currentSearch = params.search || "";
   const currentLocation = params.location || "";
-
-  const customContent = useRef();
-
-  const mergeParams = () => {
-    setParams({
-      ...params,
-      ...ui.current["Careers.mergeParams"]
-    });
-  };
-
-  const toggleFilters = () => {
-    setShowFilters(!showFilters);
-  };
-
-  const updateParams = () => {
-    setParams({
-      ...ui.current["Careers.updateParams"]
-    });
-  };
-
+  const toggleFilters = () => setShowFilters(!showFilters);
   const onChange = (e) => {
     const {name, value} = e.target;
     const newParams = {...params};
@@ -76,24 +75,7 @@ function CareerFilter(props) {
       ...params,
       page: 1
     });
-
-    return false;
   };
-
-  useEffect(() => {
-    ui.trigger("CareerFilter.initialized", {props});
-    ui.on("Careers.mergeParams", mergeParams);
-    ui.on("Careers.updateParams", updateParams);
-
-    return () => {
-      ui.off("Careers.mergeParams", mergeParams);
-      ui.off("Careers.updateParams", updateParams);
-    };
-  }, []);
-
-  useEffect(() => {
-    ui.trigger("CareerFilter.updated", {props});
-  });
 
   return (
     isReady("results") && (
@@ -150,7 +132,7 @@ function CareerFilter(props) {
                   </div>
                   <div>
                     <li className={style.center}>
-                      <input type="submit" value={translate("search")} />
+                      <button type="submit">{translate("search")}</button>
                     </li>
                   </div>
                 </ul>
@@ -163,6 +145,8 @@ function CareerFilter(props) {
     )
   );
 }
+
+CareerFilter.defaultProps = {options: null};
 CareerFilter.propTypes = {
   isReady: PropTypes.func.isRequired,
   options: PropTypes.shape({
@@ -172,12 +156,10 @@ CareerFilter.propTypes = {
       )
     })
   }),
+  setElement: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired,
-  setElement: PropTypes.func.isRequired
+  ui: TraitifyPropTypes.ui.isRequired
 };
-CareerFilter.defaultProps = {
-  options: null
-};
+
 export {CareerFilter as Component};
 export default withTraitify(CareerFilter);

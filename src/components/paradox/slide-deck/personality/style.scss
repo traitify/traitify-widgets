@@ -89,6 +89,7 @@
     @include theme("background-color", "fullscreen-color");
     &:hover{ opacity: 1; }
     svg {
+      display: block;
       height: 100%;
       margin: auto;
       width: auto;

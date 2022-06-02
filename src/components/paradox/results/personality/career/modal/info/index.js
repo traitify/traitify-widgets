@@ -25,16 +25,16 @@ function CareerModalInfo({assessment, translate, career}) {
 
   const careerTraitIDs = career.personality_traits.map((trait) => trait.personality_trait?.id);
   const careerTraits = career.personality_traits.map((trait) => ({
-    description: trait.personality_trait?.definition,
-    name: trait.personality_trait?.name,
+    description: trait.personality_trait?.definition || "NO DATA",
+    name: trait.personality_trait?.name || "NO DATA",
     y: trait.weight
   }));
 
   const assessmentTraits = assessment.personality_traits
     .filter((trait) => careerTraitIDs.includes(trait.personality_trait?.id))
     .map((trait) => ({
-      description: trait.personality_trait?.definition,
-      name: trait.personality_trait?.name,
+      description: trait.personality_trait?.definition || "NO DATA",
+      name: trait.personality_trait?.name || "NO DATA",
       y: Math.round((trait.score + 100) / 2)
     }));
 

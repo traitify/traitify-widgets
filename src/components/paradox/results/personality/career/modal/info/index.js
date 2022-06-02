@@ -23,18 +23,18 @@ function CareerModalInfo({assessment, translate, career}) {
   let growth = career.employment_projection && career.employment_projection.percent_growth_2022;
   growth = growth && `${growth}%`;
 
-  const careerTraitIDs = career.personality_traits.map((trait) => trait.personality_trait.id);
+  const careerTraitIDs = career.personality_traits.map((trait) => trait.personality_trait?.id);
   const careerTraits = career.personality_traits.map((trait) => ({
-    description: trait.personality_trait.definition,
-    name: trait.personality_trait.name,
+    description: trait.personality_trait?.definition,
+    name: trait.personality_trait?.name,
     y: trait.weight
   }));
 
   const assessmentTraits = assessment.personality_traits
-    .filter((trait) => careerTraitIDs.includes(trait.personality_trait.id))
+    .filter((trait) => careerTraitIDs.includes(trait.personality_trait?.id))
     .map((trait) => ({
-      description: trait.personality_trait.definition,
-      name: trait.personality_trait.name,
+      description: trait.personality_trait?.definition,
+      name: trait.personality_trait?.name,
       y: Math.round((trait.score + 100) / 2)
     }));
 

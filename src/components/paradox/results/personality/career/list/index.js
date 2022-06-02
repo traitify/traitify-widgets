@@ -5,10 +5,12 @@ import usePrevious from "lib/hooks/use-previous";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import Career from "../details";
+import HighlightedCareers from "../highlighted";
 import style from "./style.scss";
 
 function CareerList(props) {
   const [careers, setCareers] = useState([]);
+  const [highlightedCareers, setHighlightedCareers] = useState([]);
   const [fetching, setFetching] = useState(false);
   const [moreCareers, setMoreCareers] = useState(false);
 
@@ -32,6 +34,8 @@ function CareerList(props) {
     if(!fetchParams) { return; }
 
     const path = careerOption(props, "path") || `/assessments/${assessmentID}/matches/careers`;
+    const highlightedPath = careerOption(props, "highlightedPath");
+
     const params = {
       careers_per_page: careerOption(props, "perPage") || 20,
       locale_key: locale,
@@ -49,6 +53,14 @@ function CareerList(props) {
 
         setCareers(previousCareers.concat(response));
         setMoreCareers(response.length >= params.careers_per_page);
+      })
+    );
+
+    highlightedPath && ui.trigger(
+      "Careers.request",
+      {props},
+      traitify.get(highlightedPath, params).then((response) => {
+        setHighlightedCareers(response);
       })
     );
   };
@@ -129,6 +141,8 @@ function CareerList(props) {
   return (
     isReady("results") && (
       <div className={style.container} ref={setElement}>
+        {highlightedCareers.length > 0
+          && <HighlightedCareers careers={highlightedCareers} {...props} />}
         {careers.map((_career) => {
           const {career, score} = _career;
 

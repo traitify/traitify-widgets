@@ -1,0 +1,36 @@
+@import "~style/paradox/helpers";
+
+
+.container {
+  @extend %container;
+
+  border: 2px solid $-blue;
+  border-radius: $border-radius-sm * 2.5;
+  width: 100%;
+
+  display: block;
+  margin: 0 auto 5%;
+  padding: 0;
+  z-index: 1;
+  
+  @include min-width(xs) {
+    margin: 0 0% 3%;
+    float: left;
+    padding: 0;
+  }
+  @include min-width(xl) {
+    margin: 0 0 1.5%;
+  }
+
+  .header {
+      color: $-white;
+      background-color: $-blue;
+      border-radius: $border-radius-sm $border-radius-sm 0 0 ;
+      text-align: left;
+      padding: 4px 0 4px $buffer-lg
+  }
+
+  .content {
+      padding: 5px;
+  }
+}

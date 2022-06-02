@@ -102,7 +102,8 @@
   @include min-width(md){
     width: 50%;
     border-bottom: none;
-    border-right: 1px solid $-white;
+    border-right: 1px solid;
+    @include theme(border-color, "border-color-light");
     margin-bottom: 0;
   }
 }
@@ -151,8 +152,8 @@
   list-style: none;
   li {
     display: inline-block;
-    background: $-white;
-    border: 2px solid $-white;
+    background: $-gray-hover;
+    border: 2px solid $-gray-hover;
     padding: 5px;
     margin-right: 3px;
     border-radius: $border-radius-sm;

@@ -46,3 +46,56 @@ export function mockProps(keys) {
 
   return props;
 }
+
+export function mockUI() {
+  const callbacks = {};
+  const current = {};
+
+  return {
+    current,
+    on: jest.fn().mockName("on").mockImplementation((_key, callback) => {
+      const key = _key.toLowerCase();
+
+      callbacks[key] = callbacks[key] || [];
+      callbacks[key].push(callback);
+      return this;
+    }),
+    off: jest.fn().mockName("off").mockImplementation((_key, callback) => {
+      const key = _key.toLowerCase();
+
+      callbacks[key] = callbacks[key] || [];
+      callbacks[key] = callbacks[key].filter((_callback) => (_callback !== callback));
+
+      if(callbacks[key].length === 0) { delete callbacks[key]; }
+
+      return this;
+    }),
+    trigger: jest.fn().mockName("trigger").mockImplementation((_key, context, value) => {
+      current[_key] = value;
+
+      const key = _key.toLowerCase();
+      const widgetID = context.props && context.props.widgetID;
+      const widgetKey = widgetID && `widget-${widgetID}.${key}`.toLowerCase();
+
+      if(callbacks[widgetKey]) {
+        callbacks[widgetKey].forEach((callback) => {
+          callback.apply(this, [context, value]);
+        });
+      }
+
+      if(callbacks[key]) {
+        callbacks[key].forEach((callback) => {
+          callback.apply(this, [context, value]);
+        });
+      }
+
+      if(callbacks.all) {
+        callbacks.all.forEach((callback) => {
+          callback.apply(this, [key, context, value]);
+        });
+      }
+
+      return this;
+    })
+  };
+}

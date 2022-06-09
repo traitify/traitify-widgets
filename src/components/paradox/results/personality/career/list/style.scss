@@ -3,45 +3,8 @@
 .container {
   @extend %container;
 
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+  @include min-width(lg) { min-height: $min-height; }
 
-  padding: 0 auto 5%;
-
-  @include min-width(xs) {
-    padding: 0 0% 3%;
-  }
-  @include min-width(lg) {
-    min-height: 520px;
-    width: (9.5 / 12) * 100%;
-    float: right;
-    padding: 0;
-  }
-  @include min-width(xl) {
-    padding: 0 1% 1.5%;
-  }
-
-  .more {
-    color: $-black;
-    background: $-gray;
-    display: inline-block;
-    min-width: 155px;
-    padding: $buffer-sm $buffer-lg;
-    margin: 0 auto;
-    text-align: center;
-    border: 0;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 22px;
-    font-size: 1.375rem;
-    &:hover { background: $-gray-hover; }
-  }
-  .center {
-    text-align: center;
-  }
+  .center { text-align: center; }
+  .more { @include buttonLight("inactive-color"); }
 }

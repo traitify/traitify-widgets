@@ -138,28 +138,28 @@ function CareerList(props) {
     ui.trigger("Careers.fetching", {props}, false);
   }, [careers]);
 
-  return (
-    isReady("results") && (
-      <div className={style.container} ref={setElement}>
-        {highlightedCareers.length > 0
-          && <HighlightedCareers careers={highlightedCareers} {...props} />}
-        {careers.map((_career) => {
-          const {career, score} = _career;
+  if(!isReady("results")) { return null; }
 
-          return <Career key={career.id} career={{score, ...career}} {...props} />;
-        })}
-        <p className={style.center}>
-          {fetching && <span>{translate("loading")}</span>}
-          {!fetching && [
-            moreCareers && (
+  return (
+    <div className={style.container} ref={setElement}>
+      {highlightedCareers.length > 0
+        && <HighlightedCareers careers={highlightedCareers} {...props} />}
+      {careers.map(({career, score}) => (
+        <Career key={career.id} career={{score, ...career}} {...props} />
+      ))}
+      <div className={style.center}>
+        {fetching && <span>{translate("loading")}</span>}
+        {!fetching && (
+          <>
+            {moreCareers && (
               <button key="more" className={style.more} onClick={showMore} type="button">{translate("show_more")}</button>
-            ),
-            (careers.length === 0 && <span key="none">{translate("no_careers")}</span>),
-            (careers.length > 0 && !moreCareers && <span key="done">{translate("no_more_careers")}</span>)
-          ]}
-        </p>
+            )}
+            {careers.length === 0 && <span key="none">{translate("no_careers")}</span>}
+            {careers.length > 0 && !moreCareers && <span key="done">{translate("no_more_careers")}</span>}
+          </>
+        )}
       </div>
-    )
+    </div>
   );
 }
 

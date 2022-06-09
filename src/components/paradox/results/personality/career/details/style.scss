@@ -3,15 +3,6 @@
 .container {
   @extend %container;
 
-  // TODO: Remove
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-
   display: block;
   margin: 0 auto 5%;
   padding: 0;

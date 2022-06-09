@@ -4,8 +4,8 @@ import useDidMount from "lib/hooks/use-did-mount";
 import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import CareerFilter from "../filter";
+import CareerList from "../list";
 import CareerModal from "../modal";
-import CareerResults from "../list";
 import style from "./style.scss";
 
 function CareerContainer(props) {
@@ -19,7 +19,7 @@ function CareerContainer(props) {
     isReady("results") && (
       <div className={style.container} ref={setElement}>
         <CareerFilter {...props} />
-        <CareerResults {...props} />
+        <CareerList {...props} />
         <CareerModal {...props} />
       </div>
     )

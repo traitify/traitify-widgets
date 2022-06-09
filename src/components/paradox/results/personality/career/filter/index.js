@@ -34,6 +34,8 @@ function CareerFilter(props) {
     };
   }, []);
 
+  if(!isReady("results")) { return null; }
+
   const experienceLevels = careerOption(props, "experienceLevels") || [1, 2, 3, 4, 5];
   const currentExperienceLevels = params.experience_levels || experienceLevels;
   const currentSort = params.sort || "match";
@@ -78,71 +80,82 @@ function CareerFilter(props) {
   };
 
   return (
-    isReady("results") && (
-      <div className={style.container} ref={setElement}>
-        <form onSubmit={onSubmit}>
-          <ul>
-            <li className={style.search}>
-              <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
-              <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={onChange} />
-            </li>
-            <li className={style.searchLocation}>
-              <label className={style.label} htmlFor="traitify-career-search">{translate("location")}</label>
-              <input className={style.field} value={currentLocation} id="traitify-career-search" name="location" placeholder={translate("location")} type="text" onChange={onChange} />
-            </li>
-            <li>
-              <label className={style.filterLabel} htmlFor="traitify-career-search">{translate("filter")}</label>
-              <div className={style.fieldGroup}>
-                <button onClick={toggleFilters} type="button">{translate("filter")}</button>
-                <ul className={`${style.formGroup} ${showFilters ? style.block : ""}`}>
-                  <div>
-                    <li className={style.groupTitle}>{translate("sort")}</li>
-                    <li>
-                      <label htmlFor="traitify-career-sort-match">
-                        <input aria-labelledby="traitify-career-sort-match-label" checked={currentSort === "match"} className={style.check} id="traitify-career-sort-match" name="sort" type="radio" onChange={onChange} value="match" />
-                        <Icon icon={currentSort === "match" ? faCheckSquare : faSquare} />
-                        <span id="traitify-career-sort-match-label">{translate("best_match")}</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label htmlFor="traitify-career-sort-title">
-                        <input aria-labelledby="traitify-career-sort-title-label" checked={currentSort === "title"} className={style.check} id="traitify-career-sort-title" name="sort" type="radio" onChange={onChange} value="title" />
-                        <Icon icon={currentSort === "title" ? faCheckSquare : faSquare} />
-                        <span id="traitify-career-sort-title-label">{translate("title")}</span>
-                      </label>
-                    </li>
-                  </div>
-                  <div>
-                    <li className={style.groupTitle}>{translate("experience_level")}</li>
-                    {experienceLevels.map((level) => {
-                      const checked = currentExperienceLevels.includes(level);
-
-                      return (
-                        <li key={level}>
-                          <label htmlFor={`traitify-career-level-${level}`}>
-                            <input aria-labelledby={`traitify-career-level-${level}-label`} checked={checked} className={style.check} id={`traitify-career-level-${level}`} name="experience_level" type="checkbox" onChange={onExperienceChange} value={level} />
-                            <Icon icon={checked ? faCheckSquare : faSquare} />
-                            <span id={`traitify-career-level-${level}-label`}>
-                              {translate(`experience_level_${level}`)}
-                            </span>
-                          </label>
-                        </li>
-                      );
-                    })}
-                  </div>
-                  <div>
-                    <li className={style.center}>
-                      <button type="submit">{translate("search")}</button>
-                    </li>
-                  </div>
-                </ul>
+    <div className={style.container} ref={setElement}>
+      <form onSubmit={onSubmit}>
+        <div className={style.row}>
+          <div className={style.search}>
+            <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
+            <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={onChange} />
+          </div>
+          <div className={style.location}>
+            <label className={style.label} htmlFor="traitify-career-location">{translate("location")}</label>
+            <input className={style.field} value={currentLocation} id="traitify-career-location" name="location" placeholder={translate("location")} type="text" onChange={onChange} />
+          </div>
+          <div className={style.filter}>
+            <label className={style.label} htmlFor="traitify-career-filter">{translate("filter")}</label>
+            <button className={style.filterButton} onClick={toggleFilters} type="button">{translate("filter")}</button>
+            <div className={`${style.filterContent} ${showFilters ? style.block : ""}`}>
+              <div className={style.group}>
+                <div>{translate("sort")}</div>
+                <label className={style.check} htmlFor="traitify-career-sort-match">
+                  <input
+                    aria-labelledby="traitify-career-sort-match-label"
+                    checked={currentSort === "match"}
+                    id="traitify-career-sort-match"
+                    name="sort"
+                    onChange={onChange}
+                    type="radio"
+                    value="match"
+                  />
+                  <Icon icon={currentSort === "match" ? faCheckSquare : faSquare} />
+                  <span id="traitify-career-sort-match-label">{translate("best_match")}</span>
+                </label>
+                <label className={style.check} htmlFor="traitify-career-sort-title">
+                  <input
+                    aria-labelledby="traitify-career-sort-title-label"
+                    checked={currentSort === "title"}
+                    id="traitify-career-sort-title"
+                    name="sort"
+                    onChange={onChange}
+                    type="radio"
+                    value="title"
+                  />
+                  <Icon icon={currentSort === "title" ? faCheckSquare : faSquare} />
+                  <span id="traitify-career-sort-title-label">{translate("title")}</span>
+                </label>
               </div>
-            </li>
-            <div ref={customContent} />
-          </ul>
-        </form>
-      </div>
-    )
+              <div className={style.group}>
+                <div>{translate("experience_level")}</div>
+                {experienceLevels.map((level) => {
+                  const checked = currentExperienceLevels.includes(level);
+                  const id = `traitify-career-level-${level}`;
+
+                  return (
+                    <label key={level} className={style.check} htmlFor={id}>
+                      <input
+                        aria-labelledby={`${id}-label`}
+                        checked={checked}
+                        id={id}
+                        name="experience_level"
+                        onChange={onExperienceChange}
+                        type="checkbox"
+                        value={level}
+                      />
+                      <Icon icon={checked ? faCheckSquare : faSquare} />
+                      <span id={`${id}-label`}>{translate(`experience_level_${level}`)}</span>
+                    </label>
+                  );
+                })}
+              </div>
+              <div className={style.center}>
+                <button type="submit">{translate("search")}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ref={customContent} />
+      </form>
+    </div>
   );
 }
 

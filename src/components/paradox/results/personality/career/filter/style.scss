@@ -1,284 +1,133 @@
 @import "~style/paradox/helpers";
 
+.check {
+  cursor: pointer;
+  display: block;
+
+  input {
+    opacity: 0;
+    width: 0;
+
+    + span svg { @include theme("color", "inactive-color"); }
+    &:checked + span svg { @include theme("color", "theme-color"); }
+    &:focus + span svg { @include theme("color", "theme-color"); }
+  }
+  span:last-of-type { margin-left: $buffer-sm; }
+}
+.center { text-align: center; }
 .container {
   @extend %container;
+  @extend %shadow-box;
 
-  // TODO: Remove
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+  margin-bottom: $buffer-section;
 
-  margin-bottom: 10px;
   @include min-width(lg) {
-    float: left;
-    padding: 0 20px;
-    width: (2.5 / 12) * 100%;
+    box-shadow: none;
+    padding: 0;
   }
   @include min-width(xl) {
-    max-width: 234px;
+    width: 234px;
   }
-  form {
-    &:before, &:after {
-      content: " ";
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
 
-    width: 100%;
-    padding: ($buffer-sm * 4) $buffer ($buffer-sm * 4) $buffer;
-    margin-top: 15px;
-    border-radius: $border-radius-sm * 2.5;
-    box-shadow: 0px 1px 6px gainsboro;
-    margin-bottom: 30px;
+  .label {
+    display: block;
+    margin-bottom: $buffer-sm;
 
-    @include min-width(lg) {
-      box-shadow: none;
-      padding: initial;
-      margin-bottom: initial;
-    }
+    @include min-width(lg) { text-transform: uppercase; }
+  }
+  .location {
+    display: none;
 
-    clear: both;
+    @include min-width(md) { display: block; }
+  }
+  .location, .search {
+    @include min-width(lg) { margin-bottom: $buffer; }
+  }
+  .row {
+    display: flex;
+    gap: $buffer;
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      clear: both;
-      text-align: left;
-      float: left;
-      width: 50%;
-      padding-right: 2%;
-      margin: 0;
-      &:last-of-type {
-        &:before, &:after {
-          content: " ";
-          display: table;
-        }
-        &:after {
-          clear: both;
-        }
-
-        padding-right: 0;
-        margin-top: 0;
-        clear: none;
-      }
-      @include min-width(md) {
-        width: 33.33%;
-      }
-      @include min-width(lg) {
-        width: 100%;
-        padding-right: 0;
-      }
-    }
-
-    .label {
-      display: block;
-
-      @include min-width(lg) {
-        text-transform: uppercase;
-        padding-left: 0;
-        margin-left: -3px;
-        font-size: 18px;
-        font-size: 1.125rem;
-      }
-    }
-    .filterLabel {
-      @extend .label;
-      @include min-width(lg) {
-        display: none;
-      }
-    }
-    .field {
-      display: inline-block;
-      padding: 8px 12px;
-      height: 42px;
-      border: 1px solid #ddd;
-      border-radius: 0;
-      -webkit-appearance: none;
-      background: #e2e2e2;
-      color: #333;
-      width: 100%;
-      @include min-width(lg) {
-        margin-left: -5px;
-      }
-    }
-    .fieldGroup {
-      background: url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
-      background-size: 17px;
-      margin-top: 10px;
-      height: 42px;
-      position: relative;
-      border: 1px solid $-gray;
-      border-radius: $border-radius-sm;
-
-      @include min-width(lg) {
-        height: auto;
-        border: 0;
-      }
-      ul {
-        position: absolute;
-        left: 0;
-        right: 0;
-      }
-    }
-    .career-filter-fields {
-      input.field {
-        @include theme(color, "text-color");
-        background: url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
-        background-size: 17px 17px;
-        padding-right: 10px;
-        text-indent: 22px;
-        border-radius: $border-radius-sm;
-        margin-top: 10px;
-        @include min-width(lg) {
-          font-size: 16px;
-          font-size: 1rem;
-        }
-      }
-    }
-    .search {
-      @extend .career-filter-fields;
-      @include min-width(lg) {
-        margin-bottom: 18px !important;
-      }
-    }
-    .searchLocation {
-      @extend .career-filter-fields;
-      display: none; 
-    
-      @include min-width(md){
-        display: initial;
-        clear: none;
-      }
-      @include min-width(lg) {
-        margin-bottom: 3px;
-        clear: both;
-      }
-    }
+    @include min-width(lg) { display: block; }
+    > * { flex: 1; }
   }
 }
-.fieldGroup {
-  button {
-    font-style: normal;
-    text-align: left;
-    padding-left: 15px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    font-size: 16px;
-    border: 0;
-    margin: 0;
-    @include min-width(lg) {
-      display: none;
-    }
-  }
-  .check:checked + span:before {
-    @include min-width(lg) {
-      color: #3ca94e;
-    }
-  }
-  .center { 
-    text-align: center;
-  }
-  .field {
-    margin-left: 0;
-  }
-  .formGroup {
-    &:before, &:after {
-      content: " ";
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
+.field {
+  appearance: none;
+  background: url("https://cdn.traitify.com/assets/images/js/filter-search.png") no-repeat 10px center;
+  background-size: $font-size;
+  border: $border-width solid;
+  border-radius: $border-radius-sm;
+  display: block;
+  padding: $buffer * 0.75 $buffer;
+  text-indent: $font-size + $buffer-sm;
+  width: 100%;
 
-    @include theme("background", "background-color");
-    display: none;
-    z-index: 50;
-    position: relative;
+  @include theme("border-color", "border-color");
+  @include theme("color", "text-color");
+}
+.filter {
+  position: relative;
+
+  .filterButton {
+    background: url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 95% 50%;
+    background-size: $font-size;
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    display: block;
+    height: 42px;
     margin: 0;
-    border: 1px solid #e2e2e2;
-    font-size: 13px;
-    font-size: 0.8125rem;
+    padding: $buffer-sm $buffer;
+    width: 100%;
+
+    @include min-width(lg) { display: none; }
+    @include theme("border-color", "border-color");
+  }
+  .filterContent {
+    border: $border-width solid;
+    display: none;
+    font-size: $font-size-sm;
+    left: 0;
+    margin: 0;
+    padding: $buffer;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
     @include min-width(lg) {
+      border: none;
       display: block;
-      z-index: 0;
-      border: 0;
-      font-size: 16px;
-      font-size: 1rem;
+      font-size: $font-size;
+      padding: 0;
+      position: initial;
+      z-index: initial;
     }
-    li {
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 0 0 5px;
-      &.hidden {
-        display: none;
-      }
-    }
+    @include theme("background", "background-color");
+    @include theme("border-color", "border-color");
+
     &.block { display: block; }
-    .groupTitle {
-      font-weight: 400;
-      height: 38px;
-      line-height: 38px;
-      padding-left: 3px;
+    .group {
+      margin-bottom: $buffer;
+
       @include min-width(lg) {
-        white-space: nowrap;
         text-transform: uppercase;
-        margin-top: 15px;
-        font-size: 18px;
-        font-size: 1.125rem;
-      }
-    }
-    label {
-      span:last-of-type {
-        margin-left: 5px;
+        white-space: nowrap;
       }
     }
     button {
-      @include theme("color", "text-color");
-      background: transparent;
-      display: block;
-      padding: 6px 25px;
-      min-width: 150px;
-      text-align: center;
-      border: 1px solid $-gray;
+      border: $border-width solid;
       border-radius: $border-radius-sm;
-      margin: 10px auto 0;
-      cursor: pointer;
-      font-size: 18px;
-      font-size: 1.125rem;
-      @include min-width(lg) {
-        margin: 20px 0 0;
-      }
+      display: block;
+      font-size: $font-size;
+      margin: auto 0;
+      padding: $buffer-sm $buffer;
+      width: 100%;
+
+      @include theme("border-color", "border-color");
+      @include theme("color", "text-color");
+      @include min-width(lg) { margin: 0; }
     }
   }
-}
-.check {
-  cursor: pointer;
-  float: left;
-  display: block;
-  opacity: 0;
-  width: 0;
-  + span svg {
-    color: #d6d6d6;
-  }
-  &:checked + span svg {
-    color: $-blue;
-  }
-  &:focus + span svg {
-    color: $-blue;
-  }
-  &:checked:focus + span svg {
-    color: $-blue !important;
+  .label {
+    @include min-width(lg) { display: none; }
   }
 }

@@ -293,7 +293,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
   >
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -428,7 +427,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -563,7 +561,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -698,7 +695,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -833,7 +829,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -968,7 +963,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1103,7 +1097,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1238,7 +1231,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1373,7 +1365,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1508,7 +1499,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1643,7 +1633,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1778,7 +1767,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -1913,7 +1901,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2048,7 +2035,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2183,7 +2169,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2318,7 +2303,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2453,7 +2437,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2588,7 +2571,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2723,7 +2705,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -2858,7 +2839,6 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -3621,7 +3601,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
   >
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -3756,7 +3735,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -3891,7 +3869,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4026,7 +4003,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4161,7 +4137,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4296,7 +4271,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4431,7 +4405,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4566,7 +4539,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4701,7 +4673,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4836,7 +4807,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -4971,7 +4941,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5106,7 +5075,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5241,7 +5209,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5376,7 +5343,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5511,7 +5477,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5646,7 +5611,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5781,7 +5745,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -5916,7 +5879,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -6051,7 +6013,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -6186,7 +6147,6 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -6638,7 +6598,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
       >
         <div
           className="container"
-          id="container"
         >
           <div
             className="careerContainer"
@@ -6775,7 +6734,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -6910,7 +6868,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7045,7 +7002,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7180,7 +7136,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7315,7 +7270,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7450,7 +7404,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7585,7 +7538,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7720,7 +7672,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7855,7 +7806,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -7990,7 +7940,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8125,7 +8074,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8260,7 +8208,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8395,7 +8342,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8530,7 +8476,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8665,7 +8610,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8800,7 +8744,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -8935,7 +8878,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -9070,7 +9012,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -9205,7 +9146,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -9340,7 +9280,6 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
@@ -9473,7 +9412,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
         </div>
       </div>
     </div>
-    <p
+    <div
       className="center"
     >
       <button
@@ -9483,7 +9422,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
       >
         show_more
       </button>
-    </p>
+    </div>
   </div>
 </div>
 `;
@@ -9498,8 +9437,10 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
     <form
       onSubmit={[Function]}
     >
-      <ul>
-        <li
+      <div
+        className="row"
+      >
+        <div
           className="search"
         >
           <label
@@ -9517,290 +9458,273 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
             type="text"
             value=""
           />
-        </li>
-        <li
-          className="searchLocation"
+        </div>
+        <div
+          className="location"
         >
           <label
             className="label"
-            htmlFor="traitify-career-search"
+            htmlFor="traitify-career-location"
           >
             location
           </label>
           <input
             className="field"
-            id="traitify-career-search"
+            id="traitify-career-location"
             name="location"
             onChange={[Function]}
             placeholder="location"
             type="text"
             value=""
           />
-        </li>
-        <li>
+        </div>
+        <div
+          className="filter"
+        >
           <label
-            className="filterLabel"
-            htmlFor="traitify-career-search"
+            className="label"
+            htmlFor="traitify-career-filter"
           >
             filter
           </label>
-          <div
-            className="fieldGroup"
+          <button
+            className="filterButton"
+            onClick={[Function]}
+            type="button"
           >
-            <button
-              onClick={[Function]}
-              type="button"
+            filter
+          </button>
+          <div
+            className="filterContent "
+          >
+            <div
+              className="group"
             >
-              filter
-            </button>
-            <ul
-              className="formGroup "
+              <div>
+                sort
+              </div>
+              <label
+                className="check"
+                htmlFor="traitify-career-sort-match"
+              >
+                <input
+                  aria-labelledby="traitify-career-sort-match-label"
+                  checked={true}
+                  id="traitify-career-sort-match"
+                  name="sort"
+                  onChange={[Function]}
+                  type="radio"
+                  value="match"
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-sort-match-label"
+                >
+                  best_match
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-sort-title"
+              >
+                <input
+                  aria-labelledby="traitify-career-sort-title-label"
+                  checked={false}
+                  id="traitify-career-sort-title"
+                  name="sort"
+                  onChange={[Function]}
+                  type="radio"
+                  value="title"
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.65 28.65 32 64 32H384C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-sort-title-label"
+                >
+                  title
+                </span>
+              </label>
+            </div>
+            <div
+              className="group"
             >
               <div>
-                <li
-                  className="groupTitle"
-                >
-                  sort
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-sort-match"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-sort-match-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-sort-match"
-                      name="sort"
-                      onChange={[Function]}
-                      type="radio"
-                      value="match"
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-sort-match-label"
-                    >
-                      best_match
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-sort-title"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-sort-title-label"
-                      checked={false}
-                      className="check"
-                      id="traitify-career-sort-title"
-                      name="sort"
-                      onChange={[Function]}
-                      type="radio"
-                      value="title"
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.65 28.65 32 64 32H384C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-sort-title-label"
-                    >
-                      title
-                    </span>
-                  </label>
-                </li>
+                experience_level
               </div>
-              <div>
-                <li
-                  className="groupTitle"
+              <label
+                className="check"
+                htmlFor="traitify-career-level-1"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-1-label"
+                  checked={true}
+                  id="traitify-career-level-1"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={1}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-1-label"
                 >
-                  experience_level
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-1"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-1-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-1"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={1}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-1-label"
-                    >
-                      experience_level_1
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-2"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-2-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-2"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={2}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-2-label"
-                    >
-                      experience_level_2
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-3"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-3-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-3"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={3}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-3-label"
-                    >
-                      experience_level_3
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-4"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-4-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-4"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={4}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-4-label"
-                    >
-                      experience_level_4
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-5"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-5-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-5"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={5}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-5-label"
-                    >
-                      experience_level_5
-                    </span>
-                  </label>
-                </li>
-              </div>
-              <div>
-                <li
-                  className="center"
+                  experience_level_1
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-2"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-2-label"
+                  checked={true}
+                  id="traitify-career-level-2"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={2}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-2-label"
                 >
-                  <button
-                    type="submit"
-                  >
-                    search
-                  </button>
-                </li>
-              </div>
-            </ul>
+                  experience_level_2
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-3"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-3-label"
+                  checked={true}
+                  id="traitify-career-level-3"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={3}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-3-label"
+                >
+                  experience_level_3
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-4"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-4-label"
+                  checked={true}
+                  id="traitify-career-level-4"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={4}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-4-label"
+                >
+                  experience_level_4
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-5"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-5-label"
+                  checked={true}
+                  id="traitify-career-level-5"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={5}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-5-label"
+                >
+                  experience_level_5
+                </span>
+              </label>
+            </div>
+            <div
+              className="center"
+            >
+              <button
+                type="submit"
+              >
+                search
+              </button>
+            </div>
           </div>
-        </li>
-        <div />
-      </ul>
+        </div>
+      </div>
+      <div />
     </form>
   </div>
   <div
     className="container"
   >
-    <p
+    <div
       className="center"
     >
       <span>
         no_careers
       </span>
-    </p>
+    </div>
   </div>
 </div>
 `;
@@ -9815,8 +9739,10 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
     <form
       onSubmit={[Function]}
     >
-      <ul>
-        <li
+      <div
+        className="row"
+      >
+        <div
           className="search"
         >
           <label
@@ -9834,278 +9760,261 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
             type="text"
             value=""
           />
-        </li>
-        <li
-          className="searchLocation"
+        </div>
+        <div
+          className="location"
         >
           <label
             className="label"
-            htmlFor="traitify-career-search"
+            htmlFor="traitify-career-location"
           >
             location
           </label>
           <input
             className="field"
-            id="traitify-career-search"
+            id="traitify-career-location"
             name="location"
             onChange={[Function]}
             placeholder="location"
             type="text"
             value=""
           />
-        </li>
-        <li>
+        </div>
+        <div
+          className="filter"
+        >
           <label
-            className="filterLabel"
-            htmlFor="traitify-career-search"
+            className="label"
+            htmlFor="traitify-career-filter"
           >
             filter
           </label>
-          <div
-            className="fieldGroup"
+          <button
+            className="filterButton"
+            onClick={[Function]}
+            type="button"
           >
-            <button
-              onClick={[Function]}
-              type="button"
+            filter
+          </button>
+          <div
+            className="filterContent "
+          >
+            <div
+              className="group"
             >
-              filter
-            </button>
-            <ul
-              className="formGroup "
+              <div>
+                sort
+              </div>
+              <label
+                className="check"
+                htmlFor="traitify-career-sort-match"
+              >
+                <input
+                  aria-labelledby="traitify-career-sort-match-label"
+                  checked={true}
+                  id="traitify-career-sort-match"
+                  name="sort"
+                  onChange={[Function]}
+                  type="radio"
+                  value="match"
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-sort-match-label"
+                >
+                  best_match
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-sort-title"
+              >
+                <input
+                  aria-labelledby="traitify-career-sort-title-label"
+                  checked={false}
+                  id="traitify-career-sort-title"
+                  name="sort"
+                  onChange={[Function]}
+                  type="radio"
+                  value="title"
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.65 28.65 32 64 32H384C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-sort-title-label"
+                >
+                  title
+                </span>
+              </label>
+            </div>
+            <div
+              className="group"
             >
               <div>
-                <li
-                  className="groupTitle"
-                >
-                  sort
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-sort-match"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-sort-match-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-sort-match"
-                      name="sort"
-                      onChange={[Function]}
-                      type="radio"
-                      value="match"
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-sort-match-label"
-                    >
-                      best_match
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-sort-title"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-sort-title-label"
-                      checked={false}
-                      className="check"
-                      id="traitify-career-sort-title"
-                      name="sort"
-                      onChange={[Function]}
-                      type="radio"
-                      value="title"
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.65 28.65 32 64 32H384C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-sort-title-label"
-                    >
-                      title
-                    </span>
-                  </label>
-                </li>
+                experience_level
               </div>
-              <div>
-                <li
-                  className="groupTitle"
+              <label
+                className="check"
+                htmlFor="traitify-career-level-1"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-1-label"
+                  checked={true}
+                  id="traitify-career-level-1"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={1}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-1-label"
                 >
-                  experience_level
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-1"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-1-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-1"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={1}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-1-label"
-                    >
-                      experience_level_1
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-2"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-2-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-2"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={2}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-2-label"
-                    >
-                      experience_level_2
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-3"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-3-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-3"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={3}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-3-label"
-                    >
-                      experience_level_3
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-4"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-4-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-4"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={4}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-4-label"
-                    >
-                      experience_level_4
-                    </span>
-                  </label>
-                </li>
-                <li>
-                  <label
-                    htmlFor="traitify-career-level-5"
-                  >
-                    <input
-                      aria-labelledby="traitify-career-level-5-label"
-                      checked={true}
-                      className="check"
-                      id="traitify-career-level-5"
-                      name="experience_level"
-                      onChange={[Function]}
-                      type="checkbox"
-                      value={5}
-                    />
-                    <span
-                      className="traitify--icon-fa"
-                      dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
-                        }
-                      }
-                    />
-                    <span
-                      id="traitify-career-level-5-label"
-                    >
-                      experience_level_5
-                    </span>
-                  </label>
-                </li>
-              </div>
-              <div>
-                <li
-                  className="center"
+                  experience_level_1
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-2"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-2-label"
+                  checked={true}
+                  id="traitify-career-level-2"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={2}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-2-label"
                 >
-                  <button
-                    type="submit"
-                  >
-                    search
-                  </button>
-                </li>
-              </div>
-            </ul>
+                  experience_level_2
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-3"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-3-label"
+                  checked={true}
+                  id="traitify-career-level-3"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={3}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-3-label"
+                >
+                  experience_level_3
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-4"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-4-label"
+                  checked={true}
+                  id="traitify-career-level-4"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={4}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-4-label"
+                >
+                  experience_level_4
+                </span>
+              </label>
+              <label
+                className="check"
+                htmlFor="traitify-career-level-5"
+              >
+                <input
+                  aria-labelledby="traitify-career-level-5-label"
+                  checked={true}
+                  id="traitify-career-level-5"
+                  name="experience_level"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value={5}
+                />
+                <span
+                  className="traitify--icon-fa"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM339.8 211.8C350.7 200.9 350.7 183.1 339.8 172.2C328.9 161.3 311.1 161.3 300.2 172.2L192 280.4L147.8 236.2C136.9 225.3 119.1 225.3 108.2 236.2C97.27 247.1 97.27 264.9 108.2 275.8L172.2 339.8C183.1 350.7 200.9 350.7 211.8 339.8L339.8 211.8z\\"></path></svg>",
+                    }
+                  }
+                />
+                <span
+                  id="traitify-career-level-5-label"
+                >
+                  experience_level_5
+                </span>
+              </label>
+            </div>
+            <div
+              className="center"
+            >
+              <button
+                type="submit"
+              >
+                search
+              </button>
+            </div>
           </div>
-        </li>
-        <div />
-      </ul>
+        </div>
+      </div>
+      <div />
     </form>
   </div>
   <div
@@ -10113,14 +10022,13 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
   >
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
       >
         <img
-          alt="Methane/Landfill Gas Collection System Operators"
-          src="https://cdn.traitify.com/careers/d7da4259-9f10-4121-b0ca-7534b3ee2d3b_methane-landfill-gas-collection-system-operators"
+          alt="Nonfarm Animal Caretakers"
+          src="https://cdn.traitify.com/careers/31873a72-23ba-4312-88d9-6ed832a72f90_nonfarm-animal-caretakers"
         />
         <div
           className="careerDetails"
@@ -10128,12 +10036,12 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
           <div
             className="title"
           >
-            Methane/Landfill Gas Collection System Operators
+            Nonfarm Animal Caretakers
           </div>
           <div
             className="description"
           >
-            Direct daily operations, maintenance, or repair of landfill gas projects, including maintenance of daily logs, determination of service priorities, and compliance with reporting requirements.
+            Feed, water, groom, bathe, exercise, or otherwise care for pets and other nonfarm animals, such as dogs, cats, ornamental fish or birds, zoo animals, and mice. Work in settings such as kennels, animal shelters, zoos, circuses, and aquariums. May keep records of feedings, treatments, and animals received or discharged. May clean, disinfect, and repair cages, pens, or fish tanks.
           </div>
         </div>
       </div>
@@ -10160,7 +10068,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <i
                   className="matchRatePercent"
                 >
-                  66
+                  64
                   %
                 </i>
               </h3>
@@ -10168,10 +10076,10 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 className="matchRate"
               >
                 <span
-                  data-match-rate="65.52296205600837%"
+                  data-match-rate="63.985951944290484%"
                   style={
                     Object {
-                      "width": "65.52296205600837%",
+                      "width": "63.985951944290484%",
                     }
                   }
                 />
@@ -10248,14 +10156,13 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
       >
         <img
-          alt="Animal Trainers"
-          src="https://cdn.traitify.com/careers/54f33dfd-8dc2-4dd6-b5ed-3779c78f0b00_animal-trainers"
+          alt="Motorboat Operators"
+          src="https://cdn.traitify.com/careers/0bc21b7d-2008-4228-8cac-131539fdcb65_motorboat-operators"
         />
         <div
           className="careerDetails"
@@ -10263,12 +10170,12 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
           <div
             className="title"
           >
-            Animal Trainers
+            Motorboat Operators
           </div>
           <div
             className="description"
           >
-            Train animals for riding, harness, security, performance, or obedience, or assisting persons with disabilities. Accustom animals to human voice and contact; and condition animals to respond to commands. Train animals according to prescribed standards for show or competition. May train animals to carry pack loads or work as part of pack team.
+            Operate small motor-driven boats. May assist in navigational activities.
           </div>
         </div>
       </div>
@@ -10295,7 +10202,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <i
                   className="matchRatePercent"
                 >
-                  65
+                  64
                   %
                 </i>
               </h3>
@@ -10303,10 +10210,10 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 className="matchRate"
               >
                 <span
-                  data-match-rate="64.72489424636146%"
+                  data-match-rate="63.73888032318781%"
                   style={
                     Object {
-                      "width": "64.72489424636146%",
+                      "width": "63.73888032318781%",
                     }
                   }
                 />
@@ -10383,14 +10290,13 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
     </div>
     <div
       className="container"
-      id="container"
     >
       <div
         className="careerContainer"
       >
         <img
-          alt="Farmworkers, Farm, Ranch, and Aquacultural Animals"
-          src="https://cdn.traitify.com/careers/f4ca1838-8be3-41b2-bdd1-e4b1e5c11657_farmworkers--farm--ranch--and-aquacultural-animals"
+          alt="Animal Breeders"
+          src="https://cdn.traitify.com/careers/59cfdc16-70a0-4193-a585-8815029f11e0_animal-breeders"
         />
         <div
           className="careerDetails"
@@ -10398,12 +10304,12 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
           <div
             className="title"
           >
-            Farmworkers, Farm, Ranch, and Aquacultural Animals
+            Animal Breeders
           </div>
           <div
             className="description"
           >
-            Attend to live farm, ranch, or aquacultural animals that may include cattle, sheep, swine, goats, horses and other equines, poultry, finfish, shellfish, and bees. Attend to animals produced for animal products, such as meat, fur, skins, feathers, eggs, milk, and honey. Duties may include feeding, watering, herding, grazing, castrating, branding, de-beaking, weighing, catching, and loading animals. May maintain records on animals; examine animals to detect diseases and injuries; assist in birth deliveries; and administer medications, vaccinations, or insecticides as appropriate. May clean and maintain animal housing areas. Includes workers who shear wool from sheep, and collect eggs in hatcheries.
+            Select and breed animals according to their genealogy, characteristics, and offspring. May require knowledge of artificial insemination techniques and equipment use. May involve keeping records on heats, birth intervals, or pedigree.
           </div>
         </div>
       </div>
@@ -10438,10 +10344,10 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 className="matchRate"
               >
                 <span
-                  data-match-rate="64.22046780319654%"
+                  data-match-rate="63.69037868206123%"
                   style={
                     Object {
-                      "width": "64.22046780319654%",
+                      "width": "63.69037868206123%",
                     }
                   }
                 />
@@ -10464,10 +10370,10 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                     className="active"
                   />
                   <li
-                    className=""
+                    className="active"
                   />
                   <li
-                    className=""
+                    className="active"
                   />
                   <li
                     className=""
@@ -10497,7 +10403,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level_1
+                  experience_level_3
                   :
                 </h3>
               </div>
@@ -10516,7 +10422,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
         </div>
       </div>
     </div>
-    <p
+    <div
       className="center"
     >
       <button
@@ -10526,7 +10432,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
       >
         show_more
       </button>
-    </p>
+    </div>
   </div>
 </div>
 `;

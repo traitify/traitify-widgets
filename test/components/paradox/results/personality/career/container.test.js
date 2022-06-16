@@ -12,6 +12,9 @@ jest.mock("components/highchart", () => (() => <div className="mock">HighCharts<
 describe("Paradox.CareerContainer", () => {
   let component;
   let props;
+  const highlightedCareer = JSON.parse(JSON.stringify(careers[0]));
+  highlightedCareer.career.title = "Test Highlighted Career Title";
+  highlightedCareer.career.description = "Test Highlighted Career Description";
 
   beforeEach(() => {
     props = {
@@ -23,7 +26,24 @@ describe("Paradox.CareerContainer", () => {
       options: null
     };
     props.i18n.data = {"en-us": {}};
-    props.traitify.get = () => Promise.resolve(careers);
+    props.traitify.get = (path, params) => {
+      if(params.paged && params.careers_per_page < careers.length + 1) {
+        const data = [];
+        const start = ((params.page * params.careers_per_page) - 1) || 0;
+
+        for(let i = start; i < start + params.careers_per_page; i += 1) {
+          if(i > careers.length) {
+            break;
+          }
+          data.push(careers[i]);
+        }
+        // if(params.careers_per_page === 3) {
+        //   console.log(data);
+        // }
+        return Promise.resolve(data);
+      }
+      return Promise.resolve(path === "/highlighted" ? highlightedCareer : careers);
+    };
     props.ui = mockUI();
   });
 
@@ -42,6 +62,27 @@ describe("Paradox.CareerContainer", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with highlightedCareers", async() => {
+    props.traitify.get = (path) => Promise.resolve(path === "/highlighted" ? [highlightedCareer] : careers);
+    props.highlightedPath = "/highlighted";
+
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("show more button, shows more careers", async() => {
+    props.perPage = 3;
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    await act(async() => {
+      component.instance.findAllByType("button")[5].props.onClick();
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("modal opens", async() => {
     await act(async() => {
       component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
@@ -51,4 +92,8 @@ describe("Paradox.CareerContainer", () => {
     });
     expect(component.tree).toMatchSnapshot();
   });
+
+  // TODO: test for Search
+  // TODO: test for Experience Level Search
+  // TODOL test for Sort
 });

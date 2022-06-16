@@ -4,12 +4,8 @@
   list-style: none;
   margin: 0 $buffer-sm * 1.25 0;
   padding: 0;
-  font-size: $font-size * .94;
-  font-size: 0.9375rem;
-  @include min-width(md) {
-    font-size: $font-size * 1.06;
-    font-size: 1.0625rem;
-  }
+  font-size: $font-size;
+
   @include min-width(lg) {
     float: left;
     width: 48%;
@@ -18,9 +14,9 @@
   li {
     display: block;
     width: 100%;
-    margin: 0 0 $buffer-sm * .63;
+    margin: 0 0 $buffer-sm * .5;
     @include min-width(lg) {
-      margin-bottom: 25px;
+      margin-bottom: $buffer-lg;
     }
     h4 {
       display: inline-block;
@@ -36,7 +32,6 @@
           width: 30px;
           text-align: center;
           font-size: $font-size * 1.25;
-          font-size: 1.25rem;
         }
       }
     }
@@ -62,16 +57,16 @@
   color: $-white;
   display: inline-block;
   min-width: 155px;
-  padding: $buffer-sm * .75 $buffer * 1.04;
-  margin-right: $buffer-sm * .63;
+  padding: $buffer-sm * .75 $buffer;
+  margin-right: $buffer-sm * .5;
   text-align: center;
   border: 0;
   border-radius: $border-radius-sm;
-  font-size: 0.8em;
+  font-size: $font-size-sm * 1.25;
   text-decoration: none;
 
   @include min-width(xs) {
-    font-size: 1.1em;
+    font-size: $font-size;
   }
   cursor: pointer;
   &:visited {
@@ -125,15 +120,13 @@
   width: 80%;
   margin: 0;
 
-  font-size: $font-size-sm * 1.08;
-  font-size: 0.8125rem;
+  font-size: $font-size-sm;
 
   @include min-width(xs) {
     margin-top: initial;
   }
   @include min-width(md) {
-    font-size: $font-size * .94;
-    font-size: 0.9375rem;
+    font-size: $font-size;
   }
 }
 .subtitleFull {
@@ -143,13 +136,13 @@
 .experience {
   padding: 0;
   margin: 0;
-  list-style: none;
+  
   li {
     display: inline-block;
     background: $-gray-hover;
     border: $border-width * 2 solid $-gray-hover;
-    padding: $buffer-sm * .63;
-    margin-right: $buffer-sm * .38;
+    padding: $buffer-sm * .75;
+    margin-right: $buffer-sm * .25;
     border-radius: $border-radius-sm;
   }
   li.active {
@@ -158,7 +151,6 @@
     border-radius: $border-radius-sm;
   }
 }
-
 .matchRate {
   width: 100%;
   height: 15px;
@@ -181,14 +173,11 @@
 .matchRatePercent {
   font-style: normal;
   font-weight: 300;
-  font-size: $font-size-sm * 1.08;
-  font-size: 0.8125rem;
+  font-size: $font-size-sm;
   @include min-width(md) {
-    font-size: $font-size * .94;
-    font-size: 0.9375rem;
+    font-size: $font-size;
   }
 }
-
 .chartContainer {
   display: flex;
   flex-direction: column;
@@ -227,7 +216,7 @@
 }
 
 .questionBtn {
-  font-size: 1rem;
+  font-size: $font-size;
   text-align: center;
 }
 

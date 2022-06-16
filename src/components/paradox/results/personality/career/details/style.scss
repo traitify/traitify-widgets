@@ -34,10 +34,9 @@
 .title {
   font-weight: 500;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: $buffer-sm;
 
   font-size: $font-size-sm * 1.17;
-  font-size: 0.875rem;
 
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -48,7 +47,6 @@
 
   @include min-width(md) {
     font-size: $font-size;
-    font-size: 1rem;
   }
 }
 
@@ -57,7 +55,6 @@
   text-align: left;
 
   font-size: $font-size-sm;
-  font-size: 0.75rem;
 
   line-height: 1.35;
     -webkit-line-clamp: 3;
@@ -68,8 +65,7 @@
     display: -webkit-box;
 
   @include min-width(md) {
-    font-size: $font-size-sm *1.17;
-    font-size: 0.875rem;
+    font-size: $font-size-sm * 1.17;
   }
 }
 
@@ -79,15 +75,13 @@
   width: 80%;
   margin: 0;
 
-  font-size: $font-size-sm * 1.08;
-  font-size: 0.8125rem;
+  font-size: $font-size-sm;
 
   @include min-width(xs) {
     margin-top: initial;
   }
   @include min-width(md) {
-    font-size: $font-size * .94;
-    font-size: 0.9375rem;
+    font-size: $font-size;
   }
 }
 
@@ -104,8 +98,8 @@
     display: inline-block;
     background: $-gray-hover;
     border: $border-width * 2 solid $-gray-hover;
-    padding: $buffer-sm * .63;
-    margin-right: $buffer-sm * .38;
+    padding: $buffer-sm * .75;
+    margin-right: $buffer-sm * .25;
     border-radius: $border-radius-sm;
   }
   li.active {
@@ -118,10 +112,8 @@
 .education {
   margin: 0;
   font-size: $font-size-sm;
-  font-size: 0.75rem;
   @include min-width(md) {
-    font-size: $font-size-sm * 1.17;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
   }
 }
 
@@ -148,11 +140,9 @@
 .matchRatePercent {
   font-style: normal;
   font-weight: 300;
-  font-size: $font-size-sm * 1.08;
-  font-size: 0.8125rem;
+  font-size: $font-size-sm;
   @include min-width(md) {
-    font-size: $font-size * .94;
-    font-size: 0.9375rem;
+    font-size: $font-size;
   }
 }
 

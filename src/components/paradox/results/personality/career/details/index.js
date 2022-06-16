@@ -18,7 +18,7 @@ function CareerDetails(props) {
   };
 
   return (
-    <div className={style.container} id={style.container} ref={setElement}>
+    <div className={style.container} ref={setElement}>
       <div className={style.careerContainer}>
         <img alt={career.title} src={career.picture} />
         <div className={style.careerDetails}>

@@ -4,41 +4,24 @@
   @extend %container;
 
   display: block;
-  margin: 0 auto 5%;
-  padding: 0;
-  width: 262px;
-  z-index: 1;
+  margin-bottom: $buffer;
+  
+  border: $border-width solid;
+  border-radius: $border-radius-sm * 2.5;
+  width: 100%;
+  @include theme(border-color,"border-color-light");
 
-  @include min-width(xs) {
-    margin: 0 0% 3%;
-    float: left;
-    width: 47%;
-    padding: 0;
-  }
-  @include min-width(md) {
-    width: 30%;
-  }
-  @include min-width(xl) {
-    width: 23%;
-    margin: 0 0 1.5% 0;
-  }
   img { 
-    margin: 0px 20px 0px 0px;
+    margin-right: 20px;
     border-radius: $border-radius-sm * 2.5;
     width: 100px;
     height: 100px;
   }
   &[type="button"] {
-    border: 1px solid $-white;
+    border: $border-width solid $-white;
     border-radius: $border-radius-sm * 2.5;
     width: 100%
   }
-}
-#container {
-  border: 1px solid;
-  border-radius: $border-radius-sm * 2.5;
-  width: 100%;
-  @include theme(border-color,"border-color-light");
 }
 
 .content {
@@ -53,7 +36,7 @@
   text-align: left;
   margin-bottom: 10px;
 
-  font-size: 14px;
+  font-size: $font-size-sm * 1.17;
   font-size: 0.875rem;
 
   -webkit-line-clamp: 1;
@@ -64,7 +47,7 @@
   display: -webkit-box;
 
   @include min-width(md) {
-    font-size: 16px;
+    font-size: $font-size;
     font-size: 1rem;
   }
 }
@@ -73,7 +56,7 @@
   line-height: 1.25;
   text-align: left;
 
-  font-size: 12px;
+  font-size: $font-size-sm;
   font-size: 0.75rem;
 
   line-height: 1.35;
@@ -85,32 +68,25 @@
     display: -webkit-box;
 
   @include min-width(md) {
-    font-size: 14px;
+    font-size: $font-size-sm *1.17;
     font-size: 0.875rem;
   }
 }
 
 .subtitle {
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-
+  display: flex;
+  justify-content: space-between;
   width: 80%;
-  font-weight: 400;
   margin: 0;
 
-  font-size: 13px;
+  font-size: $font-size-sm * 1.08;
   font-size: 0.8125rem;
 
   @include min-width(xs) {
     margin-top: initial;
   }
   @include min-width(md) {
-    font-size: 15px;
+    font-size: $font-size * .94;
     font-size: 0.9375rem;
   }
 }
@@ -123,28 +99,28 @@
 .experience {
   padding: 0;
   margin: 0;
-  list-style: none;
+  
   li {
     display: inline-block;
     background: $-gray-hover;
-    border: 2px solid $-gray-hover;
-    padding: 5px;
-    margin-right: 3px;
+    border: $border-width * 2 solid $-gray-hover;
+    padding: $buffer-sm * .63;
+    margin-right: $buffer-sm * .38;
     border-radius: $border-radius-sm;
   }
   li.active {
     background: $-blue;
-    border: 2px solid $-blue;
+    border: $border-width * 2 solid $-blue;
     border-radius: $border-radius-sm;
   }
 }
 
 .education {
   margin: 0;
-  font-size: 12px;
+  font-size: $font-size-sm;
   font-size: 0.75rem;
   @include min-width(md) {
-    font-size: 14px;
+    font-size: $font-size-sm * 1.17;
     font-size: 0.875rem;
   }
 }
@@ -153,7 +129,7 @@
   width: 80%;
   height: 15px;
   background: $-gray-hover;
-  margin-top: 2px;
+  margin-top: $buffer-sm * .25;
   border-radius: $border-radius-sm;
   span {
     display: block;
@@ -172,11 +148,10 @@
 .matchRatePercent {
   font-style: normal;
   font-weight: 300;
-  float: right;
-  font-size: 13px;
+  font-size: $font-size-sm * 1.08;
   font-size: 0.8125rem;
   @include min-width(md) {
-    font-size: 15px;
+    font-size: $font-size * .94;
     font-size: 0.9375rem;
   }
 }
@@ -184,11 +159,11 @@
 .upperBox {
   display: flex;
   width: 100%;
-  padding: 10px 0px;
+  padding: $buffer-sm * 1.25 0px;
 
   @include min-width(xs) {
     width: 50%;
-    padding-right: 10px
+    padding-right: $buffer-sm * 1.25
   }
 
   .innerContent{ 
@@ -206,11 +181,11 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 10px 0px;
+  padding: $buffer-sm * 1.25 0px;
 
   @include min-width(xs) {
     width: 50%;
-    padding-left: 10px;
+    padding-left: $buffer-sm * 1.25;
   }
 
   div {
@@ -240,7 +215,7 @@
       width: 50% !important;
     }
     button {
-      padding: 10px 10%;
+      padding: $buffer-sm * 1.25 10%;
       color: $-white;
       background-color: $-blue;
       border-radius: $border-radius-sm !important;
@@ -252,7 +227,7 @@
 .grayDivider {
   color: #555555;
   width: 95%;
-  margin: 10px auto 10px;
+  margin: $buffer-sm * 1.25 auto $buffer-sm * 1.25;
   line-height: inherit;
   clear: both;
   user-select: none;
@@ -272,7 +247,7 @@
 
 .careerContainer {
   display: flex;
-  margin:  20px;
+  margin: $buffer * 1.25;
 }
 
 .careerDetails {

@@ -18,12 +18,11 @@
   @extend %container;
   @extend %shadow-box;
 
-  margin-bottom: $buffer-section;
+  margin-bottom: $buffer-lg;
 
   @include min-width(lg) {
-    box-shadow: none;
-    padding: 0;
     margin-right: $buffer;
+    max-height: 524px;
   }
   @include min-width(xl) {
     width: 234px;

@@ -65,11 +65,16 @@
 
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 100%;
   min-height: 100vh;
   position: relative;
 
   @include min-width("md") { min-height: $min-height; }
+  @media (min-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) {
+    aspect-ratio: 4/3;
+  }
   &:fullscreen {
     bottom: 0;
     position: fixed;

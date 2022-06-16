@@ -104,7 +104,16 @@
           "color_3": ""
         },
         "keywords": "sustaining, preserving, conserving, maintaining, improving, working outdoors, communing with the natural world",
-        "details": [],
+        "details": [
+          {
+            "title": "Complement",
+            "body": "You often find yourself working."
+          },
+          {
+            "title": "Conflict",
+            "body": "You are versatile."
+          }
+        ],
         "environments": [
           {
             "id": "66f8da0f-f1bc-4623-91de-4a38b3f89eba",

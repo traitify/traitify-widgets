@@ -1,38 +1,42 @@
 @import "~style/paradox/helpers";
 
-.bar {
-  height: $buffer * 0.5;
-
-  @include min-width("xl") { height: $buffer; }
-}
+.bar { height: $border-width-xl; }
 .container {
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  @include theme("background", "background-color-light");
   @include buffer("margin-bottom");
   &:last-child { margin-bottom: 0; }
 }
 .content {
   align-items: center;
   display: flex;
-  padding: $buffer-lg;
+  padding: $buffer-sm $buffer-lg;
 
   img {
-    width: 65px;
+    width: 50px;
 
     @include buffer("margin-right");
   }
 }
 .description {
   display: block;
-  font-size: $font-size;
+  font-weight: normal;
+  margin-right: $buffer;
 
   @include min-width("sm") {
     display: inline-block;
-    margin-left: $buffer;
+    margin-left: $buffer-sm;
 
     &::before {
       content: "-";
       display: inline-block;
-      margin-right: $buffer;
+      margin-right: $buffer-sm;
     }
   }
 }
-.heading { font-size: $font-size-heading; }
+.heading {
+  flex-grow: 1;
+  font-weight: bold;
+}

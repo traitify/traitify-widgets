@@ -43,6 +43,7 @@ $-traitify-blue-dark: #0376A2;
 $-traitify-red: #CB4E4E;
 $-traitify-red-dark: #9A3B3B;
 $-white: #FFFFFF;
+$-white-gray: #F5F5F5;
 $-yellow: #F9BC4F;
 $-yellow-light: #FBD288;
 
@@ -76,6 +77,7 @@ $color-scheme-dark: (
 
 $color-scheme-light: (
   "background-color": $-white,
+  "background-color-light": $-white-gray,
   "border-color": $-border-color,
   "border-color-light": $-gray,
   "fullscreen-color": $-black,

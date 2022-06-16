@@ -28,12 +28,12 @@
   }
   &:global(.traitify--color-scheme-dark) { @include -set-variables($color-scheme-dark); }
   button {
-    color: inherit;
-    font: inherit;
     background: none;
     border: none;
     border-radius: 0;
+    color: inherit;
     cursor: pointer;
+    font: inherit;
     text-align: inherit;
   }
 }

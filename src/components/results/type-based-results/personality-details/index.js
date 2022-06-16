@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {Component} from "react";
+import {Component as Paradox} from "components/paradox/results/personality/base/details";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
@@ -94,4 +95,4 @@ class PersonalityDetails extends Component {
 }
 
 export {PersonalityDetails as Component};
-export default withTraitify(PersonalityDetails);
+export default withTraitify(PersonalityDetails, {paradox: Paradox});

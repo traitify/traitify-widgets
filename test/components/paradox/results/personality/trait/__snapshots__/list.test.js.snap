@@ -4,79 +4,64 @@ exports[`Paradox.PersonalityTraits renders component 1`] = `
 <div
   className="container"
 >
-  <div>
-    <div
-      className="heading"
-    >
-      most_represented_traits
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Steady
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Forgiving
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Can Delay Gratification
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Compassionate
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Thrill-Seeking
-    </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Steady
   </div>
-  <div>
-    <div
-      className="heading"
+  <div
+    className="mock"
+  >
+    Trait - 
+    Forgiving
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Can Delay Gratification
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Compassionate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Thrill-Seeking
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Confident
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Imaginative
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Open-Minded
+  </div>
+  <div
+    className="center"
+  >
+    <button
+      className="toggle"
+      onClick={[Function]}
+      type="button"
     >
-      least_represented_traits
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Visionary
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Whimsical
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Deliberate
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Orderliness
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Creative
-    </div>
+      show_more
+    </button>
   </div>
 </div>
 `;
@@ -90,170 +75,267 @@ exports[`Paradox.PersonalityTraits renders component with headers 1`] = `
   >
     personality_traits
   </div>
-  <div>
-    <div
-      className="heading"
-    >
-      most_represented_traits
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Steady
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Forgiving
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Can Delay Gratification
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Compassionate
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Thrill-Seeking
-    </div>
+  <div
+    className="p"
+  >
+    personality_traits_description
   </div>
-  <div>
-    <div
-      className="heading"
+  <div
+    className="mock"
+  >
+    Trait - 
+    Steady
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Forgiving
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Can Delay Gratification
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Compassionate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Thrill-Seeking
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Confident
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Imaginative
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Open-Minded
+  </div>
+  <div
+    className="center"
+  >
+    <button
+      className="toggle"
+      onClick={[Function]}
+      type="button"
     >
-      least_represented_traits
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Visionary
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Whimsical
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Deliberate
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Orderliness
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Creative
-    </div>
+      show_more
+    </button>
   </div>
 </div>
 `;
 
-exports[`Paradox.PersonalityTraits renders component with translation definitions 1`] = `
+exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
 <div
   className="container"
 >
-  <div>
-    <div
-      className="heading"
-    >
-      most_represented_traits
-    </div>
-    <div
-      className="p"
-    >
-      most_represented_traits_definition
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Steady
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Forgiving
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Can Delay Gratification
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Compassionate
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Thrill-Seeking
-    </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Steady
   </div>
-  <div>
-    <div
-      className="heading"
+  <div
+    className="mock"
+  >
+    Trait - 
+    Forgiving
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Can Delay Gratification
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Compassionate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Thrill-Seeking
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Confident
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Imaginative
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Open-Minded
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Robust
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Altruistic
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Ambitious
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Playful
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Accommodating
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Self-Discipline
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Committed
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Interactive
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Enthusiastic
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Loyal
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Easy-Going
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    High-Energy
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Calm
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Positive
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Attention-Seeking
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Regulated
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Friendly
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Visionary
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Whimsical
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Deliberate
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Orderliness
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Creative
+  </div>
+  <div
+    className="center"
+  >
+    <button
+      className="toggle"
+      onClick={[Function]}
+      type="button"
     >
-      least_represented_traits
-    </div>
-    <div
-      className="p"
-    >
-      least_represented_traits_definition
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Visionary
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Whimsical
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Deliberate
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Orderliness
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Creative
-    </div>
+      show_less
+    </button>
   </div>
 </div>
 `;

@@ -58,6 +58,26 @@ exports[`PersonalityDetails renders top personality if no blend 1`] = `
   className="details"
 >
   <div
+    className="complements"
+  >
+    <h4>
+      complements
+    </h4>
+    <p>
+      You often find yourself working.
+    </p>
+  </div>
+  <div
+    className="conflicts"
+  >
+    <h4>
+      conflicts
+    </h4>
+    <p>
+      You are versatile.
+    </p>
+  </div>
+  <div
     className="environments"
   >
     <h4>

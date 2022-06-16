@@ -1,3 +1,4 @@
+import {act} from "react-test-renderer";
 import {Component} from "components/paradox/results/personality/trait/list";
 import ComponentHandler from "support/component-handler";
 import {mockOptions, mockProps} from "support/helpers";
@@ -60,9 +61,9 @@ describe("Paradox.PersonalityTraits", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with translation definitions", () => {
-    mockOptions(props.getOption, {perspective: "thirdPerson"});
+  it("renders component with more traits", () => {
     component = new ComponentHandler(<Component {...props} />);
+    act(() => { component.findByText("show_more").props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();
   });

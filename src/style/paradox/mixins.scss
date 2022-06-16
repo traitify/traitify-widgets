@@ -7,6 +7,32 @@
   @include min-width("lg") { #{$prop}: $buffer-lg; }
 }
 
+@mixin button() {
+  border-radius: $border-radius-sm;
+  padding: $buffer * 0.5 $buffer;
+  text-decoration: none;
+}
+
+@mixin buttonDark($color) {
+  @include button();
+  @include theme("color", "text-color-light");
+  @include theme("background", $color);
+
+  &:hover, &:visited {
+    @include theme("color", "text-color-light");
+  }
+}
+
+@mixin buttonLight($color) {
+  @include button();
+  @include theme("color", "text-color");
+  @include theme("background", $color);
+
+  &:hover, &:visited {
+    @include theme("color", "text-color");
+  }
+}
+
 // Currently requires an unscoped context
 @mixin colorSchemeDark() {
   :global(.traitify--color-scheme-auto) {

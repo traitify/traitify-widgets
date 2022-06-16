@@ -18,6 +18,7 @@ $border-width: 1px;
 $border-width-lg: 3px;
 $border-width-xl: 5px;
 $buffer: 16px; // Default padding/margin
+$buffer-sm: 8px;
 $buffer-lg: 24px;
 $buffer-heading: $buffer;
 $buffer-section: $buffer * 3;
@@ -40,6 +41,7 @@ $-traitify-blue-dark: #0376A2;
 $-traitify-red: #CB4E4E;
 $-traitify-red-dark: #9A3B3B;
 $-white: #FFFFFF;
+$-white-gray: #F5F5F5;
 $-yellow: #F9BC4F;
 $-yellow-light: #FBD288;
 
@@ -49,6 +51,7 @@ $-theme-color: $-blue;
 // Add variables that may change with the color scheme
 $color-scheme-dark: (
   "background-color": $-black,
+  "background-color-light": $-black,
   "border-color": $-border-color,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
@@ -72,6 +75,7 @@ $color-scheme-dark: (
 
 $color-scheme-light: (
   "background-color": $-white,
+  "background-color-light": $-white-gray,
   "border-color": $-border-color,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,

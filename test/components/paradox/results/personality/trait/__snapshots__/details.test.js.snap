@@ -3,17 +3,13 @@
 exports[`Paradox.PersonalityTrait renders component 1`] = `
 <div
   className="container"
-  style={
-    Object {
-      "background": "rgba(41,183,112,0.085)",
-    }
-  }
 >
   <div
     className="bar"
     style={
       Object {
         "background": "#29B770",
+        "width": "86%",
       }
     }
   />
@@ -33,6 +29,12 @@ exports[`Paradox.PersonalityTrait renders component 1`] = `
       >
         dependable, even and consistent
       </span>
+    </div>
+    <div
+      className="score"
+    >
+      86
+      %
     </div>
   </div>
 </div>

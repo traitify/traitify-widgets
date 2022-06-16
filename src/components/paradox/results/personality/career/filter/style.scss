@@ -10,7 +10,6 @@
 
     + span svg { @include theme("color", "inactive-color"); }
     &:checked + span svg { @include theme("color", "theme-color"); }
-    &:focus + span svg { @include theme("color", "theme-color"); }
   }
   span:last-of-type { margin-left: $buffer-sm; }
 }
@@ -24,6 +23,7 @@
   @include min-width(lg) {
     box-shadow: none;
     padding: 0;
+    margin-right: $buffer;
   }
   @include min-width(xl) {
     width: 234px;
@@ -109,7 +109,7 @@
       margin-bottom: $buffer;
 
       @include min-width(lg) {
-        text-transform: uppercase;
+        text-transform: capitalize;
         white-space: nowrap;
       }
     }

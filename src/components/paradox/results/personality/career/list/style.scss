@@ -3,10 +3,8 @@
 .container {
   @extend %container;
   @extend %shadow-box;
-  
-  margin-bottom: $buffer * 7;
 
-  @include min-width(lg) { min-height: $min-height; }
+  margin-bottom: $buffer-section;
 
   .center { text-align: center; }
   .more { @include buttonLight("inactive-color"); }

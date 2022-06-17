@@ -20,13 +20,7 @@
 
   margin-bottom: $buffer-lg;
 
-  @include min-width(lg) {
-    margin-right: $buffer;
-    max-height: 524px;
-  }
-  @include min-width(xl) {
-    width: 234px;
-  }
+  @include min-width(lg) { margin-right: $buffer; }
 
   .label {
     display: block;

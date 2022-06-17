@@ -1,0 +1,11 @@
+@import "~style/paradox/helpers";
+
+.container {
+  @extend %container;
+
+  @include min-width(lg) {
+    align-items: flex-start;
+    display: flex;
+    gap: $buffer-lg;
+  }
+}

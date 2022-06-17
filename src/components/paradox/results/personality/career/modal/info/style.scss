@@ -1,0 +1,237 @@
+@import "~style/paradox/helpers";
+
+.info {
+  list-style: none;
+  margin: 0 $buffer-sm * 1.25 0;
+  padding: 0;
+  font-size: $font-size;
+
+  @include min-width(lg) {
+    float: left;
+    width: 48%;
+    margin: 0 1% 0;
+  }
+  li {
+    display: block;
+    width: 100%;
+    margin: 0 0 $buffer-sm * .5;
+    @include min-width(lg) {
+      margin-bottom: $buffer-lg;
+    }
+    h4 {
+      display: inline-block;
+      width: 49%;
+      margin: 0;
+      @include min-width(lg) {
+        width: 52%;
+      }
+      i {
+        display: none;
+        @include min-width(lg) {
+          display: inline-block;
+          width: 30px;
+          text-align: center;
+          font-size: $font-size * 1.25;
+        }
+      }
+    }
+  }
+}
+.infoText {
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+  @include min-width(lg) {
+    width: 45%;
+  }
+}
+.contentTop {
+  padding: 0px $buffer-sm * 1.25;
+}
+.center {
+  text-align: center
+}
+
+.btnPrimary {
+  background: $-blue;
+  color: $-white;
+  display: inline-block;
+  min-width: 155px;
+  padding: $buffer-sm * .75 $buffer;
+  margin-right: $buffer-sm * .5;
+  text-align: center;
+  border: 0;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm * 1.25;
+  text-decoration: none;
+
+  @include min-width(xs) {
+    font-size: $font-size;
+  }
+  cursor: pointer;
+  &:visited {
+    color: $-white;
+  }
+  &:hover {
+    background: darken($-blue, 8%);
+    color: $-white;
+  }
+}
+
+.legendToggle {
+  background: $-white;
+  color: #8e8e8e;
+}
+.contentBottom {
+  padding: 0px $buffer-sm * 1.25 $buffer-sm * 1.25 $buffer-sm * 1.25;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leftContainer {
+  padding: $buffer-sm * 1.25;
+  width: 100%;
+  border-bottom: $border-width solid $-white;
+  margin-bottom: $buffer-sm * 1.25;
+
+  @include min-width(md){
+    width: 50%;
+    border-bottom: none;
+    border-right: $border-width solid;
+    @include theme(border-color, "border-color-light");
+    margin-bottom: 0;
+  }
+}
+.rightContainer {
+  width: 100%;
+  padding: $buffer-sm * 1.25 $buffer-sm * 1.25 $buffer-sm * 1.25 $buffer * 1.25;
+
+  @include min-width(md){
+    width: 50%;
+  }
+}
+.experienceContainer {
+  padding-bottom: $buffer-sm * 1.25;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0;
+
+  font-size: $font-size-sm;
+
+  @include min-width(xs) {
+    margin-top: initial;
+  }
+  @include min-width(md) {
+    font-size: $font-size;
+  }
+}
+.subtitleFull {
+  @extend .subtitle;
+  width: 100%;
+}
+.experience {
+  padding: 0;
+  margin: 0;
+  
+  li {
+    display: inline-block;
+    background: $-gray-hover;
+    border: $border-width * 2 solid $-gray-hover;
+    padding: $buffer-sm * .75;
+    margin-right: $buffer-sm * .25;
+    border-radius: $border-radius-sm;
+  }
+  li.active {
+    background: $-blue;
+    border: $border-width * 2 solid $-blue;
+    border-radius: $border-radius-sm;
+  }
+}
+.matchRate {
+  width: 100%;
+  height: 15px;
+  background: #ddd;
+  margin-top: $buffer-sm .25;
+  border-radius: $border-radius-sm;
+  span {
+    display: block;
+    background: #89e2cd;
+    height: 15px;
+    border-radius: $border-radius-sm;
+  }
+  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
+    background: #fbd288;
+  }
+  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
+    background: #fda7ab;
+  }
+}
+.matchRatePercent {
+  font-style: normal;
+  font-weight: 300;
+  font-size: $font-size-sm;
+  @include min-width(md) {
+    font-size: $font-size;
+  }
+}
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: $buffer-sm * 1.25;
+  width: 100%;
+}
+
+.grayDivider {
+  color: #555555;
+  width: 100%;
+  margin: $buffer-sm 1.25 auto $buffer * 1.25;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: $border-width solid #e8e8ec;
+  border-radius: $border-radius-sm;
+}
+.check {
+  float: left;
+  display: block;
+  opacity: 0;
+  + span svg {
+    color: $-white;
+  }
+  &:checked + span svg {
+    color: $-blue;
+  }
+  &:focus + span svg {
+    color: $-blue;
+  }
+  &:checked:focus + span svg {
+    color: $-blue !important;
+  }
+}
+
+.questionBtn {
+  font-size: $font-size;
+  text-align: center;
+}
+
+.careerHelp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: $buffer * 1.25;
+}
+
+.legend {
+  margin: $buffer * 1.25 0px $buffer * 1.04 0px;
+  padding-top: $buffer * 1.25;
+  border: $border-width solid $-blue;
+  p {
+    margin-top: 0;
+  }
+}

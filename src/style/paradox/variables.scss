@@ -8,7 +8,7 @@ $breakpoints: (
   sm: $breakpoint-sm,
   md: $breakpoint-md,
   lg: $breakpoint-lg,
-  xl: $breakpoint-xl
+  xl: $breakpoint-xl,
 );
 
 // Paradox likes multiples of 8
@@ -29,9 +29,11 @@ $line-height: 1.5;
 $min-height: 750px;
 
 // Private - To be used through color scheme
+$-white: #FFFFFF;
 $-black: #555555;
 $-blue: #25C9D0;
 $-gray: #D6D6D6;
+$-gray-hover: #EAEAEA;
 $-green: #3BCEAC;
 $-green-light: #89E2CD;
 $-red: #FE6D73;
@@ -51,7 +53,7 @@ $-theme-color: $-blue;
 // Add variables that may change with the color scheme
 $color-scheme-dark: (
   "background-color": $-black,
-  "background-color-light": $-black,
+  "border-color-light": $-white,
   "border-color": $-border-color,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
@@ -77,6 +79,7 @@ $color-scheme-light: (
   "background-color": $-white,
   "background-color-light": $-white-gray,
   "border-color": $-border-color,
+  "border-color-light": $-gray,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,

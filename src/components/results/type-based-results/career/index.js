@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import {Component} from "react";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import withTraitify from "lib/with-traitify";
+import {Component as Paradox} from "components/paradox/results/personality/career/details";
 import style from "./style.scss";
 
 class Career extends Component {
@@ -61,4 +62,4 @@ class Career extends Component {
 }
 
 export {Career as Component};
-export default withTraitify(Career);
+export default withTraitify(Career, {paradox: Paradox});

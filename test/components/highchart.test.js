@@ -3,6 +3,7 @@ import ComponentHandler from "support/component-handler";
 
 jest.mock("highcharts", () => (() => (<div className="mock">HighCharts</div>)));
 jest.mock("highcharts-react-official", () => (() => (<div className="mock">HighchartsReactOfficial</div>)));
+jest.mock("highcharts/highcharts-more", () => (() => (<div className="mock">HighchartsMore</div>)));
 
 describe("HighChart", () => {
   let props;

@@ -55,7 +55,7 @@ function CareerDetails(props) {
               <div className={style.education}>
                 <h3 className={style.subtitleFull}>{translate("education")}:</h3>
                 <h3 className={style.subtitleFull}>
-                  {translate(`experience_level_${career.experience_level.id}`)}:
+                  {translate(`experience_level_${career.experience_level.id}`)}
                 </h3>
               </div>
             </div>

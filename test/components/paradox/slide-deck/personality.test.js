@@ -44,7 +44,7 @@ describe("Personality", () => {
       return element;
     });
 
-    options = {imageHost: "img.com"};
+    options = {};
     props = {
       ...mockProps(["cache", "getAssessment", "getCacheKey", "getOption", "isReady", "setElement", "traitify", "translate", "ui"]),
       assessment

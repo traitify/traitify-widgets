@@ -120,12 +120,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
     <div
       className="tip"
     >
-      DWS Tip for Agreeableness
-    </div>
-    <div
-      className="tip"
-    >
-      DWS Tip for Extraversion
+      DWS Tip for Openness
     </div>
     <div
       className="tip"
@@ -135,7 +130,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component 1`] = `
     <div
       className="tip"
     >
-      DWS Tip for Openness
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Agreeableness
     </div>
     <div
       className="tip"
@@ -266,17 +266,17 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available dim
     <div
       className="tip"
     >
-      DWS Tip for Extraversion
-    </div>
-    <div
-      className="tip"
-    >
       DWS Tip for Conscientiousness
     </div>
     <div
       className="tip"
     >
-      DWS Tip for Openness
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Agreeableness
     </div>
     <div
       className="tip"
@@ -388,12 +388,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
     <div
       className="tip"
     >
-      L Tip for Agreeableness
-    </div>
-    <div
-      className="tip"
-    >
-      L Tip for Extraversion
+      L Tip for Openness
     </div>
     <div
       className="tip"
@@ -403,7 +398,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with available typ
     <div
       className="tip"
     >
-      L Tip for Openness
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
     </div>
     <div
       className="tip"
@@ -515,12 +515,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
     <div
       className="tip"
     >
-      L Tip for Agreeableness
-    </div>
-    <div
-      className="tip"
-    >
-      L Tip for Extraversion
+      L Tip for Openness
     </div>
     <div
       className="tip"
@@ -530,7 +525,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with enabled types
     <div
       className="tip"
     >
-      L Tip for Openness
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
     </div>
     <div
       className="tip"
@@ -666,12 +666,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
     <div
       className="tip"
     >
-      DWS Tip for Agreeableness
-    </div>
-    <div
-      className="tip"
-    >
-      DWS Tip for Extraversion
+      DWS Tip for Openness
     </div>
     <div
       className="tip"
@@ -681,7 +676,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders component with headers 1`] =
     <div
       className="tip"
     >
-      DWS Tip for Openness
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Agreeableness
     </div>
     <div
       className="tip"
@@ -812,12 +812,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
     <div
       className="tip"
     >
-      L Tip for Agreeableness
-    </div>
-    <div
-      className="tip"
-    >
-      L Tip for Extraversion
+      L Tip for Openness
     </div>
     <div
       className="tip"
@@ -827,7 +822,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from clicking butto
     <div
       className="tip"
     >
-      L Tip for Openness
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
     </div>
     <div
       className="tip"
@@ -958,12 +958,7 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
     <div
       className="tip"
     >
-      L Tip for Agreeableness
-    </div>
-    <div
-      className="tip"
-    >
-      L Tip for Extraversion
+      L Tip for Openness
     </div>
     <div
       className="tip"
@@ -973,7 +968,12 @@ exports[`Paradox.PersonalityArchetypeSkills renders new type from selecting opti
     <div
       className="tip"
     >
-      L Tip for Openness
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
     </div>
     <div
       className="tip"

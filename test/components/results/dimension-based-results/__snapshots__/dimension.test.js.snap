@@ -8,8 +8,8 @@ exports[`Dimension renders component 1`] = `
     className="main"
     style={
       Object {
-        "background": "rgba(41,183,112,0.085)",
-        "borderLeft": "5px solid #29B770",
+        "background": "rgba(0,0,0,0.085)",
+        "borderLeft": "5px solid #000000",
       }
     }
   >
@@ -22,7 +22,7 @@ exports[`Dimension renders component 1`] = `
         <img
           alt=""
           ariahidden="true"
-          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
         />
       </p>
     </div>
@@ -37,14 +37,14 @@ exports[`Dimension renders component 1`] = `
         <span
           style={
             Object {
-              "color": "#29B770",
+              "color": "#000000",
             }
           }
         >
           |
         </span>
          
-        9
+        6
          - 
         Medium
       </h2>
@@ -61,7 +61,7 @@ exports[`Dimension renders component 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "background": "rgba(41,183,112,0.3)",
+              "background": "rgba(0,0,0,0.3)",
             }
           }
           type="button"
@@ -80,8 +80,8 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
     className="main"
     style={
       Object {
-        "background": "rgba(41,183,112,0.085)",
-        "borderLeft": "5px solid #29B770",
+        "background": "rgba(0,0,0,0.085)",
+        "borderLeft": "5px solid #000000",
       }
     }
   >
@@ -94,7 +94,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
         <img
           alt=""
           ariahidden="true"
-          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
         />
       </p>
     </div>
@@ -109,14 +109,14 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
         <span
           style={
             Object {
-              "color": "#29B770",
+              "color": "#000000",
             }
           }
         >
           |
         </span>
          
-        9
+        6
          - 
         Medium
       </h2>
@@ -133,7 +133,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "background": "rgba(41,183,112,0.3)",
+              "background": "rgba(0,0,0,0.3)",
             }
           }
           type="button"
@@ -148,7 +148,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
       className="content"
       style={
         Object {
-          "background": "rgba(41,183,112,0.3)",
+          "background": "rgba(0,0,0,0.3)",
         }
       }
     >
@@ -229,8 +229,8 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
     className="main"
     style={
       Object {
-        "background": "rgba(41,183,112,0.085)",
-        "borderLeft": "5px solid #29B770",
+        "background": "rgba(0,0,0,0.085)",
+        "borderLeft": "5px solid #000000",
       }
     }
   >
@@ -243,7 +243,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
         <img
           alt=""
           ariahidden="true"
-          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
         />
       </p>
     </div>
@@ -258,14 +258,14 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
         <span
           style={
             Object {
-              "color": "#29B770",
+              "color": "#000000",
             }
           }
         >
           |
         </span>
          
-        9
+        6
          - 
         Medium
       </h2>
@@ -282,7 +282,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
           onClick={[Function]}
           style={
             Object {
-              "background": "rgba(41,183,112,0.3)",
+              "background": "rgba(0,0,0,0.3)",
             }
           }
           type="button"

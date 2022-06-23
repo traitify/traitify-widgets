@@ -54,7 +54,7 @@ exports[`PersonalityTraits renders component 1`] = `
     className="mock"
   >
     Trait - 
-    Whimsical
+    Friendly
   </div>
   <div
     className="mock"
@@ -141,7 +141,7 @@ exports[`PersonalityTraits renders component with translation definitions 1`] = 
     className="mock"
   >
     Trait - 
-    Whimsical
+    Friendly
   </div>
   <div
     className="mock"

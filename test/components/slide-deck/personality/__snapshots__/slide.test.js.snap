@@ -29,7 +29,7 @@ exports[`Slide likert scale renders component 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -107,7 +107,7 @@ exports[`Slide renders back button 1`] = `
     className="slide left"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -121,7 +121,7 @@ exports[`Slide renders back button 1`] = `
     className="slide right"
   >
     <img
-      alt={null}
+      alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
     />
   </div>
   <div
@@ -188,7 +188,7 @@ exports[`Slide renders back button unless first slide 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -252,7 +252,7 @@ exports[`Slide renders complete progress bar 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -316,7 +316,7 @@ exports[`Slide renders component 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -380,7 +380,7 @@ exports[`Slide renders component with previous and next slides 1`] = `
     className="slide left"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -394,7 +394,7 @@ exports[`Slide renders component with previous and next slides 1`] = `
     className="slide right"
   >
     <img
-      alt={null}
+      alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
     />
   </div>
   <div
@@ -458,7 +458,7 @@ exports[`Slide renders component with previous slide 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of an older woman laughing and hula hooping in a backyard with a woman and a girl also hula hooping in the background."
     />
   </div>
   <div
@@ -515,7 +515,7 @@ exports[`Slide renders fullscreen 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -585,7 +585,7 @@ exports[`Slide renders fullscreen button 1`] = `
     className="slide middle"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
   <div
@@ -682,7 +682,7 @@ exports[`Slide renders instructions 1`] = `
     className="slide right"
   >
     <img
-      alt={null}
+      alt="A photo of a group of young adults working on a robotic project together."
     />
   </div>
 </div>

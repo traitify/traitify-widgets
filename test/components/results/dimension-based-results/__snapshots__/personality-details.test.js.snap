@@ -94,10 +94,10 @@ exports[`PersonalityDetails renders component 1`] = `
         className="description"
       >
         <li>
-          Is routine-oriented but unstructured
+          Allows for peer support in the pursuit of goals
         </li>
         <li>
-          Allows for peer support in the pursuit of goals
+          Is routine-oriented but unstructured
         </li>
         <li>
           Features a low key atmosphere that doesn’t seem overly competitive
@@ -213,10 +213,10 @@ exports[`PersonalityDetails skips section if no detail 1`] = `
         className="description"
       >
         <li>
-          Is routine-oriented but unstructured
+          Allows for peer support in the pursuit of goals
         </li>
         <li>
-          Allows for peer support in the pursuit of goals
+          Is routine-oriented but unstructured
         </li>
         <li>
           Features a low key atmosphere that doesn’t seem overly competitive

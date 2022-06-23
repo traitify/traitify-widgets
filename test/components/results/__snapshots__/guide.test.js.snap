@@ -26,14 +26,14 @@ exports[`Guide renders component 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -46,7 +46,7 @@ exports[`Guide renders component 1`] = `
       >
         <img
           alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -67,30 +67,10 @@ exports[`Guide renders component 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -106,11 +86,11 @@ exports[`Guide renders component 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -127,10 +107,30 @@ exports[`Guide renders component 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -147,7 +147,7 @@ exports[`Guide renders component 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -306,17 +306,12 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
         <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
-          Managing Pressure
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
+          Solving Problems
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -324,22 +319,27 @@ exports[`Guide renders component if benchmark not ready 1`] = `
           Delivering Results
         </option>
         <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
         >
-          Solving Problems
+          Engaging with People
         </option>
         <option
           value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
         >
           Influencing People
         </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
       </select>
       <p
         className="mobileBadge"
       >
         <img
-          alt="Managing Pressure badge"
-          src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+          alt="Solving Problems badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
         />
       </p>
     </div>
@@ -348,26 +348,6 @@ exports[`Guide renders component if benchmark not ready 1`] = `
     >
       <li
         className="tab tabActive"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
-        </button>
-      </li>
-      <li
-        className="tab"
         style={
           Object {
             "borderTopColor": "#FFCC3B",
@@ -379,11 +359,11 @@ exports[`Guide renders component if benchmark not ready 1`] = `
           type="button"
         >
           <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
-          Engaging with People
+          Solving Problems
         </button>
       </li>
       <li
@@ -400,7 +380,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -419,18 +399,18 @@ exports[`Guide renders component if benchmark not ready 1`] = `
           type="button"
         >
           <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
-          Solving Problems
+          Engaging with People
         </button>
       </li>
       <li
         className="tab"
         style={
           Object {
-            "borderTopColor": "#29B770",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -440,10 +420,30 @@ exports[`Guide renders component if benchmark not ready 1`] = `
         >
           <img
             alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
           />
           <br />
           Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#FFCC3B",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+          />
+          <br />
+          Managing Pressure
         </button>
       </li>
     </ul>
@@ -455,9 +455,9 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       className="tabContentActive"
     >
       <h2>
-        Managing Pressure
+        Solving Problems
       </h2>
-      At the top level, Managing Pressure (ES) concerns the manner in which someone deals with pressure, and the way in which they control their emotions and underlying tension in order to stay on task and cope with everyday challenges.
+      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
       <p>
         <button
           onClick={[Function]}
@@ -469,7 +469,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <hr />
       <div>
         <h2>
-          Resilient/Reflexive People
+          Open-Minded/Pragmatic People
         </h2>
         <p>
           guide_intro
@@ -489,7 +489,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
             <span
               className="questionText"
             >
-              Tell me about dealing with a highly pressured and difficult work situation.
+              Tell me how you would go about solving a work problem you have not encountered before.
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -506,19 +506,16 @@ exports[`Guide renders component if benchmark not ready 1`] = `
           <div>
             <ul>
               <li>
-                Do they appear to respond with the appropriate level of concern?
+                Do they talk about a number of different ways of approaching the problem?
               </li>
               <li>
-                Are they able to deal with things in a calm and upbeat way?
+                Are their ideas new, original or different in any way?
               </li>
               <li>
-                Do they keep their feelings under control?
+                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
               </li>
               <li>
-                Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
-              </li>
-              <li>
-                And to probe into possible issues with being resilient/reflexive.
+                And to probe into possible issues with being open-minded/pragmatic.
               </li>
             </ul>
           </div>
@@ -538,7 +535,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.
+              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -565,7 +562,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?
+              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -615,14 +612,14 @@ exports[`Guide toggles expanded intro 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -635,7 +632,7 @@ exports[`Guide toggles expanded intro 1`] = `
       >
         <img
           alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -656,30 +653,10 @@ exports[`Guide toggles expanded intro 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -695,11 +672,11 @@ exports[`Guide toggles expanded intro 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -716,10 +693,30 @@ exports[`Guide toggles expanded intro 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -736,7 +733,7 @@ exports[`Guide toggles expanded intro 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -912,14 +909,14 @@ exports[`Guide toggles question content 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -932,7 +929,7 @@ exports[`Guide toggles question content 1`] = `
       >
         <img
           alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -953,30 +950,10 @@ exports[`Guide toggles question content 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -992,11 +969,11 @@ exports[`Guide toggles question content 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -1013,10 +990,30 @@ exports[`Guide toggles question content 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -1033,7 +1030,7 @@ exports[`Guide toggles question content 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -1226,17 +1223,12 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
-          Influencing People
-        </option>
-        <option
-          value="5064521c-1028-40d4-8baa-dfeff734406f"
-        >
-          Engaging with People
+          Solving Problems
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1244,9 +1236,14 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           Delivering Results
         </option>
         <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
         >
-          Solving Problems
+          Engaging with People
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -1258,8 +1255,8 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
         className="mobileBadge"
       >
         <img
-          alt="Influencing People badge"
-          src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+          alt="Solving Problems badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
         />
       </p>
     </div>
@@ -1279,68 +1276,8 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
-          />
-          <br />
-          Influencing People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
-          />
-          <br />
-          Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
@@ -1359,8 +1296,68 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           type="button"
         >
           <img
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
+          />
+          <br />
+          Delivering Results
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Engaging with People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
+          />
+          <br />
+          Engaging with People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#EF615E",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
             alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
           Managing Pressure
@@ -1375,9 +1372,9 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       className="tabContentActive"
     >
       <h2>
-        Influencing People
+        Solving Problems
       </h2>
-      At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
       <p>
         <button
           onClick={[Function]}
@@ -1389,7 +1386,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <hr />
       <div>
         <h2>
-          Agreeable/Independent People
+          Open-Minded/Pragmatic People
         </h2>
         <p>
           guide_intro
@@ -1409,7 +1406,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionText"
             >
-              Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+              Tell me how you would go about solving a work problem you have not encountered before.
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -1426,22 +1423,16 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           <div>
             <ul>
               <li>
-                Are they tuned into other people's thoughts and feelings?
+                Do they talk about a number of different ways of approaching the problem?
               </li>
               <li>
-                How accommodating are they?
+                Are their ideas new, original or different in any way?
               </li>
               <li>
-                Do they use a realistic but sympathetic style?
+                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
               </li>
               <li>
-                Do they push their case in an open and sensitive way?
-              </li>
-              <li>
-                Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
-              </li>
-              <li>
-                And to probe into possible issues with being agreeable/independent.
+                And to probe into possible issues with being open-minded/pragmatic.
               </li>
             </ul>
           </div>
@@ -1461,7 +1452,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -1488,7 +1479,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -1532,14 +1523,14 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Updated Name
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1552,7 +1543,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       >
         <img
           alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -1573,30 +1564,10 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -1612,11 +1583,11 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -1633,10 +1604,30 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         >
           <img
             alt="Updated Name badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Updated Name
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -1653,7 +1644,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -1825,14 +1816,14 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1845,7 +1836,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       >
         <img
           alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -1866,30 +1857,10 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -1905,11 +1876,11 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -1926,10 +1897,30 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -1946,7 +1937,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -2118,14 +2109,14 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -2138,7 +2129,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
       >
         <img
           alt="Engaging with People badge"
-          src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -2159,30 +2150,10 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -2198,11 +2169,11 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -2219,10 +2190,30 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -2239,7 +2230,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -2411,14 +2402,14 @@ exports[`Guide updates activeCompetency 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -2431,7 +2422,7 @@ exports[`Guide updates activeCompetency 1`] = `
       >
         <img
           alt="Delivering Results badge"
-          src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
         />
       </p>
     </div>
@@ -2452,30 +2443,10 @@ exports[`Guide updates activeCompetency 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -2491,11 +2462,11 @@ exports[`Guide updates activeCompetency 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -2512,10 +2483,30 @@ exports[`Guide updates activeCompetency 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -2532,7 +2523,7 @@ exports[`Guide updates activeCompetency 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results
@@ -2701,14 +2692,14 @@ exports[`Guide updates activeCompetency through select 1`] = `
           Managing Pressure
         </option>
         <option
-          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-        >
-          Influencing People
-        </option>
-        <option
           value="157f0ecf-69e6-4007-a27c-d6f35de92565"
         >
           Solving Problems
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
         </option>
         <option
           value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -2721,7 +2712,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
       >
         <img
           alt="Delivering Results badge"
-          src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
         />
       </p>
     </div>
@@ -2742,30 +2733,10 @@ exports[`Guide updates activeCompetency through select 1`] = `
         >
           <img
             alt="Engaging with People badge"
-            src="https://cdn.traitify.com/badges/bf796c03-a863-4f61-9a1a-1f4fe6e408e8_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
           />
           <br />
           Engaging with People
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/badges/16cd30cc-3d5c-4c7e-b13f-828853034334_medium"
-          />
-          <br />
-          Managing Pressure
         </button>
       </li>
       <li
@@ -2781,11 +2752,11 @@ exports[`Guide updates activeCompetency through select 1`] = `
           type="button"
         >
           <img
-            alt="Influencing People badge"
-            src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
           />
           <br />
-          Influencing People
+          Managing Pressure
         </button>
       </li>
       <li
@@ -2802,10 +2773,30 @@ exports[`Guide updates activeCompetency through select 1`] = `
         >
           <img
             alt="Solving Problems badge"
-            src="https://cdn.traitify.com/badges/216e23f2-f27c-46ae-b4b1-00c97a01db22_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
           />
           <br />
           Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Influencing People badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+          />
+          <br />
+          Influencing People
         </button>
       </li>
       <li
@@ -2822,7 +2813,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
         >
           <img
             alt="Delivering Results badge"
-            src="https://cdn.traitify.com/badges/0d29bdb5-b502-4036-a790-9479d588e8fb_medium"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
           Delivering Results

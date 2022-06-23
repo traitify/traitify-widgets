@@ -8,21 +8,12 @@ exports[`Paradox.Guide renders component 1`] = `
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -35,16 +26,25 @@ exports[`Paradox.Guide renders component 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -59,17 +59,12 @@ exports[`Paradox.Guide renders component 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -77,9 +72,14 @@ exports[`Paradox.Guide renders component 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -88,11 +88,11 @@ exports[`Paradox.Guide renders component 1`] = `
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -109,7 +109,7 @@ exports[`Paradox.Guide renders component 1`] = `
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -134,7 +134,7 @@ exports[`Paradox.Guide renders component 1`] = `
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -164,7 +164,7 @@ exports[`Paradox.Guide renders component 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -194,7 +194,7 @@ exports[`Paradox.Guide renders component 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -219,21 +219,12 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
     className="tabs"
   >
     <button
-      className="active high"
+      className="active medium"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -251,11 +242,20 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       type="button"
     >
       <span>
-        Solving Problems
+        Engaging with People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
+      </span>
+    </button>
+    <button
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -270,17 +270,12 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -288,9 +283,14 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -299,11 +299,11 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       </option>
     </select>
     <div
-      className="heading high"
+      className="heading medium"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -320,7 +320,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -345,7 +345,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -375,7 +375,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -405,7 +405,7 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -430,21 +430,12 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -457,16 +448,25 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -481,17 +481,12 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -499,9 +494,14 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -510,11 +510,11 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -531,7 +531,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -556,7 +556,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -586,7 +586,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -616,7 +616,7 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -649,21 +649,12 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -676,16 +667,25 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -700,17 +700,12 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -718,9 +713,14 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -729,11 +729,11 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -748,9 +748,10 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
     <div
       className="p expandedIntro"
     >
-      The benefits of being agreeable are likely to include accommodating other people's points of view, tuning into their particular wavelength, starting from a position of trust, being non-confrontational, and steadily working towards harmonious outcomes.
-In contrast someone who is independent will probably be questioning and challenge assumptions, will speak their mind, be competitive, and try and influence others in a direct and impersonal manner.
-Those who are a mixture of both (agreeable/independent) are best described as natural negotiators, as they will take a realistic view of others, but will also adopt a relational style and search for a 'win-win' outcome.
+      The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
+In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
+They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
+Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
 The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
     </div>
@@ -759,7 +760,7 @@ The first question is looking to confirm what they should be like; the second tw
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -784,7 +785,7 @@ The first question is looking to confirm what they should be like; the second tw
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -814,7 +815,7 @@ The first question is looking to confirm what they should be like; the second tw
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -844,7 +845,7 @@ The first question is looking to confirm what they should be like; the second tw
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -869,21 +870,12 @@ exports[`Paradox.Guide toggles question content 1`] = `
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -896,16 +888,25 @@ exports[`Paradox.Guide toggles question content 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -920,17 +921,12 @@ exports[`Paradox.Guide toggles question content 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -938,9 +934,14 @@ exports[`Paradox.Guide toggles question content 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -949,11 +950,11 @@ exports[`Paradox.Guide toggles question content 1`] = `
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -970,7 +971,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -995,7 +996,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1025,7 +1026,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1043,13 +1044,13 @@ exports[`Paradox.Guide toggles question content 1`] = `
         </div>
         <ul>
           <li>
-            Are they too open-minded and accepting of different opinions?
+            How comfortable are they working in a step-by-step manner?
           </li>
           <li>
-            While they recognize that no one is perfect, do they let sympathy get in the way of action?
+            Is there a tension between this and wanting to try something new?
           </li>
           <li>
-            Do they sometimes lose out to more assertive colleagues?
+            Does this 'conflict' sometimes show itself in taking a very cautious approach?
           </li>
         </ul>
         <div
@@ -1059,13 +1060,13 @@ exports[`Paradox.Guide toggles question content 1`] = `
         </div>
         <ul>
           <li>
-            Do they recognize that it can be important to be more objective and less people-oriented?
+            Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
           </li>
           <li>
-            Can they give an example of being more hard edged?
+            Can they give an example of using either of these extremes?
           </li>
           <li>
-            How did this feel?
+            What do they do to stop themselves getting stuck on the 'middle way' of doing things?
           </li>
         </ul>
       </div>
@@ -1087,7 +1088,7 @@ exports[`Paradox.Guide toggles question content 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1117,16 +1118,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -1144,7 +1136,16 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       type="button"
     >
       <span>
-        Solving Problems
+        Engaging with People
+      </span>
+    </button>
+    <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Influencing People
       </span>
     </button>
     <button
@@ -1163,17 +1164,12 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1181,9 +1177,14 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -1194,9 +1195,9 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
     <div
       className="heading low"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -1213,7 +1214,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -1238,7 +1239,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1268,7 +1269,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1298,7 +1299,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1323,21 +1324,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Updated Name
       </span>
     </button>
     <button
@@ -1350,16 +1342,25 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Updated Name
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -1374,17 +1375,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Updated Name
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1392,9 +1388,14 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Updated Name
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -1403,11 +1404,11 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Updated Name
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -1424,7 +1425,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -1449,7 +1450,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1479,7 +1480,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1509,7 +1510,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's assessment ID c
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1534,21 +1535,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -1561,16 +1553,25 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -1585,17 +1586,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1603,9 +1599,14 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -1614,11 +1615,11 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -1635,7 +1636,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -1660,7 +1661,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1690,7 +1691,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1720,7 +1721,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's locale changes 
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1745,21 +1746,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
     className="tabs"
   >
     <button
-      className="active medium"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -1772,16 +1764,25 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -1796,17 +1797,12 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
     <select
       className="dropdown"
       onChange={[Function]}
-      value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -1814,9 +1810,14 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -1825,11 +1826,11 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       </option>
     </select>
     <div
-      className="heading medium"
+      className="heading high"
     >
-      Influencing People
+      Solving Problems
     </div>
-    At the top level, Influencing People (A) concerns the way someone balances their emotional understanding of other people, and their respect for differing viewpoints, with the style in which they try to influence or negotiate with them.
+    At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
     <div
       className="p"
     >
@@ -1846,7 +1847,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
       <div
         className="heading"
       >
-        Agreeable/Independent People
+        Open-Minded/Pragmatic People
       </div>
       <div
         className="p"
@@ -1871,7 +1872,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
           <div
             className="text"
           >
-            Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)
+            Tell me how you would go about solving a work problem you have not encountered before.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1901,7 +1902,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.
+            (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1931,7 +1932,7 @@ exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
           <div
             className="text"
           >
-            (Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?
+            (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
           </div>
           <span
             className="arrow traitify--icon-fa"
@@ -1956,21 +1957,12 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
     className="tabs"
   >
     <button
-      className="medium"
+      className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -1983,16 +1975,25 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -2010,14 +2011,9 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -2025,9 +2021,14 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
@@ -2167,21 +2168,12 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
     className="tabs"
   >
     <button
-      className="medium"
+      className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
+        Solving Problems
       </span>
     </button>
     <button
@@ -2194,16 +2186,25 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       </span>
     </button>
     <button
+      className="low"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Engaging with People
+      </span>
+    </button>
+    <button
       className="high"
       onClick={[Function]}
       type="button"
     >
       <span>
-        Solving Problems
+        Influencing People
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -2221,14 +2222,9 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
     >
       <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
       >
-        Influencing People
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
+        Solving Problems
       </option>
       <option
         value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
@@ -2236,9 +2232,14 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
         Delivering Results
       </option>
       <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        Solving Problems
+        Engaging with People
+      </option>
+      <option
+        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+      >
+        Influencing People
       </option>
       <option
         value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"

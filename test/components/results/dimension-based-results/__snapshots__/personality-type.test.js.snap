@@ -5,7 +5,7 @@ exports[`PersonalityType renders component 1`] = `
   className="type"
   style={
     Object {
-      "borderLeft": "5px solid #29B770",
+      "borderLeft": "5px solid #000000",
     }
   }
 >
@@ -13,7 +13,7 @@ exports[`PersonalityType renders component 1`] = `
     className="main"
     style={
       Object {
-        "background": "rgba(41,183,112,0.085)",
+        "background": "rgba(0,0,0,0.085)",
       }
     }
   >
@@ -27,7 +27,7 @@ exports[`PersonalityType renders component 1`] = `
         <span
           className="score"
         >
-          9
+          6
            - 
           Medium
         </span>

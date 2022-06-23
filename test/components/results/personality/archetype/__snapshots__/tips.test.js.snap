@@ -111,6 +111,36 @@ exports[`PersonalityArchetypeTips renders component 1`] = `
       className="list"
     >
       <li>
+        Appreciate proven methods
+      </li>
+      <li>
+        Compatible with many other personalities
+      </li>
+      <li>
+        Don’t get bogged down in the details
+      </li>
+      <li>
+        Don’t mind letting others be in the spotlight
+      </li>
+      <li>
+        Effective at applying tried and tested methods
+      </li>
+      <li>
+        Independent thinker
+      </li>
+      <li>
+        Prioritize people’s feelings over pointing out every misstep
+      </li>
+      <li>
+        Skilled at controlling workflow
+      </li>
+      <li>
+        Tuned into others’ emotions and performance
+      </li>
+      <li>
+        Willing to do things the way others do them
+      </li>
+      <li>
         TU - 0
       </li>
       <li>
@@ -212,6 +242,27 @@ exports[`PersonalityArchetypeTips renders component with available types 1`] = `
       className="list"
     >
       <li>
+        Can be taken for granted because you complete tasks without objections
+      </li>
+      <li>
+        Can tolerate mediocre work from others
+      </li>
+      <li>
+        Have difficulty with unexpected changes
+      </li>
+      <li>
+        Not pushy and so can be overlooked
+      </li>
+      <li>
+        Prioritize meeting deadlines over work quality
+      </li>
+      <li>
+        Prone to feeling stressed
+      </li>
+      <li>
+        Tend to find socially stimulating environments draining
+      </li>
+      <li>
         CZ - 0
       </li>
       <li>
@@ -312,6 +363,27 @@ exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
     <ul
       className="list"
     >
+      <li>
+        Can be taken for granted because you complete tasks without objections
+      </li>
+      <li>
+        Can tolerate mediocre work from others
+      </li>
+      <li>
+        Have difficulty with unexpected changes
+      </li>
+      <li>
+        Not pushy and so can be overlooked
+      </li>
+      <li>
+        Prioritize meeting deadlines over work quality
+      </li>
+      <li>
+        Prone to feeling stressed
+      </li>
+      <li>
+        Tend to find socially stimulating environments draining
+      </li>
       <li>
         CZ - 0
       </li>
@@ -443,6 +515,27 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
       className="list"
     >
       <li>
+        Can be taken for granted because you complete tasks without objections
+      </li>
+      <li>
+        Can tolerate mediocre work from others
+      </li>
+      <li>
+        Have difficulty with unexpected changes
+      </li>
+      <li>
+        Not pushy and so can be overlooked
+      </li>
+      <li>
+        Prioritize meeting deadlines over work quality
+      </li>
+      <li>
+        Prone to feeling stressed
+      </li>
+      <li>
+        Tend to find socially stimulating environments draining
+      </li>
+      <li>
         CZ - 0
       </li>
       <li>
@@ -573,6 +666,27 @@ exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
       className="list"
     >
       <li>
+        Can be taken for granted because you complete tasks without objections
+      </li>
+      <li>
+        Can tolerate mediocre work from others
+      </li>
+      <li>
+        Have difficulty with unexpected changes
+      </li>
+      <li>
+        Not pushy and so can be overlooked
+      </li>
+      <li>
+        Prioritize meeting deadlines over work quality
+      </li>
+      <li>
+        Prone to feeling stressed
+      </li>
+      <li>
+        Tend to find socially stimulating environments draining
+      </li>
+      <li>
         CZ - 0
       </li>
       <li>
@@ -611,7 +725,7 @@ exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
       className="active"
       style={
         Object {
-          "width": "50%",
+          "width": "33.333333333333336%",
         }
       }
     >
@@ -635,7 +749,7 @@ exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
       className=""
       style={
         Object {
-          "width": "50%",
+          "width": "33.333333333333336%",
         }
       }
     >
@@ -652,6 +766,30 @@ exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
           }
         >
           tip_type_for_caution_zone, [object Object]
+        </div>
+      </button>
+    </li>
+    <li
+      className=""
+      style={
+        Object {
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="name"
+          style={
+            Object {
+              "color": "#47bb55",
+            }
+          }
+        >
+          tip_type_for_settings_third_person, [object Object]
         </div>
       </button>
     </li>
@@ -676,11 +814,46 @@ exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
         >
           tip_type_for_caution_zone, [object Object]
         </option>
+        <option
+          value="settings_third_person"
+        >
+          tip_type_for_settings_third_person, [object Object]
+        </option>
       </select>
     </div>
     <ul
       className="list"
     >
+      <li>
+        Appreciate proven methods
+      </li>
+      <li>
+        Compatible with many other personalities
+      </li>
+      <li>
+        Don’t get bogged down in the details
+      </li>
+      <li>
+        Don’t mind letting others be in the spotlight
+      </li>
+      <li>
+        Effective at applying tried and tested methods
+      </li>
+      <li>
+        Independent thinker
+      </li>
+      <li>
+        Prioritize people’s feelings over pointing out every misstep
+      </li>
+      <li>
+        Skilled at controlling workflow
+      </li>
+      <li>
+        Tuned into others’ emotions and performance
+      </li>
+      <li>
+        Willing to do things the way others do them
+      </li>
       <li>
         TP TU - 0
       </li>
@@ -712,55 +885,7 @@ exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thi
       className="active"
       style={
         Object {
-          "width": "33.333333333333336%",
-        }
-      }
-    >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        <div
-          className="name"
-          style={
-            Object {
-              "color": "#2491c1",
-            }
-          }
-        >
-          tip_type_for_tools, [object Object]
-        </div>
-      </button>
-    </li>
-    <li
-      className=""
-      style={
-        Object {
-          "width": "33.333333333333336%",
-        }
-      }
-    >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        <div
-          className="name"
-          style={
-            Object {
-              "color": "#cb4e4e",
-            }
-          }
-        >
-          tip_type_for_room, [object Object]
-        </div>
-      </button>
-    </li>
-    <li
-      className=""
-      style={
-        Object {
-          "width": "33.333333333333336%",
+          "width": "100%",
         }
       }
     >
@@ -776,7 +901,7 @@ exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thi
             }
           }
         >
-          tip_type_for_settings, [object Object]
+          tip_type_for_settings_third_person, [object Object]
         </div>
       </button>
     </li>
@@ -789,22 +914,12 @@ exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thi
     >
       <select
         onChange={[Function]}
-        value="tools"
+        value="settings_third_person"
       >
         <option
-          value="tools"
+          value="settings_third_person"
         >
-          tip_type_for_tools, [object Object]
-        </option>
-        <option
-          value="room"
-        >
-          tip_type_for_room, [object Object]
-        </option>
-        <option
-          value="settings"
-        >
-          tip_type_for_settings, [object Object]
+          tip_type_for_settings_third_person, [object Object]
         </option>
       </select>
     </div>
@@ -812,19 +927,34 @@ exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thi
       className="list"
     >
       <li>
-        TU - 0
+        Allows for extended periods of independent or small group work
       </li>
       <li>
-        TU - 1
+        De-emphasizes competition among colleagues
       </li>
       <li>
-        TU - 2
+        Does not require high attention to details
       </li>
       <li>
-        TU - 3
+        Encourages peer support in pursuit of goals
       </li>
       <li>
-        TU - 4
+        Encourages sensitive and appropriate feedback
+      </li>
+      <li>
+        Permits telecommuting on a full or partial basis
+      </li>
+      <li>
+        Prioritizes flexibility
+      </li>
+      <li>
+        Requires alertness to the thoughts and feelings of others
+      </li>
+      <li>
+        Structured and routine
+      </li>
+      <li>
+        Supports implementing existing methods
       </li>
     </ul>
   </div>

@@ -74,20 +74,15 @@ function Personality({element, setElement, ...props}) {
 
     const cachedData = cache.get(getCacheKey("slide-deck")) || {};
     const getImageURL = ({size, slide}) => {
-      const imageHost = getOption("imageHost");
       const [width, height] = size;
-      if(width <= 0 || height <= 0) { return slide.image_desktop; }
+      if(width <= 0 || height <= 0) { return slide.images[0].url; }
 
-      const baseURL = `${imageHost}/slides/${slide.image_desktop_retina.split("/").pop()}`;
       const params = {
-        "auto": "format",
-        "fp-x": slide.focus_x / 100,
-        "fp-y": slide.focus_y / 100,
-        "h": (likertScale && window.innerWidth <= 768) ? height - 74 : height,
-        "w": width
+        h: (likertScale && window.innerWidth <= 768) ? height - 74 : height,
+        w: width
       };
 
-      return `${baseURL}?${toQueryString(params)}`;
+      return `${slide.images[0].url}&${toQueryString(params)}`;
     };
 
     dispatch({

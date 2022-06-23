@@ -154,47 +154,47 @@ exports[`PersonalityArchetypeSkills renders component 1`] = `
       <li
         style={
           Object {
-            "background": "rgba(41,183,112,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Agreeableness
+        Seek comfort in the familiar: wear your comfiest shirt or change your phone’s home screen photo to an old favorite.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(255,204,59,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Extraversion
+        Don’t rush. Take your time to get work done right.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(249,139,28,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Conscientiousness
+        Familiar scents can bring back fond memories. Think about happy times and the smells that went along with them.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(66,176,219,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Openness
+        What worked before? Tell coworkers about a challenge you experienced in the past, and how you worked through it.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(239,97,94,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Emotional Stability
+        Take the “chunking” approach. Focus on the next 20 minutes and what you’ll work on then, rather than months at a time.
       </li>
     </ul>
   </div>
@@ -355,38 +355,38 @@ exports[`PersonalityArchetypeSkills renders component with available dimension s
       <li
         style={
           Object {
-            "background": "rgba(255,204,59,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Extraversion
+        Don’t rush. Take your time to get work done right.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(249,139,28,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Conscientiousness
+        Familiar scents can bring back fond memories. Think about happy times and the smells that went along with them.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(66,176,219,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Openness
+        What worked before? Tell coworkers about a challenge you experienced in the past, and how you worked through it.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(239,97,94,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        DWS Tip for Emotional Stability
+        Take the “chunking” approach. Focus on the next 20 minutes and what you’ll work on then, rather than months at a time.
       </li>
     </ul>
   </div>
@@ -523,47 +523,47 @@ exports[`PersonalityArchetypeSkills renders component with available types 1`] =
       <li
         style={
           Object {
-            "background": "rgba(41,183,112,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Agreeableness
+        Your team appreciates when you share what you know. Build a routine to provide everyone with updates, and prepare to include occasional reminders of the team’s higher level vision.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(255,204,59,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Extraversion
+        Seek out a helping hand. Check in with your coworkers for the purpose of ensuring that deadlines are on track, expectations are met, and nothing is being overlooked.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(249,139,28,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Conscientiousness
+        You’re comfortable staying out of the spotlight. Discuss a high-impact decision with your team and present the end result as a group effort.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(66,176,219,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Openness
+        Moving on after a coworker makes a mistake frees up energy to meet future goals. Focus on the opportunity to learn from the experience so as to avoid making the same mistake.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(239,97,94,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Emotional Stability
+        Is your organization not taking the time to listen to customers? Think of how a “culture of listening” could be integrated into the customer experience.
       </li>
     </ul>
   </div>
@@ -700,47 +700,47 @@ exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
       <li
         style={
           Object {
-            "background": "rgba(41,183,112,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Agreeableness
+        Your team appreciates when you share what you know. Build a routine to provide everyone with updates, and prepare to include occasional reminders of the team’s higher level vision.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(255,204,59,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Extraversion
+        Seek out a helping hand. Check in with your coworkers for the purpose of ensuring that deadlines are on track, expectations are met, and nothing is being overlooked.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(249,139,28,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Conscientiousness
+        You’re comfortable staying out of the spotlight. Discuss a high-impact decision with your team and present the end result as a group effort.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(66,176,219,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Openness
+        Moving on after a coworker makes a mistake frees up energy to meet future goals. Focus on the opportunity to learn from the experience so as to avoid making the same mistake.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(239,97,94,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Emotional Stability
+        Is your organization not taking the time to listen to customers? Think of how a “culture of listening” could be integrated into the customer experience.
       </li>
     </ul>
   </div>
@@ -901,47 +901,47 @@ exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = 
       <li
         style={
           Object {
-            "background": "rgba(41,183,112,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Agreeableness
+        Your team appreciates when you share what you know. Build a routine to provide everyone with updates, and prepare to include occasional reminders of the team’s higher level vision.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(255,204,59,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Extraversion
+        Seek out a helping hand. Check in with your coworkers for the purpose of ensuring that deadlines are on track, expectations are met, and nothing is being overlooked.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(249,139,28,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Conscientiousness
+        You’re comfortable staying out of the spotlight. Discuss a high-impact decision with your team and present the end result as a group effort.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(66,176,219,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Openness
+        Moving on after a coworker makes a mistake frees up energy to meet future goals. Focus on the opportunity to learn from the experience so as to avoid making the same mistake.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(239,97,94,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Emotional Stability
+        Is your organization not taking the time to listen to customers? Think of how a “culture of listening” could be integrated into the customer experience.
       </li>
     </ul>
   </div>
@@ -1102,47 +1102,47 @@ exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] =
       <li
         style={
           Object {
-            "background": "rgba(41,183,112,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Agreeableness
+        Your team appreciates when you share what you know. Build a routine to provide everyone with updates, and prepare to include occasional reminders of the team’s higher level vision.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(255,204,59,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Extraversion
+        Seek out a helping hand. Check in with your coworkers for the purpose of ensuring that deadlines are on track, expectations are met, and nothing is being overlooked.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(249,139,28,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Conscientiousness
+        You’re comfortable staying out of the spotlight. Discuss a high-impact decision with your team and present the end result as a group effort.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(66,176,219,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Openness
+        Moving on after a coworker makes a mistake frees up energy to meet future goals. Focus on the opportunity to learn from the experience so as to avoid making the same mistake.
       </li>
       <li
         style={
           Object {
-            "background": "rgba(239,97,94,0.1)",
+            "background": "rgba(0,0,0,0.1)",
           }
         }
       >
-        L Tip for Emotional Stability
+        Is your organization not taking the time to listen to customers? Think of how a “culture of listening” could be integrated into the customer experience.
       </li>
     </ul>
   </div>

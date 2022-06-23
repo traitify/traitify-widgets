@@ -9,7 +9,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   >
     <img
       alt="Agreeableness badge"
-      src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
       className="name"
@@ -103,7 +103,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
   >
     <img
       alt="Agreeableness badge"
-      src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
       className="name"
@@ -192,7 +192,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   >
     <img
       alt="Agreeableness badge"
-      src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
       className="name"
@@ -276,7 +276,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
   >
     <img
       alt="Agreeableness badge"
-      src="https://cdn.traitify.com/badges/96dbf653-6ea0-4dc0-94dc-f6db3247510c_medium"
+      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
       className="name"

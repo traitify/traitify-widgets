@@ -133,7 +133,7 @@ describe("Paradox.Guide", () => {
   it("toggles question content", () => {
     component = new ComponentHandler(<Component {...props} />);
 
-    const question = props.guide.competencies[3].questionSequences[0].questions[1];
+    const question = props.guide.competencies[0].questionSequences[0].questions[1];
     const button = component.findByText(question.text, {exact: false})
       .parent.findByType("button");
     component.act(() => button.props.onClick());

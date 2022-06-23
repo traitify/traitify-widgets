@@ -24,14 +24,14 @@ describe("Helpers", () => {
       const result = completedSlides(slides);
 
       expect(result).toHaveLength(completedLength);
-      expect(result[0]).toEqual({id: expect.any(String), response: false, time_taken: 600});
+      expect(result[0]).toMatchObject({id: expect.any(String), response: false, time_taken: 600});
     });
 
     it("sets time taken if blank", () => {
       const slides = assessment.slides.map((slide) => ({...slide, response: true}));
       const result = completedSlides(slides);
 
-      expect(result[0]).toEqual({id: expect.any(String), response: true, time_taken: 2});
+      expect(result[0]).toMatchObject({id: expect.any(String), response: true, time_taken: 2});
     });
   });
 
@@ -65,7 +65,7 @@ describe("Helpers", () => {
     it("stringifys the data", () => {
       const result = dataMapper({...assessment, slides: assessment.slides.slice(0, 4)});
       const data = [
-        "[\"eafd274c-b825-48ba-9a00-60b827eba277\",\"en-US\"",
+        "[\"eafd274c-b825-48ba-9a00-60b827eba277\",\"en-us\"",
         "\"2ea19c7f-bf2b-4dc0-9bd3-b7e8566a54eb-Innovative\"",
         "\"fbd27c93-aaac-4757-886c-fa3a434c1dfe-Short Cuts\"",
         "\"8ade7c57-1c01-469b-af04-b336bd285902-Skydiving\"",

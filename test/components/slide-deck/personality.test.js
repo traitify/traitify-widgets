@@ -340,7 +340,7 @@ describe("Personality", () => {
       expect(component.state.slides.filter((slide) => !slide.image.includes("w=100&h=126"))).toHaveLength(0);
     });
 
-    it("updates slides with image falling back to desktop image", () => {
+    it("updates slides with image falling back to default image", () => {
       componentDidUpdate.mockImplementation(() => {});
       const component = new ComponentHandler(<Component {...props} />);
       props.getOption.mockImplementationOnce(() => "http://localhost:8080");
@@ -352,7 +352,7 @@ describe("Personality", () => {
       expect(component.state.imageLoadingAttempts).toBe(0);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
       expect(component.state.slides.filter((slide) => (
-        slide.image !== slide.image_desktop
+        slide.image !== slide.images[0].url
       ))).toHaveLength(0);
     });
   });
@@ -636,11 +636,12 @@ describe("Personality", () => {
         });
         const previousLength = completedSlides(component.state.slides).length;
         const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.likert_response;
         component.instance.finish = jest.fn().mockName("finish");
         component.instance.updateSlide(previousLength, false);
 
         expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
-        expect(component.state.slides[previousLength]).toEqual({
+        expect(component.state.slides[previousLength]).toMatchObject({
           ...lastSlide,
           response: false,
           time_taken: expect.any(Number)
@@ -660,11 +661,12 @@ describe("Personality", () => {
         });
         const previousLength = completedSlides(component.state.slides).length;
         const lastSlide = {...component.state.slides[previousLength]};
+        delete lastSlide.likert_response;
         component.instance.finish = jest.fn().mockName("finish");
         component.instance.updateSlide(previousLength, true);
 
         expect(completedSlides(component.state.slides)).toHaveLength(previousLength + 1);
-        expect(component.state.slides[previousLength]).toEqual({
+        expect(component.state.slides[previousLength]).toMatchObject({
           ...lastSlide,
           response: true,
           time_taken: expect.any(Number)

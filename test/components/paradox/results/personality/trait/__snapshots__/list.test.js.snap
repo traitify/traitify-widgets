@@ -198,18 +198,6 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
     className="mock"
   >
     Trait - 
-    Robust
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Altruistic
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
     Ambitious
   </div>
   <div
@@ -222,19 +210,19 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
     className="mock"
   >
     Trait - 
+    Robust
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Altruistic
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
     Accommodating
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Self-Discipline
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Committed
   </div>
   <div
     className="mock"
@@ -252,7 +240,19 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
     className="mock"
   >
     Trait - 
+    Committed
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
     Loyal
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Self-Discipline
   </div>
   <div
     className="mock"
@@ -264,7 +264,7 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
     className="mock"
   >
     Trait - 
-    High-Energy
+    Regulated
   </div>
   <div
     className="mock"
@@ -276,25 +276,25 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
     className="mock"
   >
     Trait - 
-    Positive
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
     Attention-Seeking
   </div>
   <div
     className="mock"
   >
     Trait - 
-    Regulated
+    Positive
   </div>
   <div
     className="mock"
   >
     Trait - 
-    Friendly
+    High-Energy
+  </div>
+  <div
+    className="mock"
+  >
+    Trait - 
+    Whimsical
   </div>
   <div
     className="mock"
@@ -306,7 +306,7 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
     className="mock"
   >
     Trait - 
-    Whimsical
+    Friendly
   </div>
   <div
     className="mock"

@@ -141,8 +141,7 @@ class Personality extends Component {
 
       const width = this.container.clientWidth;
       let height = this.container.clientHeight;
-      const imageHost = props.getOption("imageHost");
-      const isLikertScale = this.props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP";
+      const isLikertScale = props.assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP";
       if(window.innerWidth <= 768 && isLikertScale) {
         height -= 74;
       }
@@ -151,8 +150,8 @@ class Personality extends Component {
         ...slide,
         loaded: false,
         image: width > 0 && height > 0
-          ? `${imageHost}/slides/${slide.image_desktop_retina.split("/").pop()}?w=${width}&h=${height}&fp-x=${slide.focus_x / 100}&fp-y=${slide.focus_y / 100}&auto=format`
-          : slide.image_desktop
+          ? `${slide.images[0].url}?w=${width}&h=${height}`
+          : slide.images[0].url
       }));
 
       return {imageLoadingAttempts: 0, slides};

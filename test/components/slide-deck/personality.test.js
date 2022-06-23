@@ -8,6 +8,10 @@ jest.mock("components/slide-deck/personality/not-ready", () => (() => (<div clas
 jest.mock("components/slide-deck/personality/slide", () => (() => (<div className="mock">Slide</div>)));
 jest.mock("lib/with-traitify", () => ((value) => value));
 
+const getMaxImage = (images) => (
+  images.reduce((max, current) => (max.height > current.height ? max : current))
+);
+
 describe("Personality", () => {
   let completedSlides;
   let finish;
@@ -352,7 +356,7 @@ describe("Personality", () => {
       expect(component.state.imageLoadingAttempts).toBe(0);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
       expect(component.state.slides.filter((slide) => (
-        slide.image !== slide.images[0].url
+        slide.image !== getMaxImage(slide.images).url
       ))).toHaveLength(0);
     });
   });

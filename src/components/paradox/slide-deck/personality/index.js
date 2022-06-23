@@ -75,14 +75,16 @@ function Personality({element, setElement, ...props}) {
     const cachedData = cache.get(getCacheKey("slide-deck")) || {};
     const getImageURL = ({size, slide}) => {
       const [width, height] = size;
-      if(width <= 0 || height <= 0) { return slide.images[0].url; }
+      const slideImage = slide.images
+        .reduce((max, current) => (max.height > current.height ? max : current));
+      if(width <= 0 || height <= 0) { return slideImage.url; }
 
       const params = {
         h: (likertScale && window.innerWidth <= 768) ? height - 74 : height,
         w: width
       };
 
-      return `${slide.images[0].url}&${toQueryString(params)}`;
+      return `${slideImage.url}&${toQueryString(params)}`;
     };
 
     dispatch({

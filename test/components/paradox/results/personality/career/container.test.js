@@ -37,9 +37,6 @@ describe("Paradox.CareerContainer", () => {
           }
           data.push(careers[i]);
         }
-        // if(params.careers_per_page === 3) {
-        //   console.log(data);
-        // }
         return Promise.resolve(data);
       }
       return Promise.resolve(path === "/highlighted" ? highlightedCareer : careers);

@@ -146,13 +146,16 @@ class Personality extends Component {
         height -= 74;
       }
 
-      const slides = state.slides.map((slide) => ({
-        ...slide,
-        loaded: false,
-        image: width > 0 && height > 0
-          ? `${slide.images[0].url}?w=${width}&h=${height}`
-          : slide.images[0].url
-      }));
+      const slides = state.slides.map((slide) => {
+        const image = slide.images
+          .reduce((max, current) => (max.height > current.height ? max : current));
+
+        return ({
+          ...slide,
+          loaded: false,
+          image: width > 0 && height > 0 ? `${image.url}&w=${width}&h=${height}` : image.url
+        });
+      });
 
       return {imageLoadingAttempts: 0, slides};
     }, this.fetchImages);

@@ -1,59 +1,14 @@
-import {faChevronDown, faChevronUp, faQuestion} from "@fortawesome/free-solid-svg-icons";
+import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import {combine} from "lib/helpers/combine-data";
-import Icon from "lib/helpers/icon";
 import {dig} from "lib/helpers/object";
 import TraitifyPropTypes from "lib/helpers/prop-types";
 import useDidMount from "lib/hooks/use-did-mount";
 import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
+import Question from "./question";
 import style from "./style.scss";
-
-function List({data}) {
-  return (
-    /* eslint-disable-next-line react/no-array-index-key */
-    <ul>{data.split("\n").map((e, i) => <li key={i}>{e}</li>)}</ul>
-  );
-}
-
-List.propTypes = {data: PropTypes.string.isRequired};
-
-function Question({question, translate}) {
-  const [showContent, setShowContent] = useState(false);
-
-  return (
-    <div className={[style.question, showContent && style.open].filter(Boolean).join(" ")}>
-      <button onClick={() => setShowContent(!showContent)} type="button">
-        <Icon className={style.questionMark} icon={faQuestion} />
-        <div className={style.text}>{question.text}</div>
-        <Icon className={style.arrow} icon={showContent ? faChevronUp : faChevronDown} />
-      </button>
-      {showContent && (
-        <>
-          <div className={style.h2}>{translate("question_purpose")}</div>
-          <List data={question.purpose} />
-          {question.adaptability && (
-            <>
-              <div className={style.h2}>{translate("question_adaptability")}</div>
-              <List data={question.adaptability} />
-            </>
-          )}
-        </>
-      )}
-    </div>
-  );
-}
-
-Question.propTypes = {
-  question: PropTypes.shape({
-    adaptability: PropTypes.string,
-    order: PropTypes.number.isRequired,
-    purpose: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired,
-  translate: PropTypes.func.isRequired
-};
 
 function Guide({setElement, ...props}) {
   const {
@@ -83,7 +38,7 @@ function Guide({setElement, ...props}) {
     if(competencies.length === 0 || types.length === 0) { return; }
 
     const _data = combine({benchmark, guide, order: "types", types})
-      .map(({competency, rank, score}) => ({...competency, rank, score}));
+      .map(({competency, rank, score, type}) => ({...competency, rank, score, type}));
 
     setData(_data);
     setActiveCompetency(_data[0]);
@@ -101,7 +56,7 @@ function Guide({setElement, ...props}) {
   if(!activeCompetency) { return null; }
 
   const showCompetency = (newID) => setActiveCompetency(data.find(({id}) => newID === id));
-  const [intro, ...expandedIntro] = activeCompetency.introduction.split("\n");
+  const [intro, ...expandedIntro] = activeCompetency.introduction.split("\n\n\n");
   const onChange = ({target: {value}}) => showCompetency(value);
 
   return (
@@ -122,21 +77,22 @@ function Guide({setElement, ...props}) {
         <select className={style.dropdown} onChange={onChange} value={activeCompetency.id}>
           {data.map(({id, name}) => <option key={id} value={id}>{name}</option>)}
         </select>
-        <div className={[style.heading, style[activeCompetency.rank]].join(" ")}>{activeCompetency.name}</div>
-        {intro}
+        <div className={[style.heading, style[activeCompetency.rank]].join(" ")}>{activeCompetency.name} ({activeCompetency.type.name})</div>
+        <Markdown>{intro}</Markdown>
         <div className={style.p}>
           <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
-            {translate("read_more")}
+            {translate(showExpandedIntro ? "show_less" : "show_more")}
           </button>
         </div>
-        {showExpandedIntro && <div className={`${style.p} ${style.expandedIntro}`}>{expandedIntro.join("\n").trim()}</div>}
-        <hr />
+        {showExpandedIntro && (
+          <Markdown className={`${style.p} ${style.expandedIntro}`}>{expandedIntro.join("\n\n\n").trim()}</Markdown>
+        )}
+        <div className={style.divider} />
         {activeCompetency.questionSequences.map((sequence) => (
           <div key={sequence.id}>
             <div className={style.heading}>{sequence.name}</div>
-            <div className={style.p}>{translate("guide_intro")}</div>
             {sequence.questions.map((question) => (
-              <Question key={question.id} question={question} translate={translate} />
+              <Question key={question.id} question={question} />
             ))}
           </div>
         ))}

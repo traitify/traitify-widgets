@@ -125,7 +125,7 @@ describe("Paradox.Guide", () => {
 
   it("toggles expanded intro", () => {
     component = new ComponentHandler(<Component {...props} />);
-    component.act(() => component.findByText("read_more").props.onClick());
+    component.act(() => component.findByText("show_more").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });

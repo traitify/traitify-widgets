@@ -15,6 +15,12 @@
 .content {
   @extend %box;
 
+  .divider {
+    border-top: $border-width solid;
+
+    @include buffer("margin-bottom");
+    @include theme("border-top-color", "border-color");
+  }
   .heading {
     @include max-width("lg") {
       &.high, &.low, &.medium, &.other {
@@ -28,13 +34,11 @@
       &.other { @include theme("text-decoration-color", "rank-other"); }
     }
   }
-  a, button,  span { @include theme("color", "theme-color"); }
-  hr {
-    border: none;
-    height: $border-width;
+  .readMore {
+    padding: 0;
+    text-decoration: underline;
 
-    @include buffer("margin-bottom");
-    @include theme("background", "border-color");
+    @include theme("color", "theme-color");
   }
   li { margin-top: $buffer * 0.5; }
   ul {
@@ -56,36 +60,59 @@
 .question {
   @extend %box;
 
+  padding-top: $buffer-sm;
+  position: relative;
+
   @include buffer("margin-bottom");
   &:last-of-type { margin-bottom: 0; }
-  &.open .arrow { @include theme("color", "theme-color"); }
   .arrow {
+    align-self: flex-start;
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
     padding: $buffer * 0.5;
 
+    @include theme("border-color", "border-color");
     @include theme("color", "text-color");
+
+    svg { display: block; }
+  }
+  .divider {
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
   }
   .h2 {
+    font-weight: bold;
+
     @include buffer("margin-top");
+  }
+  .list { flex: 1; }
+  .number {
+    font-weight: bold;
+    margin-bottom: $buffer-sm;
+  }
+  .prompt {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $buffer;
+    width: 100%;
+  }
+  .questionContent {
+    @include buffer("gap");
+    @include min-width("lg") { display: flex; }
+  }
+  .text {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: $buffer;
+
     @include theme("color", "theme-color");
   }
   button {
-    align-items: center;
-    display: flex;
+    display: block;
     width: 100%;
   }
-}
-.questionMark {
-  display: none;
-  font-weight: bold;
-  font-size: $font-size-heading;
-
-  @include theme("color", "theme-color");
-  @include min-width("lg") { display: initial; }
-}
-.readMore {
-  font-size: $font-size-sm;
-  padding: 0;
-  text-decoration: underline;
 }
 .tabs {
   display: flex;
@@ -124,11 +151,4 @@
       }
     }
   }
-}
-.text {
-  flex-grow: 1;
-  font-weight: bold;
-  margin-right: $buffer;
-
-  @include min-width("lg") { margin-left: $buffer; }
 }

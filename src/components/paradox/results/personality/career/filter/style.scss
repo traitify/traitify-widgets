@@ -58,6 +58,15 @@
   @include theme("border-color", "border-color");
   @include theme("color", "text-color");
 }
+.searchField {
+  @extend .field;
+  @include min-width(lg) { display: none};
+}
+.searchFieldLG {
+  @extend .field;
+  display: none;
+  @include min-width(lg) { display: block};
+}
 .filter {
   position: relative;
 

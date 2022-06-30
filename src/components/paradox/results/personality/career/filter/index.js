@@ -15,6 +15,7 @@ import style from "./style.scss";
 function CareerFilter(props) {
   const {isReady, translate, setElement, ui} = props;
   const [params, setParams] = useState({});
+  const [searchUpdated, setSearchUpdated] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const customContent = useRef();
   const state = {};
@@ -33,6 +34,19 @@ function CareerFilter(props) {
       ui.off("Careers.updateParams", updateParams);
     };
   }, []);
+
+  const onSubmit = (e) => {
+    e?.preventDefault();
+
+    ui.trigger("Careers.mergeParams", {props}, {
+      ...params,
+      page: 1
+    });
+  };
+
+  useEffect(() => {
+    onSubmit();
+  }, [searchUpdated]);
 
   if(!isReady("results")) { return null; }
 
@@ -70,13 +84,9 @@ function CareerFilter(props) {
     setParams(newParams);
   };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    ui.trigger("Careers.mergeParams", {props}, {
-      ...params,
-      page: 1
-    });
+  const liveSearch = (e) => {
+    onChange(e);
+    setSearchUpdated(!searchUpdated);
   };
 
   return (
@@ -85,7 +95,8 @@ function CareerFilter(props) {
         <div className={style.row}>
           <div className={style.search}>
             <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
-            <input className={style.field} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={onChange} />
+            <input className={style.searchFieldLG} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={onChange} />
+            <input className={style.searchField} value={currentSearch} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={liveSearch} />
           </div>
           <div className={style.location}>
             <label className={style.label} htmlFor="traitify-career-location">{translate("location")}</label>

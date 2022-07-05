@@ -231,9 +231,17 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       this.ui.requests[key] = this.traitify.get(`/assessments/recommendations/${benchmarkID}`, {
         locale_key: locale
-      }).then((data) => {
+      }).then((_data) => {
+        const data = {..._data};
+
+        if(data.locale_key.toLowerCase() !== locale) {
+          data.locale_key = locale;
+          data.skip_cache = true;
+        }
+
         if(hasData(data)) {
-          this.cache.set(key, data);
+          if(!data.skip_cache) { this.cache.set(key, data); }
+
           setBenchmark(data);
         } else {
           delete this.ui.requests[key];

@@ -163,6 +163,7 @@
     align-items: center;
     @include min-width(xs) {
       width: 50%;
+      align-items: start;
     }
   }
 }
@@ -203,6 +204,7 @@
   
     @include min-width(xs) {
       width: 50% !important;
+      justify-content: flex-end;
     }
     button {
       padding: $buffer-sm * 1.25 10%;
@@ -216,8 +218,7 @@
 
 .grayDivider {
   color: #555555;
-  width: 95%;
-  margin: $buffer-sm * 1.25 auto $buffer-sm * 1.25;
+  margin: $buffer-sm * 1.25 $buffer;
   line-height: inherit;
   clear: both;
   user-select: none;

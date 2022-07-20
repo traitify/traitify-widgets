@@ -23,7 +23,16 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
             search
           </label>
           <input
-            className="field"
+            className="searchFieldLG"
+            id="traitify-career-search"
+            name="search"
+            onChange={[Function]}
+            placeholder="search"
+            type="text"
+            value=""
+          />
+          <input
+            className="searchField"
             id="traitify-career-search"
             name="search"
             onChange={[Function]}
@@ -3311,7 +3320,16 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
             search
           </label>
           <input
-            className="field"
+            className="searchFieldLG"
+            id="traitify-career-search"
+            name="search"
+            onChange={[Function]}
+            placeholder="search"
+            type="text"
+            value=""
+          />
+          <input
+            className="searchField"
             id="traitify-career-search"
             name="search"
             onChange={[Function]}
@@ -6277,7 +6295,16 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
             search
           </label>
           <input
-            className="field"
+            className="searchFieldLG"
+            id="traitify-career-search"
+            name="search"
+            onChange={[Function]}
+            placeholder="search"
+            type="text"
+            value=""
+          />
+          <input
+            className="searchField"
             id="traitify-career-search"
             name="search"
             onChange={[Function]}
@@ -9389,7 +9416,16 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
             search
           </label>
           <input
-            className="field"
+            className="searchFieldLG"
+            id="traitify-career-search"
+            name="search"
+            onChange={[Function]}
+            placeholder="search"
+            type="text"
+            value=""
+          />
+          <input
+            className="searchField"
             id="traitify-career-search"
             name="search"
             onChange={[Function]}
@@ -9691,7 +9727,16 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
             search
           </label>
           <input
-            className="field"
+            className="searchFieldLG"
+            id="traitify-career-search"
+            name="search"
+            onChange={[Function]}
+            placeholder="search"
+            type="text"
+            value=""
+          />
+          <input
+            className="searchField"
             id="traitify-career-search"
             name="search"
             onChange={[Function]}

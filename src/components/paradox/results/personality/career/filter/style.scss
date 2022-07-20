@@ -60,12 +60,12 @@
 }
 .searchField {
   @extend .field;
-  @include min-width(lg) { display: none};
+  @include min-width(lg) { display: none; }
 }
 .searchFieldLG {
   @extend .field;
   display: none;
-  @include min-width(lg) { display: block};
+  @include min-width(lg) { display: block; } 
 }
 .filter {
   position: relative;

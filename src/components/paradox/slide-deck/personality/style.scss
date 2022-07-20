@@ -123,6 +123,7 @@
 .instructions {
   background: url("https://cdn.traitify.com/assets/images/js/instructions_slide.jpg") no-repeat center center;
   background-size: cover;
+  overflow: auto;
   padding: $buffer * 4 $buffer $buffer;
 
   @include theme("color", "text-color-light");

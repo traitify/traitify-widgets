@@ -13,8 +13,7 @@ import style from "../style.scss";
 function ManagerResults(props) {
   const {getOption, translate} = props;
   const allowHeaders = getOption("allowHeaders");
-  console.log("manager results")
-  console.dir(props)
+
   return (
     <section>
       {allowHeaders && (

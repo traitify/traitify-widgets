@@ -203,15 +203,10 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     };
     getBenchmark = (options = {}) => {
       const {benchmarkID, locale} = this.state;
-      if(!benchmarkID) { return Promise.resolve(); }
+      // if(!benchmarkID) { return Promise.resolve(); }
 
       const key = this.getCacheKey("benchmark");
-      const hasData = (data) => (
-        data && data.locale_key
-          && data.id === benchmarkID
-          && data.locale_key.toLowerCase() === locale
-          && data.name
-      );
+      const hasData = (data) => (data && data.benchmarkId === benchmarkID && data.name);
       const setBenchmark = (data) => (
         new Promise((resolve) => {
           this.setState({benchmark: data}, () => (resolve(data)));
@@ -229,22 +224,22 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         return this.ui.requests[key];
       }
 
-      this.ui.requests[key] = this.traitify.get(`/assessments/recommendations/${benchmarkID}`, {
+      this.traitify.get(`/assessments/recommendations/${benchmarkID}`, {
         locale_key: locale
       }).then((_data) => {
-        const data = {..._data};
+        console.log("rest res")
+        console.log(_data)
+      });
 
-        if(data.locale_key.toLowerCase() !== locale) {
-          data.locale_key = locale;
-          data.skip_cache = true;
-        }
+      //TODO When do I delete the requests key? Should I even have one for this now?
+      const query = queries.benchmark({benchmarkId: benchmarkID, localeKey: locale});
+      this.ui.requests[key] = this.traitify.post("/recommendations/graphql", query).then(({data}) => {
+        const benchmark = data.getDimensionRangeBenchmark;
 
-        if(hasData(data)) {
-          if(!data.skip_cache) { this.cache.set(key, data); }
+        if(hasData(benchmark)) {
+          if(!benchmark.skip_cache) { this.cache.set(key, benchmark); }
 
-          setBenchmark(data);
-        } else {
-          delete this.ui.requests[key];
+          setBenchmark(benchmark);
         }
       }).catch((error) => {
         console.warn(error); // eslint-disable-line no-console
@@ -253,7 +248,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    };
+    }
     getCacheKey = (type, options = {}) => {
       let {id} = options;
       const locale = options.locale || this.state.locale;

@@ -19,8 +19,6 @@ function CandidateResults(props) {
   const {getOption, translate} = props;
   const allowHeaders = getOption("allowHeaders");
   const disabledComponents = getOption("disabledComponents") || [];
-  console.log("candidate results")
-  console.dir(props)
 
   if(getOption("perspective") === "thirdPerson") {
     return (

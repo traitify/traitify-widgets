@@ -7,8 +7,6 @@ import style from "../style.scss";
 function ManagerResults({setElement, ...props}) {
   const {getOption, translate} = props;
   const allowHeaders = getOption("allowHeaders");
-  console.log("paradox results")
-  console.dir(props)
 
   return (
     <section className={[style.container, style.box].join(" ")} ref={setElement}>

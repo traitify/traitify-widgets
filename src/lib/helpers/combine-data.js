@@ -22,10 +22,13 @@ export function findCompetency({guide, typeID}) {
 }
 
 export function combine({benchmark, guide, order, types}) {
-  console.log(benchmark);
   const data = sortByTypePosition(types).map(({personality_type: type, score}) => {
-    const rawRanges = benchmark
-      ? benchmark.dimensionRanges
+    const dimensionRanges = benchmark
+    ? benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId == type.id)
+    : [];
+
+    const rawRanges = dimensionRanges.length
+      ? dimensionRanges
       : defaultRanges;
 
     const ranges = rawRanges.map((range) => ({
@@ -44,9 +47,6 @@ export function combine({benchmark, guide, order, types}) {
       type
     };
   });
-
-  console.log("order")
-  console.log(order)
 
   if(order === "types") { return data; }
 

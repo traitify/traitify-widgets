@@ -49,6 +49,17 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     dig(guide, "locale_key")
   ]);
 
+  const colorFromRank = (rank) => {
+    // if(rank === "low") { return benchmark.hexColorLow; }
+    // if(rank === "medium") { return benchmark.hexColorMedium; }
+    // if(rank === "high") { return benchmark.hexColorHigh; }
+    if(rank === "low") { return "blue"; }
+    if(rank === "medium") { return "red"; }
+    if(rank === "high") { return "yellow"; }
+
+    return "black";
+  };
+
   const disabledComponents = getOption("disabledComponents") || [];
   if(disabledComponents.includes("PersonalityRecommendationChart")) { return null; }
   if(!isReady("guide")) { return null; }
@@ -76,6 +87,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
               <div
                 key={index} /* eslint-disable-line react/no-array-index-key */
                 className={[active && style.active, style[rank]].filter(Boolean).join(" ")}
+                style={{background: colorFromRank(rank)}}
               />
             ))}
             <div className={style.name}>{competency.name}</div>
@@ -94,6 +106,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
                   <div
                     key={index} /* eslint-disable-line react/no-array-index-key */
                     className={[active && style.active, style[rank]].filter(Boolean).join(" ")}
+                    style={{background: colorFromRank(rank)}}
                   />
                 ))}
               </div>

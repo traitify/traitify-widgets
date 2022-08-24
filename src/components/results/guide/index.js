@@ -11,24 +11,22 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
 const colorFrom = ({benchmark, score, typeID}) => {
   if(!benchmark) {
-    if(score <= 3) { return colors.low; }
-    if(score <= 6) { return colors.medium; }
+    if(score <= 3) { return benchmark.hexColorLow; }
+    if(score <= 6) { return benchmark.hexColorMedium; }
 
-    return colors.high;
+    return benchmark.hexColorHigh;
   }
 
-  const range = benchmark
-    .range_types.find(({id}) => id === typeID)
-    .ranges.find(({max_score: max, min_score: min}) => score >= min && score <= max);
+  const dimensionRanges = benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId === typeID);
 
-  if(range.match_score === 5) { return colors.low; }
-  if(range.match_score === 10) { return colors.medium; }
-  if(range.match_score === 20) { return colors.high; }
+  const range = dimensionRanges.find(({maxScore: max, minScore: min}) => score >= min && score <= max);
+  if(range.matchScore === 5) { return benchmark.hexColorLow; }
+  if(range.matchScore === 10) { return benchmark.hexColorMedium; }
+  if(range.matchScore === 20) { return benchmark.hexColorHigh; }
 
-  return colors.other;
+  return "black";
 };
 
 const toList = (entity) => (
@@ -106,10 +104,10 @@ function Guide(props) {
       return {...competency, badge: badge.image_medium, color, score};
     });
 
-    const sortedData = _data.filter(({color}) => color === colors.low);
-    sortedData.push(..._data.filter(({color}) => color === colors.medium));
-    sortedData.push(..._data.filter(({color}) => color === colors.high));
-    sortedData.push(..._data.filter(({color}) => color === colors.other));
+    const sortedData = _data.filter(({color}) => color === benchmark.hexColorLow);
+    sortedData.push(..._data.filter(({color}) => color === benchmark.hexColorMedium));
+    sortedData.push(..._data.filter(({color}) => color === benchmark.hexColorHigh));
+    sortedData.push(..._data.filter(({color}) => color === "black"));
 
     setData(sortedData);
     setActiveCompetency(sortedData[0]);

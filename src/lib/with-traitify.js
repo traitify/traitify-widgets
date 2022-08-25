@@ -224,15 +224,8 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         return this.ui.requests[key];
       }
 
-      this.traitify.get(`/assessments/recommendations/${benchmarkID}`, {
-        locale_key: locale
-      }).then((_data) => {
-        console.log("rest res")
-        console.log(_data)
-      });
-
       //TODO When do I delete the requests key? Should I even have one for this now?
-      const query = queries.benchmark({benchmarkId: benchmarkID, localeKey: locale});
+      const query = queries.benchmark({params: {benchmarkId: benchmarkID, localeKey: locale}});
       this.ui.requests[key] = this.traitify.post("/recommendations/graphql", query).then(({data}) => {
         const benchmark = data.getDimensionRangeBenchmark;
 

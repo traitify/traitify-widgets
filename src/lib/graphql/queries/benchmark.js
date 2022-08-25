@@ -1,17 +1,13 @@
 import toQuery from "../to-query";
 
 const defaultFields = [
-  "allottedTime",
-  "completed",
-  "id",
-  "learningDisability",
-  "localeKey",
+  "benchmarkId",
+  "default",
+  "hexColorHigh",
+  "hexColorMedium",
+  "hexColorLow",
   "name",
-  "percentileScore",
-  "rawScore",
-  "specialAllottedTime",
-  "surveyId",
-  "surveyKey",
+  "orgPath",
   {
     dimensionRanges: [
       "id",
@@ -34,7 +30,6 @@ const defaultFields = [
 ];
 
 export default function benchmarkQuery({fields, params}) {
-  // make these default fields and have other fields passed in overwrite it.
   return {
     query: `
       query($benchmarkId: String!, $localeKey: String!) {

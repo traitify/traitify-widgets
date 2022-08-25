@@ -7,6 +7,7 @@ import esUS from "lib/i18n-data/es_us.json";
 import frCA from "lib/i18n-data/fr_ca.json";
 import frFR from "lib/i18n-data/fr_fr.json";
 import htUS from "lib/i18n-data/ht_us.json";
+import itIT from "lib/i18n-data/it_it.json";
 import jaJP from "lib/i18n-data/ja_jp.json";
 import nlNL from "lib/i18n-data/nl_nl.json";
 import noNO from "lib/i18n-data/no_no.json";
@@ -27,6 +28,7 @@ export default {
   "fr-us": frCA,
   "fr-fr": frFR,
   "ht-us": htUS,
+  "it-it": itIT,
   "ja-jp": jaJP,
   "nl-nl": nlNL,
   "no-no": noNO,

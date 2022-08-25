@@ -11,12 +11,13 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
+const defaultColor = "black";
 const colorFrom = ({benchmark, score, typeID}) => {
   if(!benchmark) {
     if(score <= 3) { return benchmark.hexColorLow; }
     if(score <= 6) { return benchmark.hexColorMedium; }
 
-    return benchmark.hexColorHigh;
+    return defaultColor;
   }
 
   const dimensionRanges = benchmark.dimensionRanges
@@ -28,7 +29,7 @@ const colorFrom = ({benchmark, score, typeID}) => {
   if(range.matchScore === 10) { return benchmark.hexColorMedium; }
   if(range.matchScore === 20) { return benchmark.hexColorHigh; }
 
-  return "black";
+  return defaultColor;
 };
 
 const toList = (entity) => (
@@ -109,7 +110,7 @@ function Guide(props) {
     const sortedData = _data.filter(({color}) => color === benchmark.hexColorLow);
     sortedData.push(..._data.filter(({color}) => color === benchmark.hexColorMedium));
     sortedData.push(..._data.filter(({color}) => color === benchmark.hexColorHigh));
-    sortedData.push(..._data.filter(({color}) => color === "black"));
+    sortedData.push(..._data.filter(({color}) => color === defaultColor));
 
     setData(sortedData);
     setActiveCompetency(sortedData[0]);
@@ -205,13 +206,15 @@ Guide.propTypes = {
     hexColorLow: PropTypes.string.isRequired,
     hexColorMedium: PropTypes.string.isRequired,
     hexColorHigh: PropTypes.string.isRequired,
-    dimensionRanges: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      dimensionId: PropTypes.string.isRequired,
-      matchScore: PropTypes.number.isRequired,
-      maxScore: PropTypes.number.isRequired,
-      minScore: PropTypes.number.isRequired
-    }).isRequired
+    dimensionRanges: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        dimensionId: PropTypes.string.isRequired,
+        matchScore: PropTypes.number.isRequired,
+        maxScore: PropTypes.number.isRequired,
+        minScore: PropTypes.number.isRequired
+      }).isRequired
+    )
   }),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,

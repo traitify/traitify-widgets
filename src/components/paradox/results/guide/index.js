@@ -122,13 +122,15 @@ Guide.propTypes = {
     hexColorLow: PropTypes.string.isRequired,
     hexColorMedium: PropTypes.string.isRequired,
     hexColorHigh: PropTypes.string.isRequired,
-    dimensionRanges: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      dimensionId: PropTypes.string.isRequired,
-      matchScore: PropTypes.number.isRequired,
-      maxScore: PropTypes.number.isRequired,
-      minScore: PropTypes.number.isRequired
-    }).isRequired
+    dimensionRanges: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        dimensionId: PropTypes.string.isRequired,
+        matchScore: PropTypes.number.isRequired,
+        maxScore: PropTypes.number.isRequired,
+        minScore: PropTypes.number.isRequired
+      }).isRequired
+    )
   }),
   combined: PropTypes.bool,
   followBenchmark: PropTypes.func.isRequired,

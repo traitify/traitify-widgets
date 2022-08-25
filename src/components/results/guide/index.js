@@ -17,7 +17,7 @@ const colorFrom = ({benchmark, score, typeID}) => {
     if(score <= 3) { return benchmark.hexColorLow; }
     if(score <= 6) { return benchmark.hexColorMedium; }
 
-    return defaultColor;
+    return benchmark.hexColorHigh;
   }
 
   const dimensionRanges = benchmark.dimensionRanges

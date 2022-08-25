@@ -203,7 +203,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     };
     getBenchmark = (options = {}) => {
       const {benchmarkID, locale} = this.state;
-      // if(!benchmarkID) { return Promise.resolve(); }
+      if(!benchmarkID) { return Promise.resolve(); }
 
       const key = this.getCacheKey("benchmark");
       const hasData = (data) => (data && data.benchmarkId === benchmarkID && data.name);
@@ -224,15 +224,16 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         return this.ui.requests[key];
       }
 
-      //TODO When do I delete the requests key? Should I even have one for this now?
       const query = queries.benchmark({params: {benchmarkId: benchmarkID, localeKey: locale}});
       this.ui.requests[key] = this.traitify.post("/recommendations/graphql", query).then(({data}) => {
         const benchmark = data.getDimensionRangeBenchmark;
 
         if(hasData(benchmark)) {
-          if(!benchmark.skip_cache) { this.cache.set(key, benchmark); }
+          this.cache.set(key, benchmark);
 
           setBenchmark(benchmark);
+        } else {
+          delete this.ui.requests[key];
         }
       }).catch((error) => {
         console.warn(error); // eslint-disable-line no-console

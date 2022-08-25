@@ -19,9 +19,11 @@ const colorFrom = ({benchmark, score, typeID}) => {
     return benchmark.hexColorHigh;
   }
 
-  const dimensionRanges = benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId === typeID);
+  const dimensionRanges = benchmark.dimensionRanges
+    .filter(({dimensionId}) => dimensionId === typeID);
 
-  const range = dimensionRanges.find(({maxScore: max, minScore: min}) => score >= min && score <= max);
+  const range = dimensionRanges
+    .find(({maxScore: max, minScore: min}) => score >= min && score <= max);
   if(range.matchScore === 5) { return benchmark.hexColorLow; }
   if(range.matchScore === 10) { return benchmark.hexColorMedium; }
   if(range.matchScore === 20) { return benchmark.hexColorHigh; }
@@ -200,18 +202,16 @@ Guide.propTypes = {
   }),
   benchmark: PropTypes.shape({
     id: PropTypes.string,
-    range_types: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        ranges: PropTypes.arrayOf(
-          PropTypes.shape({
-            match_score: PropTypes.number.isRequired,
-            max_score: PropTypes.number.isRequired,
-            min_score: PropTypes.number.isRequired
-          }).isRequired
-        ).isRequired
-      }).isRequired
-    )
+    hexColorLow: PropTypes.string.isRequired,
+    hexColorMedium: PropTypes.string.isRequired,
+    hexColorHigh: PropTypes.string.isRequired,
+    dimensionRanges: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      dimensionId: PropTypes.string.isRequired,
+      matchScore: PropTypes.number.isRequired,
+      maxScore: PropTypes.number.isRequired,
+      minScore: PropTypes.number.isRequired
+    }).isRequired
   }),
   followBenchmark: PropTypes.func.isRequired,
   followGuide: PropTypes.func.isRequired,

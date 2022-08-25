@@ -119,18 +119,16 @@ Guide.propTypes = {
   }),
   benchmark: PropTypes.shape({
     id: PropTypes.string,
-    range_types: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        ranges: PropTypes.arrayOf(
-          PropTypes.shape({
-            match_score: PropTypes.number.isRequired,
-            max_score: PropTypes.number.isRequired,
-            min_score: PropTypes.number.isRequired
-          }).isRequired
-        ).isRequired
-      }).isRequired
-    )
+    hexColorLow: PropTypes.string.isRequired,
+    hexColorMedium: PropTypes.string.isRequired,
+    hexColorHigh: PropTypes.string.isRequired,
+    dimensionRanges: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      dimensionId: PropTypes.string.isRequired,
+      matchScore: PropTypes.number.isRequired,
+      maxScore: PropTypes.number.isRequired,
+      minScore: PropTypes.number.isRequired
+    }).isRequired
   }),
   combined: PropTypes.bool,
   followBenchmark: PropTypes.func.isRequired,

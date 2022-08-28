@@ -1,144 +1,42 @@
 {
-  "deck_id": "big-five",
-  "default": true,
-  "editable": true,
-  "id": "8971c709-e2cb-4564-8f16-c6d1fd13f6d9",
-  "locale_key": "en-us",
-  "name": "Big Five Retail",
-  "org_path": "9011ec189e8542828b521cb850719e15",
-  "range_types": [
-    {
-      "id": "05596127-4fdd-4d22-8ae7-530d42d225eb",
-      "ranges": [
+  "data": {
+    "getDimensionRangeBenchmark": {
+      "benchmarkId": "fbb89b07-07ce-4f6e-b97d-81c374da9e7e",
+      "dimensionRanges": [
         {
-          "match_score": 5,
-          "max_score": 3,
-          "min_score": 0
+          "dimensionId": "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+          "matchScore": 0,
+          "maxScore": 4,
+          "minScore": 0
         },
         {
-          "match_score": 10,
-          "max_score": 11,
-          "min_score": 10
-        },
-        {
-          "match_score": 0,
-          "max_score": 9,
-          "min_score": 4
+          "dimensionId": "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+          "matchScore": 20,
+          "maxScore": 7,
+          "minScore": 5
         }
-      ]
-    },
-    {
-      "id": "f702b455-2c0e-433c-a274-b01b68ae29ba",
-      "ranges": [
+      ],
+      "hexColorHigh": "#29B770",
+      "hexColorLow": "#FFCC3B",
+      "hexColorMedium": "#EF615E",
+      "name": "McDonalds Employee Assessment Recommendation",
+      "orgPath": "9011ec189e8542828b521cb850719e15",
+      "resultRankings": [
         {
-          "match_score": 20,
-          "max_score": 3,
-          "min_score": 0
+          "description": "Not a good fit",
+          "maxScore": 50,
+          "minScore": 0,
+          "visualDescription": "FAIL",
+          "visualHex": "#00000"
         },
         {
-          "match_score": 10,
-          "max_score": 10,
-          "min_score": 10
-        },
-        {
-          "match_score": 5,
-          "max_score": 9,
-          "min_score": 4
-        }
-      ]
-    },
-    {
-      "id": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
-      "ranges": [
-        {
-          "match_score": 5,
-          "max_score": 3,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 10,
-          "min_score": 9
-        },
-        {
-          "match_score": 10,
-          "max_score": 8,
-          "min_score": 4
-        }
-      ]
-    },
-    {
-      "id": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
-      "ranges": [
-        {
-          "match_score": 5,
-          "max_score": 3,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 10,
-          "min_score": 9
-        },
-        {
-          "match_score": 20,
-          "max_score": 8,
-          "min_score": 4
-        }
-      ]
-    },
-    {
-      "id": "462b8063-69f4-4b50-990b-8daee93e8616",
-      "ranges": [
-        {
-          "match_score": 20,
-          "max_score": 7,
-          "min_score": 2
-        },
-        {
-          "match_score": 10,
-          "max_score": 1,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 8,
-          "min_score": 8
-        },
-        {
-          "match_score": 5,
-          "max_score": 10,
-          "min_score": 9
+          "description": "A Great Fit",
+          "maxScore": 100,
+          "minScore": 51,
+          "visualDescription": "PASS-HIRE",
+          "visualHex": "#00000"
         }
       ]
     }
-  ],
-  "rankings": [
-    {
-      "description": "Potential Risk",
-      "id": "7c7b5f37-f5d1-44cf-977b-834653569c23",
-      "max_score": 49.0,
-      "min_score": 0.0,
-      "visual_description": "Red",
-      "visual_hex_value": "#EE5351"
-    },
-    {
-      "description": "Preferred",
-      "id": "6a8d4185-0daa-4941-8ad6-9c9af550691e",
-      "max_score": 100.0,
-      "min_score": 80.0,
-      "visual_description": "Green",
-      "visual_hex_value": "#2FB855"
-    },
-    {
-      "description": "Acceptable",
-      "id": "86a06e09-4153-4cf0-a1df-de7856cecf4f",
-      "max_score": 79.0,
-      "min_score": 50.0,
-      "visual_description": "Yellow",
-      "visual_hex_value": "#FFA721"
-    }
-  ],
-  "regression": null,
-  "types": []
+  }
 }

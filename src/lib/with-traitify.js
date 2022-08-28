@@ -226,12 +226,12 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       const query = queries.benchmark({params: {benchmarkId: benchmarkID, localeKey: locale}});
       this.ui.requests[key] = this.traitify.post("/recommendations/graphql", query).then(({data}) => {
-        const benchmark = data.getDimensionRangeBenchmark;
+        const dimensionRangebenchmark = data.getDimensionRangeBenchmark;
 
-        if(hasData(benchmark)) {
-          this.cache.set(key, benchmark);
+        if(hasData(dimensionRangebenchmark)) {
+          this.cache.set(key, dimensionRangebenchmark);
 
-          setBenchmark(benchmark);
+          setBenchmark(dimensionRangebenchmark);
         } else {
           delete this.ui.requests[key];
         }
@@ -242,7 +242,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       });
 
       return this.ui.requests[key];
-    }
+    };
     getCacheKey = (type, options = {}) => {
       let {id} = options;
       const locale = options.locale || this.state.locale;

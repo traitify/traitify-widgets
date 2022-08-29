@@ -574,7 +574,7 @@ describe("withTraitify", () => {
     it("catches error with request", (done) => {
       benchmark = benchmarkWithoutName;
       const key = `en-us.benchmark.${benchmark.benchmarkId}`;
-      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
@@ -671,7 +671,7 @@ describe("withTraitify", () => {
 
     it("sets cache if request results", (done) => {
       assessment = cognitiveAssessment;
-      traitify.ajax.mockReturnValue(Promise.resolve({
+      traitify.post.mockReturnValue(Promise.resolve({
         data: {cognitiveTest: assessment}
       }));
       component.updateProps({assessmentID: assessment.id});
@@ -683,7 +683,7 @@ describe("withTraitify", () => {
 
     it("skips setting cache if no results", (done) => {
       assessment = cognitiveAssessmentWithoutResults;
-      traitify.ajax.mockReturnValue(Promise.resolve({
+      traitify.post.mockReturnValue(Promise.resolve({
         data: {cognitiveTest: assessment}
       }));
       component.updateProps({assessmentID: assessment.id});
@@ -718,7 +718,7 @@ describe("withTraitify", () => {
     it("catches error with request", (done) => {
       assessment = cognitiveAssessmentWithoutResults;
       const key = `en-us.cognitive-assessment.${assessment.id}`;
-      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateProps({assessmentID: assessment.id});
       getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
@@ -927,7 +927,7 @@ describe("withTraitify", () => {
     });
 
     it("sets cache if competencies", (done) => {
-      traitify.ajax.mockReturnValue(Promise.resolve({data: {guide}}));
+      traitify.post.mockReturnValue(Promise.resolve({data: {guide}}));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
@@ -937,7 +937,7 @@ describe("withTraitify", () => {
 
     it("sets guide assessment ID if missing", (done) => {
       guide.assessment_id = null;
-      traitify.ajax.mockReturnValue(
+      traitify.post.mockReturnValue(
         Promise.resolve({data: {guide}})
       );
       component.updateState({assessment});
@@ -949,7 +949,7 @@ describe("withTraitify", () => {
 
     it("sets guide locale if missing", (done) => {
       guide.locale_key = null;
-      traitify.ajax.mockReturnValue(Promise.resolve({data: {guide}}));
+      traitify.post.mockReturnValue(Promise.resolve({data: {guide}}));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide.locale_key).toBe(component.state.locale);
@@ -958,7 +958,7 @@ describe("withTraitify", () => {
     });
 
     it("sets guide to blank if no data", (done) => {
-      traitify.ajax.mockReturnValue(Promise.resolve({}));
+      traitify.post.mockReturnValue(Promise.resolve({}));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide).toBeNull();
@@ -988,7 +988,7 @@ describe("withTraitify", () => {
 
     it("catches error with request", (done) => {
       const key = `en-us.guide.${assessment.id}`;
-      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
@@ -1164,7 +1164,23 @@ describe("withTraitify", () => {
         beforeEach(() => {
           component.updateState({
             assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
-            benchmark: {name: "Developer Copy"},
+            benchmark: {
+              name: "Developer Copy",
+              dimensionRanges: [
+                {
+                  "dimensionId": "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+                  "matchScore": 0,
+                  "maxScore": 4,
+                  "minScore": 0
+                },
+                {
+                  "dimensionId": "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+                  "matchScore": 20,
+                  "maxScore": 7,
+                  "minScore": 5
+                }
+              ]
+            },
             deck: {id: "big-five", name: "Big Five"},
             guide: {competencies: [{}]}
           });

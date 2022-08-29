@@ -358,6 +358,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       return this.ui.requests[key];
     };
     getGuide = (options = {}) => {
+
       const {assessment, locale} = this.state;
       const assessmentID = (assessment || {}).id;
       if(!assessmentID) { return Promise.resolve(); }
@@ -518,7 +519,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       switch(type) {
         case "benchmark":
-          return !!(benchmark && benchmark.name && (benchmark.range_types || []).length > 0);
+          return !!(benchmark && benchmark.name && (benchmark.dimensionRanges || []).length > 0);
         case "deck":
           return !!(deck && deck.name);
         case "guide":

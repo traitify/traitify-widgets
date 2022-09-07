@@ -59,12 +59,13 @@ function PersonalityRecommendationChart(props) {
       const competency = (dig(guide, "competencies") || []).find(({questionSequences}) => (
         questionSequences[0].personalityTypeId === type.id
       ));
+
       const dimensionRangesForType = benchmark
         ? benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId === type.id)
         : [];
 
       const typeRange = dimensionRangesForType
-        .find((range) => score >= range.min_score && score <= range.max_score);
+        .filter((range) => score >= range.minScore && score <= range.maxScore);
 
       columns.push({
         data: typeRange.map((range) => ({

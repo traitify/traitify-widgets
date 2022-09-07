@@ -1271,7 +1271,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
     className="tabs"
   >
     <button
-      className="active low"
+      className="active high"
       onClick={[Function]}
       type="button"
     >
@@ -1280,7 +1280,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       </span>
     </button>
     <button
-      className="low"
+      className="other"
       onClick={[Function]}
       type="button"
     >
@@ -1298,7 +1298,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       </span>
     </button>
     <button
-      className="low"
+      className="high"
       onClick={[Function]}
       type="button"
     >
@@ -1307,7 +1307,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       </span>
     </button>
     <button
-      className="low"
+      className="medium"
       onClick={[Function]}
       type="button"
     >
@@ -1351,7 +1351,7 @@ exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] =
       </option>
     </select>
     <div
-      className="heading low"
+      className="heading high"
     >
       Solving Problems
        (

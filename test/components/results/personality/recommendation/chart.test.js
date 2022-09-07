@@ -2,7 +2,7 @@ import {Component} from "components/results/personality/recommendation/chart";
 import Chart from "lib/helpers/stacked-chart";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/dimension-based.json";
-import benchmark from "support/json/benchmark.json";
+import benchmarkFixture from "support/json/benchmark.json";
 import guide from "support/json/guide.json";
 
 jest.mock("lib/helpers/stacked-chart");
@@ -28,7 +28,7 @@ describe("PersonalityRecommendationChart", () => {
 
     props = {
       assessment,
-      benchmark,
+      benchmark: benchmarkFixture,
       followBenchmark: jest.fn().mockName("followBenchmark"),
       followGuide: jest.fn().mockName("followGuide"),
       guide,
@@ -169,17 +169,18 @@ describe("PersonalityRecommendationChart", () => {
   });
 
   it("creates new chart on benchmark change", () => {
+    let benchmark = benchmarkFixture;
     const component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-    component.updateProps({benchmark: {...benchmark, id: "benchmark-2"}});
+    component.updateProps({benchmark: {...benchmark, dimensionId: "benchmark-2", id: "benchmark-2"}});
 
     expect(Chart.mock.instances).toHaveLength(2);
 
     component.updateProps({
       benchmark: {
         ...benchmark,
-        rankings: [
-          {...benchmark.rankings[0], description: "New Description"},
-          ...benchmark.rankings.slice(1)
+        resultRankings: [
+          {...benchmark.resultRankings[0], description: "New Description"},
+          ...benchmark.resultRankings.slice(1)
         ]
       }
     });

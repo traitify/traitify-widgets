@@ -68,9 +68,10 @@ describe("Paradox.Guide", () => {
         benchmark: {
           ...benchmark,
           id: "updated-benchmark",
-          range_types: benchmark.range_types.map((rangeType) => ({
-            ...rangeType, ranges: [{match_score: 5, max_score: 10, min_score: 0}]
-          }))
+          dimensionRanges: [
+            ...benchmark.dimensionRanges,
+            {id: "1212ddd", dimensionId: "dcf233", matchScore: 5, maxScore: 10, minScore: 0}
+          ]
         }
       });
 

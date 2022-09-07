@@ -33,7 +33,7 @@ describe("withTraitify", () => {
     traitify = new Traitify();
     assessment = {...baseAssessment, personality_types: [{name: "Openness"}]};
     assessmentWithoutResults = {...baseAssessment, slides: [{caption: "Snakes"}]};
-    benchmark = benchmarkFixture.data.getDimensionRangeBenchmark;
+    benchmark = benchmarkFixture;
     cognitiveAssessment = {...baseCognitiveAssessment, completed: true};
     cognitiveAssessmentWithoutResults = {...baseCognitiveAssessment, completed: false};
     deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
@@ -540,9 +540,8 @@ describe("withTraitify", () => {
     });
 
     it("sets cache if name", (done) => {
-      benchmark = benchmarkFixture.data.getDimensionRangeBenchmark
-      traitify.post.mockReturnValue(Promise.resolve(benchmarkFixture));
-      component.updateState({benchmarkID: benchmark.benchmarkId});
+      traitify.post.mockReturnValue(Promise.resolve({data: {getDimensionRangeBenchmark: benchmarkFixture}}));
+      component.updateState({benchmarkID: benchmarkFixture.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
         done();

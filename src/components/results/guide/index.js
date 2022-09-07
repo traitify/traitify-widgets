@@ -11,13 +11,13 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-const defaultColor = "black";
+const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
 const colorFrom = ({benchmark, score, typeID}) => {
   if(!benchmark) {
-    if(score <= 3) { return benchmark.hexColorLow; }
-    if(score <= 6) { return benchmark.hexColorMedium; }
+    if(score <= 3) { return colors.high; }
+    if(score <= 6) { return colors.medium; }
 
-    return benchmark.hexColorHigh;
+    return colors.high;
   }
 
   const dimensionRanges = benchmark.dimensionRanges
@@ -29,7 +29,7 @@ const colorFrom = ({benchmark, score, typeID}) => {
   if(range.matchScore === 10) { return benchmark.hexColorMedium; }
   if(range.matchScore === 20) { return benchmark.hexColorHigh; }
 
-  return defaultColor;
+  return colors.other;
 };
 
 const toList = (entity) => (
@@ -107,10 +107,10 @@ function Guide(props) {
       return {...competency, badge: badge.image_medium, color, score};
     });
 
-    const sortedData = _data.filter(({color}) => color === benchmark.hexColorLow);
-    sortedData.push(..._data.filter(({color}) => color === benchmark.hexColorMedium));
-    sortedData.push(..._data.filter(({color}) => color === benchmark.hexColorHigh));
-    sortedData.push(..._data.filter(({color}) => color === defaultColor));
+    const sortedData = _data.filter(({color}) => color === (benchmark ? benchmark.hexColorLow : colors.low));
+    sortedData.push(..._data.filter(({color}) => color === (benchmark ? benchmark.hexColorMedium : colors.medium)));
+    sortedData.push(..._data.filter(({color}) => color === (benchmark ? benchmark.hexColorHigh : colors.high)));
+    sortedData.push(..._data.filter(({color}) => color === colors.other));
 
     setData(sortedData);
     setActiveCompetency(sortedData[0]);

@@ -219,7 +219,7 @@ describe("withTraitify", () => {
 
     it("gets benchmark when state gets benchmarkID", () => {
       getDummyComponent().props.followBenchmark();
-      component.updateState({benchmark: benchmark, benchmarkID: benchmark.benchmarkId});
+      component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
 
       expect(getBenchmark).toHaveBeenCalled();
     });
@@ -540,7 +540,9 @@ describe("withTraitify", () => {
     });
 
     it("sets cache if name", (done) => {
-      traitify.post.mockReturnValue(Promise.resolve({data: {getDimensionRangeBenchmark: benchmarkFixture}}));
+      traitify.post.mockReturnValue(Promise.resolve(
+        {data: {getDimensionRangeBenchmark: benchmarkFixture}}
+      ));
       component.updateState({benchmarkID: benchmarkFixture.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
@@ -1167,16 +1169,16 @@ describe("withTraitify", () => {
               name: "Developer Copy",
               dimensionRanges: [
                 {
-                  "dimensionId": "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
-                  "matchScore": 0,
-                  "maxScore": 4,
-                  "minScore": 0
+                  dimensionId: "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+                  matchScore: 0,
+                  maxScore: 4,
+                  minScore: 0
                 },
                 {
-                  "dimensionId": "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
-                  "matchScore": 20,
-                  "maxScore": 7,
-                  "minScore": 5
+                  dimensionId: "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+                  matchScore: 20,
+                  maxScore: 7,
+                  minScore: 5
                 }
               ]
             },

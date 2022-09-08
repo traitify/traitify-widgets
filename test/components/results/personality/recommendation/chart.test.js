@@ -169,7 +169,7 @@ describe("PersonalityRecommendationChart", () => {
   });
 
   it("creates new chart on benchmark change", () => {
-    let benchmark = benchmarkFixture;
+    const benchmark = benchmarkFixture;
     const component = new ComponentHandler(<Component {...props} />, {createNodeMock});
     component.updateProps({benchmark: {...benchmark, dimensionId: "benchmark-2", id: "benchmark-2"}});
 

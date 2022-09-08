@@ -107,9 +107,15 @@ function Guide(props) {
       return {...competency, badge: badge.image_medium, color, score};
     });
 
-    const sortedData = _data.filter(({color}) => color === (benchmark ? benchmark.hexColorLow : colors.low));
-    sortedData.push(..._data.filter(({color}) => color === (benchmark ? benchmark.hexColorMedium : colors.medium)));
-    sortedData.push(..._data.filter(({color}) => color === (benchmark ? benchmark.hexColorHigh : colors.high)));
+    const sortedData = _data.filter(
+      ({color}) => color === (benchmark ? benchmark.hexColorLow : colors.low)
+    );
+    sortedData.push(..._data.filter(
+      ({color}) => color === (benchmark ? benchmark.hexColorMedium : colors.medium)
+    ));
+    sortedData.push(..._data.filter(
+      ({color}) => color === (benchmark ? benchmark.hexColorHigh : colors.high)
+    ));
     sortedData.push(..._data.filter(({color}) => color === colors.other));
 
     setData(sortedData);

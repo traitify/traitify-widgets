@@ -358,7 +358,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       return this.ui.requests[key];
     };
     getGuide = (options = {}) => {
-
       const {assessment, locale} = this.state;
       const assessmentID = (assessment || {}).id;
       if(!assessmentID) { return Promise.resolve(); }

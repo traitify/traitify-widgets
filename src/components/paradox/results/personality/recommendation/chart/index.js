@@ -50,12 +50,9 @@ function PersonalityRecommendationChart({setElement, ...props}) {
   ]);
 
   const colorFromRank = (rank) => {
-    // if(rank === "low") { return benchmark.hexColorLow; }
-    // if(rank === "medium") { return benchmark.hexColorMedium; }
-    // if(rank === "high") { return benchmark.hexColorHigh; }
-    if(rank === "low") { return "blue"; }
-    if(rank === "medium") { return "red"; }
-    if(rank === "high") { return "yellow"; }
+    if(rank === "low") { return benchmark.hexColorLow; }
+    if(rank === "medium") { return benchmark.hexColorMedium; }
+    if(rank === "high") { return benchmark.hexColorHigh; }
 
     return "black";
   };

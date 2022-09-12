@@ -204,7 +204,6 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     getBenchmark = (options = {}) => {
       const {benchmarkID, locale} = this.state;
       if(!benchmarkID) { return Promise.resolve(); }
-
       const key = this.getCacheKey("benchmark");
       const hasData = (data) => (data && data.benchmarkId === benchmarkID && data.name);
       const setBenchmark = (data) => (

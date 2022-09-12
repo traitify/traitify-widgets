@@ -88,7 +88,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -96,7 +96,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -104,7 +104,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -112,7 +112,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -120,7 +120,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -128,7 +128,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -136,7 +136,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -144,7 +144,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -152,7 +152,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -160,7 +160,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -177,7 +177,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -233,7 +233,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -241,7 +241,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -249,7 +249,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -266,7 +266,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -274,7 +274,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -282,7 +282,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -290,7 +290,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -298,7 +298,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -306,7 +306,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="active low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -314,7 +314,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -322,7 +322,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -330,7 +330,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -338,7 +338,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -355,7 +355,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -363,7 +363,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -371,7 +371,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -379,7 +379,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -387,7 +387,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -395,7 +395,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -403,7 +403,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -411,7 +411,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -419,7 +419,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -427,7 +427,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -444,7 +444,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -452,7 +452,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -460,7 +460,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -468,7 +468,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -476,7 +476,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -484,7 +484,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -492,7 +492,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="active medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -500,7 +500,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -508,7 +508,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -516,7 +516,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -562,7 +562,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -570,7 +570,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -578,7 +578,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -586,7 +586,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -594,7 +594,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -602,7 +602,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -610,7 +610,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -618,7 +618,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -626,7 +626,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -634,7 +634,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -646,7 +646,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -654,7 +654,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -662,7 +662,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -718,7 +718,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -730,7 +730,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -738,7 +738,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -746,7 +746,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -754,7 +754,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -762,7 +762,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="active low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -770,7 +770,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -778,7 +778,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -786,7 +786,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -794,7 +794,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -802,7 +802,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -814,7 +814,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -822,7 +822,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -830,7 +830,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -838,7 +838,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -846,7 +846,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -854,7 +854,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -862,7 +862,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -870,7 +870,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -878,7 +878,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -886,7 +886,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -898,7 +898,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -906,7 +906,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -914,7 +914,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -922,7 +922,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="active medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -930,7 +930,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -938,7 +938,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -946,7 +946,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -954,7 +954,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -962,7 +962,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -970,1022 +970,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
             className="medium"
             style={
               Object {
-                "background": "red",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="scale"
-      >
-        <div>
-          1
-        </div>
-        <div>
-          2
-        </div>
-        <div>
-          3
-        </div>
-        <div>
-          4
-        </div>
-        <div>
-          5
-        </div>
-        <div>
-          6
-        </div>
-        <div>
-          7
-        </div>
-        <div>
-          8
-        </div>
-        <div>
-          9
-        </div>
-        <div>
-          10
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.PersonalityRecommendationChart renders component if benchmark not ready 1`] = `
-<div
-  className="container"
->
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div
-        className="label"
-      >
-        <span>
-          10
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          9
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          8
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          7
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          6
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          5
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          4
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          3
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          2
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          1
-        </span>
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Solving Problems
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Delivering Results
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Engaging with People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Influencing People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          Object {
-            "background": "yellow",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          Object {
-            "background": "red",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          Object {
-            "background": "blue",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-  </div>
-  <div
-    className="horizontal"
-  >
-    <div
-      className="labels"
-    >
-      <div>
-        Solving Problems
-      </div>
-      <div>
-        Delivering Results
-      </div>
-      <div>
-        Engaging with People
-      </div>
-      <div>
-        Influencing People
-      </div>
-      <div>
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="chart"
-    >
-      <div
-        className="grid"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              Object {
-                "background": "blue",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              Object {
-                "background": "red",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              Object {
-                "background": "yellow",
+                "background": "#EF615E",
               }
             }
           />
@@ -2118,7 +1103,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2126,7 +1111,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2134,7 +1119,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2142,7 +1127,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2150,7 +1135,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2158,7 +1143,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2166,7 +1151,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2174,7 +1159,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2182,7 +1167,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2190,7 +1175,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2207,7 +1192,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2263,7 +1248,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2271,7 +1256,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2279,7 +1264,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2296,7 +1281,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2304,7 +1289,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2312,7 +1297,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2320,7 +1305,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2328,7 +1313,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2336,7 +1321,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="active low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2344,7 +1329,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2352,7 +1337,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2360,7 +1345,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2368,7 +1353,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2385,7 +1370,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2393,7 +1378,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2401,7 +1386,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2409,7 +1394,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2417,7 +1402,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2425,7 +1410,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2433,7 +1418,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -2441,7 +1426,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2449,7 +1434,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2457,7 +1442,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2474,7 +1459,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2482,7 +1467,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2490,7 +1475,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2498,7 +1483,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2506,7 +1491,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2514,7 +1499,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2522,7 +1507,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="active medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -2530,7 +1515,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2538,7 +1523,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2546,7 +1531,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -2592,7 +1577,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2600,7 +1585,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2608,7 +1593,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2616,7 +1601,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2624,7 +1609,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2632,7 +1617,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2640,7 +1625,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2648,7 +1633,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2656,7 +1641,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2664,7 +1649,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2676,7 +1661,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2684,7 +1669,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2692,7 +1677,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2748,7 +1733,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2760,7 +1745,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2768,7 +1753,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2776,7 +1761,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2784,7 +1769,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2792,7 +1777,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="active low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2800,7 +1785,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2808,7 +1793,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2816,7 +1801,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2824,7 +1809,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2832,7 +1817,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2844,7 +1829,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2852,7 +1837,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2860,7 +1845,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2868,7 +1853,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2876,7 +1861,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2884,7 +1869,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2892,7 +1877,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2900,7 +1885,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -2908,7 +1893,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2916,7 +1901,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2928,7 +1913,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2936,7 +1921,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2944,7 +1929,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -2952,7 +1937,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="active medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2960,7 +1945,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2968,7 +1953,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2976,7 +1961,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2984,7 +1969,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -2992,7 +1977,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3000,7 +1985,7 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3141,7 +2126,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3149,7 +2134,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3157,7 +2142,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3165,7 +2150,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3173,7 +2158,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3181,7 +2166,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3189,7 +2174,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3197,7 +2182,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3205,7 +2190,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3213,7 +2198,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3230,7 +2215,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3286,7 +2271,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3294,7 +2279,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3302,7 +2287,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3319,7 +2304,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3327,7 +2312,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3335,7 +2320,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3343,7 +2328,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3351,7 +2336,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3359,7 +2344,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="active low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3367,7 +2352,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3375,7 +2360,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3383,7 +2368,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3391,7 +2376,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3408,7 +2393,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3416,7 +2401,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3424,7 +2409,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3432,7 +2417,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3440,7 +2425,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3448,7 +2433,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3456,7 +2441,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -3464,7 +2449,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3472,7 +2457,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3480,7 +2465,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3497,7 +2482,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3505,7 +2490,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3513,7 +2498,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3521,7 +2506,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3529,7 +2514,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3537,7 +2522,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3545,7 +2530,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="active medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -3553,7 +2538,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3561,7 +2546,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3569,7 +2554,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -3615,7 +2600,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3623,7 +2608,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3631,7 +2616,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3639,7 +2624,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3647,7 +2632,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3655,7 +2640,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3663,7 +2648,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3671,7 +2656,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3679,7 +2664,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3687,7 +2672,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3699,7 +2684,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3707,7 +2692,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3715,7 +2700,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3771,7 +2756,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3783,7 +2768,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3791,7 +2776,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3799,7 +2784,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3807,7 +2792,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3815,7 +2800,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="active low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3823,7 +2808,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3831,7 +2816,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3839,7 +2824,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3847,7 +2832,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3855,7 +2840,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3867,7 +2852,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3875,7 +2860,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3883,7 +2868,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3891,7 +2876,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3899,7 +2884,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3907,7 +2892,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3915,7 +2900,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3923,7 +2908,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -3931,7 +2916,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3939,7 +2924,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3951,7 +2936,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3959,7 +2944,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3967,7 +2952,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -3975,7 +2960,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="active medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3983,7 +2968,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3991,7 +2976,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -3999,7 +2984,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4007,7 +2992,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4015,7 +3000,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4023,7 +3008,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4156,7 +3141,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4164,7 +3149,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4172,7 +3157,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4180,7 +3165,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4188,7 +3173,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4196,7 +3181,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4204,7 +3189,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4212,7 +3197,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4220,7 +3205,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4228,7 +3213,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4245,7 +3230,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4301,7 +3286,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4309,7 +3294,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4317,7 +3302,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4334,7 +3319,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4342,7 +3327,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4350,7 +3335,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4358,7 +3343,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4366,7 +3351,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4374,7 +3359,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4382,7 +3367,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4390,7 +3375,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4398,7 +3383,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4406,7 +3391,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4423,7 +3408,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4431,7 +3416,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4439,7 +3424,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4447,7 +3432,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4455,7 +3440,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4463,7 +3448,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4471,7 +3456,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -4479,7 +3464,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4487,7 +3472,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4495,7 +3480,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4512,7 +3497,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4520,7 +3505,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4528,7 +3513,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4536,7 +3521,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4544,7 +3529,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4552,7 +3537,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4560,7 +3545,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -4568,7 +3553,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4576,7 +3561,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4584,7 +3569,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -4630,7 +3615,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4638,7 +3623,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4646,7 +3631,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4654,7 +3639,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4662,7 +3647,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4670,7 +3655,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4678,7 +3663,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4686,7 +3671,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4694,7 +3679,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4702,7 +3687,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4714,7 +3699,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4722,7 +3707,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4730,7 +3715,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4786,7 +3771,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4798,7 +3783,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4806,7 +3791,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4814,7 +3799,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4822,7 +3807,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4830,7 +3815,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4838,7 +3823,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4846,7 +3831,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4854,7 +3839,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4862,7 +3847,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4870,7 +3855,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4882,7 +3867,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4890,7 +3875,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4898,7 +3883,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4906,7 +3891,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4914,7 +3899,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4922,7 +3907,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4930,7 +3915,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4938,7 +3923,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -4946,7 +3931,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4954,7 +3939,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4966,7 +3951,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4974,7 +3959,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4982,7 +3967,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -4990,7 +3975,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -4998,7 +3983,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5006,7 +3991,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5014,7 +3999,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5022,7 +4007,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5030,7 +4015,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5038,7 +4023,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5171,7 +4156,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5179,7 +4164,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5187,7 +4172,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5195,7 +4180,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5203,7 +4188,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5211,7 +4196,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5219,7 +4204,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5227,7 +4212,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5235,7 +4220,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5243,7 +4228,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5260,7 +4245,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5316,7 +4301,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5324,7 +4309,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5332,7 +4317,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5349,7 +4334,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5357,7 +4342,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5365,7 +4350,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5373,7 +4358,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5381,7 +4366,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5389,7 +4374,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5397,7 +4382,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5405,7 +4390,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5413,7 +4398,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5421,7 +4406,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5438,7 +4423,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5446,7 +4431,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5454,7 +4439,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5462,7 +4447,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5470,7 +4455,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5478,7 +4463,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5486,7 +4471,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -5494,7 +4479,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5502,7 +4487,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5510,7 +4495,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5527,7 +4512,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5535,7 +4520,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5543,7 +4528,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5551,7 +4536,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5559,7 +4544,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5567,7 +4552,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5575,7 +4560,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -5583,7 +4568,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5591,7 +4576,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5599,7 +4584,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -5645,7 +4630,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5653,7 +4638,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5661,7 +4646,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5669,7 +4654,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5677,7 +4662,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5685,7 +4670,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5693,7 +4678,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5701,7 +4686,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5709,7 +4694,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5717,7 +4702,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5729,7 +4714,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5737,7 +4722,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5745,7 +4730,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5801,7 +4786,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5813,7 +4798,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5821,7 +4806,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5829,7 +4814,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5837,7 +4822,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5845,7 +4830,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5853,7 +4838,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5861,7 +4846,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5869,7 +4854,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5877,7 +4862,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5885,7 +4870,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5897,7 +4882,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5905,7 +4890,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5913,7 +4898,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5921,7 +4906,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5929,7 +4914,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5937,7 +4922,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5945,7 +4930,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5953,7 +4938,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -5961,7 +4946,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5969,7 +4954,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -5981,7 +4966,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5989,7 +4974,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -5997,7 +4982,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6005,7 +4990,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6013,7 +4998,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6021,7 +5006,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6029,7 +5014,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6037,7 +5022,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6045,7 +5030,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6053,7 +5038,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6186,7 +5171,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6194,7 +5179,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6202,7 +5187,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6210,7 +5195,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6218,7 +5203,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6226,7 +5211,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6234,7 +5219,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6242,7 +5227,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6250,7 +5235,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6258,7 +5243,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6275,7 +5260,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6331,7 +5316,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6339,7 +5324,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6347,7 +5332,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6364,7 +5349,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6372,7 +5357,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6380,7 +5365,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6388,7 +5373,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6396,7 +5381,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6404,7 +5389,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6412,7 +5397,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6420,7 +5405,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6428,7 +5413,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6436,7 +5421,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6453,7 +5438,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6461,7 +5446,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6469,7 +5454,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6477,7 +5462,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6485,7 +5470,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6493,7 +5478,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6501,7 +5486,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="high"
         style={
           Object {
-            "background": "yellow",
+            "background": "#29B770",
           }
         }
       />
@@ -6509,7 +5494,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6517,7 +5502,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6525,7 +5510,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6542,7 +5527,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6550,7 +5535,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6558,7 +5543,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6566,7 +5551,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6574,7 +5559,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6582,7 +5567,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6590,7 +5575,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="active medium"
         style={
           Object {
-            "background": "red",
+            "background": "#EF615E",
           }
         }
       />
@@ -6598,7 +5583,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6606,7 +5591,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6614,7 +5599,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         className="low"
         style={
           Object {
-            "background": "blue",
+            "background": "#FFCC3B",
           }
         }
       />
@@ -6660,7 +5645,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6668,7 +5653,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6676,7 +5661,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6684,7 +5669,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6692,7 +5677,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6700,7 +5685,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6708,7 +5693,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6716,7 +5701,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6724,7 +5709,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6732,7 +5717,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6744,7 +5729,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6752,7 +5737,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6760,7 +5745,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6816,7 +5801,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6828,7 +5813,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6836,7 +5821,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6844,7 +5829,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6852,7 +5837,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6860,7 +5845,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6868,7 +5853,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6876,7 +5861,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6884,7 +5869,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6892,7 +5877,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6900,7 +5885,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6912,7 +5897,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6920,7 +5905,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6928,7 +5913,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -6936,7 +5921,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6944,7 +5929,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6952,7 +5937,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6960,7 +5945,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6968,7 +5953,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="high"
             style={
               Object {
-                "background": "yellow",
+                "background": "#29B770",
               }
             }
           />
@@ -6976,7 +5961,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6984,7 +5969,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -6996,7 +5981,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -7004,7 +5989,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -7012,7 +5997,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="low"
             style={
               Object {
-                "background": "blue",
+                "background": "#FFCC3B",
               }
             }
           />
@@ -7020,7 +6005,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="active medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -7028,7 +6013,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -7036,7 +6021,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -7044,7 +6029,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -7052,7 +6037,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -7060,7 +6045,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />
@@ -7068,7 +6053,7 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
             className="medium"
             style={
               Object {
-                "background": "red",
+                "background": "#EF615E",
               }
             }
           />

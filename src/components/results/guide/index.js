@@ -22,7 +22,6 @@ const colorFrom = ({benchmark, score, typeID}) => {
 
   const dimensionRanges = benchmark.dimensionRanges
     .filter(({dimensionId}) => dimensionId === typeID);
-
   const range = dimensionRanges
     .find(({maxScore: max, minScore: min}) => score >= min && score <= max);
   if(range.matchScore === 5) { return benchmark.hexColorLow; }

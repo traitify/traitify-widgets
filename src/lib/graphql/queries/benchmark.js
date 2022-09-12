@@ -12,6 +12,7 @@ const defaultFields = [
     dimensionRanges: [
       "id",
       "dimensionId",
+      "matchScore",
       "maxScore",
       "minScore"
     ]

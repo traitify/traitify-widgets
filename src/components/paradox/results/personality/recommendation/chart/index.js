@@ -14,6 +14,7 @@ import style from "./style.scss";
 //   {key: "acceptable", rank: "medium"},
 //   {key: "potential_risk", rank: "low"}
 // ];
+const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
 
 function PersonalityRecommendationChart({setElement, ...props}) {
   const {
@@ -49,14 +50,6 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     dig(guide, "locale_key")
   ]);
 
-  const colorFromRank = (rank) => {
-    if(rank === "low") { return benchmark.hexColorLow; }
-    if(rank === "medium") { return benchmark.hexColorMedium; }
-    if(rank === "high") { return benchmark.hexColorHigh; }
-
-    return "black";
-  };
-
   const disabledComponents = getOption("disabledComponents") || [];
   if(disabledComponents.includes("PersonalityRecommendationChart")) { return null; }
   if(!isReady("guide")) { return null; }
@@ -64,6 +57,14 @@ function PersonalityRecommendationChart({setElement, ...props}) {
   if(data.length === 0) { return null; }
 
   const length = Math.max(...data.map(({data: points}) => points.length));
+
+  const colorFromRank = (rank) => {
+    if(rank === "low") { return benchmark ? benchmark.hexColorLow : colors.low; }
+    if(rank === "medium") { return benchmark ? benchmark.hexColorMedium : colors.medium; }
+    if(rank === "high") { return benchmark ? benchmark.hexColorHigh : colors.high; }
+
+    return colors.other;
+  };
 
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>

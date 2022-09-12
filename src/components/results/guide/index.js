@@ -14,7 +14,7 @@ import style from "./style.scss";
 const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
 const colorFrom = ({benchmark, score, typeID}) => {
   if(!benchmark) {
-    if(score <= 3) { return colors.high; }
+    if(score <= 3) { return colors.low; }
     if(score <= 6) { return colors.medium; }
 
     return colors.high;

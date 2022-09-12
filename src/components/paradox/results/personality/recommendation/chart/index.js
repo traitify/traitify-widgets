@@ -30,6 +30,8 @@ function PersonalityRecommendationChart({setElement, ...props}) {
   } = props;
   const [data, setData] = useState([]);
   const state = {};
+  console.log("PersRecC");
+  console.log(props);  
 
   useDidMount(() => { ui.trigger("PersonalityRecommendationChart.initialized", {props, state}); });
   useDidMount(() => { followBenchmark(); });

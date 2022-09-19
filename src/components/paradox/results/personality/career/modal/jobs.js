@@ -19,14 +19,18 @@ function Jobs({jobs, translate}) {
                 <div className={style.title}>
                   {job.title}
                 </div>
-                <div className={style.description}>
-                  <Icon className={style.jobIcon} icon={faBuilding} />
-                  {job.company}
-                </div>
-                <div className={style.description}>
-                  <Icon className={style.jobIcon} icon={faLocationDot} />
-                  {job.location}
-                </div>
+                {job.company && (
+                  <div className={style.description}>
+                    <Icon className={style.jobIcon} icon={faBuilding} />
+                    {job.company}
+                  </div>
+                )}
+                {job.location && (
+                  <div className={style.description}>
+                    <Icon className={style.jobIcon} icon={faLocationDot} />
+                    {job.location}
+                  </div>
+                )}
               </div>
             </div>
             <div>

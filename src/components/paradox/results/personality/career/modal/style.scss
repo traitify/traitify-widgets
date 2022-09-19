@@ -220,31 +220,32 @@
 
 .job {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
 
   @include min-width(xs) {
     flex-direction: row;
   }
 
-  padding: $buffer;
   border: $border-width solid;
+  @include theme(border-color, "border-color-light");
   border-radius: $border-radius-sm * 2.5;
+  padding: $buffer;
   width: 100%;
-  @include theme(border-color,"border-color-light");
 
   .applyNowButton {
+    border: 1px solid;
+    @include theme(border-color, "border-color");
+    border-radius: $border-radius-sm !important;
+    @include theme(color, "theme-color");
     margin-top: $buffer-sm;
     padding: $buffer-sm $buffer;
-    color: $-blue;
-    border-radius: $border-radius-sm !important;
-    border: 1px solid $-gray;
     white-space: nowrap;
 
     display: flex;
-    width: 100%;
     justify-content: center;
     text-decoration: none;
+    width: 100%;
 
     @include min-width(xs) {
       margin-top: 0;
@@ -254,13 +255,12 @@
   .jobDetails {
     display: flex;
   }
-
   .jobIcon {
     color: gray;
     margin-right: $buffer-sm;
   }
   .jobTitleIcon {
-    color: $-blue;
+    @include theme(color, "theme-color");
     margin-right: $buffer;
   }
 }

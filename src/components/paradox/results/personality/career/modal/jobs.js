@@ -7,7 +7,7 @@ import {
 import Icon from "lib/helpers/icon";
 import style from "./style.scss";
 
-function Jobs({jobs}) {
+function Jobs({jobs, translate}) {
   return (
     <div className={style.list}>
       {jobs.map((job) => (
@@ -31,7 +31,7 @@ function Jobs({jobs}) {
             </div>
             <div>
               <a className={style.applyNowButton} href={job.url}>
-                Apply Now
+                {translate("apply_now")}
               </a>
             </div>
           </div>
@@ -46,6 +46,7 @@ Jobs.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  translate: PropTypes.func.isRequired
 };
 export default Jobs;

@@ -25,7 +25,6 @@ function PersonalityRecommendationChart({setElement, ...props}) {
   } = props;
   const [data, setData] = useState([]);
   const state = {};
-  console.log("called");
 
   useDidMount(() => { ui.trigger("PersonalityRecommendationChart.initialized", {props, state}); });
   useDidMount(() => { followBenchmark(); });
@@ -62,15 +61,15 @@ function PersonalityRecommendationChart({setElement, ...props}) {
   };
 
   let ranks = dig(benchmark, "resultRankings") || [];
-  ranks = ranks.sort((a, b) => (a.maxScore < b.maxScore) ? 1 : -1)
-  console.log(ranks);
+  /* eslint-disable no-confusing-arrow */
+  ranks = ranks.sort((a, b) => (a.maxScore < b.maxScore) ? 1 : -1);
 
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>
       <div className={style.ranks}>
         {ranks.map(({description, visualHex, id}) => (
           <div key={id} className={style.chartLegendContainer}>
-            <div className={style.chartLegendColor} style={{background: visualHex}}></div>
+            <div className={style.chartLegendColor} style={{background: visualHex}} />
             <div>{description}</div>
           </div>
         ))}

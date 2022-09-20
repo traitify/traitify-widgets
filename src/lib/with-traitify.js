@@ -225,7 +225,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       const query = queries.benchmark({params: {benchmarkId: benchmarkID, localeKey: locale}});
       this.ui.requests[key] = this.traitify.post("/recommendations/graphql", query).then(({data}) => {
-        const dimensionRangebenchmark = data.getDimensionRangeBenchmark;
+        const dimensionRangebenchmark = data ? data.getDimensionRangeBenchmark : {};
 
         if(hasData(dimensionRangebenchmark)) {
           this.cache.set(key, dimensionRangebenchmark);

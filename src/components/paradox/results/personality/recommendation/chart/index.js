@@ -61,8 +61,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
   };
 
   let ranks = dig(benchmark, "resultRankings") || [];
-  /* eslint-disable no-confusing-arrow */
-  ranks = ranks.sort((a, b) => (a.maxScore < b.maxScore) ? 1 : -1);
+  ranks = ranks.sort((a, b) => ((a.maxScore < b.maxScore) ? 1 : -1));
 
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>

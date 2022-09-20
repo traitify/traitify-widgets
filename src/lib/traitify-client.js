@@ -2,7 +2,7 @@ import {toQueryString} from "lib/helpers/object";
 
 export default class TraitifyClient {
   constructor() {
-    this.host = "https://api.stag.awse.traitify.com";
+    this.host = "https://api.traitify.com";
     this.version = "v1";
     this.oldIE = typeof XDomainRequest !== "undefined";
   }

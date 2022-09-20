@@ -11,7 +11,7 @@ function Jobs({jobs, translate}) {
   return (
     <div className={style.list}>
       {jobs.map((job) => (
-        <div className={style.listItem} key={job.id}>
+        <div className={style.listItem} key={job.url}>
           <div className={style.job}>
             <div className={style.jobDetails}>
               <Icon className={style.jobTitleIcon} icon={faSuitcase} />
@@ -48,7 +48,9 @@ Jobs.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
+      company: PropTypes.string,
+      location: PropTypes.string,
+      url: PropTypes.string.isRequired
     })
   ).isRequired,
   translate: PropTypes.func.isRequired

@@ -142,7 +142,7 @@ function CareerModal(props) {
               {isSelected("career") && <Info assessment={assessment} translate={translate} career={career} />}
               {clubs?.length > 0 && isSelected("clubs") && <Clubs clubs={clubs} />}
               {majors?.length > 0 && isSelected("majors") && <Majors majors={majors} />}
-              {jobs?.length > 0 && isSelected("jobs") && <Jobs jobs={jobs} />}
+              {jobs?.length > 0 && isSelected("jobs") && <Jobs jobs={jobs} translate={translate} />}
             </div>
           </div>
         </section>

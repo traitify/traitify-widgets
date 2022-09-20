@@ -217,3 +217,50 @@
   .description { font-size: $font-size-sm; }
   .title { font-weight: 500; }
 }
+
+.job {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include min-width(xs) {
+    flex-direction: row;
+  }
+
+  border: $border-width solid;
+  @include theme(border-color, "border-color-light");
+  border-radius: $border-radius-sm * 2.5;
+  padding: $buffer;
+  width: 100%;
+
+  .applyNowButton {
+    border: 1px solid;
+    @include theme(border-color, "border-color");
+    border-radius: $border-radius-sm !important;
+    @include theme(color, "theme-color");
+    margin-top: $buffer-sm;
+    padding: $buffer-sm $buffer;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+
+    @include min-width(xs) {
+      margin-top: 0;
+    }
+  }
+
+  .jobDetails {
+    display: flex;
+  }
+  .jobIcon {
+    color: gray;
+    margin-right: $buffer-sm;
+  }
+  .jobTitleIcon {
+    @include theme(color, "theme-color");
+    margin-right: $buffer;
+  }
+}

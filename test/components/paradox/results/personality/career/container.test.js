@@ -90,6 +90,32 @@ describe("Paradox.CareerContainer", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("modal shows majors", async() => {
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    act(() => {
+      component.instance.findAllByType("button")[2].props.onClick();
+    });
+    act(() => {
+      component.instance.findAllByProps({className: "navButton"})[1].props.onClick();
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("modal shows jobs", async() => {
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    act(() => {
+      component.instance.findAllByType("button")[2].props.onClick();
+    });
+    act(() => {
+      component.instance.findAllByProps({className: "navButton"})[2].props.onClick();
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
   // TODO: test for Search
   // TODO: test for Experience Level Search
   // TODOL test for Sort

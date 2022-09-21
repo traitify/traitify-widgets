@@ -5,6 +5,55 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -1020,6 +1069,9 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
   className="container"
 >
   <div
+    className="ranks"
+  />
+  <div
     className="vertical"
   >
     <div
@@ -2034,6 +2086,55 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
 <div
   className="container combined"
 >
+  <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
   <div
     className="vertical"
   >
@@ -3058,6 +3159,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -4072,6 +4222,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
 <div
   className="container"
 >
+  <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
   <div
     className="vertical"
   >
@@ -5088,6 +5287,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -6102,6 +6350,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
 <div
   className="container"
 >
+  <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
   <div
     className="vertical"
   >

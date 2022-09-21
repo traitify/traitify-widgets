@@ -57,7 +57,7 @@ exports[`Guide renders component 1`] = `
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -77,7 +77,7 @@ exports[`Guide renders component 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -643,7 +643,7 @@ exports[`Guide toggles expanded intro 1`] = `
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -663,7 +663,7 @@ exports[`Guide toggles expanded intro 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -940,7 +940,7 @@ exports[`Guide toggles question content 1`] = `
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -960,7 +960,7 @@ exports[`Guide toggles question content 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -1223,22 +1223,22 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <select
         className="mobileSelect"
         onChange={[Function]}
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        value="5064521c-1028-40d4-8baa-dfeff734406f"
       >
-        <option
-          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-        >
-          Solving Problems
-        </option>
-        <option
-          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-        >
-          Delivering Results
-        </option>
         <option
           value="5064521c-1028-40d4-8baa-dfeff734406f"
         >
           Engaging with People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
         </option>
         <option
           value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
@@ -1246,17 +1246,17 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           Influencing People
         </option>
         <option
-          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
         >
-          Managing Pressure
+          Delivering Results
         </option>
       </select>
       <p
         className="mobileBadge"
       >
         <img
-          alt="Solving Problems badge"
-          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
+          alt="Engaging with People badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
         />
       </p>
     </div>
@@ -1267,47 +1267,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Solving Problems badge"
-            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-          />
-          <br />
-          Solving Problems
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
-          }
-        }
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <img
-            alt="Delivering Results badge"
-            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-          />
-          <br />
-          Delivering Results
-        </button>
-      </li>
-      <li
-        className="tab"
-        style={
-          Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -1336,6 +1296,46 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           type="button"
         >
           <img
+            alt="Managing Pressure badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+          />
+          <br />
+          Managing Pressure
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Solving Problems badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
+          />
+          <br />
+          Solving Problems
+        </button>
+      </li>
+      <li
+        className="tab"
+        style={
+          Object {
+            "borderTopColor": "#29B770",
+          }
+        }
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <img
             alt="Influencing People badge"
             src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
           />
@@ -1347,7 +1347,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "black",
           }
         }
       >
@@ -1356,11 +1356,11 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           type="button"
         >
           <img
-            alt="Managing Pressure badge"
-            src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+            alt="Delivering Results badge"
+            src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
           />
           <br />
-          Managing Pressure
+          Delivering Results
         </button>
       </li>
     </ul>
@@ -1372,9 +1372,9 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       className="tabContentActive"
     >
       <h2>
-        Solving Problems
+        Engaging with People
       </h2>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
+      At the top level, Engaging with People (E) concerns someone’s interest, investment and comfort in developing relationships with others - customers, clients, work groups or colleagues.
       <p>
         <button
           onClick={[Function]}
@@ -1386,7 +1386,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <hr />
       <div>
         <h2>
-          Open-Minded/Pragmatic People
+          Extraverted/Introverted People
         </h2>
         <p>
           guide_intro
@@ -1406,7 +1406,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionText"
             >
-              Tell me how you would go about solving a work problem you have not encountered before.
+              How would you describe the way in which you deal with new people in a work situation?
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -1423,16 +1423,22 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
           <div>
             <ul>
               <li>
-                Do they talk about a number of different ways of approaching the problem?
+                How comfortable are they approaching new people (work colleagues, customers etc)?
               </li>
               <li>
-                Are their ideas new, original or different in any way?
+                What sort of interpersonal skills do they describe using?
               </li>
               <li>
-                Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
+                How much energy do they invest in trying to connect with other people?
               </li>
               <li>
-                And to probe into possible issues with being open-minded/pragmatic.
+                Do they also hint at juggling the need to connect with new people and being able to back off when needed?
+              </li>
+              <li>
+                Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
+              </li>
+              <li>
+                And to probe into possible issues with being extraverted/introverted.
               </li>
             </ul>
           </div>
@@ -1452,7 +1458,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              (Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -1479,7 +1485,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionText"
             >
-              (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              (Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?
             </span>
             <span
               className="questionIcon traitify--icon-fa"
@@ -1554,7 +1560,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -1574,7 +1580,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -1847,7 +1853,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -1867,7 +1873,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -2140,7 +2146,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
         className="tab tabActive"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -2160,7 +2166,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -2433,7 +2439,7 @@ exports[`Guide updates activeCompetency 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -2453,7 +2459,7 @@ exports[`Guide updates activeCompetency 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >
@@ -2723,7 +2729,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#EF615E",
+            "borderTopColor": "#FFCC3B",
           }
         }
       >
@@ -2743,7 +2749,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
         className="tab"
         style={
           Object {
-            "borderTopColor": "#FFCC3B",
+            "borderTopColor": "#EF615E",
           }
         }
       >

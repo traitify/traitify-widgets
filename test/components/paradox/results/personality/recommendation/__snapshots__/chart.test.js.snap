@@ -5,6 +5,55 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -86,33 +135,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
     >
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -125,33 +224,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="active other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -164,33 +313,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="name"
@@ -203,33 +402,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -242,33 +491,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -310,33 +609,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         >
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
         </div>
         <div
@@ -344,33 +693,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -378,33 +777,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         >
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -412,33 +861,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -446,33 +945,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component 1`] = `
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
       </div>
@@ -520,6 +1069,9 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
   className="container"
 >
   <div
+    className="ranks"
+  />
+  <div
     className="vertical"
   >
     <div
@@ -601,33 +1153,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
     >
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -640,33 +1242,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
     >
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -679,33 +1331,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
     >
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -718,33 +1420,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
     >
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -757,33 +1509,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
     >
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -825,33 +1627,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
         </div>
         <div
@@ -859,33 +1711,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
         </div>
         <div
@@ -893,33 +1795,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
         </div>
         <div
@@ -927,33 +1879,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
         </div>
         <div
@@ -961,33 +1963,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component if benchmark n
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
         </div>
       </div>
@@ -1035,6 +2087,55 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
   className="container combined"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -1116,33 +2217,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
     >
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -1155,33 +2306,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="active other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -1194,33 +2395,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="name"
@@ -1233,33 +2484,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -1272,33 +2573,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -1340,33 +2691,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         >
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
         </div>
         <div
@@ -1374,33 +2775,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -1408,33 +2859,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         >
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -1442,33 +2943,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -1476,33 +3027,83 @@ exports[`Paradox.PersonalityRecommendationChart renders component with combined 
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
       </div>
@@ -1558,6 +3159,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -1639,33 +3289,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
     >
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
-        className="low"
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="active low"
+        className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -1677,34 +3377,84 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
       className="column"
     >
       <div
-        className="low"
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
+      />
+      <div
+        className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
+      />
+      <div
+        className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
+      />
+      <div
+        className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
+      />
+      <div
+        className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
+      />
+      <div
+        className="active other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -1716,34 +3466,84 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
       className="column"
     >
       <div
-        className="low"
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
-        className="low"
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="name"
@@ -1755,34 +3555,84 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
       className="column"
     >
       <div
-        className="low"
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
+      />
+      <div
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
+      />
+      <div
+        className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
+      />
+      <div
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
+      />
+      <div
+        className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -1794,34 +3644,84 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
       className="column"
     >
       <div
-        className="low"
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
+      />
+      <div
+        className="active medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="active low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
-      />
-      <div
-        className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -1862,34 +3762,84 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
           className="row"
         >
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
         </div>
         <div
@@ -1897,33 +3847,167 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
+          />
+          <div
+            className="active other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
+          />
+          <div
+            className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
+          />
+          <div
+            className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
+          />
+          <div
+            className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
+          />
+          <div
+            className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
+          />
+          <div
+            className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
+          />
+          <div
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
+          />
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
+          />
+          <div
+            className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
-            className="low"
-          />
-          <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -1931,33 +4015,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
-            className="low"
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
-            className="active low"
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
-            className="low"
+            className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
-            className="low"
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
-            className="low"
+            className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -1965,67 +4099,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the benc
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
-            className="low"
+            className="active medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="active low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
-            className="low"
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="active low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
-          />
-          <div
-            className="low"
+            className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
       </div>
@@ -2073,6 +4223,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -2154,33 +4353,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -2193,33 +4442,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="active other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -2232,33 +4531,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="name"
@@ -2271,33 +4620,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -2310,33 +4709,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -2378,33 +4827,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
         </div>
         <div
@@ -2412,33 +4911,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -2446,33 +4995,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -2480,33 +5079,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -2514,33 +5163,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
       </div>
@@ -2588,6 +5287,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -2669,33 +5417,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -2708,33 +5506,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="active other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -2747,33 +5595,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="name"
@@ -2786,33 +5684,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -2825,33 +5773,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -2893,33 +5891,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
         </div>
         <div
@@ -2927,33 +5975,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -2961,33 +6059,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -2995,33 +6143,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -3029,33 +6227,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
       </div>
@@ -3103,6 +6351,55 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
   className="container"
 >
   <div
+    className="ranks"
+  >
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#2FB855",
+          }
+        }
+      />
+      <div>
+        Preferred
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#FFA721",
+          }
+        }
+      />
+      <div>
+        Acceptable
+      </div>
+    </div>
+    <div
+      className="chartLegendContainer"
+    >
+      <div
+        className="chartLegendColor"
+        style={
+          Object {
+            "background": "#EE5351",
+          }
+        }
+      />
+      <div>
+        Potential Risk
+      </div>
+    </div>
+  </div>
+  <div
     className="vertical"
   >
     <div
@@ -3184,33 +6481,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="name"
@@ -3223,33 +6570,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="active other"
+        style={
+          Object {
+            "background": "black",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -3262,33 +6659,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="active low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="name"
@@ -3301,33 +6748,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="active high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="high"
+        style={
+          Object {
+            "background": "#29B770",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -3340,33 +6837,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
     >
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="active medium"
+        style={
+          Object {
+            "background": "#EF615E",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="low"
+        style={
+          Object {
+            "background": "#FFCC3B",
+          }
+        }
       />
       <div
         className="name"
@@ -3408,33 +6955,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
         </div>
         <div
@@ -3442,33 +7039,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="other"
+            style={
+              Object {
+                "background": "black",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -3476,33 +7123,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -3510,33 +7207,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="active high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="high"
+            style={
+              Object {
+                "background": "#29B770",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
         <div
@@ -3544,33 +7291,83 @@ exports[`Paradox.PersonalityRecommendationChart update sets the data if the guid
         >
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="low"
+            style={
+              Object {
+                "background": "#FFCC3B",
+              }
+            }
           />
           <div
             className="active medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
           <div
             className="medium"
+            style={
+              Object {
+                "background": "#EF615E",
+              }
+            }
           />
         </div>
       </div>

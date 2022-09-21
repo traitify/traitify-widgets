@@ -20,13 +20,13 @@ const colorFrom = ({benchmark, score, typeID}) => {
     return colors.high;
   }
 
-  const range = benchmark
-    .range_types.find(({id}) => id === typeID)
-    .ranges.find(({max_score: max, min_score: min}) => score >= min && score <= max);
-
-  if(range.match_score === 5) { return colors.low; }
-  if(range.match_score === 10) { return colors.medium; }
-  if(range.match_score === 20) { return colors.high; }
+  const dimensionRanges = benchmark.dimensionRanges
+    .filter(({dimensionId}) => dimensionId === typeID);
+  const range = dimensionRanges
+    .find(({maxScore: max, minScore: min}) => score >= min && score <= max);
+  if(range.matchScore === 5) { return benchmark.hexColorLow; }
+  if(range.matchScore === 10) { return benchmark.hexColorMedium; }
+  if(range.matchScore === 20) { return benchmark.hexColorHigh; }
 
   return colors.other;
 };
@@ -106,9 +106,15 @@ function Guide(props) {
       return {...competency, badge: badge.image_medium, color, score};
     });
 
-    const sortedData = _data.filter(({color}) => color === colors.low);
-    sortedData.push(..._data.filter(({color}) => color === colors.medium));
-    sortedData.push(..._data.filter(({color}) => color === colors.high));
+    const sortedData = _data.filter(
+      ({color}) => color === (benchmark ? benchmark.hexColorLow : colors.low)
+    );
+    sortedData.push(..._data.filter(
+      ({color}) => color === (benchmark ? benchmark.hexColorMedium : colors.medium)
+    ));
+    sortedData.push(..._data.filter(
+      ({color}) => color === (benchmark ? benchmark.hexColorHigh : colors.high)
+    ));
     sortedData.push(..._data.filter(({color}) => color === colors.other));
 
     setData(sortedData);
@@ -202,16 +208,16 @@ Guide.propTypes = {
   }),
   benchmark: PropTypes.shape({
     id: PropTypes.string,
-    range_types: PropTypes.arrayOf(
+    hexColorLow: PropTypes.string.isRequired,
+    hexColorMedium: PropTypes.string.isRequired,
+    hexColorHigh: PropTypes.string.isRequired,
+    dimensionRanges: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        ranges: PropTypes.arrayOf(
-          PropTypes.shape({
-            match_score: PropTypes.number.isRequired,
-            max_score: PropTypes.number.isRequired,
-            min_score: PropTypes.number.isRequired
-          }).isRequired
-        ).isRequired
+        dimensionId: PropTypes.string.isRequired,
+        matchScore: PropTypes.number.isRequired,
+        maxScore: PropTypes.number.isRequired,
+        minScore: PropTypes.number.isRequired
       }).isRequired
     )
   }),

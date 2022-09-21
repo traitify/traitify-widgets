@@ -204,14 +204,8 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
     getBenchmark = (options = {}) => {
       const {benchmarkID, locale} = this.state;
       if(!benchmarkID) { return Promise.resolve(); }
-
       const key = this.getCacheKey("benchmark");
-      const hasData = (data) => (
-        data && data.locale_key
-          && data.id === benchmarkID
-          && data.locale_key.toLowerCase() === locale
-          && data.name
-      );
+      const hasData = (data) => (data && data.benchmarkId === benchmarkID && data.name);
       const setBenchmark = (data) => (
         new Promise((resolve) => {
           this.setState({benchmark: data}, () => (resolve(data)));
@@ -229,20 +223,14 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
         return this.ui.requests[key];
       }
 
-      this.ui.requests[key] = this.traitify.get(`/assessments/recommendations/${benchmarkID}`, {
-        locale_key: locale
-      }).then((_data) => {
-        const data = {..._data};
+      const query = queries.benchmark({params: {benchmarkId: benchmarkID, localeKey: locale}});
+      this.ui.requests[key] = this.traitify.post("/recommendations/graphql", query).then(({data}) => {
+        const dimensionRangebenchmark = data ? data.getDimensionRangeBenchmark : {};
 
-        if(data.locale_key.toLowerCase() !== locale) {
-          data.locale_key = locale;
-          data.skip_cache = true;
-        }
+        if(hasData(dimensionRangebenchmark)) {
+          this.cache.set(key, dimensionRangebenchmark);
 
-        if(hasData(data)) {
-          if(!data.skip_cache) { this.cache.set(key, data); }
-
-          setBenchmark(data);
+          setBenchmark(dimensionRangebenchmark);
         } else {
           delete this.ui.requests[key];
         }
@@ -529,7 +517,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       switch(type) {
         case "benchmark":
-          return !!(benchmark && benchmark.name && (benchmark.range_types || []).length > 0);
+          return !!(benchmark && benchmark.name && (benchmark.dimensionRanges || []).length > 0);
         case "deck":
           return !!(deck && deck.name);
         case "guide":

@@ -9,11 +9,7 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
 
-// const ranks = [
-//   {key: "preferred", rank: "high"},
-//   {key: "acceptable", rank: "medium"},
-//   {key: "potential_risk", rank: "low"}
-// ];
+const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
 
 function PersonalityRecommendationChart({setElement, ...props}) {
   const {
@@ -25,7 +21,6 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     getOption,
     guide,
     isReady,
-    // translate,
     ui
   } = props;
   const [data, setData] = useState([]);
@@ -43,8 +38,8 @@ function PersonalityRecommendationChart({setElement, ...props}) {
     setData(createColumns({benchmark, guide, order: "types", types}));
   }, [
     dig(assessment, "personality_types", 0, "personality_type", "name"),
-    dig(benchmark, "id"),
-    dig(benchmark, "rankings", 0, "description"),
+    dig(benchmark, "dimensionId"),
+    dig(benchmark, "resultRankings", 0, "description"),
     dig(guide, "assessment_id"),
     dig(guide, "locale_key")
   ]);
@@ -57,11 +52,27 @@ function PersonalityRecommendationChart({setElement, ...props}) {
 
   const length = Math.max(...data.map(({data: points}) => points.length));
 
+  const colorFromRank = (rank) => {
+    if(rank === "low") { return benchmark ? benchmark.hexColorLow : colors.low; }
+    if(rank === "medium") { return benchmark ? benchmark.hexColorMedium : colors.medium; }
+    if(rank === "high") { return benchmark ? benchmark.hexColorHigh : colors.high; }
+
+    return colors.other;
+  };
+
+  let ranks = dig(benchmark, "resultRankings") || [];
+  ranks = ranks.sort((a, b) => ((a.maxScore < b.maxScore) ? 1 : -1));
+
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")} ref={setElement}>
-      {/* <div className={style.ranks}>
-        {ranks.map(({key, rank}) => <div key={key} className={style[rank]}>{translate(key)}</div>)}
-      </div> */}
+      <div className={style.ranks}>
+        {ranks.map(({description, visualHex, id}) => (
+          <div key={id} className={style.chartLegendContainer}>
+            <div className={style.chartLegendColor} style={{background: visualHex}} />
+            <div>{description}</div>
+          </div>
+        ))}
+      </div>
       <div className={style.vertical}>
         <div className={style.scale}>
           {times(length).map((index) => (
@@ -76,6 +87,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
               <div
                 key={index} /* eslint-disable-line react/no-array-index-key */
                 className={[active && style.active, style[rank]].filter(Boolean).join(" ")}
+                style={{background: colorFromRank(rank)}}
               />
             ))}
             <div className={style.name}>{competency.name}</div>
@@ -94,6 +106,7 @@ function PersonalityRecommendationChart({setElement, ...props}) {
                   <div
                     key={index} /* eslint-disable-line react/no-array-index-key */
                     className={[active && style.active, style[rank]].filter(Boolean).join(" ")}
+                    style={{background: colorFromRank(rank)}}
                   />
                 ))}
               </div>
@@ -126,19 +139,19 @@ PersonalityRecommendationChart.propTypes = {
   }),
   benchmark: PropTypes.shape({
     id: PropTypes.string,
-    range_types: PropTypes.arrayOf(
+    hexColorLow: PropTypes.string.isRequired,
+    hexColorMedium: PropTypes.string.isRequired,
+    hexColorHigh: PropTypes.string.isRequired,
+    dimensionRanges: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        ranges: PropTypes.arrayOf(
-          PropTypes.shape({
-            match_score: PropTypes.number.isRequired,
-            max_score: PropTypes.number.isRequired,
-            min_score: PropTypes.number.isRequired
-          }).isRequired
-        ).isRequired
+        dimensionId: PropTypes.string.isRequired,
+        matchScore: PropTypes.number.isRequired,
+        maxScore: PropTypes.number.isRequired,
+        minScore: PropTypes.number.isRequired
       }).isRequired
     ),
-    rankings: PropTypes.arrayOf(
+    resultRankings: PropTypes.arrayOf(
       PropTypes.shape({
         description: PropTypes.string.isRequired
       }).isRequired

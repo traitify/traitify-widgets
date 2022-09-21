@@ -3,12 +3,12 @@ import {times} from "lib/helpers/array";
 import {dig} from "lib/helpers/object";
 
 const defaultRanges = [
-  {match_score: 5, max_score: 3, min_score: 1},
-  {match_score: 10, max_score: 6, min_score: 4},
-  {match_score: 20, max_score: 10, min_score: 7}
+  {matchScore: 5, maxScore: 3, minScore: 1},
+  {matchScore: 10, maxScore: 6, minScore: 4},
+  {matchScore: 20, maxScore: 10, minScore: 7}
 ];
 
-const rankFromRange = ({match_score: score}) => {
+const rankFromRange = ({matchScore: score}) => {
   if(score === 5) { return "low"; }
   if(score === 10) { return "medium"; }
   if(score === 20) { return "high"; }
@@ -23,19 +23,24 @@ export function findCompetency({guide, typeID}) {
 
 export function combine({benchmark, guide, order, types}) {
   const data = sortByTypePosition(types).map(({personality_type: type, score}) => {
-    const rawRanges = benchmark
-      ? benchmark.range_types.find(({id}) => id === type.id).ranges
+    const dimensionRanges = benchmark
+      ? benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId === type.id)
+      : [];
+
+    const rawRanges = dimensionRanges.length
+      ? dimensionRanges
       : defaultRanges;
+
     const ranges = rawRanges.map((range) => ({
-      max: range.max_score <= 10 ? range.max_score : 10,
-      min: range.min_score > 0 ? range.min_score : 1,
+      max: range.maxScore <= 10 ? range.maxScore : 10,
+      min: range.minScore > 0 ? range.minScore : 1,
       rank: rankFromRange(range)
     }));
     const range = ranges.find(({max, min}) => score >= min && score <= max);
 
     return {
       competency: findCompetency({guide, typeID: type.id}),
-      rank: range ? range.rank : "other",
+      rank: range.rank,
       range,
       ranges,
       score,

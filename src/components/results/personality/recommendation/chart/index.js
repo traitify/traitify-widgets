@@ -59,15 +59,19 @@ function PersonalityRecommendationChart(props) {
       const competency = (dig(guide, "competencies") || []).find(({questionSequences}) => (
         questionSequences[0].personalityTypeId === type.id
       ));
-      const rangeType = benchmark.range_types.find(({id}) => id === type.id);
-      const typeRange = rangeType.ranges
-        .find((range) => score >= range.min_score && score <= range.max_score);
+
+      const dimensionRangesForType = benchmark
+        ? benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId === type.id)
+        : [];
+
+      const typeRange = dimensionRangesForType
+        .filter((range) => score >= range.minScore && score <= range.maxScore);
 
       columns.push({
-        data: rangeType.ranges.map((range) => ({
+        data: typeRange.map((range) => ({
           color: backgroundColorFromRange(range),
-          max: range.max_score <= 10 ? range.max_score : 10,
-          min: range.min_score > 0 ? range.min_score : 1
+          max: range.maxScore <= 10 ? range.maxScore : 10,
+          min: range.minScore > 0 ? range.minScore : 1
         })),
         label: {
           heading: type.name,
@@ -83,7 +87,7 @@ function PersonalityRecommendationChart(props) {
   }, [
     dig(assessment, "personality_types", 0, "personality_type", "name"),
     dig(benchmark, "id"),
-    dig(benchmark, "rankings", 0, "description"),
+    dig(benchmark, "resultRankings", 0, "description"),
     dig(guide, "competencies", 0, "name")
   ]);
 
@@ -122,19 +126,19 @@ PersonalityRecommendationChart.propTypes = {
   }),
   benchmark: PropTypes.shape({
     id: PropTypes.string,
-    range_types: PropTypes.arrayOf(
+    hexColorLow: PropTypes.string.isRequired,
+    hexColorMedium: PropTypes.string.isRequired,
+    hexColorHigh: PropTypes.string.isRequired,
+    dimensionRanges: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        ranges: PropTypes.arrayOf(
-          PropTypes.shape({
-            match_score: PropTypes.number.isRequired,
-            max_score: PropTypes.number.isRequired,
-            min_score: PropTypes.number.isRequired
-          }).isRequired
-        ).isRequired
+        dimensionId: PropTypes.string.isRequired,
+        matchScore: PropTypes.number.isRequired,
+        maxScore: PropTypes.number.isRequired,
+        minScore: PropTypes.number.isRequired
       }).isRequired
     ),
-    rankings: PropTypes.arrayOf(
+    resultRankings: PropTypes.arrayOf(
       PropTypes.shape({
         description: PropTypes.string.isRequired
       }).isRequired

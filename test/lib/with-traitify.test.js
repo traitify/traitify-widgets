@@ -3,6 +3,7 @@ import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";
 import DummyComponent, {ErrorComponent, OtherComponent} from "support/dummy-components";
 import Traitify from "support/traitify";
+import benchmarkFixture from "support/json/benchmark.json";
 
 jest.mock("lib/helpers", () => ({
   getDisplayName: jest.fn((component) => component.name).mockName("getDisplayName"),
@@ -32,7 +33,7 @@ describe("withTraitify", () => {
     traitify = new Traitify();
     assessment = {...baseAssessment, personality_types: [{name: "Openness"}]};
     assessmentWithoutResults = {...baseAssessment, slides: [{caption: "Snakes"}]};
-    benchmark = {id: "b-id", locale_key: "en-US", name: "Developer", range_types: [{name: "R"}, {name: "L"}]};
+    benchmark = benchmarkFixture;
     cognitiveAssessment = {...baseCognitiveAssessment, completed: true};
     cognitiveAssessmentWithoutResults = {...baseCognitiveAssessment, completed: false};
     deck = {id: "big-five", locale_key: "en-US", name: "Big Five"};
@@ -218,13 +219,13 @@ describe("withTraitify", () => {
 
     it("gets benchmark when state gets benchmarkID", () => {
       getDummyComponent().props.followBenchmark();
-      component.updateState({benchmark, benchmarkID: benchmark.id});
+      component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
 
       expect(getBenchmark).toHaveBeenCalled();
     });
 
     it("gets benchmark if state has benchmarkID", () => {
-      component.updateState({benchmark, benchmarkID: benchmark.id});
+      component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
       getDummyComponent().props.followBenchmark();
 
       expect(getBenchmark).toHaveBeenCalled();
@@ -232,7 +233,7 @@ describe("withTraitify", () => {
 
     it("gets benchmark if state has benchmarkID and benchmark is removed", () => {
       getDummyComponent().props.followBenchmark();
-      component.updateState({benchmark, benchmarkID: benchmark.id});
+      component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
       getBenchmark.mockClear();
       component.updateState({benchmark: null});
 
@@ -464,7 +465,21 @@ describe("withTraitify", () => {
         get: jest.fn().mockName("get"),
         set: jest.fn().mockName("set")
       };
-      benchmarkWithoutName = {id: "b-id", locale_key: "en-US", range_types: [{name: "R"}, {name: "L"}]};
+      benchmarkWithoutName = {
+        id: "b-id",
+        benchmarkId: "f5fbe21b-52d8-4e20-beca-dcd33b55a5d2",
+        dimensionRanges: [
+          {dimensionId: "6a3d7239-ea9a-4ce0-af85-812918a69628", maxScore: 5, minScore: 3, matchScore: 4},
+          {dimensionId: "2835d442-98be-49ff-9cf1-0e0ea577fa77", maxScore: 20, minScore: 5, matchScore: 10}
+        ],
+        resultRankings: [
+          {description: "Potential Risk"},
+          {description: "Preferred Fit"}
+        ],
+        hexColorHigh: "#29B770",
+        hexColorLow: "#FFCC3B",
+        hexColorMedium: "#EF615E"
+      };
       component = new ComponentHandler(<Component cache={cache} traitify={traitify} />);
     });
 
@@ -483,7 +498,7 @@ describe("withTraitify", () => {
     });
 
     it("checks state", (done) => {
-      component.updateState({benchmark, benchmarkID: benchmark.id});
+      component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark().then(() => {
         const {props} = getDummyComponent();
 
@@ -495,7 +510,7 @@ describe("withTraitify", () => {
 
     it("skips state if no name", (done) => {
       benchmark = benchmarkWithoutName;
-      component.updateState({benchmark, benchmarkID: benchmark.id});
+      component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
         done();
@@ -504,7 +519,7 @@ describe("withTraitify", () => {
 
     it("checks cache", (done) => {
       cache.get.mockReturnValue(benchmark);
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark().then(() => {
         const {props} = getDummyComponent();
 
@@ -517,7 +532,7 @@ describe("withTraitify", () => {
     it("skips cache if no name", (done) => {
       benchmark = benchmarkWithoutName;
       cache.get.mockReturnValue(benchmark);
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.benchmark).not.toBe(benchmark);
         done();
@@ -525,8 +540,10 @@ describe("withTraitify", () => {
     });
 
     it("sets cache if name", (done) => {
-      traitify.ajax.mockReturnValue(Promise.resolve(benchmark));
-      component.updateState({benchmarkID: benchmark.id});
+      traitify.post.mockReturnValue(Promise.resolve(
+        {data: {getDimensionRangeBenchmark: benchmarkFixture}}
+      ));
+      component.updateState({benchmarkID: benchmarkFixture.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
         done();
@@ -535,10 +552,10 @@ describe("withTraitify", () => {
 
     it("stops if there's an existing request", () => {
       benchmark = benchmarkWithoutName;
-      const key = `en-us.benchmark.${benchmark.id}`;
+      const key = `en-us.benchmark.${benchmark.benchmarkId}`;
       const request = new Promise(() => {});
       traitify.ui.requests[key] = request;
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark();
 
       expect(traitify.ui.requests[key]).toBe(request);
@@ -546,10 +563,10 @@ describe("withTraitify", () => {
 
     it("forces new request", () => {
       benchmark = benchmarkWithoutName;
-      const key = `en-us.benchmark.${benchmark.id}`;
+      const key = `en-us.benchmark.${benchmark.benchmarkId}`;
       const request = new Promise(() => {});
       traitify.ui.requests[key] = request;
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark({force: true});
 
       expect(traitify.ui.requests[key]).not.toBe(request);
@@ -557,9 +574,9 @@ describe("withTraitify", () => {
 
     it("catches error with request", (done) => {
       benchmark = benchmarkWithoutName;
-      const key = `en-us.benchmark.${benchmark.id}`;
-      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
-      component.updateState({benchmarkID: benchmark.id});
+      const key = `en-us.benchmark.${benchmark.benchmarkId}`;
+      traitify.post.mockReturnValue(Promise.reject("Error with request"));
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.getBenchmark().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
@@ -655,7 +672,7 @@ describe("withTraitify", () => {
 
     it("sets cache if request results", (done) => {
       assessment = cognitiveAssessment;
-      traitify.ajax.mockReturnValue(Promise.resolve({
+      traitify.post.mockReturnValue(Promise.resolve({
         data: {cognitiveTest: assessment}
       }));
       component.updateProps({assessmentID: assessment.id});
@@ -667,7 +684,7 @@ describe("withTraitify", () => {
 
     it("skips setting cache if no results", (done) => {
       assessment = cognitiveAssessmentWithoutResults;
-      traitify.ajax.mockReturnValue(Promise.resolve({
+      traitify.post.mockReturnValue(Promise.resolve({
         data: {cognitiveTest: assessment}
       }));
       component.updateProps({assessmentID: assessment.id});
@@ -702,7 +719,7 @@ describe("withTraitify", () => {
     it("catches error with request", (done) => {
       assessment = cognitiveAssessmentWithoutResults;
       const key = `en-us.cognitive-assessment.${assessment.id}`;
-      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateProps({assessmentID: assessment.id});
       getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
@@ -911,7 +928,7 @@ describe("withTraitify", () => {
     });
 
     it("sets cache if competencies", (done) => {
-      traitify.ajax.mockReturnValue(Promise.resolve({data: {guide}}));
+      traitify.post.mockReturnValue(Promise.resolve({data: {guide}}));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
@@ -921,7 +938,7 @@ describe("withTraitify", () => {
 
     it("sets guide assessment ID if missing", (done) => {
       guide.assessment_id = null;
-      traitify.ajax.mockReturnValue(
+      traitify.post.mockReturnValue(
         Promise.resolve({data: {guide}})
       );
       component.updateState({assessment});
@@ -933,7 +950,7 @@ describe("withTraitify", () => {
 
     it("sets guide locale if missing", (done) => {
       guide.locale_key = null;
-      traitify.ajax.mockReturnValue(Promise.resolve({data: {guide}}));
+      traitify.post.mockReturnValue(Promise.resolve({data: {guide}}));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide.locale_key).toBe(component.state.locale);
@@ -942,7 +959,7 @@ describe("withTraitify", () => {
     });
 
     it("sets guide to blank if no data", (done) => {
-      traitify.ajax.mockReturnValue(Promise.resolve({}));
+      traitify.post.mockReturnValue(Promise.resolve({}));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide).toBeNull();
@@ -972,7 +989,7 @@ describe("withTraitify", () => {
 
     it("catches error with request", (done) => {
       const key = `en-us.guide.${assessment.id}`;
-      traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
+      traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({assessment});
       component.instance.getGuide().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
@@ -1148,7 +1165,23 @@ describe("withTraitify", () => {
         beforeEach(() => {
           component.updateState({
             assessment: {id: "abc", personality_types: [{name: "Openness"}], slides: [{}]},
-            benchmark: {name: "Developer", range_types: [{id: "xyz"}]},
+            benchmark: {
+              name: "Developer Copy",
+              dimensionRanges: [
+                {
+                  dimensionId: "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+                  matchScore: 0,
+                  maxScore: 4,
+                  minScore: 0
+                },
+                {
+                  dimensionId: "dd2bb7a8-26fb-402d-8e7d-852fb9c1ba0b",
+                  matchScore: 20,
+                  maxScore: 7,
+                  minScore: 5
+                }
+              ]
+            },
             deck: {id: "big-five", name: "Big Five"},
             guide: {competencies: [{}]}
           });
@@ -1308,10 +1341,10 @@ describe("withTraitify", () => {
     });
 
     it("checks benchmarkID prop", () => {
-      component.updateProps({benchmarkID: benchmark.id});
+      component.updateProps({benchmarkID: benchmark.benchmarkId});
       component.instance.setBenchmarkID();
 
-      expect(component.state.benchmarkID).toBe(benchmark.id);
+      expect(component.state.benchmarkID).toBe(benchmark.benchmarkId);
     });
 
     it("gives up", () => {
@@ -1482,16 +1515,16 @@ describe("withTraitify", () => {
     });
 
     it("removes old listener if benchmark changes", () => {
-      const key = `en-us.benchmark.${benchmark.id}`;
+      const key = `en-us.benchmark.${benchmark.benchmarkId}`;
       component.instance.removeListener = jest.fn().mockName("removeListener");
-      component.instance.updateBenchmark({oldID: benchmark.id});
+      component.instance.updateBenchmark({oldID: benchmark.benchmarkId});
 
       expect(component.instance.removeListener).toHaveBeenCalledWith(key);
     });
 
     it("removes old listener if locale changes", () => {
-      const key = `es-us.benchmark.${benchmark.id}`;
-      component.updateState({benchmarkID: benchmark.id});
+      const key = `es-us.benchmark.${benchmark.benchmarkId}`;
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.removeListener = jest.fn().mockName("removeListener");
       component.instance.updateBenchmark({oldLocale: "es-us"});
 
@@ -1499,7 +1532,7 @@ describe("withTraitify", () => {
     });
 
     it("adds new listener", () => {
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.addListener = jest.fn().mockName("addListener");
       component.instance.removeListener = jest.fn().mockName("removeListener");
       component.instance.updateBenchmark();
@@ -1509,7 +1542,7 @@ describe("withTraitify", () => {
     });
 
     it("gets benchmark if no current value", () => {
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateBenchmark();
 
@@ -1518,9 +1551,9 @@ describe("withTraitify", () => {
     });
 
     it("uses current value", () => {
-      const key = `en-us.benchmark.${benchmark.id}`;
+      const key = `en-us.benchmark.${benchmark.benchmarkId}`;
       traitify.ui.current[key] = benchmark;
-      component.updateState({benchmarkID: benchmark.id});
+      component.updateState({benchmarkID: benchmark.benchmarkId});
       component.instance.setState = jest.fn().mockName("setState");
       component.instance.updateBenchmark();
 

@@ -1,144 +1,148 @@
 {
-  "deck_id": "big-five",
-  "default": true,
-  "editable": true,
-  "id": "8971c709-e2cb-4564-8f16-c6d1fd13f6d9",
-  "locale_key": "en-us",
-  "name": "Big Five Retail",
-  "org_path": "9011ec189e8542828b521cb850719e15",
-  "range_types": [
+  "benchmarkId": "fbb89b07-07ce-4f6e-b97d-81c374da9e7e",
+  "dimensionRanges": [
     {
-      "id": "05596127-4fdd-4d22-8ae7-530d42d225eb",
-      "ranges": [
-        {
-          "match_score": 5,
-          "max_score": 3,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 11,
-          "min_score": 10
-        },
-        {
-          "match_score": 0,
-          "max_score": 9,
-          "min_score": 4
-        }
-      ]
+      "id": "7a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "05596127-4fdd-4d22-8ae7-530d42d225eb",
+      "matchScore": 5,
+      "maxScore": 3,
+      "minScore": 0
     },
     {
-      "id": "f702b455-2c0e-433c-a274-b01b68ae29ba",
-      "ranges": [
-        {
-          "match_score": 20,
-          "max_score": 3,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 10,
-          "min_score": 10
-        },
-        {
-          "match_score": 5,
-          "max_score": 9,
-          "min_score": 4
-        }
-      ]
+      "id": "8a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "05596127-4fdd-4d22-8ae7-530d42d225eb",
+      "matchScore": 10,
+      "maxScore": 11,
+      "minScore": 10
     },
     {
-      "id": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
-      "ranges": [
-        {
-          "match_score": 5,
-          "max_score": 3,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 10,
-          "min_score": 9
-        },
-        {
-          "match_score": 10,
-          "max_score": 8,
-          "min_score": 4
-        }
-      ]
+      "id": "9a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "05596127-4fdd-4d22-8ae7-530d42d225eb",
+      "matchScore": 0,
+      "maxScore": 9,
+      "minScore": 4
     },
     {
-      "id": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
-      "ranges": [
-        {
-          "match_score": 5,
-          "max_score": 3,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 10,
-          "min_score": 9
-        },
-        {
-          "match_score": 20,
-          "max_score": 8,
-          "min_score": 4
-        }
-      ]
+      "id": "1a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "f702b455-2c0e-433c-a274-b01b68ae29ba",
+      "matchScore": 20,
+      "maxScore": 3,
+      "minScore": 0
     },
     {
-      "id": "462b8063-69f4-4b50-990b-8daee93e8616",
-      "ranges": [
-        {
-          "match_score": 20,
-          "max_score": 7,
-          "min_score": 2
-        },
-        {
-          "match_score": 10,
-          "max_score": 1,
-          "min_score": 0
-        },
-        {
-          "match_score": 10,
-          "max_score": 8,
-          "min_score": 8
-        },
-        {
-          "match_score": 5,
-          "max_score": 10,
-          "min_score": 9
-        }
-      ]
+      "id": "2a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "f702b455-2c0e-433c-a274-b01b68ae29ba",
+      "matchScore": 10,
+      "maxScore": 10,
+      "minScore": 10
+    },
+    {
+      "id": "3a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "f702b455-2c0e-433c-a274-b01b68ae29ba",
+      "matchScore": 5,
+      "maxScore": 9,
+      "minScore": 4
+    },
+    {
+      "id": "4a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
+      "matchScore": 5,
+      "maxScore": 3,
+      "minScore": 0
+    },
+    {
+      "id": "5a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
+      "matchScore": 10,
+      "maxScore": 10,
+      "minScore": 9
+    },
+    {
+      "id": "6a806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "f087aa70-14ea-4293-9327-cedf0e4ce1fa",
+      "matchScore": 10,
+      "maxScore": 8,
+      "minScore": 4
+    },
+    {
+      "id": "11806669-3972-493e-b447-f14c56199276",
+      "dimensionId": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
+      "matchScore": 5,
+      "maxScore": 3,
+      "minScore": 0
+    },
+    {
+      "id": "1206669-3972-493e-b447-f14c56199276",
+      "dimensionId": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
+      "matchScore": 10,
+      "maxScore": 10,
+      "minScore": 9
+    },
+    {
+      "id": "1306669-3972-493e-b447-f14c56199276",
+      "dimensionId": "2835d442-98be-49ff-9cf1-0e0ea577fa77",
+      "matchScore": 20,
+      "maxScore": 8,
+      "minScore": 4
+    },
+    {
+      "id": "1406669-3972-493e-b447-f14c56199276",
+      "dimensionId": "462b8063-69f4-4b50-990b-8daee93e8616",
+      "matchScore": 20,
+      "maxScore": 7,
+      "minScore": 2
+    },
+    {
+      "id": "1506669-3972-493e-b447-f14c56199276",
+      "dimensionId": "462b8063-69f4-4b50-990b-8daee93e8616",
+      "matchScore": 10,
+      "maxScore": 1,
+      "minScore": 0
+    },
+    {
+      "id": "1606669-3972-493e-b447-f14c56199276",
+      "dimensionId": "462b8063-69f4-4b50-990b-8daee93e8616",
+      "matchScore": 10,
+      "maxScore": 8,
+      "minScore": 8
+    },
+    {
+      "id": "1706669-3972-493e-b447-f14c56199276",
+      "dimensionId": "462b8063-69f4-4b50-990b-8daee93e8616",
+      "matchScore": 5,
+      "maxScore": 10,
+      "minScore": 9
     }
   ],
-  "rankings": [
+  "hexColorHigh": "#29B770",
+  "hexColorLow": "#FFCC3B",
+  "hexColorMedium": "#EF615E",
+  "name": "McDonalds Employee Assessment Recommendation",
+  "orgPath": "9011ec189e8542828b521cb850719e15",
+  "resultRankings": [
     {
       "description": "Potential Risk",
       "id": "7c7b5f37-f5d1-44cf-977b-834653569c23",
-      "max_score": 49.0,
-      "min_score": 0.0,
-      "visual_description": "Red",
-      "visual_hex_value": "#EE5351"
+      "maxScore": 49.0,
+      "minScore": 0.0,
+      "visualDescription": "Red",
+      "visualHex": "#EE5351"
     },
     {
       "description": "Preferred",
       "id": "6a8d4185-0daa-4941-8ad6-9c9af550691e",
-      "max_score": 100.0,
-      "min_score": 80.0,
-      "visual_description": "Green",
-      "visual_hex_value": "#2FB855"
+      "maxScore": 100.0,
+      "minScore": 80.0,
+      "visualDescription": "Green",
+      "visualHex": "#2FB855"
     },
     {
       "description": "Acceptable",
       "id": "86a06e09-4153-4cf0-a1df-de7856cecf4f",
-      "max_score": 79.0,
-      "min_score": 50.0,
-      "visual_description": "Yellow",
-      "visual_hex_value": "#FFA721"
+      "maxScore": 79.0,
+      "minScore": 50.0,
+      "visualDescription": "Yellow",
+      "visualHex": "#FFA721"
     }
-  ],
-  "regression": null,
-  "types": []
+  ]
 }

@@ -96,8 +96,6 @@ function InlineJobs({className, count, jobs, jobSource, translate}) {
     </div>
   );
 }
-export default InlineJobs;
-
 InlineJobs.propTypes = {
   className: PropTypes.string,
   count: PropTypes.number,
@@ -117,3 +115,4 @@ InlineJobs.defaultProps = {
   count: 0,
   jobSource: "Indeed"
 };
+export default InlineJobs;

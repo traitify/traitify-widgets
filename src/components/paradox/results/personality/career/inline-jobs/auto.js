@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {useEffect, useRef, useState} from "react";
+import {useLayoutEffect, useRef, useState} from "react";
 import InlineJobs from "./index";
 import style from "./style.scss";
 
@@ -7,26 +7,26 @@ function InlineJobsAuto({jobs, jobSource, translate}) {
   const ref = useRef(null);
   const [count, setCount] = useState(0);
 
-  /** Adjusts number of jobs based on screen size */
-  const configureCount = () => {
-    const INLINE_JOB_WIDTH = 180;
-    const NEXT_BUTTON_SIZE = 44;
-    const {offsetLeft: OFFSET_LEFT, offsetWidth: WIDTH} = ref.current;
-    const {offsetWidth: PARENT_WIDTH} = ref.current.offsetParent;
-    const WIDTH_ESTIMATE = PARENT_WIDTH - OFFSET_LEFT;
-    const DIFFERENCE = WIDTH_ESTIMATE - WIDTH;
+  useLayoutEffect(() => {
+    const configureCount = () => {
+      const inlineJobWidth = 180;
+      const nextButtonSize = 44;
+      const {offsetLeft, offsetWidth: width} = ref.current;
+      const {offsetWidth: parentWidth} = ref.current.offsetParent;
+      const widthEstimate = parentWidth - offsetLeft;
+      const difference = widthEstimate - width;
 
-    const VALUE = DIFFERENCE <= 0 ? Math.floor(PARENT_WIDTH - OFFSET_LEFT) : WIDTH;
+      const value = difference <= 0 ? Math.floor(parentWidth - offsetLeft) : width;
 
-    const newCount = Math.floor((VALUE - (NEXT_BUTTON_SIZE * 2)) / INLINE_JOB_WIDTH);
-    setCount(newCount);
-  };
-
-  useEffect(() => {
+      const newCount = Math.floor((value - (nextButtonSize * 2)) / inlineJobWidth);
+      setCount(newCount);
+    };
     configureCount();
-  }, []);
 
-  window.addEventListener("resize", configureCount);
+    window.addEventListener("resize", configureCount);
+
+    return () => window.removeEventListener("resize", configureCount);
+  }, []);
 
   return (
     <div className={style.auto} ref={ref}>

@@ -4,6 +4,7 @@ import useDidMount from "lib/hooks/use-did-mount";
 import useDidUpdate from "lib/hooks/use-did-update";
 import withTraitify from "lib/with-traitify";
 import style from "./style.scss";
+import InlineJobs from "../inline-jobs/auto";
 
 function CareerDetails(props) {
   const {career, translate, setElement, ui} = props;
@@ -63,6 +64,13 @@ function CareerDetails(props) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
+          {career?.inline_jobs?.length > 0 && (
+            <InlineJobs
+              jobs={career?.inline_jobs}
+              job_source={career?.job_source}
+              translate={translate}
+            />
+          )}
         </div>
       </div>
     </div>
@@ -75,6 +83,15 @@ CareerDetails.propTypes = {
     experience_level: PropTypes.shape({
       id: PropTypes.number.isRequired
     }).isRequired,
+    inline_jobs: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        company: PropTypes.string,
+        location: PropTypes.string,
+        url: PropTypes.string
+      })
+    ),
+    job_source: PropTypes.string,
     picture: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired

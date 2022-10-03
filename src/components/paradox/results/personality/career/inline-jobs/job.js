@@ -4,7 +4,7 @@ import Icon from "lib/helpers/icon";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import style from "./style.scss";
 
-function InlineJob({job, jobSource = "Indeed", translate}) {
+function InlineJob({job, jobSource, translate}) {
   const jobSourceURL = {
     Indeed: "https://www.indeed.com/",
     Monster: "https://www.monster.com",

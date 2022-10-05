@@ -90,7 +90,7 @@ describe("Paradox.CareerContainer", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("modal shows majors", async() => {
+  it("modal shows clubs", async() => {
     await act(async() => {
       component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
     });
@@ -103,7 +103,7 @@ describe("Paradox.CareerContainer", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("modal shows jobs", async() => {
+  it("modal shows majors", async() => {
     await act(async() => {
       component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
     });
@@ -112,6 +112,45 @@ describe("Paradox.CareerContainer", () => {
     });
     act(() => {
       component.instance.findAllByProps({className: "navButton"})[2].props.onClick();
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("modal shows jobs", async() => {
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    act(() => {
+      component.instance.findAllByType("button")[2].props.onClick();
+    });
+    act(() => {
+      component.instance.findAllByProps({className: "navButton"})[4].props.onClick();
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("modal shows employers", async() => {
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    act(() => {
+      component.instance.findAllByType("button")[2].props.onClick();
+    });
+    act(() => {
+      component.instance.findAllByProps({className: "navButton"})[6].props.onClick();
+    });
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("modal shows resources", async() => {
+    await act(async() => {
+      component = new ComponentHandler(<Component assessmentID={props.assessmentID} {...props} />);
+    });
+    act(() => {
+      component.instance.findAllByType("button")[2].props.onClick();
+    });
+    act(() => {
+      component.instance.findAllByProps({className: "navButton"})[8].props.onClick();
     });
     expect(component.tree).toMatchSnapshot();
   });

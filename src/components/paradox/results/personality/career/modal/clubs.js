@@ -6,7 +6,7 @@ function CareerModalClubs({clubs}) {
     <div className={style.list}>
       {clubs.map((club) => (
         <div className={style.listItem} key={club.id}>
-          <div className={style.title}>{club.title}</div>
+          <div className={style.title}>{club.name}</div>
           <div className={style.description}>{club.description}</div>
         </div>
       ))}
@@ -17,7 +17,7 @@ function CareerModalClubs({clubs}) {
 CareerModalClubs.propTypes = {
   clubs: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
     })
   ).isRequired

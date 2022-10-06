@@ -40,6 +40,12 @@ function InlineJobs({className, count, jobs, jobSource, translate}) {
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(count || 0);
 
+  const jobSourceURL = {
+    Indeed: "https://www.indeed.com/",
+    Monster: "https://www.monster.com",
+    MyNextMove: "https://www.mynextmove.org"
+  };
+
   const handlePrev = () => {
     if(start - count <= 0) {
       setStart(0);
@@ -64,10 +70,17 @@ function InlineJobs({className, count, jobs, jobSource, translate}) {
     setEnd(count);
   }, [count]);
 
+  if(!(jobSource in jobSourceURL)) { return null; }
+
   if(jobs?.length === 0) {
     return (
       <div className={`${style.job} ${className}`}>
-        <InlineJob job={{}} jobSource={jobSource} translate={translate} />
+        <InlineJob
+          job={{}}
+          jobSource={jobSource}
+          jobSourceURL={jobSourceURL}
+          translate={translate}
+        />
       </div>
     );
   }
@@ -83,7 +96,12 @@ function InlineJobs({className, count, jobs, jobSource, translate}) {
       </CarouselButton>
       {jobs.slice(start, end).map((job) => (
         <div key={job.url}>
-          <InlineJob job={job} jobSource={jobSource} translate={translate} />
+          <InlineJob
+            job={job}
+            jobSource={jobSource}
+            jobSourceURL={jobSourceURL}
+            translate={translate}
+          />
         </div>
       ))}
       <CarouselButton

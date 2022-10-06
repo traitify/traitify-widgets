@@ -64,10 +64,10 @@ function CareerDetails(props) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
-          {career?.inline_jobs && career?.job_source !== "f" && (
+          {career?.inline_jobs && (
             <InlineJobs
               jobs={career?.jobs}
-              job_source={career?.job_source}
+              jobSource={career?.job_source}
               translate={translate}
             />
           )}

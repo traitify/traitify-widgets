@@ -4,15 +4,7 @@ import Icon from "lib/helpers/icon";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import style from "./style.scss";
 
-function InlineJob({job, jobSource: _jobSource, translate}) {
-  const jobSource = _jobSource || "Indeed";
-
-  const jobSourceURL = {
-    Indeed: "https://www.indeed.com/",
-    Monster: "https://www.monster.com",
-    MyNextMove: "https://www.mynextmove.org"
-  };
-
+function InlineJob({job, jobSource, jobSourceURL, translate}) {
   if(!job || Object.keys(job).length === 0) {
     return (
       <div className={`${style.inlineJob} ${style.empty}`}>
@@ -64,6 +56,11 @@ InlineJob.propTypes = {
     url: PropTypes.string
   }),
   jobSource: PropTypes.string,
+  jobSourceURL: PropTypes.shape({
+    Indeed: PropTypes.string,
+    Monster: PropTypes.string,
+    MyNextMove: PropTypes.string
+  }).isRequired,
   translate: PropTypes.func.isRequired
 };
 

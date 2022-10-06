@@ -70,7 +70,6 @@ function InlineJobs({className, count, jobs, jobSource, translate}) {
     return (
       <div className={`${style.job} ${className}`}>
         <InlineJob
-          job={null}
           jobSource={jobSource}
           jobSourceURL={jobSourceURL}
           translate={translate}

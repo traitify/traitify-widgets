@@ -64,9 +64,9 @@ function CareerDetails(props) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
-          {career?.inline_jobs?.length > 0 && (
+          {career?.inline_jobs && career?.job_source !== "f" && (
             <InlineJobs
-              jobs={career?.inline_jobs}
+              jobs={career?.jobs}
               job_source={career?.job_source}
               translate={translate}
             />
@@ -83,7 +83,8 @@ CareerDetails.propTypes = {
     experience_level: PropTypes.shape({
       id: PropTypes.number.isRequired
     }).isRequired,
-    inline_jobs: PropTypes.arrayOf(
+    inline_jobs: PropTypes.bool,
+    jobs: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
         company: PropTypes.string,

@@ -58,7 +58,7 @@ function CareerModal(props) {
     };
   }, []);
 
-  const {clubs, majors, jobs} = career || {};
+  const {clubs, majors, inline_jobs: inlineJobs, jobs} = career || {};
   const tabs = {
     career: "Career Info",
     clubs: "Clubs",
@@ -113,7 +113,7 @@ function CareerModal(props) {
                     <hr className={isSelected("majors") ? style.blueDivider : style.grayDivider} />
                   </ModalTab>
                 )}
-                {jobs?.length > 0 && (
+                {!inlineJobs && jobs?.length > 0 && (
                   <ModalTab className={isSelected("jobs") ? style.navButtonActive : style.navButton} onClick={() => selectTab("jobs")}>
                     Jobs
                     <hr className={isSelected("jobs") ? style.blueDivider : style.grayDivider} />
@@ -132,7 +132,7 @@ function CareerModal(props) {
                       {majors?.length > 0 && !isSelected("majors") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("majors")}>Majors</ModalTab>
                       )}
-                      {jobs?.length > 0 && !isSelected("jobs") && (
+                      {!inlineJobs && jobs?.length > 0 && !isSelected("jobs") && (
                         <ModalTab className={style.dropdownItem} onClick={() => selectDropdown("jobs")}>Jobs</ModalTab>
                       )}
                     </div>
@@ -142,7 +142,7 @@ function CareerModal(props) {
               {isSelected("career") && <Info assessment={assessment} translate={translate} career={career} />}
               {clubs?.length > 0 && isSelected("clubs") && <Clubs clubs={clubs} />}
               {majors?.length > 0 && isSelected("majors") && <Majors majors={majors} />}
-              {jobs?.length > 0 && isSelected("jobs") && <Jobs jobs={jobs} translate={translate} />}
+              {!inlineJobs && jobs?.length > 0 && isSelected("jobs") && <Jobs jobs={jobs} translate={translate} />}
             </div>
           </div>
         </section>

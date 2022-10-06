@@ -4,7 +4,9 @@ import Icon from "lib/helpers/icon";
 import DangerousHTML from "lib/helpers/dangerous-html";
 import style from "./style.scss";
 
-function InlineJob({job, jobSource, translate}) {
+function InlineJob({job, jobSource: _jobSource, translate}) {
+  const jobSource = _jobSource || "Indeed";
+
   const jobSourceURL = {
     Indeed: "https://www.indeed.com/",
     Monster: "https://www.monster.com",
@@ -15,12 +17,12 @@ function InlineJob({job, jobSource, translate}) {
     return (
       <div className={`${style.inlineJob} ${style.empty}`}>
         <div>
-          <DangerousHTML html={translate("no_jobs", {job_source: jobSource || "Indeed"})} />
+          <DangerousHTML html={translate("no_jobs", {job_source: jobSource})} />
         </div>
         <div>
           <a
             className={style.discoverJobsButton}
-            href={jobSourceURL[jobSource] || jobSourceURL.Indeed}
+            href={jobSourceURL[jobSource]}
           >
             {translate("discover_jobs")}
           </a>
@@ -49,8 +51,11 @@ function InlineJob({job, jobSource, translate}) {
     </div>
   );
 }
-export default InlineJob;
 
+InlineJob.defaultProps = {
+  job: {},
+  jobSource: "Indeed"
+};
 InlineJob.propTypes = {
   job: PropTypes.shape({
     title: PropTypes.string,
@@ -61,7 +66,5 @@ InlineJob.propTypes = {
   jobSource: PropTypes.string,
   translate: PropTypes.func.isRequired
 };
-InlineJob.defaultProps = {
-  job: {},
-  jobSource: "Indeed"
-};
+
+export default InlineJob;

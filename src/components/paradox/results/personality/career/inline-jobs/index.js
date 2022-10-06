@@ -6,20 +6,14 @@ import InlineJob from "./job";
 import style from "./style.scss";
 
 function CarouselButton({className, onClick, children, disabled}) {
-  const [isDisabled, setIsDisabled] = useState(disabled);
-
   const handleClick = () => {
-    if(isDisabled) { return; }
+    if(disabled) { return; }
     onClick();
   };
 
-  useEffect(() => {
-    setIsDisabled(disabled);
-  }, [disabled]);
-
   return (
     <div
-      className={`${className} ${isDisabled ? style.disabled : ""}`}
+      className={`${className} ${disabled ? style.disabled : ""}`}
       onClick={handleClick}
       onKeyDown={handleClick}
       role="button"
@@ -72,7 +66,7 @@ function InlineJobs({className, count, jobs, jobSource, translate}) {
 
   if(!(jobSource in jobSourceURL)) { return null; }
 
-  if(jobs?.length === 0) {
+  if(jobs.length === 0) {
     return (
       <div className={`${style.job} ${className}`}>
         <InlineJob

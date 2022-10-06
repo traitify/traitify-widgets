@@ -40,8 +40,10 @@ function InlineJobsAuto({jobs, jobSource, translate}) {
     </div>
   );
 }
-export default InlineJobsAuto;
 
+InlineJobsAuto.defaultProps = {
+  jobSource: "Indeed"
+};
 InlineJobsAuto.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
@@ -54,6 +56,5 @@ InlineJobsAuto.propTypes = {
   jobSource: PropTypes.string,
   translate: PropTypes.func.isRequired
 };
-InlineJobsAuto.defaultProps = {
-  jobSource: "Indeed"
-};
+
+export default InlineJobsAuto;

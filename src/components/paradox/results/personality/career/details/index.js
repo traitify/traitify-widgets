@@ -64,10 +64,10 @@ function CareerDetails(props) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
-          {career?.inline_jobs && (
+          {career.inline_jobs && (
             <InlineJobs
-              jobs={career?.jobs}
-              jobSource={career?.job_source}
+              jobs={career.jobs}
+              jobSource={career.job_source}
               translate={translate}
             />
           )}

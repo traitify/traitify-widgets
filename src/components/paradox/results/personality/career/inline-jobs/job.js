@@ -5,7 +5,7 @@ import DangerousHTML from "lib/helpers/dangerous-html";
 import style from "./style.scss";
 
 function InlineJob({job, jobSource, jobSourceURL, translate}) {
-  if(!job || Object.keys(job).length === 0) {
+  if(!job) {
     return (
       <div className={`${style.inlineJob} ${style.empty}`}>
         <div>

@@ -35,17 +35,19 @@ function InlineJob({job, jobSource, jobSourceURL, translate}) {
           </div>
         )}
       </div>
-      <div>
-        <a className={style.applyNowButton} href={job.url}>
-          {translate("apply_now")}
-        </a>
-      </div>
+      {job.url && (
+        <div>
+          <a className={style.applyNowButton} href={job.url}>
+            {translate("apply_now")}
+          </a>
+        </div>
+      )}
     </div>
   );
 }
 
 InlineJob.defaultProps = {
-  job: {},
+  job: null,
   jobSource: "Indeed"
 };
 InlineJob.propTypes = {

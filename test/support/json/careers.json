@@ -162,6 +162,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 65.52296205600837
@@ -316,6 +395,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -496,6 +654,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 64.22046780319654
@@ -641,6 +878,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 64.18229294953403
@@ -765,6 +1081,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -921,6 +1316,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.985951944290484
@@ -1068,6 +1542,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.73888032318781
@@ -1212,6 +1765,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -1380,6 +2012,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.48516283298892
@@ -1537,6 +2248,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.284443799947155
@@ -1675,6 +2465,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.22097368987908
@@ -1789,6 +2658,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -1957,6 +2905,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.12399650906535
@@ -2081,6 +3108,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -2237,6 +3343,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 63.06585080697046
@@ -2383,6 +3568,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -2538,6 +3802,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },
@@ -2720,6 +4063,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 62.79880954285776
@@ -2877,6 +4299,85 @@
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
         }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
+        }
       ]
     },
     "score": 62.75083893562166
@@ -3014,6 +4515,85 @@
           "title": "Naval Architect",
           "company": "Starboard Yacht Group",
           "url": "https://www.indeed.com/viewjob?jk=d6f2f3e4238e273b&qd=9BkEdY3zXw8WCkSN2_zEK-81-9BWrRkNbJPx3SX1W9tm8QF9vtokBg6Ak_6xZ7NBvWP8Ieb62P2K025iG0vSo-VB6vhbHdrd9-mY3qEATzUzqFJk_rJh5XX7tq89_3SEDc8jggY7c6tKz0-1zg-oxg&indpubnum=1542724318819172&chnl=Woofound+By+Traitify&atk=1gcuk8f3s21a6001"
+        }
+      ],
+      "resources": [
+        {
+          "id": 5514,
+          "organization_id": 5349,
+          "active": true,
+          "name": "Career Ladder - Advanced Manufacturing",
+          "description": "Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. ",
+          "url": "http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf",
+          "created_at": "2019-09-27T02:05:57.322Z",
+          "updated_at": "2021-03-05T14:16:16.340Z"
+        },
+        {
+          "id": 994,
+          "organization_id": 5349,
+          "active": true,
+          "name": "NCWorks Online",
+          "description": "Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.",
+          "url": "http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07",
+          "created_at": "2017-08-30T21:48:09.693Z",
+          "updated_at": "2021-11-24T18:40:34.601Z"
+        }
+      ],
+      "employers": [
+        {
+          "id": 114,
+          "active": true,
+          "name": "Kaba Ilco (Nash)",
+          "description": "Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.\n\nWe offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.",
+          "url": "http://www.ilco.us/868636/working-ilco.html",
+          "logo": null,
+          "created_at": "2019-10-08T02:28:59.796Z",
+          "updated_at": "2019-10-08T02:28:59.796Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 79,
+          "active": true,
+          "name": "Iconic Marine Group (Beaufort County)",
+          "description": "If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  \n\n\nIf you are interested in joining an \"ICONIC\" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.",
+          "url": "http://www.iconicmarinegroup.com/",
+          "logo": null,
+          "created_at": "2019-07-22T17:03:52.598Z",
+          "updated_at": "2019-07-23T20:55:39.247Z",
+          "organization_id": 5349
+        },
+        {
+          "id": 88,
+          "active": true,
+          "name": "Regulator Marine (Edenton)",
+          "description": "Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  ",
+          "url": "https://www.regulatormarine.com/footer-pages/careers/",
+          "logo": null,
+          "created_at": "2019-07-22T21:05:08.958Z",
+          "updated_at": "2019-07-23T21:03:28.634Z",
+          "organization_id": 5349
+        }
+      ],
+      "clubs": [
+        {
+          "id": 1,
+          "active": true,
+          "name": "Test Club 1",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:27.610Z",
+          "updated_at": "2022-10-05T14:52:27.610Z",
+          "organization_id": 2
+        },
+        {
+          "id": 2,
+          "active": true,
+          "name": "Test Club 2",
+          "description": "This is a test.",
+          "url": "https://www.google.com",
+          "created_at": "2022-10-05T14:52:47.637Z",
+          "updated_at": "2022-10-05T14:52:47.637Z",
+          "organization_id": 2
         }
       ]
     },

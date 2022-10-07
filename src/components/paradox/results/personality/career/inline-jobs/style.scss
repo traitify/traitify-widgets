@@ -1,0 +1,104 @@
+@import "~style/paradox/helpers";
+
+.job {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  padding: $buffer;
+
+  @include min-width("xs") {
+    padding: $buffer-sm 0;
+  }
+
+  .applyNowButton {
+    border: 1px solid;
+    @include theme(border-color, "border-color");
+    border-radius: $border-radius-sm !important;
+    @include theme(color, "theme-color");
+    margin-top: $buffer-sm;
+    padding: $buffer-sm $buffer;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+
+    @include min-width(xs) {
+      margin-top: 0;
+    }
+  }
+  .discoverJobsButton {
+    @extend .applyNowButton;
+    margin-top: $buffer-sm;
+  }
+
+  .jobIcon {
+    color: gray;
+    margin-right: $buffer-sm;
+  }
+
+  .prevButton {
+    display: flex;
+    align-items: center;
+    border: 1px solid;
+    @include theme(border-color, "border-color");
+    border-radius: $border-radius-sm;
+    @include theme(color, "theme-color");
+    margin: 5px 10px 5px 0px;
+    padding: $buffer-sm * .50;
+    height: 170px;
+    cursor: pointer;
+
+    &.disabled { 
+      @include theme(color, "inactive-color");
+      cursor: default;
+    }
+  }
+  .nextButton {
+    @extend .prevButton;
+    margin: 5px 0px 5px 10px;
+  }
+
+  .inlineJob {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px 10px 5px 0px;
+    border: $border-width solid;
+    @include theme(border-color, "border-color-light");
+    border-radius: $border-radius-sm * 2.5;
+    padding: $buffer;
+    height: 170px;
+    width: 180px;
+
+    &.empty {
+      width: 250px;
+      height: auto;
+    }
+  }
+
+  .title {
+    @include clamp(1);
+    font-weight: 500;
+    font-size: $font-size;
+  }
+  .company {
+    @include clamp(1);
+    margin-top: $buffer-sm * .25;
+    font-size: $font-size-sm * 1.17
+  }
+  .location {
+    @include clamp(1);
+    margin-top: $buffer-sm;
+    font-size: $font-size-sm
+  };
+}
+
+.auto {
+  display: flex;
+  width: 100%;
+}

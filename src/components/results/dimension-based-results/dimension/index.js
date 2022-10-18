@@ -73,7 +73,7 @@ class Dimension extends Component {
         >
           <div className={style.side}>
             <p className={style.icon}>
-              <img src={type.badge.image_medium} alt="" ariahidden="true" />
+              <img src={type.badge.image_medium} alt="" />
             </p>
           </div>
           <div className={style.content}>

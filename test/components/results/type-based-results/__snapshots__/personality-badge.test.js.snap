@@ -12,7 +12,6 @@ exports[`PersonalityBadge renders component 1`] = `
 >
   <img
     alt="badge"
-    ariahidden="true"
     role="presentation"
     src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
   />

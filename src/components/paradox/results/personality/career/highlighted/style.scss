@@ -1,4 +1,4 @@
-@import "~style/paradox/helpers";
+@import "style/paradox/helpers";
 
 
 .container {
@@ -22,14 +22,14 @@
   }
 
   .header {
-      color: $-white;
-      background-color: $-blue;
-      border-radius: $border-radius-sm $border-radius-sm 0 0 ;
-      text-align: left;
-      padding: $buffer-sm * .5 0 $buffer-sm * .5 $buffer-lg
+    color: $-white;
+    background-color: $-blue;
+    border-radius: $border-radius-sm $border-radius-sm 0 0 ;
+    text-align: left;
+    padding: $buffer-sm * .5 0 $buffer-sm * .5 $buffer-lg
   }
 
   .content {
-      padding: $buffer-sm * .75;
+    padding: $buffer-sm * .75;
   }
 }

@@ -228,7 +228,7 @@ describe("Personality", () => {
       expect(component.instance.fetchImages).toHaveBeenCalled();
     });
 
-    it("handles image error ", () => {
+    it("handles image error", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateState({imageLoading: false});
       createElement.mockClear();
@@ -244,7 +244,7 @@ describe("Personality", () => {
       expect(setTimeout).toHaveBeenCalledWith(component.instance.fetchImages, 2000);
     });
 
-    it("handles repeated image error ", () => {
+    it("handles repeated image error", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateState({imageLoading: false, imageLoadingAttempts: 2});
       createElement.mockClear();

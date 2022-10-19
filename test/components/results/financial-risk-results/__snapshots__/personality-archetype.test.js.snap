@@ -7,7 +7,7 @@ exports[`PersonalityArchetype renders component 1`] = `
   <div
     className="archetypeStyle"
     style={
-      Object {
+      {
         "background": "#4fe0c4",
       }
     }
@@ -51,7 +51,7 @@ exports[`PersonalityArchetype renders perspective correctly 1`] = `
   <div
     className="archetypeStyle"
     style={
-      Object {
+      {
         "background": "#4fe0c4",
       }
     }

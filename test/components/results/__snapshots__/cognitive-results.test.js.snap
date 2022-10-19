@@ -13,7 +13,7 @@ exports[`CognitiveResults renders component 1`] = `
   </h1>
   <div
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_results_html",
       }
     }

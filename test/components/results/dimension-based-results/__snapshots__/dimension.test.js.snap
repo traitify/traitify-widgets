@@ -7,7 +7,7 @@ exports[`Dimension renders component 1`] = `
   <div
     className="main"
     style={
-      Object {
+      {
         "background": "rgba(0,0,0,0.085)",
         "borderLeft": "5px solid #000000",
       }
@@ -35,7 +35,7 @@ exports[`Dimension renders component 1`] = `
          
         <span
           style={
-            Object {
+            {
               "color": "#000000",
             }
           }
@@ -59,7 +59,7 @@ exports[`Dimension renders component 1`] = `
           className="trigger"
           onClick={[Function]}
           style={
-            Object {
+            {
               "background": "rgba(0,0,0,0.3)",
             }
           }
@@ -78,7 +78,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
   <div
     className="main"
     style={
-      Object {
+      {
         "background": "rgba(0,0,0,0.085)",
         "borderLeft": "5px solid #000000",
       }
@@ -106,7 +106,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
          
         <span
           style={
-            Object {
+            {
               "color": "#000000",
             }
           }
@@ -130,7 +130,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
           className="trigger"
           onClick={[Function]}
           style={
-            Object {
+            {
               "background": "rgba(0,0,0,0.3)",
             }
           }
@@ -145,7 +145,7 @@ exports[`Dimension with index of 0 shows content by default 1`] = `
     <div
       className="content"
       style={
-        Object {
+        {
           "background": "rgba(0,0,0,0.3)",
         }
       }
@@ -226,7 +226,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
   <div
     className="main"
     style={
-      Object {
+      {
         "background": "rgba(0,0,0,0.085)",
         "borderLeft": "5px solid #000000",
       }
@@ -254,7 +254,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
          
         <span
           style={
-            Object {
+            {
               "color": "#000000",
             }
           }
@@ -278,7 +278,7 @@ exports[`Dimension with non-zero index hides content by default 1`] = `
           className="trigger"
           onClick={[Function]}
           style={
-            Object {
+            {
               "background": "rgba(0,0,0,0.3)",
             }
           }

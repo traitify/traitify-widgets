@@ -7,7 +7,7 @@ exports[`Paradox.PersonalityTrait renders component 1`] = `
   <div
     className="bar"
     style={
-      Object {
+      {
         "background": "#000000",
         "width": "86%",
       }

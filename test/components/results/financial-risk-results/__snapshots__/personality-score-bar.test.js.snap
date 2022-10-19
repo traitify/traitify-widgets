@@ -37,7 +37,7 @@ exports[`PersonalityScoreBar renders component 1`] = `
       <div
         className="scoreBarIndicator"
         style={
-          Object {
+          {
             "marginLeft": "48%",
           }
         }

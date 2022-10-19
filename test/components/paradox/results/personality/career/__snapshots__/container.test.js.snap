@@ -101,8 +101,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -128,8 +128,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -162,8 +162,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -189,8 +189,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -216,8 +216,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -243,8 +243,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -270,8 +270,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -358,7 +358,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -491,7 +491,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -624,7 +624,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -757,7 +757,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -890,7 +890,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -1023,7 +1023,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -1156,7 +1156,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -1289,7 +1289,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -1422,7 +1422,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -1555,7 +1555,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -1688,7 +1688,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -1821,7 +1821,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -1954,7 +1954,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -2087,7 +2087,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -2220,7 +2220,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -2353,7 +2353,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -2486,7 +2486,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -2619,7 +2619,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -2752,7 +2752,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -2885,7 +2885,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -2993,8 +2993,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
               aria-label="close"
               className="close traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"xmark\\" class=\\"svg-inline--fa fa-xmark\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 320 512\\"><path fill=\\"currentColor\\" d=\\"M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>",
                 }
               }
               onClick={[Function]}
@@ -3187,8 +3187,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                     <span
                       className="traitify--icon-fa"
                       dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                        {
+                          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                         }
                       }
                     />
@@ -3213,8 +3213,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                     <span
                       className="traitify--icon-fa"
                       dangerouslySetInnerHTML={
-                        Object {
-                          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                        {
+                          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                         }
                       }
                     />
@@ -3242,8 +3242,8 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                   <span
                     className="questionBtn traitify--icon-fa"
                     dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"circle-question\\" class=\\"svg-inline--fa fa-circle-question\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z\\"></path></svg>",
+                      {
+                        "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-question" class="svg-inline--fa fa-circle-question" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"></path></svg>",
                       }
                     }
                   />
@@ -3312,7 +3312,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                     <span
                       data-match-rate="65.52296205600837%"
                       style={
-                        Object {
+                        {
                           "width": "65.52296205600837%",
                         }
                       }
@@ -3329,7 +3329,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                   </div>
                   <span
                     style={
-                      Object {
+                      {
                         "width": "100%",
                       }
                     }
@@ -3446,8 +3446,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -3473,8 +3473,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -3507,8 +3507,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -3534,8 +3534,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -3561,8 +3561,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -3588,8 +3588,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -3615,8 +3615,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -3703,7 +3703,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -3836,7 +3836,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -3969,7 +3969,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -4102,7 +4102,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -4235,7 +4235,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -4368,7 +4368,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -4501,7 +4501,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -4634,7 +4634,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -4767,7 +4767,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -4900,7 +4900,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -5033,7 +5033,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -5166,7 +5166,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -5299,7 +5299,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -5432,7 +5432,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -5565,7 +5565,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -5698,7 +5698,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -5831,7 +5831,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -5964,7 +5964,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -6097,7 +6097,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -6230,7 +6230,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -6338,8 +6338,8 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
               aria-label="close"
               className="close traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"xmark\\" class=\\"svg-inline--fa fa-xmark\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 320 512\\"><path fill=\\"currentColor\\" d=\\"M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>",
                 }
               }
               onClick={[Function]}
@@ -6603,8 +6603,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -6630,8 +6630,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -6664,8 +6664,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -6691,8 +6691,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -6718,8 +6718,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -6745,8 +6745,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -6772,8 +6772,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -6860,7 +6860,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -6993,7 +6993,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -7126,7 +7126,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -7259,7 +7259,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -7392,7 +7392,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -7525,7 +7525,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -7658,7 +7658,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -7791,7 +7791,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -7924,7 +7924,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -8057,7 +8057,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -8190,7 +8190,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -8323,7 +8323,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -8456,7 +8456,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -8589,7 +8589,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -8722,7 +8722,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -8855,7 +8855,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -8988,7 +8988,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -9121,7 +9121,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -9254,7 +9254,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -9387,7 +9387,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -9495,8 +9495,8 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
               aria-label="close"
               className="close traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"xmark\\" class=\\"svg-inline--fa fa-xmark\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 320 512\\"><path fill=\\"currentColor\\" d=\\"M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>",
                 }
               }
               onClick={[Function]}
@@ -9779,8 +9779,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -9806,8 +9806,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -9840,8 +9840,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -9867,8 +9867,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -9894,8 +9894,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -9921,8 +9921,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -9948,8 +9948,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -10036,7 +10036,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -10169,7 +10169,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -10302,7 +10302,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -10435,7 +10435,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -10568,7 +10568,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -10701,7 +10701,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -10834,7 +10834,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -10967,7 +10967,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -11100,7 +11100,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -11233,7 +11233,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -11366,7 +11366,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -11499,7 +11499,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -11632,7 +11632,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -11765,7 +11765,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -11898,7 +11898,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -12031,7 +12031,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -12164,7 +12164,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -12297,7 +12297,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -12430,7 +12430,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -12563,7 +12563,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -12671,8 +12671,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
               aria-label="close"
               className="close traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"xmark\\" class=\\"svg-inline--fa fa-xmark\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 320 512\\"><path fill=\\"currentColor\\" d=\\"M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>",
                 }
               }
               onClick={[Function]}
@@ -12811,8 +12811,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                   <span
                     className="jobTitleIcon traitify--icon-fa"
                     dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"suitcase\\" class=\\"svg-inline--fa fa-suitcase\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96v32V480H128V128 96zM64 96H96V480H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64zM448 480H416V96h32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64z\\"></path></svg>",
+                      {
+                        "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="suitcase" class="svg-inline--fa fa-suitcase" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96v32V480H128V128 96zM64 96H96V480H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64zM448 480H416V96h32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64z"></path></svg>",
                       }
                     }
                   />
@@ -12828,8 +12828,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                       <span
                         className="jobIcon traitify--icon-fa"
                         dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"building\\" class=\\"svg-inline--fa fa-building\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z\\"></path></svg>",
+                          {
+                            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="building" class="svg-inline--fa fa-building" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z"></path></svg>",
                           }
                         }
                       />
@@ -12841,8 +12841,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                       <span
                         className="jobIcon traitify--icon-fa"
                         dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"location-dot\\" class=\\"svg-inline--fa fa-location-dot\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z\\"></path></svg>",
+                          {
+                            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="location-dot" class="svg-inline--fa fa-location-dot" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"></path></svg>",
                           }
                         }
                       />
@@ -12872,8 +12872,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                   <span
                     className="jobTitleIcon traitify--icon-fa"
                     dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"suitcase\\" class=\\"svg-inline--fa fa-suitcase\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96v32V480H128V128 96zM64 96H96V480H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64zM448 480H416V96h32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64z\\"></path></svg>",
+                      {
+                        "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="suitcase" class="svg-inline--fa fa-suitcase" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96v32V480H128V128 96zM64 96H96V480H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64zM448 480H416V96h32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64z"></path></svg>",
                       }
                     }
                   />
@@ -12889,8 +12889,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                       <span
                         className="jobIcon traitify--icon-fa"
                         dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"location-dot\\" class=\\"svg-inline--fa fa-location-dot\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z\\"></path></svg>",
+                          {
+                            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="location-dot" class="svg-inline--fa fa-location-dot" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"></path></svg>",
                           }
                         }
                       />
@@ -12920,8 +12920,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                   <span
                     className="jobTitleIcon traitify--icon-fa"
                     dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"suitcase\\" class=\\"svg-inline--fa fa-suitcase\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96v32V480H128V128 96zM64 96H96V480H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64zM448 480H416V96h32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64z\\"></path></svg>",
+                      {
+                        "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="suitcase" class="svg-inline--fa fa-suitcase" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96v32V480H128V128 96zM64 96H96V480H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64zM448 480H416V96h32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64z"></path></svg>",
                       }
                     }
                   />
@@ -12937,8 +12937,8 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                       <span
                         className="jobIcon traitify--icon-fa"
                         dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"building\\" class=\\"svg-inline--fa fa-building\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 384 512\\"><path fill=\\"currentColor\\" d=\\"M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z\\"></path></svg>",
+                          {
+                            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="building" class="svg-inline--fa fa-building" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z"></path></svg>",
                           }
                         }
                       />
@@ -13065,8 +13065,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -13092,8 +13092,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -13126,8 +13126,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -13153,8 +13153,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -13180,8 +13180,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -13207,8 +13207,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -13234,8 +13234,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -13322,7 +13322,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -13455,7 +13455,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -13588,7 +13588,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -13721,7 +13721,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -13854,7 +13854,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -13987,7 +13987,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -14120,7 +14120,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -14253,7 +14253,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -14386,7 +14386,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -14519,7 +14519,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -14652,7 +14652,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -14785,7 +14785,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -14918,7 +14918,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -15051,7 +15051,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -15184,7 +15184,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -15317,7 +15317,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -15450,7 +15450,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -15583,7 +15583,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -15716,7 +15716,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -15849,7 +15849,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -15957,8 +15957,8 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
               aria-label="close"
               className="close traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"xmark\\" class=\\"svg-inline--fa fa-xmark\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 320 512\\"><path fill=\\"currentColor\\" d=\\"M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>",
                 }
               }
               onClick={[Function]}
@@ -16236,8 +16236,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -16263,8 +16263,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -16297,8 +16297,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -16324,8 +16324,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -16351,8 +16351,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -16378,8 +16378,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -16405,8 +16405,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -16493,7 +16493,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -16626,7 +16626,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -16759,7 +16759,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -16892,7 +16892,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -17025,7 +17025,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -17158,7 +17158,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -17291,7 +17291,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -17424,7 +17424,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -17557,7 +17557,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -17690,7 +17690,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -17823,7 +17823,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -17956,7 +17956,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -18089,7 +18089,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -18222,7 +18222,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -18355,7 +18355,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -18488,7 +18488,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -18621,7 +18621,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -18754,7 +18754,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -18887,7 +18887,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -19020,7 +19020,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -19128,8 +19128,8 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
               aria-label="close"
               className="close traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"xmark\\" class=\\"svg-inline--fa fa-xmark\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 320 512\\"><path fill=\\"currentColor\\" d=\\"M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg>",
                 }
               }
               onClick={[Function]}
@@ -19393,8 +19393,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -19420,8 +19420,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -19454,8 +19454,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -19481,8 +19481,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -19508,8 +19508,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -19535,8 +19535,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -19562,8 +19562,8 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -19650,7 +19650,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -19783,7 +19783,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -19916,7 +19916,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -20049,7 +20049,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -20182,7 +20182,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -20315,7 +20315,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -20448,7 +20448,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -20581,7 +20581,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -20714,7 +20714,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -20847,7 +20847,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -20980,7 +20980,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -21113,7 +21113,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -21246,7 +21246,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -21379,7 +21379,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -21512,7 +21512,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -21645,7 +21645,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -21778,7 +21778,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -21911,7 +21911,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -22044,7 +22044,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -22177,7 +22177,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -22368,8 +22368,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -22395,8 +22395,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -22429,8 +22429,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -22456,8 +22456,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -22483,8 +22483,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -22510,8 +22510,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -22537,8 +22537,8 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -22636,7 +22636,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                     <span
                       data-match-rate="65.52296205600837%"
                       style={
-                        Object {
+                        {
                           "width": "65.52296205600837%",
                         }
                       }
@@ -22771,7 +22771,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="65.52296205600837%"
                   style={
-                    Object {
+                    {
                       "width": "65.52296205600837%",
                     }
                   }
@@ -22904,7 +22904,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="64.72489424636146%"
                   style={
-                    Object {
+                    {
                       "width": "64.72489424636146%",
                     }
                   }
@@ -23037,7 +23037,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="64.22046780319654%"
                   style={
-                    Object {
+                    {
                       "width": "64.22046780319654%",
                     }
                   }
@@ -23170,7 +23170,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="64.18229294953403%"
                   style={
-                    Object {
+                    {
                       "width": "64.18229294953403%",
                     }
                   }
@@ -23303,7 +23303,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="64.0931534771221%"
                   style={
-                    Object {
+                    {
                       "width": "64.0931534771221%",
                     }
                   }
@@ -23436,7 +23436,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -23569,7 +23569,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -23702,7 +23702,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }
@@ -23835,7 +23835,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.48516283298892%"
                   style={
-                    Object {
+                    {
                       "width": "63.48516283298892%",
                     }
                   }
@@ -23968,7 +23968,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.284443799947155%"
                   style={
-                    Object {
+                    {
                       "width": "63.284443799947155%",
                     }
                   }
@@ -24101,7 +24101,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.22097368987908%"
                   style={
-                    Object {
+                    {
                       "width": "63.22097368987908%",
                     }
                   }
@@ -24234,7 +24234,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.144756105347845%"
                   style={
-                    Object {
+                    {
                       "width": "63.144756105347845%",
                     }
                   }
@@ -24367,7 +24367,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.12399650906535%"
                   style={
-                    Object {
+                    {
                       "width": "63.12399650906535%",
                     }
                   }
@@ -24500,7 +24500,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.09528651760715%"
                   style={
-                    Object {
+                    {
                       "width": "63.09528651760715%",
                     }
                   }
@@ -24633,7 +24633,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.06585080697046%"
                   style={
-                    Object {
+                    {
                       "width": "63.06585080697046%",
                     }
                   }
@@ -24766,7 +24766,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="63.06376150329174%"
                   style={
-                    Object {
+                    {
                       "width": "63.06376150329174%",
                     }
                   }
@@ -24899,7 +24899,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="62.96522825777294%"
                   style={
-                    Object {
+                    {
                       "width": "62.96522825777294%",
                     }
                   }
@@ -25032,7 +25032,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="62.79880954285776%"
                   style={
-                    Object {
+                    {
                       "width": "62.79880954285776%",
                     }
                   }
@@ -25165,7 +25165,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="62.75083893562166%"
                   style={
-                    Object {
+                    {
                       "width": "62.75083893562166%",
                     }
                   }
@@ -25298,7 +25298,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <span
                   data-match-rate="62.67436731430872%"
                   style={
-                    Object {
+                    {
                       "width": "62.67436731430872%",
                     }
                   }
@@ -25489,8 +25489,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25516,8 +25516,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -25550,8 +25550,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25577,8 +25577,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25604,8 +25604,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25631,8 +25631,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25658,8 +25658,8 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25800,8 +25800,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25827,8 +25827,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square\\" class=\\"svg-inline--fa fa-square\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"></path></svg>",
                     }
                   }
                 />
@@ -25861,8 +25861,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25888,8 +25888,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25915,8 +25915,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25942,8 +25942,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -25969,8 +25969,8 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   className="traitify--icon-fa"
                   dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"square-check\\" class=\\"svg-inline--fa fa-square-check\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z\\"></path></svg>",
+                    {
+                      "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square-check" class="svg-inline--fa fa-square-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
                     }
                   }
                 />
@@ -26057,7 +26057,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   data-match-rate="63.985951944290484%"
                   style={
-                    Object {
+                    {
                       "width": "63.985951944290484%",
                     }
                   }
@@ -26190,7 +26190,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   data-match-rate="63.73888032318781%"
                   style={
-                    Object {
+                    {
                       "width": "63.73888032318781%",
                     }
                   }
@@ -26323,7 +26323,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <span
                   data-match-rate="63.69037868206123%"
                   style={
-                    Object {
+                    {
                       "width": "63.69037868206123%",
                     }
                   }

@@ -10,7 +10,7 @@ exports[`Instructions renders custom examples 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "First Text",
       }
     }
@@ -35,7 +35,7 @@ exports[`Instructions renders custom examples 2`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "Second Text",
       }
     }
@@ -60,7 +60,7 @@ exports[`Instructions renders custom examples 3`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "Third Text",
       }
     }
@@ -105,7 +105,7 @@ exports[`Instructions renders custom examples 5`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_4_html",
       }
     }
@@ -130,7 +130,7 @@ exports[`Instructions renders custom instructions 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "<ul><li>Some Text</li></ul>",
       }
     }
@@ -167,7 +167,7 @@ exports[`Instructions renders step 1 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_1_text",
       }
     }
@@ -192,7 +192,7 @@ exports[`Instructions renders step 2 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_2_text",
       }
     }
@@ -237,7 +237,7 @@ exports[`Instructions renders step 4 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_4_html",
       }
     }
@@ -262,7 +262,7 @@ exports[`Instructions time trial default timed renders step 1 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_trial_step_1_text",
       }
     }
@@ -287,7 +287,7 @@ exports[`Instructions time trial default timed renders step 4 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_trial_step_4_timed_html",
       }
     }
@@ -312,7 +312,7 @@ exports[`Instructions time trial default untimed renders step 1 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_trial_step_1_text",
       }
     }
@@ -337,7 +337,7 @@ exports[`Instructions time trial default untimed renders step 4 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_trial_step_4_untimed_html",
       }
     }
@@ -362,7 +362,7 @@ exports[`Instructions time trial minimal timed renders step 4 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_trial_step_4_timed_minimal_html",
       }
     }
@@ -387,7 +387,7 @@ exports[`Instructions time trial minimal untimed renders step 4 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_trial_step_4_untimed_minimal_html",
       }
     }
@@ -412,7 +412,7 @@ exports[`Instructions videos horizontal renders component 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_1_text",
       }
     }
@@ -437,7 +437,7 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_1_text",
       }
     }
@@ -462,7 +462,7 @@ exports[`Instructions videos vertical renders component 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_1_text",
       }
     }
@@ -487,7 +487,7 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
   <div
     className="text"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "cognitive_instructions_step_1_text",
       }
     }

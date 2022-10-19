@@ -4,7 +4,7 @@ exports[`PersonalityType renders component 1`] = `
 <li
   className="type"
   style={
-    Object {
+    {
       "borderLeft": "5px solid #000000",
     }
   }
@@ -12,7 +12,7 @@ exports[`PersonalityType renders component 1`] = `
   <div
     className="main"
     style={
-      Object {
+      {
         "background": "rgba(0,0,0,0.085)",
       }
     }

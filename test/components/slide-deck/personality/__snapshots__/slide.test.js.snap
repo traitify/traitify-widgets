@@ -18,7 +18,7 @@ exports[`Slide likert scale renders component 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "0%",
           }
         }
@@ -96,7 +96,7 @@ exports[`Slide renders back button 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "1.36986301369863%",
           }
         }
@@ -177,7 +177,7 @@ exports[`Slide renders back button unless first slide 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "0%",
           }
         }
@@ -241,7 +241,7 @@ exports[`Slide renders complete progress bar 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "100%",
           }
         }
@@ -305,7 +305,7 @@ exports[`Slide renders component 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "0%",
           }
         }
@@ -369,7 +369,7 @@ exports[`Slide renders component with previous and next slides 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "1.36986301369863%",
           }
         }
@@ -440,7 +440,7 @@ exports[`Slide renders component with previous slide 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "98.63013698630137%",
           }
         }
@@ -504,7 +504,7 @@ exports[`Slide renders fullscreen 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "0%",
           }
         }
@@ -574,7 +574,7 @@ exports[`Slide renders fullscreen button 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "0%",
           }
         }
@@ -644,7 +644,7 @@ exports[`Slide renders instructions 1`] = `
       <div
         className="progress"
         style={
-          Object {
+          {
             "width": "0%",
           }
         }

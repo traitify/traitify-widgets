@@ -4,7 +4,7 @@ exports[`PersonalityTypeSlide renders component 1`] = `
 <li
   className="slide middle"
   style={
-    Object {
+    {
       "background": "rgba(50,191,76,0.085)",
     }
   }
@@ -12,7 +12,7 @@ exports[`PersonalityTypeSlide renders component 1`] = `
   <span
     className="title"
     style={
-      Object {
+      {
         "color": "#32BF4C",
       }
     }
@@ -31,7 +31,7 @@ exports[`PersonalityTypeSlide renders type name correctly 1`] = `
 <li
   className="slide middle"
   style={
-    Object {
+    {
       "background": "rgba(50,191,76,0.085)",
     }
   }
@@ -39,7 +39,7 @@ exports[`PersonalityTypeSlide renders type name correctly 1`] = `
   <span
     className="title"
     style={
-      Object {
+      {
         "color": "#32BF4C",
       }
     }

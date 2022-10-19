@@ -24,7 +24,7 @@ module.exports = {
   setupFilesAfterEnv: [
     "<rootDir>/test/support/setup/extend.js"
   ],
-  testURL: "https://www.example.com",
+  testEnvironmentOptions: {url: "https://www.example.com"},
   transform: {
     "^.+\\.jsx?$": "babel-jest"
   }

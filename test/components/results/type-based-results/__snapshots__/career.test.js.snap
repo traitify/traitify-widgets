@@ -74,7 +74,7 @@ exports[`Career renders component 1`] = `
       <span
         data-match-rate="65.52296205600837%"
         style={
-          Object {
+          {
             "width": "65.52296205600837%",
           }
         }

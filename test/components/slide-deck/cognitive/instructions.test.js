@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Component from "components/slide-deck/cognitive/instructions";
 import Practice from "components/slide-deck/cognitive/practice";
 import ComponentHandler, {act} from "support/component-handler";

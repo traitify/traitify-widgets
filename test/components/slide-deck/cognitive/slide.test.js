@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Component from "components/slide-deck/cognitive/slide";
 import ComponentHandler from "support/component-handler";
 import assessment from "support/json/assessment/cognitive.json";

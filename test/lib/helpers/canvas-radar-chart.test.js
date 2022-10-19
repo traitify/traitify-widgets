@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 /* eslint-disable no-param-reassign */
 import CanvasRadarChart from "lib/helpers/canvas-radar-chart";
 

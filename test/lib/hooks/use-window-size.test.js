@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {createRef} from "react";
 import useWindowSize from "lib/hooks/use-window-size";
 import ComponentHandler from "support/component-handler";

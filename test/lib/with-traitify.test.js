@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 /* eslint-disable no-console */
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";

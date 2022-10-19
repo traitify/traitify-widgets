@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {createRef, useReducer} from "react";
 import useSlideLoader, {reduceActions, reducer} from "lib/hooks/use-slide-loader";
 import {except, remap, slice} from "lib/helpers/object";
@@ -201,12 +202,9 @@ describe("useSlideLoader", () => {
 
     const advanceTimeBy = (ms) => {
       jest.advanceTimersByTime(ms);
-      Date.now.mockReturnValue(Date.now() + ms);
     };
-    const now = useGlobalMock(Date, "now");
 
     beforeEach(() => {
-      Date.now.mockReturnValue(now());
       jest.useFakeTimers();
       defaultState = {error: null, imageLoading: false, imageLoadingAttempts: 0};
     });

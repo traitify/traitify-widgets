@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Widget from "lib/traitify-widget";
 import guessComponent from "lib/helpers/guess-component";
 import {render, unmountComponentAtNode} from "react-dom";

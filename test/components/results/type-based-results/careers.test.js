@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {Component} from "components/results/type-based-results/careers";
 import ComponentHandler from "support/component-handler";
 

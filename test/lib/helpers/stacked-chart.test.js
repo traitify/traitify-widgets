@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import StackedChart from "lib/helpers/stacked-chart";
 
 describe("Helpers", () => {

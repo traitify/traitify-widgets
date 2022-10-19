@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import deprecations from "deprecations";
 import Traitify from "lib/traitify";
 

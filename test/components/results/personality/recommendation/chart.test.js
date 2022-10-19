@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {Component} from "components/results/personality/recommendation/chart";
 import Chart from "lib/helpers/stacked-chart";
 import ComponentHandler from "support/component-handler";

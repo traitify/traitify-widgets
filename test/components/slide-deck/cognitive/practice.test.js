@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Component from "components/slide-deck/cognitive/practice";
 import Slide from "components/slide-deck/cognitive/slide";
 import {defaultExplanations, defaultQuestions} from "components/slide-deck/cognitive/instructions-defaults";

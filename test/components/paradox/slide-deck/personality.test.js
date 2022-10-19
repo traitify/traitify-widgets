@@ -1,9 +1,10 @@
+/** @jest-environment jsdom */
 import {useState} from "react";
 import {Component} from "components/paradox/slide-deck/personality";
 import {times} from "lib/helpers/array";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler, {act} from "support/component-handler";
-import {flushPromises, mockOptions, mockProps} from "support/helpers";
+import {mockOptions, mockProps} from "support/helpers";
 import useGlobalMock from "support/hooks/use-global-mock";
 import assessment from "support/json/assessment/with-slides.json";
 
@@ -61,7 +62,7 @@ describe("Personality", () => {
         mockOptions(props.getOption, {allowBack: true, ...options});
 
         times(5).forEach(() => {
-          component.act(() => { getCurrentImage().onload(); });
+          act(() => { getCurrentImage().onload(); });
         });
       });
 
@@ -70,14 +71,14 @@ describe("Personality", () => {
       });
 
       it("shows button", () => {
-        component.act(() => { component.findByText("me").props.onClick(); });
+        act(() => { component.findByText("me").props.onClick(); });
 
         expect(component.tree).toMatchSnapshot();
       });
 
       it("triggers action", () => {
-        component.act(() => { component.findByText("me").props.onClick(); });
-        component.act(() => { component.instance.findByProps({className: "back"}).props.onClick(); });
+        act(() => { component.findByText("me").props.onClick(); });
+        act(() => { component.instance.findByProps({className: "back"}).props.onClick(); });
 
         expect(component.tree).toMatchSnapshot();
       });
@@ -94,7 +95,7 @@ describe("Personality", () => {
         mockOptions(props.getOption, {allowFullscreen: true, ...options});
 
         times(5).forEach(() => {
-          component.act(() => { getCurrentImage().onload(); });
+          act(() => { getCurrentImage().onload(); });
         });
       });
 
@@ -103,7 +104,7 @@ describe("Personality", () => {
       });
 
       it("triggers action", () => {
-        component.act(() => { component.base.findByProps({className: "fullscreen"}).props.onClick(); });
+        act(() => { component.base.findByProps({className: "fullscreen"}).props.onClick(); });
 
         expect(component.tree).toMatchSnapshot();
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.fullscreen", expect.objectContaining({
@@ -113,8 +114,8 @@ describe("Personality", () => {
       });
 
       it("untriggers action", () => {
-        component.act(() => { component.base.findByProps({className: "fullscreen"}).props.onClick(); });
-        component.act(() => { component.base.findByProps({className: "fullscreen"}).props.onClick(); });
+        act(() => { component.base.findByProps({className: "fullscreen"}).props.onClick(); });
+        act(() => { component.base.findByProps({className: "fullscreen"}).props.onClick(); });
 
         expect(component.tree).toMatchSnapshot();
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.fullscreen", expect.objectContaining({
@@ -129,12 +130,12 @@ describe("Personality", () => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
         times(5).forEach(() => {
-          component.act(() => { getCurrentImage().onload(); });
+          act(() => { getCurrentImage().onload(); });
         });
       });
 
       it("saves me", () => {
-        component.act(() => { component.findByText("me").props.onClick(); });
+        act(() => { component.findByText("me").props.onClick(); });
         const {state} = lastUpdate();
 
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.me", expect.objectContaining({
@@ -147,7 +148,7 @@ describe("Personality", () => {
       });
 
       it("saves not me", () => {
-        component.act(() => { component.findByText("not_me").props.onClick(); });
+        act(() => { component.findByText("not_me").props.onClick(); });
         const {state} = lastUpdate();
 
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.notMe", expect.objectContaining({
@@ -189,8 +190,8 @@ describe("Personality", () => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
         times(4).forEach(() => {
-          component.act(() => { getCurrentImage().onerror(); });
-          component.act(() => { jest.advanceTimersByTime(2000); });
+          act(() => { getCurrentImage().onerror(); });
+          act(() => { jest.advanceTimersByTime(2000); });
         });
       });
 
@@ -200,7 +201,7 @@ describe("Personality", () => {
 
       describe("retry", () => {
         beforeEach(() => {
-          component.act(() => { component.findByText("try_again").props.onClick(); });
+          act(() => { component.findByText("try_again").props.onClick(); });
         });
 
         it("renders loading", () => {
@@ -210,7 +211,7 @@ describe("Personality", () => {
 
         it("renders slide", () => {
           times(3).forEach(() => {
-            component.act(() => { getCurrentImage().onload(); });
+            act(() => { getCurrentImage().onload(); });
           });
 
           expect(component.tree).toMatchSnapshot();
@@ -234,7 +235,7 @@ describe("Personality", () => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
         times(2).forEach(() => {
-          component.act(() => { getCurrentImage().onload(); });
+          act(() => { getCurrentImage().onload(); });
         });
 
         expect(component.tree).toMatchSnapshot();
@@ -246,7 +247,7 @@ describe("Personality", () => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
         times(3).forEach(() => {
-          component.act(() => { getCurrentImage().onload(); });
+          act(() => { getCurrentImage().onload(); });
         });
 
         expect(component.tree).toMatchSnapshot();
@@ -287,7 +288,7 @@ describe("Personality", () => {
       mockOptions(props.getOption, {allowInstructions: true, ...options});
       props.assessment = {...assessment, instructions};
       component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-      component.act(() => { component.findByText("get_started").props.onClick(); });
+      act(() => { component.findByText("get_started").props.onClick(); });
 
       expect(component.tree).toMatchSnapshot();
     });
@@ -325,12 +326,12 @@ describe("Personality", () => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
 
         times(5).forEach(() => {
-          component.act(() => { getCurrentImage().onload(); });
+          act(() => { getCurrentImage().onload(); });
         });
       });
 
       it("saves me", () => {
-        component.act(() => { component.findByText("me").props.onClick(); });
+        act(() => { component.findByText("me").props.onClick(); });
         const {state} = lastUpdate();
 
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.likert.me", expect.objectContaining({
@@ -343,7 +344,7 @@ describe("Personality", () => {
       });
 
       it("saves not me", () => {
-        component.act(() => { component.findByText("not_me").props.onClick(); });
+        act(() => { component.findByText("not_me").props.onClick(); });
         const {state} = lastUpdate();
 
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.likert.notMe", expect.objectContaining({
@@ -356,7 +357,7 @@ describe("Personality", () => {
       });
 
       it("saves really me", () => {
-        component.act(() => { component.findByText("really_me").props.onClick(); });
+        act(() => { component.findByText("really_me").props.onClick(); });
         const {state} = lastUpdate();
 
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.likert.reallyMe", expect.objectContaining({
@@ -369,7 +370,7 @@ describe("Personality", () => {
       });
 
       it("saves really not me", () => {
-        component.act(() => { component.findByText("really_not_me").props.onClick(); });
+        act(() => { component.findByText("really_not_me").props.onClick(); });
         const {state} = lastUpdate();
 
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.likert.reallyNotMe", expect.objectContaining({
@@ -386,28 +387,21 @@ describe("Personality", () => {
       const completeSlides = async() => {
         const slideCount = assessment.slides.length;
 
-        times(slideCount).forEach(() => component.act(() => { getCurrentImage().onload(); }));
+        times(slideCount).forEach(() => act(() => { getCurrentImage().onload(); }));
         times(slideCount).forEach((index) => {
-          component.act(() => {
+          act(() => {
             const text = ["really_not_me", "not_me", "me", "really_me"][index % 4];
 
+            jest.advanceTimersByTime(600);
             component.findByText(text).props.onClick();
           });
         });
 
-        await flushPromises();
+        await act(async() => { jest.runOnlyPendingTimers(); });
       };
-
-      let currentTime;
-      const originalNow = useGlobalMock(Date, "now");
 
       beforeEach(() => {
         jest.useFakeTimers();
-        Date.now = Date.now.mockImplementation(() => {
-          currentTime = currentTime ? currentTime + 600 : originalNow();
-
-          return currentTime;
-        });
       });
 
       afterEach(() => {
@@ -510,26 +504,19 @@ describe("Personality", () => {
     const completeSlides = async() => {
       const slideCount = assessment.slides.length;
 
-      times(slideCount).forEach(() => component.act(() => { getCurrentImage().onload(); }));
+      times(slideCount).forEach(() => act(() => { getCurrentImage().onload(); }));
       times(slideCount).forEach((index) => {
-        component.act(() => {
+        act(() => {
+          jest.advanceTimersByTime(600);
           component.findByText(index > slideCount / 2 ? "me" : "not_me").props.onClick();
         });
       });
 
-      await flushPromises();
+      await act(async() => { jest.runOnlyPendingTimers(); });
     };
-
-    let currentTime;
-    const originalNow = useGlobalMock(Date, "now");
 
     beforeEach(() => {
       jest.useFakeTimers();
-      Date.now = Date.now.mockImplementation(() => {
-        currentTime = currentTime ? currentTime + 600 : originalNow();
-
-        return currentTime;
-      });
     });
 
     afterEach(() => {
@@ -569,15 +556,15 @@ describe("Personality", () => {
 
     describe("errors", () => {
       const retry = async() => {
-        await act(async() => { jest.advanceTimersByTime(2000); });
+        await act(async() => { jest.runOnlyPendingTimers(); });
       };
 
       it("automatically retries request", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => {
+        act(() => {
           component.props.traitify.put.mockRejectedValueOnce(`{"errors": ["Oh no", "Not good"]}`);
         });
-        component.act(() => { component.props.traitify.put.mockResolvedValueOnce({status: "success"}); });
+        act(() => { component.props.traitify.put.mockResolvedValueOnce({status: "success"}); });
 
         await completeSlides();
         await retry();
@@ -593,7 +580,7 @@ describe("Personality", () => {
 
       it("renders default error", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => { component.props.traitify.put.mockRejectedValue(); });
+        act(() => { component.props.traitify.put.mockRejectedValue(); });
 
         await completeSlides();
         await retry();
@@ -606,7 +593,7 @@ describe("Personality", () => {
 
       it("renders json error", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => {
+        act(() => {
           component.props.traitify.put.mockRejectedValue(`{"errors": ["Oh no", "Not good"]}`);
         });
 
@@ -621,7 +608,7 @@ describe("Personality", () => {
 
       it("renders text error", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => { component.props.traitify.put.mockRejectedValue("Oh no"); });
+        act(() => { component.props.traitify.put.mockRejectedValue("Oh no"); });
 
         await completeSlides();
         await retry();
@@ -634,23 +621,23 @@ describe("Personality", () => {
 
       it("retries", async() => {
         component = new ComponentHandler(<Component {...props} />, {createNodeMock});
-        component.act(() => { component.props.traitify.put.mockRejectedValue("Oh no"); });
+        act(() => { component.props.traitify.put.mockRejectedValue("Oh no"); });
 
         await completeSlides();
         await retry();
         await retry();
 
-        component.act(() => { component.props.traitify.put.mockResolvedValueOnce({status: "success"}); });
-        component.act(() => { component.findByText("try_again").props.onClick(); });
+        act(() => { component.props.traitify.put.mockResolvedValueOnce({status: "success"}); });
+        act(() => { component.findByText("try_again").props.onClick(); });
 
-        await flushPromises();
+        await act(async() => { await jest.runOnlyPendingTimers(); });
 
         expect(props.getAssessment).toHaveBeenCalledWith({force: true});
         expect(props.ui.trigger).toHaveBeenCalledWith("SlideDeck.finished", expect.objectContaining({
           props: expect.any(Object),
           state: expect.any(Object)
         }), {status: "success"});
-        expect(props.traitify.put).toHaveBeenCalledTimes(4);
+        expect(props.traitify.put).toHaveBeenCalledTimes(5);
       });
     });
   });

@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Client from "lib/traitify-client";
 import {
   xdrMocks,

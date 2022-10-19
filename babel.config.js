@@ -1,13 +1,8 @@
-{
+module.exports = {
   "sourceMaps": true,
   "presets": [
     "airbnb",
-    [
-      "@babel/preset-env",
-      {
-        "loose": true
-      }
-    ]
+    "@babel/preset-env"
   ],
   // TODO: Evaluate which Stage 0-3 proposals we're using
   "plugins": [

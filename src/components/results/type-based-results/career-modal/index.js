@@ -180,7 +180,7 @@ class CareerModal extends Component {
               </div>
             )}
             <hr />
-            <h3 className={style.heading}><Icon icon={faGlobeAmericas} /> {translate("experience_level")}</h3>
+            <h3 className={style.heading}><Icon icon={faGlobeAmericas} /> {translate("education_level")}</h3>
             <ol className={style.experience}>
               {[1, 2, 3, 4, 5].map((level) => (
                 <li key={level} className={career.experience_level.id >= level ? style.active : ""} />

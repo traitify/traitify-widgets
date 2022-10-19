@@ -136,7 +136,7 @@ function CareerFilter(props) {
                 </label>
               </div>
               <div className={style.group}>
-                <div>{translate("experience_level")}</div>
+                <div>{translate("education_level")}</div>
                 {experienceLevels.map((level) => {
                   const checked = currentExperienceLevels.includes(level);
                   const id = `traitify-career-level-${level}`;

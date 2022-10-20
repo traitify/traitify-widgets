@@ -8,6 +8,9 @@ function CareerModalEmployers({employers}) {
         <div className={style.listItem} key={employer.id}>
           <div className={style.title}>{employer.name}</div>
           <div className={style.description}>{employer.description}</div>
+          {employer.url && (
+            <a className={`${style.description} flex`} href={employer.url}> More info</a>
+          )}
         </div>
       ))}
     </div>
@@ -18,7 +21,8 @@ CareerModalEmployers.propTypes = {
   employers: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
+      description: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
     })
   ).isRequired
 };

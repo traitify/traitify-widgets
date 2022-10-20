@@ -9638,6 +9638,12 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
 
 We offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.
               </div>
+              <a
+                className="description flex"
+                href="http://www.ilco.us/868636/working-ilco.html"
+              >
+                 More info
+              </a>
             </div>
             <div
               className="listItem"
@@ -9655,6 +9661,12 @@ We offer a competitive compensation and benefits package including, Medical, Den
 
 If you are interested in joining an "ICONIC" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.
               </div>
+              <a
+                className="description flex"
+                href="http://www.iconicmarinegroup.com/"
+              >
+                 More info
+              </a>
             </div>
             <div
               className="listItem"
@@ -9669,6 +9681,12 @@ If you are interested in joining an "ICONIC" team, submit your resume to HR@icon
               >
                 Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  
               </div>
+              <a
+                className="description flex"
+                href="https://www.regulatormarine.com/footer-pages/careers/"
+              >
+                 More info
+              </a>
             </div>
           </div>
         </div>

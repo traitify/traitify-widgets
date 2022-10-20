@@ -22,7 +22,7 @@ CareerModalEmployers.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired
+      url: PropTypes.string
     })
   ).isRequired
 };

@@ -26,7 +26,7 @@ exports[`Career renders component 1`] = `
     <h3
       className="subtitle"
     >
-      experience_level
+      education_level
     </h3>
     <ol
       className="experience"

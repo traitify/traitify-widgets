@@ -254,6 +254,10 @@
 
   .jobDetails {
     display: flex;
+
+    @include min-width(xs) {
+      padding-right: 20px
+    }
   }
   .jobIcon {
     color: gray;

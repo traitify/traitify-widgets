@@ -13,7 +13,7 @@ exports[`PersonalityDetails renders component 1`] = `
       <div
         className="bar"
         style={
-          Object {
+          {
             "background": "#008dc7",
           }
         }
@@ -21,7 +21,7 @@ exports[`PersonalityDetails renders component 1`] = `
       <h4
         className="title"
         style={
-          Object {
+          {
             "color": "#008dc7",
           }
         }
@@ -44,7 +44,7 @@ exports[`PersonalityDetails renders component 1`] = `
       <div
         className="bar"
         style={
-          Object {
+          {
             "background": "#d04e4a",
           }
         }
@@ -52,7 +52,7 @@ exports[`PersonalityDetails renders component 1`] = `
       <h4
         className="title"
         style={
-          Object {
+          {
             "color": "#d04e4a",
           }
         }
@@ -75,7 +75,7 @@ exports[`PersonalityDetails renders component 1`] = `
       <div
         className="bar"
         style={
-          Object {
+          {
             "background": "#32be4b",
           }
         }
@@ -83,7 +83,7 @@ exports[`PersonalityDetails renders component 1`] = `
       <h4
         className="title"
         style={
-          Object {
+          {
             "color": "#32be4b",
           }
         }
@@ -125,7 +125,7 @@ exports[`PersonalityDetails skips environments section if no environments 1`] = 
       <div
         className="bar"
         style={
-          Object {
+          {
             "background": "#008dc7",
           }
         }
@@ -133,7 +133,7 @@ exports[`PersonalityDetails skips environments section if no environments 1`] = 
       <h4
         className="title"
         style={
-          Object {
+          {
             "color": "#008dc7",
           }
         }
@@ -156,7 +156,7 @@ exports[`PersonalityDetails skips environments section if no environments 1`] = 
       <div
         className="bar"
         style={
-          Object {
+          {
             "background": "#d04e4a",
           }
         }
@@ -164,7 +164,7 @@ exports[`PersonalityDetails skips environments section if no environments 1`] = 
       <h4
         className="title"
         style={
-          Object {
+          {
             "color": "#d04e4a",
           }
         }
@@ -194,7 +194,7 @@ exports[`PersonalityDetails skips section if no detail 1`] = `
       <div
         className="bar"
         style={
-          Object {
+          {
             "background": "#32be4b",
           }
         }
@@ -202,7 +202,7 @@ exports[`PersonalityDetails skips section if no detail 1`] = `
       <h4
         className="title"
         style={
-          Object {
+          {
             "color": "#32be4b",
           }
         }

@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {createRef} from "react";
 import useElementSize from "lib/hooks/use-element-size";
 import ComponentHandler from "support/component-handler";

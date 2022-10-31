@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {Component} from "components/slide-deck/personality";
 import ComponentHandler from "support/component-handler";
 import {flushPromises} from "support/helpers";
@@ -181,6 +182,7 @@ describe("Personality", () => {
     afterAll(() => {
       componentDidUpdate.mockRestore();
       createElement.mockRestore();
+      jest.useRealTimers();
     });
 
     it("does nothing if image loading", () => {
@@ -228,7 +230,7 @@ describe("Personality", () => {
       expect(component.instance.fetchImages).toHaveBeenCalled();
     });
 
-    it("handles image error ", () => {
+    it("handles image error", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateState({imageLoading: false});
       createElement.mockClear();
@@ -241,10 +243,9 @@ describe("Personality", () => {
       expect(component.state.imageLoading).toBe(false);
       expect(component.state.imageLoadingAttempts).toBe(1);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
-      expect(setTimeout).toHaveBeenCalledWith(component.instance.fetchImages, 2000);
     });
 
-    it("handles repeated image error ", () => {
+    it("handles repeated image error", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateState({imageLoading: false, imageLoadingAttempts: 2});
       createElement.mockClear();
@@ -259,7 +260,6 @@ describe("Personality", () => {
       expect(component.state.imageLoading).toBe(false);
       expect(component.state.imageLoadingAttempts).toBe(3);
       expect(component.state.slides.filter((slide) => slide.loaded)).toHaveLength(0);
-      expect(setTimeout).toHaveBeenCalledWith(component.instance.fetchImages, 2000);
     });
   });
 

@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {Component} from "components/results/dimension-based-results/radar";
 import Chart from "lib/helpers/canvas-radar-chart";
 import ComponentHandler from "support/component-handler";

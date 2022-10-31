@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Component from "components/slide-deck/cognitive/timer";
 import ComponentHandler from "support/component-handler";
 import useWindowMock from "support/hooks/use-window-mock";

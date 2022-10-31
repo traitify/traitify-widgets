@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {
   completedSlides,
   dataChanged,
@@ -187,14 +188,14 @@ describe("Helpers", () => {
       document.msFullscreenElement = null;
     });
 
-    it("checks fullscreenElement ", () => {
+    it("checks fullscreenElement", () => {
       document.fullscreenElement = {};
       const result = isFullscreen();
 
       expect(result).toBe(true);
     });
 
-    it("checks webkitFullscreenElement ", () => {
+    it("checks webkitFullscreenElement", () => {
       document.webkitFullscreenElement = {};
       const result = isFullscreen();
 

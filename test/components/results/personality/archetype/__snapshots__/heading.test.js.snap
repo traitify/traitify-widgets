@@ -14,7 +14,7 @@ exports[`PersonalityArchetypeHeading renders component 1`] = `
       />
       <h2
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "personality_heading, [object Object]",
           }
         }
@@ -60,7 +60,7 @@ exports[`PersonalityArchetypeHeading renders component in third person 1`] = `
       />
       <h2
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "personality_heading_third_person, [object Object]",
           }
         }
@@ -102,7 +102,7 @@ exports[`PersonalityArchetypeHeading renders component without badge 1`] = `
     <div>
       <h2
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "personality_heading, [object Object]",
           }
         }
@@ -148,7 +148,7 @@ exports[`PersonalityArchetypeHeading renders explanation text as fallback for vi
       />
       <h2
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "personality_heading, [object Object]",
           }
         }
@@ -163,7 +163,7 @@ exports[`PersonalityArchetypeHeading renders explanation text as fallback for vi
   >
     <p
       dangerouslySetInnerHTML={
-        Object {
+        {
           "__html": "archetype_description_html, [object Object]",
         }
       }

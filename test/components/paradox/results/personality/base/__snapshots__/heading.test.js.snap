@@ -16,8 +16,8 @@ exports[`Paradox.PersonalityBaseHeading fallbacks renders component with blend 1
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_blend_heading - {\\"personality\\":\\"<span>Naturalist | Analyzer</span>\\"}",
+            {
+              "__html": "personality_blend_heading - {"personality":"<span>Naturalist | Analyzer</span>"}",
             }
           }
         />
@@ -48,8 +48,8 @@ exports[`Paradox.PersonalityBaseHeading fallbacks renders component with types 1
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading - {\\"personality\\":\\"<span>Naturalist</span>\\"}",
+            {
+              "__html": "personality_base_heading - {"personality":"<span>Naturalist</span>"}",
             }
           }
         />
@@ -80,8 +80,8 @@ exports[`Paradox.PersonalityBaseHeading perspective renders component 1`] = `
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading_third_person - {\\"personality\\":\\"<span>Inventor</span>\\"}",
+            {
+              "__html": "personality_base_heading_third_person - {"personality":"<span>Inventor</span>"}",
             }
           }
         />
@@ -112,8 +112,8 @@ exports[`Paradox.PersonalityBaseHeading perspective renders component with caree
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading_third_person - {\\"personality\\":\\"<span>Inventor</span>\\"}",
+            {
+              "__html": "personality_base_heading_third_person - {"personality":"<span>Inventor</span>"}",
             }
           }
         />
@@ -163,8 +163,8 @@ exports[`Paradox.PersonalityBaseHeading renders component 1`] = `
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading - {\\"personality\\":\\"<span>Inventor</span>\\"}",
+            {
+              "__html": "personality_base_heading - {"personality":"<span>Inventor</span>"}",
             }
           }
         />
@@ -195,8 +195,8 @@ exports[`Paradox.PersonalityBaseHeading renders component with careers link 1`] 
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading - {\\"personality\\":\\"<span>Inventor</span>\\"}",
+            {
+              "__html": "personality_base_heading - {"personality":"<span>Inventor</span>"}",
             }
           }
         />
@@ -250,8 +250,8 @@ exports[`Paradox.PersonalityBaseHeading themed renders component 1`] = `
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading - {\\"personality\\":\\"<span>Inventor</span>\\"}",
+            {
+              "__html": "personality_base_heading - {"personality":"<span>Inventor</span>"}",
             }
           }
         />
@@ -297,8 +297,8 @@ exports[`Paradox.PersonalityBaseHeading themed renders component with blend 1`] 
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_blend_heading - {\\"personality\\":\\"<span>Naturalist | Analyzer</span>\\"}",
+            {
+              "__html": "personality_blend_heading - {"personality":"<span>Naturalist | Analyzer</span>"}",
             }
           }
         />
@@ -356,8 +356,8 @@ exports[`Paradox.PersonalityBaseHeading themed renders component with types 1`] 
         <div
           className="heading"
           dangerouslySetInnerHTML={
-            Object {
-              "__html": "personality_base_heading - {\\"personality\\":\\"<span>Naturalist</span>\\"}",
+            {
+              "__html": "personality_base_heading - {"personality":"<span>Naturalist</span>"}",
             }
           }
         />

@@ -87,36 +87,34 @@ describe("CareerResults", () => {
       expect(props.traitify.get).toHaveBeenCalled();
     });
 
-    it("fetch triggers a request", (done) => {
+    it("fetch triggers a request", () => {
       const component = new ComponentHandler(<Component {...props} />);
       props.ui.current["Careers.fetch"] = {};
       props.traitify.get.mockResolvedValue(Promise.resolve(careers));
       component.instance.fetch();
 
-      props.ui.trigger.mock.calls.find((call) => call[0] === "Careers.request")[2]
+      return props.ui.trigger.mock.calls.find((call) => call[0] === "Careers.request")[2]
         .then(() => {
           expect(props.ui.trigger).toHaveBeenCalledWith("Careers.fetching", component.instance, true);
           expect(props.traitify.get).toHaveBeenCalled();
           expect(component.state.careers).toEqual(careers);
           expect(props.ui.trigger).toHaveBeenCalledWith("Careers.fetching", component.instance, false);
-          done();
         });
     });
 
-    it("fetch triggers a request that combines previous careers", (done) => {
+    it("fetch triggers a request that combines previous careers", () => {
       const component = new ComponentHandler(<Component {...props} />);
       component.updateState({careers: careers.slice(0, 10)});
       props.ui.current["Careers.fetch"] = {page: 2};
       props.traitify.get.mockResolvedValue(Promise.resolve(careers.slice(10)));
       component.instance.fetch();
 
-      props.ui.trigger.mock.calls.find((call) => call[0] === "Careers.request")[2]
+      return props.ui.trigger.mock.calls.find((call) => call[0] === "Careers.request")[2]
         .then(() => {
           expect(props.ui.trigger).toHaveBeenCalledWith("Careers.fetching", component.instance, true);
           expect(props.traitify.get).toHaveBeenCalled();
           expect(component.state.careers).toEqual(careers);
           expect(props.ui.trigger).toHaveBeenCalledWith("Careers.fetching", component.instance, false);
-          done();
         });
     });
 

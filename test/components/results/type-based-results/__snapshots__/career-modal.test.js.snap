@@ -254,7 +254,7 @@ exports[`CareerModal renders component 1`] = `
       </h3>
       <p
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "match_rate_html",
           }
         }
@@ -570,7 +570,7 @@ exports[`CareerModal renders legend 1`] = `
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "salary_mean_html",
                 }
               }
@@ -590,7 +590,7 @@ exports[`CareerModal renders legend 1`] = `
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "employment_growth_html",
                 }
               }
@@ -610,7 +610,7 @@ exports[`CareerModal renders legend 1`] = `
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "education_html",
                 }
               }
@@ -634,7 +634,7 @@ exports[`CareerModal renders legend 1`] = `
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "bright_future_html",
                 }
               }
@@ -654,7 +654,7 @@ exports[`CareerModal renders legend 1`] = `
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "green_career_html",
                 }
               }
@@ -724,7 +724,7 @@ exports[`CareerModal renders legend 1`] = `
       </h3>
       <p
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "match_rate_html",
           }
         }
@@ -1046,7 +1046,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "salary_mean_html",
                 }
               }
@@ -1066,7 +1066,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "employment_growth_html",
                 }
               }
@@ -1086,7 +1086,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "education_html",
                 }
               }
@@ -1110,7 +1110,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "bright_future_html",
                 }
               }
@@ -1130,7 +1130,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
             </h4>
             <p
               dangerouslySetInnerHTML={
-                Object {
+                {
                   "__html": "green_career_html",
                 }
               }
@@ -1200,7 +1200,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
       </h3>
       <p
         dangerouslySetInnerHTML={
-          Object {
+          {
             "__html": "match_rate_html",
           }
         }

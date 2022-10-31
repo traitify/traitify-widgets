@@ -79,7 +79,7 @@ module.exports = (_env) => {
         },
         {
           test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-          type: 'asset/resource'
+          type: "asset/resource"
         }
       ]
     },
@@ -100,7 +100,7 @@ module.exports = (_env) => {
       })
     ],
     resolve: {
-      extensions: [".jsx", ".js", ".json", ".scss"],
+      extensions: [".jsx", ".js"],
       modules: [
         path.resolve(__dirname, "src"),
         path.resolve(__dirname, "node_modules")

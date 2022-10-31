@@ -7,7 +7,7 @@ exports[`PersonalityHeading renders component 1`] = `
   <div
     className="content"
     dangerouslySetInnerHTML={
-      Object {
+      {
         "__html": "personality_heading, [object Object]",
       }
     }

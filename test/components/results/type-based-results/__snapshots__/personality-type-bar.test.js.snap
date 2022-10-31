@@ -10,7 +10,7 @@ exports[`PersonalityTypeBar renders component 1`] = `
     onFocus={[Function]}
     onMouseOver={[Function]}
     style={
-      Object {
+      {
         "background": "#32BF4C",
         "height": "50%",
       }
@@ -27,7 +27,7 @@ exports[`PersonalityTypeBar renders component 1`] = `
     onClick={[Function]}
     onFocus={[Function]}
     onMouseOver={[Function]}
-    style={Object {}}
+    style={{}}
     type="button"
   >
     <img

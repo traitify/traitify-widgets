@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import Widget from "lib/traitify-widget";
 import guessComponent from "lib/helpers/guess-component";
 import {render, unmountComponentAtNode} from "react-dom";
@@ -339,65 +340,65 @@ describe("Widget", () => {
       return expect(result).rejects.toThrow("Could not select target for Default");
     });
 
-    it("renders string target", (done) => {
+    it("renders string target", () => {
       widget.options.target = "#results";
-      widget.render().then(() => {
+
+      return widget.render().then(() => {
         expect(render).toHaveBeenCalledTimes(1);
-        done();
       });
     });
 
-    it("renders dom target", (done) => {
+    it("renders dom target", () => {
       widget.options.target = {nodeName: "div"};
-      widget.render().then(() => {
+
+      return widget.render().then(() => {
         expect(render).toHaveBeenCalledTimes(1);
-        done();
       });
     });
 
-    it("renders targets", (done) => {
+    it("renders targets", () => {
       widget.options.targets = {
         PersonalityBlend: "#blend",
         PersonalityTraits: "#traits",
         PersonalityTypes: "#types"
       };
-      widget.render().then(() => {
+
+      return widget.render().then(() => {
         expect(render).toHaveBeenCalledTimes(3);
         expect(widget.options.renderedTargets).toEqual({
           PersonalityBlend: expect.any(Object),
           PersonalityTraits: expect.any(Object),
           PersonalityTypes: expect.any(Object)
         });
-        done();
       });
     });
 
-    it("removes dom target's children", (done) => {
+    it("removes dom target's children", () => {
       widget.options.target = createElement();
-      widget.render().then(() => {
+
+      return widget.render().then(() => {
         expect(unmountComponentAtNode).toHaveBeenCalled();
         expect(render).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("removes old target's children", (done) => {
+    it("removes old target's children", () => {
       widget.options.target = createElement();
       widget.options.renderedTargets = {Default: widget.options.target, Results: createElement()};
-      widget.render().then(() => {
+
+      return widget.render().then(() => {
         expect(unmountComponentAtNode).toHaveBeenCalledTimes(2);
         expect(render).toHaveBeenCalledTimes(1);
-        done();
       });
     });
 
-    it("removes only connected targets", (done) => {
+    it("removes only connected targets", () => {
       widget.options.target = createElement();
       widget.options.renderedTargets = {Results: createElement({isConnected: false})};
-      widget.render().then(() => {
+
+      return widget.render().then(() => {
         expect(unmountComponentAtNode).toHaveBeenCalledTimes(1);
         expect(render).toHaveBeenCalledTimes(1);
-        done();
       });
     });
   });

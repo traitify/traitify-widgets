@@ -56,7 +56,7 @@ exports[`Guide renders component 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -76,7 +76,7 @@ exports[`Guide renders component 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -96,7 +96,7 @@ exports[`Guide renders component 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -116,7 +116,7 @@ exports[`Guide renders component 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -136,7 +136,7 @@ exports[`Guide renders component 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -201,8 +201,8 @@ exports[`Guide renders component 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -253,8 +253,8 @@ exports[`Guide renders component 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -280,8 +280,8 @@ exports[`Guide renders component 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -349,7 +349,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -369,7 +369,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -389,7 +389,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -409,7 +409,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -429,7 +429,7 @@ exports[`Guide renders component if benchmark not ready 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -494,8 +494,8 @@ exports[`Guide renders component if benchmark not ready 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -540,8 +540,8 @@ exports[`Guide renders component if benchmark not ready 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -567,8 +567,8 @@ exports[`Guide renders component if benchmark not ready 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -642,7 +642,7 @@ exports[`Guide toggles expanded intro 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -662,7 +662,7 @@ exports[`Guide toggles expanded intro 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -682,7 +682,7 @@ exports[`Guide toggles expanded intro 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -702,7 +702,7 @@ exports[`Guide toggles expanded intro 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -722,7 +722,7 @@ exports[`Guide toggles expanded intro 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -791,8 +791,8 @@ These personality characteristics provide the basis for asking a particular sequ
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -843,8 +843,8 @@ These personality characteristics provide the basis for asking a particular sequ
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -870,8 +870,8 @@ These personality characteristics provide the basis for asking a particular sequ
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -939,7 +939,7 @@ exports[`Guide toggles question content 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -959,7 +959,7 @@ exports[`Guide toggles question content 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -979,7 +979,7 @@ exports[`Guide toggles question content 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -999,7 +999,7 @@ exports[`Guide toggles question content 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1019,7 +1019,7 @@ exports[`Guide toggles question content 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -1084,8 +1084,8 @@ exports[`Guide toggles question content 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -1136,8 +1136,8 @@ exports[`Guide toggles question content 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -1163,8 +1163,8 @@ exports[`Guide toggles question content 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -1266,7 +1266,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -1286,7 +1286,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -1306,7 +1306,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1326,7 +1326,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1346,7 +1346,7 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -1411,8 +1411,8 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -1463,8 +1463,8 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -1490,8 +1490,8 @@ exports[`Guide update sets the guide data if the benchmark changes 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -1559,7 +1559,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -1579,7 +1579,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -1599,7 +1599,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1619,7 +1619,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1639,7 +1639,7 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -1704,8 +1704,8 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -1756,8 +1756,8 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -1783,8 +1783,8 @@ exports[`Guide update sets the guide data if the guide's assessment ID changes 1
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -1852,7 +1852,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -1872,7 +1872,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -1892,7 +1892,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1912,7 +1912,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -1932,7 +1932,7 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -1997,8 +1997,8 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -2049,8 +2049,8 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2076,8 +2076,8 @@ exports[`Guide update sets the guide data if the guide's locale changes 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2145,7 +2145,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -2165,7 +2165,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -2185,7 +2185,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -2205,7 +2205,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -2225,7 +2225,7 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -2290,8 +2290,8 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -2342,8 +2342,8 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2369,8 +2369,8 @@ exports[`Guide update sets the guide data if the guide's removed 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2438,7 +2438,7 @@ exports[`Guide updates activeCompetency 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -2458,7 +2458,7 @@ exports[`Guide updates activeCompetency 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -2478,7 +2478,7 @@ exports[`Guide updates activeCompetency 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -2498,7 +2498,7 @@ exports[`Guide updates activeCompetency 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -2518,7 +2518,7 @@ exports[`Guide updates activeCompetency 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -2583,8 +2583,8 @@ exports[`Guide updates activeCompetency 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -2632,8 +2632,8 @@ exports[`Guide updates activeCompetency 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2659,8 +2659,8 @@ exports[`Guide updates activeCompetency 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2728,7 +2728,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#FFCC3B",
           }
         }
@@ -2748,7 +2748,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#EF615E",
           }
         }
@@ -2768,7 +2768,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -2788,7 +2788,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
       <li
         className="tab"
         style={
-          Object {
+          {
             "borderTopColor": "#29B770",
           }
         }
@@ -2808,7 +2808,7 @@ exports[`Guide updates activeCompetency through select 1`] = `
       <li
         className="tab tabActive"
         style={
-          Object {
+          {
             "borderTopColor": "black",
           }
         }
@@ -2873,8 +2873,8 @@ exports[`Guide updates activeCompetency through select 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-up\\" class=\\"svg-inline--fa fa-chevron-up fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
                 }
               }
             />
@@ -2922,8 +2922,8 @@ exports[`Guide updates activeCompetency through select 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />
@@ -2949,8 +2949,8 @@ exports[`Guide updates activeCompetency through select 1`] = `
             <span
               className="questionIcon traitify--icon-fa"
               dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"chevron-down\\" class=\\"svg-inline--fa fa-chevron-down fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z\\"></path></svg>",
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
                 }
               }
             />

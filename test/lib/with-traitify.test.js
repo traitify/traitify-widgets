@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 /* eslint-disable no-console */
 import withTraitify from "lib/with-traitify";
 import ComponentHandler from "support/component-handler";
@@ -357,64 +358,63 @@ describe("withTraitify", () => {
       console.warn = originalWarn;
     });
 
-    it("requires assessmentID", (done) => {
+    it("requires assessmentID", () => (
       getDummyComponent().props.getAssessment().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.assessment).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
-      });
-    });
+      })
+    ));
 
-    it("checks props", (done) => {
+    it("checks props", () => {
       component.updateProps({assessment});
-      getDummyComponent().props.getAssessment().then(() => {
+
+      return getDummyComponent().props.getAssessment().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.assessment).toBe(assessment);
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips props if no results", (done) => {
+    it("skips props if no results", () => {
       assessment = assessmentWithoutResults;
       component.updateProps({assessment});
-      getDummyComponent().props.getAssessment().then(() => {
+
+      return getDummyComponent().props.getAssessment().then(() => {
         expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("checks cache", (done) => {
+    it("checks cache", () => {
       cache.get.mockReturnValue(assessment);
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getAssessment().then(() => {
+
+      return getDummyComponent().props.getAssessment().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.assessment).toBe(assessment);
         expect(props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips cache if no results", (done) => {
+    it("skips cache if no results", () => {
       assessment = assessmentWithoutResults;
       cache.get.mockReturnValue(assessment);
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getAssessment().then(() => {
+
+      return getDummyComponent().props.getAssessment().then(() => {
         expect(getDummyComponent().props.assessment).not.toBe(assessment);
-        done();
       });
     });
 
-    it("sets cache if results", (done) => {
+    it("sets cache if results", () => {
       traitify.ajax.mockReturnValue(Promise.resolve(assessment));
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getAssessment().then(() => {
+
+      return getDummyComponent().props.getAssessment().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
-        done();
       });
     });
 
@@ -440,15 +440,15 @@ describe("withTraitify", () => {
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
 
-    it("catches error with request", (done) => {
+    it("catches error with request", () => {
       assessment = assessmentWithoutResults;
       const key = `en-us.assessment.${assessment.id}`;
       traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getAssessment().then(() => {
+
+      return getDummyComponent().props.getAssessment().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
-        done();
       });
     });
   });
@@ -487,66 +487,65 @@ describe("withTraitify", () => {
       console.warn = originalWarn;
     });
 
-    it("requires benchmarkID", (done) => {
+    it("requires benchmarkID", () => (
       component.instance.getBenchmark().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.benchmark).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
-      });
-    });
+      })
+    ));
 
-    it("checks state", (done) => {
+    it("checks state", () => {
       component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
-      component.instance.getBenchmark().then(() => {
+
+      return component.instance.getBenchmark().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.benchmark).toBe(benchmark);
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips state if no name", (done) => {
+    it("skips state if no name", () => {
       benchmark = benchmarkWithoutName;
       component.updateState({benchmark, benchmarkID: benchmark.benchmarkId});
-      component.instance.getBenchmark().then(() => {
+
+      return component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("checks cache", (done) => {
+    it("checks cache", () => {
       cache.get.mockReturnValue(benchmark);
       component.updateState({benchmarkID: benchmark.benchmarkId});
-      component.instance.getBenchmark().then(() => {
+
+      return component.instance.getBenchmark().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.benchmark).toBe(benchmark);
         expect(props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips cache if no name", (done) => {
+    it("skips cache if no name", () => {
       benchmark = benchmarkWithoutName;
       cache.get.mockReturnValue(benchmark);
       component.updateState({benchmarkID: benchmark.benchmarkId});
-      component.instance.getBenchmark().then(() => {
+
+      return component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.benchmark).not.toBe(benchmark);
-        done();
       });
     });
 
-    it("sets cache if name", (done) => {
+    it("sets cache if name", () => {
       traitify.post.mockReturnValue(Promise.resolve(
         {data: {getDimensionRangeBenchmark: benchmarkFixture}}
       ));
       component.updateState({benchmarkID: benchmarkFixture.benchmarkId});
-      component.instance.getBenchmark().then(() => {
+
+      return component.instance.getBenchmark().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
-        done();
       });
     });
 
@@ -572,15 +571,15 @@ describe("withTraitify", () => {
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
 
-    it("catches error with request", (done) => {
+    it("catches error with request", () => {
       benchmark = benchmarkWithoutName;
       const key = `en-us.benchmark.${benchmark.benchmarkId}`;
       traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({benchmarkID: benchmark.benchmarkId});
-      component.instance.getBenchmark().then(() => {
+
+      return component.instance.getBenchmark().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
-        done();
       });
     });
   });
@@ -616,81 +615,80 @@ describe("withTraitify", () => {
       console.warn = originalWarn;
     });
 
-    it("requires assessmentID", (done) => {
+    it("requires assessmentID", () => (
       getDummyComponent().props.getCognitiveAssessment().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.assessment).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
-      });
-    });
+      })
+    ));
 
-    it("checks props", (done) => {
+    it("checks props", () => {
       assessment = cognitiveAssessment;
       component.updateProps({assessment});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.assessment).toBe(assessment);
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips props if no results", (done) => {
+    it("skips props if no results", () => {
       assessment = cognitiveAssessmentWithoutResults;
       component.updateProps({assessment});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("checks cache", (done) => {
+    it("checks cache", () => {
       assessment = cognitiveAssessment;
       cache.get.mockReturnValue(assessment);
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.assessment).toBe(assessment);
         expect(props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips cache if no results", (done) => {
+    it("skips cache if no results", () => {
       assessment = cognitiveAssessmentWithoutResults;
       cache.get.mockReturnValue(assessment);
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(getDummyComponent().props.assessment).not.toBe(assessment);
-        done();
       });
     });
 
-    it("sets cache if request results", (done) => {
+    it("sets cache if request results", () => {
       assessment = cognitiveAssessment;
       traitify.post.mockReturnValue(Promise.resolve({
         data: {cognitiveTest: assessment}
       }));
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips setting cache if no results", (done) => {
+    it("skips setting cache if no results", () => {
       assessment = cognitiveAssessmentWithoutResults;
       traitify.post.mockReturnValue(Promise.resolve({
         data: {cognitiveTest: assessment}
       }));
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(getDummyComponent().props.cache.set).not.toHaveBeenCalled();
-        done();
       });
     });
 
@@ -716,15 +714,15 @@ describe("withTraitify", () => {
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
 
-    it("catches error with request", (done) => {
+    it("catches error with request", () => {
       assessment = cognitiveAssessmentWithoutResults;
       const key = `en-us.cognitive-assessment.${assessment.id}`;
       traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateProps({assessmentID: assessment.id});
-      getDummyComponent().props.getCognitiveAssessment().then(() => {
+
+      return getDummyComponent().props.getCognitiveAssessment().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
-        done();
       });
     });
   });
@@ -749,74 +747,73 @@ describe("withTraitify", () => {
       console.warn = originalWarn;
     });
 
-    it("requires deckID", (done) => {
+    it("requires deckID", () => (
       component.instance.getDeck().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.deck).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
-      });
-    });
+      })
+    ));
 
-    it("checks state", (done) => {
+    it("checks state", () => {
       component.updateState({deck, deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.deck).toBe(deck);
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips state if no name", (done) => {
+    it("skips state if no name", () => {
       deck = deckWithoutName;
       component.updateState({deck, deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("checks cache", (done) => {
+    it("checks cache", () => {
       cache.get.mockReturnValue(deck);
       component.updateState({deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.deck).toBe(deck);
         expect(props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips cache if no name", (done) => {
+    it("skips cache if no name", () => {
       deck = deckWithoutName;
       cache.get.mockReturnValue(deck);
       component.updateState({deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         expect(getDummyComponent().props.deck).not.toBe(deck);
-        done();
       });
     });
 
-    it("sets cache if name", (done) => {
+    it("sets cache if name", () => {
       traitify.ajax.mockReturnValue(Promise.resolve(deck));
       component.updateState({deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("sets deck locale if missing", (done) => {
+    it("sets deck locale if missing", () => {
       deck.locale_key = null;
       traitify.ajax.mockReturnValue(Promise.resolve(deck));
       component.updateState({deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         expect(getDummyComponent().props.deck.locale_key).toBe(component.state.locale);
-        done();
       });
     });
 
@@ -842,15 +839,15 @@ describe("withTraitify", () => {
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
 
-    it("catches error with request", (done) => {
+    it("catches error with request", () => {
       deck = deckWithoutName;
       const key = `en-us.deck.${deck.id}`;
       traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({deckID: deck.id});
-      component.instance.getDeck().then(() => {
+
+      return component.instance.getDeck().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
-        done();
       });
     });
   });
@@ -875,95 +872,93 @@ describe("withTraitify", () => {
       console.warn = originalWarn;
     });
 
-    it("requires assessment", (done) => {
+    it("requires assessment", () => (
       component.instance.getGuide().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.guide).toBeNull();
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
-      });
-    });
+      })
+    ));
 
-    it("checks state", (done) => {
+    it("checks state", () => {
       component.updateState({assessment, guide});
-      component.instance.getGuide().then(() => {
+      return component.instance.getGuide().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.guide).toBe(guide);
         expect(props.cache.get).not.toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips state if no competencies", (done) => {
+    it("skips state if no competencies", () => {
       guide = guideWithoutCompetencies;
       component.updateState({assessment, guide});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("checks cache", (done) => {
+    it("checks cache", () => {
       cache.get.mockReturnValue(guide);
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         const {props} = getDummyComponent();
 
         expect(props.guide).toBe(guide);
         expect(props.cache.get).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("skips cache if no competencies", (done) => {
+    it("skips cache if no competencies", () => {
       guide = guideWithoutCompetencies;
       cache.get.mockReturnValue(guide);
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide).not.toBe(guide);
-        done();
       });
     });
 
-    it("sets cache if competencies", (done) => {
+    it("sets cache if competencies", () => {
       traitify.post.mockReturnValue(Promise.resolve({data: {guide}}));
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.cache.set).toHaveBeenCalled();
-        done();
       });
     });
 
-    it("sets guide assessment ID if missing", (done) => {
+    it("sets guide assessment ID if missing", () => {
       guide.assessment_id = null;
       traitify.post.mockReturnValue(
         Promise.resolve({data: {guide}})
       );
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide.assessment_id).toBe(component.state.assessment.id);
-        done();
       });
     });
 
-    it("sets guide locale if missing", (done) => {
+    it("sets guide locale if missing", () => {
       guide.locale_key = null;
       traitify.post.mockReturnValue(Promise.resolve({data: {guide}}));
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide.locale_key).toBe(component.state.locale);
-        done();
       });
     });
 
-    it("sets guide to blank if no data", (done) => {
+    it("sets guide to blank if no data", () => {
       traitify.post.mockReturnValue(Promise.resolve({}));
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(getDummyComponent().props.guide).toBeNull();
-        done();
       });
     });
 
@@ -987,14 +982,14 @@ describe("withTraitify", () => {
       expect(traitify.ui.requests[key]).not.toBe(request);
     });
 
-    it("catches error with request", (done) => {
+    it("catches error with request", () => {
       const key = `en-us.guide.${assessment.id}`;
       traitify.post.mockReturnValue(Promise.reject("Error with request"));
       component.updateState({assessment});
-      component.instance.getGuide().then(() => {
+
+      return component.instance.getGuide().then(() => {
         expect(console.warn).toHaveBeenCalledWith("Error with request");
         expect(traitify.ui.requests[key]).toBeUndefined();
-        done();
       });
     });
   });

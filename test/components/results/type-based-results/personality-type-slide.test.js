@@ -59,7 +59,7 @@ describe("PersonalityTypeSlide", () => {
       expect(component.state.activeType).toEqual(props.type);
     });
 
-    it("updates state with new activeType ", () => {
+    it("updates state with new activeType", () => {
       const component = new ComponentHandler(<Component {...props} />);
       const type = assessment.personality_types[1];
       props.ui.current["Assessment.activeType"] = type;

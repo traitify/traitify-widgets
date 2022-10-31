@@ -61,12 +61,6 @@
   }
 }
 
-@mixin mqc($width) {
-  @media (min-width: $width/16*1em) {
-    @content;
-  }
-}
-
 @mixin border-radius($radius: 5px) {
   border-radius: $radius;
 }
@@ -99,10 +93,10 @@
   filter: alpha(opacity=$opacity*100);
 }
 
-@mixin rems($px-size) { 
-  $rem-size: $px-size / $font-size; 
-  font-size: $px-size + px; 
-  font-size: $rem-size + rem; 
+@mixin rems($px-size) {
+  $rem-size: calc($px-size / $font-size);
+  font-size: $px-size + px;
+  font-size: $rem-size + rem;
 }
 
 @function parseInt($n) {
@@ -140,8 +134,8 @@
 /*     Grid components     */
 @mixin cols($i: 12, $total: 12) {
   float: left;
-  padding: 0 $gutter/2;
-  width: ($i / $total) * 100%;
+  padding: 0 calc($gutter / 2);
+  width: calc($i / $total) * 100%;
   box-sizing: border-box;
 }
 @mixin push($i: 12, $total: 12) {
@@ -163,20 +157,20 @@
   transition: $what $length $easing;
 }
 
-@mixin mar($mt: 0, $mr: 0, $mb: 0, $ml: 0) { 
-  $mtv: $mt / $font-size;
-  $mrv: $mr / $font-size;
-  $mbv: $mb / $font-size;
-  $mlv: $ml / $font-size;
+@mixin mar($mt: 0, $mr: 0, $mb: 0, $ml: 0) {
+  $mtv: calc($mt / $font-size);
+  $mrv: calc($mr / $font-size);
+  $mbv: calc($mb / $font-size);
+  $mlv: calc($ml / $font-size);
   margin: $mt + px $mr + px $mb + px $ml + px;
   margin: $mtv + rem $mrv + rem $mbv + rem $mlv + rem;
 }
 
-@mixin pad($pt: 0, $pr: 0, $pb: 0, $pl: 0) { 
-  $ptv: $pt / $font-size;
-  $prv: $pr / $font-size;
-  $pbv: $pb / $font-size;
-  $plv: $pl / $font-size;
+@mixin pad($pt: 0, $pr: 0, $pb: 0, $pl: 0) {
+  $ptv: calc($pt / $font-size);
+  $prv: calc($pr / $font-size);
+  $pbv: calc($pb / $font-size);
+  $plv: calc($pl / $font-size);
   padding: $pt + px $pr + px $pb + px $pl + px;
   padding: $ptv + rem $prv + rem $pbv + rem $plv + rem;
 }

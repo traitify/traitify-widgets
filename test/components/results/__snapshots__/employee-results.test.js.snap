@@ -8,8 +8,8 @@ exports[`EmployeeResults allowHeaders renders component 1`] = `
     <span
       className="traitify--icon-fa"
       dangerouslySetInnerHTML={
-        Object {
-          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"user\\" class=\\"svg-inline--fa fa-user fa-w-14\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 448 512\\"><path fill=\\"currentColor\\" d=\\"M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z\\"></path></svg>",
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path></svg>",
         }
       }
     />
@@ -27,8 +27,8 @@ exports[`EmployeeResults allowHeaders renders component 1`] = `
     <span
       className="traitify--icon-fa"
       dangerouslySetInnerHTML={
-        Object {
-          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"table-cells-large\\" class=\\"svg-inline--fa fa-table-cells-large fa-w-16\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M448 32C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H448zM448 96H288V224H448V96zM448 288H288V416H448V288zM224 224V96H64V224H224zM64 416H224V288H64V416z\\"></path></svg>",
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-cells-large" class="svg-inline--fa fa-table-cells-large" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 96V224H288V96H448zm0 192V416H288V288H448zM224 224H64V96H224V224zM64 288H224V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg>",
         }
       }
     />
@@ -46,8 +46,8 @@ exports[`EmployeeResults allowHeaders renders component 1`] = `
     <span
       className="traitify--icon-fa"
       dangerouslySetInnerHTML={
-        Object {
-          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"table-cells-large\\" class=\\"svg-inline--fa fa-table-cells-large fa-w-16\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M448 32C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H448zM448 96H288V224H448V96zM448 288H288V416H448V288zM224 224V96H64V224H224zM64 416H224V288H64V416z\\"></path></svg>",
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-cells-large" class="svg-inline--fa fa-table-cells-large" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 96V224H288V96H448zm0 192V416H288V288H448zM224 224H64V96H224V224zM64 288H224V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg>",
         }
       }
     />
@@ -65,8 +65,8 @@ exports[`EmployeeResults allowHeaders renders component 1`] = `
     <span
       className="traitify--icon-fa"
       dangerouslySetInnerHTML={
-        Object {
-          "__html": "<svg aria-hidden=\\"true\\" focusable=\\"false\\" data-prefix=\\"fas\\" data-icon=\\"table-cells-large\\" class=\\"svg-inline--fa fa-table-cells-large fa-w-16\\" role=\\"img\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 512 512\\"><path fill=\\"currentColor\\" d=\\"M448 32C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H448zM448 96H288V224H448V96zM448 288H288V416H448V288zM224 224V96H64V224H224zM64 416H224V288H64V416z\\"></path></svg>",
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-cells-large" class="svg-inline--fa fa-table-cells-large" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M448 96V224H288V96H448zm0 192V416H288V288H448zM224 224H64V96H224V224zM64 288H224V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg>",
         }
       }
     />

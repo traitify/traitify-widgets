@@ -1,4 +1,4 @@
-@import "~style/helpers";
+@import "style/helpers";
 
 .bar {
   position: relative;
@@ -90,24 +90,6 @@
     text-align: right;
     font-style: normal;
     transform: rotate(-75deg);
-    @include mqc(414) {
-      margin-left: -37px;
-    }
-    @include mqc(450) {
-      margin-left: -32px;
-    }
-    @include mqc(550) {
-      margin-left: -25px;
-    }
-    @include mqc(600) {
-      margin-left: -20px;
-    }
-    @include mqc(640) {
-      margin-left: -15px;
-    }
-    @include mqc(700) {
-      margin-left: -10px;
-    }
     @include mq(m) {
       margin: 0 0 10px;
       width: auto;

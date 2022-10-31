@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 import {Component} from "components/slide-deck/cognitive";
 import Instructions from "components/slide-deck/cognitive/instructions";
 import Slide from "components/slide-deck/cognitive/slide";

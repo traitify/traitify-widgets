@@ -4,7 +4,7 @@ exports[`PersonalityTrait renders component 1`] = `
 <div
   className="trait"
   style={
-    Object {
+    {
       "background": "rgba(247,208,15,0.085)",
     }
   }
@@ -12,7 +12,7 @@ exports[`PersonalityTrait renders component 1`] = `
   <div
     className="bar"
     style={
-      Object {
+      {
         "background": "#f7d00f",
         "width": "100%",
       }

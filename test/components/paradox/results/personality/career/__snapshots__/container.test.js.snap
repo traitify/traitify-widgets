@@ -144,7 +144,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -372,7 +372,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -505,7 +505,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -638,7 +638,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -771,7 +771,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -904,7 +904,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1037,7 +1037,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1170,7 +1170,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1303,7 +1303,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1436,7 +1436,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1569,7 +1569,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1702,7 +1702,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1835,7 +1835,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -1968,7 +1968,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2101,7 +2101,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2234,7 +2234,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2367,7 +2367,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2500,7 +2500,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2633,7 +2633,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2766,7 +2766,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -2899,7 +2899,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -3265,7 +3265,7 @@ exports[`Paradox.CareerContainer modal opens 1`] = `
                   <h3
                     className="subtitleFull"
                   >
-                    experience_level:
+                    education_level:
                   </h3>
                   <ol
                     className="experience"
@@ -3489,7 +3489,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -3717,7 +3717,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -3850,7 +3850,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -3983,7 +3983,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4116,7 +4116,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4249,7 +4249,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4382,7 +4382,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4515,7 +4515,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4648,7 +4648,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4781,7 +4781,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -4914,7 +4914,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5047,7 +5047,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5180,7 +5180,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5313,7 +5313,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5446,7 +5446,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5579,7 +5579,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5712,7 +5712,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5845,7 +5845,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -5978,7 +5978,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -6111,7 +6111,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -6244,7 +6244,7 @@ exports[`Paradox.CareerContainer modal shows clubs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -6646,7 +6646,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -6874,7 +6874,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7007,7 +7007,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7140,7 +7140,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7273,7 +7273,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7406,7 +7406,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7539,7 +7539,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7672,7 +7672,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7805,7 +7805,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -7938,7 +7938,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8071,7 +8071,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8204,7 +8204,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8337,7 +8337,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8470,7 +8470,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8603,7 +8603,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8736,7 +8736,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -8869,7 +8869,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -9002,7 +9002,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -9135,7 +9135,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -9268,7 +9268,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -9401,7 +9401,7 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -9840,7 +9840,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -10068,7 +10068,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10201,7 +10201,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10334,7 +10334,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10467,7 +10467,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10600,7 +10600,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10733,7 +10733,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10866,7 +10866,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -10999,7 +10999,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11132,7 +11132,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11265,7 +11265,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11398,7 +11398,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11531,7 +11531,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11664,7 +11664,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11797,7 +11797,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -11930,7 +11930,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -12063,7 +12063,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -12196,7 +12196,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -12329,7 +12329,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -12462,7 +12462,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -12595,7 +12595,7 @@ exports[`Paradox.CareerContainer modal shows jobs 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -13126,7 +13126,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -13354,7 +13354,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -13487,7 +13487,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -13620,7 +13620,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -13753,7 +13753,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -13886,7 +13886,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14019,7 +14019,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14152,7 +14152,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14285,7 +14285,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14418,7 +14418,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14551,7 +14551,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14684,7 +14684,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14817,7 +14817,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -14950,7 +14950,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15083,7 +15083,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15216,7 +15216,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15349,7 +15349,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15482,7 +15482,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15615,7 +15615,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15748,7 +15748,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -15881,7 +15881,7 @@ exports[`Paradox.CareerContainer modal shows majors 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -16297,7 +16297,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -16525,7 +16525,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -16658,7 +16658,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -16791,7 +16791,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -16924,7 +16924,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17057,7 +17057,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17190,7 +17190,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17323,7 +17323,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17456,7 +17456,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17589,7 +17589,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17722,7 +17722,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17855,7 +17855,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -17988,7 +17988,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18121,7 +18121,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18254,7 +18254,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18387,7 +18387,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18520,7 +18520,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18653,7 +18653,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18786,7 +18786,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -18919,7 +18919,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -19052,7 +19052,7 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -19454,7 +19454,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -19682,7 +19682,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -19815,7 +19815,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -19948,7 +19948,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20081,7 +20081,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20214,7 +20214,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20347,7 +20347,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20480,7 +20480,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20613,7 +20613,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20746,7 +20746,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -20879,7 +20879,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21012,7 +21012,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21145,7 +21145,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21278,7 +21278,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21411,7 +21411,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21544,7 +21544,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21677,7 +21677,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21810,7 +21810,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -21943,7 +21943,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -22076,7 +22076,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -22209,7 +22209,7 @@ exports[`Paradox.CareerContainer renders component with careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -22429,7 +22429,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -22668,7 +22668,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                     <h3
                       className="subtitleFull"
                     >
-                      experience_level
+                      education_level
                       :
                     </h3>
                     <ol
@@ -22803,7 +22803,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -22936,7 +22936,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23069,7 +23069,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23202,7 +23202,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23335,7 +23335,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23468,7 +23468,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23601,7 +23601,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23734,7 +23734,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -23867,7 +23867,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24000,7 +24000,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24133,7 +24133,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24266,7 +24266,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24399,7 +24399,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24532,7 +24532,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24665,7 +24665,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24798,7 +24798,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -24931,7 +24931,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -25064,7 +25064,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -25197,7 +25197,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -25330,7 +25330,7 @@ exports[`Paradox.CareerContainer renders component with highlightedCareers 1`] =
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -25550,7 +25550,7 @@ exports[`Paradox.CareerContainer renders component with no careers 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -25861,7 +25861,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
               className="group"
             >
               <div>
-                experience_level
+                education_level
               </div>
               <label
                 className="check"
@@ -26089,7 +26089,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -26222,7 +26222,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol
@@ -26355,7 +26355,7 @@ exports[`Paradox.CareerContainer show more button, shows more careers 1`] = `
                 <h3
                   className="subtitleFull"
                 >
-                  experience_level
+                  education_level
                   :
                 </h3>
                 <ol

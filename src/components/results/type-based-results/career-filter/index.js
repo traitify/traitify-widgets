@@ -144,7 +144,7 @@ class CareerFilter extends Component {
                     </li>
                   </div>
                   <div>
-                    <li className={style.groupTitle}>{translate("experience_level")}</li>
+                    <li className={style.groupTitle}>{translate("education_level")}</li>
                     {experienceLevels.map((level) => {
                       const checked = currentExperienceLevels.includes(level);
 

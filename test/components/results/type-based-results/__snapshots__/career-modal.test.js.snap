@@ -215,7 +215,7 @@ exports[`CareerModal renders component 1`] = `
           earth-americas
         </div>
          
-        experience_level
+        education_level
       </h3>
       <ol
         className="experience"
@@ -685,7 +685,7 @@ exports[`CareerModal renders legend 1`] = `
           earth-americas
         </div>
          
-        experience_level
+        education_level
       </h3>
       <ol
         className="experience"
@@ -1161,7 +1161,7 @@ exports[`CareerModal renders unchecked squares if no bright outlooks or green ca
           earth-americas
         </div>
          
-        experience_level
+        education_level
       </h3>
       <ol
         className="experience"

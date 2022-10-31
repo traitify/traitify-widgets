@@ -105,7 +105,7 @@ exports[`CareerFilter renders component 1`] = `
               <li
                 className="groupTitle"
               >
-                experience_level
+                education_level
               </li>
               <li>
                 <label
@@ -367,7 +367,7 @@ exports[`CareerFilter renders component with different icons and style 1`] = `
               <li
                 className="groupTitle"
               >
-                experience_level
+                education_level
               </li>
               <li>
                 <label

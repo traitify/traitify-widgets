@@ -165,8 +165,8 @@ function CareerModal(props) {
               {clubs?.length > 0 && isSelected("clubs") && <Clubs clubs={clubs} />}
               {majors?.length > 0 && isSelected("majors") && <Majors majors={majors} />}
               {!inlineJobs && jobs?.length > 0 && isSelected("jobs") && <Jobs jobs={jobs} translate={translate} />}
-              {employers?.length > 0 && isSelected("employers") && <Employers employers={employers} />}
-              {resources?.length > 0 && isSelected("resources") && <Resources resources={resources} />}
+              {employers?.length > 0 && isSelected("employers") && <Employers employers={employers} translate={translate} />}
+              {resources?.length > 0 && isSelected("resources") && <Resources resources={resources} translate={translate} />}
             </div>
           </div>
         </section>

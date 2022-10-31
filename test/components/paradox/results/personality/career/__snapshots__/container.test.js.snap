@@ -9627,66 +9627,102 @@ exports[`Paradox.CareerContainer modal shows employers 1`] = `
               className="listItem"
             >
               <div
-                className="title"
+                className="job"
               >
-                Kaba Ilco (Nash)
-              </div>
-              <div
-                className="description"
-              >
-                Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.
+                <div
+                  className="jobDetails"
+                >
+                  <div>
+                    <div
+                      className="title"
+                    >
+                      Kaba Ilco (Nash)
+                    </div>
+                    <div
+                      className="description"
+                    >
+                      Kaba Ilco Corporation, located in Rocky Mount, NC, is the world's premier manufacturer of the most extensive line of quality key blanks available on the market today. Millions of keys are produced in our state-of-the-art ISO Certified manufacturing facility each week.
 
 We offer a competitive compensation and benefits package including, Medical, Dental, Vision, Life, disability, 401(k), and paid vacation. Additionally, we have a full service on-site cafeteria.
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a
+                    className="applyNowButton"
+                    href="http://www.ilco.us/868636/working-ilco.html"
+                  >
+                    learn_more
+                  </a>
+                </div>
               </div>
-              <a
-                className="description flex"
-                href="http://www.ilco.us/868636/working-ilco.html"
-              >
-                 More info
-              </a>
             </div>
             <div
               className="listItem"
             >
               <div
-                className="title"
+                className="job"
               >
-                Iconic Marine Group (Beaufort County)
-              </div>
-              <div
-                className="description"
-              >
-                If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  
+                <div
+                  className="jobDetails"
+                >
+                  <div>
+                    <div
+                      className="title"
+                    >
+                      Iconic Marine Group (Beaufort County)
+                    </div>
+                    <div
+                      className="description"
+                    >
+                      If you are ICONIC, we want YOU! Iconic Marine Group are builders of the iconic boat brands Fountain, Baja and Donzi in Chocowinity, NC. Iconic is looking for individuals who are responsible  and dedicated, and who will be excited to be part of a team of amazing craftsmen and women while being paid a competitive salary and enjoying excellent benefits, including production incentive bonuses.  
 
 
 If you are interested in joining an "ICONIC" team, submit your resume to HR@iconicmarinegroup.com, stop by our plant at 1653 Whichard's Beach Road, Chocowinity, NC 27817 and complete an application (they can be obtained from the Guard Shack day or night) or apply at your local NCWorks Job Center.
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a
+                    className="applyNowButton"
+                    href="http://www.iconicmarinegroup.com/"
+                  >
+                    learn_more
+                  </a>
+                </div>
               </div>
-              <a
-                className="description flex"
-                href="http://www.iconicmarinegroup.com/"
-              >
-                 More info
-              </a>
             </div>
             <div
               className="listItem"
             >
               <div
-                className="title"
+                className="job"
               >
-                Regulator Marine (Edenton)
+                <div
+                  className="jobDetails"
+                >
+                  <div>
+                    <div
+                      className="title"
+                    >
+                      Regulator Marine (Edenton)
+                    </div>
+                    <div
+                      className="description"
+                    >
+                      Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a
+                    className="applyNowButton"
+                    href="https://www.regulatormarine.com/footer-pages/careers/"
+                  >
+                    learn_more
+                  </a>
+                </div>
               </div>
-              <div
-                className="description"
-              >
-                Known for our commitment to quality, we are a leader in the boating industry, and our success has often been attributed to our values. Our strong work ethic, positive attitude, and consistent attention to detail are among our most important attributes of success. We are always looking for motivated, dedicated, and passionate team members, who also value the importance of family, to grow our own Regulator family.  
-              </div>
-              <a
-                className="description flex"
-                href="https://www.regulatormarine.com/footer-pages/careers/"
-              >
-                 More info
-              </a>
             </div>
           </div>
         </div>
@@ -19278,28 +19314,64 @@ exports[`Paradox.CareerContainer modal shows resources 1`] = `
               className="listItem"
             >
               <div
-                className="title"
+                className="job"
               >
-                Career Ladder - Advanced Manufacturing
-              </div>
-              <div
-                className="description"
-              >
-                Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. 
+                <div
+                  className="jobDetails"
+                >
+                  <div>
+                    <div
+                      className="title"
+                    >
+                      Career Ladder - Advanced Manufacturing
+                    </div>
+                    <div
+                      className="description"
+                    >
+                      Based on EMSI data for 1st Quarter 2020, this ladder shows wage progression for education levels. Also includes possible job titles, average wages and job openings. 
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a
+                    className="applyNowButton"
+                    href="http://nencpathways.org/wp-content/uploads/2020/12/NENC_CareerLadder-Manufacturing.pdf"
+                  >
+                    learn_more
+                  </a>
+                </div>
               </div>
             </div>
             <div
               className="listItem"
             >
               <div
-                className="title"
+                className="job"
               >
-                NCWorks Online
-              </div>
-              <div
-                className="description"
-              >
-                Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.
+                <div
+                  className="jobDetails"
+                >
+                  <div>
+                    <div
+                      className="title"
+                    >
+                      NCWorks Online
+                    </div>
+                    <div
+                      className="description"
+                    >
+                      Follow this link to view a listing of job openings in Northeastern WDB, Turning Point WDB, and Region Q WDB for this career.
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a
+                    className="applyNowButton"
+                    href="http://www.ncworks.gov/vosnet/guest.aspx?guesttype=IND&whereto=NEWALTENTRY&t=a&geo=3704000029,3704000041,3704000053,3704000055,3704000073, 3704000095,3704000139,3704000143,3704000177, 3704000187, 3704000013,3704000015,3704000091, 3704000117, 3704000147, 3704000065, 3704000083, 3704000127, 3704000131&ogrp=51-4121.07"
+                  >
+                    learn_more
+                  </a>
+                </div>
               </div>
             </div>
           </div>

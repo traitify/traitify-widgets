@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption, no-alert */
+import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import DangerousHTML from "lib/helpers/dangerous-html";
 import useWindowSize from "lib/hooks/use-window-size";
 import Loading from "components/loading";
 import Slide from "./slide";
@@ -38,7 +38,7 @@ function Practice({onFinish, practiceExplanations, practiceQuestions, translate}
       <div key={`question-${questionIndex + 1}-${type}`} className={style.instructions}>
         <h1>{heading}</h1>
         <p className={style.center}>{translate(`cognitive_practice_answer_${answer}`)}</p>
-        {text && <DangerousHTML className={style.text} html={text} />}
+        {text && <Markdown className={style.text}>{text}</Markdown>}
         {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
         <button className={style.btnBlue} onClick={onNext} type="button">{button}</button>
       </div>

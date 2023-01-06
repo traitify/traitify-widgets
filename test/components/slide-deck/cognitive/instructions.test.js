@@ -211,7 +211,25 @@ describe("Instructions", () => {
       finalInstruction: {
         button: "Goodbye",
         heading: "Custom Instructions",
-        text: "<ul><li>Some Text</li></ul>",
+        text: "<ul><li>Some Text</li><li>More Text</li></ul>",
+        video: "https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+      }
+    };
+
+    const component = new ComponentHandler(<Component {...props} />);
+    component.act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
+    component.act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+    component.act(() => component.instance.findByType(Practice).props.onFinish());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders custom instructions with markdown", () => {
+    props.options = {
+      finalInstruction: {
+        button: "Goodbye",
+        heading: "Custom Instructions",
+        text: "- Some Text\n- More Text",
         video: "https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
       }
     };

@@ -25,9 +25,8 @@
   padding: 5px 15px 15px 15px;
   @include rems(16);
   button { margin-top: 0.5em; }
-  h1 {
-    @include rems(26);
-  }
+  h1 { @include rems(26); }
+  h2 { @include rems(24); }
   h1, h2 {
     color: #3B8DBF;
     text-align: center;

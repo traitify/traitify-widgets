@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption, no-alert */
-import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import Markdown from "lib/helpers/markdown";
 import useWindowSize from "lib/hooks/use-window-size";
 import Loading from "components/loading";
 import Slide from "./slide";

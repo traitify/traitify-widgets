@@ -66,7 +66,7 @@ exports[`Practice renders custom questions 2`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     First Text
   </span>
@@ -133,7 +133,7 @@ exports[`Practice renders custom questions 4`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     Second Text
   </span>
@@ -225,7 +225,7 @@ exports[`Practice renders question 1 explanation 1`] = `
     cognitive_practice_answer_correct
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
   </span>
@@ -304,7 +304,7 @@ exports[`Practice renders question 2 explanation 1`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_2_text
   </span>
@@ -383,7 +383,7 @@ exports[`Practice renders question 3 explanation 1`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_3_text
   </span>
@@ -422,7 +422,7 @@ exports[`Practice videos horizontal renders component 1`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
   </span>
@@ -461,7 +461,7 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
   </span>
@@ -500,7 +500,7 @@ exports[`Practice videos vertical renders component 1`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
   </span>
@@ -539,7 +539,7 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
     cognitive_practice_answer_incorrect
   </p>
   <span
-    className="text"
+    className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
   </span>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import DangerousHTML from "lib/helpers/dangerous-html";
+import Markdown from "lib/helpers/markdown";
 import {dig} from "lib/helpers/object";
 import useWindowSize from "lib/hooks/use-window-size";
 import {
@@ -43,7 +43,7 @@ function Instructions({
     return (
       <div key={`step-${step}-${type}`} className={style.instructions}>
         {step === 1 ? <h1>{heading}</h1> : <h2>{heading}</h2>}
-        {text && <DangerousHTML className={style.text} html={text} />}
+        {text && <Markdown className={style.text}>{text}</Markdown>}
         {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
         <button className={style.btnBlue} onClick={() => setStep(step + 1)} type="button">{button}</button>
       </div>
@@ -66,7 +66,7 @@ function Instructions({
   return (
     <div key={`step-${step}`} className={style.instructions}>
       <h2>{heading}</h2>
-      {text && <DangerousHTML className={style.text} html={text} />}
+      {text && <Markdown className={style.text}>{text}</Markdown>}
       {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
       {captureLearningDisability && (
         <label htmlFor="traitify-disability">

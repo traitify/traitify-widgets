@@ -209,6 +209,30 @@
         widget.options.slideDeck.captureLearningDisability = true;
         widget.options.slideDeck.disableTimeLimit = true;
         widget.options.slideDeck.initialLearningDisability = true;
+        widget.options.slideDeck.practiceExamples = [
+          {
+            button: "View Examples",
+            heading: "Instructions",
+            text: "This assessment is about your ability to work out patterns and relationships between shapes.\n\nOn each screen you will see a grid with different shapes in it. One square is empty, as indicated by '?'.\n\nYour task is to identify how the shapes in the grid are related to each other.\n\nSelect the response that completes the grid.\n\nTo help you know what to expect, we'll show you some examples."
+          },
+          ({type}) => ({
+            button: "View Next Example",
+            heading: "Here's an Example",
+            text: "In each square, the small shape is the same as the overlap of the intersecting shapes. The small shapes are shaded. The shape that completes the grid is therefore the bottom right shape.",
+            video: `https://cdn.traitify.com/P10202/cognitive-practice-site/example-${type}.mp4`
+          }),
+          ({type}) => ({
+            button: "Ready to Practice",
+            heading: "Here's an Example",
+            text: "The left square is a combination of the others in its row. The colors in the right square and the middle square are swapped. The shape that completes the grid is therefore the top left shape.",
+            video: `https://cdn.traitify.com/P30201/cognitive-practice-site/example-${type}.mp4`
+          }),
+          {
+            button: "Start Practice",
+            heading: "Here's an Example",
+            text: "Now it’s time to try a few practice items. First, here's some things to remember.\n\n- You may need to look from right to left, from top to bottom, etc., or you'll have to consider the entire grid overall.\n- Consider more than one aspect of the shapes. You might find the solution involves a combination of border color, shading, positions, number, overlap, and more.\n- Sometimes you'll have to move and rotate items in your mind.\n- And here’s a tip: you can use the answer choices as a clue to the solution."
+          }
+        ];
         widget.render().then(function() {
           console.log("Rendered");
         }).catch(function(error) {

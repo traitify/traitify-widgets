@@ -32,6 +32,7 @@ function Cognitive(props) {
   const [questionIndex, setQuestionIndex] = useState(null);
   const [skipped, setSkipped] = useState(null);
   const [startTime, setStartTime] = useState(null);
+  const [submitAttempts, setSubmitAttempts] = useState(0);
   const submitting = useRef(false);
   const state = {
     disability,
@@ -59,6 +60,7 @@ function Cognitive(props) {
   };
   const onSubmit = () => {
     if(isReady("results")) { return; }
+    if(submitAttempts > 3) { return; }
     if(submitting.current) { return; }
 
     submitting.current = true;
@@ -68,7 +70,7 @@ function Cognitive(props) {
         answerId: question.answer.answerId,
         questionId: question.id,
         skipped: question.answer.skipped || false,
-        timeTaken: question.answer.timeTaken
+        timeTaken: question.answer.timeTaken < 1 ? 1 : question.answer.timeTaken
       }) : ({
         questionId: question.id,
         skipped: true, // Currently required by API
@@ -84,18 +86,25 @@ function Cognitive(props) {
       }
     });
 
-    traitify.post("/cognitive-tests/graphql", query).then(() => {
-      ui.trigger("SlideDeck.finished", {props, state});
-      // If actual results are shown, use this, but for now it won't work because the API is async
-      // getCognitiveAssessment({force: true});
-      const key = `${assessment.localeKey.toLowerCase()}.cognitive-assessment.${assessment.id}`;
-      cache.set(key, {...assessment, completed: true});
-      getCognitiveAssessment();
+    traitify.post("/cognitive-tests/graphql", query).then(({data, errors}) => {
+      if(!errors && data.completeCognitiveTest.success) {
+        ui.trigger("SlideDeck.finished", {props, state});
+        // If actual results are shown, use this, but for now it won't work because the API is async
+        // getCognitiveAssessment({force: true});
+        const key = `${assessment.localeKey.toLowerCase()}.cognitive-assessment.${assessment.id}`;
+        cache.set(key, {...assessment, completed: true});
+        getCognitiveAssessment();
+      } else {
+        console.warn(errors || data); // eslint-disable-line no-console
+        submitting.current = false;
+        setSubmitAttempts(submitAttempts + 1);
+      }
     });
   };
 
   useDidMount(() => { ui.trigger("SlideDeck.initialized", {props, state}); });
   useDidUpdate(() => { ui.trigger("SlideDeck.updated", {props, state}); });
+  useDidUpdate(() => { onSubmit(); }, [submitAttempts]);
   useEffect(() => {
     if(!assessment) { return; }
 

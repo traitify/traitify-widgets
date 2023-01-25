@@ -1,4 +1,6 @@
 /** @jest-environment jsdom */
+/* eslint-disable no-console */
+import {act} from "react-test-renderer";
 import {Component} from "components/slide-deck/cognitive";
 import Instructions from "components/slide-deck/cognitive/instructions";
 import Slide from "components/slide-deck/cognitive/slide";
@@ -32,7 +34,7 @@ describe("Cognitive", () => {
       isReady: jest.fn().mockName("isReady").mockImplementation((value) => value === "questions"),
       traitify: {
         get: jest.fn().mockName("get"),
-        post: jest.fn().mockName("post").mockResolvedValue(Promise.resolve()),
+        post: jest.fn().mockName("post").mockResolvedValue(Promise.resolve({data: {completeCognitiveTest: {success: true}}})),
         put: jest.fn().mockName("put")
       },
       translate: jest.fn().mockName("translate").mockImplementation((value) => value),
@@ -119,12 +121,15 @@ describe("Cognitive", () => {
     let slide;
     let onFinish;
     let originalDate;
+    let originalWarn;
 
     beforeAll(() => {
       originalDate = Date.now;
+      originalWarn = console.warn;
     });
 
     beforeEach(() => {
+      console.warn = jest.fn().mockName("warn");
       const now = Date.now();
       Date.now = jest.fn().mockName("now").mockReturnValue(now);
 
@@ -141,6 +146,7 @@ describe("Cognitive", () => {
 
     afterAll(() => {
       Date.now = originalDate;
+      console.warn = originalWarn;
     });
 
     it("does nothing if already submitted", () => {
@@ -194,6 +200,21 @@ describe("Cognitive", () => {
         })
       );
       expect(props.getCognitiveAssessment).toHaveBeenCalled();
+    });
+
+    it("retries submit", async() => {
+      props.traitify.post.mockResolvedValueOnce(Promise.resolve({errors: ["oh no"]}));
+
+      act(() => slide.props.onSelect({
+        answerId: slide.props.question.responses[0].id,
+        timeTaken: 600
+      }));
+
+      await act(async() => { await flushPromises(); });
+
+      expect(console.warn).toHaveBeenCalled();
+      expect(props.getCognitiveAssessment).toHaveBeenCalled();
+      expect(props.traitify.post).toHaveBeenCalledTimes(2);
     });
   });
 

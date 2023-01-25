@@ -170,6 +170,7 @@
       }
 
       function createWidget() {
+        var surveyType = localStorage.getItem("survey-type");
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
         if(!assessmentID) { return; }
 
@@ -178,7 +179,6 @@
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
         var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});
-        var surveyType = localStorage.getItem("survey-type");
         var targets = setTargets();
         var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");

@@ -1,6 +1,6 @@
 import {useEffect, useRef} from "react";
 
-export default function useDidUpdate(run) {
+export default function useDidUpdate(run, conditions = null) {
   const mounted = useRef(false);
 
   useEffect(() => {
@@ -9,5 +9,5 @@ export default function useDidUpdate(run) {
     } else {
       mounted.current = true;
     }
-  });
+  }, conditions);
 }

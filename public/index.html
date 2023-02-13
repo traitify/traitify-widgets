@@ -175,7 +175,6 @@
         if(!assessmentID) { return; }
 
         var colorScheme = localStorage.getItem("color-scheme");
-        var deckID = localStorage.getItem("deck-id");
         var locale = localStorage.getItem("locale");
         var perspective = localStorage.getItem("perspective");
         var show = Object.keys(additionalComponents).reduce((components, name) => ({...components, [name]: localStorage.getItem(`show-${name}`)}), {});

@@ -3,10 +3,9 @@ import DangerousHTML from "components/common/dangerous-html";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDeck from "lib/hooks/use-deck";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
+import useTranslate from "lib/hooks/use-translate";
 import useArchetypeDetails from "./use-archetype-details";
 import style from "./style.scss";
-
-const useTranslate = () => ((name) => name);
 
 export default function PersonalityArchetypeHeading() {
   const deck = useDeck();

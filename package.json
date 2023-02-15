@@ -101,6 +101,7 @@
     "highcharts-react-official": "^3.1.0",
     "markdown-to-jsx": "^7.1.7",
     "prop-types": "^15.8.1",
+    "recoil": "^0.7.6",
     "regenerator-runtime": "^0.13.10",
     "uuid": "^9.0.0"
   },

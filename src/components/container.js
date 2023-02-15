@@ -1,25 +1,92 @@
-import {useCallback, useMemo} from "react";
-import Context from "lib/context/object";
+/* eslint-disable react/forbid-prop-types */
+import PropTypes from "prop-types";
+import {useEffect} from "react";
+import {RecoilRoot, useRecoilState, useSetRecoilState} from "recoil";
+import slice from "lib/common/object/slice";
+import Http from "lib/http";
+import Listener from "lib/listener";
+import {
+  assessmentIDState,
+  benchmarkIDState,
+  httpState,
+  listenerState,
+  loadingState,
+  optionsState,
+  profileIDState
+} from "lib/recoil";
 
-export default function Container({children}) {
-  const [context, setContext] = useState(null);
+function State({children, http: _http, listener: _listener, options}) {
+  const setAssessmentID = useSetRecoilState(assessmentIDState);
+  const setHttp = useSetRecoilState(httpState);
+  const setListener = useSetRecoilState(listenerState);
+  const setBenchmarkID = useSetRecoilState(benchmarkIDState);
+  const setOptions = useSetRecoilState(optionsState);
+  const setProfileID = useSetRecoilState(profileIDState);
+  const [loading, setLoading] = useRecoilState(loadingState);
 
-  // TOOD: Update from taking a response to taking an action and value
-  // TODO: Or maybe update to pass arguments to a separate class like our own Context handler, which essentially is a reducer
-  const dispatch = useCallback((action) => {
-    setContext({...context, [action.key]: action.value});
+  useEffect(() => {
+    setOptions(options);
+  }, [options]);
+
+  useEffect(() => {
+    const http = _http || new Http(slice(options, ["authKey", "host", "version"]));
+
+    setHttp(http);
+  }, [_http]);
+
+  useEffect(() => {
+    const listener = _listener || new Listener();
+
+    setListener(listener);
+  }, [_listener]);
+
+  useEffect(() => {
+    const {assessmentID} = options;
+
+    setAssessmentID(assessmentID);
+  }, [options.assessmentID]);
+
+  useEffect(() => {
+    const {benchmarkID} = options;
+
+    setBenchmarkID(benchmarkID);
+  }, [options.benchmarkID]);
+
+  useEffect(() => {
+    const {profileID} = options;
+
+    setProfileID(profileID);
+  }, [options.profileID]);
+
+  useEffect(() => {
+    setLoading(false);
   }, []);
 
-  // TODO: Not sure, but maybe we don't need to memoize if we have a handler instance of a class that we just use
-  // TODO: But maybe we do and we need to connect this memo with actions running
-  const contextValue = useMemo(() => ({
-    ...context,
-    dispatch
-  }), [currentUser, dispatch]);
+  if(loading) { return null; }
 
+  return children;
+}
+
+State.defaultProps = {
+  http: null,
+  listener: null,
+  options: {}
+};
+State.propTypes = {
+  children: PropTypes.node.isRequired,
+  http: PropTypes.object,
+  listener: PropTypes.object,
+  options: PropTypes.shape({
+    assessmentID: PropTypes.string,
+    benchmarkID: PropTypes.string,
+    profileID: PropTypes.string
+  })
+};
+
+export default function Container(props) {
   return (
-    <Context.Provider value={contextValue}>
-      {children}
-    </Context.Provider>
+    <RecoilRoot>
+      <State {...props} />
+    </RecoilRoot>
   );
 }

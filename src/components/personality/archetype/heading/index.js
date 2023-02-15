@@ -1,13 +1,16 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import DangerousHTML from "components/common/dangerous-html";
+import useComponentEvents from "lib/hooks/use-component-events";
 import useDeck from "lib/hooks/use-deck";
-import useDisabledComponents from "lib/hooks/use-disabled-components";
-import useTranslate from "lib/hooks/use-translate";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useArchetypeDetails from "./use-archetype-details";
 import style from "./style.scss";
 
+const useTranslate = () => ((name) => name);
+
 export default function PersonalityArchetypeHeading() {
-  const details = useArchetypeDetails();
   const deck = useDeck();
+  const details = useArchetypeDetails();
   const disabled = useDisabledComponent("PersonalityArchetype");
   const translate = useTranslate();
 

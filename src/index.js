@@ -1,10 +1,12 @@
+import Http from "lib/http";
+import Listener from "lib/listener";
 import Traitify from "lib/traitify";
 
-export Client from "lib/traitify-client";
-export * as Components from "components";
-export * as graphql from "lib/graphql";
-export I18n from "lib/i18n";
-export UI from "lib/traitify-ui";
-export withTraitify from "lib/with-traitify";
+// TODO: Instead of exporting components, http, etc. - open up importing specific files
 export {Traitify};
-export default new Traitify();
+
+const traitify = new Traitify();
+traitify.http = new Http();
+traitify.listener = new Listener();
+
+export default traitify;

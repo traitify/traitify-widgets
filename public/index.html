@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="row">
+      <div id="default"></div>
       <div id="slide-deck"></div>
       <div id="results"></div>
       <div id="careers"></div>
@@ -147,8 +148,10 @@
     </div>
     <script src="build/traitify.js"></script>
     <script>
-      Traitify.setPublicKey("sptoechv411aqbqrp4l9a4eg2a");
-      Traitify.setHost("https://api.traitify.com");
+      Traitify.http.authKey = "sptoechv411aqbqrp4l9a4eg2a";
+      Traitify.http.host = "https://api.traitify.com";
+      Traitify.options.authKey = "sptoechv411aqbqrp4l9a4eg2a";
+      Traitify.options.host = "https://api.traitify.com";
 
       var additionalComponents = {careers: "Careers", guide: "Guide", traits: "Traits"};
       var additionalOptions = {allowBack: "Allow Back", allowFullscreen: "Allow Fullscreen", allowHeaders: "Allow Headers", allowInstructions: "Allow Instructions"};
@@ -182,29 +185,13 @@
         var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
 
-        widget = Traitify.ui.component();
-        widget
-          .assessmentID(assessmentID)
-          .colorScheme(colorScheme)
-          .locale(locale)
-          .perspective(perspective)
-          .surveyType(surveyType)
-          .theme(theme)
-          .view(view)
-          .targets(targets);
+        targets = {"Personality.Archetype.Heading": "#default"};
 
-        Object.keys(additionalOptions).forEach((name) => {
-          let value = localStorage.getItem(name);
-
-          if(value == null) { return; }
-          if(name.startsWith("allow")) {
-            widget[booleanFrom(value) ? name : name.replace("allow", "disable")]();
-          } else {
-            widget[name](value);
-          }
-        });
+        widget = Traitify;
+        widget.options.assessmentID = assessmentID;
 
         widget.options.careersLink = "/";
+        widget.options.slideDeck = {};
         widget.options.slideDeck.captureLearningDisability = true;
         widget.options.slideDeck.disableTimeLimit = true;
         widget.options.slideDeck.initialLearningDisability = true;
@@ -232,7 +219,7 @@
             text: "Now it’s time to try a few practice items. First, here's some things to remember.\n\n- You may need to look from right to left, from top to bottom, etc., or you'll have to consider the entire grid overall.\n- Consider more than one aspect of the shapes. You might find the solution involves a combination of border color, shading, positions, number, overlap, and more.\n- Sometimes you'll have to move and rotate items in your mind.\n- And here’s a tip: you can use the answer choices as a clue to the solution."
           }
         ];
-        widget.render().then(function() {
+        widget.render(targets).then(function() {
           console.log("Rendered");
         }).catch(function(error) {
           console.log(error);
@@ -246,14 +233,14 @@
 
         var surveyType = document.querySelector("#survey-type").value
         if(surveyType === "cognitive") {
-          var query = Traitify.graphql.queries.cognitive.create({
+          var query = `
             params: {
-              localeKey: document.querySelector("#locale").value,
-              surveyId: document.querySelector("#survey-id").value
+              localeKey: ${document.querySelector("#locale").value},
+              surveyId: ${document.querySelector("#survey-id").value}
             }
-          });
+          `;
 
-          Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
+          Traitify.http.post("/cognitive-tests/graphql", query).then(function(response) {
             try {
               localStorage.setItem("test-id", response.data.createCognitiveTest.id);
             } catch(error) {
@@ -270,7 +257,7 @@
           Object.keys(customParams).filter((key) => customParams[key])
             .forEach((key) => params[key] = customParams[key]);
 
-          Traitify.post("/assessments", params).then(function(assessment) {
+          Traitify.http.post("/assessments", params).then(function(assessment) {
             try {
               localStorage.setItem("assessment-id", assessment.id);
               localStorage.setItem("deck-id", assessment.deck_id);
@@ -479,9 +466,9 @@
       }
 
       function setupSurveys() {
-        var query = Traitify.graphql.queries.cognitive.surveys();
+        var query = `some stuff`;
 
-        Traitify.post("/cognitive-tests/graphql", query).then(function(response) {
+        Traitify.http.post("/cognitive-tests/graphql", query).then(function(response) {
           var values = [];
           var select = document.querySelector("#survey-id");
 
@@ -519,7 +506,7 @@
       }
 
       setupParams();
-      setupSurveys();
+      // setupSurveys();
       setupOptions();
       createWidget();
     </script>

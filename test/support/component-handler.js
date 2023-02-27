@@ -9,12 +9,23 @@ const renderComponent = (Component, {options = {}, props}) => (
 );
 
 export default class ComponentHandler {
-  constructor(Component, {options, renderer}) {
+  constructor(Component, {options, renderer} = {}) {
     this.Component = Component;
     this.options = options;
     this.renderer = renderer;
   }
-  static async render(Component, _options = {}) {
+  static render(Component, _options = {}) {
+    const {props, wrap = false, ...createOptions} = _options;
+    const options = {wrap};
+    let renderer;
+
+    act(() => {
+      renderer = create(renderComponent(Component, {options, props}), createOptions);
+    });
+
+    return new ComponentHandler(Component, {options, renderer});
+  }
+  static async setup(Component, _options = {}) {
     const {props, wrap = true, ...createOptions} = _options;
     const options = {wrap};
     let renderer;

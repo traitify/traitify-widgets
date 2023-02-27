@@ -34,7 +34,7 @@ describe("PersonalityArchetypeHeading", () => {
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {
-      await ComponentHandler.render(Component);
+      await ComponentHandler.setup(Component);
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityArchetype.initialized",
@@ -43,7 +43,7 @@ describe("PersonalityArchetypeHeading", () => {
     });
 
     it("triggers update", async() => {
-      component = await ComponentHandler.render(Component);
+      component = await ComponentHandler.setup(Component);
       component.updateProps();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
@@ -57,7 +57,7 @@ describe("PersonalityArchetypeHeading", () => {
     useOption("perspective", "thirdPerson");
 
     it("renders component in third person", async() => {
-      component = await ComponentHandler.render(Component);
+      component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
     });
@@ -67,7 +67,7 @@ describe("PersonalityArchetypeHeading", () => {
       updatedAssessment.archetype.details = details.filter(({title}) => !title.includes("Badge"));
       mockAssessment(updatedAssessment);
 
-      component = await ComponentHandler.render(Component);
+      component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
     });
@@ -77,35 +77,35 @@ describe("PersonalityArchetypeHeading", () => {
       updatedAssessment.archetype.details = details.filter(({title}) => !title.includes("Video"));
       mockAssessment(updatedAssessment);
 
-      component = await ComponentHandler.render(Component);
+      component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
     });
   });
 
   it("renders component", async() => {
-    component = await ComponentHandler.render(Component);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if disabled", async() => {
     container.options.disabledComponents = ["PersonalityArchetype"];
-    component = await ComponentHandler.render(Component);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if deck not ready", async() => {
     mockDeck(null, {id: deck.id});
-    component = await ComponentHandler.render(Component);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
-    component = await ComponentHandler.render(Component);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
@@ -115,7 +115,7 @@ describe("PersonalityArchetypeHeading", () => {
     updatedAssessment.archetype = null;
     mockAssessment(updatedAssessment);
 
-    component = await ComponentHandler.render(Component);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

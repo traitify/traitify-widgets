@@ -15,13 +15,13 @@ describe("useDidMount", () => {
   });
 
   it("is called on mount", () => {
-    new ComponentHandler(<Component />);
+    ComponentHandler.render(Component);
 
     expect(didMount).toHaveBeenCalledTimes(1);
   });
 
   it("is not called on update", () => {
-    const component = new ComponentHandler(<Component />);
+    const component = ComponentHandler.render(Component);
     didMount.mockClear();
     component.updateProps();
 

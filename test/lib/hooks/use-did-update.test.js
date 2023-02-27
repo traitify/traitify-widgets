@@ -15,7 +15,7 @@ describe("useDidUpdate", () => {
   });
 
   it("is called on update", () => {
-    const component = new ComponentHandler(<Component />);
+    const component = ComponentHandler.render(Component);
     didUpdate.mockClear();
     component.updateProps();
 
@@ -23,7 +23,7 @@ describe("useDidUpdate", () => {
   });
 
   it("is not called on moount", () => {
-    new ComponentHandler(<Component />);
+    ComponentHandler.render(Component);
 
     expect(didUpdate).not.toHaveBeenCalled();
   });

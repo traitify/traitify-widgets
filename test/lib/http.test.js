@@ -1,4 +1,3 @@
-import last from "lib/common/array/last";
 import Http from "lib/http";
 import useGlobalMock from "support/hooks/use-global-mock";
 
@@ -11,8 +10,12 @@ describe("Http", () => {
 
   describe("constructor", () => {
     describe("minimum", () => {
-      it("has authKey", () => {
-        expect(http.authKey).toBe("xyz");
+      beforeEach(() => {
+        http = new Http();
+      });
+
+      it("has no authKey", () => {
+        expect(http.authKey).toBeUndefined();
       });
 
       it("has default host", () => {
@@ -46,13 +49,15 @@ describe("Http", () => {
     });
   });
 
-  describe("ajax", () => {
+  describe("request", () => {
     useGlobalMock(global, "fetch");
 
-    const lastFetch = () => last(fetch.mock.calls);
-    const lastHeaders = () => {
-      console.log(lastFetch()[1].headers);
-    };
+    const lastFetch = () => fetch.mock.lastCall;
+    const lastHeaders = () => lastFetch()[1].headers;
+
+    beforeEach(() => {
+      fetch.mockImplementation(() => Promise.resolve({json: jest.fn().mockName("json")}));
+    });
 
     describe("graphql", () => {
       let params;
@@ -64,66 +69,53 @@ describe("Http", () => {
       });
 
       it("includes headers", () => {
-        expect(lastHeaders()).toBe(
+        expect(lastHeaders()).toEqual(
           expect.objectContaining({
             "Accept": "application/json",
             "Authorization": `Basic ${btoa("xyz:x")}`,
-            "Content-type": "application/graphql"
+            "Content-Type": "application/graphql"
           })
         );
       });
 
       it("passes params", () => {
-        const url = fetch.mock.calls[0][1];
+        const [url, options] = lastFetch();
 
+        expect(options.body).toEqual(JSON.stringify(params));
         expect(url).toEqual("https://api.traitify.com/v1/interview_guides/graphql");
-        expect(fetch).toHaveBeenCalledWith(params);
       });
     });
 
-    it("includes authorization through headers", () => {
-      http.ajax("GET", "/profiles", {locale_key: "en-us"});
-
-      expect(lastHeaders()).toBe(expect.objectContaining({Authorization: `Basic ${btoa("xyz:x")}`}));
-    });
-
-    it("includes authorization through query string", () => {
-      http.ajax("GET", "/assessments", {locale_key: "en-us"});
-
-      const url = lastFetch()[0];
-
-      expect(url).toContain("authorization=xyz");
-    });
-
     it("includes headers", () => {
-      http.ajax("GET", "/profiles", {locale_key: "en-us"});
+      http.request("GET", "/profiles", {locale_key: "en-us"});
 
-      expect(lastHeaders()).toBe(
+      expect(lastHeaders()).toEqual(
         expect.objectContaining({
           "Accept": "application/json",
-          "Content-type": "application/json"
+          "Authorization": `Basic ${btoa("xyz:x")}`,
+          "Content-Type": "application/json"
         })
       );
     });
 
     it("passes query params", () => {
-      http.ajax("GET", "/profiles", {locale_key: "en-us"});
+      http.request("GET", "/profiles", {locale_key: "en-us"});
 
-      const url = lastFetch()[0];
+      const [url] = lastFetch();
 
       expect(url).toEqual("https://api.traitify.com/v1/profiles?locale_key=en-us");
     });
 
     it("combines query params", () => {
-      http.ajax("GET", "/profiles?per_page=10", {locale_key: "en-us"});
+      http.request("GET", "/profiles?per_page=10", {locale_key: "en-us"});
 
-      const url = lastFetch()[0];
+      const [url] = lastFetch();
 
       expect(url).toEqual("https://api.traitify.com/v1/profiles?per_page=10&locale_key=en-us");
     });
 
     it("passes body params", () => {
-      http.ajax("POST", "/profiles", {locale_key: "en-us"});
+      http.request("POST", "/profiles", {locale_key: "en-us"});
 
       const [url, options] = lastFetch();
 
@@ -131,53 +123,49 @@ describe("Http", () => {
       expect(options.body).toEqual(JSON.stringify({locale_key: "en-us"}));
     });
 
-    /*
-    it("returns parsed responseText", () => {
-      const response = http.ajax("GET", "/profiles");
-      const xhr = XMLHttpRequest.mock.results[0].value;
+    it("returns parsed json", () => {
+      const json = JSON.parse(`[{"name": "Neo"}]`);
+      fetch.mockImplementationOnce(() => Promise.resolve({json: () => json}));
 
-      xhr.status = 200;
-      xhr.response = `[{"name": "Neo"}]`;
-      xhr.onload();
+      const response = http.request("GET", "/profiles");
 
       return expect(response).resolves.toEqual([{name: "Neo"}]);
     });
-    */
   });
 
   describe("get", () => {
-    it("makes ajax request", () => {
-      http.ajax = jest.fn().mockName("ajax");
+    it("makes request", () => {
+      http.request = jest.fn().mockName("request");
       http.get("/profiles", {locale_key: "en-us"});
 
-      expect(http.ajax).toHaveBeenCalledWith("GET", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith("GET", "/profiles", {locale_key: "en-us"});
     });
   });
 
   describe("put", () => {
-    it("makes ajax request", () => {
-      http.ajax = jest.fn().mockName("ajax");
+    it("makes request", () => {
+      http.request = jest.fn().mockName("request");
       http.put("/profiles", {locale_key: "en-us"});
 
-      expect(http.ajax).toHaveBeenCalledWith("PUT", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith("PUT", "/profiles", {locale_key: "en-us"});
     });
   });
 
   describe("post", () => {
-    it("makes ajax request", () => {
-      http.ajax = jest.fn().mockName("ajax");
+    it("makes request", () => {
+      http.request = jest.fn().mockName("request");
       http.post("/profiles", {locale_key: "en-us"});
 
-      expect(http.ajax).toHaveBeenCalledWith("POST", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith("POST", "/profiles", {locale_key: "en-us"});
     });
   });
 
   describe("delete", () => {
-    it("makes ajax request", () => {
-      http.ajax = jest.fn().mockName("ajax");
+    it("makes request", () => {
+      http.request = jest.fn().mockName("request");
       http.delete("/profiles", {locale_key: "en-us"});
 
-      expect(http.ajax).toHaveBeenCalledWith("DELETE", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith("DELETE", "/profiles", {locale_key: "en-us"});
     });
   });
 });

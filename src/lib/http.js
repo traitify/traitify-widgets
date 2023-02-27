@@ -7,7 +7,7 @@ export default class Http {
     this.version = version || "v1";
   }
   delete = (path, params) => this.request("DELETE", path, params);
-  fetch = (...options) => fetch(options);
+  fetch = (...options) => fetch(...options);
   get = (path, params) => this.request("GET", path, params);
   post = (path, params) => this.request("POST", path, params);
   put = (path, params) => this.request("PUT", path, params);

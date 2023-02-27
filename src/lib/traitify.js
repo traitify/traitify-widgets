@@ -18,7 +18,7 @@ export default class Traitify {
 
     return this;
   }
-  render(_targets) {
+  render(_targets = {}) {
     const targets = typeof _targets === "string" || _targets instanceof HTMLElement
       ? {Default: _targets}
       : _targets;

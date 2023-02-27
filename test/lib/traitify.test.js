@@ -1,23 +1,23 @@
 /** @jest-environment jsdom */
 import Traitify from "lib/traitify";
-import guessComponent from "lib/helpers/guess-component";
 import {render, unmountComponentAtNode} from "react-dom";
 
 jest.mock("react-dom");
 
-const createElement = (options = {}) => ({
-  firstChild: {nodeName: "div"},
-  isConnected: true,
-  nodeName: "div",
-  removeChild: jest.fn().mockName("removeChild").mockImplementation(function() { this.firstChild = null; }),
-  ...options
-});
+const createElement = (options = {}) => {
+  const element = document.createElement("div");
+
+  if(!options.disconnected) {
+    document.body.appendChild(element);
+  }
+
+  return element;
+};
 
 describe("Traitify", () => {
   let traitify;
 
   beforeEach(() => {
-    guessComponent.mockClear();
     render.mockClear();
     unmountComponentAtNode.mockClear();
 
@@ -32,7 +32,7 @@ describe("Traitify", () => {
     });
 
     it("ignores disconnected targets", () => {
-      traitify.renderedTargets = {Default: {...createElement(), isConnected: false}};
+      traitify.renderedTargets = {Default: createElement({disconnected: true})};
       traitify.destroy();
 
       expect(unmountComponentAtNode).not.toHaveBeenCalled();
@@ -93,7 +93,7 @@ describe("Traitify", () => {
     ));
 
     it("renders dom target", () => (
-      traitify.render({nodeName: "div"}).then(() => {
+      traitify.render(createElement()).then(() => {
         expect(render).toHaveBeenCalledTimes(1);
       })
     ));
@@ -134,7 +134,7 @@ describe("Traitify", () => {
     });
 
     it("removes only connected targets", () => {
-      traitify.renderedTargets = {Results: createElement({isConnected: false})};
+      traitify.renderedTargets = {Results: createElement({disconnected: true})};
 
       return traitify.render(createElement()).then(() => {
         expect(unmountComponentAtNode).toHaveBeenCalledTimes(1);

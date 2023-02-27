@@ -1,5 +1,3 @@
-jest.mock("lib/recoil");
-
 export const mockFetch = (newMock) => {
   container.http.mocks.fetch.unshift(newMock);
   container.http.fetch.mockImplementation((...options) => {

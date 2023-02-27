@@ -1,4 +1,7 @@
 expect.extend({
+  any() {
+    return {message: () => "Expected anything", pass: true};
+  },
   stringContainingAll(value, ...strings) {
     const missing = strings.find((string) => !value.includes(string));
 

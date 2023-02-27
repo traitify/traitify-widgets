@@ -9,6 +9,7 @@
   <body>
     <div class="row">
       <div id="default"></div>
+      <div id="skills"></div>
       <div id="slide-deck"></div>
       <div id="results"></div>
       <div id="careers"></div>
@@ -148,8 +149,6 @@
     </div>
     <script src="build/traitify.js"></script>
     <script>
-      Traitify.http.authKey = "sptoechv411aqbqrp4l9a4eg2a";
-      Traitify.http.host = "https://api.traitify.com";
       Traitify.options.authKey = "sptoechv411aqbqrp4l9a4eg2a";
       Traitify.options.host = "https://api.traitify.com";
 
@@ -160,7 +159,6 @@
         locale: "en-us",
         "survey-type": "personality"
       };
-      var widget;
 
       function booleanFrom(value, fallback) {
         if(value == "true") { return true; }
@@ -185,17 +183,19 @@
         var theme = localStorage.getItem("theme");
         var view = localStorage.getItem("view");
 
-        targets = {"Personality.Archetype.Heading": "#default"};
+        targets = {
+          "Personality.Archetype.Heading": "#default",
+          "Personality.Archetype.Skills": "#skills"
+        };
 
-        widget = Traitify;
-        widget.options.assessmentID = assessmentID;
+        Traitify.options.assessmentID = assessmentID;
 
-        widget.options.careersLink = "/";
-        widget.options.slideDeck = {};
-        widget.options.slideDeck.captureLearningDisability = true;
-        widget.options.slideDeck.disableTimeLimit = true;
-        widget.options.slideDeck.initialLearningDisability = true;
-        widget.options.slideDeck.practiceExamples = [
+        Traitify.options.careersLink = "/";
+        Traitify.options.slideDeck = {};
+        Traitify.options.slideDeck.captureLearningDisability = true;
+        Traitify.options.slideDeck.disableTimeLimit = true;
+        Traitify.options.slideDeck.initialLearningDisability = true;
+        Traitify.options.slideDeck.practiceExamples = [
           {
             button: "View Examples",
             heading: "Instructions",
@@ -219,7 +219,7 @@
             text: "Now it’s time to try a few practice items. First, here's some things to remember.\n\n- You may need to look from right to left, from top to bottom, etc., or you'll have to consider the entire grid overall.\n- Consider more than one aspect of the shapes. You might find the solution involves a combination of border color, shading, positions, number, overlap, and more.\n- Sometimes you'll have to move and rotate items in your mind.\n- And here’s a tip: you can use the answer choices as a clue to the solution."
           }
         ];
-        widget.render(targets).then(function() {
+        Traitify.render(targets).then(function() {
           console.log("Rendered");
         }).catch(function(error) {
           console.log(error);
@@ -269,7 +269,7 @@
         }
       }
 
-      function destroyWidget() { if(widget) { widget.destroy(); } }
+      function destroyWidget() { Traitify.destroy(); }
 
       function onChange(e) {
         var name = e.target.name;
@@ -277,15 +277,15 @@
 
         value == "" ? localStorage.removeItem(name) : localStorage.setItem(name, value);
 
-        if(widget && !["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
+        if(!["deck-id", "survey-id"].includes(name) && !name.startsWith("show-")) {
           if(name === "color-scheme") { name = "colorScheme"; }
           if(name === "survey-type") { name = "surveyType"; }
           if(name.startsWith("allow")) {
             if(value == "") { value = name == "allowInstructions"; }
 
-            widget[booleanFrom(value) ? name : name.replace("allow", "disable")]();
+            Traitify[booleanFrom(value) ? name : name.replace("allow", "disable")]();
           } else {
-            widget[name](value);
+            Traitify[name](value);
           }
         }
 
@@ -299,13 +299,11 @@
       }
 
       function refreshWidget() {
-        if(!widget) { return; }
-
         var surveyType = localStorage.getItem("survey-type");
         var assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
         var targets = setTargets();
 
-        widget.assessmentID(assessmentID).targets(targets).refresh();
+        Traitify.assessmentID(assessmentID).targets(targets).refresh();
 
         updateColorScheme();
       }

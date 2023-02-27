@@ -1,0 +1,993 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityArchetypeSkills renders component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Dealing With Stress"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
+      />
+      <div>
+        Dealing With Stress
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-default.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="dealing_with_stress"
+  >
+    <option
+      value="dealing_with_stress"
+    >
+      Dealing With Stress
+    </option>
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Work and life have plenty of ups and downs. Here are tips to help you cope.
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders component with available dimension skills 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Dealing With Stress"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
+      />
+      <div>
+        Dealing With Stress
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-default.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="dealing_with_stress"
+  >
+    <option
+      value="dealing_with_stress"
+    >
+      Dealing With Stress
+    </option>
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Work and life have plenty of ups and downs. Here are tips to help you cope.
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders component with available types 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="leading_others"
+  >
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Leadership skills help you grow, now and in the future.
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders component with enabled types 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="leading_others"
+  >
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Leadership skills help you grow, now and in the future.
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders component with headers 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="sectionHeading"
+  >
+    Success Skills
+  </div>
+  <div
+    className="tabs"
+  >
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Dealing With Stress"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/stress-blue.png"
+      />
+      <div>
+        Dealing With Stress
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-default.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="dealing_with_stress"
+  >
+    <option
+      value="dealing_with_stress"
+    >
+      Dealing With Stress
+    </option>
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Work and life have plenty of ups and downs. Here are tips to help you cope.
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      DWS Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders new type from clicking button 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Dealing With Stress"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/stress-default.png"
+      />
+      <div>
+        Dealing With Stress
+      </div>
+    </button>
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="leading_others"
+  >
+    <option
+      value="dealing_with_stress"
+    >
+      Dealing With Stress
+    </option>
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Leadership skills help you grow, now and in the future.
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders new type from selecting option 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="tabs"
+  >
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Dealing With Stress"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/stress-default.png"
+      />
+      <div>
+        Dealing With Stress
+      </div>
+    </button>
+    <button
+      className="active"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Leading Others"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/leading-blue.png"
+      />
+      <div>
+        Leading Others
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Communication Tips"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/chat-default.png"
+      />
+      <div>
+        Communication Tips
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Teamwork"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/teamwork-default.png"
+      />
+      <div>
+        Teamwork
+      </div>
+    </button>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Habits To Build"
+        className="image"
+        src="https://cdn.traitify.com/widgets/skills/build-default.png"
+      />
+      <div>
+        Habits To Build
+      </div>
+    </button>
+  </div>
+  <select
+    className="dropdown"
+    onChange={[Function]}
+    value="leading_others"
+  >
+    <option
+      value="dealing_with_stress"
+    >
+      Dealing With Stress
+    </option>
+    <option
+      value="leading_others"
+    >
+      Leading Others
+    </option>
+    <option
+      value="communication"
+    >
+      Communication Tips
+    </option>
+    <option
+      value="teamwork"
+    >
+      Teamwork
+    </option>
+    <option
+      value="habits"
+    >
+      Habits To Build
+    </option>
+  </select>
+  <div
+    className="content"
+  >
+    <div
+      className="heading"
+    >
+      Leadership skills help you grow, now and in the future.
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Openness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Conscientiousness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Extraversion
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Agreeableness
+    </div>
+    <div
+      className="tip"
+    >
+      L Tip for Emotional Stability
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeSkills renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityArchetypeSkills renders nothing if no archetype 1`] = `null`;
+
+exports[`PersonalityArchetypeSkills renders nothing if no skills 1`] = `null`;
+
+exports[`PersonalityArchetypeSkills renders nothing if results not ready 1`] = `null`;

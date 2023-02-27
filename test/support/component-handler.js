@@ -40,16 +40,16 @@ export default class ComponentHandler {
 
     return component;
   }
-  get base() { return this.renderer.root.findByType(this.Component); }
   get container() { return this.renderer.root.instance; }
-  get props() { return this.base.props; }
-  get state() { return this.base.state; }
+  get instance() { return this.renderer.root.findByType(this.Component); }
+  get props() { return this.instance.props; }
+  get state() { return this.instance.state; }
   get tree() { return this.renderer.toJSON(); }
   findByText(text, options = {}) {
     const {exact} = {exact: true, ...options};
-    if(exact) { return this.base.find((element) => element.children[0] === text); }
+    if(exact) { return this.instance.find((element) => element.children[0] === text); }
 
-    return this.base.find((element) => (
+    return this.instance.find((element) => (
       element.children[0]
       && element.children[0].includes
       && element.children[0].includes(text)

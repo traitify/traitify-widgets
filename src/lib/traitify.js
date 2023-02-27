@@ -1,13 +1,30 @@
 /* global VERSION */
 import {render, unmountComponentAtNode} from "react-dom";
 import Components from "components";
+import split from "lib/common/object/split";
 
 const componentFromString = (name) => name.split(".").reduce((current, key) => current[key], Components);
 
 export default class Traitify {
-  constructor(props) {
+  constructor(options) {
     this.__version__ = VERSION;
-    this.props = props || {};
+    this.options = options || {};
+  }
+  get props() {
+    const [props, options] = split(this.options, [
+      "assessmentID",
+      "authKey",
+      "benchmarkID",
+      "host",
+      "http",
+      "i18n",
+      "listener",
+      "locale",
+      "profileID",
+      "version"
+    ]);
+
+    return {...props, options};
   }
   destroy() {
     Object.keys(this.renderedTargets || {}).forEach((name) => {

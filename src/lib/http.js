@@ -6,7 +6,12 @@ export default class Http {
     this.host = host || "https://api.traitify.com";
     this.version = version || "v1";
   }
-  ajax = (method, path, params) => {
+  delete = (path, params) => this.request("DELETE", path, params);
+  fetch = (...options) => fetch(options);
+  get = (path, params) => this.request("GET", path, params);
+  post = (path, params) => this.request("POST", path, params);
+  put = (path, params) => this.request("PUT", path, params);
+  request = (method, path, params) => {
     const graphql = typeof params === "string";
     const headers = {
       "Accept": "application/json",
@@ -23,10 +28,6 @@ export default class Http {
       options.body = JSON.stringify(params);
     }
 
-    return fetch(url, options).then((response) => response.json());
+    return this.fetch(url, options).then((response) => response.json());
   };
-  get = (path, params) => (this.ajax("GET", path, params));
-  put = (path, params) => (this.ajax("PUT", path, params));
-  post = (path, params) => (this.ajax("POST", path, params));
-  delete = (path, params) => (this.ajax("DELETE", path, params));
 }

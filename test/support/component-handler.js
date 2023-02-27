@@ -1,20 +1,39 @@
 import {act, create} from "react-test-renderer";
+import Container from "components/container";
+import flushAsync from "support/flush-async";
 
-export {act};
+const renderComponent = (Component, {options = {}, props}) => (
+  options.wrap
+    ? <Container {...global.container}><Component {...props} /></Container>
+    : <Component {...props} />
+);
 
 export default class ComponentHandler {
-  constructor(element, options = {}) {
-    this.ref = element.ref;
-
-    act(() => { this.renderer = create(element, options); });
+  constructor(Component, {options, renderer}) {
+    this.Component = Component;
+    this.options = options;
+    this.renderer = renderer;
   }
-  get base() { return this.renderer.root; } // Test instance
-  get child() { return this.base.children[0]; }
-  get instance() { return this.base.instance || this.base; } // Either component or test instance
-  get props() { return this.instance.props; }
-  get state() { return this.instance.state; }
+  static async render(Component, _options = {}) {
+    const {props, wrap = true, ...createOptions} = _options;
+    const options = {wrap};
+    let renderer;
+
+    act(() => {
+      renderer = create(renderComponent(Component, {options, props}), createOptions);
+    });
+
+    const component = new ComponentHandler(Component, {options, renderer});
+
+    await flushAsync();
+
+    return component;
+  }
+  get base() { return this.renderer.root.findByType(this.Component); }
+  get container() { return this.renderer.root.instance; }
+  get props() { return this.base.props; }
+  get state() { return this.base.state; }
   get tree() { return this.renderer.toJSON(); }
-  act(run) { act(run); }
   findByText(text, options = {}) {
     const {exact} = {exact: true, ...options};
     if(exact) { return this.base.find((element) => element.children[0] === text); }
@@ -26,13 +45,11 @@ export default class ComponentHandler {
     ));
   }
   unmount() { this.renderer.unmount(); }
-  updateProps(newProps) {
-    const Component = this.base.type;
-    const props = {...this.props, ...newProps};
-
-    act(() => { this.renderer.update(<Component ref={this.ref} {...props} />); });
-  }
-  updateState(state) {
-    act(() => { this.instance.setState(state); });
+  updateProps(props) {
+    act(() => (
+      this.renderer.update(
+        renderComponent(this.Component, {options: this.options, props: {...this.props, ...props}})
+      )
+    ));
   }
 }

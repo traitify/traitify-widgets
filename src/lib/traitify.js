@@ -5,9 +5,9 @@ import Components from "components";
 const componentFromString = (name) => name.split(".").reduce((current, key) => current[key], Components);
 
 export default class Traitify {
-  constructor(options) {
+  constructor(props) {
     this.__version__ = VERSION;
-    this.options = options || {};
+    this.props = props || {};
   }
   destroy() {
     Object.keys(this.renderedTargets || {}).forEach((name) => {
@@ -44,7 +44,7 @@ export default class Traitify {
         if(target.isConnected) { unmountComponentAtNode(target); }
 
         resolve(render(
-          <Components.Container options={this.options}>
+          <Components.Container {...this.props}>
             <Component />
           </Components.Container>,
           target

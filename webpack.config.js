@@ -111,8 +111,7 @@ module.exports = (_env) => {
     }
   };
 
-  const compatibility = env.mode === "compatibility";
-  const browser = compatibility || env.mode === "browser";
+  const browser = env.mode === "browser";
 
   if(browser){
     config.entry.unshift("core-js/stable");
@@ -120,7 +119,6 @@ module.exports = (_env) => {
     config.output.libraryExport = "default";
     delete config.externals;
   }
-  if(compatibility){ config.entry[2] = "./compatibility.js"; }
 
   return config;
 };

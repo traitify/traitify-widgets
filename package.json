@@ -9,9 +9,8 @@
   ],
   "scripts": {
     "build": "webpack --node-env=production --progress",
-    "build:compatibility": "webpack --env mode=compatibility --node-env=production --progress",
+    "build:compatibility": "webpack --env mode=browser --node-env=production --progress",
     "dev": "webpack serve --env mode=browser",
-    "dev:compatibility": "webpack serve --env mode=compatibility",
     "dev:secure": "webpack serve --env mode=browser --https",
     "lint": "eslint {src,test}",
     "lint:fix": "eslint {src,test} --fix",
@@ -21,8 +20,7 @@
     "prestart": "npm run build",
     "pretest": "npm run lint",
     "test": "jest --config test/jest.config.js --coverage",
-    "test:watch": "jest --config test/jest.config.js --watch",
-    "test:updateSnap": "jest --config test/jest.config.js --updateSnapshot"
+    "test:watch": "jest --config test/jest.config.js --watch"
   },
   "keywords": [
     "traitify",

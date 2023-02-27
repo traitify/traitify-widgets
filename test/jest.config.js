@@ -22,9 +22,11 @@ module.exports = {
     "<rootDir>/test/support/setup/react.js"
   ],
   setupFilesAfterEnv: [
-    "<rootDir>/test/support/setup/extend.js"
+    "<rootDir>/test/support/setup/extend.js",
+    "<rootDir>/test/support/setup/recoil.js"
   ],
   testEnvironmentOptions: {url: "https://www.example.com"},
+  testPathIgnorePatterns: ["/node_modules/", "/test-backup/"], // TODO: Remove
   transform: {
     "^.+\\.jsx?$": "babel-jest"
   }

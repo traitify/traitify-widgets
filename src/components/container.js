@@ -18,7 +18,7 @@ import {
   profileIDState
 } from "lib/recoil";
 
-function State({children, http: _http, i18n: _i18n, listener: _listener, options}) {
+function State({children, ...props}) {
   const setAssessmentID = useSetRecoilState(assessmentIDState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);
   const setHttp = useSetRecoilState(httpState);
@@ -32,12 +32,12 @@ function State({children, http: _http, i18n: _i18n, listener: _listener, options
     assessmentID,
     benchmarkID,
     locale,
-    profileID,
-    ...extraOptions
-  } = options;
+    options = {},
+    profileID
+  } = props;
 
   useEffect(() => {
-    setOptions(extraOptions);
+    setOptions(options);
   }, [options]);
 
   useEffect(() => {
@@ -47,22 +47,22 @@ function State({children, http: _http, i18n: _i18n, listener: _listener, options
   }, [locale]);
 
   useEffect(() => {
-    const http = _http || new Http(slice(options, ["authKey", "host", "version"]));
+    const http = props.http || new Http(slice(props, ["authKey", "host", "version"]));
 
     setHttp(http);
-  }, [_http]);
+  }, [props.http]);
 
   useEffect(() => {
-    const i18n = _i18n || new I18n();
+    const i18n = props.i18n || new I18n();
 
     setI18n(i18n);
-  }, [_i18n]);
+  }, [props.i18n]);
 
   useEffect(() => {
-    const listener = _listener || new Listener();
+    const listener = props.listener || new Listener();
 
     setListener(listener);
-  }, [_listener]);
+  }, [props.listener]);
 
   useEffect(() => {
     setAssessmentID(assessmentID);
@@ -86,22 +86,25 @@ function State({children, http: _http, i18n: _i18n, listener: _listener, options
 }
 
 State.defaultProps = {
+  assessmentID: null,
+  benchmarkID: null,
   http: null,
   i18n: null,
   listener: null,
-  options: {}
+  locale: null,
+  options: {},
+  profileID: null
 };
 State.propTypes = {
+  assessmentID: PropTypes.string,
+  benchmarkID: PropTypes.string,
   children: PropTypes.node.isRequired,
   http: PropTypes.object,
   i18n: PropTypes.object,
   listener: PropTypes.object,
-  options: PropTypes.shape({
-    assessmentID: PropTypes.string,
-    benchmarkID: PropTypes.string,
-    locale: PropTypes.string,
-    profileID: PropTypes.string
-  })
+  locale: PropTypes.string,
+  options: PropTypes.object,
+  profileID: PropTypes.string
 };
 
 export default function Container(props) {

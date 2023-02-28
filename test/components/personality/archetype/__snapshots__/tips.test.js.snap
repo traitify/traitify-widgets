@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityArchetypeTips renders component 1`] = `
+exports[`PersonalityArchetypeTips renders component 1`] = `
 <div
   className="container"
 >
@@ -12,21 +12,21 @@ exports[`Paradox.PersonalityArchetypeTips renders component 1`] = `
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools
+      Tools To Use
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -37,17 +37,17 @@ exports[`Paradox.PersonalityArchetypeTips renders component 1`] = `
     <option
       value="tools"
     >
-      tip_type_for_tools
+      Tools To Use
     </option>
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div
@@ -72,7 +72,7 @@ exports[`Paradox.PersonalityArchetypeTips renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips renders component with available types 1`] = `
+exports[`PersonalityArchetypeTips renders component with available types 1`] = `
 <div
   className="container"
 >
@@ -84,14 +84,14 @@ exports[`Paradox.PersonalityArchetypeTips renders component with available types
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -102,12 +102,12 @@ exports[`Paradox.PersonalityArchetypeTips renders component with available types
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div
@@ -132,7 +132,7 @@ exports[`Paradox.PersonalityArchetypeTips renders component with available types
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1`] = `
+exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
 <div
   className="container"
 >
@@ -144,14 +144,14 @@ exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -162,12 +162,12 @@ exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div
@@ -192,14 +192,14 @@ exports[`Paradox.PersonalityArchetypeTips renders component with enabled types 1
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
+exports[`PersonalityArchetypeTips renders component with headers 1`] = `
 <div
   className="container"
 >
   <div
     className="sectionHeading"
   >
-    personality_tips
+    Personalty Tips
   </div>
   <div
     className="tabs"
@@ -209,21 +209,21 @@ exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools
+      Tools To Use
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -234,17 +234,17 @@ exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
     <option
       value="tools"
     >
-      tip_type_for_tools
+      Tools To Use
     </option>
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div
@@ -269,7 +269,7 @@ exports[`Paradox.PersonalityArchetypeTips renders component with headers 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 1`] = `
+exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
 <div
   className="container"
 >
@@ -281,21 +281,21 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools
+      Tools To Use
     </button>
     <button
       className="active"
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -306,17 +306,17 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 
     <option
       value="tools"
     >
-      tip_type_for_tools
+      Tools To Use
     </option>
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div
@@ -341,7 +341,7 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from clicking button 
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips renders new type from selecting option 1`] = `
+exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
 <div
   className="container"
 >
@@ -353,21 +353,21 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from selecting option
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools
+      Tools To Use
     </button>
     <button
       className="active"
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -378,17 +378,17 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from selecting option
     <option
       value="tools"
     >
-      tip_type_for_tools
+      Tools To Use
     </option>
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div
@@ -413,15 +413,15 @@ exports[`Paradox.PersonalityArchetypeTips renders new type from selecting option
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips renders nothing if disabled 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if disabled 1`] = `null`;
 
-exports[`Paradox.PersonalityArchetypeTips renders nothing if no archetype 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if no archetype 1`] = `null`;
 
-exports[`Paradox.PersonalityArchetypeTips renders nothing if no tips 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if no tips 1`] = `null`;
 
-exports[`Paradox.PersonalityArchetypeTips renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if results not ready 1`] = `null`;
 
-exports[`Paradox.PersonalityArchetypeTips thirdPerson renders component 1`] = `
+exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
 <div
   className="container"
 >
@@ -433,14 +433,14 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders component 1`] = `
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools
+      Tools To Use
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_caution_zone
+      Caution Zone
     </button>
   </div>
   <select
@@ -451,12 +451,12 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders component 1`] = `
     <option
       value="tools"
     >
-      tip_type_for_tools
+      Tools To Use
     </option>
     <option
       value="caution_zone"
     >
-      tip_type_for_caution_zone
+      Caution Zone
     </option>
   </select>
   <div
@@ -481,7 +481,7 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thirdPerson tips 1`] = `
+exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thirdPerson tips 1`] = `
 <div
   className="container"
 >
@@ -493,21 +493,21 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders firstPerson tips i
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_tools
+      Tools To Use
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      tip_type_for_settings
+      Settings For You
     </button>
   </div>
   <select
@@ -518,17 +518,17 @@ exports[`Paradox.PersonalityArchetypeTips thirdPerson renders firstPerson tips i
     <option
       value="tools"
     >
-      tip_type_for_tools
+      Tools To Use
     </option>
     <option
       value="room"
     >
-      tip_type_for_room
+      Room for Growth and Change
     </option>
     <option
       value="settings"
     >
-      tip_type_for_settings
+      Settings For You
     </option>
   </select>
   <div

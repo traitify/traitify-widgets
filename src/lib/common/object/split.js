@@ -3,7 +3,7 @@ export default function split(object, keys) {
   const excluded = {};
 
   Object.keys(object).forEach((key) => {
-    (keys.include(key) ? included : excluded)[key] = object[key];
+    (keys.includes(key) ? included : excluded)[key] = object[key];
   });
 
   return [included, excluded];

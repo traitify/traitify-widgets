@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {dig} from "lib/helpers/object";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import useDidMount from "lib/hooks/use-did-mount";
-import useDidUpdate from "lib/hooks/use-did-update";
-import withTraitify from "lib/with-traitify";
+import dig from "lib/common/object/dig";
+import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
+import useInlineMemo from "lib/hooks/use-inline-memo";
+import useOption from "lib/hooks/use-option";
+import useResults from "lib/hooks/use-results";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 const tipTypes = {
@@ -20,25 +21,26 @@ const tipTypes = {
   ]
 };
 
-function PersonalityArchetypeTips({setElement, ...props}) {
-  const {assessment, getOption, isReady, translate, ui} = props;
-  const details = dig(assessment, "archetype", "details") || [];
+export default function PersonalityArchetypeTips() {
+  const allowHeaders = useOption("allowHeaders");
+  const disabled = useDisabledComponent("PersonalityTips");
+  const perspective = useInlineMemo((value) => value || "firstPerson", [useOption("perspective")]);
+  const results = useResults();
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
-  const state = {activeType, types};
+  const translate = useTranslate();
+  const details = useInlineMemo((value) => value || [], [dig(results, "archetype", "details")]);
+  const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
-  useDidMount(() => { ui.trigger("PersonalityTips.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityTips.updated", {props, state}); });
+  useComponentEvents("PersonalityTips", {activeType, types});
   useEffect(() => {
     if(details.length === 0) { return; }
 
-    const disabledComponents = getOption("disabledComponents") || [];
     const filter = (type) => {
       if(disabledComponents.includes(type.disableKey)) { return false; }
 
       return details.find(({title}) => (title === type.apiKey));
     };
-    const perspective = getOption("perspective") || "firstPerson";
     let activeTypes = tipTypes[perspective].filter(filter);
     if(activeTypes.length === 0 && perspective === "thirdPerson") {
       activeTypes = tipTypes.firstPerson.filter(filter);
@@ -46,21 +48,19 @@ function PersonalityArchetypeTips({setElement, ...props}) {
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);
-  }, [details]);
+  }, [details, perspective]);
 
-  const disabledComponents = getOption("disabledComponents") || [];
-  if(disabledComponents.includes("PersonalityTips")) { return null; }
-  if(!isReady("results")) { return null; }
+  if(disabled) { return null; }
+  if(!results) { return null; }
   if(!activeType) { return null; }
 
-  const allowHeaders = getOption("allowHeaders");
   const onChange = ({target: {value}}) => (
     setActiveType(types.find(({translationKey}) => translationKey === value))
   );
   const tips = details.filter(({title}) => (title === activeType.apiKey)).map(({body}) => body);
 
   return (
-    <div className={style.container} ref={setElement}>
+    <div className={style.container}>
       {allowHeaders && <div className={style.sectionHeading}>{translate("personality_tips")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
@@ -85,25 +85,3 @@ function PersonalityArchetypeTips({setElement, ...props}) {
     </div>
   );
 }
-
-PersonalityArchetypeTips.defaultProps = {assessment: null};
-PersonalityArchetypeTips.propTypes = {
-  assessment: PropTypes.shape({
-    archetype: PropTypes.shape({
-      details: PropTypes.arrayOf(
-        PropTypes.shape({
-          body: PropTypes.string.isRequired,
-          title: PropTypes.string.isRequired
-        }).isRequired
-      ).isRequired
-    })
-  }),
-  getOption: PropTypes.func.isRequired,
-  isReady: PropTypes.func.isRequired,
-  setElement: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
-};
-
-export {PersonalityArchetypeTips as Component};
-export default withTraitify(PersonalityArchetypeTips);

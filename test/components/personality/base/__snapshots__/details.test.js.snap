@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityBaseDetails fallbacks renders component with blend 1`] = `
+exports[`PersonalityBaseDetails fallbacks renders component with blend 1`] = `
 <div
   className="container"
 >
@@ -12,21 +12,21 @@ exports[`Paradox.PersonalityBaseDetails fallbacks renders component with blend 1
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      best_work_environments
+      Best Work Environments
     </button>
   </div>
   <select
@@ -37,17 +37,17 @@ exports[`Paradox.PersonalityBaseDetails fallbacks renders component with blend 1
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
     <option
       value="best_work_environments"
     >
-      best_work_environments
+      Best Work Environments
     </option>
   </select>
   <div>
@@ -61,7 +61,7 @@ exports[`Paradox.PersonalityBaseDetails fallbacks renders component with blend 1
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails fallbacks renders component with types 1`] = `
+exports[`PersonalityBaseDetails fallbacks renders component with types 1`] = `
 <div
   className="container"
 >
@@ -73,21 +73,21 @@ exports[`Paradox.PersonalityBaseDetails fallbacks renders component with types 1
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      best_work_environments
+      Best Work Environments
     </button>
   </div>
   <select
@@ -98,17 +98,17 @@ exports[`Paradox.PersonalityBaseDetails fallbacks renders component with types 1
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
     <option
       value="best_work_environments"
     >
-      best_work_environments
+      Best Work Environments
     </option>
   </select>
   <div>
@@ -121,7 +121,7 @@ exports[`Paradox.PersonalityBaseDetails fallbacks renders component with types 1
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails renders component 1`] = `
+exports[`PersonalityBaseDetails renders component 1`] = `
 <div
   className="container"
 >
@@ -133,21 +133,21 @@ exports[`Paradox.PersonalityBaseDetails renders component 1`] = `
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      best_work_environments
+      Best Work Environments
     </button>
   </div>
   <select
@@ -158,17 +158,17 @@ exports[`Paradox.PersonalityBaseDetails renders component 1`] = `
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
     <option
       value="best_work_environments"
     >
-      best_work_environments
+      Best Work Environments
     </option>
   </select>
   <div>
@@ -181,14 +181,14 @@ exports[`Paradox.PersonalityBaseDetails renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails renders component with headers 1`] = `
+exports[`PersonalityBaseDetails renders component with headers 1`] = `
 <div
   className="container"
 >
   <div
     className="sectionHeading"
   >
-    personality_details
+    Personality Details
   </div>
   <div
     className="tabs"
@@ -198,21 +198,21 @@ exports[`Paradox.PersonalityBaseDetails renders component with headers 1`] = `
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      best_work_environments
+      Best Work Environments
     </button>
   </div>
   <select
@@ -223,17 +223,17 @@ exports[`Paradox.PersonalityBaseDetails renders component with headers 1`] = `
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
     <option
       value="best_work_environments"
     >
-      best_work_environments
+      Best Work Environments
     </option>
   </select>
   <div>
@@ -246,7 +246,7 @@ exports[`Paradox.PersonalityBaseDetails renders component with headers 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails renders component with no environments 1`] = `
+exports[`PersonalityBaseDetails renders component with no environments 1`] = `
 <div
   className="container"
 >
@@ -258,14 +258,14 @@ exports[`Paradox.PersonalityBaseDetails renders component with no environments 1
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
   </div>
   <select
@@ -276,12 +276,12 @@ exports[`Paradox.PersonalityBaseDetails renders component with no environments 1
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
   </select>
   <div>
@@ -294,7 +294,7 @@ exports[`Paradox.PersonalityBaseDetails renders component with no environments 1
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails renders new type from clicking button 1`] = `
+exports[`PersonalityBaseDetails renders new type from clicking button 1`] = `
 <div
   className="container"
 >
@@ -306,21 +306,21 @@ exports[`Paradox.PersonalityBaseDetails renders new type from clicking button 1`
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className="active"
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      best_work_environments
+      Best Work Environments
     </button>
   </div>
   <select
@@ -331,17 +331,17 @@ exports[`Paradox.PersonalityBaseDetails renders new type from clicking button 1`
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
     <option
       value="best_work_environments"
     >
-      best_work_environments
+      Best Work Environments
     </option>
   </select>
   <div>
@@ -354,7 +354,7 @@ exports[`Paradox.PersonalityBaseDetails renders new type from clicking button 1`
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails renders new type from selecting option 1`] = `
+exports[`PersonalityBaseDetails renders new type from selecting option 1`] = `
 <div
   className="container"
 >
@@ -366,21 +366,21 @@ exports[`Paradox.PersonalityBaseDetails renders new type from selecting option 1
       onClick={[Function]}
       type="button"
     >
-      complements
+      Complements
     </button>
     <button
       className=""
       onClick={[Function]}
       type="button"
     >
-      conflicts
+      Conflicts
     </button>
     <button
       className="active"
       onClick={[Function]}
       type="button"
     >
-      best_work_environments
+      Best Work Environments
     </button>
   </div>
   <select
@@ -391,17 +391,17 @@ exports[`Paradox.PersonalityBaseDetails renders new type from selecting option 1
     <option
       value="complements"
     >
-      complements
+      Complements
     </option>
     <option
       value="conflicts"
     >
-      conflicts
+      Conflicts
     </option>
     <option
       value="best_work_environments"
     >
-      best_work_environments
+      Best Work Environments
     </option>
   </select>
   <div>
@@ -420,8 +420,8 @@ exports[`Paradox.PersonalityBaseDetails renders new type from selecting option 1
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseDetails renders nothing if disabled 1`] = `null`;
+exports[`PersonalityBaseDetails renders nothing if disabled 1`] = `null`;
 
-exports[`Paradox.PersonalityBaseDetails renders nothing if no details 1`] = `null`;
+exports[`PersonalityBaseDetails renders nothing if no details 1`] = `null`;
 
-exports[`Paradox.PersonalityBaseDetails renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityBaseDetails renders nothing if results not ready 1`] = `null`;

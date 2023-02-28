@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityBaseHeading fallbacks renders component with blend 1`] = `
+exports[`PersonalityBaseHeading fallbacks renders component with blend 1`] = `
 <div
   className="container"
 >
@@ -17,7 +17,7 @@ exports[`Paradox.PersonalityBaseHeading fallbacks renders component with blend 1
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_blend_heading - {"personality":"<span>Naturalist | Analyzer</span>"}",
+              "__html": "Your personality blend is <span>Naturalist | Analyzer</span>",
             }
           }
         />
@@ -32,7 +32,7 @@ exports[`Paradox.PersonalityBaseHeading fallbacks renders component with blend 1
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseHeading fallbacks renders component with types 1`] = `
+exports[`PersonalityBaseHeading fallbacks renders component with types 1`] = `
 <div
   className="container"
 >
@@ -49,7 +49,7 @@ exports[`Paradox.PersonalityBaseHeading fallbacks renders component with types 1
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_base_heading - {"personality":"<span>Naturalist</span>"}",
+              "__html": "Your personality type is <span>Naturalist</span>",
             }
           }
         />
@@ -64,7 +64,7 @@ exports[`Paradox.PersonalityBaseHeading fallbacks renders component with types 1
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseHeading perspective renders component 1`] = `
+exports[`PersonalityBaseHeading perspective renders component 1`] = `
 <div
   className="container"
 >
@@ -81,7 +81,7 @@ exports[`Paradox.PersonalityBaseHeading perspective renders component 1`] = `
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_base_heading_third_person - {"personality":"<span>Inventor</span>"}",
+              "__html": "Their personality type is <span>Inventor</span>",
             }
           }
         />
@@ -96,7 +96,7 @@ exports[`Paradox.PersonalityBaseHeading perspective renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseHeading perspective renders component with careers link 1`] = `
+exports[`PersonalityBaseHeading perspective renders component with careers link 1`] = `
 <div
   className="container"
 >
@@ -113,90 +113,7 @@ exports[`Paradox.PersonalityBaseHeading perspective renders component with caree
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_base_heading_third_person - {"personality":"<span>Inventor</span>"}",
-            }
-          }
-        />
-      </div>
-      <div
-        className="p"
-      >
-        'Inventors'...are creative.  They take a contemporary, 'out of the box' approach to work and life. Inventors use themselves and other medium, often various forms of the arts, to communicate and interact with the world.  Inventors excel when they are 'lost' in their work, completely engrossed in a project.
-      </div>
-    </div>
-  </div>
-  <div
-    className="careersLink"
-  >
-    <div>
-      careers_link_heading_third_person
-    </div>
-    <a
-      href="/careers"
-    >
-      <div
-        className="mock"
-      >
-        Icon - 
-        briefcase
-      </div>
-       
-      career_matches
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Paradox.PersonalityBaseHeading renders component 1`] = `
-<div
-  className="container"
->
-  <div
-    className="row"
-  >
-    <div
-      className="details"
-    >
-      <div
-        className="header"
-      >
-        <div
-          className="heading"
-          dangerouslySetInnerHTML={
-            {
-              "__html": "personality_base_heading - {"personality":"<span>Inventor</span>"}",
-            }
-          }
-        />
-      </div>
-      <div
-        className="p"
-      >
-        'Inventors'...are creative.  They take a contemporary, 'out of the box' approach to work and life. Inventors use themselves and other medium, often various forms of the arts, to communicate and interact with the world.  Inventors excel when they are 'lost' in their work, completely engrossed in a project.
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.PersonalityBaseHeading renders component with careers link 1`] = `
-<div
-  className="container"
->
-  <div
-    className="row"
-  >
-    <div
-      className="details"
-    >
-      <div
-        className="header"
-      >
-        <div
-          className="heading"
-          dangerouslySetInnerHTML={
-            {
-              "__html": "personality_base_heading - {"personality":"<span>Inventor</span>"}",
+              "__html": "Their personality type is <span>Inventor</span>",
             }
           }
         />
@@ -212,7 +129,7 @@ exports[`Paradox.PersonalityBaseHeading renders component with careers link 1`] 
     className="careersLink"
   >
     <div>
-      careers_link_heading
+      View their personalized career recommendations
     </div>
     <a
       href="/careers"
@@ -224,17 +141,13 @@ exports[`Paradox.PersonalityBaseHeading renders component with careers link 1`] 
         briefcase
       </div>
        
-      career_matches
+      Career Matches
     </a>
   </div>
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseHeading renders nothing if disabled 1`] = `null`;
-
-exports[`Paradox.PersonalityBaseHeading renders nothing if results not ready 1`] = `null`;
-
-exports[`Paradox.PersonalityBaseHeading themed renders component 1`] = `
+exports[`PersonalityBaseHeading renders component 1`] = `
 <div
   className="container"
 >
@@ -251,7 +164,7 @@ exports[`Paradox.PersonalityBaseHeading themed renders component 1`] = `
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_base_heading - {"personality":"<span>Inventor</span>"}",
+              "__html": "Your personality type is <span>Inventor</span>",
             }
           }
         />
@@ -266,7 +179,94 @@ exports[`Paradox.PersonalityBaseHeading themed renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseHeading themed renders component with blend 1`] = `
+exports[`PersonalityBaseHeading renders component with careers link 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="details"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="heading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "Your personality type is <span>Inventor</span>",
+            }
+          }
+        />
+      </div>
+      <div
+        className="p"
+      >
+        'Inventors'...are creative.  They take a contemporary, 'out of the box' approach to work and life. Inventors use themselves and other medium, often various forms of the arts, to communicate and interact with the world.  Inventors excel when they are 'lost' in their work, completely engrossed in a project.
+      </div>
+    </div>
+  </div>
+  <div
+    className="careersLink"
+  >
+    <div>
+      View your personalized career recommendations
+    </div>
+    <a
+      href="/careers"
+    >
+      <div
+        className="mock"
+      >
+        Icon - 
+        briefcase
+      </div>
+       
+      Career Matches
+    </a>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseHeading renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityBaseHeading renders nothing if results not ready 1`] = `null`;
+
+exports[`PersonalityBaseHeading themed renders component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="details"
+    >
+      <div
+        className="header"
+      >
+        <div
+          className="heading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "Your personality type is <span>Inventor</span>",
+            }
+          }
+        />
+      </div>
+      <div
+        className="p"
+      >
+        'Inventors'...are creative.  They take a contemporary, 'out of the box' approach to work and life. Inventors use themselves and other medium, often various forms of the arts, to communicate and interact with the world.  Inventors excel when they are 'lost' in their work, completely engrossed in a project.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseHeading themed renders component with blend 1`] = `
 <div
   className="container"
 >
@@ -298,7 +298,7 @@ exports[`Paradox.PersonalityBaseHeading themed renders component with blend 1`] 
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_blend_heading - {"personality":"<span>Naturalist | Analyzer</span>"}",
+              "__html": "Your personality blend is <span>Naturalist | Analyzer</span>",
             }
           }
         />
@@ -332,7 +332,7 @@ exports[`Paradox.PersonalityBaseHeading themed renders component with blend 1`] 
 </div>
 `;
 
-exports[`Paradox.PersonalityBaseHeading themed renders component with types 1`] = `
+exports[`PersonalityBaseHeading themed renders component with types 1`] = `
 <div
   className="container"
 >
@@ -357,7 +357,7 @@ exports[`Paradox.PersonalityBaseHeading themed renders component with types 1`] 
           className="heading"
           dangerouslySetInnerHTML={
             {
-              "__html": "personality_base_heading - {"personality":"<span>Naturalist</span>"}",
+              "__html": "Your personality type is <span>Naturalist</span>",
             }
           }
         />

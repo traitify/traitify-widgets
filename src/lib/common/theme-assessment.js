@@ -1,4 +1,5 @@
-import {dig, mutable} from "lib/helpers/object";
+import dig from "lib/common/object/dig";
+import mutable from "lib/common/object/mutable";
 
 const idToName = {
   "3f715970-6fff-4852-853f-ce3dc9291b32": "Action-Taker",
@@ -81,10 +82,9 @@ const themeTrait = (trait) => {
   return {...trait, personality_type: themeType(type)};
 };
 
-export default function themeAssessment({data, theme}) {
+export default function themeAssessment(data) {
   if(data.deck_id !== "career-deck") { return data; }
   if((dig(data, "personality_types", "length") || 0) === 0) { return data; }
-  if(theme !== "paradox") { return data; }
 
   const themedData = mutable(data);
   const {

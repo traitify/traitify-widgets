@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {dig} from "lib/helpers/object";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import useDidMount from "lib/hooks/use-did-mount";
-import useDidUpdate from "lib/hooks/use-did-update";
-import withTraitify from "lib/with-traitify";
+import dig from "lib/common/object/dig";
+import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
+import useInlineMemo from "lib/hooks/use-inline-memo";
+import useOption from "lib/hooks/use-option";
+import usePersonality from "lib/hooks/use-personality";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 const detailTypes = [
@@ -13,26 +14,24 @@ const detailTypes = [
   {apiKey: "Environments", disableKey: "PersonalityEnvironments", translationKey: "best_work_environments"}
 ];
 
-function PersonalityBaseDetails({setElement, ...props}) {
-  const {assessment, getOption, personality: _personality, translate, ui} = props;
+export default function PersonalityBaseDetails() {
+  const allowHeaders = useOption("allowHeaders");
+  const disabled = useDisabledComponent("PersonalityDetails");
+  const personality = usePersonality();
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
-  const personality = _personality || dig(assessment, "personality_blend")
-    || dig(assessment, "personality_types", 0, "personality_type");
-  const state = {activeType, personality, types};
+  const translate = useTranslate();
+  const details = useInlineMemo((value) => value || [], [dig(personality, "details")]);
+  const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
-  const disabledComponents = getOption("disabledComponents") || [];
-
-  useDidMount(() => { ui.trigger("PersonalityBaseDetails.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityBaseDetails.updated", {props, state}); });
+  useComponentEvents("PersonalityBaseDetails", {activeType, personality, types});
   useEffect(() => {
-    if(!personality) { return; }
-    if(personality.details.length === 0) { return; }
+    if(details.length === 0) { return; }
 
     const activeTypes = detailTypes
       .filter(({disableKey}) => !disabledComponents.includes(disableKey))
       .map((type) => {
-        let data = personality.details.filter(({title}) => (title === type.apiKey))
+        let data = details.filter(({title}) => (title === type.apiKey))
           .map(({body}) => body);
 
         if(data.length === 0) {
@@ -45,18 +44,18 @@ function PersonalityBaseDetails({setElement, ...props}) {
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);
-  }, [personality]);
+  }, [details, personality]);
 
-  if(disabledComponents.includes("PersonalityDetails")) { return null; }
+  if(disabled) { return null; }
+  if(!personality) { return null; }
   if(!activeType) { return null; }
 
-  const allowHeaders = getOption("allowHeaders");
   const onChange = ({target: {value}}) => (
     setActiveType(types.find(({translationKey}) => translationKey === value))
   );
 
   return (
-    <div className={style.container} ref={setElement}>
+    <div className={style.container}>
       {allowHeaders && <div className={style.sectionHeading}>{translate("personality_details")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
@@ -87,30 +86,3 @@ function PersonalityBaseDetails({setElement, ...props}) {
     </div>
   );
 }
-
-const personalityPropType = PropTypes.shape({
-  details: PropTypes.arrayOf(
-    PropTypes.shape({
-      body: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired
-});
-
-PersonalityBaseDetails.defaultProps = {assessment: null, personality: null};
-PersonalityBaseDetails.propTypes = {
-  assessment: PropTypes.shape({
-    personality_blend: personalityPropType,
-    personality_types: PropTypes.arrayOf(
-      PropTypes.shape({personality_type: personalityPropType.isRequired})
-    )
-  }),
-  getOption: PropTypes.func.isRequired,
-  personality: personalityPropType,
-  setElement: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
-};
-
-export {PersonalityBaseDetails as Component};
-export default withTraitify(PersonalityBaseDetails);

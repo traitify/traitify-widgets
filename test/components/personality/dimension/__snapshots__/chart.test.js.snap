@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
+exports[`PersonalityDimensionChart renders component 1`] = `
 <div
   className="container"
 >
   <div
     className="p"
   >
-    dimension_description
+    The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
   </div>
   <div
     className="horizontal"
@@ -26,7 +26,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Openness badge"
+        alt="Openness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
       />
     </div>
@@ -44,7 +44,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Conscientiousness badge"
+        alt="Conscientiousness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
       />
     </div>
@@ -62,7 +62,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Extraversion badge"
+        alt="Extraversion Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
       />
     </div>
@@ -80,7 +80,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Agreeableness badge"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
     </div>
@@ -98,7 +98,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
         </div>
       </div>
       <img
-        alt="Emotional Stability badge"
+        alt="Emotional Stability Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
       />
     </div>
@@ -126,7 +126,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Openness badge"
+        alt="Openness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
       />
       <div
@@ -144,7 +144,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Conscientiousness badge"
+        alt="Conscientiousness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
       />
       <div
@@ -162,7 +162,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Extraversion badge"
+        alt="Extraversion Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
       />
       <div
@@ -180,7 +180,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Agreeableness badge"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
       <div
@@ -198,7 +198,7 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
       className="column medium"
     >
       <img
-        alt="Emotional Stability badge"
+        alt="Emotional Stability Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
       />
       <div
@@ -216,14 +216,14 @@ exports[`Paradox.PersonalityDimensionChart renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] = `
+exports[`PersonalityDimensionChart renders component without guide 1`] = `
 <div
   className="container"
 >
   <div
     className="p"
   >
-    dimension_description
+    The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
   </div>
   <div
     className="horizontal"
@@ -239,7 +239,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Openness badge"
+        alt="Openness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
       />
     </div>
@@ -254,7 +254,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Conscientiousness badge"
+        alt="Conscientiousness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
       />
     </div>
@@ -269,7 +269,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Extraversion badge"
+        alt="Extraversion Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
       />
     </div>
@@ -284,7 +284,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Agreeableness badge"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
     </div>
@@ -299,7 +299,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
         </div>
       </div>
       <img
-        alt="Emotional Stability badge"
+        alt="Emotional Stability Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
       />
     </div>
@@ -327,7 +327,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Openness badge"
+        alt="Openness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
       />
       <div
@@ -340,7 +340,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Conscientiousness badge"
+        alt="Conscientiousness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
       />
       <div
@@ -353,7 +353,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Extraversion badge"
+        alt="Extraversion Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
       />
       <div
@@ -366,7 +366,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Agreeableness badge"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
       <div
@@ -379,7 +379,7 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
       className="column medium"
     >
       <img
-        alt="Emotional Stability badge"
+        alt="Emotional Stability Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
       />
       <div
@@ -392,4 +392,4 @@ exports[`Paradox.PersonalityDimensionChart renders component without guide 1`] =
 </div>
 `;
 
-exports[`Paradox.PersonalityDimensionChart renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityDimensionChart renders nothing if results not ready 1`] = `null`;

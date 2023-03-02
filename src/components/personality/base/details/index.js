@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import dig from "lib/common/object/dig";
+import getDetails from "lib/common/get-details";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useInlineMemo from "lib/hooks/use-inline-memo";
@@ -15,36 +15,29 @@ const detailTypes = [
 ];
 
 export default function PersonalityBaseDetails() {
-  const allowHeaders = useOption("allowHeaders");
   const disabled = useDisabledComponent("PersonalityDetails");
   const personality = usePersonality();
+  const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
   const translate = useTranslate();
-  const details = useInlineMemo((value) => value || [], [dig(personality, "details")]);
   const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
   useComponentEvents("PersonalityBaseDetails", {activeType, personality, types});
   useEffect(() => {
-    if(details.length === 0) { return; }
+    if(!personality) { return; }
 
     const activeTypes = detailTypes
       .filter(({disableKey}) => !disabledComponents.includes(disableKey))
       .map((type) => {
-        let data = details.filter(({title}) => (title === type.apiKey))
-          .map(({body}) => body);
-
-        if(data.length === 0) {
-          data = (personality[type.apiKey.toLowerCase()] || [])
-            .map(({name}) => name);
-        }
+        const data = getDetails({name: type.apiKey, personality});
 
         return {...type, data: data.length > 1 ? data : data[0]};
       }).filter(({data}) => data);
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);
-  }, [details, personality]);
+  }, [personality]);
 
   if(disabled) { return null; }
   if(!personality) { return null; }
@@ -56,7 +49,7 @@ export default function PersonalityBaseDetails() {
 
   return (
     <div className={style.container}>
-      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_details")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("personality_details")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button

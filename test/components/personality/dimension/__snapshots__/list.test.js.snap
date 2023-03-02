@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityDimensionList renders chart if details disabled 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="mock"
+  >
+    PersonalityDimensionChart
+  </div>
+</div>
+`;
+
+exports[`PersonalityDimensionList renders component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="mock"
+  >
+    PersonalityDimensionChart
+  </div>
+  <div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityDimensionList renders component with headers 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="sectionHeading"
+  >
+    Personality Breakdown
+  </div>
+  <div
+    className="mock"
+  >
+    PersonalityDimensionChart
+  </div>
+  <div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityDimensionList renders details if chart disabled 1`] = `
+<div
+  className="container"
+>
+  <div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+    <div
+      className="mock"
+    >
+      PersonalityDimensionDetails
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityDimensionList renders nothing if disabled 1`] = `null`;
+
+exports[`PersonalityDimensionList renders nothing if results not ready 1`] = `null`;

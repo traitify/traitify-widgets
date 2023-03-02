@@ -1,6 +1,6 @@
-import {sortByTypePosition} from "lib/helpers";
-import {times} from "lib/helpers/array";
-import {dig} from "lib/helpers/object";
+import times from "lib/common/array/times";
+import dig from "lib/common/object/dig";
+import sortByTypePosition from "lib/common/sort-by-type-position";
 
 const defaultRanges = [
   {matchScore: 5, maxScore: 3, minScore: 1},

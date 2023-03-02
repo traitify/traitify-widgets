@@ -4,6 +4,23 @@ import Components from "components";
 import split from "lib/common/object/split";
 
 const componentFromString = (name) => name.split(".").reduce((current, key) => current[key], Components);
+const isTarget = (target) => (typeof target === "string" || target instanceof HTMLElement);
+const formatTargets = (_targets) => {
+  const targets = isTarget(_targets) ? {Default: _targets} : _targets;
+
+  return Object.fromEntries(
+    Object.entries(targets).map(([key, target]) => {
+      const options = isTarget(target) ? {target} : {...target};
+
+      if(!options.props) { options.props = {}; }
+      if(typeof options.target === "string") {
+        options.target = document.querySelector(options.target);
+      }
+
+      return [key, options];
+    })
+  );
+};
 
 export default class Traitify {
   constructor(options) {
@@ -15,6 +32,7 @@ export default class Traitify {
       "assessmentID",
       "authKey",
       "benchmarkID",
+      "graphql",
       "host",
       "http",
       "i18n",
@@ -36,10 +54,8 @@ export default class Traitify {
     return this;
   }
   render(_targets = {}) {
-    const targets = typeof _targets === "string" || _targets instanceof HTMLElement
-      ? {Default: _targets}
-      : _targets;
     const promises = [];
+    const targets = formatTargets(_targets);
 
     if(Object.keys(targets).length === 0) {
       promises.push(new Promise((resolve, reject) => {
@@ -52,17 +68,13 @@ export default class Traitify {
         const Component = componentFromString(name);
         if(!Component) { return reject(new Error(`Could not find component for ${name}`)); }
 
-        if(typeof targets[name] === "string") {
-          targets[name] = document.querySelector(targets[name]);
-        }
-
-        const target = targets[name];
+        const {props, target} = targets[name];
         if(!target) { return reject(new Error(`Could not select target for ${name}`)); }
         if(target.isConnected) { unmountComponentAtNode(target); }
 
         resolve(render(
           <Components.Container {...this.props}>
-            <Component />
+            <Component {...props} />
           </Components.Container>,
           target
         ));

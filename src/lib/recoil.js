@@ -2,6 +2,7 @@ import {atom, selector} from "recoil";
 
 export const assessmentIDState = atom({key: "assessment-id"});
 export const benchmarkIDState = atom({key: "benchmark-id"});
+export const graphqlState = atom({dangerouslyAllowMutability: true, key: "graphql"});
 export const httpState = atom({dangerouslyAllowMutability: true, key: "http"});
 export const i18nState = atom({dangerouslyAllowMutability: true, key: "i18n"});
 export const listenerState = atom({dangerouslyAllowMutability: true, key: "listener"});
@@ -18,6 +19,7 @@ export const localeState = atom({
 export const optionsState = atom({key: "options"});
 export const profileIDState = atom({key: "profile-id"});
 
+// TODO: Put cache in front of queries with ability to bust it
 export const assessmentQuery = selector({
   get: async({get}) => {
     const assessmentID = get(assessmentIDState);
@@ -49,4 +51,22 @@ export const deckQuery = selector({
     return response;
   },
   key: "deck"
+});
+
+export const guideQuery = selector({
+  get: async({get}) => {
+    const assessmentID = get(assessmentIDState);
+    if(!assessmentID) { return null; }
+
+    const GraphQL = get(graphqlState);
+    const http = get(httpState);
+    const params = {
+      query: GraphQL.guide.get,
+      variables: {assessmentID, localeKey: get(localeState)}
+    };
+    const response = await http.post("/interview_guides/graphql", params);
+
+    return response;
+  },
+  key: "guide"
 });

@@ -1,5 +1,5 @@
-export default function getDetail({name, personality: {details}}) {
-  const {body} = details.find(({title}) => title === name) || {};
+import getDetails from "lib/common/get-details";
 
-  return body;
+export default function getDetail(...options) {
+  return getDetails(...options)[0];
 }

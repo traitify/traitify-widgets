@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
+exports[`PersonalityDimensionDetails renders component 1`] = `
 <div
   className="container"
 >
@@ -8,7 +8,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
     className="header"
   >
     <img
-      alt="Agreeableness badge"
+      alt="Agreeableness Badge"
       src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
@@ -30,7 +30,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   <div
     className="heading"
   >
-    dimension_heading - {"level":"Medium","name":"Agreeableness"}
+    What does my Medium Agreeableness mean for me?
   </div>
   <div
     className="p"
@@ -40,7 +40,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   <div
     className="heading"
   >
-    dimension_heading_for_benefits - {"level":"Medium","name":"Agreeableness"}
+    Medium Agreeableness Potential Benefits
   </div>
   <div
     className="details"
@@ -67,7 +67,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
   <div
     className="heading"
   >
-    room_for_growth_and_change
+    Room for Growth and Change
   </div>
   <div
     className="details"
@@ -94,7 +94,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityDimensionDetails renders component in third person 1`] = `
+exports[`PersonalityDimensionDetails renders component in third person 1`] = `
 <div
   className="container"
 >
@@ -102,7 +102,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
     className="header"
   >
     <img
-      alt="Agreeableness badge"
+      alt="Agreeableness Badge"
       src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
@@ -129,7 +129,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
   <div
     className="heading"
   >
-    potential_benefits
+    Potential Benefits
   </div>
   <div
     className="details"
@@ -156,7 +156,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
   <div
     className="heading"
   >
-    room_for_growth_and_change
+    Room for Growth and Change
   </div>
   <div
     className="details"
@@ -183,7 +183,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component in third person 1
 </div>
 `;
 
-exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`] = `
+exports[`PersonalityDimensionDetails renders component without guide 1`] = `
 <div
   className="container"
 >
@@ -191,7 +191,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
     className="header"
   >
     <img
-      alt="Agreeableness badge"
+      alt="Agreeableness Badge"
       src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
@@ -203,7 +203,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   <div
     className="heading"
   >
-    dimension_heading - {"level":"Medium","name":"Agreeableness"}
+    What does my Medium Agreeableness mean for me?
   </div>
   <div
     className="p"
@@ -213,7 +213,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   <div
     className="heading"
   >
-    dimension_heading_for_benefits - {"level":"Medium","name":"Agreeableness"}
+    Medium Agreeableness Potential Benefits
   </div>
   <div
     className="details"
@@ -240,7 +240,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
   <div
     className="heading"
   >
-    room_for_growth_and_change
+    Room for Growth and Change
   </div>
   <div
     className="details"
@@ -267,7 +267,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without guide 1`]
 </div>
 `;
 
-exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 1`] = `
+exports[`PersonalityDimensionDetails renders component without pitfalls 1`] = `
 <div
   className="container"
 >
@@ -275,7 +275,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
     className="header"
   >
     <img
-      alt="Agreeableness badge"
+      alt="Agreeableness Badge"
       src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
     />
     <div
@@ -297,7 +297,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
   <div
     className="heading"
   >
-    dimension_heading - {"level":"Medium","name":"Agreeableness"}
+    What does my Medium Agreeableness mean for me?
   </div>
   <div
     className="p"
@@ -307,7 +307,7 @@ exports[`Paradox.PersonalityDimensionDetails renders component without pitfalls 
   <div
     className="heading"
   >
-    dimension_heading_for_benefits - {"level":"Medium","name":"Agreeableness"}
+    Medium Agreeableness Potential Benefits
   </div>
   <div
     className="details"

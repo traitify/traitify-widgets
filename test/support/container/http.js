@@ -1,3 +1,5 @@
+import dig from "lib/common/object/dig";
+
 export const mockFetch = (newMock) => {
   container.http.mocks.fetch.unshift(newMock);
   container.http.fetch.mockImplementation((...options) => {
@@ -37,10 +39,30 @@ export const mockDeck = (deck, {id} = {}) => {
   });
 };
 
+export const mockGuide = (guide, {assessmentID} = {}) => {
+  mockFetch({
+    key: "guide",
+    request: (url, options) => {
+      if(!url.includes("/interview_guides/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.assessmentID === (assessmentID || guide.assessmentId);
+    },
+    response: () => guide
+  });
+};
+
 export const useAssessment = (...options) => {
   beforeEach(() => { mockAssessment(...options); });
 };
 
 export const useDeck = (...options) => {
   beforeEach(() => { mockDeck(...options); });
+};
+
+export const useGuide = (...options) => {
+  beforeEach(() => { mockGuide(...options); });
 };

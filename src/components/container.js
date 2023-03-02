@@ -5,10 +5,12 @@ import {RecoilRoot, useRecoilState, useSetRecoilState} from "recoil";
 import slice from "lib/common/object/slice";
 import Http from "lib/http";
 import I18n from "lib/i18n";
+import GraphQL from "lib/graphql";
 import Listener from "lib/listener";
 import {
   assessmentIDState,
   benchmarkIDState,
+  graphqlState,
   httpState,
   i18nState,
   listenerState,
@@ -21,6 +23,7 @@ import {
 function State({children, ...props}) {
   const setAssessmentID = useSetRecoilState(assessmentIDState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);
+  const setGraphql = useSetRecoilState(graphqlState);
   const setHttp = useSetRecoilState(httpState);
   const setI18n = useSetRecoilState(i18nState);
   const setListener = useSetRecoilState(listenerState);
@@ -37,7 +40,7 @@ function State({children, ...props}) {
   } = props;
 
   useEffect(() => {
-    setOptions(options);
+    setOptions({showHeaders: false, showInstructions: true, ...options});
   }, [options]);
 
   useEffect(() => {
@@ -45,6 +48,10 @@ function State({children, ...props}) {
 
     setLocale(locale);
   }, [locale]);
+
+  useEffect(() => {
+    setGraphql(props.graphql || GraphQL);
+  }, [props.graphql]);
 
   useEffect(() => {
     const http = props.http || new Http(slice(props, ["authKey", "host", "version"]));
@@ -88,6 +95,7 @@ function State({children, ...props}) {
 State.defaultProps = {
   assessmentID: null,
   benchmarkID: null,
+  graphql: null,
   http: null,
   i18n: null,
   listener: null,
@@ -99,6 +107,7 @@ State.propTypes = {
   assessmentID: PropTypes.string,
   benchmarkID: PropTypes.string,
   children: PropTypes.node.isRequired,
+  graphql: PropTypes.object,
   http: PropTypes.object,
   i18n: PropTypes.object,
   listener: PropTypes.object,

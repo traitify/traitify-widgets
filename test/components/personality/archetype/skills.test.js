@@ -97,7 +97,7 @@ describe("PersonalityArchetypeSkills", () => {
   });
 
   it("renders component with headers", async() => {
-    mockOption("allowHeaders", true);
+    mockOption("showHeaders", true);
 
     component = await ComponentHandler.setup(Component);
 

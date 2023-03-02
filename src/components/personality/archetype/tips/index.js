@@ -22,10 +22,10 @@ const tipTypes = {
 };
 
 export default function PersonalityArchetypeTips() {
-  const allowHeaders = useOption("allowHeaders");
   const disabled = useDisabledComponent("PersonalityTips");
   const perspective = useInlineMemo((value) => value || "firstPerson", [useOption("perspective")]);
   const results = useResults();
+  const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
   const translate = useTranslate();
@@ -61,7 +61,7 @@ export default function PersonalityArchetypeTips() {
 
   return (
     <div className={style.container}>
-      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_tips")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("personality_tips")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button

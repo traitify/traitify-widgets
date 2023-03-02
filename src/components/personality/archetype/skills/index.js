@@ -53,9 +53,9 @@ const skillTypes = [
 ];
 
 export default function PersonalityArchetypeSkills() {
-  const allowHeaders = useOption("allowHeaders");
   const disabled = useDisabledComponent("PersonalitySkills");
   const results = useResults();
+  const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
   const translate = useTranslate();
@@ -92,7 +92,7 @@ export default function PersonalityArchetypeSkills() {
 
   return (
     <div className={style.container}>
-      {allowHeaders && <div className={style.sectionHeading}>{translate("success_skills")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("success_skills")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button

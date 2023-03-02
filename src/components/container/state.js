@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import PropTypes from "prop-types";
 import {useEffect} from "react";
-import {RecoilRoot, useRecoilState, useSetRecoilState} from "recoil";
+import {useRecoilState, useSetRecoilState} from "recoil";
 import slice from "lib/common/object/slice";
 import Http from "lib/http";
 import I18n from "lib/i18n";
@@ -116,10 +116,4 @@ State.propTypes = {
   profileID: PropTypes.string
 };
 
-export default function Container(props) {
-  return (
-    <RecoilRoot>
-      <State {...props} />
-    </RecoilRoot>
-  );
-}
+export default State;

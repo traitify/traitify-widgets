@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import getDetails from "lib/common/get-details";
+import dig from "lib/common/object/dig";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useInlineMemo from "lib/hooks/use-inline-memo";
@@ -25,7 +26,8 @@ export default function PersonalityBaseDetails() {
 
   useComponentEvents("PersonalityBaseDetails", {activeType, personality, types});
   useEffect(() => {
-    if(!personality) { return; }
+    const details = dig(personality, "details") || [];
+    if(details.length === 0) { return; }
 
     const activeTypes = detailTypes
       .filter(({disableKey}) => !disabledComponents.includes(disableKey))

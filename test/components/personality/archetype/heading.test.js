@@ -66,7 +66,6 @@ describe("PersonalityArchetypeHeading", () => {
       const updatedAssessment = mutable(assessment);
       updatedAssessment.archetype.details = details.filter(({title}) => !title.includes("Badge"));
       mockAssessment(updatedAssessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -76,7 +75,6 @@ describe("PersonalityArchetypeHeading", () => {
       const updatedAssessment = mutable(assessment);
       updatedAssessment.archetype.details = details.filter(({title}) => !title.includes("Video"));
       mockAssessment(updatedAssessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -114,7 +112,6 @@ describe("PersonalityArchetypeHeading", () => {
     const updatedAssessment = mutable(assessment);
     updatedAssessment.archetype = null;
     mockAssessment(updatedAssessment);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

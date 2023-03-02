@@ -52,7 +52,6 @@ describe("PersonalityBaseHeading", () => {
     it("renders component with blend", async() => {
       assessment.archetype = null;
       mockAssessment(assessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -62,7 +61,6 @@ describe("PersonalityBaseHeading", () => {
       assessment.archetype = null;
       assessment.personality_blend = null;
       mockAssessment(assessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -80,7 +78,6 @@ describe("PersonalityBaseHeading", () => {
 
     it("renders component with careers link", async() => {
       mockOption("careersLink", "/careers");
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -104,7 +101,6 @@ describe("PersonalityBaseHeading", () => {
     it("renders component with blend", async() => {
       assessment.archetype = null;
       mockAssessment(assessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -114,7 +110,6 @@ describe("PersonalityBaseHeading", () => {
       assessment.archetype = null;
       assessment.personality_blend = null;
       mockAssessment(assessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -129,7 +124,6 @@ describe("PersonalityBaseHeading", () => {
 
   it("renders component with careers link", async() => {
     mockOption("careersLink", "/careers");
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -137,7 +131,6 @@ describe("PersonalityBaseHeading", () => {
 
   it("renders nothing if disabled", async() => {
     mockOption("disabledComponents", ["PersonalityHeading"]);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -145,7 +138,6 @@ describe("PersonalityBaseHeading", () => {
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

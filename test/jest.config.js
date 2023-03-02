@@ -2,6 +2,7 @@ module.exports = {
   collectCoverageFrom: [
     "<rootDir>/src/**/*.js"
   ],
+  fakeTimers: {enableGlobally: true},
   globals: {
     VERSION: "0.0.0-test"
   },

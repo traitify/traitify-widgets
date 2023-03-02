@@ -47,7 +47,6 @@ describe("PersonalityDimensionDetails", () => {
 
   it("renders component in third person", async() => {
     mockOption("perspective", "thirdPerson");
-
     component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
@@ -55,7 +54,6 @@ describe("PersonalityDimensionDetails", () => {
 
   it("renders component without guide", async() => {
     mockGuide(null, {assessmentID: assessment.id});
-
     component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
@@ -63,7 +61,6 @@ describe("PersonalityDimensionDetails", () => {
 
   it("renders component without pitfalls", async() => {
     mockOption("disabledComponents", ["PersonalityPitfalls"]);
-
     component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();

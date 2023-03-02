@@ -8,6 +8,7 @@ import PersonalityBaseHeading from "./personality/base/heading";
 import PersonalityDimensionChart from "./personality/dimension/chart";
 import PersonalityDimensionDetails from "./personality/dimension/details";
 import PersonalityDimensionList from "./personality/dimension/list";
+import PersonalityRecommendationChart from "./personality/recommendation/chart";
 
 export default {
   Container,
@@ -26,6 +27,9 @@ export default {
       Chart: PersonalityDimensionChart,
       Details: PersonalityDimensionDetails,
       List: PersonalityDimensionList
+    },
+    Recommendation: {
+      Chart: PersonalityRecommendationChart
     }
   }
 };

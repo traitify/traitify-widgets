@@ -41,7 +41,6 @@ describe("PersonalityDimensionChart", () => {
 
   it("renders component without guide", async() => {
     mockGuide(null, {assessmentID: assessment.id});
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -49,7 +48,6 @@ describe("PersonalityDimensionChart", () => {
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

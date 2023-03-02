@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const get = `
   query($assessmentID: String!, $localeKey: String!) {
     guide(
@@ -26,3 +25,5 @@ export const get = `
     }
   }
 `;
+
+export const path = "/interview_guides/graphql";

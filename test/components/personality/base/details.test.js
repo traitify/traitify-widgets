@@ -51,7 +51,6 @@ describe("PersonalityBaseDetails", () => {
     it("renders component with blend", async() => {
       assessment.archetype = null;
       mockAssessment(assessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -61,7 +60,6 @@ describe("PersonalityBaseDetails", () => {
       assessment.archetype = null;
       assessment.personality_blend = null;
       mockAssessment(assessment);
-
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -76,7 +74,6 @@ describe("PersonalityBaseDetails", () => {
 
   it("renders component with headers", async() => {
     mockOption("showHeaders", true);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -85,7 +82,6 @@ describe("PersonalityBaseDetails", () => {
   it("renders component with no environments", async() => {
     assessment.archetype.environments = null;
     mockAssessment(assessment);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -117,7 +113,6 @@ describe("PersonalityBaseDetails", () => {
   it("renders nothing if no details", async() => {
     assessment.archetype.details = null;
     mockAssessment(assessment);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -125,7 +120,6 @@ describe("PersonalityBaseDetails", () => {
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

@@ -72,7 +72,6 @@ describe("PersonalityArchetypeSkills", () => {
     assessment.archetype.details = details
       .filter(({title}) => !title.endsWith(missingDimension.name));
     mockAssessment(assessment);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -82,7 +81,6 @@ describe("PersonalityArchetypeSkills", () => {
     assessment.archetype.details = details
       .filter(({title}) => !title.startsWith("Dealing With Stress - Success Skills"));
     mockAssessment(assessment);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -90,7 +88,6 @@ describe("PersonalityArchetypeSkills", () => {
 
   it("renders component with enabled types", async() => {
     mockOption("disabledComponents", ["Dealing With Stress"]);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -98,7 +95,6 @@ describe("PersonalityArchetypeSkills", () => {
 
   it("renders component with headers", async() => {
     mockOption("showHeaders", true);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -122,7 +118,6 @@ describe("PersonalityArchetypeSkills", () => {
 
   it("renders nothing if disabled", async() => {
     mockOption("disabledComponents", ["PersonalitySkills"]);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -130,7 +125,6 @@ describe("PersonalityArchetypeSkills", () => {
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -138,7 +132,6 @@ describe("PersonalityArchetypeSkills", () => {
 
   it("renders nothing if no archetype", async() => {
     mockAssessment({...assessment, archetype: null});
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -148,7 +141,6 @@ describe("PersonalityArchetypeSkills", () => {
     assessment.archetype.details = details
       .filter(({title}) => !title.includes("Success Skills"));
     mockAssessment(assessment);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

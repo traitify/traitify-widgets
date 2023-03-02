@@ -26,6 +26,24 @@ export const mockAssessment = (assessment, {id} = {}) => {
   });
 };
 
+export const mockBenchmark = (benchmark, {id} = {}) => {
+  container.benchmarkID = id || benchmark?.benchmarkId;
+
+  mockFetch({
+    key: "benchmark",
+    request: (url, options) => {
+      if(!url.includes("/recommendations/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.benchmarkID === container.benchmarkID;
+    },
+    response: () => benchmark
+  });
+};
+
 export const mockDeck = (deck, {id} = {}) => {
   mockFetch({
     key: "deck",
@@ -57,6 +75,10 @@ export const mockGuide = (guide, {assessmentID} = {}) => {
 
 export const useAssessment = (...options) => {
   beforeEach(() => { mockAssessment(...options); });
+};
+
+export const useBenchmark = (...options) => {
+  beforeEach(() => { mockBenchmark(...options); });
 };
 
 export const useDeck = (...options) => {

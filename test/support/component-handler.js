@@ -30,7 +30,7 @@ export default class ComponentHandler {
     const options = {wrap};
     let renderer;
 
-    act(() => {
+    await act(async() => {
       renderer = create(renderComponent(Component, {options, props}), createOptions);
     });
 
@@ -56,11 +56,13 @@ export default class ComponentHandler {
     ));
   }
   unmount() { this.renderer.unmount(); }
-  updateProps(props) {
-    act(() => (
+  async updateProps(props) {
+    await act(async() => {
       this.renderer.update(
         renderComponent(this.Component, {options: this.options, props: {...this.props, ...props}})
-      )
-    ));
+      );
+    });
+
+    await flushAsync();
   }
 }

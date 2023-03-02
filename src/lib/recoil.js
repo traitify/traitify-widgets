@@ -1,7 +1,9 @@
 import {atom, selector} from "recoil";
+import dig from "lib/common/object/dig";
 
 export const assessmentIDState = atom({key: "assessment-id"});
 export const benchmarkIDState = atom({key: "benchmark-id"});
+export const errorState = atom({key: "error"});
 export const graphqlState = atom({dangerouslyAllowMutability: true, key: "graphql"});
 export const httpState = atom({dangerouslyAllowMutability: true, key: "http"});
 export const i18nState = atom({dangerouslyAllowMutability: true, key: "i18n"});
@@ -38,6 +40,31 @@ export const assessmentQuery = selector({
   key: "assessment"
 });
 
+export const benchmarkQuery = selector({
+  get: async({get}) => {
+    let benchmarkID = get(benchmarkIDState);
+    if(!benchmarkID) {
+      const assessment = get(assessmentQuery).valueMaybe();
+      const recommendation = dig(assessment, "recommendation")
+        || dig(assessment, "recommendations", 0);
+      if(!recommendation) { return null; }
+
+      benchmarkID = recommendation.recommendation_id;
+    }
+
+    const GraphQL = get(graphqlState);
+    const http = get(httpState);
+    const params = {
+      query: GraphQL.benchmark.get,
+      variables: {benchmarkID, localeKey: get(localeState)}
+    };
+    const response = await http.post(GraphQL.benchmark.path, params);
+
+    return response;
+  },
+  key: "benchmark"
+});
+
 export const deckQuery = selector({
   get: async({get}) => {
     const assessment = get(assessmentQuery);
@@ -64,7 +91,7 @@ export const guideQuery = selector({
       query: GraphQL.guide.get,
       variables: {assessmentID, localeKey: get(localeState)}
     };
-    const response = await http.post("/interview_guides/graphql", params);
+    const response = await http.post(GraphQL.guide.path, params);
 
     return response;
   },

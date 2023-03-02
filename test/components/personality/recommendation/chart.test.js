@@ -1,0 +1,136 @@
+import Component from "components/personality/recommendation/chart";
+import ComponentHandler from "support/component-handler";
+import {mockAssessment, mockBenchmark, mockGuide, useAssessment, useBenchmark} from "support/container/http";
+import {mockOption} from "support/container/options";
+import useContainer from "support/hooks/use-container";
+import assessment from "support/json/assessment/dimension-based.json";
+import benchmark from "support/json/benchmark.json";
+import _guide from "support/json/guide.json";
+
+describe("PersonalityRecommendationChart", () => {
+  let component;
+  let guide;
+
+  useContainer();
+  useAssessment(assessment);
+  useBenchmark(benchmark);
+
+  beforeEach(() => {
+    guide = {..._guide, assessmentId: assessment.id};
+    mockGuide(guide);
+  });
+
+  describe("callbacks", () => {
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component);
+
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "PersonalityRecommendationChart.initialized",
+        undefined
+      );
+    });
+
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component);
+      component.updateProps();
+
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "PersonalityRecommendationChart.updated",
+        undefined
+      );
+    });
+  });
+
+  describe("update", () => {
+    // TODO: Look into why this one just works
+    it("sets the data if the benchmark changes", async() => {
+      const dimensionRanges = [
+        ...benchmark.dimensionRanges,
+        {id: "1212ddd", dimensionId: "dcf233", matchScore: 5, maxScore: 10, minScore: 0}
+      ];
+      component = await ComponentHandler.setup(Component);
+
+      mockBenchmark({...benchmark, dimensionRanges});
+      container.locale = "EN-US";
+      await component.updateProps();
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    // TODO: Update updateProps to work async?
+    // Looks like locale is working
+    // We are now seeing act issues
+    // Overlapping acts
+    // Is renderer.update mounting a new component or something?
+    it("sets the data if the guide changes", async() => {
+      const competencies = [
+        {...guide.competencies[0], name: "Updated Name"},
+        ...guide.competencies.slice(1)
+      ];
+      component = await ComponentHandler.setup(Component);
+
+      mockGuide({...guide, competencies});
+      container.locale = "EN-US";
+      await component.updateProps();
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("sets the data if the guide's removed", async() => {
+      component = await ComponentHandler.setup(Component);
+
+      mockGuide(null, {assessmentID: assessment.id});
+      container.locale = "EN-US";
+      await component.updateProps();
+
+      expect(component.tree).toMatchSnapshot();
+    });
+  });
+
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component if benchmark not ready", async() => {
+    mockBenchmark(null);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component with combined prop", async() => {
+    component = await ComponentHandler.setup(Component, {props: {combined: true}});
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if disabled", async() => {
+    mockOption("disabledComponents", ["PersonalityRecommendationChart"]);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if guide not ready", async() => {
+    mockGuide(null, {assessmentID: assessment.id});
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if results not ready", async() => {
+    mockAssessment(null);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if no competencies", async() => {
+    mockGuide({...guide, competencies: []});
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+});

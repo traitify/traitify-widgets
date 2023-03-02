@@ -43,7 +43,6 @@ describe("PersonalityDimensionList", () => {
 
   it("renders component with headers", async() => {
     mockOption("showHeaders", true);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -51,7 +50,6 @@ describe("PersonalityDimensionList", () => {
 
   it("renders nothing if disabled", async() => {
     mockOption("disabledComponents", ["PersonalityDimensionDetails", "PersonalityDimensionChart"]);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -59,7 +57,6 @@ describe("PersonalityDimensionList", () => {
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -67,7 +64,6 @@ describe("PersonalityDimensionList", () => {
 
   it("renders chart if details disabled", async() => {
     mockOption("disabledComponents", ["PersonalityDimensionDetails"]);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -75,7 +71,6 @@ describe("PersonalityDimensionList", () => {
 
   it("renders details if chart disabled", async() => {
     mockOption("disabledComponents", ["PersonalityDimensionChart"]);
-
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

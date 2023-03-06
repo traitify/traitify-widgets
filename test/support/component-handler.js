@@ -56,7 +56,7 @@ export default class ComponentHandler {
     ));
   }
   unmount() { this.renderer.unmount(); }
-  async updateProps(props) {
+  async update(props) {
     await act(async() => {
       this.renderer.update(
         renderComponent(this.Component, {options: this.options, props: {...this.props, ...props}})
@@ -64,5 +64,12 @@ export default class ComponentHandler {
     });
 
     await flushAsync();
+  }
+  updateProps(props) {
+    act(() => {
+      this.renderer.update(
+        renderComponent(this.Component, {options: this.options, props: {...this.props, ...props}})
+      );
+    });
   }
 }

@@ -24,7 +24,7 @@ describe("PersonalityDimensionChart", () => {
 
     it("triggers update", async() => {
       component = await ComponentHandler.setup(Component);
-      component.updateProps();
+      await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityDimensionChart.updated",

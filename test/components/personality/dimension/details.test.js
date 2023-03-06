@@ -30,7 +30,7 @@ describe("PersonalityDimensionDetails", () => {
 
     it("triggers update", async() => {
       component = await ComponentHandler.setup(Component, {props});
-      component.updateProps();
+      await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityDimensionDetails.updated",

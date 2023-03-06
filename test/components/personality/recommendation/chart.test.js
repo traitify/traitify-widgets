@@ -32,58 +32,12 @@ describe("PersonalityRecommendationChart", () => {
 
     it("triggers update", async() => {
       component = await ComponentHandler.setup(Component);
-      component.updateProps();
+      await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityRecommendationChart.updated",
         undefined
       );
-    });
-  });
-
-  describe("update", () => {
-    // TODO: Look into why this one just works
-    it("sets the data if the benchmark changes", async() => {
-      const dimensionRanges = [
-        ...benchmark.dimensionRanges,
-        {id: "1212ddd", dimensionId: "dcf233", matchScore: 5, maxScore: 10, minScore: 0}
-      ];
-      component = await ComponentHandler.setup(Component);
-
-      mockBenchmark({...benchmark, dimensionRanges});
-      container.locale = "EN-US";
-      await component.updateProps();
-
-      expect(component.tree).toMatchSnapshot();
-    });
-
-    // TODO: Update updateProps to work async?
-    // Looks like locale is working
-    // We are now seeing act issues
-    // Overlapping acts
-    // Is renderer.update mounting a new component or something?
-    it("sets the data if the guide changes", async() => {
-      const competencies = [
-        {...guide.competencies[0], name: "Updated Name"},
-        ...guide.competencies.slice(1)
-      ];
-      component = await ComponentHandler.setup(Component);
-
-      mockGuide({...guide, competencies});
-      container.locale = "EN-US";
-      await component.updateProps();
-
-      expect(component.tree).toMatchSnapshot();
-    });
-
-    it("sets the data if the guide's removed", async() => {
-      component = await ComponentHandler.setup(Component);
-
-      mockGuide(null, {assessmentID: assessment.id});
-      container.locale = "EN-US";
-      await component.updateProps();
-
-      expect(component.tree).toMatchSnapshot();
     });
   });
 

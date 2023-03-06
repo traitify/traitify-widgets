@@ -54,7 +54,7 @@ describe("PersonalityArchetypeTips", () => {
 
     it("triggers update", async() => {
       component = await ComponentHandler.setup(Component);
-      component.updateProps();
+      await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityTips.updated",

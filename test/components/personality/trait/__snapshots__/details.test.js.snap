@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityTrait renders component 1`] = `
+exports[`PersonalityTrait renders component 1`] = `
 <div
   className="container"
 >

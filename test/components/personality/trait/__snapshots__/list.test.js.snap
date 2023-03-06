@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityTraits renders component 1`] = `
+exports[`PersonalityTraits renders component 1`] = `
 <div
   className="container"
 >
@@ -60,25 +60,25 @@ exports[`Paradox.PersonalityTraits renders component 1`] = `
       onClick={[Function]}
       type="button"
     >
-      show_more
+      Show More
     </button>
   </div>
 </div>
 `;
 
-exports[`Paradox.PersonalityTraits renders component with headers 1`] = `
+exports[`PersonalityTraits renders component with headers 1`] = `
 <div
   className="container"
 >
   <div
     className="sectionHeading"
   >
-    personality_traits
+    Personality Traits
   </div>
   <div
     className="p"
   >
-    personality_traits_description
+    Here are your top 8 traits measured on a scale of 0% to 100%
   </div>
   <div
     className="mock"
@@ -136,13 +136,13 @@ exports[`Paradox.PersonalityTraits renders component with headers 1`] = `
       onClick={[Function]}
       type="button"
     >
-      show_more
+      Show More
     </button>
   </div>
 </div>
 `;
 
-exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
+exports[`PersonalityTraits renders component with more traits 1`] = `
 <div
   className="container"
 >
@@ -334,12 +334,12 @@ exports[`Paradox.PersonalityTraits renders component with more traits 1`] = `
       onClick={[Function]}
       type="button"
     >
-      show_less
+      Show Less
     </button>
   </div>
 </div>
 `;
 
-exports[`Paradox.PersonalityTraits renders nothing if disabled 1`] = `null`;
+exports[`PersonalityTraits renders nothing if disabled 1`] = `null`;
 
-exports[`Paradox.PersonalityTraits renders nothing if not ready 1`] = `null`;
+exports[`PersonalityTraits renders nothing if not ready 1`] = `null`;

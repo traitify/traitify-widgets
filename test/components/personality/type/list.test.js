@@ -1,43 +1,40 @@
-import Component from "components/personality/trait/details";
+import Component from "components/personality/type/list";
 import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/json/assessment/type-based.json";
 
-describe("PersonalityTraitDetails", () => {
+jest.mock("components/personality/type/chart", () => (() => <div className="mock">Chart</div>));
+
+describe("PersonalityTypeChart", () => {
   let component;
-  let props;
 
   useContainer();
   useAssessment(assessment);
 
-  beforeEach(() => {
-    props = {trait: assessment.personality_traits[0]};
-  });
-
   describe("callbacks", () => {
     it("triggers initialization", async() => {
-      await ComponentHandler.setup(Component, {props});
+      await ComponentHandler.setup(Component);
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "PersonalityTrait.initialized",
+        "PersonalityTypes.initialized",
         undefined
       );
     });
 
     it("triggers update", async() => {
-      component = await ComponentHandler.setup(Component, {props});
+      component = await ComponentHandler.setup(Component);
       await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "PersonalityTrait.updated",
+        "PersonalityTypes.updated",
         undefined
       );
     });
   });
 
   it("renders component", async() => {
-    component = await ComponentHandler.setup(Component, {props});
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

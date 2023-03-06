@@ -10,7 +10,7 @@ jest.mock("components/personality/trait/details", () => ((props) => (
   <div className="mock">Trait - {props.trait.personality_trait.name}</div>
 )));
 
-describe("PersonalityTraits", () => {
+describe("PersonalityTraitList", () => {
   let component;
 
   useContainer();

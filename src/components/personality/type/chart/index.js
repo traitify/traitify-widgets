@@ -1,48 +1,44 @@
-import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
-import {detailWithPerspective} from "lib/helpers";
-import {reverse} from "lib/helpers/array";
-import {dig} from "lib/helpers/object";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import useDidMount from "lib/hooks/use-did-mount";
-import useDidUpdate from "lib/hooks/use-did-update";
-import withTraitify from "lib/with-traitify";
+import reverse from "lib/common/array/reverse";
+import getDetail from "lib/common/get-detail";
+import dig from "lib/common/object/dig";
+import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
+import useOption from "lib/hooks/use-option";
+import useResults from "lib/hooks/use-results";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function PersonalityTypeChart({setElement, ...props}) {
-  const {assessment, getOption, translate, ui} = props;
+export default function PersonalityTypeChart() {
   const [activeType, setActiveType] = useState(null);
+  const disabled = useDisabledComponent("PersonalityTypes");
+  const perspective = useOption("perspective");
+  const results = useResults();
+  const showHeaders = useOption("showHeaders");
   const [types, setTypes] = useState([]);
-  const state = {activeType};
+  const translate = useTranslate();
 
-  useDidMount(() => { ui.trigger("PersonalityTypeChart.initialized", {props, state}); });
-  useDidMount(() => { ui.trigger("PersonalityTypes.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityTypeChart.updated", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityTypes.updated", {props, state}); });
+  useComponentEvents("PersonalityTypeChart");
   useEffect(() => {
-    const _types = dig(assessment, "personality_types") || [];
-    if(_types.length === 0) { return; }
-
-    const data = _types.map(({personality_type: type, score}) => ({...type, score}));
+    const data = (dig(results, "personality_types") || [])
+      .map(({personality_type: type, score}) => ({...type, score}));
 
     setTypes(data);
     setActiveType(data[0]);
-  }, [dig(assessment, "personality_types")]);
+  }, [results]);
 
-  const disabledComponents = getOption("disabledComponents") || [];
-  if(disabledComponents.includes("PersonalityTypes")) { return null; }
+  if(disabled) { return null; }
   if(!activeType) { return null; }
 
-  const allowHeaders = getOption("allowHeaders");
   const max = Math.max(...types.map(({score}) => score)) > 10 ? 100 : 10;
   const scale = [0, max * 0.25, max * 0.5, max * 0.75, max];
   const showType = (newID) => setActiveType(types.find(({id}) => newID === id));
   const onChange = ({target: {value}}) => showType(value);
 
-  let description = detailWithPerspective({
-    base: activeType,
+  let description = getDetail({
     name: "description",
-    perspective: getOption("perspective")
+    personality: activeType,
+    perspective
   });
   let title = activeType.name;
 
@@ -54,8 +50,8 @@ function PersonalityTypeChart({setElement, ...props}) {
   }
 
   return (
-    <div className={style.container} ref={setElement}>
-      {allowHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
+    <div className={style.container}>
+      {showHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
       <div className={style.horizontal}>
         {types.map(({badge, id, name, score: _score}, index) => {
           const score = index === 0 ? 95 : _score;
@@ -122,26 +118,3 @@ function PersonalityTypeChart({setElement, ...props}) {
     </div>
   );
 }
-
-PersonalityTypeChart.defaultProps = {assessment: null};
-PersonalityTypeChart.propTypes = {
-  assessment: PropTypes.shape({
-    personality_types: PropTypes.arrayOf(
-      PropTypes.shape({
-        personality_type: PropTypes.shape({
-          badge: PropTypes.shape({image_medium: PropTypes.string.isRequired}).isRequired,
-          id: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired
-        }).isRequired,
-        score: PropTypes.number.isRequired
-      }).isRequired
-    )
-  }),
-  getOption: PropTypes.func.isRequired,
-  setElement: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
-};
-
-export {PersonalityTypeChart as Component};
-export default withTraitify(PersonalityTypeChart);

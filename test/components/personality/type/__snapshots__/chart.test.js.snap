@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.PersonalityTypeChart renders component 1`] = `
+exports[`PersonalityTypeChart renders component 1`] = `
 <div
   className="container"
 >
@@ -17,7 +17,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Naturalist
         </div>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
       </div>
@@ -50,7 +50,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Analyzer
         </div>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
       </div>
@@ -83,7 +83,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Inventor
         </div>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
       </div>
@@ -116,7 +116,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Mentor
         </div>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
       </div>
@@ -149,7 +149,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Planner
         </div>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
       </div>
@@ -182,7 +182,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Visionary
         </div>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
       </div>
@@ -215,7 +215,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
           Action-Taker
         </div>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
       </div>
@@ -400,7 +400,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
         Naturalist
@@ -413,7 +413,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
         Analyzer
@@ -426,7 +426,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
         Inventor
@@ -439,7 +439,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
         Mentor
@@ -452,7 +452,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
         Planner
@@ -465,7 +465,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
         Visionary
@@ -478,7 +478,7 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
     >
       <span>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
         Action-Taker
@@ -543,14 +543,14 @@ exports[`Paradox.PersonalityTypeChart renders component 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
+exports[`PersonalityTypeChart renders component with headers 1`] = `
 <div
   className="container"
 >
   <div
     className="sectionHeading"
   >
-    personality_breakdown
+    Personality Breakdown
   </div>
   <div
     className="horizontal"
@@ -565,7 +565,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Naturalist
         </div>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
       </div>
@@ -598,7 +598,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Analyzer
         </div>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
       </div>
@@ -631,7 +631,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Inventor
         </div>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
       </div>
@@ -664,7 +664,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Mentor
         </div>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
       </div>
@@ -697,7 +697,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Planner
         </div>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
       </div>
@@ -730,7 +730,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Visionary
         </div>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
       </div>
@@ -763,7 +763,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
           Action-Taker
         </div>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
       </div>
@@ -948,7 +948,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
         Naturalist
@@ -961,7 +961,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
         Analyzer
@@ -974,7 +974,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
         Inventor
@@ -987,7 +987,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
         Mentor
@@ -1000,7 +1000,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
         Planner
@@ -1013,7 +1013,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
         Visionary
@@ -1026,7 +1026,7 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
     >
       <span>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
         Action-Taker
@@ -1091,556 +1091,13 @@ exports[`Paradox.PersonalityTypeChart renders component with headers 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeChart renders nothing if disabled 1`] = `null`;
+exports[`PersonalityTypeChart renders nothing if disabled 1`] = `null`;
 
-exports[`Paradox.PersonalityTypeChart renders nothing if no types 1`] = `null`;
+exports[`PersonalityTypeChart renders nothing if no types 1`] = `null`;
 
-exports[`Paradox.PersonalityTypeChart renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityTypeChart renders nothing if results not ready 1`] = `null`;
 
-exports[`Paradox.PersonalityTypeChart update sets the data if the types change 1`] = `
-<div
-  className="container"
->
-  <div
-    className="horizontal"
-  >
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Updated Name
-        </div>
-        <img
-          alt="Updated Name badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#32BF4C",
-              "width": "95%",
-            }
-          }
-        />
-        <div
-          className="score tooBig"
-        >
-          95%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Analyzer
-        </div>
-        <img
-          alt="Analyzer badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#17AEE7",
-              "width": "65.69328%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          66%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Inventor
-        </div>
-        <img
-          alt="Inventor badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#0ee0bd",
-              "width": "56.202103%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Mentor
-        </div>
-        <img
-          alt="Mentor badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#ed4343",
-              "width": "56.041134%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Planner
-        </div>
-        <img
-          alt="Planner badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#f7d00f",
-              "width": "55.745975%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Visionary
-        </div>
-        <img
-          alt="Visionary badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#a75bd8",
-              "width": "54.949894%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          55%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
-          Action-Taker
-        </div>
-        <img
-          alt="Action-Taker badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#e87331",
-              "width": "51.037804%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          51%
-        </div>
-      </div>
-    </div>
-    <div
-      className="scale"
-    >
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div>
-        100
-      </div>
-      <div>
-        75
-      </div>
-      <div>
-        50
-      </div>
-      <div>
-        25
-      </div>
-      <div>
-        0
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#32BF4C",
-              "height": "74.71152%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#17AEE7",
-              "height": "65.69328%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#0ee0bd",
-              "height": "56.202103%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#ed4343",
-              "height": "56.041134%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#f7d00f",
-              "height": "55.745975%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#a75bd8",
-              "height": "54.949894%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#e87331",
-              "height": "51.037804%",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Updated Name badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
-        />
-        Updated Name
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Analyzer badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
-        />
-        Analyzer
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Inventor badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
-        />
-        Inventor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Mentor badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
-        />
-        Mentor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Planner badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
-        />
-        Planner
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Visionary badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
-        />
-        Visionary
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Action-Taker badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
-        />
-        Action-Taker
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="b397ab57-b128-47d6-ac2c-46f5574107b2"
-    >
-      <option
-        value="b397ab57-b128-47d6-ac2c-46f5574107b2"
-      >
-        Updated Name
-      </option>
-      <option
-        value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
-      >
-        Analyzer
-      </option>
-      <option
-        value="eed19717-2014-48ec-b520-bb71f96ebc78"
-      >
-        Inventor
-      </option>
-      <option
-        value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
-      >
-        Mentor
-      </option>
-      <option
-        value="c47d1d99-8f08-44a7-acee-9047732aee29"
-      >
-        Planner
-      </option>
-      <option
-        value="55071620-bca6-4f15-b466-de8733a834a8"
-      >
-        Visionary
-      </option>
-      <option
-        value="3f715970-6fff-4852-853f-ce3dc9291b32"
-      >
-        Action-Taker
-      </option>
-    </select>
-    <div
-      className="heading"
-    >
-      Naturalists
-    </div>
-    <div
-      className="p"
-    >
-      are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
+exports[`PersonalityTypeChart updates activeType 1`] = `
 <div
   className="container"
 >
@@ -1657,7 +1114,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Naturalist
         </div>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
       </div>
@@ -1690,7 +1147,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Analyzer
         </div>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
       </div>
@@ -1723,7 +1180,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Inventor
         </div>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
       </div>
@@ -1756,7 +1213,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Mentor
         </div>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
       </div>
@@ -1789,7 +1246,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Planner
         </div>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
       </div>
@@ -1822,7 +1279,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Visionary
         </div>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
       </div>
@@ -1855,7 +1312,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
           Action-Taker
         </div>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
       </div>
@@ -2040,7 +1497,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
         Naturalist
@@ -2053,7 +1510,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
         Analyzer
@@ -2066,7 +1523,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
         Inventor
@@ -2079,7 +1536,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
         Mentor
@@ -2092,7 +1549,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
         Planner
@@ -2105,7 +1562,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
         Visionary
@@ -2118,7 +1575,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
     >
       <span>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
         Action-Taker
@@ -2183,7 +1640,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType 1`] = `
 </div>
 `;
 
-exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
+exports[`PersonalityTypeChart updates activeType through select 1`] = `
 <div
   className="container"
 >
@@ -2200,7 +1657,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Naturalist
         </div>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
       </div>
@@ -2233,7 +1690,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Analyzer
         </div>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
       </div>
@@ -2266,7 +1723,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Inventor
         </div>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
       </div>
@@ -2299,7 +1756,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Mentor
         </div>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
       </div>
@@ -2332,7 +1789,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Planner
         </div>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
       </div>
@@ -2365,7 +1822,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Visionary
         </div>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
       </div>
@@ -2398,7 +1855,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
           Action-Taker
         </div>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
       </div>
@@ -2583,7 +2040,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Naturalist badge"
+          alt="Naturalist Badge"
           src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
         />
         Naturalist
@@ -2596,7 +2053,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Analyzer badge"
+          alt="Analyzer Badge"
           src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
         />
         Analyzer
@@ -2609,7 +2066,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Inventor badge"
+          alt="Inventor Badge"
           src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
         />
         Inventor
@@ -2622,7 +2079,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Mentor badge"
+          alt="Mentor Badge"
           src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
         />
         Mentor
@@ -2635,7 +2092,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Planner badge"
+          alt="Planner Badge"
           src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
         />
         Planner
@@ -2648,7 +2105,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Visionary badge"
+          alt="Visionary Badge"
           src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
         />
         Visionary
@@ -2661,7 +2118,7 @@ exports[`Paradox.PersonalityTypeChart updates activeType through select 1`] = `
     >
       <span>
         <img
-          alt="Action-Taker badge"
+          alt="Action-Taker Badge"
           src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
         />
         Action-Taker

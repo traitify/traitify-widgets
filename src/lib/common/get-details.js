@@ -1,14 +1,16 @@
 import capitalize from "lib/common/string/capitalize";
 
 const detailsFrom = ({name, personality}) => {
-  const details = personality.details
+  let details = personality.details
     .filter(({title}) => title === name)
     .map(({body}) => body);
   if(details.length > 0) { return details; }
   if(name.includes(" ")) { return details; }
 
-  return (personality[name.toLowerCase()] || [])
-    .map((detail) => detail.title || detail.name);
+  details = (personality[name.toLowerCase()] || []);
+  if(!Array.isArray(details)) { details = [details]; }
+
+  return details.map((detail) => detail.title || detail.name || detail);
 };
 
 const detailsFromPerspective = ({name, personality, perspective: _perspective}) => {

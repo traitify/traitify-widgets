@@ -10,7 +10,11 @@ const allTargets = targets = {
   // "Personality.Dimension.Chart": "#default"
   // "Personality.Dimension.Details": {props: {type: {}}, target: "#default"},
   "Personality.Dimension.List": "#target-6",
-  "Personality.Recommendation.Chart": "#target-7"
+  "Personality.Recommendation.Chart": "#target-7",
+  // "Personality.Trait.Details": {props: {type: {}}, target: "#default"},
+  "Personality.Trait.List": "#target-8",
+  "Personality.Type.Chart": "#target-9",
+  "Personality.Type.List": "#target-10"
 };
 
 function createWidget() {
@@ -19,7 +23,7 @@ function createWidget() {
   if(!assessmentID) { return; }
 
   const targets = {
-    "Personality.Recommendation.Chart": "#default"
+    "Personality.Type.List": "#default"
   };
 
   Traitify.options.assessmentID = assessmentID;

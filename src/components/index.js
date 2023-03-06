@@ -9,6 +9,10 @@ import PersonalityDimensionChart from "./personality/dimension/chart";
 import PersonalityDimensionDetails from "./personality/dimension/details";
 import PersonalityDimensionList from "./personality/dimension/list";
 import PersonalityRecommendationChart from "./personality/recommendation/chart";
+import PersonalityTraitDetails from "./personality/trait/details";
+import PersonalityTraitList from "./personality/trait/list";
+import PersonalityTypeChart from "./personality/type/chart";
+import PersonalityTypeList from "./personality/type/list";
 
 export default {
   Container,
@@ -30,6 +34,14 @@ export default {
     },
     Recommendation: {
       Chart: PersonalityRecommendationChart
+    },
+    Trait: {
+      Details: PersonalityTraitDetails,
+      List: PersonalityTraitList
+    },
+    Type: {
+      Chart: PersonalityTypeChart,
+      List: PersonalityTypeList
     }
   }
 };

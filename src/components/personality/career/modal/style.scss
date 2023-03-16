@@ -1,0 +1,267 @@
+@import "style/helpers";
+
+.modal {
+  background: rgba(0,0,0,0.85);
+  color: #333;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+  transition: top 300ms ease-in-out;
+
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: $font-size * 1.25;
+  }
+}
+
+.container {
+  @extend %container;
+
+  h2, h3, h4 {
+    font-weight: normal;
+  }
+
+  .modalContainer {
+    @include theme("background", "background-color");
+    @include theme("color", "text-color");
+    border-radius: $border-radius-sm * 2.5;
+    padding: $buffer * 1.25 $buffer * 1.25 $buffer-sm * 1.25;
+    text-align: left;
+
+    @include min-width(md) {
+      width: 100%;
+      position: relative;
+      left: 50%;
+      max-width: 650px;
+      margin: $buffer-lg * 3 $buffer-lg * -13.5 0;
+    }
+    @include min-width(lg) {
+      max-width: 800px;
+      margin: $buffer-lg * 3 $buffer-lg * -16.75 0;
+    }
+    @include min-width(xl) {
+      max-width: 1000px;
+      margin: $buffer-lg * 3 $buffer-lg * -20.75 0;
+    }
+  }
+  hr {
+    clear: both;
+    margin: $buffer * 1.25 0;
+  }
+  h4 {
+    margin: 0;
+    font-size: $font-size;
+    @include min-width(md) {
+      font-size: $font-size;
+    }
+  }
+  img {
+    float: right;
+    height: 100px;
+    width: 100px;
+    border-radius: $border-radius-sm * 2.5;
+    margin-right: $buffer * 1.25;
+    @include min-width(md) {
+      float: left;
+    }
+  }
+
+  .grayDivider {
+    color: #555555;
+    width: 100%;
+    margin: $buffer-sm * 1.25 auto $buffer * 1.25;
+    line-height: inherit;
+    clear: both;
+    user-select: none;
+    break-after: page;
+    border: $border-width solid #e8e8ec;
+    border-radius: $border-radius-sm;
+  }
+  .blueDivider {
+    @extend .grayDivider;
+    border: $border-width * 2 solid $-blue;
+    margin-top: $buffer-sm * 1.13;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.careerContainer {
+  display: flex;
+
+  .careerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      margin: 0;
+      font-weight: 500;
+      text-align: left;
+      margin-bottom: $buffer-sm * 1.25;
+      font-size: $font-size-sm * 1.17;
+
+      @include min-width(md) {
+        font-size: $font-size;
+      }
+    }
+    .description {
+      line-height: 1.25;
+      text-align: left;
+      font-size: $font-size-sm;
+      @include min-width(md) {
+        font-size: $font-size-sm * 1.17;
+        line-height: $line-height;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  border: $border-width solid #ddd;
+  padding: $buffer-sm * 1.25 0px;
+  margin: $buffer-lg * 1.25 $buffer * 1.25 $buffer * 1.25 $buffer * 1.25;
+  border-radius: $border-radius-sm * 2.5;
+
+  .contentTabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px $buffer-sm * 1.25;
+
+    .navButton {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: $buffer-sm 1.25;
+      width: 100%;
+      display: none;
+      cursor: pointer;
+
+      @include min-width(md) {
+        display: flex;
+      }
+    }
+    .navButtonActive {
+      @extend .navButton;
+      color: $-blue;
+    }
+    .dropdownContainer {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+
+      @include min-width(md) {
+        display: none;
+      }
+      .dropdown {
+        @include theme("color", "text-color");
+        @include theme("background-color", "background-color");
+        position: absolute;
+        padding: $buffer-sm * .5;
+        width: 100%;
+        border: $border-width solid $-gray;
+        border-top: none;
+        border-radius: $border-radius-sm;
+        top: 47px;
+        .dropdownItem {
+          width: 100%;
+          padding: $buffer-sm * .5 $buffer-sm * 1.25;
+          cursor: pointer;
+        }
+      }
+      .dropdownButton {
+        @include theme("color", "text-color");
+        display: block;
+        width: 100%;
+        height: 42px;
+        background: url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 96% 50%;
+        background-size: 17px;
+        border: $border-width solid $-gray;
+        border-radius: $border-radius-sm;
+        padding-left: $buffer;
+        margin-top: $buffer-sm * .5;
+        margin-bottom: $buffer * 1.25;
+        font-size: $font-size;
+        text-align: left;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 $buffer;
+  width: 100%;
+}
+.listItem {
+  padding-bottom: $buffer;
+
+  .description { font-size: $font-size-sm; }
+  .title { font-weight: 500; }
+}
+
+.job {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include min-width(xs) {
+    flex-direction: row;
+  }
+
+  border: $border-width solid;
+  @include theme(border-color, "border-color-light");
+  border-radius: $border-radius-sm * 2.5;
+  padding: $buffer;
+  width: 100%;
+
+  .applyNowButton {
+    border: 1px solid;
+    @include theme(border-color, "border-color");
+    border-radius: $border-radius-sm !important;
+    @include theme(color, "theme-color");
+    margin-top: $buffer-sm;
+    padding: $buffer-sm $buffer;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+
+    @include min-width(xs) {
+      margin-top: 0;
+    }
+  }
+
+  .jobDetails {
+    display: flex;
+
+    @include min-width(xs) {
+      padding-right: 20px
+    }
+  }
+  .jobIcon {
+    color: gray;
+    margin-right: $buffer-sm;
+  }
+  .jobTitleIcon {
+    @include theme(color, "theme-color");
+    margin-right: $buffer;
+  }
+}

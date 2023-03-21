@@ -26,14 +26,14 @@ export default function CareerModal() {
   useEffect(() => {
     if(!career) { return; }
 
-    const {clubs, majors, inline_jobs: inlineJobs, jobs, employers, resources} = career || {};
+    const {clubs, majors, inline_jobs: inlineJobs, jobs, employers, resources} = career;
     const activeTabs = [
       {Component: Details, title: "Career Info"},
-      clubs.length > 0 && {Component: Clubs, title: "Clubs"},
-      majors.length > 0 && {Component: Majors, title: "Majors"},
-      jobs.length > 0 && inlineJobs && {Component: Jobs, title: "Jobs"},
-      employers.length > 0 && {Component: Employers, title: "Employers"},
-      resources.length > 0 && {Component: Resources, title: "Resources"}
+      clubs && clubs.length > 0 && {Component: Clubs, title: "Clubs"},
+      majors && majors.length > 0 && {Component: Majors, title: "Majors"},
+      jobs && jobs.length > 0 && !inlineJobs && {Component: Jobs, title: "Jobs"},
+      employers && employers.length > 0 && {Component: Employers, title: "Employers"},
+      resources && resources.length > 0 && {Component: Resources, title: "Resources"}
     ].filter(Boolean);
 
     setTabs(activeTabs);

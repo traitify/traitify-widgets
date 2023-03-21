@@ -1,20 +1,25 @@
 Traitify.options.authKey = "sptoechv411aqbqrp4l9a4eg2a";
 Traitify.options.host = "https://api.traitify.com";
 
-const allTargets = targets = {
+const allTargets = {
   "Personality.Archetype.Heading": "#target-1",
   "Personality.Archetype.Skills": "#target-2",
   "Personality.Archetype.Tips": "#target-3",
   "Personality.Base.Details": "#target-5",
   "Personality.Base.Heading": "#target-4",
+  "Personality.Career.Container": "#target-6",
+  // "Personality.Career.Details": "#default",
+  // "Personality.Career.Filter": "#default",
+  // "Personality.Career.List": "#default",
+  // "Personality.Career.Modal": "#default",
   // "Personality.Dimension.Chart": "#default"
   // "Personality.Dimension.Details": {props: {type: {}}, target: "#default"},
-  "Personality.Dimension.List": "#target-6",
-  "Personality.Recommendation.Chart": "#target-7",
+  "Personality.Dimension.List": "#target-7",
+  "Personality.Recommendation.Chart": "#target-8",
   // "Personality.Trait.Details": {props: {type: {}}, target: "#default"},
-  "Personality.Trait.List": "#target-8",
-  "Personality.Type.Chart": "#target-9",
-  "Personality.Type.List": "#target-10"
+  "Personality.Trait.List": "#target-9",
+  "Personality.Type.Chart": "#target-10",
+  "Personality.Type.List": "#target-11"
 };
 
 function createWidget() {
@@ -23,7 +28,7 @@ function createWidget() {
   if(!assessmentID) { return; }
 
   const targets = {
-    "Personality.Type.List": "#default"
+    "Personality.Career.Container": "#default"
   };
 
   Traitify.options.assessmentID = assessmentID;
@@ -45,7 +50,7 @@ function createElement({className, id}) {
 
 function setupTargets() {
   const row = createElement({className: "row", id: "targets"});
-  const total = 10;
+  const total = Object.keys(allTargets).length;
 
   row.appendChild(createElement({id: "default"}));
 

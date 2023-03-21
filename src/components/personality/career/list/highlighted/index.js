@@ -3,14 +3,14 @@ import Career from "components/personality/career/details";
 import style from "./style.scss";
 
 export default function CareerListHighlighted() {
-  const {careers} = useHighlightedCareers();
-  if(careers.length === 0) { return null; }
+  const {records} = useHighlightedCareers();
+  if(records.length === 0) { return null; }
 
   return (
     <div className={style.container}>
       <div className={style.header}>Highlighted Careers</div>
       <div className={style.content}>
-        {careers.map(({career, score}) => (
+        {records.map(({career, score}) => (
           <Career key={career.id} career={{score, ...career}} />
         ))}
       </div>

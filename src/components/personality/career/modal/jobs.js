@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import {
   faBuilding,
   faLocationDot,
@@ -14,8 +15,8 @@ export default function CareerModalJobs() {
 
   return (
     <div className={style.list}>
-      {jobs.map((job) => (
-        <div className={style.listItem} key={job.index}>
+      {jobs.map((job, index) => (
+        <div className={style.listItem} key={index}>
           <div className={style.job}>
             <div className={style.jobDetails}>
               <Icon className={style.jobTitleIcon} icon={faSuitcase} />

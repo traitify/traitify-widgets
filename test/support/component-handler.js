@@ -45,6 +45,16 @@ export default class ComponentHandler {
   get props() { return this.instance.props; }
   get state() { return this.instance.state; }
   get tree() { return this.renderer.toJSON(); }
+  findAllByText(text, options = {}) {
+    const {exact} = {exact: true, ...options};
+    if(exact) { return this.instance.findAll((element) => element.children[0] === text); }
+
+    return this.instance.findAll((element) => (
+      element.children[0]
+      && element.children[0].includes
+      && element.children[0].includes(text)
+    ));
+  }
   findByText(text, options = {}) {
     const {exact} = {exact: true, ...options};
     if(exact) { return this.instance.find((element) => element.children[0] === text); }

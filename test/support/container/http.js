@@ -44,6 +44,22 @@ export const mockBenchmark = (benchmark, {id} = {}) => {
   });
 };
 
+export const mockCareers = (careers, {assessmentID: _assessmentID, page} = {}) => {
+  const assessmentID = _assessmentID || container.assessmentID;
+
+  mockFetch({
+    key: "careers",
+    request: (url, options) => {
+      if(!url.includes(`/assessments/${assessmentID}/matches/careers`)) { return false; }
+      if(options.method !== "GET") { return false; }
+      if(page && !url.includes(`page=${page}`)) { return false; }
+
+      return true;
+    },
+    response: () => careers
+  });
+};
+
 export const mockDeck = (deck, {id} = {}) => {
   mockFetch({
     key: "deck",
@@ -73,18 +89,24 @@ export const mockGuide = (guide, {assessmentID} = {}) => {
   });
 };
 
-export const useAssessment = (...options) => {
-  beforeEach(() => { mockAssessment(...options); });
+export const mockHighlightedCareers = (careers, {path} = {}) => {
+  mockFetch({
+    key: "highlighted-careers",
+    request: (url, options) => {
+      if(!url.includes(path)) { return false; }
+      if(options.method !== "GET") { return false; }
+
+      return true;
+    },
+    response: () => careers
+  });
 };
 
-export const useBenchmark = (...options) => {
-  beforeEach(() => { mockBenchmark(...options); });
-};
-
-export const useDeck = (...options) => {
-  beforeEach(() => { mockDeck(...options); });
-};
-
-export const useGuide = (...options) => {
-  beforeEach(() => { mockGuide(...options); });
+export const useAssessment = (...options) => { beforeEach(() => { mockAssessment(...options); }); };
+export const useBenchmark = (...options) => { beforeEach(() => { mockBenchmark(...options); }); };
+export const useCareers = (...options) => { beforeEach(() => { mockCareers(...options); }); };
+export const useDeck = (...options) => { beforeEach(() => { mockDeck(...options); }); };
+export const useGuide = (...options) => { beforeEach(() => { mockGuide(...options); }); };
+export const useHighlightedCareers = (...options) => {
+  beforeEach(() => { mockHighlightedCareers(...options); });
 };

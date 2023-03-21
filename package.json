@@ -92,13 +92,13 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "apexcharts": "^3.37.1",
     "color": "^4.2.3",
     "core-js": "^3.25.5",
     "graphql-obj2arg": "^0.1.0",
-    "highcharts": "^10.2.1",
-    "highcharts-react-official": "^3.1.0",
     "markdown-to-jsx": "^7.1.7",
     "prop-types": "^15.8.1",
+    "react-apexcharts": "^1.4.0",
     "recoil": "^0.7.6",
     "regenerator-runtime": "^0.13.10",
     "uuid": "^9.0.0"

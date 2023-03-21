@@ -12,39 +12,21 @@ import {useState} from "react";
 import DangerousHTML from "components/common/dangerous-html";
 import Icon from "components/common/icon";
 import useCareer from "lib/hooks/use-career";
-import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
+import Chart from "./chart";
 import style from "./style.scss";
 
 export default function CareerModalDetails() {
   const career = useCareer();
-  const results = useResults();
   const translate = useTranslate();
   const [showLegend, setShowLegend] = useState(false);
 
   if(!career) { return null; }
-  if(!results) { return null; }
 
   let salary = career.salary_projection && career.salary_projection.annual_salary_mean;
   salary = salary && `$${Math.round(salary)}`;
   let growth = career.employment_projection && career.employment_projection.percent_growth_2022;
   growth = growth && `${growth}%`;
-
-  const careerTraitIDs = career.personality_traits.map((trait) => trait.personality_trait?.id);
-  const careerTraits = career.personality_traits.map((trait, index) => ({
-    description: trait.personality_trait?.definition || `Trait ${index + 1}`,
-    name: trait.personality_trait?.name || `Trait ${index + 1}`,
-    y: trait.weight
-  }));
-
-  const assessmentTraits = results.personality_traits
-    .filter((trait) => careerTraitIDs.includes(trait.personality_trait?.id))
-    .map((trait, index) => ({
-      description: trait.personality_trait?.definition || `Trait ${index + 1}`,
-      name: trait.personality_trait?.name || `Trait ${index + 1}`,
-      y: Math.round((trait.score + 100) / 2)
-    }));
-
   const toggleLegend = () => { setShowLegend(!showLegend); };
 
   return (
@@ -146,21 +128,7 @@ export default function CareerModalDetails() {
               <span data-match-rate={`${career.score}%`} style={{width: `${career.score}%`}} />
             </div>
           </div>
-          <div className={style.chartContainer}>
-            <HighChart
-              xAxis={{type: "category"}}
-              chart={{type: "area", polar: true, height: "300px"}}
-              legend={{layout: "vertical", align: "center", verticalAlign: "top", width: 300, itemStyle: {width: 200}, marginTop: 0, marginBottom: 0}}
-              series={[{
-                name: `${career.title} Traits`,
-                data: careerTraits.sort((a, b) => ((a.name > b.name) ? 1 : -1))
-              }, {
-                name: "Your Traits",
-                data: assessmentTraits.sort((a, b) => ((a.name > b.name) ? 1 : -1))
-              }]}
-            />
-            <span style={{width: "100%"}} />
-          </div>
+          <Chart />
         </div>
       </div>
     </div>

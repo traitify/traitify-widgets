@@ -1,6 +1,6 @@
-import useLoadedValue from "lib/hooks/use-loaded-value";
+import {useRecoilValue} from "recoil";
 import {careerState} from "lib/recoil";
 
 export default function useCareer() {
-  return useLoadedValue(careerState);
+  return useRecoilValue(careerState);
 }

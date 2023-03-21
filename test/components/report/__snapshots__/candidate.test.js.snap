@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.CandidateResults renders component 1`] = `
+exports[`Report.Candidate renders component 1`] = `
 <section
   className="container"
 >

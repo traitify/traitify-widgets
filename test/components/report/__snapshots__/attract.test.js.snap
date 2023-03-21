@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.TypeBasedResults renders component 1`] = `
+exports[`Report.Attract renders component 1`] = `
 <section
   className="container"
 >
   <div
     className="mock"
   >
-    Personality Base
+    Personality Base Heading
   </div>
   <div
     className="mock"
@@ -22,7 +22,7 @@ exports[`Paradox.TypeBasedResults renders component 1`] = `
   <div
     className="mock"
   >
-    Personality Details
+    Personality Base Details
   </div>
 </section>
 `;

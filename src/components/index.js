@@ -18,6 +18,10 @@ import PersonalityTraitDetails from "./personality/trait/details";
 import PersonalityTraitList from "./personality/trait/list";
 import PersonalityTypeChart from "./personality/type/chart";
 import PersonalityTypeList from "./personality/type/list";
+import AttractReport from "./report/attract";
+import CandidateReport from "./report/candidate";
+import EmployeeReport from "./report/employee";
+import ManagerReport from "./report/manager";
 
 export default {
   Container,
@@ -55,5 +59,11 @@ export default {
       Chart: PersonalityTypeChart,
       List: PersonalityTypeList
     }
+  },
+  Report: {
+    Attract: AttractReport,
+    Candidate: CandidateReport,
+    Employee: EmployeeReport,
+    Manager: ManagerReport
   }
 };

@@ -19,7 +19,11 @@ const allTargets = {
   // "Personality.Trait.Details": {props: {type: {}}, target: "#default"},
   "Personality.Trait.List": "#target-9",
   "Personality.Type.Chart": "#target-10",
-  "Personality.Type.List": "#target-11"
+  "Personality.Type.List": "#target-11",
+  "Report.Attract": "#target-12",
+  "Report.Candidate": "#target-13",
+  "Report.Employee": "#target-14",
+  "Report.Manager": "#target-15"
 };
 
 function createWidget() {
@@ -28,7 +32,7 @@ function createWidget() {
   if(!assessmentID) { return; }
 
   const targets = {
-    "Personality.Career.Container": "#default"
+    "Report.Candidate": "#default"
   };
 
   Traitify.options.assessmentID = assessmentID;

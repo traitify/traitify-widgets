@@ -32,7 +32,7 @@ function createWidget() {
   if(!assessmentID) { return; }
 
   const targets = {
-    "Report.Candidate": "#default"
+    "Report.Manager": "#default"
   };
 
   Traitify.options.assessmentID = assessmentID;

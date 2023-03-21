@@ -14,7 +14,7 @@ export const benchmarkQuery = selector({
   get: async({get}) => {
     let benchmarkID = get(benchmarkIDState);
     if(!benchmarkID) {
-      const assessment = get(assessmentQuery).valueMaybe();
+      const assessment = await get(assessmentQuery);
       const recommendation = dig(assessment, "recommendation")
         || dig(assessment, "recommendations", 0);
       if(!recommendation) { return null; }
@@ -29,8 +29,9 @@ export const benchmarkQuery = selector({
       variables: {benchmarkID, localeKey: get(localeState)}
     };
     const response = await http.post(GraphQL.benchmark.path, params);
+    if(response.errors) { console.warn("benchmark", response.errors); } /* eslint-disable-line no-console */
 
-    return response;
+    return response.data.getDimensionRangeBenchmark;
   },
   key: "benchmark"
 });

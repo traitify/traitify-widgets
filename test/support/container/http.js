@@ -40,7 +40,7 @@ export const mockBenchmark = (benchmark, {id} = {}) => {
 
       return variables.benchmarkID === container.benchmarkID;
     },
-    response: () => benchmark
+    response: () => ({data: {getDimensionRangeBenchmark: benchmark}})
   });
 };
 
@@ -85,7 +85,7 @@ export const mockGuide = (guide, {assessmentID} = {}) => {
 
       return variables.assessmentID === (assessmentID || guide.assessmentId);
     },
-    response: () => guide
+    response: () => ({data: {guide}})
   });
 };
 

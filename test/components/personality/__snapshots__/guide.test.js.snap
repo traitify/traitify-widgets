@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paradox.Guide renders component 1`] = `
+exports[`Personality.Guide renders component 1`] = `
 <div
   className="container"
 >
@@ -95,7 +95,9 @@ exports[`Paradox.Guide renders component 1`] = `
       Openness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
 The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
 In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
@@ -112,7 +114,7 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_more
+        Show More
       </button>
     </div>
     <div
@@ -246,7 +248,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
+exports[`Personality.Guide renders component if benchmark not ready 1`] = `
 <div
   className="container"
 >
@@ -341,7 +343,9 @@ exports[`Paradox.Guide renders component if benchmark not ready 1`] = `
       Openness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
 The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
 In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
@@ -358,7 +362,7 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_more
+        Show More
       </button>
     </div>
     <div
@@ -492,7 +496,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Paradox.Guide renders component with combined prop 1`] = `
+exports[`Personality.Guide renders component with combined prop 1`] = `
 <div
   className="container combined"
 >
@@ -587,7 +591,9 @@ exports[`Paradox.Guide renders component with combined prop 1`] = `
       Openness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
 The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
 In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
@@ -604,7 +610,7 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_more
+        Show More
       </button>
     </div>
     <div
@@ -738,15 +744,15 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Paradox.Guide renders nothing if disabled 1`] = `null`;
+exports[`Personality.Guide renders nothing if disabled 1`] = `null`;
 
-exports[`Paradox.Guide renders nothing if guide not ready 1`] = `null`;
+exports[`Personality.Guide renders nothing if guide not ready 1`] = `null`;
 
-exports[`Paradox.Guide renders nothing if no competencies 1`] = `null`;
+exports[`Personality.Guide renders nothing if no competencies 1`] = `null`;
 
-exports[`Paradox.Guide renders nothing if results not ready 1`] = `null`;
+exports[`Personality.Guide renders nothing if results not ready 1`] = `null`;
 
-exports[`Paradox.Guide toggles expanded intro 1`] = `
+exports[`Personality.Guide toggles expanded intro 1`] = `
 <div
   className="container"
 >
@@ -841,7 +847,9 @@ exports[`Paradox.Guide toggles expanded intro 1`] = `
       Openness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
 The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
 In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
@@ -858,11 +866,11 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_less
+        Show Less
       </button>
     </div>
     <span
-      className="p expandedIntro"
+      className="p expandedIntro traitify--markdown"
     />
     <div
       className="divider"
@@ -995,7 +1003,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Paradox.Guide toggles question content 1`] = `
+exports[`Personality.Guide toggles question content 1`] = `
 <div
   className="container"
 >
@@ -1090,7 +1098,9 @@ exports[`Paradox.Guide toggles question content 1`] = `
       Openness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
 The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
 In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
@@ -1107,7 +1117,7 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_more
+        Show More
       </button>
     </div>
     <div
@@ -1202,7 +1212,9 @@ The first question is looking to confirm what they should be like; the second tw
           <div
             className="list"
           >
-            <p>
+            <p
+              className="traitify--markdown"
+            >
               How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?
@@ -1211,7 +1223,9 @@ Does this 'conflict' sometimes show itself in taking a very cautious approach?
           <div
             className="list"
           >
-            <p>
+            <p
+              className="traitify--markdown"
+            >
               Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
 Can they give an example of using either of these extremes?
 What do they do to stop themselves getting stuck on the 'middle way' of doing things?
@@ -1263,991 +1277,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
 </div>
 `;
 
-exports[`Paradox.Guide update sets the guide data if the benchmark changes 1`] = `
-<div
-  className="container"
->
-  <div
-    className="tabs"
-  >
-    <button
-      className="active high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Solving Problems
-      </span>
-    </button>
-    <button
-      className="other"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Delivering Results
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
-      </span>
-    </button>
-    <button
-      className="high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Managing Pressure
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-    >
-      <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-      >
-        Solving Problems
-      </option>
-      <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-      >
-        Delivering Results
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
-      </option>
-      <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-      >
-        Managing Pressure
-      </option>
-    </select>
-    <div
-      className="heading high"
-    >
-      Solving Problems
-       (
-      Openness
-      )
-    </div>
-    <p>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
-The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
-In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
-They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
-Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
-    </p>
-    <div
-      className="p"
-    >
-      <button
-        className="readMore"
-        onClick={[Function]}
-        type="button"
-      >
-        show_more
-      </button>
-    </div>
-    <div
-      className="divider"
-    />
-    <div>
-      <div
-        className="heading"
-      >
-        Open-Minded/Pragmatic People
-      </div>
-      <div
-        className="p"
-      >
-        Tell me how you would go about solving a work problem you have not encountered before.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.Guide update sets the guide data if the guide's assessment ID changes 1`] = `
-<div
-  className="container"
->
-  <div
-    className="tabs"
-  >
-    <button
-      className="active high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Updated Name
-      </span>
-    </button>
-    <button
-      className="other"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Delivering Results
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
-      </span>
-    </button>
-    <button
-      className="high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Managing Pressure
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-    >
-      <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-      >
-        Updated Name
-      </option>
-      <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-      >
-        Delivering Results
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
-      </option>
-      <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-      >
-        Managing Pressure
-      </option>
-    </select>
-    <div
-      className="heading high"
-    >
-      Updated Name
-       (
-      Openness
-      )
-    </div>
-    <p>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
-The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
-In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
-They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
-Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
-    </p>
-    <div
-      className="p"
-    >
-      <button
-        className="readMore"
-        onClick={[Function]}
-        type="button"
-      >
-        show_more
-      </button>
-    </div>
-    <div
-      className="divider"
-    />
-    <div>
-      <div
-        className="heading"
-      >
-        Open-Minded/Pragmatic People
-      </div>
-      <div
-        className="p"
-      >
-        Tell me how you would go about solving a work problem you have not encountered before.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.Guide update sets the guide data if the guide's locale changes 1`] = `
-<div
-  className="container"
->
-  <div
-    className="tabs"
-  >
-    <button
-      className="active high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Solving Problems
-      </span>
-    </button>
-    <button
-      className="other"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Delivering Results
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
-      </span>
-    </button>
-    <button
-      className="high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Managing Pressure
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-    >
-      <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-      >
-        Solving Problems
-      </option>
-      <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-      >
-        Delivering Results
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
-      </option>
-      <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-      >
-        Managing Pressure
-      </option>
-    </select>
-    <div
-      className="heading high"
-    >
-      Solving Problems
-       (
-      Openness
-      )
-    </div>
-    <p>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
-The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
-In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
-They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
-Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
-    </p>
-    <div
-      className="p"
-    >
-      <button
-        className="readMore"
-        onClick={[Function]}
-        type="button"
-      >
-        show_more
-      </button>
-    </div>
-    <div
-      className="divider"
-    />
-    <div>
-      <div
-        className="heading"
-      >
-        Open-Minded/Pragmatic People
-      </div>
-      <div
-        className="p"
-      >
-        Tell me how you would go about solving a work problem you have not encountered before.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.Guide update sets the guide data if the guide's removed 1`] = `
-<div
-  className="container"
->
-  <div
-    className="tabs"
-  >
-    <button
-      className="active high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Solving Problems
-      </span>
-    </button>
-    <button
-      className="other"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Delivering Results
-      </span>
-    </button>
-    <button
-      className="low"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Engaging with People
-      </span>
-    </button>
-    <button
-      className="high"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Influencing People
-      </span>
-    </button>
-    <button
-      className="medium"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Managing Pressure
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-    >
-      <option
-        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
-      >
-        Solving Problems
-      </option>
-      <option
-        value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
-      >
-        Delivering Results
-      </option>
-      <option
-        value="5064521c-1028-40d4-8baa-dfeff734406f"
-      >
-        Engaging with People
-      </option>
-      <option
-        value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
-      >
-        Influencing People
-      </option>
-      <option
-        value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
-      >
-        Managing Pressure
-      </option>
-    </select>
-    <div
-      className="heading high"
-    >
-      Solving Problems
-       (
-      Openness
-      )
-    </div>
-    <p>
-      At the top level, Solving Problems (O) concerns how someone thinks about work problems, projects and challenges, how receptive they are to new or different information or approaches, and the way this influences their decision making.
-The benefits of being open-minded are likely to include approaching problems in original ways, making quick connections, pushing boundaries, seeing the bigger picture, and not getting stuck in the detail.
-In contrast someone who is pragmatic likes to solve problems in practical ways, and prefers tried-andtested solutions or established rules and regulations.
-They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
-Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
-These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
-    </p>
-    <div
-      className="p"
-    >
-      <button
-        className="readMore"
-        onClick={[Function]}
-        type="button"
-      >
-        show_more
-      </button>
-    </div>
-    <div
-      className="divider"
-    />
-    <div>
-      <div
-        className="heading"
-      >
-        Open-Minded/Pragmatic People
-      </div>
-      <div
-        className="p"
-      >
-        Tell me how you would go about solving a work problem you have not encountered before.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-      <div
-        className="p"
-      >
-        (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-      </div>
-      <div
-        className="question"
-      >
-        <button
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="number"
-          >
-            
-          </div>
-          <div
-            className="divider"
-          />
-          <div
-            className="prompt"
-          >
-            <div
-              className="text"
-            >
-              
-            </div>
-            <span
-              className="arrow traitify--icon-fa"
-              dangerouslySetInnerHTML={
-                {
-                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
-                }
-              }
-            />
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paradox.Guide updates activeCompetency 1`] = `
+exports[`Personality.Guide updates activeCompetency 1`] = `
 <div
   className="container"
 >
@@ -2342,7 +1372,9 @@ exports[`Paradox.Guide updates activeCompetency 1`] = `
       Conscientiousness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
 The level of self-discipline, dedication, orderliness and reliability are all hallmarks of the organized person.
 The benefits of being focused are likely to include obvious things like creating a structure for work and being task focused; but also having a pride in doing a job well, paying attention over the long term, and being disciplined even when work is routine or 'boring'.
@@ -2359,7 +1391,7 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_more
+        Show More
       </button>
     </div>
     <div
@@ -2493,7 +1525,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Paradox.Guide updates activeCompetency through select 1`] = `
+exports[`Personality.Guide updates activeCompetency through select 1`] = `
 <div
   className="container"
 >
@@ -2588,7 +1620,9 @@ exports[`Paradox.Guide updates activeCompetency through select 1`] = `
       Conscientiousness
       )
     </div>
-    <p>
+    <p
+      className="traitify--markdown"
+    >
       At the top level, Delivering Results (C) concerns work style and how someone directs their efforts and attention toward completing tasks.
 The level of self-discipline, dedication, orderliness and reliability are all hallmarks of the organized person.
 The benefits of being focused are likely to include obvious things like creating a structure for work and being task focused; but also having a pride in doing a job well, paying attention over the long term, and being disciplined even when work is routine or 'boring'.
@@ -2605,7 +1639,7 @@ The first question is looking to confirm what they should be like; the second tw
         onClick={[Function]}
         type="button"
       >
-        show_more
+        Show More
       </button>
     </div>
     <div

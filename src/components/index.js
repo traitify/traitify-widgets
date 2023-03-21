@@ -13,6 +13,7 @@ import PersonalityCareerModal from "./personality/career/modal";
 import PersonalityDimensionChart from "./personality/dimension/chart";
 import PersonalityDimensionDetails from "./personality/dimension/details";
 import PersonalityDimensionList from "./personality/dimension/list";
+import PersonalityGuide from "./personality/guide";
 import PersonalityRecommendationChart from "./personality/recommendation/chart";
 import PersonalityTraitDetails from "./personality/trait/details";
 import PersonalityTraitList from "./personality/trait/list";
@@ -48,6 +49,7 @@ export default {
       Details: PersonalityDimensionDetails,
       List: PersonalityDimensionList
     },
+    Guide: PersonalityGuide,
     Recommendation: {
       Chart: PersonalityRecommendationChart
     },

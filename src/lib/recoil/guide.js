@@ -20,8 +20,9 @@ export const guideQuery = selector({
       variables: {assessmentID, localeKey: get(localeState)}
     };
     const response = await http.post(GraphQL.guide.path, params);
+    if(response.errors) { console.warn("guide", response.errors); } /* eslint-disable-line no-console */
 
-    return response;
+    return response.data.guide;
   },
   key: "guide"
 });

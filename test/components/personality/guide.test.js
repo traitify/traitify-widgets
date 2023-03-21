@@ -1,4 +1,5 @@
-import Component from "components/personality/recommendation/chart";
+import {act} from "react-test-renderer";
+import Component from "components/personality/guide";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockBenchmark, mockGuide, useAssessment, useBenchmark} from "support/container/http";
 import {mockOption} from "support/container/options";
@@ -7,7 +8,7 @@ import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
 import _guide from "support/json/guide.json";
 
-describe("PersonalityRecommendationChart", () => {
+describe("Personality.Guide", () => {
   let component;
   let guide;
 
@@ -25,8 +26,8 @@ describe("PersonalityRecommendationChart", () => {
       await ComponentHandler.setup(Component);
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "PersonalityRecommendationChart.initialized",
-        undefined
+        "Guide.initialized",
+        {activeCompetency: null}
       );
     });
 
@@ -35,10 +36,46 @@ describe("PersonalityRecommendationChart", () => {
       await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "PersonalityRecommendationChart.updated",
-        undefined
+        "Guide.updated",
+        {activeCompetency: null}
       );
     });
+  });
+
+  it("toggles expanded intro", async() => {
+    component = await ComponentHandler.setup(Component);
+    act(() => component.findByText("Show More").props.onClick());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("toggles question content", async() => {
+    component = await ComponentHandler.setup(Component);
+    const question = guide.competencies[0].questionSequences[0].questions[1];
+    const button = component.findByText(question.text, {exact: false})
+      .parent.findByType("button");
+    act(() => button.props.onClick());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("updates activeCompetency", async() => {
+    component = await ComponentHandler.setup(Component);
+    const text = guide.competencies[1].name;
+    const button = component.instance
+      .find((element) => element.children[0] === text && element.type === "span")
+      .parent;
+    act(() => button.props.onClick());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("updates activeCompetency through select", async() => {
+    component = await ComponentHandler.setup(Component);
+    const value = guide.competencies[1].id;
+    act(() => component.instance.findByType("select").props.onChange({target: {value}}));
+
+    expect(component.tree).toMatchSnapshot();
   });
 
   it("renders component", async() => {
@@ -61,7 +98,7 @@ describe("PersonalityRecommendationChart", () => {
   });
 
   it("renders nothing if disabled", async() => {
-    mockOption("disabledComponents", ["PersonalityRecommendationChart"]);
+    mockOption("disabledComponents", ["InterviewGuide"]);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

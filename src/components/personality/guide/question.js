@@ -1,8 +1,8 @@
 import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
-import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
 import {useState} from "react";
-import Icon from "lib/helpers/icon";
+import Markdown from "components/common/markdown";
+import Icon from "components/common/icon";
 import style from "./style.scss";
 
 function Question({question}) {

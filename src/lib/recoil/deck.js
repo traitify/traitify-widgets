@@ -9,7 +9,7 @@ import {
 // TODO: Put cache in front of queries with ability to bust it
 export const deckQuery = selector({
   get: async({get}) => {
-    const assessment = get(assessmentQuery);
+    const assessment = await get(assessmentQuery);
     if(!assessment) { return null; }
 
     const deckID = assessment.deck_id;

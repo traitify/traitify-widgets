@@ -1,7 +1,7 @@
 export const get = `
   query($benchmarkID: String!, $localeKey: String!) {
     getDimensionRangeBenchmark(
-      benchmarkID: $benchmarkID,
+      benchmarkId: $benchmarkID,
       localeKey: $localeKey
     ) {
       benchmarkId
@@ -25,7 +25,7 @@ export const get = `
         maxScore
         minScore
         visualDescription
-        visualHex"
+        visualHex
       }
     }
   }

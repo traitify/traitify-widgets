@@ -3,6 +3,8 @@ import Traitify from "lib/traitify";
 import {render, unmountComponentAtNode} from "react-dom";
 
 jest.mock("react-dom");
+jest.mock("components/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
+jest.mock("components/personality/type/list", () => (() => <div className="mock">Personality Types</div>));
 
 const createElement = (options = {}) => {
   const element = document.createElement("div");
@@ -100,17 +102,15 @@ describe("Traitify", () => {
 
     it("renders targets", () => {
       const targets = {
-        PersonalityBlend: "#blend",
-        PersonalityTraits: "#traits",
-        PersonalityTypes: "#types"
+        "Personality.Trait.List": "#traits",
+        "Personality.Type.List": "#types"
       };
 
       return traitify.render(targets).then(() => {
-        expect(render).toHaveBeenCalledTimes(3);
+        expect(render).toHaveBeenCalledTimes(2);
         expect(traitify.renderedTargets).toEqual({
-          PersonalityBlend: expect.any(Object),
-          PersonalityTraits: expect.any(Object),
-          PersonalityTypes: expect.any(Object)
+          "Personality.Trait.List": expect.any(Object),
+          "Personality.Type.List": expect.any(Object)
         });
       });
     });

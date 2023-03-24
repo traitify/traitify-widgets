@@ -2,6 +2,7 @@ import {atom} from "recoil";
 
 export const assessmentIDState = atom({key: "assessment-id"});
 export const benchmarkIDState = atom({key: "benchmark-id"});
+export const cacheState = atom({dangerouslyAllowMutability: true, key: "cache"});
 export const errorState = atom({key: "error"});
 export const graphqlState = atom({dangerouslyAllowMutability: true, key: "graphql"});
 export const httpState = atom({dangerouslyAllowMutability: true, key: "http"});

@@ -1,0 +1,332 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey.Cognitive renders instructions 1`] = `
+<div
+  className="mock"
+>
+  Instructions
+</div>
+`;
+
+exports[`Survey.Cognitive renders loading after skipped slides finished 1`] = `
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive renders loading after skipped slides skipped 1`] = `
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive renders loading if questions finished 1`] = `
+<div
+  className="loadingContainer"
+>
+  <div
+    className="loading"
+  >
+    <i />
+    <i />
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive renders nothing if results ready 1`] = `null`;
+
+exports[`Survey.Cognitive renders skipped slides 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="mock"
+    >
+      4:59
+    </div>
+    <div
+      className="status"
+    >
+      <span>
+        cognitive_skipped_questions
+         
+      </span>
+      <span>
+        1
+         / 
+        1
+      </span>
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive renders slide 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="mock"
+    >
+      4:59
+    </div>
+    <div
+      className="status"
+    >
+      <span>
+        1
+         / 
+        30
+      </span>
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "3.3333333333333335%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive renders slide with disability 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="mock"
+    >
+      4:59
+    </div>
+    <div
+      className="status"
+    >
+      <span>
+        1
+         / 
+        30
+      </span>
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "3.3333333333333335%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive renders slide with time limit disabled 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="statusContainer"
+  >
+    <div
+      className="status"
+    >
+      <span>
+        1
+         / 
+        30
+      </span>
+    </div>
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "3.3333333333333335%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+  <div
+    className="mock"
+  >
+    Slide
+  </div>
+</div>
+`;
+
+exports[`Survey.Cognitive submit submits query 1`] = `
+[MockFunction post] {
+  "calls": [
+    [
+      "/cognitive-tests/graphql",
+      {
+        "query": "
+      mutation(
+        $answers: [QuestionAnswer]!,
+        $learningDisability: Boolean,
+        $overallTimeTaken: Int!,
+        $testId: String!
+      ) {
+        completeCognitiveTest(
+          answers: $answers,
+          learningDisability: $learningDisability,
+          overallTimeTaken: $overallTimeTaken,
+          testId: $testId
+        ) {
+          message success
+        }
+      }
+    ",
+        "variables": {
+          "answers": [
+            {
+              "answerId": "75abbb68-1e19-46ee-bd1d-74b6469210ac",
+              "questionId": "a1e24a1a-0874-4f31-975a-9244ae74a3f3",
+              "skipped": false,
+              "timeTaken": 600,
+            },
+          ],
+          "learningDisability": false,
+          "overallTimeTaken": 2,
+          "testId": "21f359be-91ed-481a-9d64-dbec755bc866",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
+exports[`Survey.Cognitive submit submits query with fallbacks 1`] = `
+[MockFunction post] {
+  "calls": [
+    [
+      "/cognitive-tests/graphql",
+      {
+        "query": "
+      mutation(
+        $answers: [QuestionAnswer]!,
+        $learningDisability: Boolean,
+        $overallTimeTaken: Int!,
+        $testId: String!
+      ) {
+        completeCognitiveTest(
+          answers: $answers,
+          learningDisability: $learningDisability,
+          overallTimeTaken: $overallTimeTaken,
+          testId: $testId
+        ) {
+          message success
+        }
+      }
+    ",
+        "variables": {
+          "answers": [
+            {
+              "questionId": "a1e24a1a-0874-4f31-975a-9244ae74a3f3",
+              "skipped": true,
+              "timeTaken": 1,
+            },
+          ],
+          "learningDisability": false,
+          "overallTimeTaken": 2,
+          "testId": "21f359be-91ed-481a-9d64-dbec755bc866",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;

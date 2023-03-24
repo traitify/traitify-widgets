@@ -1,0 +1,23 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+
+  text-align: center;
+
+  a, a:visited {
+    text-decoration: none;
+
+    @include theme("color", "theme-color");
+  }
+  img {
+    margin: 0 auto;
+    max-width: 200px;
+    width: 50%;
+  }
+}
+.heading {
+  @extend %heading;
+
+  @include theme("color", "theme-color");
+}

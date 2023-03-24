@@ -27,7 +27,6 @@ module.exports = {
     "<rootDir>/test/support/setup/recoil.js"
   ],
   testEnvironmentOptions: {url: "https://www.example.com"},
-  testPathIgnorePatterns: ["/node_modules/", "/test-backup/"], // TODO: Remove
   transform: {
     "^.+\\.jsx?$": "babel-jest"
   }

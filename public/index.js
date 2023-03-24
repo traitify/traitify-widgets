@@ -1,5 +1,5 @@
-Traitify.options.authKey = "sptoechv411aqbqrp4l9a4eg2a";
-Traitify.options.host = "https://api.traitify.com";
+Traitify.http.authKey = "sptoechv411aqbqrp4l9a4eg2a";
+Traitify.http.host = "https://api.traitify.com";
 
 const allTargets = {
   "Personality.Archetype.Heading": "#target-1",
@@ -26,16 +26,28 @@ const allTargets = {
   "Report.Manager": "#target-15"
 };
 
+const cache = {};
+cache.get = (name, {fallback} = {}) => {
+  const value = localStorage.getItem(name);
+  if(value) { return value; }
+
+  cache.set(name, fallback);
+
+  return fallback;
+};
+cache.set = (name, value) => {
+  value == "" ? localStorage.removeItem(name) : localStorage.setItem(name, value);
+};
+
 function createWidget() {
-  const surveyType = localStorage.getItem("survey-type");
-  const assessmentID = localStorage.getItem(surveyType === "cognitive" ? "test-id" : "assessment-id");
-  if(!assessmentID) { return; }
+  const testID = cache.get("testID");
+  console.log("createWidget", testID);
+  if(!testID) { return; }
 
-  const targets = {
-    "Report.Manager": "#default"
-  };
+  const surveyType = cache.get("surveyType");
+  const targets = {"Default": "#default"};
 
-  Traitify.options.assessmentID = assessmentID;
+  Traitify.options.assessmentID = testID;
   Traitify.render(targets).then(function() {
     console.log("Rendered");
   }).catch(function(error) {
@@ -43,27 +55,195 @@ function createWidget() {
   });
 }
 
-function createElement({className, id}) {
-  const element = document.createElement("div");
+function booleanFrom(value, fallback) {
+  if(value == "true") { return true; }
+  if(value == "false") { return false; }
+  if(value == true) { return true; }
+  if(value == false) { return false; }
+  if(fallback == undefined) { return false; }
 
-  if(className) { element.className = className; }
-  if(id) { element.id = id; }
+  return fallback;
+}
+
+function createAssessment() {
+  destroyWidget();
+
+  if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
+
+  const params = {
+    deck_id: cache.get("deckID"),
+    locale_key: cache.get("locale")
+  };
+  const customParams = JSON.parse(cache.get("params", {fallback: "{}"}));
+
+  Object.keys(customParams).filter((key) => customParams[key])
+    .forEach((key) => params[key] = customParams[key]);
+
+  Traitify.http.post("/assessments", params).then((assessment) => {
+    try {
+      const id = assessment.id;
+      console.log("createAssessment", id);
+
+      cache.set("personalityTestID", id);
+      cache.set("testID", id);
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
+}
+
+function createCognitiveAssessment() {
+  const query = Traitify.graphql.cognitive.create({
+    params: {
+      localeKey: cache.get("locale"),
+      surveyID: cache.get("surveyID")
+    }
+  });
+
+  Traitify.post(Traitify.graphql.cognitive.path, query).then((response) => {
+    try {
+      const id = response.data.createCognitiveTest.id;
+
+      cache.set("cognitiveTestID", id);
+      cache.set("testID", id);
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
+}
+
+// TODO: Allow for checkbox and text option
+function createOption({fallback, name, onChange, options, text}) {
+  const element = createElement({className: "row", htmlFor: name, tag: "label", text});
+  const select = createElement({id: name,
+    name,
+    onChange: onChange || onInputChange,
+    tag: "select"
+  });
+  const selected = cache.get(name, {fallback});
+
+  options.forEach(({text, value}) => {
+    select.appendChild(createElement({selected: selected === value, tag: "option", text, value}));
+  });
+
+  element.appendChild(select);
 
   return element;
 }
 
-function setupTargets() {
-  const row = createElement({className: "row", id: "targets"});
-  const total = Object.keys(allTargets).length;
+function createElement(options = {}) {
+  const {className, id, onClick, onChange, tag, text, ...attributes} = options;
+  const element = document.createElement(tag || "div");
 
-  row.appendChild(createElement({id: "default"}));
+  if(className) { element.className = className; }
+  if(id) { element.id = id; }
+  if(onClick) { element.addEventListener("click", onClick); }
+  if(onChange) { element.addEventListener("change", onChange); }
+  if(text) { element.appendChild(document.createTextNode(text)); }
 
-  Array(total).fill().map((_, index) => index + 1).forEach((index) => {
-    row.appendChild(createElement({id: `target-${index}`}));
+  Object.keys(attributes).forEach((key) => {
+    const value = attributes[key];
+
+    if(value) { element.setAttribute(key, value); }
   });
 
-  document.body.appendChild(row);
+  return element;
 }
 
-setupTargets();
+function destroyWidget() { Traitify.destroy(); }
+
+function setupTargets() {
+  const group = createElement({className: "group"});
+  const total = Object.keys(allTargets).length;
+
+  group.appendChild(createElement({id: "default"}));
+
+  Array(total).fill().map((_, index) => index + 1).forEach((index) => {
+    group.appendChild(createElement({id: `target-${index}`}));
+  });
+
+  document.body.appendChild(group);
+}
+
+function setupDom() {
+  setupTargets();
+
+  const locales = Traitify.i18n.supportedLocales;
+  let group;
+  let row;
+
+  group = createElement({className: "group"});
+  group.appendChild(createOption({
+    fallback: "en-us",
+    name: "locale",
+    onChange: onInputChange,
+    options: Object.keys(locales)
+      .map((key) => ({text: locales[key], value: key}))
+      .sort((a, b) => a.text.localeCompare(b.text)),
+    text: "Locale:"
+  }));
+  row = createElement({className: "row"});
+  row.appendChild(createElement({onClick: createWidget, tag: "button", text: "Refresh"}));
+  row.appendChild(createElement({onClick: destroyWidget, tag: "button", text: "Destroy"}));
+  group.appendChild(row);
+  document.body.appendChild(group);
+
+  group = createElement({className: "group"});
+  group.appendChild(createOption({
+    fallback: "personality",
+    name: "surveyType",
+    onChange: onSurveyTypeChange,
+    options: [{text: "Cognitive", value: "cognitive"}, {text: "Personality", value: "personality"}],
+    text: "Survey:"
+  }));
+  group.appendChild(createOption({
+    fallback: "big-five",
+    name: "deckID",
+    onChange: onInputChange,
+    options: [
+      {text: "Big Five", value: "big-five"},
+      {text: "Career Deck", value: "career-deck"},
+      {text: "Core", value: "core"},
+      {text: "Financial Risk Tolerance", value: "financial-risk-tolerance-2.0"},
+      {text: "Perseverance", value: "perseverance"},
+      {text: "Persuasion", value: "persuasion"},
+    ],
+    text: "Deck:"
+  }));
+
+  row = createElement({className: "row"});
+  row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create"}));
+  group.appendChild(row);
+  document.body.appendChild(group);
+}
+
+function onInputChange(e) {
+  const name = e.target.name;
+  const value = e.target.type === "checkbox" ? booleanFrom(e.target.checked) : e.target.value;
+
+  cache.set(name, value);
+}
+
+// TODO: Add similar logic for each assessment type, so you have one cached for each type
+function onSurveyTypeChange(e) {
+  onInputChange(e);
+
+  const name = e.target.name;
+  const value = e.target.value;
+  const testID = cache.get(`${value}TestID`);
+
+  cache.set("testID", testID);
+
+  // TODO:
+  // if cognitive
+  //   hide deckID
+  //   show surveyID
+  // else
+  //   hide surveyID
+  //   show deckID
+}
+
+setupDom();
 createWidget();

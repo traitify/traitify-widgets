@@ -3,9 +3,10 @@ import i18nData from "lib/i18n-data";
 export default class I18n {
   constructor() {
     this.data = {};
+    this.supportedLocales = {};
     this.setDefaultTranslations();
   }
-  addTranslations(_locale, data) {
+  addTranslations(_locale, {name, data}) {
     const locale = _locale.toLowerCase();
     const currentData = this.data[locale] || {};
 
@@ -13,6 +14,7 @@ export default class I18n {
       ...currentData,
       ...data
     };
+    this.supportedLocales[locale] = name;
   }
   copyTranslations(_originLocale, _targetLocale) {
     const originLocale = _originLocale.toLowerCase();

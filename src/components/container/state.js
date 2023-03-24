@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {useEffect} from "react";
 import {useRecoilState, useSetRecoilState} from "recoil";
 import slice from "lib/common/object/slice";
+import Cache from "lib/cache";
 import Http from "lib/http";
 import I18n from "lib/i18n";
 import GraphQL from "lib/graphql";
@@ -10,6 +11,7 @@ import Listener from "lib/listener";
 import {
   assessmentIDState,
   benchmarkIDState,
+  cacheState,
   graphqlState,
   httpState,
   i18nState,
@@ -23,6 +25,7 @@ import {
 function State({children, ...props}) {
   const setAssessmentID = useSetRecoilState(assessmentIDState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);
+  const setCache = useSetRecoilState(cacheState);
   const setGraphql = useSetRecoilState(graphqlState);
   const setHttp = useSetRecoilState(httpState);
   const setI18n = useSetRecoilState(i18nState);
@@ -52,6 +55,12 @@ function State({children, ...props}) {
   useEffect(() => {
     setGraphql(props.graphql || GraphQL);
   }, [props.graphql]);
+
+  useEffect(() => {
+    const cache = props.cache || new Cache();
+
+    setCache(cache);
+  }, [props.cache]);
 
   useEffect(() => {
     const http = props.http || new Http(slice(props, ["authKey", "host", "version"]));
@@ -95,6 +104,7 @@ function State({children, ...props}) {
 State.defaultProps = {
   assessmentID: null,
   benchmarkID: null,
+  cache: null,
   graphql: null,
   http: null,
   i18n: null,
@@ -106,6 +116,7 @@ State.defaultProps = {
 State.propTypes = {
   assessmentID: PropTypes.string,
   benchmarkID: PropTypes.string,
+  cache: PropTypes.object,
   children: PropTypes.node.isRequired,
   graphql: PropTypes.object,
   http: PropTypes.object,

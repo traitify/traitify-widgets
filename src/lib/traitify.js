@@ -1,6 +1,7 @@
 /* global VERSION */
 import {render, unmountComponentAtNode} from "react-dom";
 import Components from "components";
+import slice from "lib/common/object/slice";
 import split from "lib/common/object/split";
 
 const componentFromString = (name) => name.split(".").reduce((current, key) => current[key], Components);
@@ -28,28 +29,33 @@ export default class Traitify {
     this.options = options || {};
   }
   get props() {
+    const objects = slice(this, [
+      "http",
+      "i18n",
+      "listener"
+    ]);
     const [props, options] = split(this.options, [
       "assessmentID",
       "authKey",
       "benchmarkID",
       "graphql",
       "host",
-      "http",
-      "i18n",
-      "listener",
       "locale",
       "profileID",
       "version"
     ]);
 
-    return {...props, options};
+    return {...objects, ...props, options};
   }
   destroy() {
     Object.keys(this.renderedTargets || {}).forEach((name) => {
-      const target = this.renderedTargets[name];
-
-      if(target && target.isConnected) { unmountComponentAtNode(target); }
+      const component = this.renderedTargets[name];
+      if(!component) { return; }
+      if(!component.target) { return; }
+      if(component.target.isConnected) { unmountComponentAtNode(component.target); }
     });
+
+    this.renderedTargets = {};
 
     return this;
   }
@@ -81,12 +87,7 @@ export default class Traitify {
       }));
     });
 
-    Object.keys(this.renderedTargets || {}).forEach((name) => {
-      if(targets[name]) { return; }
-
-      const target = this.renderedTargets[name];
-      if(target && target.isConnected) { unmountComponentAtNode(target); }
-    });
+    this.destroy();
     this.renderedTargets = {...targets};
 
     return Promise.all(promises);

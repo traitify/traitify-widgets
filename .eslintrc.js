@@ -1,5 +1,4 @@
 module.exports = {
-  ignorePatterns: ["**/*-backup/**"], // TODO: Remove
   env: {
     node: true
   },

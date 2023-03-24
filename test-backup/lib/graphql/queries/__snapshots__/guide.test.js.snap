@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Graphql Queries Guide get creates query 1`] = `"{ guide(assessmentId:"xyz",localeKey:"es-US") { name competencies { id name } }}"`;
-
-exports[`Graphql Queries Guide get creates query with defaults 1`] = `"{ guide(assessmentId:"xyz",localeKey:"es-US") { competencies { id name introduction order questionSequences { id name personalityTypeId questions { id text adaptability order purpose } } } }}"`;

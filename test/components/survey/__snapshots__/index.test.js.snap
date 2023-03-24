@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey renders cognitive 1`] = `
+<div
+  className="mock"
+>
+  Cognitive
+</div>
+`;
+
+exports[`Survey renders personality 1`] = `
+<div
+  className="mock"
+>
+  Personality
+</div>
+`;

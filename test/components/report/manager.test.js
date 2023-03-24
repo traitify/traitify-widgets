@@ -3,8 +3,8 @@ import ComponentHandler from "support/component-handler";
 import {useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 
-jest.mock("components/personality/guide", () => (() => (<div className="mock">Personality Guide</div>)));
-jest.mock("components/personality/recommendation/chart", () => (() => (<div className="mock">Personality Recommendation Chart</div>)));
+jest.mock("components/results/guide", () => (() => (<div className="mock">Guide</div>)));
+jest.mock("components/results/recommendation/chart", () => (() => (<div className="mock">Recommendation Chart</div>)));
 
 describe("Report.Manager", () => {
   let component;

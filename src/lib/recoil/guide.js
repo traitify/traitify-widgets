@@ -8,6 +8,7 @@ import {
 } from "./base";
 
 // TODO: Put cache in front of queries with ability to bust it
+// TODO: Only get if there are results...or only fetch from hook if there are results
 export const guideQuery = selector({
   get: async({get}) => {
     const assessmentID = get(assessmentIDState);

@@ -1,5 +1,5 @@
 import {act} from "react-test-renderer";
-import Component from "components/personality/career/container";
+import Component from "components/results/career/container";
 import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockCareers, mockHighlightedCareers, useAssessment, useCareers} from "support/container/http";

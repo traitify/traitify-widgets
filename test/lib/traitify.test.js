@@ -34,7 +34,7 @@ describe("Traitify", () => {
     });
 
     it("ignores disconnected targets", () => {
-      traitify.renderedTargets = {Default: createElement({disconnected: true})};
+      traitify.renderedTargets = {Default: {target: createElement({disconnected: true})}};
       traitify.destroy();
 
       expect(unmountComponentAtNode).not.toHaveBeenCalled();
@@ -49,7 +49,7 @@ describe("Traitify", () => {
 
     it("unmounts targets", () => {
       const div = createElement();
-      traitify.renderedTargets = {Default: div};
+      traitify.renderedTargets = {Default: {target: div}};
       traitify.destroy();
 
       expect(unmountComponentAtNode).toHaveBeenCalledWith(div);
@@ -125,7 +125,7 @@ describe("Traitify", () => {
     it("removes old target's children", () => {
       const target = createElement();
 
-      traitify.renderedTargets = {Default: target, Results: createElement()};
+      traitify.renderedTargets = {Default: {target}, Results: {target: createElement()}};
 
       return traitify.render(target).then(() => {
         expect(unmountComponentAtNode).toHaveBeenCalledTimes(2);
@@ -134,7 +134,7 @@ describe("Traitify", () => {
     });
 
     it("removes only connected targets", () => {
-      traitify.renderedTargets = {Results: createElement({disconnected: true})};
+      traitify.renderedTargets = {Results: {target: createElement({disconnected: true})}};
 
       return traitify.render(createElement()).then(() => {
         expect(unmountComponentAtNode).toHaveBeenCalledTimes(1);

@@ -1,6 +1,7 @@
 /* global VERSION */
 import {render, unmountComponentAtNode} from "react-dom";
 import Components from "components";
+import except from "lib/common/object/except";
 import slice from "lib/common/object/slice";
 import split from "lib/common/object/split";
 
@@ -27,6 +28,7 @@ export default class Traitify {
   constructor(options) {
     this.__version__ = VERSION;
     this.options = options || {};
+    this.renderedTargets = {};
   }
   get props() {
     const objects = slice(this, [
@@ -47,8 +49,8 @@ export default class Traitify {
 
     return {...objects, ...props, options};
   }
-  destroy() {
-    Object.keys(this.renderedTargets || {}).forEach((name) => {
+  destroy(targets) {
+    Object.keys(targets || this.renderedTargets).forEach((name) => {
       const component = this.renderedTargets[name];
       if(!component) { return; }
       if(!component.target) { return; }
@@ -87,7 +89,7 @@ export default class Traitify {
       }));
     });
 
-    this.destroy();
+    this.destroy(except(this.renderedTargets, Object.keys(targets)));
     this.renderedTargets = {...targets};
 
     return Promise.all(promises);

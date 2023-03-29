@@ -1,4 +1,4 @@
-import Component from "components/personality/recommendation/chart";
+import Component from "components/results/recommendation/chart";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockBenchmark, mockGuide, useAssessment, useBenchmark} from "support/container/http";
 import {mockOption} from "support/container/options";

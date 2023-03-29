@@ -10,6 +10,9 @@ const clearSelectorCachesState = selector({
   }),
 });
 
-const clearSelectorCaches = snapshot_UNSTABLE().getLoadable(clearSelectorCachesState).getValue();
+afterEach(async() => {
+  const snapshot = snapshot_UNSTABLE();
+  const clearSelectorCaches = snapshot.getLoadable(clearSelectorCachesState).getValue();
 
-afterEach(clearSelectorCaches);
+  clearSelectorCaches();
+});

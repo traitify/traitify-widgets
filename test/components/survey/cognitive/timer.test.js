@@ -1,12 +1,16 @@
 /** @jest-environment jsdom */
+import {act} from "react-test-renderer";
 import Component from "components/survey/cognitive/timer";
 import ComponentHandler from "support/component-handler";
+import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
 
 describe("Timer", () => {
+  let component;
   let originalDate;
   let props;
 
+  useContainer();
   useWindowMock("setTimeout");
 
   beforeAll(() => {
@@ -28,50 +32,50 @@ describe("Timer", () => {
     Date.now = originalDate;
   });
 
-  it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("renders component with no time remaining", () => {
+  it("renders component with no time remaining", async() => {
     props.startTime -= (props.timeAllowed + 10) * 1000;
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).toHaveBeenCalled();
   });
 
-  it("renders component with time passed", () => {
+  it("renders component with time passed", async() => {
     props.startTime -= 1234;
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("sets time left", () => {
-    new ComponentHandler(<Component {...props} />);
+  it("sets time left", async() => {
+    await ComponentHandler.setup(Component, {props});
 
     expect(Date.now).toHaveBeenCalled();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("submits", () => {
+  it("submits", async() => {
     props.startTime -= props.timeAllowed * 1000;
-    new ComponentHandler(<Component {...props} />);
+    await ComponentHandler.setup(Component, {props});
 
     expect(props.onFinish).toHaveBeenCalled();
   });
 
-  it("updates component after 1 second", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("updates component after 1 second", async() => {
+    component = await ComponentHandler.setup(Component, {props});
 
     expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
 
     Date.now.mockReturnValue(Date.now() + 1000);
-    component.act(() => setTimeout.mock.calls[0][0]());
+    act(() => setTimeout.mock.calls[0][0]());
 
     expect(component.tree).toMatchSnapshot();
   });

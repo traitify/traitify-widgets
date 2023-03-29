@@ -1,5 +1,6 @@
 /** @jest-environment jsdom */
 import {createRef, forwardRef} from "react";
+import {act} from "react-test-renderer";
 import {
   loadImage,
   loadQuestions,
@@ -8,6 +9,7 @@ import {
 } from "components/survey/cognitive/helpers";
 import {dig, mutable} from "lib/helpers/object";
 import ComponentHandler from "support/component-handler";
+import useContainer from "support/hooks/use-container";
 
 const url = "https://via.placeholder.com/150";
 const defaultResponse = {image: {url}};
@@ -22,6 +24,10 @@ const loadedQuestion = mutable({
 });
 
 describe("Helpers", () => {
+  let component;
+
+  useContainer();
+
   describe("actions", () => {
     let createElementSpy;
     let dispatch;
@@ -318,6 +324,7 @@ describe("Helpers", () => {
   describe("useQuestionsLoader", () => {
     let createElementSpy;
     let mockImageLoaded;
+    let props;
 
     const Component = forwardRef(({initialQuestions}, ref) => {
       ref.current = useQuestionsLoader(initialQuestions); // eslint-disable-line no-param-reassign
@@ -333,6 +340,7 @@ describe("Helpers", () => {
 
         onLoad && onLoad();
       };
+      props = {initialQuestions: [defaultQuestion, defaultQuestion], ref: createRef()};
     });
 
     afterEach(() => {
@@ -343,12 +351,10 @@ describe("Helpers", () => {
       createElementSpy.mockRestore();
     });
 
-    it("returns current state", () => {
-      const initialQuestions = [defaultQuestion, defaultQuestion];
-      const ref = createRef();
-      new ComponentHandler(<Component initialQuestions={initialQuestions} ref={ref} />);
+    it("returns current state", async() => {
+      await ComponentHandler.setup(Component, {props});
 
-      expect(ref.current).toEqual({
+      expect(props.ref.current).toEqual({
         error: undefined,
         dispatch: expect.any(Function),
         loading: true,
@@ -356,17 +362,13 @@ describe("Helpers", () => {
       });
     });
 
-    it("updates state from dispatch", () => {
-      const initialQuestions = [defaultQuestion, defaultQuestion];
-      const ref = createRef();
-      const component = new ComponentHandler(
-        <Component initialQuestions={initialQuestions} ref={ref} />
-      );
-      component.act(() => (
-        ref.current.dispatch({answer: {skipped: true}, questionIndex: 0, type: "response"})
+    it("updates state from dispatch", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => (
+        props.ref.current.dispatch({answer: {skipped: true}, questionIndex: 0, type: "response"})
       ));
 
-      expect(ref.current).toEqual({
+      expect(props.ref.current).toEqual({
         error: null,
         dispatch: expect.any(Function),
         loading: true,
@@ -377,15 +379,11 @@ describe("Helpers", () => {
       });
     });
 
-    it("updates state from image loading", () => {
-      const initialQuestions = [defaultQuestion, defaultQuestion];
-      const ref = createRef();
-      const component = new ComponentHandler(
-        <Component initialQuestions={initialQuestions} ref={ref} />
-      );
-      component.act(() => mockImageLoaded());
+    it("updates state from image loading", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => mockImageLoaded());
 
-      expect(ref.current).toEqual({
+      expect(props.ref.current).toEqual({
         error: null,
         dispatch: expect.any(Function),
         loading: true,
@@ -400,15 +398,11 @@ describe("Helpers", () => {
       });
     });
 
-    it("updates state from props", () => {
-      const initialQuestions = [defaultQuestion, defaultQuestion];
-      const ref = createRef();
-      const component = new ComponentHandler(
-        <Component initialQuestions={initialQuestions} ref={ref} />
-      );
+    it("updates state from props", async() => {
+      component = await ComponentHandler.setup(Component, {props});
       component.updateProps({initialQuestions: [loadedQuestion, defaultQuestion]});
 
-      expect(ref.current).toEqual({
+      expect(props.ref.current).toEqual({
         error: undefined,
         dispatch: expect.any(Function),
         loading: true,

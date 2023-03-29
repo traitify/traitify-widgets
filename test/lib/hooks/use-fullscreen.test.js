@@ -7,6 +7,8 @@ import useGlobalMock from "support/hooks/use-global-mock";
 import useWindowMock from "support/hooks/use-window-mock";
 
 describe("useFullscreen", () => {
+  let component;
+
   describe("listeners", () => {
     function Component() {
       useFullscreen();
@@ -18,8 +20,8 @@ describe("useFullscreen", () => {
     useWindowMock("addEventListener");
     useWindowMock("removeEventListener");
 
-    it("adds fullscreen event listeners", () => {
-      new ComponentHandler(<Component />);
+    it("adds fullscreen event listeners", async() => {
+      await ComponentHandler.setup(Component);
 
       expect(window.addEventListener).toHaveBeenCalledWith("fullscreenchange", expect.any(Function));
       expect(window.addEventListener).toHaveBeenCalledWith("webkitfullscreenchange", expect.any(Function));
@@ -27,8 +29,8 @@ describe("useFullscreen", () => {
       expect(window.addEventListener).toHaveBeenCalledWith("MSFullscreenChange", expect.any(Function));
     });
 
-    it("removes fullscreen event listeners", () => {
-      const component = new ComponentHandler(<Component />);
+    it("removes fullscreen event listeners", async() => {
+      component = await ComponentHandler.setup(Component);
       act(() => { component.unmount(); });
 
       expect(window.removeEventListener).toHaveBeenCalledWith("fullscreenchange", expect.any(Function));
@@ -39,7 +41,6 @@ describe("useFullscreen", () => {
   });
 
   describe("values", () => {
-    let component;
     let element;
     let value;
 
@@ -72,20 +73,20 @@ describe("useFullscreen", () => {
         document.fullscreenElement = null;
       });
 
-      it("toggles fullscreen off", () => {
+      it("toggles fullscreen off", async() => {
         document.fullscreenElement = element;
-        component = new ComponentHandler(<Component element={element} />);
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([true, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([false, expect.any(Function)]);
       });
 
-      it("toggles fullscreen on", () => {
-        component = new ComponentHandler(<Component element={element} />);
+      it("toggles fullscreen on", async() => {
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([false, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([true, expect.any(Function)]);
       });
     });
@@ -108,20 +109,20 @@ describe("useFullscreen", () => {
         document.msFullscreenElement = null;
       });
 
-      it("toggles fullscreen off", () => {
+      it("toggles fullscreen off", async() => {
         document.msFullscreenElement = element;
-        component = new ComponentHandler(<Component element={element} />);
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([true, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([false, expect.any(Function)]);
       });
 
-      it("toggles fullscreen on", () => {
-        component = new ComponentHandler(<Component element={element} />);
+      it("toggles fullscreen on", async() => {
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([false, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([true, expect.any(Function)]);
       });
     });
@@ -144,20 +145,20 @@ describe("useFullscreen", () => {
         document.mozFullScreenElement = null;
       });
 
-      it("toggles fullscreen off", () => {
+      it("toggles fullscreen off", async() => {
         document.mozFullScreenElement = element;
-        component = new ComponentHandler(<Component element={element} />);
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([true, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([false, expect.any(Function)]);
       });
 
-      it("toggles fullscreen on", () => {
-        component = new ComponentHandler(<Component element={element} />);
+      it("toggles fullscreen on", async() => {
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([false, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([true, expect.any(Function)]);
       });
     });
@@ -180,30 +181,30 @@ describe("useFullscreen", () => {
         document.webkitFullscreenElement = null;
       });
 
-      it("toggles fullscreen off", () => {
+      it("toggles fullscreen off", async() => {
         document.webkitFullscreenElement = element;
-        component = new ComponentHandler(<Component element={element} />);
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([true, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([false, expect.any(Function)]);
       });
 
-      it("toggles fullscreen on", () => {
-        component = new ComponentHandler(<Component element={element} />);
+      it("toggles fullscreen on", async() => {
+        component = await ComponentHandler.setup(Component, {props: {element}});
         expect(value.current).toEqual([false, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([true, expect.any(Function)]);
       });
     });
 
     describe("without an element", () => {
-      it("toggles fullscreen on", () => {
-        component = new ComponentHandler(<Component />);
+      it("toggles fullscreen on", async() => {
+        component = await ComponentHandler.setup(Component);
         expect(value.current).toEqual([false, expect.any(Function)]);
 
-        component.act(() => { value.current[1](); });
+        act(() => { value.current[1](); });
         expect(value.current).toEqual([false, expect.any(Function)]);
       });
     });

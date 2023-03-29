@@ -1,5 +1,6 @@
 /** @jest-environment jsdom */
 import {createRef} from "react";
+import {act} from "react-test-renderer";
 import useElementSize from "lib/hooks/use-element-size";
 import ComponentHandler from "support/component-handler";
 import useResizeMock from "support/hooks/use-resize-mock";
@@ -25,21 +26,21 @@ describe("useElementSize", () => {
     useWindowMock("addEventListener");
     useWindowMock("removeEventListener");
 
-    it("adds resize event listener", () => {
-      new ComponentHandler(<Component />);
+    it("adds resize event listener", async() => {
+      await ComponentHandler.setup(Component);
 
       expect(window.addEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
     });
 
-    it("removes resize event listener", () => {
-      component = new ComponentHandler(<Component />);
+    it("removes resize event listener", async() => {
+      component = await ComponentHandler.setup(Component);
       component.unmount();
 
       expect(window.removeEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
     });
 
-    it("updates listeners for new element", () => {
-      component = new ComponentHandler(<Component />);
+    it("updates listeners for new element", async() => {
+      component = await ComponentHandler.setup(Component);
       window.addEventListener.mockClear();
       window.removeEventListener.mockClear();
       component.updateProps({element});
@@ -53,22 +54,22 @@ describe("useElementSize", () => {
   describe("values", () => {
     useResizeMock();
 
-    it("returns blank size", () => {
-      component = new ComponentHandler(<Component />);
+    it("returns blank size", async() => {
+      component = await ComponentHandler.setup(Component);
 
       expect(size.current).toEqual([0, 0]);
     });
 
-    it("returns current element size", () => {
-      component = new ComponentHandler(<Component element={element} />);
+    it("returns current element size", async() => {
+      component = await ComponentHandler.setup(Component, {props: {element}});
 
       expect(size.current).toEqual([600, 800]);
     });
 
-    it("returns updated element size", () => {
-      component = new ComponentHandler(<Component element={element} />);
+    it("returns updated element size", async() => {
+      component = await ComponentHandler.setup(Component, {props: {element}});
       element.clientWidth = 700;
-      component.act(() => window.resizeTo(1000, 2000));
+      act(() => window.resizeTo(1000, 2000));
 
       expect(size.current).toEqual([700, 800]);
     });

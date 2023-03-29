@@ -29,9 +29,6 @@ import style from "./style.scss";
 
 const maxRetries = 2;
 
-// TODO:
-//   moving more thihngs into useMemo
-//   updating rest of component
 export default function PersonalitySurvey() {
   const assessment = useAssessment();
   const cache = useCache();
@@ -51,19 +48,28 @@ export default function PersonalitySurvey() {
     slideIndex,
     slides
   } = useSlideLoader({element: image.current, translate});
-  const {allowBack, allowFullscreen, ...options} = useOption("slideDeck") || {};
+  const {allowBack, allowFullscreen, ...options} = useOption("survey") || {};
   const [fullscreen, toggleFullscreen] = useFullscreen(element.current);
-  const [instructions, setInstructions] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
   const [submitAttempts, setSubmitAttempts] = useState(0);
   const [submitError, setSubmitError] = useState(null);
   const submitting = useRef(false);
-  const state = {fullscreen};
 
   const completedSlides = slides.filter(({response}) => response != null)
     .map((slide) => slice(slide, ["id", "response", "time_taken"]));
   const finished = slides.length > 0 && slides.length === completedSlides.length;
+  const instructions = dig(assessment, "instructions", "instructional_text");
   const likertScale = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
+  const state = {
+    dispatch,
+    error,
+    finished,
+    fullscreen,
+    ready,
+    showInstructions,
+    slideIndex,
+    slides
+  };
 
   useComponentEvents("Survey", {...state});
   useEffect(() => {
@@ -91,20 +97,11 @@ export default function PersonalitySurvey() {
       slides: assessment.slides,
       type: "reset"
     });
-  }, [
-    dig(assessment, "id"),
-    dig(assessment, "locale_key"),
-    dig(assessment, "slides")
-  ]);
+  }, [assessment]);
 
-  // TODO: useMemo
   useEffect(() => {
-    const show = options.showInstructions;
-    const text = dig(assessment, "instructions", "instructional_text");
-
-    setInstructions(text);
-    setShowInstructions(show && !!text);
-  }, [assessment, options]);
+    setShowInstructions(!!(options.showInstructions && instructions));
+  }, [assessment, options.showInstructions]);
 
   useEffect(() => {
     if(completedSlides.length === 0) { return; }
@@ -128,14 +125,12 @@ export default function PersonalitySurvey() {
         time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
       }))
     ).then((response) => {
-      submitting.current = false;
-
-      listener.trigger("SlideDeck.finished", {...state, response});
-      // TODO: Clear cache?
+      listener.trigger("Survey.finished", {...state, response});
+      // TODO: Clear request cache? Once we actually add request caches
       refreshAssessment();
-    }).catch((response) => {
-      submitting.current = false;
 
+      submitting.current = false;
+    }).catch((response) => {
       let newError;
 
       try {
@@ -146,6 +141,8 @@ export default function PersonalitySurvey() {
 
       setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
       if(submitAttempts >= maxRetries) { setSubmitError(newError || "Error Submitting"); }
+
+      submitting.current = false;
     });
   }, [finished, submitAttempts]);
 
@@ -163,7 +160,7 @@ export default function PersonalitySurvey() {
   const updateSlide = (index, value) => {
     dispatch({index, response: value, type: "answer"});
 
-    listener.trigger("SlideDeck.updateSlide", {...state, response: value});
+    listener.trigger("Survey.updateSlide", {...state, response: value});
   };
 
   if(submitError || error) {

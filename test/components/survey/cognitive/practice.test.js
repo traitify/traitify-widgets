@@ -1,8 +1,10 @@
 /** @jest-environment jsdom */
+import {act} from "react-test-renderer";
 import Component from "components/survey/cognitive/practice";
 import Slide from "components/survey/cognitive/slide";
 import {defaultExplanations, defaultQuestions} from "components/survey/cognitive/instructions-defaults";
 import ComponentHandler from "support/component-handler";
+import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";
 import useWindowMock from "support/hooks/use-window-mock";
 
@@ -15,7 +17,10 @@ const selectAnswer = ({component, index}) => {
 };
 
 describe("Practice", () => {
+  let component;
   let props;
+
+  useContainer();
 
   beforeEach(() => {
     props = {
@@ -29,21 +34,21 @@ describe("Practice", () => {
   describe("actions", () => {
     useWindowMock("alert");
 
-    it("finishes", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      component.act(() => selectAnswer({component, index: 3}));
-      component.act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
-      component.act(() => selectAnswer({component, index: 3}));
-      component.act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
-      component.act(() => selectAnswer({component, index: 3}));
-      component.act(() => component.findByText("cognitive_practice_step_3_button").props.onClick());
+    it("finishes", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => selectAnswer({component, index: 3}));
+      act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+      act(() => selectAnswer({component, index: 3}));
+      act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
+      act(() => selectAnswer({component, index: 3}));
+      act(() => component.findByText("cognitive_practice_step_3_button").props.onClick());
 
       expect(component.tree).toMatchSnapshot();
       expect(props.onFinish).toHaveBeenCalled();
     });
 
-    it("doesn't skip", () => {
-      const component = new ComponentHandler(<Component {...props} />);
+    it("doesn't skip", async() => {
+      component = await ComponentHandler.setup(Component, {props});
       component.instance.findByType(Slide).props.onSkip();
 
       expect(window.alert).toHaveBeenCalled();
@@ -51,15 +56,13 @@ describe("Practice", () => {
   });
 
   describe("videos", () => {
-    let component;
-
     useResizeMock();
 
     describe("horizontal", () => {
-      beforeEach(() => {
+      beforeEach(async() => {
         act(() => window.resizeTo(1200, 800));
-        component = new ComponentHandler(<Component {...props} />);
-        component.act(() => selectAnswer({component, index: 0}));
+        component = await ComponentHandler.setup(Component, {props});
+        act(() => selectAnswer({component, index: 0}));
       });
 
       it("renders component", () => {
@@ -67,17 +70,17 @@ describe("Practice", () => {
       });
 
       it("updates to vertical", () => {
-        component.act(() => window.resizeTo(600, 800));
+        act(() => window.resizeTo(600, 800));
 
         expect(component.tree).toMatchSnapshot();
       });
     });
 
     describe("vertical", () => {
-      beforeEach(() => {
+      beforeEach(async() => {
         act(() => window.resizeTo(600, 800));
-        component = new ComponentHandler(<Component {...props} />);
-        component.act(() => selectAnswer({component, index: 0}));
+        component = await ComponentHandler.setup(Component, {props});
+        act(() => selectAnswer({component, index: 0}));
       });
 
       it("renders component", () => {
@@ -85,14 +88,14 @@ describe("Practice", () => {
       });
 
       it("updates to horizontal", () => {
-        component.act(() => window.resizeTo(1200, 800));
+        act(() => window.resizeTo(1200, 800));
 
         expect(component.tree).toMatchSnapshot();
       });
     });
   });
 
-  it("renders custom questions", () => {
+  it("renders custom questions", async() => {
     props.practiceExplanations = [
       {button: "First Button", heading: "First Heading", text: "First Text"},
       {
@@ -112,77 +115,77 @@ describe("Practice", () => {
       }))
     }));
 
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component, {props});
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
 
-    component.act(() => selectAnswer({component, index: 3}));
+    act(() => selectAnswer({component, index: 3}));
     expect(component.tree).toMatchSnapshot();
 
-    component.act(() => component.findByText("First Button").props.onClick());
+    act(() => component.findByText("First Button").props.onClick());
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
 
-    component.act(() => selectAnswer({component, index: 3}));
+    act(() => selectAnswer({component, index: 3}));
     expect(component.tree).toMatchSnapshot();
 
-    component.act(() => component.findByText("Second Button").props.onClick());
+    act(() => component.findByText("Second Button").props.onClick());
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).toHaveBeenCalled();
   });
 
-  it("renders question 1", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders question 1", async() => {
+    component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("renders question 1 explanation", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => selectAnswer({component, index: 3}));
+  it("renders question 1 explanation", async() => {
+    component = await ComponentHandler.setup(Component, {props});
+    act(() => selectAnswer({component, index: 3}));
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("renders question 2", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => selectAnswer({component, index: 2}));
-    component.act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+  it("renders question 2", async() => {
+    component = await ComponentHandler.setup(Component, {props});
+    act(() => selectAnswer({component, index: 2}));
+    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("renders question 2 explanation", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => selectAnswer({component, index: 2}));
-    component.act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
-    component.act(() => selectAnswer({component, index: 2}));
+  it("renders question 2 explanation", async() => {
+    component = await ComponentHandler.setup(Component, {props});
+    act(() => selectAnswer({component, index: 2}));
+    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => selectAnswer({component, index: 2}));
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("renders question 3", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => selectAnswer({component, index: 3}));
-    component.act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
-    component.act(() => selectAnswer({component, index: 3}));
-    component.act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
+  it("renders question 3", async() => {
+    component = await ComponentHandler.setup(Component, {props});
+    act(() => selectAnswer({component, index: 3}));
+    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => selectAnswer({component, index: 3}));
+    act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
   });
 
-  it("renders question 3 explanation", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => selectAnswer({component, index: 3}));
-    component.act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
-    component.act(() => selectAnswer({component, index: 3}));
-    component.act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
-    component.act(() => selectAnswer({component, index: 3}));
+  it("renders question 3 explanation", async() => {
+    component = await ComponentHandler.setup(Component, {props});
+    act(() => selectAnswer({component, index: 3}));
+    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => selectAnswer({component, index: 3}));
+    act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
+    act(() => selectAnswer({component, index: 3}));
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();

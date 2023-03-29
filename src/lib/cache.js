@@ -1,4 +1,9 @@
 export default class Cache {
+  clear = () => {
+    try {
+      return sessionStorage.clear();
+    } catch(error) { return null; }
+  };
   get = (key) => {
     try {
       const data = sessionStorage.getItem(key);

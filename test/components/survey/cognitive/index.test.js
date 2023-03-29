@@ -1,12 +1,13 @@
 /** @jest-environment jsdom */
 /* eslint-disable no-console */
 import {act} from "react-test-renderer";
-import {Component} from "components/survey/cognitive";
+import Component from "components/survey/cognitive";
 import Instructions from "components/survey/cognitive/instructions";
 import Slide from "components/survey/cognitive/slide";
 import Timer from "components/survey/cognitive/timer";
 import ComponentHandler from "support/component-handler";
 import {flushPromises} from "support/helpers";
+import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
 import assessment from "support/json/assessment/cognitive.json";
 
@@ -17,9 +18,11 @@ jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Survey.Cognitive", () => {
   const cacheKey = `cognitive.survey.${assessment.id}`;
+  let component;
   let props;
   const lastUpdate = () => props.ui.trigger.mock.calls[props.ui.trigger.mock.calls.length - 1][1];
 
+  useContainer();
   useWindowMock("confirm");
 
   beforeEach(() => {
@@ -48,8 +51,8 @@ describe("Survey.Cognitive", () => {
   });
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component);
 
       expect(props.ui.trigger).toHaveBeenNthCalledWith(
         1,
@@ -61,8 +64,8 @@ describe("Survey.Cognitive", () => {
       );
     });
 
-    it("triggers update", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component);
 
       expect(props.ui.trigger).toHaveBeenNthCalledWith(
         2,
@@ -76,15 +79,15 @@ describe("Survey.Cognitive", () => {
   });
 
   describe("setup", () => {
-    it("requires an assessment", () => {
+    it("requires an assessment", async() => {
       props.assessment = null;
 
-      new ComponentHandler(<Component {...props} />);
+      await ComponentHandler.setup(Component);
 
       expect(props.cache.get).not.toHaveBeenCalled();
     });
 
-    it("sets everything from cache", () => {
+    it("sets everything from cache", async() => {
       const state = {
         disability: true,
         onlySkipped: true,
@@ -95,7 +98,7 @@ describe("Survey.Cognitive", () => {
       };
       props.cache.get.mockReturnValue(state);
 
-      new ComponentHandler(<Component {...props} />);
+      await ComponentHandler.setup(Component);
 
       const lastState = lastUpdate().state;
 
@@ -108,8 +111,8 @@ describe("Survey.Cognitive", () => {
       expect(lastState.startTime).toBe(state.startTime);
     });
 
-    it("sets questions from props", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("sets questions from props", async() => {
+      await ComponentHandler.setup(Component);
 
       expect(props.cache.get).toHaveBeenCalled();
       expect(lastUpdate().state.initialQuestions).toBe(assessment.questions);
@@ -117,7 +120,6 @@ describe("Survey.Cognitive", () => {
   });
 
   describe("submit", () => {
-    let component;
     let slide;
     let onFinish;
     let originalDate;
@@ -128,14 +130,14 @@ describe("Survey.Cognitive", () => {
       originalWarn = console.warn;
     });
 
-    beforeEach(() => {
+    beforeEach(async() => {
       console.warn = jest.fn().mockName("warn");
       const now = Date.now();
       Date.now = jest.fn().mockName("now").mockReturnValue(now);
 
       props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 1)};
-      component = new ComponentHandler(<Component {...props} />);
-      component.act(() => (
+      component = await ComponentHandler.setup(Component);
+      act(() => (
         component.instance.findByType(Instructions).props.onStart({disability: false})
       ));
       slide = component.instance.findByType(Slide);
@@ -150,7 +152,7 @@ describe("Survey.Cognitive", () => {
     });
 
     it("does nothing if already submitted", () => {
-      component.act(() => slide.props.onSelect({
+      act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
@@ -162,7 +164,7 @@ describe("Survey.Cognitive", () => {
 
     it("does nothing if results ready", () => {
       props.isReady.mockReturnValue(true);
-      component.act(() => slide.props.onSelect({
+      act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
@@ -171,7 +173,7 @@ describe("Survey.Cognitive", () => {
     });
 
     it("submits query", () => {
-      component.act(() => slide.props.onSelect({
+      act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
@@ -186,7 +188,7 @@ describe("Survey.Cognitive", () => {
     });
 
     it("updates cached state", async() => {
-      component.act(() => slide.props.onSelect({
+      act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
@@ -218,19 +220,19 @@ describe("Survey.Cognitive", () => {
     });
   });
 
-  it("renders instructions", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders instructions", async() => {
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders loading if questions finished", () => {
+  it("renders loading if questions finished", async() => {
     props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 1)};
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: false}));
+    act(() => instructions.props.onStart({disability: false}));
     const slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
@@ -238,28 +240,28 @@ describe("Survey.Cognitive", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders loading after skipped slides finished", () => {
+  it("renders loading after skipped slides finished", async() => {
     window.confirm.mockReturnValue(true);
     props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 3)};
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: false}));
+    act(() => instructions.props.onStart({disability: false}));
     let slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
+    act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
+    act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[1].id,
       timeTaken: 600
     }));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[2].id,
       timeTaken: 600
     }));
@@ -276,21 +278,21 @@ describe("Survey.Cognitive", () => {
     });
   });
 
-  it("renders loading after skipped slides skipped", () => {
+  it("renders loading after skipped slides skipped", async() => {
     window.confirm.mockReturnValue(false);
     props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 3)};
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: false}));
+    act(() => instructions.props.onStart({disability: false}));
     let slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
+    act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
+    act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
 
     expect(component.tree).toMatchSnapshot();
     expect(window.confirm).toHaveBeenCalledTimes(1);
@@ -304,29 +306,29 @@ describe("Survey.Cognitive", () => {
     });
   });
 
-  it("renders nothing if results ready", () => {
+  it("renders nothing if results ready", async() => {
     props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Slide)).toThrow();
   });
 
-  it("renders skipped slides", () => {
+  it("renders skipped slides", async() => {
     window.confirm.mockReturnValue(true);
     props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 3)};
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: false}));
+    act(() => instructions.props.onStart({disability: false}));
     let slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[0].id,
       timeTaken: 600
     }));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
+    act(() => slide.props.onSelect({skipped: true, timeTaken: 600}));
     slide = component.instance.findAllByType(Slide)[0];
-    component.act(() => slide.props.onSelect({
+    act(() => slide.props.onSelect({
       answerId: slide.props.question.responses[1].id,
       timeTaken: 600
     }));
@@ -343,10 +345,10 @@ describe("Survey.Cognitive", () => {
     });
   });
 
-  it("renders slide", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders slide", async() => {
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: false}));
+    act(() => instructions.props.onStart({disability: false}));
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Instructions)).toThrow();
@@ -360,10 +362,10 @@ describe("Survey.Cognitive", () => {
     });
   });
 
-  it("renders slide with disability", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders slide with disability", async() => {
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: true}));
+    act(() => instructions.props.onStart({disability: true}));
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Instructions)).toThrow();
@@ -377,11 +379,11 @@ describe("Survey.Cognitive", () => {
     });
   });
 
-  it("renders slide with time limit disabled", () => {
+  it("renders slide with time limit disabled", async() => {
     props.getOption.mockImplementation((value, nestedValue) => value === "slideDeck" && nestedValue === "disableTimeLimit");
-    const component = new ComponentHandler(<Component {...props} />);
+    component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
-    component.act(() => instructions.props.onStart({disability: true}));
+    act(() => instructions.props.onStart({disability: true}));
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Instructions)).toThrow();

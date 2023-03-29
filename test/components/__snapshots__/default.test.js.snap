@@ -2,6 +2,8 @@
 
 exports[`Default renders div if not ready 1`] = `<div />`;
 
+exports[`Default renders nothing if not ready 1`] = `null`;
+
 exports[`Default renders results 1`] = `
 <div
   className="mock"

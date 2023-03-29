@@ -1,7 +1,10 @@
 /** @jest-environment jsdom */
 import {createRef, useReducer} from "react";
+import {act} from "react-test-renderer";
 import useSlideLoader, {reduceActions, reducer} from "components/survey/personality/use-slide-loader";
-import {except, remap, slice} from "lib/helpers/object";
+import except from "lib/common/object/except";
+import remap from "lib/common/object/remap";
+import slice from "lib/common/object/slice";
 import ComponentHandler from "support/component-handler";
 import useGlobalMock from "support/hooks/use-global-mock";
 import useResizeMock from "support/hooks/use-resize-mock";
@@ -15,24 +18,25 @@ describe("useSlideLoader", () => {
   const baseImageURL = "https://via.placeholder.com/150";
   let createdSlideCount;
   const maxRetries = 3;
-  const createSlide = (props = {}) => {
+  const createSlide = (_props = {}) => {
     createdSlideCount += 1;
 
     return {
       id: createdSlideCount,
       image: `${baseImageURL}?index=${createdSlideCount}`,
       loaded: false,
-      ...props
+      ..._props
     };
   };
 
   describe("hook", () => {
     let dispatch;
     let elements;
+    let props;
     let state;
 
-    function Component(props) {
-      state.current = useSlideLoader(props);
+    function Component(_props) {
+      state.current = useSlideLoader(_props);
 
       return null;
     }
@@ -43,6 +47,7 @@ describe("useSlideLoader", () => {
       createdSlideCount = 0;
       dispatch = jest.fn().mockName("dispatch");
       elements = [];
+      props = {translate: (key) => key};
       state = createRef(null);
       useReducer.mockImplementation((_, initialState) => [initialState, dispatch]);
 
@@ -55,7 +60,7 @@ describe("useSlideLoader", () => {
     });
 
     it("returns current state", () => {
-      new ComponentHandler(<Component />);
+      ComponentHandler.render(Component);
 
       expect(state.current).toEqual({
         error: null,
@@ -72,7 +77,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoadingAttempts: maxRetries + 1},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         expect(dispatch).toHaveBeenCalledWith({error: "slide_error", type: "error"});
       });
@@ -82,7 +87,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoadingAttempts: maxRetries},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         expect(dispatch).not.toHaveBeenCalledWith({error: "slide_error", type: "error"});
       });
@@ -99,14 +104,9 @@ describe("useSlideLoader", () => {
       };
 
       beforeEach(() => {
-        jest.useFakeTimers();
         imageLoading = false;
         imageLoadingAttempts = maxRetries;
         slides = [createSlide({loaded: true}), createSlide({loaded: false})];
-      });
-
-      afterEach(() => {
-        jest.useRealTimers();
       });
 
       it("dispatches error", () => {
@@ -114,7 +114,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoadingAttempts, slides},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         getCurrentImage().onerror();
 
@@ -131,7 +131,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoadingAttempts, slides},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         expect(dispatch).toHaveBeenCalledWith({image: slides[1].image, type: "imageLoading"});
         expect(dispatch).not.toHaveBeenCalledWith({image: slides[1].image, type: "imageLoaded"});
@@ -147,7 +147,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoadingAttempts, slides},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         expect(dispatch).not.toHaveBeenCalledWith({image: expect.any(String), type: "imageLoading"});
       });
@@ -158,7 +158,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoading, imageLoadingAttempts, slides},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         expect(dispatch).not.toHaveBeenCalledWith({image: expect.any(String), type: "imageLoading"});
       });
@@ -169,7 +169,7 @@ describe("useSlideLoader", () => {
           {...initialState, imageLoadingAttempts, slides},
           dispatch
         ]);
-        new ComponentHandler(<Component translate={(key) => key} />);
+        ComponentHandler.render(Component, {props});
 
         expect(dispatch).not.toHaveBeenCalledWith({image: expect.any(String), type: "imageLoading"});
       });
@@ -180,17 +180,17 @@ describe("useSlideLoader", () => {
 
       it("dispatches initial", () => {
         const element = document.createElement("div");
-        new ComponentHandler(<Component element={element} />);
+        ComponentHandler.render(Component, {props: {element}});
 
         expect(dispatch).toHaveBeenCalledWith({size: [600, 800], type: "resize"});
       });
 
       it("dispatches updated size", () => {
         const element = document.createElement("div");
-        const component = new ComponentHandler(<Component element={element} />);
+        ComponentHandler.render(Component, {props: {element}});
 
         element.clientWidth = 700;
-        component.act(() => window.resizeTo(1200, 800));
+        act(() => window.resizeTo(1200, 800));
 
         expect(dispatch).toHaveBeenCalledWith({size: [700, 800], type: "resize"});
       });
@@ -205,12 +205,7 @@ describe("useSlideLoader", () => {
     };
 
     beforeEach(() => {
-      jest.useFakeTimers();
       defaultState = {error: null, imageLoading: false, imageLoadingAttempts: 0};
-    });
-
-    afterEach(() => {
-      jest.useRealTimers();
     });
 
     describe("answer", () => {

@@ -21,13 +21,13 @@ describe("I18n", () => {
 
   describe("addTranslations", () => {
     it("adds data to new locale", () => {
-      i18n.addTranslations("es-CU", {tacos: "Yo quiero tacos"});
+      i18n.addTranslations("es-CU", {data: {tacos: "Yo quiero tacos"}, name: "Spanish (Cuba)"});
 
       expect(i18n.data["es-cu"].tacos).toBe("Yo quiero tacos");
     });
 
     it("adds data to existing locale", () => {
-      i18n.addTranslations("es-US", {tacos: "Yo quiero tacos"});
+      i18n.addTranslations("es-US", {data: {tacos: "Yo quiero tacos"}, name: "Spanish"});
 
       expect(i18n.data["es-us"].me).toBe("Soy yo");
       expect(i18n.data["es-us"].tacos).toBe("Yo quiero tacos");
@@ -35,8 +35,11 @@ describe("I18n", () => {
 
     it("merges data to existing locale", () => {
       i18n.addTranslations("es-US", {
-        me: "Yo quiero",
-        tacos: "Yo quiero tacos"
+        data: {
+          me: "Yo quiero",
+          tacos: "Yo quiero tacos"
+        },
+        name: "Spanish"
       });
 
       expect(i18n.data["es-us"].me).toBe("Yo quiero");

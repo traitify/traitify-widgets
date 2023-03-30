@@ -36,7 +36,9 @@ cache.get = (name, {fallback} = {}) => {
   return fallback;
 };
 cache.set = (name, value) => {
-  value == "" ? localStorage.removeItem(name) : localStorage.setItem(name, value);
+  (value == "" || value == undefined)
+    ? localStorage.removeItem(name)
+    : localStorage.setItem(name, value);
 };
 
 function createWidget() {
@@ -44,10 +46,11 @@ function createWidget() {
   console.log("createWidget", testID);
   if(!testID) { return; }
 
-  const surveyType = cache.get("surveyType");
   const targets = {"Default": "#default"};
 
   Traitify.options.assessmentID = testID;
+  Traitify.options.locale = cache.get("locale");
+  Traitify.options.surveyType = cache.get("surveyType");
   Traitify.render(targets).then(function() {
     console.log("Rendered");
   }).catch(function(error) {
@@ -94,14 +97,13 @@ function createAssessment() {
 }
 
 function createCognitiveAssessment() {
-  const query = Traitify.graphql.cognitive.create({
-    params: {
-      localeKey: cache.get("locale"),
-      surveyID: cache.get("surveyID")
-    }
-  });
+  const query = Traitify.GraphQL.cognitive.create;
+  const variables = {
+    localeKey: cache.get("locale"),
+    surveyID: cache.get("surveyID")
+  };
 
-  Traitify.post(Traitify.graphql.cognitive.path, query).then((response) => {
+  Traitify.http.post(Traitify.GraphQL.cognitive.path, {query, variables}).then((response) => {
     try {
       const id = response.data.createCognitiveTest.id;
 
@@ -117,7 +119,8 @@ function createCognitiveAssessment() {
 // TODO: Allow for checkbox and text option
 function createOption({fallback, name, onChange, options, text}) {
   const element = createElement({className: "row", htmlFor: name, tag: "label", text});
-  const select = createElement({id: name,
+  const select = createElement({
+    id: name,
     name,
     onChange: onChange || onInputChange,
     tag: "select"
@@ -196,9 +199,11 @@ function setupDom() {
     name: "surveyType",
     onChange: onSurveyTypeChange,
     options: [{text: "Cognitive", value: "cognitive"}, {text: "Personality", value: "personality"}],
-    text: "Survey:"
+    text: "Survey Type:"
   }));
-  group.appendChild(createOption({
+  const surveyType = cache.get("surveyType", {fallback: "personality"});
+  row = createElement({className: surveyType !== "personality" ? "hide" : "", id: "personality-options"});
+  row.appendChild(createOption({
     fallback: "big-five",
     name: "deckID",
     onChange: onInputChange,
@@ -212,11 +217,29 @@ function setupDom() {
     ],
     text: "Deck:"
   }));
+  group.appendChild(row);
+  group.appendChild(createElement({className: surveyType !== "cognitive" ? "hide" : "", id: "cognitive-options"}));
 
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create"}));
   group.appendChild(row);
   document.body.appendChild(group);
+}
+
+function setupCognitive() {
+  const query = Traitify.GraphQL.cognitive.surveys;
+
+  Traitify.http.post(Traitify.GraphQL.cognitive.path, {query}).then((response) => {
+    const options = response.data.cognitiveSurveys.edges
+      .map(({node: {id, name}}) => ({text: name, value: id}));
+
+    document.querySelector("#cognitive-options").appendChild(createOption({
+      name: "surveyID",
+      onChange: onInputChange,
+      options,
+      text: "Survey:"
+    }));
+  });
 }
 
 function onInputChange(e) {
@@ -236,14 +259,11 @@ function onSurveyTypeChange(e) {
 
   cache.set("testID", testID);
 
-  // TODO:
-  // if cognitive
-  //   hide deckID
-  //   show surveyID
-  // else
-  //   hide surveyID
-  //   show deckID
+  const otherValue = value === "cognitive" ? "personality" : "cognitive";
+  document.querySelector(`#${otherValue}-options`).classList.add("hide");
+  document.querySelector(`#${value}-options`).classList.remove("hide");
 }
 
 setupDom();
+setupCognitive();
 createWidget();

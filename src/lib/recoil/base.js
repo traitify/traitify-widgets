@@ -1,6 +1,6 @@
-import {atom} from "recoil";
+import {atom, selector} from "recoil";
 
-export const assessmentIDState = atom({key: "assessment-id"});
+export const activeState = atom({key: "active"});
 export const benchmarkIDState = atom({key: "benchmark-id"});
 export const cacheState = atom({dangerouslyAllowMutability: true, key: "cache"});
 export const errorState = atom({key: "error"});
@@ -20,3 +20,24 @@ export const localeState = atom({
 });
 export const optionsState = atom({key: "options"});
 export const profileIDState = atom({key: "profile-id"});
+
+export const assessmentIDState = selector({
+  get: ({get}) => {
+    const active = get(activeState);
+    if(!active) { return null; }
+    if(active.type !== "personality") { return null; }
+
+    return active.id;
+  },
+  key: "assessment-id"
+});
+export const testIDState = selector({
+  get: ({get}) => {
+    const active = get(activeState);
+    if(!active) { return null; }
+    if(active.type !== "cognitive") { return null; }
+
+    return active.id;
+  },
+  key: "test-id"
+});

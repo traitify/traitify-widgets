@@ -1,15 +1,13 @@
-import dig from "lib/common/object/dig";
-import useAssessment from "lib/hooks/use-assessment";
-import useResults from "lib/hooks/use-results";
+import {useRecoilValue} from "recoil";
+import {activeState} from "lib/recoil";
 import Results from "./results";
 import Survey from "./survey";
 
 export default function Default() {
-  const assessment = useAssessment();
-  const results = useResults();
+  const active = useRecoilValue(activeState);
 
-  if(results) { return <Results />; }
-  if(dig(assessment, "slides")) { return <Survey />; }
+  if(!active) { return null; }
+  if(active.completed) { return <Results />; }
 
-  return null;
+  return <Survey />;
 }

@@ -9,7 +9,7 @@ import I18n from "lib/i18n";
 import GraphQL from "lib/graphql";
 import Listener from "lib/listener";
 import {
-  assessmentIDState,
+  activeState,
   benchmarkIDState,
   cacheState,
   graphqlState,
@@ -23,7 +23,7 @@ import {
 } from "lib/recoil";
 
 function State({children, ...props}) {
-  const setAssessmentID = useSetRecoilState(assessmentIDState);
+  const setActive = useSetRecoilState(activeState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);
   const setCache = useSetRecoilState(cacheState);
   const setGraphql = useSetRecoilState(graphqlState);
@@ -39,7 +39,8 @@ function State({children, ...props}) {
     benchmarkID,
     locale,
     options = {},
-    profileID
+    profileID,
+    testID
   } = props;
 
   useEffect(() => {
@@ -81,8 +82,10 @@ function State({children, ...props}) {
   }, [props.listener]);
 
   useEffect(() => {
-    setAssessmentID(assessmentID);
-  }, [assessmentID]);
+    const id = assessmentID || testID;
+
+    setActive(id ? {id, type: options.surveyType || "personality"} : null);
+  }, [assessmentID, options.surveyType, testID]);
 
   useEffect(() => {
     setBenchmarkID(benchmarkID);
@@ -111,7 +114,8 @@ State.defaultProps = {
   listener: null,
   locale: null,
   options: {},
-  profileID: null
+  profileID: null,
+  testID: null
 };
 State.propTypes = {
   assessmentID: PropTypes.string,
@@ -124,7 +128,8 @@ State.propTypes = {
   listener: PropTypes.object,
   locale: PropTypes.string,
   options: PropTypes.object,
-  profileID: PropTypes.string
+  profileID: PropTypes.string,
+  testID: PropTypes.string
 };
 
 export default State;

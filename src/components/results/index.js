@@ -2,21 +2,25 @@ import AttractReport from "components/report/attract";
 import CandidateReport from "components/report/candidate";
 import EmployeeReport from "components/report/employee";
 import ManagerReport from "components/report/manager";
-import CognitiveResults from "components/results/cognitive";
+import Cognitive from "components/results/cognitive";
 import FinancialRiskResults from "components/results/financial-risk";
+import useActive from "lib/hooks/use-active";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useOption from "lib/hooks/use-option";
 import useResults from "lib/hooks/use-results";
 
 export default function Results() {
-  const results = useResults();
+  const active = useActive();
   const report = useOption("report");
-  const surveyType = useOption("surveyType");
+  const results = useResults();
 
   useComponentEvents("Results");
 
+  if(!active) { return null; }
+  if(!active.completed) { return null; }
+  if(active.type === "cognitive") { return <Cognitive />; }
+  if(active.type !== "personality") { return null; }
   if(!results) { return null; }
-  if(surveyType === "cognitive") { return <CognitiveResults />; }
   if(results.scoring_scale === "LIKERT_CUMULATIVE_POMP") {
     return <FinancialRiskResults />;
   }

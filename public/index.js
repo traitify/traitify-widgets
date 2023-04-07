@@ -51,6 +51,10 @@ function createWidget() {
   Traitify.options.assessmentID = testID;
   Traitify.options.locale = cache.get("locale");
   Traitify.options.surveyType = cache.get("surveyType");
+  Traitify.options.survey = {};
+  Traitify.options.survey.captureLearningDisability = true;
+  Traitify.options.survey.disableTimeLimit = true;
+  Traitify.options.survey.initialLearningDisability = true;
   Traitify.render(targets).then(function() {
     console.log("Rendered");
   }).catch(function(error) {

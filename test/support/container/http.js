@@ -1,13 +1,14 @@
 import dig from "lib/common/object/dig";
 
 export const mockFetch = (_newMock) => {
-  const newMock = {called: 0, ..._newMock};
+  const newMock = {called: 0, calls: [], ..._newMock};
 
   container.http.mocks.fetch.unshift(newMock);
   container.http.fetch.mockImplementation((...options) => {
     const mock = container.http.mocks.fetch.find(({request}) => request(...options));
     if(mock) {
       mock.called += 1;
+      mock.calls.push(...options);
 
       if(mock.implementation) { return mock.implementation(mock, ...options); }
       return Promise.resolve({json: () => mock.response(...options)});
@@ -20,19 +21,28 @@ export const mockFetch = (_newMock) => {
   return newMock;
 };
 
-export const mockAssessment = (assessment, {id} = {}) => {
-  container.assessmentID = id || assessment?.id;
-
-  return mockFetch({
+export const mockAssessment = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
     key: "assessment",
     request: (url, options) => {
-      if(!url.includes(`/assessments/${id || assessment.id}`)) { return false; }
+      if(!url.includes(`/assessments/${id}`)) { return false; }
       if(options.method !== "GET") { return false; }
 
       return true;
-    },
-    response: () => assessment
-  });
+    }
+  };
+
+  container.assessmentID = id;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => response;
+
+  return mockFetch(mock);
 };
 
 // NOTE: Allow params to be [response, {id}] or {id, implementation}
@@ -91,6 +101,60 @@ export const mockCareers = (careers, {assessmentID: _assessmentID, page} = {}) =
     },
     response: () => careers
   });
+};
+
+export const mockCognitiveAssessment = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "cognitive-assessment",
+    request: (url, options) => {
+      if(!url.includes("/cognitive-tests/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.testID === id && !Object.hasOwn(variables, "answers");
+    }
+  };
+
+  container.assessmentID = id;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {cognitiveTest: response}});
+
+  return mockFetch(mock);
+};
+
+export const mockCognitiveSubmit = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "cognitive-assessment-submit",
+    request: (url, options) => {
+      if(!url.includes("/cognitive-tests/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.testID === id && Object.hasOwn(variables, "answers");
+    }
+  };
+
+  container.assessmentID = id;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {completeCognitiveTest: response}});
+
+  return mockFetch(mock);
 };
 
 export const mockDeck = (deck, {id} = {}) => (

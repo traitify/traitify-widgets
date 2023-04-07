@@ -1,6 +1,7 @@
-import {atom, selector} from "recoil";
+import {atom, selector, selectorFamily} from "recoil";
+import {getCacheKey} from "lib/cache";
 
-export const activeState = atom({key: "active"});
+export const activeState = atom({default: null, key: "active"});
 export const benchmarkIDState = atom({key: "benchmark-id"});
 export const cacheState = atom({dangerouslyAllowMutability: true, key: "cache"});
 export const errorState = atom({key: "error"});
@@ -21,23 +22,49 @@ export const localeState = atom({
 export const optionsState = atom({key: "options"});
 export const profileIDState = atom({key: "profile-id"});
 
-export const assessmentIDState = selector({
+// NOTE: Breaking up state prevents over-triggering selectors
+export const activeIDState = selector({
   get: ({get}) => {
     const active = get(activeState);
     if(!active) { return null; }
-    if(active.type !== "personality") { return null; }
 
     return active.id;
   },
+  key: "active-id"
+});
+
+export const activeTypeState = selector({
+  get: ({get}) => {
+    const active = get(activeState);
+    if(!active) { return null; }
+
+    return active.type;
+  },
+  key: "active-type"
+});
+
+export const assessmentIDState = selector({
+  get: ({get}) => get(activeIDState),
   key: "assessment-id"
 });
-export const testIDState = selector({
-  get: ({get}) => {
-    const active = get(activeState);
-    if(!active) { return null; }
-    if(active.type !== "cognitive") { return null; }
 
-    return active.id;
+export const personalityAssessmentIDState = selector({
+  get: ({get}) => {
+    const type = get(activeTypeState);
+    if(type !== "personality") { return null; }
+
+    return get(activeIDState);
   },
-  key: "test-id"
+  key: "personality-assessment-id"
+});
+
+export const safeCacheKeyState = selectorFamily({
+  get: (params) => ({get}) => {
+    const [type, options] = typeof params === "string"
+      ? [params, {}]
+      : [params.type, params];
+
+    return getCacheKey(type, {...options, locale: options.locale || get(localeState)});
+  },
+  key: "safe-cache-key"
 });

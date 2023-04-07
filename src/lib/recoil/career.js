@@ -1,6 +1,6 @@
 import {atom, noWait, selector} from "recoil";
 import {
-  assessmentIDState,
+  personalityAssessmentIDState,
   httpState,
   localeState,
   optionsState
@@ -34,7 +34,7 @@ const careersPathState = selector({
     const options = get(optionsState).career || {};
     if(options.path) { return options.path; }
 
-    const assessmentID = get(assessmentIDState);
+    const assessmentID = get(personalityAssessmentIDState);
     if(!assessmentID) { return null; }
 
     return `/assessments/${assessmentID}/matches/careers`;

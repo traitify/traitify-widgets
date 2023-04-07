@@ -2,18 +2,18 @@
 
 exports[`Instructions renders custom examples 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     First Heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     First Text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -24,18 +24,18 @@ exports[`Instructions renders custom examples 1`] = `
 
 exports[`Instructions renders custom examples 2`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     Second Heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     Second Text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -46,16 +46,16 @@ exports[`Instructions renders custom examples 2`] = `
 
 exports[`Instructions renders custom examples 3`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     Third Heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     Third Text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -69,7 +69,7 @@ exports[`Instructions renders custom examples 3`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -88,18 +88,18 @@ exports[`Instructions renders custom examples 4`] = `
 
 exports[`Instructions renders custom examples 5`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_4_html
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -110,7 +110,7 @@ exports[`Instructions renders custom examples 5`] = `
 
 exports[`Instructions renders custom instructions 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     Custom Instructions
@@ -138,7 +138,7 @@ exports[`Instructions renders custom instructions 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -149,7 +149,7 @@ exports[`Instructions renders custom instructions 1`] = `
 
 exports[`Instructions renders custom instructions with markdown 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     Custom Instructions
@@ -177,7 +177,7 @@ exports[`Instructions renders custom instructions with markdown 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -188,18 +188,18 @@ exports[`Instructions renders custom instructions with markdown 1`] = `
 
 exports[`Instructions renders step 1 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -210,16 +210,16 @@ exports[`Instructions renders step 1 1`] = `
 
 exports[`Instructions renders step 2 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_2_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_2_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -233,7 +233,7 @@ exports[`Instructions renders step 2 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -252,18 +252,18 @@ exports[`Instructions renders step 3 1`] = `
 
 exports[`Instructions renders step 4 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_4_html
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -274,18 +274,18 @@ exports[`Instructions renders step 4 1`] = `
 
 exports[`Instructions time trial default timed renders step 1 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_trial_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -296,18 +296,18 @@ exports[`Instructions time trial default timed renders step 1 1`] = `
 
 exports[`Instructions time trial default timed renders step 4 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_trial_step_4_timed_html
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -318,18 +318,18 @@ exports[`Instructions time trial default timed renders step 4 1`] = `
 
 exports[`Instructions time trial default untimed renders step 1 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_trial_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -340,18 +340,18 @@ exports[`Instructions time trial default untimed renders step 1 1`] = `
 
 exports[`Instructions time trial default untimed renders step 4 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_trial_step_4_untimed_html
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -362,18 +362,18 @@ exports[`Instructions time trial default untimed renders step 4 1`] = `
 
 exports[`Instructions time trial minimal timed renders step 4 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_trial_step_4_timed_minimal_html
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -384,18 +384,18 @@ exports[`Instructions time trial minimal timed renders step 4 1`] = `
 
 exports[`Instructions time trial minimal untimed renders step 4 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h2>
     cognitive_instructions_step_4_heading
   </h2>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_trial_step_4_untimed_minimal_html
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -406,18 +406,18 @@ exports[`Instructions time trial minimal untimed renders step 4 1`] = `
 
 exports[`Instructions videos horizontal renders component 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -428,18 +428,18 @@ exports[`Instructions videos horizontal renders component 1`] = `
 
 exports[`Instructions videos horizontal updates to vertical 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -450,18 +450,18 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
 
 exports[`Instructions videos vertical renders component 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -472,18 +472,18 @@ exports[`Instructions videos vertical renders component 1`] = `
 
 exports[`Instructions videos vertical updates to horizontal 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_instructions_step_1_heading
   </h1>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_instructions_step_1_text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >

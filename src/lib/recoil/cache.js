@@ -7,10 +7,14 @@ import {
 } from "./base";
 import {deckIDState} from "./deck";
 
+// NOTE: Mirror updates in lib/cache
 export const cacheKeyState = selectorFamily({
-  get: (type, options = {}) => ({get}) => {
+  get: (params) => ({get}) => {
+    const [type, options] = typeof params === "string"
+      ? [params, {}]
+      : [params.type, params];
     let {id} = options;
-    const keys = [];
+    const keys = options.scope ? [...options.scope] : [];
     const locale = options.locale || get(localeState);
 
     // NOTE: Add additional options to keys

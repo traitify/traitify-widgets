@@ -20,9 +20,8 @@ import useFullscreen from "lib/hooks/use-fullscreen";
 import useHttp from "lib/hooks/use-http";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
-import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
-import {assessmentQuery} from "lib/recoil";
+import {personalityAssessmentQuery} from "lib/recoil";
 import Image from "./image";
 import useSlideLoader from "./use-slide-loader";
 import style from "./style.scss";
@@ -31,15 +30,15 @@ const maxRetries = 2;
 
 export default function PersonalitySurvey() {
   const assessment = useAssessment();
+  const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
-  const cacheKey = useCacheKey("survey");
+  const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});
   const caption = useRef(null);
   const element = useRef(null);
   const http = useHttp();
   const image = useRef(null);
   const listener = useListener();
-  const refreshAssessment = useRecoilRefresher(assessmentQuery);
-  const results = useResults();
+  const refreshAssessment = useRecoilRefresher(personalityAssessmentQuery);
   const translate = useTranslate();
   const {
     error,
@@ -74,6 +73,7 @@ export default function PersonalitySurvey() {
   useComponentEvents("Survey", {...state});
   useEffect(() => {
     if(!assessment) { return; }
+    if(assessment.completed_at) { return; }
     if(assessment.slides.length === 0) { return; }
 
     const cachedData = cache.get(cacheKey) || {};
@@ -111,7 +111,8 @@ export default function PersonalitySurvey() {
 
   useEffect(() => {
     if(!finished) { return; }
-    if(results) { return; }
+    if(!assessment) { return; }
+    if(assessment.completed_at) { return; }
     if(submitAttempts > maxRetries) { return; }
     if(submitting.current) { return; }
 
@@ -125,8 +126,8 @@ export default function PersonalitySurvey() {
         time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
       }))
     ).then((response) => {
+      cache.remove(assessmentCacheKey);
       listener.trigger("Survey.finished", {...state, response});
-      // TODO: Clear request cache? Once we actually add request caches
       refreshAssessment();
 
       submitting.current = false;
@@ -152,7 +153,8 @@ export default function PersonalitySurvey() {
     caption.current.focus();
   }, [showInstructions, slideIndex]);
 
-  if(results) { return null; }
+  if(!assessment) { return null; }
+  if(assessment.completed_at) { return null; }
 
   const back = () => dispatch({type: "back"});
   const content = {};

@@ -22,6 +22,7 @@ exports[`Slide renders component 1`] = `
         className="choice"
       >
         <button
+          className="traitify--response-button"
           onClick={[Function]}
           type="button"
         >
@@ -36,6 +37,7 @@ exports[`Slide renders component 1`] = `
         className="choice"
       >
         <button
+          className="traitify--response-button"
           onClick={[Function]}
           type="button"
         >
@@ -50,6 +52,7 @@ exports[`Slide renders component 1`] = `
         className="choice"
       >
         <button
+          className="traitify--response-button"
           onClick={[Function]}
           type="button"
         >
@@ -64,6 +67,7 @@ exports[`Slide renders component 1`] = `
         className="choice"
       >
         <button
+          className="traitify--response-button"
           onClick={[Function]}
           type="button"
         >
@@ -87,7 +91,7 @@ exports[`Slide renders component 1`] = `
       cognitive_skip_button
     </button>
     <button
-      className="btnDisabled"
+      className="traitify--confirm-button btnDisabled"
       disabled={true}
       onClick={null}
       type="button"
@@ -100,13 +104,13 @@ exports[`Slide renders component 1`] = `
 
 exports[`Slide renders loading 1`] = `
 <div
-  className="loadingContainer"
+  className="container"
 >
   <div
     className="loading"
   >
-    <i />
-    <i />
+    <div />
+    <div />
   </div>
 </div>
 `;

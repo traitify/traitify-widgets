@@ -7,7 +7,8 @@ import {
   reducer,
   useQuestionsLoader
 } from "components/survey/cognitive/helpers";
-import {dig, mutable} from "lib/helpers/object";
+import dig from "lib/common/object/dig";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import useContainer from "support/hooks/use-container";
 

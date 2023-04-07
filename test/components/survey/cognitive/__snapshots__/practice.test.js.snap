@@ -2,20 +2,20 @@
 
 exports[`Practice actions finishes 1`] = `
 <div
-  className="loadingContainer"
+  className="container"
 >
   <div
     className="loading"
   >
-    <i />
-    <i />
+    <div />
+    <div />
   </div>
 </div>
 `;
 
 exports[`Practice renders custom questions 1`] = `
 <div
-  className="practiceContainer"
+  className="container"
 >
   <div
     className="statusContainer"
@@ -55,7 +55,7 @@ exports[`Practice renders custom questions 1`] = `
 
 exports[`Practice renders custom questions 2`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     First Heading
@@ -65,13 +65,13 @@ exports[`Practice renders custom questions 2`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     First Text
-  </span>
+  </p>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -82,7 +82,7 @@ exports[`Practice renders custom questions 2`] = `
 
 exports[`Practice renders custom questions 3`] = `
 <div
-  className="practiceContainer"
+  className="container"
 >
   <div
     className="statusContainer"
@@ -122,7 +122,7 @@ exports[`Practice renders custom questions 3`] = `
 
 exports[`Practice renders custom questions 4`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     Second Heading
@@ -132,11 +132,11 @@ exports[`Practice renders custom questions 4`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     Second Text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -150,7 +150,7 @@ exports[`Practice renders custom questions 4`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -161,20 +161,20 @@ exports[`Practice renders custom questions 4`] = `
 
 exports[`Practice renders custom questions 5`] = `
 <div
-  className="loadingContainer"
+  className="container"
 >
   <div
     className="loading"
   >
-    <i />
-    <i />
+    <div />
+    <div />
   </div>
 </div>
 `;
 
 exports[`Practice renders question 1 1`] = `
 <div
-  className="practiceContainer"
+  className="container"
 >
   <div
     className="statusContainer"
@@ -214,7 +214,7 @@ exports[`Practice renders question 1 1`] = `
 
 exports[`Practice renders question 1 explanation 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_1_heading
@@ -224,11 +224,11 @@ exports[`Practice renders question 1 explanation 1`] = `
   >
     cognitive_practice_answer_correct
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -242,7 +242,7 @@ exports[`Practice renders question 1 explanation 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -253,7 +253,7 @@ exports[`Practice renders question 1 explanation 1`] = `
 
 exports[`Practice renders question 2 1`] = `
 <div
-  className="practiceContainer"
+  className="container"
 >
   <div
     className="statusContainer"
@@ -293,7 +293,7 @@ exports[`Practice renders question 2 1`] = `
 
 exports[`Practice renders question 2 explanation 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_2_heading
@@ -303,11 +303,11 @@ exports[`Practice renders question 2 explanation 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_2_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -321,7 +321,7 @@ exports[`Practice renders question 2 explanation 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -332,7 +332,7 @@ exports[`Practice renders question 2 explanation 1`] = `
 
 exports[`Practice renders question 3 1`] = `
 <div
-  className="practiceContainer"
+  className="container"
 >
   <div
     className="statusContainer"
@@ -372,7 +372,7 @@ exports[`Practice renders question 3 1`] = `
 
 exports[`Practice renders question 3 explanation 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_3_heading
@@ -382,11 +382,11 @@ exports[`Practice renders question 3 explanation 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_3_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -400,7 +400,7 @@ exports[`Practice renders question 3 explanation 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -411,7 +411,7 @@ exports[`Practice renders question 3 explanation 1`] = `
 
 exports[`Practice videos horizontal renders component 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_1_heading
@@ -421,11 +421,11 @@ exports[`Practice videos horizontal renders component 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -439,7 +439,7 @@ exports[`Practice videos horizontal renders component 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -450,7 +450,7 @@ exports[`Practice videos horizontal renders component 1`] = `
 
 exports[`Practice videos horizontal updates to vertical 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_1_heading
@@ -460,11 +460,11 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -478,7 +478,7 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -489,7 +489,7 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
 
 exports[`Practice videos vertical renders component 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_1_heading
@@ -499,11 +499,11 @@ exports[`Practice videos vertical renders component 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -517,7 +517,7 @@ exports[`Practice videos vertical renders component 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >
@@ -528,7 +528,7 @@ exports[`Practice videos vertical renders component 1`] = `
 
 exports[`Practice videos vertical updates to horizontal 1`] = `
 <div
-  className="instructions"
+  className="container"
 >
   <h1>
     cognitive_practice_step_1_heading
@@ -538,11 +538,11 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
   >
     cognitive_practice_answer_incorrect
   </p>
-  <span
+  <p
     className="text traitify--markdown"
   >
     cognitive_practice_step_1_text
-  </span>
+  </p>
   <video
     autoPlay={true}
     disableRemotePlayback={true}
@@ -556,7 +556,7 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
     />
   </video>
   <button
-    className="btnBlue"
+    className="traitify--response-button btnBlue"
     onClick={[Function]}
     type="button"
   >

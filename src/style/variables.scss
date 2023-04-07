@@ -24,18 +24,20 @@ $buffer-heading: $buffer;
 $buffer-section: $buffer * 3;
 $font-size: 16px;
 $font-size-sm: 12px;
+$font-size-lg: 20px;
 $font-size-heading: 24px;
 $line-height: 1.5;
 $min-height: 750px;
 
 // Private - To be used through color scheme
-$-white: #FFFFFF;
+$-aquamarine: #3BCEAC;
+$-aquamarine-light: #89E2CD;
 $-black: #555555;
 $-blue: #25C9D0;
 $-gray: #D6D6D6;
+$-gray-dark: #A0A0A0;
 $-gray-hover: #EAEAEA;
-$-green: #3BCEAC;
-$-green-light: #89E2CD;
+$-green: #2FB656;
 $-red: #FE6D73;
 $-red-light: #FEA7AB;
 $-traitify-blue: #058FC4;
@@ -48,13 +50,16 @@ $-yellow: #F9BC4F;
 $-yellow-light: #FBD288;
 
 $-border-color: $-gray;
+$-secondary-color: $-gray-dark;
 $-theme-color: $-blue;
 
 // Add variables that may change with the color scheme
 $color-scheme-dark: (
   "background-color": $-black,
-  "border-color-light": $-white,
   "border-color": $-border-color,
+  "border-color-dark": $-black,
+  "border-color-light": $-white,
+  "cognitive-progress-bar-color": $-green,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
@@ -62,14 +67,15 @@ $color-scheme-dark: (
   "not-me-active-color": $-traitify-red-dark,
   "not-me-color": $-traitify-red,
   "progress-bar-color": $-theme-color,
-  "rank-high": $-green,
-  "rank-high-light": $-green-light,
+  "rank-high": $-aquamarine,
+  "rank-high-light": $-aquamarine-light,
   "rank-low": $-red,
   "rank-low-light": $-red-light,
   "rank-medium": $-yellow,
   "rank-medium-light": $-yellow-light,
   "rank-other": $-white,
   "rank-other-light": $-gray,
+  "secondary-color": $-secondary-color,
   "text-color": $-white,
   "text-color-light": $-white,
   "theme-color": $-theme-color
@@ -79,7 +85,9 @@ $color-scheme-light: (
   "background-color": $-white,
   "background-color-light": $-white-gray,
   "border-color": $-border-color,
+  "border-color-dark": $-black,
   "border-color-light": $-gray,
+  "cognitive-progress-bar-color": $-green,
   "fullscreen-color": $-black,
   "inactive-color": $-gray,
   "me-active-color": $-traitify-blue-dark,
@@ -87,14 +95,15 @@ $color-scheme-light: (
   "not-me-active-color": $-traitify-red-dark,
   "not-me-color": $-traitify-red,
   "progress-bar-color": $-theme-color,
-  "rank-high": $-green,
-  "rank-high-light": $-green-light,
+  "rank-high": $-aquamarine,
+  "rank-high-light": $-aquamarine-light,
   "rank-low": $-red,
   "rank-low-light": $-red-light,
   "rank-medium": $-yellow,
   "rank-medium-light": $-yellow-light,
   "rank-other": $-black,
   "rank-other-light": $-black,
+  "secondary-color": $-secondary-color,
   "text-color": $-black,
   "text-color-light": $-white,
   "theme-color": $-theme-color

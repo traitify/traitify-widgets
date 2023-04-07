@@ -2,7 +2,7 @@ import Cache from "lib/cache";
 import Http from "lib/http";
 import Listener from "lib/listener";
 
-const cacheMethods = ["get", "set"];
+const cacheMethods = ["get", "remove", "set"];
 const httpMethods = ["delete", "fetch", "get", "post", "put", "request"];
 const listenerMethods = ["clear", "off", "on", "trigger", "value"];
 
@@ -42,16 +42,15 @@ export default function useContainer(props) {
     container.cache.clear();
 
     cacheMethods.forEach((method) => {
-      container.cache[method].mockReset();
+      container.cache[method].mockRestore();
     });
 
-    // NOTE: mockClear won't clear out mocked return values but mockReset breaks recoil
     httpMethods.forEach((method) => {
-      container.http[method].mockClear();
+      container.http[method].mockRestore();
     });
 
     listenerMethods.forEach((method) => {
-      container.listener[method].mockReset();
+      container.listener[method].mockRestore();
     });
   });
 

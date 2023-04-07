@@ -2,12 +2,16 @@
 import {noWait, selector} from "recoil";
 import {assessmentQuery} from "./assessment";
 import {
+  activeTypeState,
   httpState,
   localeState
 } from "./base";
 
 export const deckIDState = selector({
   get: ({get}) => {
+    const type = get(activeTypeState);
+    if(type !== "personality") { return null; }
+
     const loadable = get(noWait(assessmentQuery));
     if(loadable.state !== "hasValue") { return null; }
 

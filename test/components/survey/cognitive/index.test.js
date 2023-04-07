@@ -5,218 +5,189 @@ import Component from "components/survey/cognitive";
 import Instructions from "components/survey/cognitive/instructions";
 import Slide from "components/survey/cognitive/slide";
 import Timer from "components/survey/cognitive/timer";
+import {getCacheKey} from "lib/cache";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
-import {flushPromises} from "support/helpers";
+import {mockCognitiveAssessment as mockAssessment, mockCognitiveSubmit as mockSubmit} from "support/container/http";
+import {mockOption} from "support/container/options";
+import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
-import assessment from "support/json/assessment/cognitive.json";
+import _assessment from "support/json/assessment/cognitive.json";
 
 jest.mock("components/survey/cognitive/instructions", () => (() => <div className="mock">Instructions</div>));
 jest.mock("components/survey/cognitive/slide", () => (() => <div className="mock">Slide</div>));
 jest.mock("components/survey/cognitive/timer", () => (() => <div className="mock">4:59</div>));
-jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("Survey.Cognitive", () => {
-  const cacheKey = `cognitive.survey.${assessment.id}`;
+  let assessment;
+  let assessmentCacheKey;
+  let cacheKey;
   let component;
-  let props;
-  const lastUpdate = () => props.ui.trigger.mock.calls[props.ui.trigger.mock.calls.length - 1][1];
+  let options;
+  const lastUpdate = () => (
+    container.listener.trigger.mock.calls[container.listener.trigger.mock.calls.length - 1][1]
+  );
 
   useContainer();
   useWindowMock("confirm");
 
   beforeEach(() => {
-    props = {
-      assessment,
-      cache: {
-        get: jest.fn().mockName("get"),
-        set: jest.fn().mockName("set")
-      },
-      getCognitiveAssessment: jest.fn().mockName("getCognitiveAssessment"),
-      getOption: jest.fn().mockName("getOption"),
-      isReady: jest.fn().mockName("isReady").mockImplementation((value) => value === "questions"),
-      traitify: {
-        get: jest.fn().mockName("get"),
-        post: jest.fn().mockName("post").mockResolvedValue(Promise.resolve({data: {completeCognitiveTest: {success: true}}})),
-        put: jest.fn().mockName("put")
-      },
-      translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
+    assessment = mutable(_assessment);
+    assessmentCacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us"});
+    cacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us", scope: ["slides"]});
+    options = {};
+
+    mockAssessment(assessment);
+    mockOption("survey", options);
+    mockOption("surveyType", "cognitive");
   });
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {
       await ComponentHandler.setup(Component);
 
-      expect(props.ui.trigger).toHaveBeenNthCalledWith(
-        1,
-        "SlideDeck.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "Survey.initialized",
+        expect.any(Object)
       );
     });
 
     it("triggers update", async() => {
       component = await ComponentHandler.setup(Component);
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenNthCalledWith(
-        2,
-        "SlideDeck.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "Survey.updated",
+        expect.any(Object)
       );
     });
   });
 
   describe("setup", () => {
     it("requires an assessment", async() => {
-      props.assessment = null;
-
+      mockAssessment(null);
       await ComponentHandler.setup(Component);
 
-      expect(props.cache.get).not.toHaveBeenCalled();
+      expect(container.cache.get).not.toHaveBeenCalledWith(cacheKey);
     });
 
     it("sets everything from cache", async() => {
       const state = {
         disability: true,
-        onlySkipped: true,
-        questions: [assessment.questions[0]],
+        onlySkipped: false,
+        questions: assessment.questions.slice(0, 3),
         questionIndex: 1,
         skipped: [],
         startTime: Date.now()
       };
-      props.cache.get.mockReturnValue(state);
-
+      container.cache.set(cacheKey, state);
       await ComponentHandler.setup(Component);
 
-      const lastState = lastUpdate().state;
+      const lastState = lastUpdate();
 
-      expect(props.cache.get).toHaveBeenCalled();
+      expect(container.cache.get).toHaveBeenCalledWith(cacheKey);
       expect(lastState.disability).toBe(state.disability);
-      expect(lastState.initialQuestions).toBe(state.questions);
+      expect(lastState.initialQuestions).toEqual(state.questions);
       expect(lastState.onlySkipped).toBe(state.onlySkipped);
       expect(lastState.questionIndex).toBe(state.questionIndex);
-      expect(lastState.skipped).toBe(state.skipped);
+      expect(lastState.skipped).toEqual(state.skipped);
       expect(lastState.startTime).toBe(state.startTime);
     });
 
     it("sets questions from props", async() => {
       await ComponentHandler.setup(Component);
 
-      expect(props.cache.get).toHaveBeenCalled();
-      expect(lastUpdate().state.initialQuestions).toBe(assessment.questions);
+      expect(container.cache.get).toHaveBeenCalledWith(cacheKey);
+      expect(lastUpdate().initialQuestions).toBe(assessment.questions);
     });
   });
 
   describe("submit", () => {
     let slide;
     let onFinish;
-    let originalDate;
     let originalWarn;
 
     beforeAll(() => {
-      originalDate = Date.now;
       originalWarn = console.warn;
     });
 
     beforeEach(async() => {
       console.warn = jest.fn().mockName("warn");
-      const now = Date.now();
-      Date.now = jest.fn().mockName("now").mockReturnValue(now);
-
-      props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 1)};
+      mockAssessment({...assessment, questions: assessment.questions.slice(0, 1)});
       component = await ComponentHandler.setup(Component);
-      act(() => (
-        component.instance.findByType(Instructions).props.onStart({disability: false})
-      ));
+      act(() => {
+        component.instance.findByType(Instructions).props.onStart({disability: false});
+      });
+      jest.advanceTimersByTime(2000);
       slide = component.instance.findByType(Slide);
       onFinish = component.instance.findByType(Timer).props.onFinish;
-
-      Date.now = Date.now.mockReturnValue(now + 2000);
     });
 
     afterAll(() => {
-      Date.now = originalDate;
       console.warn = originalWarn;
     });
 
     it("does nothing if already submitted", () => {
+      const mock = mockSubmit({implementation: () => new Promise(() => {})});
       act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
-      props.traitify.post.mockClear();
       onFinish();
 
-      expect(props.traitify.post).not.toHaveBeenCalled();
-    });
-
-    it("does nothing if results ready", () => {
-      props.isReady.mockReturnValue(true);
-      act(() => slide.props.onSelect({
-        answerId: slide.props.question.responses[0].id,
-        timeTaken: 600
-      }));
-
-      expect(props.traitify.post).not.toHaveBeenCalled();
+      expect(mock.called).toBe(1);
     });
 
     it("submits query", () => {
+      const mock = mockSubmit({implementation: () => new Promise(() => {})});
       act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
 
-      expect(props.traitify.post).toMatchSnapshot();
+      expect(mock.calls).toMatchSnapshot();
     });
 
     it("submits query with fallbacks", () => {
+      const mock = mockSubmit({implementation: () => new Promise(() => {})});
       onFinish();
 
-      expect(props.traitify.post).toMatchSnapshot();
+      expect(mock.calls).toMatchSnapshot();
     });
 
     it("updates cached state", async() => {
+      const mock = mockSubmit({success: true});
       act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
 
-      await flushPromises();
+      await flushAsync();
 
-      expect(props.cache.set).toHaveBeenCalledWith(
-        `${assessment.localeKey.toLowerCase()}.cognitive-assessment.${assessment.id}`,
-        expect.objectContaining({
-          completed: true, id: props.assessment.id
-        })
+      expect(container.cache.set).toHaveBeenCalledWith(
+        assessmentCacheKey,
+        expect.objectContaining({completed: true, id: assessment.id})
       );
-      expect(props.getCognitiveAssessment).toHaveBeenCalled();
+      expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {success: true}}));
+      expect(mock.called).toBe(1);
     });
 
     it("retries submit", async() => {
-      props.traitify.post.mockResolvedValueOnce(Promise.resolve({errors: ["oh no"]}));
-
+      const mockError = mockSubmit({implementation: () => Promise.resolve({json: () => ({errors: ["Oh no", "Not good"]})})});
       act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
         timeTaken: 600
       }));
 
-      await act(async() => { await flushPromises(); });
+      await act(async() => { jest.runOnlyPendingTimers(); });
+      const mock = mockSubmit({success: true});
+      await act(async() => { jest.runOnlyPendingTimers(); });
 
       expect(console.warn).toHaveBeenCalled();
-      expect(props.getCognitiveAssessment).toHaveBeenCalled();
-      expect(props.traitify.post).toHaveBeenCalledTimes(2);
+      expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {success: true}}));
+      expect(mockError.called).toBe(1);
+      expect(mock.called).toBe(1);
     });
   });
 
@@ -227,7 +198,8 @@ describe("Survey.Cognitive", () => {
   });
 
   it("renders loading if questions finished", async() => {
-    props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 1)};
+    mockAssessment({...assessment, questions: assessment.questions.slice(0, 1)});
+    mockSubmit({implementation: () => new Promise(() => {})});
     component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
     act(() => instructions.props.onStart({disability: false}));
@@ -241,8 +213,9 @@ describe("Survey.Cognitive", () => {
   });
 
   it("renders loading after skipped slides finished", async() => {
+    mockAssessment({...assessment, questions: assessment.questions.slice(0, 3)});
+    mockSubmit({implementation: () => new Promise(() => {})});
     window.confirm.mockReturnValue(true);
-    props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 3)};
     component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
     act(() => instructions.props.onStart({disability: false}));
@@ -268,7 +241,7 @@ describe("Survey.Cognitive", () => {
 
     expect(component.tree).toMatchSnapshot();
     expect(window.confirm).toHaveBeenCalledTimes(1);
-    expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
+    expect(container.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: false,
       onlySkipped: true,
       questions: expect.any(Array),
@@ -279,8 +252,9 @@ describe("Survey.Cognitive", () => {
   });
 
   it("renders loading after skipped slides skipped", async() => {
+    mockAssessment({...assessment, questions: assessment.questions.slice(0, 3)});
+    mockSubmit({implementation: () => new Promise(() => {})});
     window.confirm.mockReturnValue(false);
-    props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 3)};
     component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
     act(() => instructions.props.onStart({disability: false}));
@@ -296,7 +270,7 @@ describe("Survey.Cognitive", () => {
 
     expect(component.tree).toMatchSnapshot();
     expect(window.confirm).toHaveBeenCalledTimes(1);
-    expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
+    expect(container.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: false,
       onlySkipped: true,
       questions: expect.any(Array),
@@ -307,7 +281,7 @@ describe("Survey.Cognitive", () => {
   });
 
   it("renders nothing if results ready", async() => {
-    props.isReady.mockReturnValue(true);
+    mockAssessment({...assessment, completed: true});
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -315,8 +289,8 @@ describe("Survey.Cognitive", () => {
   });
 
   it("renders skipped slides", async() => {
+    mockAssessment({...assessment, questions: assessment.questions.slice(0, 3)});
     window.confirm.mockReturnValue(true);
-    props.assessment = {...assessment, questions: props.assessment.questions.slice(0, 3)};
     component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
     act(() => instructions.props.onStart({disability: false}));
@@ -335,7 +309,7 @@ describe("Survey.Cognitive", () => {
 
     expect(component.tree).toMatchSnapshot();
     expect(window.confirm).toHaveBeenCalledTimes(1);
-    expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
+    expect(container.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: false,
       onlySkipped: true,
       questions: expect.any(Array),
@@ -352,7 +326,7 @@ describe("Survey.Cognitive", () => {
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Instructions)).toThrow();
-    expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
+    expect(container.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: false,
       onlySkipped: false,
       questions: expect.any(Array),
@@ -369,7 +343,7 @@ describe("Survey.Cognitive", () => {
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Instructions)).toThrow();
-    expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
+    expect(container.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: true,
       onlySkipped: false,
       questions: expect.any(Array),
@@ -380,14 +354,14 @@ describe("Survey.Cognitive", () => {
   });
 
   it("renders slide with time limit disabled", async() => {
-    props.getOption.mockImplementation((value, nestedValue) => value === "slideDeck" && nestedValue === "disableTimeLimit");
+    mockOption("survey", {...options, disableTimeLimit: true});
     component = await ComponentHandler.setup(Component);
     const instructions = component.instance.findByType(Instructions);
     act(() => instructions.props.onStart({disability: true}));
 
     expect(component.tree).toMatchSnapshot();
     expect(() => component.instance.findByType(Instructions)).toThrow();
-    expect(props.cache.set).toHaveBeenLastCalledWith(cacheKey, {
+    expect(container.cache.set).toHaveBeenLastCalledWith(cacheKey, {
       disability: true,
       onlySkipped: false,
       questions: expect.any(Array),

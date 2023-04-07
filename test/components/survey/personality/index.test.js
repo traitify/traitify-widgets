@@ -2,15 +2,17 @@
 import {useState} from "react";
 import {act} from "react-test-renderer";
 import Component from "components/survey/personality";
+import {getCacheKey} from "lib/cache";
 import times from "lib/common/array/times";
+import mutable from "lib/common/object/mutable";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockAssessmentSlides, useAssessment} from "support/container/http";
+import {mockAssessment, mockAssessmentSlides} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
-import completedAssessment from "support/json/assessment/dimension-based.json";
-import assessment from "support/json/assessment/with-slides.json";
+import _completedAssessment from "support/json/assessment/dimension-based.json";
+import _assessment from "support/json/assessment/with-slides.json";
 
 jest.mock("components/common/icon", () => (({alt, className, icon}) => <span {...{alt, className}}>{icon.iconName}</span>));
 jest.mock("lib/hooks/use-fullscreen", () => jest.fn().mockName("useFullscreen").mockReturnValue([false, () => {}]));
@@ -22,6 +24,9 @@ const createNodeMock = () => ({
 });
 
 describe("Survey.Personality", () => {
+  let assessment;
+  let cacheKey;
+  let completedAssessment;
   let component;
   let elements;
   let options;
@@ -35,10 +40,12 @@ describe("Survey.Personality", () => {
   );
 
   useContainer();
-  useAssessment(assessment);
   useGlobalMock(document, "createElement");
 
   beforeEach(() => {
+    assessment = mutable(_assessment);
+    cacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us", scope: ["slides"]});
+    completedAssessment = {...mutable(_completedAssessment), id: assessment.id};
     elements = [];
     document.createElement.mockImplementation((tag) => {
       const element = {
@@ -52,6 +59,8 @@ describe("Survey.Personality", () => {
     });
 
     options = {};
+
+    mockAssessment(assessment);
   });
 
   describe("actions", () => {
@@ -288,7 +297,9 @@ describe("Survey.Personality", () => {
   });
 
   describe("likert", () => {
-    useAssessment({...assessment, scoring_scale: "LIKERT_CUMULATIVE_POMP"});
+    beforeEach(() => {
+      mockAssessment({...assessment, scoring_scale: "LIKERT_CUMULATIVE_POMP"});
+    });
 
     describe("setup", () => {
       it("resets state", async() => {
@@ -405,12 +416,11 @@ describe("Survey.Personality", () => {
 
   describe("setup", () => {
     it("does nothing if no slides", async() => {
-      mockAssessment(null);
+      mockAssessment({...assessment, slides: []});
       component = await ComponentHandler.setup(Component, {createNodeMock});
-      component.updateProps({assessment: {...assessment, slides: []}});
       const state = lastUpdate();
 
-      expect(container.cache.get).not.toHaveBeenCalled();
+      expect(container.cache.get).not.toHaveBeenCalledWith(cacheKey);
       expect(state.finished).toBe(false);
       expect(state.ready).toBe(false);
       expect(state.slideIndex).toBe(-1);
@@ -439,7 +449,7 @@ describe("Survey.Personality", () => {
     it("uses cache", async() => {
       const cachedSlides = assessment.slides.slice(0, 2)
         .map(({id}, index) => ({id, response: index === 0, time_taken: 200}));
-      container.cache.get.mockReturnValue({slides: cachedSlides});
+      container.cache.set(cacheKey, {slides: cachedSlides});
       component = await ComponentHandler.setup(Component, {createNodeMock});
       const state = lastUpdate();
 
@@ -504,7 +514,7 @@ describe("Survey.Personality", () => {
       const mock = mockAssessmentSlides();
       const slides = assessment.slides
         .map(({id}, index) => ({id, response: index === 0, time_taken: 200}));
-      container.cache.get.mockReturnValue({slides});
+      container.cache.set(cacheKey, {slides});
       mockAssessment(completedAssessment);
       component = await ComponentHandler.setup(Component, {createNodeMock});
 

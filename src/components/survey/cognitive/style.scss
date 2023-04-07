@@ -1,0 +1,165 @@
+@import "style/helpers";
+
+.center { text-align: center; }
+.container {
+  @extend %container;
+
+  font-size: $font-size - 2;
+  min-height: 90vh;
+
+  @include min-width("sm") {
+    min-height: 650px;
+
+    h1, h2, p { margin-bottom: $buffer; }
+  }
+  @include min-width("xl") { font-size: $font-size; }
+  @include theme("background-color", "background-color");
+
+  .btnBlue {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+
+    @include buttonDark("theme-color");
+    @include min-width("sm") { width: auto; }
+  }
+  .btnContinue { @include buttonDark("theme-color"); }
+  .btnDisabled { @include buttonDark("inactive-color"); }
+  .btnSkip { @include buttonDark("secondary-color"); }
+  .buttons {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+
+    @include theme("background-color", "background-color-light");
+
+    button {
+      border-radius: 0;
+      display: inline-block;
+      padding: $buffer-sm;
+      width: 50%;
+
+      @include min-width("sm") {
+        border-radius: $border-radius-sm;
+        margin: 0 $buffer-sm $buffer;
+        width: 150px;
+      }
+    }
+  }
+  .text {
+    margin: 0 auto;
+    margin-bottom: $buffer;
+    max-width: 800px;
+    white-space: pre-wrap;
+  }
+
+  button {
+    font-size: $font-size;
+    margin-top: $buffer-sm;
+  }
+  h1 { font-size: $font-size-heading; }
+  h2 { font-size: $font-size-heading - 2; }
+  h1, h2 {
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0;
+
+    @include theme("color", "theme-color");
+  }
+  input { margin-left: $buffer-sm; }
+  label {
+    display: block;
+    text-align: center;
+  }
+  ul {
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: $buffer;
+    padding: 0;
+    li { list-style-position: inside; }
+  }
+  video {
+    border: $border-width-lg solid;
+    display: block;
+    height: auto;
+    margin: $buffer-sm auto $buffer-lg auto;
+    max-width: 500px;
+    width: 80%;
+
+    @include theme("border-color", "border-color")
+  }
+}
+
+.question {
+  min-height: 40%;
+  text-align: center;
+
+  img {
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+.choices {
+  align-items: center;
+  display: flex;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+
+  @include theme("background-color", "background-color-light");
+
+  .choice {
+    display: inline-block;
+    margin: 2%;
+    width: 30%;
+
+    &:nth-child(-n+2) {
+      margin-bottom: 0;
+      margin-top: 4%;
+    }
+  }
+  .choicesContainer {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  button { padding: 0; }
+  img {
+    border: $border-width-lg solid;
+    display: block;
+    height: auto;
+    width: 100%;
+
+    @include theme("border-color", "border-color-dark");
+  }
+  img.selected {
+    border: $border-width-xl solid;
+
+    @include theme("border-color", "theme-color");
+  }
+}
+
+.hide { display: none; }
+.statusContainer {
+  padding: $buffer-sm $buffer;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.timer { float: left; }
+.status { float: right; }
+.progressBar {
+  clear: both;
+  height: $buffer-sm;
+  width: 100%;
+
+  @include theme("background-color", "background-color-light");
+}
+.progress {
+  height: $buffer-sm;
+  width: 100%;
+
+  @include theme("background-color", "cognitive-progress-bar-color");
+}

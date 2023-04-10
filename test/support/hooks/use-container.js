@@ -33,12 +33,18 @@ export default function useContainer(props) {
     });
 
     container.http.fetch.mockImplementation((url, options) => {
-      console.error("Unmocked Fetch", url, options); // eslint-disable-line no-console
+      console.error([ // eslint-disable-line no-console
+        `Test: ${expect.getState().currentTestName}\n`,
+        "Error: Unmocked Fetch\n\n"
+      ].join(""), options);
       throw new Error("Unmocked Fetch");
     });
   });
 
   afterEach(() => {
+    delete container.assessmentID;
+    delete container.benchmarkID;
+
     container.cache.clear();
 
     cacheMethods.forEach((method) => {

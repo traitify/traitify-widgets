@@ -1,8 +1,9 @@
 import Component from "components/results";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment} from "support/container/http";
+import {mockAssessment, mockCognitiveAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
+import cognitive from "support/json/assessment/cognitive.json";
 import dimensionBased from "support/json/assessment/dimension-based.json";
 import financialRisk from "support/json/assessment/financial-risk.json";
 import typeBased from "support/json/assessment/type-based.json";
@@ -49,6 +50,7 @@ describe("Results", () => {
   });
 
   it("renders cognitive results", async() => {
+    mockCognitiveAssessment({...cognitive, completed: true});
     mockOption("surveyType", "cognitive");
     component = await ComponentHandler.setup(Component);
 
@@ -79,7 +81,7 @@ describe("Results", () => {
 
   it("renders manager report", async() => {
     mockAssessment(dimensionBased);
-    mockOption("report", "employee");
+    mockOption("report", "manager");
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

@@ -7,7 +7,7 @@ const detailsFrom = ({name, personality}) => {
   if(details.length > 0) { return details; }
   if(name.includes(" ")) { return details; }
 
-  details = (personality[name.toLowerCase()] || []);
+  details = personality[name.toLowerCase()] || [];
   if(!Array.isArray(details)) { details = [details]; }
 
   return details.map((detail) => detail.title || detail.name || detail);
@@ -15,7 +15,10 @@ const detailsFrom = ({name, personality}) => {
 
 const detailsFromPerspective = ({name, personality, perspective: _perspective}) => {
   const perspective = _perspective.replace("Person", "");
-  const options = [`${perspective}_person_${name}`, `${capitalize(perspective)} Person ${name}`];
+  const options = [
+    `${perspective}_person_${name.toLowerCase()}`,
+    `${capitalize(perspective)} Person ${capitalize(name)}`
+  ];
 
   return personality.details
     .filter(({title}) => options.includes(title))

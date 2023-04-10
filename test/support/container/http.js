@@ -14,7 +14,10 @@ export const mockFetch = (_newMock) => {
       return Promise.resolve({json: () => mock.response(...options)});
     }
 
-    console.error("Unmocked Fetch", options); // eslint-disable-line no-console
+    console.error([ // eslint-disable-line no-console
+      `Test: ${expect.getState().currentTestName}\n`,
+      "Error: Unmocked Fetch\n\n"
+    ].join(""), options);
     throw new Error("Unmocked Fetch");
   });
 

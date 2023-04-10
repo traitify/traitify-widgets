@@ -23,7 +23,10 @@ export default class ComponentHandler {
       renderer = create(renderComponent(Component, {options, props}), createOptions);
     });
 
-    return new ComponentHandler(Component, {options, renderer});
+    const component = new ComponentHandler(Component, {options, renderer});
+    if(props?.ref) { component.ref = props.ref; }
+
+    return component;
   }
   static async setup(Component, _options = {}) {
     const {props, wrap = true, ...createOptions} = _options;
@@ -35,6 +38,7 @@ export default class ComponentHandler {
     });
 
     const component = new ComponentHandler(Component, {options, renderer});
+    if(props?.ref) { component.ref = props.ref; }
 
     await flushAsync();
 
@@ -66,19 +70,25 @@ export default class ComponentHandler {
     ));
   }
   unmount() { this.renderer.unmount(); }
-  async update(props) {
+  async update(_props) {
+    const props = {...this.props, ..._props};
+    if(this.ref) { props.ref = this.ref; }
+
     await act(async() => {
       this.renderer.update(
-        renderComponent(this.Component, {options: this.options, props: {...this.props, ...props}})
+        renderComponent(this.Component, {options: this.options, props})
       );
     });
 
     await flushAsync();
   }
-  updateProps(props) {
+  updateProps(_props) {
+    const props = {...this.props, ..._props};
+    if(this.ref) { props.ref = this.ref; }
+
     act(() => {
       this.renderer.update(
-        renderComponent(this.Component, {options: this.options, props: {...this.props, ...props}})
+        renderComponent(this.Component, {options: this.options, props})
       );
     });
   }

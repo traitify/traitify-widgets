@@ -869,7 +869,7 @@ The first question is looking to confirm what they should be like; the second tw
         Show Less
       </button>
     </div>
-    <span
+    <div
       className="p expandedIntro traitify--markdown"
     />
     <div

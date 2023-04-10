@@ -352,8 +352,8 @@ describe("Helpers", () => {
       createElementSpy.mockRestore();
     });
 
-    it("returns current state", async() => {
-      await ComponentHandler.setup(Component, {props});
+    it("returns current state", () => {
+      ComponentHandler.render(Component, {props});
 
       expect(props.ref.current).toEqual({
         error: undefined,
@@ -363,8 +363,8 @@ describe("Helpers", () => {
       });
     });
 
-    it("updates state from dispatch", async() => {
-      component = await ComponentHandler.setup(Component, {props});
+    it("updates state from dispatch", () => {
+      component = ComponentHandler.render(Component, {props});
       act(() => (
         props.ref.current.dispatch({answer: {skipped: true}, questionIndex: 0, type: "response"})
       ));
@@ -380,8 +380,8 @@ describe("Helpers", () => {
       });
     });
 
-    it("updates state from image loading", async() => {
-      component = await ComponentHandler.setup(Component, {props});
+    it("updates state from image loading", () => {
+      component = ComponentHandler.render(Component, {props});
       act(() => mockImageLoaded());
 
       expect(props.ref.current).toEqual({
@@ -399,8 +399,8 @@ describe("Helpers", () => {
       });
     });
 
-    it("updates state from props", async() => {
-      component = await ComponentHandler.setup(Component, {props});
+    it("updates state from props", () => {
+      component = ComponentHandler.render(Component, {props});
       component.updateProps({initialQuestions: [loadedQuestion, defaultQuestion]});
 
       expect(props.ref.current).toEqual({

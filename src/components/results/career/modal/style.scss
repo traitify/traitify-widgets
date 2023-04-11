@@ -29,8 +29,8 @@
   }
 
   .modalContainer {
-    @include theme("background", "background-color");
-    @include theme("color", "text-color");
+    @include theme("background", "background");
+    @include theme("color", "text");
     border-radius: $border-radius-sm * 2.5;
     padding: $buffer * 1.25 $buffer * 1.25 $buffer-sm * 1.25;
     text-align: left;
@@ -167,8 +167,8 @@
         display: none;
       }
       .dropdown {
-        @include theme("color", "text-color");
-        @include theme("background-color", "background-color");
+        @include theme("color", "text");
+        @include theme("background-color", "background");
         position: absolute;
         padding: $buffer-sm * .5;
         width: 100%;
@@ -183,7 +183,7 @@
         }
       }
       .dropdownButton {
-        @include theme("color", "text-color");
+        @include theme("color", "text");
         display: block;
         width: 100%;
         height: 42px;
@@ -225,16 +225,16 @@
   }
 
   border: $border-width solid;
-  @include theme(border-color, "border-color-light");
+  @include theme("border-color", "border-light");
   border-radius: $border-radius-sm * 2.5;
   padding: $buffer;
   width: 100%;
 
   .applyNowButton {
     border: 1px solid;
-    @include theme(border-color, "border-color");
+    @include theme("border-color", "border");
     border-radius: $border-radius-sm !important;
-    @include theme(color, "theme-color");
+    @include theme("color", "theme");
     margin-top: $buffer-sm;
     padding: $buffer-sm $buffer;
     white-space: nowrap;
@@ -261,7 +261,7 @@
     margin-right: $buffer-sm;
   }
   .jobTitleIcon {
-    @include theme(color, "theme-color");
+    @include theme("color", "theme");
     margin-right: $buffer;
   }
 }

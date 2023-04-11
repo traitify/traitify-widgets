@@ -21,7 +21,7 @@
     margin-right: $buffer;
     width: $border-width-xl;
 
-    @include theme("background", "text-color");
+    @include theme("background", "text");
   }
   img { max-width: 75px; }
 }
@@ -33,7 +33,7 @@
   padding-top: $buffer-lg;
   text-align: center;
 
-  @include theme("border-top-color", "border-color");
+  @include theme("border-top-color", "border");
   @include min-width("md") {
     align-items: center;
     display: flex;
@@ -45,7 +45,7 @@
     display: inline-block;
     margin-top: $buffer;
 
-    @include buttonDark("theme-color");
+    @include buttonDark("theme");
     @include min-width("md") { margin-top: 0; }
 
     :global(.traitify--icon-fa) svg { display: inline-block; }

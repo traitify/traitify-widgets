@@ -22,7 +22,7 @@
 
     @include buffer("margin-bottom");
     @include min-width("lg") { break-inside: avoid; }
-    @include theme("border-color", "border-color");
+    @include theme("border-color", "border");
   }
 }
 .dropdown {

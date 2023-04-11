@@ -15,21 +15,21 @@
 
 @mixin buttonDark($color) {
   @include button();
-  @include theme("color", "text-color-light");
+  @include theme("color", "text-light");
   @include theme("background", $color);
 
   &:hover, &:visited {
-    @include theme("color", "text-color-light");
+    @include theme("color", "text-light");
   }
 }
 
 @mixin buttonLight($color) {
   @include button();
-  @include theme("color", "text-color");
+  @include theme("color", "text");
   @include theme("background", $color);
 
   &:hover, &:visited {
-    @include theme("color", "text-color");
+    @include theme("color", "text");
   }
 }
 

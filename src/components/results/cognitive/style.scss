@@ -8,7 +8,7 @@
   a, a:visited {
     text-decoration: none;
 
-    @include theme("color", "theme-color");
+    @include theme("color", "theme");
   }
   img {
     margin: 0 auto;
@@ -19,5 +19,5 @@
 .heading {
   @extend %heading;
 
-  @include theme("color", "theme-color");
+  @include theme("color", "theme");
 }

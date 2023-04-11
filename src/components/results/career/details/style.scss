@@ -1,17 +1,18 @@
 @import "style/helpers";
 
+// TODO: Normalize style
 .container {
   @extend %container;
 
   display: block;
   margin-bottom: $buffer;
-  
+
   border: $border-width solid;
   border-radius: $border-radius-sm * 2.5;
   width: 100%;
-  @include theme(border-color,"border-color-light");
+  @include theme("border-color","border-light");
 
-  img { 
+  img {
     margin-right: 20px;
     border-radius: $border-radius-sm * 2.5;
     width: 100px;

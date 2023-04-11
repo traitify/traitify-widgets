@@ -8,8 +8,8 @@
     opacity: 0;
     width: 0;
 
-    + span svg { @include theme("color", "inactive-color"); }
-    &:checked + span svg { @include theme("color", "theme-color"); }
+    + span svg { @include theme("color", "inactive"); }
+    &:checked + span svg { @include theme("color", "theme"); }
   }
   span:last-of-type { margin-left: $buffer-sm; }
 }
@@ -55,8 +55,8 @@
   text-indent: $font-size + $buffer-sm;
   width: 100%;
 
-  @include theme("border-color", "border-color");
-  @include theme("color", "text-color");
+  @include theme("border-color", "border");
+  @include theme("color", "text");
 }
 .searchField {
   @extend .field;
@@ -82,7 +82,7 @@
     width: 100%;
 
     @include min-width(lg) { display: none; }
-    @include theme("border-color", "border-color");
+    @include theme("border-color", "border");
   }
   .filterContent {
     border: $border-width solid;
@@ -103,8 +103,8 @@
       position: initial;
       z-index: initial;
     }
-    @include theme("background", "background-color");
-    @include theme("border-color", "border-color");
+    @include theme("background", "background");
+    @include theme("border-color", "border");
 
     &.block { display: block; }
     .group {
@@ -124,8 +124,8 @@
       padding: $buffer-sm $buffer;
       width: 100%;
 
-      @include theme("border-color", "border-color");
-      @include theme("color", "text-color");
+      @include theme("border-color", "border");
+      @include theme("color", "text");
       @include min-width(lg) { margin: 0; }
     }
   }

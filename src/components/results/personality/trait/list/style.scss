@@ -10,7 +10,7 @@
     display: block;
     margin: 0 auto;
 
-    @include buttonDark("theme-color");
+    @include buttonDark("theme");
   }
 }
 .p { @extend %paragraph; }

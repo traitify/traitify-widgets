@@ -16,7 +16,7 @@
     content: "";
     position: absolute;
 
-    @include theme("background", "background-color");
+    @include theme("background", "background");
   }
   #{$circle}:#{$direction} {
     #{$side}: ($radius * -1) - $border-width;
@@ -27,8 +27,8 @@
     width: $radius;
     z-index: 2;
 
-    @include theme("border-#{$otherSide}-color", "border-color");
-    @include theme("border-bottom-color", "border-color");
+    @include theme("border-#{$otherSide}-color", "border");
+    @include theme("border-bottom-color", "border");
   }
   #{$square}:#{$direction} {
     #{$side}: $length * -1;
@@ -51,7 +51,7 @@
 
     @include activeTabSide("left", $circle: $circle, $square: $square);
     @include activeTabSide("right", $circle: $circle, $square: $square);
-    @include theme("background", "background-color");
-    @include theme("border-color", "border-color");
+    @include theme("background", "background");
+    @include theme("border-color", "border");
   }
 }

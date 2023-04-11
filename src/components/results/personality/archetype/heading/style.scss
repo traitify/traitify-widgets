@@ -21,7 +21,7 @@
     @include min-width("lg") {
       &:first-of-type { margin-right: $buffer-lg; }
     }
-    @include theme("background", "background-color");
+    @include theme("background", "background");
   }
 }
 
@@ -58,7 +58,7 @@
     display: block;
     font-weight: bold;
 
-    @include theme("color", "theme-color");
+    @include theme("color", "theme");
   }
 }
 .meaning {

@@ -7,5 +7,5 @@
   margin-bottom: $buffer-section;
 
   .center { text-align: center; }
-  .more { @include buttonLight("inactive-color"); }
+  .more { @include buttonLight("inactive"); }
 }

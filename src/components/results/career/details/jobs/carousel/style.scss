@@ -27,11 +27,11 @@
     height: 170px;
     padding: $buffer-sm * 0.5;
 
-    @include theme("border-color", "border-color");
-    @include theme("color", "theme-color");
+    @include theme("border-color", "border");
+    @include theme("color", "theme");
 
     &:disabled {
-      @include theme("color", "inactive-color");
+      @include theme("color", "inactive");
     }
   }
 }

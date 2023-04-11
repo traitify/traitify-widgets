@@ -19,7 +19,7 @@
     border-top: $border-width solid;
 
     @include buffer("margin-bottom");
-    @include theme("border-top-color", "border-color");
+    @include theme("border-top-color", "border");
   }
   .heading {
     @include max-width("lg") {
@@ -38,7 +38,7 @@
     padding: 0;
     text-decoration: underline;
 
-    @include theme("color", "theme-color");
+    @include theme("color", "theme");
   }
   li { margin-top: $buffer * 0.5; }
   ul {
@@ -71,8 +71,8 @@
     border-radius: $border-radius-sm;
     padding: $buffer * 0.5;
 
-    @include theme("border-color", "border-color");
-    @include theme("color", "text-color");
+    @include theme("border-color", "border");
+    @include theme("color", "text");
 
     svg { display: block; }
   }
@@ -107,7 +107,7 @@
     font-weight: bold;
     margin-right: $buffer;
 
-    @include theme("color", "theme-color");
+    @include theme("color", "theme");
   }
   button {
     display: block;

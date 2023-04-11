@@ -13,7 +13,7 @@
     h1, h2, p { margin-bottom: $buffer; }
   }
   @include min-width("xl") { font-size: $font-size; }
-  @include theme("background-color", "background-color");
+  @include theme("background-color", "background");
 
   .btnBlue {
     display: block;
@@ -22,18 +22,18 @@
     text-align: center;
     width: 100%;
 
-    @include buttonDark("theme-color");
+    @include buttonDark("theme");
     @include min-width("sm") { width: auto; }
   }
-  .btnContinue { @include buttonDark("theme-color"); }
-  .btnDisabled { @include buttonDark("inactive-color"); }
-  .btnSkip { @include buttonDark("secondary-color"); }
+  .btnContinue { @include buttonDark("theme"); }
+  .btnDisabled { @include buttonDark("inactive"); }
+  .btnSkip { @include buttonDark("secondary"); }
   .buttons {
     text-align: center;
     margin: 0 auto;
     width: 100%;
 
-    @include theme("background-color", "background-color-light");
+    @include theme("background-color", "background-light");
 
     button {
       border-radius: 0;
@@ -66,7 +66,7 @@
     text-align: center;
     margin-top: 0;
 
-    @include theme("color", "theme-color");
+    @include theme("color", "theme");
   }
   input { margin-left: $buffer-sm; }
   label {
@@ -88,7 +88,7 @@
     max-width: 500px;
     width: 80%;
 
-    @include theme("border-color", "border-color")
+    @include theme("border-color", "border")
   }
 }
 
@@ -109,7 +109,7 @@
   text-align: center;
   width: 100%;
 
-  @include theme("background-color", "background-color-light");
+  @include theme("background-color", "background-light");
 
   .choice {
     display: inline-block;
@@ -133,12 +133,12 @@
     height: auto;
     width: 100%;
 
-    @include theme("border-color", "border-color-dark");
+    @include theme("border-color", "border-dark");
   }
   img.selected {
     border: $border-width-xl solid;
 
-    @include theme("border-color", "theme-color");
+    @include theme("border-color", "theme");
   }
 }
 
@@ -155,11 +155,11 @@
   height: $buffer-sm;
   width: 100%;
 
-  @include theme("background-color", "background-color-light");
+  @include theme("background-color", "background-light");
 }
 .progress {
   height: $buffer-sm;
   width: 100%;
 
-  @include theme("background-color", "cognitive-progress-bar-color");
+  @include theme("background-color", "cognitive-progress-bar");
 }

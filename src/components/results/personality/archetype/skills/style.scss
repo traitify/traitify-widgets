@@ -12,7 +12,7 @@
     margin-top: $buffer;
     padding-top: $buffer;
 
-    @include theme("border-top-color", "theme-color");
+    @include theme("border-top-color", "theme");
   }
 }
 .dropdown {
@@ -41,7 +41,7 @@
   padding: $buffer;
 
   @include buffer("margin-bottom");
-  @include theme("border-color", "border-color");
+  @include theme("border-color", "border");
 }
 
 @include colorSchemeDark() {
@@ -49,6 +49,6 @@
     border-radius: $border-radius-sm;
     margin-bottom: $buffer;
 
-    @include theme("background-color", "text-color");
+    @include theme("background-color", "text");
   }
 }

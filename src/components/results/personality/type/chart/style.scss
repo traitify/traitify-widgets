@@ -89,7 +89,7 @@ $v-scale-width: 50px;
       margin-right: $h-cell-width-sm - $border-width;
 
       @include min-width("sm") { margin-right: $h-cell-width - $border-width; }
-      @include theme("border-left-color", "border-color");
+      @include theme("border-left-color", "border");
       &:last-of-type { margin-right: 0; }
     }
   }
@@ -200,7 +200,7 @@ $v-scale-width: 50px;
         position: absolute;
         right: 0;
 
-        @include theme("border-top-color", "border-color");
+        @include theme("border-top-color", "border");
         @include max-width("xl") {
           max-width: ($v-column-buffer-sm + $v-column-width) * 7;
         }

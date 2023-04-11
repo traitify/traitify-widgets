@@ -2,9 +2,9 @@
 
 .applyNowButton {
   border: 1px solid;
-  @include theme(border-color, "border-color");
+  @include theme("border-color", "border");
   border-radius: $border-radius-sm !important;
-  @include theme(color, "theme-color");
+  @include theme("color", "theme");
   margin-top: $buffer-sm;
   padding: $buffer-sm $buffer;
   white-space: nowrap;
@@ -35,7 +35,7 @@
   justify-content: space-between;
   margin: 5px 10px 5px 0px;
   border: $border-width solid;
-  @include theme("border-color", "border-color-light");
+  @include theme("border-color", "border-light");
   border-radius: $border-radius-sm * 2.5;
   padding: $buffer;
   height: 170px;

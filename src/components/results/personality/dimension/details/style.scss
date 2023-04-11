@@ -24,7 +24,7 @@
     position: relative;
     text-align: center;
 
-    @include theme("border-color", "border-color");
+    @include theme("border-color", "border");
     &:after {
       border-bottom: $border-width-lg solid;
       bottom: $buffer * 0.5;
@@ -33,7 +33,7 @@
       position: absolute;
       right: $buffer;
 
-      @include theme("border-color", "theme-color");
+      @include theme("border-color", "theme");
     }
   }
 }

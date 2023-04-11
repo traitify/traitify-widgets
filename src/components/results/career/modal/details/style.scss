@@ -98,7 +98,7 @@
     width: 50%;
     border-bottom: none;
     border-right: $border-width solid;
-    @include theme(border-color, "border-color-light");
+    @include theme("border-color", "border-light");
     margin-bottom: 0;
   }
 }

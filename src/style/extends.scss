@@ -3,7 +3,7 @@
   border-radius: $border-radius-sm;
 
   @include buffer("padding");
-  @include theme("border-color", "border-color");
+  @include theme("border-color", "border");
 }
 
 :global(.traitify--color-scheme-auto) {
@@ -20,8 +20,8 @@
   font: 400 #{$font-size}/#{$line-height} "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
 
   @include -set-variables($color-scheme-light);
-  @include theme("color", "text-color");
-  @include theme("background", "background-color");
+  @include theme("color", "text");
+  @include theme("background", "background");
   &, * { box-sizing: border-box; }
   &:global(.traitify--color-scheme-auto) {
     @media(prefers-color-scheme: dark) { @include -set-variables($color-scheme-dark); }
@@ -47,7 +47,7 @@
   padding: 0 $buffer;
   width: 100%;
 
-  @include theme("border-color", "border-color");
+  @include theme("border-color", "border");
 }
 
 %heading { @include heading(); }
@@ -68,7 +68,7 @@
     justify-content: space-between;
     margin-bottom: $buffer-lg;
 
-    @include theme("border-bottom-color", "border-color");
+    @include theme("border-bottom-color", "border");
     button {
       @extend %heading-lg;
 
@@ -80,8 +80,8 @@
         border-bottom: $border-width-xl solid;
         padding-bottom: $buffer - $border-width-xl;
 
-        @include theme("border-bottom-color", "theme-color");
-        @include theme("color", "theme-color");
+        @include theme("border-bottom-color", "theme");
+        @include theme("color", "theme");
       }
     }
   }

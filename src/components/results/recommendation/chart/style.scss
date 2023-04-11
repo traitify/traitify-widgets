@@ -68,8 +68,8 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
       padding-left: $h-grid-buffer-x;
       padding-right: $h-grid-buffer-x;
     }
-    @include theme("border-bottom-color", "border-color");
-    @include theme("border-left-color", "border-color");
+    @include theme("border-bottom-color", "border");
+    @include theme("border-left-color", "border");
   }
   .high, .low, .medium, .other {
     border-radius: $border-radius;
@@ -113,7 +113,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
     text-align: center;
 
     @include min-width("sm") { padding-left: $h-grid-buffer-x; }
-    @include theme("color", "border-color");
+    @include theme("color", "border");
     > div {
       margin-left: $h-pill-buffer-x-sm;
       margin-right: $h-pill-buffer-x-sm;
@@ -198,7 +198,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
       &::after {
         opacity: 0.25;
 
-        @include theme("background", "border-color");
+        @include theme("background", "border");
       }
       span { font-size: $font-size-heading; }
     }
@@ -225,7 +225,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
       right: calc(50% - #{$v-column-width * 2.5});
       right: max(calc(50% - #{$v-column-width * 2.5}), 0px);
     }
-    @include theme("color", "border-color");
+    @include theme("color", "border");
     &::before {
       border-right: $border-width solid;
       bottom: 0;
@@ -235,7 +235,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
       position: absolute;
       top: $v-pill-buffer-y * 0.5;
 
-      @include theme("border-right-color", "border-color");
+      @include theme("border-right-color", "border");
     }
     span {
       display: block;

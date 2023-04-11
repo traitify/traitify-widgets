@@ -18,7 +18,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
       </div>
       <div
@@ -28,7 +28,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "width": "95%",
             }
           }
@@ -51,7 +51,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
       </div>
       <div
@@ -61,7 +61,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "width": "65.69328%",
             }
           }
@@ -84,7 +84,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
       </div>
       <div
@@ -94,7 +94,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "width": "56.202103%",
             }
           }
@@ -117,7 +117,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
       </div>
       <div
@@ -127,7 +127,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "width": "56.041134%",
             }
           }
@@ -150,7 +150,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
       </div>
       <div
@@ -160,7 +160,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "width": "55.745975%",
             }
           }
@@ -183,7 +183,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
       </div>
       <div
@@ -193,7 +193,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "width": "54.949894%",
             }
           }
@@ -216,7 +216,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         </div>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
       </div>
       <div
@@ -226,7 +226,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "width": "51.037804%",
             }
           }
@@ -280,7 +280,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "height": "74.71152%",
             }
           }
@@ -297,7 +297,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "height": "65.69328%",
             }
           }
@@ -314,7 +314,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "height": "56.202103%",
             }
           }
@@ -331,7 +331,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "height": "56.041134%",
             }
           }
@@ -348,7 +348,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "height": "55.745975%",
             }
           }
@@ -365,7 +365,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "height": "54.949894%",
             }
           }
@@ -382,7 +382,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "height": "51.037804%",
             }
           }
@@ -401,7 +401,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
         Naturalist
       </span>
@@ -414,7 +414,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
         Analyzer
       </span>
@@ -427,7 +427,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
         Inventor
       </span>
@@ -440,7 +440,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
         Mentor
       </span>
@@ -453,7 +453,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
         Planner
       </span>
@@ -466,7 +466,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
         Visionary
       </span>
@@ -479,7 +479,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <span>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
         Action-Taker
       </span>
@@ -566,7 +566,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
       </div>
       <div
@@ -576,7 +576,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "width": "95%",
             }
           }
@@ -599,7 +599,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
       </div>
       <div
@@ -609,7 +609,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "width": "65.69328%",
             }
           }
@@ -632,7 +632,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
       </div>
       <div
@@ -642,7 +642,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "width": "56.202103%",
             }
           }
@@ -665,7 +665,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
       </div>
       <div
@@ -675,7 +675,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "width": "56.041134%",
             }
           }
@@ -698,7 +698,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
       </div>
       <div
@@ -708,7 +708,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "width": "55.745975%",
             }
           }
@@ -731,7 +731,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
       </div>
       <div
@@ -741,7 +741,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "width": "54.949894%",
             }
           }
@@ -764,7 +764,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         </div>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
       </div>
       <div
@@ -774,7 +774,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "width": "51.037804%",
             }
           }
@@ -828,7 +828,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "height": "74.71152%",
             }
           }
@@ -845,7 +845,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "height": "65.69328%",
             }
           }
@@ -862,7 +862,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "height": "56.202103%",
             }
           }
@@ -879,7 +879,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "height": "56.041134%",
             }
           }
@@ -896,7 +896,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "height": "55.745975%",
             }
           }
@@ -913,7 +913,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "height": "54.949894%",
             }
           }
@@ -930,7 +930,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "height": "51.037804%",
             }
           }
@@ -949,7 +949,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
         Naturalist
       </span>
@@ -962,7 +962,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
         Analyzer
       </span>
@@ -975,7 +975,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
         Inventor
       </span>
@@ -988,7 +988,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
         Mentor
       </span>
@@ -1001,7 +1001,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
         Planner
       </span>
@@ -1014,7 +1014,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
         Visionary
       </span>
@@ -1027,7 +1027,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <span>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
         Action-Taker
       </span>
@@ -1115,7 +1115,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
       </div>
       <div
@@ -1125,7 +1125,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "width": "95%",
             }
           }
@@ -1148,7 +1148,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
       </div>
       <div
@@ -1158,7 +1158,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "width": "65.69328%",
             }
           }
@@ -1181,7 +1181,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
       </div>
       <div
@@ -1191,7 +1191,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "width": "56.202103%",
             }
           }
@@ -1214,7 +1214,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
       </div>
       <div
@@ -1224,7 +1224,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "width": "56.041134%",
             }
           }
@@ -1247,7 +1247,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
       </div>
       <div
@@ -1257,7 +1257,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "width": "55.745975%",
             }
           }
@@ -1280,7 +1280,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
       </div>
       <div
@@ -1290,7 +1290,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "width": "54.949894%",
             }
           }
@@ -1313,7 +1313,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         </div>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
       </div>
       <div
@@ -1323,7 +1323,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "width": "51.037804%",
             }
           }
@@ -1377,7 +1377,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "height": "74.71152%",
             }
           }
@@ -1394,7 +1394,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "height": "65.69328%",
             }
           }
@@ -1411,7 +1411,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "height": "56.202103%",
             }
           }
@@ -1428,7 +1428,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "height": "56.041134%",
             }
           }
@@ -1445,7 +1445,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "height": "55.745975%",
             }
           }
@@ -1462,7 +1462,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "height": "54.949894%",
             }
           }
@@ -1479,7 +1479,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "height": "51.037804%",
             }
           }
@@ -1498,7 +1498,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
         Naturalist
       </span>
@@ -1511,7 +1511,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
         Analyzer
       </span>
@@ -1524,7 +1524,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
         Inventor
       </span>
@@ -1537,7 +1537,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
         Mentor
       </span>
@@ -1550,7 +1550,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
         Planner
       </span>
@@ -1563,7 +1563,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
         Visionary
       </span>
@@ -1576,7 +1576,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <span>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
         Action-Taker
       </span>
@@ -1658,7 +1658,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
       </div>
       <div
@@ -1668,7 +1668,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "width": "95%",
             }
           }
@@ -1691,7 +1691,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
       </div>
       <div
@@ -1701,7 +1701,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "width": "65.69328%",
             }
           }
@@ -1724,7 +1724,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
       </div>
       <div
@@ -1734,7 +1734,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "width": "56.202103%",
             }
           }
@@ -1757,7 +1757,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
       </div>
       <div
@@ -1767,7 +1767,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "width": "56.041134%",
             }
           }
@@ -1790,7 +1790,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
       </div>
       <div
@@ -1800,7 +1800,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "width": "55.745975%",
             }
           }
@@ -1823,7 +1823,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
       </div>
       <div
@@ -1833,7 +1833,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "width": "54.949894%",
             }
           }
@@ -1856,7 +1856,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         </div>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
       </div>
       <div
@@ -1866,7 +1866,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="bar"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "width": "51.037804%",
             }
           }
@@ -1920,7 +1920,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#32BF4C",
+              "backgroundColor": "#38D27A",
               "height": "74.71152%",
             }
           }
@@ -1937,7 +1937,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#17AEE7",
+              "backgroundColor": "#37A9E9",
               "height": "65.69328%",
             }
           }
@@ -1954,7 +1954,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#0ee0bd",
+              "backgroundColor": "#89E2CD",
               "height": "56.202103%",
             }
           }
@@ -1971,7 +1971,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#ed4343",
+              "backgroundColor": "#FE6d73",
               "height": "56.041134%",
             }
           }
@@ -1988,7 +1988,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#f7d00f",
+              "backgroundColor": "#FABC50",
               "height": "55.745975%",
             }
           }
@@ -2005,7 +2005,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#a75bd8",
+              "backgroundColor": "#AE8bE2",
               "height": "54.949894%",
             }
           }
@@ -2022,7 +2022,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           className="score"
           style={
             {
-              "backgroundColor": "#e87331",
+              "backgroundColor": "#FF9B71",
               "height": "51.037804%",
             }
           }
@@ -2041,7 +2041,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Naturalist Badge"
-          src="https://cdn.traitify.com/badges/86a8b1fc-57ec-43af-85e9-f8b82dc7fe53_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
         />
         Naturalist
       </span>
@@ -2054,7 +2054,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Analyzer Badge"
-          src="https://cdn.traitify.com/badges/e0121c7e-46d9-49ec-817d-24de290bc9b7_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
         />
         Analyzer
       </span>
@@ -2067,7 +2067,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Inventor Badge"
-          src="https://cdn.traitify.com/badges/42be7c29-271b-4e4e-bad3-6d9af1c35175_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
         />
         Inventor
       </span>
@@ -2080,7 +2080,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Mentor Badge"
-          src="https://cdn.traitify.com/badges/9998d4f8-0257-4326-825e-a05e7763e5e1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
         />
         Mentor
       </span>
@@ -2093,7 +2093,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Planner Badge"
-          src="https://cdn.traitify.com/badges/a881a1a9-b8be-4367-b588-2b8450634322_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
         />
         Planner
       </span>
@@ -2106,7 +2106,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Visionary Badge"
-          src="https://cdn.traitify.com/badges/c11268c5-5408-41b7-b779-b334f715984c_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
         />
         Visionary
       </span>
@@ -2119,7 +2119,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <span>
         <img
           alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/badges/882d2a57-8577-4b91-a196-23adc83bf7b1_medium"
+          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
         />
         Action-Taker
       </span>

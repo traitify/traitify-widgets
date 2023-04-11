@@ -19,7 +19,6 @@ describe("PersonalityBaseHeading", () => {
 
   beforeEach(() => {
     assessment = mutable(_assessment);
-    assessment = mutable(_assessment);
     assessment.archetype = assessment.personality_types
       .find(({personality_type: type}) => type.name === "Inventor")
       .personality_type;

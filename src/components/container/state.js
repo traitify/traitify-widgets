@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
+import loadFont from "lib/common/load-font";
 import {loadingState} from "lib/recoil";
 import useAssessmentEffect from "./hooks/use-assessment-effect";
 import useProps from "./hooks/use-props";
@@ -11,6 +12,7 @@ function State({children, ...props}) {
 
   useProps(props);
   useAssessmentEffect();
+  useEffect(() => { loadFont(); }, []);
   useEffect(() => { setLoading(false); }, []);
 
   if(loading) { return null; }

@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 import {selector} from "recoil";
+import themeAssessment from "lib/common/theme-assessment";
 import {
   activeTypeState,
   assessmentIDState,
@@ -27,9 +27,17 @@ export const cognitiveAssessmentQuery = selector({
       variables: {localeKey: get(localeState), testID: assessmentID}
     };
     const response = await http.post(GraphQL.cognitive.path, params);
-    if(response.errors) { console.warn("test", response.errors); } /* eslint-disable-line no-console */
+    if(response.errors) {
+      console.warn("test", response.errors); /* eslint-disable-line no-console */
+      return response;
+    }
 
-    return response.data.cognitiveTest;
+    const assessment = response.data.cognitiveTest;
+    if(!assessment?.completed) { return assessment; }
+
+    cache.set(cacheKey, assessment);
+
+    return assessment;
   },
   key: "cognitive-assessment"
 });
@@ -50,7 +58,11 @@ export const personalityAssessmentQuery = selector({
       locale_key: get(localeState)
     };
     const http = get(httpState);
-    const response = await http.get(`/assessments/${assessmentID}`, params);
+    const _response = await http.get(`/assessments/${assessmentID}`, params);
+    const response = _response ? themeAssessment(_response) : _response;
+    if(!response?.completed_at) { return response; }
+
+    cache.set(cacheKey, response);
 
     return response;
   },

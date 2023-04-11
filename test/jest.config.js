@@ -23,6 +23,7 @@ module.exports = {
     "<rootDir>/test/support/setup/react.js"
   ],
   setupFilesAfterEnv: [
+    "<rootDir>/test/support/setup/container.js",
     "<rootDir>/test/support/setup/extend.js",
     "<rootDir>/test/support/setup/recoil.js"
   ],

@@ -1,4 +1,4 @@
-import Component from "components/personality/archetype/heading";
+import Component from "components/results/personality/archetype/heading";
 import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockDeck, useAssessment, useDeck} from "support/container/http";

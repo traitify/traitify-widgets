@@ -3,8 +3,8 @@ import Traitify from "lib/traitify";
 import {render, unmountComponentAtNode} from "react-dom";
 
 jest.mock("react-dom");
-jest.mock("components/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
-jest.mock("components/personality/type/list", () => (() => <div className="mock">Personality Types</div>));
+jest.mock("components/results/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
+jest.mock("components/results/personality/type/list", () => (() => <div className="mock">Personality Types</div>));
 
 const createElement = (options = {}) => {
   const element = document.createElement("div");

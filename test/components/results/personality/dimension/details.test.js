@@ -1,4 +1,4 @@
-import Component from "components/personality/dimension/details";
+import Component from "components/results/personality/dimension/details";
 import ComponentHandler from "support/component-handler";
 import {mockGuide, useAssessment, useGuide} from "support/container/http";
 import {mockOption} from "support/container/options";

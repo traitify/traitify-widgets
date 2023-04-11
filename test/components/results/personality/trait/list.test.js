@@ -1,14 +1,16 @@
-import Component from "components/personality/dimension/list";
+import {act} from "react-test-renderer";
+import Component from "components/results/personality/trait/list";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
 
-jest.mock("components/personality/dimension/chart", () => (() => (<div className="mock">PersonalityDimensionChart</div>)));
-jest.mock("components/personality/dimension/details", () => (() => (<div className="mock">PersonalityDimensionDetails</div>)));
+jest.mock("components/results/personality/trait/details", () => ((props) => (
+  <div className="mock">Trait - {props.trait.personality_trait.name}</div>
+)));
 
-describe("PersonalityDimensionList", () => {
+describe("PersonalityTraitList", () => {
   let component;
 
   useContainer();
@@ -19,7 +21,7 @@ describe("PersonalityDimensionList", () => {
       await ComponentHandler.setup(Component);
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "PersonalityDimensions.initialized",
+        "PersonalityTraits.initialized",
         undefined
       );
     });
@@ -29,7 +31,7 @@ describe("PersonalityDimensionList", () => {
       await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "PersonalityDimensions.updated",
+        "PersonalityTraits.updated",
         undefined
       );
     });
@@ -48,29 +50,22 @@ describe("PersonalityDimensionList", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with more traits", async() => {
+    component = await ComponentHandler.setup(Component);
+    act(() => { component.findByText("Show More").props.onClick(); });
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if disabled", async() => {
-    mockOption("disabledComponents", ["PersonalityDimensionDetails", "PersonalityDimensionChart"]);
+    mockOption("disabledComponents", ["PersonalityTraits"]);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if results not ready", async() => {
+  it("renders nothing if not ready", async() => {
     mockAssessment(null);
-    component = await ComponentHandler.setup(Component);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders chart if details disabled", async() => {
-    mockOption("disabledComponents", ["PersonalityDimensionDetails"]);
-    component = await ComponentHandler.setup(Component);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders details if chart disabled", async() => {
-    mockOption("disabledComponents", ["PersonalityDimensionChart"]);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

@@ -1,9 +1,9 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
-import PersonalityArchetypeHeading from "components/personality/archetype/heading";
-import PersonalityArchetypeTips from "components/personality/archetype/tips";
-import PersonalityDimensions from "components/personality/dimension/list";
-import PersonalityTraits from "components/personality/trait/list";
+import ArchetypeHeading from "components/results/personality/archetype/heading";
+import ArchetypeTips from "components/results/personality/archetype/tips";
+import Dimensions from "components/results/personality/dimension/list";
+import Traits from "components/results/personality/trait/list";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
@@ -25,10 +25,10 @@ export default function CandidateReport() {
 
   return (
     <section className={style.container}>
-      <PersonalityArchetypeHeading />
-      <PersonalityArchetypeTips />
-      <PersonalityDimensions />
-      <PersonalityTraits />
+      <ArchetypeHeading />
+      <ArchetypeTips />
+      <Dimensions />
+      <Traits />
     </section>
   );
 }

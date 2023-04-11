@@ -1,16 +1,16 @@
-import PersonalityBaseDetails from "components/personality/base/details";
-import PersonalityBaseHeading from "components/personality/base/heading";
-import PersonalityTypes from "components/personality/type/list";
-import PersonalityTraits from "components/personality/trait/list";
+import BaseDetails from "components/results/personality/base/details";
+import BaseHeading from "components/results/personality/base/heading";
+import Types from "components/results/personality/type/list";
+import Traits from "components/results/personality/trait/list";
 import style from "./style.scss";
 
 export default function AttractReport() {
   return (
     <section className={style.container}>
-      <PersonalityBaseHeading />
-      <PersonalityTypes />
-      <PersonalityTraits />
-      <PersonalityBaseDetails />
+      <BaseHeading />
+      <Types />
+      <Traits />
+      <BaseDetails />
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import PersonalityTrait from "components/personality/trait/details";
+import PersonalityTrait from "components/results/personality/trait/details";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useOption from "lib/hooks/use-option";

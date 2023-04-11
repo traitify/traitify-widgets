@@ -1,9 +1,9 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
-import PersonalityArchetypeHeading from "components/personality/archetype/heading";
-import PersonalityArchetypeSkills from "components/personality/archetype/skills";
-import PersonalityArchetypeTips from "components/personality/archetype/tips";
-import PersonalityDimensions from "components/personality/dimension/list";
+import ArchetypeHeading from "components/results/personality/archetype/heading";
+import ArchetypeSkills from "components/results/personality/archetype/skills";
+import ArchetypeTips from "components/results/personality/archetype/tips";
+import Dimensions from "components/results/personality/dimension/list";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
@@ -18,10 +18,10 @@ export default function EmployeeReport() {
 
   return (
     <section className={style.container}>
-      <PersonalityArchetypeHeading />
-      <PersonalityArchetypeSkills />
-      <PersonalityArchetypeTips />
-      <PersonalityDimensions />
+      <ArchetypeHeading />
+      <ArchetypeSkills />
+      <ArchetypeTips />
+      <Dimensions />
     </section>
   );
 }

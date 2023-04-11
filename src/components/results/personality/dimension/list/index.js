@@ -1,5 +1,5 @@
-import PersonalityDimensionChart from "components/personality/dimension/chart";
-import PersonalityDimensionDetails from "components/personality/dimension/details";
+import PersonalityDimensionChart from "components/results/personality/dimension/chart";
+import PersonalityDimensionDetails from "components/results/personality/dimension/details";
 import sortByTypePosition from "lib/common/sort-by-type-position";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";

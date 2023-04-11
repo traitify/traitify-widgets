@@ -1,11 +1,17 @@
 /* global VERSION */
 import {render, unmountComponentAtNode} from "react-dom";
 import Components from "components";
+import dig from "lib/common/object/dig";
 import except from "lib/common/object/except";
 import slice from "lib/common/object/slice";
 import split from "lib/common/object/split";
 
-const componentFromString = (name) => name.split(".").reduce((current, key) => current[key], Components);
+const componentFromString = (name) => {
+  const component = dig(Components, ...name.split("."));
+  if(component) { return component; }
+
+  return dig(Components.Results, ...name.split("."));
+};
 const isTarget = (target) => (typeof target === "string" || target instanceof HTMLElement);
 const formatTargets = (_targets) => {
   const targets = isTarget(_targets) ? {Default: _targets} : _targets;

@@ -1,5 +1,5 @@
 import {act} from "react-test-renderer";
-import Component from "components/personality/base/details";
+import Component from "components/results/personality/base/details";
 import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";

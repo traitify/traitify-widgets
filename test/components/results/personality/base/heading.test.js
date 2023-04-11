@@ -1,4 +1,4 @@
-import Component from "components/personality/base/heading";
+import Component from "components/results/personality/base/heading";
 import mutable from "lib/common/object/mutable";
 import themeAssessment from "lib/common/theme-assessment";
 import ComponentHandler from "support/component-handler";

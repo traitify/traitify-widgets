@@ -5,6 +5,7 @@ import {useRecoilState} from "recoil";
 import loadFont from "lib/common/load-font";
 import {loadingState} from "lib/recoil";
 import useAssessmentEffect from "./hooks/use-assessment-effect";
+import useAssessmentsEffect from "./hooks/use-assessments-effect";
 import useProps from "./hooks/use-props";
 
 function State({children, ...props}) {
@@ -12,6 +13,7 @@ function State({children, ...props}) {
 
   useProps(props);
   useAssessmentEffect();
+  useAssessmentsEffect();
   useEffect(() => { loadFont(); }, []);
   useEffect(() => { setLoading(false); }, []);
 
@@ -30,6 +32,7 @@ State.defaultProps = {
   listener: null,
   locale: null,
   options: {},
+  packageID: null,
   profileID: null
 };
 State.propTypes = {
@@ -43,6 +46,7 @@ State.propTypes = {
   listener: PropTypes.object,
   locale: PropTypes.string,
   options: PropTypes.object,
+  packageID: PropTypes.string,
   profileID: PropTypes.string
 };
 

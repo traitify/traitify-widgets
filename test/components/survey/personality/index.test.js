@@ -7,7 +7,7 @@ import times from "lib/common/array/times";
 import mutable from "lib/common/object/mutable";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockAssessmentSlides} from "support/container/http";
+import {mockAssessment, mockAssessmentSubmit} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
@@ -404,7 +404,7 @@ describe("Survey.Personality", () => {
 
       it("submits results", async() => {
         component = await ComponentHandler.setup(Component, {createNodeMock});
-        const mock = mockAssessmentSlides({status: "success"});
+        const mock = mockAssessmentSubmit({status: "success"});
 
         await completeSlides();
 
@@ -504,14 +504,14 @@ describe("Survey.Personality", () => {
     };
 
     it("does nothing if not finished", async() => {
-      const mock = mockAssessmentSlides();
+      const mock = mockAssessmentSubmit();
       component = await ComponentHandler.setup(Component, {createNodeMock});
 
       expect(mock.called).toBe(0);
     });
 
     it("does nothing if results ready", async() => {
-      const mock = mockAssessmentSlides();
+      const mock = mockAssessmentSubmit();
       const slides = assessment.slides
         .map(({id}, index) => ({id, response: index === 0, time_taken: 200}));
       container.cache.set(cacheKey, {slides});
@@ -523,7 +523,7 @@ describe("Survey.Personality", () => {
 
     it("submits results", async() => {
       component = await ComponentHandler.setup(Component, {createNodeMock});
-      const mock = mockAssessmentSlides({status: "success"});
+      const mock = mockAssessmentSubmit({status: "success"});
 
       await completeSlides();
 
@@ -538,9 +538,9 @@ describe("Survey.Personality", () => {
 
       it("automatically retries request", async() => {
         component = await ComponentHandler.setup(Component, {createNodeMock});
-        const mockError = mockAssessmentSlides({implementation: () => Promise.reject(`{"errors": ["Oh no", "Not good"]}`)});
+        const mockError = mockAssessmentSubmit({implementation: () => Promise.reject(`{"errors": ["Oh no", "Not good"]}`)});
         await completeSlides();
-        const mock = mockAssessmentSlides({status: "success"});
+        const mock = mockAssessmentSubmit({status: "success"});
         await retry();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {status: "success"}}));
@@ -550,7 +550,7 @@ describe("Survey.Personality", () => {
 
       it("renders default error", async() => {
         component = await ComponentHandler.setup(Component, {createNodeMock});
-        const mock = mockAssessmentSlides({implementation: () => Promise.reject()});
+        const mock = mockAssessmentSubmit({implementation: () => Promise.reject()});
 
         await completeSlides();
         await retry();
@@ -563,7 +563,7 @@ describe("Survey.Personality", () => {
 
       it("renders json error", async() => {
         component = await ComponentHandler.setup(Component, {createNodeMock});
-        const mock = mockAssessmentSlides({implementation: () => Promise.reject(`{"errors": ["Oh no", "Not good"]}`)});
+        const mock = mockAssessmentSubmit({implementation: () => Promise.reject(`{"errors": ["Oh no", "Not good"]}`)});
 
         await completeSlides();
         await retry();
@@ -576,7 +576,7 @@ describe("Survey.Personality", () => {
 
       it("renders text error", async() => {
         component = await ComponentHandler.setup(Component, {createNodeMock});
-        const mock = mockAssessmentSlides({implementation: () => Promise.reject("Oh no")});
+        const mock = mockAssessmentSubmit({implementation: () => Promise.reject("Oh no")});
 
         await completeSlides();
         await retry();
@@ -589,13 +589,13 @@ describe("Survey.Personality", () => {
 
       it("retries", async() => {
         component = await ComponentHandler.setup(Component, {createNodeMock});
-        const mockError = mockAssessmentSlides({implementation: () => Promise.reject("Oh no")});
+        const mockError = mockAssessmentSubmit({implementation: () => Promise.reject("Oh no")});
 
         await completeSlides();
         await retry();
         await retry();
 
-        const mock = mockAssessmentSlides({status: "success"});
+        const mock = mockAssessmentSubmit({status: "success"});
         act(() => { component.findByText("Click Here to Try Again").props.onClick(); });
 
         await act(async() => { await jest.runOnlyPendingTimers(); });

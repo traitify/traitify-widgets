@@ -48,8 +48,38 @@ export const mockAssessment = (...params) => {
   return mockFetch(mock);
 };
 
+export const mockAssessments = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {benchmarkID: _benchmarkID, profileID: _profileID, implementation} = mockOptions || {};
+  const benchmarkID = _benchmarkID || response?.benchmarkID || container.benchmarkID;
+  const profileID = _profileID || response?.profileID || container.profileID;
+  const mock = {
+    key: "assessments",
+    request: (url, options) => {
+      if(!url.includes("/xavier/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.benchmarkID === benchmarkID && variables.profileID === profileID;
+    }
+  };
+
+  container.assessmentID = null;
+  container.benchmarkID = benchmarkID;
+  container.profileID = profileID;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {recommendation: response}});
+
+  return mockFetch(mock);
+};
+
 // NOTE: Allow params to be [response, {id}] or {id, implementation}
-export const mockAssessmentSlides = (...params) => {
+export const mockAssessmentSubmit = (...params) => {
   const [response, mockOptions] = params.length === 1 && params[0]?.implementation
     ? [null, ...params]
     : params;

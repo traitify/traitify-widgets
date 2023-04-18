@@ -1,13 +1,15 @@
 import {useEffect} from "react";
-import {useSetRecoilState} from "recoil";
+import {useResetRecoilState, useSetRecoilState} from "recoil";
 import slice from "lib/common/object/slice";
 import Cache from "lib/cache";
+import GraphQL from "lib/graphql";
+import useDidUpdate from "lib/hooks/use-did-update";
 import Http from "lib/http";
 import I18n from "lib/i18n";
-import GraphQL from "lib/graphql";
 import Listener from "lib/listener";
 import {
   activeState,
+  assessmentsState,
   benchmarkIDState,
   cacheState,
   graphqlState,
@@ -16,10 +18,12 @@ import {
   listenerState,
   localeState,
   optionsState,
+  packageIDState,
   profileIDState
 } from "lib/recoil";
 
 export default function useProps(props) {
+  const resetAssessments = useResetRecoilState(assessmentsState);
   const setActive = useSetRecoilState(activeState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);
   const setCache = useSetRecoilState(cacheState);
@@ -29,12 +33,14 @@ export default function useProps(props) {
   const setListener = useSetRecoilState(listenerState);
   const setLocale = useSetRecoilState(localeState);
   const setOptions = useSetRecoilState(optionsState);
+  const setPackageID = useSetRecoilState(packageIDState);
   const setProfileID = useSetRecoilState(profileIDState);
   const {
     assessmentID,
     benchmarkID,
     locale,
     options = {},
+    packageID,
     profileID
   } = props;
 
@@ -81,6 +87,7 @@ export default function useProps(props) {
   }, [assessmentID, options.surveyType]);
 
   useEffect(() => { setBenchmarkID(benchmarkID); }, [benchmarkID]);
-
+  useEffect(() => { setPackageID(packageID); }, [packageID]);
   useEffect(() => { setProfileID(profileID); }, [profileID]);
+  useDidUpdate(() => { resetAssessments(); }, [benchmarkID, packageID, profileID]);
 }

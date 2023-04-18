@@ -42,15 +42,30 @@ cache.set = (name, value) => {
 };
 
 function createWidget() {
-  const testID = cache.get("testID");
-  console.log("createWidget", testID);
-  if(!testID) { return; }
+  const surveyType = cache.get("surveyType");
+
+  if(surveyType === "benchmark") {
+    const benchmarkID = cache.get("benchmarkID");
+    const profileID = cache.get("profileID");
+    console.log("createWidget", {benchmarkID, profileID});
+    if(!benchmarkID) { return; }
+    if(!profileID) { return; }
+
+    Traitify.options.benchmarkID = benchmarkID;
+    Traitify.options.profileID = profileID;
+  } else {
+    const assessmentID = cache.get("assessmentID");
+    console.log("createWidget", {assessmentID});
+    if(!assessmentID) { return; }
+
+    Traitify.options.assessmentID = assessmentID;
+    Traitify.options.surveyType = surveyType;
+  }
 
   const targets = {"Default": "#default"};
 
-  Traitify.options.assessmentID = testID;
   Traitify.options.locale = cache.get("locale");
-  Traitify.options.surveyType = cache.get("surveyType");
+  Traitify.options.report = cache.get("report");
   Traitify.options.survey = {};
   Traitify.options.survey.captureLearningDisability = true;
   Traitify.options.survey.disableTimeLimit = true;
@@ -75,6 +90,7 @@ function booleanFrom(value, fallback) {
 function createAssessment() {
   destroyWidget();
 
+  if(cache.get("surveyType") === "benchmark") { return createWidget(); }
   if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
 
   const params = {
@@ -91,8 +107,8 @@ function createAssessment() {
       const id = assessment.id;
       console.log("createAssessment", id);
 
-      cache.set("personalityTestID", id);
-      cache.set("testID", id);
+      cache.set("personalityAssessmentID", id);
+      cache.set("assessmentID", id);
     } catch(error) {
       console.log(error);
     }
@@ -111,8 +127,8 @@ function createCognitiveAssessment() {
     try {
       const id = response.data.createCognitiveTest.id;
 
-      cache.set("cognitiveTestID", id);
-      cache.set("testID", id);
+      cache.set("cognitiveAssessmentID", id);
+      cache.set("assessmentID", id);
     } catch(error) {
       console.log(error);
     }
@@ -121,21 +137,35 @@ function createCognitiveAssessment() {
 }
 
 // TODO: Allow for checkbox and text option
-function createOption({fallback, name, onChange, options, text}) {
+function createOption({fallback, name, onChange, options, text, type}) {
   const element = createElement({className: "row", htmlFor: name, tag: "label", text});
-  const select = createElement({
-    id: name,
-    name,
-    onChange: onChange || onInputChange,
-    tag: "select"
-  });
-  const selected = cache.get(name, {fallback});
 
-  options.forEach(({text, value}) => {
-    select.appendChild(createElement({selected: selected === value, tag: "option", text, value}));
-  });
+  if(options) {
+    const select = createElement({
+      id: name,
+      name,
+      onChange: onChange || onInputChange,
+      tag: "select"
+    });
+    const selected = cache.get(name, {fallback});
 
-  element.appendChild(select);
+    options.forEach(({text, value}) => {
+      select.appendChild(createElement({selected: selected === value, tag: "option", text, value}));
+    });
+
+    element.appendChild(select);
+  } else {
+    const input = createElement({
+      id: name,
+      name,
+      onChange: onChange || onInputChange,
+      tag: "input",
+      type: type || "text",
+      value: cache.get(name, {fallback})
+    });
+
+    element.appendChild(input);
+  }
 
   return element;
 }
@@ -185,11 +215,19 @@ function setupDom() {
   group.appendChild(createOption({
     fallback: "en-us",
     name: "locale",
-    onChange: onInputChange,
     options: Object.keys(locales)
       .map((key) => ({text: locales[key], value: key}))
       .sort((a, b) => a.text.localeCompare(b.text)),
     text: "Locale:"
+  }));
+  group.appendChild(createOption({
+    name: "report",
+    options: [
+      {text: "Candidate", value: "candidate"},
+      {text: "Employee", value: "employee"},
+      {text: "Manager", value: "manager"}
+    ],
+    text: "Report:"
   }));
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createWidget, tag: "button", text: "Refresh"}));
@@ -202,7 +240,7 @@ function setupDom() {
     fallback: "personality",
     name: "surveyType",
     onChange: onSurveyTypeChange,
-    options: [{text: "Cognitive", value: "cognitive"}, {text: "Personality", value: "personality"}],
+    options: [{text: "Benchmark", value: "benchmark"}, {text: "Cognitive", value: "cognitive"}, {text: "Personality", value: "personality"}],
     text: "Survey Type:"
   }));
   const surveyType = cache.get("surveyType", {fallback: "personality"});
@@ -210,7 +248,6 @@ function setupDom() {
   row.appendChild(createOption({
     fallback: "big-five",
     name: "deckID",
-    onChange: onInputChange,
     options: [
       {text: "Big Five", value: "big-five"},
       {text: "Career Deck", value: "career-deck"},
@@ -223,6 +260,10 @@ function setupDom() {
   }));
   group.appendChild(row);
   group.appendChild(createElement({className: surveyType !== "cognitive" ? "hide" : "", id: "cognitive-options"}));
+  row = createElement({className: surveyType !== "benchmark" ? "hide" : "", id: "benchmark-options"});
+  row.appendChild(createOption({name: "benchmarkID", text: "Benchmark ID:"}));
+  row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
+  group.appendChild(row)
 
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create"}));
@@ -259,13 +300,15 @@ function onSurveyTypeChange(e) {
 
   const name = e.target.name;
   const value = e.target.value;
-  const testID = cache.get(`${value}TestID`);
+  const assessmentID = cache.get(`${value}AssessmentID`);
+  const otherValues = ["benchmark", "cognitive", "personality"].filter((type) => type !== value);
 
-  cache.set("testID", testID);
+  cache.set("assessmentID", assessmentID);
 
-  const otherValue = value === "cognitive" ? "personality" : "cognitive";
-  document.querySelector(`#${otherValue}-options`).classList.add("hide");
   document.querySelector(`#${value}-options`).classList.remove("hide");
+  otherValues.forEach((otherValue) => {
+    document.querySelector(`#${otherValue}-options`).classList.add("hide");
+  });
 }
 
 setupDom();

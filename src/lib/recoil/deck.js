@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import {noWait, selector} from "recoil";
 import {assessmentQuery} from "./assessment";
 import {

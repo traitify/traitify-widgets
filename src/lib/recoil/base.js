@@ -20,6 +20,7 @@ export const localeState = atom({
   key: "locale"
 });
 export const optionsState = atom({key: "options"});
+export const packageIDState = atom({key: "package-id"});
 export const profileIDState = atom({key: "profile-id"});
 
 // NOTE: Breaking up state prevents over-triggering selectors

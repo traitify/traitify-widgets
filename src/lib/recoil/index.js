@@ -1,4 +1,5 @@
 export * from "./assessment";
+export * from "./assessments";
 export * from "./base";
 export * from "./benchmark";
 export * from "./cache";

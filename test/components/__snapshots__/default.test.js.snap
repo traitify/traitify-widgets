@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Default assessments renders cognitive survey 1`] = `
+<div
+  className="mock"
+>
+  Survey
+</div>
+`;
+
+exports[`Default assessments renders personality results 1`] = `
+<div
+  className="mock"
+>
+  Results
+</div>
+`;
+
+exports[`Default assessments renders personality survey 1`] = `
+<div
+  className="mock"
+>
+  Survey
+</div>
+`;
+
 exports[`Default renders nothing if not ready 1`] = `null`;
 
 exports[`Default renders results 1`] = `

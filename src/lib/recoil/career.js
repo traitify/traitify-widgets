@@ -42,7 +42,6 @@ const careersPathState = selector({
   key: "careers-path"
 });
 
-// TODO: Put cache in front of queries with ability to bust it
 export const careersQuery = selector({
   get: async({get}) => {
     const http = get(httpState);

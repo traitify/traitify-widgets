@@ -3,13 +3,14 @@ import {selector} from "recoil";
 import dig from "lib/common/object/dig";
 import {assessmentQuery} from "./assessment";
 import {
+  cacheState,
   benchmarkIDState,
   graphqlState,
   httpState,
-  localeState
+  localeState,
+  safeCacheKeyState
 } from "./base";
 
-// TODO: Put cache in front of queries with ability to bust it
 export const benchmarkQuery = selector({
   get: async({get}) => {
     let benchmarkID = get(benchmarkIDState);
@@ -22,6 +23,11 @@ export const benchmarkQuery = selector({
       benchmarkID = recommendation.recommendation_id;
     }
 
+    const cache = get(cacheState);
+    const cacheKey = get(safeCacheKeyState({id: benchmarkID, type: "benchmark"}));
+    const cached = cache.get(cacheKey);
+    if(cached) { return cached; }
+
     const GraphQL = get(graphqlState);
     const http = get(httpState);
     const params = {
@@ -31,7 +37,10 @@ export const benchmarkQuery = selector({
     const response = await http.post(GraphQL.benchmark.path, params);
     if(response.errors) { console.warn("benchmark", response.errors); } /* eslint-disable-line no-console */
 
-    return response.data.getDimensionRangeBenchmark;
+    const benchmark = response.data.getDimensionRangeBenchmark;
+    if(benchmark) { cache.set(cacheKey, benchmark); }
+
+    return benchmark;
   },
   key: "benchmark"
 });

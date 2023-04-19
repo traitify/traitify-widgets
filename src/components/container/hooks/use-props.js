@@ -22,7 +22,6 @@ import {
   profileIDState
 } from "lib/recoil";
 
-// NOTE: Similar logic is used in useListenerEffect in order to synchronize options
 export default function useProps(props) {
   const resetAssessments = useResetRecoilState(assessmentsState);
   const setActive = useSetRecoilState(activeState);
@@ -64,7 +63,7 @@ export default function useProps(props) {
   }, [props.cache]);
 
   useEffect(() => {
-    setHttp(props.http || new Http(slice(props, ["authKey", "host", "version"])));
+    setHttp(props.http || new Http(slice(options, ["authKey", "host", "version"])));
   }, [props.http]);
 
   useEffect(() => {

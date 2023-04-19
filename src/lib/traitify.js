@@ -5,6 +5,9 @@ import componentFromString from "lib/common/component-from-string";
 import except from "lib/common/object/except";
 import slice from "lib/common/object/slice";
 import split from "lib/common/object/split";
+import Http from "lib/http";
+import I18n from "lib/i18n";
+import Listener from "lib/listener";
 
 const isTarget = (target) => (typeof target === "string" || target instanceof HTMLElement);
 const formatTargets = (_targets) => {
@@ -27,6 +30,9 @@ const formatTargets = (_targets) => {
 export default class Traitify {
   constructor(options) {
     this.__version__ = VERSION;
+    this.http = new Http();
+    this.i18n = new I18n();
+    this.listener = new Listener();
     this.options = options || {};
     this.renderedTargets = {};
   }
@@ -38,14 +44,11 @@ export default class Traitify {
     ]);
     const [props, options] = split(this.options, [
       "assessmentID",
-      "authKey",
       "benchmarkID",
       "graphql",
-      "host",
       "locale",
       "packageID",
-      "profileID",
-      "version"
+      "profileID"
     ]);
 
     return {...objects, ...props, options};

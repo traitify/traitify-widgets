@@ -11,8 +11,5 @@ const traitify = new Traitify();
 
 traitify.Components = Components;
 traitify.GraphQL = GraphQL;
-traitify.http = new Http();
-traitify.i18n = new I18n();
-traitify.listener = new Listener();
 
 export default traitify;

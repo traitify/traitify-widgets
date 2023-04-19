@@ -143,6 +143,9 @@ Traitify.listener.on("Survey.finished", ({response}) => {
 
 ```
 Traitify.options.locale = "en-us";
+
+// Or if the component has already been rendered
+Traitify.updateLocale("en-us");
 ```
 
 Here is a list of the available locales (`en-us` is the default):

@@ -103,11 +103,12 @@ Traitify.render("#the-id-of-the-target-you-wish-to-render-to");
 
 ```
 // Old
-Traitify.ui.setLocale("es-us");
 assessment.locale("nl-nl");
+Traitify.ui.setLocale("es-us");
 
 // New
 Traitify.options.locale = "es-us";
+Traitify.updateLocale("en-us");
 ```
 
 #### Nested

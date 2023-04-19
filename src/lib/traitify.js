@@ -95,9 +95,8 @@ export default class Traitify {
 
     return Promise.all(promises);
   }
-  updateOption(key, value) { this.updateOptions({[key]: value}); }
-  updateOptions(options) {
-    this.listener.trigger("updateOptions", options);
-    this.options = {...this.options, ...options};
+  updateLocale(value) {
+    this.listener.trigger("updateLocale", value);
+    this.options.locale = value;
   }
 }

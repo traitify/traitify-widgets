@@ -64,6 +64,14 @@ function createWidget() {
 
   const targets = {"Default": "#default"};
 
+  Traitify.listener.on("Results.initialized", () => {
+    console.log("Results.initialized");
+  });
+
+  Traitify.listener.on("Results.updated", () => {
+    console.log("Results.updated");
+  });
+
   Traitify.options.locale = cache.get("locale");
   Traitify.options.report = cache.get("report");
   Traitify.options.survey = {};

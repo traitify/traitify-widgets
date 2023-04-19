@@ -4,6 +4,7 @@ import AttractReport from "./report/attract";
 import CandidateReport from "./report/candidate";
 import EmployeeReport from "./report/employee";
 import ManagerReport from "./report/manager";
+import Results from "./results";
 import CareerContainer from "./results/career/container";
 import CareerDetails from "./results/career/details";
 import CareerFilter from "./results/career/filter";
@@ -24,6 +25,9 @@ import TraitList from "./results/personality/trait/list";
 import TypeChart from "./results/personality/type/chart";
 import TypeList from "./results/personality/type/list";
 import RecommendationChart from "./results/recommendation/chart";
+import Survey from "./survey";
+import CognitiveSurvey from "./survey/cognitive";
+import PersonalitySurvey from "./survey/personality";
 
 export default {
   Container,
@@ -43,6 +47,7 @@ export default {
       Modal: CareerModal
     },
     Cognitive: CognitiveResults,
+    Container: Results,
     Guide,
     Personality: {
       Archetype: {
@@ -71,5 +76,10 @@ export default {
     Recommendation: {
       Chart: RecommendationChart
     }
+  },
+  Survey: {
+    Cognitive: CognitiveSurvey,
+    Container: Survey,
+    Personality: PersonalitySurvey
   }
 };

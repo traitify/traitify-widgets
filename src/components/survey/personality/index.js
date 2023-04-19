@@ -60,6 +60,7 @@ export default function PersonalitySurvey() {
   const instructions = dig(assessment, "instructions", "instructional_text");
   const likertScale = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const state = {
+    assessment,
     dispatch,
     error,
     finished,

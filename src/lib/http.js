@@ -19,7 +19,8 @@ export default class Http {
       "Content-Type": graphql ? "application/graphql" : "application/json"
     };
     const options = {headers, method};
-    let url = `${this.host}/${this.version}${path}`;
+    let url = [this.host, this.version].filter(Boolean).join("/");
+    url = `${url}${path}`;
 
     if(params && ["get", "delete"].includes(method.toLowerCase())) {
       url += url.includes("?") ? "&" : "?";

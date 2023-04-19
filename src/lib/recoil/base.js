@@ -2,13 +2,13 @@ import {atom, selector, selectorFamily} from "recoil";
 import {getCacheKey} from "lib/cache";
 
 export const activeState = atom({default: null, key: "active"});
-export const benchmarkIDState = atom({key: "benchmark-id"});
-export const cacheState = atom({dangerouslyAllowMutability: true, key: "cache"});
-export const errorState = atom({key: "error"});
-export const graphqlState = atom({dangerouslyAllowMutability: true, key: "graphql"});
-export const httpState = atom({dangerouslyAllowMutability: true, key: "http"});
-export const i18nState = atom({dangerouslyAllowMutability: true, key: "i18n"});
-export const listenerState = atom({dangerouslyAllowMutability: true, key: "listener"});
+export const benchmarkIDState = atom({default: null, key: "benchmark-id"});
+export const cacheState = atom({dangerouslyAllowMutability: true, default: null, key: "cache"});
+export const errorState = atom({default: null, key: "error"});
+export const graphqlState = atom({dangerouslyAllowMutability: true, default: null, key: "graphql"});
+export const httpState = atom({dangerouslyAllowMutability: true, default: null, key: "http"});
+export const i18nState = atom({dangerouslyAllowMutability: true, default: null, key: "i18n"});
+export const listenerState = atom({dangerouslyAllowMutability: true, default: null, key: "listener"});
 export const loadingState = atom({default: true, key: "loading"});
 export const localeState = atom({
   default: "en-us",
@@ -19,9 +19,9 @@ export const localeState = atom({
   ],
   key: "locale"
 });
-export const optionsState = atom({key: "options"});
-export const packageIDState = atom({key: "package-id"});
-export const profileIDState = atom({key: "profile-id"});
+export const optionsState = atom({default: null, key: "options"});
+export const packageIDState = atom({default: null, key: "package-id"});
+export const profileIDState = atom({default: null, key: "profile-id"});
 
 // NOTE: Breaking up state prevents over-triggering selectors
 export const activeIDState = selector({

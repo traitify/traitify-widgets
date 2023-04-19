@@ -34,7 +34,7 @@ traitify.options.assessmentID = "an assessment id you have generated via a serve
 traitify.render("#the-id-of-the-target-you-wish-to-render-to");
 ```
 
-[Click here](src/index.js) to view other classes available to import, such as the `Http`.
+[Click here](src/index.js) to view other classes available to import, such as `Http`.
 
 ## Rendering Components
 
@@ -85,6 +85,34 @@ Traitify.render({
   "Results.Personality.Type.List": "#personality-types",
   "Results.Personality.Trait.List": "#personality-traits"
 });
+```
+
+### React/JSX
+
+- Components used directly must be wrapped by a Container component
+- The Container can wrap multiple components
+- Container accepts these props
+  - assessmentID
+  - authKey
+  - benchmarkID
+  - graphql
+  - host
+  - locale
+  - options
+  - profileID
+  - version
+- If you've set options in a Traitify instance, pass them as props to the Container
+
+```
+import traitify, {Components} from "traitify-widgets";
+
+export default function Personality({id}) {
+  return (
+    <Components.Container {...traitify.props()} assessmentID={id}>
+      <Components.Results />
+    </Components.Container>
+  );
+}
 ```
 
 ## Events

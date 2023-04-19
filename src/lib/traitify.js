@@ -43,6 +43,7 @@ export default class Traitify {
       "graphql",
       "host",
       "locale",
+      "packageID",
       "profileID",
       "version"
     ]);
@@ -93,5 +94,10 @@ export default class Traitify {
     this.renderedTargets = {...targets};
 
     return Promise.all(promises);
+  }
+  updateOption(key, value) { this.updateOptions({[key]: value}); }
+  updateOptions(options) {
+    this.listener.trigger("updateOptions", options);
+    this.options = {...this.options, ...options};
   }
 }

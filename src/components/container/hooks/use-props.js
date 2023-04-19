@@ -22,6 +22,7 @@ import {
   profileIDState
 } from "lib/recoil";
 
+// NOTE: Similar logic is used in useListenerEffect in order to synchronize options
 export default function useProps(props) {
   const resetAssessments = useResetRecoilState(assessmentsState);
   const setActive = useSetRecoilState(activeState);
@@ -59,27 +60,19 @@ export default function useProps(props) {
   }, [props.graphql]);
 
   useEffect(() => {
-    const cache = props.cache || new Cache();
-
-    setCache(cache);
+    setCache(props.cache || new Cache());
   }, [props.cache]);
 
   useEffect(() => {
-    const http = props.http || new Http(slice(props, ["authKey", "host", "version"]));
-
-    setHttp(http);
+    setHttp(props.http || new Http(slice(props, ["authKey", "host", "version"])));
   }, [props.http]);
 
   useEffect(() => {
-    const i18n = props.i18n || new I18n();
-
-    setI18n(i18n);
+    setI18n(props.i18n || new I18n());
   }, [props.i18n]);
 
   useEffect(() => {
-    const listener = props.listener || new Listener();
-
-    setListener(listener);
+    setListener(props.listener || new Listener());
   }, [props.listener]);
 
   useEffect(() => {

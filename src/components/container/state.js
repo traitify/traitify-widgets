@@ -6,6 +6,7 @@ import loadFont from "lib/common/load-font";
 import {loadingState} from "lib/recoil";
 import useAssessmentEffect from "./hooks/use-assessment-effect";
 import useAssessmentsEffect from "./hooks/use-assessments-effect";
+import useListenerEffect from "./hooks/use-listener-effect";
 import useProps from "./hooks/use-props";
 
 function State({children, ...props}) {
@@ -14,6 +15,7 @@ function State({children, ...props}) {
   useProps(props);
   useAssessmentEffect();
   useAssessmentsEffect();
+  useListenerEffect();
   useEffect(() => { loadFont(); }, []);
   useEffect(() => { setLoading(false); }, []);
 

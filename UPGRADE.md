@@ -8,11 +8,11 @@
   - show is for content (headers, instructions)
 - SlideDeck has been renamed Survey
 - Various helper objects have been exposed
-  - Traitify.Components
-  - Traitify.GraphQL
-  - Traitify.http
-  - Traitify.i18n
-  - Traitify.listener
+  - Components
+  - GraphQL
+  - http
+  - i18n
+  - listener
 
 ## Setup
 
@@ -52,6 +52,16 @@ Traitify.http.host = "https://api.traitify.com";
 - Components used directly must be wrapped by a new Container component
 - The Container will manage the options and state as well as fetch data
 - The Container can wrap multiple components
+- Container accepts these props
+  - assessmentID
+  - authKey
+  - benchmarkID
+  - graphql
+  - host
+  - locale
+  - options
+  - profileID
+  - version
 
 ```
 // Old

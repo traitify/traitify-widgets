@@ -1,9 +1,13 @@
 {
   "name": "traitify-widgets",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.5",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
+  "exports": {
+    ".": "./build/traitify.js",
+    "./hooks": "./build/hooks.js"
+  },
   "files": [
     "build"
   ],
@@ -33,6 +37,7 @@
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.19.3",
     "@babel/eslint-plugin": "^7.19.1",
+    "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/preset-env": "^7.19.4",
     "@babel/register": "^7.18.9",
     "@babel/runtime": "^7.13.9",

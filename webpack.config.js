@@ -17,7 +17,6 @@ module.exports = (_env) => {
       }
     },
     devtool: "source-map",
-    entry: ["./index.js"],
     externals : {
       "react": {
         root: "React",
@@ -83,15 +82,6 @@ module.exports = (_env) => {
         }
       ]
     },
-    output: {
-      globalObject: "this",
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/",
-      filename: "traitify.js",
-      library: "Traitify",
-      libraryTarget: "umd",
-      umdNamedDefine: true
-    },
     plugins: [
       new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
       new webpack.ProvidePlugin({"React": "react"}),
@@ -114,10 +104,41 @@ module.exports = (_env) => {
   const browser = env.mode === "browser";
 
   if(browser){
-    config.entry.unshift("core-js/stable");
-    config.entry.unshift("regenerator-runtime/runtime");
-    config.output.libraryExport = "default";
     delete config.externals;
+
+    config.entry = [
+      "regenerator-runtime/runtime",
+      "core-js/stable",
+      "./index.js",
+    ];
+    config.output = {
+      filename: "traitify.js",
+      globalObject: "this",
+      library: {
+        export: "default",
+        name: "Traitify",
+        type: "umd",
+        umdNamedDefine: true
+      },
+      path: path.resolve(__dirname, "build"),
+      publicPath: "/"
+    };
+  } else {
+    config.entry = {
+      hooks: "./hooks.js",
+      traitify: "./index.js"
+    };
+    config.output = {
+      filename: "[name].js",
+      globalObject: "this",
+      library: {
+        name: "Traitify",
+        type: "umd",
+        umdNamedDefine: true
+      },
+      path: path.resolve(__dirname, "build"),
+      publicPath: "/"
+    };
   }
 
   return config;

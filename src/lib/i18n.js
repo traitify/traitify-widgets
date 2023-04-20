@@ -33,7 +33,7 @@ export default class I18n {
     });
   }
   translate = (locale, key, options) => {
-    const result = this.data[locale][key];
+    const result = this.data[locale.toLowerCase()][key];
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);

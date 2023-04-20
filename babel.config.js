@@ -1,4 +1,4 @@
 module.exports = {
-  "sourceMaps": true,
-  "presets": ["airbnb"]
+  presets: ["airbnb"],
+  sourceMaps: true
 }

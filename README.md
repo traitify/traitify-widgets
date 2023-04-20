@@ -108,7 +108,7 @@ import traitify, {Components} from "traitify-widgets";
 
 export default function Personality({id}) {
   return (
-    <Components.Container {...traitify.props()} assessmentID={id}>
+    <Components.Container {...traitify.props} assessmentID={id}>
       <Components.Results />
     </Components.Container>
   );

@@ -20,7 +20,7 @@ export function getCacheKey(type, options = {}) {
   }
   /* eslint-enable no-console */
 
-  return [locale, type, id, ...keys].filter(Boolean).join(".");
+  return [locale, type, id, ...keys].filter(Boolean).join(".").toLowerCase();
 }
 
 export default class Cache {

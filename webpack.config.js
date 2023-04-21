@@ -122,18 +122,27 @@ module.exports = (_env) => {
     };
   } else {
     config.entry = {
-      hooks: "./hooks.js",
-      traitify: "./index.js"
+      hooks: {
+        import: "./hooks.js",
+        library: {
+          name: "TraitifyHooks",
+          type: "umd",
+          umdNamedDefine: true
+        }
+      },
+      traitify: {
+        import: "./index.js",
+        library: {
+          name: "Traitify",
+          type: "umd",
+          umdNamedDefine: true
+        }
+      }
     };
     config.output = {
       clean: true,
       filename: "[name].js",
       globalObject: "this",
-      library: {
-        name: "Traitify",
-        type: "umd",
-        umdNamedDefine: true
-      },
       path: path.resolve(__dirname, "build"),
       publicPath: "/"
     };

@@ -82,9 +82,6 @@ module.exports = (_env) => {
         }
       ]
     },
-    optimization: {
-      splitChunks: {chunks: "all"}
-    },
     plugins: [
       new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
       new webpack.ProvidePlugin({"React": "react"}),
@@ -115,6 +112,7 @@ module.exports = (_env) => {
       "./index.js",
     ];
     config.output = {
+      clean: true,
       filename: "traitify.js",
       globalObject: "this",
       library: {
@@ -128,17 +126,30 @@ module.exports = (_env) => {
     };
   } else {
     config.entry = {
-      hooks: "./hooks.js",
-      traitify: "./index.js"
+      hooks: {
+        dependOn: "shared",
+        import: "./hooks.js",
+        library: {
+          name: "TraitifyHooks",
+          type: "umd",
+          umdNamedDefine: true
+        }
+      },
+      shared: ["recoil"],
+      traitify: {
+        dependOn: "shared",
+        import: "./index.js",
+        library: {
+          name: "Traitify",
+          type: "umd",
+          umdNamedDefine: true
+        }
+      }
     };
     config.output = {
+      clean: true,
       filename: "[name].js",
       globalObject: "this",
-      library: {
-        name: "Traitify",
-        type: "umd",
-        umdNamedDefine: true
-      },
       path: path.resolve(__dirname, "build"),
       publicPath: "/"
     };

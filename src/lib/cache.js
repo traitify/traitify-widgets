@@ -32,8 +32,15 @@ export default class Cache {
   get = (key) => {
     try {
       const data = sessionStorage.getItem(key);
+      if(!data) { return data; }
 
-      return data ? JSON.parse(data) : null;
+      const {expiresAt, value} = JSON.parse(data);
+      if(!expiresAt) { return value; }
+      if(expiresAt >= Date.now()) { return value; }
+
+      sessionStorage.removeItem(key);
+
+      return null;
     } catch(error) { return null; }
   };
   remove = (key) => {
@@ -41,8 +48,12 @@ export default class Cache {
       return sessionStorage.removeItem(key);
     } catch(error) { return null; }
   };
-  set = (key, data) => {
+  set = (key, value, options = {}) => {
     try {
+      const data = {value};
+      if(options.expiresAt) { data.expiresAt = options.expiresAt; }
+      if(options.expiresIn) { data.expiresAt = Date.now() + options.expiresIn * 1000; }
+
       return sessionStorage.setItem(key, JSON.stringify(data));
     } catch(error) { return null; }
   };

@@ -21,6 +21,7 @@ export useInlineMemo from "lib/hooks/use-inline-memo";
 export useListener from "lib/hooks/use-listener";
 export useLoadedValue from "lib/hooks/use-loaded-value";
 export useOption from "lib/hooks/use-option";
+export useOrganizationSettings from "lib/hooks/use-organization-settings";
 export usePersonality from "lib/hooks/use-personality";
 export useResults from "lib/hooks/use-results";
 export useTranslate from "lib/hooks/use-translate";

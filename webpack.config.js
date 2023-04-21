@@ -127,6 +127,13 @@ module.exports = (_env) => {
     config.output = {
       clean: true,
       filename: "[name].js",
+      globalObject: "this",
+      library: {
+        export: "default",
+        name: "Traitify",
+        type: "umd",
+        umdNamedDefine: true
+      },
       path: path.resolve(__dirname, "build"),
       publicPath: "/"
     };

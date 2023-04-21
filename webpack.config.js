@@ -127,19 +127,16 @@ module.exports = (_env) => {
   } else {
     config.entry = {
       hooks: {
-        asyncChunks: false,
         dependOn: "shared",
         import: "./hooks.js"
       },
       shared: ["recoil"],
       traitify: {
-        asyncChunks: false,
         dependOn: "shared",
         import: "./index.js"
       }
     };
     config.output = {
-      asyncChunks: false,
       clean: true,
       filename: "[name].js",
       path: path.resolve(__dirname, "build"),

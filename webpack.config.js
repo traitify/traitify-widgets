@@ -147,6 +147,7 @@ module.exports = (_env) => {
       }
     };
     config.output = {
+      asyncChunks: false,
       clean: true,
       filename: "[name].js",
       globalObject: "this",

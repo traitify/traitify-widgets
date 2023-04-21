@@ -72,6 +72,11 @@ module.exports = (_env) => {
         }
       ]
     },
+    optimization: {
+      splitChunks: {
+        chunks: "initial"
+      }
+    },
     plugins: [
       new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
       new webpack.ProvidePlugin({"React": "react"}),
@@ -116,15 +121,8 @@ module.exports = (_env) => {
     };
   } else {
     config.entry = {
-      hooks: {
-        import: "./hooks.js",
-        runtime: "shared"
-      },
-      shared: ["recoil"],
-      traitify: {
-        import: "./index.js",
-        runtime: "shared"
-      }
+      hooks: "./hooks.js",
+      traitify: "./index.js"
     };
     config.output = {
       clean: true,

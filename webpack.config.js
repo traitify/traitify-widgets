@@ -100,6 +100,7 @@ module.exports = (_env) => {
 
   if(browser){
     delete config.externals;
+    delete config.optimization;
 
     config.entry = [
       "regenerator-runtime/runtime",
@@ -127,7 +128,6 @@ module.exports = (_env) => {
     config.output = {
       clean: true,
       filename: "[name].js",
-      globalObject: "this",
       library: {
         export: "default",
         name: "Traitify",

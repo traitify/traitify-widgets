@@ -82,6 +82,9 @@ module.exports = (_env) => {
         }
       ]
     },
+    optimization: {
+      splitChunks: {chunks: "all"}
+    },
     plugins: [
       new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
       new webpack.ProvidePlugin({"React": "react"}),

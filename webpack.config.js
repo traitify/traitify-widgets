@@ -127,31 +127,22 @@ module.exports = (_env) => {
   } else {
     config.entry = {
       hooks: {
+        asyncChunks: false,
+        chunkLoading: false,
         dependOn: "shared",
-        import: "./hooks.js",
-        library: {
-          export: "default",
-          name: "TraitifyHooks",
-          type: "umd",
-          umdNamedDefine: true
-        }
+        import: "./hooks.js"
       },
       shared: ["recoil"],
       traitify: {
+        asyncChunks: false,
+        chunkLoading: false,
         dependOn: "shared",
-        import: "./index.js",
-        library: {
-          export: "default",
-          name: "Traitify",
-          type: "umd",
-          umdNamedDefine: true
-        }
+        import: "./index.js"
       }
     };
     config.output = {
       clean: true,
       filename: "[name].js",
-      globalObject: "this",
       path: path.resolve(__dirname, "build"),
       publicPath: "/"
     };

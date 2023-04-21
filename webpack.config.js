@@ -130,6 +130,7 @@ module.exports = (_env) => {
         dependOn: "shared",
         import: "./hooks.js",
         library: {
+          export: "default",
           name: "TraitifyHooks",
           type: "umd",
           umdNamedDefine: true
@@ -140,6 +141,7 @@ module.exports = (_env) => {
         dependOn: "shared",
         import: "./index.js",
         library: {
+          export: "default",
           name: "Traitify",
           type: "umd",
           umdNamedDefine: true
@@ -147,7 +149,6 @@ module.exports = (_env) => {
       }
     };
     config.output = {
-      asyncChunks: false,
       clean: true,
       filename: "[name].js",
       globalObject: "this",

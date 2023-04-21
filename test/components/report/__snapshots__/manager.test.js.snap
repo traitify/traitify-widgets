@@ -1,45 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Report.Manager renders component 1`] = `
-<section
-  className="container box"
->
+<section>
   <div
-    className="mock"
+    className="container box"
   >
-    Recommendation Chart
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Guide
+    <div
+      className="mock"
+    >
+      Recommendation Chart
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Guide
+    </div>
   </div>
 </section>
 `;
 
 exports[`Report.Manager showHeaders renders component 1`] = `
-<section
-  className="container box"
->
+<section>
   <div
-    className="sectionHeading"
+    className="container box"
   >
-    Fit Breakdown
-  </div>
-  <div
-    className="p"
-  >
-    Below, you can see the candidate's personality results broken down by each of the Big Five dimensions. Scores are color-coded to indicate the best-fit ranges (green), followed by yellow and red. These ranges vary for each job. They are based on several pieces of information that may include published research, job descriptions, and interviews with people who are familiar with the job.
-  </div>
-  <div
-    className="mock"
-  >
-    Recommendation Chart
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Guide
+    <div
+      className="sectionHeading"
+    >
+      Fit Breakdown
+    </div>
+    <div
+      className="p"
+    >
+      Below, you can see the candidate's personality results broken down by each of the Big Five dimensions. Scores are color-coded to indicate the best-fit ranges (green), followed by yellow and red. These ranges vary for each job. They are based on several pieces of information that may include published research, job descriptions, and interviews with people who are familiar with the job.
+    </div>
+    <div
+      className="mock"
+    >
+      Recommendation Chart
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Guide
+    </div>
   </div>
 </section>
 `;

@@ -1,7 +1,7 @@
 import useOption from "lib/hooks/use-option";
 
-export default function useDisabledComponents(name) {
+export default function useDisabledComponents(...names) {
   const disabledComponents = useOption("disabledComponents") || [];
 
-  return disabledComponents.includes(name);
+  return names.some((name) => disabledComponents.includes(name));
 }

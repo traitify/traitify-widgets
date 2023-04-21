@@ -11,6 +11,7 @@ export const get = `
           introduction
           questionSequences {
             id
+            introduction
             questions {
               id
               text

@@ -1,0 +1,90 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+  @extend %box;
+
+  margin-bottom: $buffer-section;
+}
+.content {
+  @extend %box;
+
+  .heading { font-size: $font-size-lg; }
+  li { margin-top: $buffer * 0.5; }
+  ul {
+    margin: 0;
+    padding-left: $buffer-lg;
+  }
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("lg") { display: none; }
+}
+.heading {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
+}
+.sequence {
+  @extend %box;
+
+  padding: $buffer;
+  position: relative;
+
+  @include buffer("margin-bottom");
+  &:last-of-type { margin-bottom: 0; }
+  .arrow {
+    align-self: flex-start;
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    padding: $buffer * 0.5;
+
+    @include theme("border-color", "border");
+    @include theme("color", "text");
+
+    svg { display: block; }
+  }
+  .prompt {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .text {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: $buffer;
+
+    @include theme("color", "theme");
+  }
+  button {
+    display: block;
+    width: 100%;
+  }
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  padding-left: $buffer * 4;
+  padding-right: $buffer * 4;
+
+  @include activeTab($active: ".active", $circle: "span", $square: "&");
+  @include max-width("lg") { display: none; }
+  button {
+    flex: 0 1 auto;
+    font-size: $font-size-lg;
+    padding-bottom: 0;
+    padding-left: $buffer-lg;
+    padding-right: $buffer-lg;
+    padding-top: $buffer;
+    text-align: center;
+    width: 100%;
+
+    span {
+      display: block;
+      padding-bottom: $buffer;
+      text-align: center;
+    }
+  }
+}

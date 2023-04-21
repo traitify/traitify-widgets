@@ -96,15 +96,15 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
       align-items: center;
       display: flex;
       font-weight: bold;
-      height: $h-pill-height + 2 * $h-row-buffer-y;
+      height: $h-pill-active-height + 2 * $h-row-buffer-y;
     }
   }
   .row {
+    align-items: center;
     display: flex;
     padding-bottom: $h-row-buffer-y;
     padding-top: $h-row-buffer-y;
     text-align: center;
-
   }
   .scale {
     display: flex;

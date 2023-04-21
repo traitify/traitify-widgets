@@ -10,13 +10,13 @@ import useGuide from "lib/hooks/use-guide";
 import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
 import Question from "./question";
-import style from "../style.scss";
+import style from "./style.scss";
 
 function PersonalityGuide({combined}) {
   const [activeCompetency, setActiveCompetency] = useState(null);
   const benchmark = useBenchmark();
   const [data, setData] = useState([]);
-  const disabled = useDisabledComponent("Guide");
+  const disabled = useDisabledComponent("Guide", "PersonalityGuide");
   const guide = useGuide();
   const results = useResults();
   const [showExpandedIntro, setShowExpandedIntro] = useState(false);

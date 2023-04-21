@@ -1,5 +1,67 @@
 {
-  "client": {},
+  "client": {
+    "introduction": "My Intro",
+    "sections": [
+      {
+        "id": "b58deb21-457c-578b-9712-46f3a83888aa",
+        "introduction": "Easy peasy",
+        "questionSequences": [
+          {
+            "id": "1dfce154-cf8f-59eb-ba88-bd01e702de43",
+            "introduction": "Intro",
+            "questions": [
+              {
+                "id": "907cb80c-cc9b-5a66-b930-f872a4ef817f",
+                "text": "How do you like your eggs?"
+              }
+            ],
+            "title": "Cook Questions"
+          },
+          {
+            "id": "421bd2a7-485f-560a-a7a7-e90448747f31",
+            "introduction": "Washy washy",
+            "questions": [
+              {
+                "id": "c62c8619-79b3-5126-b286-c9bef85090c9",
+                "text": "What kind of soap do you prefer?"
+              }
+            ],
+            "title": "Dish Washer Questions"
+          }
+        ],
+        "title": "First Interview"
+      },
+      {
+        "id": "0171e5f3-619d-5464-a021-0621fca8108f",
+        "introduction": "Time to get serious!",
+        "questionSequences": [
+          {
+            "id": "98deb1ac-6b52-55bb-a848-94fd17581453",
+            "introduction": "Fry fry",
+            "questions": [
+              {
+                "id": "34bf8195-2a27-54bf-a8f7-99687e1c0281",
+                "text": "Fork, spoon, OR spork?"
+              }
+            ],
+            "title": "Cook Questions"
+          },
+          {
+            "id": "3dab750e-e571-56cf-a916-db3f064735a0",
+            "introduction": "Bubbly bubbly",
+            "questions": [
+              {
+                "id": "9d15250c-8ad6-54ed-86ee-2becf09f6eb2",
+                "text": "Towel dry, heat dry, OR no dry?"
+              }
+            ],
+            "title": "Dish Washer"
+          }
+        ],
+        "title": "Second Interview"
+      }
+    ]
+  },
   "personality": {
     "competencies": [
       {

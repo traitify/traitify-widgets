@@ -128,6 +128,7 @@ module.exports = (_env) => {
     config.output = {
       clean: true,
       filename: "[name].js",
+      globalObject: "this",
       library: {
         name: "Traitify",
         type: "umd",

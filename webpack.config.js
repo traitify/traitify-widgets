@@ -17,9 +17,20 @@ module.exports = (_env) => {
       }
     },
     devtool: "source-map",
+    entry: ["./index.js"],
     externals : {
-      "react": "react",
-      "react-dom": "react-dom"
+      "react": {
+        amd: "react",
+        commonjs: "react",
+        commonjs2: "react",
+        root: "React"
+      },
+      "react-dom": {
+        amd: "react-dom",
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+        root: "ReactDOM"
+      }
     },
     mode: environment,
     module: {
@@ -72,10 +83,17 @@ module.exports = (_env) => {
         }
       ]
     },
-    optimization: {
-      splitChunks: {
-        chunks: "initial"
-      }
+    output: {
+      clean: true,
+      filename: "traitify.js",
+      globalObject: "this",
+      library: {
+        name: "Traitify",
+        type: "umd",
+        umdNamedDefine: true
+      },
+      path: path.resolve(__dirname, "build"),
+      publicPath: "/"
     },
     plugins: [
       new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
@@ -98,54 +116,15 @@ module.exports = (_env) => {
 
   const browser = env.mode === "browser";
 
-  if(browser){
+  if(browser) {
     delete config.externals;
-    delete config.optimization;
 
     config.entry = [
       "regenerator-runtime/runtime",
       "core-js/stable",
-      "./index.js",
+      "./index.js"
     ];
-    config.output = {
-      clean: true,
-      filename: "traitify.js",
-      globalObject: "this",
-      library: {
-        export: "default",
-        name: "Traitify",
-        type: "umd",
-        umdNamedDefine: true
-      },
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/"
-    };
-  } else {
-    config.entry = {
-      hooks: {
-        import: "./hooks.js",
-        library: {
-          name: "TraitifyHooks",
-          type: "umd",
-          umdNamedDefine: true
-        }
-      },
-      traitify: {
-        import: "./index.js",
-        library: {
-          name: "Traitify",
-          type: "umd",
-          umdNamedDefine: true
-        }
-      }
-    };
-    config.output = {
-      clean: true,
-      filename: "[name].js",
-      globalObject: "this",
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/"
-    };
+    config.output.library.export = "default";
   }
 
   return config;

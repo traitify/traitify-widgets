@@ -5,6 +5,7 @@ import I18n from "lib/i18n";
 import Listener from "lib/listener";
 import Traitify from "lib/traitify";
 
+export * from "./hooks";
 export {Components, Http, I18n, GraphQL, Listener, Traitify};
 
 const traitify = new Traitify();

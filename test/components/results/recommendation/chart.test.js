@@ -1,4 +1,5 @@
 import Component from "components/results/recommendation/chart";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockBenchmark, mockGuide, useAssessment, useBenchmark} from "support/container/http";
 import {mockOption} from "support/container/options";
@@ -16,7 +17,8 @@ describe("Results.RecommendationChart", () => {
   useBenchmark(benchmark);
 
   beforeEach(() => {
-    guide = {..._guide, assessmentId: assessment.id};
+    guide = mutable({..._guide, assessmentId: assessment.id});
+
     mockGuide(guide);
   });
 
@@ -82,7 +84,8 @@ describe("Results.RecommendationChart", () => {
   });
 
   it("renders nothing if no competencies", async() => {
-    mockGuide({...guide, competencies: []});
+    guide.personality.competencies = [];
+    mockGuide(guide);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

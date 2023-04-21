@@ -215,7 +215,17 @@ export const mockGuide = (guide, {assessmentID} = {}) => (
 
       return variables.assessmentID === (assessmentID || guide.assessmentId);
     },
-    response: () => ({data: {guide}})
+    response: () => (
+      guide
+        ? {
+          data: {
+            customInterviewGuide: {
+              clientInterviewGuide: guide.client,
+              personalityInterviewGuide: guide.personality
+            }
+          }
+        } : {data: {guide}}
+    )
   })
 );
 

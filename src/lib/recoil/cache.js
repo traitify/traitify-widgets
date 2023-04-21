@@ -32,7 +32,7 @@ export const cacheKeyState = selectorFamily({
         id = id || get(assessmentIDState);
     }
 
-    return [locale, type, id, ...keys].filter(Boolean).join(".").toLowerCase();
+    return ["v3", locale, type, id, ...keys].filter(Boolean).join(".").toLowerCase();
   },
   key: "cache-key"
 });

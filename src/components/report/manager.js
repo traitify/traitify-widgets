@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
-import Guide from "components/results/guide";
+import PersonalityGuide from "components/results/guide/personality";
 import RecommendationChart from "components/results/recommendation/chart";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
@@ -27,7 +27,7 @@ export default function ManagerReport() {
         </>
       )}
       <RecommendationChart combined={true} />
-      <Guide combined={true} />
+      <PersonalityGuide combined={true} />
     </section>
   );
 }

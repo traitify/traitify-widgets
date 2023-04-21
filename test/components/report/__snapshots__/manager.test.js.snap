@@ -12,7 +12,7 @@ exports[`Report.Manager renders component 1`] = `
   <div
     className="mock"
   >
-    Guide
+    Personality Guide
   </div>
 </section>
 `;
@@ -39,7 +39,7 @@ exports[`Report.Manager showHeaders renders component 1`] = `
   <div
     className="mock"
   >
-    Guide
+    Personality Guide
   </div>
 </section>
 `;

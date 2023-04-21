@@ -17,7 +17,7 @@ const rankFromRange = ({matchScore: score}) => {
 };
 
 export function findCompetency({guide, typeID}) {
-  return (dig(guide, "competencies") || [])
+  return (dig(guide, "personality", "competencies") || [])
     .find(({questionSequences}) => questionSequences[0].personalityTypeId === typeID);
 }
 

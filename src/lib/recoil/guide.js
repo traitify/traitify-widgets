@@ -28,10 +28,12 @@ export const guideQuery = selector({
     const response = await http.post(GraphQL.guide.path, params);
     if(response.errors) { console.warn("guide", response.errors); } /* eslint-disable-line no-console */
 
-    const {guide} = response.data;
-    if(guide) { cache.set(cacheKey, guide); }
+    const {customInterviewGuide, guide: _guide} = response.data;
+    const {clientInterviewGuide, personalityInterviewGuide} = customInterviewGuide || {};
+    const guide = {client: clientInterviewGuide, personality: personalityInterviewGuide || _guide};
+    if(guide.client || guide.personality) { cache.set(cacheKey, guide); }
 
-    return guide;
+    return (guide.client || guide.personality) ? guide : null;
   },
   key: "guide"
 });

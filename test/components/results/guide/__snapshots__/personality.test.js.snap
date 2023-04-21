@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Results.Guide renders component 1`] = `
+exports[`Results.Guide.Personality renders component 1`] = `
 <div
   className="container"
 >
@@ -248,7 +248,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Results.Guide renders component if benchmark not ready 1`] = `
+exports[`Results.Guide.Personality renders component if benchmark not ready 1`] = `
 <div
   className="container"
 >
@@ -496,7 +496,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Results.Guide renders component with combined prop 1`] = `
+exports[`Results.Guide.Personality renders component with combined prop 1`] = `
 <div
   className="container combined"
 >
@@ -744,15 +744,15 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Results.Guide renders nothing if disabled 1`] = `null`;
+exports[`Results.Guide.Personality renders nothing if disabled 1`] = `null`;
 
-exports[`Results.Guide renders nothing if guide not ready 1`] = `null`;
+exports[`Results.Guide.Personality renders nothing if guide not ready 1`] = `null`;
 
-exports[`Results.Guide renders nothing if no competencies 1`] = `null`;
+exports[`Results.Guide.Personality renders nothing if no competencies 1`] = `null`;
 
-exports[`Results.Guide renders nothing if results not ready 1`] = `null`;
+exports[`Results.Guide.Personality renders nothing if results not ready 1`] = `null`;
 
-exports[`Results.Guide toggles expanded intro 1`] = `
+exports[`Results.Guide.Personality toggles expanded intro 1`] = `
 <div
   className="container"
 >
@@ -1003,7 +1003,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Results.Guide toggles question content 1`] = `
+exports[`Results.Guide.Personality toggles question content 1`] = `
 <div
   className="container"
 >
@@ -1277,7 +1277,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
 </div>
 `;
 
-exports[`Results.Guide updates activeCompetency 1`] = `
+exports[`Results.Guide.Personality updates activeCompetency 1`] = `
 <div
   className="container"
 >
@@ -1525,7 +1525,7 @@ The first question is looking to confirm what they should be like; the second tw
 </div>
 `;
 
-exports[`Results.Guide updates activeCompetency through select 1`] = `
+exports[`Results.Guide.Personality updates activeCompetency through select 1`] = `
 <div
   className="container"
 >

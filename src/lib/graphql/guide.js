@@ -1,24 +1,43 @@
 export const get = `
   query($assessmentID: String!, $localeKey: String!) {
-    guide(
+    customInterviewGuide(
       assessmentId: $assessmentID,
       localeKey: $localeKey
     ) {
-      competencies {
-        id
+      clientInterviewGuide {
         introduction
-        name
-        order
-        questionSequences {
+        sections {
           id
-          name
-          personalityTypeId
-          questions {
-            adaptability
+          introduction
+          questionSequences {
             id
-            order
-            purpose
-            text
+            questions {
+              id
+              text
+            }
+            title
+          }
+          title
+        }
+        title
+      }
+      personalityInterviewGuide {
+        competencies {
+          id
+          introduction
+          name
+          order
+          questionSequences {
+            id
+            name
+            personalityTypeId
+            questions {
+              adaptability
+              id
+              order
+              purpose
+              text
+            }
           }
         }
       }

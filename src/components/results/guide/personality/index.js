@@ -10,21 +10,21 @@ import useGuide from "lib/hooks/use-guide";
 import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
 import Question from "./question";
-import style from "./style.scss";
+import style from "../style.scss";
 
-function Guide({combined}) {
+function PersonalityGuide({combined}) {
   const [activeCompetency, setActiveCompetency] = useState(null);
   const benchmark = useBenchmark();
   const [data, setData] = useState([]);
-  const disabled = useDisabledComponent("InterviewGuide");
+  const disabled = useDisabledComponent("Guide");
   const guide = useGuide();
   const results = useResults();
   const [showExpandedIntro, setShowExpandedIntro] = useState(false);
   const translate = useTranslate();
 
-  useComponentEvents("Guide", {activeCompetency});
+  useComponentEvents("PersonalityGuide", {activeCompetency});
   useEffect(() => {
-    const competencies = dig(guide, "competencies") || [];
+    const competencies = dig(guide, "personality", "competencies") || [];
     const types = dig(results, "personality_types") || [];
     if(competencies.length === 0 || types.length === 0) { return; }
 
@@ -84,7 +84,7 @@ function Guide({combined}) {
   );
 }
 
-Guide.defaultProps = {combined: false};
-Guide.propTypes = {combined: PropTypes.bool};
+PersonalityGuide.defaultProps = {combined: false};
+PersonalityGuide.propTypes = {combined: PropTypes.bool};
 
-export default Guide;
+export default PersonalityGuide;

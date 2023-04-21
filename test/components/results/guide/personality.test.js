@@ -1,5 +1,6 @@
 import {act} from "react-test-renderer";
-import Component from "components/results/guide";
+import Component from "components/results/guide/personality";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockBenchmark, mockGuide, useAssessment, useBenchmark} from "support/container/http";
 import {mockOption} from "support/container/options";
@@ -8,7 +9,7 @@ import assessment from "support/json/assessment/dimension-based.json";
 import benchmark from "support/json/benchmark.json";
 import _guide from "support/json/guide.json";
 
-describe("Results.Guide", () => {
+describe("Results.Guide.Personality", () => {
   let component;
   let guide;
 
@@ -17,7 +18,8 @@ describe("Results.Guide", () => {
   useBenchmark(benchmark);
 
   beforeEach(() => {
-    guide = {..._guide, assessmentId: assessment.id};
+    guide = mutable({..._guide, assessmentId: assessment.id});
+
     mockGuide(guide);
   });
 
@@ -26,7 +28,7 @@ describe("Results.Guide", () => {
       await ComponentHandler.setup(Component);
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "Guide.initialized",
+        "PersonalityGuide.initialized",
         {activeCompetency: null}
       );
     });
@@ -36,7 +38,7 @@ describe("Results.Guide", () => {
       await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "Guide.updated",
+        "PersonalityGuide.updated",
         {activeCompetency: null}
       );
     });
@@ -51,7 +53,7 @@ describe("Results.Guide", () => {
 
   it("toggles question content", async() => {
     component = await ComponentHandler.setup(Component);
-    const question = guide.competencies[0].questionSequences[0].questions[1];
+    const question = guide.personality.competencies[0].questionSequences[0].questions[1];
     const button = component.findByText(question.text, {exact: false})
       .parent.findByType("button");
     act(() => button.props.onClick());
@@ -61,7 +63,7 @@ describe("Results.Guide", () => {
 
   it("updates activeCompetency", async() => {
     component = await ComponentHandler.setup(Component);
-    const text = guide.competencies[1].name;
+    const text = guide.personality.competencies[1].name;
     const button = component.instance
       .find((element) => element.children[0] === text && element.type === "span")
       .parent;
@@ -72,7 +74,7 @@ describe("Results.Guide", () => {
 
   it("updates activeCompetency through select", async() => {
     component = await ComponentHandler.setup(Component);
-    const value = guide.competencies[1].id;
+    const value = guide.personality.competencies[1].id;
     act(() => component.instance.findByType("select").props.onChange({target: {value}}));
 
     expect(component.tree).toMatchSnapshot();
@@ -98,7 +100,7 @@ describe("Results.Guide", () => {
   });
 
   it("renders nothing if disabled", async() => {
-    mockOption("disabledComponents", ["InterviewGuide"]);
+    mockOption("disabledComponents", ["Guide"]);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -119,7 +121,8 @@ describe("Results.Guide", () => {
   });
 
   it("renders nothing if no competencies", async() => {
-    mockGuide({...guide, competencies: []});
+    guide.personality.competencies = [];
+    mockGuide(guide);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

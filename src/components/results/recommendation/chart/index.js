@@ -19,7 +19,7 @@ function RecommendationChart({combined}) {
   const guide = useGuide();
   const results = useResults();
   const data = useMemo(() => {
-    const competencies = dig(guide, "competencies") || [];
+    const competencies = dig(guide, "personality", "competencies") || [];
     const types = dig(results, "personality_types") || [];
     if(competencies.length === 0 || types.length === 0) { return []; }
 

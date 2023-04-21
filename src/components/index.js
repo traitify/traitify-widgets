@@ -11,7 +11,7 @@ import CareerFilter from "./results/career/filter";
 import CareerList from "./results/career/list";
 import CareerModal from "./results/career/modal";
 import CognitiveResults from "./results/cognitive";
-import Guide from "./results/guide";
+import PersonalityGuide from "./results/guide/personality";
 import ArchetypeHeading from "./results/personality/archetype/heading";
 import ArchetypeSkills from "./results/personality/archetype/skills";
 import ArchetypeTips from "./results/personality/archetype/tips";
@@ -48,7 +48,9 @@ export default {
     },
     Cognitive: CognitiveResults,
     Container: Results,
-    Guide,
+    Guide: {
+      Personality: PersonalityGuide
+    },
     Personality: {
       Archetype: {
         Heading: ArchetypeHeading,

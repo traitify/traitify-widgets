@@ -7,16 +7,20 @@
   - allow is for actions (back, fullscreen)
   - show is for content (headers, instructions)
 - SlideDeck has been renamed Survey
+- Guide has been split into Guide.Client and Guide.Personality
 - Various helper objects have been exposed
   - Components
   - GraphQL
   - http
+  - hooks
   - i18n
   - listener
 
 ## Setup
 
 ### CDN
+
+##### NOTE: This change is not yet live
 
 ```
 <!-- Old -->
@@ -28,9 +32,17 @@
 
 ### Installation
 
+##### NOTE: This change is not yet live
+
 ```
 npm i --save traitify-widgets@latest
 npm i --save traitify-widgets@2 // To continue to use the old version
+```
+
+##### NOTE: This is the current workaround
+
+```
+npm i --save traitify-widgets@alpha
 ```
 
 ## Usage
@@ -99,6 +111,24 @@ Traitify.render("#the-id-of-the-target-you-wish-to-render-to");
 
 ### Options
 
+#### Disabled Components
+
+Some disabled components have been changed/renamed
+
+```
+// Old
+Traitify.ui.options.disabledComponents = [
+  "InterviewGuide",
+  "PersonalityDimensionColumns"
+];
+
+// New
+Traitify.options.disabledComponents = [
+  "Guide",
+  "PersonalityDimensionChart"
+];
+```
+
 #### Locale
 
 ```
@@ -155,7 +185,7 @@ Traitify.render({
   "Careers": "#careers",
   "Results": "#results",
   "Results.Career.Container": "#careers",
-  "Results.Guide": "#guide",
+  "Results.Guide.Personality": "#guide",
   "Results.Personality.Type.List": "#personality-types",
   "Results.Personality.Trait.List": "#personality-traits",
   "Survey": "#survey"

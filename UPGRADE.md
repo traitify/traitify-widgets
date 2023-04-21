@@ -1,3 +1,75 @@
+# Paradox
+
+This first section is what Paradox most likely needs to update. The "Version 2 to Version 3" section is the full reference guide.
+
+### NPM
+
+Updates are still being made, so this command may need to be run again later
+
+```
+yarn upgrade traitify-widgets@alpha
+```
+
+### Auth
+
+```
+// Old
+Traitify.setHost("https://api.traitify.com");
+Traitify.setPubliCKey("Your Traitify public key");
+
+// New
+Traitify.http.authKey = "Your Traitify public key";
+Traitify.http.host = "https://api.traitify.com";
+```
+
+### Component
+
+```
+// Old
+assessment = traitify.ui.component();
+assessment.assessmentID("an assessment id you have generated via a server side client");
+assessment.target("#the-id-of-the-target-you-wish-to-render-to");
+assessment.render();
+
+// New
+Traitify.options.assessmentID = "your-assessment-id";
+Traitify.render("#the-id-of-the-target-you-wish-to-render-to");
+```
+
+When using a package
+
+```
+Traitify.options.packageID = "your-package-id";
+Traitify.options.profileID = "your-profile-id";
+```
+
+### Locale
+
+```
+// Old
+assessment.locale("es-us");
+Traitify.ui.setLocale("es-us");
+
+// New
+Traitify.options.locale = "es-us";
+Traitify.updateLocale("es-us"); // Needed if widget is already rendered
+```
+
+### Report
+
+```
+// Old
+assessment.perspective("thirdPerson");
+assessment.view("manager");
+
+// New
+Traitify.options.report = "manager";
+```
+
+### Other
+
+- Remove `.theme("paradox")`
+
 # Version 2 to Version 3
 
 ## General

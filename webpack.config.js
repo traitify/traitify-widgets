@@ -129,7 +129,6 @@ module.exports = (_env) => {
       clean: true,
       filename: "[name].js",
       library: {
-        export: "default",
         name: "Traitify",
         type: "umd",
         umdNamedDefine: true

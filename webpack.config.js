@@ -117,15 +117,13 @@ module.exports = (_env) => {
   } else {
     config.entry = {
       hooks: {
-        chunkLoading: false,
-        dependOn: "shared",
-        import: "./hooks.js"
+        import: "./hooks.js",
+        runtime: "shared"
       },
       shared: ["recoil"],
       traitify: {
-        chunkLoading: false,
-        dependOn: "shared",
-        import: "./index.js"
+        import: "./index.js",
+        runtime: "shared"
       }
     };
     config.output = {

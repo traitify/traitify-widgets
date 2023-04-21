@@ -129,7 +129,7 @@ module.exports = (_env) => {
     config.output = {
       clean: true,
       filename: "[name].js",
-      library: {type: "commonjs2"},
+      library: {type: "commonjs-static"},
       path: path.resolve(__dirname, "build"),
       publicPath: "/"
     };

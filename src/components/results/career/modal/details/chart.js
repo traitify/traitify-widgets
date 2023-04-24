@@ -25,9 +25,9 @@ export default function CareerModalChart() {
       }).filter(Boolean).sort((a, b) => ((a.name > b.name) ? 1 : -1));
 
     return {
+      height: 300,
       options: {
         fill: {opacity: 0.7},
-        chart: {height: 300, type: "radar"},
         xaxis: {categories: traits.map(({name}) => name)},
         yaxis: {max: 100, show: false}
       },

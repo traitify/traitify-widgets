@@ -65,6 +65,7 @@ function createWidget() {
   }
 
   const targets = {"Default": "#default"};
+  if(cache.get("deckID")?.includes("career")) { targets["Career"] = "#target-1"; }
 
   Traitify.listener.on("Results.initialized", () => {
     console.log("Results.initialized");

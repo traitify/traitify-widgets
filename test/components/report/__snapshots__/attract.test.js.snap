@@ -1,28 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Report.Attract renders component 1`] = `
-<section
-  className="container"
+<div
+  className="traitify--container traitify--color-scheme-light"
 >
-  <div
-    className="mock"
+  <section
+    className="container"
   >
-    Personality Base Heading
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Types
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Traits
-  </div>
-  <div
-    className="mock"
-  >
-    Personality Base Details
-  </div>
-</section>
+    <div
+      className="mock"
+    >
+      Personality Base Heading
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Types
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Traits
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Base Details
+    </div>
+  </section>
+</div>
 `;

@@ -2,542 +2,546 @@
 
 exports[`PersonalityTypeChart renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="horizontal"
+    className="container"
   >
     <div
-      className="row"
+      className="horizontal"
     >
       <div
-        className="label"
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Naturalist
+          </div>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "width": "95%",
+              }
+            }
+          />
+          <div
+            className="score tooBig"
+          >
+            95%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Analyzer
+          </div>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "width": "65.69328%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            66%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Inventor
+          </div>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "width": "56.202103%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Mentor
+          </div>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "width": "56.041134%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Planner
+          </div>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "width": "55.745975%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Visionary
+          </div>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "width": "54.949894%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Action-Taker
+          </div>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "width": "51.037804%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            51%
+          </div>
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
       >
         <div>
+          100
+        </div>
+        <div>
+          75
+        </div>
+        <div>
+          50
+        </div>
+        <div>
+          25
+        </div>
+        <div>
+          0
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "height": "74.71152%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "height": "65.69328%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "height": "56.202103%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "height": "56.041134%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "height": "55.745975%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "height": "54.949894%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "height": "51.037804%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs"
+    >
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
           Naturalist
-        </div>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "width": "95%",
-            }
-          }
-        />
-        <div
-          className="score tooBig"
-        >
-          95%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
           Analyzer
-        </div>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "width": "65.69328%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          66%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
           Inventor
-        </div>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "width": "56.202103%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
           Mentor
-        </div>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "width": "56.041134%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
           Planner
-        </div>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "width": "55.745975%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
           Visionary
-        </div>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "width": "54.949894%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          55%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
           Action-Taker
-        </div>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "width": "51.037804%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          51%
-        </div>
-      </div>
+        </span>
+      </button>
     </div>
     <div
-      className="scale"
+      className="content"
     >
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div>
-        100
-      </div>
-      <div>
-        75
-      </div>
-      <div>
-        50
-      </div>
-      <div>
-        25
-      </div>
-      <div>
-        0
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "height": "74.71152%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "height": "65.69328%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "height": "56.202103%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "height": "56.041134%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "height": "55.745975%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "height": "54.949894%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "height": "51.037804%",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-        Naturalist
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-        Analyzer
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-        Inventor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-        Mentor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-        Planner
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-        Visionary
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-        Action-Taker
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="b397ab57-b128-47d6-ac2c-46f5574107b2"
-    >
-      <option
+      <select
+        className="dropdown"
+        onChange={[Function]}
         value="b397ab57-b128-47d6-ac2c-46f5574107b2"
       >
-        Naturalist
-      </option>
-      <option
-        value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        <option
+          value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+        >
+          Naturalist
+        </option>
+        <option
+          value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        >
+          Analyzer
+        </option>
+        <option
+          value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        >
+          Inventor
+        </option>
+        <option
+          value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        >
+          Mentor
+        </option>
+        <option
+          value="c47d1d99-8f08-44a7-acee-9047732aee29"
+        >
+          Planner
+        </option>
+        <option
+          value="55071620-bca6-4f15-b466-de8733a834a8"
+        >
+          Visionary
+        </option>
+        <option
+          value="3f715970-6fff-4852-853f-ce3dc9291b32"
+        >
+          Action-Taker
+        </option>
+      </select>
+      <div
+        className="heading"
       >
-        Analyzer
-      </option>
-      <option
-        value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        Naturalists
+      </div>
+      <div
+        className="p"
       >
-        Inventor
-      </option>
-      <option
-        value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
-      >
-        Mentor
-      </option>
-      <option
-        value="c47d1d99-8f08-44a7-acee-9047732aee29"
-      >
-        Planner
-      </option>
-      <option
-        value="55071620-bca6-4f15-b466-de8733a834a8"
-      >
-        Visionary
-      </option>
-      <option
-        value="3f715970-6fff-4852-853f-ce3dc9291b32"
-      >
-        Action-Taker
-      </option>
-    </select>
-    <div
-      className="heading"
-    >
-      Naturalists
-    </div>
-    <div
-      className="p"
-    >
-      are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+        are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+      </div>
     </div>
   </div>
 </div>
@@ -545,1096 +549,1116 @@ exports[`PersonalityTypeChart renders component 1`] = `
 
 exports[`PersonalityTypeChart renders component with headers 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="sectionHeading"
-  >
-    Personality Breakdown
-  </div>
-  <div
-    className="horizontal"
+    className="container"
   >
     <div
-      className="row"
+      className="sectionHeading"
+    >
+      Personality Breakdown
+    </div>
+    <div
+      className="horizontal"
     >
       <div
-        className="label"
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Naturalist
+          </div>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "width": "95%",
+              }
+            }
+          />
+          <div
+            className="score tooBig"
+          >
+            95%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Analyzer
+          </div>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "width": "65.69328%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            66%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Inventor
+          </div>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "width": "56.202103%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Mentor
+          </div>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "width": "56.041134%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Planner
+          </div>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "width": "55.745975%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Visionary
+          </div>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "width": "54.949894%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Action-Taker
+          </div>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "width": "51.037804%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            51%
+          </div>
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
       >
         <div>
+          100
+        </div>
+        <div>
+          75
+        </div>
+        <div>
+          50
+        </div>
+        <div>
+          25
+        </div>
+        <div>
+          0
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "height": "74.71152%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "height": "65.69328%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "height": "56.202103%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "height": "56.041134%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "height": "55.745975%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "height": "54.949894%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "height": "51.037804%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs"
+    >
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
           Naturalist
-        </div>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "width": "95%",
-            }
-          }
-        />
-        <div
-          className="score tooBig"
-        >
-          95%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
           Analyzer
-        </div>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "width": "65.69328%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          66%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
           Inventor
-        </div>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "width": "56.202103%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
           Mentor
-        </div>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "width": "56.041134%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
           Planner
-        </div>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "width": "55.745975%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
           Visionary
-        </div>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "width": "54.949894%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          55%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
           Action-Taker
-        </div>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "width": "51.037804%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          51%
-        </div>
-      </div>
+        </span>
+      </button>
     </div>
     <div
-      className="scale"
+      className="content"
     >
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div>
-        100
-      </div>
-      <div>
-        75
-      </div>
-      <div>
-        50
-      </div>
-      <div>
-        25
-      </div>
-      <div>
-        0
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "height": "74.71152%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "height": "65.69328%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "height": "56.202103%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "height": "56.041134%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "height": "55.745975%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "height": "54.949894%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "height": "51.037804%",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-        Naturalist
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-        Analyzer
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-        Inventor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-        Mentor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-        Planner
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-        Visionary
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-        Action-Taker
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="b397ab57-b128-47d6-ac2c-46f5574107b2"
-    >
-      <option
+      <select
+        className="dropdown"
+        onChange={[Function]}
         value="b397ab57-b128-47d6-ac2c-46f5574107b2"
       >
-        Naturalist
-      </option>
-      <option
-        value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        <option
+          value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+        >
+          Naturalist
+        </option>
+        <option
+          value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        >
+          Analyzer
+        </option>
+        <option
+          value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        >
+          Inventor
+        </option>
+        <option
+          value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        >
+          Mentor
+        </option>
+        <option
+          value="c47d1d99-8f08-44a7-acee-9047732aee29"
+        >
+          Planner
+        </option>
+        <option
+          value="55071620-bca6-4f15-b466-de8733a834a8"
+        >
+          Visionary
+        </option>
+        <option
+          value="3f715970-6fff-4852-853f-ce3dc9291b32"
+        >
+          Action-Taker
+        </option>
+      </select>
+      <div
+        className="heading"
       >
-        Analyzer
-      </option>
-      <option
-        value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        Naturalists
+      </div>
+      <div
+        className="p"
       >
-        Inventor
-      </option>
-      <option
-        value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
-      >
-        Mentor
-      </option>
-      <option
-        value="c47d1d99-8f08-44a7-acee-9047732aee29"
-      >
-        Planner
-      </option>
-      <option
-        value="55071620-bca6-4f15-b466-de8733a834a8"
-      >
-        Visionary
-      </option>
-      <option
-        value="3f715970-6fff-4852-853f-ce3dc9291b32"
-      >
-        Action-Taker
-      </option>
-    </select>
-    <div
-      className="heading"
-    >
-      Naturalists
-    </div>
-    <div
-      className="p"
-    >
-      are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+        are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`PersonalityTypeChart renders nothing if disabled 1`] = `null`;
+exports[`PersonalityTypeChart renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityTypeChart renders nothing if no types 1`] = `null`;
+exports[`PersonalityTypeChart renders nothing if no types 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityTypeChart renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityTypeChart renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
 exports[`PersonalityTypeChart updates activeType 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="horizontal"
+    className="container"
   >
     <div
-      className="row"
+      className="horizontal"
     >
       <div
-        className="label"
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Naturalist
+          </div>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "width": "95%",
+              }
+            }
+          />
+          <div
+            className="score tooBig"
+          >
+            95%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Analyzer
+          </div>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "width": "65.69328%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            66%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Inventor
+          </div>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "width": "56.202103%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Mentor
+          </div>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "width": "56.041134%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Planner
+          </div>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "width": "55.745975%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Visionary
+          </div>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "width": "54.949894%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Action-Taker
+          </div>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "width": "51.037804%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            51%
+          </div>
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
       >
         <div>
+          100
+        </div>
+        <div>
+          75
+        </div>
+        <div>
+          50
+        </div>
+        <div>
+          25
+        </div>
+        <div>
+          0
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "height": "74.71152%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "height": "65.69328%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "height": "56.202103%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "height": "56.041134%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "height": "55.745975%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "height": "54.949894%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "height": "51.037804%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs"
+    >
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
           Naturalist
-        </div>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "width": "95%",
-            }
-          }
-        />
-        <div
-          className="score tooBig"
-        >
-          95%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
           Analyzer
-        </div>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "width": "65.69328%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          66%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
           Inventor
-        </div>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "width": "56.202103%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
           Mentor
-        </div>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "width": "56.041134%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
           Planner
-        </div>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "width": "55.745975%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
           Visionary
-        </div>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "width": "54.949894%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          55%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
           Action-Taker
-        </div>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "width": "51.037804%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          51%
-        </div>
-      </div>
+        </span>
+      </button>
     </div>
     <div
-      className="scale"
+      className="content"
     >
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div>
-        100
-      </div>
-      <div>
-        75
-      </div>
-      <div>
-        50
-      </div>
-      <div>
-        25
-      </div>
-      <div>
-        0
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "height": "74.71152%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "height": "65.69328%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "height": "56.202103%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "height": "56.041134%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "height": "55.745975%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "height": "54.949894%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "height": "51.037804%",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-        Naturalist
-      </span>
-    </button>
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-        Analyzer
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-        Inventor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-        Mentor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-        Planner
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-        Visionary
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-        Action-Taker
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
-    >
-      <option
-        value="b397ab57-b128-47d6-ac2c-46f5574107b2"
-      >
-        Naturalist
-      </option>
-      <option
+      <select
+        className="dropdown"
+        onChange={[Function]}
         value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
       >
-        Analyzer
-      </option>
-      <option
-        value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        <option
+          value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+        >
+          Naturalist
+        </option>
+        <option
+          value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        >
+          Analyzer
+        </option>
+        <option
+          value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        >
+          Inventor
+        </option>
+        <option
+          value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        >
+          Mentor
+        </option>
+        <option
+          value="c47d1d99-8f08-44a7-acee-9047732aee29"
+        >
+          Planner
+        </option>
+        <option
+          value="55071620-bca6-4f15-b466-de8733a834a8"
+        >
+          Visionary
+        </option>
+        <option
+          value="3f715970-6fff-4852-853f-ce3dc9291b32"
+        >
+          Action-Taker
+        </option>
+      </select>
+      <div
+        className="heading"
       >
-        Inventor
-      </option>
-      <option
-        value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        Analyzers
+      </div>
+      <div
+        className="p"
       >
-        Mentor
-      </option>
-      <option
-        value="c47d1d99-8f08-44a7-acee-9047732aee29"
-      >
-        Planner
-      </option>
-      <option
-        value="55071620-bca6-4f15-b466-de8733a834a8"
-      >
-        Visionary
-      </option>
-      <option
-        value="3f715970-6fff-4852-853f-ce3dc9291b32"
-      >
-        Action-Taker
-      </option>
-    </select>
-    <div
-      className="heading"
-    >
-      Analyzers
-    </div>
-    <div
-      className="p"
-    >
-      are inquisitive.  They delve, study and look deeply for information.  They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
+        are inquisitive.  They delve, study and look deeply for information.  They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
+      </div>
     </div>
   </div>
 </div>
@@ -1642,542 +1666,546 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
 
 exports[`PersonalityTypeChart updates activeType through select 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="horizontal"
+    className="container"
   >
     <div
-      className="row"
+      className="horizontal"
     >
       <div
-        className="label"
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Naturalist
+          </div>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "width": "95%",
+              }
+            }
+          />
+          <div
+            className="score tooBig"
+          >
+            95%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Analyzer
+          </div>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "width": "65.69328%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            66%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Inventor
+          </div>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "width": "56.202103%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Mentor
+          </div>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "width": "56.041134%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Planner
+          </div>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "width": "55.745975%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Visionary
+          </div>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "width": "54.949894%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Action-Taker
+          </div>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "width": "51.037804%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            51%
+          </div>
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
       >
         <div>
+          100
+        </div>
+        <div>
+          75
+        </div>
+        <div>
+          50
+        </div>
+        <div>
+          25
+        </div>
+        <div>
+          0
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "height": "74.71152%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "height": "65.69328%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "height": "56.202103%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FE6d73",
+                "height": "56.041134%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "height": "55.745975%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#AE8bE2",
+                "height": "54.949894%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "height": "51.037804%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs"
+    >
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Naturalist Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+          />
           Naturalist
-        </div>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "width": "95%",
-            }
-          }
-        />
-        <div
-          className="score tooBig"
-        >
-          95%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Analyzer Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+          />
           Analyzer
-        </div>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "width": "65.69328%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          66%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Inventor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+          />
           Inventor
-        </div>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "width": "56.202103%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Mentor Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+          />
           Mentor
-        </div>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "width": "56.041134%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Planner Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+          />
           Planner
-        </div>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "width": "55.745975%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          56%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Visionary Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+          />
           Visionary
-        </div>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-      </div>
-      <div
-        className="grid"
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
       >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "width": "54.949894%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          55%
-        </div>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="label"
-      >
-        <div>
+        <span>
+          <img
+            alt="Action-Taker Badge"
+            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+          />
           Action-Taker
-        </div>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-      </div>
-      <div
-        className="grid"
-      >
-        <div
-          className="bar"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "width": "51.037804%",
-            }
-          }
-        />
-        <div
-          className="score"
-        >
-          51%
-        </div>
-      </div>
+        </span>
+      </button>
     </div>
     <div
-      className="scale"
+      className="content"
     >
-      <div />
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div>
-        100
-      </div>
-      <div>
-        75
-      </div>
-      <div>
-        50
-      </div>
-      <div>
-        25
-      </div>
-      <div>
-        0
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#38D27A",
-              "height": "74.71152%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#37A9E9",
-              "height": "65.69328%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#89E2CD",
-              "height": "56.202103%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FE6d73",
-              "height": "56.041134%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FABC50",
-              "height": "55.745975%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#AE8bE2",
-              "height": "54.949894%",
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="bar"
-      >
-        <div
-          className="score"
-          style={
-            {
-              "backgroundColor": "#FF9B71",
-              "height": "51.037804%",
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Naturalist Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
-        />
-        Naturalist
-      </span>
-    </button>
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Analyzer Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
-        />
-        Analyzer
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Inventor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
-        />
-        Inventor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Mentor Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
-        />
-        Mentor
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Planner Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
-        />
-        Planner
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Visionary Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
-        />
-        Visionary
-      </span>
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        <img
-          alt="Action-Taker Badge"
-          src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
-        />
-        Action-Taker
-      </span>
-    </button>
-  </div>
-  <div
-    className="content"
-  >
-    <select
-      className="dropdown"
-      onChange={[Function]}
-      value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
-    >
-      <option
-        value="b397ab57-b128-47d6-ac2c-46f5574107b2"
-      >
-        Naturalist
-      </option>
-      <option
+      <select
+        className="dropdown"
+        onChange={[Function]}
         value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
       >
-        Analyzer
-      </option>
-      <option
-        value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        <option
+          value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+        >
+          Naturalist
+        </option>
+        <option
+          value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        >
+          Analyzer
+        </option>
+        <option
+          value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        >
+          Inventor
+        </option>
+        <option
+          value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        >
+          Mentor
+        </option>
+        <option
+          value="c47d1d99-8f08-44a7-acee-9047732aee29"
+        >
+          Planner
+        </option>
+        <option
+          value="55071620-bca6-4f15-b466-de8733a834a8"
+        >
+          Visionary
+        </option>
+        <option
+          value="3f715970-6fff-4852-853f-ce3dc9291b32"
+        >
+          Action-Taker
+        </option>
+      </select>
+      <div
+        className="heading"
       >
-        Inventor
-      </option>
-      <option
-        value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        Analyzers
+      </div>
+      <div
+        className="p"
       >
-        Mentor
-      </option>
-      <option
-        value="c47d1d99-8f08-44a7-acee-9047732aee29"
-      >
-        Planner
-      </option>
-      <option
-        value="55071620-bca6-4f15-b466-de8733a834a8"
-      >
-        Visionary
-      </option>
-      <option
-        value="3f715970-6fff-4852-853f-ce3dc9291b32"
-      >
-        Action-Taker
-      </option>
-    </select>
-    <div
-      className="heading"
-    >
-      Analyzers
-    </div>
-    <div
-      className="p"
-    >
-      are inquisitive.  They delve, study and look deeply for information.  They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
+        are inquisitive.  They delve, study and look deeply for information.  They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
+      </div>
     </div>
   </div>
 </div>

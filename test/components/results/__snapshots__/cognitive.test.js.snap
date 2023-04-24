@@ -1,24 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Results.Cognitive renders component 1`] = `
-<section
-  className="container"
+<div
+  className="traitify--container traitify--color-scheme-light"
 >
-  <img
-    alt="Brain"
-    src="https://cdn.traitify.com/images/cognitive/brain.png"
-  />
-  <div
-    className="heading"
+  <section
+    className="container"
   >
-    Thank you for completing our assessment
-  </div>
-  <div
-    dangerouslySetInnerHTML={
-      {
-        "__html": "To learn more about the assessment you just took, please visit <a href="https://www.traitify.com">Traitify.com</a>.",
+    <img
+      alt="Brain"
+      src="https://cdn.traitify.com/images/cognitive/brain.png"
+    />
+    <div
+      className="heading"
+    >
+      Thank you for completing our assessment
+    </div>
+    <div
+      dangerouslySetInnerHTML={
+        {
+          "__html": "To learn more about the assessment you just took, please visit <a href="https://www.traitify.com">Traitify.com</a>.",
+        }
       }
-    }
-  />
-</section>
+    />
+  </section>
+</div>
 `;

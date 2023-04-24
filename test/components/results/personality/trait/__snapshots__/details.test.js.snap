@@ -2,39 +2,43 @@
 
 exports[`PersonalityTraitDetails renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="bar"
-    style={
-      {
-        "background": "#000000",
-        "width": "86%",
-      }
-    }
-  />
-  <div
-    className="content"
+    className="container"
   >
-    <img
-      alt="Agreeableness"
-      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+    <div
+      className="bar"
+      style={
+        {
+          "background": "#000000",
+          "width": "86%",
+        }
+      }
     />
     <div
-      className="heading"
+      className="content"
     >
-      Steady
-      <span
-        className="description"
+      <img
+        alt="Agreeableness"
+        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+      />
+      <div
+        className="heading"
       >
-        dependable, even and consistent
-      </span>
-    </div>
-    <div
-      className="score"
-    >
-      86
-      %
+        Steady
+        <span
+          className="description"
+        >
+          dependable, even and consistent
+        </span>
+      </div>
+      <div
+        className="score"
+      >
+        86
+        %
+      </div>
     </div>
   </div>
 </div>

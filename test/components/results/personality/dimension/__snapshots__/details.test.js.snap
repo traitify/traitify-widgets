@@ -2,93 +2,97 @@
 
 exports[`PersonalityDimensionDetails renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="header"
+    className="container"
   >
-    <img
-      alt="Agreeableness Badge"
-      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-    />
     <div
-      className="name"
+      className="header"
     >
-      Influencing People
-      <span
-        className="divider"
+      <img
+        alt="Agreeableness Badge"
+        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+      />
+      <div
+        className="name"
       >
-         | 
-      </span>
+        Influencing People
+        <span
+          className="divider"
+        >
+           | 
+        </span>
+      </div>
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
     </div>
     <div
-      className="name"
+      className="heading"
     >
-      Agreeableness
+      What does my Medium Agreeableness mean for me?
     </div>
-  </div>
-  <div
-    className="heading"
-  >
-    What does my Medium Agreeableness mean for me?
-  </div>
-  <div
-    className="p"
-  >
-    You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
-  </div>
-  <div
-    className="heading"
-  >
-    Medium Agreeableness Potential Benefits
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      Forgiving style
+    <div
+      className="p"
+    >
+      You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
     </div>
-    <div>
-      Looks for win-win outcome
+    <div
+      className="heading"
+    >
+      Medium Agreeableness Potential Benefits
     </div>
-    <div>
-      Negotiates with sensitivity
+    <div
+      className="details"
+    >
+      <div>
+        Forgiving style
+      </div>
+      <div>
+        Looks for win-win outcome
+      </div>
+      <div>
+        Negotiates with sensitivity
+      </div>
+      <div>
+        Realistic view of others
+      </div>
+      <div>
+        Recognises imperfection 
+      </div>
+      <div>
+        Relational style
+      </div>
     </div>
-    <div>
-      Realistic view of others
+    <div
+      className="heading"
+    >
+      Room for Growth and Change
     </div>
-    <div>
-      Recognises imperfection 
-    </div>
-    <div>
-      Relational style
-    </div>
-  </div>
-  <div
-    className="heading"
-  >
-    Room for Growth and Change
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      May appear too open-minded (to others)
-    </div>
-    <div>
-      May be viewed as a ‘pushover’ by others’
-    </div>
-    <div>
-      May let sympathy get in the way
-    </div>
-    <div>
-      May lose out to very assertive colleagues
-    </div>
-    <div>
-      May not always be objective enough
-    </div>
-    <div>
-      May not go for the optimal personal win
+    <div
+      className="details"
+    >
+      <div>
+        May appear too open-minded (to others)
+      </div>
+      <div>
+        May be viewed as a ‘pushover’ by others’
+      </div>
+      <div>
+        May let sympathy get in the way
+      </div>
+      <div>
+        May lose out to very assertive colleagues
+      </div>
+      <div>
+        May not always be objective enough
+      </div>
+      <div>
+        May not go for the optimal personal win
+      </div>
     </div>
   </div>
 </div>
@@ -96,88 +100,92 @@ exports[`PersonalityDimensionDetails renders component 1`] = `
 
 exports[`PersonalityDimensionDetails renders component in third person 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="header"
+    className="container"
   >
-    <img
-      alt="Agreeableness Badge"
-      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-    />
     <div
-      className="name"
+      className="header"
     >
-      Influencing People
-      <span
-        className="divider"
+      <img
+        alt="Agreeableness Badge"
+        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+      />
+      <div
+        className="name"
       >
-         | 
-      </span>
+        Influencing People
+        <span
+          className="divider"
+        >
+           | 
+        </span>
+      </div>
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
     </div>
     <div
-      className="name"
+      className="p"
     >
-      Agreeableness
+      The candidate’s view is that they are someone who has a mature and streetwise view of other people and their views. Their first instinct is likely to be to trust other people, but they do know that others can let them down. Thus, they are probably able to be direct, but are also able to temper their approach with sensitivity for what will keep relationships healthy and intact.
     </div>
-  </div>
-  <div
-    className="p"
-  >
-    The candidate’s view is that they are someone who has a mature and streetwise view of other people and their views. Their first instinct is likely to be to trust other people, but they do know that others can let them down. Thus, they are probably able to be direct, but are also able to temper their approach with sensitivity for what will keep relationships healthy and intact.
-  </div>
-  <div
-    className="heading"
-  >
-    Potential Benefits
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      Forgiving style
+    <div
+      className="heading"
+    >
+      Potential Benefits
     </div>
-    <div>
-      Looks for win-win outcome
+    <div
+      className="details"
+    >
+      <div>
+        Forgiving style
+      </div>
+      <div>
+        Looks for win-win outcome
+      </div>
+      <div>
+        Negotiates with sensitivity
+      </div>
+      <div>
+        Realistic view of others
+      </div>
+      <div>
+        Recognises imperfection 
+      </div>
+      <div>
+        Relational style
+      </div>
     </div>
-    <div>
-      Negotiates with sensitivity
+    <div
+      className="heading"
+    >
+      Room for Growth and Change
     </div>
-    <div>
-      Realistic view of others
-    </div>
-    <div>
-      Recognises imperfection 
-    </div>
-    <div>
-      Relational style
-    </div>
-  </div>
-  <div
-    className="heading"
-  >
-    Room for Growth and Change
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      May appear too open-minded (to others)
-    </div>
-    <div>
-      May be viewed as a ‘pushover’ by others’
-    </div>
-    <div>
-      May let sympathy get in the way
-    </div>
-    <div>
-      May lose out to very assertive colleagues
-    </div>
-    <div>
-      May not always be objective enough
-    </div>
-    <div>
-      May not go for the optimal personal win
+    <div
+      className="details"
+    >
+      <div>
+        May appear too open-minded (to others)
+      </div>
+      <div>
+        May be viewed as a ‘pushover’ by others’
+      </div>
+      <div>
+        May let sympathy get in the way
+      </div>
+      <div>
+        May lose out to very assertive colleagues
+      </div>
+      <div>
+        May not always be objective enough
+      </div>
+      <div>
+        May not go for the optimal personal win
+      </div>
     </div>
   </div>
 </div>
@@ -185,83 +193,87 @@ exports[`PersonalityDimensionDetails renders component in third person 1`] = `
 
 exports[`PersonalityDimensionDetails renders component without guide 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="header"
+    className="container"
   >
-    <img
-      alt="Agreeableness Badge"
-      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-    />
     <div
-      className="name"
+      className="header"
     >
-      Agreeableness
+      <img
+        alt="Agreeableness Badge"
+        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+      />
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
     </div>
-  </div>
-  <div
-    className="heading"
-  >
-    What does my Medium Agreeableness mean for me?
-  </div>
-  <div
-    className="p"
-  >
-    You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
-  </div>
-  <div
-    className="heading"
-  >
-    Medium Agreeableness Potential Benefits
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      Forgiving style
+    <div
+      className="heading"
+    >
+      What does my Medium Agreeableness mean for me?
     </div>
-    <div>
-      Looks for win-win outcome
+    <div
+      className="p"
+    >
+      You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
     </div>
-    <div>
-      Negotiates with sensitivity
+    <div
+      className="heading"
+    >
+      Medium Agreeableness Potential Benefits
     </div>
-    <div>
-      Realistic view of others
+    <div
+      className="details"
+    >
+      <div>
+        Forgiving style
+      </div>
+      <div>
+        Looks for win-win outcome
+      </div>
+      <div>
+        Negotiates with sensitivity
+      </div>
+      <div>
+        Realistic view of others
+      </div>
+      <div>
+        Recognises imperfection 
+      </div>
+      <div>
+        Relational style
+      </div>
     </div>
-    <div>
-      Recognises imperfection 
+    <div
+      className="heading"
+    >
+      Room for Growth and Change
     </div>
-    <div>
-      Relational style
-    </div>
-  </div>
-  <div
-    className="heading"
-  >
-    Room for Growth and Change
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      May appear too open-minded (to others)
-    </div>
-    <div>
-      May be viewed as a ‘pushover’ by others’
-    </div>
-    <div>
-      May let sympathy get in the way
-    </div>
-    <div>
-      May lose out to very assertive colleagues
-    </div>
-    <div>
-      May not always be objective enough
-    </div>
-    <div>
-      May not go for the optimal personal win
+    <div
+      className="details"
+    >
+      <div>
+        May appear too open-minded (to others)
+      </div>
+      <div>
+        May be viewed as a ‘pushover’ by others’
+      </div>
+      <div>
+        May let sympathy get in the way
+      </div>
+      <div>
+        May lose out to very assertive colleagues
+      </div>
+      <div>
+        May not always be objective enough
+      </div>
+      <div>
+        May not go for the optimal personal win
+      </div>
     </div>
   </div>
 </div>
@@ -269,66 +281,70 @@ exports[`PersonalityDimensionDetails renders component without guide 1`] = `
 
 exports[`PersonalityDimensionDetails renders component without pitfalls 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="header"
+    className="container"
   >
-    <img
-      alt="Agreeableness Badge"
-      src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-    />
     <div
-      className="name"
+      className="header"
     >
-      Influencing People
-      <span
-        className="divider"
+      <img
+        alt="Agreeableness Badge"
+        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+      />
+      <div
+        className="name"
       >
-         | 
-      </span>
+        Influencing People
+        <span
+          className="divider"
+        >
+           | 
+        </span>
+      </div>
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
     </div>
     <div
-      className="name"
+      className="heading"
     >
-      Agreeableness
+      What does my Medium Agreeableness mean for me?
     </div>
-  </div>
-  <div
-    className="heading"
-  >
-    What does my Medium Agreeableness mean for me?
-  </div>
-  <div
-    className="p"
-  >
-    You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
-  </div>
-  <div
-    className="heading"
-  >
-    Medium Agreeableness Potential Benefits
-  </div>
-  <div
-    className="details"
-  >
-    <div>
-      Forgiving style
+    <div
+      className="p"
+    >
+      You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
     </div>
-    <div>
-      Looks for win-win outcome
+    <div
+      className="heading"
+    >
+      Medium Agreeableness Potential Benefits
     </div>
-    <div>
-      Negotiates with sensitivity
-    </div>
-    <div>
-      Realistic view of others
-    </div>
-    <div>
-      Recognises imperfection 
-    </div>
-    <div>
-      Relational style
+    <div
+      className="details"
+    >
+      <div>
+        Forgiving style
+      </div>
+      <div>
+        Looks for win-win outcome
+      </div>
+      <div>
+        Negotiates with sensitivity
+      </div>
+      <div>
+        Realistic view of others
+      </div>
+      <div>
+        Recognises imperfection 
+      </div>
+      <div>
+        Relational style
+      </div>
     </div>
   </div>
 </div>

@@ -2,60 +2,64 @@
 
 exports[`PersonalityBaseDetails fallbacks renders component with blend 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Complements
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Conflicts
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Best Work Environments
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="complements"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Best Work Environments
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="complements"
     >
-      Complements
-    </option>
-    <option
-      value="conflicts"
-    >
-      Conflicts
-    </option>
-    <option
-      value="best_work_environments"
-    >
-      Best Work Environments
-    </option>
-  </select>
-  <div>
-    <div
-      className="p"
-    >
-      You often find yourself working with other Naturalists as you try to work outdoors as much as possible and find your like-minded colleagues alongside you.  You also enjoy working with other Analyzers whose shared cerebral interests find you having many things in common. You appreciate your Planner colleagues as well.  They take care of managing the details so you can think through the big picture of a project and then get started on it right away.
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+      <option
+        value="best_work_environments"
+      >
+        Best Work Environments
+      </option>
+    </select>
+    <div>
+      <div
+        className="p"
+      >
+        You often find yourself working with other Naturalists as you try to work outdoors as much as possible and find your like-minded colleagues alongside you.  You also enjoy working with other Analyzers whose shared cerebral interests find you having many things in common. You appreciate your Planner colleagues as well.  They take care of managing the details so you can think through the big picture of a project and then get started on it right away.
 
+      </div>
     </div>
   </div>
 </div>
@@ -63,59 +67,63 @@ exports[`PersonalityBaseDetails fallbacks renders component with blend 1`] = `
 
 exports[`PersonalityBaseDetails fallbacks renders component with types 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Complements
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Conflicts
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Best Work Environments
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="complements"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Best Work Environments
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="complements"
     >
-      Complements
-    </option>
-    <option
-      value="conflicts"
-    >
-      Conflicts
-    </option>
-    <option
-      value="best_work_environments"
-    >
-      Best Work Environments
-    </option>
-  </select>
-  <div>
-    <div
-      className="p"
-    >
-      You often find yourself working.
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+      <option
+        value="best_work_environments"
+      >
+        Best Work Environments
+      </option>
+    </select>
+    <div>
+      <div
+        className="p"
+      >
+        You often find yourself working.
+      </div>
     </div>
   </div>
 </div>
@@ -123,59 +131,63 @@ exports[`PersonalityBaseDetails fallbacks renders component with types 1`] = `
 
 exports[`PersonalityBaseDetails renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Complements
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Conflicts
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Best Work Environments
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="complements"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Best Work Environments
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="complements"
     >
-      Complements
-    </option>
-    <option
-      value="conflicts"
-    >
-      Conflicts
-    </option>
-    <option
-      value="best_work_environments"
-    >
-      Best Work Environments
-    </option>
-  </select>
-  <div>
-    <div
-      className="p"
-    >
-      You work well with humans
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+      <option
+        value="best_work_environments"
+      >
+        Best Work Environments
+      </option>
+    </select>
+    <div>
+      <div
+        className="p"
+      >
+        You work well with humans
+      </div>
     </div>
   </div>
 </div>
@@ -183,64 +195,68 @@ exports[`PersonalityBaseDetails renders component 1`] = `
 
 exports[`PersonalityBaseDetails renders component with headers 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="sectionHeading"
+    className="container"
   >
-    Personality Details
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="sectionHeading"
     >
-      Complements
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
+      Personality Details
+    </div>
+    <div
+      className="tabs"
     >
-      Conflicts
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Best Work Environments
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="complements"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Best Work Environments
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="complements"
     >
-      Complements
-    </option>
-    <option
-      value="conflicts"
-    >
-      Conflicts
-    </option>
-    <option
-      value="best_work_environments"
-    >
-      Best Work Environments
-    </option>
-  </select>
-  <div>
-    <div
-      className="p"
-    >
-      You work well with humans
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+      <option
+        value="best_work_environments"
+      >
+        Best Work Environments
+      </option>
+    </select>
+    <div>
+      <div
+        className="p"
+      >
+        You work well with humans
+      </div>
     </div>
   </div>
 </div>
@@ -248,47 +264,51 @@ exports[`PersonalityBaseDetails renders component with headers 1`] = `
 
 exports[`PersonalityBaseDetails renders component with no environments 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Complements
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Conflicts
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="complements"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="complements"
     >
-      Complements
-    </option>
-    <option
-      value="conflicts"
-    >
-      Conflicts
-    </option>
-  </select>
-  <div>
-    <div
-      className="p"
-    >
-      You work well with humans
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+    </select>
+    <div>
+      <div
+        className="p"
+      >
+        You work well with humans
+      </div>
     </div>
   </div>
 </div>
@@ -296,59 +316,63 @@ exports[`PersonalityBaseDetails renders component with no environments 1`] = `
 
 exports[`PersonalityBaseDetails renders new type from clicking button 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Complements
-    </button>
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      Conflicts
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Best Work Environments
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="conflicts"
-  >
-    <option
-      value="complements"
-    >
-      Complements
-    </option>
-    <option
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Best Work Environments
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="conflicts"
     >
-      Conflicts
-    </option>
-    <option
-      value="best_work_environments"
-    >
-      Best Work Environments
-    </option>
-  </select>
-  <div>
-    <div
-      className="p"
-    >
-      You work poorly with aliens
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+      <option
+        value="best_work_environments"
+      >
+        Best Work Environments
+      </option>
+    </select>
+    <div>
+      <div
+        className="p"
+      >
+        You work poorly with aliens
+      </div>
     </div>
   </div>
 </div>
@@ -356,72 +380,88 @@ exports[`PersonalityBaseDetails renders new type from clicking button 1`] = `
 
 exports[`PersonalityBaseDetails renders new type from selecting option 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Complements
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Conflicts
-    </button>
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      Best Work Environments
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="best_work_environments"
-  >
-    <option
-      value="complements"
-    >
-      Complements
-    </option>
-    <option
-      value="conflicts"
-    >
-      Conflicts
-    </option>
-    <option
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Complements
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Conflicts
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Best Work Environments
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="best_work_environments"
     >
-      Best Work Environments
-    </option>
-  </select>
-  <div>
-    <ul>
-      <li>
-        Home
-      </li>
-      <li>
-        Sweeeeet
-      </li>
-      <li>
-        Home?
-      </li>
-    </ul>
+      <option
+        value="complements"
+      >
+        Complements
+      </option>
+      <option
+        value="conflicts"
+      >
+        Conflicts
+      </option>
+      <option
+        value="best_work_environments"
+      >
+        Best Work Environments
+      </option>
+    </select>
+    <div>
+      <ul>
+        <li>
+          Home
+        </li>
+        <li>
+          Sweeeeet
+        </li>
+        <li>
+          Home?
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
 
-exports[`PersonalityBaseDetails renders nothing if disabled 1`] = `null`;
+exports[`PersonalityBaseDetails renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityBaseDetails renders nothing if no details 1`] = `null`;
+exports[`PersonalityBaseDetails renders nothing if no details 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityBaseDetails renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityBaseDetails renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

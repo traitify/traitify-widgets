@@ -2,71 +2,75 @@
 
 exports[`PersonalityArchetypeTips renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Tools To Use
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="tools"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Tools To Use
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="tools"
     >
-      Tools To Use
-    </option>
-    <option
-      value="room"
+      <option
+        value="tools"
+      >
+        Tools To Use
+      </option>
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
-    >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      TU - 0
-    </div>
-    <div>
-      TU - 1
-    </div>
-    <div>
-      TU - 2
-    </div>
-    <div>
-      TU - 3
-    </div>
-    <div>
-      TU - 4
+      <div>
+        TU - 0
+      </div>
+      <div>
+        TU - 1
+      </div>
+      <div>
+        TU - 2
+      </div>
+      <div>
+        TU - 3
+      </div>
+      <div>
+        TU - 4
+      </div>
     </div>
   </div>
 </div>
@@ -74,59 +78,63 @@ exports[`PersonalityArchetypeTips renders component 1`] = `
 
 exports[`PersonalityArchetypeTips renders component with available types 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="room"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="room"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      CZ - 0
-    </div>
-    <div>
-      CZ - 1
-    </div>
-    <div>
-      CZ - 2
-    </div>
-    <div>
-      CZ - 3
-    </div>
-    <div>
-      CZ - 4
+      <div>
+        CZ - 0
+      </div>
+      <div>
+        CZ - 1
+      </div>
+      <div>
+        CZ - 2
+      </div>
+      <div>
+        CZ - 3
+      </div>
+      <div>
+        CZ - 4
+      </div>
     </div>
   </div>
 </div>
@@ -134,59 +142,63 @@ exports[`PersonalityArchetypeTips renders component with available types 1`] = `
 
 exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="room"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="room"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      CZ - 0
-    </div>
-    <div>
-      CZ - 1
-    </div>
-    <div>
-      CZ - 2
-    </div>
-    <div>
-      CZ - 3
-    </div>
-    <div>
-      CZ - 4
+      <div>
+        CZ - 0
+      </div>
+      <div>
+        CZ - 1
+      </div>
+      <div>
+        CZ - 2
+      </div>
+      <div>
+        CZ - 3
+      </div>
+      <div>
+        CZ - 4
+      </div>
     </div>
   </div>
 </div>
@@ -194,76 +206,80 @@ exports[`PersonalityArchetypeTips renders component with enabled types 1`] = `
 
 exports[`PersonalityArchetypeTips renders component with headers 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="sectionHeading"
+    className="container"
   >
-    Personalty Tips
-  </div>
-  <div
-    className="tabs"
-  >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="sectionHeading"
     >
-      Tools To Use
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
+      Personalty Tips
+    </div>
+    <div
+      className="tabs"
     >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="tools"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Tools To Use
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="tools"
     >
-      Tools To Use
-    </option>
-    <option
-      value="room"
+      <option
+        value="tools"
+      >
+        Tools To Use
+      </option>
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
-    >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      TU - 0
-    </div>
-    <div>
-      TU - 1
-    </div>
-    <div>
-      TU - 2
-    </div>
-    <div>
-      TU - 3
-    </div>
-    <div>
-      TU - 4
+      <div>
+        TU - 0
+      </div>
+      <div>
+        TU - 1
+      </div>
+      <div>
+        TU - 2
+      </div>
+      <div>
+        TU - 3
+      </div>
+      <div>
+        TU - 4
+      </div>
     </div>
   </div>
 </div>
@@ -271,71 +287,75 @@ exports[`PersonalityArchetypeTips renders component with headers 1`] = `
 
 exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Tools To Use
-    </button>
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="room"
-  >
-    <option
-      value="tools"
-    >
-      Tools To Use
-    </option>
-    <option
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Tools To Use
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="room"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
+      <option
+        value="tools"
+      >
+        Tools To Use
+      </option>
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      CZ - 0
-    </div>
-    <div>
-      CZ - 1
-    </div>
-    <div>
-      CZ - 2
-    </div>
-    <div>
-      CZ - 3
-    </div>
-    <div>
-      CZ - 4
+      <div>
+        CZ - 0
+      </div>
+      <div>
+        CZ - 1
+      </div>
+      <div>
+        CZ - 2
+      </div>
+      <div>
+        CZ - 3
+      </div>
+      <div>
+        CZ - 4
+      </div>
     </div>
   </div>
 </div>
@@ -343,139 +363,163 @@ exports[`PersonalityArchetypeTips renders new type from clicking button 1`] = `
 
 exports[`PersonalityArchetypeTips renders new type from selecting option 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Tools To Use
-    </button>
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
-    >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="room"
-  >
-    <option
-      value="tools"
-    >
-      Tools To Use
-    </option>
-    <option
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Tools To Use
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="room"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
+      <option
+        value="tools"
+      >
+        Tools To Use
+      </option>
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      CZ - 0
-    </div>
-    <div>
-      CZ - 1
-    </div>
-    <div>
-      CZ - 2
-    </div>
-    <div>
-      CZ - 3
-    </div>
-    <div>
-      CZ - 4
+      <div>
+        CZ - 0
+      </div>
+      <div>
+        CZ - 1
+      </div>
+      <div>
+        CZ - 2
+      </div>
+      <div>
+        CZ - 3
+      </div>
+      <div>
+        CZ - 4
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`PersonalityArchetypeTips renders nothing if disabled 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityArchetypeTips renders nothing if no archetype 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if no archetype 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityArchetypeTips renders nothing if no tips 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if no tips 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityArchetypeTips renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityArchetypeTips renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
 exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Tools To Use
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Caution Zone
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="tools"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Tools To Use
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Caution Zone
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="tools"
     >
-      Tools To Use
-    </option>
-    <option
-      value="caution_zone"
+      <option
+        value="tools"
+      >
+        Tools To Use
+      </option>
+      <option
+        value="caution_zone"
+      >
+        Caution Zone
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Caution Zone
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      TP TU - 0
-    </div>
-    <div>
-      TP TU - 1
-    </div>
-    <div>
-      TP TU - 2
-    </div>
-    <div>
-      TP TU - 3
-    </div>
-    <div>
-      TP TU - 4
+      <div>
+        TP TU - 0
+      </div>
+      <div>
+        TP TU - 1
+      </div>
+      <div>
+        TP TU - 2
+      </div>
+      <div>
+        TP TU - 3
+      </div>
+      <div>
+        TP TU - 4
+      </div>
     </div>
   </div>
 </div>
@@ -483,71 +527,75 @@ exports[`PersonalityArchetypeTips thirdPerson renders component 1`] = `
 
 exports[`PersonalityArchetypeTips thirdPerson renders firstPerson tips if no thirdPerson tips 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="tabs"
+    className="container"
   >
-    <button
-      className="active"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="tabs"
     >
-      Tools To Use
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Room for Growth and Change
-    </button>
-    <button
-      className=""
-      onClick={[Function]}
-      type="button"
-    >
-      Settings For You
-    </button>
-  </div>
-  <select
-    className="dropdown"
-    onChange={[Function]}
-    value="tools"
-  >
-    <option
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        Tools To Use
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Room for Growth and Change
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        Settings For You
+      </button>
+    </div>
+    <select
+      className="dropdown"
+      onChange={[Function]}
       value="tools"
     >
-      Tools To Use
-    </option>
-    <option
-      value="room"
+      <option
+        value="tools"
+      >
+        Tools To Use
+      </option>
+      <option
+        value="room"
+      >
+        Room for Growth and Change
+      </option>
+      <option
+        value="settings"
+      >
+        Settings For You
+      </option>
+    </select>
+    <div
+      className="content"
     >
-      Room for Growth and Change
-    </option>
-    <option
-      value="settings"
-    >
-      Settings For You
-    </option>
-  </select>
-  <div
-    className="content"
-  >
-    <div>
-      TU - 0
-    </div>
-    <div>
-      TU - 1
-    </div>
-    <div>
-      TU - 2
-    </div>
-    <div>
-      TU - 3
-    </div>
-    <div>
-      TU - 4
+      <div>
+        TU - 0
+      </div>
+      <div>
+        TU - 1
+      </div>
+      <div>
+        TU - 2
+      </div>
+      <div>
+        TU - 3
+      </div>
+      <div>
+        TU - 4
+      </div>
     </div>
   </div>
 </div>

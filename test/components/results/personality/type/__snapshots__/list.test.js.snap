@@ -2,8 +2,12 @@
 
 exports[`PersonalityTypeChart renders component 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Chart
+  <div
+    className="mock"
+  >
+    Chart
+  </div>
 </div>
 `;

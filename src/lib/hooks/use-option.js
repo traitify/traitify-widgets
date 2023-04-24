@@ -4,5 +4,5 @@ import {optionsState} from "lib/recoil";
 export default function useOption(key) {
   const options = useLoadedValue(optionsState);
 
-  return options[key];
+  return options ? options[key] : null;
 }

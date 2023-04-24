@@ -2,236 +2,272 @@
 
 exports[`Survey.Cognitive renders instructions 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Instructions
+  <div
+    className="mock"
+  >
+    Instructions
+  </div>
 </div>
 `;
 
 exports[`Survey.Cognitive renders loading after skipped slides finished 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="loading"
+    className="container"
   >
-    <div />
-    <div />
+    <div
+      className="loading"
+    >
+      <div />
+      <div />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Survey.Cognitive renders loading after skipped slides skipped 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="loading"
+    className="container"
   >
-    <div />
-    <div />
+    <div
+      className="loading"
+    >
+      <div />
+      <div />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Survey.Cognitive renders loading if questions finished 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="loading"
+    className="container"
   >
-    <div />
-    <div />
+    <div
+      className="loading"
+    >
+      <div />
+      <div />
+    </div>
   </div>
 </div>
 `;
 
-exports[`Survey.Cognitive renders nothing if results ready 1`] = `null`;
+exports[`Survey.Cognitive renders nothing if results ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
 exports[`Survey.Cognitive renders skipped slides 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="statusContainer"
+    className="container"
   >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="mock"
+      >
+        4:59
+      </div>
+      <div
+        className="status"
+      >
+        <span>
+          Skipped Questions
+           
+        </span>
+        <span>
+          1
+           / 
+          1
+        </span>
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
     <div
       className="mock"
     >
-      4:59
+      Slide
     </div>
     <div
-      className="status"
+      className="mock"
     >
-      <span>
-        Skipped Questions
-         
-      </span>
-      <span>
-        1
-         / 
-        1
-      </span>
+      Slide
     </div>
-    <div
-      className="progressBar"
-    >
-      <div
-        className="progress"
-        style={
-          {
-            "width": "100%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
   </div>
 </div>
 `;
 
 exports[`Survey.Cognitive renders slide 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="statusContainer"
+    className="container"
   >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="mock"
+      >
+        4:59
+      </div>
+      <div
+        className="status"
+      >
+        <span>
+          1
+           / 
+          30
+        </span>
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "3.3333333333333335%",
+            }
+          }
+        />
+      </div>
+    </div>
     <div
       className="mock"
     >
-      4:59
+      Slide
     </div>
     <div
-      className="status"
+      className="mock"
     >
-      <span>
-        1
-         / 
-        30
-      </span>
+      Slide
     </div>
-    <div
-      className="progressBar"
-    >
-      <div
-        className="progress"
-        style={
-          {
-            "width": "3.3333333333333335%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
   </div>
 </div>
 `;
 
 exports[`Survey.Cognitive renders slide with disability 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="statusContainer"
+    className="container"
   >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="mock"
+      >
+        4:59
+      </div>
+      <div
+        className="status"
+      >
+        <span>
+          1
+           / 
+          30
+        </span>
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "3.3333333333333335%",
+            }
+          }
+        />
+      </div>
+    </div>
     <div
       className="mock"
     >
-      4:59
+      Slide
     </div>
     <div
-      className="status"
+      className="mock"
     >
-      <span>
-        1
-         / 
-        30
-      </span>
+      Slide
     </div>
-    <div
-      className="progressBar"
-    >
-      <div
-        className="progress"
-        style={
-          {
-            "width": "3.3333333333333335%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
   </div>
 </div>
 `;
 
 exports[`Survey.Cognitive renders slide with time limit disabled 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="statusContainer"
+    className="container"
   >
     <div
-      className="status"
-    >
-      <span>
-        1
-         / 
-        30
-      </span>
-    </div>
-    <div
-      className="progressBar"
+      className="statusContainer"
     >
       <div
-        className="progress"
-        style={
-          {
-            "width": "3.3333333333333335%",
+        className="status"
+      >
+        <span>
+          1
+           / 
+          30
+        </span>
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "3.3333333333333335%",
+            }
           }
-        }
-      />
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
-  </div>
-  <div
-    className="mock"
-  >
-    Slide
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
   </div>
 </div>
 `;

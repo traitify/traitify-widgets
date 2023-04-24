@@ -2,214 +2,218 @@
 
 exports[`PersonalityDimensionChart renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="p"
-  >
-    The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
-  </div>
-  <div
-    className="horizontal"
+    className="container"
   >
     <div
-      className="row medium"
+      className="p"
+    >
+      The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
+    </div>
+    <div
+      className="horizontal"
     >
       <div
-        className="label"
+        className="row medium"
       >
-        <div>
+        <div
+          className="label"
+        >
+          <div>
+            Solving Problems
+          </div>
+          <div>
+            Openness
+          </div>
+        </div>
+        <img
+          alt="Openness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Delivering Results
+          </div>
+          <div>
+            Conscientiousness
+          </div>
+        </div>
+        <img
+          alt="Conscientiousness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Engaging with People
+          </div>
+          <div>
+            Extraversion
+          </div>
+        </div>
+        <img
+          alt="Extraversion Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Influencing People
+          </div>
+          <div>
+            Agreeableness
+          </div>
+        </div>
+        <img
+          alt="Agreeableness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Managing Pressure
+          </div>
+          <div>
+            Emotional Stability
+          </div>
+        </div>
+        <img
+          alt="Emotional Stability Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+        />
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+      <div
+        className="column medium"
+      >
+        <img
+          alt="Openness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
+        />
+        <div
+          className="heading"
+        >
           Solving Problems
         </div>
-        <div>
+        <div
+          className="heading"
+        >
           Openness
         </div>
       </div>
-      <img
-        alt="Openness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Conscientiousness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
+        />
+        <div
+          className="heading"
+        >
           Delivering Results
         </div>
-        <div>
+        <div
+          className="heading"
+        >
           Conscientiousness
         </div>
       </div>
-      <img
-        alt="Conscientiousness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Extraversion Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
+        />
+        <div
+          className="heading"
+        >
           Engaging with People
         </div>
-        <div>
+        <div
+          className="heading"
+        >
           Extraversion
         </div>
       </div>
-      <img
-        alt="Extraversion Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Agreeableness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+        />
+        <div
+          className="heading"
+        >
           Influencing People
         </div>
-        <div>
+        <div
+          className="heading"
+        >
           Agreeableness
         </div>
       </div>
-      <img
-        alt="Agreeableness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Emotional Stability Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+        />
+        <div
+          className="heading"
+        >
           Managing Pressure
         </div>
-        <div>
+        <div
+          className="heading"
+        >
           Emotional Stability
         </div>
-      </div>
-      <img
-        alt="Emotional Stability Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
-      />
-    </div>
-    <div
-      className="scale"
-    >
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Openness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-      />
-      <div
-        className="heading"
-      >
-        Solving Problems
-      </div>
-      <div
-        className="heading"
-      >
-        Openness
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Conscientiousness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-      />
-      <div
-        className="heading"
-      >
-        Delivering Results
-      </div>
-      <div
-        className="heading"
-      >
-        Conscientiousness
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Extraversion Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
-      />
-      <div
-        className="heading"
-      >
-        Engaging with People
-      </div>
-      <div
-        className="heading"
-      >
-        Extraversion
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Agreeableness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-      />
-      <div
-        className="heading"
-      >
-        Influencing People
-      </div>
-      <div
-        className="heading"
-      >
-        Agreeableness
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Emotional Stability Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
-      />
-      <div
-        className="heading"
-      >
-        Managing Pressure
-      </div>
-      <div
-        className="heading"
-      >
-        Emotional Stability
       </div>
     </div>
   </div>
@@ -218,178 +222,186 @@ exports[`PersonalityDimensionChart renders component 1`] = `
 
 exports[`PersonalityDimensionChart renders component without guide 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="p"
-  >
-    The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
-  </div>
-  <div
-    className="horizontal"
+    className="container"
   >
     <div
-      className="row medium"
+      className="p"
+    >
+      The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
+    </div>
+    <div
+      className="horizontal"
     >
       <div
-        className="label"
+        className="row medium"
       >
-        <div>
+        <div
+          className="label"
+        >
+          <div>
+            Openness
+          </div>
+        </div>
+        <img
+          alt="Openness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Conscientiousness
+          </div>
+        </div>
+        <img
+          alt="Conscientiousness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Extraversion
+          </div>
+        </div>
+        <img
+          alt="Extraversion Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Agreeableness
+          </div>
+        </div>
+        <img
+          alt="Agreeableness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+        />
+      </div>
+      <div
+        className="row medium"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Emotional Stability
+          </div>
+        </div>
+        <img
+          alt="Emotional Stability Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+        />
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+      <div
+        className="column medium"
+      >
+        <img
+          alt="Openness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
+        />
+        <div
+          className="heading"
+        >
           Openness
         </div>
       </div>
-      <img
-        alt="Openness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Conscientiousness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
+        />
+        <div
+          className="heading"
+        >
           Conscientiousness
         </div>
       </div>
-      <img
-        alt="Conscientiousness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Extraversion Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
+        />
+        <div
+          className="heading"
+        >
           Extraversion
         </div>
       </div>
-      <img
-        alt="Extraversion Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Agreeableness Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+        />
+        <div
+          className="heading"
+        >
           Agreeableness
         </div>
       </div>
-      <img
-        alt="Agreeableness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-      />
-    </div>
-    <div
-      className="row medium"
-    >
       <div
-        className="label"
+        className="column medium"
       >
-        <div>
+        <img
+          alt="Emotional Stability Badge"
+          src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
+        />
+        <div
+          className="heading"
+        >
           Emotional Stability
         </div>
-      </div>
-      <img
-        alt="Emotional Stability Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
-      />
-    </div>
-    <div
-      className="scale"
-    >
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Openness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-      />
-      <div
-        className="heading"
-      >
-        Openness
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Conscientiousness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-      />
-      <div
-        className="heading"
-      >
-        Conscientiousness
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Extraversion Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
-      />
-      <div
-        className="heading"
-      >
-        Extraversion
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Agreeableness Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-      />
-      <div
-        className="heading"
-      >
-        Agreeableness
-      </div>
-    </div>
-    <div
-      className="column medium"
-    >
-      <img
-        alt="Emotional Stability Badge"
-        src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
-      />
-      <div
-        className="heading"
-      >
-        Emotional Stability
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`PersonalityDimensionChart renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityDimensionChart renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

@@ -2,50 +2,58 @@
 
 exports[`PersonalityDimensionList renders chart if details disabled 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="mock"
+    className="container"
   >
-    PersonalityDimensionChart
+    <div
+      className="mock"
+    >
+      PersonalityDimensionChart
+    </div>
   </div>
 </div>
 `;
 
 exports[`PersonalityDimensionList renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="mock"
+    className="container"
   >
-    PersonalityDimensionChart
-  </div>
-  <div>
     <div
       className="mock"
     >
-      PersonalityDimensionDetails
+      PersonalityDimensionChart
     </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
+    <div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
     </div>
   </div>
 </div>
@@ -53,43 +61,47 @@ exports[`PersonalityDimensionList renders component 1`] = `
 
 exports[`PersonalityDimensionList renders component with headers 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="sectionHeading"
+    className="container"
   >
-    Personality Breakdown
-  </div>
-  <div
-    className="mock"
-  >
-    PersonalityDimensionChart
-  </div>
-  <div>
     <div
-      className="mock"
+      className="sectionHeading"
     >
-      PersonalityDimensionDetails
+      Personality Breakdown
     </div>
     <div
       className="mock"
     >
-      PersonalityDimensionDetails
+      PersonalityDimensionChart
     </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
+    <div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
     </div>
   </div>
 </div>
@@ -97,38 +109,50 @@ exports[`PersonalityDimensionList renders component with headers 1`] = `
 
 exports[`PersonalityDimensionList renders details if chart disabled 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
-  <div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
+  <div
+    className="container"
+  >
+    <div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`PersonalityDimensionList renders nothing if disabled 1`] = `null`;
+exports[`PersonalityDimensionList renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`PersonalityDimensionList renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityDimensionList renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

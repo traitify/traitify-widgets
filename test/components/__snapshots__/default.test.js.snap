@@ -2,42 +2,66 @@
 
 exports[`Default assessments renders cognitive survey 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Survey
+  <div
+    className="mock"
+  >
+    Survey
+  </div>
 </div>
 `;
 
 exports[`Default assessments renders personality results 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Results
+  <div
+    className="mock"
+  >
+    Results
+  </div>
 </div>
 `;
 
 exports[`Default assessments renders personality survey 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Survey
+  <div
+    className="mock"
+  >
+    Survey
+  </div>
 </div>
 `;
 
-exports[`Default renders nothing if not ready 1`] = `null`;
+exports[`Default renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
 exports[`Default renders results 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Results
+  <div
+    className="mock"
+  >
+    Results
+  </div>
 </div>
 `;
 
 exports[`Default renders survey 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Survey
+  <div
+    className="mock"
+  >
+    Survey
+  </div>
 </div>
 `;

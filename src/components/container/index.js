@@ -1,13 +1,22 @@
+import PropTypes from "prop-types";
 import {RecoilRoot} from "recoil";
 import ErrorBoundary from "./error-boundary";
 import State from "./state";
+import Theme from "./theme";
 
-export default function Container(props) {
+function Container(props) {
   return (
     <RecoilRoot>
-      <ErrorBoundary>
-        <State {...props} />
-      </ErrorBoundary>
+      <Theme className={props.className}>
+        <ErrorBoundary>
+          <State {...props} />
+        </ErrorBoundary>
+      </Theme>
     </RecoilRoot>
   );
 }
+
+Container.defaultProps = {className: null};
+Container.propTypes = {className: PropTypes.string};
+
+export default Container;

@@ -2,58 +2,90 @@
 
 exports[`Results renders attract report 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Attract
+  <div
+    className="mock"
+  >
+    Attract
+  </div>
 </div>
 `;
 
 exports[`Results renders candidate report 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Candidate
+  <div
+    className="mock"
+  >
+    Candidate
+  </div>
 </div>
 `;
 
 exports[`Results renders cognitive results 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Cognitive
+  <div
+    className="mock"
+  >
+    Cognitive
+  </div>
 </div>
 `;
 
 exports[`Results renders dimension based results 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Candidate
+  <div
+    className="mock"
+  >
+    Candidate
+  </div>
 </div>
 `;
 
 exports[`Results renders employee report 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Employee
+  <div
+    className="mock"
+  >
+    Employee
+  </div>
 </div>
 `;
 
 exports[`Results renders financial risk results 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Financial Risk
+  <div
+    className="mock"
+  >
+    Financial Risk
+  </div>
 </div>
 `;
 
 exports[`Results renders manager report 1`] = `
 <div
-  className="mock"
+  className="traitify--container traitify--color-scheme-light"
 >
-  Manager
+  <div
+    className="mock"
+  >
+    Manager
+  </div>
 </div>
 `;
 
-exports[`Results renders nothing if not ready 1`] = `null`;
+exports[`Results renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

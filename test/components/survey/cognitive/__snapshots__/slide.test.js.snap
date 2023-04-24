@@ -2,115 +2,123 @@
 
 exports[`Slide renders component 1`] = `
 <div
-  className=""
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="question"
-  >
-    <img
-      alt="cognitive_question_alt_text"
-      src="https://cdn.traitify.com/images/cognitive_tests/10017/q.png"
-    />
-  </div>
-  <div
-    className="choices"
+    className=""
   >
     <div
-      className="choicesContainer"
+      className="question"
+    >
+      <img
+        alt="cognitive_question_alt_text"
+        src="https://cdn.traitify.com/images/cognitive_tests/10017/q.png"
+      />
+    </div>
+    <div
+      className="choices"
     >
       <div
-        className="choice"
+        className="choicesContainer"
       >
-        <button
-          className="traitify--response-button"
-          onClick={[Function]}
-          type="button"
+        <div
+          className="choice"
         >
-          <img
-            alt="cognitive_response_alt_text"
-            className={null}
-            src="https://cdn.traitify.com/images/cognitive_tests/10017/a.png"
-          />
-        </button>
-      </div>
-      <div
-        className="choice"
-      >
-        <button
-          className="traitify--response-button"
-          onClick={[Function]}
-          type="button"
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="cognitive_response_alt_text"
+              className={null}
+              src="https://cdn.traitify.com/images/cognitive_tests/10017/a.png"
+            />
+          </button>
+        </div>
+        <div
+          className="choice"
         >
-          <img
-            alt="cognitive_response_alt_text"
-            className={null}
-            src="https://cdn.traitify.com/images/cognitive_tests/10017/o1.png"
-          />
-        </button>
-      </div>
-      <div
-        className="choice"
-      >
-        <button
-          className="traitify--response-button"
-          onClick={[Function]}
-          type="button"
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="cognitive_response_alt_text"
+              className={null}
+              src="https://cdn.traitify.com/images/cognitive_tests/10017/o1.png"
+            />
+          </button>
+        </div>
+        <div
+          className="choice"
         >
-          <img
-            alt="cognitive_response_alt_text"
-            className={null}
-            src="https://cdn.traitify.com/images/cognitive_tests/10017/o3.png"
-          />
-        </button>
-      </div>
-      <div
-        className="choice"
-      >
-        <button
-          className="traitify--response-button"
-          onClick={[Function]}
-          type="button"
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="cognitive_response_alt_text"
+              className={null}
+              src="https://cdn.traitify.com/images/cognitive_tests/10017/o3.png"
+            />
+          </button>
+        </div>
+        <div
+          className="choice"
         >
-          <img
-            alt="cognitive_response_alt_text"
-            className={null}
-            src="https://cdn.traitify.com/images/cognitive_tests/10017/o2.png"
-          />
-        </button>
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="cognitive_response_alt_text"
+              className={null}
+              src="https://cdn.traitify.com/images/cognitive_tests/10017/o2.png"
+            />
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    className="buttons"
-  >
-    <button
-      className="btnSkip"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="buttons"
     >
-      cognitive_skip_button
-    </button>
-    <button
-      className="traitify--confirm-button btnDisabled"
-      disabled={true}
-      onClick={null}
-      type="button"
-    >
-      cognitive_confirm_button
-    </button>
+      <button
+        className="btnSkip"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_skip_button
+      </button>
+      <button
+        className="traitify--confirm-button btnDisabled"
+        disabled={true}
+        onClick={null}
+        type="button"
+      >
+        cognitive_confirm_button
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Slide renders loading 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="loading"
+    className="container"
   >
-    <div />
-    <div />
+    <div
+      className="loading"
+    >
+      <div />
+      <div />
+    </div>
   </div>
 </div>
 `;

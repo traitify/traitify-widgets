@@ -75,6 +75,7 @@ function createWidget() {
     console.log("Results.updated");
   });
 
+  Traitify.options.colorScheme = cache.get("colorScheme");
   Traitify.options.locale = cache.get("locale");
   Traitify.options.report = cache.get("report");
   Traitify.options.survey = {};
@@ -147,7 +148,7 @@ function createCognitiveAssessment() {
   });
 }
 
-// TODO: Allow for checkbox and text option
+// TODO: Allow for checkbox
 function createOption({fallback, name, onChange, options, text, type}) {
   const element = createElement({className: "row", htmlFor: name, tag: "label", text});
 
@@ -223,6 +224,16 @@ function setupDom() {
   let row;
 
   group = createElement({className: "group"});
+  group.appendChild(createOption({
+    name: "colorScheme",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Auto", value: "auto"},
+      {text: "Dark", value: "dark"},
+      {text: "Light", value: "light"}
+    ],
+    text: "Color Scheme:"
+  }));
   group.appendChild(createOption({
     fallback: "en-us",
     name: "locale",

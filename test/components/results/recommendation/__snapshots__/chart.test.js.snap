@@ -2,1061 +2,1065 @@
 
 exports[`Results.RecommendationChart renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="ranks"
+    className="container"
   >
     <div
-      className="chartLegendContainer"
+      className="ranks"
     >
       <div
-        className="chartLegendColor"
-        style={
-          {
-            "background": "#2FB855",
-          }
-        }
-      />
-      <div>
-        Preferred
-      </div>
-    </div>
-    <div
-      className="chartLegendContainer"
-    >
-      <div
-        className="chartLegendColor"
-        style={
-          {
-            "background": "#FFA721",
-          }
-        }
-      />
-      <div>
-        Acceptable
-      </div>
-    </div>
-    <div
-      className="chartLegendContainer"
-    >
-      <div
-        className="chartLegendColor"
-        style={
-          {
-            "background": "#EE5351",
-          }
-        }
-      />
-      <div>
-        Potential Risk
-      </div>
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div
-        className="label"
-      >
-        <span>
-          10
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          9
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          8
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          7
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          6
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          5
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          4
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          3
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          2
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          1
-        </span>
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="active high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Solving Problems
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="active other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Delivering Results
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="active low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Engaging with People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="active high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Influencing People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-  </div>
-  <div
-    className="horizontal"
-  >
-    <div
-      className="labels"
-    >
-      <div>
-        Solving Problems
-      </div>
-      <div>
-        Delivering Results
-      </div>
-      <div>
-        Engaging with People
-      </div>
-      <div>
-        Influencing People
-      </div>
-      <div>
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="chart"
-    >
-      <div
-        className="grid"
+        className="chartLegendContainer"
       >
         <div
-          className="row"
-        >
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#2FB855",
             }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="active high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="active high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
+          }
+        />
+        <div>
+          Preferred
         </div>
       </div>
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#FFA721",
+            }
+          }
+        />
+        <div>
+          Acceptable
+        </div>
+      </div>
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#EE5351",
+            }
+          }
+        />
+        <div>
+          Potential Risk
+        </div>
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
       <div
         className="scale"
       >
+        <div
+          className="label"
+        >
+          <span>
+            10
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            9
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            8
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            7
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            6
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            5
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            4
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            3
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            2
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            1
+          </span>
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="active high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Solving Problems
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="active other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Delivering Results
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="active low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Engaging with People
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="active high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Influencing People
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Managing Pressure
+        </div>
+      </div>
+    </div>
+    <div
+      className="horizontal"
+    >
+      <div
+        className="labels"
+      >
         <div>
-          1
+          Solving Problems
         </div>
         <div>
-          2
+          Delivering Results
         </div>
         <div>
-          3
+          Engaging with People
         </div>
         <div>
-          4
+          Influencing People
         </div>
         <div>
-          5
+          Managing Pressure
         </div>
-        <div>
-          6
+      </div>
+      <div
+        className="chart"
+      >
+        <div
+          className="grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="active high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="active high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
         </div>
-        <div>
-          7
-        </div>
-        <div>
-          8
-        </div>
-        <div>
-          9
-        </div>
-        <div>
-          10
+        <div
+          className="scale"
+        >
+          <div>
+            1
+          </div>
+          <div>
+            2
+          </div>
+          <div>
+            3
+          </div>
+          <div>
+            4
+          </div>
+          <div>
+            5
+          </div>
+          <div>
+            6
+          </div>
+          <div>
+            7
+          </div>
+          <div>
+            8
+          </div>
+          <div>
+            9
+          </div>
+          <div>
+            10
+          </div>
         </div>
       </div>
     </div>
@@ -1066,1015 +1070,1019 @@ exports[`Results.RecommendationChart renders component 1`] = `
 
 exports[`Results.RecommendationChart renders component if benchmark not ready 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="ranks"
-  />
-  <div
-    className="vertical"
+    className="container"
   >
     <div
-      className="scale"
-    >
-      <div
-        className="label"
-      >
-        <span>
-          10
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          9
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          8
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          7
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          6
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          5
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          4
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          3
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          2
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          1
-        </span>
-      </div>
-    </div>
+      className="ranks"
+    />
     <div
-      className="column"
+      className="vertical"
     >
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Solving Problems
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Delivering Results
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Engaging with People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Influencing People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-  </div>
-  <div
-    className="horizontal"
-  >
-    <div
-      className="labels"
-    >
-      <div>
-        Solving Problems
-      </div>
-      <div>
-        Delivering Results
-      </div>
-      <div>
-        Engaging with People
-      </div>
-      <div>
-        Influencing People
-      </div>
-      <div>
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="chart"
-    >
-      <div
-        className="grid"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-        </div>
-      </div>
       <div
         className="scale"
       >
+        <div
+          className="label"
+        >
+          <span>
+            10
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            9
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            8
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            7
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            6
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            5
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            4
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            3
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            2
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            1
+          </span>
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Solving Problems
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Delivering Results
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Engaging with People
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Influencing People
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Managing Pressure
+        </div>
+      </div>
+    </div>
+    <div
+      className="horizontal"
+    >
+      <div
+        className="labels"
+      >
         <div>
-          1
+          Solving Problems
         </div>
         <div>
-          2
+          Delivering Results
         </div>
         <div>
-          3
+          Engaging with People
         </div>
         <div>
-          4
+          Influencing People
         </div>
         <div>
-          5
+          Managing Pressure
         </div>
-        <div>
-          6
+      </div>
+      <div
+        className="chart"
+      >
+        <div
+          className="grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+          </div>
         </div>
-        <div>
-          7
-        </div>
-        <div>
-          8
-        </div>
-        <div>
-          9
-        </div>
-        <div>
-          10
+        <div
+          className="scale"
+        >
+          <div>
+            1
+          </div>
+          <div>
+            2
+          </div>
+          <div>
+            3
+          </div>
+          <div>
+            4
+          </div>
+          <div>
+            5
+          </div>
+          <div>
+            6
+          </div>
+          <div>
+            7
+          </div>
+          <div>
+            8
+          </div>
+          <div>
+            9
+          </div>
+          <div>
+            10
+          </div>
         </div>
       </div>
     </div>
@@ -2084,1061 +2092,1065 @@ exports[`Results.RecommendationChart renders component if benchmark not ready 1`
 
 exports[`Results.RecommendationChart renders component with combined prop 1`] = `
 <div
-  className="container combined"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="ranks"
+    className="container combined"
   >
     <div
-      className="chartLegendContainer"
+      className="ranks"
     >
       <div
-        className="chartLegendColor"
-        style={
-          {
-            "background": "#2FB855",
-          }
-        }
-      />
-      <div>
-        Preferred
-      </div>
-    </div>
-    <div
-      className="chartLegendContainer"
-    >
-      <div
-        className="chartLegendColor"
-        style={
-          {
-            "background": "#FFA721",
-          }
-        }
-      />
-      <div>
-        Acceptable
-      </div>
-    </div>
-    <div
-      className="chartLegendContainer"
-    >
-      <div
-        className="chartLegendColor"
-        style={
-          {
-            "background": "#EE5351",
-          }
-        }
-      />
-      <div>
-        Potential Risk
-      </div>
-    </div>
-  </div>
-  <div
-    className="vertical"
-  >
-    <div
-      className="scale"
-    >
-      <div
-        className="label"
-      >
-        <span>
-          10
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          9
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          8
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          7
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          6
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          5
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          4
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          3
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          2
-        </span>
-      </div>
-      <div
-        className="label"
-      >
-        <span>
-          1
-        </span>
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="active high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Solving Problems
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="active other"
-        style={
-          {
-            "background": "black",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Delivering Results
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="active low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Engaging with People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="active high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="high"
-        style={
-          {
-            "background": "#29B770",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Influencing People
-      </div>
-    </div>
-    <div
-      className="column"
-    >
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="active medium"
-        style={
-          {
-            "background": "#EF615E",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="low"
-        style={
-          {
-            "background": "#FFCC3B",
-          }
-        }
-      />
-      <div
-        className="name"
-      >
-        Managing Pressure
-      </div>
-    </div>
-  </div>
-  <div
-    className="horizontal"
-  >
-    <div
-      className="labels"
-    >
-      <div>
-        Solving Problems
-      </div>
-      <div>
-        Delivering Results
-      </div>
-      <div>
-        Engaging with People
-      </div>
-      <div>
-        Influencing People
-      </div>
-      <div>
-        Managing Pressure
-      </div>
-    </div>
-    <div
-      className="chart"
-    >
-      <div
-        className="grid"
+        className="chartLegendContainer"
       >
         <div
-          className="row"
-        >
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#2FB855",
             }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="active high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="other"
-            style={
-              {
-                "background": "black",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="active high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="high"
-            style={
-              {
-                "background": "#29B770",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-        </div>
-        <div
-          className="row"
-        >
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="low"
-            style={
-              {
-                "background": "#FFCC3B",
-              }
-            }
-          />
-          <div
-            className="active medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
-          <div
-            className="medium"
-            style={
-              {
-                "background": "#EF615E",
-              }
-            }
-          />
+          }
+        />
+        <div>
+          Preferred
         </div>
       </div>
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#FFA721",
+            }
+          }
+        />
+        <div>
+          Acceptable
+        </div>
+      </div>
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#EE5351",
+            }
+          }
+        />
+        <div>
+          Potential Risk
+        </div>
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
       <div
         className="scale"
       >
+        <div
+          className="label"
+        >
+          <span>
+            10
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            9
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            8
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            7
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            6
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            5
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            4
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            3
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            2
+          </span>
+        </div>
+        <div
+          className="label"
+        >
+          <span>
+            1
+          </span>
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="active high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Solving Problems
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="active other"
+          style={
+            {
+              "background": "black",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Delivering Results
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="active low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Engaging with People
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="active high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="high"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Influencing People
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="active medium"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="low"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div
+          className="name"
+        >
+          Managing Pressure
+        </div>
+      </div>
+    </div>
+    <div
+      className="horizontal"
+    >
+      <div
+        className="labels"
+      >
         <div>
-          1
+          Solving Problems
         </div>
         <div>
-          2
+          Delivering Results
         </div>
         <div>
-          3
+          Engaging with People
         </div>
         <div>
-          4
+          Influencing People
         </div>
         <div>
-          5
+          Managing Pressure
         </div>
-        <div>
-          6
+      </div>
+      <div
+        className="chart"
+      >
+        <div
+          className="grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="active high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="other"
+              style={
+                {
+                  "background": "black",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="active high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="high"
+              style={
+                {
+                  "background": "#29B770",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="low"
+              style={
+                {
+                  "background": "#FFCC3B",
+                }
+              }
+            />
+            <div
+              className="active medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+            <div
+              className="medium"
+              style={
+                {
+                  "background": "#EF615E",
+                }
+              }
+            />
+          </div>
         </div>
-        <div>
-          7
-        </div>
-        <div>
-          8
-        </div>
-        <div>
-          9
-        </div>
-        <div>
-          10
+        <div
+          className="scale"
+        >
+          <div>
+            1
+          </div>
+          <div>
+            2
+          </div>
+          <div>
+            3
+          </div>
+          <div>
+            4
+          </div>
+          <div>
+            5
+          </div>
+          <div>
+            6
+          </div>
+          <div>
+            7
+          </div>
+          <div>
+            8
+          </div>
+          <div>
+            9
+          </div>
+          <div>
+            10
+          </div>
         </div>
       </div>
     </div>
@@ -3146,10 +3158,26 @@ exports[`Results.RecommendationChart renders component with combined prop 1`] = 
 </div>
 `;
 
-exports[`Results.RecommendationChart renders nothing if disabled 1`] = `null`;
+exports[`Results.RecommendationChart renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`Results.RecommendationChart renders nothing if guide not ready 1`] = `null`;
+exports[`Results.RecommendationChart renders nothing if guide not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`Results.RecommendationChart renders nothing if no competencies 1`] = `null`;
+exports[`Results.RecommendationChart renders nothing if no competencies 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
 
-exports[`Results.RecommendationChart renders nothing if results not ready 1`] = `null`;
+exports[`Results.RecommendationChart renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

@@ -5,14 +5,15 @@ import {
   graphqlState,
   httpState,
   localeState,
+  packageIDState,
   profileIDState
 } from "./base";
 
-// TODO: Add packageID to the mix
 const assessmentsDefaultQuery = selector({
   get: async({get}) => {
     const benchmarkID = get(benchmarkIDState);
-    if(!benchmarkID) { return null; }
+    const packageID = get(packageIDState);
+    if(!benchmarkID && !packageID) { return null; }
 
     const profileID = get(profileIDState);
     if(!profileID) { return null; }
@@ -21,7 +22,7 @@ const assessmentsDefaultQuery = selector({
     const http = get(httpState);
     const params = {
       query: GraphQL.xavier.recommendation,
-      variables: {benchmarkID, localeKey: get(localeState), profileID}
+      variables: {benchmarkID, localeKey: get(localeState), packageID, profileID}
     };
     const response = await http.post(GraphQL.xavier.path, params);
     if(response.errors) { console.warn("xavier", response.errors); } /* eslint-disable-line no-console */

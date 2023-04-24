@@ -1,12 +1,14 @@
 export const recommendation = `
   query(
-    $benchmarkID: String!,
+    $benchmarkID: String,
     $localeKey: String!,
+    $packageID: String,
     $profileID: String!
   ) {
     recommendation(
       benchmarkId: $benchmarkID,
       localeKey: $localeKey,
+      packageId: $packageID,
       profileId: $profileID
     ) {
       id

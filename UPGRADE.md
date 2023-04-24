@@ -36,10 +36,10 @@ Traitify.options.assessmentID = "your-assessment-id";
 Traitify.render("#the-id-of-the-target-you-wish-to-render-to");
 ```
 
-When using a package
+When using a benchmark
 
 ```
-Traitify.options.packageID = "your-package-id";
+Traitify.options.benchmarkID = "your-benchmark-id";
 Traitify.options.profileID = "your-profile-id";
 ```
 

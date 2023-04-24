@@ -46,12 +46,14 @@ function createWidget() {
 
   if(surveyType === "benchmark") {
     const benchmarkID = cache.get("benchmarkID");
+    const packageID = cache.get("packageID");
     const profileID = cache.get("profileID");
-    console.log("createWidget", {benchmarkID, profileID});
-    if(!benchmarkID) { return; }
+    console.log("createWidget", {benchmarkID, packagedID, profileID});
+    if(!benchmarkID && !packageID) { return; }
     if(!profileID) { return; }
 
     Traitify.options.benchmarkID = benchmarkID;
+    Traitify.options.packageID = packageID;
     Traitify.options.profileID = profileID;
   } else {
     const assessmentID = cache.get("assessmentID");
@@ -270,6 +272,7 @@ function setupDom() {
   group.appendChild(createElement({className: surveyType !== "cognitive" ? "hide" : "", id: "cognitive-options"}));
   row = createElement({className: surveyType !== "benchmark" ? "hide" : "", id: "benchmark-options"});
   row.appendChild(createOption({name: "benchmarkID", text: "Benchmark ID:"}));
+  row.appendChild(createOption({name: "packageID", text: "Package ID:"}));
   row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
   group.appendChild(row)
 

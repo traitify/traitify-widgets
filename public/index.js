@@ -79,6 +79,11 @@ function createWidget() {
   Traitify.options.locale = cache.get("locale");
   Traitify.options.report = cache.get("report");
   Traitify.options.survey = {};
+  ["allowBack", "allowFullscreen"].forEach((key) => {
+    const value = booleanFrom(cache.get(`survey.${key}`), "default");
+
+    if(value !== "default") { Traitify.options.survey[key] = value; }
+  });
   Traitify.options.survey.captureLearningDisability = true;
   Traitify.options.survey.disableTimeLimit = true;
   Traitify.options.survey.initialLearningDisability = true;
@@ -148,7 +153,6 @@ function createCognitiveAssessment() {
   });
 }
 
-// TODO: Allow for checkbox
 function createOption({fallback, name, onChange, options, text, type}) {
   const element = createElement({className: "row", htmlFor: name, tag: "label", text});
 
@@ -220,11 +224,15 @@ function setupDom() {
   setupTargets();
 
   const locales = Traitify.i18n.supportedLocales;
+  let column;
   let group;
   let row;
 
   group = createElement({className: "group"});
-  group.appendChild(createOption({
+  row = createElement({className: "row gap-lg"});
+  column = createElement();
+  column.appendChild(createElement({className: "column-header", text: "General Options"}));
+  column.appendChild(createOption({
     name: "colorScheme",
     options: [
       {text: "Default", value: ""},
@@ -234,7 +242,7 @@ function setupDom() {
     ],
     text: "Color Scheme:"
   }));
-  group.appendChild(createOption({
+  column.appendChild(createOption({
     fallback: "en-us",
     name: "locale",
     options: Object.keys(locales)
@@ -242,7 +250,16 @@ function setupDom() {
       .sort((a, b) => a.text.localeCompare(b.text)),
     text: "Locale:"
   }));
-  group.appendChild(createOption({
+  column.appendChild(createOption({
+    name: "perspective",
+    options: [
+      {text: "Default", value: ""},
+      {text: "First Person", value: "firstPerson"},
+      {text: "Third Person", value: "thirdPerson"}
+    ],
+    text: "Perspective:"
+  }));
+  column.appendChild(createOption({
     name: "report",
     options: [
       {text: "Candidate", value: "candidate"},
@@ -251,6 +268,50 @@ function setupDom() {
     ],
     text: "Report:"
   }));
+  row.appendChild(column);
+  column = createElement();
+  column.appendChild(createElement({className: "column-header", text: "Additional Options"}));
+  column.appendChild(createOption({
+    name: "showHeaders",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Yes", value: "true"},
+      {text: "No", value: "false"}
+    ],
+    text: "Show Headers:"
+  }));
+  column.appendChild(createOption({
+    name: "showInstructions",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Yes", value: "true"},
+      {text: "No", value: "false"}
+    ],
+    text: "Show Instructions:"
+  }));
+  row.appendChild(column);
+  column = createElement();
+  column.appendChild(createElement({className: "column-header", text: "Survey Options"}));
+  column.appendChild(createOption({
+    name: "survey.allowBack",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Yes", value: "true"},
+      {text: "No", value: "false"}
+    ],
+    text: "Allow Back:"
+  }));
+  column.appendChild(createOption({
+    name: "survey.allowFullscreen",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Yes", value: "true"},
+      {text: "No", value: "false"}
+    ],
+    text: "Allow Fullscreen:"
+  }));
+  row.appendChild(column);
+  group.appendChild(row);
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createWidget, tag: "button", text: "Refresh"}));
   row.appendChild(createElement({onClick: destroyWidget, tag: "button", text: "Destroy"}));

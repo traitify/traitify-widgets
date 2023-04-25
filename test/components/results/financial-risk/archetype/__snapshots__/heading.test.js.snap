@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk.Archetype.Heading renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="description"
+      style={
+        {
+          "background": "#4fe0c4",
+        }
+      }
+    >
+      <div>
+        <img
+          alt="Conservative"
+          src="https://cdn.traitify.com/frtq/conservative.png"
+        />
+        <div
+          className="heading"
+        >
+          Their
+           Financial Risk style is 
+          <span>
+            Conservative
+          </span>
+        </div>
+      </div>
+      <div
+        className="p"
+      >
+        This individual's assessment results show that their Financial Risk Style is Conservative. Financial Risk Style scores range from 1-100, with higher scores indicating a greater willingness to take on more financial risk. In general, they are significantly less interested in assuming risk in their portfolio compared to most investors.
+      </div>
+    </div>
+    <div
+      className="analysis"
+    >
+      <div
+        className="heading"
+      >
+        What does this tell me?
+      </div>
+      <div
+        className="p"
+      >
+        This individual's financial risk style is influenced by their life circumstances, such as their age and financial needs. Beyond those parameters, their approach to financial risk is influenced by important components of their personality. Some examples are their level of spontaneity and the degree to which they enjoy learning about new topics. Each of us is a blend of core components. By considering how these factors work together, we gain a picture of their approach to financial risk.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Heading renders nothing if no archetype 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Heading renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Heading renders perspective correctly 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="description"
+      style={
+        {
+          "background": "#4fe0c4",
+        }
+      }
+    >
+      <div>
+        <img
+          alt="Conservative"
+          src="https://cdn.traitify.com/frtq/conservative.png"
+        />
+        <div
+          className="heading"
+        >
+          Your
+           Financial Risk style is 
+          <span>
+            Conservative
+          </span>
+        </div>
+      </div>
+      <div
+        className="p"
+      >
+        Your assessment results show that your Financial Risk Style is Conservative. Financial Risk Style scores range from 1-100, with higher scores indicating a greater willingness to take on more financial risk. In general, you are significantly less interested in assuming risk in your portfolio compared to most investors.
+      </div>
+    </div>
+    <div
+      className="analysis"
+    >
+      <div
+        className="heading"
+      >
+        What does this tell me?
+      </div>
+      <div
+        className="p"
+      >
+        Your financial risk style is influenced by your life circumstances, such as your age and financial needs. Beyond those parameters, your approach to financial risk is influenced by important components of your personality. Some examples are your level of spontaneity and the degree to which you enjoy learning about new topics. Each of us is a blend of core components. By considering how these factors work together, we gain a picture of your approach to financial risk.
+      </div>
+    </div>
+  </div>
+</div>
+`;

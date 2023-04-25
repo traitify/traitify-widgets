@@ -1,0 +1,73 @@
+@import "style/helpers";
+@import "../../variables.scss";
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+
+  @include min-width("md") {
+    display: flex;
+    gap: $buffer-lg * 2;
+    justify-content: space-between;
+  }
+  > div {
+    margin-bottom: $buffer;
+
+    @include min-width("md") {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.analysis {
+  @include theme("background", "background");
+
+  padding: $buffer;
+
+  .heading { margin: $buffer-lg 0; }
+}
+
+.description {
+  @extend %shadow-box;
+
+  background: #4D53D6;
+  background: linear-gradient(137deg, #4D85D6 0%,#4D53D6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D85D6", endColorstr="#4D53D6", GradientType=1);
+  font-size: $font-size-lg;
+
+  @include min-width("md") {
+    display: flex;
+    flex-direction: column;
+  }
+  @include theme("color", "text-light");
+  > div {
+    align-items: flex-start;
+    display: flex;
+  }
+  img {
+    flex: initial;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    max-width: 80px;
+  }
+  span {
+    display: block;
+    font-weight: bold;
+  }
+}
+.heading {
+  display: block;
+  font-size: $font-size-heading;
+  margin-top: 5px;
+}
+.p {
+  @include min-width("md") {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column;
+    justify-content: center;
+    margin: 0;
+  }
+}

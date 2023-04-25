@@ -1,0 +1,38 @@
+@import "style/helpers";
+@import "../../variables.scss";
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-lg;
+}
+.heading {
+  color: $blue;
+  font-size: $font-size-heading;
+  margin-bottom: $buffer;
+  text-align: center;
+}
+.takeaways {
+  display: grid;
+  gap: $buffer-lg;
+  grid-template-columns: repeat(2, 1fr);
+
+  > div {
+    align-items: center;
+    background: #4D53D6;
+    background: linear-gradient(137deg, #4D85D6 0%,#4D53D6 100%);
+    border-radius: 5px;
+    display: flex;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D85D6", endColorstr="#4D53D6", GradientType=1);
+    justify-content: center;
+    min-height: 180px;
+    text-align: center;
+    padding: $buffer;
+
+    @include min-width("md") { min-height: 135px; }
+    @include theme("color", "text-light");
+  }
+
+  @include min-width("md") { grid-template-columns: repeat(3, 1fr); }
+  @include min-width("xl") { grid-template-columns: repeat(6, 1fr); }
+}

@@ -1,0 +1,39 @@
+@import "style/helpers";
+@import "../../variables.scss";
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+
+  @include min-width("md") {
+    display: flex;
+    gap: $buffer-lg * 2;
+    justify-content: space-between;
+  }
+  > div {
+    @extend %shadow-box;
+
+    margin-bottom: $buffer-section;
+
+    @include min-width("md") {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+}
+.life {
+  background: $blue-light;
+
+  .heading { color: $blue; }
+}
+.financial {
+  background: $green-light;
+
+  .heading { color: $green; }
+}
+.heading {
+  font-size: $font-size-heading;
+  margin-top: 5px;
+}
+.p { @extend %paragraph; }

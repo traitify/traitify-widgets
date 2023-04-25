@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="range"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="lowMedium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="mediumHigh"
+      />
+      <div
+        className="high"
+      />
+    </div>
+    <div
+      className="indicators"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="risk"
+        style={
+          {
+            "left": "50%",
+          }
+        }
+      />
+      <div
+        className="high"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar risk levels renders aggressive 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="range"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="lowMedium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="mediumHigh"
+      />
+      <div
+        className="high"
+      />
+    </div>
+    <div
+      className="indicators"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="risk"
+        style={
+          {
+            "left": "90%",
+          }
+        }
+      />
+      <div
+        className="high"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar risk levels renders conservative 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="range"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="lowMedium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="mediumHigh"
+      />
+      <div
+        className="high"
+      />
+    </div>
+    <div
+      className="indicators"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="risk"
+        style={
+          {
+            "left": "10%",
+          }
+        }
+      />
+      <div
+        className="high"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar risk levels renders measured 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="range"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="lowMedium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="mediumHigh"
+      />
+      <div
+        className="high"
+      />
+    </div>
+    <div
+      className="indicators"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="risk"
+        style={
+          {
+            "left": "30%",
+          }
+        }
+      />
+      <div
+        className="high"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar risk levels renders neutral 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="range"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="lowMedium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="mediumHigh"
+      />
+      <div
+        className="high"
+      />
+    </div>
+    <div
+      className="indicators"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="risk"
+        style={
+          {
+            "left": "50%",
+          }
+        }
+      />
+      <div
+        className="high"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.ScoreBar risk levels renders receptive 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="range"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="lowMedium"
+      />
+      <div
+        className="medium"
+      />
+      <div
+        className="mediumHigh"
+      />
+      <div
+        className="high"
+      />
+    </div>
+    <div
+      className="indicators"
+    >
+      <div
+        className="low"
+      />
+      <div
+        className="risk"
+        style={
+          {
+            "left": "70%",
+          }
+        }
+      />
+      <div
+        className="high"
+      />
+    </div>
+  </div>
+</div>
+`;

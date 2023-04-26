@@ -214,7 +214,7 @@ exports[`PersonalityArchetypeTips renders component with headers 1`] = `
     <div
       className="sectionHeading"
     >
-      Personalty Tips
+      Personality Tips
     </div>
     <div
       className="tabs"

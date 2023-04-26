@@ -9,6 +9,7 @@ import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useBenchmark from "lib/hooks/use-benchmark";
 import useGuide from "lib/hooks/use-guide";
 import useResults from "lib/hooks/use-results";
+import useSetting from "lib/hooks/use-setting";
 import style from "./style.scss";
 
 const colors = {high: "#29B770", low: "#EF615E", medium: "#FFCC3B", other: "black"};
@@ -18,6 +19,7 @@ function RecommendationChart({combined}) {
   const disabled = useDisabledComponent("RecommendationChart");
   const guide = useGuide();
   const results = useResults();
+  const allowed = useSetting("showFitBreakdownGraph", {fallback: true});
   const data = useMemo(() => {
     const competencies = dig(guide, "personality", "competencies") || [];
     const types = dig(results, "personality_types") || [];
@@ -28,6 +30,7 @@ function RecommendationChart({combined}) {
 
   useComponentEvents("RecommendationChart");
 
+  if(!allowed) { return null; }
   if(disabled) { return null; }
   if(data.length === 0) { return null; }
 

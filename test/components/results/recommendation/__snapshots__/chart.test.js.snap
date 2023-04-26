@@ -3176,6 +3176,12 @@ exports[`Results.RecommendationChart renders nothing if no competencies 1`] = `
 />
 `;
 
+exports[`Results.RecommendationChart renders nothing if not allowed 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
 exports[`Results.RecommendationChart renders nothing if results not ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

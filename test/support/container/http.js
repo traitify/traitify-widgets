@@ -242,6 +242,19 @@ export const mockHighlightedCareers = (careers, {path} = {}) => (
   })
 );
 
+export const mockSettings = (settings) => (
+  mockFetch({
+    key: "settings",
+    request: (url, options) => {
+      if(!url.includes("/organizations/settings")) { return false; }
+      if(options.method !== "GET") { return false; }
+
+      return true;
+    },
+    response: () => settings
+  })
+);
+
 export const useAssessment = (...options) => { beforeEach(() => { mockAssessment(...options); }); };
 export const useBenchmark = (...options) => { beforeEach(() => { mockBenchmark(...options); }); };
 export const useCareers = (...options) => { beforeEach(() => { mockCareers(...options); }); };
@@ -250,3 +263,4 @@ export const useGuide = (...options) => { beforeEach(() => { mockGuide(...option
 export const useHighlightedCareers = (...options) => {
   beforeEach(() => { mockHighlightedCareers(...options); });
 };
+export const useSettings = (...options) => { beforeEach(() => { mockSettings(...options); }); };

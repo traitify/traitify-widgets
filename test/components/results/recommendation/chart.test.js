@@ -1,7 +1,15 @@
 import Component from "components/results/recommendation/chart";
 import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockBenchmark, mockGuide, useAssessment, useBenchmark} from "support/container/http";
+import {
+  mockAssessment,
+  mockBenchmark,
+  mockGuide,
+  mockSettings,
+  useAssessment,
+  useBenchmark,
+  useSettings
+} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
@@ -15,6 +23,7 @@ describe("Results.RecommendationChart", () => {
   useContainer();
   useAssessment(assessment);
   useBenchmark(benchmark);
+  useSettings({});
 
   beforeEach(() => {
     guide = mutable({..._guide, assessmentId: assessment.id});
@@ -71,6 +80,13 @@ describe("Results.RecommendationChart", () => {
 
   it("renders nothing if guide not ready", async() => {
     mockGuide(null, {assessmentID: assessment.id});
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if not allowed", async() => {
+    mockSettings({show_fit_breakdown_graph: false});
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

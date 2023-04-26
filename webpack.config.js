@@ -84,7 +84,6 @@ module.exports = (_env) => {
       ]
     },
     output: {
-      clean: true,
       filename: "traitify.js",
       globalObject: "this",
       library: {
@@ -124,6 +123,7 @@ module.exports = (_env) => {
       "core-js/stable",
       "./index.js"
     ];
+    config.output.clean = false;
     config.output.library.export = "default";
   }
 

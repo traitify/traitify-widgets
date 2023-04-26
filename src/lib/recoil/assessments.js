@@ -30,7 +30,7 @@ const assessmentsDefaultQuery = selector({
     const assessments = [];
     const {cognitive, personality} = response.data.recommendation.prerequisites || {};
 
-    if(personality.assessmentId) {
+    if(personality && personality.assessmentId) {
       assessments.push({
         completed: personality.status === "COMPLETE",
         id: personality.assessmentId,
@@ -38,7 +38,7 @@ const assessmentsDefaultQuery = selector({
       });
     }
 
-    if(cognitive.testId) {
+    if(cognitive && cognitive.testId) {
       assessments.push({
         completed: cognitive.status === "COMPLETE",
         id: cognitive.testId,

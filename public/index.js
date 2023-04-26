@@ -48,7 +48,7 @@ function createWidget() {
     const benchmarkID = cache.get("benchmarkID");
     const packageID = cache.get("packageID");
     const profileID = cache.get("profileID");
-    console.log("createWidget", {benchmarkID, packagedID, profileID});
+    console.log("createWidget", {benchmarkID, packageID, profileID});
     if(!benchmarkID && !packageID) { return; }
     if(!profileID) { return; }
 

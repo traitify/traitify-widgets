@@ -1,64 +1,38 @@
-import PropTypes from "prop-types";
-import {Component as Paradox} from "components/paradox/results/personality/dimension/list";
 import PersonalityDimensionChart from "components/results/personality/dimension/chart";
 import PersonalityDimensionDetails from "components/results/personality/dimension/details";
-import {sortByTypePosition} from "lib/helpers";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import useDidMount from "lib/hooks/use-did-mount";
-import useDidUpdate from "lib/hooks/use-did-update";
-import withTraitify from "lib/with-traitify";
+import sortByTypePosition from "lib/common/sort-by-type-position";
+import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
+import useOption from "lib/hooks/use-option";
+import useResults from "lib/hooks/use-results";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function PersonalityDimensionList(props) {
-  const {assessment, getOption, isReady, ui} = props;
-  const state = {};
+export default function PersonalityDimensionList() {
+  const disableChart = useDisabledComponent("PersonalityDimensionChart");
+  const disableDetails = useDisabledComponent("PersonalityDimensionDetails");
+  const showHeaders = useOption("showHeaders");
+  const results = useResults();
+  const translate = useTranslate();
 
-  useDidMount(() => { ui.trigger("PersonalityDimensions.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityDimensions.updated", {props, state}); });
+  useComponentEvents("PersonalityDimensions");
 
-  if(!isReady("results")) { return null; }
-  const disabledComponents = getOption("disabledComponents") || [];
-  const disableChart = disabledComponents
-    .some((c) => ["PersonalityDimensionChart", "PersonalityDimensionColumns"].includes(c));
-  const disableDetails = disabledComponents.includes("PersonalityDimensionDetails");
+  if(!results) { return null; }
   if(disableChart && disableDetails) { return null; }
 
-  const types = sortByTypePosition(assessment.personality_types);
+  const types = sortByTypePosition(results.personality_types);
 
   return (
     <div className={style.container}>
-      {!disableChart && <PersonalityDimensionChart {...props} />}
+      {showHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
+      {!disableChart && <PersonalityDimensionChart />}
       {!disableDetails && (
-        <ul className={style.details}>
+        <div>
           {types.map((type) => (
-            <PersonalityDimensionDetails
-              key={type.personality_type.id}
-              type={type}
-              {...props}
-            />
+            <PersonalityDimensionDetails key={type.personality_type.id} type={type} />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
 }
-
-PersonalityDimensionList.defaultProps = {assessment: null};
-PersonalityDimensionList.propTypes = {
-  assessment: PropTypes.shape({
-    personality_types: PropTypes.arrayOf(
-      PropTypes.shape({
-        personality_type: PropTypes.shape({
-          id: PropTypes.string.isRequired
-        }).isRequired
-      }).isRequired
-    )
-  }),
-  getOption: PropTypes.func.isRequired,
-  isReady: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
-};
-
-export {PersonalityDimensionList as Component};
-export default withTraitify(PersonalityDimensionList, {paradox: Paradox});

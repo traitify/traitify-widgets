@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section>
+    <div
+      className="mock"
+    >
+      Archetype Scorebar
+    </div>
+    <div
+      className="mock"
+    >
+      Archetype Heading
+    </div>
+    <div
+      className="mock"
+    >
+      Archetype Details
+    </div>
+    <div
+      className="mock"
+    >
+      Archetype Takeaways
+    </div>
+    <div
+      className="mock"
+    >
+      Dimension List
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Results.FinancialRisk renders results for third person 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section>
+    <div
+      className="mock"
+    >
+      Archetype Scorebar
+    </div>
+    <div
+      className="mock"
+    >
+      Archetype Heading
+    </div>
+    <div
+      className="mock"
+    >
+      Archetype Details
+    </div>
+    <div
+      className="mock"
+    >
+      Archetype Takeaways
+    </div>
+    <div
+      className="mock"
+    >
+      Dimension List
+    </div>
+  </section>
+</div>
+`;

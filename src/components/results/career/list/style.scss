@@ -1,0 +1,11 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+
+  .center { text-align: center; }
+  .more { @include buttonLight("inactive"); }
+}

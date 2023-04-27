@@ -1,0 +1,199 @@
+@import "style/helpers";
+
+.buttons, .caption { flex: 0 0; }
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  @include min-width("sm") { margin: $buffer 0; }
+  .me {
+    @include theme("background-color", "me");
+    &:active, &:hover { @include theme("background-color", "me-active"); }
+  }
+  .notMe {
+    @include theme("background-color", "not-me");
+    &:active, &:hover { @include theme("background-color", "not-me-active"); }
+  }
+  .response {
+    flex: 1 1 0;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 2;
+    padding: $buffer $buffer * 0.25;
+    text-align: center;
+
+    @include min-width("xs") { padding: $buffer $buffer * 0.5; }
+    @include min-width("sm") {
+      font-size: $font-size * 1.25;
+      line-height: $line-height;
+      margin: 5px;
+      padding: $buffer;
+      max-width: 150px;
+
+      &:first-child {
+        border-radius: $border-radius-sm;
+        border-radius: $border-radius-sm;
+      }
+      &:last-child {
+        border-radius: $border-radius-sm;
+        border-radius: $border-radius-sm;
+      }
+    }
+    @include theme("color", "text-light");
+    &:focus {
+      outline-offset: -1px;
+      outline-style: solid;
+      outline-width: 1px;
+    }
+  }
+  button.btnDisabled {
+    &:active, &:hover { @include theme("background-color", "inactive"); }
+  }
+}
+.caption {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
+  margin-top: $buffer;
+  text-align: center;
+
+  @include theme("color", "text");
+  &:focus, &:focus-visible { outline: none; }
+}
+.container {
+  @extend %container;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  @include min-width("md") { min-height: $min-height; }
+  @media (min-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) {
+    aspect-ratio: 4/3;
+  }
+  &:fullscreen {
+    bottom: 0;
+    position: fixed;
+    top: 0;
+  }
+  .back, .fullscreen {
+    border-radius: $border-radius-sm;
+    bottom: 30px;
+    height: 40px;
+    opacity: 0.7;
+    padding: $buffer * 0.5;
+    position: absolute;
+    width: 40px;
+    z-index: 1;
+
+    @include theme("color", "text-light");
+    @include theme("background-color", "fullscreen");
+    &:hover{ opacity: 1; }
+    svg {
+      display: block;
+      height: 100%;
+      margin: auto;
+      width: auto;
+    }
+  }
+  .back { left: 30px; }
+  .fullscreen { right: 30px; }
+}
+.error, .loading {
+  height: 100%;
+
+  @include theme("background-color", "inactive");
+}
+.error {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.image {
+  flex: 1 1 0;
+  overflow: hidden;
+  position: relative;
+
+  @include min-width("sm") { border-radius: $border-radius; }
+}
+.instructions {
+  background: url("https://cdn.traitify.com/assets/images/js/instructions_slide.jpg") no-repeat center center;
+  background-size: cover;
+  overflow: auto;
+  padding: $buffer * 4 $buffer $buffer;
+
+  @include theme("color", "text-light");
+
+  .markdown {
+    border: $border-width-lg solid;
+    border-radius: $border-radius;
+    margin: 0 auto $buffer;
+    max-width: 800px;
+    padding: 0 $buffer;
+
+    @include min-width("md") { margin-bottom: $buffer-lg; }
+    @include min-width("lg") { padding: 0 $buffer-lg; }
+    @include theme("border-color", "text-light");
+  }
+  button {
+    border-radius: $border-radius-sm;
+    display: block;
+    font-size: $font-size-heading;
+    margin: auto;
+    padding: $buffer $buffer * 4;
+
+    @include theme("background-color", "theme");
+    &:hover { opacity: 0.7; }
+  }
+  h1 { margin: $buffer 0; }
+}
+.likertScale {
+  .buttons {
+    .me, .reallyMe {
+      @include theme("background-color", "me");
+      &:active, &:hover { @include theme("background-color", "me-active"); }
+    }
+    .notMe, .reallyNotMe {
+      @include theme("background-color", "not-me");
+      &:active, &:hover { @include theme("background-color", "not-me-active"); }
+    }
+    .response {
+      margin: 0 1px;
+
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+  }
+}
+.progress {
+  height: $border-width-xl;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: width 0.3s;
+  width: 0%;
+  z-index: 1;
+
+  @include theme("background-color", "progress-bar");
+}
+.slide {
+  bottom: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+
+  &.left { left: 0%; }
+  &.middle {
+    left: 0%;
+    transition: left 0.3s;
+  }
+  &.right { left: 100%; }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}

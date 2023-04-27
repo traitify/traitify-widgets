@@ -1,0 +1,581 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.Guide.Client renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    />
+    <p
+      className="traitify--markdown"
+    >
+      My Intro
+    </p>
+    <div
+      className="tabs"
+    >
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          First Interview
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Second Interview
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="b58deb21-457c-578b-9712-46f3a83888aa"
+      >
+        <option
+          value="b58deb21-457c-578b-9712-46f3a83888aa"
+        >
+          First Interview
+        </option>
+        <option
+          value="0171e5f3-619d-5464-a021-0621fca8108f"
+        >
+          Second Interview
+        </option>
+      </select>
+      <div
+        className="heading"
+      >
+        First Interview
+      </div>
+      <p
+        className="traitify--markdown"
+      >
+        Easy peasy
+      </p>
+      <div
+        className="sequence open"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Cook Questions
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+        <div
+          className="sequenceContent"
+        >
+          <p
+            className="traitify--markdown"
+          >
+            Intro
+          </p>
+          <ul>
+            <li>
+              How do you like your eggs?
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        className="sequence"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Dish Washer Questions
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.Guide.Client renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.Guide.Client renders nothing if guide not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.Guide.Client renders nothing if no sections 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.Guide.Client toggles sequence content 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    />
+    <p
+      className="traitify--markdown"
+    >
+      My Intro
+    </p>
+    <div
+      className="tabs"
+    >
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          First Interview
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Second Interview
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="b58deb21-457c-578b-9712-46f3a83888aa"
+      >
+        <option
+          value="b58deb21-457c-578b-9712-46f3a83888aa"
+        >
+          First Interview
+        </option>
+        <option
+          value="0171e5f3-619d-5464-a021-0621fca8108f"
+        >
+          Second Interview
+        </option>
+      </select>
+      <div
+        className="heading"
+      >
+        First Interview
+      </div>
+      <p
+        className="traitify--markdown"
+      >
+        Easy peasy
+      </p>
+      <div
+        className="sequence open"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Cook Questions
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+        <div
+          className="sequenceContent"
+        >
+          <p
+            className="traitify--markdown"
+          >
+            Intro
+          </p>
+          <ul>
+            <li>
+              How do you like your eggs?
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        className="sequence open"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Dish Washer Questions
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+        <div
+          className="sequenceContent"
+        >
+          <p
+            className="traitify--markdown"
+          >
+            Washy washy
+          </p>
+          <ul>
+            <li>
+              What kind of soap do you prefer?
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.Guide.Client updates activeSection 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    />
+    <p
+      className="traitify--markdown"
+    >
+      My Intro
+    </p>
+    <div
+      className="tabs"
+    >
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          First Interview
+        </span>
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Second Interview
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="0171e5f3-619d-5464-a021-0621fca8108f"
+      >
+        <option
+          value="b58deb21-457c-578b-9712-46f3a83888aa"
+        >
+          First Interview
+        </option>
+        <option
+          value="0171e5f3-619d-5464-a021-0621fca8108f"
+        >
+          Second Interview
+        </option>
+      </select>
+      <div
+        className="heading"
+      >
+        Second Interview
+      </div>
+      <p
+        className="traitify--markdown"
+      >
+        Time to get serious!
+      </p>
+      <div
+        className="sequence open"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Cook Questions
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+        <div
+          className="sequenceContent"
+        >
+          <p
+            className="traitify--markdown"
+          >
+            Fry fry
+          </p>
+          <ul>
+            <li>
+              Fork, spoon, OR spork?
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        className="sequence"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Dish Washer
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.Guide.Client updates activeSection through select 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    />
+    <p
+      className="traitify--markdown"
+    >
+      My Intro
+    </p>
+    <div
+      className="tabs"
+    >
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          First Interview
+        </span>
+      </button>
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Second Interview
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="0171e5f3-619d-5464-a021-0621fca8108f"
+      >
+        <option
+          value="b58deb21-457c-578b-9712-46f3a83888aa"
+        >
+          First Interview
+        </option>
+        <option
+          value="0171e5f3-619d-5464-a021-0621fca8108f"
+        >
+          Second Interview
+        </option>
+      </select>
+      <div
+        className="heading"
+      >
+        Second Interview
+      </div>
+      <p
+        className="traitify--markdown"
+      >
+        Time to get serious!
+      </p>
+      <div
+        className="sequence open"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Cook Questions
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+        <div
+          className="sequenceContent"
+        >
+          <p
+            className="traitify--markdown"
+          >
+            Fry fry
+          </p>
+          <ul>
+            <li>
+              Fork, spoon, OR spork?
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        className="sequence"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="prompt"
+          >
+            <div
+              className="text"
+            >
+              Dish Washer
+            </div>
+            <span
+              className="arrow traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+                }
+              }
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

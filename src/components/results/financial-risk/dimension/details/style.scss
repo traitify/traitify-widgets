@@ -1,0 +1,35 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-lg;
+
+  .h1 {
+    font-size: $font-size-heading;
+    font-weight: bold;
+    margin-bottom: $buffer-lg;
+  }
+  .h2 {
+    font-size: $font-size-lg;
+    margin-bottom: $buffer-lg;
+  }
+  .p { @extend %paragraph; }
+}
+
+.characteristics {
+  display: grid;
+  gap: $buffer;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include min-width("lg") { grid-template-columns: repeat(4, 1fr); }
+  > div {
+    align-items: center;
+    border-radius: $border-radius-sm;
+    display: flex;
+    justify-content: center;
+    padding: $buffer;
+    text-align: center;
+  }
+}

@@ -1,71 +1,68 @@
-import {Component} from "components/results/personality/dimension/details";
+import Component from "components/results/personality/dimension/details";
 import ComponentHandler from "support/component-handler";
-import {mockOptions} from "support/helpers";
+import {mockGuide, useAssessment, useGuide} from "support/container/http";
+import {mockOption} from "support/container/options";
+import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
-
-jest.mock("lib/with-traitify", () => ((value) => value));
+import guide from "support/json/guide.json";
 
 describe("PersonalityDimensionDetails", () => {
+  let component;
   let props;
 
+  useContainer();
+  useAssessment(assessment);
+  useGuide(guide, {assessmentID: assessment.id});
+
   beforeEach(() => {
-    props = {
-      translate: jest.fn().mockName("translate").mockReturnValue("Detail Header"),
-      getOption: jest.fn().mockName("getOption"),
-      type: assessment.personality_types[0],
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
+    props = {type: assessment.personality_types[0]};
   });
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component, {props});
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityDimensionDetails.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
 
-    it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      props.ui.trigger.mockClear();
-      component.updateProps();
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityDimensionDetails.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
   });
 
-  it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component, {props});
+
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component in third person", () => {
-    mockOptions(props.getOption, {perspective: "thirdPerson"});
+  it("renders component in third person", async() => {
+    mockOption("perspective", "thirdPerson");
+    component = await ComponentHandler.setup(Component, {props});
 
-    const component = new ComponentHandler(<Component {...props} />);
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component without pitfalls", () => {
-    mockOptions(props.getOption, {disabledComponents: ["PersonalityPitfalls"]});
+  it("renders component without guide", async() => {
+    mockGuide(null, {assessmentID: assessment.id});
+    component = await ComponentHandler.setup(Component, {props});
 
-    const component = new ComponentHandler(<Component {...props} />);
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component without pitfalls", async() => {
+    mockOption("disabledComponents", ["PersonalityPitfalls"]);
+    component = await ComponentHandler.setup(Component, {props});
+
     expect(component.tree).toMatchSnapshot();
   });
 });

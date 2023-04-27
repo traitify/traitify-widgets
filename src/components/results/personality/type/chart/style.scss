@@ -1,0 +1,211 @@
+@import "style/helpers";
+
+$h-cell-height: 50px;
+$h-cell-width: 75px;
+$h-cell-width-sm: 50px;
+$v-cell-height: 75px;
+$v-column-buffer: $buffer * 2;
+$v-column-buffer-sm: $buffer;
+$v-column-width: 200px;
+$v-scale-width: 50px;
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+}
+.content {
+  @extend %box;
+
+  .heading { @extend %heading; }
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("lg") { display: none; }
+}
+.horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+  margin-bottom: $buffer;
+  position: relative;
+
+  @include min-width("lg") { display: none; }
+  .row {
+    align-items: center;
+    display: flex;
+    z-index: 1;
+
+    .bar {
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      height: $h-cell-height;
+    }
+    .grid {
+      align-items: center;
+      display: flex;
+      flex: 0 0 auto;
+      width: $h-cell-width-sm * 4;
+
+      @include min-width("sm") { width: $h-cell-width * 4; }
+    }
+    .label {
+      align-items: center;
+      display: flex;
+      flex: 1 1;
+      font-size: $font-size-sm;
+      font-weight: bold;
+      justify-content: space-between;
+      margin-right: $buffer;
+      word-break: break-word;
+
+      @include min-width("sm") { font-size: $font-size; }
+    }
+    .score {
+      margin-left: $buffer-sm;
+
+      &.tooBig {
+        position: absolute;
+        margin-left: 0;
+        right: $buffer;
+      }
+    }
+    img {
+      flex-shrink: 0;
+      width: 50px;
+    }
+  }
+  .scale {
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    div {
+      border-left: $border-width solid;
+      margin-right: $h-cell-width-sm - $border-width;
+
+      @include min-width("sm") { margin-right: $h-cell-width - $border-width; }
+      @include theme("border-left-color", "border");
+      &:last-of-type { margin-right: 0; }
+    }
+  }
+}
+.p {
+  @extend %paragraph;
+
+  margin-bottom: 0;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  padding-left: $v-scale-width + $v-column-buffer * 0.5;
+  padding-right: $v-column-buffer * 0.5;
+
+  @include activeTab($active: ".active", $circle: "span", $square: "&");
+  @include max-width("lg") { display: none; }
+  @include max-width("xl") {
+    padding-left: $v-scale-width + $v-column-buffer-sm * 0.5;
+    padding-right: $v-column-buffer-sm * 0.5;
+  }
+  button {
+    flex: 0 1 auto;
+    margin-left: $v-column-buffer * 0.5;
+    margin-right: $v-column-buffer * 0.5;
+    max-width: $v-column-width;
+    padding-bottom: 0;
+    padding-top: $buffer;
+    text-align: center;
+    width: 100%;
+
+    @include max-width("xl") {
+      margin-left: $v-column-buffer-sm * 0.5;
+      margin-right: $v-column-buffer-sm * 0.5;
+    }
+    img {
+      display: block;
+      margin-bottom: $buffer;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50px;
+    }
+    span {
+      display: block;
+      font-weight: bold;
+      padding-bottom: $buffer;
+      text-align: center;
+    }
+  }
+}
+.vertical {
+  display: flex;
+  justify-content: center;
+  padding-top: $buffer;
+  position: relative;
+
+  @include max-width("lg") { display: none; }
+  .column {
+    flex: 1 0;
+    padding-bottom: 0;
+    position: relative;
+    margin-left: $v-column-buffer;
+    max-width: $v-column-width;
+    text-align: center;
+    z-index: 1;
+
+    @include max-width("xl") {
+      margin-left: $v-column-buffer-sm;
+    }
+    .bar {
+      display: flex;
+      height: $v-cell-height * 4;
+      margin-bottom: $buffer-lg;
+    }
+    .score {
+      flex: auto;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      margin-top: auto;
+    }
+    &:last-of-type {
+      margin-right: $v-column-buffer;
+
+      @include max-width("xl") {
+        margin-right: $v-column-buffer-sm;
+      }
+    }
+    img { width: 50px; }
+  }
+  .scale {
+    flex: 0 0 auto;
+    padding-right: $buffer;
+    text-align: right;
+    width: $v-scale-width;
+
+    div {
+      height: $v-cell-height + $font-size;
+      margin-top: -$font-size;
+
+      &:before {
+        border-top: $border-width solid;
+        content: "";
+        left: $v-scale-width;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: $font-size;
+        max-width: ($v-column-buffer + $v-column-width) * 7;
+        position: absolute;
+        right: 0;
+
+        @include theme("border-top-color", "border");
+        @include max-width("xl") {
+          max-width: ($v-column-buffer-sm + $v-column-width) * 7;
+        }
+      }
+      &:last-of-type { height: 0; }
+    }
+  }
+}

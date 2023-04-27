@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report.Employee renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="mock"
+    >
+      Personality Archetype Heading
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Archetype Skills
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Archetype Tips
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Dimension List
+    </div>
+  </section>
+</div>
+`;

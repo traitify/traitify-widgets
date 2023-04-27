@@ -1,0 +1,256 @@
+@import "style/helpers";
+
+// TODO: Normalize style
+.container {
+  @extend %container;
+
+  display: block;
+  margin-bottom: $buffer;
+
+  border: $border-width solid;
+  border-radius: $border-radius-sm * 2.5;
+  width: 100%;
+  @include theme("border-color","border-light");
+
+  img {
+    margin-right: 20px;
+    border-radius: $border-radius-sm * 2.5;
+    width: 100px;
+    height: 100px;
+  }
+  &[type="button"] {
+    border: $border-width solid $-white;
+    border-radius: $border-radius-sm * 2.5;
+    width: 100%
+  }
+}
+
+.content {
+  @include min-width(xs) {
+    padding: 0 $buffer $buffer;
+  }
+  text-align: left;
+}
+
+.title {
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: $buffer-sm;
+
+  font-size: $font-size-sm * 1.17;
+
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+
+  @include min-width(md) {
+    font-size: $font-size;
+  }
+}
+
+.description {
+  line-height: 1.25;
+  text-align: left;
+
+  font-size: $font-size-sm;
+
+  line-height: 1.35;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+
+  @include min-width(md) {
+    font-size: $font-size-sm * 1.17;
+  }
+}
+
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0;
+
+  font-size: $font-size-sm;
+
+  @include min-width(xs) {
+    margin-top: initial;
+  }
+  @include min-width(md) {
+    font-size: $font-size;
+  }
+}
+
+.subtitleFull {
+  @extend .subtitle;
+  width: 100%;
+}
+
+.experience {
+  padding: 0;
+  margin: 0;
+  
+  li {
+    display: inline-block;
+    background: $-gray-hover;
+    border: $border-width * 2 solid $-gray-hover;
+    padding: $buffer-sm * .75;
+    margin-right: $buffer-sm * .25;
+    border-radius: $border-radius-sm;
+  }
+  li.active {
+    background: $-blue;
+    border: $border-width * 2 solid $-blue;
+    border-radius: $border-radius-sm;
+  }
+}
+
+.education {
+  margin: 0;
+  font-size: $font-size-sm;
+  @include min-width(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+.matchRate {
+  width: 80%;
+  height: 15px;
+  background: $-gray-hover;
+  margin-top: $buffer-sm * .25;
+  border-radius: $border-radius-sm;
+  span {
+    display: block;
+    background: #89e2cd;
+    height: 15px;
+    border-radius: $border-radius-sm;
+  }
+  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
+    background: #fbd288;
+  }
+  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
+    background: #fda7ab;
+  }
+}
+
+.matchRatePercent {
+  font-style: normal;
+  font-weight: 300;
+  font-size: $font-size-sm;
+  @include min-width(md) {
+    font-size: $font-size;
+  }
+}
+
+.upperBox {
+  display: flex;
+  width: 100%;
+  padding: $buffer-sm * 1.25 0px;
+
+  @include min-width(xs) {
+    width: 50%;
+    padding-right: $buffer-sm * 1.25
+  }
+
+  .innerContent{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include min-width(xs) {
+      width: 50%;
+      align-items: start;
+    }
+  }
+}
+
+.lowerBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: $buffer-sm * 1.25 0px;
+
+  @include min-width(xs) {
+    width: 50%;
+    padding-left: $buffer-sm * 1.25;
+  }
+
+  div {
+    @include min-width(xs) {
+      width: 100%;
+    }
+  }
+
+  .innerContent{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include min-width(xs) {
+      width: 50%;
+    }
+  }
+
+  .learnMore {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-sm;
+  
+    @include min-width(xs) {
+      width: 50% !important;
+      justify-content: flex-end;
+    }
+    button {
+      padding: $buffer-sm * 1.25 10%;
+      color: $-white;
+      background-color: $-blue;
+      border-radius: $border-radius-sm !important;
+      white-space: nowrap;
+    }
+  }
+}
+
+.grayDivider {
+  color: #555555;
+  margin: $buffer-sm * 1.25 $buffer;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: 1px solid #e8e8ec;
+}
+
+.education { 
+  width: 100%;
+  padding-left: 10%;
+
+  @include min-width(xs) {
+    padding-left: initial;
+    width: initial;
+  }
+}
+
+.careerContainer {
+  display: flex;
+  margin: $buffer * 1.25;
+}
+
+.careerDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}

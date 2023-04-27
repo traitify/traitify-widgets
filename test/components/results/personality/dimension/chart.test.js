@@ -1,57 +1,54 @@
-import {Component} from "components/results/personality/dimension/chart";
+import Component from "components/results/personality/dimension/chart";
 import ComponentHandler from "support/component-handler";
+import {mockAssessment, mockGuide, useAssessment, useGuide} from "support/container/http";
+import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
-
-jest.mock("lib/with-traitify", () => ((value) => value));
+import guide from "support/json/guide.json";
 
 describe("PersonalityDimensionChart", () => {
-  let props;
+  let component;
 
-  beforeEach(() => {
-    props = {
-      assessment,
-      isReady: jest.fn().mockName("isReady"),
-      translate: jest.fn().mockName("translate"),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
-  });
+  useContainer();
+  useAssessment(assessment);
+  useGuide(guide, {assessmentID: assessment.id});
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
-        "PersonalityDimensionColumns.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "PersonalityDimensionChart.initialized",
+        undefined
       );
     });
 
-    it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      props.ui.trigger.mockClear();
-      component.updateProps();
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component);
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
-        "PersonalityDimensionColumns.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "PersonalityDimensionChart.updated",
+        undefined
       );
     });
   });
 
-  it("renders component", () => {
-    props.isReady.mockReturnValue(true);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component without guide", async() => {
+    mockGuide(null, {assessmentID: assessment.id});
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if results not ready", async() => {
+    mockAssessment(null);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

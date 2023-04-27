@@ -1,4 +1,11 @@
-export * as queries from "./queries";
-export toArgs from "./to-args";
-export toNodeID from "./to-node-id";
-export toQuery from "./to-query";
+import * as benchmark from "./benchmark";
+import * as cognitive from "./cognitive";
+import * as guide from "./guide";
+import * as xavier from "./xavier";
+
+export default {
+  benchmark,
+  cognitive,
+  guide,
+  xavier
+};

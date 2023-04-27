@@ -1,10 +1,16 @@
+import Components from "components";
+import GraphQL from "lib/graphql";
+import Http from "lib/http";
+import I18n from "lib/i18n";
+import Listener from "lib/listener";
 import Traitify from "lib/traitify";
 
-export Client from "lib/traitify-client";
-export * as Components from "components";
-export * as graphql from "lib/graphql";
-export I18n from "lib/i18n";
-export UI from "lib/traitify-ui";
-export withTraitify from "lib/with-traitify";
-export {Traitify};
-export default new Traitify();
+export * from "./hooks";
+export {Components, Http, I18n, GraphQL, Listener, Traitify};
+
+const traitify = new Traitify();
+
+traitify.Components = Components;
+traitify.GraphQL = GraphQL;
+
+export default traitify;

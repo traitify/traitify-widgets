@@ -1,29 +1,168 @@
 @import "style/helpers";
 
+$h-cell-width: 75px;
+$h-cell-width-sm: 50px;
+$v-cell-height: 75px;
+
 .container {
-  @extend %widgetContainer;
-  .columns {
-    @extend %widgetContainer;
-    display: table;
-    margin-bottom: 20px;
-    table-layout: fixed;
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+}
+.horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+  position: relative;
+
+  @include min-width("lg") { display: none; }
+  .row {
+    align-items: center;
+    display: flex;
+    z-index: 1;
+
+    &::after {
+      align-self: stretch;
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      margin-left: $buffer;
+      margin-right: $h-cell-width-sm * 3;
+      width: 0;
+
+      @include min-width("sm") { margin-right: $h-cell-width * 3; }
+      @include theme("background", "theme");
+    }
+    &.high::after {
+      margin-right: $h-cell-width-sm * 0;
+      width: $h-cell-width-sm * 3;
+
+      @include min-width("sm") {
+        margin-right: $h-cell-width * 0;
+        width: $h-cell-width * 3;
+      }
+    }
+    &.low::after {
+      margin-right: $h-cell-width-sm * 2;
+      width: $h-cell-width-sm * 1;
+
+      @include min-width("sm") {
+        margin-right: $h-cell-width * 2;
+        width: $h-cell-width * 1;
+      }
+    }
+    &.medium::after {
+      margin-right: $h-cell-width-sm * 1;
+      width: $h-cell-width-sm * 2;
+
+      @include min-width("sm") {
+        margin-right: $h-cell-width * 1;
+        width: $h-cell-width * 2;
+      }
+    }
+    &.other::after {
+      margin-right: $h-cell-width-sm * 3;
+      width: $h-cell-width-sm * 0;
+
+      @include min-width("sm") {
+        margin-right: $h-cell-width * 3;
+        width: $h-cell-width * 0;
+      }
+    }
+    .label {
+      flex: 1 1;
+      font-size: $font-size-sm;
+      word-break: break-word;
+
+      @include min-width("sm") { font-size: $font-size; }
+      :first-of-type { font-weight: bold; }
+    }
+    img {
+      flex-shrink: 0;
+      width: 50px;
+    }
   }
-  p {
-    @include rems(16);
-    @include mq(m) {
-      @include rems(17);
-    }
-    @include mq(xl) {
-      @include rems(18);
-    }
-  }
-  .columnsBuffer {
-    margin-top: 200px;
-    @include mq(m) {
-      margin-top: 220px;
-    }
-    @include mq(xl) {
-      margin-top: 40px;
+  .scale {
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    div {
+      border-left: $border-width solid;
+      margin-right: $h-cell-width-sm - $border-width;
+
+      @include min-width("sm") { margin-right: $h-cell-width - $border-width; }
+      @include theme("border-left-color", "border");
+      &:last-of-type { margin-right: 0; }
     }
   }
+}
+.vertical {
+  display: flex;
+  position: relative;
+
+  @include max-width("lg") { display: none; }
+  .column {
+    flex: 1 0;
+    padding-bottom: 0;
+    margin-right: $buffer-lg;
+    text-align: center;
+    z-index: 1;
+
+    &::before {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+      content: "";
+      display: block;
+      height: 0;
+      margin-bottom: $buffer;
+      margin-top: $v-cell-height * 3;
+
+      @include theme("background", "theme");
+    }
+    &:last-of-type { margin-right: 0; }
+    &.high::before {
+      height: $v-cell-height * 3;
+      margin-top: $v-cell-height * 0;
+    }
+    &.low::before {
+      height: $v-cell-height * 1;
+      margin-top: $v-cell-height * 2;
+    }
+    &.medium::before {
+      height: $v-cell-height * 2;
+      margin-top: $v-cell-height * 1;
+    }
+    &.other::before {
+      height: $v-cell-height * 0;
+      margin-top: $v-cell-height * 3;
+    }
+    div:first-of-type { font-weight: bold; }
+    img { width: 50px; }
+  }
+  .scale {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    div {
+      border-top: $border-width solid;
+      margin-bottom: $v-cell-height - $border-width;
+
+      @include theme("border-top-color", "border");
+      &:last-of-type { margin-bottom: 0; }
+    }
+  }
+}
+.p {
+  @extend %paragraph;
+
+  margin-top: 0;
+
+  @include buffer("margin-bottom");
 }

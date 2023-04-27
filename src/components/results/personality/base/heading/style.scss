@@ -1,0 +1,117 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+}
+.badge {
+  display: flex;
+  justify-content: center;
+
+  @include min-width("lg") {
+    justify-content: initial;
+    margin-right: $buffer;
+  }
+
+  .badgeDivider {
+    border-radius: $border-radius;
+    margin-left: $buffer;
+    margin-right: $buffer;
+    width: $border-width-xl;
+
+    @include theme("background", "text");
+  }
+  img { max-width: 75px; }
+}
+.careersLink {
+  border-top: $border-width solid;
+  font-weight: bold;
+  margin-top: $buffer * 2;
+  padding-bottom: $buffer-lg - $buffer;
+  padding-top: $buffer-lg;
+  text-align: center;
+
+  @include theme("border-top-color", "border");
+  @include min-width("md") {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  a {
+    font-weight: normal;
+    display: inline-block;
+    margin-top: $buffer;
+
+    @include buttonDark("theme");
+    @include min-width("md") { margin-top: 0; }
+
+    :global(.traitify--icon-fa) svg { display: inline-block; }
+  }
+}
+.details {
+  margin-bottom: $buffer;
+
+  @include min-width("md") {
+    display: flex;
+    flex-direction: column;
+    margin-right: $buffer;
+  }
+  @include min-width("lg") {
+    margin-right: $buffer-lg;
+  }
+  .heading {
+    display: block;
+    font-size: $font-size-heading;
+    margin-bottom: $buffer;
+    margin-top: $buffer;
+
+    @include min-width("lg") { text-align: left; }
+  }
+  .p {
+    @include min-width("md") {
+      display: flex;
+      flex-grow: 1;
+      flex-flow: column;
+      justify-content: center;
+      margin: 0;
+    }
+  }
+  span {
+    display: block;
+    font-weight: bold;
+  }
+}
+.header {
+  text-align: center;
+
+  @include min-width("lg") {
+    align-items: center;
+    display: flex;
+  }
+}
+.meaning {
+  align-items: center;
+  display: flex;
+
+  p {
+    margin: 0;
+    padding: 20px;
+  }
+  video {
+    border-radius: $border-radius;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+.row {
+  @include min-width("md") { display: flex; }
+
+  .details, .meaning {
+    @include min-width("md") { flex: 1; }
+  }
+}

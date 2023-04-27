@@ -1,124 +1,54 @@
 @import "style/helpers";
 
 .container {
-  @extend %widgetContainer;
-}
+  @extend %container;
+  @extend %shadow-box;
 
+  margin-bottom: $buffer-section;
+}
+.content {
+  @include max-width("lg") {
+    border-top: $border-width-lg solid;
+    margin-top: $buffer;
+    padding-top: $buffer;
+
+    @include theme("border-top-color", "theme");
+  }
+}
+.dropdown {
+  @extend %dropdown;
+
+  @include min-width("lg") { display: none; }
+}
+.heading {
+  font-weight: bold;
+  margin-bottom: $buffer-heading;
+}
 .tabs {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none;
-  @include mq(l) {
+  @extend %tabs-lg;
+
+  @include max-width("lg") { display: none; }
+  button { font-size: $font-size; }
+  img {
     display: block;
-  }
-  li {
-    display: inline-block;
-    width: 20%;
-    height: 235px;
-    text-align: center;
-    background: #F8F9FA;
-    border: 1px solid #E0E1E2;
-    padding: 15px;
-  }
-  li.active {
-    background: white;
-    border-top: 5px solid #007DBE;
-    padding-top: 30px;
-    border-bottom: 1px solid white;
-  }
-  button {
-    background: transparent;
-    border: 0;
+    margin: 0 auto;
+    width: 75px;
   }
 }
-.featured {
-  background: #E6F9FF;
-  width: 20%;
-  text-align: center;
-  padding: 5px 0;
-}
-.image {
-  text-align: center;
-  width: 150px;
-  height: auto;
-}
-.name {
-  text-align: center;
-  @include rems(18);
-  @include mq(xl) {
-    @include rems(20);
-  }
+.tip {
+  border: $border-width solid;
+  border-radius: $border-radius-sm;
+  padding: $buffer;
+
+  @include buffer("margin-bottom");
+  @include theme("border-color", "border");
 }
 
-.tab {
-  border: 1px solid #E0E1E2;
-  padding: 20px 0;
-  margin-bottom: 20px;
-  @include mq(l) {
-    border-width: 0 1px 1px;
-  }
-  h3 {
-    margin-top: 0;
-    text-align: center;
-    @include rems(20);
-    @include mq(m) {
-      @include rems(22);
-    }
-    @include mq(l) {
-      @include rems(24);
-    }
-  }
-}
-.formSelect {
-  display: block;
-  padding: 0;
-  margin: 0 20px 20px;
-  width: 90%;
-  color: #333;
-  background: #fff url("https://cdn.traitify.com/images/select.gif") no-repeat 95% 50%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  height: 36px;
-  @include mq(l) {
-    display: none;
-  }
-  select {
-    width: 100%;
-    height: 36px;
-    border: none;
-    background-color: transparent;
-    background-image: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none ;
-    line-height: 36px;
-    padding: 0 12px;
-    @include rems(16);
-  }
-}
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li {
-    display: inline-block;
-    width: 100%;
-    vertical-align: top;
-    padding: 10px 20px;
-    margin-bottom: 15px;
-    @include rems(18);
-    @include mq(m) {
-      width: 49%;
-      margin: 0 0.5% 15px;
-      @include rems(20);
-    }
-    @include mq(l) {
-      width: 19%;
-      margin: 0 0.5%;
-      @include rems(22);
-    }
+@include colorSchemeDark() {
+  .tabs img {
+    border-radius: $border-radius-sm;
+    margin-bottom: $buffer;
+
+    @include theme("background-color", "text");
   }
 }

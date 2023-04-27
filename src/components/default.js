@@ -1,16 +1,13 @@
-import PropTypes from "prop-types";
-import withTraitify from "lib/with-traitify";
+import useActive from "lib/hooks/use-active";
 import Results from "./results";
-import SlideDeck from "./slide-deck";
+import Survey from "./survey";
 
-function Default(props) {
-  if(props.isReady("results")) { return <Results {...props} />; }
-  if(props.isReady("slides")) { return <SlideDeck {...props} />; }
+export default function Default() {
+  const active = useActive();
 
-  return <div />;
+  if(!active) { return null; }
+  if(active.loading) { return null; }
+  if(active.completed) { return <Results />; }
+
+  return <Survey />;
 }
-
-Default.propTypes = {isReady: PropTypes.func.isRequired};
-
-export {Default as Component};
-export default withTraitify(Default);

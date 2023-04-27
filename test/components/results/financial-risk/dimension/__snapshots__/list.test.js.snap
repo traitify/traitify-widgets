@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk.Dimension.List renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="mock"
+    >
+      Personality Dimension - 
+      Internalized Positivity
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Dimension - 
+      Adventurousness
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Dimension - 
+      Systematic Resourcefulness
+    </div>
+    <div
+      className="mock"
+    >
+      Personality Dimension - 
+      Connectedness
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Dimension.List renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

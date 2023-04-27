@@ -1,9 +1,0 @@
-@import "style/paradox/helpers";
-
-.box {
-  @extend %box;
-
-  margin-bottom: $buffer-section;
-}
-.container { @extend %container; }
-.p { @extend %paragraph; }

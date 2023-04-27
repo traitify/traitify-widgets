@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk.Archetype.Details renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="life"
+    >
+      <div
+        className="heading"
+      >
+        This style in everyday life:
+      </div>
+      <div
+        className="p"
+      >
+        Routines comfort this individual. They take a careful approach to life. Some other characteristics of their approach to daily life:
+      </div>
+      <ul>
+        <li>
+          They dislike when others send mixed messages or when they say one thing and do another.
+        </li>
+      </ul>
+    </div>
+    <div
+      className="financial"
+    >
+      <div
+        className="heading"
+      >
+        This style in financial decisions:
+      </div>
+      <div
+        className="p"
+      >
+        This individual prefers to have a plan for their financial decisions that indicates what will be done quarter by quarter, including notes about mitigating circumstances and alternative plans. Some other characteristics of their approach to financial decisions:
+      </div>
+      <ul>
+        <li>
+          Their investments will favor index funds and traditional industries, and look largely the same from year to year.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Details renders nothing if no archetype 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Details renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

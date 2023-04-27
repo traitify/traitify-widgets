@@ -1,0 +1,577 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions renders custom examples 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      First Heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      First Text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      First Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders custom examples 2`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      Second Heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      Second Text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      Second Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders custom examples 3`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      Third Heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      Third Text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      Third Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders custom examples 4`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Practice
+  </div>
+</div>
+`;
+
+exports[`Instructions renders custom examples 5`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_4_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_4_html
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_4_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders custom instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      Custom Instructions
+    </h2>
+    <ul
+      className="text traitify--markdown"
+    >
+      <li>
+        Some Text
+      </li>
+      <li>
+        More Text
+      </li>
+    </ul>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      Goodbye
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders custom instructions with markdown 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      Custom Instructions
+    </h2>
+    <ul
+      className="text traitify--markdown"
+    >
+      <li>
+        Some Text
+      </li>
+      <li>
+        More Text
+      </li>
+    </ul>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      Goodbye
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders step 1 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders step 2 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_2_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_2_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_2_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions renders step 3 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Practice
+  </div>
+</div>
+`;
+
+exports[`Instructions renders step 4 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_4_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_4_html
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_4_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions time trial default timed renders step 1 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_trial_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions time trial default timed renders step 4 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_4_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_trial_step_4_timed_html
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_4_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions time trial default untimed renders step 1 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_trial_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions time trial default untimed renders step 4 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_4_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_trial_step_4_untimed_html
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_4_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions time trial minimal timed renders step 4 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_4_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_trial_step_4_timed_minimal_html
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_4_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions time trial minimal untimed renders step 4 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_4_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_trial_step_4_untimed_minimal_html
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_4_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions videos horizontal renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions videos horizontal updates to vertical 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions videos vertical renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Instructions videos vertical updates to horizontal 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_instructions_step_1_button
+    </button>
+  </div>
+</div>
+`;

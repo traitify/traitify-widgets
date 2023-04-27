@@ -1,87 +1,77 @@
-import {Component} from "components/results/personality/dimension/list";
+import Component from "components/results/personality/dimension/list";
 import ComponentHandler from "support/component-handler";
+import {mockAssessment, useAssessment} from "support/container/http";
+import {mockOption} from "support/container/options";
+import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
 
+jest.mock("components/results/personality/dimension/chart", () => (() => (<div className="mock">PersonalityDimensionChart</div>)));
 jest.mock("components/results/personality/dimension/details", () => (() => (<div className="mock">PersonalityDimensionDetails</div>)));
-jest.mock("lib/with-traitify", () => ((value) => value));
 
 describe("PersonalityDimensionList", () => {
-  let props;
+  let component;
 
-  beforeEach(() => {
-    props = {
-      assessment,
-      getOption: jest.fn().mockName("getOption"),
-      isReady: jest.fn().mockName("isReady").mockReturnValue(true),
-      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
-  });
+  useContainer();
+  useAssessment(assessment);
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityDimensions.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
 
-    it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      props.ui.trigger.mockClear();
-      component.updateProps();
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component);
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityDimensions.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
   });
 
-  it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionDetails", "PersonalityDimensionColumns"]);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component with headers", async() => {
+    mockOption("showHeaders", true);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if results not ready", () => {
-    props.assessment = null;
-    props.isReady.mockImplementation((value) => value !== "results");
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders nothing if disabled", async() => {
+    mockOption("disabledComponents", ["PersonalityDimensionDetails", "PersonalityDimensionChart"]);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders columns if details disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionDetails"]);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders nothing if results not ready", async() => {
+    mockAssessment(null);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders details if columns disabled", () => {
-    props.getOption.mockReturnValue(["PersonalityDimensionColumns"]);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders chart if details disabled", async() => {
+    mockOption("disabledComponents", ["PersonalityDimensionDetails"]);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders details if chart disabled", async() => {
+    mockOption("disabledComponents", ["PersonalityDimensionChart"]);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

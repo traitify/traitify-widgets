@@ -1,41 +1,52 @@
 @import "style/helpers";
 
 .container {
-  @extend %widgetContainer;
-  @extend %cf;
+  @extend %container;
 
-  @include mq(m) {
-    display: flex;
+  background: none;
+  margin-bottom: $buffer-section;
+
+  @include min-width("md") { display: flex; }
+  > div {
+    @extend %shadow-box;
+
+    margin-bottom: $buffer;
+
+    @include min-width("md") {
+      flex: 1;
+      margin-bottom: 0;
+
+      &:first-of-type { margin-right: $buffer; }
+    }
+    @include min-width("lg") {
+      &:first-of-type { margin-right: $buffer-lg; }
+    }
+    @include theme("background", "background");
   }
 }
+
 .details {
-  background: #4d53d6;
-  background: -moz-linear-gradient(137deg, #4d85d6 0%, #4d53d6 100%);
-  background: -webkit-linear-gradient(137deg,#4d85d6 0%,#4d53d6 100%);
-  background: linear-gradient(137deg, #4d85d6 0%,#4d53d6 100%);
-  border-radius: 5px;
-  color: $white;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d85d6', endColorstr='#4d53d6',GradientType=1 );
-  margin-bottom: 20px;
-  padding: 20px;
-  @include rems(16);
-  @include mq(m) {
+  @include min-width("md") {
     display: flex;
-    flex: auto;
-    flex-basis: 0;
     flex-direction: column;
-    margin-right: 20px;
-    @include rems(17);
   }
-  @include mq(l) {
-    padding: 20px;
-  }
-  @include mq(xl) {
-    @include rems(18);
-  }
-  div {
+  > div {
     align-items: flex-start;
     display: flex;
+  }
+  .heading {
+    display: block;
+    font-size: $font-size-heading;
+    margin-top: 5px;
+  }
+  .p {
+    @include min-width("md") {
+      display: flex;
+      flex-grow: 1;
+      flex-flow: column;
+      justify-content: center;
+      margin: 0;
+    }
   }
   img {
     flex: initial;
@@ -43,39 +54,23 @@
     margin-bottom: 20px;
     max-width: 80px;
   }
-  h2 {
-    margin-top: 5px;
-  }
   span {
-    font-weight: bold;
     display: block;
-  }
-  p {
-    @include mq(m) {
-      display: flex;
-      margin: 0;
-      flex-grow: 1;
-      flex-flow: column;
-      justify-content: center;
-    }
+    font-weight: bold;
+
+    @include theme("color", "theme");
   }
 }
 .meaning {
-  margin-bottom: 20px;
-  @include rems(16);
-  @include mq(m) {
-    flex: auto;
-    flex-basis: 0;
-    @include rems(17);
-  }
-  @include mq(xl) {
-    @include rems(18);
-  }
+  align-items: center;
+  display: flex;
+
   p {
-    padding: 20px;
     margin: 0;
+    padding: 20px;
   }
   video {
+    border-radius: $border-radius;
     display: block;
     height: auto;
     margin: 0 auto;

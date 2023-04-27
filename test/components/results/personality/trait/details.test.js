@@ -1,54 +1,43 @@
-import {Component} from "components/results/personality/trait/details";
+import Component from "components/results/personality/trait/details";
 import ComponentHandler from "support/component-handler";
+import {useAssessment} from "support/container/http";
+import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
 
-jest.mock("lib/with-traitify", () => ((value) => value));
-
-describe("PersonalityTrait", () => {
+describe("PersonalityTraitDetails", () => {
+  let component;
   let props;
 
+  useContainer();
+  useAssessment(assessment);
+
   beforeEach(() => {
-    props = {
-      trait: assessment.personality_traits[0],
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
+    props = {trait: assessment.personality_traits[0]};
   });
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component, {props});
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityTrait.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
 
-    it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      props.ui.trigger.mockClear();
-      component.updateProps();
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityTrait.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
   });
 
-  it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component, {props});
 
     expect(component.tree).toMatchSnapshot();
   });

@@ -1,0 +1,630 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Practice actions finishes 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="loading"
+    >
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="timer"
+      >
+        cognitive_practice_heading
+      </div>
+      <div
+        className="status"
+      >
+        1
+         / 
+        2
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "50%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 2`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      First Heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      First Text
+    </p>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      First Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 3`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="timer"
+      >
+        cognitive_practice_heading
+      </div>
+      <div
+        className="status"
+      >
+        2
+         / 
+        2
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 4`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      Second Heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      Second Text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      Second Button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice renders custom questions 5`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="loading"
+    >
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 1 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="timer"
+      >
+        cognitive_practice_heading
+      </div>
+      <div
+        className="status"
+      >
+        1
+         / 
+        3
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "33.333333333333336%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 1 explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_1_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_correct
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_1_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-1-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 2 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="timer"
+      >
+        cognitive_practice_heading
+      </div>
+      <div
+        className="status"
+      >
+        2
+         / 
+        3
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "66.66666666666667%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 2 explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_2_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_2_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-2-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_2_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 3 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="statusContainer"
+    >
+      <div
+        className="timer"
+      >
+        cognitive_practice_heading
+      </div>
+      <div
+        className="status"
+      >
+        3
+         / 
+        3
+      </div>
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Slide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Practice renders question 3 explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_3_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_3_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-3-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_3_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice videos horizontal renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_1_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_1_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-1-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice videos horizontal updates to vertical 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_1_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_1_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-1-v.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice videos vertical renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_1_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_1_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-1-v.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_1_button
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Practice videos vertical updates to horizontal 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_practice_step_1_heading
+    </h1>
+    <p
+      className="center"
+    >
+      cognitive_practice_answer_incorrect
+    </p>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_practice_step_1_text
+    </p>
+    <video
+      autoPlay={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-1-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <button
+      className="traitify--response-button btnBlue"
+      onClick={[Function]}
+      type="button"
+    >
+      cognitive_practice_step_1_button
+    </button>
+  </div>
+</div>
+`;

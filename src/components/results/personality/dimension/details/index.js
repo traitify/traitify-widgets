@@ -1,59 +1,62 @@
 import PropTypes from "prop-types";
-import {Component as Paradox} from "components/paradox/results/personality/dimension/details";
-import {detailWithPerspective} from "lib/helpers";
-import {rgba} from "lib/helpers/color";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import useDidMount from "lib/hooks/use-did-mount";
-import useDidUpdate from "lib/hooks/use-did-update";
-import withTraitify from "lib/with-traitify";
-import List from "./list";
+import {findCompetency} from "lib/common/combine-data";
+import getDetails from "lib/common/get-details";
+import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
+import useInlineMemo from "lib/hooks/use-inline-memo";
+import useGuide from "lib/hooks/use-guide";
+import useOption from "lib/hooks/use-option";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function PersonalityDimensionDetails(props) {
-  const {getOption, translate, type: {personality_type: {badge, details, level, name}}, ui} = props;
-  const state = {};
+function PersonalityDimensionDetails({type}) {
+  const disablePitfalls = useDisabledComponent("PersonalityPitfalls");
+  const guide = useGuide();
+  const translate = useTranslate();
+  const perspective = useInlineMemo((value) => value || "firstPerson", [useOption("perspective")]);
+  const {personality_type: {badge, details, id, level, name}} = type;
 
-  useDidMount(() => { ui.trigger("PersonalityDimensionDetails.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("PersonalityDimensionDetails.updated", {props, state}); });
+  useComponentEvents("PersonalityDimensionDetails");
 
-  const color = `#${badge.color_1}`;
-  const benefits = details.filter(({title}) => (title === "Benefits")).map(({body}) => body);
-  const pitfalls = details.filter(({title}) => (title === "Pitfalls")).map(({body}) => body);
-  const perspective = getOption("perspective") || "firstPerson";
-  const options = {base: {details}, perspective};
+  const personality = {details};
+  const benefits = getDetails({name: "Benefits", personality});
+  const pitfalls = getDetails({name: "Pitfalls", personality});
   const benefitsHeader = perspective === "firstPerson" ? translate("dimension_heading_for_benefits", {level, name}) : translate("potential_benefits");
-  const disabledComponents = getOption("disabledComponents") || [];
-  const disablePitfalls = disabledComponents.includes("PersonalityPitfalls");
+  const competency = findCompetency({guide, typeID: id});
 
   return (
-    <li className={style.container} style={{background: rgba(color, 10), borderTop: `5px solid ${color}`, listStyle: "none"}}>
-      <div className={style.side}>
-        <p className={style.icon}>
-          <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
-        </p>
-      </div>
-      <div className={style.content}>
-        <h2>{name} <span style={{color}}>|</span> {level}</h2>
-        {perspective === "firstPerson" && (
-          <h3>{translate("dimension_heading", {level, name})}</h3>
+    <div className={style.container}>
+      <div className={style.header}>
+        <img alt={`${name} ${translate("badge")}`} src={badge.image_medium} />
+        {competency && (
+          <div className={style.name}>
+            {competency.name}<span className={style.divider}> | </span>
+          </div>
         )}
-        <p className={style.description}>{detailWithPerspective({...options, name: "short_description"})}</p>
+        <div className={style.name}>{name}</div>
       </div>
-      <List color={color} details={benefits} header={benefitsHeader} />
+      {perspective === "firstPerson" && <div className={style.heading}>{translate("dimension_heading", {level, name})}</div>}
+      <div className={style.p}>{getDetails({name: "short_description", personality, perspective})}</div>
+      <div className={style.heading}>{benefitsHeader}</div>
+      <div className={style.details}>
+        {benefits.map((detail) => <div key={detail}>{detail}</div>)}
+      </div>
       {!disablePitfalls && (
-        <List color={color} details={pitfalls} header={translate("room_for_growth_and_change")} />
+        <>
+          <div className={style.heading}>{translate("room_for_growth_and_change")}</div>
+          <div className={style.details}>
+            {pitfalls.map((detail) => <div key={detail}>{detail}</div>)}
+          </div>
+        </>
       )}
-    </li>
+    </div>
   );
 }
 
 PersonalityDimensionDetails.propTypes = {
-  getOption: PropTypes.func.isRequired,
-  translate: PropTypes.func.isRequired,
   type: PropTypes.shape({
     personality_type: PropTypes.shape({
       badge: PropTypes.shape({
-        color_1: PropTypes.string.isRequired,
         image_medium: PropTypes.string.isRequired
       }).isRequired,
       details: PropTypes.arrayOf(
@@ -62,12 +65,11 @@ PersonalityDimensionDetails.propTypes = {
           title: PropTypes.string.isRequired
         }).isRequired
       ).isRequired,
+      id: PropTypes.string.isRequired,
       level: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired
     }).isRequired
-  }).isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
+  }).isRequired
 };
 
-export {PersonalityDimensionDetails as Component};
-export default withTraitify(PersonalityDimensionDetails, {paradox: Paradox});
+export default PersonalityDimensionDetails;

@@ -1,49 +1,33 @@
-import PropTypes from "prop-types";
-import TraitifyPropTypes from "lib/helpers/prop-types";
-import useDidMount from "lib/hooks/use-did-mount";
-import useDidUpdate from "lib/hooks/use-did-update";
-import withTraitify from "lib/with-traitify";
-import CandidateResults from "./candidate-results";
-import CognitiveResults from "./cognitive-results";
-import DimensionBasedResults from "./dimension-based-results";
-import EmployeeResults from "./employee-results";
-import FinancialRiskResults from "./financial-risk-results";
-import ManagerResults from "./manager-results";
-import TypeBasedResults from "./type-based-results";
+import AttractReport from "components/report/attract";
+import CandidateReport from "components/report/candidate";
+import EmployeeReport from "components/report/employee";
+import ManagerReport from "components/report/manager";
+import Cognitive from "components/results/cognitive";
+import FinancialRiskResults from "components/results/financial-risk";
+import useActive from "lib/hooks/use-active";
+import useComponentEvents from "lib/hooks/use-component-events";
+import useOption from "lib/hooks/use-option";
+import useResults from "lib/hooks/use-results";
 
-function Results(props) {
-  const {assessment, getOption, isReady, ui} = props;
-  const state = {};
+export default function Results() {
+  const active = useActive();
+  const report = useOption("report");
+  const results = useResults();
 
-  useDidMount(() => { ui.trigger("Results.initialized", {props, state}); });
-  useDidUpdate(() => { ui.trigger("Results.updated", {props, state}); });
+  useComponentEvents("Results");
 
-  if(!isReady("results")) { return null; }
-
-  const view = getOption("view");
-
-  if(getOption("surveyType") === "cognitive") { return <CognitiveResults {...props} />; }
-  if(assessment.scoring_scale === "LIKERT_CUMULATIVE_POMP") {
-    return <FinancialRiskResults {...props} />;
+  if(!active) { return null; }
+  if(!active.completed) { return null; }
+  if(active.type === "cognitive") { return <Cognitive />; }
+  if(active.type !== "personality") { return null; }
+  if(!results) { return null; }
+  if(results.scoring_scale === "LIKERT_CUMULATIVE_POMP") {
+    return <FinancialRiskResults />;
   }
-  if(assessment.assessment_type === "TYPE_BASED") { return <TypeBasedResults {...props} />; }
-  if(view === "candidate") { return <CandidateResults {...props} />; }
-  if(view === "employee") { return <EmployeeResults {...props} />; }
-  if(view === "manager") { return <ManagerResults {...props} />; }
+  if(results.assessment_type === "TYPE_BASED") { return <AttractReport />; }
+  if(report === "candidate") { return <CandidateReport />; }
+  if(report === "employee") { return <EmployeeReport />; }
+  if(report === "manager") { return <ManagerReport />; }
 
-  return <DimensionBasedResults {...props} />;
+  return <CandidateReport />;
 }
-
-Results.defaultProps = {assessment: null};
-Results.propTypes = {
-  assessment: PropTypes.shape({
-    assessment_type: PropTypes.string,
-    scoring_scale: PropTypes.string
-  }),
-  getOption: PropTypes.func.isRequired,
-  isReady: PropTypes.func.isRequired,
-  ui: TraitifyPropTypes.ui.isRequired
-};
-
-export {Results as Component};
-export default withTraitify(Results);

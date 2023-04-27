@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk.Dimension.Details renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+    style={
+      {
+        "background": "rgba(208, 210, 211, 0.09999999999999998)",
+        "borderTop": "5px solid rgb(208, 210, 211)",
+      }
+    }
+  >
+    <div
+      className="h1"
+    >
+      Internalized Positivity
+       
+      <span
+        style={
+          {
+            "color": "rgb(208, 210, 211)",
+          }
+        }
+      >
+        |
+      </span>
+       
+      Low
+    </div>
+    <div
+      className="h2"
+    >
+      Those with lower Internalized Positivity will tend to be less willing to take on greater financial risk
+    </div>
+    <div
+      className="p"
+    >
+      This individual reacts with emotion to bad financial news, and may attribute this to having generally bad luck, poor judgment, or both. A financial advisor should be mindful of the tendency of these individuals to become upset and stressed -- they may recoil at critical feedback (such as "This may not have been the right time to make that withdrawal…"), so words should be chosen wisely. Prone to an often pessimistic view, any downturn in the portfolio may be attributed to their own poor decisions, and taken as an indication of an inability to make more successful choices in the future. These clients will tend to focus on any unfavorable data points more than on positive ones. In making decisions, structure should be put in place to ensure that decisions are made and actions undertaken, as these individuals are often those who procrastinate, particularly when the necessary task is couched in the emotions of influential decisions.
+    </div>
+    <div
+      className="h2"
+    >
+      Characteristics common in lower Internalized Positivity
+    </div>
+    <div
+      className="characteristics"
+    >
+      <div
+        style={
+          {
+            "background": "rgba(208, 210, 211, 0.5)",
+          }
+        }
+      >
+        Find daily life stressful
+      </div>
+      <div
+        style={
+          {
+            "background": "rgba(208, 210, 211, 0.5)",
+          }
+        }
+      >
+        Find it hard to stay focused
+      </div>
+      <div
+        style={
+          {
+            "background": "rgba(208, 210, 211, 0.5)",
+          }
+        }
+      >
+        Not boastful
+      </div>
+      <div
+        style={
+          {
+            "background": "rgba(208, 210, 211, 0.5)",
+          }
+        }
+      >
+        Often feel down
+      </div>
+      <div
+        style={
+          {
+            "background": "rgba(208, 210, 211, 0.5)",
+          }
+        }
+      >
+        Procrastinate
+      </div>
+      <div
+        style={
+          {
+            "background": "rgba(208, 210, 211, 0.5)",
+          }
+        }
+      >
+        Prone to worry
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Dimension.Details renders nothing if no characteristics 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

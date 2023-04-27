@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.FinancialRisk.Archetype.Takeaways renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    >
+      Key Takeaways of 
+      Conservative
+       Financial Risk Style
+    </div>
+    <div
+      className="takeaways"
+    >
+      <div>
+        Are unlikely to change strategy from year to year
+      </div>
+      <div>
+        Decisions come relatively easily
+      </div>
+      <div>
+        Have high degree of trust in financial advisors
+      </div>
+      <div>
+        Make decisions after discussion and research
+      </div>
+      <div>
+        Prefer a formal, structured decision making process
+      </div>
+      <div>
+        Rely on data and precedent, not on hunches
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Takeaways renders nothing if no archetype 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Takeaways renders nothing if no takeaways 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Takeaways renders nothing if not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.FinancialRisk.Archetype.Takeaways renders perspective correctly 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    >
+      Key Takeaways of 
+      Conservative
+       Financial Risk Style
+    </div>
+    <div
+      className="takeaways"
+    >
+      <div>
+        Are unlikely to change strategy from year to year
+      </div>
+      <div>
+        Decisions come relatively easily
+      </div>
+      <div>
+        Have high degree of trust in financial advisors
+      </div>
+      <div>
+        Make decisions after discussion and research
+      </div>
+      <div>
+        Prefer a formal, structured decision making process
+      </div>
+      <div>
+        Rely on data and precedent, not on hunches
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,76 +1,42 @@
 @import "style/helpers";
 
-.trait {
-  @extend %cf;
-  margin-bottom: 16px;
-  @include mq(xl) {
-    margin-bottom: 20px;
-  }
-}
-.bar {
-  height: 5px;
-  @include mq(xl) {
-    height: 7px;
-  }
+.bar { height: $border-width-xl; }
+.container {
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  @include theme("background", "background-light");
+  @include buffer("margin-bottom");
+  &:last-child { margin-bottom: 0; }
 }
 .content {
-  @extend %cf;
-  padding: 10px 15px 12px 10px;
-}
-.score {
-  float: right;
-  margin: 0 0 0 20px;
-  @include rems(19);
-  @include mq(m) {
-    margin: 18px 0 0 30px;
-    @include rems(21);
-  }
-  @include mq(xl) {
-    margin-right: 10px;
-    @include rems(24);
-  }
-}
-.icon {
-  float: left;
-  margin: 5px 12px 0 0;
-  max-width: 65px;
-  @include mq(m) {
-    margin-right: 16px;
-  }
-  @include mq(xl) {
-    margin-left: 10px;
-  }
-}
-.name {
-  font-weight: normal;
-  margin: 0 0 3px;
-  @include rems(19);
-  @include mq(m) {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    @include rems(21);
-  }
-  @include mq(xl) {
-    @include rems(24);
+  align-items: center;
+  display: flex;
+  padding: $buffer-sm $buffer-lg;
+
+  img {
+    width: 50px;
+
+    @include buffer("margin-right");
   }
 }
 .description {
-  margin: 0;
-  overflow: hidden;
   display: block;
-  @include rems(15);
-  @include mq(m) {
-    display: inline;
-    overflow: auto;
-    margin-left: 5px;
-    @include rems(17);
-    &:before {
+  font-weight: normal;
+  margin-right: $buffer;
+
+  @include min-width("sm") {
+    display: inline-block;
+    margin-left: $buffer-sm;
+
+    &::before {
       content: "-";
-      margin-right: 5px;
       display: inline-block;
+      margin-right: $buffer-sm;
     }
   }
-  @include mq(xl) {
-    @include rems(19);
-  }
+}
+.heading {
+  flex-grow: 1;
+  font-weight: bold;
 }

@@ -1,0 +1,49 @@
+@import "style/helpers";
+@import "../../variables.scss";
+
+.container {
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+}
+
+.indicators {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  .low, .high {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+    @include theme("background", "background");
+  }
+  .low {
+    border: 3px solid $low;
+    margin-top: $buffer-sm;
+  }
+  .high {
+    border: 3px solid $high;
+    margin-top: $buffer-sm;
+  }
+  .risk {
+    background: url("https://cdn.traitify.com/images/indicator.png") no-repeat;
+    height: 24px;
+    margin-left: -24px;
+    position: absolute;
+    width: 48px;
+  }
+}
+
+.range {
+  display: flex;
+  height: 28px;
+
+  * { width: 20%; }
+  .low { background: $low; }
+  .lowMedium { background: $low-medium; }
+  .medium { background: $medium; }
+  .mediumHigh { background: $medium-high; }
+  .high { background: $high; }
+}

@@ -1,18 +1,89 @@
-export Default from "./default";
-export Loading from "./loading";
-export Results from "./results";
-export CandidateResults from "./results/candidate-results";
-export DimensionBasedResults from "./results/dimension-based-results";
-export EmployeeResults from "./results/employee-results";
-export FinancialRiskResults from "./results/financial-risk-results";
-export Guide from "./results/guide";
-export ManagerResults from "./results/manager-results";
-export TypeBasedResults from "./results/type-based-results";
-export SlideDeck from "./slide-deck";
+import Container from "./container";
+import Default from "./default";
+import AttractReport from "./report/attract";
+import CandidateReport from "./report/candidate";
+import EmployeeReport from "./report/employee";
+import ManagerReport from "./report/manager";
+import Results from "./results";
+import CareerContainer from "./results/career/container";
+import CareerDetails from "./results/career/details";
+import CareerFilter from "./results/career/filter";
+import CareerList from "./results/career/list";
+import CareerModal from "./results/career/modal";
+import CognitiveResults from "./results/cognitive";
+import ClientGuide from "./results/guide/client";
+import PersonalityGuide from "./results/guide/personality";
+import ArchetypeHeading from "./results/personality/archetype/heading";
+import ArchetypeSkills from "./results/personality/archetype/skills";
+import ArchetypeTips from "./results/personality/archetype/tips";
+import BaseDetails from "./results/personality/base/details";
+import BaseHeading from "./results/personality/base/heading";
+import DimensionChart from "./results/personality/dimension/chart";
+import DimensionDetails from "./results/personality/dimension/details";
+import DimensionList from "./results/personality/dimension/list";
+import TraitDetails from "./results/personality/trait/details";
+import TraitList from "./results/personality/trait/list";
+import TypeChart from "./results/personality/type/chart";
+import TypeList from "./results/personality/type/list";
+import RecommendationChart from "./results/recommendation/chart";
+import Survey from "./survey";
+import CognitiveSurvey from "./survey/cognitive";
+import PersonalitySurvey from "./survey/personality";
 
-export * as CandidateComponents from "./results/candidate-results/components";
-export * as DimensionComponents from "./results/dimension-based-results/components";
-export * as EmployeeComponents from "./results/employee-results/components";
-export * as FinancialRiskComponents from "./results/financial-risk-results/components";
-export * as ManagerComponents from "./results/manager-results/components";
-export * as TypeComponents from "./results/type-based-results/components";
+export default {
+  Container,
+  Default,
+  Report: {
+    Attract: AttractReport,
+    Candidate: CandidateReport,
+    Employee: EmployeeReport,
+    Manager: ManagerReport
+  },
+  Results: {
+    Career: {
+      Container: CareerContainer,
+      Details: CareerDetails,
+      Filter: CareerFilter,
+      List: CareerList,
+      Modal: CareerModal
+    },
+    Cognitive: CognitiveResults,
+    Container: Results,
+    Guide: {
+      Client: ClientGuide,
+      Personality: PersonalityGuide
+    },
+    Personality: {
+      Archetype: {
+        Heading: ArchetypeHeading,
+        Skills: ArchetypeSkills,
+        Tips: ArchetypeTips
+      },
+      Base: {
+        Details: BaseDetails,
+        Heading: BaseHeading
+      },
+      Dimension: {
+        Chart: DimensionChart,
+        Details: DimensionDetails,
+        List: DimensionList
+      },
+      Trait: {
+        Details: TraitDetails,
+        List: TraitList
+      },
+      Type: {
+        Chart: TypeChart,
+        List: TypeList
+      }
+    },
+    Recommendation: {
+      Chart: RecommendationChart
+    }
+  },
+  Survey: {
+    Cognitive: CognitiveSurvey,
+    Container: Survey,
+    Personality: PersonalitySurvey
+  }
+};

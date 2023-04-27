@@ -1,8 +1,11 @@
-import {Component} from "components/results/personality/archetype/skills";
+import {act} from "react-test-renderer";
+import Component from "components/results/personality/archetype/skills";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
+import {mockAssessment} from "support/container/http";
+import {mockOption} from "support/container/options";
+import useContainer from "support/hooks/use-container";
 import _assessment from "support/json/assessment/dimension-based.json";
-
-jest.mock("lib/with-traitify", () => ((value) => value));
 
 const details = [];
 
@@ -24,157 +27,121 @@ _assessment.personality_types.forEach(({personality_type: dimension}) => {
   });
 });
 
-const assessment = {
-  ..._assessment,
-  archetype: {
-    ..._assessment.archetype,
-    details: [
-      ..._assessment.archetype.details,
-      ...details
-    ]
-  }
-};
-
 describe("PersonalityArchetypeSkills", () => {
-  let props;
+  let assessment;
+  let component;
+
+  useContainer();
 
   beforeEach(() => {
-    props = {
-      assessment,
-      getOption: jest.fn().mockName("getOption"),
-      isReady: jest.fn().mockName("isReady").mockReturnValue(true),
-      options: {},
-      translate: jest.fn().mockName("translate").mockImplementation((value, options = {}) => `${value}, ${options}`),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
+    assessment = mutable(_assessment);
+    assessment.archetype.details = [...details];
+
+    mockAssessment(assessment);
   });
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalitySkills.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        expect.objectContaining({activeType: expect.any(), types: expect.any()})
       );
     });
 
-    it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      props.ui.trigger.mockClear();
-      component.updateProps();
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component);
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalitySkills.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        expect.objectContaining({activeType: expect.any(), types: expect.any()})
       );
     });
   });
 
-  it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with available dimension skills", () => {
-    const missingDimension = props.assessment.personality_types[0].personality_type;
-    props.assessment = {
-      ...assessment,
-      archetype: {
-        ...assessment.archetype,
-        details: assessment.archetype.details.filter((detail) => (
-          !detail.title.endsWith(missingDimension.name)
-        ))
-      }
-    };
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component with available dimension skills", async() => {
+    const missingDimension = assessment.personality_types[0].personality_type;
+    assessment.archetype.details = details
+      .filter(({title}) => !title.endsWith(missingDimension.name));
+    mockAssessment(assessment);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with available types", () => {
-    props.assessment = {
-      ...assessment,
-      archetype: {
-        ...assessment.archetype,
-        details: assessment.archetype.details.filter((detail) => (
-          !detail.title.startsWith("Dealing With Stress - Success Skills")
-        ))
-      }
-    };
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component with available types", async() => {
+    assessment.archetype.details = details
+      .filter(({title}) => !title.startsWith("Dealing With Stress - Success Skills"));
+    mockAssessment(assessment);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with enabled types", () => {
-    props.getOption.mockReturnValue(["Dealing With Stress"]);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component with enabled types", async() => {
+    mockOption("disabledComponents", ["Dealing With Stress"]);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders new type from clicking button", () => {
-    const component = new ComponentHandler(<Component {...props} />);
-    component.act(() => component.instance.findAllByType("button")[1].props.onClick());
+  it("renders component with headers", async() => {
+    mockOption("showHeaders", true);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders new type from selecting option", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders new type from clicking button", async() => {
+    component = await ComponentHandler.setup(Component);
+    act(() => component.instance.findAllByType("button")[1].props.onClick());
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders new type from selecting option", async() => {
+    component = await ComponentHandler.setup(Component);
     const select = component.instance.findByType("select");
     const option = component.instance.findAllByType("option")[1];
-    component.act(() => select.props.onChange({target: option.props}));
+    act(() => select.props.onChange({target: option.props}));
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if disabled", () => {
-    props.getOption.mockReturnValue(["PersonalitySkills"]);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders nothing if disabled", async() => {
+    mockOption("disabledComponents", ["PersonalitySkills"]);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if results not ready", () => {
-    props.assessment = null;
-    props.isReady.mockImplementation((value) => value !== "results");
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders nothing if results not ready", async() => {
+    mockAssessment(null);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if no archetype", () => {
-    props.assessment = {...props.assessment, archetype: null};
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders nothing if no archetype", async() => {
+    mockAssessment({...assessment, archetype: null});
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if no skills", () => {
-    props.assessment = {
-      ...props.assessment,
-      archetype: {
-        ...props.assessment.archetype,
-        details: props.assessment.archetype.details.filter(({title}) => (
-          !title.includes("Success Skills")
-        ))
-      }
-    };
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders nothing if no skills", async() => {
+    assessment.archetype.details = details
+      .filter(({title}) => !title.includes("Success Skills"));
+    mockAssessment(assessment);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

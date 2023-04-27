@@ -1,21 +1,16 @@
 @import "style/helpers";
 
-.traits {
-  @extend %widgetContainer;
-  font-weight: 400;
-  color: #333;
-  margin-bottom: 40px;
-}
-.title {
-  @extend %cf;
-  font-weight: normal;
-  text-transform: uppercase;
-  @include rems(18);
-  @include mq(xl) {
-    @include rems(20);
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+
+  .toggle {
+    display: block;
+    margin: 0 auto;
+
+    @include buttonDark("theme");
   }
 }
-
-.traitsDefinition {
-  padding-bottom: 30px;
-}
+.p { @extend %paragraph; }

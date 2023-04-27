@@ -1,75 +1,72 @@
-import {Component} from "components/results/personality/trait/list";
+import {act} from "react-test-renderer";
+import Component from "components/results/personality/trait/list";
 import ComponentHandler from "support/component-handler";
+import {mockAssessment, useAssessment} from "support/container/http";
+import {mockOption} from "support/container/options";
+import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
 
 jest.mock("components/results/personality/trait/details", () => ((props) => (
   <div className="mock">Trait - {props.trait.personality_trait.name}</div>
 )));
-jest.mock("lib/with-traitify", () => ((value) => value));
 
-describe("PersonalityTraits", () => {
-  let props;
+describe("PersonalityTraitList", () => {
+  let component;
 
-  beforeEach(() => {
-    props = {
-      assessment,
-      getOption: jest.fn().mockName("getOption"),
-      isReady: jest.fn().mockName("isReady").mockImplementation(() => true),
-      translate: jest.fn().mockName("translate").mockImplementation((value) => value),
-      ui: {
-        current: {},
-        off: jest.fn().mockName("off"),
-        on: jest.fn().mockName("on"),
-        trigger: jest.fn().mockName("trigger")
-      }
-    };
-  });
+  useContainer();
+  useAssessment(assessment);
 
   describe("callbacks", () => {
-    it("triggers initialization", () => {
-      new ComponentHandler(<Component {...props} />);
+    it("triggers initialization", async() => {
+      await ComponentHandler.setup(Component);
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityTraits.initialized",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
 
-    it("triggers update", () => {
-      const component = new ComponentHandler(<Component {...props} />);
-      props.ui.trigger.mockClear();
-      component.updateProps();
+    it("triggers update", async() => {
+      component = await ComponentHandler.setup(Component);
+      await component.update();
 
-      expect(props.ui.trigger).toHaveBeenCalledWith(
+      expect(container.listener.trigger).toHaveBeenCalledWith(
         "PersonalityTraits.updated",
-        expect.objectContaining({
-          props: expect.any(Object),
-          state: expect.any(Object)
-        })
+        undefined
       );
     });
   });
 
-  it("renders component", () => {
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component", async() => {
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders component with translation definitions", () => {
-    props.getOption.mockReturnValueOnce("thirdPerson");
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component with headers", async() => {
+    mockOption("showHeaders", true);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if not ready", () => {
-    props.assessment = null;
-    props.isReady.mockImplementation(() => false);
-    const component = new ComponentHandler(<Component {...props} />);
+  it("renders component with more traits", async() => {
+    component = await ComponentHandler.setup(Component);
+    act(() => { component.findByText("Show More").props.onClick(); });
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if disabled", async() => {
+    mockOption("disabledComponents", ["PersonalityTraits"]);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing if not ready", async() => {
+    mockAssessment(null);
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

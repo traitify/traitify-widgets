@@ -20,16 +20,16 @@ module.exports = (_env) => {
     entry: ["./index.js"],
     externals : {
       "react": {
-        root: "React",
-        commonjs2: "react",
+        amd: "react",
         commonjs: "react",
-        amd: "react"
+        commonjs2: "react",
+        root: "React"
       },
       "react-dom": {
-        root: "ReactDOM",
-        commonjs2: "react-dom",
+        amd: "react-dom",
         commonjs: "react-dom",
-        amd: "react-dom"
+        commonjs2: "react-dom",
+        root: "ReactDOM"
       }
     },
     mode: environment,
@@ -84,13 +84,15 @@ module.exports = (_env) => {
       ]
     },
     output: {
-      globalObject: "this",
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/",
       filename: "traitify.js",
-      library: "Traitify",
-      libraryTarget: "umd",
-      umdNamedDefine: true
+      globalObject: "this",
+      library: {
+        name: "Traitify",
+        type: "umd",
+        umdNamedDefine: true
+      },
+      path: path.resolve(__dirname, "build"),
+      publicPath: "/"
     },
     plugins: [
       new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
@@ -111,16 +113,19 @@ module.exports = (_env) => {
     }
   };
 
-  const compatibility = env.mode === "compatibility";
-  const browser = compatibility || env.mode === "browser";
+  const browser = env.mode === "browser";
 
-  if(browser){
-    config.entry.unshift("core-js/stable");
-    config.entry.unshift("regenerator-runtime/runtime");
-    config.output.libraryExport = "default";
+  if(browser) {
     delete config.externals;
+
+    config.entry = [
+      "regenerator-runtime/runtime",
+      "core-js/stable",
+      "./index.js"
+    ];
+    config.output.clean = false;
+    config.output.library.export = "default";
   }
-  if(compatibility){ config.entry[2] = "./compatibility.js"; }
 
   return config;
 };

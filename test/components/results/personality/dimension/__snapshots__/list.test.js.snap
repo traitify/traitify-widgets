@@ -1,452 +1,158 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PersonalityDimensionList renders columns if details disabled 1`] = `
+exports[`PersonalityDimensionList renders chart if details disabled 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
     className="container"
   >
-    <p>
-      dimension_description, [object Object]
-    </p>
-    <ul
-      className="columns"
-    >
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Openness badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-            />
-          </div>
-          <h3>
-            Openness
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Conscientiousness badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-            />
-          </div>
-          <h3>
-            Conscientiousness
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Extraversion badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
-            />
-          </div>
-          <h3>
-            Extraversion
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Agreeableness badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-            />
-          </div>
-          <h3>
-            Agreeableness
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Emotional Stability badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
-            />
-          </div>
-          <h3>
-            Emotional Stability
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-    </ul>
     <div
-      className="columnsBuffer"
-    />
+      className="mock"
+    >
+      PersonalityDimensionChart
+    </div>
   </div>
 </div>
 `;
 
 exports[`PersonalityDimensionList renders component 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
     className="container"
   >
-    <p>
-      dimension_description, [object Object]
-    </p>
-    <ul
-      className="columns"
-    >
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Openness badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/openness.png"
-            />
-          </div>
-          <h3>
-            Openness
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Conscientiousness badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/conscientiousness.png"
-            />
-          </div>
-          <h3>
-            Conscientiousness
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Extraversion badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/extraversion.png"
-            />
-          </div>
-          <h3>
-            Extraversion
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Agreeableness badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
-            />
-          </div>
-          <h3>
-            Agreeableness
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="container"
-      >
-        <div>
-          <div
-            className="icon"
-            style={
-              {
-                "background": "rgba(0,0,0,0.085)",
-                "border": "3px solid #000000",
-              }
-            }
-          >
-            <img
-              alt="Emotional Stability badge, [object Object]"
-              src="https://cdn.traitify.com/icons/big-five/dimensions/black/emotional_stability.png"
-            />
-          </div>
-          <h3>
-            Emotional Stability
-          </h3>
-          <h2>
-            Medium
-          </h2>
-        </div>
-        <div
-          className="background medium"
-          style={
-            {
-              "background": "rgba(0,0,0,0.1)",
-            }
-          }
-        />
-      </li>
-    </ul>
     <div
-      className="columnsBuffer"
-    />
+      className="mock"
+    >
+      PersonalityDimensionChart
+    </div>
+    <div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+    </div>
   </div>
-  <ul
-    className="details"
-  >
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-  </ul>
 </div>
 `;
 
-exports[`PersonalityDimensionList renders details if columns disabled 1`] = `
+exports[`PersonalityDimensionList renders component with headers 1`] = `
 <div
-  className="container"
+  className="traitify--container traitify--color-scheme-light"
 >
-  <ul
-    className="details"
+  <div
+    className="container"
   >
     <div
-      className="mock"
+      className="sectionHeading"
     >
-      PersonalityDimensionDetails
+      Personality Breakdown
     </div>
     <div
       className="mock"
     >
-      PersonalityDimensionDetails
+      PersonalityDimensionChart
     </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
+    <div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
     </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-    <div
-      className="mock"
-    >
-      PersonalityDimensionDetails
-    </div>
-  </ul>
+  </div>
 </div>
 `;
 
-exports[`PersonalityDimensionList renders nothing if disabled 1`] = `null`;
+exports[`PersonalityDimensionList renders details if chart disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+      <div
+        className="mock"
+      >
+        PersonalityDimensionDetails
+      </div>
+    </div>
+  </div>
+</div>
+`;
 
-exports[`PersonalityDimensionList renders nothing if results not ready 1`] = `null`;
+exports[`PersonalityDimensionList renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`PersonalityDimensionList renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

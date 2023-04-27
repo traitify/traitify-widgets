@@ -1,10 +1,25 @@
-@import "variables";
-@import "mixins";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./extends.scss";
 
-.center {
-  text-align: center;
-}
+// When choosing between extend vs mixin:
+// - Mixins generate fresh CSS within that selector
+// - Extends uses one block of CSS with multiple selectors
+// - Extends may often be the right choice to reduce bundle size but may not be specific enough
 
-.hide {
-  display: none;
+// SCSS Order and Spacing - Alphabetical within each category
+// - @extend
+// - - whitespace
+// - attributes
+// - - whitespace
+// - @include
+// - special selectors (>, &)
+// - ids
+// - classes
+// - elements
+
+.sectionHeading {
+  @extend %heading;
+
+  margin-bottom: $buffer-heading;
 }

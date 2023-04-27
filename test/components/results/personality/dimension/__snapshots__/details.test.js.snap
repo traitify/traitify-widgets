@@ -1,482 +1,351 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PersonalityDimensionDetails renders component 1`] = `
-<li
-  className="container"
-  style={
-    {
-      "background": "rgba(0,0,0,0.1)",
-      "borderTop": "5px solid #000000",
-      "listStyle": "none",
-    }
-  }
+<div
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="side"
+    className="container"
   >
-    <p
-      className="icon"
+    <div
+      className="header"
     >
       <img
-        alt="Agreeableness Detail Header"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
-    </p>
-  </div>
-  <div
-    className="content"
-  >
-    <h2>
-      Agreeableness
-       
-      <span
-        style={
-          {
-            "color": "#000000",
-          }
-        }
+      <div
+        className="name"
       >
-        |
-      </span>
-       
-      Medium
-    </h2>
-    <h3>
-      Detail Header
-    </h3>
-    <p
-      className="description"
+        Influencing People
+        <span
+          className="divider"
+        >
+           | 
+        </span>
+      </div>
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
+    </div>
+    <div
+      className="heading"
+    >
+      What does my Medium Agreeableness mean for me?
+    </div>
+    <div
+      className="p"
     >
       You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
-    </p>
-  </div>
-  <div
-    className="detailsListContainer"
-  >
-    <h3>
-      Detail Header
-    </h3>
-    <ul
-      className="detailsList"
+    </div>
+    <div
+      className="heading"
     >
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      Medium Agreeableness Potential Benefits
+    </div>
+    <div
+      className="details"
+    >
+      <div>
         Forgiving style
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Looks for win-win outcome
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Negotiates with sensitivity
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Realistic view of others
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Recognises imperfection 
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Relational style
-      </li>
-    </ul>
-  </div>
-  <div
-    className="detailsListContainer"
-  >
-    <h3>
-      Detail Header
-    </h3>
-    <ul
-      className="detailsList"
+      </div>
+    </div>
+    <div
+      className="heading"
     >
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      Room for Growth and Change
+    </div>
+    <div
+      className="details"
+    >
+      <div>
         May appear too open-minded (to others)
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May be viewed as a ‘pushover’ by others’
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May let sympathy get in the way
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May lose out to very assertive colleagues
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May not always be objective enough
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May not go for the optimal personal win
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-</li>
+</div>
 `;
 
 exports[`PersonalityDimensionDetails renders component in third person 1`] = `
-<li
-  className="container"
-  style={
-    {
-      "background": "rgba(0,0,0,0.1)",
-      "borderTop": "5px solid #000000",
-      "listStyle": "none",
-    }
-  }
+<div
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="side"
+    className="container"
   >
-    <p
-      className="icon"
+    <div
+      className="header"
     >
       <img
-        alt="Agreeableness Detail Header"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
-    </p>
-  </div>
-  <div
-    className="content"
-  >
-    <h2>
-      Agreeableness
-       
-      <span
-        style={
-          {
-            "color": "#000000",
-          }
-        }
+      <div
+        className="name"
       >
-        |
-      </span>
-       
-      Medium
-    </h2>
-    <p
-      className="description"
+        Influencing People
+        <span
+          className="divider"
+        >
+           | 
+        </span>
+      </div>
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
+    </div>
+    <div
+      className="p"
     >
       The candidate’s view is that they are someone who has a mature and streetwise view of other people and their views. Their first instinct is likely to be to trust other people, but they do know that others can let them down. Thus, they are probably able to be direct, but are also able to temper their approach with sensitivity for what will keep relationships healthy and intact.
-    </p>
-  </div>
-  <div
-    className="detailsListContainer"
-  >
-    <h3>
-      Detail Header
-    </h3>
-    <ul
-      className="detailsList"
+    </div>
+    <div
+      className="heading"
     >
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      Potential Benefits
+    </div>
+    <div
+      className="details"
+    >
+      <div>
         Forgiving style
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Looks for win-win outcome
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Negotiates with sensitivity
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Realistic view of others
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Recognises imperfection 
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Relational style
-      </li>
-    </ul>
-  </div>
-  <div
-    className="detailsListContainer"
-  >
-    <h3>
-      Detail Header
-    </h3>
-    <ul
-      className="detailsList"
+      </div>
+    </div>
+    <div
+      className="heading"
     >
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      Room for Growth and Change
+    </div>
+    <div
+      className="details"
+    >
+      <div>
         May appear too open-minded (to others)
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May be viewed as a ‘pushover’ by others’
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May let sympathy get in the way
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May lose out to very assertive colleagues
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May not always be objective enough
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         May not go for the optimal personal win
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-</li>
+</div>
+`;
+
+exports[`PersonalityDimensionDetails renders component without guide 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      <img
+        alt="Agreeableness Badge"
+        src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
+      />
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
+    </div>
+    <div
+      className="heading"
+    >
+      What does my Medium Agreeableness mean for me?
+    </div>
+    <div
+      className="p"
+    >
+      You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
+    </div>
+    <div
+      className="heading"
+    >
+      Medium Agreeableness Potential Benefits
+    </div>
+    <div
+      className="details"
+    >
+      <div>
+        Forgiving style
+      </div>
+      <div>
+        Looks for win-win outcome
+      </div>
+      <div>
+        Negotiates with sensitivity
+      </div>
+      <div>
+        Realistic view of others
+      </div>
+      <div>
+        Recognises imperfection 
+      </div>
+      <div>
+        Relational style
+      </div>
+    </div>
+    <div
+      className="heading"
+    >
+      Room for Growth and Change
+    </div>
+    <div
+      className="details"
+    >
+      <div>
+        May appear too open-minded (to others)
+      </div>
+      <div>
+        May be viewed as a ‘pushover’ by others’
+      </div>
+      <div>
+        May let sympathy get in the way
+      </div>
+      <div>
+        May lose out to very assertive colleagues
+      </div>
+      <div>
+        May not always be objective enough
+      </div>
+      <div>
+        May not go for the optimal personal win
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`PersonalityDimensionDetails renders component without pitfalls 1`] = `
-<li
-  className="container"
-  style={
-    {
-      "background": "rgba(0,0,0,0.1)",
-      "borderTop": "5px solid #000000",
-      "listStyle": "none",
-    }
-  }
+<div
+  className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="side"
+    className="container"
   >
-    <p
-      className="icon"
+    <div
+      className="header"
     >
       <img
-        alt="Agreeableness Detail Header"
+        alt="Agreeableness Badge"
         src="https://cdn.traitify.com/icons/big-five/dimensions/black/agreeableness.png"
       />
-    </p>
-  </div>
-  <div
-    className="content"
-  >
-    <h2>
-      Agreeableness
-       
-      <span
-        style={
-          {
-            "color": "#000000",
-          }
-        }
+      <div
+        className="name"
       >
-        |
-      </span>
-       
-      Medium
-    </h2>
-    <h3>
-      Detail Header
-    </h3>
-    <p
-      className="description"
+        Influencing People
+        <span
+          className="divider"
+        >
+           | 
+        </span>
+      </div>
+      <div
+        className="name"
+      >
+        Agreeableness
+      </div>
+    </div>
+    <div
+      className="heading"
+    >
+      What does my Medium Agreeableness mean for me?
+    </div>
+    <div
+      className="p"
     >
       You describe yourself as someone who has a mature and streetwise view of other people and their views. Your first instinct is likely to be to trust other people, but you do know that others can let you down. Thus, you are probably able to be direct, but are also able to temper your approach with sensitivity for what will keep relationships healthy and intact.
-    </p>
-  </div>
-  <div
-    className="detailsListContainer"
-  >
-    <h3>
-      Detail Header
-    </h3>
-    <ul
-      className="detailsList"
+    </div>
+    <div
+      className="heading"
     >
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      Medium Agreeableness Potential Benefits
+    </div>
+    <div
+      className="details"
+    >
+      <div>
         Forgiving style
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Looks for win-win outcome
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Negotiates with sensitivity
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Realistic view of others
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Recognises imperfection 
-      </li>
-      <li
-        style={
-          {
-            "background": "rgba(0,0,0,0.5)",
-          }
-        }
-      >
+      </div>
+      <div>
         Relational style
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
-</li>
+</div>
 `;

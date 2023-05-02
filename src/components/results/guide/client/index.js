@@ -25,7 +25,7 @@ export default function ClientGuide() {
   return (
     <div className={style.container}>
       <div className={style.heading}>{guide.client.title}</div>
-      <Markdown>{guide.client.introduction}</Markdown>
+      <Markdown>{guide.client.introduction || ""}</Markdown>
       <div className={style.tabs}>
         {sections.map(({id, title}) => (
           <button
@@ -43,7 +43,7 @@ export default function ClientGuide() {
           {sections.map(({id, title}) => <option key={id} value={id}>{title}</option>)}
         </select>
         <div className={style.heading}>{activeSection.title}</div>
-        <Markdown>{activeSection.introduction}</Markdown>
+        <Markdown>{activeSection.introduction || ""}</Markdown>
         {activeSection.questionSequences.map((sequence, index) => (
           <Sequence key={sequence.id} index={index} sequence={sequence} />
         ))}

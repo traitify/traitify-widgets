@@ -121,8 +121,8 @@ Most components trigger an initialized and updated event. Some components offer 
 
 The widgets are capable of showing multiple kinds of surveys to users in order to satisfy benchmark requirements, to handle the event when all surveys have been finished you should use this event:
 ```
-Traitify.listener.on("Surveys.allFinished", (assessments) => {
-  console.log("Surveys.allFinished", assessments);
+Traitify.listener.on("Surveys.allFinished", (surveys) => {
+  console.log("Surveys.allFinished", surveys);
 });
 ```
 

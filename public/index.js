@@ -75,6 +75,10 @@ function createWidget() {
     console.log("Results.updated");
   });
 
+  Traitify.listener.on("Surveys.allFinished", (surveys) => {
+    console.log("Surveys.allFinished", surveys);
+  });
+
   Traitify.options.colorScheme = cache.get("colorScheme");
   Traitify.options.locale = cache.get("locale");
   Traitify.options.report = cache.get("report");

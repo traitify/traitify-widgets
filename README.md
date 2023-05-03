@@ -119,6 +119,21 @@ export default function Personality({id}) {
 
 Most components trigger an initialized and updated event. Some components offer additional events. Event handlers must be set before the render command, or they will not be called.
 
+The widgets are capable of showing multiple kinds of surveys to users in order to satisfy benchmark requirements, to handle the event when all surveys have been finished you should use this event:
+```
+Traitify.listener.on("Surveys.allFinished", (surveys) => {
+  console.log("Surveys.allFinished", surveys);
+});
+```
+
+To handle the event when each survey has been finished, maybe to record total  progress in a backend system:
+```
+Traitify.listener.on("Survey.finished", ({response}) => {
+  console.log("Survey.finished", response);
+});
+```
+
+Here are some other events that can be handled:
 ```
 Traitify.listener.on("Survey.initialized", () => {
   console.log("Survey.initialized");
@@ -129,13 +144,10 @@ Traitify.listener.on("Survey.updated", () => {
 });
 
 Traitify.listener.on("Survey.updateSlide", ({response}) => {
-  console.log("Survey.finished", response);
-});
-
-Traitify.listener.on("Survey.finished", ({response}) => {
-  console.log("Survey.finished", response);
+  console.log("Survey.updateSlide", response);
 });
 ```
+
 
 ## Options
 

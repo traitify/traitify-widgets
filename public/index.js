@@ -75,9 +75,8 @@ function createWidget() {
     console.log("Results.updated");
   });
 
-  Traitify.listener.on("Surveys.allFinished", (e) => {
-    console.log(e);
-    console.log("Surveys.allFinished");
+  Traitify.listener.on("Surveys.allFinished", (assessments) => {
+    console.log("Surveys.allFinished", assessments);
   });
 
   Traitify.options.colorScheme = cache.get("colorScheme");

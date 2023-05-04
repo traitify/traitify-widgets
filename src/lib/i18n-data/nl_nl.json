@@ -68,7 +68,7 @@
   "personality_heading": "Uw %{deck_name} persoonlijkheid is %{personality}",
   "personality_heading_third_person": "%{deck_name} Persoonlijkheid: %{personality}",
   "personality_traits": "Persoonlijkheidseigenschappen",
-  "personality_traits_description": "Hier zijn jouw top 8 eigenschappen gemeten op een schaal van 0% tot 100%",
+  "personality_traits_description": "Hier zijn jouw top 5 eigenschappen gemeten op een schaal van 0% tot 100%",
   "personality_type": "Persoonlijkheids Type",
   "potential_benefits": "Potentiële voordelen",
   "potential_pitfalls": "Mogelijke valkuilen",

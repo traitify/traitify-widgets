@@ -68,7 +68,7 @@
   "personality_heading": "あなたの %{deck_name} 個性は %{personality} です",
   "personality_heading_third_person": "%{deck_name} 人 %{personality}",
   "personality_traits": "性格特性",
-  "personality_traits_description": "0%~100%の範囲で測定した上位8つの特長はこちらです。",
+  "personality_traits_description": "0%~100%の範囲で測定した上位5つの特長はこちらです。",
   "personality_type": "性格タイプ",
   "potential_benefits": "潜在的な利点",
   "potential_pitfalls": "潜在的な落とし穴",

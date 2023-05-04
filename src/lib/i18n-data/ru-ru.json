@@ -68,7 +68,7 @@
   "personality_heading": "Ваша личность %{deck_name} - это %{personality}",
   "personality_heading_third_person": "%{deck_name} личность: %{personality}",
   "personality_traits": "Черты характера",
-  "personality_traits_description": "Здесь представлены 8 основных ваших черт по шкале от 0 до 100 %",
+  "personality_traits_description": "Здесь представлены 5 основных ваших черт по шкале от 0 до 100 %",
   "personality_type": "Тип личности",
   "potential_benefits": "Потенциальные выгоды",
   "potential_pitfalls": "Потенциальные ловушки",

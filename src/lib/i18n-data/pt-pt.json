@@ -68,7 +68,7 @@
   "personality_heading": "Sua %{deck_name} personalidade é %{personality}",
   "personality_heading_third_person": "%{deck_name} Personalidade: %{personality}",
   "personality_traits": "Traços de Personalidade",
-  "personality_traits_description": "Estas são as suas 8 principais características, medidas numa escala de 0 a 100%",
+  "personality_traits_description": "Estas são as suas 5 principais características, medidas numa escala de 0 a 100%",
   "personality_type": "Tipo de Personalidade",
   "potential_benefits": "benefícios potenciais",
   "potential_pitfalls": "armadilhas em potencial",

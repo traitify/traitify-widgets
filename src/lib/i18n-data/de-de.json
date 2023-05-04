@@ -63,7 +63,7 @@
   "personality_blend_heading_third_person": "Deren Persönlichkeitsmischung ist %{personality}",
   "personality_heading":"Ihre %{deck_name} Persönlichkeit ist %{personality}",
   "personality_heading_third_person":"%{deck_name} Persönlichkeit: %{personality}",
-  "personality_traits_description": "Hier sind Ihre Top 8 Merkmale, gemessen auf einer Skala von 0% bis 100%",
+  "personality_traits_description": "Hier sind Ihre Top 5 Merkmale, gemessen auf einer Skala von 0% bis 100%",
   "potential_benefits":"Mögliche Vorteile",
   "potential_pitfalls":"Mögliche Tücken",
   "question_adaptability":"Haben sie einen Bewältigungsstil entwickelt?",

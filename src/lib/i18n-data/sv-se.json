@@ -68,7 +68,7 @@
   "personality_heading": "Din personlighet %{deck_name} är %{personality}",
   "personality_heading_third_person": "%{deck_name} Personlighet: %{personality}",
   "personality_traits": "Personlighetsdrag",
-  "personality_traits_description": "Här är dina topp 8 egenskaper mätt på en skala från 0 % till 100 %",
+  "personality_traits_description": "Här är dina topp 5 egenskaper mätt på en skala från 0 % till 100 %",
   "personality_type": "Personlighetstyp",
   "potential_benefits": "Möjliga fördelar",
   "potential_pitfalls": "Möjliga fallgropar",

@@ -35,24 +35,6 @@ exports[`Paradox.PersonalityTraits renders component 1`] = `
     Thrill-Seeking
   </div>
   <div
-    className="mock"
-  >
-    Trait - 
-    Confident
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Imaginative
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Open-Minded
-  </div>
-  <div
     className="center"
   >
     <button
@@ -109,24 +91,6 @@ exports[`Paradox.PersonalityTraits renders component with headers 1`] = `
   >
     Trait - 
     Thrill-Seeking
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Confident
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Imaginative
-  </div>
-  <div
-    className="mock"
-  >
-    Trait - 
-    Open-Minded
   </div>
   <div
     className="center"

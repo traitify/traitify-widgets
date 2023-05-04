@@ -68,7 +68,7 @@
   "personality_heading": "Your %{deck_name} Personality is %{personality}",
   "personality_heading_third_person": "%{deck_name} Personality: %{personality}",
   "personality_traits": "Personality Traits",
-  "personality_traits_description": "Here are your top eight traits measured on a scale of 0% to 100%",
+  "personality_traits_description": "Here are your top five traits measured on a scale of 0% to 100%",
   "personality_type": "Personality Type",
   "potential_benefits": "Potential Benefits",
   "potential_pitfalls": "Potential Pitfalls",

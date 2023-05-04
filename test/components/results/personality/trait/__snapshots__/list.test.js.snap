@@ -38,24 +38,6 @@ exports[`PersonalityTraitList renders component 1`] = `
       Thrill-Seeking
     </div>
     <div
-      className="mock"
-    >
-      Trait - 
-      Confident
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Imaginative
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Open-Minded
-    </div>
-    <div
       className="center"
     >
       <button
@@ -85,7 +67,7 @@ exports[`PersonalityTraitList renders component with headers 1`] = `
     <div
       className="p"
     >
-      Here are your top 8 traits measured on a scale of 0% to 100%
+      Here are your top 5 traits measured on a scale of 0% to 100%
     </div>
     <div
       className="mock"
@@ -116,24 +98,6 @@ exports[`PersonalityTraitList renders component with headers 1`] = `
     >
       Trait - 
       Thrill-Seeking
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Confident
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Imaginative
-    </div>
-    <div
-      className="mock"
-    >
-      Trait - 
-      Open-Minded
     </div>
     <div
       className="center"

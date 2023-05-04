@@ -23,7 +23,7 @@ function PersonalityTraitList({setElement, ...props}) {
   const text = translate(showMore ? "show_less" : "show_more");
   let traits = assessment.personality_traits;
 
-  if(!showMore) { traits = traits.slice(0, 8); }
+  if(!showMore) { traits = traits.slice(0, 5); }
 
   return (
     <div className={style.container} ref={setElement}>

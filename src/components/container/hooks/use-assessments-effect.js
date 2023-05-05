@@ -1,6 +1,5 @@
 import {useEffect} from "react";
 import {useSetRecoilState, useRecoilState} from "recoil";
-import useListener from "lib/hooks/use-listener";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import {activeState, assessmentsState} from "lib/recoil";
 import mutable from "lib/common/object/mutable";
@@ -10,7 +9,6 @@ export default function useAssessmentsEffect() {
   const [active, setActive] = useRecoilState(activeState);
   const assessments = useLoadedValue(assessmentsState);
   const setAssessments = useSetRecoilState(assessmentsState);
-  const listener = useListener();
 
   useEffect(() => {
     if(!assessments) { return; }
@@ -25,8 +23,6 @@ export default function useAssessmentsEffect() {
 
     // NOTE: Show personality results
     if(assessments.every(({completed}) => completed)) {
-      listener.trigger("Surveys.allFinished", {assessments});
-
       const nextAssessment = assessments[0];
       if(active.id === nextAssessment.id) { return; }
 

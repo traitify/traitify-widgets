@@ -1,6 +1,8 @@
 .container {
-  line-height: 500px;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
 .loading {
@@ -14,7 +16,6 @@
     border-radius: 50%;
     display: inline-block;
     height: 30px;
-    margin-left: -15px;
     position: absolute;
     width: 30px;
 

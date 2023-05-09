@@ -71,7 +71,6 @@
   min-height: 100vh;
   position: relative;
 
-  @include min-width("md") { min-height: $min-height; }
   @media (min-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) {
     aspect-ratio: 4/3;
   }

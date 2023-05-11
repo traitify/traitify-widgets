@@ -71,6 +71,7 @@
   min-height: 100vh;
   position: relative;
 
+  @media (max-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) { width: 100%; }
   @media (min-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) {
     aspect-ratio: 4/3;
   }

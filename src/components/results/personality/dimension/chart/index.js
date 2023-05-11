@@ -27,7 +27,7 @@ export default function PersonalityDimensionChart() {
       <div className={style.p}>{translate("dimension_description")}</div>
       <div className={style.horizontal}>
         {data.map(({competency, rank, type: {badge, name, id}}) => (
-          <div key={id} className={[style.row, style[rank]].join(" ")}>
+          <div key={id} className={[style.row, style[rank]].join(" ")} data-content={capitalize(rank)}>
             <div className={style.label}>
               {competency && <div>{competency.name}</div>}
               <div>{name}</div>

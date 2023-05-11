@@ -22,18 +22,22 @@ $v-cell-height: 75px;
     z-index: 1;
 
     &::after {
+      align-items: center;
       align-self: stretch;
       border-bottom-right-radius: $border-radius;
       border-top-right-radius: $border-radius;
-      content: "";
-      display: block;
+      box-sizing: border-box;
+      content: attr(data-content);
+      display: flex;
       flex-shrink: 0;
       margin-left: $buffer;
       margin-right: $h-cell-width-sm * 3;
+      padding-left: $buffer-sm;
       width: 0;
 
       @include min-width("sm") { margin-right: $h-cell-width * 3; }
       @include theme("background", "theme");
+      @include theme("color", "text-light");
     }
     &.high::after {
       margin-right: $h-cell-width-sm * 0;
@@ -124,8 +128,8 @@ $v-cell-height: 75px;
       margin-top: $v-cell-height * 3;
       padding-top: $buffer-sm;
 
-      @include theme("color", "text-light");
       @include theme("background", "theme");
+      @include theme("color", "text-light");
     }
     &:last-of-type { margin-right: 0; }
     &.high::before {

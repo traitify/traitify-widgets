@@ -10,7 +10,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
     <div
       className="p"
     >
-      The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
+      The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Medium, and 7 and up are High.
     </div>
     <div
       className="horizontal"
@@ -235,7 +235,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
     <div
       className="p"
     >
-      The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Moderate, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Moderate, and 7 and up are High.
+      The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Medium, and 7 and up are High.
     </div>
     <div
       className="horizontal"

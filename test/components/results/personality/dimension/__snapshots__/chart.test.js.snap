@@ -17,6 +17,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
     >
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -35,6 +36,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -53,6 +55,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -71,6 +74,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -89,6 +93,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -242,6 +247,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
     >
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -257,6 +263,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -272,6 +279,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -287,6 +295,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"
@@ -302,6 +311,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="row medium"
+        data-content="Medium"
       >
         <div
           className="label"

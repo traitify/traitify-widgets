@@ -116,12 +116,15 @@ $v-cell-height: 75px;
     &::before {
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
-      content: "";
+      box-sizing: border-box;
+      content: attr(data-content);
       display: block;
       height: 0;
       margin-bottom: $buffer;
       margin-top: $v-cell-height * 3;
+      padding-top: $buffer-sm;
 
+      @include theme("color", "text-light");
       @include theme("background", "theme");
     }
     &:last-of-type { margin-right: 0; }

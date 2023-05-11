@@ -127,6 +127,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Openness Badge"
@@ -145,6 +146,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Conscientiousness Badge"
@@ -163,6 +165,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Extraversion Badge"
@@ -181,6 +184,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Agreeableness Badge"
@@ -199,6 +203,7 @@ exports[`PersonalityDimensionChart renders component 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Emotional Stability Badge"
@@ -332,6 +337,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Openness Badge"
@@ -345,6 +351,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Conscientiousness Badge"
@@ -358,6 +365,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Extraversion Badge"
@@ -371,6 +379,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Agreeableness Badge"
@@ -384,6 +393,7 @@ exports[`PersonalityDimensionChart renders component without guide 1`] = `
       </div>
       <div
         className="column medium"
+        data-content="Medium"
       >
         <img
           alt="Emotional Stability Badge"

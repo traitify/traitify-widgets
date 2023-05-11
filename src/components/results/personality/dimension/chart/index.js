@@ -1,5 +1,6 @@
 import {useMemo} from "react";
 import reverse from "lib/common/array/reverse";
+import capitalize from "lib/common/string/capitalize";
 import {combine} from "lib/common/combine-data";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useGuide from "lib/hooks/use-guide";
@@ -43,7 +44,7 @@ export default function PersonalityDimensionChart() {
           {reverse(ranks).map((rank) => <div key={rank} />)}
         </div>
         {data.map(({competency, rank, type: {badge, name, id}}) => (
-          <div key={id} className={[style.column, style[rank]].join(" ")}>
+          <div key={id} className={[style.column, style[rank]].join(" ")} data-content={capitalize(rank)}>
             <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
             {competency && <div className={style.heading}>{competency.name}</div>}
             <div className={style.heading}>{name}</div>

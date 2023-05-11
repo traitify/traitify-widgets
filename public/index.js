@@ -75,12 +75,12 @@ function createWidget() {
     console.log("Results.updated");
   });
 
-  Traitify.listener.on("Surveys.allFinished", (surveys) => {
-    console.log("Surveys.allFinished", surveys);
+  Traitify.listener.on("Surveys.finished", (surveys) => {
+    console.log("Surveys.finished", surveys);
   });
 
-  Traitify.listener.on("Survey.finished", (a, b, c) => {
-    console.log("Survey.finished", a, b, c);
+  Traitify.listener.on("Survey.finished", (survey) => {
+    console.log("Survey.finished", survey);
   });
 
   Traitify.options.colorScheme = cache.get("colorScheme");

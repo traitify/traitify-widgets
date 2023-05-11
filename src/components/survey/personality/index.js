@@ -21,8 +21,7 @@ import useHttp from "lib/hooks/use-http";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {assessmentsState, personalityAssessmentQuery} from "lib/recoil";
-import useLoadedValue from "lib/hooks/use-loaded-value";
+import {personalityAssessmentQuery} from "lib/recoil";
 import Image from "./image";
 import useSlideLoader from "./use-slide-loader";
 import style from "./style.scss";
@@ -41,7 +40,6 @@ export default function PersonalitySurvey() {
   const listener = useListener();
   const refreshAssessment = useRecoilRefresher(personalityAssessmentQuery);
   const translate = useTranslate();
-  const assessments = useLoadedValue(assessmentsState);
   const {
     error,
     dispatch,
@@ -128,12 +126,8 @@ export default function PersonalitySurvey() {
         [likertScale ? "likert_response" : "response"]: response,
         time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
       }))
-    ).then((response) => {
+    ).then(() => {
       cache.remove(assessmentCacheKey);
-      listener.trigger("Survey.finished", {...state, response});
-      if(!assessments || assessments.every((a) => a.id === assessment.id || a.completed)) {
-        listener.trigger("Surveys.allFinished", {assessments: assessments || [assessment]});
-      }
       refreshAssessment();
 
       submitting.current = false;

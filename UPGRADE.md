@@ -293,8 +293,8 @@ Traitify.listener.on("Survey.updateSlide", ({response}) => {
   console.log("Survey.finished", response);
 });
 
-Traitify.listener.on("Surveys.allFinished", (surveys) => {
-  console.log("Surveys.allFinished", surveys);
+Traitify.listener.on("Surveys.finished", (surveys) => {
+  console.log("Surveys.finished", surveys);
 });
 ```
 

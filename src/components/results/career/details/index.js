@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import {useSetRecoilState} from "recoil";
 import useComponentEvents from "lib/hooks/use-component-events";
+import useFetchInlineJobs from "lib/hooks/use-fetch-inline-jobs";
+import useJobOptions from "lib/hooks/use-job-options";
 import useTranslate from "lib/hooks/use-translate";
 import {careerModalShowState, careerState} from "lib/recoil";
 import Jobs from "./jobs";
@@ -10,6 +12,8 @@ function CareerDetails({career}) {
   const setCareer = useSetRecoilState(careerState);
   const setShow = useSetRecoilState(careerModalShowState);
   const translate = useTranslate();
+  const {inline_jobs: inlineJobs, job_source: jobSource} = useJobOptions();
+  const {jobs} = useFetchInlineJobs(career.id);
 
   useComponentEvents("Career", {career});
 
@@ -64,8 +68,8 @@ function CareerDetails({career}) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
-          {career.inline_jobs && (
-            <Jobs jobs={career.jobs} jobSource={career.job_source || "Indeed"} />
+          {jobSource && inlineJobs && (
+            <Jobs jobs={jobs} jobSource={career.job_source || "Indeed"} />
           )}
         </div>
       </div>
@@ -75,6 +79,7 @@ function CareerDetails({career}) {
 
 CareerDetails.propTypes = {
   career: PropTypes.shape({
+    id: PropTypes.string,
     description: PropTypes.string.isRequired,
     experience_level: PropTypes.shape({
       id: PropTypes.number.isRequired

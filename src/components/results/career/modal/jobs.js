@@ -5,17 +5,17 @@ import {
   faSuitcase
 } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/common/icon";
-import useCareer from "lib/hooks/use-career";
+import useJobs from "lib/hooks/use-jobs";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function CareerModalJobs() {
-  const {jobs} = useCareer();
+  const {jobs} = useJobs();
   const translate = useTranslate();
 
   return (
     <div className={style.list}>
-      {jobs.map((job, index) => (
+      {jobs?.map((job, index) => (
         <div className={style.listItem} key={index}>
           <div className={style.job}>
             <div className={style.jobDetails}>

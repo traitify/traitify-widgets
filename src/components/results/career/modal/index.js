@@ -4,6 +4,9 @@ import {useRecoilState} from "recoil";
 import Icon from "components/common/icon";
 import useCareer from "lib/hooks/use-career";
 import useComponentEvents from "lib/hooks/use-component-events";
+import useFetchModalJobs from "lib/hooks/use-fetch-modal-jobs";
+import useJobOptions from "lib/hooks/use-job-options";
+import useJobs from "lib/hooks/use-jobs";
 import useTranslate from "lib/hooks/use-translate";
 import {careerModalShowState} from "lib/recoil";
 import Clubs from "./clubs";
@@ -15,8 +18,11 @@ import Resources from "./resources";
 import style from "./style.scss";
 
 export default function CareerModal() {
+  useFetchModalJobs();
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
+  const {inline_jobs: inlineJobs, job_source: jobSource} = useJobOptions();
+  const {fetching, jobs} = useJobs();
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);
   const [tabs, setTabs] = useState(null);
@@ -26,19 +32,20 @@ export default function CareerModal() {
   useEffect(() => {
     if(!career) { return; }
 
-    const {clubs, majors, inline_jobs: inlineJobs, jobs, employers, resources} = career;
+    const {clubs, majors, employers, resources} = career;
+
     const activeTabs = [
       {Component: Details, title: "Career Info"},
       clubs && clubs.length > 0 && {Component: Clubs, title: "Clubs"},
       majors && majors.length > 0 && {Component: Majors, title: "Majors"},
-      jobs && jobs.length > 0 && !inlineJobs && {Component: Jobs, title: "Jobs"},
+      jobSource && !inlineJobs && !fetching && jobs.length > 0 && {Component: Jobs, title: "Jobs"},
       employers && employers.length > 0 && {Component: Employers, title: "Employers"},
       resources && resources.length > 0 && {Component: Resources, title: "Resources"}
     ].filter(Boolean);
 
     setTabs(activeTabs);
     setActiveTab(activeTabs[0]);
-  }, [career]);
+  }, [career, fetching, jobs]);
 
   if(!activeTab) { return null; }
   if(!career) { return null; }

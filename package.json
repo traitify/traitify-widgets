@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack --node-env=production --progress",
     "build:compatibility": "webpack --env mode=browser --node-env=production --progress",
-    "build:install": "npm i --lockfile-version 1 --package-lock-only && npm run build",
+    "build:install": "npm i --package-lock-only && npm run build",
     "dev": "webpack serve --env mode=browser",
     "dev:secure": "webpack serve --env mode=browser --https",
     "lint": "eslint {src,test}",

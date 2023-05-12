@@ -3,7 +3,6 @@ import {createRef} from "react";
 import {act} from "react-test-renderer";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
-import useGlobalMock from "support/hooks/use-global-mock";
 import useWindowMock from "support/hooks/use-window-mock";
 
 describe("useFullscreen", () => {
@@ -14,7 +13,6 @@ describe("useFullscreen", () => {
       return null;
     }
 
-    useGlobalMock(global, "window");
     useWindowMock("addEventListener");
     useWindowMock("removeEventListener");
 

@@ -10,12 +10,12 @@ export default function useHighlightedCareers() {
     if(!request.records) { return; }
 
     setState({
-      moreRecords: request.records.length > 0
-        && (request.records.length % request.params.careers_per_page) === 0,
+      moreRecords: request.records.careers.length > 0
+        && (request.records.careers.length % request.params.careers_per_page) === 0,
       params: request.params,
       records: request.params.page === 1
-        ? request.records
-        : [...state.records, ...request.records]
+        ? request.records.careers
+        : [...state.records, ...request.records.careers]
     });
   }, [request.records]);
 

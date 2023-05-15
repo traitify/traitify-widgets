@@ -3,7 +3,6 @@ import {httpState, optionsState} from "./base";
 import {careerState, careersParamsState} from "./career";
 
 export const careerJobsState = atom({key: "career-modal-jobs", default: {fetching: false, jobs: []}});
-export const jobOptionsState = atom({key: "job-options", default: {}});
 
 const jobsPathState = selector({
   get: ({get}) => {
@@ -38,7 +37,7 @@ export const jobsQuery = selector({
 
 export const jobsState = selector({
   get: ({get}) => {
-    const {inline_jobs: inlineJobs, job_source: jobSource} = get(jobOptionsState);
+    const {inlineJobs, jobSource} = get(optionsState)?.career?.jobOptions || {};
     const isActive = jobSource && !inlineJobs;
 
     const loadable = isActive ? get(noWait(jobsQuery)) : {};
@@ -78,7 +77,7 @@ export const inlineJobsQuery = selectorFamily({
 });
 export const inlineJobsState = selectorFamily({
   get: (id) => ({get}) => {
-    const {inline_jobs: inlineJobs, job_source: jobSource} = get(jobOptionsState);
+    const {inlineJobs, jobSource} = get(optionsState)?.career?.jobOptions || {};
     const isActive = jobSource && inlineJobs;
 
     const loadable = isActive ? get(noWait(inlineJobsQuery(id))) : {};

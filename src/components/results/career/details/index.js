@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {useSetRecoilState} from "recoil";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useFetchInlineJobs from "lib/hooks/use-fetch-inline-jobs";
-import useJobOptions from "lib/hooks/use-job-options";
+import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {careerModalShowState, careerState} from "lib/recoil";
 import Jobs from "./jobs";
@@ -12,7 +12,7 @@ function CareerDetails({career}) {
   const setCareer = useSetRecoilState(careerState);
   const setShow = useSetRecoilState(careerModalShowState);
   const translate = useTranslate();
-  const {inline_jobs: inlineJobs, job_source: jobSource} = useJobOptions();
+  const {inlineJobs, jobSource} = useOption("career")?.jobOptions || {};
   const {jobs} = useFetchInlineJobs(career.id);
 
   useComponentEvents("Career", {career});

@@ -5,8 +5,8 @@ import Icon from "components/common/icon";
 import useCareer from "lib/hooks/use-career";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useFetchModalJobs from "lib/hooks/use-fetch-modal-jobs";
-import useJobOptions from "lib/hooks/use-job-options";
 import useJobs from "lib/hooks/use-jobs";
+import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {careerModalShowState} from "lib/recoil";
 import Clubs from "./clubs";
@@ -21,7 +21,7 @@ export default function CareerModal() {
   useFetchModalJobs();
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
-  const {inline_jobs: inlineJobs, job_source: jobSource} = useJobOptions();
+  const {inlineJobs, jobSource} = useOption("career")?.jobOptions || {};
   const {fetching, jobs} = useJobs();
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);

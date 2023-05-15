@@ -19,7 +19,7 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
   useEffect(() => { setStart(0); }, [count]);
 
   if(records.length === 0) {
-    return <div className={style.container}><FallbackComponent /></div>;
+    return <div className={style.container}>{FallbackComponent}</div>;
   }
 
   return (

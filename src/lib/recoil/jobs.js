@@ -9,9 +9,9 @@ const jobsPathState = selector({
     const career = get(careerState);
     const options = get(optionsState).career || {};
 
-    if(options.jobsPath) { return `${options.jobsPath}/${career.id}/jobs`; }
+    if(career?.id && options.jobsPath) { return options.jobsPath(career.id); }
 
-    return `/api/user/careers/${career.id}/jobs`;
+    return "";
   },
   key: "jobs-path"
 });
@@ -19,10 +19,11 @@ const jobsPathState = selector({
 export const jobsQuery = selector({
   get: async({get}) => {
     const career = get(careerState);
-    if(!career) { return {}; }
+    const path = get(jobsPathState);
+
+    if(!career || !path) { return {}; }
 
     const http = get(httpState);
-    const path = get(jobsPathState);
     const careerParams = get(careersParamsState);
 
     const params = {};
@@ -52,9 +53,9 @@ export const inlineJobsPathState = selectorFamily({
   get: (id) => ({get}) => {
     const options = get(optionsState).career || {};
 
-    if(options.jobsPath) { return `${options.jobsPath}/${id}/jobs`; }
+    if(options.jobsPath) { return options.jobsPath(id); }
 
-    return `/api/user/careers/${id}/jobs`;
+    return "";
   },
   key: "inline-jobs-path"
 });

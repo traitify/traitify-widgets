@@ -1,14 +1,12 @@
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
-import {useRecoilState} from "recoil";
+import {useRecoilState, useRecoilValue} from "recoil";
 import Icon from "components/common/icon";
 import useCareer from "lib/hooks/use-career";
 import useComponentEvents from "lib/hooks/use-component-events";
-import useFetchModalJobs from "lib/hooks/use-fetch-modal-jobs";
-import useJobs from "lib/hooks/use-jobs";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {careerModalShowState} from "lib/recoil";
+import {careerModalShowState, jobsState} from "lib/recoil";
 import Clubs from "./clubs";
 import Details from "./details";
 import Jobs from "./jobs";
@@ -18,11 +16,10 @@ import Resources from "./resources";
 import style from "./style.scss";
 
 export default function CareerModal() {
-  useFetchModalJobs();
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
   const {inlineJobs, jobSource} = useOption("career")?.jobOptions || {};
-  const {fetching, jobs} = useJobs();
+  const {fetching, records: jobs} = useRecoilValue(jobsState);
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);
   const [tabs, setTabs] = useState(null);

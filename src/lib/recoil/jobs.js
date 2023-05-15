@@ -1,8 +1,6 @@
-import {atom, noWait, selector, selectorFamily} from "recoil";
+import {noWait, selector, selectorFamily} from "recoil";
 import {httpState, optionsState} from "./base";
 import {careerState, careersParamsState} from "./career";
-
-export const careerJobsState = atom({key: "career-modal-jobs", default: {fetching: false, jobs: []}});
 
 const jobsPathState = selector({
   get: ({get}) => {
@@ -27,7 +25,7 @@ export const jobsQuery = selector({
     const careerParams = get(careersParamsState);
 
     const params = {};
-    careerParams.location && (params.location = careerParams.location);
+    if(careerParams.location) { params.location = careerParams.location; }
 
     const jobs = await http.get(path, params);
 
@@ -39,12 +37,12 @@ export const jobsQuery = selector({
 export const jobsState = selector({
   get: ({get}) => {
     const {inlineJobs, jobSource} = get(optionsState)?.career?.jobOptions || {};
-    const isActive = jobSource && !inlineJobs;
+    if(!jobSource || inlineJobs) { return {fetching: false, records: []}; }
 
-    const loadable = isActive ? get(noWait(jobsQuery)) : {};
+    const loadable = get(noWait(jobsQuery));
     const {jobs} = loadable.state === "hasValue" ? loadable.contents : [];
     const fetching = loadable.state === "loading";
-    return {fetching, jobs: jobs || []};
+    return {fetching, records: jobs || []};
   },
   key: "jobs"
 });
@@ -68,7 +66,7 @@ export const inlineJobsQuery = selectorFamily({
     const careerParams = get(careersParamsState);
 
     const params = {};
-    careerParams.location && (params.location = careerParams.location);
+    if(careerParams.location) { params.location = careerParams.location; }
 
     const jobs = await http.get(path, params);
 
@@ -79,12 +77,12 @@ export const inlineJobsQuery = selectorFamily({
 export const inlineJobsState = selectorFamily({
   get: (id) => ({get}) => {
     const {inlineJobs, jobSource} = get(optionsState)?.career?.jobOptions || {};
-    const isActive = jobSource && inlineJobs;
+    if(!jobSource || !inlineJobs) { return {fetching: false, records: []}; }
 
-    const loadable = isActive ? get(noWait(inlineJobsQuery(id))) : {};
+    const loadable = get(noWait(inlineJobsQuery(id)));
     const {jobs} = loadable.state === "hasValue" ? loadable.contents : [];
     const fetching = loadable.state === "loading";
-    return {fetching, jobs: jobs || []};
+    return {fetching, records: jobs || []};
   },
   key: "inline-jobs"
 });

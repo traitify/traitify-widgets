@@ -5,12 +5,13 @@ import {
   faSuitcase
 } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/common/icon";
-import useJobs from "lib/hooks/use-jobs";
+import {useRecoilValue} from "recoil";
+import {jobsState} from "lib/recoil";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function CareerModalJobs() {
-  const {jobs} = useJobs();
+  const {records: jobs} = useRecoilValue(jobsState);
   const translate = useTranslate();
 
   return (

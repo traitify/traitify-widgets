@@ -5,7 +5,7 @@ import Fallback from "./fallback";
 import Job from "./job";
 
 function Jobs({jobs, jobSource}) {
-  const FallbackComponent = useMemo(() => <Fallback jobSource={jobSource} />, [jobSource]);
+  const FallbackComponent = useMemo(() => (() => <Fallback jobSource={jobSource} />, [jobSource]));
 
   return (
     <Carousel

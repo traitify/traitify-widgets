@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import {
   faChevronLeft,
   faMaximize,
@@ -241,7 +242,7 @@ export default function PersonalitySurvey() {
 
   return (
     <div className={[style.container, likertScale && style.likertScale].filter(Boolean).join(" ")} ref={element}>
-      <div className={style.caption} ref={caption} tabIndex="-1">{content.caption}</div>
+      <div className={style.caption} ref={caption} tabIndex="0">{content.caption}</div>
       <div className={style.image} ref={image}>{content.image}</div>
       <div className={style.buttons}>
         {buttons.map(({key, response}) => (

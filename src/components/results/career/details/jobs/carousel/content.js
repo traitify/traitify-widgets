@@ -39,7 +39,7 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
 
 CarouselContent.propTypes = {
   Component: PropTypes.elementType.isRequired,
-  FallbackComponent: PropTypes.elementType.isRequired,
+  FallbackComponent: PropTypes.element.isRequired,
   count: PropTypes.number.isRequired,
   records: PropTypes.arrayOf(PropTypes.shape({})).isRequired
 };

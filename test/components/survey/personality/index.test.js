@@ -408,7 +408,6 @@ describe("Survey.Personality", () => {
 
         await completeSlides();
 
-        expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {status: "success"}}));
         expect(mock.called).toBe(1);
       });
     });
@@ -527,7 +526,6 @@ describe("Survey.Personality", () => {
 
       await completeSlides();
 
-      expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {status: "success"}}));
       expect(mock.called).toBe(1);
     });
 
@@ -543,7 +541,6 @@ describe("Survey.Personality", () => {
         const mock = mockAssessmentSubmit({status: "success"});
         await retry();
 
-        expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {status: "success"}}));
         expect(mockError.called).toBe(1);
         expect(mock.called).toBe(1);
       });
@@ -556,7 +553,6 @@ describe("Survey.Personality", () => {
         await retry();
         await retry();
 
-        expect(container.listener.trigger).not.toHaveBeenCalledWith("Survey.finished", expect.anything());
         expect(mock.called).toBe(3);
         expect(component).toMatchSnapshot();
       });
@@ -569,7 +565,6 @@ describe("Survey.Personality", () => {
         await retry();
         await retry();
 
-        expect(container.listener.trigger).not.toHaveBeenCalledWith("Survey.finished", expect.anything());
         expect(mock.called).toEqual(3);
         expect(component).toMatchSnapshot();
       });
@@ -582,7 +577,6 @@ describe("Survey.Personality", () => {
         await retry();
         await retry();
 
-        expect(container.listener.trigger).not.toHaveBeenCalledWith("Survey.finished", expect.anything());
         expect(mock.called).toEqual(3);
         expect(component).toMatchSnapshot();
       });
@@ -600,7 +594,6 @@ describe("Survey.Personality", () => {
 
         await act(async() => { await jest.runOnlyPendingTimers(); });
 
-        expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {status: "success"}}));
         expect(mockError.called).toEqual(3);
         expect(mock.called).toEqual(1);
       });

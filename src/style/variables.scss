@@ -13,7 +13,7 @@ $breakpoints: (
 
 // Paradox likes multiples of 8
 $border-radius: 16px;
-$border-radius-sm: 4px;
+$border-radius-sm: 8px;
 $border-width: 1px;
 $border-width-lg: 3px;
 $border-width-xl: 5px;
@@ -21,7 +21,7 @@ $buffer: 16px; // Default padding/margin
 $buffer-sm: 8px;
 $buffer-lg: 24px;
 $buffer-heading: $buffer;
-$buffer-section: $buffer * 3;
+$buffer-section: $buffer * 2;
 $font-size: 16px;
 $font-size-sm: 12px;
 $font-size-lg: 20px;

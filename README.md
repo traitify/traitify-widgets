@@ -117,16 +117,20 @@ export default function Personality({id}) {
 
 ## Events
 
-Most components trigger an initialized and updated event. Some components offer additional events. Event handlers must be set before the render command, or they will not be called.
+- Most components trigger an initialized and updated event
+- Event handlers must be set before the render command or they will not be called
+- Some events may fire multiple times, once for each target specified (such as the Survey and Results)
 
-The widgets are capable of showing multiple kinds of surveys to users in order to satisfy benchmark requirements, to handle the event when all surveys have been finished you should use this event:
+The widgets are capable of showing multiple kinds of surveys to users in order to satisfy benchmark requirements. To handle the event when all surveys have been finished you should use this event:
+
 ```
-Traitify.listener.on("Surveys.allFinished", (surveys) => {
-  console.log("Surveys.allFinished", surveys);
+Traitify.listener.on("Surveys.finished", (surveys) => {
+  console.log("Surveys.finished", surveys);
 });
 ```
 
-To handle the event when each survey has been finished, maybe to record total  progress in a backend system:
+To handle the event when each survey has been finished, maybe to record total progress in a backend system:
+
 ```
 Traitify.listener.on("Survey.finished", ({response}) => {
   console.log("Survey.finished", response);

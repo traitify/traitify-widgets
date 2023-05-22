@@ -208,6 +208,11 @@ OR
 Traitify.options.perspective = "thirdPerson";
 ```
 
+### Render cognitive assessment without timer
+```
+Traitify.options.survey.disableTimeLimit = true;
+```
+
 ## Reports
 
 ### Big Five Hiring Manager Report

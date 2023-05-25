@@ -15,6 +15,7 @@ import Practice from "./practice";
 import style from "./style.scss";
 
 function Instructions({
+  assessmentID,
   captureLearningDisability,
   initialLearningDisability,
   onStart,
@@ -35,7 +36,7 @@ function Instructions({
   useEffect(() => { if(minimal) { setStep(practiceExamples.length + 2); } }, [minimal]);
 
   const example = practiceExamples[step - 1];
-  const instructionOptions = {minimal, timeTrial, timed, translate, type};
+  const instructionOptions = {id: assessmentID, minimal, timeTrial, timed, translate, type};
 
   if(example) {
     const {button, heading, text, video} = typeof example === "function" ? example(instructionOptions) : example;
@@ -85,6 +86,7 @@ Instructions.defaultProps = {
   options: {}
 };
 Instructions.propTypes = {
+  assessmentID: PropTypes.string.isRequired,
   captureLearningDisability: PropTypes.bool,
   initialLearningDisability: PropTypes.bool,
   onStart: PropTypes.func.isRequired,

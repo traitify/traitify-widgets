@@ -168,6 +168,7 @@ export default function Cognitive() {
   if(questionIndex === null) {
     return (
       <Instructions
+        assessmentID={assessment.id}
         captureLearningDisability={options.captureLearningDisability}
         initialLearningDisability={options.initialLearningDisability}
         onStart={onStart}

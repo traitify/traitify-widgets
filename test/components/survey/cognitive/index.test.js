@@ -169,7 +169,6 @@ describe("Survey.Cognitive", () => {
         assessmentCacheKey,
         expect.objectContaining({completed: true, id: assessment.id})
       );
-      expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {success: true}}));
       expect(mock.called).toBe(1);
     });
 
@@ -185,7 +184,6 @@ describe("Survey.Cognitive", () => {
       await act(async() => { jest.runOnlyPendingTimers(); });
 
       expect(console.warn).toHaveBeenCalled();
-      expect(container.listener.trigger).toHaveBeenCalledWith("Survey.finished", expect.objectContaining({response: {success: true}}));
       expect(mockError.called).toBe(1);
       expect(mock.called).toBe(1);
     });

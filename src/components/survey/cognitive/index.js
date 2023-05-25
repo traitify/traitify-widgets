@@ -10,10 +10,8 @@ import useDidUpdate from "lib/hooks/use-did-update";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useOption from "lib/hooks/use-option";
-import useListener from "lib/hooks/use-listener";
 import useTranslate from "lib/hooks/use-translate";
-import {assessmentsState, cognitiveAssessmentQuery} from "lib/recoil";
-import useLoadedValue from "lib/hooks/use-loaded-value";
+import {cognitiveAssessmentQuery} from "lib/recoil";
 import Instructions from "./instructions";
 import Slide from "./slide";
 import Timer from "./timer";
@@ -28,10 +26,8 @@ export default function Cognitive() {
   const graphQL = useGraphql();
   const http = useHttp();
   const options = useOption("survey") || {};
-  const listener = useListener();
   const refreshAssessment = useRecoilRefresher(cognitiveAssessmentQuery);
   const translate = useTranslate();
-  const assessments = useLoadedValue(assessmentsState);
 
   const [initialQuestions, setInitialQuestions] = useState([]);
   const {dispatch, questions} = useQuestionsLoader(initialQuestions);
@@ -95,10 +91,6 @@ export default function Cognitive() {
     http.post(graphQL.cognitive.path, {query, variables}).then(({data, errors}) => {
       if(!errors && data.completeCognitiveTest.success) {
         cache.set(assessmentCacheKey, {...assessment, completed: true});
-        listener.trigger("Survey.finished", {...state, response: data.completeCognitiveTest});
-        if(!assessments || assessments.every((a) => a.id === assessment.id || a.completed)) {
-          listener.trigger("Surveys.allFinished", {assessments: assessments || [assessment]});
-        }
         refreshAssessment();
 
         submitting.current = false;

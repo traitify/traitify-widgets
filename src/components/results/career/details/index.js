@@ -11,7 +11,7 @@ function CareerDetails({career}) {
   const setCareer = useSetRecoilState(careerState);
   const setShow = useSetRecoilState(careerModalShowState);
   const translate = useTranslate();
-  const {inlineJobs, jobSource} = useOption("career")?.jobOptions || {};
+  const {inlineJobs, jobSource} = useOption("career")?.jobs || {};
   const {records: jobs} = useRecoilValue(inlineJobsState(career.id));
 
   useComponentEvents("Career", {career});

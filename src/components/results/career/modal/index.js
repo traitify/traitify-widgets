@@ -18,7 +18,7 @@ import style from "./style.scss";
 export default function CareerModal() {
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
-  const {inlineJobs, jobSource} = useOption("career")?.jobOptions || {};
+  const {inlineJobs, jobSource} = useOption("career")?.jobs || {};
   const {fetching, records: jobs} = useRecoilValue(jobsState);
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);

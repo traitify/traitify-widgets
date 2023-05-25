@@ -36,7 +36,7 @@ export const jobsQuery = selector({
 
 export const jobsState = selector({
   get: ({get}) => {
-    const {inlineJobs, jobSource} = get(optionsState)?.career?.jobOptions || {};
+    const {inlineJobs, jobSource} = get(optionsState)?.career?.jobs || {};
     if(!jobSource || inlineJobs) { return {fetching: false, records: []}; }
 
     const loadable = get(noWait(jobsQuery));
@@ -76,7 +76,7 @@ export const inlineJobsQuery = selectorFamily({
 });
 export const inlineJobsState = selectorFamily({
   get: (id) => ({get}) => {
-    const {inlineJobs, jobSource} = get(optionsState)?.career?.jobOptions || {};
+    const {inlineJobs, jobSource} = get(optionsState)?.career?.jobs || {};
     if(!jobSource || !inlineJobs) { return {fetching: false, records: []}; }
 
     const loadable = get(noWait(inlineJobsQuery(id)));

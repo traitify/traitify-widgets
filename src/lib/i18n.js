@@ -33,7 +33,22 @@ export default class I18n {
     });
   }
   translate = (locale, key, options) => {
-    const result = this.data[locale.toLowerCase()][key];
+    const keys = key.split(".");
+
+    const traverse = (arr) => {
+      let result = this.data[locale.toLowerCase()][arr[0]];
+
+      arr.splice(1).every((current) => {
+        if(!result) { return false; }
+        result = result[current];
+
+        return true;
+      });
+
+      return result;
+    };
+
+    const result = keys.length > 1 ? traverse(keys) : this.data[locale.toLowerCase()][key];
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);

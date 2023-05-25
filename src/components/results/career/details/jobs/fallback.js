@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import DangerousHTML from "components/common/dangerous-html";
+import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function Fallback({jobSource}) {
+function Fallback() {
+  const {jobSource} = useOption("career")?.jobs || {};
   const translate = useTranslate();
   const jobSourceURL = {
     Indeed: "https://www.indeed.com/",

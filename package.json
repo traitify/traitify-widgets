@@ -1,15 +1,17 @@
 {
   "name": "traitify-widgets",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
   "files": [
     "build"
   ],
+  "publishConfig": {"tag": "2.x"},
   "scripts": {
     "build": "webpack --node-env=production --progress",
     "build:compatibility": "webpack --env mode=compatibility --node-env=production --progress",
+    "build:install": "npm i --package-lock-only && npm run build",
     "dev": "webpack serve --env mode=browser",
     "dev:compatibility": "webpack serve --env mode=compatibility",
     "dev:secure": "webpack serve --env mode=browser --https",
@@ -20,6 +22,7 @@
     "prebuild:compatibility": "mkdirp build",
     "prestart": "npm run build",
     "pretest": "npm run lint",
+    "publish:alpha": "npm run build:install && npm publish --tag alpha",
     "test": "jest --config test/jest.config.js --coverage",
     "test:watch": "jest --config test/jest.config.js --watch",
     "test:updateSnap": "jest --config test/jest.config.js --updateSnapshot"

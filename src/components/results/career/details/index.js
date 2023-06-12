@@ -11,7 +11,7 @@ function CareerDetails({career}) {
   const setCareer = useSetRecoilState(careerState);
   const setShow = useSetRecoilState(careerModalShowState);
   const translate = useTranslate();
-  const {inlineJobs, jobSource} = useOption("career")?.jobs || {};
+  const {inline, source} = useOption("career")?.jobs || {};
   const {records: jobs} = useRecoilValue(inlineJobsState(career.id));
 
   useComponentEvents("Career", {career});
@@ -67,8 +67,8 @@ function CareerDetails({career}) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
-          {jobSource && inlineJobs && (
-            <Jobs jobs={jobs} jobSource={career.job_source || "Indeed"} />
+          {source && inline && (
+            <Jobs jobs={jobs} />
           )}
         </div>
       </div>

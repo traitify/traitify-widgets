@@ -18,7 +18,7 @@ import style from "./style.scss";
 export default function CareerModal() {
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
-  const {inlineJobs, jobSource} = useOption("career")?.jobs || {};
+  const {inline, source} = useOption("career")?.jobs || {};
   const {fetching, records: jobs} = useRecoilValue(jobsState);
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -35,7 +35,7 @@ export default function CareerModal() {
       {Component: Details, title: "Career Info"},
       clubs && clubs.length > 0 && {Component: Clubs, title: "Clubs"},
       majors && majors.length > 0 && {Component: Majors, title: "Majors"},
-      jobSource && !inlineJobs && !fetching && jobs.length > 0 && {Component: Jobs, title: "Jobs"},
+      source && !inline && !fetching && jobs.length > 0 && {Component: Jobs, title: "Jobs"},
       employers && employers.length > 0 && {Component: Employers, title: "Employers"},
       resources && resources.length > 0 && {Component: Resources, title: "Resources"}
     ].filter(Boolean);

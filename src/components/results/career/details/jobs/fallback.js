@@ -1,11 +1,10 @@
-import PropTypes from "prop-types";
 import DangerousHTML from "components/common/dangerous-html";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 function Fallback() {
-  const {jobSource} = useOption("career")?.jobs || {};
+  const {source} = useOption("career")?.jobs || {};
   const translate = useTranslate();
   const jobSourceURL = {
     Indeed: "https://www.indeed.com/",
@@ -13,20 +12,18 @@ function Fallback() {
     MyNextMove: "https://www.mynextmove.org"
   };
 
-  if(!(jobSource in jobSourceURL)) { return null; }
+  if(!(source in jobSourceURL)) { return null; }
 
   return (
     <div className={`${style.job} ${style.empty}`}>
-      <DangerousHTML html={translate("no_jobs", {job_source: jobSource})} />
+      <DangerousHTML html={translate("no_jobs", {job_source: source})} />
       <div>
-        <a className={style.discoverJobsButton} href={jobSourceURL[jobSource]}>
+        <a className={style.discoverJobsButton} href={jobSourceURL[source]}>
           {translate("discover_jobs")}
         </a>
       </div>
     </div>
   );
 }
-
-Fallback.propTypes = {jobSource: PropTypes.string.isRequired};
 
 export default Fallback;

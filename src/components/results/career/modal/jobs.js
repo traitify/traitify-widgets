@@ -14,9 +14,11 @@ export default function CareerModalJobs() {
   const {records: jobs} = useRecoilValue(jobsState);
   const translate = useTranslate();
 
+  if(!jobs) { return null; }
+
   return (
     <div className={style.list}>
-      {jobs?.map((job, index) => (
+      {jobs.map((job, index) => (
         <div className={style.listItem} key={index}>
           <div className={style.job}>
             <div className={style.jobDetails}>

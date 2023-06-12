@@ -1,16 +1,13 @@
 import PropTypes from "prop-types";
-import {useMemo} from "react";
 import Carousel from "./carousel";
 import Fallback from "./fallback";
 import Job from "./job";
 
-function Jobs({jobs, jobSource}) {
-  const FallbackComponent = useMemo(() => <Fallback />, [jobSource]);
-
+function Jobs({jobs}) {
   return (
     <Carousel
       Component={Job}
-      FallbackComponent={FallbackComponent}
+      FallbackComponent={Fallback}
       records={jobs}
     />
   );
@@ -24,8 +21,7 @@ Jobs.propTypes = {
       location: PropTypes.string,
       url: PropTypes.string.isRequired
     })
-  ).isRequired,
-  jobSource: PropTypes.string.isRequired
+  ).isRequired
 };
 
 export default Jobs;

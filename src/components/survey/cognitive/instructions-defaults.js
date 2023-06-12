@@ -24,15 +24,24 @@ export const defaultExplanations = defaultAnswers.map((_, index) => (
   })
 ));
 
-export const defaultInstruction = ({minimal, timeTrial, timed, translate}) => ({
-  button: translate("cognitive_instructions_step_4_button"),
-  heading: translate("cognitive_instructions_step_4_heading"),
-  text: translate(
-    timeTrial
-      ? `cognitive_instructions_trial_step_4_${timed ? "timed" : "untimed"}${minimal ? "_minimal" : ""}_html`
-      : "cognitive_instructions_step_4_html"
-  )
-});
+export const defaultInstruction = ({id, minimal, timeTrial, timed, translate}) => {
+  const getInstructions = () => {
+    if(!id) { return "cognitive_instructions_step_4_html"; }
+
+    const specificInstructions = translate(`cognitive_id_specific_instructions.${id}`);
+    return specificInstructions ? `cognitive_id_specific_instructions.${id}` : "cognitive_instructions_step_4_html";
+  };
+
+  return {
+    button: translate("cognitive_instructions_step_4_button"),
+    heading: translate("cognitive_instructions_step_4_heading"),
+    text: translate(
+      timeTrial
+        ? `cognitive_instructions_trial_step_4_${timed ? "timed" : "untimed"}${minimal ? "_minimal" : ""}_html`
+        : getInstructions()
+    )
+  };
+};
 
 export const defaultQuestions = defaultAnswers.map((answer, index) => ({
   correctAnswerID: `r-${index}-${answer}`,

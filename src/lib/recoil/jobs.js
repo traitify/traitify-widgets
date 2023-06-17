@@ -1,91 +1,69 @@
 import {noWait, selector, selectorFamily} from "recoil";
 import {httpState, optionsState} from "./base";
-import {careerState, careersParamsState} from "./career";
+import {careerState, careersParamsState, currentCareerIDState} from "./career";
 
-const jobsPathState = selector({
-  get: ({get}) => {
-    const career = get(careerState);
-    const options = get(optionsState).career || {};
+const jobsPathState = selectorFamily({
+  get: (id) => ({get}) => {
+    const {path} = get(optionsState).career?.jobs || {};
+    if(!path) { return null; }
+    if(typeof path === "string") { return path; }
 
-    if(career?.id && options.jobsPath) { return options.jobsPath(career.id); }
-
-    return null;
+    return path({career: get(careerState(id))});
   },
   key: "jobs-path"
 });
 
-export const jobsQuery = selector({
-  get: async({get}) => {
-    const career = get(careerState);
-    const path = get(jobsPathState);
-
-    if(!career || !path) { return {}; }
+export const jobsQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    const path = get(jobsPathState(id));
+    if(!path) { return null; }
 
     const http = get(httpState);
-    const careerParams = get(careersParamsState);
-
+    const {location} = get(careersParamsState) || {};
     const params = {};
-    if(careerParams.location) { params.location = careerParams.location; }
+    if(location) { params.location = location; }
 
-    const jobs = await http.get(path, params);
+    const records = await http.get(path, params);
 
-    return jobs;
+    return {params, records};
   },
   key: "jobs-request"
 });
 
-export const jobsState = selector({
-  get: ({get}) => {
-    const {inline, source} = get(optionsState)?.career?.jobs || {};
-    if(!source || inline) { return {fetching: false, records: []}; }
+const createHideState = () => ({fetching: false, hide: true, records: []});
 
-    const loadable = get(noWait(jobsQuery));
-    const {jobs} = loadable.state === "hasValue" ? loadable.contents : [];
+export const jobsState = selectorFamily({
+  get: (id) => ({get}) => {
+    const loadable = get(noWait(jobsQuery(id)));
+    const request = loadable.state === "hasValue" ? loadable.contents : {};
     const fetching = loadable.state === "loading";
-    return {fetching, records: jobs || []};
+    if(request) { return {fetching, ...request}; }
+
+    const career = get(careerState(id)) || {};
+    if(!Object.hasOwn(career, "jobs")) { return createHideState(); }
+
+    return {fetching: false, records: career.jobs};
   },
   key: "jobs"
 });
 
-export const inlineJobsPathState = selectorFamily({
-  get: (id) => ({get}) => {
-    const options = get(optionsState).career || {};
-
-    if(options.jobsPath) { return options.jobsPath(id); }
-
-    return null;
-  },
-  key: "inline-jobs-path"
-});
-
-export const inlineJobsQuery = selectorFamily({
-  get: (id) => async({get}) => {
-    const path = get(inlineJobsPathState(id));
-
-    if(!path) return {};
-
-    const http = get(httpState);
-    const careerParams = get(careersParamsState);
-
-    const params = {};
-    if(careerParams.location) { params.location = careerParams.location; }
-
-    const jobs = await http.get(path, params);
-
-    return jobs;
-  },
-  key: "inline-jobs-request"
-});
-
 export const inlineJobsState = selectorFamily({
   get: (id) => ({get}) => {
-    const {inline, source} = get(optionsState)?.career?.jobs || {};
-    if(!source || !inline) { return {fetching: false, records: []}; }
+    const {inline} = get(optionsState).career?.jobs || {};
+    if(!inline) { return createHideState(); }
 
-    const loadable = get(noWait(inlineJobsQuery(id)));
-    const {jobs} = loadable.state === "hasValue" ? loadable.contents : [];
-    const fetching = loadable.state === "loading";
-    return {fetching, records: jobs || []};
+    return get(noWait(jobsState(id)));
   },
   key: "inline-jobs"
+});
+
+export const modalJobsState = selector({
+  get: ({get}) => {
+    const id = get(currentCareerIDState);
+    const {inline} = get(optionsState).career?.jobs || {};
+    if(!id || inline) { return createHideState(); }
+
+    return get(noWait(jobsState(id)));
+  },
+  key: "modal-jobs"
 });

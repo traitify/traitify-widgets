@@ -15,11 +15,11 @@ import Practice from "./practice";
 import style from "./style.scss";
 
 function Instructions({
-  surveyID,
   captureLearningDisability,
   initialLearningDisability,
   onStart,
   options,
+  surveyID,
   translate
 }) {
   const [width] = useWindowSize();
@@ -86,7 +86,6 @@ Instructions.defaultProps = {
   options: {}
 };
 Instructions.propTypes = {
-  surveyID: PropTypes.string.isRequired,
   captureLearningDisability: PropTypes.bool,
   initialLearningDisability: PropTypes.bool,
   onStart: PropTypes.func.isRequired,
@@ -141,6 +140,7 @@ Instructions.propTypes = {
       timed: PropTypes.bool
     })
   }),
+  surveyID: PropTypes.string.isRequired,
   translate: PropTypes.func.isRequired
 };
 

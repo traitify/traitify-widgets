@@ -249,6 +249,11 @@
     }
   }
 
+  .discoverJobsButton {
+    @extend .applyNowButton;
+    margin-top: $buffer-sm;
+  }
+
   .jobDetails {
     display: flex;
 

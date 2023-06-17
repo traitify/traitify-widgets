@@ -17,6 +17,7 @@ describe("Instructions", () => {
   beforeEach(() => {
     props = {
       onStart: jest.fn().mockName("onStart"),
+      surveyID: "xyz",
       translate: jest.fn().mockName("translate").mockImplementation((value) => value)
     };
   });

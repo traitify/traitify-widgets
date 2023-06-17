@@ -4,9 +4,8 @@ import {useRecoilState, useRecoilValue} from "recoil";
 import Icon from "components/common/icon";
 import useCareer from "lib/hooks/use-career";
 import useComponentEvents from "lib/hooks/use-component-events";
-import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {careerModalShowState, jobsState} from "lib/recoil";
+import {careerModalShowState, modalJobsState} from "lib/recoil";
 import Clubs from "./clubs";
 import Details from "./details";
 import Jobs from "./jobs";
@@ -18,8 +17,7 @@ import style from "./style.scss";
 export default function CareerModal() {
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
-  const {inline, source} = useOption("career")?.jobs || {};
-  const {fetching, records: jobs} = useRecoilValue(jobsState);
+  const {hide: hideJobs} = useRecoilValue(modalJobsState);
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);
   const [tabs, setTabs] = useState(null);
@@ -35,14 +33,14 @@ export default function CareerModal() {
       {Component: Details, title: "Career Info"},
       clubs && clubs.length > 0 && {Component: Clubs, title: "Clubs"},
       majors && majors.length > 0 && {Component: Majors, title: "Majors"},
-      source && !inline && !fetching && jobs.length > 0 && {Component: Jobs, title: "Jobs"},
+      !hideJobs && {Component: Jobs, title: "Jobs"},
       employers && employers.length > 0 && {Component: Employers, title: "Employers"},
       resources && resources.length > 0 && {Component: Resources, title: "Resources"}
     ].filter(Boolean);
 
     setTabs(activeTabs);
     setActiveTab(activeTabs[0]);
-  }, [career, fetching, jobs]);
+  }, [career, hideJobs]);
 
   if(!activeTab) { return null; }
   if(!career) { return null; }

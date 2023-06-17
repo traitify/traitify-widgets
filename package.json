@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "3.0.0-alpha.38-beta.97",
+  "version": "3.0.3-alpha.0",
   "description": "Traitiy Widgets",
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
@@ -22,7 +22,7 @@
     "pretest": "npm run lint",
     "publish:alpha": "npm run build:install && npm publish --tag alpha",
     "publish:beta": "npm run build:install && npm publish --tag beta",
-    "publish:official": "npm run test && build:install && npm publish",
+    "publish:latest": "npm run test && build:install && npm publish",
     "test": "jest --config test/jest.config.js --coverage",
     "test:watch": "jest --config test/jest.config.js --watch"
   },

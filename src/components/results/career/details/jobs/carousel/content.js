@@ -7,6 +7,13 @@ import style from "./style.scss";
 function CarouselContent({Component, FallbackComponent, count, records}) {
   const [start, setStart] = useState(0);
   const end = start + count;
+
+  useEffect(() => { setStart(0); }, [count]);
+
+  if(records.length === 0) {
+    return <div className={style.container}><FallbackComponent /></div>;
+  }
+
   const onBack = () => {
     const nextStart = start - count;
 
@@ -15,12 +22,6 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
   const onNext = () => {
     setStart(end + count >= records.length ? records.length - count : end);
   };
-
-  useEffect(() => { setStart(0); }, [count]);
-
-  if(records.length === 0) {
-    return <div className={style.container}><FallbackComponent /></div>;
-  }
 
   return (
     <div className={style.container}>
@@ -39,7 +40,7 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
 
 CarouselContent.propTypes = {
   Component: PropTypes.elementType.isRequired,
-  FallbackComponent: PropTypes.element.isRequired,
+  FallbackComponent: PropTypes.elementType.isRequired,
   count: PropTypes.number.isRequired,
   records: PropTypes.arrayOf(PropTypes.shape({})).isRequired
 };

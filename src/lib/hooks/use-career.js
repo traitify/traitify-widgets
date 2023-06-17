@@ -1,6 +1,8 @@
 import {useRecoilValue} from "recoil";
-import {careerState} from "lib/recoil";
+import {careerState, currentCareerIDState} from "lib/recoil";
 
-export default function useCareer() {
-  return useRecoilValue(careerState);
+export default function useCareer(id) {
+  const currentID = useRecoilValue(currentCareerIDState);
+
+  return useRecoilValue(careerState(id || currentID));
 }

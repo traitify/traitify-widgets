@@ -1,23 +1,20 @@
 import PropTypes from "prop-types";
-import {useSetRecoilState, useRecoilValue} from "recoil";
+import {useSetRecoilState} from "recoil";
 import useComponentEvents from "lib/hooks/use-component-events";
-import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {careerModalShowState, careerState, inlineJobsState} from "lib/recoil";
+import {careerModalShowState, currentCareerIDState} from "lib/recoil";
 import Jobs from "./jobs";
 import style from "./style.scss";
 
 function CareerDetails({career}) {
-  const setCareer = useSetRecoilState(careerState);
+  const setCareerID = useSetRecoilState(currentCareerIDState);
   const setShow = useSetRecoilState(careerModalShowState);
   const translate = useTranslate();
-  const {inline, source} = useOption("career")?.jobs || {};
-  const {records: jobs} = useRecoilValue(inlineJobsState(career.id));
 
   useComponentEvents("Career", {career});
 
   const openModal = () => {
-    setCareer(career);
+    setCareerID(career.id);
     setShow(true);
   };
 
@@ -67,9 +64,7 @@ function CareerDetails({career}) {
               <button type="button" onClick={openModal}>Learn More</button>
             </div>
           </div>
-          {source && inline && (
-            <Jobs jobs={jobs} />
-          )}
+          <Jobs career={career} />
         </div>
       </div>
     </div>
@@ -78,11 +73,11 @@ function CareerDetails({career}) {
 
 CareerDetails.propTypes = {
   career: PropTypes.shape({
-    id: PropTypes.string,
     description: PropTypes.string.isRequired,
     experience_level: PropTypes.shape({
       id: PropTypes.number.isRequired
     }).isRequired,
+    id: PropTypes.string.isRequired,
     inline_jobs: PropTypes.bool,
     jobs: PropTypes.arrayOf(
       PropTypes.shape({
@@ -92,7 +87,6 @@ CareerDetails.propTypes = {
         url: PropTypes.string
       })
     ),
-    job_source: PropTypes.string,
     picture: PropTypes.string.isRequired,
     score: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired

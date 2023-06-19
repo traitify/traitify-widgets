@@ -23,9 +23,14 @@ export const jobsQuery = selectorFamily({
     const params = {};
     if(location) { params.location = location; }
 
-    const records = await http.get(path, params);
+    const response = await http.get(path, params);
+    const request = {params};
+    if(!response) { return request; }
+    if(Array.isArray(response)) { return {...request, records: response}; }
+    if(Object.hasOwn(response, "records")) { return {...request, records: response.records}; }
+    if(Object.hasOwn(response, "jobs")) { return {...request, records: response.jobs}; }
 
-    return {params, records};
+    return request;
   },
   key: "jobs-request"
 });

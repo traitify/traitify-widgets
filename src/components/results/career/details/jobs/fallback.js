@@ -18,7 +18,7 @@ export default function Fallback() {
     <div className={`${style.job} ${style.empty}`}>
       <DangerousHTML html={translate("no_jobs", {job_source: source})} />
       <div>
-        <a className={style.discoverJobsButton} href={jobSources[source]}>
+        <a className={style.discoverJobsButton} href={jobSources[source]} rel="noreferrer" target="_blank">
           {translate("discover_jobs")}
         </a>
       </div>

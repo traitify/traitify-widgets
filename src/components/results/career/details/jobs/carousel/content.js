@@ -10,7 +10,7 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
 
   useEffect(() => { setStart(0); }, [count]);
 
-  if(records.length === 0) {
+  if(!records || records.length === 0) {
     return <div className={style.container}><FallbackComponent /></div>;
   }
 
@@ -38,11 +38,12 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
   );
 }
 
+CarouselContent.defaultProps = {records: null};
 CarouselContent.propTypes = {
   Component: PropTypes.elementType.isRequired,
   FallbackComponent: PropTypes.elementType.isRequired,
   count: PropTypes.number.isRequired,
-  records: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+  records: PropTypes.arrayOf(PropTypes.shape({}).isRequired)
 };
 
 export default CarouselContent;

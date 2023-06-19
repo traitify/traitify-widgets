@@ -28,7 +28,6 @@ export default function CareerModal() {
     if(!career) { return; }
 
     const {clubs, majors, employers, resources} = career;
-
     const activeTabs = [
       {Component: Details, title: "Career Info"},
       clubs && clubs.length > 0 && {Component: Clubs, title: "Clubs"},

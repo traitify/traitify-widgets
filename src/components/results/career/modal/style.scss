@@ -249,11 +249,6 @@
     }
   }
 
-  .discoverJobsButton {
-    @extend .applyNowButton;
-    margin-top: $buffer-sm;
-  }
-
   .jobDetails {
     display: flex;
 
@@ -269,4 +264,16 @@
     @include theme("color", "theme");
     margin-right: $buffer;
   }
+}
+
+.discoverJobsButton {
+  border: 1px solid;
+  border-radius: $border-radius-sm;
+  display: inline-block;
+  margin-top: $buffer-sm;
+  text-decoration: none;
+  padding: $buffer-sm $buffer;
+
+  @include theme("border-color", "border");
+  @include theme("color", "theme");
 }

@@ -25,12 +25,12 @@ export default function CareerModalJobs() {
   const translate = useTranslate();
 
   if(fetching) { return <div className={style.list}>{translate("loading")}</div>; }
-  if(records.length === 0) {
+  if(!records || records.length === 0) {
     return (
       <div className={style.list}>
         <DangerousHTML html={translate("no_jobs", {job_source: source})} />
         <div>
-          <a className={style.discoverJobsButton} href={jobSources[source]}>
+          <a className={style.discoverJobsButton} href={jobSources[source]} rel="noreferrer" target="_blank">
             {translate("discover_jobs")}
           </a>
         </div>

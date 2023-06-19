@@ -1,256 +1,141 @@
 @import "style/helpers";
 
-// TODO: Normalize style
 .container {
   @extend %container;
 
-  display: block;
-  margin-bottom: $buffer;
-
   border: $border-width solid;
-  border-radius: $border-radius-sm * 2.5;
-  width: 100%;
+  border-radius: $border-radius;
+  margin-bottom: $buffer;
+  padding: $buffer;
+
   @include theme("border-color","border-light");
+}
+
+.details {
+  align-items: flex-start;
+  display: flex;
+  gap: $buffer;
 
   img {
-    margin-right: 20px;
-    border-radius: $border-radius-sm * 2.5;
+    border-radius: $border-radius;
+    height: auto;
     width: 100px;
-    height: 100px;
   }
-  &[type="button"] {
-    border: $border-width solid $-white;
-    border-radius: $border-radius-sm * 2.5;
-    width: 100%
+  > div {
+    display: flex;
+    gap: $buffer-sm;
+    flex-direction: column;
+    min-width: 0; // NOTE: Allows title to use text-overflow
   }
-}
-
-.content {
-  @include min-width(xs) {
-    padding: 0 $buffer $buffer;
-  }
-  text-align: left;
-}
-
-.title {
-  font-weight: 500;
-  text-align: left;
-  margin-bottom: $buffer-sm;
-
-  font-size: $font-size-sm * 1.17;
-
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block; /* Fallback for non-webkit */
-  display: -webkit-box;
-
-  @include min-width(md) {
-    font-size: $font-size;
-  }
-}
-
-.description {
-  line-height: 1.25;
-  text-align: left;
-
-  font-size: $font-size-sm;
-
-  line-height: 1.35;
+  .description {
+    font-size: $font-size-sm;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  }
+  .title {
+    font-weight: 500;
+    -webkit-line-clamp: 1;
+  }
+  .description, .title {
+    display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: block; /* Fallback for non-webkit */
-    display: -webkit-box;
-
-  @include min-width(md) {
-    font-size: $font-size-sm * 1.17;
+    -webkit-box-orient: vertical;
   }
 }
 
-.subtitle {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: 0;
+.divider {
+  border: $border-width solid;
+  margin: $buffer 0;
 
-  font-size: $font-size-sm;
-
-  @include min-width(xs) {
-    margin-top: initial;
-  }
-  @include min-width(md) {
-    font-size: $font-size;
-  }
+  @include theme("border-color","border-light");
 }
 
-.subtitleFull {
-  @extend .subtitle;
-  width: 100%;
+.grid {
+  display: grid;
+  gap: $buffer;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include min-width("md") {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .detail {
+    display: flex;
+    gap: $buffer-sm;
+    flex-direction: column;
+    font-size: $font-size-sm;
+
+    @include min-width("md") { font-size: $font-size; }
+  }
+  .learnMore {
+    align-self: center;
+    text-align: center;
+
+    button {
+      border-radius: $border-radius-sm;
+      padding: $buffer-sm;
+
+      @include min-width("md") { padding: $buffer; }
+      @include theme("color", "text-light");
+      @include theme("background-color", "theme");
+    }
+  }
+  .subtitle {
+    font-weight: bold;
+    font-size: $font-size-sm;
+
+    @include min-width("md") { font-size: $font-size; }
+  }
 }
 
 .experience {
-  padding: 0;
-  margin: 0;
-  
-  li {
+  text-align: center;
+
+  @include min-width("md") { text-align: left; }
+
+  .level {
     display: inline-block;
-    background: $-gray-hover;
-    border: $border-width * 2 solid $-gray-hover;
-    padding: $buffer-sm * .75;
-    margin-right: $buffer-sm * .25;
-    border-radius: $border-radius-sm;
-  }
-  li.active {
-    background: $-blue;
-    border: $border-width * 2 solid $-blue;
-    border-radius: $border-radius-sm;
+    border-radius: 50%;
+    height: $font-size;
+    margin-right: $buffer-sm * 0.25;
+    width: $font-size;
+
+    @include theme("background-color", "inactive");
+    @include theme("border-color", "inactive");
+
+    &.active {
+      @include theme("background-color", "theme");
+      @include theme("border-color", "theme");
+    }
   }
 }
 
-.education {
-  margin: 0;
-  font-size: $font-size-sm;
-  @include min-width(md) {
-    font-size: $font-size-sm;
-  }
-}
+.match {
+  @include min-width("md") { width: 20%; }
 
-.matchRate {
-  width: 80%;
-  height: 15px;
-  background: $-gray-hover;
-  margin-top: $buffer-sm * .25;
-  border-radius: $border-radius-sm;
-  span {
-    display: block;
-    background: #89e2cd;
-    height: 15px;
-    border-radius: $border-radius-sm;
-  }
-  span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
-    background: #fbd288;
-  }
-  span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
-    background: #fda7ab;
-  }
-}
-
-.matchRatePercent {
-  font-style: normal;
-  font-weight: 300;
-  font-size: $font-size-sm;
-  @include min-width(md) {
-    font-size: $font-size;
-  }
-}
-
-.upperBox {
-  display: flex;
-  width: 100%;
-  padding: $buffer-sm * 1.25 0px;
-
-  @include min-width(xs) {
-    width: 50%;
-    padding-right: $buffer-sm * 1.25
-  }
-
-  .innerContent{ 
-    width: 100%;
+  .matchText {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include min-width(xs) {
-      width: 50%;
-      align-items: start;
-    }
-  }
-}
-
-.lowerBox {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: $buffer-sm * 1.25 0px;
-
-  @include min-width(xs) {
-    width: 50%;
-    padding-left: $buffer-sm * 1.25;
+    justify-content: space-between;
   }
 
-  div {
-    @include min-width(xs) {
-      width: 100%;
-    }
-  }
-
-  .innerContent{ 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include min-width(xs) {
-      width: 50%;
-    }
-  }
-
-  .learnMore {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .matchRate {
     border-radius: $border-radius-sm;
-  
-    @include min-width(xs) {
-      width: 50% !important;
-      justify-content: flex-end;
+    height: $font-size;
+
+    @include theme("background-color", "inactive");
+
+    span {
+      background: #89e2cd;
+      border-radius: $border-radius-sm;
+      display: block;
+      height: $font-size;
     }
-    button {
-      padding: $buffer-sm * 1.25 10%;
-      color: $-white;
-      background-color: $-blue;
-      border-radius: $border-radius-sm !important;
-      white-space: nowrap;
+    span[data-match-rate^="6"], span[data-match-rate^="5"], span[data-match-rate^="4"] {
+      background: #fbd288;
+    }
+    span[data-match-rate^="3"], span[data-match-rate^="2"], span[data-match-rate^="1"] {
+      background: #fda7ab;
     }
   }
-}
-
-.grayDivider {
-  color: #555555;
-  margin: $buffer-sm * 1.25 $buffer;
-  line-height: inherit;
-  clear: both;
-  user-select: none;
-  break-after: page;
-  border: 1px solid #e8e8ec;
-}
-
-.education { 
-  width: 100%;
-  padding-left: 10%;
-
-  @include min-width(xs) {
-    padding-left: initial;
-    width: initial;
-  }
-}
-
-.careerContainer {
-  display: flex;
-  margin: $buffer * 1.25;
-}
-
-.careerDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.statsContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  flex-wrap: wrap;
 }

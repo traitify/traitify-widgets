@@ -28,9 +28,12 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
       <button className={style.back} disabled={start <= 0} onClick={onBack} type="button">
         <Icon icon={faCaretLeft} />
       </button>
-      {records.slice(start, end).map((record, index) => (
-        <Component key={index} record={record} /> /* eslint-disable-line react/no-array-index-key */
-      ))}
+      <div className={style.content}>
+        {records.slice(start, end).map((record, index) => (
+          /* eslint-disable-next-line react/no-array-index-key */
+          <Component key={index} record={record} />
+        ))}
+      </div>
       <button className={style.next} disabled={end >= records.length} onClick={onNext} type="button">
         <Icon icon={faCaretRight} />
       </button>

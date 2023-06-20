@@ -8,20 +8,18 @@ function Job({record}) {
   const translate = useTranslate();
 
   return (
-    <div className={style.job}>
-      <div>
-        <div className={style.title}>{record.title}</div>
-        {record.company && <div className={style.company}>{record.company}</div>}
-        {record.location && (
-          <div className={style.location}>
-            <Icon className={style.jobIcon} icon={faLocationDot} />
-            {record.location}
-          </div>
-        )}
-      </div>
+    <div className={style.container}>
+      <div className={style.title}>{record.title}</div>
+      {record.company && <div className={style.company}>{record.company}</div>}
+      {record.location && (
+        <div className={style.location}>
+          <Icon className={style.icon} icon={faLocationDot} />
+          {record.location}
+        </div>
+      )}
       {record.url && (
         <div>
-          <a className={style.applyNowButton} href={record.url}>
+          <a className={style.applyNowButton} href={record.url} rel="noreferrer" target="_blank">
             {translate("apply_now")}
           </a>
         </div>

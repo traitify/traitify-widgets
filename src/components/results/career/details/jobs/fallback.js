@@ -15,7 +15,7 @@ export default function Fallback() {
   const translate = useTranslate();
 
   return (
-    <div className={`${style.job} ${style.empty}`}>
+    <div className={`${style.container} ${style.empty}`}>
       <DangerousHTML html={translate("no_jobs", {job_source: source})} />
       <div>
         <a className={style.discoverJobsButton} href={jobSources[source]} rel="noreferrer" target="_blank">

@@ -1,30 +1,16 @@
 @import "style/helpers";
 
-// TODO: Does this even need display or width?
-.carousel {
-  display: flex;
-  width: 100%;
-}
 .container {
+  align-items: stretch;
   display: flex;
-  // TODO: Space between? seems wrong
-  justify-content: space-between;
-  // TODO: Overflow seems wrong too
-  overflow: hidden;
-  overflow-y: hidden;
-  padding: $buffer;
+  gap: $buffer;
+  margin-top: $buffer;
 
-  @include min-width("xs") { padding: $buffer-sm 0; }
-
-  .back { margin: 5px 10px 5px 0px; }
-  .next { margin: 5px 0px 5px 10px; }
   .back, .next {
     align-items: center;
     display: flex;
-    border: 1px solid;
+    border: $border-width solid;
     border-radius: $border-radius-sm;
-    // TODO: Height?
-    height: 170px;
     padding: $buffer-sm * 0.5;
 
     @include theme("border-color", "border");
@@ -34,4 +20,11 @@
       @include theme("color", "inactive");
     }
   }
+}
+.content {
+  display: flex;
+  flex: 1;
+  gap: $buffer;
+  justify-content: space-between;
+  overflow-x: hidden;
 }

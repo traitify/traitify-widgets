@@ -67,14 +67,21 @@
   flex-direction: column;
   height: 100vh;
   margin: 0 auto;
+  max-height: 100vh;
   max-width: 100%;
-  min-height: 100vh;
   position: relative;
 
-  @media (max-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) { width: 100%; }
-  @media (min-aspect-ratio: 4/3) and (min-width: $breakpoint-xs) {
+  @include min-width("xs") {
     aspect-ratio: 4/3;
+    height: auto;
   }
+  @include min-width("sm") { max-width: $breakpoint-xs; }
+  @include min-width("md") { max-width: $breakpoint-sm; }
+  @include min-width("lg") { max-width: $breakpoint-md; }
+  @include min-width("xl") { max-width: $breakpoint-lg; }
+  @include min-width("2xl") { max-width: $breakpoint-xl; }
+  @include min-width("3xl") { max-width: $breakpoint-2xl; }
+  @include min-width("4xl") { max-width: $breakpoint-3xl; }
   &:fullscreen {
     bottom: 0;
     position: fixed;

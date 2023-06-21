@@ -20,8 +20,6 @@
 
   margin-bottom: $buffer-lg;
 
-  @include min-width(lg) { margin-right: $buffer; }
-
   .label {
     display: block;
     margin-bottom: $buffer-sm;

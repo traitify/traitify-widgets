@@ -43,6 +43,7 @@ cache.set = (name, value) => {
 
 function createWidget() {
   const surveyType = cache.get("surveyType");
+  const targets = {"Default": "#default"};
 
   if(surveyType === "benchmark") {
     const benchmarkID = cache.get("benchmarkID");
@@ -62,10 +63,20 @@ function createWidget() {
 
     Traitify.options.assessmentID = assessmentID;
     Traitify.options.surveyType = surveyType;
-  }
 
-  const targets = {"Default": "#default"};
-  if(cache.get("deckID")?.includes("career")) { targets["Career"] = "#target-1"; }
+    if(cache.get("deckID")?.includes("career")) {
+      targets["Career"] = "#target-1";
+
+      Traitify.options.career = {
+        experienceLevels: [3, 4, 5],
+        jobs: {
+          inline: true,
+          // path: "/asdf",
+          source: "Indeed"
+        }
+      };
+    }
+  }
 
   Traitify.listener.on("Results.initialized", () => {
     console.log("Results.initialized");

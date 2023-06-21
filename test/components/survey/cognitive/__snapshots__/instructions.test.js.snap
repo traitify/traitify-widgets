@@ -115,7 +115,7 @@ exports[`Instructions renders custom examples 5`] = `
     <p
       className="text traitify--markdown"
     >
-      cognitive_instructions_step_4_html
+      cognitive_id_specific_instructions.xyz
     </p>
     <button
       className="traitify--response-button btnBlue"
@@ -303,7 +303,7 @@ exports[`Instructions renders step 4 1`] = `
     <p
       className="text traitify--markdown"
     >
-      cognitive_instructions_step_4_html
+      cognitive_id_specific_instructions.xyz
     </p>
     <button
       className="traitify--response-button btnBlue"

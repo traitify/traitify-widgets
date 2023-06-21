@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import {useLayoutEffect, useRef, useState} from "react";
 import Content from "./content";
-import style from "./style.scss";
+
+const gap = 16;
+const buttonWidth = 18; // Border * 2 + Padding * 2
+const containerBuffer = 34; // Border * 2 + Padding * 2
 
 function Carousel({recordWidth, ...props}) {
   const ref = useRef(null);
@@ -9,13 +12,16 @@ function Carousel({recordWidth, ...props}) {
 
   useLayoutEffect(() => {
     const calculateCount = () => {
-      const buttonWidth = 44;
       const {offsetLeft, offsetWidth: width} = ref.current;
       const {offsetWidth: parentWidth} = ref.current.offsetParent;
       const widthEstimate = parentWidth - offsetLeft;
-      const containerWidth = width >= widthEstimate ? width : Math.floor(widthEstimate);
+      const containerWidth = width >= widthEstimate ? Math.floor(widthEstimate) : width;
+      const buttonSpace = buttonWidth * 2 + gap;
+      const containerSpace = containerWidth - containerBuffer;
+      const recordSpace = recordWidth + gap;
+      const countEstimate = Math.floor((containerSpace - buttonSpace) / recordSpace);
 
-      setCount(Math.floor((containerWidth - (buttonWidth * 2)) / recordWidth));
+      setCount(countEstimate === 0 ? 1 : countEstimate);
     };
     calculateCount();
 
@@ -25,7 +31,7 @@ function Carousel({recordWidth, ...props}) {
   }, []);
 
   return (
-    <div className={style.carousel} ref={ref}>
+    <div ref={ref}>
       <Content count={count} {...props} />
     </div>
   );

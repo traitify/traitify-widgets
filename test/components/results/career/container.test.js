@@ -74,14 +74,14 @@ describe("Results.CareerContainer", () => {
 
   it("modal opens", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.findAllByText("Learn More")[0].props.onClick(); });
+    await act(async() => { component.findAllByText("Learn More")[0].props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("modal shows clubs", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.findAllByText("Learn More")[0].props.onClick(); });
+    await act(async() => { component.findAllByText("Learn More")[0].props.onClick(); });
     act(() => { component.findByText("Clubs").props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();
@@ -89,7 +89,7 @@ describe("Results.CareerContainer", () => {
 
   it("modal shows employers", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.findAllByText("Learn More")[0].props.onClick(); });
+    await act(async() => { component.findAllByText("Learn More")[0].props.onClick(); });
     act(() => { component.findByText("Employers").props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();
@@ -97,7 +97,7 @@ describe("Results.CareerContainer", () => {
 
   it("modal shows majors", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.findAllByText("Learn More")[0].props.onClick(); });
+    await act(async() => { component.findAllByText("Learn More")[0].props.onClick(); });
     act(() => { component.findByText("Clubs").props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();
@@ -105,7 +105,7 @@ describe("Results.CareerContainer", () => {
 
   it("modal shows jobs", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.findAllByText("Learn More")[0].props.onClick(); });
+    await act(async() => { component.findAllByText("Learn More")[0].props.onClick(); });
     act(() => { component.findByText("Jobs").props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();
@@ -113,7 +113,7 @@ describe("Results.CareerContainer", () => {
 
   it("modal shows resources", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.findAllByText("Learn More")[0].props.onClick(); });
+    await act(async() => { component.findAllByText("Learn More")[0].props.onClick(); });
     act(() => { component.findByText("Resources").props.onClick(); });
 
     expect(component.tree).toMatchSnapshot();

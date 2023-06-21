@@ -1,52 +1,42 @@
 @import "style/helpers";
 
 .applyNowButton {
-  border: 1px solid;
-  @include theme("border-color", "border");
-  border-radius: $border-radius-sm !important;
-  @include theme("color", "theme");
+  border: $border-width solid;
+  border-radius: $border-radius-sm;
+  display: block;
   margin-top: $buffer-sm;
   padding: $buffer-sm $buffer;
+  text-align: center;
+  text-decoration: none;
   white-space: nowrap;
 
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  width: 100%;
-
-  @include min-width(xs) {
-    margin-top: 0;
-  }
+  @include theme("border-color", "border");
+  @include theme("color", "theme");
 }
-
-.discoverJobsButton {
-  @extend .applyNowButton;
-  margin-top: $buffer-sm;
-}
-
-.jobIcon {
-  color: gray;
-  margin-right: $buffer-sm;
-}
-
-.job {
+.discoverJobsButton { @extend .applyNowButton; }
+.container {
+  border: $border-width solid;
+  border-radius: $border-radius;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 5px 10px 5px 0px;
-  border: $border-width solid;
-  @include theme("border-color", "border-light");
-  border-radius: $border-radius-sm * 2.5;
-  padding: $buffer;
   height: 170px;
+  justify-content: space-between;
+  margin: auto;
+  padding: $buffer;
   width: 180px;
 
+  @include theme("border-color", "border-light");
+
   &.empty {
-    width: 250px;
     height: auto;
+    width: 250px;
+  }
+  .icon {
+    margin-right: $buffer-sm;
+
+    @include theme("color", "inactive");
   }
 }
-
 .title {
   @include clamp(1);
   font-weight: 500;

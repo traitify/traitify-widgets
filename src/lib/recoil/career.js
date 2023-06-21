@@ -1,4 +1,5 @@
-import {atom, noWait, selector} from "recoil";
+import {atom, atomFamily, noWait, selector, selectorFamily} from "recoil";
+import except from "lib/common/object/except";
 import {
   personalityAssessmentIDState,
   httpState,
@@ -6,7 +7,7 @@ import {
   optionsState
 } from "./base";
 
-export const careerState = atom({key: "career", default: null});
+export const currentCareerIDState = atom({key: "current-career-id", default: null});
 export const careerModalShowState = atom({key: "career-modal-show", default: false});
 export const careersParamsState = atom({
   default: selector({
@@ -47,6 +48,8 @@ export const careersQuery = selector({
     const http = get(httpState);
     const params = get(careersParamsState);
     const path = get(careersPathState);
+    if(!path) { return {}; }
+
     const records = await http.get(path, params);
 
     return {params, records};
@@ -78,7 +81,7 @@ export const highlightedCareersQuery = selector({
   get: async({get}) => {
     const options = get(optionsState).career || {};
     const path = options.highlightedPath;
-    if(!path) { return null; }
+    if(!path) { return {}; }
 
     const http = get(httpState);
     const params = get(highlightedCareersParamsState);
@@ -92,10 +95,36 @@ export const highlightedCareersQuery = selector({
 export const highlightedCareersState = selector({
   get: ({get}) => {
     const loadable = get(noWait(highlightedCareersQuery));
-    const {params, records} = loadable.state === "hasValue" ? (loadable.contents || {}) : {};
+    const {params, records} = loadable.state === "hasValue" ? loadable.contents : {};
     const fetching = loadable.state === "loading";
 
     return {fetching, params, records};
   },
   key: "highlighted-careers"
+});
+
+// NOTE: Allows setting a career from an external source but defaults to our career stores
+export const careerState = atomFamily({
+  default: selectorFamily({
+    get: (id) => ({get}) => {
+      let records = get(careersState).records || [];
+      let record = records.find(({career: {id: recordID}}) => id === recordID);
+      if(record) { return {...record.career, ...except(record, "career")}; }
+
+      records = get(highlightedCareersState).records || [];
+      record = records.find(({career: {id: recordID}}) => id === recordID);
+      if(record) { return {...record.career, ...except(record, "career")}; }
+    },
+    key: "career/default"
+  }),
+  key: "career"
+});
+
+export const currentCareerState = selector({
+  get: ({get}) => {
+    const id = get(currentCareerIDState);
+
+    return get(careerState(id));
+  },
+  key: "current-career"
 });

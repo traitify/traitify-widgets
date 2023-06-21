@@ -1,31 +1,25 @@
 import PropTypes from "prop-types";
-import {useMemo} from "react";
+import {useRecoilValue} from "recoil";
+import {inlineJobsState} from "lib/recoil";
 import Carousel from "./carousel";
 import Fallback from "./fallback";
 import Job from "./job";
 
-function Jobs({jobs, jobSource}) {
-  const FallbackComponent = useMemo(() => <Fallback jobSource={jobSource} />, [jobSource]);
+function Jobs({career}) {
+  const {hide, records} = useRecoilValue(inlineJobsState(career.id));
+  if(hide) { return null; }
 
   return (
     <Carousel
       Component={Job}
-      FallbackComponent={FallbackComponent}
-      records={jobs}
+      FallbackComponent={Fallback}
+      records={records}
     />
   );
 }
 
 Jobs.propTypes = {
-  jobs: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      company: PropTypes.string,
-      location: PropTypes.string,
-      url: PropTypes.string.isRequired
-    })
-  ).isRequired,
-  jobSource: PropTypes.string.isRequired
+  career: PropTypes.shape({id: PropTypes.string.isRequired}).isRequired
 };
 
 export default Jobs;

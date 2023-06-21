@@ -7,6 +7,13 @@ import style from "./style.scss";
 function CarouselContent({Component, FallbackComponent, count, records}) {
   const [start, setStart] = useState(0);
   const end = start + count;
+
+  useEffect(() => { setStart(0); }, [count]);
+
+  if(!records || records.length === 0) {
+    return <div className={style.container}><FallbackComponent /></div>;
+  }
+
   const onBack = () => {
     const nextStart = start - count;
 
@@ -16,20 +23,17 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
     setStart(end + count >= records.length ? records.length - count : end);
   };
 
-  if(records.length === 0) {
-    return <div className={style.container}><FallbackComponent /></div>;
-  }
-
-  useEffect(() => { setStart(0); }, [count]);
-
   return (
     <div className={style.container}>
       <button className={style.back} disabled={start <= 0} onClick={onBack} type="button">
         <Icon icon={faCaretLeft} />
       </button>
-      {records.slice(start, end).map((record, index) => (
-        <Component key={index} record={record} /> /* eslint-disable-line react/no-array-index-key */
-      ))}
+      <div className={style.content}>
+        {records.slice(start, end).map((record, index) => (
+          /* eslint-disable-next-line react/no-array-index-key */
+          <Component key={index} record={record} />
+        ))}
+      </div>
       <button className={style.next} disabled={end >= records.length} onClick={onNext} type="button">
         <Icon icon={faCaretRight} />
       </button>
@@ -37,11 +41,12 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
   );
 }
 
+CarouselContent.defaultProps = {records: null};
 CarouselContent.propTypes = {
   Component: PropTypes.elementType.isRequired,
   FallbackComponent: PropTypes.elementType.isRequired,
   count: PropTypes.number.isRequired,
-  records: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+  records: PropTypes.arrayOf(PropTypes.shape({}).isRequired)
 };
 
 export default CarouselContent;

@@ -1,11 +1,11 @@
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
-import {useRecoilState} from "recoil";
+import {useRecoilState, useRecoilValue} from "recoil";
 import Icon from "components/common/icon";
 import useCareer from "lib/hooks/use-career";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useTranslate from "lib/hooks/use-translate";
-import {careerModalShowState} from "lib/recoil";
+import {careerModalShowState, modalJobsState} from "lib/recoil";
 import Clubs from "./clubs";
 import Details from "./details";
 import Jobs from "./jobs";
@@ -17,6 +17,7 @@ import style from "./style.scss";
 export default function CareerModal() {
   const [activeTab, setActiveTab] = useState(null);
   const career = useCareer();
+  const {hide: hideJobs} = useRecoilValue(modalJobsState);
   const [show, setShow] = useRecoilState(careerModalShowState);
   const [showDropdown, setShowDropdown] = useState(false);
   const [tabs, setTabs] = useState(null);
@@ -26,19 +27,19 @@ export default function CareerModal() {
   useEffect(() => {
     if(!career) { return; }
 
-    const {clubs, majors, inline_jobs: inlineJobs, jobs, employers, resources} = career;
+    const {clubs, majors, employers, resources} = career;
     const activeTabs = [
       {Component: Details, title: "Career Info"},
       clubs && clubs.length > 0 && {Component: Clubs, title: "Clubs"},
       majors && majors.length > 0 && {Component: Majors, title: "Majors"},
-      jobs && jobs.length > 0 && !inlineJobs && {Component: Jobs, title: "Jobs"},
+      !hideJobs && {Component: Jobs, title: "Jobs"},
       employers && employers.length > 0 && {Component: Employers, title: "Employers"},
       resources && resources.length > 0 && {Component: Resources, title: "Resources"}
     ].filter(Boolean);
 
     setTabs(activeTabs);
     setActiveTab(activeTabs[0]);
-  }, [career]);
+  }, [career, hideJobs]);
 
   if(!activeTab) { return null; }
   if(!career) { return null; }

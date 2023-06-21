@@ -74,6 +74,16 @@ Traitify.options.career.experienceLevels = [4, 5];
 Traitify.options.career.perPage = 10;
 ```
 
+#### Get jobs for your careers
+
+```
+Traitify.options.career.jobs = {
+  inline: true, // Show the jobs in the list view, otherwise show them in the modal
+  path: ({career}) => career && `/my-jobs-endpoint?careerID=${career.id}`, // Can be a string or function
+  source: "Indeed" // If no jobs are found, a link displays to Indeed, Monster, or MyNextMove
+};
+```
+
 ### Render multiple components in specific elements
 
 ```

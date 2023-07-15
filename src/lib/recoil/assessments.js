@@ -28,12 +28,17 @@ const assessmentsDefaultQuery = selector({
     if(response.errors) { console.warn("xavier", response.errors); } /* eslint-disable-line no-console */
 
     const assessments = [];
-    const {cognitive, personality} = response.data.recommendation.prerequisites || {};
+    const {
+      cognitive,
+      externalAssessment,
+      personality
+    } = response.data.recommendation.prerequisites || {};
 
     if(personality && personality.assessmentId) {
       assessments.push({
         completed: personality.status === "COMPLETE",
         id: personality.assessmentId,
+        name: "Personality Assessment",
         type: "personality"
       });
     }
@@ -42,7 +47,20 @@ const assessmentsDefaultQuery = selector({
       assessments.push({
         completed: cognitive.status === "COMPLETE",
         id: cognitive.testId,
+        name: "Cognitive Assessment",
         type: "cognitive"
+      });
+    }
+
+    if(externalAssessment) {
+      externalAssessment.forEach((assessment) => {
+        assessments.push({
+          completed: assessment.status === "COMPLETE",
+          id: assessment.assessmentId,
+          link: assessment.link,
+          name: `${assessment.vendor} Assessment`,
+          type: "external"
+        });
       });
     }
 

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      Your Application Assessments
+    </div>
+    <div
+      className="p"
+    >
+      As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment and either be returned to this page if you have multiple assessments to complete or taken to the next stage of the process.
+    </div>
+    <div
+      className="assessment inactive"
+    >
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          Personality Assessment
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
+    <div
+      className="assessment inactive"
+    >
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          Cognitive Assessment
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
+    <div
+      className="assessment"
+    >
+      <div>
+        <span
+          className="text"
+        >
+          Emmersion Assessment
+        </span>
+      </div>
+      <a
+        href="https://external.traitify.com/external-assessment-id"
+      >
+        Start Assessment
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Status renders nothing if assessments not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Status renders nothing if no assessments 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

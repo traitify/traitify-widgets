@@ -18,6 +18,13 @@ export const recommendation = `
           surveyId
           testId
         }
+        externalAssessment {
+          assessmentId
+          externalAssessmentId
+          link
+          status
+          vendor
+        }
         personality {
           assessmentId
           status

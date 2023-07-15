@@ -53,6 +53,9 @@ function createWidget() {
     if(!benchmarkID && !packageID) { return; }
     if(!profileID) { return; }
 
+    targets["Status"] = "#target-0";
+
+    Traitify.listener.on("Survey.start", (x) => console.log(x));
     Traitify.options.benchmarkID = benchmarkID;
     Traitify.options.packageID = packageID;
     Traitify.options.profileID = profileID;
@@ -230,6 +233,7 @@ function setupTargets() {
   const group = createElement({className: "group"});
   const total = Object.keys(allTargets).length;
 
+  group.appendChild(createElement({id: "target-0"}));
   group.appendChild(createElement({id: "default"}));
 
   Array(total).fill().map((_, index) => index + 1).forEach((index) => {

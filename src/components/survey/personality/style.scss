@@ -30,14 +30,8 @@
       padding: $buffer;
       max-width: 150px;
 
-      &:first-child {
-        border-radius: $border-radius-sm;
-        border-radius: $border-radius-sm;
-      }
-      &:last-child {
-        border-radius: $border-radius-sm;
-        border-radius: $border-radius-sm;
-      }
+      &:first-child { border-radius: $border-radius-sm; }
+      &:last-child { border-radius: $border-radius-sm; }
     }
     @include theme("color", "text-light");
     &:focus {

@@ -12,7 +12,7 @@ export default function PersonalityDimensionList() {
   const disableChart = useDisabledComponent("PersonalityDimensionChart");
   const disableDetails = useDisabledComponent("PersonalityDimensionDetails");
   const showHeaders = useOption("showHeaders");
-  const results = useResults();
+  const results = useResults({type: "personality"});
   const translate = useTranslate();
 
   useComponentEvents("PersonalityDimensions");

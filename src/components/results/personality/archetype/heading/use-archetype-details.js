@@ -6,7 +6,7 @@ import useResults from "lib/hooks/use-results";
 
 export default function useArchetypeDetails() {
   const perspective = useOption("perspective");
-  const results = useResults();
+  const results = useResults({type: "personality"});
 
   return useMemo(() => {
     const personality = dig(results, "archetype");

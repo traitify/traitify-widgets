@@ -12,7 +12,7 @@ import useResults from "lib/hooks/use-results";
 export default function Results() {
   const active = useActive();
   const report = useOption("report");
-  const results = useResults();
+  const results = useResults({type: "personality"});
 
   useComponentEvents("Results");
 

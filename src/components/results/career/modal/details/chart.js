@@ -6,7 +6,7 @@ import style from "./style.scss";
 
 export default function CareerModalChart() {
   const career = useCareer();
-  const results = useResults();
+  const results = useResults({type: "personality"});
   const options = useMemo(() => {
     if(!career) { return; }
     if(!results) { return; }

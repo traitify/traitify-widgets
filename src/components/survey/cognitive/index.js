@@ -19,7 +19,7 @@ import {useQuestionsLoader} from "./helpers";
 import style from "./style.scss";
 
 export default function Cognitive() {
-  const assessment = useAssessment("cognitive");
+  const assessment = useAssessment({type: "cognitive"});
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});

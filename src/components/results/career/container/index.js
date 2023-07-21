@@ -6,7 +6,7 @@ import CareerModal from "../modal";
 import style from "./style.scss";
 
 export default function CareerContainer() {
-  const results = useResults();
+  const results = useResults({type: "personality"});
 
   useComponentEvents("Careers");
 

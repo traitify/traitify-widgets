@@ -1,6 +1,5 @@
+import useAssessments from "lib/hooks/use-assessments";
 import useComponentEvents from "lib/hooks/use-component-events";
-import useLoadedValue from "lib/hooks/use-loaded-value";
-import {assessmentsState} from "lib/recoil";
 import Assessment from "./assessment";
 import style from "./style.scss";
 
@@ -10,7 +9,7 @@ const translations = {
 };
 
 export default function Status() {
-  const assessments = useLoadedValue(assessmentsState);
+  const assessments = useAssessments();
 
   useComponentEvents("Status", {assessments});
 

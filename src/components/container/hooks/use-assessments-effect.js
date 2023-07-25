@@ -24,8 +24,6 @@ export default function useAssessmentsEffect() {
 
     // NOTE: Show personality results
     if(assessments.every(({completed}) => completed)) {
-      listener.trigger("Surveys.finished", {assessments});
-
       const nextAssessment = assessments[0];
       if(active.id === nextAssessment.id) { return; }
 
@@ -59,4 +57,12 @@ export default function useAssessmentsEffect() {
       setAssessments(updatedAssessments);
     }
   }, [active, assessments]);
+
+  useEffect(() => {
+    if(!assessments) { return; }
+    if(assessments.length === 0) { return; }
+    if(assessments.some(({completed}) => !completed)) { return; }
+
+    listener.trigger("Surveys.finished", {assessments});
+  }, [assessments]);
 }

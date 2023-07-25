@@ -31,5 +31,5 @@ export default function useAssessmentEffect() {
     if(!active.completed) { return; }
 
     listener.trigger("Survey.finished", {assessment: active});
-  }, [active]);
+  }, [active?.id, active?.completed]);
 }

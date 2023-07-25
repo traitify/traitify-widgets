@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {useSetRecoilState} from "recoil";
 import Icon from "components/common/icon";
 import get from "lib/common/object/get";
-import slice from "lib/common/object/slice";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import {activeState} from "lib/recoil";
@@ -25,7 +24,7 @@ function Button({assessment}) {
 
   const start = () => {
     listener.trigger("Survey.start", {assessment});
-    setActive(slice(assessment, ["completed", "id", "type"]));
+    setActive({...assessment});
   };
 
   return <button onClick={start} type="button">Start Assessment</button>;

@@ -4,7 +4,6 @@ import useListener from "lib/hooks/use-listener";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import {activeState, assessmentsState} from "lib/recoil";
 import mutable from "lib/common/object/mutable";
-import slice from "lib/common/object/slice";
 
 export default function useAssessmentsEffect() {
   const [active, setActive] = useRecoilState(activeState);
@@ -19,7 +18,7 @@ export default function useAssessmentsEffect() {
     if(!active) {
       const nextAssessment = assessments.find(({completed}) => !completed) || assessments[0];
 
-      setActive(slice(nextAssessment, ["completed", "id", "type"]));
+      setActive({...nextAssessment});
       return;
     }
 
@@ -30,7 +29,7 @@ export default function useAssessmentsEffect() {
       const nextAssessment = assessments[0];
       if(active.id === nextAssessment.id) { return; }
 
-      setActive(slice(nextAssessment, ["completed", "id", "type"]));
+      setActive({...nextAssessment});
       return;
     }
 
@@ -43,23 +42,21 @@ export default function useAssessmentsEffect() {
       const nextAssessment = assessments.find(({completed}) => !completed);
       if(!nextAssessment) { return; }
 
-      setActive(slice(nextAssessment, ["completed", "id", "type"]));
+      setActive({...nextAssessment});
       return;
     }
 
-    // NOTE: Sync completed state to assessments
-    if(active.completed !== currentAssessment.completed) {
-      currentAssessment.completed = active.completed;
+    // NOTE: Sync active state changes to assessments
+    const changes = {
+      completed: active.completed !== currentAssessment.completed,
+      name: active.name !== currentAssessment.name
+    };
+
+    if(changes.completed || changes.name) {
+      if(changes.completed) { currentAssessment.completed = active.completed; }
+      if(changes.name) { currentAssessment.name = active.name; }
 
       setAssessments(updatedAssessments);
     }
-  }, [active, assessments]);
-
-  useEffect(() => {
-    if(assessments) { return; }
-    if(!active) { return; }
-    if(!active.completed) { return; }
-
-    listener.trigger("Surveys.finished", {assessments: [active]});
   }, [active, assessments]);
 }

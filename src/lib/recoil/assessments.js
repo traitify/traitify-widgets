@@ -1,23 +1,27 @@
 /* eslint-disable import/prefer-default-export */
 import {atom, selector} from "recoil";
+import capitalize from "lib/common/string/capitalize";
 import {
-  benchmarkIDState,
+  baseState,
   graphqlState,
   httpState,
   localeState,
-  packageIDState,
-  profileIDState
+  optionsState
 } from "./base";
 
-const assessmentsDefaultQuery = selector({
+const baseAssessmentState = selector({
+  get: ({get}) => {
+    const {assessmentID} = get(baseState);
+    const type = get(optionsState).surveyType || "personality";
+
+    return [{id: assessmentID, name: `${capitalize(type)} Assessment`, type}];
+  },
+  key: "assessments/default/assessment"
+});
+
+const baseRecommendationQuery = selector({
   get: async({get}) => {
-    const benchmarkID = get(benchmarkIDState);
-    const packageID = get(packageIDState);
-    if(!benchmarkID && !packageID) { return null; }
-
-    const profileID = get(profileIDState);
-    if(!profileID) { return null; }
-
+    const {benchmarkID, packageID, profileID} = get(baseState);
     const GraphQL = get(graphqlState);
     const http = get(httpState);
     const params = {
@@ -65,6 +69,18 @@ const assessmentsDefaultQuery = selector({
     }
 
     return assessments;
+  },
+  key: "assessments/default/recommendation"
+});
+
+const assessmentsDefaultQuery = selector({
+  get: async({get}) => {
+    const {assessmentID, benchmarkID, packageID, profileID} = get(baseState);
+
+    if(profileID && (benchmarkID || packageID)) { return get(baseRecommendationQuery); }
+    if(assessmentID) { return get(baseAssessmentState); }
+
+    return null;
   },
   key: "assessments/default"
 });

@@ -1,31 +1,24 @@
 import {useEffect} from "react";
-import {useResetRecoilState, useSetRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 import slice from "lib/common/object/slice";
 import Cache from "lib/cache";
 import GraphQL from "lib/graphql";
-import useDidUpdate from "lib/hooks/use-did-update";
 import Http from "lib/http";
 import I18n from "lib/i18n";
 import Listener from "lib/listener";
 import {
-  activeState,
-  assessmentsState,
-  benchmarkIDState,
+  baseState,
   cacheState,
   graphqlState,
   httpState,
   i18nState,
   listenerState,
   localeState,
-  optionsState,
-  packageIDState,
-  profileIDState
+  optionsState
 } from "lib/recoil";
 
 export default function useProps(props) {
-  const resetAssessments = useResetRecoilState(assessmentsState);
-  const setActive = useSetRecoilState(activeState);
-  const setBenchmarkID = useSetRecoilState(benchmarkIDState);
+  const setBase = useSetRecoilState(baseState);
   const setCache = useSetRecoilState(cacheState);
   const setGraphql = useSetRecoilState(graphqlState);
   const setHttp = useSetRecoilState(httpState);
@@ -33,8 +26,6 @@ export default function useProps(props) {
   const setListener = useSetRecoilState(listenerState);
   const setLocale = useSetRecoilState(localeState);
   const setOptions = useSetRecoilState(optionsState);
-  const setPackageID = useSetRecoilState(packageIDState);
-  const setProfileID = useSetRecoilState(profileIDState);
   const {
     assessmentID,
     benchmarkID,
@@ -75,11 +66,13 @@ export default function useProps(props) {
   }, [props.listener]);
 
   useEffect(() => {
-    setActive(assessmentID ? {id: assessmentID, loading: true, type: options.surveyType || "personality"} : null);
-  }, [assessmentID, options.surveyType]);
+    const base = {};
 
-  useEffect(() => { setBenchmarkID(benchmarkID); }, [benchmarkID]);
-  useEffect(() => { setPackageID(packageID); }, [packageID]);
-  useEffect(() => { setProfileID(profileID); }, [profileID]);
-  useDidUpdate(() => { resetAssessments(); }, [benchmarkID, packageID, profileID]);
+    if(assessmentID) { base.assessmentID = assessmentID; }
+    if(benchmarkID) { base.benchmarkID = benchmarkID; }
+    if(packageID) { base.packageID = packageID; }
+    if(profileID) { base.profileID = profileID; }
+
+    setBase(base);
+  }, [assessmentID, benchmarkID, packageID, profileID]);
 }

@@ -9,9 +9,10 @@ import personality from "support/json/assessment/dimension-based.json";
 
 const external = {
   assessmentId: "external-id",
-  externalAssessmentId: "external-assessment-id",
   link: "https://external.traitify.com/external-assessment-id",
   status: "INCOMPLETE",
+  surveyId: "external-assessment-id",
+  surveyName: "Emmersion Assessment",
   vendor: "Emmersion"
 };
 
@@ -19,7 +20,7 @@ const responseToArray = (response) => {
   const assessments = [];
   const {
     cognitive: cognitiveAssessment,
-    externalAssessment,
+    external: externalAssessment,
     personality: personalityAssessment
   } = response.prerequisites || {};
 
@@ -47,7 +48,7 @@ const responseToArray = (response) => {
         completed: assessment.status === "COMPLETE",
         id: assessment.assessmentId,
         link: assessment.link,
-        name: `${assessment.vendor} Assessment`,
+        name: assessment.surveyName,
         type: "external"
       });
     });
@@ -72,7 +73,7 @@ describe("Status", () => {
           surveyId: cognitive.surveyId,
           testId: cognitive.id
         },
-        externalAssessment: [{...external}],
+        external: [{...external}],
         personality: {
           assessmentId: personality.id,
           status: "COMPLETE",

@@ -34,7 +34,7 @@ const baseRecommendationQuery = selector({
     const assessments = [];
     const {
       cognitive,
-      externalAssessment,
+      external,
       personality
     } = response.data.recommendation.prerequisites || {};
 
@@ -56,13 +56,13 @@ const baseRecommendationQuery = selector({
       });
     }
 
-    if(externalAssessment) {
-      externalAssessment.forEach((assessment) => {
+    if(external) {
+      external.forEach((assessment) => {
         assessments.push({
           completed: assessment.status === "COMPLETE",
           id: assessment.assessmentId,
           link: assessment.link,
-          name: `${assessment.vendor} Assessment`,
+          name: assessment.surveyName,
           type: "external"
         });
       });

@@ -18,9 +18,10 @@ export const recommendation = `
           surveyId
           testId
         }
-        externalAssessment {
+        external {
           assessmentId
-          externalAssessmentId
+          surveyId
+          surveyName
           link
           status
           vendor

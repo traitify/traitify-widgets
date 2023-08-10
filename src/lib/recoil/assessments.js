@@ -42,7 +42,7 @@ const baseRecommendationQuery = selector({
       assessments.push({
         completed: personality.status === "COMPLETE",
         id: personality.assessmentId,
-        name: "Personality Assessment",
+        name: personality.surveyName,
         type: "personality"
       });
     }
@@ -51,7 +51,7 @@ const baseRecommendationQuery = selector({
       assessments.push({
         completed: cognitive.status === "COMPLETE",
         id: cognitive.testId,
-        name: "Cognitive Assessment",
+        name: cognitive.surveyName,
         type: "cognitive"
       });
     }
@@ -61,7 +61,7 @@ const baseRecommendationQuery = selector({
         assessments.push({
           completed: assessment.status === "COMPLETE",
           id: assessment.assessmentId,
-          link: assessment.link,
+          link: assessment.assessmentTakerUrl,
           name: assessment.surveyName,
           type: "external"
         });

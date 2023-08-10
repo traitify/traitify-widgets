@@ -9,7 +9,7 @@ import personality from "support/json/assessment/dimension-based.json";
 
 const external = {
   assessmentId: "external-id",
-  link: "https://external.traitify.com/external-assessment-id",
+  assessmentTakerUrl: "https://external.traitify.com/external-assessment-id",
   status: "INCOMPLETE",
   surveyId: "external-assessment-id",
   surveyName: "Emmersion Assessment",
@@ -47,7 +47,7 @@ const responseToArray = (response) => {
       assessments.push({
         completed: assessment.status === "COMPLETE",
         id: assessment.assessmentId,
-        link: assessment.link,
+        link: assessment.assessmentTakerUrl,
         name: assessment.surveyName,
         type: "external"
       });
@@ -71,13 +71,15 @@ describe("Status", () => {
         cognitive: {
           status: "COMPLETE",
           surveyId: cognitive.surveyId,
+          surveyName: "Cognitive Assessment",
           testId: cognitive.id
         },
         external: [{...external}],
         personality: {
           assessmentId: personality.id,
           status: "COMPLETE",
-          surveyId: personality.deck_id
+          surveyId: personality.deck_id,
+          surveyName: "Personality Assessment"
         }
       },
       profileID: "profile-id"
@@ -139,7 +141,7 @@ describe("Status", () => {
     component = await ComponentHandler.setup(Component);
     const button = component.findByText("Start Assessment");
 
-    expect(button.props.href).toBe(external.link);
+    expect(button.props.href).toBe(external.assessmentTakerUrl);
   });
 
   it("renders component", async() => {

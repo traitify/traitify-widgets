@@ -148,6 +148,7 @@ Traitify.listener.on("Survey.finished", ({response}) => {
 ```
 
 Here are some other events that can be handled:
+
 ```
 Traitify.listener.on("Survey.initialized", () => {
   console.log("Survey.initialized");

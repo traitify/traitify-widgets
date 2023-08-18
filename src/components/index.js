@@ -26,6 +26,7 @@ import TraitList from "./results/personality/trait/list";
 import TypeChart from "./results/personality/type/chart";
 import TypeList from "./results/personality/type/list";
 import RecommendationChart from "./results/recommendation/chart";
+import Status from "./status";
 import Survey from "./survey";
 import CognitiveSurvey from "./survey/cognitive";
 import PersonalitySurvey from "./survey/personality";
@@ -81,6 +82,7 @@ export default {
       Chart: RecommendationChart
     }
   },
+  Status,
   Survey: {
     Cognitive: CognitiveSurvey,
     Container: Survey,

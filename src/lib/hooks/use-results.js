@@ -1,9 +1,9 @@
 import useActive from "lib/hooks/use-active";
 import useAssessment from "lib/hooks/use-assessment";
 
-export default function useResults(type = "personality") {
+export default function useResults({type} = {}) {
   const active = useActive();
-  const assessment = useAssessment(type);
+  const assessment = useAssessment({type});
 
   if(!active) { return null; }
   if(!active.completed) { return null; }

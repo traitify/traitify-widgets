@@ -3,7 +3,7 @@ import dig from "lib/common/object/dig";
 import useResults from "lib/hooks/use-results";
 
 export default function usePersonality() {
-  const results = useResults();
+  const results = useResults({type: "personality"});
 
   return useMemo(() => {
     if(!results) { return null; }

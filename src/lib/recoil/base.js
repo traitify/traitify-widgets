@@ -2,6 +2,7 @@ import {atom, selector, selectorFamily} from "recoil";
 import {getCacheKey} from "lib/cache";
 
 export const activeState = atom({default: null, key: "active"});
+export const baseState = atom({default: {}, key: "base"});
 export const benchmarkIDState = atom({default: null, key: "benchmark-id"});
 export const cacheState = atom({dangerouslyAllowMutability: true, default: null, key: "cache"});
 export const errorState = atom({default: null, key: "error"});

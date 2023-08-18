@@ -8,7 +8,7 @@ import style from "./style.scss";
 
 export default function CareerList() {
   const {fetching, getNextPage, moreRecords, records} = useCareers();
-  const results = useResults();
+  const results = useResults({type: "personality"});
   const translate = useTranslate();
 
   useComponentEvents("CareerList");

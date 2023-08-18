@@ -29,7 +29,7 @@ import style from "./style.scss";
 const maxRetries = 2;
 
 export default function PersonalitySurvey() {
-  const assessment = useAssessment();
+  const assessment = useAssessment({type: "personality"});
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});

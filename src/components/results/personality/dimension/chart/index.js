@@ -12,7 +12,7 @@ const ranks = ["other", "low", "medium", "high"];
 
 export default function PersonalityDimensionChart() {
   const guide = useGuide();
-  const results = useResults();
+  const results = useResults({type: "personality"});
   const translate = useTranslate();
   const data = useMemo(() => (
     results && combine({guide, order: "types", types: results.personality_types})

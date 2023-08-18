@@ -54,7 +54,7 @@ const skillTypes = [
 
 export default function PersonalityArchetypeSkills() {
   const disabled = useDisabledComponent("PersonalitySkills");
-  const results = useResults();
+  const results = useResults({type: "personality"});
   const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);

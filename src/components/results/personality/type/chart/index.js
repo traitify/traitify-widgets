@@ -13,7 +13,7 @@ export default function PersonalityTypeChart() {
   const [activeType, setActiveType] = useState(null);
   const disabled = useDisabledComponent("PersonalityTypes");
   const perspective = useOption("perspective");
-  const results = useResults();
+  const results = useResults({type: "personality"});
   const showHeaders = useOption("showHeaders");
   const [types, setTypes] = useState([]);
   const translate = useTranslate();

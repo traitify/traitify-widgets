@@ -16,12 +16,22 @@ export const recommendation = `
         cognitive {
           status
           surveyId
+          surveyName
           testId
+        }
+        external {
+          assessmentId
+          assessmentTakerUrl
+          status
+          surveyId
+          surveyName
+          vendor
         }
         personality {
           assessmentId
           status
           surveyId
+          surveyName
         }
       }
     }

@@ -1,5 +1,6 @@
 export useActive from "lib/hooks/use-active";
 export useAssessment from "lib/hooks/use-assessment";
+export useAssessments from "lib/hooks/use-assessments";
 export useBenchmark from "lib/hooks/use-benchmark";
 export useCacheKey from "lib/hooks/use-cache-key";
 export useCache from "lib/hooks/use-cache";

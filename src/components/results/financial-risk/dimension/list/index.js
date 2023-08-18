@@ -3,7 +3,7 @@ import Details from "../details";
 import style from "./style.scss";
 
 export default function FinancialRiskDimensionList() {
-  const results = useResults();
+  const results = useResults({type: "personality"});
   if(!results) { return null; }
 
   return (

@@ -17,7 +17,11 @@ export default function useAssessmentEffect() {
 
     const completed = assessment ? !!(assessment.completed || assessment.completed_at) : false;
     const loading = state === "loading";
-    if(active.completed === completed && active.loading === loading) { return; }
+    const changes = {
+      completed: active.completed !== completed,
+      loading: active.loading !== loading
+    };
+    if(!changes.completed && !changes.loading) { return; }
 
     setActive({...active, completed, loading});
   }, [active, assessmentLoadable]);
@@ -27,5 +31,5 @@ export default function useAssessmentEffect() {
     if(!active.completed) { return; }
 
     listener.trigger("Survey.finished", {assessment: active});
-  }, [active]);
+  }, [active?.id, active?.completed]);
 }

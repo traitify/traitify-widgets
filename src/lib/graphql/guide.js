@@ -1,7 +1,8 @@
 export const get = `
-  query($assessmentID: String!, $localeKey: String!) {
+  query($assessmentID: String!, $benchmarkID: String, $localeKey: String!) {
     customInterviewGuide(
       assessmentId: $assessmentID,
+      benchmarkId: $benchmarkID,
       localeKey: $localeKey
     ) {
       clientInterviewGuide {

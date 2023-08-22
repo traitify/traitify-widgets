@@ -17,7 +17,6 @@ export const cacheKeyState = selectorFamily({
     const keys = options.scope ? [...options.scope] : [];
     const locale = options.locale || get(localeState);
 
-    // NOTE: Add additional options to keys
     switch(type) {
       case "assessment":
         id = id || get(assessmentIDState);
@@ -28,6 +27,13 @@ export const cacheKeyState = selectorFamily({
       case "deck":
         id = id || get(deckIDState);
         break;
+      case "guide": {
+        const benchmarkID = options.benchmarkID || get(benchmarkIDState);
+        if(benchmarkID) { keys.push(`benchmark-${benchmarkID}`); }
+
+        id = id || get(assessmentIDState);
+        break;
+      }
       default:
         id = id || get(assessmentIDState);
     }

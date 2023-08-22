@@ -15,6 +15,10 @@ export function getCacheKey(type, options = {}) {
     case "deck":
       id = id || console.warn("Missing deckID");
       break;
+    case "guide":
+      id = id || console.warn("Missing ID");
+      if(options.benchmarkID) { keys.push(`benchmark-${options.benchmarkID}`); }
+      break;
     default:
       id = id || console.warn("Missing ID");
   }

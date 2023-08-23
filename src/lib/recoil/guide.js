@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import {selector} from "recoil";
 import {
+  benchmarkIDState,
   cacheState,
   graphqlState,
   httpState,
@@ -14,8 +15,9 @@ export const guideQuery = selector({
     const assessmentID = get(personalityAssessmentIDState);
     if(!assessmentID) { return null; }
 
+    const benchmarkID = get(benchmarkIDState);
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState({id: assessmentID, type: "guide"}));
+    const cacheKey = get(safeCacheKeyState({benchmarkID, id: assessmentID, type: "guide"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
@@ -23,7 +25,7 @@ export const guideQuery = selector({
     const http = get(httpState);
     const params = {
       query: GraphQL.guide.get,
-      variables: {assessmentID, localeKey: get(localeState)}
+      variables: {assessmentID, benchmarkID, localeKey: get(localeState)}
     };
     const response = await http.post(GraphQL.guide.path, params);
     if(response.errors) { console.warn("guide", response.errors); } /* eslint-disable-line no-console */

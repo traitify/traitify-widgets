@@ -3,8 +3,8 @@ import {selector} from "recoil";
 import dig from "lib/common/object/dig";
 import {assessmentQuery} from "./assessment";
 import {
-  cacheState,
   benchmarkIDState,
+  cacheState,
   graphqlState,
   httpState,
   localeState,

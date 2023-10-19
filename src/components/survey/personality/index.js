@@ -101,6 +101,17 @@ export default function PersonalitySurvey() {
   }, [assessment]);
 
   useEffect(() => {
+    if(!assessment) { return; }
+    if(assessment.completed_at) { return; }
+    if(assessment.started_at) { return; }
+
+    http.get(`/assessments/${assessment.id}/started`).then(() => {
+      cache.set(assessmentCacheKey, {...assessment, started_at: Date.now()});
+      refreshAssessment();
+    });
+  }, [assessment]);
+
+  useEffect(() => {
     setShowInstructions(!!(options.showInstructions && instructions));
   }, [assessment, options.showInstructions]);
 

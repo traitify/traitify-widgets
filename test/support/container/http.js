@@ -79,6 +79,30 @@ export const mockAssessments = (...params) => {
 };
 
 // NOTE: Allow params to be [response, {id}] or {id, implementation}
+export const mockAssessmentStarted = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || container.assessmentID;
+  const mock = {
+    key: "assessment-started",
+    request: (url, options) => {
+      if(!url.includes(`/assessments/${id}/started`)) { return false; }
+      if(options.method !== "GET") { return false; }
+
+      return true;
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => response;
+
+  return mockFetch(mock);
+};
+
+// NOTE: Allow params to be [response, {id}] or {id, implementation}
 export const mockAssessmentSubmit = (...params) => {
   const [response, mockOptions] = params.length === 1 && params[0]?.implementation
     ? [null, ...params]

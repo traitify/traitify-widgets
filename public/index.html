@@ -26,7 +26,11 @@
         margin: 12px 0;
       }
       .row.gap-lg { gap: 24px; }
+      .row select { overflow: auto; }
 
+      @media(max-width: 567px) {
+        .max-sm-flex-col { flex-direction: column; }
+      }
       @media(min-width: 960px) {
         .group {
           margin-left: 48px;

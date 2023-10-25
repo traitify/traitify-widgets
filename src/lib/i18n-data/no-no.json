@@ -42,6 +42,11 @@
   "learn_more": "Lære mer",
   "least_represented_traits": "Minst representert trekk",
   "least_represented_traits_definition": "Disse trekkene fikk score i den nederste tredjedelen av kandidatens totale svar. Utseende på denne listen gjenspeiler bare den relative posisjonen til disse trekkene for denne personen sammenlignet med de gjenværende egenskapene. Dette gir ikke informasjon som kan brukes til å sammenligne utvidelsen av en egenskap som vises av en kandidat kontra en annen.",
+  "level": {
+    "high": "Høy",
+    "low": "Lav",
+    "medium": "Middels"
+  },
   "loading": "Laster",
   "local_salary": "Lokal Lønn",
   "location": "Plassering",

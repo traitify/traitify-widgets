@@ -42,6 +42,11 @@
   "learn_more": "Más información",
   "least_represented_traits": "Rasgos menos representativos",
   "least_represented_traits_definition": "Estos rasgos recibieron puntajes en el tercio inferior de las respuestas totales de este candidato. La aparición en esta lista refleja solo la posición relativa de estos rasgos para este individuo en comparación con los rasgos restantes. Esto no proporciona información que pueda usarse para comparar la extensión de un rasgo mostrado por un candidato versus otro.",
+  "level": {
+    "high": "Alto",
+    "low": "Bajo",
+    "medium": "Medio"
+  },
   "loading": "Cargando",
   "local_salary": "Salario Local",
   "location": "Ubicación",

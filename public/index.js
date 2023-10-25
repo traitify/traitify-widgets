@@ -356,6 +356,7 @@ function setupDom() {
     name: "deckID",
     options: [
       {text: "Big Five", value: "big-five"},
+      {text: "Big Five Animated", value: "big-five-animated"},
       {text: "Career Deck", value: "career-deck"},
       {text: "Core", value: "core"},
       {text: "Financial Risk Tolerance", value: "financial-risk-tolerance-2.0"},

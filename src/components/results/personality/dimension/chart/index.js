@@ -1,22 +1,12 @@
-import {useMemo} from "react";
 import reverse from "lib/common/array/reverse";
-import capitalize from "lib/common/string/capitalize";
-import {combine} from "lib/common/combine-data";
 import useComponentEvents from "lib/hooks/use-component-events";
-import useGuide from "lib/hooks/use-guide";
-import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
+import useData from "./use-data";
 import style from "./style.scss";
 
-const ranks = ["other", "low", "medium", "high"];
-
 export default function PersonalityDimensionChart() {
-  const guide = useGuide();
-  const results = useResults({type: "personality"});
+  const data = useData();
   const translate = useTranslate();
-  const data = useMemo(() => (
-    results && combine({guide, order: "types", types: results.personality_types})
-  ), [guide, results]);
 
   useComponentEvents("PersonalityDimensionChart");
 
@@ -26,8 +16,8 @@ export default function PersonalityDimensionChart() {
     <div className={style.container}>
       <div className={style.p}>{translate("dimension_description")}</div>
       <div className={style.horizontal}>
-        {data.map(({competency, rank, type: {badge, name, id}}) => (
-          <div key={id} className={[style.row, style[rank]].join(" ")} data-content={capitalize(rank)}>
+        {data.columns.map(({competency, rank, type: {badge, name, id}}) => (
+          <div key={id} className={[style.row, style[rank.value]].join(" ")} data-content={rank.name}>
             <div className={style.label}>
               {competency && <div>{competency.name}</div>}
               <div>{name}</div>
@@ -36,15 +26,15 @@ export default function PersonalityDimensionChart() {
           </div>
         ))}
         <div className={style.scale}>
-          {ranks.map((rank) => <div key={rank} />)}
+          {data.ranks.map(({value}) => <div key={value} />)}
         </div>
       </div>
       <div className={style.vertical}>
         <div className={style.scale}>
-          {reverse(ranks).map((rank) => <div key={rank} />)}
+          {reverse(data.ranks).map(({value}) => <div key={value} />)}
         </div>
-        {data.map(({competency, rank, type: {badge, name, id}}) => (
-          <div key={id} className={[style.column, style[rank]].join(" ")} data-content={capitalize(rank)}>
+        {data.columns.map(({competency, rank, type: {badge, name, id}}) => (
+          <div key={id} className={[style.column, style[rank.value]].join(" ")} data-content={rank.name}>
             <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
             {competency && <div className={style.heading}>{competency.name}</div>}
             <div className={style.heading}>{name}</div>

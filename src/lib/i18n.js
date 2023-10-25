@@ -1,4 +1,5 @@
 import i18nData from "lib/i18n-data";
+import dig from "lib/common/object/dig";
 
 export default class I18n {
   constructor() {
@@ -32,23 +33,9 @@ export default class I18n {
       this.addTranslations(locale, i18nData[locale]);
     });
   }
-  translate = (locale, key, options) => {
-    const keys = key.split(".");
-
-    const traverse = (arr) => {
-      let result = this.data[locale.toLowerCase()][arr[0]];
-
-      arr.splice(1).every((current) => {
-        if(!result) { return false; }
-        result = result[current];
-
-        return true;
-      });
-
-      return result;
-    };
-
-    const result = keys.length > 1 ? traverse(keys) : this.data[locale.toLowerCase()][key];
+  translate = (locale, _key, options) => {
+    const keys = _key.split(".");
+    const result = dig(this.data, locale.toLowerCase(), ...keys);
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);

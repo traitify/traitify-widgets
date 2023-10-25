@@ -42,6 +42,11 @@
   "learn_more": "Mehr erfahren",
   "least_represented_traits":"Am wenigsten ausgeprägte Eigenschaften",
   "least_represented_traits_definition":"Diese Eigenschaften haben Punktwerte im unteren Drittel der Gesamtantworten des Kandidaten erhalten. Durch die Aufführung in dieser Liste soll für die entsprechende Person nur die relative Ausprägung der Eigenschaften gegenüber den übrigen Eigenschaften dargestellt werden.<br /><br />Dadurch werden keine Informationen bereitgestellt, die zum Vergleich der Ausprägung einer vom Kandidaten gezeigten Eigenschaft im Vergleich zu einem anderen herangezogen werden können.",
+  "level": {
+    "high": "Hoch",
+    "low": "Niedrig",
+    "medium": "Mittel"
+  },
   "loading":"Lädt",
   "local_salary": "Lokales Gehalt",
   "location": "Lage",

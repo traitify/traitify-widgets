@@ -98,7 +98,7 @@ describe("I18n", () => {
     it("allows misses", () => {
       const translation = translate("tacos");
 
-      expect(translation).toBeUndefined();
+      expect(translation).toBeNull();
     });
   });
 });

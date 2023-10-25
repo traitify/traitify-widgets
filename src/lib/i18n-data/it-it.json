@@ -81,6 +81,11 @@
   "learn_more": "Per saperne di più",
   "least_represented_traits": "Tratti meno rappresentati",
   "least_represented_traits_definition": "Questi tratti hanno ricevuto punteggi nel terzo inferiore delle risposte totali di questo candidato. L'aspetto in questo elenco riflette solo la posizione relativa di questi tratti per questo individuo rispetto ai tratti rimanenti. Ciò non fornisce informazioni che possono essere utilizzate per confrontare l'estensione di un tratto visualizzato da un candidato contro un altro.",
+  "level": {
+    "high": "Alto",
+    "low": "Basso",
+    "medium": "Medio"
+  },
   "loading": "Caricamento in corso",
   "local_salary": "Stipendio locale",
   "location": "Posizione",

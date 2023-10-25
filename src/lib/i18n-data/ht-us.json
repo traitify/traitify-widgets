@@ -42,6 +42,11 @@
   "learn_more": "Pou Plis Enfòmasyon",
   "least_represented_traits": "Ki pi piti trete repwezante",
   "least_represented_traits_definition": "Karakteristik sa yo te resevwa nòt nan twazyèm pati anba a nan repons total kandida sa a. Aparans sou lis sa a reflete sèlman pozisyon relatif karakteristik sa yo pou moun sa a konpare ak karakteristik ki rete yo. Sa a pa bay enfòmasyon ki ka itilize yo konpare pwolonje a nan yon trè parèt pa yon kandida vs yon lòt.",
+  "level": {
+    "high": "Elve",
+    "low": "Fèb",
+    "medium": "Mwayen"
+  },
   "loading": "Loading",
   "local_salary": "Salè Lokal",
   "location": "Kote,",

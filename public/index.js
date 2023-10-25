@@ -252,7 +252,7 @@ function setupDom() {
   let row;
 
   group = createElement({className: "group"});
-  row = createElement({className: "row gap-lg"});
+  row = createElement({className: "row gap-lg max-sm-flex-col"});
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "General Options"}));
   column.appendChild(createOption({
@@ -384,7 +384,8 @@ function setupCognitive() {
 
   Traitify.http.post(Traitify.GraphQL.cognitive.path, {query}).then((response) => {
     const options = response.data.cognitiveSurveys.edges
-      .map(({node: {id, name}}) => ({text: name, value: id}));
+      .map(({node: {id, name}}) => ({text: name, value: id}))
+      .sort((a, b) => a.text.localeCompare(b.text));
 
     document.querySelector("#cognitive-options").appendChild(createOption({
       name: "surveyID",

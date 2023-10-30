@@ -14,7 +14,7 @@
   "close": "Fèmen",
   "complements": "Konpliman",
   "conflicts": "Konfli",
-  "dimension_description": "Nòt nan dimansyon kalkile soti nan repons ou nan atik ki ansanm mezire eleman kache nan chak dimansyon. An jeneral, yon moun gen swa yon nivo segondè, modere, oswa ki ba nan chak. Nòt nan dimansyon se yon nòt ki estandadize ant 1 ak 10. Nòt 1-3 yo ba, 4-6 Modere, ak 7 ak moute yo wo anpil.",
+  "dimension_description": "Nòt nan dimansyon kalkile soti nan repons ou nan atik ki ansanm mezire eleman kache nan chak dimansyon. An jeneral, yon moun gen swa yon nivo segondè, modere, oswa ki ba nan chak.",
   "dimension_heading": "Ki sa ki %{level} %{name} mwen vle di pou mwen?",
   "dimension_heading_for_benefits": "%{level} %{name} Benefis potansyèl yo",
   "discover_jobs": "Dekouvri travay",

@@ -15,7 +15,7 @@
   "complements":"Ergänzungen",
   "conflicts":"Konflikte",
   "dimension_heading_for_benefits":"%{level} %{name} Mögliche Vorteile",
-  "dimension_description":"Der Dimensionspunktwert wird aus Ihren Antworten auf Items berechnet, die zusammen die zugrundeliegenden Komponenten der einzelnen Dimensionen messen. Insgesamt weist eine Person jeweils eine hohe, mittlere oder niedrige Ausprägung auf. Der Dimensionspunktwert ist ein standardisierter Punktwert zwischen 1 und 10. Punktwerte von 1-3 fallen in die Kategorie „Niedrig“, 4-6 in die Kategorie „Mittel“ und 7-10 in die Kategorie „Hoch“.",
+  "dimension_description":"Der Dimensionspunktwert wird aus Ihren Antworten auf Items berechnet, die zusammen die zugrundeliegenden Komponenten der einzelnen Dimensionen messen. Insgesamt weist eine Person jeweils eine hohe, mittlere oder niedrige Ausprägung auf.",
   "dimension_heading":"Was bedeutet das Ergebnis %{level} %{name} für mich?",
   "discover_jobs": "Jobs entdecken",
   "education":"Ausbildung",

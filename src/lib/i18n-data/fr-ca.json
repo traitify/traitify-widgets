@@ -14,7 +14,7 @@
   "close": "Fermer",
   "complements": "Compléments",
   "conflicts": "Conflits",
-  "dimension_description": "Le score des dimensions est calculé à partir de vos réponses aux questions qui permettent de mesurer les composants sous-jacents de chaque dimension. De manière générale, chaque individu a un niveau Élevé, Moyen ou Faible pour chaque dimension. Le score des dimensions est un score normalisé compris entre 1 et 10. Entre 1 et 3, le score est Faible; entre 4 et 6, le score est Moyen; entre 7 et 10, le score est Élevé.",
+  "dimension_description": "Le score des dimensions est calculé à partir de vos réponses aux questions qui permettent de mesurer les composants sous-jacents de chaque dimension. De manière générale, chaque individu a un niveau Élevé, Moyen ou Faible pour chaque dimension.",
   "dimension_heading": "Pour moi, que signifie mon niveau de %{name} %{level}?",
   "dimension_heading_for_benefits": "Avantages potentiels d’un niveau de %{name} %{level}",
   "discover_jobs": "Découvrir des emplois",

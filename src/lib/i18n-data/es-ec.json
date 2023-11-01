@@ -14,7 +14,7 @@
   "close": "Cerca",
   "complements": "Complementos",
   "conflicts": "Conflictos",
-  "dimension_description": "El puntaje dimensional se calcula con sus respuestas a elementos que juntos miden los componentes subyacentes de cada dimensión. En general, una persona tiene un nivel alto, moderado o bajo de cada uno. El puntaje dimensional es un puntaje estandarizado que varía entre 1 y 10. Los puntajes de 1 a 3 son Bajos, de 4 a 6+ son Moderados y de 7 en adelante son Altos.",
+  "dimension_description": "El puntaje dimensional se calcula con sus respuestas a elementos que juntos miden los componentes subyacentes de cada dimensión. En general, una persona tiene un nivel alto, moderado o bajo de cada uno.",
   "dimension_heading": "¿Qué significa mi %{level} %{name} para mí?",
   "dimension_heading_for_benefits": "Beneficios potenciales de %{level} %{name}",
   "discover_jobs": "Descubrir trabajos",

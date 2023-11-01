@@ -14,7 +14,7 @@
   "close": "关",
   "complements": "补",
   "conflicts": "冲突",
-  "dimension_description": "我们根据您对各项（用于综合评测每个维度的基本组成部分）的回答计算出维度分数。总体而言，每个人都具有五个人格维度，只是程度或高或中等或低。维度分数为标准化分数，范围在 1 至 10 之间。1-3 分为低，4-6 分为中等，7 分以上为高。",
+  "dimension_description": "我们根据您对各项（用于综合评测每个维度的基本组成部分）的回答计算出维度分数。总体而言，每个人都具有五个人格维度，只是程度或高或中等或低。",
   "dimension_heading": "我的%{level}%{name}性人格对我而言意味着什么？",
   "dimension_heading_for_benefits": "%{level}%{name}性人格的潜在优势",
   "discover_jobs": "发现工作",

@@ -14,7 +14,7 @@
   "close": "Lukk",
   "complements": "Utfyller",
   "conflicts": "Konflikter",
-  "dimension_description": "Dimensjonsscore blir beregnet ut fra svarene dine på elementer som sammen måler de underliggende komponentene i hver dimensjon. Totalt sett har en person enten et høyt, moderat eller lavt nivå av hver. Dimensjonsscore er en standardisert poengsum som varierer mellom 1 og 10. Poeng på 1-3 er lav, 4-6 moderat og 7 og oppover er høye.",
+  "dimension_description": "Dimensjonsscore blir beregnet ut fra svarene dine på elementer som sammen måler de underliggende komponentene i hver dimensjon. Totalt sett har en person enten et høyt, moderat eller lavt nivå av hver.",
   "dimension_heading": "Hva betyr min %{level} %{name} for meg?",
   "dimension_heading_for_benefits": "Potensielle fordeler med %{level} %{name}",
   "discover_jobs": "Oppdag jobber",

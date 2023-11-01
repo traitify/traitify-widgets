@@ -52,7 +52,7 @@
   "cognitive_skip_button": "Saltare",
   "complements": "Complementi",
   "conflicts": "Conflitti",
-  "dimension_description": "Il punteggio della dimensione viene calcolato dalle risposte agli elementi che insieme misurano i componenti sottostanti di ciascuna dimensione. Nel complesso, un individuo ha un livello alto, moderato o basso di ciascuno. Il punteggio della dimensione è un punteggio standardizzato che varia tra 1 e 10. punteggi di 1-3 sono bassi, 4-6 moderati e 7 e oltre sono alti.",
+  "dimension_description": "Il punteggio della dimensione viene calcolato dalle risposte agli elementi che insieme misurano i componenti sottostanti di ciascuna dimensione. Nel complesso, un individuo ha un livello alto, moderato o basso di ciascuno.",
   "dimension_heading": "Cosa significa per me il mio %{level} %{name}?",
   "dimension_heading_for_benefits": "%{level} %{name} Benefici potenziali",
   "discover_jobs": "Scopri i lavori",

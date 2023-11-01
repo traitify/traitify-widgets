@@ -14,7 +14,7 @@
   "close": "Close",
   "complements": "Complements",
   "conflicts": "Conflicten",
-  "dimension_description": "De dimensiescore wordt berekend op basis van je antwoorden op items die samen de onderliggende componenten van elke dimensie meten. Over het algemeen heeft iemand een hoog, middelhoog of laag niveau voor elke dimensie. De dimensiescore is een gestandaardiseerde score tussen 1 en 10. Scores van 1-3 zijn laag, van 4-6 middelhoog en 7 en hoger hoog.",
+  "dimension_description": "De dimensiescore wordt berekend op basis van je antwoorden op items die samen de onderliggende componenten van elke dimensie meten. Over het algemeen heeft iemand een hoog, middelhoog of laag niveau voor elke dimensie.",
   "dimension_heading": "Wat betekent mijn %{level} mate van %{name} voor mij?",
   "dimension_heading_for_benefits": "Potentiële voordelen van een %{level} mate van %{name}",
   "discover_jobs": "Ontdek banen",

@@ -14,7 +14,7 @@
   "close": "perto",
   "complements": "complementa",
   "conflicts": "conflitos",
-  "dimension_description": "A pontuação de dimensão é calculada com base em suas respostas a itens que, juntos, medem os componentes subjacentes de cada dimensão. No geral, um indivíduo possui um nível Alto, Moderado ou Baixo em cada uma. A pontuação de dimensão é uma pontuação padronizada que varia entre 1 e 10. Pontuações entre 1 e 3 são consideradas Baixas, entre 4 e 6, são classificadas como Moderadas e a partir de 7, estão na faixa Alta.",
+  "dimension_description": "A pontuação de dimensão é calculada com base em suas respostas a itens que, juntos, medem os componentes subjacentes de cada dimensão. No geral, um indivíduo possui um nível Alto, Moderado ou Baixo em cada uma.",
   "dimension_heading": "O que minha classificação de %{level} potencial de %{name} significa para mim?",
   "dimension_heading_for_benefits": "%{level} potencial de benefícios na qualidade de %{name}",
   "discover_jobs": "Descubra empregos",

@@ -55,7 +55,7 @@
   "cognitive_skip_button": "Skip",
   "complements": "Complements",
   "conflicts": "Conflicts",
-  "dimension_description": "The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each. The dimension score is a standardized score that ranges between 1 and 10. Scores of 1-3 are Low, 4-6 Medium, and 7 and up are High.",
+  "dimension_description": "The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each.",
   "dimension_heading": "What does my %{level} %{name} mean for me?",
   "dimension_heading_for_benefits": "%{level} %{name} Potential Benefits",
   "discover_jobs": "Discover Jobs",

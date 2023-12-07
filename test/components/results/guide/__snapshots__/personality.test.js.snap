@@ -107,7 +107,6 @@ In contrast someone who is pragmatic likes to solve problems in practical ways, 
 They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
 Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"
@@ -359,7 +358,6 @@ In contrast someone who is pragmatic likes to solve problems in practical ways, 
 They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
 Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"
@@ -611,7 +609,6 @@ In contrast someone who is pragmatic likes to solve problems in practical ways, 
 They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
 Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"
@@ -624,6 +621,241 @@ The first question is looking to confirm what they should be like; the second tw
           Show More
         </button>
       </div>
+      <div
+        className="divider"
+      />
+      <div>
+        <div
+          className="heading"
+        >
+          Open-Minded/Pragmatic People
+        </div>
+        <div
+          className="p"
+        >
+          Tell me how you would go about solving a work problem you have not encountered before.
+        </div>
+        <div
+          className="question"
+        >
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="number"
+            >
+              
+            </div>
+            <div
+              className="divider"
+            />
+            <div
+              className="prompt"
+            >
+              <div
+                className="text"
+              >
+                
+              </div>
+              <span
+                className="arrow traitify--icon-fa"
+                dangerouslySetInnerHTML={
+                  {
+                    "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+                  }
+                }
+              />
+            </div>
+          </button>
+        </div>
+        <div
+          className="p"
+        >
+          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+        </div>
+        <div
+          className="question"
+        >
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="number"
+            >
+              
+            </div>
+            <div
+              className="divider"
+            />
+            <div
+              className="prompt"
+            >
+              <div
+                className="text"
+              >
+                
+              </div>
+              <span
+                className="arrow traitify--icon-fa"
+                dangerouslySetInnerHTML={
+                  {
+                    "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+                  }
+                }
+              />
+            </div>
+          </button>
+        </div>
+        <div
+          className="p"
+        >
+          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+        </div>
+        <div
+          className="question"
+        >
+          <button
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="number"
+            >
+              
+            </div>
+            <div
+              className="divider"
+            />
+            <div
+              className="prompt"
+            >
+              <div
+                className="text"
+              >
+                
+              </div>
+              <span
+                className="arrow traitify--icon-fa"
+                dangerouslySetInnerHTML={
+                  {
+                    "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+                  }
+                }
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.Guide.Personality renders component without show more 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="tabs"
+    >
+      <button
+        className="active high"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Solving Problems
+        </span>
+      </button>
+      <button
+        className="other"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Delivering Results
+        </span>
+      </button>
+      <button
+        className="low"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Engaging with People
+        </span>
+      </button>
+      <button
+        className="high"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Influencing People
+        </span>
+      </button>
+      <button
+        className="medium"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Managing Pressure
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+      >
+        <option
+          value="157f0ecf-69e6-4007-a27c-d6f35de92565"
+        >
+          Solving Problems
+        </option>
+        <option
+          value="a00c6b05-f9c5-4cc8-987f-80f6c5492f92"
+        >
+          Delivering Results
+        </option>
+        <option
+          value="5064521c-1028-40d4-8baa-dfeff734406f"
+        >
+          Engaging with People
+        </option>
+        <option
+          value="b20ac1cb-9a1f-4fa5-abde-117974267c34"
+        >
+          Influencing People
+        </option>
+        <option
+          value="26314abe-d7c2-4ad2-af7c-3919c2a1c4e7"
+        >
+          Managing Pressure
+        </option>
+      </select>
+      <div
+        className="heading high"
+      >
+        Solving Problems
+         (
+        Openness
+        )
+      </div>
+      <p
+        className="traitify--markdown"
+      >
+        Hello this is just a short intro
+      </p>
       <div
         className="divider"
       />
@@ -887,7 +1119,6 @@ In contrast someone who is pragmatic likes to solve problems in practical ways, 
 They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
 Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"
@@ -900,9 +1131,11 @@ The first question is looking to confirm what they should be like; the second tw
           Show Less
         </button>
       </div>
-      <div
+      <p
         className="p expandedIntro traitify--markdown"
-      />
+      >
+        The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
+      </p>
       <div
         className="divider"
       />
@@ -1142,7 +1375,6 @@ In contrast someone who is pragmatic likes to solve problems in practical ways, 
 They are likely to have a fine eye for detail, be results oriented, and able to bring experience to bear on a problem.
 Those who are a mixture of both (openminded/pragmatic) are best described as approaching problems in a systematic way, being able to flex between different options, capable of seeing situations at different levels of detail, and as bringing healthy caution to decision making.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"
@@ -1420,7 +1652,6 @@ The benefits of being focused are likely to include obvious things like creating
 In contrast someone who is flexible probably prefers to approach tasks in a dynamic manner, quickly reacting to things as they occur, side-stepping anything that isn't of personal interest, in order to achieve rapid results.
 Those who are a mixture of both (focused/flexible) are best described as able to focus on the process and the goal, and allocating their energies in a measured way while continually reviewing what needs to be done next.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"
@@ -1672,7 +1903,6 @@ The benefits of being focused are likely to include obvious things like creating
 In contrast someone who is flexible probably prefers to approach tasks in a dynamic manner, quickly reacting to things as they occur, side-stepping anything that isn't of personal interest, in order to achieve rapid results.
 Those who are a mixture of both (focused/flexible) are best described as able to focus on the process and the goal, and allocating their energies in a measured way while continually reviewing what needs to be done next.
 These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'.
-The first question is looking to confirm what they should be like; the second two explore areas of possible concern.
       </p>
       <div
         className="p"

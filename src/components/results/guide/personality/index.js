@@ -41,6 +41,7 @@ function PersonalityGuide({combined}) {
   const showCompetency = (newID) => setActiveCompetency(data.find(({id}) => newID === id));
   const [intro, ...expandedIntro] = activeCompetency.introduction.split("\n\n\n");
   const onChange = ({target: {value}}) => showCompetency(value);
+  const hasMore = expandedIntro.length > 0;
 
   return (
     <div className={[style.container, combined && style.combined].filter(Boolean).join(" ")}>
@@ -62,12 +63,14 @@ function PersonalityGuide({combined}) {
         </select>
         <div className={[style.heading, style[activeCompetency.rank]].join(" ")}>{activeCompetency.name} ({activeCompetency.type.name})</div>
         <Markdown>{intro}</Markdown>
-        <div className={style.p}>
-          <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
-            {translate(showExpandedIntro ? "show_less" : "show_more")}
-          </button>
-        </div>
-        {showExpandedIntro && (
+        {hasMore && (
+          <div className={style.p}>
+            <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
+              {translate(showExpandedIntro ? "show_less" : "show_more")}
+            </button>
+          </div>
+        )}
+        {hasMore && showExpandedIntro && (
           <Markdown className={`${style.p} ${style.expandedIntro}`}>{expandedIntro.join("\n\n\n").trim()}</Markdown>
         )}
         <div className={style.divider} />

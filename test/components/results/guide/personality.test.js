@@ -99,6 +99,14 @@ describe("Results.Guide.Personality", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component without show more", async() => {
+    guide.personality.competencies[0].introduction = "Hello this is just a short intro";
+    mockGuide(guide);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if disabled", async() => {
     mockOption("disabledComponents", ["Guide"]);
     component = await ComponentHandler.setup(Component);

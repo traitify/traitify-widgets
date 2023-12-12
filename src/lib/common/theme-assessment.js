@@ -83,7 +83,7 @@ const themeTrait = (trait) => {
 };
 
 export default function themeAssessment(data) {
-  if(data.deck_id !== "career-deck") { return data; }
+  if(!data.deck_id || !data.deck_id.includes("career-")) { return data; }
   if((dig(data, "personality_types", "length") || 0) === 0) { return data; }
 
   const themedData = mutable(data);

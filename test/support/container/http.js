@@ -89,7 +89,7 @@ export const mockAssessmentStarted = (...params) => {
     key: "assessment-started",
     request: (url, options) => {
       if(!url.includes(`/assessments/${id}/started`)) { return false; }
-      if(options.method !== "GET") { return false; }
+      if(options.method !== "PUT") { return false; }
 
       return true;
     }

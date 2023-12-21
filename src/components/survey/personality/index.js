@@ -105,7 +105,7 @@ export default function PersonalitySurvey() {
     if(assessment.completed_at) { return; }
     if(assessment.started_at) { return; }
 
-    http.get(`/assessments/${assessment.id}/started`).then(() => {
+    http.put(`/assessments/${assessment.id}/started`).then(() => {
       cache.set(assessmentCacheKey, {...assessment, started_at: Date.now()});
       refreshAssessment();
     });

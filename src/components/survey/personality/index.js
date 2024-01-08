@@ -101,6 +101,19 @@ export default function PersonalitySurvey() {
   }, [assessment]);
 
   useEffect(() => {
+    if(!assessment) { return; }
+    if(assessment.completed_at) { return; }
+    if(assessment.started_at) { return; }
+
+    // NOTE: catch is used to prevent the non-json response from erroring
+    http.put(`/assessments/${assessment.id}/started`).catch(() => {}).then(() => {
+      // NOTE: refreshAssessment() should be called after setting the cache but since nothing else
+      // uses started_at, skipping it prevents an unnecessary loading state
+      cache.set(assessmentCacheKey, {...assessment, started_at: Date.now()});
+    });
+  }, [assessment]);
+
+  useEffect(() => {
     setShowInstructions(!!(options.showInstructions && instructions));
   }, [assessment, options.showInstructions]);
 

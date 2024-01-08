@@ -7,7 +7,7 @@ import times from "lib/common/array/times";
 import mutable from "lib/common/object/mutable";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockAssessmentSubmit} from "support/container/http";
+import {mockAssessment, mockAssessmentStarted, mockAssessmentSubmit} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
@@ -443,6 +443,15 @@ describe("Survey.Personality", () => {
         response: null,
         time_taken: null
       });
+    });
+
+    it("sets started_at", async() => {
+      assessment.started_at = null;
+      mockAssessment(assessment);
+      const mock = mockAssessmentStarted();
+      component = await ComponentHandler.setup(Component, {createNodeMock});
+
+      expect(mock.called).toBe(1);
     });
 
     it("uses cache", async() => {

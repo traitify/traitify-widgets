@@ -1,8 +1,20 @@
 # Traitify Widgets
 
-## Installing and Initializing The Library
+## Setup
 
 The widgets can be installed through our CDN or npm. Usage through the CDN will maintain backwards compatibility, while the npm library will use semantic versioning.
+
+### Requirements
+
+Depending on the use-case, different IDs are required to use the widgets.
+
+  - Single assessment
+    - assessmentID
+  - Assessment(s) associated with a recommendation
+    - benchmarkID or packageID
+    - profileID
+
+Additionally an `authKey` is required.
 
 ### CDN
 
@@ -109,6 +121,7 @@ Traitify.render({
   - host
   - locale
   - options
+  - packageID
   - profileID
   - version
 - If you've set options in a Traitify instance, pass them as props to the Container
@@ -176,6 +189,7 @@ Traitify.updateLocale("en-us");
 ```
 
 Here is a list of the available locales (`en-us` is the default):
+
   - Chinese - `zh-cn`
   - Creole - `ht-us`
   - Dutch - `nl-nl`

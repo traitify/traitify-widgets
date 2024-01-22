@@ -1,5 +1,6 @@
 import {useEffect, useReducer} from "react";
 import mutable from "lib/common/object/mutable";
+import useSafeDispatch from "lib/hooks/use-safe-dispatch";
 
 export function loadImage({dispatch, imageType, url}) {
   dispatch({type: "imageLoading"});
@@ -81,8 +82,9 @@ export function reducer(state, action) {
 export function useQuestionsLoader(initialQuestions) {
   const [
     {error, imageLoading, loading, questions},
-    dispatch
+    unsafeDispatch
   ] = useReducer(reducer, {questions: initialQuestions});
+  const dispatch = useSafeDispatch(unsafeDispatch);
 
   useEffect(() => dispatch({questions: initialQuestions, type: "reset"}), [initialQuestions]);
   useEffect(() => {

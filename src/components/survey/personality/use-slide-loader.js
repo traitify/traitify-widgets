@@ -2,6 +2,7 @@ import {useEffect, useReducer} from "react";
 import except from "lib/common/object/except";
 import mutable from "lib/common/object/mutable";
 import useElementSize from "lib/hooks/use-element-size";
+import useSafeDispatch from "lib/hooks/use-safe-dispatch";
 
 const defaultState = {
   error: null,
@@ -108,8 +109,9 @@ export default function useSlideLoader({element, translate}) {
   const size = useElementSize(element);
   const [
     {error, imageLoading, imageLoadingAttempts, ready, slideIndex, slides},
-    dispatch
+    unsafeDispatch
   ] = useReducer(reducer, {...defaultState, ready: false, size, slideIndex: -1, slides: []});
+  const dispatch = useSafeDispatch(unsafeDispatch);
 
   useEffect(() => { dispatch({size, type: "resize"}); }, [...size]);
   useEffect(() => {

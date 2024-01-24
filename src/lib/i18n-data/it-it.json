@@ -91,7 +91,7 @@
   "location": "Posizione",
   "location_placeholder": "ex. Baltimora, MD",
   "match_rate": "Incontro",
-  "match_rate_html": "Questa carriera corrisponde alla tua personalità di <nan>%{match_rate} <span>%.",
+  "match_rate_html": "Questa carriera corrisponde alla tua personalità di <span>%{match_rate} <span>%.",
   "me": "Me",
   "more_information": "Maggiori informazioni su questi valori",
   "most_represented_traits": "I tratti più rappresentati",

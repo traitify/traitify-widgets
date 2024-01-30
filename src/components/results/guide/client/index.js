@@ -18,6 +18,7 @@ export default function ClientGuide() {
 
   if(disabled) { return null; }
   if(!activeSection) { return null; }
+  if(!guide) { return null; }
 
   const showSection = (newID) => setActiveSection(sections.find(({id}) => newID === id));
   const onChange = ({target: {value}}) => showSection(value);

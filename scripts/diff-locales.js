@@ -3,26 +3,30 @@ const fs = require("node:fs");
 function main() {
   const csv = [["Locale", "Key", "Value"]];
   const dataPath = "../src/lib/i18n-data";
+  const exportPath = "./scripts/exports";
   const enUS = require(`${dataPath}/en-us.json`);
   const locales = [
     "de-de",
     "en-gb",
     "en-us",
-    "es-ec",
-    "es-pr",
     "es-us",
     "fr-ca",
     "fr-fr",
     "ht-us",
+    "id-id",
     "it-it",
     "ja-jp",
+    "ko-kr",
     "nl-nl",
     "no-no",
     "pt-br",
     "pt-pt",
     "ru-ru",
     "sv-se",
-    "zh-cn"
+    "th-th",
+    "vi-vn",
+    "zh-cn",
+    "zh-tw"
   ];
   const requiredTranslations = [];
 
@@ -43,7 +47,7 @@ function main() {
     })
   });
 
-  fs.writeFileSync("./missing.csv", csv.map((row) => row.join(";").replace(/\n/g, "\\n")).join("\n"));
+  fs.writeFileSync(`${exportPath}/missing.csv`, csv.map((row) => row.join(";").replace(/\n/g, "\\n")).join("\n"));
 }
 
 function eachKey({fn, object, scope}) {

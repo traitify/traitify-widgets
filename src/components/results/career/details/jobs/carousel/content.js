@@ -26,7 +26,7 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
   return (
     <div className={style.container}>
       <button className={style.back} disabled={start <= 0} onClick={onBack} type="button">
-        <Icon icon={faCaretLeft} />
+        <Icon alt="Left" icon={faCaretLeft} />
       </button>
       <div className={style.content}>
         {records.slice(start, end).map((record, index) => (
@@ -35,7 +35,7 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
         ))}
       </div>
       <button className={style.next} disabled={end >= records.length} onClick={onNext} type="button">
-        <Icon icon={faCaretRight} />
+        <Icon alt="Right" icon={faCaretRight} />
       </button>
     </div>
   );

@@ -2789,6 +2789,7 @@ exports[`Results.CareerContainer modal opens 1`] = `
                     type="button"
                   >
                     <span
+                      alt="More information about these values"
                       className="questionBtn traitify--icon-fa"
                       dangerouslySetInnerHTML={
                         {

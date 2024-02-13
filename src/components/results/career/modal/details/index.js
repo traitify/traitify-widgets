@@ -70,7 +70,7 @@ export default function CareerModalDetails() {
         <div className={style.careerHelp}>
           <a className={style.btnPrimary} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title={translate("view_on_onet")}>{translate("view_on_onet")}</a>
           <button className={style.legendToggle} onClick={toggleLegend} title={translate("more_information")} type="button">
-            <Icon className={style.questionBtn} icon={faCircleQuestion} />
+            <Icon alt={translate("more_information")} className={style.questionBtn} icon={faCircleQuestion} />
           </button>
         </div>
         {showLegend && (

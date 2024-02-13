@@ -230,7 +230,7 @@ export default function PersonalitySurvey() {
         )}
         {allowFullscreen && (
           <button className={style.fullscreen} onClick={toggleFullscreen} type="button">
-            <Icon icon={fullscreen ? faMinimize : faMaximize} />
+            <Icon alt="fullscreen" icon={fullscreen ? faMinimize : faMaximize} />
           </button>
         )}
       </>

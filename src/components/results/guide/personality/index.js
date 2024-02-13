@@ -29,6 +29,7 @@ function PersonalityGuide({combined}) {
     if(competencies.length === 0 || types.length === 0) { return; }
 
     const _data = combine({benchmark, guide, order: "types", types})
+      .filter(({competency}) => competency)
       .map(({competency, rank, score, type}) => ({...competency, rank, score, type}));
 
     setData(_data);

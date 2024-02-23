@@ -1,6 +1,6 @@
 {
-  "apply_now": "Applica ora",
   "acceptable": "Accettabile",
+  "apply_now": "Applica ora",
   "archetype_description_html": "Questa valutazione ti aiuta a comprendere i componenti della tua personalità. Proprio come i nostri corpi sono composti da diversi sistemi di organi, possiamo pensare che le nostre personalità abbiano parti separate e ugualmente importanti. <br /> <br /> Anche se potremmo sentire e comportarci in modo leggermente diverso da un giorno all'altro, o Anche da una situazione all'altra, in genere visualizziamo tutti livelli più alti o più bassi di cinque dimensioni core. Tutte e cinque le dimensioni modellano chi siamo, proprio come tutte le parti del nostro corpo lavorano insieme per mantenerci in salute.",
   "back": "Di ritorno",
   "badge": "Distintivo",
@@ -14,6 +14,9 @@
   "careers_link_heading_third_person": "Visualizza le loro raccomandazioni di carriera personalizzate",
   "close": "Chiudere",
   "cognitive_alert_skip": "Non sei in grado di saltare le domande di pratica",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": ""
+  },
   "cognitive_confirm_button": "Confermare",
   "cognitive_confirm_retry": "Vorresti tentare le domande che hai saltato?",
   "cognitive_confirm_skip": "Sei sicuro di voler saltare?",

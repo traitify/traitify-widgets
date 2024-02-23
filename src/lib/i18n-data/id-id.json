@@ -15,7 +15,7 @@
   "close": "Tutup",
   "cognitive_alert_skip": "Kamu tidak dapat melewati pertanyaan latihan",
   "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "Sekarang waktunya untuk berlatih. Sebelum kamu memulai, ingat:  Terdapat 31 pertanyaan dalam latihan ini. Kamu memiliki waktu selama kamu ingin menyelesaikannya. Namun, kebanyakan orang akan menyelesaikan latihan ini dalam waktu 15 menit. Kamu harus mencari tempat yang tenang dimana kamu dapat memberikan perhatian penuhmu pada latihan ini tanpa terganggu. Kamu dapat melewati pertanyaan jika  perlu tetapi usahakan untuk menjawab setiap pertanyaan. Silahkan selesaikan latihan ini dalam sekali duduk"
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Sekarang waktunya untuk berlatih. Sebelum kamu memulai ingat:</p><ul><li>Terdapat 31 pertanyaan dalam latihan ini</li><li>Kamu memiliki waktu sebanyak yang kamu butuhkan untuk menyelesaikannya. Namun, kebanyakan orang akan menyelesaikan latihan ini dalam waktu 15 menit.</li><li>Kamu harus mencari tempat tenang dimana kamu dapat memberikan perhatianmu secara penuh ke dalam latihan ini tanpa terganggu.</li><li>Kamu dapat melewati pertanyaan jika perlu tetapi cobalah untuk memberikan jawaban pada setiap pertanyaan.</li><li>Silahkan selesaikan latihan ini dalam sekali duduk.</li></ul>"
   },
   "cognitive_confirm_button": "Konfirmasi",
   "cognitive_confirm_retry": "Apakah kamu ingin mencoba pertanyaan yang kamu lewati?",

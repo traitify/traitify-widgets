@@ -15,7 +15,7 @@
   "close": "Đóng",
   "cognitive_alert_skip": "Bạn không thể bỏ qua các câu hỏi thực hành",
   "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "Bây giờ là lúc bắt đầu làm bài tập. Trước khi bắt đầu, hãy nhớ: Có 31 câu hỏi trong bài tập này. Bạn có thể mất bao nhiêu thời gian tùy ý để hoàn thành chúng. Tuy nhiên, hầu hết mọi người sẽ hoàn thành bài tập trong khoảng 15 phút. Bạn nên tìm một nơi yên tĩnh để có thể tập trung hoàn toàn vào bài tập mà không bị xao nhãng. Bạn có thể bỏ qua các câu hỏi nếu cần, nhưng hãy cố gắng trả lời tất cả các câu hỏi. Vui lòng hoàn thành bài tập trong một lần ngồi."
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Bây giờ là lúc cho bài tập. Trước khi bắt đầu, hãy nhớ:</p><ul><li>Có 31 câu hỏi trong bài tập</li><li>Bạn có thể mất bao lâu tùy ý để hoàn thành chúng. Tuy nhiên, hầu hết mọi người sẽ hoàn thành bài tập trong khoảng 15 phút.</li><li>Bạn nên tìm một nơi yên tĩnh nơi bạn có thể tập trung hoàn toàn vào bài tập mà không bị phân tâm.</li><li>Bạn có thể bỏ qua các câu hỏi nếu cần, nhưng hãy cố gắng trả lời mỗi câu hỏi.</li><li>ui lòng hoàn thành bài tập trong một lần làm.</li></ul>"
   },
   "cognitive_confirm_button": "Xác nhận",
   "cognitive_confirm_retry": "Bạn có muốn thử trả lời lại những câu hỏi đã bỏ qua không",

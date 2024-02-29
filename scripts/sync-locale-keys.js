@@ -21,7 +21,7 @@ const locales = [
   "th-th",
   "vi-vn",
   "zh-cn",
-  "zh-tw",
+  "zh-hant",
   "locale-data_template"
 ];
 

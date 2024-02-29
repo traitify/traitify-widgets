@@ -26,7 +26,7 @@ function main() {
     "th-th",
     "vi-vn",
     "zh-cn",
-    "zh-tw"
+    "zh-hant"
   ];
   const requiredTranslations = [];
 

@@ -18,7 +18,7 @@ import svSE from "lib/i18n-data/sv-se.json";
 import thTH from "lib/i18n-data/th-th.json";
 import viVN from "lib/i18n-data/vi-vn.json";
 import zhCN from "lib/i18n-data/zh-cn.json";
-import zhTW from "lib/i18n-data/zh-tw.json";
+import zhHant from "lib/i18n-data/zh-hant.json";
 
 export default {
   "de-de": {data: deDE, name: "German"},
@@ -44,5 +44,5 @@ export default {
   "th-th": {data: thTH, name: "Thai"},
   "vi-vn": {data: viVN, name: "Vietnamese"},
   "zh-cn": {data: zhCN, name: "Chinese (Simplified)"},
-  "zh-tw": {data: zhTW, name: "Chinese (Traditional)"}
+  "zh-hant": {data: zhHant, name: "Chinese (Traditional)"}
 };

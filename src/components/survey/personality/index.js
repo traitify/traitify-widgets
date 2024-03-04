@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
+import DangerousHTML from "components/common/dangerous-html";
 import Icon from "components/common/icon";
 import Loading from "components/common/loading";
 import Markdown from "components/common/markdown";
@@ -57,7 +58,8 @@ export default function PersonalitySurvey() {
   const completedSlides = slides.filter(({response}) => response != null)
     .map((slide) => slice(slide, ["id", "response", "time_taken"]));
   const finished = slides.length > 0 && slides.length === completedSlides.length;
-  const instructions = dig(assessment, "instructions", "instructional_text");
+  const instructionsHTML = dig(assessment, "instructions", "instructional_html");
+  const instructionsText = dig(assessment, "instructions", "instructional_text");
   const likertScale = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const state = {
     assessment,
@@ -114,7 +116,7 @@ export default function PersonalitySurvey() {
   }, [assessment]);
 
   useEffect(() => {
-    setShowInstructions(!!(options.showInstructions && instructions));
+    setShowInstructions(!!(options.showInstructions && (instructionsHTML || instructionsText)));
   }, [assessment, options.showInstructions]);
 
   useEffect(() => {
@@ -199,7 +201,11 @@ export default function PersonalitySurvey() {
     content.image = (
       <>
         <div className={[style.instructions, style.slide, style.middle].join(" ")}>
-          <Markdown className={style.markdown}>{instructions}</Markdown>
+          {instructionsHTML ? (
+            <DangerousHTML className={style.markdown} html={instructionsHTML} />
+          ) : (
+            <Markdown className={style.markdown}>{instructionsText}</Markdown>
+          )}
           <button onClick={() => setShowInstructions(false)} type="button">
             {translate("get_started")}
           </button>

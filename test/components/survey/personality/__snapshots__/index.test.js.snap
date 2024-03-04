@@ -899,7 +899,70 @@ exports[`Survey.Personality image loads renders slide 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality instructions renders instructions 1`] = `
+exports[`Survey.Personality instructions renders html instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="image"
+    >
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<p>Listen Up<br /><br />Click the buttons</p>",
+            }
+          }
+        />
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Get Started
+        </button>
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions renders markdown instructions 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >

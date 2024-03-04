@@ -268,7 +268,15 @@ describe("Survey.Personality", () => {
       mockOption("survey", {...options});
     });
 
-    it("renders instructions", async() => {
+    it("renders html instructions", async() => {
+      instructions = {instructional_html: "<p>Listen Up<br /><br />Click the buttons</p>"};
+      mockAssessment({...assessment, instructions});
+      component = await ComponentHandler.setup(Component, {createNodeMock});
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders markdown instructions", async() => {
       component = await ComponentHandler.setup(Component, {createNodeMock});
 
       expect(component.tree).toMatchSnapshot();

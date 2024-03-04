@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import style from "./style.scss";
 
-function Image({orientation, slide}) {
+function Slide({orientation, slide}) {
   return (
     <div className={`${style.slide} ${style[orientation]}`}>
       <img src={slide.image} alt={slide.alternative_text} />
@@ -9,7 +9,7 @@ function Image({orientation, slide}) {
   );
 }
 
-Image.propTypes = {
+Slide.propTypes = {
   orientation: PropTypes.string.isRequired,
   slide: PropTypes.shape({
     alternative_text: PropTypes.string,
@@ -17,4 +17,4 @@ Image.propTypes = {
   }).isRequired
 };
 
-export default Image;
+export default Slide;

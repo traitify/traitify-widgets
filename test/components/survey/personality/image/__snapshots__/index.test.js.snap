@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Survey.Personality actions back requires answered slides 1`] = `
+exports[`Survey.Personality.Image actions back requires answered slides 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -63,7 +63,7 @@ exports[`Survey.Personality actions back requires answered slides 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions back shows button 1`] = `
+exports[`Survey.Personality.Image actions back shows button 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -145,7 +145,7 @@ exports[`Survey.Personality actions back shows button 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions back triggers action 1`] = `
+exports[`Survey.Personality.Image actions back triggers action 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -208,7 +208,7 @@ exports[`Survey.Personality actions back triggers action 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions fullscreen shows button 1`] = `
+exports[`Survey.Personality.Image actions fullscreen shows button 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -282,7 +282,7 @@ exports[`Survey.Personality actions fullscreen shows button 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions fullscreen triggers action 1`] = `
+exports[`Survey.Personality.Image actions fullscreen triggers action 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -356,7 +356,7 @@ exports[`Survey.Personality actions fullscreen triggers action 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
+exports[`Survey.Personality.Image actions fullscreen untriggers action 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -430,7 +430,7 @@ exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions response saves me 1`] = `
+exports[`Survey.Personality.Image actions response saves me 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -501,7 +501,7 @@ exports[`Survey.Personality actions response saves me 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality actions response saves not me 1`] = `
+exports[`Survey.Personality.Image actions response saves not me 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -572,7 +572,7 @@ exports[`Survey.Personality actions response saves not me 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality image error renders error 1`] = `
+exports[`Survey.Personality.Image image error renders error 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -620,7 +620,7 @@ exports[`Survey.Personality image error renders error 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality image error retry renders loading 1`] = `
+exports[`Survey.Personality.Image image error retry renders loading 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -671,7 +671,7 @@ exports[`Survey.Personality image error retry renders loading 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality image error retry renders slide 1`] = `
+exports[`Survey.Personality.Image image error retry renders slide 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -734,7 +734,7 @@ exports[`Survey.Personality image error retry renders slide 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality image loading renders loading 1`] = `
+exports[`Survey.Personality.Image image loading renders loading 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -785,7 +785,7 @@ exports[`Survey.Personality image loading renders loading 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality image loading requires multiple loaded slides 1`] = `
+exports[`Survey.Personality.Image image loading requires multiple loaded slides 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -836,7 +836,7 @@ exports[`Survey.Personality image loading requires multiple loaded slides 1`] = 
 </div>
 `;
 
-exports[`Survey.Personality image loads renders slide 1`] = `
+exports[`Survey.Personality.Image image loads renders slide 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -899,7 +899,7 @@ exports[`Survey.Personality image loads renders slide 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality instructions renders html instructions 1`] = `
+exports[`Survey.Personality.Image instructions renders html instructions 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -962,7 +962,7 @@ exports[`Survey.Personality instructions renders html instructions 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality instructions renders markdown instructions 1`] = `
+exports[`Survey.Personality.Image instructions renders markdown instructions 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1029,7 +1029,7 @@ exports[`Survey.Personality instructions renders markdown instructions 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality instructions requires instructions 1`] = `
+exports[`Survey.Personality.Image instructions requires instructions 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1080,7 +1080,7 @@ exports[`Survey.Personality instructions requires instructions 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality instructions requires option 1`] = `
+exports[`Survey.Personality.Image instructions requires option 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1131,7 +1131,7 @@ exports[`Survey.Personality instructions requires option 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality instructions starts assessment 1`] = `
+exports[`Survey.Personality.Image instructions starts assessment 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1182,7 +1182,7 @@ exports[`Survey.Personality instructions starts assessment 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality likert response saves me 1`] = `
+exports[`Survey.Personality.Image likert response saves me 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1267,7 +1267,7 @@ exports[`Survey.Personality likert response saves me 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality likert response saves not me 1`] = `
+exports[`Survey.Personality.Image likert response saves not me 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1352,7 +1352,7 @@ exports[`Survey.Personality likert response saves not me 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality likert response saves really me 1`] = `
+exports[`Survey.Personality.Image likert response saves really me 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1437,7 +1437,7 @@ exports[`Survey.Personality likert response saves really me 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality likert response saves really not me 1`] = `
+exports[`Survey.Personality.Image likert response saves really not me 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -1522,13 +1522,13 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
 </div>
 `;
 
-exports[`Survey.Personality renders nothing if results ready 1`] = `
+exports[`Survey.Personality.Image renders nothing if results ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 />
 `;
 
-exports[`Survey.Personality submit errors renders default error 1`] = `
+exports[`Survey.Personality.Image submit errors renders default error 1`] = `
 ComponentHandler {
   "Component": [Function],
   "options": {
@@ -1582,7 +1582,7 @@ ComponentHandler {
 }
 `;
 
-exports[`Survey.Personality submit errors renders json error 1`] = `
+exports[`Survey.Personality.Image submit errors renders json error 1`] = `
 ComponentHandler {
   "Component": [Function],
   "options": {
@@ -1636,7 +1636,7 @@ ComponentHandler {
 }
 `;
 
-exports[`Survey.Personality submit errors renders text error 1`] = `
+exports[`Survey.Personality.Image submit errors renders text error 1`] = `
 ComponentHandler {
   "Component": [Function],
   "options": {

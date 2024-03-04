@@ -1,7 +1,7 @@
 /** @jest-environment jsdom */
 import {useState} from "react";
 import {act} from "react-test-renderer";
-import Component from "components/survey/personality";
+import Component from "components/survey/personality/image";
 import {getCacheKey} from "lib/cache";
 import times from "lib/common/array/times";
 import mutable from "lib/common/object/mutable";
@@ -23,7 +23,7 @@ const createNodeMock = () => ({
   focus: jest.fn().mockName("focus")
 });
 
-describe("Survey.Personality", () => {
+describe("Survey.Personality.Image", () => {
   let assessment;
   let cacheKey;
   let completedAssessment;

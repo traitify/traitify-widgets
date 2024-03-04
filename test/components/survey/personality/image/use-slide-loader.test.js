@@ -1,7 +1,7 @@
 /** @jest-environment jsdom */
 import {createRef, useReducer} from "react";
 import {act} from "react-test-renderer";
-import useSlideLoader, {reduceActions, reducer} from "components/survey/personality/use-slide-loader";
+import useSlideLoader, {reduceActions, reducer} from "components/survey/personality/image/use-slide-loader";
 import except from "lib/common/object/except";
 import remap from "lib/common/object/remap";
 import slice from "lib/common/object/slice";

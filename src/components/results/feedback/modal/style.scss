@@ -24,12 +24,6 @@
 .container {
   @extend %container;
 
-  h2,
-  h3,
-  h4 {
-    font-weight: normal;
-  }
-
   .modalContainer {
     @include theme("background", "background");
     @include theme("color", "text");
@@ -74,11 +68,35 @@
   justify-content: space-between;
 }
 
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: $buffer;
+
+  .submitBtn {
+    @include buttonDark("theme");
+  }
+
+  .cancelBtn {
+    @include buttonLight("text-dark");
+    @include theme("border-color", "border-light");
+    border: $border-width solid;
+  }
+}
+
 
 .content {
   display: flex;
   flex-direction: column;
-  padding: $buffer-sm * 1.25 0px;
-  margin: $buffer-lg * 1.25 $buffer * 1.25 $buffer * 1.25 $buffer * 1.25;
-  border-radius: $border-radius-sm * 2.5;
+  margin: $buffer-lg;
+  gap: $buffer;
+
+  .dropdown {
+    @extend %dropdown;
+    margin-bottom: $buffer-sm;
+  }
+
+  label {
+    font-weight: bold;
+  }
 }

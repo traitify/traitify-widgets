@@ -12,6 +12,18 @@ export default function FeedbackModal() {
   if(!show) {
     return null;
   }
+
+  const onCancel = () => {
+    setShow(false);
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const response = new Map(new FormData(event.target).entries());
+    console.log("response :>> ", response);
+    // TODO send to server
+  };
+
   const questionEntries = [
     {
       id: "overall-experience-assessment",
@@ -39,33 +51,52 @@ export default function FeedbackModal() {
     <div className={`${style.modal} ${style.container}`}>
       <section className={style.modalContainer}>
         <div className={style.modalContent}>
-          <div className={style.header}>
-            <div>Share Your Perspective</div>
-            <div>
-              <Icon
-                aria-label={translate("close")}
-                className={style.close}
-                icon={faTimes}
-                onClick={() => setShow(false)}
-                tabIndex="-1"
-              />
-            </div>
-          </div>
-          <hr className={style.grayDivider} />
-          <div className={style.content}>
-            <span>We&apos;d like to learn about your experience</span>
-            {questionEntries.map((entry) => (
+
+          <form onSubmit={onSubmit} id="form">
+
+            <div className={style.header}>
+              <div>Share Your Perspective</div>
               <div>
-                <label htmlFor={entry.id} className={style.question}>{entry.q}</label>
-                <select id={entry.id}>
-                  <option value="" disabled={true} selected={true} hidden={true}>Select</option>
-                  {entry.opts.map((answer) => (
-                    <option value={answer}>{answer}</option>
-                  ))}
-                </select>
+                <Icon
+                  aria-label={translate("close")}
+                  className={style.close}
+                  icon={faTimes}
+                  onClick={() => setShow(false)}
+                  tabIndex="-1"
+                />
               </div>
-            ))}
-          </div>
+            </div>
+
+            <hr className={style.grayDivider} />
+
+            <div className={style.content}>
+              <span>We&apos;d like to learn about your experience</span>
+
+              {questionEntries.map((entry) => (
+                <div key={entry.id}>
+                  <label htmlFor={entry.id} className={style.question}>{entry.q}</label>
+                  <select form="form" className={style.dropdown} id={entry.id} name={entry.id} defaultValue="">
+                    <option value="" disabled={true} hidden={true}>Select</option>
+                    {entry.opts.map((answer) => (
+                      <option key={answer} value={answer}>{answer}</option>
+                    ))}
+                  </select>
+                </div>
+              ))}
+            </div>
+
+            <hr className={style.grayDivider} />
+
+            <div className={style.footer}>
+
+              <button className={style.cancelBtn} onClick={onCancel} type="button">
+                Cancel
+              </button>
+              <button type="submit" className={style.submitBtn}>Submit</button>
+            </div>
+
+          </form>
+
         </div>
       </section>
     </div>

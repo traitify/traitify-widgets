@@ -5,6 +5,7 @@ import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
 import Traits from "components/results/personality/trait/list";
 import {optionsState} from "lib/recoil";
+import Feedback from "components/results/feedback";
 import style from "./style.scss";
 
 export default function CandidateReport() {
@@ -23,9 +24,12 @@ export default function CandidateReport() {
     setOptions({...options, newOptions});
   }, []);
 
+  // TOOD only show feedback if big-five
+
   return (
     <section className={style.container}>
       <ArchetypeHeading />
+      <Feedback />
       <ArchetypeTips />
       <Dimensions />
       <Traits />

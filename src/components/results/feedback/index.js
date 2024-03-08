@@ -1,12 +1,17 @@
-import {useSetRecoilState} from "recoil";
 import {feedbackModalShowState} from "lib/recoil";
+import useLoadedValue from "lib/hooks/use-loaded-value";
 import useTranslate from "lib/hooks/use-translate";
+import {useRecoilState} from "recoil";
 import style from "./style.scss";
 import Modal from "./modal";
+import {userCompletedFeedbackQuery} from "../../../lib/recoil/feedback";
 
 export default function Feedback() {
-  const setShow = useSetRecoilState(feedbackModalShowState);
+  const [show, setShow] = useRecoilState(feedbackModalShowState);
+  const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);
   const translate = useTranslate();
+
+  if(userCompletedFeedback) { return null; }
 
   const openModal = () => {
     setShow(true);
@@ -23,7 +28,7 @@ export default function Feedback() {
           </div>
         </div>
       </div>
-      <Modal />
+      { show && <Modal />}
     </div>
   );
 }

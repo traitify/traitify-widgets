@@ -5,7 +5,7 @@ export * from "./benchmark";
 export * from "./cache";
 export * from "./career";
 export * from "./deck";
+export * from "./feedback";
 export * from "./guide";
 export * from "./jobs";
 export * from "./organization";
-export * from "./results";

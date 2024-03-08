@@ -1,17 +1,19 @@
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {feedbackModalShowState} from "lib/recoil";
-import {useRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 import useTranslate from "lib/hooks/use-translate";
 import Icon from "components/common/icon";
+import useLoadedValue from "lib/hooks/use-loaded-value";
 import style from "./style.scss";
+import {feedbackSurveyQuery} from "../../../../lib/recoil/feedback";
 
 export default function FeedbackModal() {
-  const [show, setShow] = useRecoilState(feedbackModalShowState);
-  const translate = useTranslate(); // TODO i18n
+  const setShow = useSetRecoilState(feedbackModalShowState);
+  const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
+  const translate = useTranslate();
 
-  if(!show) {
-    return null;
-  }
+  console.log("feedbackSurvey :>> ", feedbackSurvey);
+  if(!feedbackSurvey) { return null; }
 
   const onCancel = () => {
     setShow(false);
@@ -24,28 +26,29 @@ export default function FeedbackModal() {
     // TODO send to server
   };
 
-  const questionEntries = [
-    {
-      id: "overall-experience-assessment",
-      q: "What was your overall experience of taking the assessment?",
-      opts: ["Positive", "Negative", "Not sure/No opinion"]
-    },
-    {
-      id: "overall-opinion-images",
-      q: "What was your overall opinion of the images in the assessment?",
-      opts: ["I liked them", "I didn’t like them", "Not sure/No opinion"]
-    },
-    {
-      id: "assessment-effect-interest",
-      q: "Did taking this assessment affect your interest in working for this company?",
-      opts: [
-        "Increased my interest",
-        "Decreased my interest",
-        "Had no effect",
-        "N/A. I did not take this as part of a hiring process"
-      ]
+  const multipleChoice = (question) => (
+    <div key={question.id}>
+      <label htmlFor={question.id} className={style.question}>{question.text}</label>
+      <select form="form" className={style.dropdown} id={question.id} name={question.id} defaultValue="">
+        <option value="" disabled={true} hidden={true}>Select</option>
+        {question.multipleChoiceOptions.map((option) => (
+          <option key={option.id} value={option.id}>{option.text}</option>
+        ))}
+      </select>
+    </div>
+  );
+
+  const questionFactory = (question) => {
+    switch(question.questionType) {
+      case "Multiple Choice":
+        return multipleChoice(question);
+      // case "Short Response":
+        // TODO
+      default:
+        console.error(`Unknown question type: ${question.questionType}`); /* eslint-disable-line no-console */
+        return null;
     }
-  ];
+  };
 
   return (
     <div className={`${style.modal} ${style.container}`}>
@@ -55,7 +58,7 @@ export default function FeedbackModal() {
           <form onSubmit={onSubmit} id="form">
 
             <div className={style.header}>
-              <div>{translate("feedback_header")}</div>
+              <div>{feedbackSurvey.title}</div>
               <div>
                 <Icon
                   aria-label={translate("close")}
@@ -72,17 +75,7 @@ export default function FeedbackModal() {
             <div className={style.content}>
               <span>{translate("feedback_modal_prompt")}</span>
 
-              {questionEntries.map((entry) => (
-                <div key={entry.id}>
-                  <label htmlFor={entry.id} className={style.question}>{entry.q}</label>
-                  <select form="form" className={style.dropdown} id={entry.id} name={entry.id} defaultValue="">
-                    <option value="" disabled={true} hidden={true}>Select</option>
-                    {entry.opts.map((answer) => (
-                      <option key={answer} value={answer}>{answer}</option>
-                    ))}
-                  </select>
-                </div>
-              ))}
+              {feedbackSurvey.questions.map(questionFactory)}
             </div>
 
             <hr className={style.grayDivider} />

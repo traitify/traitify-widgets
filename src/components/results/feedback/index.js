@@ -6,7 +6,7 @@ import Modal from "./modal";
 
 export default function Feedback() {
   const setShow = useSetRecoilState(feedbackModalShowState);
-  const translate = useTranslate(); // TODO i18n
+  const translate = useTranslate();
 
   const openModal = () => {
     setShow(true);
@@ -16,10 +16,10 @@ export default function Feedback() {
     <div>
       <div className={style.container}>
         <div className={style.details}>
-          <span>Did you feel like your personality results match you?</span>
+          <span>{translate("feedback_prompt")}</span>
           <div className={style.buttons}>
-            <button type="button" className={style.me} onClick={openModal}>Yes</button>
-            <button type="button" className={style.notMe} onClick={openModal}>No</button>
+            <button type="button" className={style.me} onClick={openModal}>{translate("yes")}</button>
+            <button type="button" className={style.notMe} onClick={openModal}>{translate("no")}</button>
           </div>
         </div>
       </div>

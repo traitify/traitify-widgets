@@ -55,7 +55,7 @@ export default function FeedbackModal() {
           <form onSubmit={onSubmit} id="form">
 
             <div className={style.header}>
-              <div>Share Your Perspective</div>
+              <div>{translate("feedback_header")}</div>
               <div>
                 <Icon
                   aria-label={translate("close")}
@@ -70,7 +70,7 @@ export default function FeedbackModal() {
             <hr className={style.grayDivider} />
 
             <div className={style.content}>
-              <span>We&apos;d like to learn about your experience</span>
+              <span>{translate("feedback_modal_prompt")}</span>
 
               {questionEntries.map((entry) => (
                 <div key={entry.id}>
@@ -90,9 +90,9 @@ export default function FeedbackModal() {
             <div className={style.footer}>
 
               <button className={style.cancelBtn} onClick={onCancel} type="button">
-                Cancel
+                {translate("cancel")}
               </button>
-              <button type="submit" className={style.submitBtn}>Submit</button>
+              <button type="submit" className={style.submitBtn}>{translate("submit")}</button>
             </div>
 
           </form>

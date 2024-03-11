@@ -95,7 +95,7 @@
   "location_placeholder": "舉例：馬裡蘭州巴爾的摩",
   "match_rate": "匹配",
   "match_rate_html": "這個職業與你的性格相符<span>%{match_rate}<span>%。",
-  "me": "中等",
+  "me": "我",
   "more_information": "有關這些值的更多資訊。",
   "most_represented_traits": "最具代表性的特徵",
   "most_represented_traits_definition": "在本次評估所衡量的三十個特徵中，這些特徵的得分位於該候選人總回答的前三分之一。 此列表中的外觀僅反映了該個體的這些特徵與其餘特徵相比的相對位置。 這並沒有提供可用於比較一位候選人與另一位候選人所表現出的一種特質程度的資訊。",

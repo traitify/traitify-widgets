@@ -36,6 +36,7 @@ exports[`PersonalityArchetypeHeading fallbacks renders component in third person
       <video
         controls={true}
         crossOrigin="anonymous"
+        disablePictureInPicture={true}
         playsInline={true}
         poster="https://cdn.traitify.com/content/paradox-archetype-videos/Cohort_thumb.jpg"
       >
@@ -85,6 +86,7 @@ exports[`PersonalityArchetypeHeading fallbacks renders component without badge 1
       <video
         controls={true}
         crossOrigin="anonymous"
+        disablePictureInPicture={true}
         playsInline={true}
         poster="https://cdn.traitify.com/content/paradox-archetype-videos/Cohort_thumb.jpg"
       >
@@ -183,6 +185,7 @@ exports[`PersonalityArchetypeHeading renders component 1`] = `
       <video
         controls={true}
         crossOrigin="anonymous"
+        disablePictureInPicture={true}
         playsInline={true}
         poster="https://cdn.traitify.com/content/paradox-archetype-videos/Cohort_thumb.jpg"
       >

@@ -44,7 +44,7 @@ export default function PersonalityArchetypeHeading() {
       </div>
       <div className={style.meaning}>
         {video.url ? (
-          <video controls={true} playsInline={true} poster={video.thumbnail} crossOrigin="anonymous">
+          <video controls={true} crossOrigin="anonymous" disablePictureInPicture={true} playsInline={true} poster={video.thumbnail}>
             <source src={video.url} type="video/mp4" />
             {video.track && <track kind="captions" src={video.track} />}
           </video>

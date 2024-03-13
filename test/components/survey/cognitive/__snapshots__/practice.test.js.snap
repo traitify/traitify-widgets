@@ -158,6 +158,7 @@ exports[`Practice renders custom questions 4`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -262,6 +263,7 @@ exports[`Practice renders question 1 explanation 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -349,6 +351,7 @@ exports[`Practice renders question 2 explanation 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -436,6 +439,7 @@ exports[`Practice renders question 3 explanation 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -479,6 +483,7 @@ exports[`Practice videos horizontal renders component 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -522,6 +527,7 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -565,6 +571,7 @@ exports[`Practice videos vertical renders component 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -608,6 +615,7 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}

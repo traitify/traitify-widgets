@@ -1,18 +1,16 @@
-import {atom, selector} from "recoil";
+import {selector} from "recoil";
 import {assessmentIDState, graphqlState, httpState} from "./base";
-
-export const feedbackModalShowState = atom({key: "feedback-modal-show", default: false});
 
 export const userCompletedFeedbackQuery = selector({
   key: "user-completed-feedback",
-  get: ({get}) => {
+  get: async({get}) => {
     const assessmentID = get(assessmentIDState);
     if(!assessmentID) { return true; }
-
-    // TODO check status
     // const http = get(httpState);
-    // const resp = http.get(`/feedback/assessments/${assessmentID}/status`);
-    // console.log("resp :>> ", resp);
+    // const resp = await http.get(`/feedback/assessments/${assessmentID}/status`);
+    // console.log('resp :>> ', resp);
+
+    // return resp?.status === "complete";
     return false;
   }
 });

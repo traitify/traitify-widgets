@@ -1,23 +1,17 @@
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
-import {feedbackModalShowState} from "lib/recoil";
-import {useSetRecoilState} from "recoil";
+import PropTypes from "prop-types";
+import {feedbackSurveyQuery} from "lib/recoil/feedback";
 import useTranslate from "lib/hooks/use-translate";
-import Icon from "components/common/icon";
 import useLoadedValue from "lib/hooks/use-loaded-value";
+import Icon from "components/common/icon";
 import style from "./style.scss";
-import {feedbackSurveyQuery} from "../../../../lib/recoil/feedback";
 
-export default function FeedbackModal() {
-  const setShow = useSetRecoilState(feedbackModalShowState);
+export default function FeedbackModal({closeFn}) {
   const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
   const translate = useTranslate();
 
   console.log("feedbackSurvey :>> ", feedbackSurvey);
   if(!feedbackSurvey) { return null; }
-
-  const onCancel = () => {
-    setShow(false);
-  };
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -64,7 +58,7 @@ export default function FeedbackModal() {
                   aria-label={translate("close")}
                   className={style.close}
                   icon={faTimes}
-                  onClick={() => setShow(false)}
+                  onClick={closeFn}
                   tabIndex="-1"
                 />
               </div>
@@ -82,7 +76,7 @@ export default function FeedbackModal() {
 
             <div className={style.footer}>
 
-              <button className={style.cancelBtn} onClick={onCancel} type="button">
+              <button className={style.cancelBtn} onClick={closeFn} type="button">
                 {translate("cancel")}
               </button>
               <button type="submit" className={style.submitBtn}>{translate("submit")}</button>
@@ -95,3 +89,7 @@ export default function FeedbackModal() {
     </div>
   );
 }
+
+FeedbackModal.propTypes = {
+  closeFn: PropTypes.func.isRequired
+};

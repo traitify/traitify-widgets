@@ -1,21 +1,19 @@
-import {feedbackModalShowState} from "lib/recoil";
+import {useState} from "react";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import useTranslate from "lib/hooks/use-translate";
-import {useRecoilState} from "recoil";
+import {userCompletedFeedbackQuery} from "lib/recoil/feedback";
 import style from "./style.scss";
 import Modal from "./modal";
-import {userCompletedFeedbackQuery} from "../../../lib/recoil/feedback";
 
 export default function Feedback() {
-  const [show, setShow] = useRecoilState(feedbackModalShowState);
   const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);
   const translate = useTranslate();
+  const [showModal, setShowModal] = useState(false);
 
   if(userCompletedFeedback) { return null; }
 
-  const openModal = () => {
-    setShow(true);
-  };
+  const openModal = () => { setShowModal(true); };
+  const closeModal = () => { setShowModal(false); };
 
   return (
     <div>
@@ -28,7 +26,7 @@ export default function Feedback() {
           </div>
         </div>
       </div>
-      { show && <Modal />}
+      {showModal && <Modal closeFn={closeModal} />}
     </div>
   );
 }

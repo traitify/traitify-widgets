@@ -12,7 +12,6 @@ import Markdown from "components/common/markdown";
 import dig from "lib/common/object/dig";
 import slice from "lib/common/object/slice";
 import toQueryString from "lib/common/object/to-query-string";
-import camelCase from "lib/common/string/camel-case";
 import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
@@ -25,6 +24,7 @@ import useTranslate from "lib/hooks/use-translate";
 import {personalityAssessmentQuery} from "lib/recoil";
 import Slide from "./slide";
 import useSlideLoader from "./use-slide-loader";
+import Responses from "../responses";
 import style from "../style.scss";
 
 const maxRetries = 2;
@@ -60,7 +60,7 @@ export default function PersonalityImageSurvey() {
   const finished = slides.length > 0 && slides.length === completedSlides.length;
   const instructionsHTML = dig(assessment, "instructions", "instructional_html");
   const instructionsText = dig(assessment, "instructions", "instructional_text");
-  const likertScale = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
+  const likert = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const state = {
     assessment,
     dispatch,
@@ -87,7 +87,7 @@ export default function PersonalityImageSurvey() {
       if(width <= 0 || height <= 0) { return slideImage.url; }
 
       const params = {
-        h: (likertScale && window.innerWidth <= 768) ? height - 74 : height,
+        h: (likert && window.innerWidth <= 768) ? height - 74 : height,
         w: width
       };
 
@@ -138,7 +138,7 @@ export default function PersonalityImageSurvey() {
       `/assessments/${assessment.id}/slides`,
       completedSlides.map(({id, response, time_taken: timeTaken}) => ({
         id,
-        [likertScale ? "likert_response" : "response"]: response,
+        [likert ? "likert_response" : "response"]: response,
         time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
       }))
     ).then(() => {
@@ -174,10 +174,10 @@ export default function PersonalityImageSurvey() {
   const back = () => dispatch({type: "back"});
   const content = {};
   const currentSlide = slides[slideIndex];
-  const updateSlide = (index, value) => {
-    dispatch({index, response: value, type: "answer"});
+  const updateSlide = (response) => {
+    dispatch({index: slideIndex, response, type: "answer"});
 
-    listener.trigger("Survey.updateSlide", {...state, response: value});
+    listener.trigger("Survey.updateSlide", {...state, response});
   };
 
   if(submitError || error) {
@@ -243,37 +243,11 @@ export default function PersonalityImageSurvey() {
     );
   }
 
-  const buttonClass = [
-    "traitify--response-button",
-    style.response,
-    !content.enabled && style.btnDisabled
-  ].filter(Boolean).join(" ");
-  const buttons = likertScale ? [
-    {key: "really_not_me", response: "REALLY_NOT_ME"},
-    {key: "not_me", response: "NOT_ME"},
-    {key: "me", response: "ME"},
-    {key: "really_me", response: "REALLY_ME"}
-  ] : [
-    {key: "me", response: true},
-    {key: "not_me", response: false}
-  ];
-
   return (
-    <div className={[style.container, likertScale && style.likertScale].filter(Boolean).join(" ")} ref={element}>
+    <div className={[style.container, likert && style.likert].filter(Boolean).join(" ")} ref={element}>
       <div className={style.caption} ref={caption} tabIndex="-1">{content.caption}</div>
       <div className={style.image} ref={image}>{content.image}</div>
-      <div className={style.buttons}>
-        {buttons.map(({key, response}) => (
-          <button
-            key={key}
-            className={[buttonClass, style[camelCase(key)]].join(" ")}
-            onClick={content.enabled && (() => updateSlide(slideIndex, response))}
-            type="button"
-          >
-            {translate(key)}
-          </button>
-        ))}
-      </div>
+      <Responses likert={likert} onResponse={content.enabled && updateSlide} />
     </div>
   );
 }

@@ -152,7 +152,7 @@
   }
   h1 { margin: $buffer 0; }
 }
-.likertScale {
+.likert {
   .buttons {
     .me, .reallyMe {
       @include theme("background-color", "me");

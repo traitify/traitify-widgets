@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey renders image 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Image
+  </div>
+</div>
+`;
+
+exports[`Survey renders nothing 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Survey renders text 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div>
+    Text
+  </div>
+</div>
+`;

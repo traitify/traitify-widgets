@@ -1,10 +1,20 @@
 import PropTypes from "prop-types";
+import {useLayoutEffect, useRef} from "react";
 import style from "../style.scss";
 
 function Slide({orientation, slide}) {
+  const caption = useRef(null);
+
+  useLayoutEffect(() => {
+    if(!caption.current) { return; }
+    if(orientation === "middle") { return; }
+
+    caption.current.focus({preventScroll: true});
+  }, [orientation]);
+
   return (
     <div className={`${style.slide} ${style[orientation]}`}>
-      <img src={slide.image} alt={slide.alternative_text} />
+      <div className={style.text}>{slide.text}</div>
     </div>
   );
 }
@@ -12,8 +22,7 @@ function Slide({orientation, slide}) {
 Slide.propTypes = {
   orientation: PropTypes.string.isRequired,
   slide: PropTypes.shape({
-    alternative_text: PropTypes.string,
-    image: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired
   }).isRequired
 };
 

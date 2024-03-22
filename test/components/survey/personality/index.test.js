@@ -2,8 +2,8 @@ import Component from "components/survey/personality";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import useContainer from "support/hooks/use-container";
-import dimensionBased from "support/json/assessment/dimension-based.json";
-import textAssessment from "support/json/assessment/text.json";
+import imageAssessment from "support/json/assessment/with-slides.json";
+import textAssessment from "support/json/assessment/with-text-slides.json";
 
 jest.mock("components/survey/personality/image", () => (() => <div className="mock">Image</div>));
 jest.mock("components/survey/personality/text", () => (() => <div className="mock">Text</div>));
@@ -14,7 +14,7 @@ describe("Survey", () => {
   useContainer();
 
   it("renders image", async() => {
-    mockAssessment(dimensionBased);
+    mockAssessment(imageAssessment);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

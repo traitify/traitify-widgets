@@ -1,9 +1,6 @@
 import useAssessment from "lib/hooks/use-assessment";
 import Image from "./image";
-// import Text from "./text";
-
-// TODO: Build text widget
-function Text() { return <div>Text</div>; }
+import Text from "./text";
 
 export default function PersonalitySurvey() {
   const assessment = useAssessment({type: "personality"});

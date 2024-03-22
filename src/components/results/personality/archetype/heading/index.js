@@ -4,8 +4,8 @@ import useComponentEvents from "lib/hooks/use-component-events";
 import useDeck from "lib/hooks/use-deck";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useTranslate from "lib/hooks/use-translate";
-import useArchetypeDetails from "./use-archetype-details";
 import style from "./style.scss";
+import useArchetypeDetails from "./use-archetype-details";
 
 export default function PersonalityArchetypeHeading() {
   const deck = useDeck();

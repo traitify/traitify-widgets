@@ -24,8 +24,8 @@ import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {personalityAssessmentQuery} from "lib/recoil";
 import Image from "./image";
-import useSlideLoader from "./use-slide-loader";
 import style from "./style.scss";
+import useSlideLoader from "./use-slide-loader";
 
 const maxRetries = 2;
 

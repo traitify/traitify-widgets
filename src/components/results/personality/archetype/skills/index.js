@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import sortByTypePosition from "lib/common/sort-by-type-position";
 import dig from "lib/common/object/dig";
+import sortByTypePosition from "lib/common/sort-by-type-position";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useInlineMemo from "lib/hooks/use-inline-memo";

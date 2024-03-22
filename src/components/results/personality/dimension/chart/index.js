@@ -1,8 +1,8 @@
 import reverse from "lib/common/array/reverse";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useTranslate from "lib/hooks/use-translate";
-import useData from "./use-data";
 import style from "./style.scss";
+import useData from "./use-data";
 
 export default function PersonalityDimensionChart() {
   const data = useData();

@@ -10,8 +10,8 @@ import useInlineMemo from "lib/hooks/use-inline-memo";
 import useOption from "lib/hooks/use-option";
 import usePersonality from "lib/hooks/use-personality";
 import useTranslate from "lib/hooks/use-translate";
-import useBaseData from "./use-base-data";
 import style from "./style.scss";
+import useBaseData from "./use-base-data";
 
 export default function PersonalityBaseHeading() {
   const assessment = useAssessment({type: "personality"});

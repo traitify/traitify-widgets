@@ -12,11 +12,11 @@ import useHttp from "lib/hooks/use-http";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {cognitiveAssessmentQuery} from "lib/recoil";
+import {useQuestionsLoader} from "./helpers";
 import Instructions from "./instructions";
 import Slide from "./slide";
-import Timer from "./timer";
-import {useQuestionsLoader} from "./helpers";
 import style from "./style.scss";
+import Timer from "./timer";
 
 export default function Cognitive() {
   const assessment = useAssessment({type: "cognitive"});

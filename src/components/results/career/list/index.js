@@ -2,9 +2,9 @@ import useCareers from "lib/hooks/use-careers";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
-import Career from "../details";
 import HighlightedCareers from "./highlighted";
 import style from "./style.scss";
+import Career from "../details";
 
 export default function CareerList() {
   const {fetching, getNextPage, moreRecords, records} = useCareers();

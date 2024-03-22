@@ -1,5 +1,5 @@
-import useHighlightedCareers from "lib/hooks/use-highlighted-careers";
 import Career from "components/results/career/details";
+import useHighlightedCareers from "lib/hooks/use-highlighted-careers";
 import style from "./style.scss";
 
 export default function CareerListHighlighted() {

@@ -1,9 +1,9 @@
 import {useEffect} from "react";
 import {useSetRecoilState, useRecoilState} from "recoil";
+import mutable from "lib/common/object/mutable";
 import useListener from "lib/hooks/use-listener";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import {activeState, assessmentsState} from "lib/recoil";
-import mutable from "lib/common/object/mutable";
 
 export default function useAssessmentsEffect() {
   const [active, setActive] = useRecoilState(activeState);

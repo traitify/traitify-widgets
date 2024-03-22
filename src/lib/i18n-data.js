@@ -1,6 +1,6 @@
 import deDE from "lib/i18n-data/de-de.json";
-import enUS from "lib/i18n-data/en-us.json";
 import enGB from "lib/i18n-data/en-gb.json";
+import enUS from "lib/i18n-data/en-us.json";
 import esUS from "lib/i18n-data/es-us.json";
 import frCA from "lib/i18n-data/fr-ca.json";
 import frFR from "lib/i18n-data/fr-fr.json";

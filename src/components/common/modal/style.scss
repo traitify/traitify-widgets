@@ -1,0 +1,69 @@
+@import "style/helpers";
+
+.modal {
+  background: rgba(0, 0, 0, 0.85);
+  color: #333;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+  transition: top 300ms ease-in-out;
+
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: $font-size * 1.25;
+  }
+}
+
+.container {
+  @extend %container;
+
+  .modalContainer {
+    @include theme("background", "background");
+    @include theme("color", "text");
+    border-radius: $border-radius-sm * 2.5;
+    padding: $buffer * 1.25 $buffer * 1.25 $buffer-sm * 1.25;
+    text-align: left;
+
+    @include min-width(md) {
+      width: 100%;
+      position: relative;
+      left: 50%;
+      max-width: 650px;
+      margin: $buffer-lg * 3 $buffer-lg * -13.5 0;
+    }
+
+    @include min-width(lg) {
+      max-width: 800px;
+      margin: $buffer-lg * 3 $buffer-lg * -16.75 0;
+    }
+
+    @include min-width(xl) {
+      max-width: 1000px;
+      margin: $buffer-lg * 3 $buffer-lg * -20.75 0;
+    }
+  }
+
+  .grayDivider {
+    color: #555555;
+    width: 100%;
+    margin: $buffer-sm * 1.25 auto $buffer * 1.25;
+    line-height: inherit;
+    clear: both;
+    user-select: none;
+    break-after: page;
+    border: $border-width solid #e8e8ec;
+    border-radius: $border-radius-sm;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,92 +1,105 @@
-import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import Modal from "components/common/modal";
 import {feedbackSurveyQuery} from "lib/recoil/feedback";
-import useTranslate from "lib/hooks/use-translate";
+import useAssessment from "lib/hooks/use-assessment";
 import useLoadedValue from "lib/hooks/use-loaded-value";
-import Icon from "components/common/icon";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
+
+const multipleChoice = (question) => (
+  <div key={question.id} className={style.questionSection}>
+    <label className={style.question} htmlFor={question.id}>{question.text}</label>
+    <select defaultValue="" id={question.id} name={question.id}>
+      <option disabled={true} hidden={true} value="">Select</option>
+      {question.multipleChoiceOptions.map((option) => (
+        <option key={option.id} value={option.id}>{option.text}</option>
+      ))}
+    </select>
+  </div>
+);
+
+const shortResponse = (question) => (
+  <div key={question.id} className={style.questionSection}>
+    <label className={style.question} htmlFor={question.id}>{question.text}</label>
+    <textarea id={question.id} name={question.id} rows="5" />
+  </div>
+);
+
+const questionFactory = (question) => {
+  switch(question.questionType) {
+    case "Multiple Choice":
+      return multipleChoice(question);
+    case "Short Response":
+      return shortResponse(question);
+    default:
+      console.error(`Unknown question type: ${question.questionType}`); /* eslint-disable-line no-console */
+      throw new Error("Unknown question type");
+  }
+};
+
+const buildFeedbackSurveyResponse = (questionType, questionId, answer) => {
+  switch(questionType) {
+    case "Multiple Choice":
+      return {
+        question_id: questionId,
+        selected_option_id: answer
+      };
+    case "Short Response":
+      return {
+        question_id: questionId,
+        short_response: answer
+      };
+    default:
+      console.error(`Unknown question type: ${questionType}`); /* eslint-disable-line no-console */
+      throw new Error("Unknown question type");
+  }
+};
+
+const buildFeedbackSurveyRequest = (assessment, feedbackSurvey, responseMap) => ({
+  // TODO
+  profile_id: "profile_id TODO",
+  assessment_survey_id: assessment.id,
+  assessment_survey_key: "assessment_survey_key TODO",
+  assessment_survey_type: assessment.type,
+  feedback_survey_id: feedbackSurvey.id,
+  locale_key: assessment.locale_key,
+  responses: Array.from(responseMap).map(([questionId, answer]) => {
+    const {questionType} = feedbackSurvey.questions.find((q) => q.id === questionId);
+    return buildFeedbackSurveyResponse(questionType, questionId, answer);
+  })
+});
 
 export default function FeedbackModal({closeFn}) {
   const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
+  const assessment = useAssessment();
   const translate = useTranslate();
-
-  console.log("feedbackSurvey :>> ", feedbackSurvey);
   if(!feedbackSurvey) { return null; }
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const response = new Map(new FormData(event.target).entries());
-    console.log("response :>> ", response);
+    const responseMap = new Map(new FormData(event.target).entries());
+    const request = buildFeedbackSurveyRequest(assessment, feedbackSurvey, responseMap);
+    console.log("request :>> ", request);
     // TODO send to server
   };
 
-  const multipleChoice = (question) => (
-    <div key={question.id}>
-      <label htmlFor={question.id} className={style.question}>{question.text}</label>
-      <select form="form" className={style.dropdown} id={question.id} name={question.id} defaultValue="">
-        <option value="" disabled={true} hidden={true}>Select</option>
-        {question.multipleChoiceOptions.map((option) => (
-          <option key={option.id} value={option.id}>{option.text}</option>
-        ))}
-      </select>
-    </div>
-  );
-
-  const questionFactory = (question) => {
-    switch(question.questionType) {
-      case "Multiple Choice":
-        return multipleChoice(question);
-      // case "Short Response":
-        // TODO
-      default:
-        console.error(`Unknown question type: ${question.questionType}`); /* eslint-disable-line no-console */
-        return null;
-    }
-  };
-
   return (
-    <div className={`${style.modal} ${style.container}`}>
-      <section className={style.modalContainer}>
-        <div className={style.modalContent}>
-
-          <form onSubmit={onSubmit} id="form">
-
-            <div className={style.header}>
-              <div>{feedbackSurvey.title}</div>
-              <div>
-                <Icon
-                  aria-label={translate("close")}
-                  className={style.close}
-                  icon={faTimes}
-                  onClick={closeFn}
-                  tabIndex="-1"
-                />
-              </div>
-            </div>
-
-            <hr className={style.grayDivider} />
-
-            <div className={style.content}>
-              <span>{translate("feedback_modal_prompt")}</span>
-
-              {feedbackSurvey.questions.map(questionFactory)}
-            </div>
-
-            <hr className={style.grayDivider} />
-
-            <div className={style.footer}>
-
-              <button className={style.cancelBtn} onClick={closeFn} type="button">
-                {translate("cancel")}
-              </button>
-              <button type="submit" className={style.submitBtn}>{translate("submit")}</button>
-            </div>
-
-          </form>
-
-        </div>
-      </section>
-    </div>
+    <Modal
+      closeFn={closeFn}
+      title={feedbackSurvey.title}
+    >
+      <form className={style.form} id={feedbackSurvey.id} onSubmit={onSubmit}>
+        <span>{translate("feedback_modal_prompt")}</span>
+        {feedbackSurvey.questions.map(questionFactory)}
+      </form>
+      <hr className={style.grayDivider} />
+      <div className={style.footer}>
+        <button className={style.cancelBtn} onClick={closeFn} type="button">
+          {translate("cancel")}
+        </button>
+        <button type="submit" className={style.submitBtn} form={feedbackSurvey.id}>{translate("submit")}</button>
+      </div>
+    </Modal>
   );
 }
 

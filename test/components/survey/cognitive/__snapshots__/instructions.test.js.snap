@@ -69,6 +69,7 @@ exports[`Instructions renders custom examples 3`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -150,6 +151,7 @@ exports[`Instructions renders custom instructions 1`] = `
     </ul>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -193,6 +195,7 @@ exports[`Instructions renders custom instructions with markdown 1`] = `
     </ul>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}
@@ -257,6 +260,7 @@ exports[`Instructions renders step 2 1`] = `
     </p>
     <video
       autoPlay={true}
+      disablePictureInPicture={true}
       disableRemotePlayback={true}
       loop={true}
       muted={true}

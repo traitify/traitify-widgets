@@ -115,8 +115,11 @@
     }
   ],
   "hexColorHigh": "#29B770",
+  "hexColorHighLabel": "Higher",
   "hexColorLow": "#FFCC3B",
+  "hexColorLowLabel": "Lower",
   "hexColorMedium": "#EF615E",
+  "hexColorMediumLabel": "Medium",
   "name": "McDonalds Employee Assessment Recommendation",
   "orgPath": "9011ec189e8542828b521cb850719e15",
   "resultRankings": [

@@ -2,6 +2,12 @@ import times from "lib/common/array/times";
 import dig from "lib/common/object/dig";
 import sortByTypePosition from "lib/common/sort-by-type-position";
 
+const defaultRanks = [
+  {color: "#29B770", rank: "high"},
+  {color: "#FFCC3B", rank: "medium"},
+  {color: "#EF615E", rank: "low"}
+];
+
 const defaultRanges = [
   {matchScore: 5, maxScore: 3, minScore: 1},
   {matchScore: 10, maxScore: 6, minScore: 4},
@@ -16,12 +22,29 @@ const rankFromRange = ({matchScore: score}) => {
   return "other";
 };
 
+const findRank = ({range, ranks}) => {
+  const key = rankFromRange(range);
+
+  return ranks.find(({rank}) => rank === key) || {color: "black", rank: key};
+};
+
 export function findCompetency({guide, typeID}) {
   return (dig(guide, "personality", "competencies") || [])
     .find(({questionSequences}) => dig(questionSequences, 0, "personalityTypeId") === typeID);
 }
 
+export function ranksFromBenchmark(benchmark) {
+  if(!benchmark) { return defaultRanks; }
+
+  return ["High", "Medium", "Low"].map((rank) => ({
+    color: benchmark[`hexColor${rank}`],
+    label: benchmark[`hexColor${rank}Label`],
+    rank: rank.toLowerCase()
+  }));
+}
+
 export function combine({benchmark, guide, order, types}) {
+  const ranks = ranksFromBenchmark(benchmark);
   const data = sortByTypePosition(types).map(({personality_type: type, score}) => {
     const dimensionRanges = benchmark
       ? benchmark.dimensionRanges.filter(({dimensionId}) => dimensionId === type.id)
@@ -34,7 +57,7 @@ export function combine({benchmark, guide, order, types}) {
     const ranges = rawRanges.map((range) => ({
       max: range.maxScore <= 10 ? range.maxScore : 10,
       min: range.minScore > 0 ? range.minScore : 1,
-      rank: rankFromRange(range)
+      ...findRank({range, ranks})
     }));
     const range = ranges.find(({max, min}) => score >= min && score <= max);
 
@@ -60,10 +83,10 @@ export function combine({benchmark, guide, order, types}) {
 
 export function createColumns(options) {
   return combine(options).map(({ranges, score, ...column}) => {
-    const data = Array(10).fill().map(() => ({rank: "other"}));
+    const data = Array(10).fill().map(() => ({color: "black", rank: "other"}));
 
-    ranges.forEach(({max, min, rank}) => {
-      times(max - min + 1).forEach((index) => { data[index + min - 1] = {rank}; });
+    ranges.forEach(({color, max, min, rank}) => {
+      times(max - min + 1).forEach((index) => { data[index + min - 1] = {color, rank}; });
     });
 
     data[score - 1].active = true;

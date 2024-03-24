@@ -10,8 +10,8 @@ import useInlineMemo from "lib/hooks/use-inline-memo";
 import useOption from "lib/hooks/use-option";
 import usePersonality from "lib/hooks/use-personality";
 import useTranslate from "lib/hooks/use-translate";
-import useBaseData from "./use-base-data";
 import style from "./style.scss";
+import useBaseData from "./use-base-data";
 
 export default function PersonalityBaseHeading() {
   const assessment = useAssessment({type: "personality"});
@@ -63,7 +63,7 @@ export default function PersonalityBaseHeading() {
         </div>
         {video.url && (
           <div className={style.meaning}>
-            <video controls={true} playsInline={true} poster={video.thumbnail} crossOrigin="anonymous">
+            <video controls={true} crossOrigin="anonymous" disablePictureInPicture={true} playsInline={true} poster={video.thumbnail}>
               <source src={video.url} type="video/mp4" />
               {video.track && <track kind="captions" src={video.track} />}
             </video>

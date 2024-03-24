@@ -58,22 +58,26 @@ Do they sometimes override their experience because they think they need to demo
       ],
     },
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#EF615E",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "max": 6,
         "min": 4,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "max": 10,
         "min": 7,
         "rank": "high",
@@ -275,22 +279,26 @@ Are they continually pushing on even when something needs to be done in a slow, 
       ],
     },
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#EF615E",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "max": 6,
         "min": 4,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "max": 10,
         "min": 7,
         "rank": "high",
@@ -490,22 +498,26 @@ Do they tend to 'sit on the fence'?",
       ],
     },
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#EF615E",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "max": 6,
         "min": 4,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "max": 10,
         "min": 7,
         "rank": "high",
@@ -707,22 +719,26 @@ Do they let their desire for harmony get in the way of people properly 'clearing
       ],
     },
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#EF615E",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "max": 6,
         "min": 4,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "max": 10,
         "min": 7,
         "rank": "high",
@@ -921,22 +937,26 @@ Do they see comments, even negative or critical ones, as a way of helping them t
       ],
     },
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#EF615E",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "max": 6,
         "min": 4,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "max": 10,
         "min": 7,
         "rank": "high",
@@ -1141,22 +1161,30 @@ Do they tend to 'sit on the fence'?",
       ],
     },
     "range": {
+      "color": "#FFCC3B",
+      "label": "Lower",
       "max": 9,
       "min": 4,
       "rank": "low",
     },
     "ranges": [
       {
+        "color": "#29B770",
+        "label": "Higher",
         "max": 3,
         "min": 1,
         "rank": "high",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 10,
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 9,
         "min": 4,
         "rank": "low",
@@ -1355,22 +1383,30 @@ Do they see comments, even negative or critical ones, as a way of helping them t
       ],
     },
     "range": {
+      "color": "#EF615E",
+      "label": "Medium",
       "max": 8,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 9,
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 8,
         "min": 4,
         "rank": "medium",
@@ -1571,27 +1607,37 @@ Do they sometimes override their experience because they think they need to demo
       ],
     },
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 7,
       "min": 2,
       "rank": "high",
     },
     "ranges": [
       {
+        "color": "#29B770",
+        "label": "Higher",
         "max": 7,
         "min": 2,
         "rank": "high",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 1,
         "min": 1,
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 8,
         "min": 8,
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 10,
         "min": 9,
         "rank": "low",
@@ -1793,22 +1839,30 @@ Do they let their desire for harmony get in the way of people properly 'clearing
       ],
     },
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 8,
       "min": 4,
       "rank": "high",
     },
     "ranges": [
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 9,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
+        "label": "Higher",
         "max": 8,
         "min": 4,
         "rank": "high",
@@ -2010,22 +2064,28 @@ Are they continually pushing on even when something needs to be done in a slow, 
       ],
     },
     "range": {
+      "color": "black",
       "max": 9,
       "min": 4,
       "rank": "other",
     },
     "ranges": [
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 10,
         "rank": "medium",
       },
       {
+        "color": "black",
         "max": 9,
         "min": 4,
         "rank": "other",
@@ -2231,27 +2291,37 @@ Do they sometimes override their experience because they think they need to demo
       ],
     },
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 7,
       "min": 2,
       "rank": "high",
     },
     "ranges": [
       {
+        "color": "#29B770",
+        "label": "Higher",
         "max": 7,
         "min": 2,
         "rank": "high",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 1,
         "min": 1,
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 8,
         "min": 8,
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 10,
         "min": 9,
         "rank": "low",
@@ -2453,22 +2523,28 @@ Are they continually pushing on even when something needs to be done in a slow, 
       ],
     },
     "range": {
+      "color": "black",
       "max": 9,
       "min": 4,
       "rank": "other",
     },
     "ranges": [
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 10,
         "rank": "medium",
       },
       {
+        "color": "black",
         "max": 9,
         "min": 4,
         "rank": "other",
@@ -2668,22 +2744,30 @@ Do they tend to 'sit on the fence'?",
       ],
     },
     "range": {
+      "color": "#FFCC3B",
+      "label": "Lower",
       "max": 9,
       "min": 4,
       "rank": "low",
     },
     "ranges": [
       {
+        "color": "#29B770",
+        "label": "Higher",
         "max": 3,
         "min": 1,
         "rank": "high",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 10,
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 9,
         "min": 4,
         "rank": "low",
@@ -2885,22 +2969,30 @@ Do they let their desire for harmony get in the way of people properly 'clearing
       ],
     },
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 8,
       "min": 4,
       "rank": "high",
     },
     "ranges": [
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 9,
         "rank": "medium",
       },
       {
+        "color": "#29B770",
+        "label": "Higher",
         "max": 8,
         "min": 4,
         "rank": "high",
@@ -3099,22 +3191,30 @@ Do they see comments, even negative or critical ones, as a way of helping them t
       ],
     },
     "range": {
+      "color": "#EF615E",
+      "label": "Medium",
       "max": 8,
       "min": 4,
       "rank": "medium",
     },
     "ranges": [
       {
+        "color": "#FFCC3B",
+        "label": "Lower",
         "max": 3,
         "min": 1,
         "rank": "low",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 10,
         "min": 9,
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
+        "label": "Medium",
         "max": 8,
         "min": 4,
         "rank": "medium",
@@ -3321,38 +3421,49 @@ Do they sometimes override their experience because they think they need to demo
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
@@ -3554,38 +3665,49 @@ Are they continually pushing on even when something needs to be done in a slow, 
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
@@ -3785,38 +3907,49 @@ Do they tend to 'sit on the fence'?",
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
@@ -4018,38 +4151,49 @@ Do they let their desire for harmony get in the way of people properly 'clearing
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
@@ -4248,38 +4392,49 @@ Do they see comments, even negative or critical ones, as a way of helping them t
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
       "max": 6,
       "min": 4,
       "rank": "medium",
@@ -4484,38 +4639,50 @@ Do they tend to 'sit on the fence'?",
     },
     "data": [
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
+      "label": "Lower",
       "max": 9,
       "min": 4,
       "rank": "low",
@@ -4714,38 +4881,50 @@ Do they see comments, even negative or critical ones, as a way of helping them t
     },
     "data": [
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "#EF615E",
+      "label": "Medium",
       "max": 8,
       "min": 4,
       "rank": "medium",
@@ -4946,38 +5125,50 @@ Do they sometimes override their experience because they think they need to demo
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
         "active": true,
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
     ],
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 7,
       "min": 2,
       "rank": "high",
@@ -5179,38 +5370,50 @@ Do they let their desire for harmony get in the way of people properly 'clearing
     },
     "data": [
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
         "active": true,
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 8,
       "min": 4,
       "rank": "high",
@@ -5412,38 +5615,49 @@ Are they continually pushing on even when something needs to be done in a slow, 
     },
     "data": [
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "black",
       "max": 9,
       "min": 4,
       "rank": "other",
@@ -5649,38 +5863,50 @@ Do they sometimes override their experience because they think they need to demo
     },
     "data": [
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
         "active": true,
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
     ],
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 7,
       "min": 2,
       "rank": "high",
@@ -5882,38 +6108,49 @@ Are they continually pushing on even when something needs to be done in a slow, 
     },
     "data": [
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "black",
         "rank": "other",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "black",
       "max": 9,
       "min": 4,
       "rank": "other",
@@ -6113,38 +6350,50 @@ Do they tend to 'sit on the fence'?",
     },
     "data": [
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "#FFCC3B",
+      "label": "Lower",
       "max": 9,
       "min": 4,
       "rank": "low",
@@ -6346,38 +6595,50 @@ Do they let their desire for harmony get in the way of people properly 'clearing
     },
     "data": [
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
         "active": true,
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#29B770",
         "rank": "high",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "#29B770",
+      "label": "Higher",
       "max": 8,
       "min": 4,
       "rank": "high",
@@ -6576,38 +6837,50 @@ Do they see comments, even negative or critical ones, as a way of helping them t
     },
     "data": [
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
+        "color": "#FFCC3B",
         "rank": "low",
       },
       {
         "active": true,
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
       {
+        "color": "#EF615E",
         "rank": "medium",
       },
     ],
     "range": {
+      "color": "#EF615E",
+      "label": "Medium",
       "max": 8,
       "min": 4,
       "rank": "medium",

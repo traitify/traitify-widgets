@@ -14,8 +14,11 @@ export const get = `
         minScore
       }
       hexColorHigh
+      hexColorHighLabel
       hexColorMedium
+      hexColorMediumLabel
       hexColorLow
+      hexColorLowLabel
       name
       orgPath
       resultRankings {

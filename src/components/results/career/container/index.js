@@ -1,9 +1,9 @@
 import useComponentEvents from "lib/hooks/use-component-events";
 import useResults from "lib/hooks/use-results";
+import style from "./style.scss";
 import CareerFilter from "../filter";
 import CareerList from "../list";
 import CareerModal from "../modal";
-import style from "./style.scss";
 
 export default function CareerContainer() {
   const results = useResults({type: "personality"});

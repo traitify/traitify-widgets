@@ -1,5 +1,5 @@
-import i18nData from "lib/i18n-data";
 import dig from "lib/common/object/dig";
+import i18nData from "lib/i18n-data";
 
 export default class I18n {
   constructor() {

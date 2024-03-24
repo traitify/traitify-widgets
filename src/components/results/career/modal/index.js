@@ -8,9 +8,9 @@ import useTranslate from "lib/hooks/use-translate";
 import {careerModalShowState, modalJobsState} from "lib/recoil";
 import Clubs from "./clubs";
 import Details from "./details";
+import Employers from "./employers";
 import Jobs from "./jobs";
 import Majors from "./majors";
-import Employers from "./employers";
 import Resources from "./resources";
 import style from "./style.scss";
 

@@ -4,12 +4,12 @@ import {
   faLocationDot,
   faSuitcase
 } from "@fortawesome/free-solid-svg-icons";
+import {useRecoilValue} from "recoil";
 import DangerousHTML from "components/common/dangerous-html";
 import Icon from "components/common/icon";
-import {useRecoilValue} from "recoil";
-import {modalJobsState} from "lib/recoil";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
+import {modalJobsState} from "lib/recoil";
 import style from "./style.scss";
 
 const jobSources = {

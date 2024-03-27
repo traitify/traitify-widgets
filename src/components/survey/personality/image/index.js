@@ -244,7 +244,7 @@ export default function PersonalityImageSurvey() {
   }
 
   return (
-    <div className={[style.container, likert && style.likert].filter(Boolean).join(" ")} ref={element}>
+    <div className={style.container} ref={element}>
       <div className={style.caption} ref={caption} tabIndex="-1">{content.caption}</div>
       <div className={style.image} ref={image}>{content.image}</div>
       <Responses likert={likert} onResponse={content.enabled && updateSlide} />

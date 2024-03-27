@@ -6,6 +6,22 @@
   justify-content: center;
 
   @include min-width("sm") { margin: $buffer 0; }
+  &.likert {
+    .me, .reallyMe {
+      @include theme("background-color", "me");
+      &:active, &:hover { @include theme("background-color", "me-active"); }
+    }
+    .notMe, .reallyNotMe {
+      @include theme("background-color", "not-me");
+      &:active, &:hover { @include theme("background-color", "not-me-active"); }
+    }
+    .response {
+      @include max-width("sm") { margin: 0 1px; }
+
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+  }
   .me {
     @include theme("background-color", "me");
     &:active, &:hover { @include theme("background-color", "me-active"); }
@@ -24,14 +40,12 @@
 
     @include min-width("xs") { padding: $buffer $buffer * 0.5; }
     @include min-width("sm") {
+      border-radius: $border-radius-sm;
       font-size: $font-size * 1.25;
       line-height: $line-height;
       margin: 5px;
       padding: $buffer;
       max-width: 150px;
-
-      &:first-child { border-radius: $border-radius-sm; }
-      &:last-child { border-radius: $border-radius-sm; }
     }
     @include theme("color", "text-light");
     &:focus {
@@ -151,24 +165,6 @@
     &:hover { opacity: 0.7; }
   }
   h1 { margin: $buffer 0; }
-}
-.likert {
-  .buttons {
-    .me, .reallyMe {
-      @include theme("background-color", "me");
-      &:active, &:hover { @include theme("background-color", "me-active"); }
-    }
-    .notMe, .reallyNotMe {
-      @include theme("background-color", "not-me");
-      &:active, &:hover { @include theme("background-color", "not-me-active"); }
-    }
-    .response {
-      margin: 0 1px;
-
-      &:first-child { margin-left: 0; }
-      &:last-child { margin-right: 0; }
-    }
-  }
 }
 .progress {
   height: $border-width-xl;

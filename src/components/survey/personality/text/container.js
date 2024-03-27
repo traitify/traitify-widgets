@@ -4,7 +4,7 @@ import style from "../style.scss";
 
 function Container({children, likert, onResponse, progress}) {
   return (
-    <div className={[style.container, likert && style.likert].filter(Boolean).join(" ")}>
+    <div className={style.container}>
       <div className={style.progress} style={{width: `${progress}%`}} />
       <div className={style.image}>{children}</div>
       <Responses likert={likert} onResponse={onResponse} />

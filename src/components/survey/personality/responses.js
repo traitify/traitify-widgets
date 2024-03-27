@@ -22,7 +22,7 @@ function Responses({likert, onResponse}) {
   ];
 
   return (
-    <div className={style.buttons}>
+    <div className={[style.buttons, likert && style.likert].filter(Boolean).join(" ")}>
       {buttons.map(({key, response}) => (
         <button
           key={key}

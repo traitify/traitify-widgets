@@ -2,8 +2,8 @@ import {useState} from "react";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import useTranslate from "lib/hooks/use-translate";
 import {userCompletedFeedbackQuery} from "lib/recoil/feedback";
-import style from "./style.scss";
 import Modal from "./modal";
+import style from "./style.scss";
 
 export default function Feedback() {
   const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);

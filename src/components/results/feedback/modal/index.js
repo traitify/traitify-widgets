@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import Modal from "components/common/modal";
-import {feedbackSurveyQuery} from "lib/recoil/feedback";
 import useAssessment from "lib/hooks/use-assessment";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import useTranslate from "lib/hooks/use-translate";
+import {feedbackSurveyQuery} from "lib/recoil/feedback";
 import style from "./style.scss";
 
 const multipleChoice = (question) => (
@@ -56,11 +56,10 @@ const buildFeedbackSurveyResponse = (questionType, questionId, answer) => {
 };
 
 const buildFeedbackSurveyRequest = (assessment, feedbackSurvey, responseMap) => ({
-  // TODO
-  profile_id: "profile_id TODO",
+  profile_id: assessment.profile_ids[0],
   assessment_survey_id: assessment.id,
-  assessment_survey_key: "assessment_survey_key TODO",
-  assessment_survey_type: assessment.type,
+  assessment_survey_key: assessment.deck_id,
+  assessment_survey_type: assessment.assessment_type,
   feedback_survey_id: feedbackSurvey.id,
   locale_key: assessment.locale_key,
   responses: Array.from(responseMap).map(([questionId, answer]) => {

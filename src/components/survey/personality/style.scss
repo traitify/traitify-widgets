@@ -118,6 +118,13 @@
   .back { left: 30px; }
   .fullscreen { right: 30px; }
 }
+.content {
+  flex: 1 1 0;
+  overflow: hidden;
+  position: relative;
+
+  @include min-width("sm") { border-radius: $border-radius; }
+}
 .error, .loading {
   height: 100%;
 
@@ -127,13 +134,6 @@
   align-items: center;
   display: flex;
   justify-content: center;
-}
-.image {
-  flex: 1 1 0;
-  overflow: hidden;
-  position: relative;
-
-  @include min-width("sm") { border-radius: $border-radius; }
 }
 .instructions {
   background: url("https://cdn.traitify.com/assets/images/js/instructions_slide.jpg") no-repeat center center;

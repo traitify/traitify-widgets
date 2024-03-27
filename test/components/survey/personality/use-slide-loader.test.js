@@ -1,13 +1,11 @@
 /** @jest-environment jsdom */
 import {createRef, useReducer} from "react";
-import {act} from "react-test-renderer";
-import useSlideLoader, {reduceActions, reducer} from "components/survey/personality/image/use-slide-loader";
+import useSlideLoader, {reduceActions, reducer} from "components/survey/personality/use-slide-loader";
 import except from "lib/common/object/except";
 import remap from "lib/common/object/remap";
 import slice from "lib/common/object/slice";
 import ComponentHandler from "support/component-handler";
 import useGlobalMock from "support/hooks/use-global-mock";
-import useResizeMock from "support/hooks/use-resize-mock";
 
 jest.mock("react", () => ({
   ...jest.requireActual("react"),
@@ -172,27 +170,6 @@ describe("useSlideLoader", () => {
         ComponentHandler.render(Component, {props});
 
         expect(dispatch).not.toHaveBeenCalledWith({image: expect.any(String), type: "imageLoading"});
-      });
-    });
-
-    describe("resize", () => {
-      useResizeMock();
-
-      it("dispatches initial", () => {
-        const element = document.createElement("div");
-        ComponentHandler.render(Component, {props: {element}});
-
-        expect(dispatch).toHaveBeenCalledWith({size: [600, 800], type: "resize"});
-      });
-
-      it("dispatches updated size", () => {
-        const element = document.createElement("div");
-        ComponentHandler.render(Component, {props: {element}});
-
-        element.clientWidth = 700;
-        act(() => window.resizeTo(1200, 800));
-
-        expect(dispatch).toHaveBeenCalledWith({size: [700, 800], type: "resize"});
       });
     });
   });

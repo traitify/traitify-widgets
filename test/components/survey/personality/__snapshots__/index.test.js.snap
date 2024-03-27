@@ -1,29 +1,1811 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Survey renders image 1`] = `
+exports[`Survey.Personality actions back requires answered slides 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="mock"
+    className="container"
   >
-    Image
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
   </div>
 </div>
 `;
 
-exports[`Survey renders nothing 1`] = `
+exports[`Survey.Personality actions back shows button 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+      <button
+        className="back"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Back"
+        >
+          chevron-left
+        </span>
+      </button>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality actions back triggers action 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality actions fullscreen shows button 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <button
+        className="fullscreen"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="fullscreen"
+        >
+          maximize
+        </span>
+      </button>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality actions fullscreen triggers action 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <button
+        className="fullscreen"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="fullscreen"
+        >
+          minimize
+        </span>
+      </button>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <button
+        className="fullscreen"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="fullscreen"
+        >
+          maximize
+        </span>
+      </button>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality actions response saves me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality actions response saves not me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality image error renders error 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Unable to load more slides at this time
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="error"
+      >
+        <button
+          className="link"
+          onClick={[Function]}
+          type="button"
+        >
+          Click Here to Try Again
+        </button>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality image error retry renders loading 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality image error retry renders slide 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality image loading renders loading 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality image loading requires multiple loaded slides 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality image loads renders slide 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Innovative
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions renders html instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<p>Listen Up<br /><br />Click the buttons</p>",
+            }
+          }
+        />
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Get Started
+        </button>
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions renders markdown instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown traitify--markdown"
+        >
+          <h1
+            id="listen-up"
+          >
+            Listen Up
+          </h1>
+          <p>
+            Click the buttons
+          </p>
+        </div>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Get Started
+        </button>
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions requires instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions requires option 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions starts assessment 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality likert response saves me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons likert"
+    >
+      <button
+        className="traitify--response-button response reallyNotMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Not Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response reallyMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality likert response saves not me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons likert"
+    >
+      <button
+        className="traitify--response-button response reallyNotMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Not Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response reallyMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality likert response saves really me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons likert"
+    >
+      <button
+        className="traitify--response-button response reallyNotMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Not Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response reallyMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality likert response saves really not me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Short Cuts
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+      <div
+        className="slide left"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide middle"
+      >
+        <img
+          alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
+          src="https://traitify.imgix.net/slides/2da5dd35-14e1-4f10-9670-4d16c4809e76_desktop_retina?auto=format&fp-x=50&fp-y=50&h=800&w=600"
+        />
+      </div>
+      <div
+        className="slide right"
+      >
+        <img
+          alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
+          src="https://traitify.imgix.net/slides/0a75ded6-2bf4-458e-9e91-6f560659be21_desktop_retina?auto=format&fp-x=45&fp-y=53&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons likert"
+    >
+      <button
+        className="traitify--response-button response reallyNotMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Not Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response reallyMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Really Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality renders nothing if results ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 />
 `;
 
-exports[`Survey renders text 1`] = `
-<div
-  className="traitify--container traitify--color-scheme-light"
->
-  <div>
-    Text
-  </div>
-</div>
+exports[`Survey.Personality submit errors renders default error 1`] = `
+ComponentHandler {
+  "Component": [Function],
+  "options": {
+    "wrap": true,
+  },
+  "renderer": <div
+    className="traitify--container traitify--color-scheme-light"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="caption"
+        tabIndex="-1"
+      >
+        Error Submitting
+      </div>
+      <div
+        className="content"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "0%",
+            }
+          }
+        />
+        <div
+          className="error"
+        >
+          <button
+            className="link"
+            onClick={[Function]}
+            type="button"
+          >
+            Click Here to Try Again
+          </button>
+        </div>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="traitify--response-button response btnDisabled me"
+          onClick={null}
+          type="button"
+        >
+          Me
+        </button>
+        <button
+          className="traitify--response-button response btnDisabled notMe"
+          onClick={null}
+          type="button"
+        >
+          Not Me
+        </button>
+      </div>
+    </div>
+  </div>,
+}
+`;
+
+exports[`Survey.Personality submit errors renders json error 1`] = `
+ComponentHandler {
+  "Component": [Function],
+  "options": {
+    "wrap": true,
+  },
+  "renderer": <div
+    className="traitify--container traitify--color-scheme-light"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="caption"
+        tabIndex="-1"
+      >
+        Oh no
+      </div>
+      <div
+        className="content"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "0%",
+            }
+          }
+        />
+        <div
+          className="error"
+        >
+          <button
+            className="link"
+            onClick={[Function]}
+            type="button"
+          >
+            Click Here to Try Again
+          </button>
+        </div>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="traitify--response-button response btnDisabled me"
+          onClick={null}
+          type="button"
+        >
+          Me
+        </button>
+        <button
+          className="traitify--response-button response btnDisabled notMe"
+          onClick={null}
+          type="button"
+        >
+          Not Me
+        </button>
+      </div>
+    </div>
+  </div>,
+}
+`;
+
+exports[`Survey.Personality submit errors renders text error 1`] = `
+ComponentHandler {
+  "Component": [Function],
+  "options": {
+    "wrap": true,
+  },
+  "renderer": <div
+    className="traitify--container traitify--color-scheme-light"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="caption"
+        tabIndex="-1"
+      >
+        Oh no
+      </div>
+      <div
+        className="content"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "0%",
+            }
+          }
+        />
+        <div
+          className="error"
+        >
+          <button
+            className="link"
+            onClick={[Function]}
+            type="button"
+          >
+            Click Here to Try Again
+          </button>
+        </div>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="traitify--response-button response btnDisabled me"
+          onClick={null}
+          type="button"
+        >
+          Me
+        </button>
+        <button
+          className="traitify--response-button response btnDisabled notMe"
+          onClick={null}
+          type="button"
+        >
+          Not Me
+        </button>
+      </div>
+    </div>
+  </div>,
+}
 `;

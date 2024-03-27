@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import {useLayoutEffect, useRef} from "react";
-import style from "../style.scss";
+import useAssessment from "lib/hooks/use-assessment";
+import style from "./style.scss";
 
 function Slide({orientation, slide}) {
+  const assessment = useAssessment({type: "personality"});
   const caption = useRef(null);
+  const textSurvey = assessment.slide_type === "text";
 
   useLayoutEffect(() => {
     if(!caption.current) { return; }
@@ -14,7 +17,11 @@ function Slide({orientation, slide}) {
 
   return (
     <div className={`${style.slide} ${style[orientation]}`}>
-      <div className={style.text}>{slide.text}</div>
+      {textSurvey ? (
+        <div className={style.text} ref={caption}>{slide.text}</div>
+      ) : (
+        <img src={slide.image} alt={slide.alternative_text} />
+      )}
     </div>
   );
 }
@@ -22,7 +29,9 @@ function Slide({orientation, slide}) {
 Slide.propTypes = {
   orientation: PropTypes.string.isRequired,
   slide: PropTypes.shape({
-    text: PropTypes.string.isRequired
+    alternative_text: PropTypes.string,
+    image: PropTypes.string,
+    text: PropTypes.string
   }).isRequired
 };
 

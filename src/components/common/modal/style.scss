@@ -23,6 +23,9 @@
 
 .container {
   @extend %container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .modalContainer {
     @include theme("background", "background");
@@ -33,20 +36,15 @@
 
     @include min-width(md) {
       width: 100%;
-      position: relative;
-      left: 50%;
       max-width: 650px;
-      margin: $buffer-lg * 3 $buffer-lg * -13.5 0;
     }
 
     @include min-width(lg) {
       max-width: 800px;
-      margin: $buffer-lg * 3 $buffer-lg * -16.75 0;
     }
 
     @include min-width(xl) {
       max-width: 1000px;
-      margin: $buffer-lg * 3 $buffer-lg * -20.75 0;
     }
   }
 

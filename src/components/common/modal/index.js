@@ -4,7 +4,7 @@ import Icon from "components/common/icon";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-export default function Modal({children, closeFn, title}) {
+export default function Modal({children, onClose, title}) {
   const translate = useTranslate();
   return (
     <div className={`${style.modal} ${style.container}`}>
@@ -18,7 +18,7 @@ export default function Modal({children, closeFn, title}) {
                 aria-label={translate("close")}
                 className={style.close}
                 icon={faTimes}
-                onClick={closeFn}
+                onClick={onClose}
                 tabIndex="-1"
               />
             </div>
@@ -35,6 +35,6 @@ export default function Modal({children, closeFn, title}) {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
-  closeFn: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired
 };

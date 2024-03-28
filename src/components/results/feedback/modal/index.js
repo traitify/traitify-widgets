@@ -72,7 +72,7 @@ const buildFeedbackSurveyResponse = (assessment, feedbackSurvey, responseMap) =>
   })
 });
 
-export default function FeedbackModal({closeFn}) {
+export default function FeedbackModal({onClose}) {
   const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
   const assessment = useAssessment();
   const translate = useTranslate();
@@ -88,7 +88,7 @@ export default function FeedbackModal({closeFn}) {
 
   return (
     <Modal
-      closeFn={closeFn}
+      onClose={onClose}
       title={feedbackSurvey.title}
     >
       <form className={style.form} id={feedbackSurvey.id} onSubmit={onSubmit}>
@@ -97,7 +97,7 @@ export default function FeedbackModal({closeFn}) {
       </form>
       <hr className={style.grayDivider} />
       <div className={style.footer}>
-        <button className={style.cancelBtn} onClick={closeFn} type="button">
+        <button className={style.cancelBtn} onClick={onClose} type="button">
           {translate("cancel")}
         </button>
         <button type="submit" className={style.submitBtn} form={feedbackSurvey.id}>{translate("submit")}</button>
@@ -107,5 +107,5 @@ export default function FeedbackModal({closeFn}) {
 }
 
 FeedbackModal.propTypes = {
-  closeFn: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired
 };

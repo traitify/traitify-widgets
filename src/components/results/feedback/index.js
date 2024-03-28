@@ -26,7 +26,7 @@ export default function Feedback() {
           </div>
         </div>
       </div>
-      {showModal && <Modal closeFn={closeModal} />}
+      {showModal && <Modal onClose={closeModal} />}
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import Modal from "components/common/modal";
+import {submitFeedbackSurveyResponse} from "lib/feedback-survey";
 import useAssessment from "lib/hooks/use-assessment";
+import useHttp from "lib/hooks/use-http";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import useTranslate from "lib/hooks/use-translate";
 import {feedbackSurveyQuery} from "lib/recoil/feedback";
@@ -37,15 +39,17 @@ const questionFactory = (question) => {
   }
 };
 
-const buildFeedbackSurveyResponse = (questionType, questionId, answer) => {
+const buildQuestionResponse = (questionType, questionId, answer) => {
   switch(questionType) {
     case "Multiple Choice":
       return {
+        question_type: questionType,
         question_id: questionId,
         selected_option_id: answer
       };
     case "Short Response":
       return {
+        question_type: questionType,
         question_id: questionId,
         short_response: answer
       };
@@ -55,7 +59,7 @@ const buildFeedbackSurveyResponse = (questionType, questionId, answer) => {
   }
 };
 
-const buildFeedbackSurveyRequest = (assessment, feedbackSurvey, responseMap) => ({
+const buildFeedbackSurveyResponse = (assessment, feedbackSurvey, responseMap) => ({
   profile_id: assessment.profile_ids[0],
   assessment_survey_id: assessment.id,
   assessment_survey_key: assessment.deck_id,
@@ -64,7 +68,7 @@ const buildFeedbackSurveyRequest = (assessment, feedbackSurvey, responseMap) => 
   locale_key: assessment.locale_key,
   responses: Array.from(responseMap).map(([questionId, answer]) => {
     const {questionType} = feedbackSurvey.questions.find((q) => q.id === questionId);
-    return buildFeedbackSurveyResponse(questionType, questionId, answer);
+    return buildQuestionResponse(questionType, questionId, answer);
   })
 });
 
@@ -72,14 +76,14 @@ export default function FeedbackModal({closeFn}) {
   const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
   const assessment = useAssessment();
   const translate = useTranslate();
+  const http = useHttp();
   if(!feedbackSurvey) { return null; }
 
   const onSubmit = (event) => {
     event.preventDefault();
     const responseMap = new Map(new FormData(event.target).entries());
-    const request = buildFeedbackSurveyRequest(assessment, feedbackSurvey, responseMap);
-    console.log("request :>> ", request);
-    // TODO send to server
+    const response = buildFeedbackSurveyResponse(assessment, feedbackSurvey, responseMap);
+    submitFeedbackSurveyResponse(assessment.id, response, http);
   };
 
   return (

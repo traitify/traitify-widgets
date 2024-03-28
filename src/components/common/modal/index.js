@@ -1,7 +1,7 @@
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import useTranslate from "lib/hooks/use-translate";
 import Icon from "components/common/icon";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function Modal({children, closeFn, title}) {

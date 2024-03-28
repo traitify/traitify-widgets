@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
+import Feedback from "components/results/feedback";
 import ArchetypeHeading from "components/results/personality/archetype/heading";
 import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
@@ -23,9 +24,12 @@ export default function CandidateReport() {
     setOptions({...options, newOptions});
   }, []);
 
+  // TOOD only show feedback if big-five
+
   return (
     <section className={style.container}>
       <ArchetypeHeading />
+      <Feedback />
       <ArchetypeTips />
       <Dimensions />
       <Traits />

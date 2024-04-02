@@ -222,7 +222,7 @@
     @include min-width("sm") { max-width: 100%; }
   }
   .slide {
-    @include theme("background-color", "background");
+    @include theme("background-color", "background-light");
   }
   &.container {
     border: $border-width solid;
@@ -233,7 +233,7 @@
       aspect-ratio: 2/1;
       max-width: $breakpoint-md;
     }
-    @include theme("background-color", "background");
+    @include theme("background-color", "background-light");
     @include theme("border-color", "border");
 
     .back { left: 0; }

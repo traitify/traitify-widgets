@@ -30,7 +30,7 @@ export default function PersonalitySurvey() {
   const http = useHttp();
   const listener = useListener();
   const refreshAssessment = useRecoilRefresher(personalityAssessmentQuery);
-  const textSurvey = dig(assessment, "slide_type") === "text";
+  const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
   const translate = useTranslate();
   const {
     error: loaderError,

@@ -6,21 +6,21 @@ import style from "./style.scss";
 function Slide({orientation, slide}) {
   const assessment = useAssessment({type: "personality"});
   const caption = useRef(null);
-  const textSurvey = assessment.slide_type === "text";
+  const textSurvey = assessment.slide_type?.toLowerCase() === "text";
 
   useLayoutEffect(() => {
     if(!caption.current) { return; }
-    if(orientation === "middle") { return; }
+    if(orientation !== "middle") { return; }
 
     caption.current.focus({preventScroll: true});
   }, [orientation]);
 
   return (
-    <div className={`${style.slide} ${style[orientation]}`}>
+    <div className={[style.slide, style[orientation], style[textSurvey ? "text" : "image"]].join(" ")}>
       {textSurvey ? (
-        <div className={style.text} ref={caption}>{slide.text}</div>
+        <span ref={caption}>{slide.caption}</span>
       ) : (
-        <img src={slide.image} alt={slide.alternative_text} />
+        <img alt={slide.alternative_text} src={slide.image} />
       )}
     </div>
   );
@@ -30,8 +30,8 @@ Slide.propTypes = {
   orientation: PropTypes.string.isRequired,
   slide: PropTypes.shape({
     alternative_text: PropTypes.string,
-    image: PropTypes.string,
-    text: PropTypes.string
+    caption: PropTypes.string,
+    image: PropTypes.string
   }).isRequired
 };
 

@@ -357,6 +357,7 @@ function setupDom() {
     options: [
       {text: "Big Five", value: "big-five"},
       {text: "Big Five Animated", value: "big-five-animated"},
+      {text: "Big Five Text", value: "big-five-text"},
       {text: "Career Deck", value: "career-deck"},
       {text: "Career Interest Animated", value: "career-interest-animated"},
       {text: "Core", value: "core"},

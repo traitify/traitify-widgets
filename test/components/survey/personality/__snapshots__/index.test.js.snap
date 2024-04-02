@@ -5,7 +5,7 @@ exports[`Survey.Personality actions back requires answered slides 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -25,7 +25,7 @@ exports[`Survey.Personality actions back requires answered slides 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -33,7 +33,7 @@ exports[`Survey.Personality actions back requires answered slides 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -68,7 +68,7 @@ exports[`Survey.Personality actions back shows button 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -88,7 +88,7 @@ exports[`Survey.Personality actions back shows button 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -96,7 +96,7 @@ exports[`Survey.Personality actions back shows button 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -104,7 +104,7 @@ exports[`Survey.Personality actions back shows button 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -150,7 +150,7 @@ exports[`Survey.Personality actions back triggers action 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -170,7 +170,7 @@ exports[`Survey.Personality actions back triggers action 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -178,7 +178,7 @@ exports[`Survey.Personality actions back triggers action 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -213,7 +213,7 @@ exports[`Survey.Personality actions fullscreen shows button 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -233,7 +233,7 @@ exports[`Survey.Personality actions fullscreen shows button 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -241,7 +241,7 @@ exports[`Survey.Personality actions fullscreen shows button 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -287,7 +287,7 @@ exports[`Survey.Personality actions fullscreen triggers action 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -307,7 +307,7 @@ exports[`Survey.Personality actions fullscreen triggers action 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -315,7 +315,7 @@ exports[`Survey.Personality actions fullscreen triggers action 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -361,7 +361,7 @@ exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -381,7 +381,7 @@ exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -389,7 +389,7 @@ exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -435,7 +435,7 @@ exports[`Survey.Personality actions response saves me 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -455,7 +455,7 @@ exports[`Survey.Personality actions response saves me 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -463,7 +463,7 @@ exports[`Survey.Personality actions response saves me 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -471,7 +471,7 @@ exports[`Survey.Personality actions response saves me 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -506,7 +506,7 @@ exports[`Survey.Personality actions response saves not me 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -526,7 +526,7 @@ exports[`Survey.Personality actions response saves not me 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -534,7 +534,7 @@ exports[`Survey.Personality actions response saves not me 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -542,7 +542,7 @@ exports[`Survey.Personality actions response saves not me 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -577,7 +577,7 @@ exports[`Survey.Personality image error renders error 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -635,7 +635,7 @@ exports[`Survey.Personality image error retry renders loading 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -696,7 +696,7 @@ exports[`Survey.Personality image error retry renders slide 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -716,7 +716,7 @@ exports[`Survey.Personality image error retry renders slide 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -724,7 +724,7 @@ exports[`Survey.Personality image error retry renders slide 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -759,7 +759,7 @@ exports[`Survey.Personality image loading renders loading 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -820,7 +820,7 @@ exports[`Survey.Personality image loading requires multiple loaded slides 1`] = 
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -881,7 +881,7 @@ exports[`Survey.Personality image loads renders slide 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -901,7 +901,7 @@ exports[`Survey.Personality image loads renders slide 1`] = `
         }
       />
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -909,7 +909,7 @@ exports[`Survey.Personality image loads renders slide 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -944,7 +944,7 @@ exports[`Survey.Personality instructions renders html instructions 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -982,7 +982,7 @@ exports[`Survey.Personality instructions renders html instructions 1`] = `
         </button>
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -1017,7 +1017,7 @@ exports[`Survey.Personality instructions renders markdown instructions 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1059,7 +1059,7 @@ exports[`Survey.Personality instructions renders markdown instructions 1`] = `
         </button>
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -1094,7 +1094,7 @@ exports[`Survey.Personality instructions requires instructions 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1155,7 +1155,7 @@ exports[`Survey.Personality instructions requires option 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1216,7 +1216,7 @@ exports[`Survey.Personality instructions starts assessment 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1277,7 +1277,7 @@ exports[`Survey.Personality likert response saves me 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1297,7 +1297,7 @@ exports[`Survey.Personality likert response saves me 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -1305,7 +1305,7 @@ exports[`Survey.Personality likert response saves me 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -1313,7 +1313,7 @@ exports[`Survey.Personality likert response saves me 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -1362,7 +1362,7 @@ exports[`Survey.Personality likert response saves not me 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1382,7 +1382,7 @@ exports[`Survey.Personality likert response saves not me 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -1390,7 +1390,7 @@ exports[`Survey.Personality likert response saves not me 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -1398,7 +1398,7 @@ exports[`Survey.Personality likert response saves not me 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -1447,7 +1447,7 @@ exports[`Survey.Personality likert response saves really me 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1467,7 +1467,7 @@ exports[`Survey.Personality likert response saves really me 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -1475,7 +1475,7 @@ exports[`Survey.Personality likert response saves really me 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -1483,7 +1483,7 @@ exports[`Survey.Personality likert response saves really me 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -1532,7 +1532,7 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="container"
+    className="container traitify--survey-image"
   >
     <div
       className="caption"
@@ -1552,7 +1552,7 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
         }
       />
       <div
-        className="slide left"
+        className="slide left image"
       >
         <img
           alt="A photo of a group of young adults working on a robotic project together."
@@ -1560,7 +1560,7 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
         />
       </div>
       <div
-        className="slide middle"
+        className="slide middle image"
       >
         <img
           alt="A photo of a heated TV dinner next to silverware, a glass and a TV remote control."
@@ -1568,7 +1568,7 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
         />
       </div>
       <div
-        className="slide right"
+        className="slide right image"
       >
         <img
           alt="A photo of a parachuter taken from the back, just before a jump from a helicopter."
@@ -1628,7 +1628,7 @@ ComponentHandler {
     className="traitify--container traitify--color-scheme-light"
   >
     <div
-      className="container"
+      className="container traitify--survey-image"
     >
       <div
         className="caption"
@@ -1692,7 +1692,7 @@ ComponentHandler {
     className="traitify--container traitify--color-scheme-light"
   >
     <div
-      className="container"
+      className="container traitify--survey-image"
     >
       <div
         className="caption"
@@ -1756,7 +1756,7 @@ ComponentHandler {
     className="traitify--container traitify--color-scheme-light"
   >
     <div
-      className="container"
+      className="container traitify--survey-image"
     >
       <div
         className="caption"
@@ -1775,6 +1775,200 @@ ComponentHandler {
             }
           }
         />
+        <div
+          className="error"
+        >
+          <button
+            className="link"
+            onClick={[Function]}
+            type="button"
+          >
+            Click Here to Try Again
+          </button>
+        </div>
+      </div>
+      <div
+        className="buttons"
+      >
+        <button
+          className="traitify--response-button response btnDisabled me"
+          onClick={null}
+          type="button"
+        >
+          Me
+        </button>
+        <button
+          className="traitify--response-button response btnDisabled notMe"
+          onClick={null}
+          type="button"
+        >
+          Not Me
+        </button>
+      </div>
+    </div>
+  </div>,
+}
+`;
+
+exports[`Survey.Personality text survey actions response saves me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-text"
+  >
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="slide left text"
+      >
+        <span>
+          Innovative
+        </span>
+      </div>
+      <div
+        className="slide middle text"
+      >
+        <span>
+          Short Cuts
+        </span>
+      </div>
+      <div
+        className="slide right text"
+      >
+        <span>
+          Skydiving
+        </span>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality text survey actions response saves not me 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-text"
+  >
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "1.36986301369863%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="slide left text"
+      >
+        <span>
+          Innovative
+        </span>
+      </div>
+      <div
+        className="slide middle text"
+      >
+        <span>
+          Short Cuts
+        </span>
+      </div>
+      <div
+        className="slide right text"
+      >
+        <span>
+          Skydiving
+        </span>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response me"
+        onClick={[Function]}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response notMe"
+        onClick={[Function]}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality text survey submit errors renders error 1`] = `
+ComponentHandler {
+  "Component": [Function],
+  "options": {
+    "wrap": true,
+  },
+  "renderer": <div
+    className="traitify--container traitify--color-scheme-light"
+  >
+    <div
+      className="container traitify--survey-text"
+    >
+      <div
+        className="progressBar"
+      >
+        <div
+          className="progress"
+          style={
+            {
+              "width": "0%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="content"
+      >
         <div
           className="error"
         >

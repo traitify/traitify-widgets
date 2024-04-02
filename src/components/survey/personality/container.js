@@ -41,15 +41,20 @@ function Container({
   }, [caption]);
 
   const back = () => dispatch({type: "back"});
-  const textSurvey = dig(assessment, "slide_type") === "text";
+  const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
 
   return (
-    <div className={style.container} ref={container}>
+    <div className={`${style.container} traitify--survey-${textSurvey ? "text" : "image"}`} ref={container}>
       {caption && !textSurvey && (
         <div className={style.caption} ref={text} tabIndex="-1">{caption}</div>
       )}
+      {textSurvey && (
+        <div className={style.progressBar}>
+          <div className={style.progress} style={{width: `${progress}%`}} />
+        </div>
+      )}
       <div className={style.content} ref={content}>
-        <div className={style.progress} style={{width: `${progress}%`}} />
+        {!textSurvey && <div className={style.progress} style={{width: `${progress}%`}} />}
         {children}
         {allowBack && slideIndex > 0 && (
           <button className={style.back} onClick={back} type="button">

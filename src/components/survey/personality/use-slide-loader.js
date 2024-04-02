@@ -91,9 +91,13 @@ export function reduceTextActions(state, action) {
 }
 
 export function reduceActions(_state, action) {
-  const state = _state.textSurvey
-    ? reduceTextActions(_state, action)
-    : reduceImageActions(_state, action);
+  let state = {..._state};
+
+  if(Object.hasOwn(action, "textSurvey")) { state.textSurvey = action.textSurvey; }
+
+  state = state.textSurvey
+    ? reduceTextActions(state, action)
+    : reduceImageActions(state, action);
 
   switch(action.type) {
     case "answer": {
@@ -138,14 +142,29 @@ export function reducer(_state, action) {
   return {...state, ready, slideIndex};
 }
 
-export default function useSlideLoader({textSurvey, translate}) {
+export default function useSlideLoader({textSurvey: _textSurvey, translate}) {
   const [
-    {error, imageLoading, imageLoadingAttempts, ready, slideIndex, slides},
+    {
+      error,
+      imageLoading,
+      imageLoadingAttempts,
+      ready,
+      slideIndex,
+      slides,
+      textSurvey
+    },
     unsafeDispatch
-  ] = useReducer(reducer, {...defaultState, ready: false, slideIndex: -1, slides: [], textSurvey});
+  ] = useReducer(reducer, {
+    ...defaultState,
+    ready: false,
+    slideIndex: -1,
+    slides: [],
+    textSurvey: _textSurvey
+  });
   const dispatch = useSafeDispatch(unsafeDispatch);
 
   useEffect(() => {
+    if(textSurvey) { return; }
     if(imageLoading) { return; }
     if(imageLoadingAttempts > maxRetries) { return; }
 

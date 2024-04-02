@@ -3,9 +3,10 @@
 .buttons, .caption { flex: 0 0; }
 .buttons {
   display: flex;
+  gap: $buffer;
   justify-content: center;
+  margin: $buffer 0;
 
-  @include min-width("sm") { margin: $buffer 0; }
   &.likert {
     .me, .reallyMe {
       @include theme("background-color", "me");
@@ -14,12 +15,6 @@
     .notMe, .reallyNotMe {
       @include theme("background-color", "not-me");
       &:active, &:hover { @include theme("background-color", "not-me-active"); }
-    }
-    .response {
-      @include max-width("sm") { margin: 0 1px; }
-
-      &:first-child { margin-left: 0; }
-      &:last-child { margin-right: 0; }
     }
   }
   .me {
@@ -31,6 +26,7 @@
     &:active, &:hover { @include theme("background-color", "not-me-active"); }
   }
   .response {
+    border-radius: $border-radius-sm;
     flex: 1 1 0;
     font-weight: 600;
     letter-spacing: 2px;
@@ -40,10 +36,8 @@
 
     @include min-width("xs") { padding: $buffer $buffer * 0.5; }
     @include min-width("sm") {
-      border-radius: $border-radius-sm;
       font-size: $font-size * 1.25;
       line-height: $line-height;
-      margin: 5px;
       padding: $buffer;
       max-width: 150px;
     }
@@ -119,11 +113,22 @@
   .fullscreen { right: 30px; }
 }
 .content {
+  border-radius: $border-radius;
   flex: 1 1 0;
   overflow: hidden;
   position: relative;
 
-  @include min-width("sm") { border-radius: $border-radius; }
+  .progress {
+    height: $border-width-xl;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: width 0.3s;
+    width: 0%;
+    z-index: 1;
+
+    @include theme("background-color", "progress-bar");
+  }
 }
 .error, .loading {
   height: 100%;
@@ -166,17 +171,6 @@
   }
   h1 { margin: $buffer 0; }
 }
-.progress {
-  height: $border-width-xl;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  transition: width 0.3s;
-  width: 0%;
-  z-index: 1;
-
-  @include theme("background-color", "progress-bar");
-}
 .slide {
   bottom: 0;
   position: absolute;
@@ -189,8 +183,49 @@
     transition: left 0.3s;
   }
   &.right { left: 100%; }
+  &.text {
+    align-items: center;
+    display: flex;
+    font-size: $font-size-heading;
+    justify-content: center;
+  }
   img {
     height: 100%;
     width: 100%;
+  }
+}
+:global(.traitify--survey-text) {
+  .content {
+    border: $border-width solid;
+
+    @include theme("border-color", "border");
+  }
+  .progress {
+    border-radius: $border-radius-sm;
+    height: 100%;
+    transition: width 0.3s;
+    width: 0%;
+
+    @include theme("background-color", "progress-bar");
+  }
+  .progressBar {
+    border-radius: $border-radius-sm;
+    height: $border-width-xl;
+    margin-bottom: $buffer;
+
+    @include theme("background-color", "border");
+  }
+  .response {
+    @include min-width("sm") { max-width: 100%; }
+    @include min-width("md") { padding: $buffer-lg; }
+  }
+  .slide {
+    @include theme("background-color", "background");
+  }
+  &.container {
+    @include min-width("xs") {
+      aspect-ratio: 2/1;
+      max-width: $breakpoint-md;
+    }
   }
 }

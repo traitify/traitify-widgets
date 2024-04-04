@@ -1,8 +1,11 @@
+import PropTypes from "prop-types";
 import style from "./style.scss";
 
-export default function Loading() {
+function Loading({className: _class}) {
+  const className = [_class, style.container].filter(Boolean).join(" ");
+
   return (
-    <div className={style.container}>
+    <div className={className}>
       <div className={style.loading}>
         <div />
         <div />
@@ -10,3 +13,8 @@ export default function Loading() {
     </div>
   );
 }
+
+Loading.defaultProps = {className: null};
+Loading.propTypes = {className: PropTypes.string};
+
+export default Loading;

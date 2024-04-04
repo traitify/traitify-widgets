@@ -1853,6 +1853,17 @@ exports[`Survey.Personality text survey actions response saves me 1`] = `
           Skydiving
         </span>
       </div>
+      <button
+        className="back"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Back"
+        >
+          chevron-left
+        </span>
+      </button>
     </div>
     <div
       className="buttons"
@@ -1919,6 +1930,17 @@ exports[`Survey.Personality text survey actions response saves not me 1`] = `
           Skydiving
         </span>
       </div>
+      <button
+        className="back"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Back"
+        >
+          chevron-left
+        </span>
+      </button>
     </div>
     <div
       className="buttons"

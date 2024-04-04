@@ -25,7 +25,7 @@ function Container({
   slideIndex
 }) {
   const assessment = useAssessment({type: "personality"});
-  const {allowBack, allowFullscreen} = useOption("survey") || {};
+  const {allowFullscreen, ...options} = useOption("survey") || {};
   const container = useRef(null);
   const content = useRef(null);
   const [fullscreen, toggleFullscreen] = useFullscreen(container.current);
@@ -42,6 +42,7 @@ function Container({
 
   const back = () => dispatch({type: "back"});
   const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
+  const allowBack = Object.hasOwn(options, "allowBack") ? options.allowBack : textSurvey;
 
   return (
     <div className={`${style.container} traitify--survey-${textSurvey ? "text" : "image"}`} ref={container}>

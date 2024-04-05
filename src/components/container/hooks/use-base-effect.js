@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
+import useDidUpdate from "lib/hooks/use-did-update";
 import {
   assessmentsState,
   baseState,
@@ -7,7 +8,6 @@ import {
   packageIDState,
   profileIDState
 } from "lib/recoil";
-import useDidUpdate from "lib/hooks/use-did-update";
 
 export default function useBaseEffect() {
   const resetAssessments = useResetRecoilState(assessmentsState);

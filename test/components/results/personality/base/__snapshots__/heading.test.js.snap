@@ -52,6 +52,7 @@ exports[`PersonalityBaseHeading fallbacks renders component with blend 1`] = `
         <video
           controls={true}
           crossOrigin="anonymous"
+          disablePictureInPicture={true}
           playsInline={true}
           poster="https://cdn.traitify.com/widgets/career-deck/blends/naturalist_analyzer/thumbnail.jpg"
         >
@@ -396,6 +397,7 @@ exports[`PersonalityBaseHeading themed renders component with blend 1`] = `
         <video
           controls={true}
           crossOrigin="anonymous"
+          disablePictureInPicture={true}
           playsInline={true}
           poster="https://cdn.traitify.com/widgets/career-deck/blends/naturalist_analyzer/thumbnail.jpg"
         >

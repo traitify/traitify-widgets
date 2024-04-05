@@ -10,5 +10,23 @@ module.exports = {
     "import/resolver": {
       webpack: {config: "webpack.config.js"}
     }
+  },
+  rules: {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "internal",
+          "sibling",
+          "parent"
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          order: "asc",
+          caseInsensitive: true
+        }
+      }
+    ]
   }
 };

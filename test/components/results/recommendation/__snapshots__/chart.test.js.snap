@@ -17,12 +17,12 @@ exports[`Results.RecommendationChart renders component 1`] = `
           className="chartLegendColor"
           style={
             {
-              "background": "#2FB855",
+              "background": "#29B770",
             }
           }
         />
         <div>
-          Preferred
+          Higher
         </div>
       </div>
       <div
@@ -32,12 +32,12 @@ exports[`Results.RecommendationChart renders component 1`] = `
           className="chartLegendColor"
           style={
             {
-              "background": "#FFA721",
+              "background": "#EF615E",
             }
           }
         />
         <div>
-          Acceptable
+          Medium
         </div>
       </div>
       <div
@@ -47,12 +47,12 @@ exports[`Results.RecommendationChart renders component 1`] = `
           className="chartLegendColor"
           style={
             {
-              "background": "#EE5351",
+              "background": "#FFCC3B",
             }
           }
         />
         <div>
-          Potential Risk
+          Lower
         </div>
       </div>
     </div>
@@ -1077,7 +1077,53 @@ exports[`Results.RecommendationChart renders component if benchmark not ready 1`
   >
     <div
       className="ranks"
-    />
+    >
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#29B770",
+            }
+          }
+        />
+        <div>
+          High
+        </div>
+      </div>
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#FFCC3B",
+            }
+          }
+        />
+        <div>
+          Medium
+        </div>
+      </div>
+      <div
+        className="chartLegendContainer"
+      >
+        <div
+          className="chartLegendColor"
+          style={
+            {
+              "background": "#EF615E",
+            }
+          }
+        />
+        <div>
+          Low
+        </div>
+      </div>
+    </div>
     <div
       className="vertical"
     >
@@ -2107,12 +2153,12 @@ exports[`Results.RecommendationChart renders component with combined prop 1`] = 
           className="chartLegendColor"
           style={
             {
-              "background": "#2FB855",
+              "background": "#29B770",
             }
           }
         />
         <div>
-          Preferred
+          Higher
         </div>
       </div>
       <div
@@ -2122,12 +2168,12 @@ exports[`Results.RecommendationChart renders component with combined prop 1`] = 
           className="chartLegendColor"
           style={
             {
-              "background": "#FFA721",
+              "background": "#EF615E",
             }
           }
         />
         <div>
-          Acceptable
+          Medium
         </div>
       </div>
       <div
@@ -2137,12 +2183,12 @@ exports[`Results.RecommendationChart renders component with combined prop 1`] = 
           className="chartLegendColor"
           style={
             {
-              "background": "#EE5351",
+              "background": "#FFCC3B",
             }
           }
         />
         <div>
-          Potential Risk
+          Lower
         </div>
       </div>
     </div>

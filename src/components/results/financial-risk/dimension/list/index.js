@@ -1,6 +1,6 @@
 import useResults from "lib/hooks/use-results";
-import Details from "../details";
 import style from "./style.scss";
+import Details from "../details";
 
 export default function FinancialRiskDimensionList() {
   const results = useResults({type: "personality"});

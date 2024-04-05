@@ -1,8 +1,8 @@
 /** @jest-environment jsdom */
 import {act} from "react-test-renderer";
+import {defaultExplanations, defaultQuestions} from "components/survey/cognitive/instructions-defaults";
 import Component from "components/survey/cognitive/practice";
 import Slide from "components/survey/cognitive/slide";
-import {defaultExplanations, defaultQuestions} from "components/survey/cognitive/instructions-defaults";
 import ComponentHandler from "support/component-handler";
 import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";

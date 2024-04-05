@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
-import Traitify from "lib/traitify";
 import {render, unmountComponentAtNode} from "react-dom";
+import Traitify from "lib/traitify";
 
 jest.mock("react-dom");
 jest.mock("components/results/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));

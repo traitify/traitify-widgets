@@ -17,7 +17,7 @@ module.exports = {
     "<rootDir>/src/",
     "<rootDir>/test/"
   ],
-  rootDir: "..",
+  rootDir: require("path").resolve(__dirname, ".."),
   setupFiles: [
     "<rootDir>/test/support/setup/babel.js",
     "<rootDir>/test/support/setup/react.js"

@@ -4,6 +4,7 @@
   "status": "incomplete",
   "scoring_scale": "STEN",
   "assessment_type": "DIMENSION_BASED",
+  "slide_type": "image",
   "completed_at": null,
   "started_at": 1546455988548,
   "created_at": 1545352376163,

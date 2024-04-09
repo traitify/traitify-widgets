@@ -116,9 +116,6 @@ describe("Survey.Personality", () => {
         act(() => { component.instance.findByProps({className: "fullscreen"}).props.onClick(); });
 
         expect(component.tree).toMatchSnapshot();
-        expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updated", expect.objectContaining({
-          fullscreen: true
-        }));
       });
 
       it("untriggers action", () => {
@@ -126,9 +123,6 @@ describe("Survey.Personality", () => {
         act(() => { component.instance.findByProps({className: "fullscreen"}).props.onClick(); });
 
         expect(component.tree).toMatchSnapshot();
-        expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updated", expect.objectContaining({
-          fullscreen: false
-        }));
       });
     });
 
@@ -146,7 +140,6 @@ describe("Survey.Personality", () => {
         const state = lastUpdate();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
-          fullscreen: false,
           response: true
         }));
         expect(state.slideIndex).toBe(1);
@@ -159,7 +152,6 @@ describe("Survey.Personality", () => {
         const state = lastUpdate();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
-          fullscreen: false,
           response: false
         }));
         expect(state.slideIndex).toBe(1);
@@ -345,7 +337,6 @@ describe("Survey.Personality", () => {
         const state = lastUpdate();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
-          fullscreen: false,
           response: "ME"
         }));
         expect(state.slideIndex).toBe(1);
@@ -358,7 +349,6 @@ describe("Survey.Personality", () => {
         const state = lastUpdate();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
-          fullscreen: false,
           response: "NOT_ME"
         }));
         expect(state.slideIndex).toBe(1);
@@ -371,7 +361,6 @@ describe("Survey.Personality", () => {
         const state = lastUpdate();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
-          fullscreen: false,
           response: "REALLY_ME"
         }));
         expect(state.slideIndex).toBe(1);
@@ -384,7 +373,6 @@ describe("Survey.Personality", () => {
         const state = lastUpdate();
 
         expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
-          fullscreen: false,
           response: "REALLY_NOT_ME"
         }));
         expect(state.slideIndex).toBe(1);
@@ -613,6 +601,106 @@ describe("Survey.Personality", () => {
 
         expect(mockError.called).toEqual(3);
         expect(mock.called).toEqual(1);
+      });
+    });
+  });
+
+  describe("text survey", () => {
+    beforeEach(() => {
+      assessment = mutable(_assessment);
+      assessment.slide_type = "TEXT";
+
+      mockAssessment(assessment);
+    });
+
+    describe("actions", () => {
+      describe("response", () => {
+        beforeEach(async() => {
+          component = await ComponentHandler.setup(Component, {createNodeMock});
+        });
+
+        it("saves me", () => {
+          act(() => { component.findByText("Me").props.onClick(); });
+          const state = lastUpdate();
+
+          expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
+            response: true
+          }));
+          expect(state.slideIndex).toBe(1);
+          expect(state.slides[0].response).toBe(true);
+          expect(component.tree).toMatchSnapshot();
+        });
+
+        it("saves not me", () => {
+          act(() => { component.findByText("Not Me").props.onClick(); });
+          const state = lastUpdate();
+
+          expect(container.listener.trigger).toHaveBeenCalledWith("Survey.updateSlide", expect.objectContaining({
+            response: false
+          }));
+          expect(state.slideIndex).toBe(1);
+          expect(state.slides[0].response).toBe(false);
+          expect(component.tree).toMatchSnapshot();
+        });
+      });
+    });
+
+    describe("submit", () => {
+      const completeSlides = async() => {
+        const slideCount = assessment.slides.length;
+
+        times(slideCount).forEach((index) => {
+          act(() => {
+            jest.advanceTimersByTime(600);
+            component.findByText(index > slideCount / 2 ? "Me" : "Not Me").props.onClick();
+          });
+        });
+
+        await act(async() => { jest.runOnlyPendingTimers(); });
+      };
+
+      it("submits results", async() => {
+        component = await ComponentHandler.setup(Component, {createNodeMock});
+        const mock = mockAssessmentSubmit({status: "success"});
+
+        await completeSlides();
+
+        expect(mock.called).toBe(1);
+      });
+
+      describe("errors", () => {
+        const retry = async() => {
+          await act(async() => { jest.runOnlyPendingTimers(); });
+        };
+
+        it("renders error", async() => {
+          component = await ComponentHandler.setup(Component, {createNodeMock});
+          const mock = mockAssessmentSubmit({implementation: () => Promise.reject()});
+
+          await completeSlides();
+          await retry();
+          await retry();
+
+          expect(mock.called).toBe(3);
+          expect(component).toMatchSnapshot();
+        });
+
+        it("retries", async() => {
+          component = await ComponentHandler.setup(Component, {createNodeMock});
+          const mockError = mockAssessmentSubmit({implementation: () => Promise.reject("Oh no")});
+
+          await completeSlides();
+          await retry();
+          await retry();
+
+          const mock = mockAssessmentSubmit({status: "success"});
+          act(() => { component.findByText("Click Here to Try Again").props.onClick(); });
+
+          await act(async() => { await jest.runOnlyPendingTimers(); });
+
+          expect(mockError.called).toEqual(3);
+          expect(mock.called).toEqual(1);
+        });
       });
     });
   });

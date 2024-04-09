@@ -1,11 +1,25 @@
 @import "style/helpers";
 
+$inner-padding: $buffer-lg;
+$outer-padding: $buffer;
+
 .buttons, .caption { flex: 0 0; }
 .buttons {
   display: flex;
+  gap: $buffer;
   justify-content: center;
+  margin: $buffer 0;
 
-  @include min-width("sm") { margin: $buffer 0; }
+  &.likert {
+    .me, .reallyMe {
+      @include theme("background-color", "me");
+      &:active, &:hover { @include theme("background-color", "me-active"); }
+    }
+    .notMe, .reallyNotMe {
+      @include theme("background-color", "not-me");
+      &:active, &:hover { @include theme("background-color", "not-me-active"); }
+    }
+  }
   .me {
     @include theme("background-color", "me");
     &:active, &:hover { @include theme("background-color", "me-active"); }
@@ -15,6 +29,7 @@
     &:active, &:hover { @include theme("background-color", "not-me-active"); }
   }
   .response {
+    border-radius: $border-radius-sm;
     flex: 1 1 0;
     font-weight: 600;
     letter-spacing: 2px;
@@ -26,12 +41,8 @@
     @include min-width("sm") {
       font-size: $font-size * 1.25;
       line-height: $line-height;
-      margin: 5px;
       padding: $buffer;
       max-width: 150px;
-
-      &:first-child { border-radius: $border-radius-sm; }
-      &:last-child { border-radius: $border-radius-sm; }
     }
     @include theme("color", "text-light");
     &:focus {
@@ -60,10 +71,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100svh;
   margin: 0 auto;
   max-height: 100vh;
+  max-height: 100svh;
   max-width: 100%;
   position: relative;
+  z-index: 1;
 
   @include min-width("xs") {
     aspect-ratio: 4/3;
@@ -104,6 +118,24 @@
   .back { left: 30px; }
   .fullscreen { right: 30px; }
 }
+.content {
+  border-radius: $border-radius;
+  flex: 1 1 0;
+  overflow: hidden;
+  position: relative;
+
+  .progress {
+    height: $border-width-xl;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: width 0.3s;
+    width: 0%;
+    z-index: 1;
+
+    @include theme("background-color", "progress-bar");
+  }
+}
 .error, .loading {
   height: 100%;
 
@@ -113,13 +145,6 @@
   align-items: center;
   display: flex;
   justify-content: center;
-}
-.image {
-  flex: 1 1 0;
-  overflow: hidden;
-  position: relative;
-
-  @include min-width("sm") { border-radius: $border-radius; }
 }
 .instructions {
   background: url("https://cdn.traitify.com/assets/images/js/instructions_slide.jpg") no-repeat center center;
@@ -152,35 +177,6 @@
   }
   h1 { margin: $buffer 0; }
 }
-.likertScale {
-  .buttons {
-    .me, .reallyMe {
-      @include theme("background-color", "me");
-      &:active, &:hover { @include theme("background-color", "me-active"); }
-    }
-    .notMe, .reallyNotMe {
-      @include theme("background-color", "not-me");
-      &:active, &:hover { @include theme("background-color", "not-me-active"); }
-    }
-    .response {
-      margin: 0 1px;
-
-      &:first-child { margin-left: 0; }
-      &:last-child { margin-right: 0; }
-    }
-  }
-}
-.progress {
-  height: $border-width-xl;
-  left: 0px;
-  position: absolute;
-  top: 0px;
-  transition: width 0.3s;
-  width: 0%;
-  z-index: 1;
-
-  @include theme("background-color", "progress-bar");
-}
 .slide {
   bottom: 0;
   position: absolute;
@@ -193,8 +189,72 @@
     transition: left 0.3s;
   }
   &.right { left: 100%; }
+  &.text {
+    align-items: center;
+    display: flex;
+    font-size: $font-size-heading;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+  }
   img {
     height: 100%;
     width: 100%;
+  }
+}
+:global(.traitify--survey-text) {
+  .buttons { margin-bottom: 0; }
+  .content {
+    border-bottom: $border-width solid;
+    border-radius: 0;
+
+    @include theme("border-color", "border");
+  }
+  .progress {
+    border-radius: $border-radius-sm;
+    height: 100%;
+    transition: width 0.3s;
+    width: 0%;
+
+    @include theme("background-color", "progress-bar");
+  }
+  .progressBar {
+    border-radius: $border-radius-sm;
+    height: $border-width-xl;
+    margin-bottom: $buffer;
+
+    @include theme("background-color", "border");
+  }
+  .response {
+    @include min-width("sm") { max-width: 100%; }
+  }
+  .slide {
+    @include theme("background-color", "background");
+  }
+  &.container {
+    padding: $inner-padding + $outer-padding $outer-padding;
+
+    @include min-width("xs") {
+      aspect-ratio: 2/1;
+      max-width: $breakpoint-md;
+    }
+    @include theme("background-color", "background");
+
+    .back { left: 0; }
+    .fullscreen { right: 0; }
+    .back, .fullscreen { bottom: $buffer; }
+  }
+  &:after {
+    border: $border-width solid;
+    border-radius: $border-radius;
+    bottom: $outer-padding;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: $outer-padding;
+    z-index: -1;
+
+    @include theme("border-color", "border");
   }
 }

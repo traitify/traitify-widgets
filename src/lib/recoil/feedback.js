@@ -1,5 +1,5 @@
 import {selector} from "recoil";
-import {getIsUserCompletedFeedback} from "lib/feedback-survey";
+import {getIsUserCompletedFeedback} from "components/results/feedback/feedback-survey";
 import {assessmentQuery} from "lib/recoil/assessment";
 import {assessmentIDState, graphqlState, httpState, localeState} from "./base";
 

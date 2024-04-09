@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Modal from "components/common/modal";
-import {submitFeedbackSurveyResponse} from "lib/feedback-survey";
+import {submitFeedbackSurveyResponse} from "components/results/feedback/feedback-survey";
 import useAssessment from "lib/hooks/use-assessment";
 import useHttp from "lib/hooks/use-http";
 import useLoadedValue from "lib/hooks/use-loaded-value";

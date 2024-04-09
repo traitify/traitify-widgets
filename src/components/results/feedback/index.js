@@ -9,13 +9,20 @@ export default function Feedback() {
   const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);
   const translate = useTranslate();
   const [showModal, setShowModal] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   if(userCompletedFeedback) { return null; }
 
   const openModal = () => { setShowModal(true); };
-  const closeModal = () => { setShowModal(false); };
+  const closeModal = ({isSubmission}) => {
+    setShowModal(false);
+    if(isSubmission) {
+      setSubmitted(true);
+    }
+  };
 
   return (
+    !submitted && (
     <div>
       <div className={style.container}>
         <div className={style.details}>
@@ -28,5 +35,6 @@ export default function Feedback() {
       </div>
       {showModal && <Modal onClose={closeModal} />}
     </div>
+    )
   );
 }

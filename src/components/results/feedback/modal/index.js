@@ -43,7 +43,7 @@ export default function FeedbackModal({onClose}) {
     event.preventDefault();
     const response = buildFeedbackSurveyResponse(assessment, feedbackSurvey, responses);
     submitFeedbackSurveyResponse(assessment.id, response, http);
-    onClose();
+    onClose({isSubmission: true});
   };
 
   return (

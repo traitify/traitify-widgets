@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.Feedback.Modal renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="modal container"
+  >
+    <section
+      className="modalContainer"
+    >
+      <div
+        className="modalContent"
+      >
+        <div
+          className="header"
+        >
+          <div>
+            Share Your Perspective
+          </div>
+          <div>
+            <div
+              className="mock"
+            >
+              Close Btn
+            </div>
+          </div>
+        </div>
+        <hr
+          className="grayDivider"
+        />
+        <div
+          className="content"
+        >
+          <form
+            className="form"
+            id="442c90ef-c5e6-50fe-8756-60965b8bd620"
+            onSubmit={[Function]}
+          >
+            <span>
+              We'd like to learn about your experience
+            </span>
+            <div
+              className="questionSection"
+            >
+              <label
+                className="question"
+                htmlFor="d00ad1b9-4532-5c7e-891c-f321059ab07c"
+              >
+                What was your overall experience of taking the assessment? 
+              </label>
+              <select
+                id="d00ad1b9-4532-5c7e-891c-f321059ab07c"
+                name="d00ad1b9-4532-5c7e-891c-f321059ab07c"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  disabled={true}
+                  hidden={true}
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="3adbc566-ec54-50ea-947c-0bde0f23fd3d"
+                >
+                  Positive
+                </option>
+                <option
+                  value="82f58f7c-4a84-5e1a-ad60-54d1ecd28b67"
+                >
+                  Negative
+                </option>
+                <option
+                  value="c55d95c5-487a-593e-a2d2-896af419634a"
+                >
+                  Not sure/No opinion
+                </option>
+              </select>
+            </div>
+            <div
+              className="questionSection"
+            >
+              <label
+                className="question"
+                htmlFor="a3b2e441-ed20-5027-884b-6f0f565ef3a8"
+              >
+                What was your overall opinion of the images in the assessment?
+              </label>
+              <select
+                id="a3b2e441-ed20-5027-884b-6f0f565ef3a8"
+                name="a3b2e441-ed20-5027-884b-6f0f565ef3a8"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  disabled={true}
+                  hidden={true}
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="9b475757-9deb-52ee-8495-5d969c8c3b5b"
+                >
+                  I liked them
+                </option>
+                <option
+                  value="28ac732e-c157-5ccc-ba3c-be8d5d076b89"
+                >
+                  I didn’t like them
+                </option>
+                <option
+                  value="c55d95c5-487a-593e-a2d2-896af419634a"
+                >
+                  Not sure/No opinion
+                </option>
+              </select>
+            </div>
+            <div
+              className="questionSection"
+            >
+              <label
+                className="question"
+                htmlFor="5a9fa3fa-bc71-5c45-9519-fb9efc2e85aa"
+              >
+                Did taking this assessment affect your interest in working for this company?
+              </label>
+              <select
+                id="5a9fa3fa-bc71-5c45-9519-fb9efc2e85aa"
+                name="5a9fa3fa-bc71-5c45-9519-fb9efc2e85aa"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  disabled={true}
+                  hidden={true}
+                  value=""
+                >
+                  Select
+                </option>
+                <option
+                  value="849b1574-6c04-55e0-8fd1-b1c2757acf65"
+                >
+                  Increased my interest
+                </option>
+                <option
+                  value="afcbc3f9-00ef-50fb-98e4-f923d1b380d0"
+                >
+                  Decreased my interest
+                </option>
+                <option
+                  value="e9838235-c649-5d7b-bd0b-516763a3c50a"
+                >
+                  Had no effect
+                </option>
+                <option
+                  value="12111c83-f670-5755-a72c-a290d95a37a0"
+                >
+                  N/A. I did not take this as part of a hiring process
+                </option>
+              </select>
+            </div>
+            <div
+              className="questionSection"
+            >
+              <label
+                className="question"
+                htmlFor="c9275926-28d7-5d71-b026-d6d9d86dc475"
+              >
+                Write a 3000 words essay on Traitify. Jk. Unless...
+              </label>
+              <textarea
+                name="c9275926-28d7-5d71-b026-d6d9d86dc475"
+                onChange={[Function]}
+                rows="5"
+                value=""
+              />
+            </div>
+          </form>
+          <hr
+            className="grayDivider"
+          />
+          <div
+            className="footer"
+          >
+            <button
+              className="cancelBtn"
+              type="button"
+            >
+              Cancel
+               
+            </button>
+            <button
+              className="submitBtn"
+              disabled={true}
+              form="442c90ef-c5e6-50fe-8756-60965b8bd620"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

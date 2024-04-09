@@ -1,0 +1,73 @@
+{
+  "id": "442c90ef-c5e6-50fe-8756-60965b8bd620",
+  "questions": [
+    {
+      "id": "d00ad1b9-4532-5c7e-891c-f321059ab07c",
+      "multipleChoiceOptions": [
+        {
+          "id": "3adbc566-ec54-50ea-947c-0bde0f23fd3d",
+          "text": "Positive"
+        },
+        {
+          "id": "82f58f7c-4a84-5e1a-ad60-54d1ecd28b67",
+          "text": "Negative"
+        },
+        {
+          "id": "c55d95c5-487a-593e-a2d2-896af419634a",
+          "text": "Not sure/No opinion"
+        }
+      ],
+      "questionType": "Multiple Choice",
+      "text": "What was your overall experience of taking the assessment? "
+    },
+    {
+      "id": "a3b2e441-ed20-5027-884b-6f0f565ef3a8",
+      "multipleChoiceOptions": [
+        {
+          "id": "9b475757-9deb-52ee-8495-5d969c8c3b5b",
+          "text": "I liked them"
+        },
+        {
+          "id": "28ac732e-c157-5ccc-ba3c-be8d5d076b89",
+          "text": "I didn’t like them"
+        },
+        {
+          "id": "c55d95c5-487a-593e-a2d2-896af419634a",
+          "text": "Not sure/No opinion"
+        }
+      ],
+      "questionType": "Multiple Choice",
+      "text": "What was your overall opinion of the images in the assessment?"
+    },
+    {
+      "id": "5a9fa3fa-bc71-5c45-9519-fb9efc2e85aa",
+      "multipleChoiceOptions": [
+        {
+          "id": "849b1574-6c04-55e0-8fd1-b1c2757acf65",
+          "text": "Increased my interest"
+        },
+        {
+          "id": "afcbc3f9-00ef-50fb-98e4-f923d1b380d0",
+          "text": "Decreased my interest"
+        },
+        {
+          "id": "e9838235-c649-5d7b-bd0b-516763a3c50a",
+          "text": "Had no effect"
+        },
+        {
+          "id": "12111c83-f670-5755-a72c-a290d95a37a0",
+          "text": "N/A. I did not take this as part of a hiring process"
+        }
+      ],
+      "questionType": "Multiple Choice",
+      "text": "Did taking this assessment affect your interest in working for this company?"
+    },
+    {
+      "id": "c9275926-28d7-5d71-b026-d6d9d86dc475",
+      "multipleChoiceOptions": null,
+      "questionType": "Short Response",
+      "text": "Write a 3000 words essay on Traitify. Jk. Unless..."
+    }
+  ],
+  "title": "Share Your Perspective"
+}

@@ -2,9 +2,9 @@
 import {act} from "react-test-renderer";
 import Component from "components/survey/cognitive/slide";
 import ComponentHandler from "support/component-handler";
-import assessment from "support/json/assessment/cognitive.json";
 import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
+import assessment from "support/json/assessment/cognitive.json";
 
 const defaultQuestions = assessment.questions.slice(1, 3);
 const loadedQuestions = defaultQuestions.map((question) => ({...question, loaded: true}));

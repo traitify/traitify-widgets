@@ -5,8 +5,8 @@ import ComponentHandler from "support/component-handler";
 import {mockCareers, mockHighlightedCareers, useAssessment, useCareers} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import careers from "support/json/careers.json";
 import assessment from "support/json/assessment/type-based.json";
+import careers from "support/json/careers.json";
 
 jest.mock("react-apexcharts", () => ((props) => <div className="mock" {...props}>Chart</div>));
 

@@ -50,4 +50,9 @@
     @include theme("border-color", "border-light");
     border: $border-width solid;
   }
+
+  button:disabled {
+    @include theme("color", "inactive");
+    cursor: not-allowed;
+  }
 }

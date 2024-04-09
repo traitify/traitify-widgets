@@ -14,3 +14,13 @@ export const submitFeedbackSurveyResponse = async(assessmentId, response, http) 
     console.error("Failed to submit feedback survey response"); /* eslint-disable-line no-console */
     console.error(e); /* eslint-disable-line no-console */
   });
+
+const notEmpty = (str) => str !== undefined && str !== "";
+
+export const isResponsesValid = (responses) => {
+  if(!responses) return false;
+
+  return Object.values(responses).every(
+    (r) => notEmpty(r.selected_option_id) || notEmpty(r.short_response)
+  );
+};

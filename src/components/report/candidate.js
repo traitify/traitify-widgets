@@ -13,7 +13,7 @@ export default function CandidateReport() {
   const [options, setOptions] = useRecoilState(optionsState);
   const assessment = useAssessment();
 
-  const showFeedback = assessment?.deck_id === "big-five";
+  const showFeedback = assessment?.deck_id.includes("big-five");
 
   useEffect(() => {
     const disabledComponents = options.disabledComponents || [];

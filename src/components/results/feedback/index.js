@@ -14,15 +14,14 @@ export default function Feedback() {
   if(userCompletedFeedback) { return null; }
 
   const openModal = () => { setShowModal(true); };
-  const closeModal = ({isSubmission}) => {
+  const closeModal = ({isSubmitting}) => {
     setShowModal(false);
-    if(isSubmission) {
-      setSubmitted(true);
-    }
+    if(isSubmitting) setSubmitted(true);
   };
 
+  if(submitted) return null;
+
   return (
-    !submitted && (
     <div>
       <div className={style.container}>
         <div className={style.details}>
@@ -35,6 +34,5 @@ export default function Feedback() {
       </div>
       {showModal && <Modal onClose={closeModal} />}
     </div>
-    )
   );
 }

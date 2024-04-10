@@ -11,6 +11,7 @@ function MultipleChoice({onChange, questionId, questionText, options}) {
       selected_option_id: answer
     });
   }, [answer]);
+
   return (
     <div className={style.questionSection}>
       <label className={style.question} htmlFor={questionId}>{questionText}</label>

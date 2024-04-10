@@ -10,7 +10,6 @@ export default function Modal({children, onClose, title}) {
     <div className={`${style.modal} ${style.container}`}>
       <section className={style.modalContainer}>
         <div className={style.modalContent}>
-
           <div className={style.header}>
             <div>{title}</div>
             <div>

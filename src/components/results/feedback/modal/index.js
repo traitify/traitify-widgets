@@ -43,7 +43,7 @@ export default function FeedbackModal({onClose}) {
     event.preventDefault();
     const response = buildFeedbackSurveyResponse(assessment, feedbackSurvey, responses);
     submitFeedbackSurveyResponse(assessment.id, response, http);
-    onClose({isSubmission: true});
+    onClose({isSubmitting: true});
   };
 
   return (
@@ -64,7 +64,7 @@ export default function FeedbackModal({onClose}) {
       <hr className={style.grayDivider} />
       <div className={style.footer}>
         <button className={style.cancelBtn} onClick={onClose} type="button">
-          {translate("cancel")} {isValid}
+          {translate("cancel")}
         </button>
         <button type="submit" className={style.submitBtn} disabled={!isValid} form={feedbackSurvey.id}>{translate("submit")}</button>
       </div>

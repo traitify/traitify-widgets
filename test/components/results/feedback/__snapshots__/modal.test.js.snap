@@ -48,7 +48,7 @@ exports[`Results.Feedback.Modal renders component 1`] = `
                 className="question"
                 htmlFor="d00ad1b9-4532-5c7e-891c-f321059ab07c"
               >
-                What was your overall experience of taking the assessment? 
+                What was your overall experience of taking the assessment?
               </label>
               <select
                 id="d00ad1b9-4532-5c7e-891c-f321059ab07c"
@@ -191,7 +191,6 @@ exports[`Results.Feedback.Modal renders component 1`] = `
               type="button"
             >
               Cancel
-               
             </button>
             <button
               className="submitBtn"

@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`I18nSync .buildFiles wrties translations 1`] = `
+[
+  [
+    "./src/lib/i18n-data/en-us.json",
+    "{
+  "look": {
+    "at": {
+      "this": "I'm missing\\n\\n from es-US"
+    }
+  },
+  "sub": {
+    "with_1": "%{name} is really exciting",
+    "with_2": "%{name} is really %{something}"
+  },
+  "survey": {
+    "me": "Me",
+    "not_me": "Not Me"
+  }
+}",
+  ],
+  [
+    "./src/lib/i18n-data/es-pr.json",
+    "{
+  "sub": {
+    "with_1": "Yo estoy divertida"
+  }
+}",
+  ],
+  [
+    "./src/lib/i18n-data/es-us.json",
+    "{
+  "sub": {
+    "with_1": "%{name} estas divertida",
+    "with_2": "%{name} estas divertida"
+  },
+  "survey": {
+    "me": "Yo Soy",
+    "not_me": "No Soy"
+  }
+}",
+  ],
+]
+`;
+
+exports[`I18nSync .importData catches errors 1`] = `
+{
+  "de-de": {
+    "code": "de-de",
+    "data": [],
+    "name": "German",
+  },
+  "en-gb": {
+    "code": "en-gb",
+    "data": [],
+    "name": "English (GB)",
+  },
+  "en-us": {
+    "code": "en-us",
+    "data": [
+      {
+        "key": "look.at.this",
+        "locale": "en-us",
+        "value": "I'm missing
+
+ from es-US",
+      },
+      {
+        "key": "sub.with_1",
+        "locale": "en-us",
+        "value": "%{name} is really exciting",
+      },
+      {
+        "key": "sub.with_2",
+        "locale": "en-us",
+        "value": "%{name} is really %{something}",
+      },
+      {
+        "key": "survey.me",
+        "locale": "en-us",
+        "value": "Me",
+      },
+      {
+        "key": "survey.not_me",
+        "locale": "en-us",
+        "value": "Not Me",
+      },
+    ],
+    "name": "English (US)",
+    "tree": {
+      "look": {
+        "at": {
+          "this": "I'm missing
+
+ from es-US",
+        },
+      },
+      "sub": {
+        "with_1": "%{name} is really exciting",
+        "with_2": "%{name} is really %{something}",
+      },
+      "survey": {
+        "me": "Me",
+        "not_me": "Not Me",
+      },
+    },
+  },
+  "es-ec": {
+    "code": "es-ec",
+    "data": [],
+    "name": "Spanish (Ecuador)",
+  },
+  "es-pr": {
+    "code": "es-pr",
+    "data": [
+      {
+        "key": "sub.with_1",
+        "locale": "es-pr",
+        "value": "Yo estoy divertida",
+      },
+    ],
+    "name": "Spanish (Puerto Rico)",
+    "tree": {
+      "sub": {
+        "with_1": "Yo estoy divertida",
+      },
+    },
+  },
+  "es-us": {
+    "code": "es-us",
+    "data": [
+      {
+        "key": "sub.with_1",
+        "locale": "es-us",
+        "value": "%{name} estas divertida",
+      },
+      {
+        "key": "sub.with_2",
+        "locale": "es-us",
+        "value": "%{name} estas divertida",
+      },
+      {
+        "key": "survey.me",
+        "locale": "es-us",
+        "value": "Yo Soy",
+      },
+      {
+        "key": "survey.not_me",
+        "locale": "es-us",
+        "value": "No Soy",
+      },
+    ],
+    "name": "Spanish",
+    "tree": {
+      "sub": {
+        "with_1": "%{name} estas divertida",
+        "with_2": "%{name} estas divertida",
+      },
+      "survey": {
+        "me": "Yo Soy",
+        "not_me": "No Soy",
+      },
+    },
+  },
+  "fr-ca": {
+    "code": "fr-ca",
+    "data": [],
+    "name": "French (Canadian)",
+  },
+  "fr-fr": {
+    "code": "fr-fr",
+    "data": [],
+    "name": "French (France)",
+  },
+  "fr-us": {
+    "code": "fr-us",
+    "data": [],
+    "name": "French",
+  },
+  "ht-us": {
+    "code": "ht-us",
+    "data": [],
+    "name": "Creole",
+  },
+  "id-id": {
+    "code": "id-id",
+    "data": [],
+    "name": "Indonesian",
+  },
+  "it-it": {
+    "code": "it-it",
+    "data": [],
+    "name": "Italian",
+  },
+  "ja-jp": {
+    "code": "ja-jp",
+    "data": [],
+    "name": "Japanese",
+  },
+  "ko-kr": {
+    "code": "ko-kr",
+    "data": [],
+    "name": "Korean",
+  },
+  "nl-nl": {
+    "code": "nl-nl",
+    "data": [],
+    "name": "Dutch",
+  },
+  "no-no": {
+    "code": "no-no",
+    "data": [],
+    "name": "Norwegian",
+  },
+  "pt-br": {
+    "code": "pt-br",
+    "data": [],
+    "name": "Portuguese (Brazil)",
+  },
+  "pt-pt": {
+    "code": "pt-pt",
+    "data": [],
+    "name": "Portuguese",
+  },
+  "ru-ru": {
+    "code": "ru-ru",
+    "data": [],
+    "name": "Russian",
+  },
+  "sv-se": {
+    "code": "sv-se",
+    "data": [],
+    "name": "Swedish",
+  },
+  "th-th": {
+    "code": "th-th",
+    "data": [],
+    "name": "Thai",
+  },
+  "vi-vn": {
+    "code": "vi-vn",
+    "data": [],
+    "name": "Vietnamese",
+  },
+  "zh-cn": {
+    "code": "zh-cn",
+    "data": [],
+    "name": "Chinese (Simplified)",
+  },
+  "zh-hant": {
+    "code": "zh-hant",
+    "data": [],
+    "name": "Chinese (Traditional)",
+  },
+}
+`;
+
+exports[`I18nSync .importData saves translations 1`] = `
+{
+  "de-de": {
+    "code": "de-de",
+    "data": [],
+    "name": "German",
+  },
+  "en-gb": {
+    "code": "en-gb",
+    "data": [],
+    "name": "English (GB)",
+  },
+  "en-us": {
+    "code": "en-us",
+    "data": [
+      {
+        "key": "look.at.this",
+        "locale": "en-us",
+        "value": "I'm missing
+
+ from es-US",
+      },
+      {
+        "key": "sub.with_1",
+        "locale": "en-us",
+        "value": "%{name} is really exciting",
+      },
+      {
+        "key": "sub.with_2",
+        "locale": "en-us",
+        "value": "%{name} is really %{something}",
+      },
+      {
+        "key": "survey.me",
+        "locale": "en-us",
+        "value": "Me",
+      },
+      {
+        "key": "survey.not_me",
+        "locale": "en-us",
+        "value": "Not Me",
+      },
+    ],
+    "name": "English (US)",
+    "tree": {
+      "look": {
+        "at": {
+          "this": "I'm missing
+
+ from es-US",
+        },
+      },
+      "sub": {
+        "with_1": "%{name} is really exciting",
+        "with_2": "%{name} is really %{something}",
+      },
+      "survey": {
+        "me": "Me",
+        "not_me": "Not Me",
+      },
+    },
+  },
+  "es-ec": {
+    "code": "es-ec",
+    "data": [],
+    "name": "Spanish (Ecuador)",
+  },
+  "es-pr": {
+    "code": "es-pr",
+    "data": [
+      {
+        "key": "sub.with_1",
+        "locale": "es-pr",
+        "value": "Yo estoy divertida",
+      },
+    ],
+    "name": "Spanish (Puerto Rico)",
+    "tree": {
+      "sub": {
+        "with_1": "Yo estoy divertida",
+      },
+    },
+  },
+  "es-us": {
+    "code": "es-us",
+    "data": [
+      {
+        "key": "sub.with_1",
+        "locale": "es-us",
+        "value": "%{name} estas divertida",
+      },
+      {
+        "key": "sub.with_2",
+        "locale": "es-us",
+        "value": "%{name} estas divertida",
+      },
+      {
+        "key": "survey.me",
+        "locale": "es-us",
+        "value": "Yo Soy",
+      },
+      {
+        "key": "survey.not_me",
+        "locale": "es-us",
+        "value": "No Soy",
+      },
+    ],
+    "name": "Spanish",
+    "tree": {
+      "sub": {
+        "with_1": "%{name} estas divertida",
+        "with_2": "%{name} estas divertida",
+      },
+      "survey": {
+        "me": "Yo Soy",
+        "not_me": "No Soy",
+      },
+    },
+  },
+  "fr-ca": {
+    "code": "fr-ca",
+    "data": [],
+    "name": "French (Canadian)",
+  },
+  "fr-fr": {
+    "code": "fr-fr",
+    "data": [],
+    "name": "French (France)",
+  },
+  "fr-us": {
+    "code": "fr-us",
+    "data": [],
+    "name": "French",
+  },
+  "ht-us": {
+    "code": "ht-us",
+    "data": [],
+    "name": "Creole",
+  },
+  "id-id": {
+    "code": "id-id",
+    "data": [],
+    "name": "Indonesian",
+  },
+  "it-it": {
+    "code": "it-it",
+    "data": [],
+    "name": "Italian",
+  },
+  "ja-jp": {
+    "code": "ja-jp",
+    "data": [],
+    "name": "Japanese",
+  },
+  "ko-kr": {
+    "code": "ko-kr",
+    "data": [],
+    "name": "Korean",
+  },
+  "nl-nl": {
+    "code": "nl-nl",
+    "data": [],
+    "name": "Dutch",
+  },
+  "no-no": {
+    "code": "no-no",
+    "data": [],
+    "name": "Norwegian",
+  },
+  "pt-br": {
+    "code": "pt-br",
+    "data": [],
+    "name": "Portuguese (Brazil)",
+  },
+  "pt-pt": {
+    "code": "pt-pt",
+    "data": [],
+    "name": "Portuguese",
+  },
+  "ru-ru": {
+    "code": "ru-ru",
+    "data": [],
+    "name": "Russian",
+  },
+  "sv-se": {
+    "code": "sv-se",
+    "data": [],
+    "name": "Swedish",
+  },
+  "th-th": {
+    "code": "th-th",
+    "data": [],
+    "name": "Thai",
+  },
+  "vi-vn": {
+    "code": "vi-vn",
+    "data": [],
+    "name": "Vietnamese",
+  },
+  "zh-cn": {
+    "code": "zh-cn",
+    "data": [],
+    "name": "Chinese (Simplified)",
+  },
+  "zh-hant": {
+    "code": "zh-hant",
+    "data": [],
+    "name": "Chinese (Traditional)",
+  },
+}
+`;

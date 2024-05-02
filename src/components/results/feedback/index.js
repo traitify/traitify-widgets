@@ -21,7 +21,17 @@ export default function Feedback() {
     if(isSubmitting) setSubmitted(true);
   };
 
-  if(submitted) return null;
+  if(submitted) {
+    return (
+      <div>
+        <div className={style.container}>
+          <div className={style.details}>
+            <span>{translate("feedback_thanks")}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>

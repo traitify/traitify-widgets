@@ -5,15 +5,11 @@ import ArchetypeHeading from "components/results/personality/archetype/heading";
 import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
 import Traits from "components/results/personality/trait/list";
-import useAssessment from "lib/hooks/use-assessment";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function CandidateReport() {
   const [options, setOptions] = useRecoilState(optionsState);
-  const assessment = useAssessment();
-
-  const showFeedback = assessment?.deck_id.includes("big-five");
 
   useEffect(() => {
     const disabledComponents = options.disabledComponents || [];
@@ -31,7 +27,7 @@ export default function CandidateReport() {
   return (
     <section className={style.container}>
       <ArchetypeHeading />
-      {showFeedback && <Feedback />}
+      <Feedback />
       <ArchetypeTips />
       <Dimensions />
       <Traits />

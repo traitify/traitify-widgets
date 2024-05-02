@@ -1,16 +1,18 @@
 import {useState} from "react";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import useTranslate from "lib/hooks/use-translate";
-import {userCompletedFeedbackQuery} from "lib/recoil/feedback";
+import {userCompletedFeedbackQuery, feedbackSurveyQuery} from "lib/recoil/feedback";
 import Modal from "./modal";
 import style from "./style.scss";
 
 export default function Feedback() {
   const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);
+  const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
   const translate = useTranslate();
   const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  if(!feedbackSurvey) { return null; }
   if(userCompletedFeedback) { return null; }
 
   const openModal = () => { setShowModal(true); };

@@ -20,7 +20,7 @@ function Slide({className, onSelect, onSkip: _onSkip, question, translate}) {
     setStartTime(Date.now());
   }, [question.id]);
 
-  if(!question.loaded) { return <Loading />; }
+  if(!question.loaded) { return <Loading className={className} />; }
 
   return (
     <div className={className}>

@@ -6,7 +6,16 @@ const locales = Object.keys(i18nData).reduce((map, key) => ({
   ...map, [key]: {name: i18nData[key].name}
 }), {});
 
-const stringify = (object) => JSON.stringify(object, null, 2);
+const sortKeys = (key, value) => {
+  if(!value) { return value; }
+  if(typeof value !== "object") { return value; }
+  if(Array.isArray(value)) { return value; }
+
+  return Object.keys(value).sort()
+    .reduce((object, key) => (object[key] = value[key], object), {});
+};
+
+const stringify = (object) => JSON.stringify(object, sortKeys, 2);
 
 export default class I18nSync {
   static async run() { new I18nSync().run(); }
@@ -67,7 +76,7 @@ export default class I18nSync {
   #fetchData() {
     const headers = {Accept: "application/json"};
     const options = {headers, method: "GET"};
-    const url = "https://cdn.traitify/widgets.json";
+    const url = "https://cdn-stag.traitify.com/translations/widgets.json";
 
     return fetch(url, options).then((response) => response.json());
   }

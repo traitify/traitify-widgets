@@ -3,6 +3,7 @@ import {useRecoilState} from "recoil";
 import ClientGuide from "components/results/guide/client";
 import PersonalityGuide from "components/results/guide/personality";
 import RecommendationChart from "components/results/recommendation/chart";
+import RecommendationList from "components/results/recommendation/list";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {optionsState} from "lib/recoil";
@@ -19,9 +20,13 @@ export default function ManagerReport() {
     setOptions({...options, perspective: "thirdPerson"});
   }, []);
 
+  // NOTE: Temporary option until 2024-09-01
+  const {showRecommendationList} = options;
+
   return (
     <section>
       <ClientGuide />
+      {showRecommendationList && <RecommendationList />}
       <div className={[style.container, style.box].join(" ")}>
         {showHeaders && (
           <>

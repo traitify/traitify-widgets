@@ -1,7 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 import {selector} from "recoil";
-import dig from "lib/common/object/dig";
-import {assessmentQuery} from "./assessment";
 import {
   benchmarkIDState,
   cacheState,
@@ -13,15 +11,8 @@ import {
 
 export const benchmarkQuery = selector({
   get: async({get}) => {
-    let benchmarkID = get(benchmarkIDState);
-    if(!benchmarkID) {
-      const assessment = await get(assessmentQuery);
-      const recommendation = dig(assessment, "recommendation")
-        || dig(assessment, "recommendations", 0);
-      if(!recommendation) { return null; }
-
-      benchmarkID = recommendation.recommendation_id;
-    }
+    const benchmarkID = get(benchmarkIDState);
+    if(!benchmarkID) { return null; }
 
     const cache = get(cacheState);
     const cacheKey = get(safeCacheKeyState({id: benchmarkID, type: "benchmark"}));

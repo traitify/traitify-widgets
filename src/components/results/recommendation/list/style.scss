@@ -1,0 +1,37 @@
+@import "style/helpers";
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+
+  select {
+    @extend %dropdown;
+
+    font-size: $font-size-lg;
+  }
+}
+
+.recommendation {
+  @extend %heading;
+
+  border-radius: $border-radius-lg;
+  padding: $buffer-sm $buffer-lg * 2;
+
+  @include theme("color", "text-light");
+}
+
+.recommendations {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+  justify-content: space-between;
+  max-width: $breakpoint-lg;
+  margin: auto;
+
+  @include min-width("md") {
+    flex-direction: row;
+  }
+}

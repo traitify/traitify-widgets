@@ -13,7 +13,7 @@ export default function RecommendationList() {
   const recommendations = useRecommendations();
   const [benchmarkID, setBenchmarkID] = useRecoilState(benchmarkIDState);
 
-  useComponentEvents("RecommendationList", {recommendation, recommendations});
+  useComponentEvents("RecommendationList", {benchmarkID, recommendation, recommendations});
 
   if(disabled) { return null; }
   if(!recommendation) { return null; }

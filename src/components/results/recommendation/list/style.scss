@@ -28,7 +28,6 @@
   flex-direction: column;
   gap: $buffer;
   justify-content: space-between;
-  max-width: $breakpoint-lg;
   margin: auto;
 
   @include min-width("md") {

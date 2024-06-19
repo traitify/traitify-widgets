@@ -25,8 +25,8 @@ export default function ManagerReport() {
 
   return (
     <section>
-      <ClientGuide />
       {showRecommendationList && <RecommendationList />}
+      <ClientGuide />
       <div className={[style.container, style.box].join(" ")}>
         {showHeaders && (
           <>

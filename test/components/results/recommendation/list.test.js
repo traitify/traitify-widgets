@@ -18,7 +18,12 @@ describe("Results.RecommendationList", () => {
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "RecommendationList.initialized",
-        {recommendation: null, recommendations: null}
+        {
+          benchmarkID: undefined,
+          benchmarkTag: null,
+          recommendation: null,
+          recommendations: null
+        }
       );
     });
 
@@ -31,6 +36,8 @@ describe("Results.RecommendationList", () => {
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "RecommendationList.updated",
         {
+          benchmarkID: "benchmark-xyz",
+          benchmarkTag: null,
           recommendation,
           recommendations: expect.arrayContaining([recommendation])
         }

@@ -1,4 +1,5 @@
 import {useRecoilState} from "recoil";
+import useBenchmarkTag from "lib/hooks/use-benchmark-tag";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useRecommendation from "lib/hooks/use-recommendation";
@@ -7,18 +8,18 @@ import {benchmarkIDState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function RecommendationList() {
+  const benchmarkTag = useBenchmarkTag();
   const disabled = useDisabledComponent("RecommendationList");
   const disabledScore = useDisabledComponent("RecommendationScore");
   const recommendation = useRecommendation();
   const recommendations = useRecommendations();
   const [benchmarkID, setBenchmarkID] = useRecoilState(benchmarkIDState);
 
-  useComponentEvents("RecommendationList", {benchmarkID, recommendation, recommendations});
+  useComponentEvents("RecommendationList", {benchmarkID, benchmarkTag, recommendation, recommendations});
 
   if(disabled) { return null; }
   if(!recommendation) { return null; }
 
-  const benchmarkTag = recommendation.benchmark_tag;
   const filteredRecommendations = benchmarkTag
     ? recommendations.filter(({benchmark_tag: tag}) => tag === benchmarkTag)
     : recommendations;

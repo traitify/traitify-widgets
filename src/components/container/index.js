@@ -4,10 +4,10 @@ import ErrorBoundary from "./error-boundary";
 import State from "./state";
 import Theme from "./theme";
 
-function Container(props) {
+function Container({className = null, ...props}) {
   return (
     <RecoilRoot>
-      <Theme className={props.className}>
+      <Theme className={className}>
         <ErrorBoundary>
           <State {...props} />
         </ErrorBoundary>
@@ -16,7 +16,6 @@ function Container(props) {
   );
 }
 
-Container.defaultProps = {className: null};
 Container.propTypes = {className: PropTypes.string};
 
 export default Container;

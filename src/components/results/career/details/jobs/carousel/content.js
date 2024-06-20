@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Icon from "components/common/icon";
 import style from "./style.scss";
 
-function CarouselContent({Component, FallbackComponent, count, records}) {
+function CarouselContent({Component, FallbackComponent, count, records = null}) {
   const [start, setStart] = useState(0);
   const end = start + count;
 
@@ -41,7 +41,6 @@ function CarouselContent({Component, FallbackComponent, count, records}) {
   );
 }
 
-CarouselContent.defaultProps = {records: null};
 CarouselContent.propTypes = {
   Component: PropTypes.elementType.isRequired,
   FallbackComponent: PropTypes.elementType.isRequired,

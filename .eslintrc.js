@@ -27,6 +27,7 @@ module.exports = {
           caseInsensitive: true
         }
       }
-    ]
+    ],
+    "react/require-default-props": ["error", {functions: "defaultArguments"}]
   }
 };

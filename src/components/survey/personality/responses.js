@@ -3,7 +3,7 @@ import camelCase from "lib/common/string/camel-case";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function Responses({likert, onResponse}) {
+function Responses({likert = false, onResponse = null}) {
   const translate = useTranslate();
 
   const buttonClass = [
@@ -37,7 +37,6 @@ function Responses({likert, onResponse}) {
   );
 }
 
-Responses.defaultProps = {likert: false, onResponse: null};
 Responses.propTypes = {likert: PropTypes.bool, onResponse: PropTypes.func};
 
 export default Responses;

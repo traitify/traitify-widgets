@@ -100,6 +100,7 @@ function createWidget() {
   Traitify.options.colorScheme = cache.get("colorScheme");
   Traitify.options.locale = cache.get("locale");
   Traitify.options.report = cache.get("report");
+  Traitify.options.showRecommendationList = true;
   Traitify.options.survey = {};
   ["allowBack", "allowFullscreen"].forEach((key) => {
     const value = booleanFrom(cache.get(`survey.${key}`), "default");

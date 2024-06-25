@@ -1,9 +1,10 @@
 import {useEffect} from "react";
 import {useRecoilValue, useSetRecoilState} from "recoil";
-import {baseState, listenerState, localeState} from "lib/recoil";
+import {baseState, listenerState, localeState, optionsState} from "lib/recoil";
 
 export default function useListenerEffect() {
   const listener = useRecoilValue(listenerState);
+  const options = useRecoilValue(optionsState);
   const setBase = useSetRecoilState(baseState);
   const setLocale = useSetRecoilState(localeState);
 
@@ -19,4 +20,10 @@ export default function useListenerEffect() {
 
     return () => callbacks.forEach((callback) => callback());
   }, [listener]);
+
+  useEffect(() => {
+    if(!listener) { return; }
+
+    listener.trigger("Options.updated", {options});
+  }, [listener, options]);
 }

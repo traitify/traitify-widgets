@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import DangerousHTML from "components/common/dangerous-html";
 import reverse from "lib/common/array/reverse";
 import getDetail from "lib/common/get-detail";
 import dig from "lib/common/object/dig";
@@ -40,6 +41,7 @@ export default function PersonalityTypeChart() {
     personality: activeType,
     perspective
   });
+  const fields = ["explore", "achieve", "act", "appreciate"].filter((field) => dig(activeType, field, 0));
   let title = activeType.name;
 
   if(description.startsWith("'")) {
@@ -114,6 +116,16 @@ export default function PersonalityTypeChart() {
         </select>
         <div className={style.heading}>{title}</div>
         <div className={style.p}>{description}</div>
+        {fields.map((field) => (
+          <div key={field} className={style.field}>
+            <DangerousHTML className={style.subheading} html={translate(`headings.personality.${field}_html`)} />
+            <div className={style.values}>
+              {activeType[field].map((value) => (
+                <div key={value} style={{borderColor: `#${activeType.badge.color_1}`}}>{value}</div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

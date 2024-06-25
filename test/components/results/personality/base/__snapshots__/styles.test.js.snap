@@ -1,0 +1,471 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityBaseStyles renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="columns"
+    >
+      <div>
+        <div
+          className="heading"
+        >
+          More elements of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            />
+            <span>
+              Helping
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            />
+            <span>
+              Guiding
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            />
+            <span>
+              Listening
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            />
+            <span>
+              Following steps
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            />
+            <span>
+              Organizing
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            />
+            <span>
+              Tracking details
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="negative"
+      >
+        <div
+          className="heading"
+        >
+          Not so much of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Creating
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Building from scratch
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Diving in deep
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Taking charge
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Setting trends
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Changing
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseStyles renders component with headers 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="sectionHeading"
+    >
+      Your overall career style is...
+    </div>
+    <div
+      className="columns"
+    >
+      <div>
+        <div
+          className="heading"
+        >
+          More elements of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            />
+            <span>
+              Helping
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            />
+            <span>
+              Guiding
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            />
+            <span>
+              Listening
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            />
+            <span>
+              Following steps
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            />
+            <span>
+              Organizing
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            />
+            <span>
+              Tracking details
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="negative"
+      >
+        <div
+          className="heading"
+        >
+          Not so much of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Creating
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Building from scratch
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Diving in deep
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Taking charge
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Setting trends
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Changing
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseStyles renders component with less types 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="columns"
+    >
+      <div>
+        <div
+          className="heading"
+        >
+          More elements of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Taking charge
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Setting trends
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            />
+            <span>
+              Changing
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="negative"
+      >
+        <div
+          className="heading"
+        >
+          Not so much of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Creating
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Building from scratch
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            />
+            <span>
+              Diving in deep
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseStyles renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`PersonalityBaseStyles renders nothing if no styles 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`PersonalityBaseStyles renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

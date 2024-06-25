@@ -27,6 +27,17 @@ $v-scale-width: 50px;
 
   @include min-width("lg") { display: none; }
 }
+.field {
+  border-bottom: $border-width solid;
+  margin-top: $buffer-lg;
+  padding-bottom: $buffer-lg;
+
+  @include theme("border-bottom-color", "border");
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
 .horizontal {
   display: flex;
   flex-direction: column;
@@ -101,6 +112,9 @@ $v-scale-width: 50px;
 
   margin-bottom: 0;
 }
+.subheading {
+  font-size: $font-size-lg;
+}
 .tabs {
   display: flex;
   justify-content: center;
@@ -140,6 +154,23 @@ $v-scale-width: 50px;
       padding-bottom: $buffer;
       text-align: center;
     }
+  }
+}
+.values {
+  display: flex;
+  gap: $buffer;
+  margin-top: $buffer;
+
+  @include max-width("lg") { flex-direction: column; }
+
+  div {
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    flex: 1;
+    padding: $buffer;
+    text-align: center;
+
+    @include theme("border-color", "border");
   }
 }
 .vertical {

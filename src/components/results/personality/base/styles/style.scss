@@ -1,0 +1,49 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+  @extend %shadow-box;
+
+  margin-bottom: $buffer-section;
+}
+.columns {
+  @include min-width("md") {
+    display: grid;
+    gap: $buffer-lg;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  > div {
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    padding: $buffer;
+
+    @include buffer("margin-bottom");
+    @include theme("border-color", "border");
+  }
+}
+.heading {
+  @extend %heading;
+
+  margin-bottom: $buffer;
+}
+.negative .style { @include theme("border-color", "border"); }
+.style {
+  align-items: center;
+  border: $border-width solid;
+  border-radius: $border-radius;
+  display: flex;
+  gap: $buffer-sm;
+  padding: $buffer-sm * 0.5 $buffer-sm;
+
+  @include theme("border-color", "theme");
+}
+.styles {
+  display: flex;
+  gap: $buffer;
+  flex-wrap: wrap;
+
+  img {
+    display: inline-block;
+    height: $font-size-lg;
+  }
+}

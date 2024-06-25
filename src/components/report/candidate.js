@@ -20,7 +20,7 @@ export default function CandidateReport() {
     if(!options.perspective) { newOptions.perspective = "firstPerson"; }
     if(Object.keys(newOptions).length === 0) { return; }
 
-    setOptions({...options, newOptions});
+    setOptions({...options, ...newOptions});
   }, []);
 
   return (

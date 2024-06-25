@@ -130,6 +130,19 @@
   "really_not_me": "Really Not Me",
   "recommendation_chart_description": "Below, you can see the candidate's personality results broken down by each of the Big Five dimensions. Scores are color-coded to indicate the best-fit ranges (green), followed by yellow and red. These ranges vary for each job. They are based on several pieces of information that may include published research, job descriptions, and interviews with people who are familiar with the job.",
   "recommendation_chart_heading": "Fit Breakdown",
+  "headings": {
+    "personality": {
+      "achieve_html": "<b>ACHIEVE</b> - Skills you enjoy developing",
+      "act_html": "<b>ACT</b> - Ways you like to spend time",
+      "appreciate_html": "<b>APPRECIATE</b> - Values that align with your worldview",
+      "explore_html": "<b>EXPLORE</b> - Content you find interesting",
+      "styles": {
+        "negative": "Not so much of:",
+        "overall": "Your overall career style is...",
+        "positive": "More elements of:"
+      }
+    }
+  },
   "room_for_growth_and_change": "Room for Growth and Change",
   "salary_mean": "Salary Mean",
   "salary_mean_html": "The wage at which half of the workers in the occupation earned more than that amount and half earned less. Median wage data is from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",

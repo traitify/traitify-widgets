@@ -6,13 +6,13 @@ const locales = Object.keys(i18nData).reduce((map, key) => ({
   ...map, [key]: {name: i18nData[key].name}
 }), {});
 
-const sortKeys = (key, value) => {
+const sortKeys = (_key, value) => {
   if(!value) { return value; }
   if(typeof value !== "object") { return value; }
   if(Array.isArray(value)) { return value; }
 
   return Object.keys(value).sort()
-    .reduce((object, key) => (object[key] = value[key], object), {});
+    .reduce((object, key) => ({...object, [key]: value[key]}), {});
 };
 
 const stringify = (object) => JSON.stringify(object, sortKeys, 2);

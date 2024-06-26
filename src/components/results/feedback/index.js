@@ -1,5 +1,6 @@
 import {useState} from "react";
 import useLoadedValue from "lib/hooks/use-loaded-value";
+import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {userCompletedFeedbackQuery, feedbackSurveyQuery} from "lib/recoil/feedback";
 import Modal from "./modal";
@@ -9,11 +10,13 @@ export default function Feedback() {
   const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);
   const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
   const translate = useTranslate();
+  const perspective = useOption("perspective");
   const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   if(!feedbackSurvey) { return null; }
   if(userCompletedFeedback) { return null; }
+  if(perspective !== "firstPerson") { return null; }
 
   const openModal = () => { setShowModal(true); };
   const closeModal = ({isSubmitting}) => {

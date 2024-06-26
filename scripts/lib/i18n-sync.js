@@ -72,11 +72,10 @@ export default class I18nSync {
 
     this.#writeFile(`./src/lib/i18n-data/${locale.code}.json`, locale.tree);
   }
-  // TODO: Get locales from CDN
   #fetchData() {
     const headers = {Accept: "application/json"};
     const options = {headers, method: "GET"};
-    const url = "https://cdn-stag.traitify.com/translations/widgets.json";
+    const url = "https://cdn.traitify.com/translations/widgets.json";
 
     return fetch(url, options).then((response) => response.json());
   }

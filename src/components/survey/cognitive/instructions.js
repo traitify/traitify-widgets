@@ -15,10 +15,10 @@ import Practice from "./practice";
 import style from "./style.scss";
 
 function Instructions({
-  captureLearningDisability,
-  initialLearningDisability,
+  captureLearningDisability = false,
+  initialLearningDisability = false,
   onStart,
-  options,
+  options = {},
   surveyID,
   translate
 }) {
@@ -80,11 +80,6 @@ function Instructions({
   );
 }
 
-Instructions.defaultProps = {
-  captureLearningDisability: false,
-  initialLearningDisability: false,
-  options: {}
-};
 Instructions.propTypes = {
   captureLearningDisability: PropTypes.bool,
   initialLearningDisability: PropTypes.bool,

@@ -1,5 +1,5 @@
 /* global VERSION */
-import {render, unmountComponentAtNode} from "react-dom";
+import {createRoot} from "react-dom/client";
 import Components from "components";
 import componentFromString from "lib/common/component-from-string";
 import except from "lib/common/object/except";
@@ -57,8 +57,7 @@ export default class Traitify {
     Object.keys(targets || this.renderedTargets).forEach((name) => {
       const component = this.renderedTargets[name];
       if(!component) { return; }
-      if(!component.target) { return; }
-      if(component.target.isConnected) { unmountComponentAtNode(component.target); }
+      if(component.root) { component.root.unmount(); }
     });
 
     this.renderedTargets = {};
@@ -80,15 +79,14 @@ export default class Traitify {
         const Component = componentFromString(name);
         if(!Component) { return reject(new Error(`Could not find component for ${name}`)); }
 
-        const {props, target} = targets[name];
+        const {props, root, target} = targets[name];
         if(!target) { return reject(new Error(`Could not select target for ${name}`)); }
-        if(target.isConnected) { unmountComponentAtNode(target); }
+        if(!root) { targets[name].root = createRoot(target); }
 
-        resolve(render(
+        resolve(targets[name].root.render(
           <Components.Container {...this.props}>
             <Component {...props} />
-          </Components.Container>,
-          target
+          </Components.Container>
         ));
       }));
     });

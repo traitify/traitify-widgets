@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import PropTypes from "prop-types";
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
@@ -28,32 +27,6 @@ function State({children, ...props}) {
   return children;
 }
 
-State.defaultProps = {
-  assessmentID: null,
-  benchmarkID: null,
-  cache: null,
-  graphql: null,
-  http: null,
-  i18n: null,
-  listener: null,
-  locale: null,
-  options: {},
-  packageID: null,
-  profileID: null
-};
-State.propTypes = {
-  assessmentID: PropTypes.string,
-  benchmarkID: PropTypes.string,
-  cache: PropTypes.object,
-  children: PropTypes.node.isRequired,
-  graphql: PropTypes.object,
-  http: PropTypes.object,
-  i18n: PropTypes.object,
-  listener: PropTypes.object,
-  locale: PropTypes.string,
-  options: PropTypes.object,
-  packageID: PropTypes.string,
-  profileID: PropTypes.string
-};
+State.propTypes = {children: PropTypes.node.isRequired};
 
 export default State;

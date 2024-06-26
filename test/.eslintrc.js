@@ -1,21 +1,9 @@
 module.exports = {
-  extends: ["plugin:jest/recommended"],
+  extends: ["traitify/jest"],
   globals: {
     container: "writable"
   },
-  overrides: [
-    {
-      files: "*.config.js",
-      rules: {
-        "global-require": "off"
-      }
-    }
-  ],
-  rules: {
-    "no-new": "off",
-    "prefer-promise-reject-errors": "off",
-    "react/prop-types": "off"
-  },
+  rules: {},
   settings: {
     "import/resolver": {
       jest: {

@@ -16,11 +16,11 @@ import Responses from "./responses";
 import style from "./style.scss";
 
 function Container({
-  caption,
+  caption = null,
   children,
   dispatch,
-  likert,
-  onResponse,
+  likert = false,
+  onResponse = null,
   progress,
   slideIndex
 }) {
@@ -73,7 +73,6 @@ function Container({
   );
 }
 
-Container.defaultProps = {caption: null, likert: false, onResponse: null};
 Container.propTypes = {
   caption: PropTypes.string,
   children: PropTypes.node.isRequired,

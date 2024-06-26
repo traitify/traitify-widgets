@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Loading from "components/common/loading";
 import style from "./style.scss";
 
-function Slide({className, onSelect, onSkip: _onSkip, question, translate}) {
+function Slide({className = "", onSelect, onSkip: _onSkip = null, question, translate}) {
   const [answerID, setAnswerID] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
   const onConfirm = () => onSelect({answerId: answerID, timeTaken: Date.now() - startTime});
@@ -46,7 +46,6 @@ function Slide({className, onSelect, onSkip: _onSkip, question, translate}) {
   );
 }
 
-Slide.defaultProps = {className: "", onSkip: null};
 Slide.propTypes = {
   className: PropTypes.string,
   onSelect: PropTypes.func.isRequired,

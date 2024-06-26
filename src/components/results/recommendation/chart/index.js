@@ -13,7 +13,7 @@ import useSetting from "lib/hooks/use-setting";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function RecommendationChart({combined}) {
+function RecommendationChart({combined = false}) {
   const benchmark = useBenchmark();
   const disabled = useDisabledComponent("RecommendationChart");
   const guide = useGuide();
@@ -95,7 +95,6 @@ function RecommendationChart({combined}) {
   );
 }
 
-RecommendationChart.defaultProps = {combined: false};
 RecommendationChart.propTypes = {combined: PropTypes.bool};
 
 export default RecommendationChart;

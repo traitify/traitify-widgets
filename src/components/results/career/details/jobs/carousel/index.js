@@ -6,7 +6,7 @@ const gap = 16;
 const buttonWidth = 18; // Border * 2 + Padding * 2
 const containerBuffer = 34; // Border * 2 + Padding * 2
 
-function Carousel({recordWidth, ...props}) {
+function Carousel({recordWidth = 180, ...props}) {
   const ref = useRef(null);
   const [count, setCount] = useState(0);
 
@@ -37,7 +37,6 @@ function Carousel({recordWidth, ...props}) {
   );
 }
 
-Carousel.defaultProps = {recordWidth: 180};
 Carousel.propTypes = {recordWidth: PropTypes.number};
 
 export default Carousel;

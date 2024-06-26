@@ -20,13 +20,13 @@ describe("useWindowSize", () => {
     useWindowMock("removeEventListener");
 
     it("adds resize event listener", async() => {
-      await ComponentHandler.setup(Component);
+      await ComponentHandler.setup(Component, {wrap: false});
 
       expect(window.addEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
     });
 
     it("removes resize event listener", async() => {
-      component = await ComponentHandler.setup(Component);
+      component = await ComponentHandler.setup(Component, {wrap: false});
       component.unmount();
 
       expect(window.removeEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
@@ -49,13 +49,13 @@ describe("useWindowSize", () => {
     });
 
     it("returns current window size", async() => {
-      await ComponentHandler.setup(Component);
+      await ComponentHandler.setup(Component, {wrap: false});
 
       expect(size.current).toEqual([window.innerWidth, window.innerHeight]);
     });
 
     it("returns updated window size", async() => {
-      await ComponentHandler.setup(Component);
+      await ComponentHandler.setup(Component, {wrap: false});
       act(() => window.resizeTo(1000, 2000));
 
       expect(size.current).toEqual([1000, 2000]);

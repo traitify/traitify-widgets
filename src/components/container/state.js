@@ -9,6 +9,7 @@ import useAssessmentsEffect from "./hooks/use-assessments-effect";
 import useBaseEffect from "./hooks/use-base-effect";
 import useListenerEffect from "./hooks/use-listener-effect";
 import useProps from "./hooks/use-props";
+import useRecommendationEffect from "./hooks/use-recommendation-effect";
 
 function State({children, ...props}) {
   const [loading, setLoading] = useRecoilState(loadingState);
@@ -18,6 +19,7 @@ function State({children, ...props}) {
   useAssessmentsEffect();
   useBaseEffect();
   useListenerEffect();
+  useRecommendationEffect();
   useEffect(() => { loadFont(); }, []);
   useEffect(() => { setLoading(false); }, []);
 

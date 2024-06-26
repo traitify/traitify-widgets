@@ -4099,7 +4099,7 @@
   ],
   "recommendation": {
     "id": "b9d3d4b9-7fe4-4076-839c-17361ec98d3e",
-    "recommendation_id": "8971c709-e2cb-4564-8f16-c6d1fd13f6d9",
+    "recommendation_id": "benchmark-xyz",
     "benchmark_name": "Big Five Retail",
     "rank_id": "6a8d4185-0daa-4941-8ad6-9c9af550691e",
     "description": "Preferred",
@@ -4674,7 +4674,7 @@
   "recommendations": [
     {
       "id": "b9d3d4b9-7fe4-4076-839c-17361ec98d3e",
-      "recommendation_id": "8971c709-e2cb-4564-8f16-c6d1fd13f6d9",
+      "recommendation_id": "benchmark-xyz",
       "benchmark_name": "Big Five Retail",
       "rank_id": "6a8d4185-0daa-4941-8ad6-9c9af550691e",
       "description": "Preferred",

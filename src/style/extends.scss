@@ -41,12 +41,10 @@
 %dropdown {
   border: $border-width solid;
   display: block;
-  height: 36px;
-  line-height: 36px;
-  margin-bottom: $buffer;
-  padding: 0 $buffer;
+  padding: $buffer-sm $buffer;
   width: 100%;
 
+  @include theme("background", "background");
   @include theme("border-color", "border");
 }
 

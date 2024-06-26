@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.RecommendationList renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="recommendations"
+    >
+      <label
+        htmlFor="traitify-benchmark-id"
+      >
+        <select
+          id="traitify-benchmark-id"
+          name="recommendation"
+          onChange={[Function]}
+          value="benchmark-xyz"
+        >
+          <option
+            value="benchmark-xyz"
+          >
+            Big Five Retail
+          </option>
+        </select>
+      </label>
+      <div
+        className="recommendation"
+        style={
+          {
+            "background": "#2FB855",
+          }
+        }
+      >
+        90 - Preferred
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Results.RecommendationList renders component with tag 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="recommendations"
+    >
+      <label
+        htmlFor="traitify-benchmark-id"
+      >
+        <select
+          id="traitify-benchmark-id"
+          name="recommendation"
+          onChange={[Function]}
+          value="benchmark-xyz"
+        >
+          <option
+            value="benchmark-xyz"
+          >
+            Big Five Retail
+          </option>
+        </select>
+      </label>
+      <div
+        className="recommendation"
+        style={
+          {
+            "background": "#2FB855",
+          }
+        }
+      >
+        90 - Preferred
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Results.RecommendationList renders component without score 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="recommendations"
+    >
+      <label
+        htmlFor="traitify-benchmark-id"
+      >
+        <select
+          id="traitify-benchmark-id"
+          name="recommendation"
+          onChange={[Function]}
+          value="benchmark-xyz"
+        >
+          <option
+            value="benchmark-xyz"
+          >
+            Big Five Retail
+          </option>
+        </select>
+      </label>
+      <div
+        className="recommendation"
+        style={
+          {
+            "background": "#2FB855",
+          }
+        }
+      >
+        Preferred
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Results.RecommendationList renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.RecommendationList renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.RecommendationList updates recommendation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="recommendations"
+    >
+      <label
+        htmlFor="traitify-benchmark-id"
+      >
+        <select
+          id="traitify-benchmark-id"
+          name="recommendation"
+          onChange={[Function]}
+          value="other-xyz"
+        >
+          <option
+            value="benchmark-xyz"
+          >
+            Big Five Retail
+          </option>
+          <option
+            value="other-xyz"
+          >
+            Other
+          </option>
+        </select>
+      </label>
+      <div
+        className="recommendation"
+        style={
+          {
+            "background": "#2FB855",
+          }
+        }
+      >
+        90 - Preferred
+      </div>
+    </div>
+  </section>
+</div>
+`;

@@ -19,6 +19,8 @@
 .dropdown {
   @extend %dropdown;
 
+  margin-bottom: $buffer;
+
   @include min-width("lg") { display: none; }
 }
 .heading {

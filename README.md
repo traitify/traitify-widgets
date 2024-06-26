@@ -221,9 +221,15 @@ Traitify.options.survey.allowFullscreen = true;
 Traitify.options.showHeaders = true;
 ```
 
-### Render results using specific perspective
+### Render results using specific benchmark
 
-\* currently only the `big-five` assessment has perspective content
+```
+Traitify.options.results.benchmarkID = benchmarkID;
+```
+
+Note: This differs from `options.benchmarkID`. A `profileID` and `benchmarkID` can be used to get an assessment with multiple recommendations. This option can be used to select one of those recommendations.
+
+### Render results using specific perspective
 
 ```
 Traitify.options.perspective = "firstPerson";

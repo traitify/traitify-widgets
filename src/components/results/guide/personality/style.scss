@@ -49,6 +49,8 @@
 .dropdown {
   @extend %dropdown;
 
+  margin-bottom: $buffer;
+
   @include min-width("lg") { display: none; }
 }
 .expandedIntro { animation: fade-in 1s; }

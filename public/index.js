@@ -99,8 +99,15 @@ function createWidget() {
 
   Traitify.options.colorScheme = cache.get("colorScheme");
   Traitify.options.locale = cache.get("locale");
+  Traitify.options.perspective = cache.get("perspective");
   Traitify.options.report = cache.get("report");
+  ["showHeaders", "showInstructions"].forEach((key) => {
+    const value = booleanFrom(cache.get(key), "default");
+
+    if(value !== "default") { Traitify.options[key] = value; }
+  });
   Traitify.options.showRecommendationList = true;
+  Traitify.options.showTraitList = true;
   Traitify.options.survey = {};
   ["allowBack", "allowFullscreen"].forEach((key) => {
     const value = booleanFrom(cache.get(`survey.${key}`), "default");
@@ -344,6 +351,13 @@ function setupDom() {
 
   group = createElement({className: "group"});
   group.appendChild(createOption({
+    fallback: "production",
+    name: "environment",
+    onChange: onEnvironmentChange,
+    options: [{text: "Production", value: "production"}, {text: "Staging", value: "staging"}],
+    text: "Environment:"
+  }));
+  group.appendChild(createOption({
     fallback: "personality",
     name: "surveyType",
     onChange: onSurveyTypeChange,
@@ -400,6 +414,20 @@ function setupCognitive() {
   });
 }
 
+function setupTraitify() {
+  const environment = cache.get("environment");
+
+  if(environment === "staging") {
+    Traitify.http.host = "https://api.stag.awse.traitify.com";
+  } else {
+    Traitify.http.host = "https://api.traitify.com";
+  }
+}
+
+function onEnvironmentChange(e) {
+  onInputChange(e);
+  setupTraitify();
+}
 function onInputChange(e) {
   const name = e.target.name;
   const value = e.target.type === "checkbox" ? booleanFrom(e.target.checked) : e.target.value;
@@ -407,7 +435,7 @@ function onInputChange(e) {
   cache.set(name, value);
 }
 
-// TODO: Add similar logic for each assessment type, so you have one cached for each type
+// TODO: Add similar logic for each assessment type, so you have one cached for each type, in each environment
 function onSurveyTypeChange(e) {
   onInputChange(e);
 
@@ -424,6 +452,7 @@ function onSurveyTypeChange(e) {
   });
 }
 
+setupTraitify();
 setupDom();
 setupCognitive();
 createWidget();

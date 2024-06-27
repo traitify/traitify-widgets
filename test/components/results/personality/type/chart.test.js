@@ -71,6 +71,32 @@ describe("PersonalityTypeChart", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders component with new data", async() => {
+    assessment.personality_types[0].personality_type = {
+      ...assessment.personality_types[0].personality_type,
+      achieve: ["Learning, expanding a specific base of knowledge", "Finding your own take; adding a new twist", "Discovering a new way of approaching an old question"],
+      act: ["“Losing yourself” in a creative process", "Adding something new to the world, uniquely your own", "Letting loose; being playful and whimsical"],
+      appreciate: ["Questioning what’s been the norm", "Freedom and the importance of self expression", "Supporting beauty and artistic appeal"],
+      explore: ["Creative productions, such as theater, music, film, design", "Understanding the human condition through ideas", "Searching for your “passion”"]
+    };
+    mockAssessment(assessment);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders component with some new data", async() => {
+    assessment.personality_types[0].personality_type = {
+      ...assessment.personality_types[0].personality_type,
+      achieve: ["Learning, expanding a specific base of knowledge", "Finding your own take; adding a new twist", "Discovering a new way of approaching an old question"],
+      explore: ["Creative productions, such as theater, music, film, design", "Understanding the human condition through ideas", "Searching for your “passion”"]
+    };
+    mockAssessment(assessment);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if disabled", async() => {
     mockOption("disabledComponents", ["PersonalityTypes"]);
     component = await ComponentHandler.setup(Component);

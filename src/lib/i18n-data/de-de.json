@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Sehen Sie sich ihre individuellen Karriereempfehlungen an",
   "close": "Schließen",
   "cognitive_alert_skip": "Sie können die Übungsaufgaben nicht überspringen.",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 31 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten. Die meisten Menschen schließen die Übung jedoch in etwa 15 Minuten ab.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>"
-  },
   "cognitive_confirm_button": "Bestätigen",
   "cognitive_confirm_retry": "Möchten Sie die Fragen, die Sie übersprungen haben, beantworten?",
   "cognitive_confirm_skip": "Sind Sie sich sicher, dass Sie überspringen möchten?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 31 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten. Die meisten Menschen schließen die Übung jedoch in etwa 15 Minuten ab.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Bitte geben Sie an, ob bei Ihnen eine Lernschwäche vorliegt.",
   "cognitive_instructions_step_1_button": "Beispiel anzeigen",
   "cognitive_instructions_step_1_heading": "Anweisungen",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Antwort",
   "cognitive_results_heading": "Vielen Dank, dass Sie unsere Bewertung abgeschlossen haben.",
   "cognitive_results_html": "Um mehr über die gerade durchgeführte Bewertung zu erfahren, besuchen Sie bitte <a href='https://www.traitify.com'>Traitify.com</a>.",
-  "cognitive_skipped_questions": "Übersprungene Fragen",
   "cognitive_skip_button": "Überspringen",
+  "cognitive_skipped_questions": "Übersprungene Fragen",
   "complements": "Ergänzungen",
   "conflicts": "Konflikte",
   "dimension_description": "Der Dimensionspunktwert wird aus Ihren Antworten auf Items berechnet, die zusammen die zugrundeliegenden Komponenten der einzelnen Dimensionen messen. Insgesamt weist eine Person jeweils eine hohe, mittlere oder niedrige Ausprägung auf.",

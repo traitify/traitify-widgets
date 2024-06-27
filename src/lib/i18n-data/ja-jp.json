@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "パーソナライズされたおすすめのキャリアを表示する",
   "close": "閉じる",
   "cognitive_alert_skip": "練習問題をスキップすることはできません。",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>それでは、練習問題を始めます。練習問題を始める前に、以下の点に留意ください。：</p><ul><li>練習問題は31問あります。</li><li>練習時間はお好きなだけお取りいただいて結構です。ただ、ほとんどの場合、15分程度で終わらせることが多いです。</li><li>気が散ることなく練習に集中できる静かな場所を見つけて下さい。</li><li>また、質問をスキップしても構いませんが、できるだけ各質問に答えるようにしてください。</li><li>この練習問題は一回で終わらせてください。</li></ul>"
-  },
   "cognitive_confirm_button": "確定",
   "cognitive_confirm_retry": "スキップした問題に回答しますか？",
   "cognitive_confirm_skip": "スキップしてよろしいですか？",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>それでは、練習問題を始めます。練習問題を始める前に、以下の点に留意ください。：</p><ul><li>練習問題は31問あります。</li><li>練習時間はお好きなだけお取りいただいて結構です。ただ、ほとんどの場合、15分程度で終わらせることが多いです。</li><li>気が散ることなく練習に集中できる静かな場所を見つけて下さい。</li><li>また、質問をスキップしても構いませんが、できるだけ各質問に答えるようにしてください。</li><li>この練習問題は一回で終わらせてください。</li></ul>"
+  },
   "cognitive_instructions_disability_text": "学習障害がある方は選択してください。",
   "cognitive_instructions_step_1_button": "例を見る",
   "cognitive_instructions_step_1_heading": "説明",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "回答",
   "cognitive_results_heading": "この度は、アセスメントにご回答いただき誠にありがとうございました。",
   "cognitive_results_html": "あなたが受けたアセスメントの詳細については、こちらをご覧ください。<a href=\"https://www.traitify.com\">Traitify.com</a>",
-  "cognitive_skipped_questions": "スキップした質問",
   "cognitive_skip_button": "スキップ",
+  "cognitive_skipped_questions": "スキップした質問",
   "complements": "補完",
   "conflicts": "衝突",
   "dimension_description": "特性スコアは、各項目に対する回答から計算されており、これらの項目では各特性の根底にある要素をまとめて測定しています。全体として、特性ごとに高、中程度、低レベルのいずれかに当てはまります。",

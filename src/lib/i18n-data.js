@@ -1,9 +1,12 @@
 import deDE from "lib/i18n-data/de-de.json";
 import enGB from "lib/i18n-data/en-gb.json";
 import enUS from "lib/i18n-data/en-us.json";
+import esEC from "lib/i18n-data/es-ec.json";
+import esPR from "lib/i18n-data/es-pr.json";
 import esUS from "lib/i18n-data/es-us.json";
 import frCA from "lib/i18n-data/fr-ca.json";
 import frFR from "lib/i18n-data/fr-fr.json";
+import frUS from "lib/i18n-data/fr-us.json";
 import htUS from "lib/i18n-data/ht-us.json";
 import idID from "lib/i18n-data/id-id.json";
 import itIT from "lib/i18n-data/it-it.json";
@@ -24,12 +27,12 @@ export default {
   "de-de": {data: deDE, name: "German"},
   "en-gb": {data: enGB, name: "English (GB)"},
   "en-us": {data: enUS, name: "English (US)"},
-  "es-ec": {data: esUS, name: "Spanish (Ecuador)"},
-  "es-pr": {data: esUS, name: "Spanish (Puerto Rico)"},
+  "es-ec": {data: esEC, name: "Spanish (Ecuador)"},
+  "es-pr": {data: esPR, name: "Spanish (Puerto Rico)"},
   "es-us": {data: esUS, name: "Spanish"},
   "fr-ca": {data: frCA, name: "French (Canadian)"},
   "fr-fr": {data: frFR, name: "French (France)"},
-  "fr-us": {data: frCA, name: "French"},
+  "fr-us": {data: frUS, name: "French"},
   "ht-us": {data: htUS, name: "Creole"},
   "id-id": {data: idID, name: "Indonesian"},
   "it-it": {data: itIT, name: "Italian"},

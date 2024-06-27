@@ -14,7 +14,7 @@
     "dev": "webpack serve --env mode=browser",
     "dev:secure": "webpack serve --env mode=browser --https",
     "i18n:sync": "node build/scripts/i18n-sync.js",
-    "lint": "eslint {scripts,src,test}",
+    "lint": "eslint scripts src test",
     "lint:fix": "eslint {scripts,src,test} --fix",
     "lint:watch": "esw -w {scripts,src,test} --color",
     "prebuild": "mkdirp build",

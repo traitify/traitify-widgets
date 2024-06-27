@@ -82,6 +82,19 @@
   "green_career": "Green Career",
   "green_career_html": "The green economy will cause a change in occupations' employment demand or work and worker requirements such as tasks, skills, knowledge, and credentials. Data from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.",
+  "headings": {
+    "personality": {
+      "achieve_html": "<b>ACHIEVE</b> - Skills you enjoy developing",
+      "act_html": "<b>ACT</b> - Ways you like to spend time",
+      "appreciate_html": "<b>APPRECIATE</b> - Values that align with your worldview",
+      "explore_html": "<b>EXPLORE</b> - Content you find interesting",
+      "styles": {
+        "negative": "Not so much of:",
+        "overall": "Your overall career style is...",
+        "positive": "More elements of:"
+      }
+    }
+  },
   "help": "Help",
   "instructions": "Instructions",
   "interview_guide_description": "These questions are customized for this candidate based on their levels of each personality dimension. You may wish to review the candidate's personality profile to learn whether they are high, medium, or low in each dimension, and then structure their interview around the components of personality that are of greatest concern for the position they seek.",

@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Xem các gợi ý nghề nghiệp được cá nhân hóa cho họ",
   "close": "Đóng",
   "cognitive_alert_skip": "Bạn không thể bỏ qua các câu hỏi thực hành",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Bây giờ là lúc cho bài tập. Trước khi bắt đầu, hãy nhớ:</p><ul><li>Có 31 câu hỏi trong bài tập</li><li>Bạn có thể mất bao lâu tùy ý để hoàn thành chúng. Tuy nhiên, hầu hết mọi người sẽ hoàn thành bài tập trong khoảng 15 phút.</li><li>Bạn nên tìm một nơi yên tĩnh nơi bạn có thể tập trung hoàn toàn vào bài tập mà không bị phân tâm.</li><li>Bạn có thể bỏ qua các câu hỏi nếu cần, nhưng hãy cố gắng trả lời mỗi câu hỏi.</li><li>ui lòng hoàn thành bài tập trong một lần làm.</li></ul>"
-  },
   "cognitive_confirm_button": "Xác nhận",
   "cognitive_confirm_retry": "Bạn có muốn thử trả lời lại những câu hỏi đã bỏ qua không",
   "cognitive_confirm_skip": "Bạn có chắc chắn muốn bỏ qua?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Bây giờ là lúc cho bài tập. Trước khi bắt đầu, hãy nhớ:</p><ul><li>Có 31 câu hỏi trong bài tập</li><li>Bạn có thể mất bao lâu tùy ý để hoàn thành chúng. Tuy nhiên, hầu hết mọi người sẽ hoàn thành bài tập trong khoảng 15 phút.</li><li>Bạn nên tìm một nơi yên tĩnh nơi bạn có thể tập trung hoàn toàn vào bài tập mà không bị phân tâm.</li><li>Bạn có thể bỏ qua các câu hỏi nếu cần, nhưng hãy cố gắng trả lời mỗi câu hỏi.</li><li>ui lòng hoàn thành bài tập trong một lần làm.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Vui lòng chọn nếu bạn có hạn chế về mặt học tập",
   "cognitive_instructions_step_1_button": "Xem ví dụ",
   "cognitive_instructions_step_1_heading": "Hướng dẫn",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Phản hồi",
   "cognitive_results_heading": "Cảm ơn bạn đã hoàn thành bài đánh giá của chúng tôi ",
   "cognitive_results_html": "Để tìm hiểu thêm về bài đánh giá mà bạn vừa làm, vui lòng truy cập <a href=\"https://www.traitify.com\">Traitify.com</a>",
-  "cognitive_skipped_questions": "Các câu hỏi đã bỏ qua ",
   "cognitive_skip_button": "Bỏ qua",
+  "cognitive_skipped_questions": "Các câu hỏi đã bỏ qua ",
   "complements": "Bổ sung ",
   "conflicts": "Xung đột",
   "dimension_description": "Điểm số của từng chiều được tính dựa trên các câu trả lời của bạn cho các mục câu hỏi cùng đo lường các thành phần cơ bản của mỗi chiều. Nhìn chung, mỗi cá nhân sẽ có mức Độ Cao, Trung bình hoặc Thấp cho mỗi chiều. ",

@@ -1,0 +1,32 @@
+{
+  "es-pr": {
+    "sub": {
+      "with_1": "Yo estoy divertida"
+    }
+  },
+  "es-us": {
+    "sub": {
+      "with_1": "%{name} estas divertida",
+      "with_2": "%{name} estas divertida"
+    },
+    "survey": {
+      "me": "Yo Soy",
+      "not_me": "No Soy"
+    }
+  },
+  "en-us": {
+    "look": {
+      "at": {
+        "this": "I'm missing\n\n from es-US"
+      }
+    },
+    "sub": {
+      "with_1": "%{name} is really exciting",
+      "with_2": "%{name} is really %{something}"
+    },
+    "survey": {
+      "me": "Me",
+      "not_me": "Not Me"
+    }
+  }
+}

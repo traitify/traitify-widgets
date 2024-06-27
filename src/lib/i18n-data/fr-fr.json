@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Afficher leurs recommandations de carrière personnalisées",
   "close": "Fermer",
   "cognitive_alert_skip": "Vous ne pouvez pas sauter ces questions",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 31 questions dans cet exercice. Prenez tout votre temps de les compléter. La plupart de participants va terminer dans environ 15 minutes. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>"
-  },
   "cognitive_confirm_button": "Confirmer",
   "cognitive_confirm_retry": "Voulez-vous essayer les questions que vous avez sautées?",
   "cognitive_confirm_skip": "Etes-vous sur de sauter?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 31 questions dans cet exercice. Prenez tout votre temps de les compléter. La plupart de participants va terminer dans environ 15 minutes. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Selectionnez s'il vous plait si vous avez des difficultés d'apprentissage.",
   "cognitive_instructions_step_1_button": "Voir un exemple",
   "cognitive_instructions_step_1_heading": "Instructions",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Réponse",
   "cognitive_results_heading": "Merci de compléter notre évaluation",
   "cognitive_results_html": "Pour savoir plus sur l'évaluation que vous venez de passer, visitez s'il vous plait <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Questions sautées",
   "cognitive_skip_button": "Sauter",
+  "cognitive_skipped_questions": "Questions sautées",
   "complements": "Forces",
   "conflicts": "Opportunités",
   "dimension_description": "Le score des dimensions est calculé à partir de vos réponses aux questions qui permettent de mesurer les composants sous-jacents de chaque dimension. De manière générale, chaque individu a un niveau Élevé, Moyen ou Faible pour chaque dimension.",

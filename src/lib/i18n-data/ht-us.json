@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Gade rekòmandasyon pèsonalize sou karyè yo",
   "close": "Fèmen",
   "cognitive_alert_skip": "Ou pa ka sote kesyon pratik yo",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Kounye a li lè pou fè egzèsis la. Anvan w kòmanse, sonje:</p><ul><li>Gen 31 kesyon nan ekzèsis la</li><li>Ou ka gen tout tan ou vle pou reponn kesyon yo. Sepandan, pifò moun pral fè egzèsis la nan apeprè 15 minit.</li><li>Ou dwe chache yon espas ki trankil kote ou ka pote tout atansyon ou nan egzèsis la san distraksyon.</li><li>Ou ka sote kesyon si w vle men eseye bay yon repons pou chak kesyon.</li><li>Tanpri fè egzèsis la nan yon sèl pase.</li></ul>"
-  },
   "cognitive_confirm_button": "Konfime",
   "cognitive_confirm_retry": "Èske w vle eseye reponn kesyon ou te sote yo?",
   "cognitive_confirm_skip": "Èske w sèten ou vle sote kesyon?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Kounye a li lè pou fè egzèsis la. Anvan w kòmanse, sonje:</p><ul><li>Gen 31 kesyon nan ekzèsis la</li><li>Ou ka gen tout tan ou vle pou reponn kesyon yo. Sepandan, pifò moun pral fè egzèsis la nan apeprè 15 minit.</li><li>Ou dwe chache yon espas ki trankil kote ou ka pote tout atansyon ou nan egzèsis la san distraksyon.</li><li>Ou ka sote kesyon si w vle men eseye bay yon repons pou chak kesyon.</li><li>Tanpri fè egzèsis la nan yon sèl pase.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Tanpri chwazi si w gen pwoblèm aprantisaj.",
   "cognitive_instructions_step_1_button": "Gade egzanp",
   "cognitive_instructions_step_1_heading": "Enstriksyon",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Repons",
   "cognitive_results_heading": "Mèsi paske w konplete evalyasyon nou an",
   "cognitive_results_html": "Pou aprann plis sou evalyasyon ou sot fè a, tanpri vizite <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Sote Kesyon yo",
   "cognitive_skip_button": "Sote",
+  "cognitive_skipped_questions": "Sote Kesyon yo",
   "complements": "Konpliman",
   "conflicts": "Konfli",
   "dimension_description": "Nòt nan dimansyon kalkile soti nan repons ou nan atik ki ansanm mezire eleman kache nan chak dimansyon. An jeneral, yon moun gen swa yon nivo segondè, modere, oswa ki ba nan chak.",

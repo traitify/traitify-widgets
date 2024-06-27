@@ -21,7 +21,7 @@ export default function Feedback() {
   const openModal = () => { setShowModal(true); };
   const closeModal = ({isSubmitting}) => {
     setShowModal(false);
-    if(isSubmitting) setSubmitted(true);
+    if(isSubmitting) { setSubmitted(true); }
   };
 
   if(submitted) {
@@ -29,7 +29,7 @@ export default function Feedback() {
       <div>
         <div className={style.container}>
           <div className={style.details}>
-            <span>{translate("feedback_thanks")}</span>
+            <span>{translate("feedback.thanks")}</span>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Feedback() {
     <div>
       <div className={style.container}>
         <div className={style.details}>
-          <span>{translate("feedback_prompt")}</span>
+          <span>{translate("feedback.prompt")}</span>
           <div className={style.buttons}>
             <button type="button" className={style.me} onClick={openModal}>{translate("yes")}</button>
             <button type="button" className={style.notMe} onClick={openModal}>{translate("no")}</button>

@@ -72,9 +72,11 @@
   "experience_level_5": "Graduate Degree",
   "extended_description": "Extended Description",
   "featured_skill": "Featured Skill",
-  "feedback_modal_prompt": "We'd like to learn about your experience",
-  "feedback_prompt": "Do you feel like your results match you?",
-  "feedback_thanks": "Thank you for your feedback!",
+  "feedback": {
+    "modal_prompt": "We'd like to learn about your experience",
+    "prompt": "Do you feel like your results match you?",
+    "thanks": "Thank you for your feedback!"
+  },
   "filter": "Filter",
   "get_started": "Get Started",
   "green_career": "Green Career",

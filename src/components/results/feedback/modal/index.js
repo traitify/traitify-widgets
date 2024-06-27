@@ -52,7 +52,7 @@ export default function FeedbackModal({onClose}) {
       title={feedbackSurvey.title}
     >
       <form className={style.form} id={feedbackSurvey.id} onSubmit={onSubmit}>
-        <span>{translate("feedback_modal_prompt")}</span>
+        <span>{translate("feedback.modal_prompt")}</span>
         {feedbackSurvey.questions.map((q) => (
           <Question
             key={q.id}

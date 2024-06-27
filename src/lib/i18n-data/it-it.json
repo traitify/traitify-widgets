@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Visualizza le loro raccomandazioni di carriera personalizzate",
   "close": "Chiudere",
   "cognitive_alert_skip": "Non sei in grado di saltare le domande di pratica",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": ""
-  },
   "cognitive_confirm_button": "Confermare",
   "cognitive_confirm_retry": "Vorresti tentare le domande che hai saltato?",
   "cognitive_confirm_skip": "Sei sicuro di voler saltare?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": ""
+  },
   "cognitive_instructions_disability_text": "Seleziona se hai una disabilità di apprendimento.",
   "cognitive_instructions_step_1_button": "Visualizza esempio",
   "cognitive_instructions_step_1_heading": "Istruzioni",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Risposta",
   "cognitive_results_heading": "Grazie per aver completato la nostra valutazione",
   "cognitive_results_html": "Per saperne di più sulla valutazione che hai appena effettuato, visitare <a href=\"https://www.traitify.com\">tratify.com</a>.",
-  "cognitive_skipped_questions": "Domande saltate",
   "cognitive_skip_button": "Saltare",
+  "cognitive_skipped_questions": "Domande saltate",
   "complements": "Complementi",
   "conflicts": "Conflitti",
   "dimension_description": "Il punteggio della dimensione viene calcolato dalle risposte agli elementi che insieme misurano i componenti sottostanti di ciascuna dimensione. Nel complesso, un individuo ha un livello alto, moderato o basso di ciascuno.",

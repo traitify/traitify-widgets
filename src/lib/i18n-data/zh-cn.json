@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "查看他们的个性化职业建议",
   "close": "关",
   "cognitive_alert_skip": "您無法跳過練習題",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>現在是練習時間了。 在開始之前請記住：</p><ul><li>練習中有 31 個問題</li><li>只要您願意，您可以完成這些問題。 不過，大多數人會在大約15 分鐘內完成練習。</li><li>您應該找到一個安靜的地方，可以全神貫注地進行練習，而不會分心。</li><li>您可以跳過問題如果需要，請嘗試回答每個問題。</li><li>請一次完成練習。</li></ul>"
-  },
   "cognitive_confirm_button": "確認",
   "cognitive_confirm_retry": "您想嘗試一下您跳過的問題嗎？",
   "cognitive_confirm_skip": "您確定要跳過嗎？",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>現在是練習時間了。 在開始之前請記住：</p><ul><li>練習中有 31 個問題</li><li>只要您願意，您可以完成這些問題。 不過，大多數人會在大約15 分鐘內完成練習。</li><li>您應該找到一個安靜的地方，可以全神貫注地進行練習，而不會分心。</li><li>您可以跳過問題如果需要，請嘗試回答每個問題。</li><li>請一次完成練習。</li></ul>"
+  },
   "cognitive_instructions_disability_text": "請選擇您是否有學習障礙。",
   "cognitive_instructions_step_1_button": "查看範例",
   "cognitive_instructions_step_1_heading": "指示",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "回覆",
   "cognitive_results_heading": "感謝您完成我們的評估",
   "cognitive_results_html": "要了解有關您剛剛參加的評估的更多信息，請訪問 <a href=\"https://www.traitify.com\">Traitify.com</a>。",
-  "cognitive_skipped_questions": "跳過的問題",
   "cognitive_skip_button": "跳過",
+  "cognitive_skipped_questions": "跳過的問題",
   "complements": "补",
   "conflicts": "冲突",
   "dimension_description": "我们根据您对各项（用于综合评测每个维度的基本组成部分）的回答计算出维度分数。总体而言，每个人都具有五个人格维度，只是程度或高或中等或低。",

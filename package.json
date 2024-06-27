@@ -5,7 +5,7 @@
   "repository": "github:traitify/traitify-widgets",
   "main": "./build/traitify.js",
   "files": [
-    "build"
+    "build/*"
   ],
   "scripts": {
     "build": "webpack --node-env=production --progress",
@@ -13,9 +13,10 @@
     "build:install": "npm i --package-lock-only && npm run build",
     "dev": "webpack serve --env mode=browser",
     "dev:secure": "webpack serve --env mode=browser --https",
-    "lint": "eslint {src,test}",
-    "lint:fix": "eslint {src,test} --fix",
-    "lint:watch": "esw -w {src,test} --color",
+    "i18n:sync": "node build/scripts/i18n-sync.js",
+    "lint": "eslint {scripts,src,test}",
+    "lint:fix": "eslint {scripts,src,test} --fix",
+    "lint:watch": "esw -w {scripts,src,test} --color",
     "prebuild": "mkdirp build",
     "prebuild:compatibility": "mkdirp build",
     "prestart": "npm run build",

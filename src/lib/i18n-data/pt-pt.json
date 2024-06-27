@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Veja as recomendações personalizadas de carreira deles",
   "close": "perto",
   "cognitive_alert_skip": "Não podes pular as perguntas práticas",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Agora é o momento do exercício. Antes de começar, lembre-se:</p><ul><li>Há 31 questões no exercício</li><li>Podes levar o tempo que precisar para concluí-las. No entanto, a maioria das pessoas conseguirá concluir em cerca de 15 minutos.</li><li>Precisas encontrar um lugar tranquilo para poder dedicar-se totalmente ao exercício sem distração.</li><li>Podes pular as questões se sentir necessidade, mas tente responder a todas.</li><li>Complete o exercício de uma só vez.</li></ul>"
-  },
   "cognitive_confirm_button": "Confirmar",
   "cognitive_confirm_retry": "Gostarias de tentar responder às questões que pulou?",
   "cognitive_confirm_skip": "Tem certeza que deseja pular?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Agora é o momento do exercício. Antes de começar, lembre-se:</p><ul><li>Há 31 questões no exercício</li><li>Podes levar o tempo que precisar para concluí-las. No entanto, a maioria das pessoas conseguirá concluir em cerca de 15 minutos.</li><li>Precisas encontrar um lugar tranquilo para poder dedicar-se totalmente ao exercício sem distração.</li><li>Podes pular as questões se sentir necessidade, mas tente responder a todas.</li><li>Complete o exercício de uma só vez.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Selecione se tiver alguma dificuldade de aprendizagem",
   "cognitive_instructions_step_1_button": "Veja o Exemplo",
   "cognitive_instructions_step_1_heading": "Instruções",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Resposta",
   "cognitive_results_heading": "Obrigado por completar nossa avaliação",
   "cognitive_results_html": "Para saber mais sobre a avaliação que acabou de fazer, visite <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Questões Puladas",
   "cognitive_skip_button": "Pular",
+  "cognitive_skipped_questions": "Questões Puladas",
   "complements": "complementa",
   "conflicts": "conflitos",
   "dimension_description": "A pontuação de dimensão é calculada com base em suas respostas a itens que, juntos, medem os componentes subjacentes de cada dimensão. No geral, um indivíduo possui um nível Alto, Moderado ou Baixo em cada uma.",

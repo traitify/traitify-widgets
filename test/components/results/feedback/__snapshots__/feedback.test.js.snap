@@ -38,6 +38,12 @@ exports[`Results.Feedback renders component 1`] = `
 </div>
 `;
 
+exports[`Results.Feedback renders empty when perspective is not firstPerson 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
 exports[`Results.Feedback renders empty when user has completed 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

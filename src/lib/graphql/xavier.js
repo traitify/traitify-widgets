@@ -38,4 +38,28 @@ export const recommendation = `
   }
 `;
 
+export const feedbackSurvey = `
+  query(
+    $surveyId: String!,
+    $localeKey: String!
+  ) {
+    feedbackSurvey(
+      surveyId: $surveyId,
+      localeKey: $localeKey
+    ) {
+        id
+        title
+        questions {
+          id
+          text
+          questionType
+          multipleChoiceOptions {
+            id
+            text
+          }
+        }
+    }
+  }
+`;
+
 export const path = "/xavier/graphql";

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.Feedback renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div>
+    <div
+      className="container"
+    >
+      <div
+        className="details"
+      >
+        <span>
+          Do you feel like your results match you?
+        </span>
+        <div
+          className="buttons"
+        >
+          <button
+            className="me"
+            onClick={[Function]}
+            type="button"
+          >
+            Yes
+          </button>
+          <button
+            className="notMe"
+            onClick={[Function]}
+            type="button"
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.Feedback renders empty when perspective is not firstPerson 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.Feedback renders empty when user has completed 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

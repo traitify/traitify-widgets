@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
+import Feedback from "components/results/feedback";
 import ArchetypeHeading from "components/results/personality/archetype/heading";
 import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
@@ -26,6 +27,7 @@ export default function CandidateReport() {
   return (
     <section className={style.container}>
       <ArchetypeHeading />
+      <Feedback />
       <ArchetypeTips />
       <Dimensions />
       <Traits />

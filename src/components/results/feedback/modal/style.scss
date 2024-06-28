@@ -1,0 +1,58 @@
+@import "style/helpers";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: $buffer-lg;
+  gap: $buffer;
+
+  .questionSection {
+    display: flex;
+    flex-direction: column;
+
+    select {
+      @extend %dropdown;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  }
+}
+
+.grayDivider {
+  color: #555555;
+  width: 100%;
+  margin: $buffer-sm * 1.25 auto $buffer * 1.25;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: $border-width solid #e8e8ec;
+  border-radius: $border-radius-sm;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: $buffer;
+
+  .submitBtn {
+    @include buttonDark("theme");
+  }
+
+  .cancelBtn {
+    @include buttonLight("text-dark");
+    @include theme("border-color", "border-light");
+    border: $border-width solid;
+  }
+
+  button:disabled {
+    @include theme("color", "inactive");
+    cursor: not-allowed;
+  }
+}

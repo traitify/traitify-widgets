@@ -279,6 +279,34 @@ export const mockSettings = (settings) => (
   })
 );
 
+export const mockUserCompletedFeedback = (assessmentId, completed = false) => (
+  mockFetch({
+    key: "user-completed-feedback",
+    request: (url, options) => {
+      if(!url.includes(`/feedback/assessments/${assessmentId}/status`)) { return false; }
+      if(options.method !== "GET") { return false; }
+      return true;
+    },
+    response: () => ({status: completed ? "complete" : "incomplete"})
+  })
+);
+
+export const mockFeedbackSurvey = (feedbackSurvey, surveyId) => (
+  mockFetch({
+    key: "feedback-survey",
+    request: (url, options) => {
+      if(!url.includes("/xavier/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.surveyId === surveyId;
+    },
+    response: () => ({data: {feedbackSurvey}})
+  })
+);
+
 export const useAssessment = (...options) => { beforeEach(() => { mockAssessment(...options); }); };
 export const useBenchmark = (...options) => { beforeEach(() => { mockBenchmark(...options); }); };
 export const useCareers = (...options) => { beforeEach(() => { mockCareers(...options); }); };

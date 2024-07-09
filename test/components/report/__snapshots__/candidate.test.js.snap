@@ -15,6 +15,11 @@ exports[`Report.Candidate renders component 1`] = `
     <div
       className="mock"
     >
+      Feedback
+    </div>
+    <div
+      className="mock"
+    >
       Personality Archetype Tips
     </div>
     <div

@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "View their personalised career recommendations",
   "close": "Close",
   "cognitive_alert_skip": "You are unable to skip the practice questions",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 31 questions in the exercise</li><li>You may have as long as you want to complete them. However, most people will complete the exercise in about 15 minutes.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>"
-  },
   "cognitive_confirm_button": "Confirm",
   "cognitive_confirm_retry": "Would you like to attempt the questions you skipped?",
   "cognitive_confirm_skip": "Are you sure you want to skip?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 31 questions in the exercise</li><li>You may have as long as you want to complete them. However, most people will complete the exercise in about 15 minutes.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Please select if you have a learning disability.",
   "cognitive_instructions_step_1_button": "View Example",
   "cognitive_instructions_step_1_heading": "Instructions",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Response",
   "cognitive_results_heading": "Thank you for completing our assessment",
   "cognitive_results_html": "To learn more about the assessment you just took, please visit <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Skipped Questions",
   "cognitive_skip_button": "Skip",
+  "cognitive_skipped_questions": "Skipped Questions",
   "complements": "Complements",
   "conflicts": "Conflicts",
   "dimension_description": "The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each.",

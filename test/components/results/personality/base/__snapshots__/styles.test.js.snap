@@ -1,0 +1,471 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalityBaseStyles renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="columns"
+    >
+      <div>
+        <div
+          className="heading"
+        >
+          More elements of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+            />
+            <span>
+              Helping
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+            />
+            <span>
+              Guiding
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+            />
+            <span>
+              Listening
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+            />
+            <span>
+              Following steps
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+            />
+            <span>
+              Organizing
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+            />
+            <span>
+              Tracking details
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="negative"
+      >
+        <div
+          className="heading"
+        >
+          Not so much of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Creating
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Building from scratch
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Diving in deep
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Taking charge
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Setting trends
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Changing
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseStyles renders component with headers 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="sectionHeading"
+    >
+      Your overall career style is...
+    </div>
+    <div
+      className="columns"
+    >
+      <div>
+        <div
+          className="heading"
+        >
+          More elements of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+            />
+            <span>
+              Helping
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+            />
+            <span>
+              Guiding
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Visionary"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+            />
+            <span>
+              Listening
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+            />
+            <span>
+              Following steps
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+            />
+            <span>
+              Organizing
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Planner"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+            />
+            <span>
+              Tracking details
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="negative"
+      >
+        <div
+          className="heading"
+        >
+          Not so much of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Creating
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Building from scratch
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Diving in deep
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Taking charge
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Setting trends
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Changing
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseStyles renders component with less types 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="columns"
+    >
+      <div>
+        <div
+          className="heading"
+        >
+          More elements of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Taking charge
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Setting trends
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Analyzer"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+            />
+            <span>
+              Changing
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="negative"
+      >
+        <div
+          className="heading"
+        >
+          Not so much of:
+        </div>
+        <div
+          className="styles"
+        >
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Creating
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Building from scratch
+            </span>
+          </div>
+          <div
+            className="style"
+          >
+            <img
+              alt="Naturalist"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+            />
+            <span>
+              Diving in deep
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityBaseStyles renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`PersonalityBaseStyles renders nothing if no styles 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`PersonalityBaseStyles renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

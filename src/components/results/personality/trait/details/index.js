@@ -1,13 +1,22 @@
 import PropTypes from "prop-types";
+import {useEffect} from "react";
 import useComponentEvents from "lib/hooks/use-component-events";
 import style from "./style.scss";
 
 function PersonalityTraitDetails({trait: {personality_trait: trait, score: _score}}) {
-  useComponentEvents("PersonalityTrait");
-
-  const score = Math.round(_score * 0.5 + 50);
   const type = trait.personality_type;
+
+  useComponentEvents("PersonalityTrait");
+  useEffect(() => {
+    if(type) { return; }
+
+    console.warn("Type missing on trait", trait); /* eslint-disable-line no-console */
+  });
+
+  if(!type) { return null; }
+
   const color = `#${type.badge.color_1}`;
+  const score = Math.round(_score * 0.5 + 50);
 
   return (
     <div className={style.container}>

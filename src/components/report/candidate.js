@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
+import Feedback from "components/results/feedback";
 import ArchetypeHeading from "components/results/personality/archetype/heading";
 import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
@@ -20,12 +21,13 @@ export default function CandidateReport() {
     if(!options.perspective) { newOptions.perspective = "firstPerson"; }
     if(Object.keys(newOptions).length === 0) { return; }
 
-    setOptions({...options, newOptions});
+    setOptions({...options, ...newOptions});
   }, []);
 
   return (
     <section className={style.container}>
       <ArchetypeHeading />
+      <Feedback />
       <ArchetypeTips />
       <Dimensions />
       <Traits />

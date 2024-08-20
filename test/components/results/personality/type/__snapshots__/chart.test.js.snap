@@ -21,7 +21,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
         </div>
         <div
@@ -54,7 +54,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
         </div>
         <div
@@ -87,7 +87,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
         </div>
         <div
@@ -120,7 +120,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
         </div>
         <div
@@ -130,7 +130,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "width": "56.041134%",
               }
             }
@@ -153,7 +153,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
         </div>
         <div
@@ -186,7 +186,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
         </div>
         <div
@@ -196,7 +196,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "width": "54.949894%",
               }
             }
@@ -219,7 +219,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
           </div>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
         </div>
         <div
@@ -334,7 +334,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "height": "56.041134%",
               }
             }
@@ -368,7 +368,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "height": "54.949894%",
               }
             }
@@ -404,7 +404,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
           Naturalist
         </span>
@@ -417,7 +417,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
           Analyzer
         </span>
@@ -430,7 +430,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
           Inventor
         </span>
@@ -443,7 +443,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
           Mentor
         </span>
@@ -456,7 +456,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
           Planner
         </span>
@@ -469,7 +469,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
           Visionary
         </span>
@@ -482,7 +482,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
         <span>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
           Action-Taker
         </span>
@@ -540,7 +540,7 @@ exports[`PersonalityTypeChart renders component 1`] = `
       <div
         className="p"
       >
-        are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+        are attached to the natural world, frequently working with plants and animals in their  environment. Often nature lovers, they like to experience the world outdoors. They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
       </div>
     </div>
   </div>
@@ -573,7 +573,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
         </div>
         <div
@@ -606,7 +606,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
         </div>
         <div
@@ -639,7 +639,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
         </div>
         <div
@@ -672,7 +672,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
         </div>
         <div
@@ -682,7 +682,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "width": "56.041134%",
               }
             }
@@ -705,7 +705,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
         </div>
         <div
@@ -738,7 +738,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
         </div>
         <div
@@ -748,7 +748,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "width": "54.949894%",
               }
             }
@@ -771,7 +771,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
           </div>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
         </div>
         <div
@@ -886,7 +886,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "height": "56.041134%",
               }
             }
@@ -920,7 +920,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "height": "54.949894%",
               }
             }
@@ -956,7 +956,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
           Naturalist
         </span>
@@ -969,7 +969,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
           Analyzer
         </span>
@@ -982,7 +982,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
           Inventor
         </span>
@@ -995,7 +995,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
           Mentor
         </span>
@@ -1008,7 +1008,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
           Planner
         </span>
@@ -1021,7 +1021,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
           Visionary
         </span>
@@ -1034,7 +1034,7 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
         <span>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
           Action-Taker
         </span>
@@ -1092,7 +1092,1359 @@ exports[`PersonalityTypeChart renders component with headers 1`] = `
       <div
         className="p"
       >
-        are attached to the natural world, frequently working with plants and animals in their  environment.  Often nature lovers, they like to experience the world outdoors.  They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+        are attached to the natural world, frequently working with plants and animals in their  environment. Often nature lovers, they like to experience the world outdoors. They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityTypeChart renders component with new data 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="horizontal"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Naturalist
+          </div>
+          <img
+            alt="Naturalist Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "width": "95%",
+              }
+            }
+          />
+          <div
+            className="score tooBig"
+          >
+            95%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Analyzer
+          </div>
+          <img
+            alt="Analyzer Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "width": "65.69328%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            66%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Inventor
+          </div>
+          <img
+            alt="Inventor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "width": "56.202103%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Mentor
+          </div>
+          <img
+            alt="Mentor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FE6D73",
+                "width": "56.041134%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Planner
+          </div>
+          <img
+            alt="Planner Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "width": "55.745975%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Visionary
+          </div>
+          <img
+            alt="Visionary Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#AE8BE2",
+                "width": "54.949894%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Action-Taker
+          </div>
+          <img
+            alt="Action-Taker Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "width": "51.037804%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            51%
+          </div>
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
+      >
+        <div>
+          100
+        </div>
+        <div>
+          75
+        </div>
+        <div>
+          50
+        </div>
+        <div>
+          25
+        </div>
+        <div>
+          0
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "height": "74.71152%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "height": "65.69328%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "height": "56.202103%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FE6D73",
+                "height": "56.041134%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "height": "55.745975%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#AE8BE2",
+                "height": "54.949894%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "height": "51.037804%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs"
+    >
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Naturalist Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+          />
+          Naturalist
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Analyzer Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+          />
+          Analyzer
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Inventor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
+          />
+          Inventor
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Mentor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
+          />
+          Mentor
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Planner Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+          />
+          Planner
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Visionary Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+          />
+          Visionary
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Action-Taker Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
+          />
+          Action-Taker
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+      >
+        <option
+          value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+        >
+          Naturalist
+        </option>
+        <option
+          value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        >
+          Analyzer
+        </option>
+        <option
+          value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        >
+          Inventor
+        </option>
+        <option
+          value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        >
+          Mentor
+        </option>
+        <option
+          value="c47d1d99-8f08-44a7-acee-9047732aee29"
+        >
+          Planner
+        </option>
+        <option
+          value="55071620-bca6-4f15-b466-de8733a834a8"
+        >
+          Visionary
+        </option>
+        <option
+          value="3f715970-6fff-4852-853f-ce3dc9291b32"
+        >
+          Action-Taker
+        </option>
+      </select>
+      <div
+        className="heading"
+      >
+        Naturalists
+      </div>
+      <div
+        className="p"
+      >
+        are attached to the natural world, frequently working with plants and animals in their  environment. Often nature lovers, they like to experience the world outdoors. They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+      </div>
+      <div
+        className="field"
+      >
+        <div
+          className="subheading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<b>EXPLORE</b> - Content you find interesting",
+            }
+          }
+        />
+        <div
+          className="values"
+        >
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Creative productions, such as theater, music, film, design
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Understanding the human condition through ideas
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Searching for your “passion”
+          </div>
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <div
+          className="subheading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<b>ACHIEVE</b> - Skills you enjoy developing",
+            }
+          }
+        />
+        <div
+          className="values"
+        >
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Learning, expanding a specific base of knowledge
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Finding your own take; adding a new twist
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Discovering a new way of approaching an old question
+          </div>
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <div
+          className="subheading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<b>ACT</b> - Ways you like to spend time",
+            }
+          }
+        />
+        <div
+          className="values"
+        >
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            “Losing yourself” in a creative process
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Adding something new to the world, uniquely your own
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Letting loose; being playful and whimsical
+          </div>
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <div
+          className="subheading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<b>APPRECIATE</b> - Values that align with your worldview",
+            }
+          }
+        />
+        <div
+          className="values"
+        >
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Questioning what’s been the norm
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Freedom and the importance of self expression
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Supporting beauty and artistic appeal
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityTypeChart renders component with some new data 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="horizontal"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Naturalist
+          </div>
+          <img
+            alt="Naturalist Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "width": "95%",
+              }
+            }
+          />
+          <div
+            className="score tooBig"
+          >
+            95%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Analyzer
+          </div>
+          <img
+            alt="Analyzer Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "width": "65.69328%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            66%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Inventor
+          </div>
+          <img
+            alt="Inventor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "width": "56.202103%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Mentor
+          </div>
+          <img
+            alt="Mentor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FE6D73",
+                "width": "56.041134%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Planner
+          </div>
+          <img
+            alt="Planner Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "width": "55.745975%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            56%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Visionary
+          </div>
+          <img
+            alt="Visionary Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#AE8BE2",
+                "width": "54.949894%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            55%
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="label"
+        >
+          <div>
+            Action-Taker
+          </div>
+          <img
+            alt="Action-Taker Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
+          />
+        </div>
+        <div
+          className="grid"
+        >
+          <div
+            className="bar"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "width": "51.037804%",
+              }
+            }
+          />
+          <div
+            className="score"
+          >
+            51%
+          </div>
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <div
+      className="vertical"
+    >
+      <div
+        className="scale"
+      >
+        <div>
+          100
+        </div>
+        <div>
+          75
+        </div>
+        <div>
+          50
+        </div>
+        <div>
+          25
+        </div>
+        <div>
+          0
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#38D27A",
+                "height": "74.71152%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#37A9E9",
+                "height": "65.69328%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#89E2CD",
+                "height": "56.202103%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FE6D73",
+                "height": "56.041134%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FABC50",
+                "height": "55.745975%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#AE8BE2",
+                "height": "54.949894%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="column"
+      >
+        <div
+          className="bar"
+        >
+          <div
+            className="score"
+            style={
+              {
+                "backgroundColor": "#FF9B71",
+                "height": "51.037804%",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs"
+    >
+      <button
+        className="active"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Naturalist Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
+          />
+          Naturalist
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Analyzer Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
+          />
+          Analyzer
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Inventor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
+          />
+          Inventor
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Mentor Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
+          />
+          Mentor
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Planner Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
+          />
+          Planner
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Visionary Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
+          />
+          Visionary
+        </span>
+      </button>
+      <button
+        className=""
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          <img
+            alt="Action-Taker Badge"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
+          />
+          Action-Taker
+        </span>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <select
+        className="dropdown"
+        onChange={[Function]}
+        value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+      >
+        <option
+          value="b397ab57-b128-47d6-ac2c-46f5574107b2"
+        >
+          Naturalist
+        </option>
+        <option
+          value="5f36d2be-d06f-4f11-9450-e749e5fc19d6"
+        >
+          Analyzer
+        </option>
+        <option
+          value="eed19717-2014-48ec-b520-bb71f96ebc78"
+        >
+          Inventor
+        </option>
+        <option
+          value="a88cd7e9-11b7-4a5c-b190-4b343e30344c"
+        >
+          Mentor
+        </option>
+        <option
+          value="c47d1d99-8f08-44a7-acee-9047732aee29"
+        >
+          Planner
+        </option>
+        <option
+          value="55071620-bca6-4f15-b466-de8733a834a8"
+        >
+          Visionary
+        </option>
+        <option
+          value="3f715970-6fff-4852-853f-ce3dc9291b32"
+        >
+          Action-Taker
+        </option>
+      </select>
+      <div
+        className="heading"
+      >
+        Naturalists
+      </div>
+      <div
+        className="p"
+      >
+        are attached to the natural world, frequently working with plants and animals in their  environment. Often nature lovers, they like to experience the world outdoors. They are committed to preserving and protecting the planet and its natural resources. Serene, earthy, efficient and solid, they excel at working as one with the natural environment.
+      </div>
+      <div
+        className="field"
+      >
+        <div
+          className="subheading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<b>EXPLORE</b> - Content you find interesting",
+            }
+          }
+        />
+        <div
+          className="values"
+        >
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Creative productions, such as theater, music, film, design
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Understanding the human condition through ideas
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Searching for your “passion”
+          </div>
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <div
+          className="subheading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<b>ACHIEVE</b> - Skills you enjoy developing",
+            }
+          }
+        />
+        <div
+          className="values"
+        >
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Learning, expanding a specific base of knowledge
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Finding your own take; adding a new twist
+          </div>
+          <div
+            style={
+              {
+                "borderColor": "#38D27A",
+              }
+            }
+          >
+            Discovering a new way of approaching an old question
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1138,7 +2490,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
         </div>
         <div
@@ -1171,7 +2523,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
         </div>
         <div
@@ -1204,7 +2556,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
         </div>
         <div
@@ -1237,7 +2589,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
         </div>
         <div
@@ -1247,7 +2599,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "width": "56.041134%",
               }
             }
@@ -1270,7 +2622,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
         </div>
         <div
@@ -1303,7 +2655,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
         </div>
         <div
@@ -1313,7 +2665,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "width": "54.949894%",
               }
             }
@@ -1336,7 +2688,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
           </div>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
         </div>
         <div
@@ -1451,7 +2803,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "height": "56.041134%",
               }
             }
@@ -1485,7 +2837,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "height": "54.949894%",
               }
             }
@@ -1521,7 +2873,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
           Naturalist
         </span>
@@ -1534,7 +2886,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
           Analyzer
         </span>
@@ -1547,7 +2899,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
           Inventor
         </span>
@@ -1560,7 +2912,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
           Mentor
         </span>
@@ -1573,7 +2925,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
           Planner
         </span>
@@ -1586,7 +2938,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
           Visionary
         </span>
@@ -1599,7 +2951,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
         <span>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
           Action-Taker
         </span>
@@ -1657,7 +3009,7 @@ exports[`PersonalityTypeChart updates activeType 1`] = `
       <div
         className="p"
       >
-        are inquisitive.  They delve, study and look deeply for information.  They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
+        are inquisitive.  They delve, study and look deeply for information. They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
       </div>
     </div>
   </div>
@@ -1685,7 +3037,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
         </div>
         <div
@@ -1718,7 +3070,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
         </div>
         <div
@@ -1751,7 +3103,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
         </div>
         <div
@@ -1784,7 +3136,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
         </div>
         <div
@@ -1794,7 +3146,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "width": "56.041134%",
               }
             }
@@ -1817,7 +3169,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
         </div>
         <div
@@ -1850,7 +3202,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
         </div>
         <div
@@ -1860,7 +3212,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
             className="bar"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "width": "54.949894%",
               }
             }
@@ -1883,7 +3235,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
           </div>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
         </div>
         <div
@@ -1998,7 +3350,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#FE6d73",
+                "backgroundColor": "#FE6D73",
                 "height": "56.041134%",
               }
             }
@@ -2032,7 +3384,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
             className="score"
             style={
               {
-                "backgroundColor": "#AE8bE2",
+                "backgroundColor": "#AE8BE2",
                 "height": "54.949894%",
               }
             }
@@ -2068,7 +3420,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Naturalist Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
           />
           Naturalist
         </span>
@@ -2081,7 +3433,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Analyzer Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
           />
           Analyzer
         </span>
@@ -2094,7 +3446,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Inventor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/inventor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/41AlofqG3dYytmPYqZjq1e/ee8989452ff79472ebf894c72cb9374d/inventor-black.png"
           />
           Inventor
         </span>
@@ -2107,7 +3459,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Mentor Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/mentor.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/kJdsPf6rsyIGKVLQW5lNo/bc5fc2baea63b515158a08e9f42a268d/mentor-black.png"
           />
           Mentor
         </span>
@@ -2120,7 +3472,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Planner Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
           />
           Planner
         </span>
@@ -2133,7 +3485,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Visionary Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
           />
           Visionary
         </span>
@@ -2146,7 +3498,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
         <span>
           <img
             alt="Action-Taker Badge"
-            src="https://cdn.traitify.com/widgets/career-deck/badges/black/action-taker.png"
+            src="https://images.ctfassets.net/4pzvszxmf15y/3gkddjmzVXeKNemYPvfYQf/daca16abca40f7d4bb901c66ce0efb95/action-taker-black.png"
           />
           Action-Taker
         </span>
@@ -2204,7 +3556,7 @@ exports[`PersonalityTypeChart updates activeType through select 1`] = `
       <div
         className="p"
       >
-        are inquisitive.  They delve, study and look deeply for information.  They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
+        are inquisitive.  They delve, study and look deeply for information. They have a keen eye and an experimental nature.  Analyzers use these capacities to figure out problems and search for the facts, often in a laboratory environment.  They excel at going beyond the surface toward uncovering information and discovery.
       </div>
     </div>
   </div>

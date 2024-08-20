@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Se dina personliga karriär-rekommendationer",
   "close": "Stänga",
   "cognitive_alert_skip": "Du kan inte hoppa över övningsfrågorna",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Nu är det dags för övningen. Innan du börjar, kom ihåg följande:</p><ul><li>Det finns 31 frågor i övningen</li><li>Du har obegränsat med tid. Dock tar det cirka 15 minuter för de flesta.</li><li>Hitta gärna en lugn plats där du kan ägna övningen din fulla uppmärksamhet utan att bli distraherad.</li><li>Du har möjlighet att hoppa över frågor, men försök besvara alla.</li><li>Försök att slutföra övningen under en sittning.</li></ul>"
-  },
   "cognitive_confirm_button": "Bekräfta",
   "cognitive_confirm_retry": "Vill du försöka besvara de frågor du hoppade över?",
   "cognitive_confirm_skip": "Är du säker på att du vill hoppa över frågan?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Nu är det dags för övningen. Innan du börjar, kom ihåg följande:</p><ul><li>Det finns 31 frågor i övningen</li><li>Du har obegränsat med tid. Dock tar det cirka 15 minuter för de flesta.</li><li>Hitta gärna en lugn plats där du kan ägna övningen din fulla uppmärksamhet utan att bli distraherad.</li><li>Du har möjlighet att hoppa över frågor, men försök besvara alla.</li><li>Försök att slutföra övningen under en sittning.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Vänligen markera om du har inlärningssvårigheter",
   "cognitive_instructions_step_1_button": "Visa exempel",
   "cognitive_instructions_step_1_heading": "Instruktioner",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Svar",
   "cognitive_results_heading": "Tack för att du har slutfört vår bedömning",
   "cognitive_results_html": "För att läsa mer om den bedömning du just slutfört, besök <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Frågor du hoppat över",
   "cognitive_skip_button": "Hoppa över",
+  "cognitive_skipped_questions": "Frågor du hoppat över",
   "complements": "Förenlig med",
   "conflicts": "Strider emot",
   "dimension_description": "Dimensionspoängen räknas ut baserat på dina svar på punkter som tillsammans omfattar de underliggande komponenterna för varje dimension. I det stora hela har en enskild person en hög, medel eller låg nivå av varje.",

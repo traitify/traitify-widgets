@@ -1,6 +1,5 @@
 import Component from "components/results/personality/base/heading";
 import mutable from "lib/common/object/mutable";
-import themeAssessment from "lib/common/theme-assessment";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
@@ -77,38 +76,6 @@ describe("PersonalityBaseHeading", () => {
 
     it("renders component with careers link", async() => {
       mockOption("careersLink", "/careers");
-      component = await ComponentHandler.setup(Component);
-
-      expect(component.tree).toMatchSnapshot();
-    });
-  });
-
-  describe("themed", () => {
-    beforeEach(() => {
-      const archetype = themeAssessment(assessment.archetype);
-      assessment = themeAssessment(assessment);
-      assessment.archetype = archetype;
-      mockAssessment(assessment);
-    });
-
-    it("renders component", async() => {
-      component = await ComponentHandler.setup(Component);
-
-      expect(component.tree).toMatchSnapshot();
-    });
-
-    it("renders component with blend", async() => {
-      assessment.archetype = null;
-      mockAssessment(assessment);
-      component = await ComponentHandler.setup(Component);
-
-      expect(component.tree).toMatchSnapshot();
-    });
-
-    it("renders component with types", async() => {
-      assessment.archetype = null;
-      assessment.personality_blend = null;
-      mockAssessment(assessment);
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();

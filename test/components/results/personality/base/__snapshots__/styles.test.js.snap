@@ -24,7 +24,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Visionary"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
             />
             <span>
               Helping
@@ -35,7 +35,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Visionary"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
             />
             <span>
               Guiding
@@ -46,7 +46,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Visionary"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
             />
             <span>
               Listening
@@ -57,7 +57,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Planner"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
             />
             <span>
               Following steps
@@ -68,7 +68,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Planner"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
             />
             <span>
               Organizing
@@ -79,7 +79,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Planner"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
             />
             <span>
               Tracking details
@@ -103,7 +103,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Creating
@@ -114,7 +114,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Building from scratch
@@ -125,7 +125,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Diving in deep
@@ -136,7 +136,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Taking charge
@@ -147,7 +147,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Setting trends
@@ -158,7 +158,7 @@ exports[`PersonalityBaseStyles renders component 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Changing
@@ -200,7 +200,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Visionary"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
             />
             <span>
               Helping
@@ -211,7 +211,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Visionary"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
             />
             <span>
               Guiding
@@ -222,7 +222,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Visionary"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/visionary.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/lgBRClpXEDIlGRUwox17h/cddacc1c0c4df6704c7a09e2b908cd5d/visionary-black.png"
             />
             <span>
               Listening
@@ -233,7 +233,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Planner"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
             />
             <span>
               Following steps
@@ -244,7 +244,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Planner"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
             />
             <span>
               Organizing
@@ -255,7 +255,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Planner"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/planner.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/6mTdrGCzYEeErSkT96Lx4Q/77bd1dafc3700891da6a4d0e568057b0/planner-black.png"
             />
             <span>
               Tracking details
@@ -279,7 +279,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Creating
@@ -290,7 +290,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Building from scratch
@@ -301,7 +301,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Diving in deep
@@ -312,7 +312,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Taking charge
@@ -323,7 +323,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Setting trends
@@ -334,7 +334,7 @@ exports[`PersonalityBaseStyles renders component with headers 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Changing
@@ -371,7 +371,7 @@ exports[`PersonalityBaseStyles renders component with less types 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Taking charge
@@ -382,7 +382,7 @@ exports[`PersonalityBaseStyles renders component with less types 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Setting trends
@@ -393,7 +393,7 @@ exports[`PersonalityBaseStyles renders component with less types 1`] = `
           >
             <img
               alt="Analyzer"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/analyzer.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/1MUfph7kuAypJM6bZEm4c4/4699694511bb00c1b6e78e74917629e5/analyzer-black.png"
             />
             <span>
               Changing
@@ -417,7 +417,7 @@ exports[`PersonalityBaseStyles renders component with less types 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Creating
@@ -428,7 +428,7 @@ exports[`PersonalityBaseStyles renders component with less types 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Building from scratch
@@ -439,7 +439,7 @@ exports[`PersonalityBaseStyles renders component with less types 1`] = `
           >
             <img
               alt="Naturalist"
-              src="https://cdn.traitify.com/widgets/career-deck/badges/black/naturalist.png"
+              src="https://images.ctfassets.net/4pzvszxmf15y/afwpXsCa69nCw6EUu3ecr/6eba34e8d15e9974926336eaf8356709/naturalist-black.png"
             />
             <span>
               Diving in deep

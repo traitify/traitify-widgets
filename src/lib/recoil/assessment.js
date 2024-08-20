@@ -1,5 +1,4 @@
 import {selector} from "recoil";
-import themeAssessment from "lib/common/theme-assessment";
 import {
   activeTypeState,
   assessmentIDState,
@@ -54,12 +53,10 @@ export const personalityAssessmentQuery = selector({
 
     const params = {
       data: "archetype,blend,instructions,recommendation,slides,types,traits",
-      image_pack: "white",
       locale_key: get(localeState)
     };
     const http = get(httpState);
-    const _response = await http.get(`/assessments/${assessmentID}`, params);
-    const response = _response ? themeAssessment(_response) : _response;
+    const response = await http.get(`/assessments/${assessmentID}`, params);
     if(!response?.completed_at) { return response; }
 
     cache.set(cacheKey, response);

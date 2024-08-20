@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Bekijk hun gepersonaliseerde loopbaan aanbevelingen",
   "close": "Close",
   "cognitive_alert_skip": "Het is niet mogelijk de oefenings vragen over te slaan.",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Nu is het tijd voor de oefening. Voordat je begint, onthou: </p><ul><li>Er zijn 31 vragen in de oefening</li><li>Je kan zo lang je wilt de tijd nemen om de oefening te vervaardigen. Echter, de meeste mensen vervaardigen de oefening in ongeveer 15 minuten.<li><li> Zoek een plek op waar je de oefening je volle aandacht kan geven zonder te worden afgeleid. </li><li>Je kan vragen overslaan als dat nodig is, maar probeer elke vraag te beantwoorden..</li><li>Probeer alsjeblieft de oefening in een enkele sitting af te ronden.</li></ul>"
-  },
   "cognitive_confirm_button": "Bevestig",
   "cognitive_confirm_retry": "Wil je de vraag proberen te beantwoorden die je hebt overgeslagen?",
   "cognitive_confirm_skip": "Weet je zeker dat je wilt overslaan?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Nu is het tijd voor de oefening. Voordat je begint, onthou: </p><ul><li>Er zijn 31 vragen in de oefening</li><li>Je kan zo lang je wilt de tijd nemen om de oefening te vervaardigen. Echter, de meeste mensen vervaardigen de oefening in ongeveer 15 minuten.<li><li> Zoek een plek op waar je de oefening je volle aandacht kan geven zonder te worden afgeleid. </li><li>Je kan vragen overslaan als dat nodig is, maar probeer elke vraag te beantwoorden..</li><li>Probeer alsjeblieft de oefening in een enkele sitting af te ronden.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Selecteer indien je een leerstoornis hebt. ",
   "cognitive_instructions_step_1_button": "Bekijk voorbeeld",
   "cognitive_instructions_step_1_heading": "Instructies",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Antwoord",
   "cognitive_results_heading": "Dank je wel voor het vervaardigend van ons onderzoek",
   "cognitive_results_html": "Om meer te leren over het onderzoek, waar je net aan heb deelgenomen kun je kijken op  <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Overgeslagen vragen",
   "cognitive_skip_button": "Overslaan",
+  "cognitive_skipped_questions": "Overgeslagen vragen",
   "complements": "Complements",
   "conflicts": "Conflicten",
   "dimension_description": "De dimensiescore wordt berekend op basis van je antwoorden op items die samen de onderliggende componenten van elke dimensie meten. Over het algemeen heeft iemand een hoog, middelhoog of laag niveau voor elke dimensie.",

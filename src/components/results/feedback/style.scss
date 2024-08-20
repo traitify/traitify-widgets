@@ -1,0 +1,74 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+
+  background: none;
+  margin-bottom: $buffer-section;
+
+  @include min-width("md") {
+    display: flex;
+  }
+
+  >div {
+    @extend %shadow-box;
+    @include theme("background", "background");
+
+    flex: 1;
+  }
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: $buffer;
+
+  @include min-width("md") {
+    flex-direction: row;
+  }
+
+  span {
+    display: block;
+    font-weight: bold;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: $buffer;
+
+  .me {
+    @include theme("background-color", "me");
+
+    &:active,
+    &:hover {
+      @include theme("background-color", "me-active");
+    }
+  }
+
+  .notMe {
+    @include theme("background-color", "not-me");
+
+    &:active,
+    &:hover {
+      @include theme("background-color", "not-me-active");
+    }
+  }
+
+  >button {
+    padding: $buffer * 0.75 $buffer * 3;
+    text-align: center;
+    border-radius: $border-radius-sm;
+
+    @include theme("color", "text-light");
+
+    &:focus {
+      outline-offset: -1px;
+      outline-style: solid;
+      outline-width: 1px;
+    }
+  }
+}

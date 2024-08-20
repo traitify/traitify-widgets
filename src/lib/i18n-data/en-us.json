@@ -8,18 +8,19 @@
   "best_work_environments": "Best Work Environments",
   "bright_future": "Bright Future",
   "bright_future_html": "These occupations are expected to grow rapidly in the next several years, will have large numbers of job openings, or are new and emerging occupations. Data from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+  "cancel": "Cancel",
   "career_information": "Career Information",
   "career_matches": "Career Matches",
   "careers_link_heading": "View your personalized career recommendations",
   "careers_link_heading_third_person": "View their personalized career recommendations",
   "close": "Close",
   "cognitive_alert_skip": "You are unable to skip the practice questions",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 31 questions in the exercise</li><li>You may have as long as you want to complete them. However, most people will complete the exercise in about 15 minutes.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>"
-  },
   "cognitive_confirm_button": "Confirm",
   "cognitive_confirm_retry": "Would you like to attempt the questions you skipped?",
   "cognitive_confirm_skip": "Are you sure you want to skip?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 31 questions in the exercise</li><li>You may have as long as you want to complete them. However, most people will complete the exercise in about 15 minutes.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Please select if you have a learning disability.",
   "cognitive_instructions_step_1_button": "View Example",
   "cognitive_instructions_step_1_heading": "Instructions",
@@ -51,8 +52,8 @@
   "cognitive_response_alt_text": "Response",
   "cognitive_results_heading": "Thank you for completing our assessment",
   "cognitive_results_html": "To learn more about the assessment you just took, please visit <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Skipped Questions",
   "cognitive_skip_button": "Skip",
+  "cognitive_skipped_questions": "Skipped Questions",
   "complements": "Complements",
   "conflicts": "Conflicts",
   "dimension_description": "The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each.",
@@ -71,11 +72,29 @@
   "experience_level_5": "Graduate Degree",
   "extended_description": "Extended Description",
   "featured_skill": "Featured Skill",
+  "feedback": {
+    "modal_prompt": "We'd like to learn about your experience",
+    "prompt": "Do you feel like your results match you?",
+    "thanks": "Thank you for your feedback!"
+  },
   "filter": "Filter",
   "get_started": "Get Started",
   "green_career": "Green Career",
   "green_career_html": "The green economy will cause a change in occupations' employment demand or work and worker requirements such as tasks, skills, knowledge, and credentials. Data from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "These personality characteristics provide the basis for asking a particular sequence of questions of each of the personality 'types'. The first question is looking to confirm what they should be like; the second two explore areas of possible concern.",
+  "headings": {
+    "personality": {
+      "achieve_html": "<b>ACHIEVE</b> - Skills you enjoy developing",
+      "act_html": "<b>ACT</b> - Ways you like to spend time",
+      "appreciate_html": "<b>APPRECIATE</b> - Values that align with your worldview",
+      "explore_html": "<b>EXPLORE</b> - Content you find interesting",
+      "styles": {
+        "negative": "Not so much of:",
+        "overall": "Your overall career style is...",
+        "positive": "More elements of:"
+      }
+    }
+  },
   "help": "Help",
   "instructions": "Instructions",
   "interview_guide_description": "These questions are customized for this candidate based on their levels of each personality dimension. You may wish to review the candidate's personality profile to learn whether they are high, medium, or low in each dimension, and then structure their interview around the components of personality that are of greatest concern for the position they seek.",
@@ -100,6 +119,7 @@
   "most_represented_traits": "Most Represented Traits",
   "most_represented_traits_definition": "Of the thirty traits measured by this assessment, these traits received scores in the top third of this candidate’s total responses. Appearance on this list reflects only the relative position of these traits for this individual compared to the remaining traits. This does not provide information that can be used to compare the extent of one trait displayed by one candidate vs another.",
   "next": "Next",
+  "no": "No",
   "no_careers": "No Careers",
   "no_jobs": "No local jobs were found for this career. Please visit %{job_source} to find more opportunities.",
   "no_more_careers": "No More Careers",
@@ -165,6 +185,7 @@
   "skill_name_for_working_from_home": "Working From Home Tips",
   "slide_error": "Unable to load more slides at this time",
   "sort": "Sort",
+  "submit": "Submit",
   "success_skills": "Success Skills",
   "tip_type_for_caution_zone": "Caution Zone",
   "tip_type_for_room": "Room for Growth and Change",
@@ -173,5 +194,6 @@
   "tip_type_for_tools": "Tools To Use",
   "title": "Title",
   "try_again": "Click Here to Try Again",
-  "view_on_onet": "View Career Details on O*Net"
+  "view_on_onet": "View Career Details on O*Net",
+  "yes": "Yes"
 }

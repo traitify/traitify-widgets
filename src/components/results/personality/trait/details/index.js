@@ -10,7 +10,7 @@ function PersonalityTraitDetails({trait: {personality_trait: trait, score: _scor
   useEffect(() => {
     if(type) { return; }
 
-    console.warn("Type missing on trait", trait);
+    console.warn("Type missing on trait", trait); /* eslint-disable-line no-console */
   });
 
   if(!type) { return null; }

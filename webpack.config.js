@@ -8,6 +8,7 @@ module.exports = (_env) => {
   const cssMaps = environment !== "production";
   let config = {
     context: path.resolve(__dirname, "src"),
+    mode: environment,
     devServer: {
       client: {
         overlay: {errors: true, warnings: false}
@@ -32,7 +33,6 @@ module.exports = (_env) => {
         root: "ReactDOM"
       }
     },
-    mode: environment,
     module: {
       rules: [
         {
@@ -113,6 +113,44 @@ module.exports = (_env) => {
     }
   };
 
+  const scriptConfig = {
+    context: path.resolve(__dirname, "src"),
+    mode: environment,
+    entry: {"i18n-sync": "../scripts/i18n-sync.js"},
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: "babel-loader"
+        }
+      ]
+    },
+    output: {
+      filename: "scripts/[name].js",
+      globalObject: "this",
+      library: {
+        name: "Traitify",
+        type: "umd",
+        umdNamedDefine: true
+      },
+      path: path.resolve(__dirname, "build"),
+      publicPath: "/"
+    },
+    plugins: [
+      new ESLintPlugin({emitWarning: true, extensions: ["js"], failOnError: false})
+    ],
+    resolve: {
+      extensions: [".js"],
+      modules: [
+        path.resolve(__dirname, "scripts"),
+        path.resolve(__dirname, "src"),
+        path.resolve(__dirname, "node_modules")
+      ]
+    },
+    target: "node"
+  };
+
   const browser = env.mode === "browser";
 
   if(browser) {
@@ -127,5 +165,5 @@ module.exports = (_env) => {
     config.output.library.export = "default";
   }
 
-  return config;
+  return [config, scriptConfig];
 };

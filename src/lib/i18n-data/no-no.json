@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "Se deres tilpassede karriereforslag",
   "close": "Lukk",
   "cognitive_alert_skip": "Du kan ikke hoppe over treningsspørsmålene",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p> Nå er det på tide med en øvelse. Husk dette før du begynner: </p><ul><li>Du kan bruke så lang tid du vil, men de fleste vil behøve rundt femten minutter til å fullføre.</li><li>Du bør finne et rolig sted hvor du kan gi øvelsen din fulle oppmerksom uten noen forstyrrelser.</li><li>Du kan hoppe over spørsmål om du vil, men forsøk å svare på hvert enkelt.</li><li>Vennligst fullfør øvelsen i en sammenhengende økt.</li></ul>"
-  },
   "cognitive_confirm_button": "Bekreft",
   "cognitive_confirm_retry": "Vil du forsøke på spørsmålene du hoppet over?",
   "cognitive_confirm_skip": "Er du sikker på at du vil hoppe over?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p> Nå er det på tide med en øvelse. Husk dette før du begynner: </p><ul><li>Du kan bruke så lang tid du vil, men de fleste vil behøve rundt femten minutter til å fullføre.</li><li>Du bør finne et rolig sted hvor du kan gi øvelsen din fulle oppmerksom uten noen forstyrrelser.</li><li>Du kan hoppe over spørsmål om du vil, men forsøk å svare på hvert enkelt.</li><li>Vennligst fullfør øvelsen i en sammenhengende økt.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "Vennligst velg hvis du har en kognitiv funksjonsnedsettelse.",
   "cognitive_instructions_step_1_button": "Se eksempel",
   "cognitive_instructions_step_1_heading": "Instruksjoner",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "Respons",
   "cognitive_results_heading": "Takk for å ha fullført vår evaluering",
   "cognitive_results_html": "For å lære mer om evalueringen du akkurat tok kan du besøke <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skipped_questions": "Ubesvarte Spørsmål",
   "cognitive_skip_button": "Hopp over",
+  "cognitive_skipped_questions": "Ubesvarte Spørsmål",
   "complements": "Utfyller",
   "conflicts": "Konflikter",
   "dimension_description": "Dimensjonsscore blir beregnet ut fra svarene dine på elementer som sammen måler de underliggende komponentene i hver dimensjon. Totalt sett har en person enten et høyt, moderat eller lavt nivå av hver.",

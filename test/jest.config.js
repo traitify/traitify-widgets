@@ -1,5 +1,6 @@
 module.exports = {
   collectCoverageFrom: [
+    "<rootDir>/scripts/**/*.js",
     "<rootDir>/src/**/*.js"
   ],
   fakeTimers: {enableGlobally: true},
@@ -14,6 +15,7 @@ module.exports = {
     "^.+\\.(css|less|scss|sass)$": "identity-obj-proxy"
   },
   modulePaths: [
+    "<rootDir>/scripts/",
     "<rootDir>/src/",
     "<rootDir>/test/"
   ],

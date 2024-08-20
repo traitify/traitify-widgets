@@ -14,12 +14,12 @@
   "careers_link_heading_third_person": "귀하의 맞춤형 커리어 추천 사항 보기",
   "close": "닫기",
   "cognitive_alert_skip": "연습 문제를 건너뛸 수 없습니다.",
-  "cognitive_id_specific_instructions": {
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>이제 연습을 할 시간입니다. 시작하기 전에 기억하세요:</p><ul><li>연습에는 31개의 질문이 있습니다.</li><li>원하는 만큼 시간을 들여 질문을 완료할 수 있습니다. 그러나 대부분의 사람들은 약 15분 안에 연습을 완료합니다.</li><li>주의가 산만해지지 않고 연습에 집중할 수 있는 조용한 장소를 찾아야 합니다.</li><li>질문은 건너뛸 수 있지만, 각 질문에 답하도록 노력하시기 바랍니다.</li><li>앉은 자리에서 연습을 완료하시기 바랍니다.</li></ul>"
-  },
   "cognitive_confirm_button": "확인하기",
   "cognitive_confirm_retry": "건너뛴 질문을 해보고 싶습니까?",
   "cognitive_confirm_skip": "정말로 건너뛰고 싶습니까?",
+  "cognitive_id_specific_instructions": {
+    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>이제 연습을 할 시간입니다. 시작하기 전에 기억하세요:</p><ul><li>연습에는 31개의 질문이 있습니다.</li><li>원하는 만큼 시간을 들여 질문을 완료할 수 있습니다. 그러나 대부분의 사람들은 약 15분 안에 연습을 완료합니다.</li><li>주의가 산만해지지 않고 연습에 집중할 수 있는 조용한 장소를 찾아야 합니다.</li><li>질문은 건너뛸 수 있지만, 각 질문에 답하도록 노력하시기 바랍니다.</li><li>앉은 자리에서 연습을 완료하시기 바랍니다.</li></ul>"
+  },
   "cognitive_instructions_disability_text": "학습 장애가 있는지 선택하십시오",
   "cognitive_instructions_step_1_button": "예 보기",
   "cognitive_instructions_step_1_heading": "지침",
@@ -51,8 +51,8 @@
   "cognitive_response_alt_text": "응답",
   "cognitive_results_heading": "평가를 완료해 주셔서 감사합니다",
   "cognitive_results_html": "방금 하신 평가에 대해 자세히 알아보려면 <a href=\"https://www.traitify.com\">Traitify.com</a>을 방문하세요.",
-  "cognitive_skipped_questions": "건너 뛴 질문",
   "cognitive_skip_button": "건너뛰기",
+  "cognitive_skipped_questions": "건너 뛴 질문",
   "complements": "보완",
   "conflicts": "갈등",
   "dimension_description": "차원 점수는 각 차원의 기본 구성 요소를 측정하는 항목들에 대한 귀하의 응답을 바탕으로 계산됩니다. 전반적으로 개인의 점수는 각각에 대하여 높은, 중간 또는 낮은 수준을 갖습니다.",

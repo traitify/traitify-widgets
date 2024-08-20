@@ -188,6 +188,7 @@ exports[`Results.Feedback.Modal renders component 1`] = `
           >
             <button
               className="cancelBtn"
+              onClick={[MockFunction onClose]}
               type="button"
             >
               Cancel

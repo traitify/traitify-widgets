@@ -17,7 +17,7 @@ describe("Results.Feedback.Modal", () => {
     mockUserCompletedFeedback(assessment.id, true);
     mockFeedbackSurvey(feedbackSurvey, assessment.deck_id);
 
-    component = await ComponentHandler.setup(Component);
+    component = await ComponentHandler.setup(Component, {props: {onClose: jest.fn().mockName("onClose")}});
 
     expect(component.tree).toMatchSnapshot();
   });

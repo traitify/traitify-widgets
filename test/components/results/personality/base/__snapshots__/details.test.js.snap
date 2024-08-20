@@ -80,38 +80,14 @@ exports[`PersonalityBaseDetails fallbacks renders component with types 1`] = `
         onClick={[Function]}
         type="button"
       >
-        Complements
-      </button>
-      <button
-        className=""
-        onClick={[Function]}
-        type="button"
-      >
-        Conflicts
-      </button>
-      <button
-        className=""
-        onClick={[Function]}
-        type="button"
-      >
         Best Work Environments
       </button>
     </div>
     <select
       className="dropdown"
       onChange={[Function]}
-      value="complements"
+      value="best_work_environments"
     >
-      <option
-        value="complements"
-      >
-        Complements
-      </option>
-      <option
-        value="conflicts"
-      >
-        Conflicts
-      </option>
       <option
         value="best_work_environments"
       >
@@ -119,11 +95,32 @@ exports[`PersonalityBaseDetails fallbacks renders component with types 1`] = `
       </option>
     </select>
     <div>
-      <div
-        className="p"
-      >
-        You often find yourself working.
-      </div>
+      <ul>
+        <li>
+          Allows for both independent work and teamwork
+        </li>
+        <li>
+          Allows for independent study and peer collaboration
+        </li>
+        <li>
+          Has a strong mission
+        </li>
+        <li>
+          Incorporates the natural environment
+        </li>
+        <li>
+          Incorporates work with like-minded colleagues
+        </li>
+        <li>
+          Is fueled by a strong mission
+        </li>
+        <li>
+          Nurtures collaborations with others who share the same mission
+        </li>
+        <li>
+          Offers a combination of autonomy and teamwork
+        </li>
+      </ul>
     </div>
   </div>
 </div>

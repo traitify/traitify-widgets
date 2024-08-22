@@ -14,6 +14,7 @@
     "dev": "webpack serve --env platform=browser",
     "dev:secure": "webpack serve --env platform=browser --server-type https",
     "i18n:sync": "node build/scripts/i18n-sync.js",
+    "i18n:sync:dev": "node build/scripts/i18n-sync.js --dev",
     "lint": "eslint {scripts,src,test}",
     "lint:fix": "eslint {scripts,src,test} --fix",
     "lint:watch": "esw -w {scripts,src,test} --color",

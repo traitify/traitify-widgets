@@ -18,8 +18,9 @@ const sortKeys = (_key, value) => {
 const stringify = (object) => JSON.stringify(object, sortKeys, 2);
 
 export default class I18nSync {
-  static async run() { new I18nSync().run(); }
-  constructor() {
+  static async run(...args) { new I18nSync(...args).run(); }
+  constructor({environment = "production"} = {}) {
+    this.environment = environment;
     this.locales = Object.keys(locales).map((key) => ({code: key, ...locales[key]}));
     this.translations = this.locales.reduce((map, locale) => (
       {...map, [locale.code]: {...locale, data: []}}
@@ -75,7 +76,10 @@ export default class I18nSync {
   #fetchData() {
     const headers = {Accept: "application/json"};
     const options = {headers, method: "GET"};
-    const url = "https://cdn.traitify.com/translations/widgets.json";
+    const url = {
+      production: "https://cdn.traitify.com/translations/widgets.json",
+      staging: "https://cdn-stag.traitify.com/translations/widgets.json"
+    }[this.environment];
 
     return fetch(url, options).then((response) => response.json());
   }

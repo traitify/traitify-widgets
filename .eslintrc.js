@@ -6,11 +6,6 @@ module.exports = {
   globals: {
     XDomainRequest: true
   },
-  settings: {
-    "import/resolver": {
-      webpack: {config: "webpack.config.js"}
-    }
-  },
   rules: {
     "import/order": [
       "error",
@@ -28,5 +23,10 @@ module.exports = {
         }
       }
     ]
+  },
+  settings: {
+    "import/resolver": {
+      webpack: {config: "webpack.config.js"}
+    }
   }
 };

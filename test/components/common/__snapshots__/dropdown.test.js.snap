@@ -1,0 +1,597 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown fancy renders component 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    Search
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+</label>
+`;
+
+exports[`Dropdown fancy renders component with options 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    Search
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+  <div
+    className="dropdown"
+  >
+    <div
+      className="search"
+    >
+      <span
+        alt="Search"
+        className="traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>",
+          }
+        }
+      />
+      <input
+        autoComplete="off"
+        id="record-name"
+        name="search"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="options"
+    >
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        First
+      </button>
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Second
+      </button>
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Third
+      </button>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`Dropdown fancy renders component with value 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+</label>
+`;
+
+exports[`Dropdown fancy search searches by name 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+  <div
+    className="dropdown"
+  >
+    <div
+      className="search"
+    >
+      <span
+        alt="Search"
+        className="traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>",
+          }
+        }
+      />
+      <input
+        autoComplete="off"
+        id="record-name"
+        name="search"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search"
+        type="text"
+        value="Sec"
+      />
+    </div>
+    <div
+      className="options"
+    >
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Second
+      </button>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`Dropdown fancy search searches by value 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+  <div
+    className="dropdown"
+  >
+    <div
+      className="search"
+    >
+      <span
+        alt="Search"
+        className="traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>",
+          }
+        }
+      />
+      <input
+        autoComplete="off"
+        id="record-name"
+        name="search"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search"
+        type="text"
+        value="Tw"
+      />
+    </div>
+    <div
+      className="options"
+    >
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Second
+      </button>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`Dropdown fancy search searches without results 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+  <div
+    className="dropdown"
+  >
+    <div
+      className="search"
+    >
+      <span
+        alt="Search"
+        className="traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>",
+          }
+        }
+      />
+      <input
+        autoComplete="off"
+        id="record-name"
+        name="search"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search"
+        type="text"
+        value="Twenty"
+      />
+    </div>
+    <div
+      className="options"
+    >
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`Dropdown fancy search searches without results 2`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+  <div
+    className="dropdown"
+  >
+    <div
+      className="search"
+    >
+      <span
+        alt="Search"
+        className="traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>",
+          }
+        }
+      />
+      <input
+        autoComplete="off"
+        id="record-name"
+        name="search"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search"
+        type="text"
+        value="Twenty"
+      />
+    </div>
+    <div
+      className="options"
+    >
+      <button
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`Dropdown fancy select selects current option 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+</label>
+`;
+
+exports[`Dropdown fancy select selects option 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <button
+    className="current"
+    onClick={[Function]}
+    type="button"
+  >
+    <div>
+      <span
+        className="collapse"
+      >
+        Third
+      </span>
+      <span
+        className="stiff"
+      >
+         (
+        Current
+        )
+      </span>
+    </div>
+    <span
+      className="traitify--icon-fa"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"></path></svg>",
+        }
+      }
+    />
+  </button>
+</label>
+`;
+
+exports[`Dropdown options renders with objects 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <select
+    id="record-name"
+    name="name"
+    onChange={[MockFunction onChange]}
+  >
+    <option
+      value="one"
+    >
+      First
+    </option>
+    <option
+      value="two"
+    >
+      Second
+    </option>
+    <option
+      value="three"
+    >
+      Third
+    </option>
+  </select>
+</label>
+`;
+
+exports[`Dropdown options renders with strings 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <select
+    id="record-name"
+    name="name"
+    onChange={[MockFunction onChange]}
+  >
+    <option
+      value="one"
+    >
+      one
+    </option>
+    <option
+      value="two"
+    >
+      two
+    </option>
+    <option
+      value="three"
+    >
+      three
+    </option>
+  </select>
+</label>
+`;
+
+exports[`Dropdown simple renders component 1`] = `
+<label
+  className="container"
+  htmlFor="record-name"
+>
+  <select
+    id="record-name"
+    name="name"
+    onChange={[MockFunction onChange]}
+  >
+    <option
+      value="one"
+    >
+      First
+    </option>
+    <option
+      value="two"
+    >
+      Second
+    </option>
+    <option
+      value="three"
+    >
+      Third
+    </option>
+  </select>
+</label>
+`;

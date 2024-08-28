@@ -149,6 +149,7 @@ module.exports = (_env) => {
         path.resolve(__dirname, "node_modules")
       ]
     },
+    stats: "minimal",
     target: "node"
   };
 

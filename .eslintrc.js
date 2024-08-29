@@ -6,6 +6,14 @@ module.exports = {
   globals: {
     XDomainRequest: true
   },
+  overrides: [
+    {
+      files: "*.config.js",
+      rules: {
+        "global-require": "off"
+      }
+    }
+  ],
   rules: {
     "import/order": [
       "error",

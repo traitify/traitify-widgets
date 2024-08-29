@@ -3,12 +3,12 @@ module.exports = {
     node: true
   },
   extends: ["traitify"],
+  rules: {
+    "import/no-extraneous-dependencies": "off"
+  },
   settings: {
     "import/resolver": {
-      webpack: {
-        "config": "webpack.config.js",
-        "config-index": 1
-      }
+      webpack: "./webpack.config.js"
     }
   }
 };

@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
-import I18nSync from "lib/i18n-sync";
+import I18nSync from "i18n-sync";
 import useGlobalMock from "support/hooks/use-global-mock";
 import translations from "support/json/translations.json";
 import fs from "node:fs";
 
 jest.mock("node:fs");
+jest.mock("get-path", () => jest.fn().mockName("getPath").mockImplementation((path) => path));
 
 const stringify = (object) => JSON.stringify(object, null, 2);
 

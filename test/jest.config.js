@@ -1,6 +1,5 @@
 module.exports = {
   collectCoverageFrom: [
-    "<rootDir>/scripts/**/*.js",
     "<rootDir>/src/**/*.js"
   ],
   fakeTimers: {enableGlobally: true},
@@ -15,7 +14,6 @@ module.exports = {
     "^.+\\.(css|less|scss|sass)$": "identity-obj-proxy"
   },
   modulePaths: [
-    "<rootDir>/scripts/",
     "<rootDir>/src/",
     "<rootDir>/test/"
   ],
@@ -30,6 +28,7 @@ module.exports = {
     "<rootDir>/test/support/setup/recoil.js"
   ],
   testEnvironmentOptions: {url: "https://www.example.com"},
+  testMatch: ["<rootDir>/test/**/*.test.js"],
   transform: {
     "^.+\\.jsx?$": "babel-jest"
   }

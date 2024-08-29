@@ -114,45 +114,6 @@ module.exports = (_env) => {
     }
   };
 
-  const scriptConfig = {
-    context: path.resolve(__dirname, "src"),
-    mode: environment,
-    entry: {"i18n-sync": "../scripts/i18n-sync.js"},
-    module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: /node_modules/,
-          loader: "babel-loader"
-        }
-      ]
-    },
-    output: {
-      filename: "scripts/[name].js",
-      globalObject: "this",
-      library: {
-        name: "Traitify",
-        type: "umd",
-        umdNamedDefine: true
-      },
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/"
-    },
-    plugins: [
-      new ESLintPlugin({emitWarning: true, extensions: ["js"], failOnError: false})
-    ],
-    resolve: {
-      extensions: [".js"],
-      modules: [
-        path.resolve(__dirname, "scripts"),
-        path.resolve(__dirname, "src"),
-        path.resolve(__dirname, "node_modules")
-      ]
-    },
-    stats: "minimal",
-    target: "node"
-  };
-
   const browser = env.platform === "browser";
 
   if(browser) {
@@ -167,5 +128,5 @@ module.exports = (_env) => {
     config.output.library.export = "default";
   }
 
-  return [config, scriptConfig];
+  return config;
 };

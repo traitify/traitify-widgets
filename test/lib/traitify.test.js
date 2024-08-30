@@ -1,29 +1,27 @@
 /** @jest-environment jsdom */
-import {render, unmountComponentAtNode} from "react-dom";
+import {createRoot} from "react-dom/client";
 import Traitify from "lib/traitify";
 
-jest.mock("react-dom");
+jest.mock("react-dom/client");
 jest.mock("components/results/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
 jest.mock("components/results/personality/type/list", () => (() => <div className="mock">Personality Types</div>));
 
-const createElement = (options = {}) => {
-  const element = document.createElement("div");
-
-  if(!options.disconnected) {
-    document.body.appendChild(element);
-  }
-
-  return element;
-};
+const createElement = () => document.createElement("div");
 
 describe("Traitify", () => {
   let traitify;
 
   beforeEach(() => {
-    render.mockClear();
-    unmountComponentAtNode.mockClear();
+    createRoot.mockImplementation(() => ({
+      render: jest.fn().mockName("render"),
+      unmount: jest.fn().mockName("unmount")
+    }));
 
     traitify = new Traitify();
+  });
+
+  afterEach(() => {
+    createRoot.mockClear();
   });
 
   describe("destroy", () => {
@@ -33,26 +31,27 @@ describe("Traitify", () => {
       expect(returnValue).toEqual(traitify);
     });
 
-    it("ignores disconnected targets", () => {
-      traitify.renderedTargets = {Default: {target: createElement({disconnected: true})}};
+    it("ignores unmounted targets", () => {
+      traitify.renderedTargets = {Default: {target: createElement()}};
       traitify.destroy();
 
-      expect(unmountComponentAtNode).not.toHaveBeenCalled();
+      expect(traitify.renderedTargets).toEqual({});
     });
 
     it("ignores invalid targets", () => {
       traitify.renderedTargets = {Default: null};
       traitify.destroy();
 
-      expect(unmountComponentAtNode).not.toHaveBeenCalled();
+      expect(traitify.renderedTargets).toEqual({});
     });
 
     it("unmounts targets", () => {
       const div = createElement();
-      traitify.renderedTargets = {Default: {target: div}};
+      const root = createRoot();
+      traitify.renderedTargets = {Default: {root, target: div}};
       traitify.destroy();
 
-      expect(unmountComponentAtNode).toHaveBeenCalledWith(div);
+      expect(root.unmount).toHaveBeenCalled();
     });
   });
 
@@ -90,13 +89,13 @@ describe("Traitify", () => {
 
     it("renders string target", () => (
       traitify.render("#results").then(() => {
-        expect(render).toHaveBeenCalledTimes(1);
+        expect(createRoot).toHaveBeenCalledTimes(1);
       })
     ));
 
     it("renders dom target", () => (
       traitify.render(createElement()).then(() => {
-        expect(render).toHaveBeenCalledTimes(1);
+        expect(createRoot).toHaveBeenCalledTimes(1);
       })
     ));
 
@@ -107,7 +106,7 @@ describe("Traitify", () => {
       };
 
       return traitify.render(targets).then(() => {
-        expect(render).toHaveBeenCalledTimes(2);
+        expect(createRoot).toHaveBeenCalledTimes(2);
         expect(traitify.renderedTargets).toEqual({
           "Personality.Trait.List": expect.any(Object),
           "Personality.Type.List": expect.any(Object)
@@ -115,30 +114,20 @@ describe("Traitify", () => {
       });
     });
 
-    it("removes dom target's children", () => (
-      traitify.render(createElement()).then(() => {
-        expect(unmountComponentAtNode).toHaveBeenCalled();
-        expect(render).toHaveBeenCalled();
-      })
-    ));
-
     it("removes old target's children", () => {
       const target = createElement();
+      const root1 = createRoot();
+      const root2 = createRoot();
 
-      traitify.renderedTargets = {Default: {target}, Results: {target: createElement()}};
+      traitify.renderedTargets = {
+        Default: {root: root1, target},
+        Results: {root: root2, target: createElement()}
+      };
 
       return traitify.render(target).then(() => {
-        expect(unmountComponentAtNode).toHaveBeenCalledTimes(2);
-        expect(render).toHaveBeenCalledTimes(1);
-      });
-    });
-
-    it("removes only connected targets", () => {
-      traitify.renderedTargets = {Results: {target: createElement({disconnected: true})}};
-
-      return traitify.render(createElement()).then(() => {
-        expect(unmountComponentAtNode).toHaveBeenCalledTimes(1);
-        expect(render).toHaveBeenCalledTimes(1);
+        expect(root1.unmount).not.toHaveBeenCalled();
+        expect(root2.unmount).toHaveBeenCalled();
+        expect(createRoot).toHaveBeenCalledTimes(3);
       });
     });
   });

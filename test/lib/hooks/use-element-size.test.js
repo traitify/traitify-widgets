@@ -27,20 +27,20 @@ describe("useElementSize", () => {
     useWindowMock("removeEventListener");
 
     it("adds resize event listener", async() => {
-      await ComponentHandler.setup(Component);
+      await ComponentHandler.setup(Component, {wrap: false});
 
       expect(window.addEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
     });
 
     it("removes resize event listener", async() => {
-      component = await ComponentHandler.setup(Component);
+      component = await ComponentHandler.setup(Component, {wrap: false});
       component.unmount();
 
       expect(window.removeEventListener).toHaveBeenCalledWith("resize", expect.any(Function));
     });
 
     it("updates listeners for new element", async() => {
-      component = await ComponentHandler.setup(Component);
+      component = await ComponentHandler.setup(Component, {wrap: false});
       window.addEventListener.mockClear();
       window.removeEventListener.mockClear();
       component.updateProps({element});
@@ -55,19 +55,19 @@ describe("useElementSize", () => {
     useResizeMock();
 
     it("returns blank size", async() => {
-      component = await ComponentHandler.setup(Component);
+      component = await ComponentHandler.setup(Component, {wrap: false});
 
       expect(size.current).toEqual([0, 0]);
     });
 
     it("returns current element size", async() => {
-      component = await ComponentHandler.setup(Component, {props: {element}});
+      component = await ComponentHandler.setup(Component, {props: {element}, wrap: false});
 
       expect(size.current).toEqual([600, 800]);
     });
 
     it("returns updated element size", async() => {
-      component = await ComponentHandler.setup(Component, {props: {element}});
+      component = await ComponentHandler.setup(Component, {props: {element}, wrap: false});
       element.clientWidth = 700;
       act(() => window.resizeTo(1000, 2000));
 

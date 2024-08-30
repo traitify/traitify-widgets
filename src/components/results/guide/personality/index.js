@@ -12,7 +12,7 @@ import useTranslate from "lib/hooks/use-translate";
 import Question from "./question";
 import style from "./style.scss";
 
-function PersonalityGuide({combined}) {
+function PersonalityGuide({combined = false}) {
   const [activeCompetency, setActiveCompetency] = useState(null);
   const benchmark = useBenchmark();
   const [data, setData] = useState([]);
@@ -88,7 +88,6 @@ function PersonalityGuide({combined}) {
   );
 }
 
-PersonalityGuide.defaultProps = {combined: false};
 PersonalityGuide.propTypes = {combined: PropTypes.bool};
 
 export default PersonalityGuide;

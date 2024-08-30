@@ -55,7 +55,8 @@ module.exports = (_env) => {
               options:  {
                 sourceMap: cssMaps,
                 modules: {
-                  localIdentName: "traitify--[path]--[local]"
+                  localIdentName: "traitify--[path]--[local]",
+                  namedExport: false
                 },
                 importLoaders: 2,
               }
@@ -151,7 +152,7 @@ module.exports = (_env) => {
     target: "node"
   };
 
-  const browser = env.mode === "browser";
+  const browser = env.platform === "browser";
 
   if(browser) {
     delete config.externals;

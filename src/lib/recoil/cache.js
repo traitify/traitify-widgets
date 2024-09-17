@@ -7,7 +7,7 @@ import {
 } from "./base";
 import {deckIDState} from "./deck";
 
-// NOTE: Mirror updates in lib/cache
+// NOTE: Mirror updates in lib/common/get-cache-key
 export const cacheKeyState = selectorFamily({
   get: (params) => ({get}) => {
     const [type, options] = typeof params === "string"

@@ -1,3 +1,4 @@
+const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
 
 module.exports = ({name}) => {
@@ -26,6 +27,14 @@ module.exports = ({name}) => {
       path: path.resolve(__dirname, "../build"),
       publicPath: "/"
     },
+    plugins: [
+      new ESLintPlugin({
+        context: path.resolve(__dirname, name),
+        eslintPath: "../../eslint",
+        emitWarning: true,
+        failOnError: false
+      })
+    ],
     resolve: {
       alias: {
         traitify: path.resolve(__dirname, "../src")

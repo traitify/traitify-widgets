@@ -6,11 +6,13 @@ module.exports = {
   globals: {
     XDomainRequest: true
   },
+  ignorePatterns: ["build/*", "public/*"],
   overrides: [
     {
       files: "*.config.js",
       rules: {
-        "global-require": "off"
+        "global-require": "off",
+        "import/no-extraneous-dependencies": ["error", {devDependencies: ["**/*.config.js"]}]
       }
     }
   ],

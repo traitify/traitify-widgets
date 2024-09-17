@@ -1,3 +1,3 @@
-const createScriptConfig = require("../script.config");
+const createConfig = require("../script.config");
 
-module.exports = () => createScriptConfig({name: "i18n-sync"});
+module.exports = () => createConfig({name: "i18n-sync"});

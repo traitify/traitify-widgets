@@ -1,7 +1,7 @@
+build
 coverage
 node_modules
 /npm-debug.log
-/build
 .DS_Store
 /.idea
 yarn.lock

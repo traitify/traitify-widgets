@@ -1,10 +1,9 @@
+import {useCallback, useEffect, useState} from "react";
 import isObject from "traitify/lib/common/object/is-object";
-import useDidMount from "traitify/lib/hooks/use-did-mount";
-import useDidUpdate from "traitify/lib/hooks/use-did-update";
 import useCacheKey from "./use-cache-key";
 import useWidgetContext from "./use-widget-context";
 
-export default function useData({key: _key, initialValue}) {
+export default function useData({key: _key}) {
   const cacheKey = useCacheKey(isObject(_key) ? {..._key} : {skip: true});
   const key = `data.${_key || cacheKey}`;
   const {listener} = useWidgetContext();

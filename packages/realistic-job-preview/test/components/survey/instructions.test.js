@@ -26,7 +26,7 @@ describe("Instructions", () => {
     it("calls prop", async() => {
       component = await ComponentHandler.setup(Component, {props});
       act(() => { component.instance.findByType("video").props.onPlay(); });
-      act(() => { component.instance.find(({props}) => props.className?.includes("traitify--response-button")).props.onClick(); });
+      act(() => { component.instance.find(({props: {className}}) => className?.includes("traitify--response-button")).props.onClick(); });
 
       expect(props.onStart).toHaveBeenCalled();
     });

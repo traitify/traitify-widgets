@@ -32,23 +32,23 @@ describe("Traitify", () => {
     });
 
     it("ignores unmounted targets", () => {
-      traitify.renderedTargets = {Default: {target: createElement()}};
+      traitify.renderer.renderedTargets = {Default: {target: createElement()}};
       traitify.destroy();
 
-      expect(traitify.renderedTargets).toEqual({});
+      expect(traitify.renderer.renderedTargets).toEqual({});
     });
 
     it("ignores invalid targets", () => {
-      traitify.renderedTargets = {Default: null};
+      traitify.renderer.renderedTargets = {Default: null};
       traitify.destroy();
 
-      expect(traitify.renderedTargets).toEqual({});
+      expect(traitify.renderer.renderedTargets).toEqual({});
     });
 
     it("unmounts targets", () => {
       const div = createElement();
       const root = createRoot();
-      traitify.renderedTargets = {Default: {root, target: div}};
+      traitify.renderer.renderedTargets = {Default: {root, target: div}};
       traitify.destroy();
 
       expect(root.unmount).toHaveBeenCalled();
@@ -107,7 +107,7 @@ describe("Traitify", () => {
 
       return traitify.render(targets).then(() => {
         expect(createRoot).toHaveBeenCalledTimes(2);
-        expect(traitify.renderedTargets).toEqual({
+        expect(traitify.renderer.renderedTargets).toEqual({
           "Personality.Trait.List": expect.any(Object),
           "Personality.Type.List": expect.any(Object)
         });
@@ -119,7 +119,7 @@ describe("Traitify", () => {
       const root1 = createRoot();
       const root2 = createRoot();
 
-      traitify.renderedTargets = {
+      traitify.renderer.renderedTargets = {
         Default: {root: root1, target},
         Results: {root: root2, target: createElement()}
       };

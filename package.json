@@ -10,22 +10,20 @@
   "scripts": {
     "build": "webpack --define-process-env-node-env production --progress",
     "build:compatibility": "webpack --define-process-env-node-env production --env platform=browser --progress",
-    "build:install": "npm i --package-lock-only && npm run build",
     "dev": "webpack serve --env platform=browser",
     "dev:secure": "webpack serve --env platform=browser --server-type https",
-    "i18n:sync": "node build/scripts/i18n-sync.js",
-    "lint": "eslint {scripts,src,test}",
-    "lint:fix": "eslint {scripts,src,test} --fix",
-    "lint:watch": "esw -w {scripts,src,test} --color",
+    "i18n:sync": "cd packages/i18n-sync && npm run i18n:sync --",
+    "i18n-sync:test": "cd packages/i18n-sync && npm run test --",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:watch": "esw -w {packages,src,test} --color",
     "prebuild": "mkdirp build",
     "prebuild:compatibility": "mkdirp build",
-    "prestart": "npm run build",
     "pretest": "npm run lint",
-    "publish:alpha": "npm run build:install && npm publish --tag alpha",
-    "publish:beta": "npm run build:install && npm publish --tag beta",
-    "publish:latest": "npm run test && build:install && npm publish",
-    "test": "jest --config test/jest.config.js --coverage",
-    "test:watch": "jest --config test/jest.config.js --watch"
+    "test": "npm-run-all *:test",
+    "traitify:lint": "eslint {src,test}",
+    "traitify:test": "jest --config test/jest.config.js --coverage",
+    "traitify:test:watch": "jest --config test/jest.config.js --watch"
   },
   "keywords": [
     "traitify",
@@ -48,8 +46,6 @@
     "babel-plugin-jsx-pragmatic": "^1.0.2",
     "babel-preset-airbnb": "^5.0.0",
     "css-loader": "^7.1.2",
-    "csv-parse": "^5.5.6",
-    "csv-stringify": "^6.5.0",
     "eslint": "^8.57.0",
     "eslint-config-traitify": "^0.4.0",
     "eslint-import-resolver-jest": "^3.0.2",
@@ -59,11 +55,12 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-watch": "^8.0.0",
-    "eslint-webpack-plugin": "^4.1.0",
+    "eslint-webpack-plugin": "^4.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "mkdirp": "^3.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.15",
     "postcss-loader": "^8.1.1",
     "react": "^18.3.1",
@@ -77,8 +74,6 @@
     "webpack-dev-server": "^5.0.4"
   },
   "devDependenciesNotes": {
-    "csv-parse": "used for script",
-    "csv-stringify": "used for script",
     "postcss": "peer-dependency of postcss-loader"
   },
   "dependencies": {

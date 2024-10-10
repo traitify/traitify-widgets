@@ -3,7 +3,7 @@
 exports[`I18nSync .buildFiles wrties translations 1`] = `
 [
   [
-    "./src/lib/i18n-data/en-us.json",
+    "src/lib/i18n-data/en-us.json",
     "{
   "look": {
     "at": {
@@ -21,7 +21,7 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
 }",
   ],
   [
-    "./src/lib/i18n-data/es-pr.json",
+    "src/lib/i18n-data/es-pr.json",
     "{
   "sub": {
     "with_1": "Yo estoy divertida"
@@ -29,7 +29,7 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
 }",
   ],
   [
-    "./src/lib/i18n-data/es-us.json",
+    "src/lib/i18n-data/es-us.json",
     "{
   "sub": {
     "with_1": "%{name} estas divertida",

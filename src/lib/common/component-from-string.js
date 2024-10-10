@@ -1,10 +1,9 @@
-import Components from "components";
-import dig from "lib/common/object/dig";
+import dig from "./object/dig";
 
-function dive(components, name) { return dig(components, ...name.split(".")); }
+function dive({components, name}) { return dig(components, ...name.split(".")); }
 
-function findComponent(components, name) {
-  const node = dive(components, name);
+function findComponent({components, name}) {
+  const node = dive({components, name});
   if(!node) { return; }
   if(node.Container) { return node.Container; }
   if(node.List) { return node.List; }
@@ -12,9 +11,9 @@ function findComponent(components, name) {
   return node;
 }
 
-export default function componentFromString(name) {
-  const component = findComponent(Components, name);
+export default function componentFromString({components, name}) {
+  const component = findComponent({components, name});
   if(component) { return component; }
 
-  return findComponent(Components.Results, name);
+  return findComponent({components: components.Results, name});
 }

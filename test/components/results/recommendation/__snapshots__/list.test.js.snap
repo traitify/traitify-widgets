@@ -10,22 +10,11 @@ exports[`Results.RecommendationList renders component 1`] = `
     <div
       className="recommendations"
     >
-      <label
-        htmlFor="traitify-benchmark-id"
+      <div
+        className="mock"
       >
-        <select
-          id="traitify-benchmark-id"
-          name="recommendation"
-          onChange={[Function]}
-          value="benchmark-xyz"
-        >
-          <option
-            value="benchmark-xyz"
-          >
-            Big Five Retail
-          </option>
-        </select>
-      </label>
+        Dropdown
+      </div>
       <div
         className="recommendation"
         style={
@@ -51,22 +40,11 @@ exports[`Results.RecommendationList renders component with tag 1`] = `
     <div
       className="recommendations"
     >
-      <label
-        htmlFor="traitify-benchmark-id"
+      <div
+        className="mock"
       >
-        <select
-          id="traitify-benchmark-id"
-          name="recommendation"
-          onChange={[Function]}
-          value="benchmark-xyz"
-        >
-          <option
-            value="benchmark-xyz"
-          >
-            Big Five Retail
-          </option>
-        </select>
-      </label>
+        Dropdown
+      </div>
       <div
         className="recommendation"
         style={
@@ -92,22 +70,11 @@ exports[`Results.RecommendationList renders component without score 1`] = `
     <div
       className="recommendations"
     >
-      <label
-        htmlFor="traitify-benchmark-id"
+      <div
+        className="mock"
       >
-        <select
-          id="traitify-benchmark-id"
-          name="recommendation"
-          onChange={[Function]}
-          value="benchmark-xyz"
-        >
-          <option
-            value="benchmark-xyz"
-          >
-            Big Five Retail
-          </option>
-        </select>
-      </label>
+        Dropdown
+      </div>
       <div
         className="recommendation"
         style={
@@ -145,27 +112,11 @@ exports[`Results.RecommendationList updates recommendation 1`] = `
     <div
       className="recommendations"
     >
-      <label
-        htmlFor="traitify-benchmark-id"
+      <div
+        className="mock"
       >
-        <select
-          id="traitify-benchmark-id"
-          name="recommendation"
-          onChange={[Function]}
-          value="other-xyz"
-        >
-          <option
-            value="benchmark-xyz"
-          >
-            Big Five Retail
-          </option>
-          <option
-            value="other-xyz"
-          >
-            Other
-          </option>
-        </select>
-      </label>
+        Dropdown
+      </div>
       <div
         className="recommendation"
         style={

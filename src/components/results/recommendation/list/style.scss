@@ -5,17 +5,17 @@
   @extend %container;
 
   margin-bottom: $buffer-section;
+}
 
-  select {
-    @extend %dropdown;
-
-    font-size: $font-size-lg;
-  }
+.dropdown {
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .recommendation {
   @extend %heading;
 
+  flex-shrink: 0;
   border-radius: $border-radius-lg;
   padding: $buffer-sm $buffer-lg * 2;
 

@@ -5,7 +5,7 @@ import Component from "components/survey/cognitive";
 import Instructions from "components/survey/cognitive/instructions";
 import Slide from "components/survey/cognitive/slide";
 import Timer from "components/survey/cognitive/timer";
-import {getCacheKey} from "lib/cache";
+import getCacheKey from "lib/common/get-cache-key";
 import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockCognitiveAssessment as mockAssessment, mockCognitiveSubmit as mockSubmit} from "support/container/http";

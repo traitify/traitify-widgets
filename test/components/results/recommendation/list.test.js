@@ -1,10 +1,13 @@
 import {act} from "react-test-renderer";
+import Dropdown from "components/common/dropdown";
 import Component from "components/results/recommendation/list";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import assessment from "support/json/assessment/dimension-based.json";
+
+jest.mock("components/common/dropdown", () => (() => <div className="mock">Dropdown</div>));
 
 describe("Results.RecommendationList", () => {
   let component;
@@ -95,7 +98,7 @@ describe("Results.RecommendationList", () => {
       ]
     });
     component = await ComponentHandler.setup(Component);
-    act(() => component.instance.findByType("select").props.onChange({target: {value: "other-xyz"}}));
+    act(() => component.instance.findByType(Dropdown).props.onChange({target: {name: "Other", value: "other-xyz"}}));
 
     expect(component.tree).toMatchSnapshot();
   });

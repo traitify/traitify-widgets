@@ -6,11 +6,16 @@ module.exports = {
   globals: {
     XDomainRequest: true
   },
-  settings: {
-    "import/resolver": {
-      webpack: {config: "webpack.config.js"}
+  ignorePatterns: ["build/*", "public/*"],
+  overrides: [
+    {
+      files: "*.config.js",
+      rules: {
+        "global-require": "off",
+        "import/no-extraneous-dependencies": ["error", {devDependencies: ["**/*.config.js"]}]
+      }
     }
-  },
+  ],
   rules: {
     "import/order": [
       "error",
@@ -28,5 +33,10 @@ module.exports = {
         }
       }
     ]
+  },
+  settings: {
+    "import/resolver": {
+      webpack: {config: "webpack.config.js"}
+    }
   }
 };

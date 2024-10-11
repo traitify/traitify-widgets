@@ -1,4 +1,4 @@
-import mutable from "lib/common/object/mutable";
+import mutable from "./object/mutable";
 
 export default function sortByTypePosition(types) {
   return mutable(types).sort((x, y) => {

@@ -1,6 +1,6 @@
-import times from "lib/common/array/times";
-import dig from "lib/common/object/dig";
-import sortByTypePosition from "lib/common/sort-by-type-position";
+import times from "./array/times";
+import dig from "./object/dig";
+import sortByTypePosition from "./sort-by-type-position";
 
 const defaultRanks = [
   {color: "#29B770", rank: "high"},

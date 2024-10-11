@@ -1,6 +1,6 @@
-/* eslint-disable no-console */
 import fs from "node:fs";
-import i18nData from "lib/i18n-data";
+import i18nData from "traitify/lib/i18n-data";
+import getPath from "./get-path";
 
 const locales = Object.keys(i18nData).reduce((map, key) => ({
   ...map, [key]: {name: i18nData[key].name}
@@ -18,9 +18,10 @@ const sortKeys = (_key, value) => {
 const stringify = (object) => JSON.stringify(object, sortKeys, 2);
 
 export default class I18nSync {
-  static async run() { new I18nSync().run(); }
-  constructor() {
+  static async run(...args) { new I18nSync(...args).run(); }
+  constructor({dryRun = false, environment = "production", quiet = false} = {}) {
     this.locales = Object.keys(locales).map((key) => ({code: key, ...locales[key]}));
+    this.options = {environment, dryRun, quiet};
     this.translations = this.locales.reduce((map, locale) => (
       {...map, [locale.code]: {...locale, data: []}}
     ), {});
@@ -37,6 +38,13 @@ export default class I18nSync {
     await this.importData();
     this.buildFiles();
     this.validate();
+    this.help();
+  }
+  help() {
+    this.#log("Available Options:");
+    this.#log("  --dev to run against staging");
+    this.#log("  --dryRun to run without updating files");
+    this.#log("  --quiet to run without output");
   }
   validate() {
     this.validation = this.translations["en-us"];
@@ -51,7 +59,7 @@ export default class I18nSync {
   }
   #addLocale({code, tree}) {
     const locale = this.locales.find(({code: key}) => key.toLowerCase() === code.toLowerCase());
-    if(!locale) { return console.log(`Issue adding locale (${code}: ${stringify(tree)})`); }
+    if(!locale) { return this.#log(`Issue adding locale (${code}: ${stringify(tree)})`); }
 
     this.translations[locale.code].tree = tree;
     Object.keys(tree).forEach((key) => this.#addTranslation({key, locale, value: tree[key]}));
@@ -70,14 +78,23 @@ export default class I18nSync {
   #buildFile(locale) {
     if(!locale.tree) { return; }
 
-    this.#writeFile(`./src/lib/i18n-data/${locale.code}.json`, locale.tree);
+    const path = getPath(`src/lib/i18n-data/${locale.code}.json`);
+    this.#writeFile(path, locale.tree);
   }
   #fetchData() {
     const headers = {Accept: "application/json"};
     const options = {headers, method: "GET"};
-    const url = "https://cdn.traitify.com/translations/widgets.json";
+    const url = {
+      production: "https://cdn.traitify.com/translations/widgets.json",
+      staging: "https://cdn-stag.traitify.com/translations/widgets.json"
+    }[this.options.environment];
 
     return fetch(url, options).then((response) => response.json());
+  }
+  #log(...options) {
+    if(this.options.quiet) { return; }
+
+    console.log(...options); // eslint-disable-line no-console
   }
   #validateKeys(locale) {
     const warnings = [];
@@ -101,22 +118,22 @@ export default class I18nSync {
     }
 
     if(warnings.locale) {
-      console.log(`Locale Missing: ${locale.code}`);
+      this.#log(`Locale Missing: ${locale.code}`);
     }
 
     if(warnings.keys && warnings.keys.length > 0) {
-      console.log(`Keys Missing for ${locale.code}:`);
+      this.#log(`Keys Missing for ${locale.code}:`);
       warnings.keys
-        .forEach((warning) => console.log(`  ${warning.key}: ${stringify(warning.value)}`));
+        .forEach((warning) => this.#log(`  ${warning.key}: ${stringify(warning.value)}`));
     }
 
     if(warnings.substitutions && warnings.substitutions.length > 0) {
-      console.log(`Substitutions Missing for ${locale.code}:`);
+      this.#log(`Substitutions Missing for ${locale.code}:`);
       warnings.substitutions
-        .forEach((warning) => console.log(`  ${warning.key}: ${warning.missing.join(", ")}`));
+        .forEach((warning) => this.#log(`  ${warning.key}: ${warning.missing.join(", ")}`));
     }
 
-    console.log("");
+    this.#log("");
   }
   #validateSubstitutions(locale) {
     const warnings = [];
@@ -135,6 +152,8 @@ export default class I18nSync {
     return warnings;
   }
   #writeFile(file, data) {
+    if(this.options.dryRun) { return; }
+
     fs.writeFileSync(file, stringify(data));
   }
 }

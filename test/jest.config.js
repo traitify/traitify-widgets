@@ -30,6 +30,7 @@ module.exports = {
     "<rootDir>/test/support/setup/recoil.js"
   ],
   testEnvironmentOptions: {url: "https://www.example.com"},
+  testMatch: ["<rootDir>/test/**/*.test.js"],
   transform: {
     "^.+\\.jsx?$": "babel-jest"
   }

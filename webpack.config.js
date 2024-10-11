@@ -1,12 +1,12 @@
 const ESLintPlugin = require("eslint-webpack-plugin");
-const path = require("path");
 const webpack = require("webpack");
+const path = require("path");
 
 module.exports = (_env) => {
   const env = _env || {};
   const environment = process.env.NODE_ENV || "development";
   const cssMaps = environment !== "production";
-  let config = {
+  const config = {
     context: path.resolve(__dirname, "src"),
     mode: environment,
     devServer: {
@@ -19,7 +19,7 @@ module.exports = (_env) => {
     },
     devtool: "source-map",
     entry: ["./index.js"],
-    externals : {
+    externals: {
       "react": {
         amd: "react",
         commonjs: "react",
@@ -52,13 +52,13 @@ module.exports = (_env) => {
             },
             {
               loader: "css-loader",
-              options:  {
+              options: {
                 sourceMap: cssMaps,
                 modules: {
                   localIdentName: "traitify--[path]--[local]",
                   namedExport: false
                 },
-                importLoaders: 2,
+                importLoaders: 2
               }
             },
             {
@@ -67,7 +67,7 @@ module.exports = (_env) => {
                 postcssOptions: {
                   plugins: ["autoprefixer"]
                 },
-                sourceMap: cssMaps,
+                sourceMap: cssMaps
               }
             },
             {
@@ -96,8 +96,8 @@ module.exports = (_env) => {
       publicPath: "/"
     },
     plugins: [
-      new ESLintPlugin({emitWarning: true, extensions: ["js", "jsx"], failOnError: false}),
-      new webpack.ProvidePlugin({"React": "react"}),
+      new ESLintPlugin({emitWarning: true, failOnError: false}),
+      new webpack.ProvidePlugin({React: "react"}),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(process.env.npm_package_version)
       })
@@ -114,44 +114,6 @@ module.exports = (_env) => {
     }
   };
 
-  const scriptConfig = {
-    context: path.resolve(__dirname, "src"),
-    mode: environment,
-    entry: {"i18n-sync": "../scripts/i18n-sync.js"},
-    module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: /node_modules/,
-          loader: "babel-loader"
-        }
-      ]
-    },
-    output: {
-      filename: "scripts/[name].js",
-      globalObject: "this",
-      library: {
-        name: "Traitify",
-        type: "umd",
-        umdNamedDefine: true
-      },
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/"
-    },
-    plugins: [
-      new ESLintPlugin({emitWarning: true, extensions: ["js"], failOnError: false})
-    ],
-    resolve: {
-      extensions: [".js"],
-      modules: [
-        path.resolve(__dirname, "scripts"),
-        path.resolve(__dirname, "src"),
-        path.resolve(__dirname, "node_modules")
-      ]
-    },
-    target: "node"
-  };
-
   const browser = env.platform === "browser";
 
   if(browser) {
@@ -166,5 +128,5 @@ module.exports = (_env) => {
     config.output.library.export = "default";
   }
 
-  return [config, scriptConfig];
+  return config;
 };

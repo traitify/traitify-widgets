@@ -2,7 +2,10 @@
   "name": "traitify-widgets",
   "version": "3.5.0",
   "description": "Traitiy Widgets",
-  "repository": "github:traitify/traitify-widgets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/traitify/traitify-widgets.git"
+  },
   "main": "./build/traitify.js",
   "files": [
     "build/*"
@@ -19,7 +22,11 @@
     "lint:watch": "esw -w {packages,src,test} --color",
     "prebuild": "mkdirp build",
     "prebuild:compatibility": "mkdirp build",
+    "prei18n-sync:test": "cd packages/i18n-sync && npm install",
+    "prerjp:test": "cd packages/realistic-job-preview && npm install",
     "pretest": "npm run lint",
+    "rjp:dev": "cd packages/realistic-job-preview && npm run dev --",
+    "rjp:test": "cd packages/realistic-job-preview && npm run test --",
     "test": "npm-run-all *:test",
     "traitify:lint": "eslint {src,test}",
     "traitify:test": "jest --config test/jest.config.js --coverage",

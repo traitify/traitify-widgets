@@ -44,7 +44,7 @@
   "repository": {
     "directory": "packages/realistic-job-preview",
     "type": "git",
-    "url": "https://github.com/github:traitify/traitify-widgets.git"
+    "url": "https://github.com/traitify/traitify-widgets.git"
   },
   "scripts": {
     "build": "webpack --define-process-env-node-env production --progress",

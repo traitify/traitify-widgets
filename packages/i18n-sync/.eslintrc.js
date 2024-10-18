@@ -3,6 +3,7 @@ module.exports = {
     node: true
   },
   extends: ["traitify"],
+  ignorePatterns: ["build/*", "public/*"],
   rules: {
     "import/no-extraneous-dependencies": "off"
   },

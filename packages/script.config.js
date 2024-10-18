@@ -5,8 +5,8 @@ module.exports = ({name}) => {
   const environment = process.env.NODE_ENV || "development";
   const config = {
     context: path.resolve(__dirname, name),
-    mode: environment,
     entry: {[name]: `./index.js`},
+    mode: environment,
     module: {
       rules: [
         {
@@ -17,14 +17,15 @@ module.exports = ({name}) => {
       ]
     },
     output: {
-      filename: "packages/[name].js",
+      clean: true,
+      filename: `${name}.js`,
       globalObject: "this",
       library: {
         name: "Traitify",
         type: "umd",
         umdNamedDefine: true
       },
-      path: path.resolve(__dirname, "../build"),
+      path: path.resolve(__dirname, `${name}/build`),
       publicPath: "/"
     },
     plugins: [
@@ -45,7 +46,6 @@ module.exports = ({name}) => {
         path.resolve(__dirname, `${name}/node_modules`)
       ]
     },
-    stats: "minimal",
     target: "node"
   };
 

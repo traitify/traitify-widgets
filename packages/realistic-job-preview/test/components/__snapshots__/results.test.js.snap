@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results renders component 1`] = `
+<div
+  className="rjp--container rjp--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="h1"
+    >
+      You've successfully completed the preview!
+    </div>
+    <div
+      className="p"
+    >
+      Thank you for completing the realistic job preview. I hope this gave you insight on what this job may be like.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results renders nothing 1`] = `
+<div
+  className="rjp--container rjp--color-scheme-light"
+/>
+`;

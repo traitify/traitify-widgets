@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default renders nothing 1`] = `
+<div
+  className="rjp--container rjp--color-scheme-light"
+/>
+`;
+
+exports[`Default renders results 1`] = `
+<div
+  className="rjp--container rjp--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Results
+  </div>
+</div>
+`;
+
+exports[`Default renders survey 1`] = `
+<div
+  className="rjp--container rjp--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Survey
+  </div>
+</div>
+`;

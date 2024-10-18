@@ -1,0 +1,26 @@
+@import "traitify/style/helpers";
+
+.container {
+  @extend %container;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: $breakpoint-sm;
+  min-height: 100svh;
+  padding: $buffer $buffer-lg;
+  text-align: center;
+
+  @include min-width("sm") {
+    min-height: $breakpoint-sm;
+
+  }
+}
+.h1 {
+  font-size: $font-size-heading;
+  margin-bottom: $buffer-sm;
+  margin-top: 0;
+
+  @include theme("color", "theme");
+}

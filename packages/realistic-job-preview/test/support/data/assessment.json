@@ -1,0 +1,66 @@
+{
+  "completedAt": null,
+  "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "insertedAt": 1544219120952,
+  "instructions": "Instruction for rjp pm",
+  "jobId": "0d8a26a2-bc83-49bd-aea5-05a27734f112",
+  "localeKey": "en-us",
+  "minCorrectResponseToFit": 1,
+  "profileId": "7129b805-f631-4c5a-a2fa-092b992136b6",
+  "responses": [
+    {
+      "id": "r1",
+      "isCorrectResponse": true,
+      "isQuestionRequired": false,
+      "questionId": "q1",
+      "questionText": "Do you like this job ? ",
+      "responseOptions": [
+        {
+          "isCorrect": false,
+          "responseOptionId": "q1-o1",
+          "responseOptionText": "I don't like it"
+        },
+        {
+          "isCorrect": true,
+          "responseOptionId": "q1-o2",
+          "responseOptionText": "I like it"
+        }
+      ],
+      "rjpAssessmentId": "rjp-id",
+      "selectedResponseOptionId": "q1-o2",
+      "selectedResponseOptionText": "I like it"
+    },
+    {
+      "id": "r2",
+      "isCorrectResponse": false,
+      "isQuestionRequired": true,
+      "questionId": "q2",
+      "questionText": "Question test 1 (required)",
+      "responseOptions": [
+        {
+          "isCorrect": true,
+          "responseOptionId": "q2-o1",
+          "responseOptionText": "Yes"
+        },
+        {
+          "isCorrect": false,
+          "responseOptionId": "q2-o2",
+          "responseOptionText": "No"
+        }
+      ],
+      "rjpAssessmentId": "rjp-id",
+      "selectedResponseOptionId": "q2-o1",
+      "selectedResponseOptionText": "Yes"
+    }
+  ],
+  "rjpId": "rjp-id",
+  "rjpVideoUrls": [
+    {
+      "thumbnailUrl": "https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg",
+      "videoUrl": "https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.mp4"
+    }
+  ],
+  "startedAt": 1544219130254,
+  "totalCorrectResponses": 1,
+  "updatedAt": 1544219130254
+}

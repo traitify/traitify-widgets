@@ -1,0 +1,56 @@
+{
+  "author": "Traitify <traitify-dev@paradox.ai> (www.traitify.com)",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "core-js": "^3.37.1",
+    "markdown-to-jsx": "^7.5.0",
+    "prop-types": "^15.8.1",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "dependenciesNotes": {},
+  "description": "Realistic Job Preview",
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-export-default-from": "^7.24.7",
+    "@babel/runtime": "^7.25.6",
+    "babel-jest": "^29.7.0",
+    "babel-preset-airbnb": "^5.0.0",
+    "css-loader": "^7.1.2",
+    "eslint-webpack-plugin": "^4.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "postcss-loader": "^8.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-test-renderer": "^18.3.1",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "devDependenciesNotes": {},
+  "keywords": [
+    "jobs",
+    "traitify",
+    "widgets"
+  ],
+  "license": "MIT",
+  "main": "./build/realistic-job-preview.js",
+  "name": "realistic-job-preview",
+  "repository": {
+    "directory": "packages/realistic-job-preview",
+    "type": "git",
+    "url": "https://github.com/github:traitify/traitify-widgets.git"
+  },
+  "scripts": {
+    "build": "webpack --define-process-env-node-env production --progress",
+    "dev": "webpack serve --env platform=browser",
+    "test": "jest --config test/jest.config.js --coverage",
+    "test:watch": "jest --config test/jest.config.js --watch"
+  },
+  "version": "0.0.0"
+}

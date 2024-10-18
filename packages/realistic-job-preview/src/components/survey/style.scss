@@ -1,0 +1,122 @@
+@import "traitify/style/helpers";
+
+.container {
+  @extend %container;
+
+  border: $border-width solid;
+  border-radius: $border-radius;
+  margin: 0 auto;
+  max-width: $breakpoint-sm;
+  min-height: 100svh;
+  padding: $buffer $buffer-lg;
+
+  @include min-width("sm") {
+    min-height: initial;
+
+    .h1, .h2 { margin-bottom: $buffer-sm; }
+  }
+  & {
+    @include theme("background-color", "background");
+    @include theme("border-color", "border");
+  }
+  .back {
+    align-items: center;
+    border: $border-width solid;
+    display: inline-flex;
+    font-size: $font-size-sm;
+    gap: $buffer-sm;
+    margin-top: $buffer;
+
+    @include theme("border-color", "border");
+    @include buttonLight("white");
+
+    &:active, &:hover {
+      @include theme("background", "theme");
+      @include theme("border-color", "theme");
+      @include theme("color", "text-light");
+    }
+    & { padding: $buffer-sm * 0.5 $buffer; }
+    :global(.traitify--icon-fa) { font-size: $font-size; }
+  }
+  .btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+
+    @include buttonDark("theme");
+  }
+  .h1 { font-size: $font-size-heading; }
+  .h2 { font-size: $font-size-lg; }
+  .h1, .h2 {
+    font-weight: normal;
+    margin-top: 0;
+    text-align: center;
+
+    @include theme("color", "theme");
+  }
+  .p { @extend %paragraph; }
+  video {
+    border-radius: $border-radius;
+    display: block;
+    height: auto;
+    margin: $buffer-sm auto $buffer-lg auto;
+    width: 100%;
+  }
+}
+.divider {
+  border-top: $border-width solid;
+  margin: $buffer 0;
+
+  @include theme("border-top-color", "border");
+}
+.loading {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include min-width("sm") { min-height: $breakpoint-sm; }
+}
+.options {
+  display: grid;
+  gap: $buffer-lg;
+  grid-template-columns: repeat(2, 1fr);
+
+  button {
+    border: $border-width solid;
+    text-align: center;
+
+    @include theme("border-color", "border");
+    @include buttonLight("white");
+
+    &:active, &:hover {
+      @include theme("background", "theme");
+      @include theme("border-color", "theme");
+      @include theme("color", "text-light");
+    }
+  }
+}
+.progress {
+  border-radius: $border-radius-sm;
+  height: 100%;
+  transition: width 0.3s;
+  width: 0%;
+
+  @include theme("background-color", "progress-bar");
+}
+.progressBar {
+  border-radius: $border-radius-sm;
+  height: $border-width-xl;
+  margin-bottom: $buffer;
+
+  @include theme("background-color", "border");
+}
+.secondaryInstructions {
+  border: $border-width solid;
+  border-radius: $border-radius;
+  padding: $buffer;
+
+  @include theme("border-color", "border");
+}

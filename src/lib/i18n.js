@@ -11,11 +11,12 @@ export default class I18n {
     const locale = _locale.toLowerCase();
     const currentData = this.data[locale] || {};
 
+    // TODO: Deep merge
     this.data[locale] = {
       ...currentData,
       ...data
     };
-    this.supportedLocales[locale] = name;
+    if(name) { this.supportedLocales[locale] = name; }
   }
   copyTranslations(_originLocale, _targetLocale) {
     const originLocale = _originLocale.toLowerCase();

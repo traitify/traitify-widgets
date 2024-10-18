@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useI18n returns i18n 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  Tools To Use
+</div>
+`;

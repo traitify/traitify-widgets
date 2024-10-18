@@ -1,39 +1,16 @@
-// NOTE: Mirror updates in lib/recoil/cache
-export function getCacheKey(type, options = {}) {
-  /* eslint-disable no-console */
-  let {id} = options;
-  const keys = options.scope ? [...options.scope] : [];
-  const locale = options.locale || console.warn("Missing locale");
-
-  switch(type) {
-    case "assessment":
-      id = id || console.warn("Missing assessmentID");
-      break;
-    case "benchmark":
-      id = id || console.warn("Missing benchmarkID");
-      break;
-    case "deck":
-      id = id || console.warn("Missing deckID");
-      break;
-    case "guide":
-      id = id || console.warn("Missing ID");
-      if(options.benchmarkID) { keys.push(`benchmark-${options.benchmarkID}`); }
-      break;
-    default:
-      id = id || console.warn("Missing ID");
-  }
-  /* eslint-enable no-console */
-
-  return ["v3", locale, type, id, ...keys].filter(Boolean).join(".").toLowerCase();
-}
-
 export default class Cache {
+  constructor({namespace} = {}) {
+    this.namespace = namespace;
+  }
   clear = () => {
     try {
       return sessionStorage.clear();
     } catch(error) { return null; }
   };
-  get = (key) => {
+  getKey = (name) => [this.namespace, name].filter(Boolean).join("-");
+  get = (_key) => {
+    const key = this.getKey(_key);
+
     try {
       const data = sessionStorage.getItem(key);
       if(!data) { return data; }
@@ -47,12 +24,16 @@ export default class Cache {
       return null;
     } catch(error) { return null; }
   };
-  remove = (key) => {
+  remove = (_key) => {
+    const key = this.getKey(_key);
+
     try {
       return sessionStorage.removeItem(key);
     } catch(error) { return null; }
   };
-  set = (key, value, options = {}) => {
+  set = (_key, value, options = {}) => {
+    const key = this.getKey(_key);
+
     try {
       const data = {value};
       if(options.expiresAt) { data.expiresAt = options.expiresAt; }

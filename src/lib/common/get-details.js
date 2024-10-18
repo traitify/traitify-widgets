@@ -1,4 +1,4 @@
-import capitalize from "lib/common/string/capitalize";
+import capitalize from "./string/capitalize";
 
 const detailsFrom = ({name, personality}) => {
   let details = personality.details

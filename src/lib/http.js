@@ -1,4 +1,4 @@
-import toQueryString from "lib/common/object/to-query-string";
+import toQueryString from "./common/object/to-query-string";
 
 export default class Http {
   constructor({authKey, host, version} = {}) {

@@ -1,5 +1,5 @@
 import {atom, selector, selectorFamily} from "recoil";
-import {getCacheKey} from "lib/cache";
+import getCacheKey from "lib/common/get-cache-key";
 
 export const activeState = atom({default: null, key: "active"});
 export const baseState = atom({default: {}, key: "base"});

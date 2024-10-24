@@ -2,8 +2,8 @@ import {act} from "react-test-renderer";
 import mutable from "traitify/lib/common/object/mutable";
 import Component from "components/survey";
 import Instructions from "components/survey/instructions";
-import {getCacheKey} from "lib/hooks/use-cache-key";
 import ComponentHandler from "support/component-handler";
+import {mockAssessment, mockAssessmentStarted, mockAssessmentSubmit} from "support/container/http";
 import _assessment from "support/data/assessment.json";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
@@ -12,16 +12,15 @@ jest.mock("components/survey/instructions", () => (() => <div className="mock">I
 
 describe("Survey", () => {
   let assessment;
-  let cacheKey;
   let component;
 
   useContainer();
 
   beforeEach(() => {
     assessment = mutable(_assessment);
-    container.assessmentID = assessment.rjpId;
-    cacheKey = `request.${getCacheKey({...container, type: "assessment"})}`;
-    container.listener.current[cacheKey] = assessment;
+    assessment.startedAt = assessment.insertedAt;
+
+    mockAssessment(assessment);
   });
 
   describe("callbacks", () => {
@@ -74,11 +73,38 @@ describe("Survey", () => {
     });
   });
 
+  describe("start", () => {
+    it("renders component", async() => {
+      assessment.startedAt = null;
+      mockAssessment(assessment);
+      component = await ComponentHandler.setup(Component);
+      mockAssessmentStarted(assessment);
+      act(() => { component.instance.findByType(Instructions).props.onStart(); });
+
+      await flushAsync();
+
+      expect(component.tree).toMatchSnapshot();
+    });
+  });
+
   describe("submit", () => {
     it("renders component", async() => {
       component = await ComponentHandler.setup(Component);
       act(() => { component.instance.findByType(Instructions).props.onStart(); });
       act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[0].props.onClick(); });
+      mockAssessmentSubmit({...assessment, completedAt: assessment.insertedAt});
+      act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[1].props.onClick(); });
+
+      await flushAsync();
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders loading", async() => {
+      component = await ComponentHandler.setup(Component);
+      act(() => { component.instance.findByType(Instructions).props.onStart(); });
+      act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[0].props.onClick(); });
+      mockAssessmentSubmit({implementation: () => new Promise(() => {})});
       act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[1].props.onClick(); });
 
       await flushAsync();
@@ -95,7 +121,7 @@ describe("Survey", () => {
 
   it("renders nothing", async() => {
     assessment.completedAt = assessment.insertedAt;
-    container.listener.current[cacheKey] = assessment;
+    mockAssessment(assessment);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -103,6 +129,7 @@ describe("Survey", () => {
 
   it("renders nothing without assessment", async() => {
     container.assessmentID = null;
+    mockAssessment(null);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

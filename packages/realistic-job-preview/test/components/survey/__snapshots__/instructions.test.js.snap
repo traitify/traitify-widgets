@@ -23,10 +23,10 @@ exports[`Instructions renders component 1`] = `
       onError={[Function]}
       onPlay={[Function]}
       playsInline={true}
-      poster="https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg"
+      poster="https://images.ctfassets.net/4pzvszxmf15y/2zKFPfTtgXwNPsmI3yYiG2/afea442075d770eb08b1b755e2b20fa4/O_ArtIsntMyThing_Slide_v5.jpg"
     >
       <source
-        src="https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.mp4"
+        src="https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg"
         type="video/mp4"
       />
     </video>
@@ -57,10 +57,10 @@ exports[`Instructions renders secondary instructions 1`] = `
       onError={[Function]}
       onPlay={[Function]}
       playsInline={true}
-      poster="https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg"
+      poster="https://images.ctfassets.net/4pzvszxmf15y/2zKFPfTtgXwNPsmI3yYiG2/afea442075d770eb08b1b755e2b20fa4/O_ArtIsntMyThing_Slide_v5.jpg"
     >
       <source
-        src="https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.mp4"
+        src="https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg"
         type="video/mp4"
       />
     </video>

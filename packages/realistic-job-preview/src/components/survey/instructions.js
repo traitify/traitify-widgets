@@ -17,12 +17,13 @@ function Instructions({onStart}) {
   const translate = useTranslate();
   const [ready, setReady] = useState(false);
   const onPlay = () => setReady(true);
+  if(!assessment) { return null; }
 
   return (
     <div className={style.container}>
       <div className={style.h1}>{translate("rjp.instructions.heading") || "Realistic Job Preview Instructions"}</div>
       <Markdown className={style.text}>{assessment.instructions}</Markdown>
-      {assessment.rjpVideoUrls.map(({thumbnailUrl, videoUrl}) => (
+      {assessment.videos.map(({thumbnailUrl, videoUrl}) => (
         <video
           key={videoUrl}
           onError={onPlay}

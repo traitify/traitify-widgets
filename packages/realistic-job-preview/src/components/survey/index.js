@@ -14,26 +14,13 @@ import useWidgetContext from "lib/hooks/use-widget-context";
 import Instructions from "./instructions";
 import style from "./style.scss";
 
-const testing = true;
-const createTestingData = ({id, localeKey, ...assessment}) => ({
-  data: {
-    updateRealisticJobPreviewAssessment: {
-      ...assessment,
-      completedAt: Date.now(),
-      localeKey,
-      rjpId: id
-    }
-  }
-});
-
 export default function Survey() {
   const assessment = useAssessment();
   const cacheKey = useCacheKey({type: "assessment"});
   const refreshAssessment = useDataRefresh({key: cacheKey});
-  const {assessmentID, cache, locale, http} = useWidgetContext();
+  const {assessmentID, cache, http} = useWidgetContext();
   const [questionIndex, setQuestionIndex] = useState(null);
   const [responses, setResponses] = useState([]);
-  const [startTime, setStartTime] = useState(null);
   const [submitAttempts, setSubmitAttempts] = useState(0);
   const submitting = useRef(false);
   const translate = useTranslate();
@@ -46,18 +33,26 @@ export default function Survey() {
   const onSelect = (response) => {
     const updatedResponses = [...responses];
     updatedResponses[questionIndex] = {
-      questionId: question.questionID,
-      questionText: question.questionText,
-      selectedResponseOptionId: response.responseOptionId,
-      selectedResponseOptionText: response.responseOptionText
+      questionId: question.questionId,
+      selectedResponseOptionId: response.responseOptionId
     };
 
     setResponses(updatedResponses);
     setQuestionIndex(questionIndex + 1);
   };
-  const onStart = () => {
+  const onStart = async() => {
     setQuestionIndex(0);
-    setStartTime(Date.now());
+
+    if(assessment.startedAt) { return; }
+
+    const params = {
+      query: graphql.start,
+      variables: {assessmentID}
+    };
+    const response = await http.post(graphql.path, params).catch((errors) => ({errors}));
+    if(response.errors) {
+      console.warn("start", response.errors); /* eslint-disable-line no-console */
+    }
   };
   const onSubmit = async() => {
     if(assessment.completedAt) { return; }
@@ -67,25 +62,18 @@ export default function Survey() {
     const params = {
       query: graphql.update,
       variables: {
-        id: assessmentID,
-        localeKey: locale,
-        responses,
-        startTime
+        answers: responses,
+        assessmentID
       }
     };
-    const response = testing
-      ? createTestingData({assessment, ...params.variables})
-      : await http.post(graphql.path, params).catch((errors) => ({errors}));
-
+    const response = await http.post(graphql.path, params).catch((errors) => ({errors}));
     if(response.errors) {
-      console.warn("test", response.errors); /* eslint-disable-line no-console */
+      console.warn("submit", response.errors); /* eslint-disable-line no-console */
       setSubmitAttempts((x) => x + 1);
       return;
     }
 
-    const data = response.data.updateRealisticJobPreviewAssessment;
-    data.id = data.rjpId;
-
+    const data = response.data.updateAssessmentAnswer;
     if(data.completedAt) {
       cache.set(cacheKey, data);
       refreshAssessment();

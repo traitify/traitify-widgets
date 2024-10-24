@@ -1,6 +1,7 @@
 import Cache from "traitify/lib/cache";
 import Http from "traitify/lib/http";
 import Listener from "traitify/lib/listener";
+import useStorage from "support/hooks/use-storage";
 
 const cacheMethods = ["get", "remove", "set"];
 const httpMethods = ["delete", "fetch", "get", "post", "put", "request"];
@@ -16,6 +17,8 @@ export default function useContainer(props) {
   if(!container.options) { container.options = {}; }
 
   global.container = container;
+
+  useStorage();
 
   beforeEach(() => {
     container.http.mocks = {fetch: []};
@@ -46,6 +49,7 @@ export default function useContainer(props) {
     delete container.assessmentID;
 
     container.cache.clear();
+    container.listener.clear();
 
     cacheMethods.forEach((method) => {
       container.cache[method].mockRestore();

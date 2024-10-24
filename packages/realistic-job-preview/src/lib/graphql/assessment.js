@@ -1,138 +1,167 @@
 export const create = `
-  mutation(
-    $jobID: String!,
+  mutation createAssessment(
     $localeKey: String!,
-    $profileID: String!
+    $profileID: String!,
+    $surveyID: String!
   ) {
-    createRealisticJobPreviewAssessment(
-      jobId: $jobID,
+    createAssessment(
       localeKey: $localeKey,
-      profileId: $profileID
+      profileId: $profileID,
+      surveyId: $surveyID
     ) {
       completedAt
+      failedReason
       id
       insertedAt
       instructions
+      isFit
       jobId
       localeKey
-      minCorrectResponseToFit
       profileId
       responses {
         id
-        isCorrectResponse
-        isQuestionRequired
         questionId
         questionText
         responseOptions {
-          isCorrect
           responseOptionId
           responseOptionText
         }
-        rjpAssessmentId
         selectedResponseOptionId
         selectedResponseOptionText
       }
-      rjpId
-      rjpVideoUrls {
+      startedAt
+      status
+      surveyId
+      totalCorrectResponses
+      updatedAt
+      videos {
         thumbnailUrl
         videoUrl
       }
-      startedAt
-      totalCorrectResponses
-      updatedAt
     }
   }
 `;
 
 export const get = `
-  query(
-    $id: String!,
-    $localeKey: String!
+  query assessment(
+    $assessmentID: ID!
   ) {
-    realisticJobPreviewAssessment(
-      id: $id,
-      localeKey: $localeKey
+    assessment(
+      id: $assessmentID
     ) {
       completedAt
+      failedReason
       id
       insertedAt
       instructions
+      isFit
       jobId
       localeKey
-      minCorrectResponseToFit
       profileId
       responses {
         id
-        isCorrectResponse
-        isQuestionRequired
         questionId
         questionText
         responseOptions {
-          isCorrect
           responseOptionId
           responseOptionText
         }
-        rjpAssessmentId
         selectedResponseOptionId
         selectedResponseOptionText
       }
-      rjpId
-      rjpVideoUrls {
+      startedAt
+      status
+      surveyId
+      totalCorrectResponses
+      updatedAt
+      videos {
         thumbnailUrl
         videoUrl
       }
-      startedAt
-      totalCorrectResponses
-      updatedAt
     }
   }
 `;
 
 export const path = "/realistic-job-previews/graphql";
 
-// TODO: Accept responses and startTime
-export const update = `
-  mutation(
-    $jobID: String!,
-    $localeKey: String!,
-    $profileID: String!
+export const start = `
+  mutation startAssessment(
+    $assessmentID: ID!
   ) {
-    updateRealisticJobPreviewAssessment(
-      jobId: $jobID,
-      localeKey: $localeKey,
-      profileId: $profileID
+    startAssessment(
+      id: $assessmentID
     ) {
       completedAt
+      failedReason
       id
       insertedAt
       instructions
+      isFit
       jobId
       localeKey
-      minCorrectResponseToFit
       profileId
       responses {
         id
-        isCorrectResponse
-        isQuestionRequired
         questionId
         questionText
         responseOptions {
-          isCorrect
           responseOptionId
           responseOptionText
         }
-        rjpAssessmentId
         selectedResponseOptionId
         selectedResponseOptionText
       }
-      rjpId
-      rjpVideoUrls {
+      startedAt
+      status
+      surveyId
+      totalCorrectResponses
+      updatedAt
+      videos {
         thumbnailUrl
         videoUrl
       }
+    }
+  }
+`;
+
+export const update = `
+  mutation updateAssessmentAnswer(
+    $answers: [AssessmentAnswer],
+    $assessmentID: String!
+  ) {
+    updateAssessmentAnswer(
+      answers: $answers,
+      assessmentId: $assessmentID
+    ) {
+      completedAt
+      failedReason
+      id
+      insertedAt
+      instructions
+      isFit
+      jobId
+      localeKey
+      profileId
+      responses {
+        id
+        questionId
+        questionText
+        responseOptions {
+          responseOptionId
+          responseOptionText
+        }
+        selectedResponseOptionId
+        selectedResponseOptionText
+      }
       startedAt
+      status
+      surveyId
       totalCorrectResponses
       updatedAt
+      videos {
+        thumbnailUrl
+        videoUrl
+      }
     }
   }
 `;

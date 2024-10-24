@@ -10,7 +10,7 @@ const listenerMethods = ["clear", "off", "on", "trigger", "value"];
 export default function useContainer(props) {
   const container = {...props};
 
-  if(!container.cache) { container.cache = new Cache(); }
+  if(!container.cache) { container.cache = new Cache({namespace: "test"}); }
   if(!container.http) { container.http = new Http(); }
   if(!container.listener) { container.listener = new Listener(); }
   if(!container.options) { container.options = {}; }

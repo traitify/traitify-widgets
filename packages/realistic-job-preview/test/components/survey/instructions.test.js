@@ -1,14 +1,13 @@
 import {act} from "react-test-renderer";
 import mutable from "traitify/lib/common/object/mutable";
 import Component from "components/survey/instructions";
-import {getCacheKey} from "lib/hooks/use-cache-key";
 import ComponentHandler from "support/component-handler";
+import {mockAssessment} from "support/container/http";
 import _assessment from "support/data/assessment.json";
 import useContainer from "support/hooks/use-container";
 
 describe("Instructions", () => {
   let assessment;
-  let cacheKey;
   let component;
   let props;
 
@@ -16,10 +15,9 @@ describe("Instructions", () => {
 
   beforeEach(() => {
     assessment = mutable(_assessment);
-    container.assessmentID = assessment.rjpId;
-    cacheKey = `request.${getCacheKey({...container, type: "assessment"})}`;
-    container.listener.current[cacheKey] = assessment;
     props = {onStart: jest.fn().mockName("onStart")};
+
+    mockAssessment(assessment);
   });
 
   describe("start", () => {

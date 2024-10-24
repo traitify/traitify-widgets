@@ -1,66 +1,58 @@
 {
   "completedAt": null,
-  "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "insertedAt": 1544219120952,
+  "failedReason": null,
+  "id": "9b40a5f2-592c-4fc2-aca6-5ebcdab6db5a",
+  "insertedAt": "2024-10-24 20:17:40",
   "instructions": "Instruction for rjp pm",
+  "isFit": false,
   "jobId": "0d8a26a2-bc83-49bd-aea5-05a27734f112",
   "localeKey": "en-us",
-  "minCorrectResponseToFit": 1,
   "profileId": "7129b805-f631-4c5a-a2fa-092b992136b6",
   "responses": [
     {
-      "id": "r1",
-      "isCorrectResponse": true,
-      "isQuestionRequired": false,
-      "questionId": "q1",
+      "id": "ba474f2d-7b43-44c9-9ff3-95050c963ce7",
+      "questionId": "8c25b397-7e4b-5176-b6ff-6859494ee7fc",
       "questionText": "Do you like this job ? ",
       "responseOptions": [
         {
-          "isCorrect": false,
-          "responseOptionId": "q1-o1",
+          "responseOptionId": "da22ad89-0478-5743-9b8a-ff1ff7f0d948",
           "responseOptionText": "I don't like it"
         },
         {
-          "isCorrect": true,
-          "responseOptionId": "q1-o2",
+          "responseOptionId": "0e87a737-6f23-5f61-8e3e-32929ebe2e21",
           "responseOptionText": "I like it"
         }
       ],
-      "rjpAssessmentId": "rjp-id",
-      "selectedResponseOptionId": "q1-o2",
-      "selectedResponseOptionText": "I like it"
+      "selectedResponseOptionId": null,
+      "selectedResponseOptionText": null
     },
     {
-      "id": "r2",
-      "isCorrectResponse": false,
-      "isQuestionRequired": true,
-      "questionId": "q2",
+      "id": "82dcb7d8-37bc-4829-9031-1c390f7f0c22",
+      "questionId": "e5dcc2ed-2df5-5fce-a299-a03b1df5e6ca",
       "questionText": "Question test 1 (required)",
       "responseOptions": [
         {
-          "isCorrect": true,
-          "responseOptionId": "q2-o1",
+          "responseOptionId": "8b0e9c72-a0f9-56ae-b1c1-08aabb9222cb",
           "responseOptionText": "Yes"
         },
         {
-          "isCorrect": false,
-          "responseOptionId": "q2-o2",
+          "responseOptionId": "2372481d-c06b-5d32-8790-11d53ac676b7",
           "responseOptionText": "No"
         }
       ],
-      "rjpAssessmentId": "rjp-id",
-      "selectedResponseOptionId": "q2-o1",
-      "selectedResponseOptionText": "Yes"
+      "selectedResponseOptionId": null,
+      "selectedResponseOptionText": null
     }
   ],
-  "rjpId": "rjp-id",
-  "rjpVideoUrls": [
+  "startedAt": "2024-10-24 20:21:55",
+  "status": "INCOMPLETE",
+  "surveyId": "2fcca917-9658-5a06-a64c-17d9c5fe7362",
+  "totalCorrectResponses": null,
+  "updatedAt": "2024-10-24 20:21:55",
+  "videos": [
     {
-      "thumbnailUrl": "https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg",
-      "videoUrl": "https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.mp4"
+      "thumbnailUrl": "https://images.ctfassets.net/4pzvszxmf15y/2zKFPfTtgXwNPsmI3yYiG2/afea442075d770eb08b1b755e2b20fa4/O_ArtIsntMyThing_Slide_v5.jpg",
+      "videoUrl": "https://images.ctfassets.net/4pzvszxmf15y/41I1X3uogzwJGRQEfLOclo/082d1856d8f5ad53a535c9d7664639a5/PersonalBest_slide_v4.jpg"
     }
-  ],
-  "startedAt": 1544219130254,
-  "totalCorrectResponses": 1,
-  "updatedAt": 1544219130254
+  ]
 }

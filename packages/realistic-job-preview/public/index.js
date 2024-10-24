@@ -50,20 +50,16 @@ function booleanFrom(value, fallback) {
 function createAssessment() {
   const query = RJP.GraphQL.assessment.create;
   const variables = {
-    jobID: cache.get("jobID"),
     localeKey: cache.get("locale"),
-    profileID: cache.get("profileID")
+    profileID: cache.get("profileID"),
+    surveyID: cache.get("surveyID")
   };
-
-  // TODO: Remove
-  console.log("createAssessment", "Setting test ID");
-  cache.set("assessmentID", "testing-id");
 
   RJP.http.post(RJP.GraphQL.assessment.path, {query, variables}).then((response) => {
     console.log("createAssessment", response);
 
     try {
-      const id = response.data.createRealisticJobPreviewAssessment.rjpId;
+      const {id} = response.data.createAssessment;
 
       cache.set("assessmentID", id);
     } catch(error) {
@@ -187,8 +183,8 @@ function setupDom() {
     options: [{text: "Production", value: "production"}, {text: "Staging", value: "staging"}],
     text: "Environment:"
   }));
-  group.appendChild(createOption({name: "jobID", text: "Job ID:"}));
   group.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
+  group.appendChild(createOption({name: "surveyID", text: "Survey ID:"}));
 
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create"}));
@@ -217,6 +213,7 @@ function onInputChange(e) {
   cache.set(name, value);
 }
 
+// TODO: Get list of surveys
 setupTraitify();
 setupDom();
 createWidget();

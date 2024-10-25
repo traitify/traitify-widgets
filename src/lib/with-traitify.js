@@ -178,7 +178,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
 
       if(this.ui.requests[key] && !options.force) { return this.ui.requests[key]; }
 
-      const imagePack = imagePacks[this.getOption("theme")] || this.ui.options.imagePack;
+      const imagePack = imagePacks[this.getOption("theme")] || this.ui.options.imagePack || "linear";
       const params = {
         data: "archetype,blend,instructions,recommendation,slides,types,traits",
         locale_key: locale
@@ -251,7 +251,7 @@ export default function withTraitify(WrappedComponent, themeComponents = {}) {
       switch(type) {
         case "assessment":
           id = id || this.state.assessmentID;
-          keys.push(imagePacks[this.getOption("theme")] || this.ui.options.imagePack);
+          keys.push(imagePacks[this.getOption("theme")] || this.ui.options.imagePack || "linear");
           break;
         case "benchmark":
           id = id || this.state.benchmarkID;

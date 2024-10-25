@@ -120,9 +120,12 @@ export default class CanvasRadarChart {
     this.ctx.stroke();
   }
   renderLabels() {
+    const height = 100;
+    const width = 100;
+
     this.grid.axes.forEach((axis, index) => {
       const label = this.labels[index];
-      axis.img = new Image();
+      axis.img = new Image(width, height);
       axis.img.src = label.image;
       axis.img.onload = () => {
         const diagonal = Math.sqrt((axis.img.width ** 2) + (axis.img.height ** 2));
@@ -130,7 +133,7 @@ export default class CanvasRadarChart {
           + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.cos(axis.angle);
         const y = (this.grid.center.y - axis.img.height / 2)
           + (this.grid.radius + (diagonal / 2) * 1.10) * -Math.sin(axis.angle);
-        this.ctx.drawImage(axis.img, x, y);
+        this.ctx.drawImage(axis.img, x, y, axis.img.width, axis.img.height);
 
         this.renderLabelText(label, x + axis.img.width / 2, y + axis.img.height);
       };

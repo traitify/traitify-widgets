@@ -340,7 +340,7 @@ describe("withTraitify", () => {
       component.instance.updateAssessment = function() {
         if(!this.state.assessmentID) { return; }
 
-        const key = `${this.state.locale}.assessment.${this.state.assessmentID}`;
+        const key = `${this.state.locale}.assessment.${this.state.assessmentID}.linear`;
 
         this.listeners[key] = (_, _assessment) => {
           this.setState({
@@ -420,7 +420,7 @@ describe("withTraitify", () => {
 
     it("stops if there's an existing request", () => {
       assessment = assessmentWithoutResults;
-      const key = `en-us.assessment.${assessment.id}`;
+      const key = `en-us.assessment.${assessment.id}.linear`;
       const request = new Promise(() => {});
       traitify.ui.requests[key] = request;
       component.updateProps({assessmentID: assessment.id});
@@ -431,7 +431,7 @@ describe("withTraitify", () => {
 
     it("forces new request", () => {
       assessment = assessmentWithoutResults;
-      const key = `en-us.assessment.${assessment.id}`;
+      const key = `en-us.assessment.${assessment.id}.linear`;
       const request = new Promise(() => {});
       traitify.ui.requests[key] = request;
       component.updateProps({assessmentID: assessment.id});
@@ -442,7 +442,7 @@ describe("withTraitify", () => {
 
     it("catches error with request", () => {
       assessment = assessmentWithoutResults;
-      const key = `en-us.assessment.${assessment.id}`;
+      const key = `en-us.assessment.${assessment.id}.linear`;
       traitify.ajax.mockReturnValue(Promise.reject("Error with request"));
       component.updateProps({assessmentID: assessment.id});
 
@@ -1457,7 +1457,7 @@ describe("withTraitify", () => {
     });
 
     it("removes old listener if assessment changes", () => {
-      const key = `en-us.assessment.${assessment.id}`;
+      const key = `en-us.assessment.${assessment.id}.linear`;
       component.instance.removeListener = jest.fn().mockName("removeListener");
       component.instance.updateAssessment({oldID: assessment.id});
 
@@ -1465,7 +1465,7 @@ describe("withTraitify", () => {
     });
 
     it("removes old listener if locale changes", () => {
-      const key = `es-us.assessment.${assessment.id}`;
+      const key = `es-us.assessment.${assessment.id}.linear`;
       component.updateState({assessmentID: assessment.id});
       component.instance.removeListener = jest.fn().mockName("removeListener");
       component.instance.updateAssessment({oldLocale: "es-us"});
@@ -1491,7 +1491,7 @@ describe("withTraitify", () => {
     });
 
     it("uses current value", () => {
-      const key = `en-us.assessment.${assessment.id}`;
+      const key = `en-us.assessment.${assessment.id}.linear`;
       traitify.ui.current[key] = assessment;
       component.updateState({assessmentID: assessment.id});
       component.instance.setState = jest.fn().mockName("setState");

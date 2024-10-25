@@ -7,3 +7,4 @@
 yarn.lock
 /.vscode
 /test/karma.browserstack.conf.js
+/packages

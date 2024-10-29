@@ -154,6 +154,11 @@
     "benchmarks": {
       "current": "Current Benchmark",
       "search": "Search for Benchmark"
+    },
+    "reports": {
+      "candidate": "Candidate Report",
+      "employee": "Engage Employee Report",
+      "manager": "Hiring Manager Report"
     }
   },
   "room_for_growth_and_change": "Room for Growth and Change",

@@ -52,5 +52,5 @@
     "test": "jest --config test/jest.config.js --coverage",
     "test:watch": "jest --config test/jest.config.js --watch"
   },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

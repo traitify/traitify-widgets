@@ -184,12 +184,31 @@ function setupDom() {
     text: "Environment:"
   }));
   group.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
-  group.appendChild(createOption({name: "surveyID", text: "Survey ID:"}));
+  group.appendChild(createElement({id: "survey-options"}));
 
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create"}));
   group.appendChild(row);
   document.body.appendChild(group);
+}
+
+function setupSurveys() {
+  const query = RJP.GraphQL.survey.list;
+
+  RJP.http.post(RJP.GraphQL.survey.path, {query}).then((response) => {
+    const options = response.data.realisticJobPreviews
+      .map(({id, name}) => ({text: name, value: id}))
+      .sort((a, b) => a.text.localeCompare(b.text));
+    const surveyID = cache.get("surveyID")
+    if(!surveyID) { cache.set("surveyID", options[0].value); }
+
+    document.querySelector("#survey-options").appendChild(createOption({
+      name: "surveyID",
+      onChange: onInputChange,
+      options,
+      text: "Survey:"
+    }));
+  });
 }
 
 function setupTraitify() {
@@ -213,7 +232,7 @@ function onInputChange(e) {
   cache.set(name, value);
 }
 
-// TODO: Get list of surveys
 setupTraitify();
 setupDom();
+setupSurveys();
 createWidget();

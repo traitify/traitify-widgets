@@ -279,6 +279,19 @@ export const mockSettings = (settings) => (
   })
 );
 
+export const mockTranslations = (translations) => (
+  mockFetch({
+    key: "translate",
+    request: (url, options) => {
+      if(!url.includes("/xavier/translations")) { return false; }
+      if(options.method !== "GET") { return false; }
+
+      return true;
+    },
+    response: () => translations
+  })
+);
+
 export const mockUserCompletedFeedback = (assessmentId, completed = false) => (
   mockFetch({
     key: "user-completed-feedback",
@@ -316,3 +329,6 @@ export const useHighlightedCareers = (...options) => {
   beforeEach(() => { mockHighlightedCareers(...options); });
 };
 export const useSettings = (...options) => { beforeEach(() => { mockSettings(...options); }); };
+export const useTranslations = (...options) => {
+  beforeEach(() => { mockTranslations(...options); });
+};

@@ -1,8 +1,11 @@
 {
   "name": "traitify-widgets",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "description": "Traitiy Widgets",
-  "repository": "github:traitify/traitify-widgets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/traitify/traitify-widgets.git"
+  },
   "main": "./build/traitify.js",
   "files": [
     "build/*"
@@ -19,6 +22,7 @@
     "lint:watch": "esw -w {packages,src,test} --color",
     "prebuild": "mkdirp build",
     "prebuild:compatibility": "mkdirp build",
+    "prei18n-sync:test": "cd packages/i18n-sync && npm install",
     "pretest": "npm run lint",
     "test": "npm-run-all *:test",
     "traitify:lint": "eslint {src,test}",

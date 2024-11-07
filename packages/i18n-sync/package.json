@@ -17,13 +17,12 @@
   },
   "devDependenciesNotes": {},
   "license": "MIT",
-  "main": "../../build/packages/i18n-sync.js",
   "name": "@traitify/i18n-sync",
   "private": true,
   "repository": {
     "directory": "packages/i18n-sync",
     "type": "git",
-    "url": "https://github.com/github:traitify/traitify-widgets.git"
+    "url": "https://github.com/traitify/traitify-widgets.git"
   },
   "scripts": {
     "build": "webpack --define-process-env-node-env production --progress",

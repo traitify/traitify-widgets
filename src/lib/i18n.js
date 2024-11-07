@@ -1,4 +1,5 @@
 import dig from "./common/object/dig";
+import merge from "./common/object/merge";
 import i18nData from "./i18n-data";
 
 export default class I18n {
@@ -11,11 +12,8 @@ export default class I18n {
     const locale = _locale.toLowerCase();
     const currentData = this.data[locale] || {};
 
-    this.data[locale] = {
-      ...currentData,
-      ...data
-    };
-    this.supportedLocales[locale] = name;
+    this.data[locale] = merge(currentData, data);
+    if(name) { this.supportedLocales[locale] = name; }
   }
   copyTranslations(_originLocale, _targetLocale) {
     const originLocale = _originLocale.toLowerCase();

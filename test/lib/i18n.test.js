@@ -77,15 +77,26 @@ describe("I18n", () => {
 
   describe("translate", () => {
     let translate;
+    let translateES;
 
     beforeEach(() => {
       translate = i18n.translate.bind(null, "en-us");
+      translateES = i18n.translate.bind(null, "es-us");
     });
 
     it("returns translation", () => {
       const translation = translate("me");
 
       expect(translation).toBe("Me");
+    });
+
+    it("returns fallback", () => {
+      i18n.addTranslations("en-US", {data: {tacos: "I like tacos"}});
+      const translation = translate("tacos");
+      const translationES = translateES("tacos");
+
+      expect(translation).not.toBeNull();
+      expect(translation).toBe(translationES);
     });
 
     it("substitutes options", () => {

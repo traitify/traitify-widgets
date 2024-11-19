@@ -33,7 +33,8 @@ export default class I18n {
   }
   translate = (locale, _key, options) => {
     const keys = _key.split(".");
-    const result = dig(this.data, locale.toLowerCase(), ...keys);
+    let result = dig(this.data, locale.toLowerCase(), ...keys);
+    if(!result && locale.toLowerCase() !== "en-us") { result = dig(this.data, "en-us", ...keys); }
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);

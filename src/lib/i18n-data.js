@@ -1,3 +1,4 @@
+import cnhMM from "./i18n-data/cnh-mm.json";
 import deDE from "./i18n-data/de-de.json";
 import enGB from "./i18n-data/en-gb.json";
 import enUS from "./i18n-data/en-us.json";
@@ -12,6 +13,7 @@ import idID from "./i18n-data/id-id.json";
 import itIT from "./i18n-data/it-it.json";
 import jaJP from "./i18n-data/ja-jp.json";
 import koKR from "./i18n-data/ko-kr.json";
+import myMM from "./i18n-data/my-mm.json";
 import nlNL from "./i18n-data/nl-nl.json";
 import noNO from "./i18n-data/no-no.json";
 import ptBR from "./i18n-data/pt-br.json";
@@ -24,6 +26,7 @@ import zhCN from "./i18n-data/zh-cn.json";
 import zhHant from "./i18n-data/zh-hant.json";
 
 export default {
+  "cnh-mm": {data: cnhMM, name: "Hakha Chin"},
   "de-de": {data: deDE, name: "German"},
   "en-gb": {data: enGB, name: "English (GB)"},
   "en-us": {data: enUS, name: "English (US)"},
@@ -38,6 +41,7 @@ export default {
   "it-it": {data: itIT, name: "Italian"},
   "ja-jp": {data: jaJP, name: "Japanese"},
   "ko-kr": {data: koKR, name: "Korean"},
+  "my-mm": {data: myMM, name: "Burmese (Myanmar [Burma])"},
   "nl-nl": {data: nlNL, name: "Dutch"},
   "no-no": {data: noNO, name: "Norwegian"},
   "pt-br": {data: ptBR, name: "Portuguese (Brazil)"},

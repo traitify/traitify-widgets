@@ -1,7 +1,7 @@
-import Cache from "lib/cache";
-import Http from "lib/http";
-import Listener from "lib/listener";
-import {useTranslations} from "../container/http";
+import Cache from "traitify/lib/cache";
+import Http from "traitify/lib/http";
+import Listener from "traitify/lib/listener";
+import useStorage from "support/hooks/use-storage";
 
 const cacheMethods = ["get", "remove", "set"];
 const httpMethods = ["delete", "fetch", "get", "post", "put", "request"];
@@ -10,12 +10,15 @@ const listenerMethods = ["clear", "off", "on", "trigger", "value"];
 export default function useContainer(props) {
   const container = {...props};
 
-  if(!container.cache) { container.cache = new Cache({namespace: "test"}); }
+  if(!container.cache) { container.cache = new Cache(); }
   if(!container.http) { container.http = new Http(); }
   if(!container.listener) { container.listener = new Listener(); }
+  if(!container.locale) { container.locale = "en-us"; }
   if(!container.options) { container.options = {}; }
 
   global.container = container;
+
+  useStorage();
 
   beforeEach(() => {
     container.http.mocks = {fetch: []};
@@ -42,13 +45,11 @@ export default function useContainer(props) {
     });
   });
 
-  useTranslations();
-
   afterEach(() => {
     delete container.assessmentID;
-    delete container.benchmarkID;
 
     container.cache.clear();
+    container.listener.clear();
 
     cacheMethods.forEach((method) => {
       container.cache[method].mockRestore();

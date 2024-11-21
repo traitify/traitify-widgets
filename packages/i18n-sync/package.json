@@ -28,7 +28,7 @@
     "build": "webpack --define-process-env-node-env production --progress",
     "i18n:setup": "npm install && npm run build",
     "i18n:sync": "npm run i18n:sync:run --",
-    "i18n:sync:run": "node ../../build/packages/i18n-sync.js",
+    "i18n:sync:run": "node build/i18n-sync.js",
     "prei18n:sync": "npm run i18n:setup",
     "test": "jest --config test/jest.config.js --coverage",
     "test:watch": "jest --config test/jest.config.js --watch"

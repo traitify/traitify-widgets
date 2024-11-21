@@ -8,6 +8,7 @@ export default function useI18n() {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
   useEffect(() => {
+    if(!i18n) { return; }
     if(!translations) { return; }
 
     Object.keys(translations).forEach((locale) => {
@@ -15,7 +16,7 @@ export default function useI18n() {
     });
 
     forceUpdate();
-  }, [translations]);
+  }, [i18n, translations]);
 
   return i18n;
 }

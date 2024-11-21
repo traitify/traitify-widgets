@@ -46,6 +46,11 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
 
 exports[`I18nSync .importData catches errors 1`] = `
 {
+  "cnh-mm": {
+    "code": "cnh-mm",
+    "data": [],
+    "name": "Hakha Chin",
+  },
   "de-de": {
     "code": "de-de",
     "data": [],
@@ -202,6 +207,11 @@ exports[`I18nSync .importData catches errors 1`] = `
     "code": "ko-kr",
     "data": [],
     "name": "Korean",
+  },
+  "my-mm": {
+    "code": "my-mm",
+    "data": [],
+    "name": "Burmese (Myanmar [Burma])",
   },
   "nl-nl": {
     "code": "nl-nl",
@@ -258,6 +268,11 @@ exports[`I18nSync .importData catches errors 1`] = `
 
 exports[`I18nSync .importData saves translations 1`] = `
 {
+  "cnh-mm": {
+    "code": "cnh-mm",
+    "data": [],
+    "name": "Hakha Chin",
+  },
   "de-de": {
     "code": "de-de",
     "data": [],
@@ -414,6 +429,11 @@ exports[`I18nSync .importData saves translations 1`] = `
     "code": "ko-kr",
     "data": [],
     "name": "Korean",
+  },
+  "my-mm": {
+    "code": "my-mm",
+    "data": [],
+    "name": "Burmese (Myanmar [Burma])",
   },
   "nl-nl": {
     "code": "nl-nl",

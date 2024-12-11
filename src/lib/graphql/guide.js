@@ -36,8 +36,11 @@ export const get = `
             questions {
               adaptability
               id
+              introduction
               order
+              numberWithLabel
               purpose
+              questionText
               text
             }
           }

@@ -7,9 +7,9 @@ import style from "./style.scss";
 
 function Question({question}) {
   const [showContent, setShowContent] = useState(false);
-  const [introduction, ...content] = question.text.split("\n\n\n");
-  const [number, ...remainingText] = content.join("\n\n\n").split(":");
-  const text = remainingText.join(":").trim();
+  const introduction = question.introduction
+  const number = question.numberWithLabel;
+  const text = question.questionText;
 
   return (
     <>
@@ -43,8 +43,11 @@ function Question({question}) {
 Question.propTypes = {
   question: PropTypes.shape({
     adaptability: PropTypes.string,
+    introduction: PropTypes.string.isRequired,
+    numberWithLabel: PropTypes.string.isRequired,
     order: PropTypes.number.isRequired,
     purpose: PropTypes.string.isRequired,
+    questionText: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired
 };

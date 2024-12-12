@@ -7,9 +7,10 @@ import style from "./style.scss";
 
 function Question({question}) {
   const [showContent, setShowContent] = useState(false);
-  const introduction = question.introduction
-  const number = question.numberWithLabel;
-  const text = question.questionText;
+  const parsedText = parseQuestionText(question.text);
+  const introduction = question.introduction || parsedText.introduction;
+  const number = question.numberWithLabel || parsedText.numberWithLabel;
+  const text = question.questionText || parsedText.text;
 
   return (
     <>
@@ -40,15 +41,30 @@ function Question({question}) {
   );
 }
 
+function parseQuestionText(text) {
+  if (!text) return { introduction: "", numberWithLabel: "", text: "" };
+
+  try {
+    const [introduction, ...content] = text.split("\n\n\n");
+    const [numberWithLabel, ...remainingText] = content.join("\n\n\n").split(":");
+    const questionText = remainingText.join(":").trim();
+
+    return { introduction, numberWithLabel, text: questionText };
+  } catch (error) {
+    console.error("Error parsing question text:", { text, error });
+    return { introduction: "", numberWithLabel: "", text: "" };
+  }
+}
+
 Question.propTypes = {
   question: PropTypes.shape({
     adaptability: PropTypes.string,
-    introduction: PropTypes.string.isRequired,
-    numberWithLabel: PropTypes.string.isRequired,
+    introduction: PropTypes.string,
+    numberWithLabel: PropTypes.string,
     order: PropTypes.number.isRequired,
     purpose: PropTypes.string.isRequired,
-    questionText: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
+    questionText: PropTypes.string,
+    text: PropTypes.string
   }).isRequired
 };
 

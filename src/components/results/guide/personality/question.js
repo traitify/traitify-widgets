@@ -5,6 +5,21 @@ import Icon from "components/common/icon";
 import Markdown from "components/common/markdown";
 import style from "./style.scss";
 
+function parseQuestionText(text) {
+  if(!text) return {introduction: "", numberWithLabel: "", text: ""};
+
+  try {
+    const [introduction, ...content] = text.split("\n\n\n");
+    const [numberWithLabel, ...remainingText] = content.join("\n\n\n").split(":");
+    const questionText = remainingText.join(":").trim();
+
+    return {introduction, numberWithLabel, text: questionText};
+  } catch(error) {
+    console.error("Error parsing question text:", {text, error});
+    return {introduction: "", numberWithLabel: "", text: ""};
+  }
+}
+
 function Question({question}) {
   const [showContent, setShowContent] = useState(false);
   const parsedText = parseQuestionText(question.text);
@@ -39,21 +54,6 @@ function Question({question}) {
       </div>
     </>
   );
-}
-
-function parseQuestionText(text) {
-  if (!text) return { introduction: "", numberWithLabel: "", text: "" };
-
-  try {
-    const [introduction, ...content] = text.split("\n\n\n");
-    const [numberWithLabel, ...remainingText] = content.join("\n\n\n").split(":");
-    const questionText = remainingText.join(":").trim();
-
-    return { introduction, numberWithLabel, text: questionText };
-  } catch (error) {
-    console.error("Error parsing question text:", { text, error });
-    return { introduction: "", numberWithLabel: "", text: "" };
-  }
 }
 
 Question.propTypes = {

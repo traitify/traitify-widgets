@@ -8,14 +8,19 @@ export default class I18n {
     this.supportedLocales = {};
     this.setDefaultTranslations();
   }
-  addTranslations(_locale, {name, data}) {
+  setDefaultTranslations() {
+    Object.keys(i18nData).forEach((locale) => {
+      this.addTranslations(locale, i18nData[locale]);
+    });
+  }
+  addTranslations = (_locale, {name, data}) => {
     const locale = _locale.toLowerCase();
     const currentData = this.data[locale] || {};
 
     this.data[locale] = merge(currentData, data);
     if(name) { this.supportedLocales[locale] = name; }
-  }
-  copyTranslations(_originLocale, _targetLocale) {
+  };
+  copyTranslations = (_originLocale, _targetLocale) => {
     const originLocale = _originLocale.toLowerCase();
     const targetLocale = _targetLocale.toLowerCase();
     const targetData = this.data[targetLocale] || {};
@@ -25,12 +30,7 @@ export default class I18n {
       ...targetData,
       ...originData
     };
-  }
-  setDefaultTranslations() {
-    Object.keys(i18nData).forEach((locale) => {
-      this.addTranslations(locale, i18nData[locale]);
-    });
-  }
+  };
   translate = (locale, _key, options) => {
     const keys = _key.split(".");
     let result = dig(this.data, locale.toLowerCase(), ...keys);

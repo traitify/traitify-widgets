@@ -15,7 +15,7 @@ function parseQuestionText(text) {
 
     return {introduction, numberWithLabel, text: questionText};
   } catch(error) {
-    console.error("Error parsing question text:", {text, error});
+    console.error("Error parsing question text:", {text, error}); // eslint-disable-line no-console
     return {introduction: "", numberWithLabel: "", text: ""};
   }
 }

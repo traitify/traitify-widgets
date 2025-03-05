@@ -59,6 +59,14 @@ export default function useAssessmentsEffect() {
   }, [active, assessments]);
 
   useEffect(() => {
+    if(!active) { return; }
+    if(!assessments) { return; }
+    if(assessments.length === 0) { return; }
+
+    listener.trigger("Status.updated", {assessment: active, assessments});
+  }, [active, assessments]);
+
+  useEffect(() => {
     if(!assessments) { return; }
     if(assessments.length === 0) { return; }
     if(assessments.some(({completed}) => !completed)) { return; }

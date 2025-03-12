@@ -23,6 +23,7 @@ function Instructions({
   // - bubble something up so survey moves the user on?
   //   - trigger listener
   //   - update survey.personality.index to listen? maybe something else
+  // - mimic in cognitive
   if(showAccommodation) {
     return (
       <>

@@ -17,18 +17,20 @@ export default function useAssessmentEffect() {
 
     const completed = assessment ? !!(assessment.completed || assessment.completed_at) : false;
     const loading = state === "loading";
+    const skipped = assessment?.skipped || false;
     const changes = {
       completed: active.completed !== completed,
-      loading: active.loading !== loading
+      loading: active.loading !== loading,
+      skipped: active.skipped !== skipped
     };
-    if(!changes.completed && !changes.loading) { return; }
+    if(!changes.completed && !changes.loading && !changes.skipped) { return; }
 
-    setActive({...active, completed, loading});
+    setActive({...active, completed, loading, skipped});
   }, [active, assessmentLoadable]);
 
   useEffect(() => {
     if(!active) { return; }
-    if(!active.completed) { return; }
+    if(!active.completed && !active.skipped) { return; }
 
     listener.trigger("Survey.finished", {assessment: active});
   }, [active?.id, active?.completed]);

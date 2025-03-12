@@ -31,6 +31,14 @@ export default function useAssessmentsEffect() {
       return;
     }
 
+    if(assessments.find(({skipped}) => skipped)) {
+      const nextAssessment = assessments[0];
+      if(active.id === nextAssessment.id) { return; }
+
+      setActive({...nextAssessment});
+      return;
+    }
+
     const updatedAssessments = mutable(assessments);
     const currentAssessment = updatedAssessments.find(({id}) => id === active.id);
     if(!currentAssessment) { return; }
@@ -47,12 +55,14 @@ export default function useAssessmentsEffect() {
     // NOTE: Sync active state changes to assessments
     const changes = {
       completed: active.completed !== currentAssessment.completed,
-      name: active.name !== currentAssessment.name
+      name: active.name !== currentAssessment.name,
+      skipped: active.skipped !== currentAssessment.skipped
     };
 
-    if(changes.completed || changes.name) {
+    if(changes.completed || changes.name || changes.skipped) {
       if(changes.completed) { currentAssessment.completed = active.completed; }
       if(changes.name) { currentAssessment.name = active.name; }
+      if(changes.skipped) { currentAssessment.skipped = active.skipped; }
 
       setAssessments(updatedAssessments);
     }
@@ -69,7 +79,10 @@ export default function useAssessmentsEffect() {
   useEffect(() => {
     if(!assessments) { return; }
     if(assessments.length === 0) { return; }
-    if(assessments.some(({completed}) => !completed)) { return; }
+
+    const incomplete = assessments.some(({completed}) => !completed);
+    const unskipped = !assessments.some(({skipped}) => skipped);
+    if(incomplete && unskipped) { return; }
 
     listener.trigger("Surveys.finished", {assessments});
   }, [assessments]);

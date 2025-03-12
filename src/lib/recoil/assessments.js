@@ -43,6 +43,7 @@ const baseRecommendationQuery = selector({
         completed: personality.status === "COMPLETE",
         id: personality.assessmentId,
         name: personality.surveyName,
+        skipped: false, // TODO: Get data
         type: "personality"
       });
     }
@@ -52,6 +53,7 @@ const baseRecommendationQuery = selector({
         completed: cognitive.status === "COMPLETE",
         id: cognitive.testId,
         name: cognitive.surveyName,
+        skipped: false, // TODO: Get data
         type: "cognitive"
       });
     }
@@ -63,6 +65,7 @@ const baseRecommendationQuery = selector({
           id: assessment.assessmentId,
           link: assessment.assessmentTakerUrl,
           name: assessment.surveyName,
+          skipped: false, // TODO: Get data
           type: "external"
         });
       });

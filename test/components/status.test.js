@@ -29,6 +29,7 @@ const responseToArray = (response) => {
       completed: personalityAssessment.status === "COMPLETE",
       id: personalityAssessment.assessmentId,
       name: "Personality Assessment",
+      skipped: false, // TODO: Get data
       type: "personality"
     });
   }
@@ -38,6 +39,7 @@ const responseToArray = (response) => {
       completed: cognitiveAssessment.status === "COMPLETE",
       id: cognitiveAssessment.testId,
       name: "Cognitive Assessment",
+      skipped: false, // TODO: Get data
       type: "cognitive"
     });
   }
@@ -49,6 +51,7 @@ const responseToArray = (response) => {
         id: assessment.assessmentId,
         link: assessment.assessmentTakerUrl,
         name: assessment.surveyName,
+        skipped: false, // TODO: Get data
         type: "external"
       });
     });
@@ -94,7 +97,7 @@ describe("Status", () => {
       await ComponentHandler.setup(Component);
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "Status.initialized",
+        "Component.Status.initialized",
         {assessments: null}
       );
     });
@@ -104,7 +107,7 @@ describe("Status", () => {
       await component.update();
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
-        "Status.updated",
+        "Component.Status.updated",
         {assessments}
       );
     });

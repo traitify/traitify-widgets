@@ -18,6 +18,10 @@ function Button({assessment}) {
     return <button disabled={true} type="button">Complete</button>;
   }
 
+  if(assessment.skipped) {
+    return <button disabled={true} type="button">Skipped</button>;
+  }
+
   if(assessment.link && redirect) {
     return <a href={assessment.link}>Start Assessment</a>;
   }
@@ -33,15 +37,18 @@ function Button({assessment}) {
 Button.propTypes = {
   assessment: PropTypes.shape({
     completed: PropTypes.bool.isRequired,
-    link: PropTypes.string
+    link: PropTypes.string,
+    skipped: PropTypes.bool.isRequired
   }).isRequired
 };
 
 function Assessment({assessment}) {
   return (
-    <div className={[style.assessment, assessment.completed && style.inactive].filter(Boolean).join(" ")}>
+    <div className={[style.assessment, (assessment.completed || assessment.skipped) && style.inactive].filter(Boolean).join(" ")}>
       <div>
-        {assessment.completed && <Icon className={style.icon} icon={faCheck} />}
+        {(assessment.completed || assessment.skipped) && (
+          <Icon className={style.icon} icon={faCheck} />
+        )}
         <span className={style.text}>{assessment.name}</span>
       </div>
       <Button assessment={assessment} />
@@ -52,7 +59,8 @@ function Assessment({assessment}) {
 Assessment.propTypes = {
   assessment: PropTypes.shape({
     completed: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    skipped: PropTypes.bool.isRequired
   }).isRequired
 };
 

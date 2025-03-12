@@ -23,8 +23,7 @@ function Instructions({
   surveyID,
   translate
 }) {
-  // TODO: Remove test data
-  const allowSkip = useSetting("skipAssessmentAccommodation", {fallback: false}) || true;
+  const allowSkip = useSetting("skipAssessmentAccommodation", {fallback: false});
   const [width] = useWindowSize();
   const [disability, setDisability] = useState(initialLearningDisability || false);
   const [step, setStep] = useState(1);

@@ -974,12 +974,17 @@ exports[`Survey.Personality instructions renders html instructions 1`] = `
             }
           }
         />
-        <button
-          onClick={[Function]}
-          type="button"
+        <div
+          className="btnGroup"
         >
-          Get Started
-        </button>
+          <button
+            className="btnNext"
+            onClick={[Function]}
+            type="button"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
       <div
         className="slide right image"
@@ -1051,12 +1056,17 @@ exports[`Survey.Personality instructions renders markdown instructions 1`] = `
             Click the buttons
           </p>
         </div>
-        <button
-          onClick={[Function]}
-          type="button"
+        <div
+          className="btnGroup"
         >
-          Get Started
-        </button>
+          <button
+            className="btnNext"
+            onClick={[Function]}
+            type="button"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
       <div
         className="slide right image"
@@ -1151,6 +1161,419 @@ exports[`Survey.Personality instructions requires instructions 1`] = `
 `;
 
 exports[`Survey.Personality instructions requires option 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-image"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Loading
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="loading"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="loading"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions skip assessment accommodation renders back action 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-image"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown traitify--markdown"
+        >
+          <h1
+            id="listen-up"
+          >
+            Listen Up
+          </h1>
+          <p>
+            Click the buttons
+          </p>
+        </div>
+        <div
+          className="btnGroup"
+        >
+          <button
+            className="btnBack"
+            onClick={[Function]}
+            type="button"
+          >
+            Request Accommodation
+          </button>
+          <button
+            className="btnNext"
+            onClick={[Function]}
+            type="button"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+      <div
+        className="slide right image"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions skip assessment accommodation renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-image"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown traitify--markdown"
+        >
+          <h1
+            id="listen-up"
+          >
+            Listen Up
+          </h1>
+          <p>
+            Click the buttons
+          </p>
+        </div>
+        <div
+          className="btnGroup"
+        >
+          <button
+            className="btnBack"
+            onClick={[Function]}
+            type="button"
+          >
+            Request Accommodation
+          </button>
+          <button
+            className="btnNext"
+            onClick={[Function]}
+            type="button"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+      <div
+        className="slide right image"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions skip assessment accommodation renders request accommodation text 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-image"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown"
+        >
+          <h1>
+            Request Accommodation
+          </h1>
+          <p>
+            Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
+          </p>
+        </div>
+        <div
+          className="btnGroup"
+        >
+          <button
+            className="btnBack"
+            onClick={[Function]}
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            className="btnNext"
+            onClick={[Function]}
+            type="button"
+          >
+            Yes, Request Accommodation
+          </button>
+        </div>
+      </div>
+      <div
+        className="slide right image"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions skip assessment accommodation triggers accommodation request 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container traitify--survey-image"
+  >
+    <div
+      className="caption"
+      tabIndex="-1"
+    >
+      Instructions
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+      <div
+        className="instructions slide middle"
+      >
+        <div
+          className="markdown"
+        >
+          <h1>
+            Request Accommodation
+          </h1>
+          <p>
+            Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
+          </p>
+        </div>
+        <div
+          className="btnGroup"
+        >
+          <button
+            className="btnBack"
+            onClick={[Function]}
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            className="btnNext"
+            onClick={[Function]}
+            type="button"
+          >
+            Yes, Request Accommodation
+          </button>
+        </div>
+      </div>
+      <div
+        className="slide right image"
+      >
+        <img
+          alt="A photo of a group of young adults working on a robotic project together."
+          src="https://traitify.imgix.net/slides/bc98004c-0e07-415d-b601-6b40d047c44d_desktop_retina?auto=format&fp-x=75&fp-y=73&h=800&w=600"
+        />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button
+        className="traitify--response-button response btnDisabled me"
+        onClick={null}
+        type="button"
+      >
+        Me
+      </button>
+      <button
+        className="traitify--response-button response btnDisabled notMe"
+        onClick={null}
+        type="button"
+      >
+        Not Me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.Personality instructions skip assessment accommodation triggers start assessment 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >

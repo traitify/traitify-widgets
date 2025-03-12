@@ -11,8 +11,7 @@ function Instructions({
   instructionsHTML = null,
   onNext
 }) {
-  // TODO: Remove test data
-  const allowSkip = useSetting("skipAssessmentAccommodation", {fallback: false}) || true;
+  const allowSkip = useSetting("skipAssessmentAccommodation", {fallback: false});
   const [showAccommodation, setShowAccommodation] = useState(false);
   const translate = useTranslate();
   const onRequest = () => {};

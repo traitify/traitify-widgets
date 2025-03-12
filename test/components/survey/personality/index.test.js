@@ -7,7 +7,13 @@ import getCacheKey from "lib/common/get-cache-key";
 import mutable from "lib/common/object/mutable";
 import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockAssessmentStarted, mockAssessmentSubmit} from "support/container/http";
+import {
+  mockAssessment,
+  mockAssessmentStarted,
+  mockAssessmentSubmit,
+  mockSettings,
+  useSettings
+} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
@@ -41,6 +47,7 @@ describe("Survey.Personality", () => {
 
   useContainer();
   useGlobalMock(document, "createElement");
+  useSettings({});
 
   beforeEach(() => {
     assessment = mutable(_assessment);
@@ -258,6 +265,48 @@ describe("Survey.Personality", () => {
 
       mockAssessment({...assessment, instructions});
       mockOption("survey", {...options});
+    });
+
+    describe("skip assessment accommodation", () => {
+      beforeEach(() => {
+        mockSettings({skip_assessment_accommodation: true});
+      });
+
+      it("renders instructions", async() => {
+        component = await ComponentHandler.setup(Component, {createNodeMock});
+
+        expect(component.tree).toMatchSnapshot();
+      });
+
+      it("renders request accommodation text", async() => {
+        component = await ComponentHandler.setup(Component, {createNodeMock});
+        act(() => { component.findByText("Request Accommodation").props.onClick(); });
+
+        expect(component.tree).toMatchSnapshot();
+      });
+
+      it("renders back action", async() => {
+        component = await ComponentHandler.setup(Component, {createNodeMock});
+        act(() => { component.findByText("Request Accommodation").props.onClick(); });
+        act(() => { component.findByText("Back").props.onClick(); });
+
+        expect(component.tree).toMatchSnapshot();
+      });
+
+      it("triggers accommodation request", async() => {
+        component = await ComponentHandler.setup(Component, {createNodeMock});
+        act(() => { component.findByText("Request Accommodation").props.onClick(); });
+        act(() => { component.findByText("Yes, Request Accommodation").props.onClick(); });
+
+        expect(component.tree).toMatchSnapshot();
+      });
+
+      it("triggers start assessment", async() => {
+        component = await ComponentHandler.setup(Component, {createNodeMock});
+        act(() => { component.findByText("Get Started").props.onClick(); });
+
+        expect(component.tree).toMatchSnapshot();
+      });
     });
 
     it("renders html instructions", async() => {

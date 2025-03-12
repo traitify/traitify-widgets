@@ -15,13 +15,17 @@ exports[`Instructions renders custom examples 1`] = `
     >
       First Text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      First Button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        First Button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -41,13 +45,17 @@ exports[`Instructions renders custom examples 2`] = `
     >
       Second Text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      Second Button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        Second Button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -80,13 +88,17 @@ exports[`Instructions renders custom examples 3`] = `
         type="video/mp4"
       />
     </video>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      Third Button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        Third Button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -232,13 +244,17 @@ exports[`Instructions renders step 1 1`] = `
     >
       cognitive_instructions_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -271,13 +287,17 @@ exports[`Instructions renders step 2 1`] = `
         type="video/mp4"
       />
     </video>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_2_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_2_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -320,6 +340,197 @@ exports[`Instructions renders step 4 1`] = `
 </div>
 `;
 
+exports[`Instructions skip assessment accommodation renders accommodation text 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      survey.accommodation.request
+    </h1>
+    <div
+      className="text"
+    >
+      survey.accommodation.request_text
+    </div>
+    <div
+      className="btnGroup"
+    >
+      <button
+        className="btnBack"
+        onClick={[Function]}
+        type="button"
+      >
+        back
+      </button>
+      <button
+        className="btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        survey.accommodation.confirm
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation renders back action 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <div
+      className="btnGroup"
+    >
+      <button
+        className="btnBack"
+        onClick={[Function]}
+        type="button"
+      >
+        survey.accommodation.request
+      </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      cognitive_instructions_step_1_heading
+    </h1>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_1_text
+    </p>
+    <div
+      className="btnGroup"
+    >
+      <button
+        className="btnBack"
+        onClick={[Function]}
+        type="button"
+      >
+        survey.accommodation.request
+      </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation triggers accommodation request 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      survey.accommodation.request
+    </h1>
+    <div
+      className="text"
+    >
+      survey.accommodation.request_text
+    </div>
+    <div
+      className="btnGroup"
+    >
+      <button
+        className="btnBack"
+        onClick={[Function]}
+        type="button"
+      >
+        back
+      </button>
+      <button
+        className="btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        survey.accommodation.confirm
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation triggers next 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      cognitive_instructions_step_2_heading
+    </h2>
+    <p
+      className="text traitify--markdown"
+    >
+      cognitive_instructions_step_2_text
+    </p>
+    <video
+      autoPlay={true}
+      disablePictureInPicture={true}
+      disableRemotePlayback={true}
+      loop={true}
+      muted={true}
+      playsInline={true}
+    >
+      <source
+        src="https://cdn.traitify.com/images/cognitive/practice-example-h.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      className="btnGroup"
+    >
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_2_button
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Instructions time trial default timed renders step 1 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
@@ -335,13 +546,17 @@ exports[`Instructions time trial default timed renders step 1 1`] = `
     >
       cognitive_instructions_trial_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -387,13 +602,17 @@ exports[`Instructions time trial default untimed renders step 1 1`] = `
     >
       cognitive_instructions_trial_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -491,13 +710,17 @@ exports[`Instructions videos horizontal renders component 1`] = `
     >
       cognitive_instructions_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -517,13 +740,17 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
     >
       cognitive_instructions_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -543,13 +770,17 @@ exports[`Instructions videos vertical renders component 1`] = `
     >
       cognitive_instructions_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -569,13 +800,17 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
     >
       cognitive_instructions_step_1_text
     </p>
-    <button
-      className="traitify--response-button btnBlue"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="btnGroup"
     >
-      cognitive_instructions_step_1_button
-    </button>
+      <button
+        className="traitify--response-button btnBlue"
+        onClick={[Function]}
+        type="button"
+      >
+        cognitive_instructions_step_1_button
+      </button>
+    </div>
   </div>
 </div>
 `;

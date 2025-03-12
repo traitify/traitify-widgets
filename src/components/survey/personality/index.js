@@ -49,9 +49,7 @@ export default function PersonalitySurvey() {
   const error = submitError || loaderError;
   const finished = slides.length > 0 && slides.length === completedSlides.length;
   const instructionsHTML = dig(assessment, "instructions", "instructional_html");
-  // TODO: Remove test data
-  const instructionsText = dig(assessment, "instructions", "instructional_text")
-    || "# Listen Up\n\nClick the buttons";
+  const instructionsText = dig(assessment, "instructions", "instructional_text");
   const likert = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const progress = slideIndex >= 0 ? (slideIndex / slides.length) * 100 : 0;
   const state = {

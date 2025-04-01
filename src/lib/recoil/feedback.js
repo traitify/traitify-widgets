@@ -30,7 +30,7 @@ export const feedbackSurveyQuery = selector({
     };
     const response = await http.post(GraphQL.xavier.path, params);
     if(response.errors) {
-      console.warn("benchmark", response.errors); /* eslint-disable-line no-console */
+      console.warn("feedback", response.errors); /* eslint-disable-line no-console */
       return null;
     }
     const {feedbackSurvey} = response.data;

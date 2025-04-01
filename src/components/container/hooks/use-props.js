@@ -31,6 +31,7 @@ export default function useProps(props) {
     benchmarkID,
     locale,
     options = {},
+    orderID,
     packageID,
     profileID
   } = props;
@@ -70,9 +71,10 @@ export default function useProps(props) {
 
     if(assessmentID) { base.assessmentID = assessmentID; }
     if(benchmarkID) { base.benchmarkID = benchmarkID; }
+    if(orderID) { base.orderID = orderID; }
     if(packageID) { base.packageID = packageID; }
     if(profileID) { base.profileID = profileID; }
 
     setBase(base);
-  }, [assessmentID, benchmarkID, packageID, profileID]);
+  }, [assessmentID, benchmarkID, orderID, packageID, profileID]);
 }

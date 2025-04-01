@@ -3,6 +3,7 @@ import useComponentEvents from "lib/hooks/use-component-events";
 import Assessment from "./assessment";
 import style from "./style.scss";
 
+// TODO: Translate probably
 const translations = {
   header: "Your Application Assessments",
   text: "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment and either be returned to this page if you have multiple assessments to complete or taken to the next stage of the process."

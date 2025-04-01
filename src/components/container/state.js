@@ -4,9 +4,10 @@ import {useRecoilState} from "recoil";
 import loadFont from "lib/common/load-font";
 import {loadingState} from "lib/recoil";
 import useAssessmentEffect from "./hooks/use-assessment-effect";
-import useAssessmentsEffect from "./hooks/use-assessments-effect";
 import useBaseEffect from "./hooks/use-base-effect";
 import useListenerEffect from "./hooks/use-listener-effect";
+import useOrderEffect from "./hooks/use-order-effect";
+import useOrderPolling from "./hooks/use-order-polling";
 import useProps from "./hooks/use-props";
 import useRecommendationEffect from "./hooks/use-recommendation-effect";
 
@@ -15,9 +16,10 @@ function State({children, ...props}) {
 
   useProps(props);
   useAssessmentEffect();
-  useAssessmentsEffect();
   useBaseEffect();
   useListenerEffect();
+  useOrderEffect();
+  useOrderPolling();
   useRecommendationEffect();
   useEffect(() => { loadFont(); }, []);
   useEffect(() => { setLoading(false); }, []);

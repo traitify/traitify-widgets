@@ -59,6 +59,12 @@ function createWidget() {
     Traitify.options.benchmarkID = benchmarkID;
     Traitify.options.packageID = packageID;
     Traitify.options.profileID = profileID;
+  } else if(surveyType === "order") {
+    const orderID = cache.get("orderID");
+    console.log("createWidget", {orderID});
+    if(!orderID) { return; }
+    Traitify.listener.on("Survey.start", (x) => console.log(x));
+    Traitify.options.orderID = orderID;
   } else {
     const assessmentID = cache.get("assessmentID");
     console.log("createWidget", {assessmentID});
@@ -138,6 +144,7 @@ function createAssessment() {
   destroyWidget();
 
   if(cache.get("surveyType") === "benchmark") { return createWidget(); }
+  if(cache.get("surveyType") === "order") { return createWidget(); }
   if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
 
   const params = {
@@ -361,7 +368,12 @@ function setupDom() {
     fallback: "personality",
     name: "surveyType",
     onChange: onSurveyTypeChange,
-    options: [{text: "Benchmark", value: "benchmark"}, {text: "Cognitive", value: "cognitive"}, {text: "Personality", value: "personality"}],
+    options: [
+      {text: "Benchmark", value: "benchmark"},
+      {text: "Cognitive", value: "cognitive"},
+      {text: "Order", value: "order"},
+      {text: "Personality", value: "personality"}
+    ],
     text: "Survey Type:"
   }));
   const surveyType = cache.get("surveyType", {fallback: "personality"});
@@ -389,6 +401,9 @@ function setupDom() {
   row.appendChild(createOption({name: "benchmarkID", text: "Benchmark ID:"}));
   row.appendChild(createOption({name: "packageID", text: "Package ID:"}));
   row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
+  group.appendChild(row)
+  row = createElement({className: surveyType !== "order" ? "hide" : "", id: "order-options"});
+  row.appendChild(createOption({name: "orderID", text: "Order ID:"}));
   group.appendChild(row)
 
   row = createElement({className: "row"});
@@ -442,7 +457,7 @@ function onSurveyTypeChange(e) {
   const name = e.target.name;
   const value = e.target.value;
   const assessmentID = cache.get(`${value}AssessmentID`);
-  const otherValues = ["benchmark", "cognitive", "personality"].filter((type) => type !== value);
+  const otherValues = ["benchmark", "cognitive", "order", "personality"].filter((type) => type !== value);
 
   cache.set("assessmentID", assessmentID);
 

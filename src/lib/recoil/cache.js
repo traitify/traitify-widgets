@@ -3,7 +3,10 @@ import {selectorFamily} from "recoil";
 import {
   assessmentIDState,
   benchmarkIDState,
-  localeState
+  localeState,
+  orderIDState,
+  packageIDState,
+  profileIDState
 } from "./base";
 import {deckIDState} from "./deck";
 
@@ -34,11 +37,35 @@ export const cacheKeyState = selectorFamily({
         id = id || get(assessmentIDState);
         break;
       }
+      case "order":
+        id = id || get(orderIDState);
+        break;
+      case "order-recommendation": {
+        const packageID = options.packageID || get(packageIDState);
+        const profileID = options.profileID || get(profileIDState);
+        if(packageID) {
+          keys.push(`package-${packageID}`);
+        } else {
+          const benchmarkID = options.benchmarkID || get(benchmarkIDState);
+          if(benchmarkID) { keys.push(`benchmark-${benchmarkID}`); }
+        }
+
+        keys.push(`profile-${profileID}`);
+        break;
+      }
       default:
         id = id || get(assessmentIDState);
     }
 
-    return ["v3", locale, type, id, ...keys].filter(Boolean).join(".").toLowerCase();
+    if(type === "order") {
+      keys.unshift(type, id);
+    } else if(type === "order-recommendation") {
+      keys.unshift(type);
+    } else {
+      keys.unshift(locale, type, id);
+    }
+
+    return ["v3", ...keys].filter(Boolean).join(".").toLowerCase();
   },
   key: "cache-key"
 });

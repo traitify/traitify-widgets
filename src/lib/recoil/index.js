@@ -8,6 +8,7 @@ export * from "./deck";
 export * from "./feedback";
 export * from "./guide";
 export * from "./jobs";
+export * from "./order";
 export * from "./organization";
 export * from "./recommendation";
 export * from "./recommendations";

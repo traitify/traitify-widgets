@@ -21,6 +21,7 @@ export const localeState = atom({
   key: "locale"
 });
 export const optionsState = atom({default: null, key: "options"});
+export const orderIDState = atom({default: null, key: "order-id"});
 export const packageIDState = atom({default: null, key: "package-id"});
 export const profileIDState = atom({default: null, key: "profile-id"});
 

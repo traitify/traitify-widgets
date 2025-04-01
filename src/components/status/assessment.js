@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {useSetRecoilState} from "recoil";
 import Icon from "components/common/icon";
 import get from "lib/common/object/get";
+import capitalize from "lib/common/string/capitalize";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import {activeState} from "lib/recoil";
@@ -38,11 +39,13 @@ Button.propTypes = {
 };
 
 function Assessment({assessment}) {
+  const surveyName = assessment.surveyName || `${capitalize(assessment.surveyType)} Assessment`;
+
   return (
     <div className={[style.assessment, assessment.completed && style.inactive].filter(Boolean).join(" ")}>
       <div>
         {assessment.completed && <Icon className={style.icon} icon={faCheck} />}
-        <span className={style.text}>{assessment.name}</span>
+        <span className={style.text}>{surveyName}</span>
       </div>
       <Button assessment={assessment} />
     </div>
@@ -52,7 +55,8 @@ function Assessment({assessment}) {
 Assessment.propTypes = {
   assessment: PropTypes.shape({
     completed: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
+    surveyName: PropTypes.string,
+    surveyType: PropTypes.string.isRequired
   }).isRequired
 };
 

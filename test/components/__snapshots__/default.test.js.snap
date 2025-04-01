@@ -36,6 +36,18 @@ exports[`Default assessments renders personality survey 1`] = `
 </div>
 `;
 
+exports[`Default assessments renders personality survey 2`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Survey
+  </div>
+</div>
+`;
+
 exports[`Default renders nothing if not ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

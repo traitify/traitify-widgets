@@ -28,8 +28,8 @@ const responseToArray = (response) => {
     assessments.push({
       completed: personalityAssessment.status === "COMPLETE",
       id: personalityAssessment.assessmentId,
-      name: "Personality Assessment",
-      type: "personality"
+      surveyName: "Personality Assessment",
+      surveyType: "personality"
     });
   }
 
@@ -37,8 +37,8 @@ const responseToArray = (response) => {
     assessments.push({
       completed: cognitiveAssessment.status === "COMPLETE",
       id: cognitiveAssessment.testId,
-      name: "Cognitive Assessment",
-      type: "cognitive"
+      surveyName: "Cognitive Assessment",
+      surveyType: "cognitive"
     });
   }
 
@@ -48,8 +48,8 @@ const responseToArray = (response) => {
         completed: assessment.status === "COMPLETE",
         id: assessment.assessmentId,
         link: assessment.assessmentTakerUrl,
-        name: assessment.surveyName,
-        type: "external"
+        surveyName: assessment.surveyName,
+        surveyType: "external"
       });
     });
   }

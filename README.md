@@ -10,6 +10,8 @@ Depending on the use-case, different IDs are required to use the widgets.
 
   - Single assessment
     - assessmentID
+  - Assessment(s) associated with an order
+    - orderID
   - Assessment(s) associated with a recommendation
     - benchmarkID or packageID
     - profileID
@@ -121,6 +123,7 @@ Traitify.render({
   - host
   - locale
   - options
+  - orderID
   - packageID
   - profileID
   - version

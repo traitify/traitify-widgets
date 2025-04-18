@@ -142,8 +142,8 @@ function createAssessment() {
   destroyWidget();
 
   if(cache.get("surveyType") === "benchmark") { return createWidget(); }
-  if(cache.get("surveyType") === "order") { return createWidget(); }
   if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
+  if(cache.get("surveyType") === "order") { return createWidget(); }
 
   const params = {
     deck_id: cache.get("deckID"),

@@ -36,22 +36,24 @@ exports[`Default assessments renders personality survey 1`] = `
 </div>
 `;
 
-exports[`Default assessments renders personality survey 2`] = `
+exports[`Default renders loading if not ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="mock"
+    className="container"
   >
-    Survey
+    <img
+      alt=""
+      src="https://cdn.traitify.com/widgets/status/loading-sonar.gif"
+    />
+    <div
+      className="bold p"
+    >
+      Loading your assessment
+    </div>
   </div>
 </div>
-`;
-
-exports[`Default renders nothing if not ready 1`] = `
-<div
-  className="traitify--container traitify--color-scheme-light"
-/>
 `;
 
 exports[`Default renders results 1`] = `

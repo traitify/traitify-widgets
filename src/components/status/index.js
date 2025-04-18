@@ -76,6 +76,8 @@ export default function Status() {
     );
   }
 
+  if(assessments.length === 0) { return null; }
+
   return (
     <div className={style.container}>
       <div className={style.header}>{translations.status.header}</div>

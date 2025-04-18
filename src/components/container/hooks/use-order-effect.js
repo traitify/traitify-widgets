@@ -11,21 +11,6 @@ export default function useOrderEffect() {
   const setOrder = useSetRecoilState(orderState);
   const listener = useListener();
 
-  /*
-  useEffect(() => {
-    if(!order) { return; }
-    if(order.assessments.length === 0) { return; }
-
-    order.assessments.forEach(({id, loaded, surveyType}) => {
-      if(loaded) { return; }
-
-      // TODO: Get assessment
-      // - update in order - merge loaded: true
-      // - update survey
-    });
-  }, [order]);
-  */
-
   // NOTE: Syncs state from active to order and sets next active
   useEffect(() => {
     if(!order) { return; }
@@ -62,41 +47,10 @@ export default function useOrderEffect() {
       return;
     }
 
-    // TODO: Probably only need to sync completed
     // NOTE: Sync active state changes to order
-    let changes = ["completed", "link", "surveyID", "surveyName"]
+    let changes = ["completed"]
       .filter((key) => active[key] !== currentAssessment[key]);
-    let set = false;
-
-    if(changes.length > 0) {
-      changes.forEach((key) => { currentAssessment[key] = active[key]; });
-
-      updatedOrder.surveys.filter(({id}) => !id).forEach((survey) => {
-        const assessment = updatedOrder.assessments
-          .find(({surveyType}) => surveyType === survey.type);
-
-        // eslint-disable-next-line no-param-reassign
-        if(assessment?.surveyID) { survey.id = assessment.surveyID; }
-      });
-
-      set = true;
-    }
-
-    // NOTE: Update order completed and status
-    if(updatedOrder.assessments.length === updatedOrder.surveys.length) {
-      updatedOrder.completed = updatedOrder.assessments.every(({completed}) => completed);
-
-      if(updatedOrder.completed && updatedOrder.status === "incomplete") {
-        updatedOrder.status = "completed";
-      }
-
-      changes = ["completed", "status"].filter((key) => order[key] !== updatedOrder[key]);
-      if(changes.length > 0) { set = true; }
-    }
-
-    // TODO: Update order status from loading? may go in useOrderPolling
-    // - status - completed, error, loading, incomplete
-    if(set) { setOrder(updatedOrder); }
+    // TODO: Sync asseessment completed to order
   }, [active, order]);
 
   useEffect(() => {

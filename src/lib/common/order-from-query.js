@@ -5,33 +5,51 @@ export const overrides = {
   draft: "5135d0e0-033e-4c96-81b1-8be2036fb62a"
 };
 
+export function assessmentFromQuery(response) {
+  const record = {
+    completed: !!(response.completed || response.completed_at),
+    link: response.assessmentTakerUrl,
+    loaded: true,
+    loading: false,
+    surveyID: response.deck_id || response.surveyId || response?.surveyKey,
+    surveyName: response.surveyName || response.name
+  };
+
+  // NOTE: Prevent overriding with blanks
+  ["link", "surveyID", "surveyName"].filter((key) => !record[key]).forEach((key) => {
+    delete record[key];
+  });
+
+  return record;
+}
+
 export default function orderFromQuery(response) {
   if(response.errorMessage) { console.warn("order", response.errors); } /* eslint-disable-line no-console */
 
-  const _order = response.data.order;
-  if(!_order) { return null; }
+  const {order} = response.data;
+  if(!order) { return null; }
 
-  const order = {
-    assessments: _order.assessments.map((assessment) => ({
+  const record = {
+    assessments: order.assessments.map((assessment) => ({
       completed: assessment.status === "COMPLETE",
       id: assessment.id,
       loaded: false,
       surveyID: assessment.surveyId,
       surveyType: assessment.type.toLowerCase()
     })),
-    completed: _order.status === "COMPLETED",
+    completed: order.status === "COMPLETED",
     status: {
       ALL_ASSESSMENT_AVAILABLE: "incomplete",
       COMPLETED: "completed",
       DRAFT: "loading",
       FAILED: "error"
-    }[_order.status],
-    surveys: _order.requirements.surveys.map(({id, type}) => ({
+    }[order.status],
+    surveys: order.requirements.surveys.map(({id, type}) => ({
       id,
       type: type.toLowerCase()
     }))
   };
 
-  if(response.errorMessage) { order.errors = [response.errorMessage]; }
-  return order;
+  if(response.errorMessage) { record.errors = [response.errorMessage]; }
+  return record;
 }

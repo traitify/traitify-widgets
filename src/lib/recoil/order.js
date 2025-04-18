@@ -1,6 +1,6 @@
 import {atom, selector} from "recoil";
 import mutable from "lib/common/object/mutable";
-import orderFromQuery, {overrides} from "lib/common/order-from-query";
+import orderFromQuery, {assessmentFromQuery, overrides} from "lib/common/order-from-query";
 import {assessmentQuery} from "./assessment";
 import {
   baseState,
@@ -25,12 +25,8 @@ const baseAssessmentState = selector({
     const {assessmentID} = get(baseState);
     const type = get(optionsState).surveyType || "personality";
 
-    // NOTE: useAssessmentEffect/useOrderEffect will provide completed, link, surveyID, surveyName
     return {
-      assessments: [{
-        id: assessmentID,
-        surveyType: type
-      }],
+      assessments: [{id: assessmentID, surveyType: type}],
       completed: false,
       status: "loading",
       surveys: [{type}]
@@ -166,9 +162,6 @@ const orderDefaultQuery = selector({
   key: "order/default"
 });
 
-// - assessments - completed, id, link (optional), surveyID, surveyName (optional), surveyType
-// - surveys - id, type
-
 const loadAssessments = ({getPromise, onSet, setSelf}) => {
   onSet((order) => {
     if(!order) { return; }
@@ -178,15 +171,28 @@ const loadAssessments = ({getPromise, onSet, setSelf}) => {
       if(loaded) { return; }
 
       getPromise(assessmentQuery({id, surveyType})).then((latestAssessment) => {
+        if(!latestAssessment) { return; }
+
         setSelf((_latestOrder) => {
           const latestOrder = mutable(_latestOrder);
           const assessment = latestOrder.assessments.find((a) => a.id === id);
-          // TODO: Merge assessment active fields
-          assessment.id = latestAssessment.id;
-          // TODO: Merge assessment.surveyID to survey.id if there's a survey matching the type that's missing id
-          latestOrder.surveys = [...latestOrder.surveys];
+          Object.assign(assessment, assessmentFromQuery(latestAssessment));
 
-          // TODO: Updated order fields (completed, status)
+          // NOTE: Claim the first survey missing an ID that matches the type
+          const survey = latestOrder.surveys.filter((s) => !s.id)
+            .find((s) => assessment.surveyType === s.type);
+          if(survey) { survey.id = assessment.surveyID; }
+
+          // TODO: Currently assuming updateStatus is called after this setSelf
+          /*
+          if(latestOrder.assessments.length === latestOrder.surveys.length) {
+            latestOrder.completed = latestOrder.assessments.every(({completed}) => completed);
+
+            if(latestOrder.completed) { latestOrder.status = "completed"; }
+          }
+          */
+
+          console.log("setting in loadAssessments");
           return latestOrder;
         });
       });
@@ -194,8 +200,21 @@ const loadAssessments = ({getPromise, onSet, setSelf}) => {
   });
 };
 
+const updateStatus = ({onSet, setSelf}) => {
+  onSet((order) => {
+    console.log("setting in updateStatus");
+    if(!order) { return; }
+    if(order.completed) { return; }
+    if(order.assessments.length === 0) { return; }
+    if(order.assessments.length !== order.surveys.length) { return; }
+    if(order.assessments.some(({completed}) => !completed)) { return; }
+
+    setSelf({...order, completed: true, status: "completed"});
+  });
+};
+
 export const orderState = atom({
   default: orderDefaultQuery,
-  effects: [loadAssessments],
+  effects: [loadAssessments, updateStatus],
   key: "order"
 });

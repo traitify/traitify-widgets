@@ -2,11 +2,11 @@ import {useEffect} from "react";
 import {useRecoilState, useRecoilValueLoadable} from "recoil";
 import mutable from "lib/common/object/mutable";
 import useListener from "lib/hooks/use-listener";
-import {activeState, assessmentQuery} from "lib/recoil";
+import {activeAssessmentQuery, activeState} from "lib/recoil";
 
 export default function useAssessmentEffect() {
   const [active, setActive] = useRecoilState(activeState);
-  const assessmentLoadable = useRecoilValueLoadable(assessmentQuery);
+  const assessmentLoadable = useRecoilValueLoadable(activeAssessmentQuery);
   const listener = useListener();
 
   // NOTE: Syncs state from assessment to active

@@ -6,7 +6,7 @@ import CareerList from "../list";
 import CareerModal from "../modal";
 
 export default function CareerContainer() {
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
 
   useComponentEvents("Careers");
 

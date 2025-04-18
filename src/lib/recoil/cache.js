@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import {selectorFamily} from "recoil";
 import {
-  assessmentIDState,
+  activeIDState,
   benchmarkIDState,
   localeState,
   orderIDState,
@@ -22,7 +22,7 @@ export const cacheKeyState = selectorFamily({
 
     switch(type) {
       case "assessment":
-        id = id || get(assessmentIDState);
+        id = id || get(activeIDState);
         break;
       case "benchmark":
         id = id || get(benchmarkIDState);
@@ -34,7 +34,7 @@ export const cacheKeyState = selectorFamily({
         const benchmarkID = options.benchmarkID || get(benchmarkIDState);
         if(benchmarkID) { keys.push(`benchmark-${benchmarkID}`); }
 
-        id = id || get(assessmentIDState);
+        id = id || get(activeIDState);
         break;
       }
       case "order":
@@ -54,7 +54,7 @@ export const cacheKeyState = selectorFamily({
         break;
       }
       default:
-        id = id || get(assessmentIDState);
+        id = id || get(activeIDState);
     }
 
     if(type === "order") {

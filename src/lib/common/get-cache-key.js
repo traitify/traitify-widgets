@@ -44,7 +44,7 @@ export default function getCacheKey(type, options = {}) {
   if(type === "order") {
     keys.unshift(type, id);
   } else if(type === "order-recommendation") {
-    keys.unshift(locale, type);
+    keys.unshift(type);
   } else {
     keys.unshift(locale, type, id);
   }

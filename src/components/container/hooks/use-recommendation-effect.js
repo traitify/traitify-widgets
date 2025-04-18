@@ -2,10 +2,10 @@ import {useEffect} from "react";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import dig from "lib/common/object/dig";
 import useLoadedValue from "lib/hooks/use-loaded-value";
-import {assessmentQuery, baseState, benchmarkIDState, optionsState} from "lib/recoil";
+import {activeAssessmentQuery, baseState, benchmarkIDState, optionsState} from "lib/recoil";
 
 export default function useRecommendationEffect() {
-  const assessment = useLoadedValue(assessmentQuery);
+  const assessment = useLoadedValue(activeAssessmentQuery);
   const base = useRecoilValue(baseState);
   const options = useRecoilValue(optionsState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);

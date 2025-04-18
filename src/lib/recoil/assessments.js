@@ -1,13 +1,13 @@
 /* eslint-disable import/prefer-default-export */
-import {selector} from "recoil";
+import {noWait, selector} from "recoil";
 import {orderState} from "./order";
 
 export const assessmentsState = selector({
   get: ({get}) => {
-    const order = get(orderState);
-    if(!order) { return null; }
+    const loadable = get(noWait(orderState));
+    if(loadable.state !== "hasValue") { return null; }
 
-    return order.assessments;
+    return loadable.contents?.assessments;
   },
   key: "assessments"
 });

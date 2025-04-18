@@ -1,4 +1,7 @@
 import {atom, selector} from "recoil";
+import mutable from "lib/common/object/mutable";
+import orderFromQuery, {overrides} from "lib/common/order-from-query";
+import {assessmentQuery} from "./assessment";
 import {
   baseState,
   cacheState,
@@ -54,42 +57,11 @@ export const baseOrderQuery = selector({
     };
 
     // TODO: Remove overrides when API is ready
-    const overrides = {
-      all: "098d5e03-0606-42f0-8086-7cde8eb25a1c",
-      completed: "71df3e54-2e06-40bb-a3c5-49d39957bd39",
-      draft: "5135d0e0-033e-4c96-81b1-8be2036fb62a"
-    };
     const overrideState = localStorage.getItem("order-override");
     if(overrideState) { params.variables.id = overrides[overrideState]; }
 
     const response = await http.post(GraphQL.order.path, params);
-    if(response.errorMessage) { console.warn("order", response.errors); } /* eslint-disable-line no-console */
-
-    const _order = response.data.order;
-    if(!_order) { return null; }
-
-    // NOTE: useAssessmentEffect/useOrderEffect will provide each assessment's link (external)
-    const order = {
-      assessments: _order.assessments.map((assessment) => ({
-        completed: assessment.status === "COMPLETE",
-        id: assessment.id,
-        surveyID: assessment.surveyId,
-        surveyType: assessment.type.toLowerCase()
-      })),
-      completed: _order.status === "COMPLETED",
-      status: {
-        ALL_ASSESSMENT_AVAILABLE: "incomplete",
-        COMPLETED: "completed",
-        DRAFT: "loading",
-        FAILED: "error"
-      }[_order.status],
-      surveys: _order.requirements.surveys.map(({id, type}) => ({
-        id,
-        type: type.toLowerCase()
-      }))
-    };
-
-    if(response.errorMessage) { order.errors = [response.errorMessage]; }
+    const order = orderFromQuery(response);
     if(order.completed) { cache.set(cacheKey, order); }
 
     return order;
@@ -194,7 +166,36 @@ const orderDefaultQuery = selector({
   key: "order/default"
 });
 
+// - assessments - completed, id, link (optional), surveyID, surveyName (optional), surveyType
+// - surveys - id, type
+
+const loadAssessments = ({getPromise, onSet, setSelf}) => {
+  onSet((order) => {
+    if(!order) { return; }
+    if(order.assessments.length === 0) { return; }
+
+    order.assessments.forEach(({id, loaded, surveyType}) => {
+      if(loaded) { return; }
+
+      getPromise(assessmentQuery({id, surveyType})).then((latestAssessment) => {
+        setSelf((_latestOrder) => {
+          const latestOrder = mutable(_latestOrder);
+          const assessment = latestOrder.assessments.find((a) => a.id === id);
+          // TODO: Merge assessment active fields
+          assessment.id = latestAssessment.id;
+          // TODO: Merge assessment.surveyID to survey.id if there's a survey matching the type that's missing id
+          latestOrder.surveys = [...latestOrder.surveys];
+
+          // TODO: Updated order fields (completed, status)
+          return latestOrder;
+        });
+      });
+    });
+  });
+};
+
 export const orderState = atom({
   default: orderDefaultQuery,
+  effects: [loadAssessments],
   key: "order"
 });

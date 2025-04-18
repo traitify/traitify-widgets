@@ -1,7 +1,7 @@
 import toQueryString from "./common/object/to-query-string";
 
 const formatArgs = ({method, options, params}) => {
-  if(typeof path === "object") { return {method, ...options}; }
+  if(typeof options === "object") { return {method, ...options}; }
 
   return {method, path: options, params};
 };

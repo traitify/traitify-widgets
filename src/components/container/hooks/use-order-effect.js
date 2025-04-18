@@ -11,22 +11,38 @@ export default function useOrderEffect() {
   const setOrder = useSetRecoilState(orderState);
   const listener = useListener();
 
+  /*
+  useEffect(() => {
+    if(!order) { return; }
+    if(order.assessments.length === 0) { return; }
+
+    order.assessments.forEach(({id, loaded, surveyType}) => {
+      if(loaded) { return; }
+
+      // TODO: Get assessment
+      // - update in order - merge loaded: true
+      // - update survey
+    });
+  }, [order]);
+  */
+
   // NOTE: Syncs state from active to order and sets next active
   useEffect(() => {
     if(!order) { return; }
     if(order.assessments.length === 0) { return; }
 
+    const loadedAssessments = order.assessments.filter(({loaded}) => !loaded);
     if(!active) {
-      const nextAssessment = order.assessments.find(({completed}) => !completed)
-        || order.assessments[0];
+      const nextAssessment = loadedAssessments.find(({completed}) => !completed)
+        || loadedAssessments[0];
+      if(nextAssessment) { setActive({...nextAssessment}); }
 
-      setActive({...nextAssessment});
       return;
     }
 
     // NOTE: Show personality results
     if(order.completed) {
-      const nextAssessment = order.assessments[0];
+      const nextAssessment = loadedAssessments[0];
       if(active.id === nextAssessment.id) { return; }
 
       setActive({...nextAssessment});
@@ -46,6 +62,7 @@ export default function useOrderEffect() {
       return;
     }
 
+    // TODO: Probably only need to sync completed
     // NOTE: Sync active state changes to order
     let changes = ["completed", "link", "surveyID", "surveyName"]
       .filter((key) => active[key] !== currentAssessment[key]);

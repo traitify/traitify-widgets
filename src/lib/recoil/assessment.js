@@ -1,7 +1,7 @@
-import {selector} from "recoil";
+import {selector, selectorFamily} from "recoil";
 import {
+  activeIDState,
   activeTypeState,
-  assessmentIDState,
   cacheState,
   graphqlState,
   httpState,
@@ -9,13 +9,12 @@ import {
   safeCacheKeyState
 } from "./base";
 
-export const cognitiveAssessmentQuery = selector({
-  get: async({get}) => {
-    const assessmentID = get(assessmentIDState);
-    if(!assessmentID) { return null; }
+export const cognitiveAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
 
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState({id: assessmentID, type: "assessment"}));
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
@@ -23,7 +22,7 @@ export const cognitiveAssessmentQuery = selector({
     const http = get(httpState);
     const params = {
       query: GraphQL.cognitive.get,
-      variables: {localeKey: get(localeState), testID: assessmentID}
+      variables: {localeKey: get(localeState), testID: id}
     };
     const response = await http.post({path: GraphQL.cognitive.path, params});
     if(response.errors) {
@@ -38,16 +37,15 @@ export const cognitiveAssessmentQuery = selector({
 
     return assessment;
   },
-  key: "cognitive-assessment"
+  key: "assessment/cognitive"
 });
 
-export const externalAssessmentQuery = selector({
-  get: async({get}) => {
-    const assessmentID = get(assessmentIDState);
-    if(!assessmentID) { return null; }
+export const externalAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
 
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState({id: assessmentID, type: "assessment"}));
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
@@ -56,7 +54,7 @@ export const externalAssessmentQuery = selector({
     const query = {
       params: {
         query: GraphQL.external.get,
-        variables: {id: assessmentID}
+        variables: {id}
       },
       path: GraphQL.external.path
     };
@@ -75,16 +73,15 @@ export const externalAssessmentQuery = selector({
 
     return assessment;
   },
-  key: "external-assessment"
+  key: "assessment/external"
 });
 
-export const personalityAssessmentQuery = selector({
-  get: async({get}) => {
-    const assessmentID = get(assessmentIDState);
-    if(!assessmentID) { return null; }
+export const personalityAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
 
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState({id: assessmentID, type: "assessment"}));
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
@@ -93,24 +90,33 @@ export const personalityAssessmentQuery = selector({
       locale_key: get(localeState)
     };
     const http = get(httpState);
-    const response = await http.get({path: `/assessments/${assessmentID}`, params});
+    const response = await http.get({path: `/assessments/${id}`, params});
     if(!response?.completed_at) { return response; }
 
     cache.set(cacheKey, response);
 
     return response;
   },
-  key: "personality-assessment"
+  key: "assessment/personality"
 });
 
-export const assessmentQuery = selector({
-  get: async({get}) => {
-    const type = get(activeTypeState);
-    if(type === "cognitive") { return get(cognitiveAssessmentQuery); }
-    if(type === "external") { return get(externalAssessmentQuery); }
-    if(type === "personality") { return get(personalityAssessmentQuery); }
+export const assessmentQuery = selectorFamily({
+  get: ({id, surveyType}) => async({get}) => {
+    if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
+    if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
+    if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
 
     return null;
   },
   key: "assessment"
+});
+
+export const activeAssessmentQuery = selector({
+  get: async({get}) => {
+    const id = get(activeIDState);
+    const surveyType = get(activeTypeState);
+
+    return get(assessmentQuery({id, surveyType}));
+  },
+  key: "assessment/active"
 });

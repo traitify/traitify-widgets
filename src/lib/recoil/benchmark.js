@@ -1,6 +1,6 @@
 import {noWait, selector} from "recoil";
 import dig from "lib/common/object/dig";
-import {assessmentQuery} from "./assessment";
+import {activeAssessmentQuery} from "./assessment";
 import {
   benchmarkIDState,
   cacheState,
@@ -39,7 +39,7 @@ export const benchmarkQuery = selector({
 
 export const benchmarkTagState = selector({
   get: ({get}) => {
-    const loadable = get(noWait(assessmentQuery));
+    const loadable = get(noWait(activeAssessmentQuery));
     const assessment = loadable.state === "hasValue" ? loadable.contents : {};
     return dig(assessment, "recommendation", "benchmark_tag");
   },

@@ -41,14 +41,9 @@ export const activeTypeState = selector({
     const active = get(activeState);
     if(!active) { return null; }
 
-    return active.type;
+    return active.surveyType;
   },
   key: "active-type"
-});
-
-export const assessmentIDState = selector({
-  get: ({get}) => get(activeIDState),
-  key: "assessment-id"
 });
 
 export const personalityAssessmentIDState = selector({

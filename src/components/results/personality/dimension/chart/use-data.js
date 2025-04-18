@@ -13,7 +13,7 @@ export default function PersonalityDimensionChart() {
   const guide = useGuide();
   const i18n = useI18n();
   const locale = useLoadedValue(localeState).toLowerCase();
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
 
   return useMemo(() => {
     if(!results) { return; }

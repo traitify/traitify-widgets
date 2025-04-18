@@ -9,6 +9,7 @@ import useOption from "lib/hooks/use-option";
 import {activeState} from "lib/recoil";
 import style from "./style.scss";
 
+// TODO: Extract text to translate
 function Button({assessment}) {
   const listener = useListener();
   const options = useOption("status") || {};
@@ -23,6 +24,10 @@ function Button({assessment}) {
     return <a href={assessment.link}>Start Assessment</a>;
   }
 
+  if(assessment.loading) {
+    return <button disabled={true} type="button">Loading</button>;
+  }
+
   const start = () => {
     listener.trigger("Survey.start", {assessment});
     setActive({...assessment});
@@ -34,7 +39,8 @@ function Button({assessment}) {
 Button.propTypes = {
   assessment: PropTypes.shape({
     completed: PropTypes.bool.isRequired,
-    link: PropTypes.string
+    link: PropTypes.string,
+    loading: PropTypes.bool
   }).isRequired
 };
 

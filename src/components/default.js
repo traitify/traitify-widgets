@@ -1,6 +1,7 @@
 import useActive from "lib/hooks/use-active";
 import useOrder from "lib/hooks/use-order";
 import Results from "./results";
+import Status from "./status";
 import Survey from "./survey";
 
 // TODO: Add loading component?
@@ -19,10 +20,12 @@ export default function Default() {
   const active = useActive();
   const order = useOrder();
 
-  console.log(order);
-  if(!active) { return null; } // TODO: Maybe show loading if there's an order or something
-  if(active.loading) { return null; }
-  if(active.completed) { return <Results />; }
+  console.log("default - order", order);
+  console.log("default - active", active);
+  if(!active) { return <Status />; }
+  if(active.error) { return <Status />; } // TODO: See if error state makes it to active
+  if(active.loading) { return <Status />; }
+  if(active.surveyType === "external") { return <Status />; }
 
-  return <Survey />;
+  return active.completed ? <Results /> : <Survey />;
 }

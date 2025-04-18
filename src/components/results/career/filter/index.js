@@ -15,7 +15,7 @@ export default function CareerFilter() {
   const [showFilters, setShowFilters] = useState(false);
   const [submit, setSubmit] = useState(0);
   const options = useOption("career") || {};
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
   const translate = useTranslate();
 
   useComponentEvents("CareerFilter");

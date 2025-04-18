@@ -4,7 +4,7 @@ import useAssessment from "lib/hooks/use-assessment";
 import style from "./style.scss";
 
 function Slide({orientation, slide}) {
-  const assessment = useAssessment({type: "personality"});
+  const assessment = useAssessment({surveyType: "personality"});
   const caption = useRef(null);
   const textSurvey = assessment.slide_type?.toLowerCase() === "text";
 

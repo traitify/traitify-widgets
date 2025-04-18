@@ -11,7 +11,7 @@ import {
 } from "lib/recoil";
 
 export default function useBaseEffect() {
-  const resetAssessments = useResetRecoilState(orderState);
+  const resetOrder = useResetRecoilState(orderState);
   const base = useRecoilValue(baseState);
   const setBenchmarkID = useSetRecoilState(benchmarkIDState);
   const setOrderID = useSetRecoilState(orderIDState);
@@ -22,5 +22,5 @@ export default function useBaseEffect() {
   useEffect(() => { setOrderID(base.orderID); }, [base.orderID]);
   useEffect(() => { setPackageID(base.packageID); }, [base.packageID]);
   useEffect(() => { setProfileID(base.profileID); }, [base.profileID]);
-  useDidUpdate(() => { resetAssessments(); }, [base]);
+  useDidUpdate(() => { resetOrder(); }, [base]);
 }

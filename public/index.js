@@ -53,8 +53,6 @@ function createWidget() {
     if(!benchmarkID && !packageID) { return; }
     if(!profileID) { return; }
 
-    targets["Status"] = "#target-0";
-
     Traitify.listener.on("Survey.start", (x) => console.log(x));
     Traitify.options.benchmarkID = benchmarkID;
     Traitify.options.packageID = packageID;
@@ -407,7 +405,7 @@ function setupDom() {
   group.appendChild(row)
 
   row = createElement({className: "row"});
-  row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create"}));
+  row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create / Load"}));
   group.appendChild(row);
   document.body.appendChild(group);
 }

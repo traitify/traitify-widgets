@@ -1,6 +1,6 @@
 export function assessmentFromQuery(response) {
   const record = {
-    completed: !!(response.completed || response.completed_at),
+    completed: !!(response.completed || response.completed_at || response.completedAt),
     link: response.assessmentTakerUrl,
     loaded: true,
     loading: false,
@@ -16,6 +16,7 @@ export function assessmentFromQuery(response) {
   return record;
 }
 
+// NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 export default function orderFromQuery(response) {
   if(response.errorMessage) { console.warn("order", response.errors); } /* eslint-disable-line no-console */
 
@@ -24,7 +25,7 @@ export default function orderFromQuery(response) {
 
   const record = {
     assessments: order.assessments.map((assessment) => ({
-      completed: assessment.status === "COMPLETE",
+      completed: assessment.status === "COMPLETED",
       id: assessment.id,
       loaded: false,
       surveyID: assessment.surveyId,

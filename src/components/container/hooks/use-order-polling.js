@@ -1,20 +1,24 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {useRecoilValue, useSetRecoilState} from "recoil";
+import dig from "lib/common/object/dig";
 import mutable from "lib/common/object/mutable";
 import orderFromQuery from "lib/common/order-from-query";
-import useCache from "lib/hooks/use-cache";
-import useCacheKey from "lib/hooks/use-cache-key";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useInterval from "lib/hooks/use-interval";
 import useListener from "lib/hooks/use-listener";
+import useOption from "lib/hooks/use-option";
 import useOrder from "lib/hooks/use-order";
 import {orderIDState, orderState} from "lib/recoil";
 
+const defaultPollingTimes = {
+  long: {interval: 10 * 1000, stop: 5 * 60 * 1000},
+  none: {interval: null, stop: null},
+  short: {interval: 5 * 1000, stop: 1 * 60 * 1000}
+};
+
 export default function useOrderPolling() {
   const orderID = useRecoilValue(orderIDState);
-  const cache = useCache();
-  const cacheKey = useCacheKey({id: orderID, type: "order"});
   const graphQL = useGraphql();
   const [halted, setHalted] = useState(false);
   const http = useHttp();
@@ -23,22 +27,25 @@ export default function useOrderPolling() {
   const order = useOrder();
   const request = useRef(false);
   const setOrder = useSetRecoilState(orderState);
+  const pollingTimes = useOption("order", "pollingTimes");
   const pollingTime = useMemo(() => {
-    // TODO: Make configurable
-    const times = {
-      long: {interval: 10 * 1000, stop: 5 * 60 * 1000},
-      none: {interval: null, stop: null},
-      shot: {interval: 5 * 1000, stop: 1 * 60 * 1000}
-    };
+    const times = mutable(defaultPollingTimes);
+
+    pollingTimes && ["long", "short"].forEach((key) => {
+      ["interval", "stop"].forEach((type) => {
+        const time = dig(pollingTimes, key, type);
+        if(time) { times[key][type] = time; }
+      });
+    });
 
     if(!order) { return times.none; }
     if(!orderID) { return times.none; }
     if(order.completed) { return times.none; }
     if(order.status === "incomplete") { return times.long; }
 
-    // NOTE: For status of error, loading, or unknown
+    // NOTE: For status of error or loading
     return times.short;
-  }, [orderID, order?.status]);
+  }, [orderID, order?.status, pollingTimes]);
 
   useEffect(() => {
     if(!listener) { return; }
@@ -66,6 +73,8 @@ export default function useOrderPolling() {
     if(request.current) { return; }
 
     if(Date.now() - lastUpdatedAt > pollingTime.stop) {
+      if(order.status === "loading") { setOrder({...order, status: "timeout"}); }
+
       setHalted(true);
       return;
     }
@@ -86,8 +95,9 @@ export default function useOrderPolling() {
         const currentAssessment = currentOrder.assessments
           .find(({id}) => id === latestAssessment.id);
         if(currentAssessment && currentAssessment.completed !== latestAssessment.completed) {
+          // NOTE: May need to reset assessmentQuery for personality results
           changes = true;
-          currentOrder.completed = currentAssessment.completed || latestAssessment.completed;
+          currentAssessment.completed = currentAssessment.completed || latestAssessment.completed;
         } else if(!currentAssessment) {
           changes = true;
           currentOrder.assessments.push(latestAssessment);
@@ -99,7 +109,6 @@ export default function useOrderPolling() {
         currentOrder.completed = currentOrder.assessments.every(({completed}) => completed);
         currentOrder.status = currentOrder.completed ? "completed" : latestOrder.status;
       }
-      if(currentOrder.completed) { cache.set(cacheKey, latestOrder); }
       if(changes) { setOrder(currentOrder); }
 
       request.current = false;

@@ -3,7 +3,6 @@ import {useEffect} from "react";
 import {useRecoilState} from "recoil";
 import loadFont from "lib/common/load-font";
 import {loadingState} from "lib/recoil";
-import useAssessmentEffect from "./hooks/use-assessment-effect";
 import useBaseEffect from "./hooks/use-base-effect";
 import useListenerEffect from "./hooks/use-listener-effect";
 import useOrderEffect from "./hooks/use-order-effect";
@@ -15,7 +14,6 @@ function State({children, ...props}) {
   const [loading, setLoading] = useRecoilState(loadingState);
 
   useProps(props);
-  useAssessmentEffect();
   useBaseEffect();
   useListenerEffect();
   useOrderEffect();

@@ -136,10 +136,8 @@ export default function PersonalitySurvey() {
         time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
       }))
     ).then(() => {
-      console.log("refreshing");
       cache.remove(assessmentCacheKey);
       refreshAssessment();
-      console.log("refreshed");
 
       submitting.current = false;
     }).catch((response) => {

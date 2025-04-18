@@ -1,5 +1,5 @@
-import {atom, selector} from "recoil";
-import orderFromQuery, {overrides} from "lib/common/order-from-query";
+import {DefaultValue, atom, selector} from "recoil";
+import orderFromQuery from "lib/common/order-from-query";
 import {
   baseState,
   cacheState,
@@ -13,9 +13,11 @@ import {
 
 // NOTE: Order
 // - assessments - completed, id, link (optional), surveyID, surveyName (optional), surveyType
+// - cacheKey
 // - completed
 // - errors (optional)
-// - status - completed, error, loading, incomplete
+// - status - completed, error, loading, incomplete, timeout
+//   - timeout occurs when no longer loading but still not incomplete (missing assessments)
 // - surveys - id, type
 
 const baseAssessmentState = selector({
@@ -50,12 +52,9 @@ export const baseOrderQuery = selector({
       variables: {id: orderID}
     };
 
-    // TODO: Remove overrides when API is ready
-    const overrideState = localStorage.getItem("order-override");
-    if(overrideState) { params.variables.id = overrides[overrideState]; }
-
     const response = await http.post(GraphQL.order.path, params);
     const order = orderFromQuery(response);
+    order.cacheKey = cacheKey;
     if(order.completed) { cache.set(cacheKey, order); }
 
     return order;
@@ -63,6 +62,7 @@ export const baseOrderQuery = selector({
   key: "order/default/order"
 });
 
+// NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 const baseRecommendationQuery = selector({
   get: async({get}) => {
     const {benchmarkID, packageID, profileID} = get(baseState);
@@ -79,7 +79,16 @@ const baseRecommendationQuery = selector({
       variables: {benchmarkID, localeKey: get(localeState), packageID, profileID}
     };
     const response = await http.post(GraphQL.xavier.path, params);
-    if(response.errors) { console.warn("xavier", response.errors); } /* eslint-disable-line no-console */
+    if(response.errors) {
+      console.warn("xavier", response.errors); /* eslint-disable-line no-console */
+      return {
+        assessments: [],
+        completed: false,
+        errors: response.errors,
+        status: "error",
+        surveys: []
+      };
+    }
 
     const assessments = [];
     const surveys = [];
@@ -127,6 +136,7 @@ const baseRecommendationQuery = selector({
 
     const order = {
       assessments,
+      cacheKey,
       completed: assessments.every(({completed}) => completed),
       errors: response.errors,
       surveys
@@ -160,15 +170,36 @@ const orderDefaultQuery = selector({
   key: "order/default"
 });
 
-const updateStatus = ({onSet, setSelf}) => {
-  onSet((order) => {
+const updateStatus = ({getLoadable, onSet, setSelf}) => {
+  onSet((order, oldOrder) => {
     if(!order) { return; }
-    if(order.completed) { return; }
-    if(order.assessments.length === 0) { return; }
-    if(order.assessments.length !== order.surveys.length) { return; }
+    if(order instanceof DefaultValue) { return; }
+
+    const cacheOrder = (newOrder) => {
+      const cache = getLoadable(cacheState).contents;
+      const {cacheKey} = newOrder;
+      if(!cache || !cacheKey) { return; }
+
+      cache.set(cacheKey, newOrder);
+    };
+
+    if(order.completed && !oldOrder?.completed) {
+      cacheOrder(order);
+      return;
+    }
+
+    if(order.errors) { return; }
+    if(order.assessments.length === 0 || order.assessments.length !== order.surveys.length) {
+      if(["loading", "timeout"].includes(order.status)) { return; }
+
+      setSelf({...order, status: "loading"});
+      return;
+    }
     if(order.assessments.some(({completed}) => !completed)) { return; }
 
-    setSelf({...order, completed: true, status: "completed"});
+    const newOrder = {...order, completed: true, status: "completed"};
+    cacheOrder(newOrder);
+    setSelf(newOrder);
   });
 };
 

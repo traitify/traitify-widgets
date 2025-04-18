@@ -9,6 +9,8 @@ import {
   safeCacheKeyState
 } from "./base";
 
+// TODO: Return error instead of null for cognitive and external
+// return {errors: response.errors, id};
 export const cognitiveAssessmentQuery = selectorFamily({
   get: (id) => async({get}) => {
     if(!id) { return null; }
@@ -27,7 +29,7 @@ export const cognitiveAssessmentQuery = selectorFamily({
     const response = await http.post({path: GraphQL.cognitive.path, params});
     if(response.errors) {
       console.warn("cognitive-assessment", response.errors); /* eslint-disable-line no-console */
-      return response;
+      return null;
     }
 
     const assessment = response.data.cognitiveTest;
@@ -63,7 +65,7 @@ export const externalAssessmentQuery = selectorFamily({
     const response = await http.post(query);
     if(response.errors) {
       console.warn("external-assessment", response.errors); /* eslint-disable-line no-console */
-      return response;
+      return null;
     }
 
     const assessment = response.data.getAssessment;
@@ -78,7 +80,6 @@ export const externalAssessmentQuery = selectorFamily({
 
 export const personalityAssessmentQuery = selectorFamily({
   get: (id) => async({get}) => {
-    console.log("personalityAssessmentQuery", id);
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -103,7 +104,6 @@ export const personalityAssessmentQuery = selectorFamily({
 
 export const assessmentQuery = selectorFamily({
   get: ({id, surveyType}) => async({get}) => {
-    console.log("assessmentQuery", id, surveyType);
     if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
     if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
     if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
@@ -117,7 +117,6 @@ export const activeAssessmentQuery = selector({
   get: async({get}) => {
     const id = get(activeIDState);
     const surveyType = get(activeTypeState);
-    console.log("activeAssessmentQuery", id, surveyType);
 
     return get(assessmentQuery({id, surveyType}));
   },

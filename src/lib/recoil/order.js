@@ -1,7 +1,5 @@
 import {atom, selector} from "recoil";
-import mutable from "lib/common/object/mutable";
-import orderFromQuery, {assessmentFromQuery, overrides} from "lib/common/order-from-query";
-import {assessmentQuery} from "./assessment";
+import orderFromQuery, {overrides} from "lib/common/order-from-query";
 import {
   baseState,
   cacheState,
@@ -162,47 +160,8 @@ const orderDefaultQuery = selector({
   key: "order/default"
 });
 
-const loadAssessments = ({getPromise, onSet, setSelf}) => {
-  onSet((order) => {
-    if(!order) { return; }
-    if(order.assessments.length === 0) { return; }
-
-    order.assessments.forEach(({id, loaded, surveyType}) => {
-      if(loaded) { return; }
-
-      getPromise(assessmentQuery({id, surveyType})).then((latestAssessment) => {
-        if(!latestAssessment) { return; }
-
-        setSelf((_latestOrder) => {
-          const latestOrder = mutable(_latestOrder);
-          const assessment = latestOrder.assessments.find((a) => a.id === id);
-          Object.assign(assessment, assessmentFromQuery(latestAssessment));
-
-          // NOTE: Claim the first survey missing an ID that matches the type
-          const survey = latestOrder.surveys.filter((s) => !s.id)
-            .find((s) => assessment.surveyType === s.type);
-          if(survey) { survey.id = assessment.surveyID; }
-
-          // TODO: Currently assuming updateStatus is called after this setSelf
-          /*
-          if(latestOrder.assessments.length === latestOrder.surveys.length) {
-            latestOrder.completed = latestOrder.assessments.every(({completed}) => completed);
-
-            if(latestOrder.completed) { latestOrder.status = "completed"; }
-          }
-          */
-
-          console.log("setting in loadAssessments");
-          return latestOrder;
-        });
-      });
-    });
-  });
-};
-
 const updateStatus = ({onSet, setSelf}) => {
   onSet((order) => {
-    console.log("setting in updateStatus");
     if(!order) { return; }
     if(order.completed) { return; }
     if(order.assessments.length === 0) { return; }
@@ -215,6 +174,6 @@ const updateStatus = ({onSet, setSelf}) => {
 
 export const orderState = atom({
   default: orderDefaultQuery,
-  effects: [loadAssessments, updateStatus],
+  effects: [updateStatus],
   key: "order"
 });

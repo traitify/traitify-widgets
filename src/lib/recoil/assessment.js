@@ -78,6 +78,7 @@ export const externalAssessmentQuery = selectorFamily({
 
 export const personalityAssessmentQuery = selectorFamily({
   get: (id) => async({get}) => {
+    console.log("personalityAssessmentQuery", id);
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -102,6 +103,7 @@ export const personalityAssessmentQuery = selectorFamily({
 
 export const assessmentQuery = selectorFamily({
   get: ({id, surveyType}) => async({get}) => {
+    console.log("assessmentQuery", id, surveyType);
     if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
     if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
     if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
@@ -115,6 +117,7 @@ export const activeAssessmentQuery = selector({
   get: async({get}) => {
     const id = get(activeIDState);
     const surveyType = get(activeTypeState);
+    console.log("activeAssessmentQuery", id, surveyType);
 
     return get(assessmentQuery({id, surveyType}));
   },

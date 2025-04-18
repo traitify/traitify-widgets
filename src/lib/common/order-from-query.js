@@ -1,10 +1,3 @@
-// TODO: Remove overrides when API is ready
-export const overrides = {
-  all: "50390484-de15-4530-a82c-95933282e082",
-  completed: "71df3e54-2e06-40bb-a3c5-49d39957bd39",
-  draft: "5135d0e0-033e-4c96-81b1-8be2036fb62a"
-};
-
 export function assessmentFromQuery(response) {
   const record = {
     completed: !!(response.completed || response.completed_at),

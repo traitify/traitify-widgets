@@ -1,7 +1,7 @@
 import {useEffect, useMemo, useRef, useState} from "react";
 import {useRecoilValue, useSetRecoilState} from "recoil";
-import diff from "lib/common/deep-diff";
-import orderFromQuery, {overrides} from "lib/common/order-from-query";
+import mutable from "lib/common/object/mutable";
+import orderFromQuery from "lib/common/order-from-query";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
 import useGraphql from "lib/hooks/use-graphql";
@@ -76,19 +76,31 @@ export default function useOrderPolling() {
       query: graphQL.order.get,
       variables: {id: orderID}
     };
-    // TODO: Remove overrides when API is ready
-    const overrideState = localStorage.getItem("order-override");
-    if(overrideState) { params.variables.id = overrides[overrideState]; }
 
     http.post(graphQL.order.path, params).then((response) => {
+      let changes = false;
+      const currentOrder = mutable(order);
       const latestOrder = orderFromQuery(response);
-      // TODO: Merge updates into order
-      // - link and stuff too
-      console.log("diff", diff.map(order, latestOrder));
-      if(latestOrder.completed) { cache.set(cacheKey, latestOrder); }
 
-      // TODO: Only set if there are changes
-      setOrder(true ? order : latestOrder);
+      latestOrder.assessments.forEach((latestAssessment) => {
+        const currentAssessment = currentOrder.assessments
+          .find(({id}) => id === latestAssessment.id);
+        if(currentAssessment && currentAssessment.completed !== latestAssessment.completed) {
+          changes = true;
+          currentOrder.completed = currentAssessment.completed || latestAssessment.completed;
+        } else if(!currentAssessment) {
+          changes = true;
+          currentOrder.assessments.push(latestAssessment);
+        }
+      });
+
+      if(currentOrder.completed !== latestOrder.completed) {
+        changes = true;
+        currentOrder.completed = currentOrder.assessments.every(({completed}) => completed);
+        currentOrder.status = currentOrder.completed ? "completed" : latestOrder.status;
+      }
+      if(currentOrder.completed) { cache.set(cacheKey, latestOrder); }
+      if(changes) { setOrder(currentOrder); }
 
       request.current = false;
     });

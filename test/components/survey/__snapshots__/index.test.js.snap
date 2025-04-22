@@ -12,6 +12,26 @@ exports[`Survey renders cognitive 1`] = `
 </div>
 `;
 
+exports[`Survey renders external 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <img
+      alt=""
+      src="https://cdn.traitify.com/widgets/status/loading-sonar.gif"
+    />
+    <div
+      className="bold p"
+    >
+      Loading your assessment
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Survey renders personality 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

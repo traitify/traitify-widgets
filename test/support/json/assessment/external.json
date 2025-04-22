@@ -1,0 +1,8 @@
+{
+  "assessmentId": "external-id",
+  "assessmentTakerUrl": "https://external.traitify.com/external-assessment-id",
+  "status": "INCOMPLETE",
+  "surveyId": "external-assessment-id",
+  "surveyName": "Emmersion Assessment",
+  "vendor": "Emmersion"
+}

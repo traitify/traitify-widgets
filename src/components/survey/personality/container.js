@@ -24,7 +24,7 @@ function Container({
   progress,
   slideIndex
 }) {
-  const assessment = useAssessment({type: "personality"});
+  const assessment = useAssessment({surveyType: "personality"});
   const {allowFullscreen, ...options} = useOption("survey") || {};
   const container = useRef(null);
   const content = useRef(null);

@@ -11,7 +11,7 @@ import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {cognitiveAssessmentQuery} from "lib/recoil";
+import {activeAssessmentQuery} from "lib/recoil";
 import {useQuestionsLoader} from "./helpers";
 import Instructions from "./instructions";
 import Slide from "./slide";
@@ -19,14 +19,14 @@ import style from "./style.scss";
 import Timer from "./timer";
 
 export default function Cognitive() {
-  const assessment = useAssessment({type: "cognitive"});
+  const assessment = useAssessment({surveyType: "cognitive"});
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});
   const graphQL = useGraphql();
   const http = useHttp();
   const options = useOption("survey") || {};
-  const refreshAssessment = useRecoilRefresher(cognitiveAssessmentQuery);
+  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
   const translate = useTranslate();
 
   const [initialQuestions, setInitialQuestions] = useState([]);

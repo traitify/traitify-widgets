@@ -12,14 +12,14 @@ import useResults from "lib/hooks/use-results";
 export default function Results() {
   const active = useActive();
   const report = useOption("report");
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
 
   useComponentEvents("Results");
 
   if(!active) { return null; }
   if(!active.completed) { return null; }
-  if(active.type === "cognitive") { return <Cognitive />; }
-  if(active.type !== "personality") { return null; }
+  if(active.surveyType === "cognitive") { return <Cognitive />; }
+  if(active.surveyType !== "personality") { return null; }
   if(!results) { return null; }
   if(results.scoring_scale === "LIKERT_CUMULATIVE_POMP") {
     return <FinancialRiskResults />;

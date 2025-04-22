@@ -87,7 +87,7 @@ describe("Http", () => {
     });
 
     it("includes headers", () => {
-      http.request("GET", "/profiles", {locale_key: "en-us"});
+      http.request({method: "GET", path: "/profiles", params: {locale_key: "en-us"}});
 
       expect(lastHeaders()).toEqual(
         expect.objectContaining({
@@ -99,7 +99,7 @@ describe("Http", () => {
     });
 
     it("passes query params", () => {
-      http.request("GET", "/profiles", {locale_key: "en-us"});
+      http.request({method: "GET", path: "/profiles", params: {locale_key: "en-us"}});
 
       const [url] = lastFetch();
 
@@ -107,7 +107,7 @@ describe("Http", () => {
     });
 
     it("combines query params", () => {
-      http.request("GET", "/profiles?per_page=10", {locale_key: "en-us"});
+      http.request({method: "GET", path: "/profiles?per_page=10", params: {locale_key: "en-us"}});
 
       const [url] = lastFetch();
 
@@ -115,7 +115,7 @@ describe("Http", () => {
     });
 
     it("passes body params", () => {
-      http.request("POST", "/profiles", {locale_key: "en-us"});
+      http.request({method: "POST", path: "/profiles", params: {locale_key: "en-us"}});
 
       const [url, options] = lastFetch();
 
@@ -127,7 +127,7 @@ describe("Http", () => {
       const json = JSON.parse(`[{"name": "Neo"}]`);
       fetch.mockImplementationOnce(() => Promise.resolve({json: () => json}));
 
-      const response = http.request("GET", "/profiles");
+      const response = http.request({method: "GET", path: "/profiles"});
 
       return expect(response).resolves.toEqual([{name: "Neo"}]);
     });
@@ -138,7 +138,7 @@ describe("Http", () => {
       http.request = jest.fn().mockName("request");
       http.get("/profiles", {locale_key: "en-us"});
 
-      expect(http.request).toHaveBeenCalledWith("GET", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith({method: "GET", path: "/profiles", params: {locale_key: "en-us"}});
     });
   });
 
@@ -147,7 +147,7 @@ describe("Http", () => {
       http.request = jest.fn().mockName("request");
       http.put("/profiles", {locale_key: "en-us"});
 
-      expect(http.request).toHaveBeenCalledWith("PUT", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith({method: "PUT", path: "/profiles", params: {locale_key: "en-us"}});
     });
   });
 
@@ -156,7 +156,7 @@ describe("Http", () => {
       http.request = jest.fn().mockName("request");
       http.post("/profiles", {locale_key: "en-us"});
 
-      expect(http.request).toHaveBeenCalledWith("POST", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith({method: "POST", path: "/profiles", params: {locale_key: "en-us"}});
     });
   });
 
@@ -165,7 +165,7 @@ describe("Http", () => {
       http.request = jest.fn().mockName("request");
       http.delete("/profiles", {locale_key: "en-us"});
 
-      expect(http.request).toHaveBeenCalledWith("DELETE", "/profiles", {locale_key: "en-us"});
+      expect(http.request).toHaveBeenCalledWith({method: "DELETE", path: "/profiles", params: {locale_key: "en-us"}});
     });
   });
 });

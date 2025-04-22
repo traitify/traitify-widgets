@@ -18,7 +18,7 @@ function PersonalityGuide({combined = false}) {
   const [data, setData] = useState([]);
   const disabled = useDisabledComponent("Guide", "PersonalityGuide");
   const guide = useGuide();
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
   const [showExpandedIntro, setShowExpandedIntro] = useState(false);
   const translate = useTranslate();
 

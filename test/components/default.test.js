@@ -1,6 +1,6 @@
 import Component from "components/default";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockAssessments, mockCognitiveAssessment} from "support/container/http";
+import {mockAssessment, mockCognitiveAssessment, mockRecommendation} from "support/container/http";
 import useContainer from "support/hooks/use-container";
 import cognitive from "support/json/assessment/cognitive.json";
 import assessment from "support/json/assessment/dimension-based.json";
@@ -20,10 +20,10 @@ describe("Default", () => {
   });
 
   describe("assessments", () => {
-    let assessments;
+    let recommendation;
 
     beforeEach(() => {
-      assessments = {
+      recommendation = {
         benchmarkID: "benchmark-id",
         prerequisites: {
           cognitive: {
@@ -39,30 +39,31 @@ describe("Default", () => {
         },
         profileID: "profile-id"
       };
+
+      mockAssessment(assessment, {id: assessment.id});
+      mockCognitiveAssessment({...cognitive, completed: true});
+      mockRecommendation(recommendation);
     });
 
     it("renders cognitive survey", async() => {
-      assessments.prerequisites.cognitive.status = "INCOMPLETE";
-      mockAssessment(assessment, {id: assessment.id});
+      recommendation.prerequisites.cognitive.status = "INCOMPLETE";
       mockCognitiveAssessment(cognitive);
-      mockAssessments(assessments);
+      mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
     });
 
     it("renders personality results", async() => {
-      mockAssessment(assessment, {id: assessment.id});
-      mockAssessments(assessments);
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
     });
 
     it("renders personality survey", async() => {
-      assessments.prerequisites.personality.status = "INCOMPLETE";
+      recommendation.prerequisites.personality.status = "INCOMPLETE";
       mockAssessment(assessmentWithSlides, {id: assessment.id});
-      mockAssessments(assessments);
+      mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -83,7 +84,7 @@ describe("Default", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing if not ready", async() => {
+  it("renders loading if not ready", async() => {
     mockAssessment({id: assessment.id, implementation: () => new Promise(() => {})});
     component = await ComponentHandler.setup(Component);
 

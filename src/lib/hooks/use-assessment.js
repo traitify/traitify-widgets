@@ -1,13 +1,13 @@
 import useActive from "lib/hooks/use-active";
 import useLoadedValue from "lib/hooks/use-loaded-value";
-import {assessmentQuery} from "lib/recoil";
+import {activeAssessmentQuery} from "lib/recoil";
 
-export default function useAssessment({type} = {}) {
+export default function useAssessment({surveyType} = {}) {
   const active = useActive();
-  const assessment = useLoadedValue(assessmentQuery);
+  const assessment = useLoadedValue(activeAssessmentQuery);
 
   if(!active) { return null; }
-  if(type && active.type !== type) { return null; }
+  if(surveyType && active.surveyType !== surveyType) { return null; }
 
   return assessment;
 }

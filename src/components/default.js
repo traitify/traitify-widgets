@@ -1,13 +1,14 @@
 import useActive from "lib/hooks/use-active";
 import Results from "./results";
+import Status from "./status";
 import Survey from "./survey";
 
 export default function Default() {
   const active = useActive();
 
-  if(!active) { return null; }
-  if(active.loading) { return null; }
-  if(active.completed) { return <Results />; }
+  if(!active) { return <Status />; }
+  if(active.loading) { return <Status />; }
+  if(active.surveyType === "external") { return <Status />; }
 
-  return <Survey />;
+  return active.completed ? <Results /> : <Survey />;
 }

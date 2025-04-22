@@ -17,7 +17,7 @@ function RecommendationChart({combined = false}) {
   const benchmark = useBenchmark();
   const disabled = useDisabledComponent("RecommendationChart");
   const guide = useGuide();
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
   const allowed = useSetting("showFitBreakdownGraph", {fallback: true});
   const data = useMemo(() => {
     const competencies = dig(guide, "personality", "competencies") || [];

@@ -1,5 +1,5 @@
 import {noWait, selector} from "recoil";
-import {assessmentQuery} from "./assessment";
+import {activeAssessmentQuery} from "./assessment";
 import {
   activeTypeState,
   cacheState,
@@ -13,7 +13,7 @@ export const deckIDState = selector({
     const type = get(activeTypeState);
     if(type !== "personality") { return null; }
 
-    const loadable = get(noWait(assessmentQuery));
+    const loadable = get(noWait(activeAssessmentQuery));
     if(loadable.state !== "hasValue") { return null; }
 
     return loadable.contents?.deck_id;

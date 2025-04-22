@@ -24,7 +24,7 @@ const tipTypes = {
 export default function PersonalityArchetypeTips() {
   const disabled = useDisabledComponent("PersonalityTips");
   const perspective = useInlineMemo((value) => value || "firstPerson", [useOption("perspective")]);
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
   const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);

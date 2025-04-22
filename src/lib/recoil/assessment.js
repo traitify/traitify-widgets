@@ -1,7 +1,7 @@
-import {selector} from "recoil";
+import {selector, selectorFamily} from "recoil";
 import {
+  activeIDState,
   activeTypeState,
-  assessmentIDState,
   cacheState,
   graphqlState,
   httpState,
@@ -9,13 +9,14 @@ import {
   safeCacheKeyState
 } from "./base";
 
-export const cognitiveAssessmentQuery = selector({
-  get: async({get}) => {
-    const assessmentID = get(assessmentIDState);
-    if(!assessmentID) { return null; }
+// TODO: Return error instead of null for cognitive and external
+// return {errors: response.errors, id};
+export const cognitiveAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
 
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState({id: assessmentID, type: "assessment"}));
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
@@ -23,12 +24,12 @@ export const cognitiveAssessmentQuery = selector({
     const http = get(httpState);
     const params = {
       query: GraphQL.cognitive.get,
-      variables: {localeKey: get(localeState), testID: assessmentID}
+      variables: {localeKey: get(localeState), testID: id}
     };
-    const response = await http.post(GraphQL.cognitive.path, params);
+    const response = await http.post({path: GraphQL.cognitive.path, params});
     if(response.errors) {
-      console.warn("test", response.errors); /* eslint-disable-line no-console */
-      return response;
+      console.warn("cognitive-assessment", response.errors); /* eslint-disable-line no-console */
+      return null;
     }
 
     const assessment = response.data.cognitiveTest;
@@ -38,16 +39,51 @@ export const cognitiveAssessmentQuery = selector({
 
     return assessment;
   },
-  key: "cognitive-assessment"
+  key: "assessment/cognitive"
 });
 
-export const personalityAssessmentQuery = selector({
-  get: async({get}) => {
-    const assessmentID = get(assessmentIDState);
-    if(!assessmentID) { return null; }
+export const externalAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
 
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState({id: assessmentID, type: "assessment"}));
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
+    const cached = cache.get(cacheKey);
+    if(cached) { return cached; }
+
+    const GraphQL = get(graphqlState);
+    const http = get(httpState);
+    const query = {
+      params: {
+        query: GraphQL.external.get,
+        variables: {id}
+      },
+      path: GraphQL.external.path
+    };
+    if(http.version === "v1") { query.version = GraphQL.external.version; }
+
+    const response = await http.post(query);
+    if(response.errors) {
+      console.warn("external-assessment", response.errors); /* eslint-disable-line no-console */
+      return null;
+    }
+
+    const assessment = response.data.getAssessment;
+    if(!assessment?.completedAt) { return assessment; }
+
+    cache.set(cacheKey, assessment);
+
+    return assessment;
+  },
+  key: "assessment/external"
+});
+
+export const personalityAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
+
+    const cache = get(cacheState);
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
@@ -56,23 +92,33 @@ export const personalityAssessmentQuery = selector({
       locale_key: get(localeState)
     };
     const http = get(httpState);
-    const response = await http.get(`/assessments/${assessmentID}`, params);
+    const response = await http.get({path: `/assessments/${id}`, params});
     if(!response?.completed_at) { return response; }
 
     cache.set(cacheKey, response);
 
     return response;
   },
-  key: "personality-assessment"
+  key: "assessment/personality"
 });
 
-export const assessmentQuery = selector({
-  get: async({get}) => {
-    const type = get(activeTypeState);
-    if(type === "cognitive") { return get(cognitiveAssessmentQuery); }
-    if(type === "personality") { return get(personalityAssessmentQuery); }
+export const assessmentQuery = selectorFamily({
+  get: ({id, surveyType}) => async({get}) => {
+    if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
+    if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
+    if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
 
     return null;
   },
   key: "assessment"
+});
+
+export const activeAssessmentQuery = selector({
+  get: async({get}) => {
+    const id = get(activeIDState);
+    const surveyType = get(activeTypeState);
+
+    return get(assessmentQuery({id, surveyType}));
+  },
+  key: "assessment/active"
 });

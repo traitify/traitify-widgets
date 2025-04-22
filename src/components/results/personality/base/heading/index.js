@@ -14,7 +14,7 @@ import style from "./style.scss";
 import useBaseData from "./use-base-data";
 
 export default function PersonalityBaseHeading() {
-  const assessment = useAssessment({type: "personality"});
+  const assessment = useAssessment({surveyType: "personality"});
   const careersLink = useInlineMemo((deckID, link) => (
     deckID?.includes("career") && link
   ), [dig(assessment, "deck_id"), useOption("careersLink")]);

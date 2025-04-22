@@ -1,11 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import {noWait, selector} from "recoil";
 import dig from "lib/common/object/dig";
-import {assessmentQuery} from "./assessment";
+import {activeAssessmentQuery} from "./assessment";
 
 export const recommendationsState = selector({
   get: ({get}) => {
-    const loadable = get(noWait(assessmentQuery));
+    const loadable = get(noWait(activeAssessmentQuery));
     const assessment = loadable.state === "hasValue" ? loadable.contents : {};
     const recommendations = dig(assessment, "recommendations");
 

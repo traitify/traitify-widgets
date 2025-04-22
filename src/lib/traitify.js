@@ -27,6 +27,7 @@ export default class Traitify {
       "benchmarkID",
       "graphql",
       "locale",
+      "orderID",
       "packageID",
       "profileID"
     ]);

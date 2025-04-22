@@ -21,6 +21,7 @@ export const localeState = atom({
   key: "locale"
 });
 export const optionsState = atom({default: null, key: "options"});
+export const orderIDState = atom({default: null, key: "order-id"});
 export const packageIDState = atom({default: null, key: "package-id"});
 export const profileIDState = atom({default: null, key: "profile-id"});
 
@@ -40,14 +41,9 @@ export const activeTypeState = selector({
     const active = get(activeState);
     if(!active) { return null; }
 
-    return active.type;
+    return active.surveyType;
   },
   key: "active-type"
-});
-
-export const assessmentIDState = selector({
-  get: ({get}) => get(activeIDState),
-  key: "assessment-id"
 });
 
 export const personalityAssessmentIDState = selector({

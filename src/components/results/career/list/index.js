@@ -8,7 +8,7 @@ import Career from "../details";
 
 export default function CareerList() {
   const {fetching, getNextPage, moreRecords, records} = useCareers();
-  const results = useResults({type: "personality"});
+  const results = useResults({surveyType: "personality"});
   const translate = useTranslate();
 
   useComponentEvents("CareerList");

@@ -19,6 +19,7 @@
     @include min-width("sm") { min-width: 175px; }
   }
 }
+.bold { font-weight: bold; }
 .container {
   @extend %container;
 
@@ -26,6 +27,20 @@
   margin-right: auto;
   max-width: $breakpoint-sm;
   padding: $buffer-lg;
+
+  .retry {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+    @include buttonDark("theme");
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    width: 100%;
+  }
 }
 .header {
   @extend %heading;
@@ -49,4 +64,7 @@
 
   margin-bottom: $buffer-section;
   text-align: center;
+}
+.spacer {
+  height: 200px;
 }

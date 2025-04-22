@@ -48,36 +48,6 @@ export const mockAssessment = (...params) => {
   return mockFetch(mock);
 };
 
-export const mockAssessments = (...params) => {
-  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
-    ? [null, ...params]
-    : params;
-  const {benchmarkID: _benchmarkID, profileID: _profileID, implementation} = mockOptions || {};
-  const benchmarkID = _benchmarkID || response?.benchmarkID || container.benchmarkID;
-  const profileID = _profileID || response?.profileID || container.profileID;
-  const mock = {
-    key: "assessments",
-    request: (url, options) => {
-      if(!url.includes("/xavier/graphql")) { return false; }
-      if(options.method !== "POST") { return false; }
-      if(!options.body) { return false; }
-
-      const variables = dig(JSON.parse(options.body), "variables") || {};
-
-      return variables.benchmarkID === benchmarkID && variables.profileID === profileID;
-    }
-  };
-
-  container.assessmentID = null;
-  container.benchmarkID = benchmarkID;
-  container.profileID = profileID;
-  implementation
-    ? mock.implementation = implementation
-    : mock.response = () => ({data: {recommendation: response}});
-
-  return mockFetch(mock);
-};
-
 // NOTE: Allow params to be [response, {id}] or {id, implementation}
 export const mockAssessmentStarted = (...params) => {
   const [response, mockOptions] = params.length === 1 && params[0]?.implementation
@@ -227,6 +197,33 @@ export const mockDeck = (deck, {id} = {}) => (
   })
 );
 
+export const mockExternalAssessment = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.assessmentId || container.assessmentID;
+  const mock = {
+    key: "external-assessment",
+    request: (url, options) => {
+      if(!url.includes("/external_assessments/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === id;
+    }
+  };
+
+  container.assessmentID = id;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {getAssessment: response}});
+
+  return mockFetch(mock);
+};
+
 export const mockGuide = (guide, {assessmentID} = {}) => (
   mockFetch({
     key: "guide",
@@ -265,6 +262,36 @@ export const mockHighlightedCareers = (careers, {path} = {}) => (
     response: () => careers
   })
 );
+
+export const mockRecommendation = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {benchmarkID: _benchmarkID, profileID: _profileID, implementation} = mockOptions || {};
+  const benchmarkID = _benchmarkID || response?.benchmarkID || container.benchmarkID;
+  const profileID = _profileID || response?.profileID || container.profileID;
+  const mock = {
+    key: "recommendation",
+    request: (url, options) => {
+      if(!url.includes("/xavier/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.benchmarkID === benchmarkID && variables.profileID === profileID;
+    }
+  };
+
+  container.assessmentID = null;
+  container.benchmarkID = benchmarkID;
+  container.profileID = profileID;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {recommendation: response}});
+
+  return mockFetch(mock);
+};
 
 export const mockSettings = (settings) => (
   mockFetch({

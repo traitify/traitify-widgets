@@ -14,7 +14,7 @@ import useHttp from "lib/hooks/use-http";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {personalityAssessmentQuery} from "lib/recoil";
+import {activeAssessmentQuery} from "lib/recoil";
 import Container from "./container";
 import Slide from "./slide";
 import style from "./style.scss";
@@ -23,13 +23,13 @@ import useSlideLoader from "./use-slide-loader";
 const maxRetries = 2;
 
 export default function PersonalitySurvey() {
-  const assessment = useAssessment({type: "personality"});
+  const assessment = useAssessment({surveyType: "personality"});
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});
   const http = useHttp();
   const listener = useListener();
-  const refreshAssessment = useRecoilRefresher(personalityAssessmentQuery);
+  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
   const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
   const translate = useTranslate();
   const {

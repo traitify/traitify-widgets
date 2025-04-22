@@ -1,7 +1,12 @@
 import {act} from "react-test-renderer";
 import Component from "components/status";
 import ComponentHandler from "support/component-handler";
-import {mockAssessments, mockCognitiveAssessment} from "support/container/http";
+import {
+  mockAssessment,
+  mockCognitiveAssessment,
+  mockExternalAssessment,
+  mockRecommendation
+} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import cognitive from "support/json/assessment/cognitive.json";
@@ -16,8 +21,8 @@ const external = {
   vendor: "Emmersion"
 };
 
-const responseToArray = (response) => {
-  const assessments = [];
+const responseToOrder = (response) => {
+  const order = {assessments: [], surveys: []};
   const {
     cognitive: cognitiveAssessment,
     external: externalAssessment,
@@ -25,47 +30,63 @@ const responseToArray = (response) => {
   } = response.prerequisites || {};
 
   if(personalityAssessment && personalityAssessment.assessmentId) {
-    assessments.push({
+    order.assessments.push({
       completed: personalityAssessment.status === "COMPLETE",
       id: personalityAssessment.assessmentId,
-      name: "Personality Assessment",
-      type: "personality"
+      surveyID: personalityAssessment.surveyId,
+      surveyName: "Personality Assessment",
+      surveyType: "personality"
     });
+    order.surveys.push({id: personalityAssessment.surveyId, type: "personality"});
   }
 
   if(cognitiveAssessment && cognitiveAssessment.testId) {
-    assessments.push({
+    order.assessments.push({
       completed: cognitiveAssessment.status === "COMPLETE",
       id: cognitiveAssessment.testId,
-      name: "Cognitive Assessment",
-      type: "cognitive"
+      surveyID: cognitiveAssessment.surveyId,
+      surveyName: "Cognitive Assessment",
+      surveyType: "cognitive"
     });
+    order.surveys.push({id: cognitiveAssessment.surveyId, type: "cognitive"});
   }
 
   if(externalAssessment) {
     externalAssessment.forEach((assessment) => {
-      assessments.push({
+      order.assessments.push({
         completed: assessment.status === "COMPLETE",
         id: assessment.assessmentId,
         link: assessment.assessmentTakerUrl,
-        name: assessment.surveyName,
-        type: "external"
+        surveyID: assessment.surveyId,
+        surveyName: assessment.surveyName,
+        surveyType: "external"
       });
+      order.surveys.push({id: assessment.surveyId, type: "external"});
     });
   }
+  order.cacheKey = [response.benchmarkID, response.profileID].join("-");
+  order.completed = order.assessments.every(({completed}) => completed);
+  order.errors = response.errors;
 
-  return assessments;
+  if(order.completed) {
+    order.status = "completed";
+  } else if(response.errors) {
+    order.status = "error";
+  } else {
+    order.status = "incomplete";
+  }
+  return order;
 };
 
 describe("Status", () => {
-  let assessments;
-  let assessmentsResponse;
   let component;
+  let order;
+  let recommendationResponse;
 
   useContainer();
 
   beforeEach(() => {
-    assessmentsResponse = {
+    recommendationResponse = {
       benchmarkID: "benchmark-id",
       prerequisites: {
         cognitive: {
@@ -84,9 +105,12 @@ describe("Status", () => {
       },
       profileID: "profile-id"
     };
-    assessments = responseToArray(assessmentsResponse);
+    order = responseToOrder(recommendationResponse);
 
-    mockAssessments(assessmentsResponse);
+    mockAssessment(personality);
+    mockCognitiveAssessment({...cognitive, completed: true});
+    mockExternalAssessment(external);
+    mockRecommendation(recommendationResponse);
   });
 
   describe("callbacks", () => {
@@ -95,7 +119,7 @@ describe("Status", () => {
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "Status.initialized",
-        {assessments: null}
+        {order: null}
       );
     });
 
@@ -105,23 +129,23 @@ describe("Status", () => {
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "Status.updated",
-        {assessments}
+        {order: null}
       );
     });
   });
 
   it("starts assessment", async() => {
-    assessmentsResponse.prerequisites.cognitive.status = "INCOMPLETE";
-    assessments = responseToArray(assessmentsResponse);
+    recommendationResponse.prerequisites.cognitive.status = "INCOMPLETE";
+    order = responseToOrder(recommendationResponse);
     mockCognitiveAssessment(cognitive);
-    mockAssessments(assessmentsResponse);
+    mockRecommendation(recommendationResponse);
     component = await ComponentHandler.setup(Component);
     const button = component.findAllByText("Start Assessment")[0];
-    act(() => button.props.onClick());
+    act(() => { button.props.onClick(); });
 
     expect(container.listener.trigger).toHaveBeenCalledWith(
       "Survey.start",
-      {assessment: assessments[1]}
+      {assessment: {...order.assessments[1], loaded: true, loading: false}}
     );
   });
 
@@ -129,11 +153,10 @@ describe("Status", () => {
     mockOption("status", {allowRedirect: false});
     component = await ComponentHandler.setup(Component);
     const button = component.findByText("Start Assessment");
-    act(() => button.props.onClick());
-
+    act(() => { button.props.onClick(); });
     expect(container.listener.trigger).toHaveBeenCalledWith(
       "Survey.start",
-      {assessment: assessments[2]}
+      {assessment: {...order.assessments[2], loaded: true, loading: false}}
     );
   });
 
@@ -151,16 +174,15 @@ describe("Status", () => {
   });
 
   it("renders nothing if assessments not ready", async() => {
-    mockAssessments({implementation: () => new Promise(() => {})});
+    mockRecommendation({implementation: () => new Promise(() => {})});
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders nothing if no assessments", async() => {
-    assessmentsResponse.prerequisites = {};
-    assessments = responseToArray(assessmentsResponse);
-    mockAssessments(assessmentsResponse);
+    recommendationResponse.prerequisites = {};
+    mockRecommendation(recommendationResponse);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

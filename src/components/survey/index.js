@@ -7,9 +7,9 @@ export default function Survey() {
   const active = useActive();
 
   if(!active) { return null; }
-  if(active.type === "cognitive") { return <Cognitive />; }
-  if(active.type === "external") { return <Status />; }
-  if(active.type === "personality") { return <Personality />; }
+  if(active.surveyType === "cognitive") { return <Cognitive />; }
+  if(active.surveyType === "external") { return <Status />; }
+  if(active.surveyType === "personality") { return <Personality />; }
 
   return null;
 }

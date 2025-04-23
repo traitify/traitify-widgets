@@ -1,8 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
-import DangerousHTML from "components/common/dangerous-html";
 import Loading from "components/common/loading";
-import Markdown from "components/common/markdown";
 import dig from "lib/common/object/dig";
 import slice from "lib/common/object/slice";
 import toQueryString from "lib/common/object/to-query-string";
@@ -16,6 +14,7 @@ import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {activeAssessmentQuery} from "lib/recoil";
 import Container from "./container";
+import Instructions from "./instructions";
 import Slide from "./slide";
 import style from "./style.scss";
 import useSlideLoader from "./use-slide-loader";
@@ -185,14 +184,11 @@ export default function PersonalitySurvey() {
     return (
       <Container {...props} caption={translate("instructions")}>
         <div className={[style.instructions, style.slide, style.middle].join(" ")}>
-          {instructionsHTML ? (
-            <DangerousHTML className={style.markdown} html={instructionsHTML} />
-          ) : (
-            <Markdown className={style.markdown}>{instructionsText}</Markdown>
-          )}
-          <button onClick={() => setShowInstructions(false)} type="button">
-            {translate("get_started")}
-          </button>
+          <Instructions
+            instructionsText={instructionsText}
+            instructionsHTML={instructionsHTML}
+            onNext={() => setShowInstructions(false)}
+          />
         </div>
         {currentSlide && <Slide key={currentSlide.id} orientation="right" slide={currentSlide} />}
       </Container>

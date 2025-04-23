@@ -32,6 +32,10 @@ function Button({assessment}) {
     return <button disabled={true} type="button">{translations.complete}</button>;
   }
 
+  if(assessment.skipped) {
+    return <button disabled={true} type="button">Skipped</button>;
+  }
+
   if(assessment.link && redirect) {
     return <a href={assessment.link}>{translations.status.start}</a>;
   }
@@ -52,7 +56,8 @@ Button.propTypes = {
   assessment: PropTypes.shape({
     completed: PropTypes.bool,
     link: PropTypes.string,
-    loading: PropTypes.bool
+    loading: PropTypes.bool,
+    skipped: PropTypes.bool
   }).isRequired
 };
 
@@ -73,6 +78,7 @@ function Assessment({assessment}) {
 Assessment.propTypes = {
   assessment: PropTypes.shape({
     completed: PropTypes.bool,
+    skipped: PropTypes.bool,
     surveyName: PropTypes.string,
     surveyType: PropTypes.string.isRequired
   }).isRequired

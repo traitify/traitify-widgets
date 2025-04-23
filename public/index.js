@@ -105,7 +105,7 @@ function createWidget() {
   Traitify.options.locale = cache.get("locale");
   Traitify.options.perspective = cache.get("perspective");
   Traitify.options.report = cache.get("report");
-  ["showHeaders", "showInstructions"].forEach((key) => {
+  ["showHeaders"].forEach((key) => {
     const value = booleanFrom(cache.get(key), "default");
 
     if(value !== "default") { Traitify.options[key] = value; }
@@ -113,7 +113,7 @@ function createWidget() {
   Traitify.options.showRecommendationList = true;
   Traitify.options.showTraitList = true;
   Traitify.options.survey = {};
-  ["allowBack", "allowFullscreen"].forEach((key) => {
+  ["allowBack", "allowFullscreen", "showInstructions"].forEach((key) => {
     const value = booleanFrom(cache.get(`survey.${key}`), "default");
 
     if(value !== "default") { Traitify.options.survey[key] = value; }
@@ -316,15 +316,6 @@ function setupDom() {
     ],
     text: "Show Headers:"
   }));
-  column.appendChild(createOption({
-    name: "showInstructions",
-    options: [
-      {text: "Default", value: ""},
-      {text: "Yes", value: "true"},
-      {text: "No", value: "false"}
-    ],
-    text: "Show Instructions:"
-  }));
   row.appendChild(column);
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "Survey Options"}));
@@ -345,6 +336,15 @@ function setupDom() {
       {text: "No", value: "false"}
     ],
     text: "Allow Fullscreen:"
+  }));
+  column.appendChild(createOption({
+    name: "survey.showInstructions",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Yes", value: "true"},
+      {text: "No", value: "false"}
+    ],
+    text: "Show Instructions:"
   }));
   row.appendChild(column);
   group.appendChild(row);

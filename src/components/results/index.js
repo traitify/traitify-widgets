@@ -4,6 +4,7 @@ import EmployeeReport from "components/report/employee";
 import ManagerReport from "components/report/manager";
 import Cognitive from "components/results/cognitive";
 import FinancialRiskResults from "components/results/financial-risk";
+import Skipped from "components/results/skipped";
 import useActive from "lib/hooks/use-active";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useOption from "lib/hooks/use-option";
@@ -17,6 +18,7 @@ export default function Results() {
   useComponentEvents("Results");
 
   if(!active) { return null; }
+  if(active.skipped) { return <Skipped />; }
   if(!active.completed) { return null; }
   if(active.surveyType === "cognitive") { return <Cognitive />; }
   if(active.surveyType !== "personality") { return null; }

@@ -3,6 +3,7 @@ import {act} from "react-test-renderer";
 import Component from "components/survey/cognitive/instructions";
 import Practice from "components/survey/cognitive/practice";
 import ComponentHandler from "support/component-handler";
+import {mockSettings, useSettings} from "support/container/http";
 import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";
 
@@ -13,6 +14,7 @@ describe("Instructions", () => {
   let props;
 
   useContainer();
+  useSettings({});
 
   beforeEach(() => {
     props = {
@@ -20,6 +22,48 @@ describe("Instructions", () => {
       surveyID: "xyz",
       translate: jest.fn().mockName("translate").mockImplementation((value) => value)
     };
+  });
+
+  describe("skip assessment accommodation", () => {
+    beforeEach(() => {
+      mockSettings({skip_assessment_accommodation: true});
+    });
+
+    it("renders instructions", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders accommodation text", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => component.findByText("survey.accommodation.request").props.onClick());
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders back action", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => component.findByText("survey.accommodation.request").props.onClick());
+      act(() => component.findByText("back").props.onClick());
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("triggers accommodation request", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => component.findByText("survey.accommodation.request").props.onClick());
+      act(() => component.findByText("survey.accommodation.confirm").props.onClick());
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("triggers next", async() => {
+      component = await ComponentHandler.setup(Component, {props});
+      act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
+
+      expect(component.tree).toMatchSnapshot();
+    });
   });
 
   describe("start", () => {

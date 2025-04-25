@@ -5,43 +5,31 @@ import Icon from "components/common/icon";
 import get from "lib/common/object/get";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
+import useTranslate from "lib/hooks/use-translate";
 import {activeState} from "lib/recoil";
 import style from "./style.scss";
-
-// TODO: Extract text to translate
-const translations = {
-  complete: "Complete",
-  loading: "Loading", // Already translated
-  status: {
-    start: "Start Assessment"
-  },
-  survey: {
-    cognitive_assessment: "Cognitive Assessment",
-    external_assessment: "External Assessment",
-    personality_assessment: "Personality Assessment"
-  }
-};
 
 function Button({assessment}) {
   const listener = useListener();
   const options = useOption("status") || {};
   const redirect = get(options, "allowRedirect", true);
   const setActive = useSetRecoilState(activeState);
+  const translate = useTranslate();
 
   if(assessment.completed) {
-    return <button disabled={true} type="button">{translations.complete}</button>;
+    return <button disabled={true} type="button">{translate("complete")}</button>;
   }
 
   if(assessment.skipped) {
-    return <button disabled={true} type="button">Skipped</button>;
+    return <button disabled={true} type="button">{translate("skipped")}</button>;
   }
 
   if(assessment.link && redirect) {
-    return <a href={assessment.link}>{translations.status.start}</a>;
+    return <a href={assessment.link}>{translate("status.start")}</a>;
   }
 
   if(assessment.loading) {
-    return <button disabled={true} type="button">{translations.loading}</button>;
+    return <button disabled={true} type="button">{translate("loading")}</button>;
   }
 
   const start = () => {
@@ -49,7 +37,7 @@ function Button({assessment}) {
     setActive({...assessment});
   };
 
-  return <button onClick={start} type="button">{translations.status.start}</button>;
+  return <button onClick={start} type="button">{translate("status.start")}</button>;
 }
 
 Button.propTypes = {
@@ -62,7 +50,8 @@ Button.propTypes = {
 };
 
 function Assessment({assessment}) {
-  const surveyName = assessment.surveyName || translations.survey[`${assessment.surveyType}_assessment`];
+  const translate = useTranslate();
+  const surveyName = assessment.surveyName || translate(`survey.${assessment.surveyType}_assessment`);
 
   return (
     <div className={[style.assessment, assessment.completed && style.inactive].filter(Boolean).join(" ")}>

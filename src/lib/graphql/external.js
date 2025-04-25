@@ -7,6 +7,30 @@ export const get = `
       externalId
       externalSurveyKey
       id
+      isSkipped
+      numericResult
+      passFailResult
+      profileId
+      resultUrl
+      surveyKey
+      surveyType
+      surveyName
+      textResult
+      vendor
+    }
+  }
+`;
+
+export const skip = `
+  mutation($id: String!) {
+    skipAssessment(id: $id) {
+      assessmentTakerUrl
+      band
+      completedAt
+      externalId
+      externalSurveyKey
+      id
+      isSkipped
       numericResult
       passFailResult
       profileId

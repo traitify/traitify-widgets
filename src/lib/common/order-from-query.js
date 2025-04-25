@@ -1,10 +1,12 @@
+// NOTE: Fields with underscores are from personality API (plus skipped field)
 export function assessmentFromQuery(response) {
   const record = {
     completed: !!(response.completed || response.completed_at || response.completedAt),
     link: response.assessmentTakerUrl,
     loaded: true,
     loading: false,
-    surveyID: response.deck_id || response.surveyId || response?.surveyKey,
+    skipped: response.isSkipped || response.skipped,
+    surveyID: response.deck_id || response.surveyId || response.surveyKey,
     surveyName: response.surveyName || response.name
   };
 
@@ -28,6 +30,7 @@ export default function orderFromQuery(response) {
       completed: assessment.status === "COMPLETED",
       id: assessment.id,
       loaded: false,
+      skipped: assessment.isSkipped,
       surveyID: assessment.surveyId,
       surveyType: assessment.type.toLowerCase()
     })),
@@ -44,6 +47,7 @@ export default function orderFromQuery(response) {
     }))
   };
 
+  if(record.assessments.some(({skipped}) => skipped)) { record.status = "skipped"; }
   if(response.errorMessage) { record.errors = [response.errorMessage]; }
   return record;
 }

@@ -195,6 +195,12 @@ const updateStatus = ({getLoadable, onSet, setSelf}) => {
       setSelf({...order, status: "loading"});
       return;
     }
+    if(order.assessments.some(({skipped}) => skipped)) {
+      const newOrder = {...order, completed: true, status: "skipped"};
+      cacheOrder(newOrder);
+      setSelf(newOrder);
+      return;
+    }
     if(order.assessments.some(({completed}) => !completed)) { return; }
 
     const newOrder = {...order, completed: true, status: "completed"};

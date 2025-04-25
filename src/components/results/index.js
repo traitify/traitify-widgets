@@ -4,7 +4,7 @@ import EmployeeReport from "components/report/employee";
 import ManagerReport from "components/report/manager";
 import Cognitive from "components/results/cognitive";
 import FinancialRiskResults from "components/results/financial-risk";
-import Skipped from "components/results/skipped";
+import Skipped from "components/status/skipped";
 import useActive from "lib/hooks/use-active";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useOption from "lib/hooks/use-option";

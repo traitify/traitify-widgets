@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {useState} from "react";
 import DangerousHTML from "components/common/dangerous-html";
 import Markdown from "components/common/markdown";
-import useSetting from "lib/hooks/use-setting";
+import useSkipAssessment from "lib/hooks/use-skip-assessment";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
@@ -11,18 +11,10 @@ function Instructions({
   instructionsHTML = null,
   onNext
 }) {
-  const allowSkip = useSetting("skipAssessmentAccommodation", {fallback: false});
+  const {allow: allowSkip, trigger: onSkip} = useSkipAssessment();
   const [showAccommodation, setShowAccommodation] = useState(false);
   const translate = useTranslate();
-  const onRequest = () => {};
 
-  // TODO: onRequest
-  // - make request
-  // - update assessment's cache
-  // - bubble something up so survey moves the user on?
-  //   - trigger listener
-  //   - update survey.personality.index to listen? maybe something else
-  // - mimic in cognitive
   if(showAccommodation) {
     return (
       <>
@@ -34,7 +26,7 @@ function Instructions({
           <button className={style.btnBack} onClick={() => setShowAccommodation(false)} type="button">
             {translate("back")}
           </button>
-          <button className={style.btnNext} onClick={onRequest} type="button">
+          <button className={style.btnNext} onClick={onSkip} type="button">
             {translate("survey.accommodation.confirm")}
           </button>
         </div>

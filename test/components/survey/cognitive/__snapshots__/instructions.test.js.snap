@@ -451,43 +451,6 @@ exports[`Instructions skip assessment accommodation renders instructions 1`] = `
 </div>
 `;
 
-exports[`Instructions skip assessment accommodation triggers accommodation request 1`] = `
-<div
-  className="traitify--container traitify--color-scheme-light"
->
-  <div
-    className="container"
-  >
-    <h1>
-      survey.accommodation.request
-    </h1>
-    <div
-      className="text"
-    >
-      survey.accommodation.request_text
-    </div>
-    <div
-      className="btnGroup"
-    >
-      <button
-        className="btnBack"
-        onClick={[Function]}
-        type="button"
-      >
-        back
-      </button>
-      <button
-        className="btnBlue"
-        onClick={[Function]}
-        type="button"
-      >
-        survey.accommodation.confirm
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Instructions skip assessment accommodation triggers next 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

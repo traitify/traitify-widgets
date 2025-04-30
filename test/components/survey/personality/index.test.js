@@ -9,6 +9,7 @@ import useFullscreen from "lib/hooks/use-fullscreen";
 import ComponentHandler from "support/component-handler";
 import {
   mockAssessment,
+  mockAssessmentSkip,
   mockAssessmentStarted,
   mockAssessmentSubmit,
   mockSettings,
@@ -294,11 +295,12 @@ describe("Survey.Personality", () => {
       });
 
       it("triggers accommodation request", async() => {
+        const mock = mockAssessmentSkip({skipped: true});
         component = await ComponentHandler.setup(Component, {createNodeMock});
         act(() => { component.findByText("Request Accommodation").props.onClick(); });
-        act(() => { component.findByText("Yes, Request Accommodation").props.onClick(); });
+        await act(async() => { component.findByText("Yes, Request Accommodation").props.onClick(); });
 
-        expect(component.tree).toMatchSnapshot();
+        expect(mock.called).toBe(1);
       });
 
       it("triggers start assessment", async() => {

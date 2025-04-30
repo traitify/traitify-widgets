@@ -103,6 +103,7 @@ export const skipRecommendation = `
           surveyName
         }
       }
+      profileId
     }
   }
 `;

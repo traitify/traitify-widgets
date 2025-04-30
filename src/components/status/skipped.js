@@ -7,8 +7,8 @@ export default function Skipped() {
 
   return (
     <section className={style.container}>
-      <div className={style.heading}>{translate("survey.accommodation.submitted")}</div>
-      <DangerousHTML html={translate("survey.accommodation.submitted_text")} />
+      <div className={style.header}>{translate("survey.accommodation.submitted")}</div>
+      <DangerousHTML className={style.p} html={translate("survey.accommodation.submitted_text")} />
     </section>
   );
 }

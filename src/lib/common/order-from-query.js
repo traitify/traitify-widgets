@@ -20,7 +20,7 @@ export function assessmentFromQuery(response) {
 
 // NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 export default function orderFromQuery(response) {
-  if(response.errorMessage) { console.warn("order", response.errors); } /* eslint-disable-line no-console */
+  if(response.errorMessage) { console.warn("order", response.errorMessage); } /* eslint-disable-line no-console */
 
   const {order} = response.data;
   if(!order) { return null; }
@@ -50,4 +50,79 @@ export default function orderFromQuery(response) {
   if(record.assessments.some(({skipped}) => skipped)) { record.status = "skipped"; }
   if(response.errorMessage) { record.errors = [response.errorMessage]; }
   return record;
+}
+
+// NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
+export function orderFromRecommendation(response) {
+  if(response.errors) {
+    console.warn("xavier", response.errors); /* eslint-disable-line no-console */
+    return {
+      assessments: [],
+      completed: false,
+      errors: response.errors,
+      status: "error",
+      surveys: []
+    };
+  }
+
+  const assessments = [];
+  const surveys = [];
+  const {
+    cognitive,
+    external,
+    personality
+  } = response.data.recommendation.prerequisites || {};
+
+  if(personality && personality.assessmentId) {
+    assessments.push({
+      completed: personality.status === "COMPLETE",
+      id: personality.assessmentId,
+      surveyID: personality.surveyId,
+      surveyName: personality.surveyName,
+      surveyType: "personality"
+    });
+    surveys.push({id: personality.surveyId, type: "personality"});
+  }
+
+  if(cognitive && cognitive.testId) {
+    assessments.push({
+      completed: cognitive.status === "COMPLETE",
+      id: cognitive.testId,
+      surveyID: cognitive.surveyId,
+      surveyName: cognitive.surveyName,
+      surveyType: "cognitive"
+    });
+    surveys.push({id: cognitive.surveyId, type: "cognitive"});
+  }
+
+  if(external) {
+    external.forEach((assessment) => {
+      assessments.push({
+        completed: assessment.status === "COMPLETE",
+        id: assessment.assessmentId,
+        link: assessment.assessmentTakerUrl,
+        surveyID: assessment.surveyId,
+        surveyName: assessment.surveyName,
+        surveyType: "external"
+      });
+      surveys.push({id: assessment.surveyId, type: "external"});
+    });
+  }
+
+  const order = {
+    assessments,
+    completed: assessments.every(({completed}) => completed),
+    errors: response.errors,
+    surveys
+  };
+
+  if(order.completed) {
+    order.status = "completed";
+  } else if(response.errors) {
+    order.status = "error";
+  } else {
+    order.status = "incomplete";
+  }
+
+  return order;
 }

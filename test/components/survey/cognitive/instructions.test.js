@@ -2,14 +2,23 @@
 import {act} from "react-test-renderer";
 import Component from "components/survey/cognitive/instructions";
 import Practice from "components/survey/cognitive/practice";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
-import {mockSettings, useSettings} from "support/container/http";
+import {
+  mockCognitiveAssessment as mockAssessment,
+  mockCognitiveSkip,
+  mockSettings,
+  useSettings
+} from "support/container/http";
+import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";
+import _assessment from "support/json/assessment/cognitive.json";
 
 jest.mock("components/survey/cognitive/practice", () => (() => <div className="mock">Practice</div>));
 
 describe("Instructions", () => {
+  let assessment;
   let component;
   let props;
 
@@ -17,11 +26,14 @@ describe("Instructions", () => {
   useSettings({});
 
   beforeEach(() => {
+    assessment = mutable(_assessment);
     props = {
       onStart: jest.fn().mockName("onStart"),
       surveyID: "xyz",
       translate: jest.fn().mockName("translate").mockImplementation((value) => value)
     };
+    mockAssessment(assessment);
+    mockOption("surveyType", "cognitive");
   });
 
   describe("skip assessment accommodation", () => {
@@ -51,11 +63,12 @@ describe("Instructions", () => {
     });
 
     it("triggers accommodation request", async() => {
+      const mock = mockCognitiveSkip({success: true});
       component = await ComponentHandler.setup(Component, {props});
       act(() => component.findByText("survey.accommodation.request").props.onClick());
-      act(() => component.findByText("survey.accommodation.confirm").props.onClick());
+      await act(async() => component.findByText("survey.accommodation.confirm").props.onClick());
 
-      expect(component.tree).toMatchSnapshot();
+      expect(mock.called).toBe(1);
     });
 
     it("triggers next", async() => {

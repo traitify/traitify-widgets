@@ -1,5 +1,5 @@
 import {DefaultValue, atom, selector} from "recoil";
-import orderFromQuery from "lib/common/order-from-query";
+import orderFromQuery, {orderFromRecommendation} from "lib/common/order-from-query";
 import {
   baseState,
   cacheState,
@@ -16,6 +16,7 @@ import {
 // - cacheKey
 // - completed
 // - errors (optional)
+// - origin
 // - status - completed, error, loading, incomplete, timeout
 //   - timeout occurs when no longer loading but still not incomplete (missing assessments)
 // - surveys - id, type
@@ -28,6 +29,7 @@ const baseAssessmentState = selector({
     return {
       assessments: [{id: assessmentID, surveyType: type}],
       completed: false,
+      origin: {assessmentID},
       status: "loading",
       surveys: [{type}]
     };
@@ -55,6 +57,7 @@ export const baseOrderQuery = selector({
     const response = await http.post(GraphQL.order.path, params);
     const order = orderFromQuery(response);
     order.cacheKey = cacheKey;
+    order.origin = {orderID};
     if(order.completed) { cache.set(cacheKey, order); }
 
     return order;
@@ -62,7 +65,6 @@ export const baseOrderQuery = selector({
   key: "order/default/order"
 });
 
-// NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 const baseRecommendationQuery = selector({
   get: async({get}) => {
     const {benchmarkID, packageID, profileID} = get(baseState);
@@ -78,78 +80,11 @@ const baseRecommendationQuery = selector({
       query: GraphQL.xavier.recommendation,
       variables: {benchmarkID, localeKey: get(localeState), packageID, profileID}
     };
+
     const response = await http.post(GraphQL.xavier.path, params);
-    if(response.errors) {
-      console.warn("xavier", response.errors); /* eslint-disable-line no-console */
-      return {
-        assessments: [],
-        completed: false,
-        errors: response.errors,
-        status: "error",
-        surveys: []
-      };
-    }
-
-    const assessments = [];
-    const surveys = [];
-    const {
-      cognitive,
-      external,
-      personality
-    } = response.data.recommendation.prerequisites || {};
-
-    if(personality && personality.assessmentId) {
-      assessments.push({
-        completed: personality.status === "COMPLETE",
-        id: personality.assessmentId,
-        surveyID: personality.surveyId,
-        surveyName: personality.surveyName,
-        surveyType: "personality"
-      });
-      surveys.push({id: personality.surveyId, type: "personality"});
-    }
-
-    if(cognitive && cognitive.testId) {
-      assessments.push({
-        completed: cognitive.status === "COMPLETE",
-        id: cognitive.testId,
-        surveyID: cognitive.surveyId,
-        surveyName: cognitive.surveyName,
-        surveyType: "cognitive"
-      });
-      surveys.push({id: cognitive.surveyId, type: "cognitive"});
-    }
-
-    if(external) {
-      external.forEach((assessment) => {
-        assessments.push({
-          completed: assessment.status === "COMPLETE",
-          id: assessment.assessmentId,
-          link: assessment.assessmentTakerUrl,
-          surveyID: assessment.surveyId,
-          surveyName: assessment.surveyName,
-          surveyType: "external"
-        });
-        surveys.push({id: assessment.surveyId, type: "external"});
-      });
-    }
-
-    const order = {
-      assessments,
-      cacheKey,
-      completed: assessments.every(({completed}) => completed),
-      errors: response.errors,
-      surveys
-    };
-
-    if(order.completed) {
-      order.status = "completed";
-    } else if(response.errors) {
-      order.status = "error";
-    } else {
-      order.status = "incomplete";
-    }
-
+    const order = orderFromRecommendation(response);
+    order.cacheKey = cacheKey;
+    order.origin = {benchmarkID, packageID, profileID};
     if(order.completed) { cache.set(cacheKey, order); }
 
     return order;
@@ -195,7 +130,7 @@ const updateStatus = ({getLoadable, onSet, setSelf}) => {
       setSelf({...order, status: "loading"});
       return;
     }
-    if(order.assessments.some(({skipped}) => skipped)) {
+    if(order.assessments.some(({skipped}) => skipped) || order.status === "skipped") {
       const newOrder = {...order, completed: true, status: "skipped"};
       cacheOrder(newOrder);
       setSelf(newOrder);

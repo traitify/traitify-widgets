@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import Markdown from "components/common/markdown";
 import dig from "lib/common/object/dig";
-import useSetting from "lib/hooks/use-setting";
+import useSkipAssessment from "lib/hooks/use-skip-assessment";
 import useWindowSize from "lib/hooks/use-window-size";
 import {videoProps} from "./helpers";
 import {
@@ -23,7 +23,7 @@ function Instructions({
   surveyID,
   translate
 }) {
-  const allowSkip = useSetting("skipAssessmentAccommodation", {fallback: false});
+  const {allow: allowSkip, trigger: onSkip} = useSkipAssessment();
   const [width] = useWindowSize();
   const [disability, setDisability] = useState(initialLearningDisability || false);
   const [step, setStep] = useState(1);
@@ -38,10 +38,8 @@ function Instructions({
   useEffect(() => { setType(width > 768 ? "h" : "v"); }, [width]);
   useEffect(() => { if(minimal) { setStep(practiceExamples.length + 2); } }, [minimal]);
 
-  // TODO: Request Accommodation
   const example = practiceExamples[step - 1];
   const instructionOptions = {id: surveyID, minimal, timeTrial, timed, translate, type};
-  const onRequest = () => {};
 
   if(showAccommodation) {
     return (
@@ -52,7 +50,7 @@ function Instructions({
           <button className={style.btnBack} onClick={() => setShowAccommodation(false)} type="button">
             {translate("back")}
           </button>
-          <button className={style.btnBlue} onClick={onRequest} type="button">
+          <button className={style.btnBlue} onClick={onSkip} type="button">
             {translate("survey.accommodation.confirm")}
           </button>
         </div>

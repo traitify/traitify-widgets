@@ -27,5 +27,6 @@ export usePersonality from "lib/hooks/use-personality";
 export useResults from "lib/hooks/use-results";
 export useSetting from "lib/hooks/use-setting";
 export useSettings from "lib/hooks/use-settings";
+export useSkipAssessment from "lib/hooks/use-skip-assessment";
 export useTranslate from "lib/hooks/use-translate";
 export useWindowSize from "lib/hooks/use-window-size";

@@ -40,6 +40,7 @@ export default function PersonalitySurvey() {
   } = useSlideLoader({textSurvey, translate});
   const options = useOption("survey") || {};
   const [showInstructions, setShowInstructions] = useState(false);
+  const [started, setStarted] = useState(null);
   const [submitAttempts, setSubmitAttempts] = useState(0);
   const [submitError, setSubmitError] = useState(null);
   const submitting = useRef(false);
@@ -99,12 +100,11 @@ export default function PersonalitySurvey() {
     if(!assessment) { return; }
     if(assessment.completed_at) { return; }
     if(assessment.started_at) { return; }
+    if(started) { return; }
 
     // NOTE: catch is used to prevent the non-json response from erroring
     http.put(`/assessments/${assessment.id}/started`).catch(() => {}).then(() => {
-      // NOTE: refreshAssessment() should be called after setting the cache but since nothing else
-      // uses started_at, skipping it prevents an unnecessary loading state
-      cache.set(assessmentCacheKey, {...assessment, started_at: Date.now()});
+      setStarted(Date.now());
     });
   }, [assessment]);
 

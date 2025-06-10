@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Default assessments renders cognitive survey 1`] = `
+exports[`Default recommendation renders cognitive survey 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -12,7 +12,19 @@ exports[`Default assessments renders cognitive survey 1`] = `
 </div>
 `;
 
-exports[`Default assessments renders personality results 1`] = `
+exports[`Default recommendation renders external survey 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Status
+  </div>
+</div>
+`;
+
+exports[`Default recommendation renders personality results 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -24,7 +36,7 @@ exports[`Default assessments renders personality results 1`] = `
 </div>
 `;
 
-exports[`Default assessments renders personality survey 1`] = `
+exports[`Default recommendation renders personality survey 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -32,26 +44,6 @@ exports[`Default assessments renders personality survey 1`] = `
     className="mock"
   >
     Survey
-  </div>
-</div>
-`;
-
-exports[`Default renders loading if not ready 1`] = `
-<div
-  className="traitify--container traitify--color-scheme-light"
->
-  <div
-    className="container"
-  >
-    <img
-      alt=""
-      src="https://cdn.traitify.com/widgets/status/loading-sonar.gif"
-    />
-    <div
-      className="bold p"
-    >
-      Loading your assessment
-    </div>
   </div>
 </div>
 `;
@@ -64,6 +56,18 @@ exports[`Default renders results 1`] = `
     className="mock"
   >
     Results
+  </div>
+</div>
+`;
+
+exports[`Default renders skipped 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Status
   </div>
 </div>
 `;

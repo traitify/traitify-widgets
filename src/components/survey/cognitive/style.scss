@@ -25,8 +25,16 @@
     @include buttonDark("theme");
     @include min-width("sm") { width: auto; }
   }
+  .btnBack { @include buttonDark("secondary"); }
   .btnContinue { @include buttonDark("theme"); }
   .btnDisabled { @include buttonDark("inactive"); }
+  .btnGroup {
+    display: flex;
+    gap: $buffer;
+    justify-content: center;
+
+    button { margin: 0; }
+  }
   .btnSkip { @include buttonDark("secondary"); }
   .buttons {
     text-align: center;

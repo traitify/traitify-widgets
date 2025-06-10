@@ -47,6 +47,7 @@ export default function useContainer(props) {
   afterEach(() => {
     delete container.assessmentID;
     delete container.benchmarkID;
+    delete container.orderID;
 
     container.cache.clear();
 

@@ -1,117 +1,27 @@
 import {act} from "react-test-renderer";
 import Component from "components/status";
+import orderFromQuery, {assessmentFromQuery, orderFromRecommendation} from "lib/common/order-from-query";
 import ComponentHandler from "support/component-handler";
 import {
   mockAssessment,
   mockCognitiveAssessment,
   mockExternalAssessment,
+  mockOrder,
   mockRecommendation
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
+import useGlobalMock from "support/hooks/use-global-mock";
 import cognitive from "support/json/assessment/cognitive.json";
 import personality from "support/json/assessment/dimension-based.json";
-
-const external = {
-  assessmentId: "external-id",
-  assessmentTakerUrl: "https://external.traitify.com/external-assessment-id",
-  status: "INCOMPLETE",
-  surveyId: "external-assessment-id",
-  surveyName: "Emmersion Assessment",
-  vendor: "Emmersion"
-};
-
-const responseToOrder = (response) => {
-  const order = {assessments: [], surveys: []};
-  const {
-    cognitive: cognitiveAssessment,
-    external: externalAssessment,
-    personality: personalityAssessment
-  } = response.prerequisites || {};
-
-  if(personalityAssessment && personalityAssessment.assessmentId) {
-    order.assessments.push({
-      completed: personalityAssessment.status === "COMPLETE",
-      id: personalityAssessment.assessmentId,
-      surveyID: personalityAssessment.surveyId,
-      surveyName: "Personality Assessment",
-      surveyType: "personality"
-    });
-    order.surveys.push({id: personalityAssessment.surveyId, type: "personality"});
-  }
-
-  if(cognitiveAssessment && cognitiveAssessment.testId) {
-    order.assessments.push({
-      completed: cognitiveAssessment.status === "COMPLETE",
-      id: cognitiveAssessment.testId,
-      surveyID: cognitiveAssessment.surveyId,
-      surveyName: "Cognitive Assessment",
-      surveyType: "cognitive"
-    });
-    order.surveys.push({id: cognitiveAssessment.surveyId, type: "cognitive"});
-  }
-
-  if(externalAssessment) {
-    externalAssessment.forEach((assessment) => {
-      order.assessments.push({
-        completed: assessment.status === "COMPLETE",
-        id: assessment.assessmentId,
-        link: assessment.assessmentTakerUrl,
-        surveyID: assessment.surveyId,
-        surveyName: assessment.surveyName,
-        surveyType: "external"
-      });
-      order.surveys.push({id: assessment.surveyId, type: "external"});
-    });
-  }
-  order.cacheKey = [response.benchmarkID, response.profileID].join("-");
-  order.completed = order.assessments.every(({completed}) => completed);
-  order.errors = response.errors;
-
-  if(order.completed) {
-    order.status = "completed";
-  } else if(response.errors) {
-    order.status = "error";
-  } else {
-    order.status = "incomplete";
-  }
-  return order;
-};
+import external from "support/json/assessment/external.json";
 
 describe("Status", () => {
   let component;
   let order;
-  let recommendationResponse;
 
   useContainer();
-
-  beforeEach(() => {
-    recommendationResponse = {
-      benchmarkID: "benchmark-id",
-      prerequisites: {
-        cognitive: {
-          status: "COMPLETE",
-          surveyId: cognitive.surveyId,
-          surveyName: "Cognitive Assessment",
-          testId: cognitive.id
-        },
-        external: [{...external}],
-        personality: {
-          assessmentId: personality.id,
-          status: "COMPLETE",
-          surveyId: personality.deck_id,
-          surveyName: "Personality Assessment"
-        }
-      },
-      profileID: "profile-id"
-    };
-    order = responseToOrder(recommendationResponse);
-
-    mockAssessment(personality);
-    mockCognitiveAssessment({...cognitive, completed: true});
-    mockExternalAssessment(external);
-    mockRecommendation(recommendationResponse);
-  });
+  useGlobalMock(console, "warn");
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {
@@ -134,57 +44,218 @@ describe("Status", () => {
     });
   });
 
-  it("starts assessment", async() => {
-    recommendationResponse.prerequisites.cognitive.status = "INCOMPLETE";
-    order = responseToOrder(recommendationResponse);
-    mockCognitiveAssessment(cognitive);
-    mockRecommendation(recommendationResponse);
-    component = await ComponentHandler.setup(Component);
-    const button = component.findAllByText("Start Assessment")[0];
-    act(() => { button.props.onClick(); });
+  describe("order", () => {
+    let orderResponse;
 
-    expect(container.listener.trigger).toHaveBeenCalledWith(
-      "Survey.start",
-      {assessment: {...order.assessments[1], loaded: true, loading: false}}
-    );
+    beforeEach(() => {
+      orderResponse = {
+        assessments: [
+          {
+            id: cognitive.id,
+            status: "COMPLETED",
+            surveyId: cognitive.surveyId,
+            type: "COGNITIVE"
+          },
+          {
+            id: external.assessmentId,
+            status: "COMPLETED",
+            surveyId: external.surveyId,
+            type: "EXTERNAL"
+          },
+          {
+            id: personality.id,
+            status: "COMPLETED",
+            surveyId: personality.deck_id,
+            type: "PERSONALITY"
+          }
+        ],
+        id: "order-id",
+        profileID: "profile-id",
+        requirements: {
+          surveys: [
+            {id: cognitive.surveyId, type: "COGNITIVE"},
+            {id: external.surveyId, type: "EXTERNAL"},
+            {id: personality.deck_id, type: "PERSONALITY"}
+          ]
+        },
+        status: "COMPLETED"
+      };
+      order = orderFromQuery({data: {order: orderResponse}});
+
+      mockAssessment(personality);
+      mockCognitiveAssessment({...cognitive, completed: true});
+      mockExternalAssessment({...external, status: "COMPLETED"});
+      mockOrder(orderResponse);
+    });
+
+    it("starts assessment", async() => {
+      orderResponse.assessments[0].status = "INCOMPLETE";
+      orderResponse.status = "ALL_ASSESSMENT_AVAILABLE";
+      order = orderFromQuery({data: {order: orderResponse}});
+      mockCognitiveAssessment(cognitive);
+      mockOrder(orderResponse);
+      component = await ComponentHandler.setup(Component);
+      const button = component.findAllByText("Start Assessment")[0];
+      act(() => { button.props.onClick(); });
+
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "Survey.start",
+        {assessment: {...order.assessments[0], loaded: true, loading: false}}
+      );
+    });
+
+    it("starts external assessment", async() => {
+      orderResponse.assessments[1].status = "INCOMPLETE";
+      orderResponse.status = "ALL_ASSESSMENT_AVAILABLE";
+      order = orderFromQuery({data: {order: orderResponse}});
+      mockExternalAssessment({...external, status: "INCOMPLETE"});
+      mockOption("status", {allowRedirect: false});
+      mockOrder(orderResponse);
+      component = await ComponentHandler.setup(Component);
+      const button = component.findByText("Start Assessment");
+      act(() => { button.props.onClick(); });
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "Survey.start",
+        {
+          assessment: {
+            ...order.assessments[1],
+            ...assessmentFromQuery(external),
+            loaded: true,
+            loading: false
+          }
+        }
+      );
+    });
+
+    it("starts external assessment with redirect", async() => {
+      orderResponse.assessments[1].status = "INCOMPLETE";
+      orderResponse.status = "ALL_ASSESSMENT_AVAILABLE";
+      order = orderFromQuery({data: {order: orderResponse}});
+      mockExternalAssessment({...external, status: "INCOMPLETE"});
+      mockOrder(orderResponse);
+      component = await ComponentHandler.setup(Component);
+      const button = component.findByText("Start Assessment");
+
+      expect(button.props.href).toBe(external.assessmentTakerUrl);
+    });
+
+    it("renders component", async() => {
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders error", async() => {
+      orderResponse.assessments = [];
+      orderResponse.status = "FAILED";
+      order = orderFromQuery({data: {order: orderResponse}, errorMessage: "Uh oh"});
+      mockOrder(orderResponse);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+      expect(console.warn).toHaveBeenCalledWith("order", "Uh oh");
+    });
+
+    it("renders loading", async() => {
+      orderResponse.assessments = [];
+      orderResponse.status = "DRAFT";
+      mockOrder(orderResponse);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders skipped", async() => {
+      mockCognitiveAssessment({...cognitive, completed: true, isSkipped: true});
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
   });
 
-  it("starts external assessment", async() => {
-    mockOption("status", {allowRedirect: false});
-    component = await ComponentHandler.setup(Component);
-    const button = component.findByText("Start Assessment");
-    act(() => { button.props.onClick(); });
-    expect(container.listener.trigger).toHaveBeenCalledWith(
-      "Survey.start",
-      {assessment: {...order.assessments[2], loaded: true, loading: false}}
-    );
-  });
+  describe("recommendation", () => {
+    let recommendationResponse;
 
-  it("starts external assessment with redirect", async() => {
-    component = await ComponentHandler.setup(Component);
-    const button = component.findByText("Start Assessment");
+    beforeEach(() => {
+      recommendationResponse = {
+        benchmarkID: "benchmark-id",
+        prerequisites: {
+          cognitive: {
+            status: "COMPLETE",
+            surveyId: cognitive.surveyId,
+            surveyName: "Cognitive Assessment",
+            testId: cognitive.id
+          },
+          external: [{...external}],
+          personality: {
+            assessmentId: personality.id,
+            status: "COMPLETE",
+            surveyId: personality.deck_id,
+            surveyName: "Personality Assessment"
+          }
+        },
+        profileID: "profile-id"
+      };
+      order = orderFromRecommendation({data: {recommendation: recommendationResponse}});
 
-    expect(button.props.href).toBe(external.assessmentTakerUrl);
-  });
+      mockAssessment(personality);
+      mockCognitiveAssessment({...cognitive, completed: true});
+      mockExternalAssessment(external);
+      mockRecommendation(recommendationResponse);
+    });
 
-  it("renders component", async() => {
-    component = await ComponentHandler.setup(Component);
+    it("starts assessment", async() => {
+      recommendationResponse.prerequisites.cognitive.status = "INCOMPLETE";
+      order = orderFromRecommendation({data: {recommendation: recommendationResponse}});
+      mockCognitiveAssessment(cognitive);
+      mockRecommendation(recommendationResponse);
+      component = await ComponentHandler.setup(Component);
+      const button = component.findAllByText("Start Assessment")[0];
+      act(() => { button.props.onClick(); });
 
-    expect(component.tree).toMatchSnapshot();
-  });
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "Survey.start",
+        {assessment: {...order.assessments[1], loaded: true, loading: false}}
+      );
+    });
 
-  it("renders nothing if assessments not ready", async() => {
-    mockRecommendation({implementation: () => new Promise(() => {})});
-    component = await ComponentHandler.setup(Component);
+    it("starts external assessment", async() => {
+      mockOption("status", {allowRedirect: false});
+      component = await ComponentHandler.setup(Component);
+      const button = component.findByText("Start Assessment");
+      act(() => { button.props.onClick(); });
+      expect(container.listener.trigger).toHaveBeenCalledWith(
+        "Survey.start",
+        {assessment: {...order.assessments[2], loaded: true, loading: false}}
+      );
+    });
 
-    expect(component.tree).toMatchSnapshot();
-  });
+    it("starts external assessment with redirect", async() => {
+      component = await ComponentHandler.setup(Component);
+      const button = component.findByText("Start Assessment");
 
-  it("renders nothing if no assessments", async() => {
-    recommendationResponse.prerequisites = {};
-    mockRecommendation(recommendationResponse);
-    component = await ComponentHandler.setup(Component);
+      expect(button.props.href).toBe(external.assessmentTakerUrl);
+    });
 
-    expect(component.tree).toMatchSnapshot();
+    it("renders component", async() => {
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders nothing if assessments not ready", async() => {
+      mockRecommendation({implementation: () => new Promise(() => {})});
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("renders nothing if no assessments", async() => {
+      recommendationResponse.prerequisites = {};
+      mockRecommendation(recommendationResponse);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
   });
 });

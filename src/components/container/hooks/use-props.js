@@ -37,7 +37,10 @@ export default function useProps(props) {
   } = props;
 
   useEffect(() => {
-    setOptions({showHeaders: false, showInstructions: true, ...options});
+    // NOTE: showInstructions should be true but we don't want a breaking change
+    const surveyOptions = {showInstructions: false, ...(options.survey || {})};
+
+    setOptions({showHeaders: false, ...options, survey: surveyOptions});
   }, [options]);
 
   useEffect(() => {

@@ -12,7 +12,7 @@ import useOrder from "lib/hooks/use-order";
 import {orderIDState, orderState} from "lib/recoil";
 
 const defaultPollingTimes = {
-  long: {interval: 10 * 1000, stop: 5 * 60 * 1000},
+  long: {interval: 10 * 1000, stop: 10 * 24 * 60 * 60 * 1000},
   none: {interval: null, stop: null},
   short: {interval: 5 * 1000, stop: 1 * 60 * 1000}
 };

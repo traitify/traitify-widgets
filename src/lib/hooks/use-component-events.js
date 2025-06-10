@@ -5,6 +5,12 @@ import useListener from "lib/hooks/use-listener";
 export default function useComponentEvents(name, context) {
   const listener = useListener();
 
-  useDidMount(() => { listener.trigger(`${name}.initialized`, context); });
-  useDidUpdate(() => { listener.trigger(`${name}.updated`, context); });
+  useDidMount(() => {
+    listener.trigger(`${name}.initialized`, context);
+    listener.trigger(`Component.${name}.initialized`, context);
+  });
+  useDidUpdate(() => {
+    listener.trigger(`${name}.updated`, context);
+    listener.trigger(`Component.${name}.updated`, context);
+  });
 }

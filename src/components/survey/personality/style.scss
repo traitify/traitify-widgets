@@ -154,6 +154,15 @@ $outer-padding: $buffer;
 
   @include theme("color", "text-light");
 
+  .btnBack { @include buttonDark("secondary"); }
+  .btnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto $buffer;
+    max-width: 800px;
+  }
+  .btnNext { @include buttonDark("theme"); }
+  .btnBack, .btnNext { &:hover{ opacity: 0.7; } }
   .markdown {
     border: $border-width-lg solid;
     border-radius: $border-radius;
@@ -164,16 +173,6 @@ $outer-padding: $buffer;
     @include min-width("md") { margin-bottom: $buffer-lg; }
     @include min-width("lg") { padding: 0 $buffer-lg; }
     @include theme("border-color", "text-light");
-  }
-  button {
-    border-radius: $border-radius-sm;
-    display: block;
-    font-size: $font-size-heading;
-    margin: auto;
-    padding: $buffer $buffer * 4;
-
-    @include theme("background-color", "theme");
-    &:hover { opacity: 0.7; }
   }
   h1 { margin: $buffer 0; }
 }

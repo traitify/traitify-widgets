@@ -63,6 +63,11 @@ function createWidget() {
     if(!orderID) { return; }
     Traitify.listener.on("Survey.start", (x) => console.log(x));
     Traitify.options.orderID = orderID;
+  } else if(surveyType === "generic") {
+    Traitify.options.surveyID = cache.get("surveyID");
+    Traitify.options.profileID = cache.get("profileID");
+    Traitify.options.assessmentID = cache.get("assessmentID");
+    Traitify.options.surveyType = surveyType;
   } else {
     const assessmentID = cache.get("assessmentID");
     console.log("createWidget", {assessmentID});
@@ -144,6 +149,7 @@ function createAssessment() {
   if(cache.get("surveyType") === "benchmark") { return createWidget(); }
   if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
   if(cache.get("surveyType") === "order") { return createWidget(); }
+  if(cache.get("surveyType") === "generic") { return createGenericAssessment(); }
 
   const params = {
     deck_id: cache.get("deckID"),
@@ -238,6 +244,24 @@ function createElement(options = {}) {
   });
 
   return element;
+}
+
+function createGenericAssessment() {
+  Traitify.http.authKey = "admin-secret";
+  const query = Traitify.GraphQL.generic.create;
+  const variables = {
+    surveyID: cache.get("surveyID"),
+    profileID: cache.get("profileID")
+  };
+
+  Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
+    try {
+      const id = response.data.getOrCreateGenericAssessment.id;
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
 }
 
 function destroyWidget() { Traitify.destroy(); }
@@ -370,7 +394,8 @@ function setupDom() {
       {text: "Benchmark", value: "benchmark"},
       {text: "Cognitive", value: "cognitive"},
       {text: "Order", value: "order"},
-      {text: "Personality", value: "personality"}
+      {text: "Personality", value: "personality"},
+      {text: "Generic", value: "generic"}
     ],
     text: "Survey Type:"
   }));
@@ -404,6 +429,9 @@ function setupDom() {
   row.appendChild(createOption({name: "orderID", text: "Order ID:"}));
   group.appendChild(row)
 
+  row = createElement({className: surveyType !== "generic" ? "hide" : "", id: "generic-options"});
+  row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
+  group.appendChild(row);
   row = createElement({className: "row"});
   row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create / Load"}));
   group.appendChild(row);
@@ -427,11 +455,32 @@ function setupCognitive() {
   });
 }
 
+function setupGeneric() {
+  Traitify.http.authKey = "admin-secret";
+  const query = Traitify.GraphQL.generic.surveys;
+  const variables = {localeKey: cache.get("locale")};
+
+  Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
+    const options = response.data.genericAssessments
+      .map(({id, name}) => ({text: name, value: id}))
+      .sort((a, b) => a.text.localeCompare(b.text));
+
+    document.querySelector("#generic-options").appendChild(createOption({
+      name: "surveyID",
+      onChange: onInputChange,
+      options,
+      text: "Survey:"
+    }));
+  });
+
+}
+
 function setupTraitify() {
   const environment = cache.get("environment");
 
   if(environment === "staging") {
-    Traitify.http.host = "https://api.stag.awse.traitify.com";
+    // Traitify.http.host = "https://api.stag.awse.traitify.com";
+    Traitify.http.host = "http://localhost:4000/";
   } else {
     Traitify.http.host = "https://api.traitify.com";
   }
@@ -455,7 +504,7 @@ function onSurveyTypeChange(e) {
   const name = e.target.name;
   const value = e.target.value;
   const assessmentID = cache.get(`${value}AssessmentID`);
-  const otherValues = ["benchmark", "cognitive", "order", "personality"].filter((type) => type !== value);
+  const otherValues = ["benchmark", "cognitive", "order", "personality", "generic"].filter((type) => type !== value);
 
   cache.set("assessmentID", assessmentID);
 
@@ -467,5 +516,6 @@ function onSurveyTypeChange(e) {
 
 setupTraitify();
 setupDom();
-setupCognitive();
+// setupCognitive();
+setupGeneric();
 createWidget();

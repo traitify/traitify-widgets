@@ -7,7 +7,8 @@ import {
   orderIDState,
   orderState,
   packageIDState,
-  profileIDState
+  profileIDState,
+  surveyIDState
 } from "lib/recoil";
 
 export default function useBaseEffect() {
@@ -17,10 +18,12 @@ export default function useBaseEffect() {
   const setOrderID = useSetRecoilState(orderIDState);
   const setPackageID = useSetRecoilState(packageIDState);
   const setProfileID = useSetRecoilState(profileIDState);
+  const setSurveyID = useSetRecoilState(surveyIDState);
 
   useEffect(() => { setBenchmarkID(base.benchmarkID); }, [base.benchmarkID]);
   useEffect(() => { setOrderID(base.orderID); }, [base.orderID]);
   useEffect(() => { setPackageID(base.packageID); }, [base.packageID]);
   useEffect(() => { setProfileID(base.profileID); }, [base.profileID]);
+  useEffect(() => { setSurveyID(base.surveyID); }, [base.surveyID]);
   useDidUpdate(() => { resetOrder(); }, [base]);
 }

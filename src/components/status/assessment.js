@@ -18,6 +18,7 @@ const translations = {
   survey: {
     cognitive_assessment: "Cognitive Assessment",
     external_assessment: "External Assessment",
+    generic_assessment: "Generic Assessment",
     personality_assessment: "Personality Assessment"
   }
 };

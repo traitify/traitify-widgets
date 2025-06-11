@@ -6,7 +6,9 @@ import {
   graphqlState,
   httpState,
   localeState,
-  safeCacheKeyState
+  profileIDState,
+  safeCacheKeyState,
+  surveyIDState
 } from "./base";
 
 // TODO: Return error instead of null for cognitive and external
@@ -102,11 +104,44 @@ export const personalityAssessmentQuery = selectorFamily({
   key: "assessment/personality"
 });
 
+export const genericAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
+
+    const cache = get(cacheState);
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
+    const cached = cache.get(cacheKey);
+    if(cached) { return cached; }
+
+    const GraphQL = get(graphqlState);
+    const http = get(httpState);
+    const params = {
+      query: GraphQL.generic.questions,
+      variables: {profileID: get(profileIDState), surveyID: get(surveyIDState)}
+    };
+
+    const response = await http.post({path: GraphQL.generic.path, params});
+    if(response.errors) {
+      console.warn("generic-assessment", response.errors); /* eslint-disable-line no-console */
+      return null;
+    }
+
+    const questions = response.data.genericAssessmentQuestions;
+    if(!questions?.length) { return questions; }
+
+    cache.set(cacheKey, questions);
+
+    return questions;
+  },
+  key: "assessment/generic"
+});
+
 export const assessmentQuery = selectorFamily({
   get: ({id, surveyType}) => async({get}) => {
     if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
     if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
     if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
+    if(surveyType === "generic") { return get(genericAssessmentQuery(id)); }
 
     return null;
   },

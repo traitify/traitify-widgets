@@ -73,7 +73,6 @@ export const skipRecommendation = `
   ) {
     skipRecommendation(
       benchmarkId: $benchmarkID,
-      localeKey: $localeKey,
       packageId: $packageID,
       profileId: $profileID
     ) {

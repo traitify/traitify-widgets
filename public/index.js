@@ -257,6 +257,7 @@ function createGenericAssessment() {
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
     try {
       const id = response.data.getOrCreateGenericAssessment.id;
+      cache.set("assessmentID", id);
     } catch(error) {
       console.log(error);
     }
@@ -461,16 +462,20 @@ function setupGeneric() {
   const variables = {localeKey: cache.get("locale")};
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
-    const options = response.data.genericAssessments
-      .map(({id, name}) => ({text: name, value: id}))
-      .sort((a, b) => a.text.localeCompare(b.text));
-
-    document.querySelector("#generic-options").appendChild(createOption({
-      name: "surveyID",
-      onChange: onInputChange,
-      options,
-      text: "Survey:"
-    }));
+    try {
+      const options = response.data.genericAssessments
+        .map(({id, name}) => ({text: name, value: id}))
+        .sort((a, b) => a.text.localeCompare(b.text));
+  
+      document.querySelector("#generic-options").appendChild(createOption({
+        name: "surveyID",
+        onChange: onInputChange,
+        options,
+        text: "Survey:"
+      }));
+    } catch(error) {
+      console.log(error);
+    }
   });
 
 }

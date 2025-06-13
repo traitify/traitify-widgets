@@ -1,0 +1,98 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-height: 100vh;
+  max-height: 100svh;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: $buffer-lg;
+
+  @include min-width("xs") {
+    aspect-ratio: 2/1;
+    max-width: $breakpoint-md * 0.85;
+  }
+
+  button {
+    border: 1px solid #DADCE0;
+    border-radius: $border-radius-sm * 0.5;
+    margin: $buffer $buffer * 0.5;
+    height: 48px;
+  }
+
+  .progress {
+    border-radius: $border-radius-sm;
+    height: 100%;
+    transition: width 0.3s;
+    width: 0%;
+
+    @include theme("background-color", "progress-bar");
+  }
+  .progressBar {
+    border-radius: $border-radius-sm;
+    height: $border-width-xl;
+    margin-bottom: $buffer * 2;
+
+    @include theme("background-color", "border");
+  }
+  &:after {
+    top: 0;
+    bottom: 0;
+    border: $border-width solid;
+    border-radius: $border-radius;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+
+    @include theme("border-color", "border");
+  }
+}
+
+.questionSet {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding: $buffer;
+
+  img {
+    margin-bottom: $buffer * 2;
+  }
+
+  .question {
+    text-align: left;
+  }
+}
+
+.response {
+  flex: 1 1 0;
+  letter-spacing: 2px;
+  line-height: 2;
+  padding: $buffer * 0.25 $buffer * 0.75;
+  text-align: center;
+
+  @include min-width("xs") { padding: $buffer * 0.25 $buffer * 0.75; }
+  @include min-width("sm") {
+    font-size: $font-size * 1.25;
+    line-height: $line-height;
+    padding: $buffer * 0.5 $buffer * 0.75;
+  }
+  @include theme("color", "text-light");
+  &:focus {
+    outline-offset: -1px;
+    outline-style: solid;
+    outline-width: 1px;
+  }
+  button.btnActive {
+    background-color: #25C9D0;
+    color: #FFFFFF;
+  }
+  button.btnDisabled {
+    &:active, &:hover { @include theme("background-color", "inactive"); }
+  }
+}

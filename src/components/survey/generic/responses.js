@@ -1,17 +1,22 @@
 import PropTypes from "prop-types";
 import style from "./style.scss";
 
-export default function Responses({responseOptions = []}) {
+export default function Responses({responseOptions = [], updateSlide = null}) {
   const buttonClass = ["traitify--response-button", style.response].join(" ");
   const buttonWidth = (text) => {
-    console.log("Calculating button width for text:", text.length);
     return text.length > 20 ? "100%" : "auto";
   };
 
   return (
     <div>
       {responseOptions.map((option) => (
-        <button key={option.id} type="button" className={buttonClass} style={{width: `${buttonWidth(option.text)}`}}>
+        <button
+          key={option.id}
+          type="button"
+          className={buttonClass}
+          onClick={() => updateSlide(option.id)}
+          style={{width: `${buttonWidth(option.text)}`}}
+        >
           {option.text}
         </button>
       ))}
@@ -25,5 +30,6 @@ Responses.propTypes = {
       id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  updateSlide: PropTypes.func
 };

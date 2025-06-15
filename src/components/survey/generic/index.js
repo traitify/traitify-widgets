@@ -5,7 +5,6 @@ import useAssessment from "lib/hooks/use-assessment";
 import useTranslate from "lib/hooks/use-translate";
 import Container from "./container";
 import QuestionSet from "./question-set";
-import style from "./style.scss";
 
 export default function Generic() {
   const [questionSetIndex, setQuestionSetIndex] = useState(0);

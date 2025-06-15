@@ -3,9 +3,7 @@ import style from "./style.scss";
 
 export default function Responses({responseOptions = [], updateSlide = null}) {
   const buttonClass = ["traitify--response-button", style.response].join(" ");
-  const buttonWidth = (text) => {
-    return text.length > 20 ? "100%" : "auto";
-  };
+  const buttonWidth = (text) => (text.length > 20 ? "100%" : "auto");
 
   return (
     <div>

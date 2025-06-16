@@ -107,11 +107,12 @@
     outline-style: solid;
     outline-width: 1px;
   }
-  button.btnActive {
+  &.btnActive {
     background-color: #25C9D0;
     color: #FFFFFF;
+    border-color: transparent;
   }
-  button.btnDisabled {
+  &.btnDisabled {
     &:active, &:hover { @include theme("background-color", "inactive"); }
   }
 }

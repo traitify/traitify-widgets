@@ -1,9 +1,21 @@
 import PropTypes from "prop-types";
+import {useEffect, useState} from "react";
 import Responses from "./responses";
 import style from "./style.scss";
 
-export default function QuestionSet({questionSet, updateSlide = null}) {
+export default function QuestionSet({questionSet, updateAnswer = null, next = null}) {
   const questionSetClass = [style.questionSet].join(" ");
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const setFinished = questionSet.questions.length === selectedOptions.length;
+  const selectOption = (questionId, optionId) => {
+    if(!selectedOptions.includes(questionId)) setSelectedOptions([...selectedOptions, questionId]);
+    updateAnswer(questionId, optionId);
+  };
+
+  useEffect(() => {
+    if(!setFinished) return;
+    next();
+  }, [setFinished]);
 
   return (
     <div className={questionSetClass}>
@@ -14,7 +26,7 @@ export default function QuestionSet({questionSet, updateSlide = null}) {
           <h3 className={style.question}>{question.text}</h3>
           <Responses
             responseOptions={question.responseOptions}
-            updateSlide={(optionId) => updateSlide(question.id, optionId)}
+            updateAnswer={(optionId) => selectOption(question.id, optionId)}
           />
         </div>
       ))}
@@ -31,5 +43,6 @@ QuestionSet.propTypes = {
     })).isRequired,
     setImage: PropTypes.string.isRequired
   }).isRequired,
-  updateSlide: PropTypes.func
+  updateAnswer: PropTypes.func,
+  next: PropTypes.func
 };

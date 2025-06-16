@@ -11,22 +11,21 @@ export default function Generic() {
   const [answers, setAnswers] = useState([]);
   const assessment = useAssessment({surveyType: "generic"});
   const questionSets = assessment ? assessment.questionSets : [];
+  const questionCount = questionSets.reduce((count, questionSet) => count + questionSet.questions.length, 0);
   const currentQuestionSet = questionSets ? questionSets[questionSetIndex] : {};
   const progress = questionSetIndex >= 0 ? (questionSetIndex / questionSets.length) * 100 : 0;
-  const finished = questionSets.length > 0 && questionSets.length === answers.length;
+  const finished = questionSets.length > 0 && questionCount === answers.length;
 
   const props = {progress};
   const translate = useTranslate();
 
-  const updateSlide = (questionId, selectedOptionId) => {
+  const updateAnswer = (questionId, selectedOptionId) => {
     const currentAnswers = answers.filter((answer) => answer.questionId !== questionId);
     setAnswers([...currentAnswers,
       {questionId, selectedResponseOptionId: selectedOptionId}]);
-    if(questionSetIndex + 1 < questionSets.length) {
-      setQuestionSetIndex(questionSetIndex + 1);
-    }
   };
 
+  const next = () => { setQuestionSetIndex(questionSetIndex + 1); };
   const back = () => { setQuestionSetIndex(questionSetIndex - 1); };
 
   const onSubmit = () => {
@@ -45,7 +44,8 @@ export default function Generic() {
         <QuestionSet
           key={questionSetIndex}
           questionSet={currentQuestionSet}
-          updateSlide={updateSlide}
+          updateAnswer={updateAnswer}
+          next={next}
         />
         )}
 

@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
+import {useState} from "react";
 import style from "./style.scss";
 
-export default function Responses({responseOptions = [], updateSlide = null}) {
+export default function Responses({responseOptions = [], updateAnswer = null}) {
   const buttonClass = ["traitify--response-button", style.response].join(" ");
   const buttonWidth = (text) => (text.length > 20 ? "100%" : "auto");
+  const [activeButton, setActiveButton] = useState(null);
+  const selectOption = (optionId) => {
+    setActiveButton(optionId);
+    updateAnswer(optionId);
+  };
 
   return (
     <div>
@@ -11,8 +17,8 @@ export default function Responses({responseOptions = [], updateSlide = null}) {
         <button
           key={option.id}
           type="button"
-          className={buttonClass}
-          onClick={() => updateSlide(option.id)}
+          className={`${buttonClass} ${activeButton === option.id ? style.btnActive : ""}`}
+          onClick={() => selectOption(option.id)}
           style={{width: `${buttonWidth(option.text)}`}}
         >
           {option.text}
@@ -29,5 +35,5 @@ Responses.propTypes = {
       text: PropTypes.string.isRequired
     })
   ).isRequired,
-  updateSlide: PropTypes.func
+  updateAnswer: PropTypes.func
 };

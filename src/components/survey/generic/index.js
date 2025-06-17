@@ -2,6 +2,7 @@ import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
 import Icon from "components/common/icon";
 import Markdown from "components/common/markdown";
+import Modal from "components/common/modal";
 import useAssessment from "lib/hooks/use-assessment";
 import useTranslate from "lib/hooks/use-translate";
 import Container from "./container";
@@ -11,6 +12,7 @@ import style from "./style.scss";
 export default function Generic() {
   const [questionSetIndex, setQuestionSetIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
+  const [showInstructions, setShowInstructions] = useState(false);
   const [showConclusions, setShowConclusions] = useState(false);
   const assessment = useAssessment({surveyType: "generic"});
   const questionSets = assessment ? assessment.questionSets : [];
@@ -35,6 +37,10 @@ export default function Generic() {
     console.log("Submitting answers:", answers);
     setShowConclusions(true);
   };
+
+  useEffect(() => {
+    setShowInstructions(true);
+  }, [assessment]);
 
   useEffect(() => {
     if(!finished) { return; }
@@ -70,6 +76,23 @@ export default function Generic() {
           Go Back
         </button>
       )}
+      {showInstructions
+        && (
+          <Modal
+            title="Instructions"
+            onClose={() => setShowInstructions(false)}
+            className={style.instructions}
+          >
+            <Markdown>
+              {assessment.instructions}
+            </Markdown>
+            <hr className={style.grayDivider} />
+            <div className={style.footer}>
+              <button type="button" className={style.cancelBtn}>Cancel</button>
+              <button type="button" className={style.btnPrimary}>{assessment.instructionButton}</button>
+            </div>
+          </Modal>
+        )}
     </Container>
   );
 }

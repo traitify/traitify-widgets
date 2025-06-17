@@ -1,17 +1,20 @@
-import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
 import Icon from "components/common/icon";
+import Markdown from "components/common/markdown";
 import useAssessment from "lib/hooks/use-assessment";
 import useTranslate from "lib/hooks/use-translate";
 import Container from "./container";
 import QuestionSet from "./question-set";
+import style from "./style.scss";
 
 export default function Generic() {
   const [questionSetIndex, setQuestionSetIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
+  const [showConclusions, setShowConclusions] = useState(false);
   const assessment = useAssessment({surveyType: "generic"});
   const questionSets = assessment ? assessment.questionSets : [];
-  const questionCount = questionSets.reduce((count, questionSet) => count + questionSet.questions.length, 0);
+  const questionCount = questionSets.reduce((count, set) => count + set.questions.length, 0);
   const currentQuestionSet = questionSets ? questionSets[questionSetIndex] : {};
   const progress = questionSetIndex >= 0 ? (questionSetIndex / questionSets.length) * 100 : 0;
   const finished = questionSets.length > 0 && questionCount === answers.length;
@@ -30,12 +33,24 @@ export default function Generic() {
 
   const onSubmit = () => {
     console.log("Submitting answers:", answers);
+    setShowConclusions(true);
   };
 
   useEffect(() => {
     if(!finished) { return; }
     onSubmit();
   }, [finished]);
+
+  if(showConclusions) {
+    return (
+      <Container {...props}>
+        <Markdown className={style.markdown}>
+          {assessment.conclusions}
+        </Markdown>
+        <button type="button" className={style.btnPrimary}>Finished!</button>
+      </Container>
+    );
+  }
 
   return (
     <Container {...props}>
@@ -50,9 +65,9 @@ export default function Generic() {
         )}
 
       {questionSetIndex > 0 && (
-        <button onClick={back} type="button">
-          <Icon alt={translate("back")} icon={faChevronLeft} />
-          Back
+        <button onClick={back} type="button" className={style.back}>
+          <Icon className={style.icon} alt={translate("back")} icon={faArrowLeft} />
+          Go Back
         </button>
       )}
     </Container>

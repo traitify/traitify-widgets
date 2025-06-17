@@ -112,9 +112,6 @@
     color: $-white;
     border-color: transparent;
   }
-  &.btnDisabled {
-    &:active, &:hover { @include theme("background-color", "inactive"); }
-  }
 }
 
 button.btnPrimary {
@@ -145,16 +142,17 @@ button.btnPrimary {
 .footer {
   display: flex;
   justify-content: flex-end;
-  gap: $buffer * 0.5;
+  gap: $buffer * 0.25;
 
   .cancelBtn {
     @include buttonLight("text-dark");
     @include theme("border-color", "border-light");
     border: $border-width solid;
     border-radius: $border-radius-sm * 0.5;
+    margin: $buffer * 0.5;
   }
 
   .btnPrimary {
-    margin: $buffer;
+    margin: $buffer * 0.5;
   }
 }

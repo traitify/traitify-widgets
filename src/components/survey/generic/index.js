@@ -81,15 +81,27 @@ export default function Generic() {
           <Modal
             title="Instructions"
             onClose={() => setShowInstructions(false)}
-            className={style.instructions}
+            containerClass={style.modalContainer}
           >
             <Markdown>
               {assessment.instructions}
             </Markdown>
             <hr className={style.grayDivider} />
             <div className={style.footer}>
-              <button type="button" className={style.cancelBtn}>Cancel</button>
-              <button type="button" className={style.btnPrimary}>{assessment.instructionButton}</button>
+              <button
+                type="button"
+                className={style.cancelBtn}
+                onClick={() => setShowInstructions(false)}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className={style.btnPrimary}
+                onClick={() => setShowInstructions(false)}
+              >
+                {assessment.instructionButton}
+              </button>
             </div>
           </Modal>
         )}

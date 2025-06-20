@@ -43,4 +43,16 @@ export const questions = `
   }
 `;
 
+export const update = `
+  mutation($profileID: ID!, $surveyID: ID!, $answers: [Answers]!) {
+    submitGenericAssessmentAnswers(profileId: $profileID, surveyId: $surveyID, answers: $answers) {
+      id
+      surveyId
+      profileId
+      startedAt
+      completedAt
+    }
+  }
+`;
+
 export const path = "/generic-assessments/graphql";

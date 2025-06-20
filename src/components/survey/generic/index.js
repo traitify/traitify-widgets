@@ -4,6 +4,8 @@ import Icon from "components/common/icon";
 import Markdown from "components/common/markdown";
 import Modal from "components/common/modal";
 import useAssessment from "lib/hooks/use-assessment";
+import useGraphql from "lib/hooks/use-graphql";
+import useHttp from "lib/hooks/use-http";
 import useTranslate from "lib/hooks/use-translate";
 import Container from "./container";
 import QuestionSet from "./question-set";
@@ -14,6 +16,7 @@ export default function Generic() {
   const [answers, setAnswers] = useState([]);
   const [showInstructions, setShowInstructions] = useState(false);
   const [showConclusions, setShowConclusions] = useState(false);
+
   const assessment = useAssessment({surveyType: "generic"});
   const questionSets = assessment ? assessment.questionSets : [];
   const questionCount = questionSets.reduce((count, set) => count + set.questions.length, 0);
@@ -21,8 +24,10 @@ export default function Generic() {
   const progress = questionSetIndex >= 0 ? (questionSetIndex / questionSets.length) * 100 : 0;
   const finished = questionSets.length > 0 && questionCount === answers.length;
 
-  const props = {progress};
+  const graphQL = useGraphql();
+  const http = useHttp();
   const translate = useTranslate();
+  const props = {progress};
 
   const updateAnswer = (questionId, selectedOptionId) => {
     const currentAnswers = answers.filter((answer) => answer.questionId !== questionId);
@@ -34,8 +39,22 @@ export default function Generic() {
   const back = () => { setQuestionSetIndex(questionSetIndex - 1); };
 
   const onSubmit = () => {
-    console.log("Submitting answers:", answers);
-    setShowConclusions(true);
+    const query = graphQL.generic.update;
+    const variables = {
+      surveyID: localStorage.getItem("surveyID"),
+      profileID: localStorage.getItem("profileID"),
+      answers
+    };
+
+    http.post(graphQL.generic.path, {query, variables}).then(({data, errors}) => {
+      if(!errors && data.submitGenericAssessmentAnswers.success) {
+        setShowConclusions(true);
+      } else {
+        console.warn(errors || data); // eslint-disable-line no-console
+
+        // setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
+      }
+    });
   };
 
   useEffect(() => {

@@ -63,11 +63,6 @@ function createWidget() {
     if(!orderID) { return; }
     Traitify.listener.on("Survey.start", (x) => console.log(x));
     Traitify.options.orderID = orderID;
-  } else if(surveyType === "generic") {
-    Traitify.options.surveyID = cache.get("surveyID");
-    Traitify.options.profileID = cache.get("profileID");
-    Traitify.options.assessmentID = cache.get("assessmentID");
-    Traitify.options.surveyType = surveyType;
   } else {
     const assessmentID = cache.get("assessmentID");
     console.log("createWidget", {assessmentID});

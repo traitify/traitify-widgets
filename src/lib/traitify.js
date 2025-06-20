@@ -29,8 +29,7 @@ export default class Traitify {
       "locale",
       "orderID",
       "packageID",
-      "profileID",
-      "surveyID"
+      "profileID"
     ]);
 
     return {...objects, ...props, options};

@@ -49,6 +49,30 @@ export const mockAssessment = (...params) => {
 };
 
 // NOTE: Allow params to be [response, {id}] or {id, implementation}
+export const mockAssessmentSkip = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || container.assessmentID;
+  const mock = {
+    key: "assessment-skip",
+    request: (url, options) => {
+      if(!url.includes(`/assessments/${id}/skip`)) { return false; }
+      if(options.method !== "PUT") { return false; }
+
+      return true;
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => response;
+
+  return mockFetch(mock);
+};
+
+// NOTE: Allow params to be [response, {id}] or {id, implementation}
 export const mockAssessmentStarted = (...params) => {
   const [response, mockOptions] = params.length === 1 && params[0]?.implementation
     ? [null, ...params]
@@ -157,6 +181,33 @@ export const mockCognitiveAssessment = (...params) => {
   return mockFetch(mock);
 };
 
+export const mockCognitiveSkip = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "cognitive-assessment-skip",
+    request: (url, options) => {
+      if(!url.includes("/cognitive-tests/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const query = dig(JSON.parse(options.body), "query") || {};
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.testID === id && query.includes("skipCognitiveTest");
+    }
+  };
+
+  container.assessmentID = id;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {skipCognitiveTest: response}});
+
+  return mockFetch(mock);
+};
 export const mockCognitiveSubmit = (...params) => {
   const [response, mockOptions] = params.length === 1 && params[0]?.implementation
     ? [null, ...params]
@@ -262,6 +313,34 @@ export const mockHighlightedCareers = (careers, {path} = {}) => (
     response: () => careers
   })
 );
+
+export const mockOrder = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {orderID: _orderID, implementation} = mockOptions || {};
+  const orderID = _orderID || response?.id || container.orderID;
+  const mock = {
+    key: "order",
+    request: (url, options) => {
+      if(!url.includes("/orders/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === orderID;
+    }
+  };
+
+  container.assessmentID = null;
+  container.orderID = orderID;
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {order: response}});
+
+  return mockFetch(mock);
+};
 
 export const mockRecommendation = (...params) => {
   const [response, mockOptions] = params.length === 1 && params[0]?.implementation

@@ -1,6 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Status renders component 1`] = `
+exports[`Status order renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      Your Application Assessments
+    </div>
+    <div
+      className="p"
+    >
+      As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment and either be returned to this page if you have multiple assessments to complete or taken to the next stage of the process.
+    </div>
+    <div
+      className="assessment inactive"
+    >
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          Cognitive Assessment
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
+    <div
+      className="assessment"
+    >
+      <div>
+        <span
+          className="text"
+        >
+          Emmersion Assessment
+        </span>
+      </div>
+      <a
+        href="https://external.traitify.com/external-assessment-id"
+      >
+        Start Assessment
+      </a>
+    </div>
+    <div
+      className="assessment inactive"
+    >
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          Personality Assessment
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Status order renders error 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      Your Application Assessments
+    </div>
+    <div
+      className="p"
+    >
+      There was an error with your assessments
+    </div>
+    <button
+      className="retry"
+      onClick={[Function]}
+      type="button"
+    >
+      Let's Try Again
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Status order renders loading 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <img
+      alt=""
+      src="https://cdn.traitify.com/widgets/status/loading-sonar.gif"
+    />
+    <div
+      className="bold p"
+    >
+      Loading your assessment
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Status order renders skipped 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      Accommodation Request Submitted
+    </div>
+    <div
+      className="p"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "A member of our team will review your information as soon as possible",
+        }
+      }
+    />
+  </section>
+</div>
+`;
+
+exports[`Status recommendation renders component 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
@@ -87,13 +246,13 @@ exports[`Status renders component 1`] = `
 </div>
 `;
 
-exports[`Status renders nothing if assessments not ready 1`] = `
+exports[`Status recommendation renders nothing if assessments not ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 />
 `;
 
-exports[`Status renders nothing if no assessments 1`] = `
+exports[`Status recommendation renders nothing if no assessments 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 />

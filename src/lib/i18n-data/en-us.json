@@ -14,6 +14,7 @@
   "careers_link_heading": "View your personalized career recommendations",
   "careers_link_heading_third_person": "View their personalized career recommendations",
   "close": "Close",
+  "complete": "Complete",
   "cognitive_alert_skip": "You are unable to skip the practice questions",
   "cognitive_confirm_button": "Confirm",
   "cognitive_confirm_retry": "Would you like to attempt the questions you skipped?",
@@ -181,10 +182,32 @@
   "skill_name_for_leading_others": "Leading Others",
   "skill_name_for_teamwork": "Teamwork",
   "skill_name_for_working_from_home": "Working From Home Tips",
+  "skipped": "Skipped",
   "slide_error": "Unable to load more slides at this time",
   "sort": "Sort",
+  "status": {
+    "error": "There was an error with your assessments",
+    "heading": "Your Application Assessments",
+    "loading": "Loading your assessment",
+    "start": "Start Assessment",
+    "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment and either be returned to this page if you have multiple assessments to complete or taken to the next stage of the process.",
+    "timeout": "Loading timed out",
+    "try_again": "Let's Try Again"
+  },
   "submit": "Submit",
   "success_skills": "Success Skills",
+  "survey": {
+    "accommodation": {
+      "confirm": "Yes, Request Accommodation",
+      "request": "Request Accommodation",
+      "request_text": "Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment",
+      "submitted": "Accommodation Request Submitted",
+      "submitted_text": "A member of our team will review your information as soon as possible"
+    },
+    "cognitive_assessment": "Cognitive Assessment",
+    "external_assessment": "External Assessment",
+    "personality_assessment": "Personality Assessment"
+  },
   "tip_type_for_caution_zone": "Caution Zone",
   "tip_type_for_room": "Room for Growth and Change",
   "tip_type_for_settings": "Settings For You",

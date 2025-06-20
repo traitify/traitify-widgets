@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
 import Markdown from "components/common/markdown";
 import dig from "lib/common/object/dig";
+import useSkipAssessment from "lib/hooks/use-skip-assessment";
 import useWindowSize from "lib/hooks/use-window-size";
 import {videoProps} from "./helpers";
 import {
@@ -22,9 +23,11 @@ function Instructions({
   surveyID,
   translate
 }) {
+  const {allow: allowSkip, trigger: onSkip} = useSkipAssessment();
   const [width] = useWindowSize();
   const [disability, setDisability] = useState(initialLearningDisability || false);
   const [step, setStep] = useState(1);
+  const [showAccommodation, setShowAccommodation] = useState(false);
   const [type, setType] = useState(width > 768 ? "h" : "v");
   const finalInstruction = options.finalInstruction || defaultInstruction;
   const practiceExamples = options.practiceExamples || defaultExamples;
@@ -38,6 +41,23 @@ function Instructions({
   const example = practiceExamples[step - 1];
   const instructionOptions = {id: surveyID, minimal, timeTrial, timed, translate, type};
 
+  if(showAccommodation) {
+    return (
+      <div key="request-accommodation" className={style.container}>
+        <h1>{translate("survey.accommodation.request")}</h1>
+        <div className={style.text}>{translate("survey.accommodation.request_text")}</div>
+        <div className={style.btnGroup}>
+          <button className={style.btnBack} onClick={() => setShowAccommodation(false)} type="button">
+            {translate("back")}
+          </button>
+          <button className={style.btnBlue} onClick={onSkip} type="button">
+            {translate("survey.accommodation.confirm")}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if(example) {
     const {button, heading, text, video} = typeof example === "function" ? example(instructionOptions) : example;
 
@@ -46,7 +66,12 @@ function Instructions({
         {step === 1 ? <h1>{heading}</h1> : <h2>{heading}</h2>}
         {text && <Markdown className={style.text}>{text}</Markdown>}
         {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
-        <button className={`traitify--response-button ${style.btnBlue}`} onClick={() => setStep(step + 1)} type="button">{button}</button>
+        <div className={style.btnGroup}>
+          {step === 1 && allowSkip && (
+            <button className={style.btnBack} onClick={() => setShowAccommodation(true)} type="button">{translate("survey.accommodation.request")}</button>
+          )}
+          <button className={`traitify--response-button ${style.btnBlue}`} onClick={() => setStep(step + 1)} type="button">{button}</button>
+        </div>
       </div>
     );
   }

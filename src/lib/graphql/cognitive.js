@@ -4,6 +4,7 @@ export const create = `
       allottedTime
       completed
       id
+      isSkipped
       learningDisability
       localeKey
       name
@@ -41,6 +42,7 @@ export const get = `
       allottedTime
       completed
       id
+      isSkipped
       learningDisability
       localeKey
       name
@@ -68,6 +70,15 @@ export const get = `
           }
         }
       }
+    }
+  }
+`;
+
+export const skip = `
+  mutation($testID: String!) {
+    skipCognitiveTest(testId: $testID) {
+      message
+      success
     }
   }
 `;

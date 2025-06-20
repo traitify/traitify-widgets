@@ -23,7 +23,7 @@ function Instructions({
   surveyID,
   translate
 }) {
-  const {allow: allowSkip, trigger: onSkip} = useSkipAssessment();
+  const {allow: allowSkip, dismiss: dismissSkip, trigger: onSkip} = useSkipAssessment();
   const [width] = useWindowSize();
   const [disability, setDisability] = useState(initialLearningDisability || false);
   const [step, setStep] = useState(1);
@@ -40,6 +40,10 @@ function Instructions({
 
   const example = practiceExamples[step - 1];
   const instructionOptions = {id: surveyID, minimal, timeTrial, timed, translate, type};
+  const onContinue = () => {
+    dismissSkip();
+    setStep(step + 1);
+  };
 
   if(showAccommodation) {
     return (
@@ -70,7 +74,7 @@ function Instructions({
           {step === 1 && allowSkip && (
             <button className={style.btnBack} onClick={() => setShowAccommodation(true)} type="button">{translate("survey.accommodation.request")}</button>
           )}
-          <button className={`traitify--response-button ${style.btnBlue}`} onClick={() => setStep(step + 1)} type="button">{button}</button>
+          <button className={`traitify--response-button ${style.btnBlue}`} onClick={onContinue} type="button">{button}</button>
         </div>
       </div>
     );

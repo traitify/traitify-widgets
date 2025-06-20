@@ -1,5 +1,5 @@
 import {useCallback} from "react";
-import {useSetRecoilState} from "recoil";
+import {useRecoilState, useSetRecoilState} from "recoil";
 import useActive from "lib/hooks/use-active";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
@@ -7,18 +7,20 @@ import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useOrder from "lib/hooks/use-order";
 import useSetting from "lib/hooks/use-setting";
-import {orderState} from "lib/recoil";
+import {orderState, skipDismissedState} from "lib/recoil";
 
 export default function useSkipAssessment() {
   const active = useActive();
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
+  const [dismissed, setDismissed] = useRecoilState(skipDismissedState);
   const graphQL = useGraphql();
   const http = useHttp();
   const order = useOrder();
   const setOrder = useSetRecoilState(orderState);
 
   const allow = useSetting("skipAssessmentAccommodation", {fallback: false});
+  const dismiss = () => { setDismissed(true); };
   const trigger = useCallback(async() => {
     if(!active) { return; }
     if(!order) { return; }
@@ -79,5 +81,5 @@ export default function useSkipAssessment() {
     setOrder((_order) => ({..._order, completed: true, status: "skipped"}));
   }, [active, order]);
 
-  return {allow, trigger};
+  return {allow: dismissed ? false : allow, dismiss, trigger};
 }

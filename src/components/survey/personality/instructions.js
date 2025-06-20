@@ -11,7 +11,7 @@ function Instructions({
   instructionsHTML = null,
   onNext
 }) {
-  const {allow: allowSkip, trigger: onSkip} = useSkipAssessment();
+  const {allow: allowSkip, dismiss: dismissSkip, trigger: onSkip} = useSkipAssessment();
   const [showAccommodation, setShowAccommodation] = useState(false);
   const translate = useTranslate();
 
@@ -34,6 +34,11 @@ function Instructions({
     );
   }
 
+  const onContinue = () => {
+    dismissSkip();
+    onNext();
+  };
+
   return (
     <>
       {instructionsHTML ? (
@@ -47,7 +52,7 @@ function Instructions({
             {translate("survey.accommodation.request")}
           </button>
         )}
-        <button className={style.btnNext} onClick={onNext} type="button">
+        <button className={style.btnNext} onClick={onContinue} type="button">
           {translate("get_started")}
         </button>
       </div>

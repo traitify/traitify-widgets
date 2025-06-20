@@ -33,8 +33,7 @@ export default function useProps(props) {
     options = {},
     orderID,
     packageID,
-    profileID,
-    surveyID
+    profileID
   } = props;
 
   useEffect(() => {
@@ -78,8 +77,7 @@ export default function useProps(props) {
     if(orderID) { base.orderID = orderID; }
     if(packageID) { base.packageID = packageID; }
     if(profileID) { base.profileID = profileID; }
-    if(surveyID) { base.surveyID = surveyID; }
 
     setBase(base);
-  }, [assessmentID, benchmarkID, orderID, packageID, profileID, surveyID]);
+  }, [assessmentID, benchmarkID, orderID, packageID, profileID]);
 }

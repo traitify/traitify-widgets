@@ -20,8 +20,8 @@ export const create = `
 `;
 
 export const questions = `
-  query($profileID: ID!, $surveyID: ID!) {
-    genericAssessmentQuestions(profileId: $profileID, surveyId: $surveyID) {
+  query($assessmentID: ID!) {
+    genericAssessmentQuestions(assessmentId: $assessmentID) {
       id
       name
       conclusions
@@ -39,13 +39,20 @@ export const questions = `
           }
         }
       }
+      assessment {
+        id
+        surveyId
+        profileId
+        startedAt
+        completedAt
+      }
     }
   }
 `;
 
 export const update = `
-  mutation($profileID: ID!, $surveyID: ID!, $answers: [Answers]!) {
-    submitGenericAssessmentAnswers(profileId: $profileID, surveyId: $surveyID, answers: $answers) {
+  mutation($assessmentID: ID!, $answers: [Answers]!) {
+    submitGenericAssessmentAnswers(assessmentId: $assessmentID, answers: $answers) {
       id
       surveyId
       profileId

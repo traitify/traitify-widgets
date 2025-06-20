@@ -41,13 +41,12 @@ export default function Generic() {
   const onSubmit = () => {
     const query = graphQL.generic.update;
     const variables = {
-      surveyID: localStorage.getItem("surveyID"),
-      profileID: localStorage.getItem("profileID"),
+      assessmentID: assessment.assessment.id,
       answers
     };
 
     http.post(graphQL.generic.path, {query, variables}).then(({data, errors}) => {
-      if(!errors && data.submitGenericAssessmentAnswers.success) {
+      if(!errors && data.submitGenericAssessmentAnswers) {
         setShowConclusions(true);
       } else {
         console.warn(errors || data); // eslint-disable-line no-console

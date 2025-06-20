@@ -9,21 +9,6 @@ import useTranslate from "lib/hooks/use-translate";
 import {activeState} from "lib/recoil";
 import style from "./style.scss";
 
-// TODO: Extract text to translate
-const translations = {
-  complete: "Complete",
-  loading: "Loading", // Already translated
-  status: {
-    start: "Start Assessment"
-  },
-  survey: {
-    cognitive_assessment: "Cognitive Assessment",
-    external_assessment: "External Assessment",
-    generic_assessment: "Generic Assessment",
-    personality_assessment: "Personality Assessment"
-  }
-};
-
 function Button({assessment}) {
   const listener = useListener();
   const options = useOption("status") || {};

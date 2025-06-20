@@ -6,9 +6,7 @@ import {
   graphqlState,
   httpState,
   localeState,
-  profileIDState,
-  safeCacheKeyState,
-  surveyIDState
+  safeCacheKeyState
 } from "./base";
 
 // TODO: Return error instead of null for cognitive and external
@@ -117,7 +115,7 @@ export const genericAssessmentQuery = selectorFamily({
     const http = get(httpState);
     const params = {
       query: GraphQL.generic.questions,
-      variables: {profileID: get(profileIDState), surveyID: get(surveyIDState)}
+      variables: {assessmentID: id}
     };
 
     const response = await http.post({path: GraphQL.generic.path, params});
@@ -126,12 +124,12 @@ export const genericAssessmentQuery = selectorFamily({
       return null;
     }
 
-    const questions = response.data.genericAssessmentQuestions;
-    if(!questions?.length) { return questions; }
+    const survey = response.data.genericAssessmentQuestions;
+    if(!survey?.length || !survey?.assessment.completedAt) { return survey; }
 
-    cache.set(cacheKey, questions);
+    cache.set(cacheKey, survey);
 
-    return questions;
+    return survey;
   },
   key: "assessment/generic"
 });

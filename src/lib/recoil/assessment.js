@@ -124,12 +124,12 @@ export const genericAssessmentQuery = selectorFamily({
       return null;
     }
 
-    const survey = response.data.genericAssessmentQuestions;
-    if(!survey?.length || !survey?.assessment.completedAt) { return survey; }
+    const assessment = response.data.genericSurveyQuestions;
+    if(!assessment?.length || !assessment?.completedAt) { return assessment; }
 
-    cache.set(cacheKey, survey);
+    cache.set(cacheKey, assessment);
 
-    return survey;
+    return assessment;
   },
   key: "assessment/generic"
 });

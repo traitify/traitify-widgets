@@ -458,7 +458,7 @@ function setupGeneric() {
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
     try {
-      const options = response.data.genericAssessments
+      const options = response.data.genericSurveys
         .map(({id, name}) => ({text: name, value: id}))
         .sort((a, b) => a.text.localeCompare(b.text));
   

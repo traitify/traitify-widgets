@@ -18,7 +18,7 @@ export default function Generic() {
   const [showConclusions, setShowConclusions] = useState(false);
 
   const assessment = useAssessment({surveyType: "generic"});
-  const questionSets = assessment ? assessment.questionSets : [];
+  const questionSets = assessment ? assessment.survey.questionSets : [];
   const questionCount = questionSets.reduce((count, set) => count + set.questions.length, 0);
   const currentQuestionSet = questionSets ? questionSets[questionSetIndex] : {};
   const progress = questionSetIndex >= 0 ? (questionSetIndex / questionSets.length) * 100 : 0;
@@ -41,7 +41,7 @@ export default function Generic() {
   const onSubmit = () => {
     const query = graphQL.generic.update;
     const variables = {
-      assessmentID: assessment.assessment.id,
+      assessmentID: assessment.id,
       answers
     };
 
@@ -69,7 +69,7 @@ export default function Generic() {
     return (
       <Container {...props}>
         <Markdown className={style.markdown}>
-          {assessment.conclusions}
+          {assessment.survey.conclusions}
         </Markdown>
         <button type="button" className={style.btnPrimary}>Finished!</button>
       </Container>
@@ -102,7 +102,7 @@ export default function Generic() {
             containerClass={style.modalContainer}
           >
             <Markdown>
-              {assessment.instructions}
+              {assessment.survey.instructions}
             </Markdown>
             <hr className={style.grayDivider} />
             <div className={style.footer}>
@@ -118,7 +118,7 @@ export default function Generic() {
                 className={style.btnPrimary}
                 onClick={() => setShowInstructions(false)}
               >
-                {assessment.instructionButton}
+                {assessment.survey.instructionButton}
               </button>
             </div>
           </Modal>

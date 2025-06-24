@@ -1,6 +1,6 @@
 export const surveys = `
   query($localeKey: String!) {
-    genericAssessments(localeKey: $localeKey) {
+    genericSurveys(localeKey: $localeKey) {
       id
       name
     }
@@ -21,30 +21,30 @@ export const create = `
 
 export const questions = `
   query($assessmentID: ID!) {
-    genericAssessmentQuestions(assessmentId: $assessmentID) {
+    genericSurveyQuestions(assessmentId: $assessmentID) {
       id
-      name
-      conclusions
-      instructions
-      instructionButton
-      questionSets {
-        text
-        setImage
-        questions {
-          id
+      surveyId
+      profileId
+      startedAt
+      completedAt
+      survey {
+        id
+        name
+        conclusions
+        instructions
+        instructionButton
+        questionSets {
           text
-          responseOptions {
+          setImage
+          questions {
             id
             text
+            responseOptions {
+              id
+              text
+            }
           }
         }
-      }
-      assessment {
-        id
-        surveyId
-        profileId
-        startedAt
-        completedAt
       }
     }
   }

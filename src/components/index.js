@@ -29,6 +29,7 @@ import RecommendationChart from "./results/recommendation/chart";
 import Status from "./status";
 import Survey from "./survey";
 import CognitiveSurvey from "./survey/cognitive";
+import Generic from "./survey/generic";
 import PersonalitySurvey from "./survey/personality";
 
 export default {
@@ -86,6 +87,7 @@ export default {
   Survey: {
     Cognitive: CognitiveSurvey,
     Container: Survey,
+    Generic,
     Personality: PersonalitySurvey
   }
 };

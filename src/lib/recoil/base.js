@@ -24,6 +24,7 @@ export const optionsState = atom({default: null, key: "options"});
 export const orderIDState = atom({default: null, key: "order-id"});
 export const packageIDState = atom({default: null, key: "package-id"});
 export const profileIDState = atom({default: null, key: "profile-id"});
+export const skipDismissedState = atom({default: false, key: "skip-dismissed"});
 
 // NOTE: Breaking up state prevents over-triggering selectors
 export const activeIDState = selector({

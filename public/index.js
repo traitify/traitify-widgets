@@ -480,7 +480,6 @@ function setupTraitify() {
 
   if(environment === "staging") {
     Traitify.http.host = "https://api.stag.awse.traitify.com";
-    // Traitify.http.host = "http://localhost:4000/";
   } else {
     Traitify.http.host = "https://api.traitify.com";
   }

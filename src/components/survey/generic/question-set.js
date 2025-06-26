@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import Responses from "./responses";
 import style from "./style.scss";
 
-export default function QuestionSet({questionSet, updateAnswer = null, next = null}) {
+export default function QuestionSet({questionSet, next, updateAnswer}) {
   const questionSetClass = [style.questionSet].join(" ");
   const [selectedOptions, setSelectedOptions] = useState([]);
   const setFinished = questionSet.questions.length === selectedOptions.length;
@@ -43,6 +43,6 @@ QuestionSet.propTypes = {
     })).isRequired,
     setImage: PropTypes.string.isRequired
   }).isRequired,
-  updateAnswer: PropTypes.func,
-  next: PropTypes.func
+  next: PropTypes.func.isRequired,
+  updateAnswer: PropTypes.func.isRequired
 };

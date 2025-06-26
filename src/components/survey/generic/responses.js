@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {useState} from "react";
 import style from "./style.scss";
 
-export default function Responses({responseOptions = [], updateAnswer = null}) {
+export default function Responses({responseOptions = [], updateAnswer}) {
   const buttonClass = ["traitify--response-button", style.response].join(" ");
   const buttonWidth = (text) => (text.length > 20 ? "100%" : "auto");
   const [activeButton, setActiveButton] = useState(null);
@@ -35,5 +35,5 @@ Responses.propTypes = {
       text: PropTypes.string.isRequired
     })
   ).isRequired,
-  updateAnswer: PropTypes.func
+  updateAnswer: PropTypes.func.isRequired
 };

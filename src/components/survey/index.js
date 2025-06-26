@@ -10,8 +10,8 @@ export default function Survey() {
   if(!active) { return <Status />; }
   if(active.surveyType === "cognitive") { return <Cognitive />; }
   if(active.surveyType === "external") { return <Status />; }
-  if(active.surveyType === "personality") { return <Personality />; }
   if(active.surveyType === "generic") { return <Generic />; }
+  if(active.surveyType === "personality") { return <Personality />; }
 
   return null;
 }

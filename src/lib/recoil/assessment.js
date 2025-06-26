@@ -138,8 +138,8 @@ export const assessmentQuery = selectorFamily({
   get: ({id, surveyType}) => async({get}) => {
     if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
     if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
-    if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
     if(surveyType === "generic") { return get(genericAssessmentQuery(id)); }
+    if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
 
     return null;
   },

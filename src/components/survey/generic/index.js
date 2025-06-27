@@ -6,6 +6,7 @@ import Modal from "components/common/modal";
 import useAssessment from "lib/hooks/use-assessment";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
+import useDidUpdate from "lib/hooks/use-did-update";
 import useTranslate from "lib/hooks/use-translate";
 import Container from "./container";
 import QuestionSet from "./question-set";
@@ -16,6 +17,7 @@ export default function Generic() {
   const [answers, setAnswers] = useState([]);
   const [showInstructions, setShowInstructions] = useState(false);
   const [showConclusions, setShowConclusions] = useState(false);
+  const [submitAttempts, setSubmitAttempts] = useState(0);
 
   const assessment = useAssessment({surveyType: "generic"});
   const questionSets = assessment ? assessment.survey.questionSets : [];
@@ -39,6 +41,7 @@ export default function Generic() {
   const back = () => { setQuestionSetIndex(questionSetIndex - 1); };
 
   const onSubmit = () => {
+    if(submitAttempts > 3) { return; }
     const query = graphQL.generic.update;
     const variables = {
       assessmentID: assessment.id,
@@ -51,10 +54,12 @@ export default function Generic() {
       } else {
         console.warn(errors || data); // eslint-disable-line no-console
 
-        // setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
+        setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
       }
     });
   };
+
+  useDidUpdate(() => { onSubmit(); }, [submitAttempts]);
 
   useEffect(() => {
     setShowInstructions(true);

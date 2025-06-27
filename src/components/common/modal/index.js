@@ -4,9 +4,9 @@ import Icon from "components/common/icon";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-export default function Modal({children, onClose, title, containerClass = ""}) {
+export default function Modal({children, containerClass = null, onClose, title}) {
   const translate = useTranslate();
-  const sectionClass = [style.modalContainer, containerClass].join(" ");
+  const sectionClass = [style.modalContainer, containerClass].filter(Boolean).join(" ");
   return (
     <div className={`${style.modal} ${style.container}`}>
       <section className={sectionClass}>
@@ -35,7 +35,7 @@ export default function Modal({children, onClose, title, containerClass = ""}) {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
+  containerClass: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  containerClass: PropTypes.string
+  title: PropTypes.string.isRequired
 };

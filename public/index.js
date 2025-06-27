@@ -389,9 +389,9 @@ function setupDom() {
     options: [
       {text: "Benchmark", value: "benchmark"},
       {text: "Cognitive", value: "cognitive"},
+      {text: "Generic", value: "generic"},
       {text: "Order", value: "order"},
-      {text: "Personality", value: "personality"},
-      {text: "Generic", value: "generic"}
+      {text: "Personality", value: "personality"}
     ],
     text: "Survey Type:"
   }));
@@ -479,8 +479,7 @@ function setupTraitify() {
   const environment = cache.get("environment");
 
   if(environment === "staging") {
-    // Traitify.http.host = "https://api.stag.awse.traitify.com";
-    Traitify.http.host = "http://localhost:4000/";
+    Traitify.http.host = "https://api.stag.awse.traitify.com";
   } else {
     Traitify.http.host = "https://api.traitify.com";
   }
@@ -516,6 +515,6 @@ function onSurveyTypeChange(e) {
 
 setupTraitify();
 setupDom();
-// setupCognitive();
+setupCognitive();
 setupGeneric();
 createWidget();

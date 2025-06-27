@@ -78,15 +78,14 @@ export default function Generic() {
 
   return (
     <Container {...props}>
-      {currentQuestionSet
-        && (
+      {currentQuestionSet && (
         <QuestionSet
           key={questionSetIndex}
           questionSet={currentQuestionSet}
           updateAnswer={updateAnswer}
           next={next}
         />
-        )}
+      )}
 
       {questionSetIndex > 0 && (
         <button onClick={back} type="button" className={style.back}>

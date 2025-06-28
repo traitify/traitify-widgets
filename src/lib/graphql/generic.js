@@ -50,6 +50,36 @@ export const questions = `
   }
 `;
 
+export const result = `
+  query($assessmentID: ID!) {
+    genericAssessmentResult(assessmentId: $assessmentID) {
+      profile {
+        profileId
+        firstName
+        lastName
+      }
+      assessment {
+        profileId
+        surveyId
+        startedAt
+        totalCorrectResponses
+        completedAt
+        responses {
+          questionId
+          questionText
+          selectedResponseOptionId
+          isCorrect
+          responseOptions {
+            responseOptionId
+            responseOptionText
+            isCorrect
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const update = `
   mutation($assessmentID: ID!, $answers: [Answers]!) {
     submitGenericAssessmentAnswers(assessmentId: $assessmentID, answers: $answers) {

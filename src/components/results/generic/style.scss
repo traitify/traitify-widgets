@@ -1,0 +1,70 @@
+@import "style/helpers";
+
+.container {
+  .score {
+    .scoreRow {
+      display: flex;
+      gap: $buffer * 0.5;
+      font-size: $font-size-lg;
+      .correct {
+        background-color: $-aquamarine;
+      }
+      .incorrect {
+        background-color: $-red;
+      }
+      .overall {
+        background-color: $-blue;
+      }
+      .correct, .incorrect, .overall {
+        div {
+          display: flex;
+          width: 50%;
+        }
+      }
+      div {
+        display: flex;
+        width: 30%;
+        height: $buffer * 2.75;
+        border-radius: $border-radius-sm;
+        padding: $buffer * 0.5 $buffer;
+        color: $-white;
+        align-items: center;
+        .count {
+          justify-content: end;
+        }
+      }
+    }
+  }
+  button {
+    border: 1px solid #DADCE0;
+    border-radius: $border-radius-sm * 0.5;
+    margin: $buffer $buffer * 0.5;
+    height: 48px;
+    vertical-align: middle;
+
+    &.back {
+      padding: $buffer * 0.5 $buffer-lg * 0.5;
+      width: 150px;
+
+      .icon {
+        margin-right: $buffer-sm;
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  .markdown {
+    text-align: center;
+  }
+}
+
+button.btnPrimary {
+  background-color: $-blue;
+  color: $-white;
+  display: inline-block;
+  padding: $buffer-lg * .5 $buffer;
+  text-align: center;
+  border: transparent;
+  max-width: 110px;
+  margin: $buffer-lg auto;
+}

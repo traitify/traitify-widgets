@@ -1,13 +1,17 @@
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
+import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
 import Icon from "components/common/icon";
 import Markdown from "components/common/markdown";
 import Modal from "components/common/modal";
 import useAssessment from "lib/hooks/use-assessment";
+import useCache from "lib/hooks/use-cache";
+import useCacheKey from "lib/hooks/use-cache-key";
+import useDidUpdate from "lib/hooks/use-did-update";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
-import useDidUpdate from "lib/hooks/use-did-update";
 import useTranslate from "lib/hooks/use-translate";
+import {activeAssessmentQuery} from "lib/recoil";
 import Container from "./container";
 import QuestionSet from "./question-set";
 import style from "./style.scss";
@@ -20,6 +24,8 @@ export default function Generic() {
   const [submitAttempts, setSubmitAttempts] = useState(0);
 
   const assessment = useAssessment({surveyType: "generic"});
+  const assessmentCacheKey = useCacheKey("assessment");
+  const cache = useCache();
   const questionSets = assessment ? assessment.survey.questionSets : [];
   const questionCount = questionSets.reduce((count, set) => count + set.questions.length, 0);
   const currentQuestionSet = questionSets ? questionSets[questionSetIndex] : {};
@@ -30,6 +36,7 @@ export default function Generic() {
   const http = useHttp();
   const translate = useTranslate();
   const props = {progress};
+  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
 
   const updateAnswer = (questionId, selectedOptionId) => {
     const currentAnswers = answers.filter((answer) => answer.questionId !== questionId);
@@ -51,6 +58,10 @@ export default function Generic() {
     http.post(graphQL.generic.path, {query, variables}).then(({data, errors}) => {
       if(!errors && data.submitGenericAssessmentAnswers) {
         setShowConclusions(true);
+        setTimeout(() => {
+          cache.set(assessmentCacheKey, {...assessment, completed: true});
+          refreshAssessment();
+        }, 5000);
       } else {
         console.warn(errors || data); // eslint-disable-line no-console
 

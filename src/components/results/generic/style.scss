@@ -1,38 +1,131 @@
 @import "style/helpers";
 
 .container {
-  .score {
-    .scoreRow {
-      display: flex;
-      gap: $buffer * 0.5;
-      font-size: $font-size-lg;
-      .correct {
-        background-color: $-aquamarine;
-      }
-      .incorrect {
-        background-color: $-red;
-      }
-      .overall {
-        background-color: $-blue;
-      }
-      .correct, .incorrect, .overall {
+  .contentBody {
+    display: flex;
+    flex-direction: column;
+    gap: $buffer-lg;
+    width: 100%;
+    & > div {
+      border: 1px solid #DADCE0;
+      border-radius: $border-radius-sm;
+      padding: $buffer;
+    }
+    .score {
+      .scoreRow {
+        margin-top: $buffer;
+        display: flex;
+        gap: $buffer * 0.5;
+        font-size: $font-size-lg;
+        .correct {
+          background-color: $-aquamarine;
+        }
+        .incorrect {
+          background-color: $-red;
+        }
+        .overall {
+          background-color: $-blue;
+        }
+        .correct, .incorrect, .overall {
+          div {
+            display: flex;
+            width: 50%;
+          }
+        }
         div {
           display: flex;
-          width: 50%;
+          width: 30%;
+          height: $buffer * 2.75;
+          border-radius: $border-radius-sm;
+          padding: $buffer * 0.5 $buffer;
+          color: $-white;
+          align-items: center;
+          .count {
+            justify-content: end;
+          }
         }
       }
-      div {
+    }
+    .breakdown {
+      display: flex;
+      gap: $buffer-lg * 0.5;
+      flex-direction: column;
+      .header {
         display: flex;
-        width: 30%;
-        height: $buffer * 2.75;
-        border-radius: $border-radius-sm;
-        padding: $buffer * 0.5 $buffer;
-        color: $-white;
         align-items: center;
-        .count {
-          justify-content: end;
+        gap: $buffer * 0.5;
+        .toggleButtonWrapper {
+          margin-left: auto;
         }
       }
+      .questions {
+        display: flex;
+        flex-direction: column;
+        gap: $buffer * 0.5;
+        .question {
+          border: 1px solid #DADCE0;
+          border-radius: $border-radius-sm;
+          padding: $buffer * 0.75 $buffer;
+          .questionTitle {
+            display: flex;
+            align-items: center;
+            gap: $buffer * 0.75;
+            font-weight: 700;
+            .iconCorrect {
+              color: $-aquamarine;
+              font-size: $font-size-heading * 1.25;
+            }
+            .iconIncorrect {
+              color: $-red;
+              font-size: $font-size-heading * 1.25;
+            }
+            .toggleButtonWrapper {
+              display: flex;
+              align-items: center;
+              margin-left: auto;
+            }
+          }
+          .questionContent {
+            display: flex;
+            gap: $buffer * 0.5;
+            align-items: center;
+            .questionText {
+              font-weight: 600;
+              padding: $buffer 0;
+            }
+            .responseOptions {
+              display: flex;
+              flex-direction: column;
+              flex: 1;
+              gap: $buffer;
+              .responseOption {
+                border: 1px solid #DADCE0;
+                padding: $buffer-lg * 0.25 $buffer-lg * 0.5;
+                border-radius: $border-radius-sm;
+                text-align: center;
+                &.correctResponse {
+                  background-color: $-aquamarine;
+                  color: $-white;
+                }
+                &.incorrectResponse {
+                  background-color: $-red;
+                  color: $-white;
+                }
+                &.correctOption {
+                  border: 2px solid $-aquamarine;
+                }
+              }
+            }
+            .questionImage {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+    .title {
+      @extend %heading;
+      font-size: $font-size;
     }
   }
   button {
@@ -50,6 +143,15 @@
         margin-right: $buffer-sm;
         font-size: $font-size-lg;
       }
+    }
+    &.toggleButton {
+      @include buttonLight("text-dark");
+      border-radius: $border-radius-sm * 0.5;
+      padding: $buffer-sm $buffer-sm * 1.25;
+      margin: $buffer-sm * 0.5;
+      cursor: pointer;
+      height: $buffer * 2;
+      justify-content: end;
     }
   }
 

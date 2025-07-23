@@ -10,6 +10,7 @@ export default function Question({question, index, showState}) {
   useEffect(() => {
     setShowContent(showState);
   }, [showState]);
+
   const toggleContent = () => {
     setShowContent(!showContent);
   };
@@ -72,5 +73,6 @@ Question.propTypes = {
       isCorrect: PropTypes.bool.isRequired
     })).isRequired
   }).isRequired,
-  index: PropTypes.number.isRequired
+  index: PropTypes.number.isRequired,
+  showState: PropTypes.bool.isRequired
 };

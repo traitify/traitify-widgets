@@ -24,7 +24,12 @@ export default function Breakdown({assessmentResult}) {
       </div>
       <div className={style.questions}>
         {assessmentResult.responses.map((question, index) => (
-          <Question key={question.questionId} question={question} index={index} showState={showAll} />
+          <Question
+            key={question.questionId}
+            question={question}
+            index={index}
+            showState={showAll}
+          />
         ))}
       </div>
     </div>

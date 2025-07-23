@@ -1,15 +1,56 @@
 @import "style/helpers";
 
 .container {
+  @extend %container;
+  color: $-black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .header {
+    display: flex;
+    padding: $buffer $buffer-lg;
+    background-color: $-white;
+    border-bottom: 1px solid #DADCE0;
+    gap: $buffer;
+    .profileCircle {
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      height: $buffer-lg * 2.5;
+      justify-content: center;
+      width: $buffer-lg * 2.5;
+      background-color: $-traitify-blue;
+      color: $-white;
+      font-size: $font-size-lg;
+    }
+    .profileDetails {
+      color: #A9A9A9;
+      .profileName {
+        font-size: $font-size-lg;
+        font-weight: 700;
+        color: $-black;
+      }
+    }
+  }
   .contentBody {
     display: flex;
     flex-direction: column;
     gap: $buffer-lg;
-    width: 100%;
+    width: $breakpoint-lg;
+    margin: $buffer-lg auto;
     & > div {
       border: 1px solid #DADCE0;
       border-radius: $border-radius-sm;
       padding: $buffer;
+    }
+    .assessmentResult {
+      display: flex;
+      justify-content: space-between;
+      .actions {
+        color: #A9A9A9;
+        display: flex;
+        gap: $buffer;
+      }
     }
     .score {
       .scoreRow {
@@ -17,6 +58,7 @@
         display: flex;
         gap: $buffer * 0.5;
         font-size: $font-size-lg;
+        justify-content: space-between;
         .correct {
           background-color: $-aquamarine;
         }
@@ -27,22 +69,13 @@
           background-color: $-blue;
         }
         .correct, .incorrect, .overall {
-          div {
-            display: flex;
-            width: 50%;
-          }
-        }
-        div {
           display: flex;
-          width: 30%;
+          justify-content: space-between;
+          width: 100%;
           height: $buffer * 2.75;
           border-radius: $border-radius-sm;
           padding: $buffer * 0.5 $buffer;
           color: $-white;
-          align-items: center;
-          .count {
-            justify-content: end;
-          }
         }
       }
     }
@@ -50,13 +83,11 @@
       display: flex;
       gap: $buffer-lg * 0.5;
       flex-direction: column;
-      .header {
+      .description {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: $buffer * 0.5;
-        .toggleButtonWrapper {
-          margin-left: auto;
-        }
       }
       .questions {
         display: flex;
@@ -71,6 +102,7 @@
             align-items: center;
             gap: $buffer * 0.75;
             font-weight: 700;
+            justify-content: space-between;
             .iconCorrect {
               color: $-aquamarine;
               font-size: $font-size-heading * 1.25;
@@ -79,7 +111,7 @@
               color: $-red;
               font-size: $font-size-heading * 1.25;
             }
-            .toggleButtonWrapper {
+            div:last-of-type {
               display: flex;
               align-items: center;
               margin-left: auto;
@@ -118,6 +150,7 @@
             }
             .questionImage {
               flex: 1;
+              text-align: center
             }
           }
         }
@@ -135,38 +168,13 @@
     height: 48px;
     vertical-align: middle;
 
-    &.back {
-      padding: $buffer * 0.5 $buffer-lg * 0.5;
-      width: 150px;
-
-      .icon {
-        margin-right: $buffer-sm;
-        font-size: $font-size-lg;
-      }
-    }
     &.toggleButton {
       @include buttonLight("text-dark");
       border-radius: $border-radius-sm * 0.5;
-      padding: $buffer-sm $buffer-sm * 1.25;
+      padding: $buffer-sm * 0.5 $buffer-sm * 1.25;
       margin: $buffer-sm * 0.5;
       cursor: pointer;
       height: $buffer * 2;
-      justify-content: end;
     }
   }
-
-  .markdown {
-    text-align: center;
-  }
-}
-
-button.btnPrimary {
-  background-color: $-blue;
-  color: $-white;
-  display: inline-block;
-  padding: $buffer-lg * .5 $buffer;
-  text-align: center;
-  border: transparent;
-  max-width: 110px;
-  margin: $buffer-lg auto;
 }

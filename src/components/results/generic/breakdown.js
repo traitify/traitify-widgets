@@ -3,15 +3,25 @@ import Question from "./question";
 import style from "./style.scss";
 
 export default function Breakdown({assessmentResult}) {
+  const showHideAll = () => {
+
+  };
+
+  const showHideQuestion = (questionId) => {
+
+  };
+
   return (
     <div className={style.breakdown}>
-      <div className={style.header}>
+      <div className={style.description}>
         <div>
           <div className={style.title}>Breakdown</div>
           <span>Here is the breakdown of the questions you answered in the assessment</span>
         </div>
-        <div className={style.toggleButtonWrapper}>
-          <button className={style.toggleButton} type="button">Show/Hide All</button>
+        <div>
+          <button className={style.toggleButton} type="button" onClick={showHideAll}>
+            Show/Hide All
+          </button>
         </div>
       </div>
       <div className={style.questions}>

@@ -3,6 +3,8 @@ import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useResults from "lib/hooks/use-results";
 import Breakdown from "./breakdown";
+import Header from "./header";
+import ResultActions from "./result_actions";
 import Score from "./score";
 import style from "./style.scss";
 
@@ -34,14 +36,9 @@ export default function Generic() {
     <div>
       {result && (
         <div className={style.container}>
-          <div className={`${style.header} row`}>
-            {profile.firstName} {profile.lastName}
-            <p>Completed on: {assessment ? assessment.completedAt : ""}</p>
-          </div>
+          <Header profile={profile} assessment={assessment} />
           <div className={style.contentBody}>
-            <div className={style.headline}>
-              <div className={style.title}>Assessment Results</div>
-            </div>
+            <ResultActions />
             <Score assessmentResult={assessmentResult} />
             <Breakdown assessmentResult={assessmentResult} />
           </div>

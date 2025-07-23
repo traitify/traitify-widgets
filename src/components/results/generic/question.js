@@ -16,7 +16,7 @@ export default function Question({question, index}) {
             : <Icon className={style.iconIncorrect} alt="X Mark" icon={faXmark} />}
         </div>
         <div> Question {index + 1}</div>
-        <div className={style.toggleButtonWrapper}>
+        <div>
           <button type="button" onClick={() => setShowContent(!showContent)} className={style.toggleButton}>
             <Icon className={style.icon} alt="Expand" icon={showContent ? faChevronUp : faChevronDown} />
           </button>

@@ -1,11 +1,18 @@
 import {faCheck, faXmark, faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Icon from "components/common/icon";
 import style from "./style.scss";
 
-export default function Question({question, index}) {
+export default function Question({question, index, showState}) {
   const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    setShowContent(showState);
+  }, [showState]);
+  const toggleContent = () => {
+    setShowContent(!showContent);
+  };
 
   return (
     <div key={question.questionId} className={style.question}>
@@ -17,7 +24,7 @@ export default function Question({question, index}) {
         </div>
         <div> Question {index + 1}</div>
         <div>
-          <button type="button" onClick={() => setShowContent(!showContent)} className={style.toggleButton}>
+          <button type="button" onClick={toggleContent} className={style.toggleButton}>
             <Icon className={style.icon} alt="Expand" icon={showContent ? faChevronUp : faChevronDown} />
           </button>
         </div>

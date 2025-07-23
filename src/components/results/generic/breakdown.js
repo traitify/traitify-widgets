@@ -1,14 +1,12 @@
 import PropTypes from "prop-types";
+import {useState} from "react";
 import Question from "./question";
 import style from "./style.scss";
 
 export default function Breakdown({assessmentResult}) {
+  const [showAll, setShowAll] = useState(false);
   const showHideAll = () => {
-
-  };
-
-  const showHideQuestion = (questionId) => {
-
+    setShowAll(!showAll);
   };
 
   return (
@@ -26,7 +24,7 @@ export default function Breakdown({assessmentResult}) {
       </div>
       <div className={style.questions}>
         {assessmentResult.responses.map((question, index) => (
-          <Question key={question.questionId} question={question} index={index} />
+          <Question key={question.questionId} question={question} index={index} showState={showAll} />
         ))}
       </div>
     </div>

@@ -61,6 +61,7 @@ export const result = `
       assessment {
         profileId
         surveyId
+        surveyName
         startedAt
         totalCorrectResponses
         completedAt
@@ -68,6 +69,7 @@ export const result = `
           questionId
           questionText
           selectedResponseOptionId
+          setImage
           isCorrect
           responseOptions {
             responseOptionId

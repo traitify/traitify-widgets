@@ -130,6 +130,20 @@
               flex-direction: column;
               flex: 1;
               gap: $buffer;
+              .responsesWithoutImage {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+                gap: $buffer;
+                .responseOption {
+                  width: 100%;
+                }
+              }
+              .responsesWithImage {
+                display: flex;
+                flex-direction: column;
+                gap: $buffer;
+              }
               .responseOption {
                 border: 1px solid #DADCE0;
                 padding: $buffer-lg * 0.25 $buffer-lg * 0.5;

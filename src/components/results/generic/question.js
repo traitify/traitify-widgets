@@ -6,6 +6,9 @@ import style from "./style.scss";
 
 export default function Question({question, index, showState}) {
   const [showContent, setShowContent] = useState(false);
+  const responsesClassName = question.setImage
+    ? style.responsesWithImage
+    : style.responsesWithoutImage;
 
   useEffect(() => {
     setShowContent(showState);
@@ -34,27 +37,34 @@ export default function Question({question, index, showState}) {
         <div className={style.questionContent}>
           <div className={style.responseOptions}>
             <div className={style.questionText}>{question.questionText}</div>
-            {question.responseOptions.map((option) => {
-              let optionClassName = "";
-              if(question.isCorrect) {
-                optionClassName = option.isCorrect ? style.correctResponse : "";
-              } else {
-                if(option.isCorrect) {
-                  optionClassName = style.correctOption;
-                } else if(option.responseOptionId === question.selectedResponseOptionId) {
-                  optionClassName = style.incorrectResponse;
+            <div className={responsesClassName}>
+              {question.responseOptions.map((option) => {
+                let optionClassName = "";
+                if(question.isCorrect) {
+                  optionClassName = option.isCorrect ? style.correctResponse : "";
+                } else {
+                  if(option.isCorrect) {
+                    optionClassName = style.correctOption;
+                  } else if(option.responseOptionId === question.selectedResponseOptionId) {
+                    optionClassName = style.incorrectResponse;
+                  }
                 }
-              }
-              return (
-                <div className={`${optionClassName} ${style.responseOption}`} key={option.responseOptionId}>
-                  {option.responseOptionText}
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    key={option.responseOptionId}
+                    className={`${optionClassName} ${style.responseOption}`}
+                  >
+                    {option.responseOptionText}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div className={style.questionImage}>
-            <img src="//images.ctfassets.net/4pzvszxmf15y/3HIUe5W3dB5dmGUKcQegZM/a539a141bb6bbd56e95355684b1ba942/069933fe23e6bd36bab24fd91be5e835.png" alt="Question illustration" />
-          </div>
+          {question.setImage && (
+            <div className={style.questionImage}>
+              <img src={question.setImage} alt={question.questionText} />
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -67,6 +77,7 @@ Question.propTypes = {
     questionId: PropTypes.string.isRequired,
     isCorrect: PropTypes.bool.isRequired,
     selectedResponseOptionId: PropTypes.string,
+    setImage: PropTypes.string,
     responseOptions: PropTypes.arrayOf(PropTypes.shape({
       responseOptionId: PropTypes.string.isRequired,
       responseOptionText: PropTypes.string.isRequired,

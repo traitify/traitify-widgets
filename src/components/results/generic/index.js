@@ -36,7 +36,7 @@ export default function Generic() {
     <div>
       {result && (
         <div className={style.container}>
-          <Header profile={profile} assessment={assessment} />
+          <Header profile={profile} assessment={assessmentResult} />
           <div className={style.contentBody}>
             <ResultActions />
             <Score assessmentResult={assessmentResult} />

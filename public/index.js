@@ -242,7 +242,6 @@ function createElement(options = {}) {
 }
 
 function createGenericAssessment() {
-  Traitify.http.authKey = "admin-secret";
   const query = Traitify.GraphQL.generic.create;
   const variables = {
     surveyID: cache.get("surveyID"),
@@ -452,7 +451,6 @@ function setupCognitive() {
 }
 
 function setupGeneric() {
-  Traitify.http.authKey = "admin-secret";
   const query = Traitify.GraphQL.generic.surveys;
   const variables = {localeKey: cache.get("locale")};
 

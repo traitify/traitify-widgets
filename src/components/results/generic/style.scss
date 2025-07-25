@@ -11,20 +11,24 @@
     padding: $buffer $buffer-lg;
     background-color: $-white;
     border-bottom: 1px solid #DADCE0;
-    gap: $buffer;
-    .profileCircle {
-      display: flex;
-      align-items: center;
-      border-radius: 50%;
-      height: $buffer-lg * 2.5;
-      justify-content: center;
-      width: $buffer-lg * 2.5;
-      background-color: $-traitify-blue;
-      color: $-white;
-      font-size: $font-size-lg;
-    }
+    justify-content: space-between;
     .profileDetails {
+      display: flex;
+      flex-direction: row;
+      gap: $buffer;
       color: #A9A9A9;
+      .profileCircle {
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        height: $buffer-lg * 2.5;
+        justify-content: center;
+        width: $buffer-lg * 2.5;
+        background-color: #DD7373;
+        color: $-white;
+        font-size: $font-size-lg;
+        border: 2px solid #FAC4C4;
+      }
       .profileName {
         font-size: $font-size-lg;
         font-weight: 700;

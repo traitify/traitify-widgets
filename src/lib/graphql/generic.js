@@ -59,6 +59,7 @@ export const result = `
         lastName
       }
       assessment {
+        localeKey
         profileId
         surveyId
         surveyName

@@ -24,7 +24,6 @@ export default function Generic() {
 
     http.post(graphQL.generic.path, {query, variables}).then(({data, errors}) => {
       if(!errors && data.genericAssessmentResult) {
-        console.log("Generic assessment result data:", data.genericAssessmentResult);
         setResult(data.genericAssessmentResult);
       } else {
         console.warn(errors || data); // eslint-disable-line no-console

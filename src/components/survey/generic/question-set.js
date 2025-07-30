@@ -20,10 +20,10 @@ export default function QuestionSet({next, questionSet, updateAnswer}) {
   return (
     <div className={questionSetClass}>
       <img src={questionSet.setImage} alt={questionSet.text} />
-      <hr />
-      {questionSet.questions.map((question) => (
+      {questionSet.questions.map((question, index) => (
         <div key={question.id}>
-          <h3 className={style.question}>{question.text}</h3>
+          <div className={style.grayDivider} />
+          <div className={style.question}>{index + 1}. {question.text}</div>
           <Responses
             responseOptions={question.responseOptions}
             updateAnswer={(optionId) => selectOption(question.id, optionId)}

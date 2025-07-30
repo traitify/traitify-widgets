@@ -106,7 +106,7 @@ export default function Generic() {
       {questionSetIndex > 0 && (
         <button onClick={back} type="button" className={style.back}>
           <Icon className={style.icon} alt={translate("back")} icon={faArrowLeft} />
-          Go Back
+          {translate("back")}
         </button>
       )}
       {showInstructions
@@ -119,7 +119,7 @@ export default function Generic() {
             <Markdown>
               {assessment.survey.instructions}
             </Markdown>
-            <hr className={style.grayDivider} />
+            <div className={style.grayDivider} />
             <div className={style.footer}>
               <button
                 type="button"

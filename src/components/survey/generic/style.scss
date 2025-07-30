@@ -24,9 +24,10 @@
   button {
     border: 1px solid #DADCE0;
     border-radius: $border-radius-sm * 0.5;
-    margin: $buffer $buffer * 0.5;
+    margin: $buffer * 1.25 0 0;
     height: 48px;
     vertical-align: middle;
+    font-weight: 500;
 
     &.back {
       padding: $buffer * 0.5 $buffer-lg * 0.5;
@@ -80,18 +81,21 @@
   padding: $buffer;
 
   img {
-    margin-bottom: $buffer * 2;
+    margin-bottom: $buffer;
   }
 
   .question {
     text-align: left;
+    font-weight: 600;
   }
 }
 
+.responseOptions{
+  display: flex;
+  justify-content: space-between;
+}
+
 .response {
-  flex: 1 1 0;
-  letter-spacing: 2px;
-  line-height: 2;
   padding: $buffer * 0.25 $buffer * 0.75;
   text-align: center;
 
@@ -99,7 +103,7 @@
   @include min-width("sm") {
     font-size: $font-size * 1.25;
     line-height: $line-height;
-    padding: $buffer * 0.5 $buffer * 0.75;
+    padding: $buffer * 0.5 $buffer * 1.5;
   }
   @include theme("color", "text-light");
   &:focus {
@@ -130,7 +134,7 @@ button.btnPrimary {
 .grayDivider {
   color: #555555;
   width: 100%;
-  margin: $buffer * 3 auto $buffer * .5;
+  margin: $buffer-lg auto $buffer-lg;
   line-height: inherit;
   clear: both;
   user-select: none;

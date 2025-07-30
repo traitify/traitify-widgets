@@ -501,7 +501,7 @@ function onSurveyTypeChange(e) {
   const name = e.target.name;
   const value = e.target.value;
   const assessmentID = cache.get(`${value}AssessmentID`);
-  const otherValues = ["benchmark", "cognitive", "order", "personality", "generic"].filter((type) => type !== value);
+  const otherValues = ["benchmark", "cognitive", "generic", "order", "personality"].filter((type) => type !== value);
 
   cache.set("assessmentID", assessmentID);
 

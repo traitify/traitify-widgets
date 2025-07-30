@@ -1,198 +1,230 @@
 @import "style/helpers";
 
+.actions {
+  color: #A9A9A9;
+  display: flex;
+  gap: $buffer;
+}
+
+.assessmentResult {
+  display: flex;
+  justify-content: space-between;
+}
+
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer-lg * 0.5;
+}
+
 .container {
   @extend %container;
   color: $-black;
   display: flex;
   flex-direction: column;
   width: 100%;
-  .header {
-    display: flex;
-    padding: $buffer $buffer-lg;
-    background-color: $-white;
-    border-bottom: 1px solid #DADCE0;
-    justify-content: space-between;
-    .profileDetails {
-      display: flex;
-      flex-direction: row;
-      gap: $buffer;
-      color: #A9A9A9;
-      .profileCircle {
-        display: flex;
-        align-items: center;
-        border-radius: 50%;
-        height: $buffer-lg * 2.5;
-        justify-content: center;
-        width: $buffer-lg * 2.5;
-        background-color: #DD7373;
-        color: $-white;
-        font-size: $font-size-lg;
-        border: 2px solid #FAC4C4;
-      }
-      .profileName {
-        font-size: $font-size-lg;
-        font-weight: 700;
-        color: $-black;
-      }
-    }
-  }
-  .contentBody {
-    display: flex;
-    flex-direction: column;
-    gap: $buffer-lg;
-    width: $breakpoint-lg;
-    margin: $buffer-lg auto;
-    & > div {
-      border: 1px solid #DADCE0;
-      border-radius: $border-radius-sm;
-      padding: $buffer;
-    }
-    .assessmentResult {
-      display: flex;
-      justify-content: space-between;
-      .actions {
-        color: #A9A9A9;
-        display: flex;
-        gap: $buffer;
-      }
-    }
-    .score {
-      .scoreRow {
-        margin-top: $buffer;
-        display: flex;
-        gap: $buffer * 0.5;
-        font-size: $font-size-lg;
-        justify-content: space-between;
-        .correct {
-          background-color: $-aquamarine;
-        }
-        .incorrect {
-          background-color: $-red;
-        }
-        .overall {
-          background-color: $-blue;
-        }
-        .correct, .incorrect, .overall {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          height: $buffer * 2.75;
-          border-radius: $border-radius-sm;
-          padding: $buffer * 0.5 $buffer;
-          color: $-white;
-        }
-      }
-    }
-    .breakdown {
-      display: flex;
-      gap: $buffer-lg * 0.5;
-      flex-direction: column;
-      .description {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: $buffer * 0.5;
-      }
-      .questions {
-        display: flex;
-        flex-direction: column;
-        gap: $buffer * 0.5;
-        .question {
-          border: 1px solid #DADCE0;
-          border-radius: $border-radius-sm;
-          padding: $buffer * 0.75 $buffer;
-          .questionTitle {
-            display: flex;
-            align-items: center;
-            gap: $buffer * 0.75;
-            font-weight: 700;
-            justify-content: space-between;
-            .iconCorrect {
-              color: $-aquamarine;
-              font-size: $font-size-heading * 1.25;
-            }
-            .iconIncorrect {
-              color: $-red;
-              font-size: $font-size-heading * 1.25;
-            }
-            div:last-of-type {
-              display: flex;
-              align-items: center;
-              margin-left: auto;
-            }
-          }
-          .questionContent {
-            display: flex;
-            gap: $buffer * 0.5;
-            align-items: center;
-            .questionText {
-              font-weight: 600;
-              padding: $buffer 0;
-            }
-            .responseOptions {
-              display: flex;
-              flex-direction: column;
-              flex: 1;
-              gap: $buffer;
-              .responsesWithoutImage {
-                display: flex;
-                justify-content: space-around;
-                flex-direction: row;
-                gap: $buffer;
-                .responseOption {
-                  width: 100%;
-                }
-              }
-              .responsesWithImage {
-                display: flex;
-                flex-direction: column;
-                gap: $buffer;
-              }
-              .responseOption {
-                border: 1px solid #DADCE0;
-                padding: $buffer-lg * 0.25 $buffer-lg * 0.5;
-                border-radius: $border-radius-sm;
-                text-align: center;
-                &.correctResponse {
-                  background-color: $-aquamarine;
-                  color: $-white;
-                }
-                &.incorrectResponse {
-                  background-color: $-red;
-                  color: $-white;
-                }
-                &.correctOption {
-                  border: 2px solid $-aquamarine;
-                }
-              }
-            }
-            .questionImage {
-              flex: 1;
-              text-align: center
-            }
-          }
-        }
-      }
-    }
-    .title {
-      @extend %heading;
-      font-size: $font-size;
-    }
-  }
+
   button {
     border: 1px solid #DADCE0;
     border-radius: $border-radius-sm * 0.5;
-    margin: $buffer $buffer * 0.5;
     height: 48px;
+    margin: $buffer $buffer * 0.5;
     vertical-align: middle;
 
     &.toggleButton {
       @include buttonLight("text-dark");
       border-radius: $border-radius-sm * 0.5;
-      padding: $buffer-sm * 0.5 $buffer-sm * 1.25;
-      margin: $buffer-sm * 0.5;
       cursor: pointer;
       height: $buffer * 2;
+      margin: $buffer-sm * 0.5;
+      padding: $buffer-sm * 0.5 $buffer-sm * 1.25;
     }
   }
+}
+
+.contentBody {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer-lg;
+  margin: $buffer-lg auto;
+  width: $breakpoint-lg;
+  
+  & > div {
+    border: 1px solid #DADCE0;
+    border-radius: $border-radius-sm;
+    padding: $buffer;
+  }
+}
+
+.correct {
+  background-color: $-aquamarine;
+}
+
+.correct, .incorrect, .overall {
+  border-radius: $border-radius-sm;
+  color: $-white;
+  display: flex;
+  height: $buffer * 2.75;
+  justify-content: space-between;
+  padding: $buffer * 0.5 $buffer;
+  width: 100%;
+}
+
+.description {
+  align-items: center;
+  display: flex;
+  gap: $buffer * 0.5;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: $-white;
+  border-bottom: 1px solid #DADCE0;
+  display: flex;
+  justify-content: space-between;
+  padding: $buffer $buffer-lg;
+}
+
+.iconCorrect {
+  color: $-aquamarine;
+  font-size: $font-size-heading * 1.25;
+}
+
+.iconIncorrect {
+  color: $-red;
+  font-size: $font-size-heading * 1.25;
+}
+
+.incorrect {
+  background-color: $-red;
+}
+
+.overall {
+  background-color: $-blue;
+}
+
+.profileCircle {
+  align-items: center;
+  background-color: #DD7373;
+  border: 2px solid #FAC4C4;
+  border-radius: 50%;
+  color: $-white;
+  display: flex;
+  font-size: $font-size-lg;
+  height: $buffer-lg * 2.5;
+  justify-content: center;
+  width: $buffer-lg * 2.5;
+}
+
+.profileDetails {
+  color: #A9A9A9;
+  display: flex;
+  flex-direction: row;
+  gap: $buffer;
+}
+
+.profileName {
+  color: $-black;
+  font-size: $font-size-lg;
+  font-weight: 700;
+}
+
+.question {
+  border: 1px solid #DADCE0;
+  border-radius: $border-radius-sm;
+  padding: $buffer * 0.75 $buffer;
+}
+
+.questionContent {
+  align-items: center;
+  display: flex;
+  gap: $buffer * 0.5;
+}
+
+.questionImage {
+  flex: 1;
+  text-align: center;
+}
+
+.questionText {
+  font-weight: 600;
+  padding: $buffer 0;
+}
+
+.questionTitle {
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  gap: $buffer * 0.75;
+  justify-content: space-between;
+  
+  div:last-of-type {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer * 0.5;
+}
+
+.responseOption {
+  border: 1px solid #DADCE0;
+  border-radius: $border-radius-sm;
+  padding: $buffer-lg * 0.25 $buffer-lg * 0.5;
+  text-align: center;
+  font-weight: 500;
+  &.correctOption {
+    border: 2px solid $-aquamarine;
+  }
+  &.incorrectResponse {
+    background-color: $-red;
+    color: $-white;
+  }
+  &.correctResponse {
+    background-color: $-aquamarine;
+    color: $-white;
+  }
+}
+
+.responseOptions {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.responsesWithImage {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.responsesWithoutImage {
+  display: flex;
+  flex-direction: row;
+  gap: $buffer;
+  justify-content: space-around;
+  
+  .responseOption {
+    width: 100%;
+  }
+}
+
+.score {
+  .scoreRow {
+    display: flex;
+    font-size: $font-size-lg;
+    gap: $buffer * 0.5;
+    justify-content: space-between;
+    margin-top: $buffer;
+  }
+}
+
+.title {
+  @extend %heading;
+  font-size: $font-size;
 }

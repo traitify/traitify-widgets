@@ -9,6 +9,11 @@ export default function Question({question, index, showState}) {
   const responsesClassName = question.setImage
     ? style.responsesWithImage
     : style.responsesWithoutImage;
+  const longTextCondition = (option) => option.responseOptionText.length > 20;
+  const longTextResponses = question.responseOptions.some(longTextCondition);
+  const optionsDirection = (longTextResponses || responsesClassName === style.responsesWithImage)
+    ? "column"
+    : "row";
 
   useEffect(() => {
     setShowContent(showState);
@@ -16,6 +21,20 @@ export default function Question({question, index, showState}) {
 
   const toggleContent = () => {
     setShowContent(!showContent);
+  };
+
+  const optionClassName = (option) => {
+    let className = "";
+    if(question.isCorrect) {
+      className = option.isCorrect ? style.correctResponse : "";
+    } else {
+      if(option.isCorrect) {
+        className = style.correctOption;
+      } else if(option.responseOptionId === question.selectedResponseOptionId) {
+        className = style.incorrectResponse;
+      }
+    }
+    return className;
   };
 
   return (
@@ -37,27 +56,15 @@ export default function Question({question, index, showState}) {
         <div className={style.questionContent}>
           <div className={style.responseOptions}>
             <div className={style.questionText}>{question.questionText}</div>
-            <div className={responsesClassName}>
-              {question.responseOptions.map((option) => {
-                let optionClassName = "";
-                if(question.isCorrect) {
-                  optionClassName = option.isCorrect ? style.correctResponse : "";
-                } else {
-                  if(option.isCorrect) {
-                    optionClassName = style.correctOption;
-                  } else if(option.responseOptionId === question.selectedResponseOptionId) {
-                    optionClassName = style.incorrectResponse;
-                  }
-                }
-                return (
-                  <div
-                    key={option.responseOptionId}
-                    className={`${optionClassName} ${style.responseOption}`}
-                  >
-                    {option.responseOptionText}
-                  </div>
-                );
-              })}
+            <div className={responsesClassName} style={{flexDirection: optionsDirection}}>
+              {question.responseOptions.map((option) => (
+                <div
+                  key={option.responseOptionId}
+                  className={`${optionClassName(option)} ${style.responseOption}`}
+                >
+                  {option.responseOptionText}
+                </div>
+              ))}
             </div>
           </div>
           {question.setImage && (

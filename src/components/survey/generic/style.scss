@@ -1,5 +1,16 @@
 @import "style/helpers";
 
+button.btnPrimary {
+  background-color: $-blue;
+  color: $-white;
+  display: inline-block;
+  padding: $buffer-lg * .5 $buffer;
+  text-align: center;
+  border: transparent;
+  max-width: 110px;
+  margin: $buffer-lg auto;
+}
+
 .container {
   @extend %container;
   display: flex;
@@ -74,6 +85,36 @@
   }
 }
 
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: $buffer * 0.25;
+
+  .cancelBtn {
+    @include buttonLight("text-dark");
+    @include theme("border-color", "border-light");
+    border: $border-width solid;
+    border-radius: $border-radius-sm * 0.5;
+    margin: $buffer * 0.5;
+  }
+
+  .btnPrimary {
+    margin: $buffer * 0.5;
+  }
+}
+
+.grayDivider {
+  color: #555555;
+  width: 100%;
+  margin: $buffer-lg auto $buffer-lg;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: $border-width solid #e8e8ec;
+  border-radius: $border-radius-sm;
+}
+
 .questionSet {
   width: 100%;
   align-items: center;
@@ -88,11 +129,6 @@
     text-align: left;
     font-weight: 600;
   }
-}
-
-.responseOptions{
-  display: flex;
-  justify-content: space-between;
 }
 
 .response {
@@ -118,45 +154,7 @@
   }
 }
 
-button.btnPrimary {
-  background-color: $-blue;
-  color: $-white;
-  display: inline-block;
-  padding: $buffer-lg * .5 $buffer;
-  text-align: center;
-  border: transparent;
-  max-width: 110px;
-  margin: $buffer-lg auto;
-}
-
-.hide { display: none; }
-
-.grayDivider {
-  color: #555555;
-  width: 100%;
-  margin: $buffer-lg auto $buffer-lg;
-  line-height: inherit;
-  clear: both;
-  user-select: none;
-  break-after: page;
-  border: $border-width solid #e8e8ec;
-  border-radius: $border-radius-sm;
-}
-
-.footer {
+.responseOptions{
   display: flex;
-  justify-content: flex-end;
-  gap: $buffer * 0.25;
-
-  .cancelBtn {
-    @include buttonLight("text-dark");
-    @include theme("border-color", "border-light");
-    border: $border-width solid;
-    border-radius: $border-radius-sm * 0.5;
-    margin: $buffer * 0.5;
-  }
-
-  .btnPrimary {
-    margin: $buffer * 0.5;
-  }
+  justify-content: space-between;
 }

@@ -174,9 +174,10 @@
 .responseOption {
   border: 1px solid #DADCE0;
   border-radius: $border-radius-sm;
+  font-weight: 500;
   padding: $buffer-lg * 0.25 $buffer-lg * 0.5;
   text-align: center;
-  font-weight: 500;
+
   &.correctOption {
     border: 2px solid $-aquamarine;
   }

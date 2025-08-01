@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import {useState} from "react";
+import useTranslate from "lib/hooks/use-translate";
 import Question from "./question";
 import style from "./style.scss";
 
 export default function Breakdown({assessmentResult}) {
   const [showAll, setShowAll] = useState(false);
+  const translate = useTranslate();
   const showHideAll = () => {
     setShowAll(!showAll);
   };
@@ -13,12 +15,12 @@ export default function Breakdown({assessmentResult}) {
     <div className={style.breakdown}>
       <div className={style.description}>
         <div>
-          <div className={style.title}>Breakdown</div>
-          <span>Here is the breakdown of the questions you answered in the assessment</span>
+          <div className={style.title}>{translate("results.generic.breakdown")}</div>
+          <span>{translate("results.generic.breakdown_description")}</span>
         </div>
         <div>
           <button className={style.toggleButton} type="button" onClick={showHideAll}>
-            Show/Hide All
+            {translate("show_hide_all")}
           </button>
         </div>
       </div>

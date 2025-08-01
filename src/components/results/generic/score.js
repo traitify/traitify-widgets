@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function Score({assessmentResult}) {
+  const translate = useTranslate();
   const totalQuestions = assessmentResult ? assessmentResult.responses.length : 0;
   const totalCorrectResponses = assessmentResult ? assessmentResult.totalCorrectResponses : 0;
   const totalIncorrectResponses = totalQuestions - totalCorrectResponses;
@@ -9,18 +11,18 @@ export default function Score({assessmentResult}) {
 
   return (
     <div className={style.score}>
-      <div className={style.title}>Score</div>
+      <div className={style.title}>{translate("results.generic.score")}</div>
       <div className={style.scoreRow}>
         <div className={style.correct}>
-          <div>Correct:</div>
+          <div>{translate("results.generic.correct")}:</div>
           <div className={style.count}>{totalCorrectResponses} / {totalQuestions}</div>
         </div>
         <div className={style.incorrect}>
-          <div>Incorrect:</div>
+          <div>{translate("results.generic.incorrect")}:</div>
           <div className={style.count}>{totalIncorrectResponses} / {totalQuestions}</div>
         </div>
         <div className={style.overall}>
-          <div>Overall Score:</div>
+          <div>{translate("results.generic.overall_score")}:</div>
           <div className={style.count}>{overallScore}%</div>
         </div>
       </div>

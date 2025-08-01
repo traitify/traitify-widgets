@@ -112,7 +112,7 @@ export default function Generic() {
       {showInstructions
         && (
           <Modal
-            title="Instructions"
+            title={translate("instructions")}
             onClose={() => setShowInstructions(false)}
             containerClass={style.modalContainer}
           >

@@ -2,9 +2,11 @@ import {faCheck, faXmark, faChevronDown, faChevronUp} from "@fortawesome/free-so
 import PropTypes from "prop-types";
 import {useState, useEffect} from "react";
 import Icon from "components/common/icon";
+import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function Question({question, index, showState}) {
+  const translate = useTranslate();
   const [showContent, setShowContent] = useState(false);
   const responsesClassName = question.setImage
     ? style.responsesWithImage
@@ -45,7 +47,7 @@ export default function Question({question, index, showState}) {
             ? <Icon className={style.iconCorrect} alt="Checked" icon={faCheck} />
             : <Icon className={style.iconIncorrect} alt="X Mark" icon={faXmark} />}
         </div>
-        <div> Question {index + 1}</div>
+        <div> {translate("cognitive_question_alt_text")} {index + 1}</div>
         <div>
           <button type="button" onClick={toggleContent} className={style.toggleButton}>
             <Icon className={style.icon} alt="Expand" icon={showContent ? faChevronUp : faChevronDown} />

@@ -1,4 +1,5 @@
 import propTypes from "prop-types";
+import {useState} from "react";
 import SimpleDropdown from "components/common/dropdown/simple";
 import useTranslate from "lib/hooks/use-translate";
 import i18nData from "lib/i18n-data";
@@ -8,8 +9,13 @@ export default function Header({profile, assessment}) {
   const translate = useTranslate();
   const initials = `${profile.firstName.charAt(0)}${profile.lastName.charAt(0)}`.toUpperCase();
   const surveyName = assessment ? assessment.surveyName : "";
-  const completedAt = assessment ? assessment.completedAt : [];
   const assessmentLocale = assessment ? assessment.localeKey : "en-US";
+
+  const [locale, setLocale] = useState(assessmentLocale);
+  const completedAt = assessment ? new Date(Number(assessment.completedAt)) : "";
+  const formattedCompletedAt = assessment
+    ? completedAt.toLocaleString(locale, {year: "numeric", month: "long", day: "2-digit", hour: "2-digit", minute: "2-digit"})
+    : "";
   const localeOptions = Object.keys(i18nData).map((key) => ({
     value: key,
     name: i18nData[key].name
@@ -22,7 +28,7 @@ export default function Header({profile, assessment}) {
         <div>
           <div className={style.profileName}>{profile.firstName} {profile.lastName}</div>
           <div>{surveyName}</div>
-          <div>{translate("results.generic.completed_on", {date: completedAt[0], time: completedAt[1]})}</div>
+          <div>{translate("results.generic.completed_on")} {formattedCompletedAt}</div>
         </div>
       </div>
       <div>
@@ -31,6 +37,7 @@ export default function Header({profile, assessment}) {
           options={localeOptions}
           defaultValue={assessmentLocale}
           className={style.localeDropdown}
+          onChange={({target: {value}}) => setLocale(value)}
         />
       </div>
     </div>
@@ -43,7 +50,7 @@ Header.propTypes = {
     lastName: propTypes.string.isRequired
   }).isRequired,
   assessment: propTypes.shape({
-    completedAt: propTypes.arrayOf(propTypes.string).isRequired,
+    completedAt: propTypes.string.isRequired,
     surveyName: propTypes.string.isRequired,
     localeKey: propTypes.string.isRequired
   }).isRequired

@@ -160,7 +160,7 @@
       "assessment_results": "Assessment Results",
       "breakdown": "Breakdown",
       "breakdown_description": "Here is the breakdown of the questions you answered in the assessment",
-      "completed_on": "Completed on: %{date} at %{time}",
+      "completed_on": "Completed on:",
       "correct": "Correct",
       "incorrect": "Incorrect",
       "overall_score": "Overall Score",

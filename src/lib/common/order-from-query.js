@@ -30,6 +30,7 @@ export default function orderFromQuery(response) {
       completed: assessment.status === "COMPLETED",
       id: assessment.id,
       loaded: false,
+      loading: true,
       skipped: assessment.isSkipped,
       surveyID: assessment.surveyId,
       surveyType: assessment.type.toLowerCase()

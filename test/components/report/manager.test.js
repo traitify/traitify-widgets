@@ -3,6 +3,7 @@ import ComponentHandler from "support/component-handler";
 import {useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 
+jest.mock("components/results/cognitive/chart", () => (() => <div className="mock">Cognitive Chart</div>));
 jest.mock("components/results/guide/personality", () => (() => <div className="mock">Personality Guide</div>));
 jest.mock("components/results/recommendation/chart", () => (() => <div className="mock">Recommendation Chart</div>));
 jest.mock("components/results/recommendation/list", () => (() => <div className="mock">Recommendation List</div>));

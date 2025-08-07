@@ -11,6 +11,7 @@ export const create = `
       percentileScore
       rawScore
       specialAllottedTime
+      stenScore
       surveyId
       surveyKey
       questions {
@@ -49,6 +50,7 @@ export const get = `
       percentileScore
       rawScore
       specialAllottedTime
+      stenScore
       surveyId
       surveyKey
       questions {

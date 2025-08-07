@@ -156,6 +156,12 @@
       "current": "Current Benchmark",
       "search": "Search for Benchmark"
     },
+    "cognitive": {
+      "breakdown": {
+        "description": "This illustrates the %{survey_name} measurements based on the answers to a series of abstract general mental ability questions",
+        "heading": "Cognitive Breakdown"
+      }
+    },
     "reports": {
       "candidate": "Candidate Report",
       "employee": "Engage Employee Report",

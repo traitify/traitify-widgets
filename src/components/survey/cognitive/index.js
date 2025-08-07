@@ -90,7 +90,7 @@ export default function Cognitive() {
 
     http.post(graphQL.cognitive.path, {query, variables}).then(({data, errors}) => {
       if(!errors && data.completeCognitiveTest.success) {
-        cache.set(assessmentCacheKey, {...assessment, completed: true});
+        cache.remove(assessmentCacheKey);
         refreshAssessment();
 
         submitting.current = false;

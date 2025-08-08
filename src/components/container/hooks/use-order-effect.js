@@ -11,7 +11,6 @@ export default function useOrderEffect() {
   const completedAssessments = useRef([]);
   const completedOrders = useRef([]);
 
-  // TODO: See if nextAssessment should have loaded flag before being set as active
   // NOTE: Syncs state from order to active
   useEffect(() => {
     if(!order) { return; }

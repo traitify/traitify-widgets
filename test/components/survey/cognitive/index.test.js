@@ -140,6 +140,7 @@ describe("Survey.Cognitive", () => {
     });
 
     it("submits query", () => {
+      mockAssessment({...assessment, completed: true});
       const mock = mockSubmit({implementation: () => new Promise(() => {})});
       act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
@@ -150,6 +151,7 @@ describe("Survey.Cognitive", () => {
     });
 
     it("submits query with fallbacks", () => {
+      mockAssessment({...assessment, completed: true});
       const mock = mockSubmit({implementation: () => new Promise(() => {})});
       onFinish();
 
@@ -157,6 +159,7 @@ describe("Survey.Cognitive", () => {
     });
 
     it("updates cached state", async() => {
+      mockAssessment({...assessment, completed: true});
       const mock = mockSubmit({success: true});
       act(() => slide.props.onSelect({
         answerId: slide.props.question.responses[0].id,
@@ -180,6 +183,7 @@ describe("Survey.Cognitive", () => {
       }));
 
       await act(async() => { jest.runOnlyPendingTimers(); });
+      mockAssessment({...assessment, completed: true});
       const mock = mockSubmit({success: true});
       await act(async() => { jest.runOnlyPendingTimers(); });
 

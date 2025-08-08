@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
+import CognitiveChart from "components/results/cognitive/chart";
 import ClientGuide from "components/results/guide/client";
 import PersonalityGuide from "components/results/guide/personality";
 import RecommendationChart from "components/results/recommendation/chart";
@@ -37,6 +38,7 @@ export default function ManagerReport() {
         <RecommendationChart combined={true} />
         <PersonalityGuide combined={true} />
       </div>
+      <CognitiveChart />
     </section>
   );
 }

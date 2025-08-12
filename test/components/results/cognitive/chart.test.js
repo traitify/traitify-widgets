@@ -16,7 +16,7 @@ describe("Results.CognitiveChart", () => {
   useContainer();
   useCognitiveAssessment(assessment);
   useOptions({surveyType: "cognitive"});
-  useSettings({});
+  useSettings({show_cognitive_results: true});
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {

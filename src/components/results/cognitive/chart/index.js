@@ -10,7 +10,7 @@ import style from "./style.scss";
 export default function CognitiveChart() {
   const disabled = useDisabledComponent("CognitiveChart");
   const results = useResults({surveyType: "cognitive"});
-  const allowed = useSetting("showCognitiveResults", {fallback: true});
+  const allowed = useSetting("showCognitiveResults", {fallback: false});
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
 

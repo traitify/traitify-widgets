@@ -16,10 +16,9 @@ export default function useOrderEffect() {
     if(!order) { return; }
     if(order.assessments.length === 0) { return; }
 
-    const loadedAssessments = order.assessments.filter(({loaded}) => loaded);
     if(!active) {
-      const nextAssessment = loadedAssessments.find(({completed}) => !completed)
-        || loadedAssessments[0];
+      const nextAssessment = order.assessments.find(({completed}) => !completed)
+        || order.assessments[0];
       if(nextAssessment) { setActive({...nextAssessment}); }
 
       return;
@@ -27,23 +26,21 @@ export default function useOrderEffect() {
 
     // NOTE: Show personality results
     if(order.completed) {
-      const nextAssessment = loadedAssessments.find(({surveyType}) => surveyType === "personality")
-        || loadedAssessments[0];
-      if(!nextAssessment) { return; }
+      const nextAssessment = order.assessments.find(({surveyType}) => surveyType === "personality")
+        || order.assessments[0];
+      if(nextAssessment) { setActive({...nextAssessment}); }
 
-      setActive({...nextAssessment});
       return;
     }
 
-    const currentAssessment = loadedAssessments.find(({id}) => id === active.id);
+    const currentAssessment = order.assessments.find(({id}) => id === active.id);
     if(!currentAssessment) { return; }
 
     // NOTE: Start next assessment
     if(currentAssessment.completed) {
-      const nextAssessment = loadedAssessments.find(({completed}) => !completed);
-      if(!nextAssessment) { return; }
+      const nextAssessment = order.assessments.find(({completed}) => !completed);
+      if(nextAssessment) { setActive({...nextAssessment}); }
 
-      setActive({...nextAssessment});
       return;
     }
 

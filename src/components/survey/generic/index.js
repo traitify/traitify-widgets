@@ -2,6 +2,7 @@ import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
 import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
 import Icon from "components/common/icon";
+import Loading from "components/common/loading";
 import Markdown from "components/common/markdown";
 import Modal from "components/common/modal";
 import useAssessment from "lib/hooks/use-assessment";
@@ -81,6 +82,8 @@ export default function Generic() {
     onSubmit();
   }, [finished]);
 
+  if(!assessment) { return <Loading />; }
+
   if(showConclusions) {
     return (
       <Container {...props}>
@@ -109,35 +112,34 @@ export default function Generic() {
           {translate("back")}
         </button>
       )}
-      {showInstructions
-        && (
-          <Modal
-            title={translate("instructions")}
-            onClose={() => setShowInstructions(false)}
-            containerClass={style.modalContainer}
-          >
-            <Markdown>
-              {assessment.survey.instructions}
-            </Markdown>
-            <div className={style.grayDivider} />
-            <div className={style.footer}>
-              <button
-                type="button"
-                className={style.cancelBtn}
-                onClick={() => setShowInstructions(false)}
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className={style.btnPrimary}
-                onClick={() => setShowInstructions(false)}
-              >
-                {assessment.survey.instructionButton}
-              </button>
-            </div>
-          </Modal>
-        )}
+      {showInstructions && (
+        <Modal
+          title={translate("instructions")}
+          onClose={() => setShowInstructions(false)}
+          containerClass={style.modalContainer}
+        >
+          <Markdown>
+            {assessment.survey.instructions}
+          </Markdown>
+          <div className={style.grayDivider} />
+          <div className={style.footer}>
+            <button
+              type="button"
+              className={style.cancelBtn}
+              onClick={() => setShowInstructions(false)}
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              className={style.btnPrimary}
+              onClick={() => setShowInstructions(false)}
+            >
+              {assessment.survey.instructionButton}
+            </button>
+          </div>
+        </Modal>
+      )}
     </Container>
   );
 }

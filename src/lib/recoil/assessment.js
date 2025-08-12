@@ -1,5 +1,7 @@
 import {selector, selectorFamily} from "recoil";
+import {assessmentsState} from "./assessments";
 import {
+  activeState,
   activeIDState,
   activeTypeState,
   cacheState,
@@ -121,4 +123,23 @@ export const activeAssessmentQuery = selector({
     return get(assessmentQuery({id, surveyType}));
   },
   key: "assessment/active"
+});
+
+export const completedAssessmentQuery = selectorFamily({
+  get: ({surveyType}) => async({get}) => {
+    if(!surveyType) {
+      const active = get(activeState);
+      if(!active?.completed) { return null; }
+
+      return get(activeAssessmentQuery);
+    }
+
+    const assessments = get(assessmentsState);
+    const assessment = assessments
+      .find(({completed, surveyType: type}) => type === surveyType && completed);
+    if(!assessment) { return null; }
+
+    return get(assessmentQuery({id: assessment.id, surveyType}));
+  },
+  key: "assessment/completed"
 });

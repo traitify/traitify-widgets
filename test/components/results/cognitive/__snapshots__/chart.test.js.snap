@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.CognitiveChart renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="p"
+    >
+      This illustrates the cognitive-v1.0 measurements based on the answers to a series of abstract general mental ability questions
+    </div>
+    <div
+      className="chart"
+    >
+      <div
+        className="grid"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="low"
+          />
+          <div
+            className="active low"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+          <div
+            className="high"
+          />
+        </div>
+      </div>
+      <div
+        className="scale"
+      >
+        <div>
+          1
+        </div>
+        <div>
+          2
+        </div>
+        <div>
+          3
+        </div>
+        <div>
+          4
+        </div>
+        <div>
+          5
+        </div>
+        <div>
+          6
+        </div>
+        <div>
+          7
+        </div>
+        <div>
+          8
+        </div>
+        <div>
+          9
+        </div>
+        <div>
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.CognitiveChart renders nothing if disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.CognitiveChart renders nothing if not allowed 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Results.CognitiveChart renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

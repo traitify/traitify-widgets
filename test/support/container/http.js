@@ -429,6 +429,9 @@ export const mockFeedbackSurvey = (feedbackSurvey, surveyId) => (
 export const useAssessment = (...options) => { beforeEach(() => { mockAssessment(...options); }); };
 export const useBenchmark = (...options) => { beforeEach(() => { mockBenchmark(...options); }); };
 export const useCareers = (...options) => { beforeEach(() => { mockCareers(...options); }); };
+export const useCognitiveAssessment = (...options) => {
+  beforeEach(() => { mockCognitiveAssessment(...options); });
+};
 export const useDeck = (...options) => { beforeEach(() => { mockDeck(...options); }); };
 export const useGuide = (...options) => { beforeEach(() => { mockGuide(...options); }); };
 export const useHighlightedCareers = (...options) => {

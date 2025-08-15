@@ -32,7 +32,7 @@ exports[`Status order renders component 1`] = `
         <span
           className="text"
         >
-          Cognitive Assessment
+          cognitive-survey-name
         </span>
       </div>
       <button
@@ -43,20 +43,29 @@ exports[`Status order renders component 1`] = `
       </button>
     </div>
     <div
-      className="assessment"
+      className="assessment inactive"
     >
       <div>
         <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
           className="text"
         >
-          Emmersion Assessment
+          external-survey-name
         </span>
       </div>
-      <a
-        href="https://external.traitify.com/external-assessment-id"
+      <button
+        disabled={true}
+        type="button"
       >
-        Start Assessment
-      </a>
+        Complete
+      </button>
     </div>
     <div
       className="assessment inactive"
@@ -191,7 +200,7 @@ exports[`Status recommendation renders component 1`] = `
         <span
           className="text"
         >
-          Personality Assessment
+          Big Five
         </span>
       </div>
       <button
@@ -216,7 +225,7 @@ exports[`Status recommendation renders component 1`] = `
         <span
           className="text"
         >
-          Cognitive Assessment
+          cognitive-survey-name
         </span>
       </div>
       <button
@@ -233,7 +242,7 @@ exports[`Status recommendation renders component 1`] = `
         <span
           className="text"
         >
-          Emmersion Assessment
+          external-survey-name
         </span>
       </div>
       <a

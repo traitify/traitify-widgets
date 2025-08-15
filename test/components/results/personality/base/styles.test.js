@@ -4,7 +4,7 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import _assessment from "support/json/assessment/type-based.json";
+import _assessment from "support/data/assessment/personality/type-based";
 
 describe("PersonalityBaseStyles", () => {
   let assessment;
@@ -20,6 +20,8 @@ describe("PersonalityBaseStyles", () => {
     assessment.personality_types[3].personality_type.career_style = ["Studying", "Problem solving", "Mind-expanding"];
     assessment.personality_types[4].personality_type.career_style = ["Following steps", "Organizing", "Tracking details"];
     assessment.personality_types[5].personality_type.career_style = ["Helping", "Guiding", "Listening"];
+
+    container.assessmentID = assessment.id;
 
     mockAssessment(assessment);
   });

@@ -4,7 +4,7 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import _assessment from "support/json/assessment/type-based.json";
+import _assessment from "support/data/assessment/personality/completed";
 
 jest.mock("components/results/personality/base/details", () => (() => <div className="mock">Personality Base Details</div>));
 jest.mock("components/results/personality/base/styles", () => (() => <div className="mock">Personality Base Styles</div>));
@@ -19,6 +19,8 @@ describe("Report.Attract", () => {
   useContainer();
 
   beforeEach(() => {
+    container.assessmentID = _assessment.id;
+
     assessment = mutable(_assessment);
     mockAssessment(assessment);
   });

@@ -3,10 +3,10 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockCognitiveAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import cognitive from "support/json/assessment/cognitive.json";
-import dimensionBased from "support/json/assessment/dimension-based.json";
-import financialRisk from "support/json/assessment/financial-risk.json";
-import typeBased from "support/json/assessment/type-based.json";
+import cognitive from "support/data/assessment/cognitive/completed";
+import dimensionBased from "support/data/assessment/personality/dimension-based";
+import financialRisk from "support/data/assessment/personality/financial-risk";
+import typeBased from "support/data/assessment/personality/type-based";
 
 jest.mock("components/report/attract", () => (() => <div className="mock">Attract</div>));
 jest.mock("components/report/candidate", () => (() => <div className="mock">Candidate</div>));
@@ -19,6 +19,10 @@ describe("Results", () => {
   let component;
 
   useContainer();
+
+  afterEach(() => {
+    delete container.assessmentID;
+  });
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {
@@ -42,6 +46,8 @@ describe("Results", () => {
   });
 
   it("renders candidate report", async() => {
+    container.assessmentID = dimensionBased.id;
+
     mockAssessment(dimensionBased);
     mockOption("report", "candidate");
     component = await ComponentHandler.setup(Component);
@@ -50,7 +56,9 @@ describe("Results", () => {
   });
 
   it("renders cognitive results", async() => {
-    mockCognitiveAssessment({...cognitive, completed: true});
+    container.assessmentID = cognitive.id;
+
+    mockCognitiveAssessment(cognitive);
     mockOption("surveyType", "cognitive");
     component = await ComponentHandler.setup(Component);
 
@@ -58,6 +66,8 @@ describe("Results", () => {
   });
 
   it("renders dimension based results", async() => {
+    container.assessmentID = dimensionBased.id;
+
     mockAssessment(dimensionBased);
     component = await ComponentHandler.setup(Component);
 
@@ -65,6 +75,8 @@ describe("Results", () => {
   });
 
   it("renders employee report", async() => {
+    container.assessmentID = dimensionBased.id;
+
     mockAssessment(dimensionBased);
     mockOption("report", "employee");
     component = await ComponentHandler.setup(Component);
@@ -73,6 +85,8 @@ describe("Results", () => {
   });
 
   it("renders financial risk results", async() => {
+    container.assessmentID = financialRisk.id;
+
     mockAssessment(financialRisk);
     component = await ComponentHandler.setup(Component);
 
@@ -80,6 +94,8 @@ describe("Results", () => {
   });
 
   it("renders manager report", async() => {
+    container.assessmentID = dimensionBased.id;
+
     mockAssessment(dimensionBased);
     mockOption("report", "manager");
     component = await ComponentHandler.setup(Component);
@@ -88,6 +104,8 @@ describe("Results", () => {
   });
 
   it("renders attract report", async() => {
+    container.assessmentID = typeBased.id;
+
     mockAssessment(typeBased);
     component = await ComponentHandler.setup(Component);
 

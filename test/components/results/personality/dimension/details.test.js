@@ -3,14 +3,14 @@ import ComponentHandler from "support/component-handler";
 import {mockGuide, useAssessment, useGuide} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
-import guide from "support/json/guide.json";
+import assessment from "support/data/assessment/personality/dimension-based";
+import guide from "support/data/guide.json";
 
 describe("PersonalityDimensionDetails", () => {
   let component;
   let props;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
   useGuide(guide, {assessmentID: assessment.id});
 

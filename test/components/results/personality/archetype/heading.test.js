@@ -4,8 +4,8 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockDeck, useAssessment, useDeck} from "support/container/http";
 import {useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
-import deck from "support/json/deck/big-five.json";
+import assessment from "support/data/assessment/personality/dimension-based";
+import deck from "support/data/survey/personality/big-five";
 
 const newDetails = [
   {body: "https://cdn.traitify.com/frtq/paradox/conservative_white.png", title: "Paradox - Badge"},
@@ -28,7 +28,7 @@ const details = [...oldDetails, ...newDetails];
 describe("PersonalityArchetypeHeading", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
   useDeck(deck);
 

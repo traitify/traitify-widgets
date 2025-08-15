@@ -135,6 +135,8 @@ export const completedAssessmentQuery = selectorFamily({
     }
 
     const assessments = get(assessmentsState);
+    if(!assessments) { return null; }
+
     const assessment = assessments
       .find(({completed, surveyType: type}) => type === surveyType && completed);
     if(!assessment) { return null; }

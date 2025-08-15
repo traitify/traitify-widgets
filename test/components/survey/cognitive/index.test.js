@@ -13,7 +13,7 @@ import {mockOption} from "support/container/options";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
-import _assessment from "support/json/assessment/cognitive.json";
+import _assessment from "support/data/assessment/cognitive/incomplete";
 
 jest.mock("components/survey/cognitive/instructions", () => (() => <div className="mock">Instructions</div>));
 jest.mock("components/survey/cognitive/slide", () => (() => <div className="mock">Slide</div>));
@@ -33,6 +33,8 @@ describe("Survey.Cognitive", () => {
   useWindowMock("confirm");
 
   beforeEach(() => {
+    container.assessmentID = _assessment.id;
+
     assessment = mutable(_assessment);
     assessmentCacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us"});
     cacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us", scope: ["slides"]});

@@ -8,12 +8,12 @@ import {
 } from "support/container/http";
 import {mockOption, useOptions} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/cognitive-results.json";
+import assessment from "support/data/assessment/cognitive/completed";
 
 describe("Results.CognitiveChart", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useCognitiveAssessment(assessment);
   useOptions({surveyType: "cognitive"});
   useSettings({show_cognitive_results: true});

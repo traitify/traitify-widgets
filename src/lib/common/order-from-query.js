@@ -1,3 +1,5 @@
+import dig from "lib/common/object/dig";
+
 // NOTE: Fields with underscores are from personality API (plus skipped field)
 export function assessmentFromQuery(response) {
   const record = {
@@ -5,13 +7,14 @@ export function assessmentFromQuery(response) {
     link: response.assessmentTakerUrl,
     loaded: true,
     loading: false,
-    skipped: response.isSkipped || response.skipped,
+    profileID: response.profile_id || response.profileId || dig(response, "profile_ids", 0),
+    skipped: response.isSkipped || response.skipped || false,
     surveyID: response.deck_id || response.surveyId || response.surveyKey,
     surveyName: response.surveyName || response.name
   };
 
   // NOTE: Prevent overriding with blanks
-  ["link", "surveyID", "surveyName"].filter((key) => !record[key]).forEach((key) => {
+  ["link", "profileID", "surveyID", "surveyName"].filter((key) => !record[key]).forEach((key) => {
     delete record[key];
   });
 
@@ -78,6 +81,7 @@ export function orderFromRecommendation(response) {
     assessments.push({
       completed: personality.status === "COMPLETE",
       id: personality.assessmentId,
+      skipped: personality.isSkipped,
       surveyID: personality.surveyId,
       surveyName: personality.surveyName,
       surveyType: "personality"
@@ -89,6 +93,7 @@ export function orderFromRecommendation(response) {
     assessments.push({
       completed: cognitive.status === "COMPLETE",
       id: cognitive.testId,
+      skipped: cognitive.isSkipped,
       surveyID: cognitive.surveyId,
       surveyName: cognitive.surveyName,
       surveyType: "cognitive"
@@ -102,6 +107,7 @@ export function orderFromRecommendation(response) {
         completed: assessment.status === "COMPLETE",
         id: assessment.assessmentId,
         link: assessment.assessmentTakerUrl,
+        skipped: assessment.isSkipped,
         surveyID: assessment.surveyId,
         surveyName: assessment.surveyName,
         surveyType: "external"
@@ -117,7 +123,9 @@ export function orderFromRecommendation(response) {
     surveys
   };
 
-  if(order.completed) {
+  if(assessments.some(({skipped}) => skipped)) {
+    order.status = "skipped";
+  } else if(order.completed) {
     order.status = "completed";
   } else if(response.errors) {
     order.status = "error";

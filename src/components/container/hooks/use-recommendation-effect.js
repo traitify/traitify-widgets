@@ -1,14 +1,14 @@
 import {useEffect} from "react";
-import {useRecoilValue, useSetRecoilState} from "recoil";
+import {useRecoilState, useRecoilValue} from "recoil";
 import dig from "lib/common/object/dig";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import {activeAssessmentQuery, baseState, benchmarkIDState, optionsState} from "lib/recoil";
 
 export default function useRecommendationEffect() {
   const assessment = useLoadedValue(activeAssessmentQuery);
-  const base = useRecoilValue(baseState);
+  const [base, setBase] = useRecoilState(baseState);
   const options = useRecoilValue(optionsState);
-  const setBenchmarkID = useSetRecoilState(benchmarkIDState);
+  const [benchmarkID, setBenchmarkID] = useRecoilState(benchmarkIDState);
 
   useEffect(() => {
     const recommendations = dig(assessment, "recommendations") || [];
@@ -27,4 +27,12 @@ export default function useRecommendationEffect() {
       return fallbackIDs.find((id) => benchmarkIDs.includes(id)) || benchmarkIDs[0];
     });
   }, [assessment, options]);
+
+  // NOTE: Syncs benchmarkID back to base for results
+  useEffect(() => {
+    if(!benchmarkID) { return; }
+    if(benchmarkID === base.benchmarkID) { return; }
+
+    setBase({...base, benchmarkID});
+  }, [benchmarkID]);
 }

@@ -4,7 +4,7 @@ import Component from "components/survey/cognitive/slide";
 import ComponentHandler from "support/component-handler";
 import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
-import assessment from "support/json/assessment/cognitive.json";
+import assessment from "support/data/assessment/cognitive/incomplete";
 
 const defaultQuestions = assessment.questions.slice(1, 3);
 const loadedQuestions = defaultQuestions.map((question) => ({...question, loaded: true}));

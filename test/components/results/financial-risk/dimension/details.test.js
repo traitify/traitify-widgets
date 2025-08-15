@@ -2,7 +2,7 @@ import Component from "components/results/financial-risk/dimension/details";
 import ComponentHandler from "support/component-handler";
 import {useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/financial-risk.json";
+import assessment from "support/data/assessment/personality/financial-risk";
 
 describe("Results.FinancialRisk.Dimension.Details", () => {
   let component;

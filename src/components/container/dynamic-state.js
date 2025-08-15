@@ -6,7 +6,7 @@ import {assessmentFromQuery} from "lib/common/order-from-query";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import {assessmentQuery, orderState} from "lib/recoil";
 
-// NOTE: Sync changes between assessments and order
+// NOTE: Syncs changes between assessments and order
 function Assessment({id, surveyType}) {
   const latestAssessment = useLoadedValue(assessmentQuery({id, surveyType}));
   const setOrder = useSetRecoilState(orderState);

@@ -12,7 +12,14 @@ import {
 } from "./base";
 
 // NOTE: Order
-// - assessments - completed, id, link (optional), surveyID, surveyName (optional), surveyType
+// - assessments
+//   - completed
+//   - id
+//   - link (optional)
+//   - profileID
+//   - surveyID
+//   - surveyName (optional)
+//   - surveyType
 // - cacheKey
 // - completed
 // - errors (optional)
@@ -130,6 +137,7 @@ const updateStatus = ({getLoadable, onSet, setSelf}) => {
       setSelf({...order, status: "loading"});
       return;
     }
+
     if(order.assessments.some(({skipped}) => skipped) || order.status === "skipped") {
       const newOrder = {...order, completed: true, status: "skipped"};
       cacheOrder(newOrder);

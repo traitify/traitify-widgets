@@ -4,7 +4,7 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/data/assessment/personality/completed";
 
 jest.mock("components/results/personality/trait/details", () => ((props) => (
   <div className="mock">Trait - {props.trait.personality_trait.name}</div>
@@ -13,7 +13,7 @@ jest.mock("components/results/personality/trait/details", () => ((props) => (
 describe("PersonalityTraitList", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
 
   describe("callbacks", () => {

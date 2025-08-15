@@ -2,14 +2,14 @@ import Component from "components/results/personality/type/list";
 import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/type-based.json";
+import assessment from "support/data/assessment/personality/type-based";
 
 jest.mock("components/results/personality/type/chart", () => (() => <div className="mock">Chart</div>));
 
 describe("PersonalityTypeChart", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
 
   describe("callbacks", () => {

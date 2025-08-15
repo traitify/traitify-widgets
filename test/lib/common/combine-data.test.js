@@ -1,8 +1,8 @@
 import {combine, createColumns, findCompetency} from "lib/common/combine-data";
 import mutable from "lib/common/object/mutable";
-import assessment from "support/json/assessment/dimension-based.json";
-import _benchmark from "support/json/benchmark.json";
-import _guide from "support/json/guide.json";
+import assessment from "support/data/assessment/personality/completed";
+import {data as _benchmark} from "support/data/benchmark";
+import _guide from "support/data/guide.json";
 
 describe("combineData", () => {
   let benchmark;

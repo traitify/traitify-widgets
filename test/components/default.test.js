@@ -1,4 +1,5 @@
 import Component from "components/default";
+import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {
   mockAssessment,
@@ -7,56 +8,52 @@ import {
   mockRecommendation
 } from "support/container/http";
 import useContainer from "support/hooks/use-container";
-import cognitive from "support/json/assessment/cognitive.json";
-import assessment from "support/json/assessment/dimension-based.json";
-import external from "support/json/assessment/external.json";
-import _assessmentWithSlides from "support/json/assessment/with-slides.json";
+import cognitive from "support/data/assessment/cognitive/completed";
+import cognitiveIncomplete from "support/data/assessment/cognitive/incomplete";
+import external from "support/data/assessment/external/completed";
+import externalIncomplete from "support/data/assessment/external/incomplete";
+import personality from "support/data/assessment/personality/dimension-based";
+import personalityIncomplete from "support/data/assessment/personality/incomplete";
+import recommendationCompleted from "support/data/recommendation/completed";
+import recommendationIncomplete from "support/data/recommendation/incomplete";
 
 jest.mock("components/results", () => (() => <div className="mock">Results</div>));
 jest.mock("components/status", () => (() => <div className="mock">Status</div>));
 jest.mock("components/survey", () => (() => <div className="mock">Survey</div>));
 
 describe("Default", () => {
-  let assessmentWithSlides;
   let component;
 
   useContainer();
-
-  beforeEach(() => {
-    assessmentWithSlides = {..._assessmentWithSlides, id: assessment.id};
-  });
 
   describe("recommendation", () => {
     let recommendation;
 
     beforeEach(() => {
       recommendation = {
-        benchmarkID: "benchmark-id",
-        prerequisites: {
-          cognitive: {
-            status: "COMPLETE",
-            surveyId: cognitive.surveyId,
-            testId: cognitive.id
-          },
-          external: [{...external, status: "COMPLETE"}],
-          personality: {
-            assessmentId: assessment.id,
-            status: "COMPLETE",
-            surveyId: assessment.deck_id
-          }
-        },
-        profileID: "profile-id"
+        benchmarkID: "benchmark-xyz",
+        profileID: "profile-xyz",
+        ...mutable(recommendationCompleted)
       };
 
-      mockAssessment(assessment, {id: assessment.id});
-      mockCognitiveAssessment({...cognitive, completed: true});
-      mockExternalAssessment({...external, status: "COMPLETE"});
+      container.benchmarkID = recommendation.benchmarkID;
+      container.profileID = recommendation.profileID;
+
+      mockAssessment(personality, {mockRecommendation: false});
+      mockCognitiveAssessment(cognitive, {mockRecommendation: false});
+      mockExternalAssessment(external, {mockRecommendation: false});
       mockRecommendation(recommendation);
     });
 
+    afterEach(() => {
+      delete container.assessmentID;
+      delete container.benchmarkID;
+      delete container.profileID;
+    });
+
     it("renders cognitive survey", async() => {
-      recommendation.prerequisites.cognitive.status = "INCOMPLETE";
-      mockCognitiveAssessment(cognitive);
+      recommendation.prerequisites.cognitive = recommendationIncomplete.prerequisites.cognitive;
+      mockCognitiveAssessment(cognitiveIncomplete, {mockRecommendation: false});
       mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
 
@@ -64,8 +61,8 @@ describe("Default", () => {
     });
 
     it("renders external survey", async() => {
-      recommendation.prerequisites.external[0].status = "INCOMPLETE";
-      mockExternalAssessment(external);
+      recommendation.prerequisites.external[0] = recommendationIncomplete.prerequisites.external[0];
+      mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
       mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
 
@@ -79,8 +76,8 @@ describe("Default", () => {
     });
 
     it("renders personality survey", async() => {
-      recommendation.prerequisites.personality.status = "INCOMPLETE";
-      mockAssessment(assessmentWithSlides, {id: assessment.id});
+      recommendation.prerequisites.personality = recommendationIncomplete.prerequisites.personality;
+      mockAssessment(personalityIncomplete, {mockRecommendation: false});
       mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
 
@@ -89,21 +86,27 @@ describe("Default", () => {
   });
 
   it("renders results", async() => {
-    mockAssessment(assessment, {id: assessment.id});
+    container.assessmentID = personality.id;
+
+    mockAssessment(personality);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders skipped", async() => {
-    mockAssessment({...assessment, skipped: true}, {id: assessment.id});
+    container.assessmentID = personality.id;
+
+    mockAssessment({...personality, skipped: true});
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders survey", async() => {
-    mockAssessment(assessmentWithSlides, {id: assessment.id});
+    container.assessmentID = personalityIncomplete.id;
+
+    mockAssessment(personalityIncomplete);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

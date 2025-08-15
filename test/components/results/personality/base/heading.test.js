@@ -4,7 +4,7 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import _assessment from "support/json/assessment/type-based.json";
+import _assessment from "support/data/assessment/personality/type-based";
 
 jest.mock("components/common/icon", () => ((props) => (
   <div className="mock">Icon - {props.icon.iconName}</div>
@@ -21,6 +21,8 @@ describe("PersonalityBaseHeading", () => {
     assessment.archetype = assessment.personality_types
       .find(({personality_type: type}) => type.name === "Inventor")
       .personality_type;
+
+    container.assessmentID = assessment.id;
 
     mockAssessment(assessment);
   });

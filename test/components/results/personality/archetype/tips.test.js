@@ -5,7 +5,7 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import _assessment from "support/json/assessment/dimension-based.json";
+import _assessment from "support/data/assessment/personality/dimension-based";
 
 const details = [];
 const tipTypes = {
@@ -38,6 +38,8 @@ describe("PersonalityArchetypeTips", () => {
   beforeEach(() => {
     assessment = mutable(_assessment);
     assessment.archetype.details = [...details];
+
+    container.assessmentID = assessment.id;
 
     mockAssessment(assessment);
   });

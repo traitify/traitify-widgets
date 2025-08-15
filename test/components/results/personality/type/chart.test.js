@@ -5,7 +5,7 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import _assessment from "support/json/assessment/type-based.json";
+import _assessment from "support/data/assessment/personality/type-based";
 
 describe("PersonalityTypeChart", () => {
   let assessment;
@@ -14,6 +14,8 @@ describe("PersonalityTypeChart", () => {
   useContainer();
 
   beforeEach(() => {
+    container.assessmentID = _assessment.id;
+
     assessment = mutable(_assessment);
     mockAssessment(assessment);
   });

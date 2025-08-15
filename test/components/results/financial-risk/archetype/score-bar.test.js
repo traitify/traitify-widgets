@@ -4,13 +4,13 @@ import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import _assessment from "support/json/assessment/financial-risk.json";
+import _assessment from "support/data/assessment/personality/financial-risk";
 
 describe("Results.FinancialRisk.Archetype.ScoreBar", () => {
   let assessment;
   let component;
 
-  useContainer();
+  useContainer({assessmentID: _assessment.id});
   useAssessment(_assessment);
   useOption("perspective", "thirdPerson");
 

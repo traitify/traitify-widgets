@@ -10,7 +10,7 @@ exports[`Results.CognitiveChart renders component 1`] = `
     <div
       className="p"
     >
-      This illustrates the cognitive-v1.0 measurements based on the answers to a series of abstract general mental ability questions
+      This illustrates the cognitive-survey-name measurements based on the answers to a series of abstract general mental ability questions
     </div>
     <div
       className="chart"

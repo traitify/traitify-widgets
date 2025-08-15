@@ -18,8 +18,8 @@ import {
 import {mockOption, useOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
-import _completedAssessment from "support/json/assessment/dimension-based.json";
-import _assessment from "support/json/assessment/with-slides.json";
+import _completedAssessment from "support/data/assessment/personality/completed";
+import _assessment from "support/data/assessment/personality/incomplete";
 
 jest.mock("components/common/icon", () => (({alt, className, icon}) => <span {...{alt, className}}>{icon.iconName}</span>));
 jest.mock("lib/hooks/use-fullscreen", () => jest.fn().mockName("useFullscreen").mockReturnValue([false, () => {}]));
@@ -51,6 +51,8 @@ describe("Survey.Personality", () => {
   useSettings({});
 
   beforeEach(() => {
+    container.assessmentID = _assessment.id;
+
     assessment = mutable(_assessment);
     cacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us", scope: ["slides"]});
     completedAssessment = {...mutable(_completedAssessment), id: assessment.id};

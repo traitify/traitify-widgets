@@ -2,13 +2,13 @@ import Component from "components/results/personality/trait/details";
 import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/data/assessment/personality/completed";
 
 describe("PersonalityTraitDetails", () => {
   let component;
   let props;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
 
   beforeEach(() => {

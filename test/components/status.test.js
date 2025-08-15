@@ -1,5 +1,6 @@
 import {act} from "react-test-renderer";
 import Component from "components/status";
+import mutable from "lib/common/object/mutable";
 import orderFromQuery, {assessmentFromQuery, orderFromRecommendation} from "lib/common/order-from-query";
 import ComponentHandler from "support/component-handler";
 import {
@@ -12,9 +13,18 @@ import {
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
-import cognitive from "support/json/assessment/cognitive.json";
-import personality from "support/json/assessment/dimension-based.json";
-import external from "support/json/assessment/external.json";
+import cognitive from "support/data/assessment/cognitive/completed";
+import cognitiveIncomplete from "support/data/assessment/cognitive/incomplete";
+import cognitiveSkipped from "support/data/assessment/cognitive/skipped";
+import external from "support/data/assessment/external/completed";
+import externalIncomplete from "support/data/assessment/external/incomplete";
+import personality from "support/data/assessment/personality/completed";
+import benchmark from "support/data/benchmark";
+import orderCompleted from "support/data/order/completed";
+import orderIncomplete from "support/data/order/incomplete";
+import profile from "support/data/profile";
+import recommendationCompleted from "support/data/recommendation/completed";
+import recommendationIncomplete from "support/data/recommendation/incomplete";
 
 describe("Status", () => {
   let component;
@@ -48,51 +58,26 @@ describe("Status", () => {
     let orderResponse;
 
     beforeEach(() => {
-      orderResponse = {
-        assessments: [
-          {
-            id: cognitive.id,
-            status: "COMPLETED",
-            surveyId: cognitive.surveyId,
-            type: "COGNITIVE"
-          },
-          {
-            id: external.assessmentId,
-            status: "COMPLETED",
-            surveyId: external.surveyId,
-            type: "EXTERNAL"
-          },
-          {
-            id: personality.id,
-            status: "COMPLETED",
-            surveyId: personality.deck_id,
-            type: "PERSONALITY"
-          }
-        ],
-        id: "order-id",
-        profileID: "profile-id",
-        requirements: {
-          surveys: [
-            {id: cognitive.surveyId, type: "COGNITIVE"},
-            {id: external.surveyId, type: "EXTERNAL"},
-            {id: personality.deck_id, type: "PERSONALITY"}
-          ]
-        },
-        status: "COMPLETED"
-      };
+      orderResponse = mutable(orderCompleted);
       order = orderFromQuery({data: {order: orderResponse}});
 
-      mockAssessment(personality);
-      mockCognitiveAssessment({...cognitive, completed: true});
-      mockExternalAssessment({...external, status: "COMPLETED"});
+      container.orderID = orderResponse.id;
+
+      mockAssessment(personality, {mockRecommendation: false});
+      mockCognitiveAssessment(cognitive, {mockRecommendation: false});
+      mockExternalAssessment(external, {mockRecommendation: false});
       mockOrder(orderResponse);
     });
 
+    afterEach(() => {
+      delete container.orderID;
+    });
+
     it("starts assessment", async() => {
-      orderResponse.assessments[0].status = "INCOMPLETE";
-      orderResponse.status = "ALL_ASSESSMENT_AVAILABLE";
+      orderResponse.assessments[0] = orderIncomplete.assessments[0];
+      orderResponse.status = orderIncomplete.status;
       order = orderFromQuery({data: {order: orderResponse}});
-      mockCognitiveAssessment(cognitive);
+      mockCognitiveAssessment(cognitiveIncomplete, {mockRecommendation: false});
       mockOrder(orderResponse);
       component = await ComponentHandler.setup(Component);
       const button = component.findAllByText("Start Assessment")[0];
@@ -100,15 +85,22 @@ describe("Status", () => {
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "Survey.start",
-        {assessment: {...order.assessments[0], loaded: true, loading: false}}
+        {
+          assessment: {
+            ...order.assessments[0],
+            ...assessmentFromQuery(cognitiveIncomplete),
+            loaded: true,
+            loading: false
+          }
+        }
       );
     });
 
     it("starts external assessment", async() => {
-      orderResponse.assessments[1].status = "INCOMPLETE";
-      orderResponse.status = "ALL_ASSESSMENT_AVAILABLE";
+      orderResponse.assessments[1] = orderIncomplete.assessments[1];
+      orderResponse.status = orderIncomplete.status;
       order = orderFromQuery({data: {order: orderResponse}});
-      mockExternalAssessment({...external, status: "INCOMPLETE"});
+      mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
       mockOption("status", {allowRedirect: false});
       mockOrder(orderResponse);
       component = await ComponentHandler.setup(Component);
@@ -119,7 +111,7 @@ describe("Status", () => {
         {
           assessment: {
             ...order.assessments[1],
-            ...assessmentFromQuery(external),
+            ...assessmentFromQuery(externalIncomplete),
             loaded: true,
             loading: false
           }
@@ -128,10 +120,10 @@ describe("Status", () => {
     });
 
     it("starts external assessment with redirect", async() => {
-      orderResponse.assessments[1].status = "INCOMPLETE";
-      orderResponse.status = "ALL_ASSESSMENT_AVAILABLE";
+      orderResponse.assessments[1] = orderIncomplete.assessments[1];
+      orderResponse.status = orderIncomplete.status;
       order = orderFromQuery({data: {order: orderResponse}});
-      mockExternalAssessment({...external, status: "INCOMPLETE"});
+      mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
       mockOrder(orderResponse);
       component = await ComponentHandler.setup(Component);
       const button = component.findByText("Start Assessment");
@@ -166,7 +158,12 @@ describe("Status", () => {
     });
 
     it("renders skipped", async() => {
-      mockCognitiveAssessment({...cognitive, completed: true, isSkipped: true});
+      orderResponse.assessments[0] = orderIncomplete.assessments[0];
+      orderResponse.status = orderIncomplete.status;
+      order = orderFromQuery({data: {order: orderResponse}});
+      mockCognitiveAssessment(cognitiveSkipped, {mockRecommendation: false});
+      mockOrder(orderResponse);
+
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
@@ -174,48 +171,50 @@ describe("Status", () => {
   });
 
   describe("recommendation", () => {
-    let recommendationResponse;
+    let recommendation;
 
     beforeEach(() => {
-      recommendationResponse = {
-        benchmarkID: "benchmark-id",
-        prerequisites: {
-          cognitive: {
-            status: "COMPLETE",
-            surveyId: cognitive.surveyId,
-            surveyName: "Cognitive Assessment",
-            testId: cognitive.id
-          },
-          external: [{...external}],
-          personality: {
-            assessmentId: personality.id,
-            status: "COMPLETE",
-            surveyId: personality.deck_id,
-            surveyName: "Personality Assessment"
-          }
-        },
-        profileID: "profile-id"
+      recommendation = {
+        benchmarkID: benchmark.id,
+        profileID: profile.id,
+        ...mutable(recommendationCompleted)
       };
-      order = orderFromRecommendation({data: {recommendation: recommendationResponse}});
+      recommendation.prerequisites.external[0] = recommendationIncomplete.prerequisites.external[0];
+      order = orderFromRecommendation({data: {recommendation}});
 
-      mockAssessment(personality);
-      mockCognitiveAssessment({...cognitive, completed: true});
-      mockExternalAssessment(external);
-      mockRecommendation(recommendationResponse);
+      container.benchmarkID = recommendation.benchmarkID;
+      container.profileID = recommendation.profileID;
+
+      mockAssessment(personality, {mockRecommendation: false});
+      mockCognitiveAssessment(cognitive, {mockRecommendation: false});
+      mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
+      mockRecommendation(recommendation);
+    });
+
+    afterEach(() => {
+      delete container.benchmarkID;
+      delete container.profileID;
     });
 
     it("starts assessment", async() => {
-      recommendationResponse.prerequisites.cognitive.status = "INCOMPLETE";
-      order = orderFromRecommendation({data: {recommendation: recommendationResponse}});
-      mockCognitiveAssessment(cognitive);
-      mockRecommendation(recommendationResponse);
+      recommendation.prerequisites.cognitive = recommendationIncomplete.prerequisites.cognitive;
+      order = orderFromRecommendation({data: {recommendation}});
+      mockCognitiveAssessment(cognitiveIncomplete, {mockRecommendation: false});
+      mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
       const button = component.findAllByText("Start Assessment")[0];
       act(() => { button.props.onClick(); });
 
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "Survey.start",
-        {assessment: {...order.assessments[1], loaded: true, loading: false}}
+        {
+          assessment: {
+            ...order.assessments[1],
+            ...assessmentFromQuery(cognitiveIncomplete),
+            loaded: true,
+            loading: false
+          }
+        }
       );
     });
 
@@ -226,7 +225,14 @@ describe("Status", () => {
       act(() => { button.props.onClick(); });
       expect(container.listener.trigger).toHaveBeenCalledWith(
         "Survey.start",
-        {assessment: {...order.assessments[2], loaded: true, loading: false}}
+        {
+          assessment: {
+            ...order.assessments[2],
+            ...assessmentFromQuery(externalIncomplete),
+            loaded: true,
+            loading: false
+          }
+        }
       );
     });
 
@@ -251,8 +257,8 @@ describe("Status", () => {
     });
 
     it("renders nothing if no assessments", async() => {
-      recommendationResponse.prerequisites = {};
-      mockRecommendation(recommendationResponse);
+      recommendation.prerequisites = {};
+      mockRecommendation(recommendation);
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();

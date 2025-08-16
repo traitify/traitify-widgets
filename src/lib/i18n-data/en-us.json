@@ -156,11 +156,15 @@
       "current": "Current Benchmark",
       "search": "Search for Benchmark"
     },
+    "cognitive": {
+      "breakdown": {
+        "description": "This illustrates the %{survey_name} measurements based on the answers to a series of abstract general mental ability questions",
+        "heading": "Cognitive Breakdown"
+      }
+    },
     "generic": {
-      "assessment_results": "Assessment Results",
       "breakdown": "Breakdown",
       "breakdown_description": "Here is the breakdown of the questions you answered in the assessment",
-      "completed_on": "Completed on:",
       "correct": "Correct",
       "incorrect": "Incorrect",
       "overall_score": "Overall Score",

@@ -9,8 +9,10 @@ export const create = `
       localeKey
       name
       percentileScore
+      profileId
       rawScore
       specialAllottedTime
+      stenScore
       surveyId
       surveyKey
       questions {
@@ -47,8 +49,10 @@ export const get = `
       localeKey
       name
       percentileScore
+      profileId
       rawScore
       specialAllottedTime
+      stenScore
       surveyId
       surveyKey
       questions {

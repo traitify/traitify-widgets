@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import I18nSync from "i18n-sync";
 import useGlobalMock from "support/hooks/use-global-mock";
-import translations from "support/json/translations.json";
+import translations from "support/data/translations.json";
 import fs from "node:fs";
 
 jest.mock("node:fs");

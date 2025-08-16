@@ -2,17 +2,18 @@ import {act} from "react-test-renderer";
 import Dropdown from "components/common/dropdown";
 import Component from "components/results/recommendation/list";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, useAssessment} from "support/container/http";
+import {mockAssessment, mockRecommendation, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/data/assessment/personality/completed";
+import orderRecommendation from "support/data/recommendation/personality/completed";
 
 jest.mock("components/common/dropdown", () => (() => <div className="mock">Dropdown</div>));
 
 describe("Results.RecommendationList", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
 
   describe("callbacks", () => {
@@ -84,6 +85,7 @@ describe("Results.RecommendationList", () => {
 
   it("renders nothing if results not ready", async() => {
     mockAssessment(null);
+    mockRecommendation(null);
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
@@ -97,8 +99,9 @@ describe("Results.RecommendationList", () => {
         {...assessment.recommendation, benchmark_name: "Other", recommendation_id: "other-xyz"}
       ]
     });
+    mockRecommendation(orderRecommendation, {benchmarkID: "other-xyz", profileID: "profile-xyz"});
     component = await ComponentHandler.setup(Component);
-    act(() => component.instance.findByType(Dropdown).props.onChange({target: {name: "Other", value: "other-xyz"}}));
+    await act(async() => component.instance.findByType(Dropdown).props.onChange({target: {name: "Other", value: "other-xyz"}}));
 
     expect(component.tree).toMatchSnapshot();
   });

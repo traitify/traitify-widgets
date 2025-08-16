@@ -13,7 +13,7 @@ import {
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";
-import _assessment from "support/json/assessment/cognitive.json";
+import _assessment from "support/data/assessment/cognitive/incomplete";
 
 jest.mock("components/survey/cognitive/practice", () => (() => <div className="mock">Practice</div>));
 
@@ -26,6 +26,8 @@ describe("Instructions", () => {
   useSettings({});
 
   beforeEach(() => {
+    container.assessmentID = _assessment.id;
+
     assessment = mutable(_assessment);
     props = {
       onStart: jest.fn().mockName("onStart"),

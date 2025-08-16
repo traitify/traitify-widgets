@@ -1,0 +1,1907 @@
+import base from "./base";
+
+export default {
+  ...base,
+  assessment_type: "DIMENSION_BASED",
+  completed_at: base.created_at + 10000,
+  deck_id: "financial-risk-tolerance-2.0",
+  scoring_scale: "LIKERT_CUMULATIVE_POMP",
+  status: "complete",
+  personality_types: [
+    {
+      personality_type: {
+        id: "7e57da8c-c1cf-404a-a1bb-97a893ebe4ca",
+        name: "Internalized Positivity",
+        description: "an even-tempered approach to life that includes self-control and the ability to adjust to changing situations",
+        badge: {
+          image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+          image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+          image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+          font_color: "ffffff",
+          color_1: "d0d2d3",
+          color_2: "bbbdbf",
+          color_3: "6d6e70"
+        },
+        keywords: "",
+        details: [
+          {
+            title: "Application",
+            body: ""
+          },
+          {
+            title: "Complement",
+            body: ""
+          },
+          {
+            title: "Conflict",
+            body: ""
+          },
+          {
+            title: "Characteristics",
+            body: "Find daily life stressful"
+          },
+          {
+            title: "Characteristics",
+            body: "Find it hard to stay focused"
+          },
+          {
+            title: "Characteristics",
+            body: "Not boastful"
+          },
+          {
+            title: "Characteristics",
+            body: "Often feel down"
+          },
+          {
+            title: "Characteristics",
+            body: "Procrastinate"
+          },
+          {
+            title: "Characteristics",
+            body: "Prone to worry"
+          },
+          {
+            title: "third_person_description",
+            body: "This individual reacts with emotion to bad financial news, and may attribute this to having generally bad luck, poor judgment, or both. A financial advisor should be mindful of the tendency of these individuals to become upset and stressed -- they may recoil at critical feedback (such as \"This may not have been the right time to make that withdrawal…\"), so words should be chosen wisely. Prone to an often pessimistic view, any downturn in the portfolio may be attributed to their own poor decisions, and taken as an indication of an inability to make more successful choices in the future. These clients will tend to focus on any unfavorable data points more than on positive ones. In making decisions, structure should be put in place to ensure that decisions are made and actions undertaken, as these individuals are often those who procrastinate, particularly when the necessary task is couched in the emotions of influential decisions."
+          },
+          {
+            title: "type",
+            body: "Internalized Positivity"
+          }
+        ],
+        environments: [],
+        famous_people: [],
+        personality_traits: [],
+        level: "Low"
+      },
+      score: 60.49,
+      standard_score: 60.49,
+      rank: 1
+    },
+    {
+      personality_type: {
+        id: "353d6365-bf38-4f6f-b0c8-6a273f2ceb63",
+        name: "Adventurousness",
+        description: "an appreciation for interacting with the world in novel and even impractical ways, including a desire to share oneself with others ",
+        badge: {
+          image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+          image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+          image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+          font_color: "ffffff",
+          color_1: "d0d2d3",
+          color_2: "bbbdbf",
+          color_3: "6d6e70"
+        },
+        keywords: "",
+        details: [
+          {
+            title: "Application",
+            body: ""
+          },
+          {
+            title: "Complement",
+            body: ""
+          },
+          {
+            title: "Conflict",
+            body: ""
+          },
+          {
+            title: "Characteristics",
+            body: "Creative problem solver"
+          },
+          {
+            title: "Characteristics",
+            body: "Curious"
+          },
+          {
+            title: "Characteristics",
+            body: "Enjoy time with friends"
+          },
+          {
+            title: "Characteristics",
+            body: "Let others take the lead"
+          },
+          {
+            title: "Characteristics",
+            body: "Like things settled"
+          },
+          {
+            title: "Characteristics",
+            body: "Some stress"
+          },
+          {
+            title: "third_person_description",
+            body: "This individual is interested in learning about leading-edge investment opportunities but may not opt to pursue these investments, or may want to do so in only a limited way. This client does sometimes make financial decisions without much deliberation, finding that they are comfortable with some degree of uncertainty and at times motivated by a competitive desire to keep up with others. They may feel they are missing out and want assurance that they have been made aware of exciting possibilities or news of note. Their default is to have some hesitation in the end -- although they recognize the potential of certain portfolios, they do experience some worry about the future. To address this, clients with medium Adventurousness may respond favorably to some comic relief in your discussions."
+          },
+          {
+            title: "type",
+            body: "Adventurousness"
+          }
+        ],
+        environments: [],
+        famous_people: [],
+        personality_traits: [],
+        level: "Medium"
+      },
+      score: 39.39,
+      standard_score: 39.39,
+      rank: 2
+    },
+    {
+      personality_type: {
+        id: "3c9fd048-9e27-4b23-9455-bba008127755",
+        name: "Systematic Resourcefulness",
+        description: "the self-assured, organized use of information to make decisions and approach challenges",
+        badge: {
+          image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+          image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+          image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+          font_color: "ffffff",
+          color_1: "d0d2d3",
+          color_2: "bbbdbf",
+          color_3: "6d6e70"
+        },
+        keywords: "",
+        details: [
+          {
+            title: "Application",
+            body: ""
+          },
+          {
+            title: "Complement",
+            body: ""
+          },
+          {
+            title: "Conflict",
+            body: ""
+          },
+          {
+            title: "Characteristics",
+            body: "Can be impulsive"
+          },
+          {
+            title: "Characteristics",
+            body: "Don't like challenges"
+          },
+          {
+            title: "Characteristics",
+            body: "Get help from others"
+          },
+          {
+            title: "Characteristics",
+            body: "May seek out many opinions"
+          },
+          {
+            title: "Characteristics",
+            body: "Prefer their comfort zones"
+          },
+          {
+            title: "Characteristics",
+            body: "Prone to stress"
+          },
+          {
+            title: "third_person_description",
+            body: "This individual is not likely to enjoy a detailed discussion of their portfolio, especially if this is couched as a \"challenge\" or a problem that needs to be solved. They're prone to feeling like setbacks will be hard to overcome, so the focus should be on overall results without emphasis on ups and downs. The advisor should provide reassurance that market outlooks are not atypical or cause for particular worry. These individuals may benefit from introducing a clear path for them, since their own thinking can be influenced by self-doubt and a lack of knowing where to start. They likely will not ask about economic trends or the inner workings of the world of finance and should be instead provided with global assertions presented with an air of confidence and calm from the advisor."
+          },
+          {
+            title: "type",
+            body: "Systematic Resourcefulness"
+          }
+        ],
+        environments: [],
+        famous_people: [],
+        personality_traits: [],
+        level: "Low"
+      },
+      score: 34.78,
+      standard_score: 34.78,
+      rank: 3
+    },
+    {
+      personality_type: {
+        id: "354c23a4-d8ce-4f32-a7b4-aaa6dc22b58d",
+        name: "Connectedness",
+        description: "a propensity to communicate and affiliate with others, including both friends and strangers",
+        badge: {
+          image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+          image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+          image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+          font_color: "ffffff",
+          color_1: "d0d2d3",
+          color_2: "bbbdbf",
+          color_3: "6d6e70"
+        },
+        keywords: "",
+        details: [
+          {
+            title: "Application",
+            body: ""
+          },
+          {
+            title: "Complement",
+            body: ""
+          },
+          {
+            title: "Conflict",
+            body: ""
+          },
+          {
+            title: "Characteristics",
+            body: "Don't like to rely on others"
+          },
+          {
+            title: "Characteristics",
+            body: "Hard to get to know"
+          },
+          {
+            title: "Characteristics",
+            body: "Independent"
+          },
+          {
+            title: "Characteristics",
+            body: "Prefer to solve problems alone"
+          },
+          {
+            title: "Characteristics",
+            body: "Quiet in public"
+          },
+          {
+            title: "Characteristics",
+            body: "Self-starter"
+          },
+          {
+            title: "third_person_description",
+            body: "This individual is concerned about maintaining their independence and the financial wellbeing of their household is their first priority. They are not particularly motivated by a concern for what other people are doing, or what others need, and believe that financial independence is an important principle for all. They dislike surprises, so information should be provided at a steady pace and bad news should be buffered. They likely will want to get down to business during financial discussions and will have relatively little interest in friendly banter. Social concerns and community needs are lower priorities in their investments. They are more likely to be pragmatic than prosocial in their financial decision making, in part because they are unlikely to conceptualize their net worth as being of any relevance to promoting social causes or advancing community needs."
+          },
+          {
+            title: "type",
+            body: "Connectedness"
+          }
+        ],
+        environments: [],
+        famous_people: [],
+        personality_traits: [],
+        level: "Low"
+      },
+      score: 23.53,
+      standard_score: 23.53,
+      rank: 4
+    }
+  ],
+  personality_traits: [
+    {
+      personality_trait: {
+        id: "d29a8f1f-1118-4a4f-bc35-94b594e228aa",
+        name: "Internalized Positivity",
+        definition: "an even-tempered approach to life that includes self-control and the ability to adjust to changing situations",
+        description: "For use in the Horizon financial risk tolerance assessment, post the initial validation pilot study.",
+        personality_type: {
+          id: "7e57da8c-c1cf-404a-a1bb-97a893ebe4ca",
+          name: "Internalized Positivity",
+          description: "an even-tempered approach to life that includes self-control and the ability to adjust to changing situations",
+          badge: {
+            image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+            image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+            image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+            font_color: "ffffff",
+            color_1: "d0d2d3",
+            color_2: "bbbdbf",
+            color_3: "6d6e70"
+          },
+          keywords: "",
+          details: [
+            {
+              title: "Application",
+              body: ""
+            },
+            {
+              title: "Complement",
+              body: ""
+            },
+            {
+              title: "Conflict",
+              body: ""
+            }
+          ],
+          environments: [],
+          famous_people: [],
+          personality_traits: [],
+          level: null
+        }
+      },
+      score: 60.49,
+      rank: 1,
+      raw_score: 1.81,
+      max_score: 3
+    },
+    {
+      personality_trait: {
+        id: "48d1767a-93cd-4b35-bfad-f974dd42a283",
+        name: "Adventurousness",
+        definition: "an appreciation for interacting with the world in novel and even impractical ways, including a desire to share oneself with others",
+        description: "For use in the Horizon financial risk tolerance assessment, post the initial validation pilot study.",
+        personality_type: {
+          id: "353d6365-bf38-4f6f-b0c8-6a273f2ceb63",
+          name: "Adventurousness",
+          description: "an appreciation for interacting with the world in novel and even impractical ways, including a desire to share oneself with others ",
+          badge: {
+            image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+            image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+            image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+            font_color: "ffffff",
+            color_1: "d0d2d3",
+            color_2: "bbbdbf",
+            color_3: "6d6e70"
+          },
+          keywords: "",
+          details: [
+            {
+              title: "Application",
+              body: ""
+            },
+            {
+              title: "Complement",
+              body: ""
+            },
+            {
+              title: "Conflict",
+              body: ""
+            }
+          ],
+          environments: [],
+          famous_people: [],
+          personality_traits: [],
+          level: null
+        }
+      },
+      score: 39.39,
+      rank: 2,
+      raw_score: 1.18,
+      max_score: 3
+    },
+    {
+      personality_trait: {
+        id: "08afef6d-39fb-48f5-9882-9f2754a61298",
+        name: "Systematic Resourcefulness",
+        definition: "the self-assured, organized use of information to make decisions and approach challenges",
+        description: "For use in the Horizon financial risk tolerance assessment, post the initial validation pilot study.",
+        personality_type: {
+          id: "3c9fd048-9e27-4b23-9455-bba008127755",
+          name: "Systematic Resourcefulness",
+          description: "the self-assured, organized use of information to make decisions and approach challenges",
+          badge: {
+            image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+            image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+            image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+            font_color: "ffffff",
+            color_1: "d0d2d3",
+            color_2: "bbbdbf",
+            color_3: "6d6e70"
+          },
+          keywords: "",
+          details: [
+            {
+              title: "Application",
+              body: ""
+            },
+            {
+              title: "Complement",
+              body: ""
+            },
+            {
+              title: "Conflict",
+              body: ""
+            }
+          ],
+          environments: [],
+          famous_people: [],
+          personality_traits: [],
+          level: null
+        }
+      },
+      score: 34.78,
+      rank: 3,
+      raw_score: 1.04,
+      max_score: 3
+    },
+    {
+      personality_trait: {
+        id: "8f551736-d904-44f8-9c46-925ac88dbfbf",
+        name: "Connectedness",
+        definition: "a propensity to communicate and affiliate with others, including both friends and strangers",
+        description: "For use in the Horizon financial risk tolerance assessment, post the initial validation pilot study.",
+        personality_type: {
+          id: "354c23a4-d8ce-4f32-a7b4-aaa6dc22b58d",
+          name: "Connectedness",
+          description: "a propensity to communicate and affiliate with others, including both friends and strangers",
+          badge: {
+            image_small: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/small",
+            image_medium: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/medium",
+            image_large: "https://s3.amazonaws.com/traitify-api/badges/no-image-available/large",
+            font_color: "ffffff",
+            color_1: "d0d2d3",
+            color_2: "bbbdbf",
+            color_3: "6d6e70"
+          },
+          keywords: "",
+          details: [
+            {
+              title: "Application",
+              body: ""
+            },
+            {
+              title: "Complement",
+              body: ""
+            },
+            {
+              title: "Conflict",
+              body: ""
+            }
+          ],
+          environments: [],
+          famous_people: [],
+          personality_traits: [],
+          level: null
+        }
+      },
+      score: 23.53,
+      rank: 4,
+      raw_score: 0.71,
+      max_score: 3
+    }
+  ],
+  career_matches: [],
+  slides: [
+    {
+      id: "e7360c43-9b0a-4c9a-bc39-ec4176c99874",
+      position: 1,
+      caption: "Fascinated",
+      image_desktop: "https://cdn.traitify.com/slides/4045331f-134c-4bb5-9a31-d97fa63e3dc6_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/c221492c-3d32-4c38-8594-9400cc83c247_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 1772,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "1784b751-19a8-4979-af3c-8a31b41f9218",
+      position: 2,
+      caption: "Expertise To Share",
+      image_desktop: "https://cdn.traitify.com/slides/531b17c0-9442-4eaf-83ff-6f400152a8a3_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/2ddf77b4-d3ae-4e9f-bc9d-7debb34378e2_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 65,
+      focus_y: 46,
+      alternative_text: null
+    },
+    {
+      id: "7c9d66a0-0640-4659-9ed1-fd87b30e3dc9",
+      position: 3,
+      caption: "Performing",
+      image_desktop: "https://cdn.traitify.com/slides/a1a6abd5-c99f-4b5b-9ef2-374f03a0e858_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/609faf16-ad6c-4a2b-a563-671c924cd6d7_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 39,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "9c9134d0-9798-4fac-bae0-dabce9dd7356",
+      position: 4,
+      caption: "Solve Confusing Problems",
+      image_desktop: "https://cdn.traitify.com/slides/d807c6be-6fd3-4ee9-915b-ba90a52a92dd_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/acefc8c1-8941-4990-8cb4-ac95f2767d77_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "9f74cddb-9004-4148-89c0-5fb85b6dfca0",
+      position: 5,
+      caption: "Wonder What Went Wrong",
+      image_desktop: "https://cdn.traitify.com/slides/1be9bffc-5058-4bea-9fbf-c00449256a72_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/773a70d5-f54e-4daa-8ee3-a2864a20867e_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "12c095ef-0929-4fbf-9c60-78db4f197173",
+      position: 6,
+      caption: "Stressed By Travel Delays",
+      image_desktop: "https://cdn.traitify.com/slides/66b2e2e1-1408-49e0-9377-0adbeb92a512_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/039644b1-d491-4cda-85d3-1c9388fc018a_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "fadedaf9-3482-4221-bc44-e9352b43bd3a",
+      position: 7,
+      caption: "Can Be Moody",
+      image_desktop: "https://cdn.traitify.com/slides/1d0b733d-0e45-4c13-af1d-2cb69cd1f22b_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/7ad8ba29-0d3d-46ee-9eda-a63da2780d65_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 119,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "f016cced-02b7-454e-89f3-b6ef5388c1ee",
+      position: 8,
+      caption: "Skydiving",
+      image_desktop: "https://cdn.traitify.com/slides/23184575-10ef-4396-863b-e98ddb5857b6_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/9e972584-d1e4-4587-b96a-b14fafe38ebd_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 46,
+      focus_y: 53,
+      alternative_text: null
+    },
+    {
+      id: "5b5dbda2-31d0-4294-a58f-d7d0ea9957f9",
+      position: 9,
+      caption: "Volunteer For That",
+      image_desktop: "https://cdn.traitify.com/slides/6c69c264-a196-47cd-a968-ca7ffb12fb07_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/1ee9ac26-8856-4e9d-b36e-0939262c2eb5_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "e59a7d5f-d3c5-45c4-ade1-81424a03b8a7",
+      position: 10,
+      caption: "Paragliding",
+      image_desktop: "https://cdn.traitify.com/slides/e378ff58-f8b7-44a7-8904-9bf1f2515a3a_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/ac6ee5a8-c995-484e-b3a3-956d8f39e8e7_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 52,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "ace14c1f-41e8-4284-b101-e208dcf5ea3b",
+      position: 11,
+      caption: "Easily Thrown Off Course",
+      image_desktop: "https://cdn.traitify.com/slides/200e8915-b779-4f47-ba2d-7694a1df2afd_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/f27104a4-d8c0-4ff9-94a2-c19d397a9f52_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 55,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "e79a1ec4-2205-4864-8503-a242df295e32",
+      position: 12,
+      caption: "Off The Beaten Path",
+      image_desktop: "https://cdn.traitify.com/slides/96d4b7dc-55f3-4cfa-bbc2-5ab8631f7b52_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/8e550ffc-8419-44c9-855f-fca6cfdade1f_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "bd89134a-9b74-4309-957c-e930673a0269",
+      position: 13,
+      caption: "Don't Want To Do It",
+      image_desktop: "https://cdn.traitify.com/slides/b402da5a-b69a-4ffd-9331-fc9c0834a5c8_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/be7c2179-4336-4c50-9378-f383ea83292d_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 68,
+      focus_y: 52,
+      alternative_text: null
+    },
+    {
+      id: "ea9feb83-47c0-4cf7-bf16-f378c9432c41",
+      position: 14,
+      caption: "Accept Uncertainty",
+      image_desktop: "https://cdn.traitify.com/slides/cb910937-bf69-4fed-a119-07f030a84133_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/b1e57d2b-8e14-4d83-a4fd-574e52a087fe_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 41,
+      focus_y: 48,
+      alternative_text: null
+    },
+    {
+      id: "b9a4b854-74b8-4ff2-b778-a270c0ac98ef",
+      position: 15,
+      caption: "Laser Focus",
+      image_desktop: "https://cdn.traitify.com/slides/11a67958-b9ba-4a1b-afe4-afa8590281e5_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/689dab29-132c-43cb-9f88-8b3e40ac59da_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "dcfbc7ff-d778-4a3e-a4ff-7c67cdbbf79e",
+      position: 16,
+      caption: "Very Sensitive",
+      image_desktop: "https://cdn.traitify.com/slides/1d1d774b-dcd7-44c0-bfd3-d6d990318b6e_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/5da0609a-32bb-4201-9277-81079cc5c298_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 110,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 45,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "301cf8e2-5ccd-49e4-8ff6-18a9aa8521f6",
+      position: 17,
+      caption: "Thrill Rides",
+      image_desktop: "https://cdn.traitify.com/slides/3f940f38-2a09-4644-9460-cd005eb987b8_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/33e3beca-156d-4241-a59f-60182fdac976_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 112,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 57,
+      focus_y: 54,
+      alternative_text: null
+    },
+    {
+      id: "d40e0984-d9e7-4126-a627-a8e469a24bbb",
+      position: 18,
+      caption: "Deserve To Be Here",
+      image_desktop: "https://cdn.traitify.com/slides/f745af1d-60cf-4d32-85af-38cf9d4a006b_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/681e3608-b1a1-44c1-8e0a-e3c190a751e0_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 58,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "31ea9289-38ec-4130-8f8b-2183155c501f",
+      position: 19,
+      caption: "Second Guessing",
+      image_desktop: "https://cdn.traitify.com/slides/2cb29208-9a4f-4145-93ca-3a037e83c728_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/65381b11-91d0-4787-81bb-38ebbec1642d_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 31,
+      focus_y: 48,
+      alternative_text: null
+    },
+    {
+      id: "af378d44-3183-423e-9ffc-c1c307643e06",
+      position: 20,
+      caption: "Hard To Start A New Task",
+      image_desktop: "https://cdn.traitify.com/slides/196dc3bc-6959-410c-84e7-0cc10b47acb0_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/25143510-ca9b-45ed-b0a8-4efaf5302d76_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "7e167311-dd28-41d4-9abe-56a62f5bbd4b",
+      position: 21,
+      caption: "First To Offer Sympathy",
+      image_desktop: "https://cdn.traitify.com/slides/0152790f-dbb8-4e27-8e88-44890110cb02_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/525d4cdc-0743-4ea0-983b-0443aa0c3a1c_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 120,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 31,
+      focus_y: 47,
+      alternative_text: null
+    },
+    {
+      id: "8a23d844-5a6b-4a54-b7ca-1d3064a64d20",
+      position: 22,
+      caption: "Outside The Box",
+      image_desktop: "https://cdn.traitify.com/slides/ea960b30-27ed-4ff0-8b9e-eda6d5176df7_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/a9c0ca31-1187-4ec7-b2d8-1078ebed03f6_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "3c144096-60ea-401e-b046-dd2f1c1a2e8d",
+      position: 23,
+      caption: "Want A Taste",
+      image_desktop: "https://cdn.traitify.com/slides/4ab8f03f-ff69-4605-a56f-ae16f6dfc413_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/71902294-adb0-46ae-b06a-d0d8d5d4f6b1_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 65,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "0e9efdd8-5716-4b4a-aa28-d03ab0ba4365",
+      position: 24,
+      caption: "Loud Music",
+      image_desktop: "https://cdn.traitify.com/slides/9447d5f9-63ef-4334-8f53-9f943d457730_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/23e8c8e5-1d49-4e33-8877-82a844accd5e_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 62,
+      focus_y: 47,
+      alternative_text: null
+    },
+    {
+      id: "3770d37c-3c2f-4aae-b849-ecb10cf0cf08",
+      position: 25,
+      caption: "Break The Rules",
+      image_desktop: "https://cdn.traitify.com/slides/69fe4ff3-973f-4dd8-8f45-036041e06fae_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/882b1ffd-dd5d-40fa-9c14-08bdc6551b0a_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 35,
+      focus_y: 48,
+      alternative_text: null
+    },
+    {
+      id: "a9b5f432-4a3c-48b4-ba7d-8fca2bc7c328",
+      position: 26,
+      caption: "Chats In Elevators",
+      image_desktop: "https://cdn.traitify.com/slides/cde2eed5-e103-454d-9781-bac15f797de5_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/738bbcdd-780c-48b6-85f1-25181fa120cb_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 108,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "c99706b2-6296-4260-ad04-95dc894fc495",
+      position: 27,
+      caption: "Have A Mentor",
+      image_desktop: "https://cdn.traitify.com/slides/b3b9b224-7daa-4259-9f44-280e7e5b1ba2_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/677cff3d-a853-4a8a-941c-ef2fb93706e0_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 52,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "7b64ad81-7a40-4f4d-a9ef-519acfa440b3",
+      position: 28,
+      caption: "High Speed",
+      image_desktop: "https://cdn.traitify.com/slides/1b7d8ece-e052-4c54-bf6b-d9e6a0cc114f_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/e27aabfc-6b57-46fb-9ec2-e08b44196e2c_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 56,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "4a84daa6-1661-49c4-8689-60f22883eb6b",
+      position: 29,
+      caption: "Push The Limits",
+      image_desktop: "https://cdn.traitify.com/slides/2d445816-9b38-4c55-900c-a9e0d9dacf05_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/c3a439b6-4b77-4b25-b264-57fc7162a0a1_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 44,
+      focus_y: 52,
+      alternative_text: null
+    },
+    {
+      id: "fae5a580-6b29-4faa-b798-a092a0af6e78",
+      position: 30,
+      caption: "Worry About It Later",
+      image_desktop: "https://cdn.traitify.com/slides/62f37325-3285-4250-86c0-97154b2ee530_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/d1d61245-2634-41fa-9c9b-7f46d5bfa0b7_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 68,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "551848d7-1f69-4946-848b-359d9c7c912f",
+      position: 31,
+      caption: "Makes Friends Everywhere",
+      image_desktop: "https://cdn.traitify.com/slides/61293ffa-a002-4f3d-b4f6-a09e875fc496_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/af426eef-7080-4a07-9b12-f5ad3cfba71d_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 39,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "cb73ffef-9d4f-44d6-8ef5-bde4d4555202",
+      position: 32,
+      caption: "Soup Kitchen",
+      image_desktop: "https://cdn.traitify.com/slides/7879df95-2187-4dfc-a3cf-1f24fc6d96c0_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/9ce7d878-d8a5-4191-99de-c4594fc13388_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "7d166306-b80a-442d-947d-7eed5d6cf7a2",
+      position: 33,
+      caption: "Tend To Feel Sad",
+      image_desktop: "https://cdn.traitify.com/slides/8afa1992-e504-4f4e-b385-680fb93357b0_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/07774de1-ce23-492d-a72a-b3a9cdf6701c_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "bb5b039a-ab05-4596-8066-856c9af05f8d",
+      position: 34,
+      caption: "Think It Over",
+      image_desktop: "https://cdn.traitify.com/slides/26487e77-82bc-42a4-83f0-cc7e63c292cc_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/37350929-a80f-4ce4-9f40-782678d5505b_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "4c8edb06-dd2e-4ff5-9d3e-7d4529619e3c",
+      position: 35,
+      caption: "Wish I Did Better",
+      image_desktop: "https://cdn.traitify.com/slides/346c67cf-a1a3-435f-bd33-240fc8261515_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/626773c8-4bd4-475e-80e6-cf27b9c4037f_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "67e4dfad-5813-4f5a-887d-99531b6e3445",
+      position: 36,
+      caption: "Sometimes Doubt Myself",
+      image_desktop: "https://cdn.traitify.com/slides/b1d68130-9fa8-44ad-a023-eb0ca7a7354c_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/c16e8b41-d626-40ba-8868-86a02728a4e7_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "5077d123-b1c6-42b3-9b42-be0108496ec7",
+      position: 37,
+      caption: "Future Is Bright",
+      image_desktop: "https://cdn.traitify.com/slides/89d26f16-7b79-4d83-ab16-648b40a28c27_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/f3dd0ad1-debe-434b-9802-8966b1bef459_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 60,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "076c9b68-e450-4d76-94e4-5aa9488e8b1a",
+      position: 38,
+      caption: "Ate Too Much",
+      image_desktop: "https://cdn.traitify.com/slides/6c7b1f8d-faf2-45d0-994f-8c779e82f6fb_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/574fc58d-9e28-4035-9817-3898ce67a09d_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "d9333088-1536-4f8e-ad13-e349ba82e794",
+      position: 39,
+      caption: "More Bad News",
+      image_desktop: "https://cdn.traitify.com/slides/e049f142-adff-48b0-b903-9a58b83dacda_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/c63613a5-5047-4727-8e3b-2079b39099c8_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 53,
+      focus_y: 53,
+      alternative_text: null
+    },
+    {
+      id: "3342a5fd-faa7-4717-b20a-da38c5f53cb8",
+      position: 40,
+      caption: "Riled Up",
+      image_desktop: "https://cdn.traitify.com/slides/eca56539-4dcf-4dac-a651-846b74f8cd60_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/d2efef7f-22e2-4a3c-a039-c2b66b14b094_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 35,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "ec574fbe-3c70-4981-8417-ec62dac56afe",
+      position: 41,
+      caption: "Adventure Travel",
+      image_desktop: "https://cdn.traitify.com/slides/0d46eb4b-72de-4a0d-9434-061a4aa75ed9_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/4337ee18-2532-4830-beea-70abb98883e5_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 67,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "661103c8-eb1f-4fd9-ba6c-821005c0851a",
+      position: 42,
+      caption: "Easily Criticized",
+      image_desktop: "https://cdn.traitify.com/slides/081edcbd-5b66-443a-8853-794070c93e80_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/704ab99c-3210-4a22-ba01-da68eb7281aa_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 57,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "e103a360-07b2-40a7-9fe2-4fd39e21ae96",
+      position: 43,
+      caption: "Frequently Changing My Mind",
+      image_desktop: "https://cdn.traitify.com/slides/b2e017f6-5664-4292-bc65-60731ac1fb80_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/e0f0964c-f6f2-4f2b-9c6a-c5eb8665ff6e_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 53,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "98fcea76-a1e5-48dd-8f94-a3a0a0aa4822",
+      position: 44,
+      caption: "Up To The Job",
+      image_desktop: "https://cdn.traitify.com/slides/d668f07a-7c6d-403f-b788-815146097056_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/a5014bf3-530d-4efe-a970-06f6d9324685_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 33,
+      focus_y: 42,
+      alternative_text: null
+    },
+    {
+      id: "2cae703b-fe70-4364-af8e-32d214b7ef0b",
+      position: 45,
+      caption: "Join The Bonfire",
+      image_desktop: "https://cdn.traitify.com/slides/9613dff0-3fd8-4d32-b260-cff0f5ba6404_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/407f4255-c241-4e54-bb41-fdd4c4478b33_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "5ff494e4-a349-4099-b420-6db8627ee824",
+      position: 46,
+      caption: "Know The Rule Book",
+      image_desktop: "https://cdn.traitify.com/slides/822cc843-23a9-49a9-8e35-4a43e9d6bc34_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/f76636b2-4600-427a-85b3-5ffc777c32b1_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 31,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "93132736-2b5f-4bee-a6dc-69198efef5cd",
+      position: 47,
+      caption: "Need Others",
+      image_desktop: "https://cdn.traitify.com/slides/e1a79f69-fe20-4e51-8412-c81563231d8a_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/8391071b-df33-45f3-9226-dc83154ab5f0_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 49,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "74751680-1afb-407a-89b3-767c7a23b57a",
+      position: 48,
+      caption: "Demonstrate My Talents",
+      image_desktop: "https://cdn.traitify.com/slides/97f67808-dfea-447c-b797-b9e6fc8caff4_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/cd1236a8-29c2-4897-be82-38a7453d7604_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 19,
+      focus_y: 48,
+      alternative_text: null
+    },
+    {
+      id: "f6aa723d-8048-4bdd-8fc5-eda8c61c6c1f",
+      position: 49,
+      caption: "Well-Liked",
+      image_desktop: "https://cdn.traitify.com/slides/df4d5ea7-e524-4ff3-9934-ec3e8e69b827_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/fa43fa08-bcc6-4025-82c2-2038389c5627_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "f9e6f7ee-2b7b-48ca-a4ff-4ccbdbe057da",
+      position: 50,
+      caption: "Good At Networking",
+      image_desktop: "https://cdn.traitify.com/slides/6e3b7423-4669-41ac-88db-35acd9747d59_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/ae56c606-c940-4c0f-8525-47bb8de39980_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 59,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "530ec1b2-1a93-4c23-9d97-46fa18ad08d4",
+      position: 51,
+      caption: "Smart Buys",
+      image_desktop: "https://cdn.traitify.com/slides/f0e9da15-bc4f-4e04-b92f-650b2c4e6781_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/314711f2-4eba-4f3a-8f94-41bba688cee1_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "bc609ea6-e53f-452d-a712-8ab80fbecbf1",
+      position: 52,
+      caption: "Last Minute Changes",
+      image_desktop: "https://cdn.traitify.com/slides/6fb01089-2a9c-4605-89bc-2613a82f7957_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/61bfe4a6-5974-42f9-9bf0-34fa26cfcb8b_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 22,
+      focus_y: 54,
+      alternative_text: null
+    },
+    {
+      id: "c7d9afc8-9c26-44e4-bb92-bc221b767acf",
+      position: 53,
+      caption: "Lose Interest",
+      image_desktop: "https://cdn.traitify.com/slides/8d757665-48d7-4233-9de2-9ed963d3f872_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/bf44a67c-df44-40e7-a5b9-a9ed211bc52f_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 59,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "3c2693a3-c782-42d4-afa2-5a5e1858fc58",
+      position: 54,
+      caption: "Snap Decision",
+      image_desktop: "https://cdn.traitify.com/slides/6518a061-9d1b-4d6f-b0fe-d9ccf021f499_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/1f818674-7665-4049-b3fb-d2bc70c6ec20_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "e42b82c0-51ba-4a52-bc29-619735dce93f",
+      position: 55,
+      caption: "Need Reassurance",
+      image_desktop: "https://cdn.traitify.com/slides/7ec59e21-f333-47ec-a7bb-88b3b548c9dd_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/9f11a5c0-d5f0-4972-9392-f4eb43bfa3d5_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 46,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "3eacf315-f004-4f57-8ba1-f31696a40ab6",
+      position: 56,
+      caption: "Self-Reliant",
+      image_desktop: "https://cdn.traitify.com/slides/bc2ddafb-a09d-4460-85b8-84a2f804e4e0_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/f325be1e-1962-467f-bfb6-a09986a3a5af_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 57,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "8ebf2504-36b3-4cd2-8ccc-839399b16c20",
+      position: 57,
+      caption: "Talk All Night",
+      image_desktop: "https://cdn.traitify.com/slides/456675f3-1e9b-45da-b6cd-00975bba7de2_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/befbd4c5-6a3a-4718-8de7-d65acc671da2_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 63,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "a37b5f9a-7fb6-4af4-8a1e-8e8e35475b6e",
+      position: 58,
+      caption: "Bad Habits",
+      image_desktop: "https://cdn.traitify.com/slides/5f878524-7909-43fe-b3d9-f9cfb7bf21c6_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/b96d0524-6ac2-4109-afd8-3bc9afbe121c_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "08f7d820-6387-4816-bdcc-1e607497f37f",
+      position: 59,
+      caption: "Grounded In Reality",
+      image_desktop: "https://cdn.traitify.com/slides/8bb1ed3d-e925-489a-b6c0-75e97764cea1_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/5c9a29f7-e815-407b-9c97-b79d8192f426_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "d9be77e6-c5d1-4044-a0e5-e87b13082069",
+      position: 60,
+      caption: "Phone Friends Just To Check In",
+      image_desktop: "https://cdn.traitify.com/slides/03d7a05d-d423-41f1-a948-78d91f7fa849_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/11b5416b-4ace-4465-b9d4-1a8555e9b404_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 35,
+      focus_y: 53,
+      alternative_text: null
+    },
+    {
+      id: "ffb8db3e-d2b3-45fe-bb8b-27b4ab3a4b5d",
+      position: 61,
+      caption: "Ups And Downs",
+      image_desktop: "https://cdn.traitify.com/slides/958002e6-4a72-426f-809b-ab53b55fffa8_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/3b618d8a-1433-4dee-9f17-6376ff386e94_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "3a7f72ba-c361-491f-84ce-d69511afdd7e",
+      position: 62,
+      caption: "Sometimes Lose Things",
+      image_desktop: "https://cdn.traitify.com/slides/524b9492-ee33-4385-a03e-f32b5bd975e2_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/488ada2d-f54c-4e37-849a-6019a5d278a5_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "13a0dbc1-a54f-48b5-84d5-db0bc3e263f2",
+      position: 63,
+      caption: "Strangers Trust Me",
+      image_desktop: "https://cdn.traitify.com/slides/5c78c2a3-f1c1-4ca9-842a-39ab370ca53e_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/c7007603-490c-4d37-b94f-6cbf8d140f35_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 63,
+      focus_y: 54,
+      alternative_text: null
+    },
+    {
+      id: "4acff1fe-47f2-4106-b8d7-48174ea0996e",
+      position: 64,
+      caption: "Strive To Improve",
+      image_desktop: "https://cdn.traitify.com/slides/945e0795-388e-469e-a51a-1c5d764e72aa_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/a5f3bb8d-a84b-47fc-a714-e0d0256d2f4f_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 78,
+      focus_y: 41,
+      alternative_text: null
+    },
+    {
+      id: "c8542198-affa-469a-b738-e88909fa7c7c",
+      position: 65,
+      caption: "Always On The Go",
+      image_desktop: "https://cdn.traitify.com/slides/81371014-d1b7-4c5e-8d36-ae977af469a0_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/25c9f312-66b8-4d0c-a398-8ba35f2c4fee_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "f0f88d41-4029-4a0a-948e-f66b306fb2de",
+      position: 66,
+      caption: "Feel The Pressure",
+      image_desktop: "https://cdn.traitify.com/slides/e3e2474d-6c6f-4da8-a348-9802b91cb56c_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/dfa7e083-bcfb-4ff9-9d69-4d642bf874de_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 35,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "22a23da7-8d51-4fc1-b977-772202eacfd0",
+      position: 67,
+      caption: "Rely On Myself",
+      image_desktop: "https://cdn.traitify.com/slides/04dad87d-7b0f-4cec-afd7-d161ce9dec13_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/ce0bbd11-6454-49d6-b06f-06b2ff8d285f_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "c4c3bd7a-9686-4704-b7ab-5d3fb06ccc82",
+      position: 68,
+      caption: "Depend On Friends",
+      image_desktop: "https://cdn.traitify.com/slides/5ab01ec8-3a0c-41cd-9305-2ea999dd2024_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/107a0bde-8f6f-40c3-b66f-8f3ee9e343dd_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "bbe4b428-af31-46f2-bf9b-1f7387082dcd",
+      position: 69,
+      caption: "Put Off Until Later",
+      image_desktop: "https://cdn.traitify.com/slides/3994ac5e-16a7-483d-86c2-36247b582b0c_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/1b9c6de8-702c-47fb-9a88-1f11be13fa91_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 65,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "08396580-4f86-42b7-a3c4-c6c9f358bf29",
+      position: 70,
+      caption: "Bit Of A Worrier",
+      image_desktop: "https://cdn.traitify.com/slides/e6475fbd-a0fd-4d50-8dd0-0da85b65c15f_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/118b0eef-c2af-41b5-ab7e-f1447e23edce_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 79,
+      focus_y: 47,
+      alternative_text: null
+    },
+    {
+      id: "396635f9-62a6-4cb3-901b-92ebf63932a8",
+      position: 71,
+      caption: "Put My Foot In My Mouth",
+      image_desktop: "https://cdn.traitify.com/slides/bdcf90c3-20e0-48fc-9dc7-2a893dc49575_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/b937fb30-1410-45e5-92d1-140f5775ad2b_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 65,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "ca19b635-5910-465a-8c05-2e0e7260cd11",
+      position: 72,
+      caption: "Get Through It",
+      image_desktop: "https://cdn.traitify.com/slides/9ae1ad32-0d3d-48c8-8983-52d3ed18db48_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/dcf5a9ed-2d3f-4a8e-b148-4b3b60ca9c47_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "069edea6-c625-4e86-8da6-386b8c33804f",
+      position: 73,
+      caption: "Out Of Bounds",
+      image_desktop: "https://cdn.traitify.com/slides/4b698a7a-4883-4a54-b176-35448ff9ec49_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/5a97f854-5285-4668-9020-d3fdfc23775b_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 102,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "fe5a1333-f025-49d2-a91c-0ec4949f01f7",
+      position: 74,
+      caption: "Bounce Back",
+      image_desktop: "https://cdn.traitify.com/slides/0920fa20-d92c-4fbb-b273-be676e3c3498_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/1b8273f3-623b-46b4-b8a4-b009a2af43e9_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 47,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "e8fbcb20-f075-46e8-9719-5f9a801b35d0",
+      position: 75,
+      caption: "Start At Step One",
+      image_desktop: "https://cdn.traitify.com/slides/cfbf2442-b770-4a71-86e6-c3b9f0e236e8_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/691120e7-2a1e-4055-b440-c19bddf88f6f_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 103,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "3fc3489a-9557-429d-94bd-5bcd9f9c9053",
+      position: 76,
+      caption: "Prankster",
+      image_desktop: "https://cdn.traitify.com/slides/d0a56eb8-0136-40b5-a84f-3b482a95e167_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/76fba735-4ee9-4809-a162-fe69a30da21c_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 29,
+      focus_y: 47,
+      alternative_text: null
+    },
+    {
+      id: "915023c4-c960-4b55-80d6-afbfaf9078e6",
+      position: 77,
+      caption: "Show Everyone",
+      image_desktop: "https://cdn.traitify.com/slides/e6c11b28-b7bc-42c8-ad7f-9813d70ec3b5_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/d49836bd-3336-4a6e-b596-669008c18f88_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 104,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 44,
+      focus_y: 47,
+      alternative_text: null
+    },
+    {
+      id: "aab141a5-b2f1-429c-b65d-605916747a0e",
+      position: 78,
+      caption: "Can Be Taught",
+      image_desktop: "https://cdn.traitify.com/slides/931e8a76-20c3-4904-a913-b3f441a0f384_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/40627b4d-674e-4715-9712-9b616061eff1_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "86bb047c-41db-4da0-81f5-4bd240e21e56",
+      position: 79,
+      caption: "Like Surprises",
+      image_desktop: "https://cdn.traitify.com/slides/584f4723-beac-4f44-b53f-788c9057dc7f_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/ac2df01c-f932-45ec-9436-f032d7936c47_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 56,
+      focus_y: 48,
+      alternative_text: null
+    },
+    {
+      id: "42768595-1f26-455b-95b6-868d30f3e869",
+      position: 80,
+      caption: "Give Honest Evaluations",
+      image_desktop: "https://cdn.traitify.com/slides/56fa9b38-a244-44e1-b309-11081b9978ca_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/787bc872-1e06-45a2-b2d5-bee3abbcc489_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 51,
+      focus_y: 49,
+      alternative_text: null
+    },
+    {
+      id: "7b40a49c-3752-4d05-bc1e-6ccd7c876479",
+      position: 81,
+      caption: "Easily Upset",
+      image_desktop: "https://cdn.traitify.com/slides/f3af35cc-3a98-4239-8681-adee159a4d61_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/02eb852d-c7cc-41fd-94d6-efe1ec334241_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 62,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "c09cef8d-7e85-443e-bd14-720efa3e745d",
+      position: 82,
+      caption: "You Only Live Once",
+      image_desktop: "https://cdn.traitify.com/slides/544bd9a3-03d7-4226-a23c-978de22556f0_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/32682a3f-d8d5-4f14-90d6-4cae74b3cd73_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "bd7cb89b-fc22-4558-8fa4-3a740cd7429f",
+      position: 83,
+      caption: "Do It Right The First Time",
+      image_desktop: "https://cdn.traitify.com/slides/4cf49326-654c-469f-a6a1-8a919898bfbd_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/0d96bc5f-6c10-4d13-8ca2-740c4d3f8f3f_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 107,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 40,
+      focus_y: 52,
+      alternative_text: null
+    },
+    {
+      id: "e020dcb6-6af9-44db-8272-8dfa10d8db72",
+      position: 84,
+      caption: "Caretaking",
+      image_desktop: "https://cdn.traitify.com/slides/322d43e5-9736-4194-a4d1-c22af18f8d51_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/a7158298-0f67-4ea0-8a93-7750f208d4d5_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "731f97b7-d49a-4782-9902-6ceffe67d612",
+      position: 85,
+      caption: "Group Projects",
+      image_desktop: "https://cdn.traitify.com/slides/9efd73e3-9a88-4f4d-96d9-22bf80f16140_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/002853f9-a340-4f93-b44a-198da639507c_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 38,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "f3ee21ec-f92c-4c78-812d-2e5cf5b14cb1",
+      position: 86,
+      caption: "Earned My Success",
+      image_desktop: "https://cdn.traitify.com/slides/cd30cdb9-f0be-4354-a668-0194e3e63680_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/cfc64382-a4eb-458f-832d-97c6ddfd7d3a_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "95fab5a1-5c4a-42ad-b583-8fe85208c516",
+      position: 87,
+      caption: "Disappointed",
+      image_desktop: "https://cdn.traitify.com/slides/8d88fd1a-14e9-4ac7-942e-216d5cfd9d8e_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/d75f0593-37ff-47dd-80c0-17432fb29b8a_desktop_retina",
+      response: null,
+      likert_response: "REALLY_NOT_ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    },
+    {
+      id: "3d8cad5d-c8d8-400f-a73d-0262b94b2072",
+      position: 88,
+      caption: "Share The Credit",
+      image_desktop: "https://cdn.traitify.com/slides/1bad1113-4b4b-49cd-a385-370250091850_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/b9a11d2a-18ff-4221-9118-27953d86f4bd_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 105,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 37,
+      focus_y: 51,
+      alternative_text: null
+    },
+    {
+      id: "50296ebf-081d-4b96-a862-a5736211d1cb",
+      position: 89,
+      caption: "Try Again",
+      image_desktop: "https://cdn.traitify.com/slides/98ac50c0-309b-41fa-9c81-de9176331f36_desktop",
+      image_desktop_retina: "https://cdn.traitify.com/slides/a6303102-3dc8-4ff0-88a2-54390bf0a6d9_desktop_retina",
+      response: null,
+      likert_response: "ME",
+      time_taken: 106,
+      completed_at: null,
+      created_at: 1569278559394,
+      focus_x: 50,
+      focus_y: 50,
+      alternative_text: null
+    }
+  ],
+  archetype: {
+    id: "b2182a80-6363-429e-b74a-a8462229face",
+    name: "Conservative",
+    personalityGroupId: "12c9e071-1968-4846-8134-983d4b0a48ad",
+    details: [
+      {
+        title: "Badge",
+        body: "https://cdn.traitify.com/frtq/conservative.png"
+      },
+      {
+        title: "Color",
+        body: "#4fe0c4"
+      },
+      {
+        title: "First Person Analysis",
+        body: "Your financial risk style is influenced by your life circumstances, such as your age and financial needs. Beyond those parameters, your approach to financial risk is influenced by important components of your personality. Some examples are your level of spontaneity and the degree to which you enjoy learning about new topics. Each of us is a blend of core components. By considering how these factors work together, we gain a picture of your approach to financial risk."
+      },
+      {
+        title: "First Person Description",
+        body: "Your assessment results show that your Financial Risk Style is Conservative. Financial Risk Style scores range from 1-100, with higher scores indicating a greater willingness to take on more financial risk. In general, you are significantly less interested in assuming risk in your portfolio compared to most investors."
+      },
+      {
+        title: "First Person Everyday Life Detail",
+        body: "You dislike when others send mixed messages or when they say one thing and do another."
+      },
+      {
+        title: "First Person Everyday Life Title",
+        body: "Routines comfort you. You take a careful approach to life. Some other characteristics of your approach to daily life:"
+      },
+      {
+        title: "First Person Financial Decisions Detail",
+        body: "Your investments will favor index funds and traditional industries, and look largely the same from year to year."
+      },
+      {
+        title: "First Person Financial Decisions Title",
+        body: "You prefer to have a plan for your financial decisions that indicates what will be done quarter by quarter, including notes about mitigating circumstances and alternative plans. Some other characteristics of your approach to financial decisions:"
+      },
+      {
+        title: "Takeaways",
+        body: "Are unlikely to change strategy from year to year"
+      },
+      {
+        title: "Takeaways",
+        body: "Decisions come relatively easily"
+      },
+      {
+        title: "Takeaways",
+        body: "Have high degree of trust in financial advisors"
+      },
+      {
+        title: "Takeaways",
+        body: "Make decisions after discussion and research"
+      },
+      {
+        title: "Takeaways",
+        body: "Prefer a formal, structured decision making process"
+      },
+      {
+        title: "Takeaways",
+        body: "Rely on data and precedent, not on hunches"
+      },
+      {
+        title: "Third Person Analysis",
+        body: "This individual's financial risk style is influenced by their life circumstances, such as their age and financial needs. Beyond those parameters, their approach to financial risk is influenced by important components of their personality. Some examples are their level of spontaneity and the degree to which they enjoy learning about new topics. Each of us is a blend of core components. By considering how these factors work together, we gain a picture of their approach to financial risk."
+      },
+      {
+        title: "Third Person Description",
+        body: "This individual's assessment results show that their Financial Risk Style is Conservative. Financial Risk Style scores range from 1-100, with higher scores indicating a greater willingness to take on more financial risk. In general, they are significantly less interested in assuming risk in their portfolio compared to most investors."
+      },
+      {
+        title: "Third Person Everyday Life Detail",
+        body: "They dislike when others send mixed messages or when they say one thing and do another."
+      },
+      {
+        title: "Third Person Everyday Life Title",
+        body: "Routines comfort this individual. They take a careful approach to life. Some other characteristics of their approach to daily life:"
+      },
+      {
+        title: "Third Person Financial Decisions Detail",
+        body: "Their investments will favor index funds and traditional industries, and look largely the same from year to year."
+      },
+      {
+        title: "Third Person Financial Decisions Title",
+        body: "This individual prefers to have a plan for their financial decisions that indicates what will be done quarter by quarter, including notes about mitigating circumstances and alternative plans. Some other characteristics of their approach to financial decisions:"
+      },
+      {
+        title: "risk_level",
+        body: "neutral"
+      }
+    ],
+    environments: [],
+    personalityTypes: [],
+    localeKey: "en-US"
+  },
+  overall_score: 41.57
+};

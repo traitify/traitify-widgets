@@ -3,7 +3,7 @@ import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/financial-risk.json";
+import assessment from "support/data/assessment/personality/financial-risk";
 
 jest.mock("components/results/financial-risk/archetype/details", () => (() => <div className="mock">Archetype Details</div>));
 jest.mock("components/results/financial-risk/archetype/heading", () => (() => <div className="mock">Archetype Heading</div>));
@@ -14,7 +14,7 @@ jest.mock("components/results/financial-risk/dimension/list", () => (() => <div 
 describe("Results.FinancialRisk", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
 
   it("renders component", async() => {

@@ -1,0 +1,68 @@
+@import "style/helpers";
+
+$grid-buffer-x: $buffer;
+$grid-buffer-x-sm: $grid-buffer-x * 0.5;
+$grid-buffer-y: $buffer;
+$row-buffer-y: $buffer;
+$pill-buffer-x: $buffer;
+$pill-buffer-x-sm: $pill-buffer-x * 0.5;
+$pill-height: 12px;
+$pill-radius: $pill-height * 0.5;
+$pill-active-height: 24px;
+$pill-active-radius: 6px;
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+}
+.chart {
+  .active {
+    &.high { @include theme("background", "rank-high"); }
+    &.low { @include theme("background", "rank-low"); }
+    &.high, &.low {
+      border-radius: $pill-active-radius;
+      height: $pill-active-height;
+    }
+  }
+  .grid {
+    border-bottom: $border-width solid;
+
+    @include theme("border-bottom-color", "border");
+  }
+  .grid, .scale {
+    margin: $grid-buffer-y $grid-buffer-x-sm;
+
+    @include min-width("sm") {
+      margin-left: $grid-buffer-x;
+      margin-right: $grid-buffer-x;
+    }
+  }
+  .high { @include theme("background", "rank-high-light"); }
+  .low { @include theme("background", "rank-low-light"); }
+  .high, .low {
+    flex: 1 auto;
+    border-radius: $pill-radius;
+    height: $pill-height;
+    position: relative;
+  }
+  .row {
+    padding-bottom: $row-buffer-y;
+    padding-top: $row-buffer-y;
+  }
+  .row, .scale {
+    align-items: center;
+    display: flex;
+    gap: $pill-buffer-x-sm;
+    text-align: center;
+
+    @include min-width("sm") { gap: $pill-buffer-x; }
+  }
+  .scale {
+    @include theme("color", "border");
+
+    > div { flex: 1 auto; }
+  }
+}
+.p { @extend %paragraph; }

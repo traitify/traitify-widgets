@@ -2,13 +2,13 @@ import Component from "components/results/personality/dimension/chart";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockGuide, useAssessment, useGuide} from "support/container/http";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
-import guide from "support/json/guide.json";
+import assessment from "support/data/assessment/personality/dimension-based";
+import guide from "support/data/guide.json";
 
 describe("PersonalityDimensionChart", () => {
   let component;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
   useGuide(guide, {assessmentID: assessment.id});
 

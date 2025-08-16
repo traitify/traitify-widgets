@@ -1,6 +1,6 @@
 import getDetails from "lib/common/get-details";
 import mutable from "lib/common/object/mutable";
-import assessment from "support/json/assessment/dimension-based.json";
+import assessment from "support/data/assessment/personality/completed";
 
 describe("getDetails", () => {
   let options;

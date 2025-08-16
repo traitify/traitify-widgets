@@ -12,15 +12,15 @@ import {
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import useContainer from "support/hooks/use-container";
-import assessment from "support/json/assessment/dimension-based.json";
-import benchmark from "support/json/benchmark.json";
-import _guide from "support/json/guide.json";
+import assessment from "support/data/assessment/personality/completed";
+import {data as benchmark} from "support/data/benchmark";
+import _guide from "support/data/guide.json";
 
 describe("Results.RecommendationChart", () => {
   let component;
   let guide;
 
-  useContainer();
+  useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
   useBenchmark(benchmark);
   useSettings({});

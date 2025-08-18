@@ -38,6 +38,7 @@
   
   & > div {
     @extend %box;
+    @extend %container;
     margin-bottom: $buffer-section;
   }
 }

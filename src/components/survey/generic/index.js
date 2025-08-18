@@ -25,6 +25,7 @@ export default function Generic() {
   const [submitAttempts, setSubmitAttempts] = useState(0);
 
   const assessment = useAssessment({surveyType: "generic"});
+  if(assessment?.completedAt) { return; }
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const questionSets = assessment ? assessment.survey.questionSets : [];

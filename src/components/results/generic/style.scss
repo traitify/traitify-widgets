@@ -1,16 +1,5 @@
 @import "style/helpers";
 
-.actions {
-  color: #A9A9A9;
-  display: flex;
-  gap: $buffer;
-}
-
-.assessmentResult {
-  display: flex;
-  justify-content: space-between;
-}
-
 .breakdown {
   display: flex;
   flex-direction: column;
@@ -77,13 +66,7 @@
   justify-content: space-between;
 }
 
-.header {
-  background-color: $-white;
-  border-bottom: 1px solid #DADCE0;
-  display: flex;
-  justify-content: space-between;
-  padding: $buffer $buffer-lg;
-}
+
 
 .iconCorrect {
   color: $-aquamarine;
@@ -101,32 +84,6 @@
 
 .overall {
   background-color: $-blue;
-}
-
-.profileCircle {
-  align-items: center;
-  background-color: #DD7373;
-  border: 2px solid #FAC4C4;
-  border-radius: 50%;
-  color: $-white;
-  display: flex;
-  font-size: $font-size-lg;
-  height: $buffer-lg * 2.5;
-  justify-content: center;
-  width: $buffer-lg * 2.5;
-}
-
-.profileDetails {
-  color: #A9A9A9;
-  display: flex;
-  flex-direction: row;
-  gap: $buffer;
-}
-
-.profileName {
-  color: $-black;
-  font-size: $font-size-lg;
-  font-weight: 700;
 }
 
 .question {

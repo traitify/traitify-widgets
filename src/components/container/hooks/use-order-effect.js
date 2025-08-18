@@ -35,6 +35,12 @@ export default function useOrderEffect() {
       if(nextAssessment) { setActive({...nextAssessment}); }
 
       return;
+    } else {
+      // Update base active assessment from baseAssessmentState with loaded assessment
+      if(active.completed === undefined) {
+        const currentAssessment = order.assessments.find(({id}) => id === active.id);
+        setActive({...currentAssessment});
+      }
     }
 
     // NOTE: Show personality results

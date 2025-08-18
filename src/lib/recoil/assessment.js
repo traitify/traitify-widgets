@@ -127,7 +127,7 @@ export const genericAssessmentQuery = selectorFamily({
     }
 
     const assessment = response.data.genericSurveyQuestions;
-    if(!assessment?.length || !assessment?.completedAt) { return assessment; }
+    if(!assessment?.completedAt) { return assessment; }
 
     cache.set(cacheKey, assessment);
 

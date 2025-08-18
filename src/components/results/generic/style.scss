@@ -34,14 +34,11 @@
 .contentBody {
   display: flex;
   flex-direction: column;
-  gap: $buffer-lg;
-  margin: $buffer-lg auto;
-  width: $breakpoint-lg;
+  @extend %container;
   
   & > div {
-    border: 1px solid #DADCE0;
-    border-radius: $border-radius-sm;
-    padding: $buffer;
+    @extend %box;
+    margin-bottom: $buffer-section;
   }
 }
 

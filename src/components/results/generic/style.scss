@@ -14,7 +14,6 @@
   width: 100%;
 
   button {
-    border: 1px solid #DADCE0;
     border-radius: $border-radius-sm * 0.5;
     height: 48px;
     margin: $buffer $buffer * 0.5;
@@ -27,6 +26,7 @@
       height: $buffer * 2;
       margin: $buffer-sm * 0.5;
       padding: $buffer-sm * 0.5 $buffer-sm * 1.25;
+      border: 1px solid #DADCE0;
     }
   }
 }
@@ -36,7 +36,7 @@
   flex-direction: column;
   @extend %container;
   
-  & > div {
+  .score, .breakdown {
     @extend %box;
     @extend %container;
     margin-bottom: $buffer-section;
@@ -85,9 +85,7 @@
 }
 
 .question {
-  border: 1px solid #DADCE0;
-  border-radius: $border-radius-sm;
-  padding: $buffer * 0.75 $buffer;
+  @extend %box;
 }
 
 .questionContent {
@@ -123,12 +121,11 @@
 .questions {
   display: flex;
   flex-direction: column;
-  gap: $buffer * 0.5;
+  gap: $buffer;
 }
 
 .responseOption {
-  border: 1px solid #DADCE0;
-  border-radius: $border-radius-sm;
+  @extend %box;
   font-weight: 500;
   padding: $buffer-lg * 0.25 $buffer-lg * 0.5;
   text-align: center;

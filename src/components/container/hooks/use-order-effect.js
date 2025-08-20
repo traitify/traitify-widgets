@@ -35,12 +35,6 @@ export default function useOrderEffect() {
       if(nextAssessment) { setActive({...nextAssessment}); }
 
       return;
-    } else {
-      // Update base active assessment from baseAssessmentState with loaded assessment
-      if(active.completed === undefined) {
-        const currentAssessment = order.assessments.find(({id}) => id === active.id);
-        setActive({...currentAssessment});
-      }
     }
 
     // NOTE: Show personality results
@@ -58,9 +52,10 @@ export default function useOrderEffect() {
     // NOTE: Start next assessment
     if(currentAssessment.completed) {
       const nextAssessment = order.assessments.find(({completed}) => !completed);
-      if(nextAssessment) { setActive({...nextAssessment}); }
-
-      return;
+      if(nextAssessment) {
+        setActive({...nextAssessment});
+        return;
+      }
     }
 
     // NOTE: Load updates for active assessment

@@ -4,7 +4,7 @@ import EmployeeReport from "components/report/employee";
 import ManagerReport from "components/report/manager";
 import Cognitive from "components/results/cognitive";
 import FinancialRiskResults from "components/results/financial-risk";
-import Generic from "components/results/generic";
+import GenericResults from "components/results/generic";
 import Skipped from "components/status/skipped";
 import useActive from "lib/hooks/use-active";
 import useComponentEvents from "lib/hooks/use-component-events";
@@ -22,7 +22,7 @@ export default function Results() {
   if(active.skipped) { return <Skipped />; }
   if(!active.completed) { return null; }
   if(active.surveyType === "cognitive") { return <Cognitive />; }
-  if(active.surveyType === "generic") { return <Generic />; }
+  if(active.surveyType === "generic") { return <GenericResults />; }
   if(active.surveyType !== "personality") { return null; }
   if(!results) { return null; }
   if(results.scoring_scale === "LIKERT_CUMULATIVE_POMP") {

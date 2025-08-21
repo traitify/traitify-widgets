@@ -54,6 +54,7 @@ export default function useOrderEffect() {
       const nextAssessment = order.assessments.find(({completed}) => !completed);
       if(nextAssessment) {
         setActive({...nextAssessment});
+
         return;
       }
     }

@@ -17,7 +17,7 @@ import Container from "./container";
 import QuestionSet from "./question-set";
 import style from "./style.scss";
 
-export default function Generic() {
+export default function GenericSurvey() {
   const [questionSetIndex, setQuestionSetIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [showInstructions, setShowInstructions] = useState(false);

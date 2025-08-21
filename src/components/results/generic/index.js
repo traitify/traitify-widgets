@@ -6,7 +6,7 @@ import Breakdown from "./breakdown";
 import Score from "./score";
 import style from "./style.scss";
 
-export default function Generic() {
+export default function GenericResults() {
   const [result, setResult] = useState(null);
   const assessment = useResults({surveyType: "generic"});
   const assessmentResult = result ? result.assessment : {};

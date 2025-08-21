@@ -1,40 +1,18 @@
-import {useState, useEffect} from "react";
-import useGraphql from "lib/hooks/use-graphql";
-import useHttp from "lib/hooks/use-http";
 import useResults from "lib/hooks/use-results";
 import Breakdown from "./breakdown";
 import Score from "./score";
 import style from "./style.scss";
 
 export default function GenericResults() {
-  const [result, setResult] = useState(null);
-  const assessment = useResults({surveyType: "generic"});
-  const assessmentResult = result ? result.assessment : {};
-
-  const graphQL = useGraphql();
-  const http = useHttp();
-
-  useEffect(() => {
-    if(assessment === null) return;
-    const query = graphQL.generic.result;
-    const variables = {assessmentID: assessment.id};
-
-    http.post(graphQL.generic.path, {query, variables}).then(({data, errors}) => {
-      if(!errors && data.genericAssessmentResult) {
-        setResult(data.genericAssessmentResult);
-      } else {
-        console.warn(errors || data); // eslint-disable-line no-console
-      }
-    });
-  }, [assessment]);
+  const result = useResults({surveyType: "generic"});
 
   return (
     <div>
       {result && (
         <div className={style.container}>
           <div className={style.contentBody}>
-            <Score assessmentResult={assessmentResult} />
-            <Breakdown assessmentResult={assessmentResult} />
+            <Score assessmentResult={result} />
+            <Breakdown assessmentResult={result} />
           </div>
         </div>
       )}

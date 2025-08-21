@@ -129,9 +129,16 @@ export const genericAssessmentQuery = selectorFamily({
     const assessment = response.data.genericSurveyQuestions;
     if(!assessment?.completedAt) { return assessment; }
 
-    cache.set(cacheKey, assessment);
+    const query = GraphQL.generic.result;
+    const variables = {assessmentID: id};
 
-    return assessment;
+    const resultResponse = await http.post(GraphQL.generic.path, {query, variables});
+    if(resultResponse.errors) { return null; }
+    const result = resultResponse.data.genericAssessmentResult.assessment;
+
+    cache.set(cacheKey, result);
+
+    return result;
   },
   key: "assessment/generic"
 });

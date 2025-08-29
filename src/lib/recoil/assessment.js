@@ -111,7 +111,7 @@ export const genericAssessmentQuery = selectorFamily({
     const cache = get(cacheState);
     const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
     const cached = cache.get(cacheKey);
-    if(cached) { return cached; }
+    if(cached && !cached.completed) { return cached; }
 
     const GraphQL = get(graphqlState);
     const http = get(httpState);

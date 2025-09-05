@@ -46,37 +46,16 @@ export const questions = `
           }
         }
       }
-    }
-  }
-`;
-
-export const result = `
-  query($assessmentID: ID!) {
-    genericAssessmentResult(assessmentId: $assessmentID) {
-      profile {
-        profileId
-        firstName
-        lastName
-      }
-      assessment {
-        localeKey
-        profileId
-        surveyId
-        surveyName
-        startedAt
-        totalCorrectResponses
-        completedAt
-        responses {
-          questionId
-          questionText
-          selectedResponseOptionId
-          setImage
+      responses {
+        questionId
+        questionText
+        selectedResponseOptionId
+        setImage
+        isCorrect
+        responseOptions {
+          responseOptionId
+          responseOptionText
           isCorrect
-          responseOptions {
-            responseOptionId
-            responseOptionText
-            isCorrect
-          }
         }
       }
     }
@@ -91,6 +70,19 @@ export const update = `
       profileId
       startedAt
       completedAt
+      totalCorrectResponses
+      responses {
+        questionId
+        questionText
+        selectedResponseOptionId
+        setImage
+        isCorrect
+        responseOptions {
+          responseOptionId
+          responseOptionText
+          isCorrect
+        }
+      }
     }
   }
 `;

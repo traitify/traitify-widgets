@@ -61,7 +61,8 @@ export default function GenericSurvey() {
       if(!errors && data.submitGenericAssessmentAnswers) {
         setShowConclusions(true);
         setTimeout(() => {
-          cache.set(assessmentCacheKey, {...assessment, completed: true});
+          const response = data.submitGenericAssessmentAnswers;
+          cache.set(assessmentCacheKey, {...response, completed: true});
           refreshAssessment();
         }, 5000);
       } else {

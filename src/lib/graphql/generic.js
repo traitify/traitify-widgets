@@ -15,6 +15,7 @@ export const create = `
       profileId
       startedAt
       completedAt
+      localeKey
     }
   }
 `;
@@ -27,6 +28,8 @@ export const questions = `
       profileId
       startedAt
       completedAt
+      totalCorrectResponses
+      localeKey
       survey {
         id
         name

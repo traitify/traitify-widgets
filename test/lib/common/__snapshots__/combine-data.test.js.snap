@@ -30,7 +30,7 @@ The first question is looking to confirm what they should be like; the second tw
 Are their ideas new, original or different in any way?
 Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
 And to probe into possible issues with being open-minded/pragmatic.",
-              "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+              "questionText": "Tell me how you would go about solving a work problem you have not encountered before.",
             },
             {
               "adaptability": "Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
@@ -41,7 +41,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
               "purpose": "How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?",
-              "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
+              "questionText": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
             },
             {
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?
@@ -51,7 +51,7 @@ Can they provide an example of sticking with experience, and the tried-and-teste
               "purpose": "Do they sometimes not learn from the past?
 Do they move on too quickly without consolidating what they have learned?
 Do they sometimes override their experience because they think they need to demonstrate original thought?",
-              "text": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
+              "questionText": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
             },
           ],
         },
@@ -251,7 +251,7 @@ Can they change direction of thought (and travel) quickly?
 Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
 Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
 And to probe into possible issues with being flexible.",
-              "text": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
+              "questionText": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
             },
             {
               "adaptability": "Do they see the importance of systematically working towards a common goal?
@@ -262,7 +262,7 @@ Can they provide an example of taking an existing plan and using it, rather than
               "purpose": "How do they respond to working to an established plan or process?
 Do they become critical of the purpose?
 Do they try and short-circuit parts of the plan in order to achieve their goal?",
-              "text": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
+              "questionText": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
             },
             {
               "adaptability": "Do they see that systems, processes and details are important for efficient working?
@@ -272,7 +272,7 @@ Can they tell you about times when they have focused, laser-like, on a single ap
               "purpose": "Are they intolerant of small details?
 Do they sacrifice quality for speed?
 Are they continually pushing on even when something needs to be done in a slow, considered and organized manner?",
-              "text": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
+              "questionText": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
             },
           ],
         },
@@ -469,7 +469,7 @@ How much energy do they invest in trying to connect with other people?
 Do they also hint at juggling the need to connect with new people and being able to back off when needed?
 Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
 And to probe into possible issues with being extraverted/introverted.",
-              "text": "How would you describe the way in which you deal with new people in a work situation?",
+              "questionText": "How would you describe the way in which you deal with new people in a work situation?",
             },
             {
               "adaptability": "Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
@@ -480,7 +480,7 @@ How do they keep themselves mentally engaged?",
               "purpose": "How comfortable are they working alone?
 Are they likely to be frustrated because they cannot employ their face-to-face social skills?
 Do they get bored with apparently low energy situations?",
-              "text": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
+              "questionText": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
             },
             {
               "adaptability": "Do they know they sometimes read situations the wrong way?
@@ -491,7 +491,7 @@ How do they decide whether to turn up the social/action oriented side of their c
               "purpose": "Do they misjudge situations?
 Do they sometimes think and are then slow to act, or vice versa?
 Do they tend to 'sit on the fence'?",
-              "text": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
+              "questionText": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
             },
           ],
         },
@@ -691,7 +691,7 @@ Do they use a realistic but sympathetic style?
 Do they push their case in an open and sensitive way?
 Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
 And to probe into possible issues with being agreeable/independent.",
-              "text": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
+              "questionText": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
             },
             {
               "adaptability": "Do they recognize that it can be important to be more objective and less people-oriented?
@@ -702,7 +702,7 @@ How did this feel?",
               "purpose": "Are they too open-minded and accepting of different opinions?
 While they recognize that no one is perfect, do they let sympathy get in the way of action?
 Do they sometimes lose out to more assertive colleagues?",
-              "text": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
+              "questionText": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
             },
             {
               "adaptability": "Can they see that sometimes a hands-off style is needed?
@@ -712,7 +712,7 @@ Can they give an example of recognizing that some people will never be friends b
               "purpose": "Do they sometimes intervene when it is not needed?
 Do they overmanage the people side of situations?
 Do they let their desire for harmony get in the way of people properly 'clearing the air'?",
-              "text": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
+              "questionText": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
             },
           ],
         },
@@ -910,7 +910,7 @@ Are they able to deal with things in a calm and upbeat way?
 Do they keep their feelings under control?
 Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
 And to probe into possible issues with being resilient/reflexive.",
-              "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+              "questionText": "Tell me about dealing with a highly pressured and difficult work situation.",
             },
             {
               "adaptability": "Do they realize that other people may need to see/hear, rather more frequently, how they actually feel about something?
@@ -920,7 +920,7 @@ Have they worked out a way of increasing their energy level when needed?",
               "purpose": "Does their dependable (emotional) style mean they do not show their true feelings?
 Do they sometimes seem a bit unconcerned or unresponsive?
 Are they slow to rouse, whatever the situation?",
-              "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
+              "questionText": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
             },
             {
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?
@@ -930,7 +930,7 @@ Can they provide an example of immediately acting on feedback from someone else 
               "purpose": "Do they take well-meant criticism or feedback seriously enough?
 Do they seek or avoid feedback?
 Do they see comments, even negative or critical ones, as a way of helping them to improve at work?",
-              "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
+              "questionText": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
             },
           ],
         },
@@ -1132,7 +1132,7 @@ How much energy do they invest in trying to connect with other people?
 Do they also hint at juggling the need to connect with new people and being able to back off when needed?
 Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
 And to probe into possible issues with being extraverted/introverted.",
-              "text": "How would you describe the way in which you deal with new people in a work situation?",
+              "questionText": "How would you describe the way in which you deal with new people in a work situation?",
             },
             {
               "adaptability": "Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
@@ -1143,7 +1143,7 @@ How do they keep themselves mentally engaged?",
               "purpose": "How comfortable are they working alone?
 Are they likely to be frustrated because they cannot employ their face-to-face social skills?
 Do they get bored with apparently low energy situations?",
-              "text": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
+              "questionText": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
             },
             {
               "adaptability": "Do they know they sometimes read situations the wrong way?
@@ -1154,7 +1154,7 @@ How do they decide whether to turn up the social/action oriented side of their c
               "purpose": "Do they misjudge situations?
 Do they sometimes think and are then slow to act, or vice versa?
 Do they tend to 'sit on the fence'?",
-              "text": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
+              "questionText": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
             },
           ],
         },
@@ -1356,7 +1356,7 @@ Are they able to deal with things in a calm and upbeat way?
 Do they keep their feelings under control?
 Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
 And to probe into possible issues with being resilient/reflexive.",
-              "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+              "questionText": "Tell me about dealing with a highly pressured and difficult work situation.",
             },
             {
               "adaptability": "Do they realize that other people may need to see/hear, rather more frequently, how they actually feel about something?
@@ -1366,7 +1366,7 @@ Have they worked out a way of increasing their energy level when needed?",
               "purpose": "Does their dependable (emotional) style mean they do not show their true feelings?
 Do they sometimes seem a bit unconcerned or unresponsive?
 Are they slow to rouse, whatever the situation?",
-              "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
+              "questionText": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
             },
             {
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?
@@ -1376,7 +1376,7 @@ Can they provide an example of immediately acting on feedback from someone else 
               "purpose": "Do they take well-meant criticism or feedback seriously enough?
 Do they seek or avoid feedback?
 Do they see comments, even negative or critical ones, as a way of helping them to improve at work?",
-              "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
+              "questionText": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
             },
           ],
         },
@@ -1579,7 +1579,7 @@ The first question is looking to confirm what they should be like; the second tw
 Are their ideas new, original or different in any way?
 Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
 And to probe into possible issues with being open-minded/pragmatic.",
-              "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+              "questionText": "Tell me how you would go about solving a work problem you have not encountered before.",
             },
             {
               "adaptability": "Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
@@ -1590,7 +1590,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
               "purpose": "How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?",
-              "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
+              "questionText": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
             },
             {
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?
@@ -1600,7 +1600,7 @@ Can they provide an example of sticking with experience, and the tried-and-teste
               "purpose": "Do they sometimes not learn from the past?
 Do they move on too quickly without consolidating what they have learned?
 Do they sometimes override their experience because they think they need to demonstrate original thought?",
-              "text": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
+              "questionText": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
             },
           ],
         },
@@ -1811,7 +1811,7 @@ Do they use a realistic but sympathetic style?
 Do they push their case in an open and sensitive way?
 Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
 And to probe into possible issues with being agreeable/independent.",
-              "text": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
+              "questionText": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
             },
             {
               "adaptability": "Do they recognize that it can be important to be more objective and less people-oriented?
@@ -1822,7 +1822,7 @@ How did this feel?",
               "purpose": "Are they too open-minded and accepting of different opinions?
 While they recognize that no one is perfect, do they let sympathy get in the way of action?
 Do they sometimes lose out to more assertive colleagues?",
-              "text": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
+              "questionText": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
             },
             {
               "adaptability": "Can they see that sometimes a hands-off style is needed?
@@ -1832,7 +1832,7 @@ Can they give an example of recognizing that some people will never be friends b
               "purpose": "Do they sometimes intervene when it is not needed?
 Do they overmanage the people side of situations?
 Do they let their desire for harmony get in the way of people properly 'clearing the air'?",
-              "text": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
+              "questionText": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
             },
           ],
         },
@@ -2036,7 +2036,7 @@ Can they change direction of thought (and travel) quickly?
 Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
 Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
 And to probe into possible issues with being flexible.",
-              "text": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
+              "questionText": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
             },
             {
               "adaptability": "Do they see the importance of systematically working towards a common goal?
@@ -2047,7 +2047,7 @@ Can they provide an example of taking an existing plan and using it, rather than
               "purpose": "How do they respond to working to an established plan or process?
 Do they become critical of the purpose?
 Do they try and short-circuit parts of the plan in order to achieve their goal?",
-              "text": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
+              "questionText": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
             },
             {
               "adaptability": "Do they see that systems, processes and details are important for efficient working?
@@ -2057,7 +2057,7 @@ Can they tell you about times when they have focused, laser-like, on a single ap
               "purpose": "Are they intolerant of small details?
 Do they sacrifice quality for speed?
 Are they continually pushing on even when something needs to be done in a slow, considered and organized manner?",
-              "text": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
+              "questionText": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
             },
           ],
         },
@@ -2263,7 +2263,7 @@ The first question is looking to confirm what they should be like; the second tw
 Are their ideas new, original or different in any way?
 Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
 And to probe into possible issues with being open-minded/pragmatic.",
-              "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+              "questionText": "Tell me how you would go about solving a work problem you have not encountered before.",
             },
             {
               "adaptability": "Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
@@ -2274,7 +2274,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
               "purpose": "How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?",
-              "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
+              "questionText": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
             },
             {
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?
@@ -2284,7 +2284,7 @@ Can they provide an example of sticking with experience, and the tried-and-teste
               "purpose": "Do they sometimes not learn from the past?
 Do they move on too quickly without consolidating what they have learned?
 Do they sometimes override their experience because they think they need to demonstrate original thought?",
-              "text": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
+              "questionText": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
             },
           ],
         },
@@ -2495,7 +2495,7 @@ Can they change direction of thought (and travel) quickly?
 Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
 Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
 And to probe into possible issues with being flexible.",
-              "text": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
+              "questionText": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
             },
             {
               "adaptability": "Do they see the importance of systematically working towards a common goal?
@@ -2506,7 +2506,7 @@ Can they provide an example of taking an existing plan and using it, rather than
               "purpose": "How do they respond to working to an established plan or process?
 Do they become critical of the purpose?
 Do they try and short-circuit parts of the plan in order to achieve their goal?",
-              "text": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
+              "questionText": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
             },
             {
               "adaptability": "Do they see that systems, processes and details are important for efficient working?
@@ -2516,7 +2516,7 @@ Can they tell you about times when they have focused, laser-like, on a single ap
               "purpose": "Are they intolerant of small details?
 Do they sacrifice quality for speed?
 Are they continually pushing on even when something needs to be done in a slow, considered and organized manner?",
-              "text": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
+              "questionText": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
             },
           ],
         },
@@ -2715,7 +2715,7 @@ How much energy do they invest in trying to connect with other people?
 Do they also hint at juggling the need to connect with new people and being able to back off when needed?
 Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
 And to probe into possible issues with being extraverted/introverted.",
-              "text": "How would you describe the way in which you deal with new people in a work situation?",
+              "questionText": "How would you describe the way in which you deal with new people in a work situation?",
             },
             {
               "adaptability": "Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
@@ -2726,7 +2726,7 @@ How do they keep themselves mentally engaged?",
               "purpose": "How comfortable are they working alone?
 Are they likely to be frustrated because they cannot employ their face-to-face social skills?
 Do they get bored with apparently low energy situations?",
-              "text": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
+              "questionText": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
             },
             {
               "adaptability": "Do they know they sometimes read situations the wrong way?
@@ -2737,7 +2737,7 @@ How do they decide whether to turn up the social/action oriented side of their c
               "purpose": "Do they misjudge situations?
 Do they sometimes think and are then slow to act, or vice versa?
 Do they tend to 'sit on the fence'?",
-              "text": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
+              "questionText": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
             },
           ],
         },
@@ -2941,7 +2941,7 @@ Do they use a realistic but sympathetic style?
 Do they push their case in an open and sensitive way?
 Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
 And to probe into possible issues with being agreeable/independent.",
-              "text": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
+              "questionText": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
             },
             {
               "adaptability": "Do they recognize that it can be important to be more objective and less people-oriented?
@@ -2952,7 +2952,7 @@ How did this feel?",
               "purpose": "Are they too open-minded and accepting of different opinions?
 While they recognize that no one is perfect, do they let sympathy get in the way of action?
 Do they sometimes lose out to more assertive colleagues?",
-              "text": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
+              "questionText": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
             },
             {
               "adaptability": "Can they see that sometimes a hands-off style is needed?
@@ -2962,7 +2962,7 @@ Can they give an example of recognizing that some people will never be friends b
               "purpose": "Do they sometimes intervene when it is not needed?
 Do they overmanage the people side of situations?
 Do they let their desire for harmony get in the way of people properly 'clearing the air'?",
-              "text": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
+              "questionText": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
             },
           ],
         },
@@ -3164,7 +3164,7 @@ Are they able to deal with things in a calm and upbeat way?
 Do they keep their feelings under control?
 Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
 And to probe into possible issues with being resilient/reflexive.",
-              "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+              "questionText": "Tell me about dealing with a highly pressured and difficult work situation.",
             },
             {
               "adaptability": "Do they realize that other people may need to see/hear, rather more frequently, how they actually feel about something?
@@ -3174,7 +3174,7 @@ Have they worked out a way of increasing their energy level when needed?",
               "purpose": "Does their dependable (emotional) style mean they do not show their true feelings?
 Do they sometimes seem a bit unconcerned or unresponsive?
 Are they slow to rouse, whatever the situation?",
-              "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
+              "questionText": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
             },
             {
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?
@@ -3184,7 +3184,7 @@ Can they provide an example of immediately acting on feedback from someone else 
               "purpose": "Do they take well-meant criticism or feedback seriously enough?
 Do they seek or avoid feedback?
 Do they see comments, even negative or critical ones, as a way of helping them to improve at work?",
-              "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
+              "questionText": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
             },
           ],
         },
@@ -3392,7 +3392,7 @@ The first question is looking to confirm what they should be like; the second tw
 Are their ideas new, original or different in any way?
 Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
 And to probe into possible issues with being open-minded/pragmatic.",
-              "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+              "questionText": "Tell me how you would go about solving a work problem you have not encountered before.",
             },
             {
               "adaptability": "Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
@@ -3403,7 +3403,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
               "purpose": "How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?",
-              "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
+              "questionText": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
             },
             {
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?
@@ -3413,7 +3413,7 @@ Can they provide an example of sticking with experience, and the tried-and-teste
               "purpose": "Do they sometimes not learn from the past?
 Do they move on too quickly without consolidating what they have learned?
 Do they sometimes override their experience because they think they need to demonstrate original thought?",
-              "text": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
+              "questionText": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
             },
           ],
         },
@@ -3636,7 +3636,7 @@ Can they change direction of thought (and travel) quickly?
 Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
 Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
 And to probe into possible issues with being flexible.",
-              "text": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
+              "questionText": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
             },
             {
               "adaptability": "Do they see the importance of systematically working towards a common goal?
@@ -3647,7 +3647,7 @@ Can they provide an example of taking an existing plan and using it, rather than
               "purpose": "How do they respond to working to an established plan or process?
 Do they become critical of the purpose?
 Do they try and short-circuit parts of the plan in order to achieve their goal?",
-              "text": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
+              "questionText": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
             },
             {
               "adaptability": "Do they see that systems, processes and details are important for efficient working?
@@ -3657,7 +3657,7 @@ Can they tell you about times when they have focused, laser-like, on a single ap
               "purpose": "Are they intolerant of small details?
 Do they sacrifice quality for speed?
 Are they continually pushing on even when something needs to be done in a slow, considered and organized manner?",
-              "text": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
+              "questionText": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
             },
           ],
         },
@@ -3877,7 +3877,7 @@ How much energy do they invest in trying to connect with other people?
 Do they also hint at juggling the need to connect with new people and being able to back off when needed?
 Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
 And to probe into possible issues with being extraverted/introverted.",
-              "text": "How would you describe the way in which you deal with new people in a work situation?",
+              "questionText": "How would you describe the way in which you deal with new people in a work situation?",
             },
             {
               "adaptability": "Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
@@ -3888,7 +3888,7 @@ How do they keep themselves mentally engaged?",
               "purpose": "How comfortable are they working alone?
 Are they likely to be frustrated because they cannot employ their face-to-face social skills?
 Do they get bored with apparently low energy situations?",
-              "text": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
+              "questionText": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
             },
             {
               "adaptability": "Do they know they sometimes read situations the wrong way?
@@ -3899,7 +3899,7 @@ How do they decide whether to turn up the social/action oriented side of their c
               "purpose": "Do they misjudge situations?
 Do they sometimes think and are then slow to act, or vice versa?
 Do they tend to 'sit on the fence'?",
-              "text": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
+              "questionText": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
             },
           ],
         },
@@ -4122,7 +4122,7 @@ Do they use a realistic but sympathetic style?
 Do they push their case in an open and sensitive way?
 Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
 And to probe into possible issues with being agreeable/independent.",
-              "text": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
+              "questionText": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
             },
             {
               "adaptability": "Do they recognize that it can be important to be more objective and less people-oriented?
@@ -4133,7 +4133,7 @@ How did this feel?",
               "purpose": "Are they too open-minded and accepting of different opinions?
 While they recognize that no one is perfect, do they let sympathy get in the way of action?
 Do they sometimes lose out to more assertive colleagues?",
-              "text": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
+              "questionText": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
             },
             {
               "adaptability": "Can they see that sometimes a hands-off style is needed?
@@ -4143,7 +4143,7 @@ Can they give an example of recognizing that some people will never be friends b
               "purpose": "Do they sometimes intervene when it is not needed?
 Do they overmanage the people side of situations?
 Do they let their desire for harmony get in the way of people properly 'clearing the air'?",
-              "text": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
+              "questionText": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
             },
           ],
         },
@@ -4364,7 +4364,7 @@ Are they able to deal with things in a calm and upbeat way?
 Do they keep their feelings under control?
 Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
 And to probe into possible issues with being resilient/reflexive.",
-              "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+              "questionText": "Tell me about dealing with a highly pressured and difficult work situation.",
             },
             {
               "adaptability": "Do they realize that other people may need to see/hear, rather more frequently, how they actually feel about something?
@@ -4374,7 +4374,7 @@ Have they worked out a way of increasing their energy level when needed?",
               "purpose": "Does their dependable (emotional) style mean they do not show their true feelings?
 Do they sometimes seem a bit unconcerned or unresponsive?
 Are they slow to rouse, whatever the situation?",
-              "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
+              "questionText": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
             },
             {
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?
@@ -4384,7 +4384,7 @@ Can they provide an example of immediately acting on feedback from someone else 
               "purpose": "Do they take well-meant criticism or feedback seriously enough?
 Do they seek or avoid feedback?
 Do they see comments, even negative or critical ones, as a way of helping them to improve at work?",
-              "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
+              "questionText": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
             },
           ],
         },
@@ -4609,7 +4609,7 @@ How much energy do they invest in trying to connect with other people?
 Do they also hint at juggling the need to connect with new people and being able to back off when needed?
 Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
 And to probe into possible issues with being extraverted/introverted.",
-              "text": "How would you describe the way in which you deal with new people in a work situation?",
+              "questionText": "How would you describe the way in which you deal with new people in a work situation?",
             },
             {
               "adaptability": "Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
@@ -4620,7 +4620,7 @@ How do they keep themselves mentally engaged?",
               "purpose": "How comfortable are they working alone?
 Are they likely to be frustrated because they cannot employ their face-to-face social skills?
 Do they get bored with apparently low energy situations?",
-              "text": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
+              "questionText": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
             },
             {
               "adaptability": "Do they know they sometimes read situations the wrong way?
@@ -4631,7 +4631,7 @@ How do they decide whether to turn up the social/action oriented side of their c
               "purpose": "Do they misjudge situations?
 Do they sometimes think and are then slow to act, or vice versa?
 Do they tend to 'sit on the fence'?",
-              "text": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
+              "questionText": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
             },
           ],
         },
@@ -4853,7 +4853,7 @@ Are they able to deal with things in a calm and upbeat way?
 Do they keep their feelings under control?
 Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
 And to probe into possible issues with being resilient/reflexive.",
-              "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+              "questionText": "Tell me about dealing with a highly pressured and difficult work situation.",
             },
             {
               "adaptability": "Do they realize that other people may need to see/hear, rather more frequently, how they actually feel about something?
@@ -4863,7 +4863,7 @@ Have they worked out a way of increasing their energy level when needed?",
               "purpose": "Does their dependable (emotional) style mean they do not show their true feelings?
 Do they sometimes seem a bit unconcerned or unresponsive?
 Are they slow to rouse, whatever the situation?",
-              "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
+              "questionText": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
             },
             {
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?
@@ -4873,7 +4873,7 @@ Can they provide an example of immediately acting on feedback from someone else 
               "purpose": "Do they take well-meant criticism or feedback seriously enough?
 Do they seek or avoid feedback?
 Do they see comments, even negative or critical ones, as a way of helping them to improve at work?",
-              "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
+              "questionText": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
             },
           ],
         },
@@ -5096,7 +5096,7 @@ The first question is looking to confirm what they should be like; the second tw
 Are their ideas new, original or different in any way?
 Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
 And to probe into possible issues with being open-minded/pragmatic.",
-              "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+              "questionText": "Tell me how you would go about solving a work problem you have not encountered before.",
             },
             {
               "adaptability": "Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
@@ -5107,7 +5107,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
               "purpose": "How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?",
-              "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
+              "questionText": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
             },
             {
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?
@@ -5117,7 +5117,7 @@ Can they provide an example of sticking with experience, and the tried-and-teste
               "purpose": "Do they sometimes not learn from the past?
 Do they move on too quickly without consolidating what they have learned?
 Do they sometimes override their experience because they think they need to demonstrate original thought?",
-              "text": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
+              "questionText": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
             },
           ],
         },
@@ -5341,7 +5341,7 @@ Do they use a realistic but sympathetic style?
 Do they push their case in an open and sensitive way?
 Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
 And to probe into possible issues with being agreeable/independent.",
-              "text": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
+              "questionText": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
             },
             {
               "adaptability": "Do they recognize that it can be important to be more objective and less people-oriented?
@@ -5352,7 +5352,7 @@ How did this feel?",
               "purpose": "Are they too open-minded and accepting of different opinions?
 While they recognize that no one is perfect, do they let sympathy get in the way of action?
 Do they sometimes lose out to more assertive colleagues?",
-              "text": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
+              "questionText": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
             },
             {
               "adaptability": "Can they see that sometimes a hands-off style is needed?
@@ -5362,7 +5362,7 @@ Can they give an example of recognizing that some people will never be friends b
               "purpose": "Do they sometimes intervene when it is not needed?
 Do they overmanage the people side of situations?
 Do they let their desire for harmony get in the way of people properly 'clearing the air'?",
-              "text": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
+              "questionText": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
             },
           ],
         },
@@ -5586,7 +5586,7 @@ Can they change direction of thought (and travel) quickly?
 Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
 Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
 And to probe into possible issues with being flexible.",
-              "text": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
+              "questionText": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
             },
             {
               "adaptability": "Do they see the importance of systematically working towards a common goal?
@@ -5597,7 +5597,7 @@ Can they provide an example of taking an existing plan and using it, rather than
               "purpose": "How do they respond to working to an established plan or process?
 Do they become critical of the purpose?
 Do they try and short-circuit parts of the plan in order to achieve their goal?",
-              "text": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
+              "questionText": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
             },
             {
               "adaptability": "Do they see that systems, processes and details are important for efficient working?
@@ -5607,7 +5607,7 @@ Can they tell you about times when they have focused, laser-like, on a single ap
               "purpose": "Are they intolerant of small details?
 Do they sacrifice quality for speed?
 Are they continually pushing on even when something needs to be done in a slow, considered and organized manner?",
-              "text": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
+              "questionText": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
             },
           ],
         },
@@ -5834,7 +5834,7 @@ The first question is looking to confirm what they should be like; the second tw
 Are their ideas new, original or different in any way?
 Do they test new ideas against what seems feasible, both now and in the longer term? Producing new ideas but checking their viability, and implementing balanced and timely solutions, are all aspects of the open-minded/pragmatic character.
 And to probe into possible issues with being open-minded/pragmatic.",
-              "text": "Tell me how you would go about solving a work problem you have not encountered before.",
+              "questionText": "Tell me how you would go about solving a work problem you have not encountered before.",
             },
             {
               "adaptability": "Do they recognize that sometimes the best approach is to use an existing procedure, or to be far less cautious and try something radically different?
@@ -5845,7 +5845,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
               "purpose": "How comfortable are they working in a step-by-step manner?
 Is there a tension between this and wanting to try something new?
 Does this 'conflict' sometimes show itself in taking a very cautious approach?",
-              "text": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
+              "questionText": "(Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.",
             },
             {
               "adaptability": "Do they know they sometimes confuse knowledge with foresight?
@@ -5855,7 +5855,7 @@ Can they provide an example of sticking with experience, and the tried-and-teste
               "purpose": "Do they sometimes not learn from the past?
 Do they move on too quickly without consolidating what they have learned?
 Do they sometimes override their experience because they think they need to demonstrate original thought?",
-              "text": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
+              "questionText": "(Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?",
             },
           ],
         },
@@ -6079,7 +6079,7 @@ Can they change direction of thought (and travel) quickly?
 Are they able to suspend the need for a plan in order to achieve a rapid solution to a problem?
 Being able to use a variety of different approaches, pivot and change priorities, and react in 'real time' are all aspects of a flexible character.
 And to probe into possible issues with being flexible.",
-              "text": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
+              "questionText": "Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.",
             },
             {
               "adaptability": "Do they see the importance of systematically working towards a common goal?
@@ -6090,7 +6090,7 @@ Can they provide an example of taking an existing plan and using it, rather than
               "purpose": "How do they respond to working to an established plan or process?
 Do they become critical of the purpose?
 Do they try and short-circuit parts of the plan in order to achieve their goal?",
-              "text": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
+              "questionText": "(Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.",
             },
             {
               "adaptability": "Do they see that systems, processes and details are important for efficient working?
@@ -6100,7 +6100,7 @@ Can they tell you about times when they have focused, laser-like, on a single ap
               "purpose": "Are they intolerant of small details?
 Do they sacrifice quality for speed?
 Are they continually pushing on even when something needs to be done in a slow, considered and organized manner?",
-              "text": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
+              "questionText": "(Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?",
             },
           ],
         },
@@ -6320,7 +6320,7 @@ How much energy do they invest in trying to connect with other people?
 Do they also hint at juggling the need to connect with new people and being able to back off when needed?
 Being skilled at relationship building, approaching other people but being able to step back when needed, should all be aspects of a person with a balance of extraverted and introverted characteristics.
 And to probe into possible issues with being extraverted/introverted.",
-              "text": "How would you describe the way in which you deal with new people in a work situation?",
+              "questionText": "How would you describe the way in which you deal with new people in a work situation?",
             },
             {
               "adaptability": "Do they recognize that working completely alone is not what they would prefer, but they have a way of dealing with it?
@@ -6331,7 +6331,7 @@ How do they keep themselves mentally engaged?",
               "purpose": "How comfortable are they working alone?
 Are they likely to be frustrated because they cannot employ their face-to-face social skills?
 Do they get bored with apparently low energy situations?",
-              "text": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
+              "questionText": "(Your results suggest that you like to work with other people.) Tell me about a time when you needed to work quietly by yourself on a lengthy and important task. What were you doing and how did you feel about it?",
             },
             {
               "adaptability": "Do they know they sometimes read situations the wrong way?
@@ -6342,7 +6342,7 @@ How do they decide whether to turn up the social/action oriented side of their c
               "purpose": "Do they misjudge situations?
 Do they sometimes think and are then slow to act, or vice versa?
 Do they tend to 'sit on the fence'?",
-              "text": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
+              "questionText": "(Your results suggest that you like to think things through and then act promptly) Can you describe a work situation where you leapt in too quickly or didn't move quickly enough? What did you do? What was the result?",
             },
           ],
         },
@@ -6566,7 +6566,7 @@ Do they use a realistic but sympathetic style?
 Do they push their case in an open and sensitive way?
 Taking people at face value, but not being a pushover, and making their case in a positive way, should all be aspects of the agreeable/independent character.
 And to probe into possible issues with being agreeable/independent.",
-              "text": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
+              "questionText": "Tell me how you go about getting your views across at work? (This could be in a team or group, with a work colleague, a customer etc.)",
             },
             {
               "adaptability": "Do they recognize that it can be important to be more objective and less people-oriented?
@@ -6577,7 +6577,7 @@ How did this feel?",
               "purpose": "Are they too open-minded and accepting of different opinions?
 While they recognize that no one is perfect, do they let sympathy get in the way of action?
 Do they sometimes lose out to more assertive colleagues?",
-              "text": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
+              "questionText": "(Your results suggest you feel for other people and deal with them in an understanding but practical manner.) Tell me about a time when you went along with something at work but it turned out you should have been more questioning.",
             },
             {
               "adaptability": "Can they see that sometimes a hands-off style is needed?
@@ -6587,7 +6587,7 @@ Can they give an example of recognizing that some people will never be friends b
               "purpose": "Do they sometimes intervene when it is not needed?
 Do they overmanage the people side of situations?
 Do they let their desire for harmony get in the way of people properly 'clearing the air'?",
-              "text": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
+              "questionText": "(Your results suggest you are the person who acts like the 'referee' at work.) Can you describe a work situation, or work project, where you should just have let people confront their differences head-on?",
             },
           ],
         },
@@ -6809,7 +6809,7 @@ Are they able to deal with things in a calm and upbeat way?
 Do they keep their feelings under control?
 Reacting to situations in a proportionate way, but keeping an eye on what might change, and having a predictably reliable and controlled manner, should all be aspects of the resilient/reflexive character.
 And to probe into possible issues with being resilient/reflexive.",
-              "text": "Tell me about dealing with a highly pressured and difficult work situation.",
+              "questionText": "Tell me about dealing with a highly pressured and difficult work situation.",
             },
             {
               "adaptability": "Do they realize that other people may need to see/hear, rather more frequently, how they actually feel about something?
@@ -6819,7 +6819,7 @@ Have they worked out a way of increasing their energy level when needed?",
               "purpose": "Does their dependable (emotional) style mean they do not show their true feelings?
 Do they sometimes seem a bit unconcerned or unresponsive?
 Are they slow to rouse, whatever the situation?",
-              "text": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
+              "questionText": "(Your results suggest you come off as an even-tempered person.) Describe a time at work when being even-tempered has not acted in your favor.",
             },
             {
               "adaptability": "Do they fully acknowledge that feedback can be useful comment rather than personal criticism?
@@ -6829,7 +6829,7 @@ Can they provide an example of immediately acting on feedback from someone else 
               "purpose": "Do they take well-meant criticism or feedback seriously enough?
 Do they seek or avoid feedback?
 Do they see comments, even negative or critical ones, as a way of helping them to improve at work?",
-              "text": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
+              "questionText": "(Your results suggest you do not let personal criticism interfere with your work.) Can you think of a time when you should have responded more actively to something like a negative comment?",
             },
           ],
         },

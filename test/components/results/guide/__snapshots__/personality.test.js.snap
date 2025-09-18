@@ -130,9 +130,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Tell me how you would go about solving a work problem you have not encountered before.
-        </div>
+        />
         <div
           className="question"
         >
@@ -151,7 +149,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Tell me how you would go about solving a work problem you have not encountered before.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -165,9 +165,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-        </div>
+        />
         <div
           className="question"
         >
@@ -186,7 +184,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -200,9 +200,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-        </div>
+        />
         <div
           className="question"
         >
@@ -221,7 +219,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -369,9 +369,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Tell me how you would go about solving a work problem you have not encountered before.
-        </div>
+        />
         <div
           className="question"
         >
@@ -390,7 +388,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Tell me how you would go about solving a work problem you have not encountered before.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -404,9 +404,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-        </div>
+        />
         <div
           className="question"
         >
@@ -425,7 +423,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -439,9 +439,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-        </div>
+        />
         <div
           className="question"
         >
@@ -460,7 +458,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -608,9 +608,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Tell me how you would go about solving a work problem you have not encountered before.
-        </div>
+        />
         <div
           className="question"
         >
@@ -629,7 +627,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Tell me how you would go about solving a work problem you have not encountered before.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -643,9 +643,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-        </div>
+        />
         <div
           className="question"
         >
@@ -664,7 +662,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -678,9 +678,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-        </div>
+        />
         <div
           className="question"
         >
@@ -699,7 +697,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -831,9 +831,7 @@ exports[`Results.Guide.Personality renders component without show more 1`] = `
         </div>
         <div
           className="p"
-        >
-          Tell me how you would go about solving a work problem you have not encountered before.
-        </div>
+        />
         <div
           className="question"
         >
@@ -852,7 +850,9 @@ exports[`Results.Guide.Personality renders component without show more 1`] = `
             >
               <div
                 className="text"
-              />
+              >
+                Tell me how you would go about solving a work problem you have not encountered before.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -866,9 +866,7 @@ exports[`Results.Guide.Personality renders component without show more 1`] = `
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-        </div>
+        />
         <div
           className="question"
         >
@@ -887,7 +885,9 @@ exports[`Results.Guide.Personality renders component without show more 1`] = `
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -901,9 +901,7 @@ exports[`Results.Guide.Personality renders component without show more 1`] = `
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-        </div>
+        />
         <div
           className="question"
         >
@@ -922,7 +920,9 @@ exports[`Results.Guide.Personality renders component without show more 1`] = `
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1099,9 +1099,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Tell me how you would go about solving a work problem you have not encountered before.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1120,7 +1118,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Tell me how you would go about solving a work problem you have not encountered before.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1134,9 +1134,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1155,7 +1153,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1169,9 +1169,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-        </div>
+        />
         <div
           className="question"
         >
@@ -1190,7 +1188,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1338,9 +1338,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Tell me how you would go about solving a work problem you have not encountered before.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1359,7 +1357,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Tell me how you would go about solving a work problem you have not encountered before.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1373,9 +1373,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
-        </div>
+        />
         <div
           className="question open"
         >
@@ -1394,7 +1392,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you like to think about new ideas and possibilities). Give me an example of a time when you had to be practical and realistic, and work to a fixed set of rules.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1434,9 +1434,7 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
-        </div>
+        />
         <div
           className="question"
         >
@@ -1455,7 +1453,9 @@ What do they do to stop themselves getting stuck on the 'middle way' of doing th
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are a grounded person but also someone who thinks about future possibilities.) Can you describe a work situation where you realized that you hadn't learned from a similar situation in the past. What happened and what did you do?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1603,9 +1603,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1624,7 +1622,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1638,9 +1638,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1659,7 +1657,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1673,9 +1673,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
-        </div>
+        />
         <div
           className="question"
         >
@@ -1694,7 +1692,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1842,9 +1842,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1863,7 +1861,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                Describe an occasion at work where you needed to react very swiftly to a rapidly moving situation.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1877,9 +1877,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
-        </div>
+        />
         <div
           className="question"
         >
@@ -1898,7 +1896,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you are someone who likes to 'do their own thing'.) Describe a work situation where you needed to work closely to someone else's plan.
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={
@@ -1912,9 +1912,7 @@ These personality characteristics provide the basis for asking a particular sequ
         </div>
         <div
           className="p"
-        >
-          (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
-        </div>
+        />
         <div
           className="question"
         >
@@ -1933,7 +1931,9 @@ These personality characteristics provide the basis for asking a particular sequ
             >
               <div
                 className="text"
-              />
+              >
+                (Your results suggest you tend to avoid work activities you consider unnecessary, repetitive or unpleasant.) Can you describe a time at work when in order to produce your best work you needed to perform a task in a slow and very detailed way?
+              </div>
               <span
                 className="arrow traitify--icon-fa"
                 dangerouslySetInnerHTML={

@@ -5,7 +5,6 @@ import Icon from "components/common/icon";
 import Markdown from "components/common/markdown";
 import style from "./style.scss";
 
-
 function Question({question}) {
   const [showContent, setShowContent] = useState(false);
   const introduction = question.introduction || "";

@@ -6,7 +6,8 @@ export default function Responses({responseOptions = [], updateAnswer}) {
   const buttonClass = ["traitify--response-button", style.response].join(" ");
   const longTextResponses = responseOptions.some((option) => option.text.length > 20);
   const buttonWidth = longTextResponses ? "100%" : "auto";
-  const optionsDirection = longTextResponses ? "column" : "row";
+  const directionClass = longTextResponses ? style.flexDirectionColumn : "";
+  const responseOptionsClass = [style.responseOptions, directionClass].join(" ");
   const [activeButton, setActiveButton] = useState(null);
   const selectOption = (optionId) => {
     setActiveButton(optionId);
@@ -14,10 +15,7 @@ export default function Responses({responseOptions = [], updateAnswer}) {
   };
 
   return (
-    <div
-      className={style.responseOptions}
-      style={{flexDirection: optionsDirection}}
-    >
+    <div className={responseOptionsClass}>
       {responseOptions.map((option) => (
         <button
           key={option.id}

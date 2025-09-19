@@ -27,6 +27,10 @@ button.btnPrimary {
     max-width: $breakpoint-md * 0.85;
   }
 
+  @include max-width("xs") {
+    padding: $buffer-sm;
+  }
+
   .modalContainer {
     overflow: auto;
     max-width: 600px;
@@ -85,6 +89,8 @@ button.btnPrimary {
   }
 }
 
+.flexDirectionColumn { flex-direction: column; }
+
 .footer {
   display: flex;
   justify-content: flex-end;
@@ -121,8 +127,11 @@ button.btnPrimary {
   text-align: center;
   padding: $buffer;
 
+  @include max-width("xs") { padding: $buffer-sm; }
+
   img {
     margin-bottom: $buffer;
+    @include max-width("xs") { max-width: 100%; }
   }
 
   .question {
@@ -157,4 +166,5 @@ button.btnPrimary {
 .responseOptions{
   display: flex;
   justify-content: space-between;
+  @include max-width("xs") { flex-direction: column; }
 }

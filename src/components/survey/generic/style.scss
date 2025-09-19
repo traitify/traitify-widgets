@@ -44,6 +44,11 @@ button.btnPrimary {
     vertical-align: middle;
     font-weight: 500;
 
+    @include max-width("xs") {
+      height: auto;
+      padding: $buffer * 0.25 $buffer * 0.5;
+    }
+
     &.back {
       padding: $buffer * 0.5 $buffer-lg * 0.5;
       width: 150px;

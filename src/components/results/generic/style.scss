@@ -62,9 +62,10 @@
   display: flex;
   gap: $buffer * 0.5;
   justify-content: space-between;
+  @include max-width("xs") { flex-direction: column; }
 }
 
-
+.flexDirectionColumn { flex-direction: column; }
 
 .iconCorrect {
   color: $-aquamarine;
@@ -165,6 +166,8 @@
   flex-direction: row;
   gap: $buffer;
   justify-content: space-around;
+
+  @include max-width("xs") { flex-direction: column; }
   
   .responseOption {
     width: 100%;

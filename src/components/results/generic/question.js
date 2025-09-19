@@ -8,14 +8,12 @@ import style from "./style.scss";
 export default function Question({question, index, showState}) {
   const translate = useTranslate();
   const [showContent, setShowContent] = useState(false);
-  const responsesClassName = question.setImage
-    ? style.responsesWithImage
-    : style.responsesWithoutImage;
   const longTextCondition = (option) => option.responseOptionText.length > 20;
   const longTextResponses = question.responseOptions.some(longTextCondition);
-  const optionsDirection = (longTextResponses || responsesClassName === style.responsesWithImage)
-    ? "column"
-    : "row";
+  const directionClass = (longTextResponses || question.setImage) ? style.flexDirectionColumn : "";
+  const responsesClassName = (question.setImage)
+    ? [style.responsesWithImage, directionClass].join(" ")
+    : [style.responsesWithoutImage, directionClass].join(" ");
 
   useEffect(() => {
     setShowContent(showState);
@@ -58,7 +56,7 @@ export default function Question({question, index, showState}) {
         <div className={style.questionContent}>
           <div className={style.responseOptions}>
             <div className={style.questionText}>{question.questionText}</div>
-            <div className={responsesClassName} style={{flexDirection: optionsDirection}}>
+            <div className={responsesClassName}>
               {question.responseOptions.map((option) => (
                 <div
                   key={option.responseOptionId}

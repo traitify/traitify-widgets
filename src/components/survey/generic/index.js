@@ -13,7 +13,7 @@ import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useTranslate from "lib/hooks/use-translate";
 import {activeAssessmentQuery} from "lib/recoil";
-import Container from "./container";
+import ProgressBar from "./progress-bar";
 import QuestionSet from "./question-set";
 import style from "./style.scss";
 
@@ -37,7 +37,6 @@ export default function GenericSurvey() {
   const graphQL = useGraphql();
   const http = useHttp();
   const translate = useTranslate();
-  const props = {progress};
   const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
 
   const updateAnswer = (questionId, selectedOptionId) => {
@@ -88,17 +87,18 @@ export default function GenericSurvey() {
 
   if(showConclusions) {
     return (
-      <Container {...props}>
+      <div className={`${style.container}`}>
         <Markdown className={style.markdown}>
           {assessment.survey.conclusions}
         </Markdown>
         <button type="button" className={style.btnPrimary}>Finished!</button>
-      </Container>
+      </div>
     );
   }
 
   return (
-    <Container {...props}>
+    <div className={`${style.container}`}>
+      <ProgressBar progress={progress} />
       {currentQuestionSet && (
         <QuestionSet
           key={questionSetIndex}
@@ -142,6 +142,6 @@ export default function GenericSurvey() {
           </div>
         </Modal>
       )}
-    </Container>
+    </div>
   );
 }

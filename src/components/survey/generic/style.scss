@@ -52,6 +52,7 @@ button.btnPrimary {
     &.back {
       padding: $buffer * 0.5 $buffer-lg * 0.5;
       width: 150px;
+      @include max-width("xs") { width: 100px; }
 
       .icon {
         margin-right: $buffer-sm;
@@ -111,6 +112,7 @@ button.btnPrimary {
 
   .btnPrimary {
     margin: $buffer * 0.5;
+    @include max-width("xs") { padding: $buffer * 0.25 $buffer; }
   }
 }
 

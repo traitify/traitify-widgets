@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import Responses from "./responses";
 import style from "./style.scss";
 
-export default function QuestionSet({next, questionSet, updateAnswer}) {
+export default function QuestionSet({onNext, questionSet, updateAnswer}) {
   const questionSetClass = [style.questionSet].join(" ");
   const [selectedOptions, setSelectedOptions] = useState([]);
   const setFinished = questionSet.questions.length === selectedOptions.length;
@@ -14,7 +14,7 @@ export default function QuestionSet({next, questionSet, updateAnswer}) {
 
   useEffect(() => {
     if(!setFinished) return;
-    next();
+    onNext();
   }, [setFinished]);
 
   return (
@@ -35,7 +35,7 @@ export default function QuestionSet({next, questionSet, updateAnswer}) {
 }
 
 QuestionSet.propTypes = {
-  next: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
   questionSet: PropTypes.shape({
     text: PropTypes.string.isRequired,
     questions: PropTypes.arrayOf(PropTypes.shape({

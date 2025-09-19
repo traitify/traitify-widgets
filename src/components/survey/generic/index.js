@@ -46,8 +46,8 @@ export default function GenericSurvey() {
       {questionId, selectedResponseOptionId: selectedOptionId}]);
   };
 
-  const next = () => { setQuestionSetIndex(questionSetIndex + 1); };
-  const back = () => { setQuestionSetIndex(questionSetIndex - 1); };
+  const onNext = () => { setQuestionSetIndex(questionSetIndex + 1); };
+  const onBack = () => { setQuestionSetIndex(questionSetIndex - 1); };
 
   const onSubmit = () => {
     if(submitAttempts > 3) { return; }
@@ -104,12 +104,12 @@ export default function GenericSurvey() {
           key={questionSetIndex}
           questionSet={currentQuestionSet}
           updateAnswer={updateAnswer}
-          next={next}
+          onNext={onNext}
         />
       )}
 
       {questionSetIndex > 0 && (
-        <button onClick={back} type="button" className={style.back}>
+        <button onClick={onBack} type="button" className={style.back}>
           <Icon className={style.icon} alt={translate("back")} icon={faArrowLeft} />
           {translate("back")}
         </button>

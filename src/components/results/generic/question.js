@@ -24,17 +24,16 @@ export default function Question({question, index, showState}) {
   };
 
   const optionClassName = (option) => {
-    let className = "";
     if(question.isCorrect) {
-      className = option.isCorrect ? style.correctResponse : "";
-    } else {
-      if(option.isCorrect) {
-        className = style.correctOption;
-      } else if(option.responseOptionId === question.selectedResponseOptionId) {
-        className = style.incorrectResponse;
-      }
+      return option.isCorrect ? style.correctResponse : "";
     }
-    return className;
+    if(option.isCorrect) {
+      return style.correctOption;
+    }
+    if(option.responseOptionId === question.selectedResponseOptionId) {
+      return style.incorrectResponse;
+    }
+    return "";
   };
 
   return (

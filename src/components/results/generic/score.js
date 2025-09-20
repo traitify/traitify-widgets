@@ -6,8 +6,8 @@ export default function Score({assessmentResult}) {
   const translate = useTranslate();
   const totalQuestions = assessmentResult ? assessmentResult.responses.length : 0;
   const totalCorrectResponses = assessmentResult ? assessmentResult.totalCorrectResponses : 0;
-  const totalIncorrectResponses = totalQuestions - totalCorrectResponses;
-  const overallScore = totalQuestions > 0 ? (totalCorrectResponses / totalQuestions) * 100 : 0;
+  const totalIncorrectResponses = assessmentResult ? assessmentResult.totalIncorrectResponses : 0;
+  const overallScore = assessmentResult ? assessmentResult.overallScore : 0;
 
   return (
     <div className={style.score}>
@@ -47,6 +47,8 @@ Score.propTypes = {
         ).isRequired
       })
     ).isRequired,
-    totalCorrectResponses: PropTypes.number.isRequired
+    totalCorrectResponses: PropTypes.number.isRequired,
+    totalIncorrectResponses: PropTypes.number.isRequired,
+    overallScore: PropTypes.number.isRequired
   }).isRequired
 };

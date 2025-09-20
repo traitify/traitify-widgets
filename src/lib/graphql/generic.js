@@ -29,6 +29,8 @@ export const questions = `
       startedAt
       completedAt
       totalCorrectResponses
+      totalIncorrectResponses
+      overallScore
       localeKey
       survey {
         id
@@ -74,6 +76,8 @@ export const update = `
       startedAt
       completedAt
       totalCorrectResponses
+      totalIncorrectResponses
+      overallScore
       responses {
         questionId
         questionText

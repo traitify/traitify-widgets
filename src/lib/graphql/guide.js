@@ -41,7 +41,6 @@ export const get = `
               numberWithLabel
               purpose
               questionText
-              text
             }
           }
         }

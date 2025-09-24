@@ -54,8 +54,8 @@ describe("Results.Guide.Personality", () => {
   it("toggles question content", async() => {
     component = await ComponentHandler.setup(Component);
     const question = guide.personality.competencies[0].questionSequences[0].questions[1];
-    const button = component.findByText(question.text, {exact: false})
-      .parent.findByType("button");
+    let button = component.findByText(question.questionText, {exact: false});
+    button = button.parent.parent.findByType("button");
     act(() => button.props.onClick());
 
     expect(component.tree).toMatchSnapshot();

@@ -12,6 +12,7 @@ import CareerList from "./results/career/list";
 import CareerModal from "./results/career/modal";
 import CognitiveResults from "./results/cognitive";
 import CognitiveChart from "./results/cognitive/chart";
+import GenericResults from "./results/generic";
 import ClientGuide from "./results/guide/client";
 import PersonalityGuide from "./results/guide/personality";
 import ArchetypeHeading from "./results/personality/archetype/heading";
@@ -30,6 +31,7 @@ import RecommendationChart from "./results/recommendation/chart";
 import Status from "./status";
 import Survey from "./survey";
 import CognitiveSurvey from "./survey/cognitive";
+import GenericSurvey from "./survey/generic";
 import PersonalitySurvey from "./survey/personality";
 
 export default {
@@ -54,6 +56,7 @@ export default {
       Container: CognitiveResults
     },
     Container: Results,
+    Generic: GenericResults,
     Guide: {
       Client: ClientGuide,
       Personality: PersonalityGuide
@@ -90,6 +93,7 @@ export default {
   Survey: {
     Cognitive: CognitiveSurvey,
     Container: Survey,
+    Generic: GenericSurvey,
     Personality: PersonalitySurvey
   }
 };

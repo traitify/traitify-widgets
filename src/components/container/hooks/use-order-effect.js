@@ -52,9 +52,11 @@ export default function useOrderEffect() {
     // NOTE: Start next assessment
     if(currentAssessment.completed) {
       const nextAssessment = order.assessments.find(({completed}) => !completed);
-      if(nextAssessment) { setActive({...nextAssessment}); }
+      if(nextAssessment) {
+        setActive({...nextAssessment});
 
-      return;
+        return;
+      }
     }
 
     // NOTE: Load updates for active assessment

@@ -2,8 +2,8 @@ import Component from "components/results/financial-risk";
 import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/financial-risk";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/financial-risk/archetype/details", () => (() => <div className="mock">Archetype Details</div>));
 jest.mock("components/results/financial-risk/archetype/heading", () => (() => <div className="mock">Archetype Heading</div>));

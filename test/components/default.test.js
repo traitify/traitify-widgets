@@ -7,7 +7,6 @@ import {
   mockExternalAssessment,
   mockRecommendation
 } from "support/container/http";
-import useContainer from "support/hooks/use-container";
 import cognitive from "support/data/assessment/cognitive/completed";
 import cognitiveIncomplete from "support/data/assessment/cognitive/incomplete";
 import external from "support/data/assessment/external/completed";
@@ -16,6 +15,7 @@ import personality from "support/data/assessment/personality/dimension-based";
 import personalityIncomplete from "support/data/assessment/personality/incomplete";
 import recommendationCompleted from "support/data/recommendation/completed";
 import recommendationIncomplete from "support/data/recommendation/incomplete";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results", () => (() => <div className="mock">Results</div>));
 jest.mock("components/status", () => (() => <div className="mock">Status</div>));

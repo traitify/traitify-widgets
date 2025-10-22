@@ -11,8 +11,6 @@ import {
   mockRecommendation
 } from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
-import useGlobalMock from "support/hooks/use-global-mock";
 import cognitive from "support/data/assessment/cognitive/completed";
 import cognitiveIncomplete from "support/data/assessment/cognitive/incomplete";
 import cognitiveSkipped from "support/data/assessment/cognitive/skipped";
@@ -25,6 +23,8 @@ import orderIncomplete from "support/data/order/incomplete";
 import profile from "support/data/profile";
 import recommendationCompleted from "support/data/recommendation/completed";
 import recommendationIncomplete from "support/data/recommendation/incomplete";
+import useContainer from "support/hooks/use-container";
+import useGlobalMock from "support/hooks/use-global-mock";
 
 describe("Status", () => {
   let component;
@@ -145,7 +145,7 @@ describe("Status", () => {
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
-      expect(console.warn).toHaveBeenCalledWith("order", "Uh oh");
+      expect(console.warn).toHaveBeenCalledWith("order", "Uh oh"); // eslint-disable-line no-console
     });
 
     it("renders loading", async() => {

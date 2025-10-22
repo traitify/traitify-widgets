@@ -2,10 +2,10 @@ import Component from "components/survey";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockCognitiveAssessment, mockExternalAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import cognitive from "support/data/assessment/cognitive/incomplete";
 import external from "support/data/assessment/external/incomplete";
 import personality from "support/data/assessment/personality/incomplete";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/survey/cognitive", () => (() => <div className="mock">Cognitive</div>));
 jest.mock("components/survey/personality", () => (() => <div className="mock">Personality</div>));

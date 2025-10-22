@@ -11,9 +11,9 @@ import {
   useSettings
 } from "support/container/http";
 import {mockOption} from "support/container/options";
+import _assessment from "support/data/assessment/cognitive/incomplete";
 import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";
-import _assessment from "support/data/assessment/cognitive/incomplete";
 
 jest.mock("components/survey/cognitive/practice", () => (() => <div className="mock">Practice</div>));
 

@@ -7,8 +7,8 @@ import {
   useSettings
 } from "support/container/http";
 import {mockOption, useOptions} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/cognitive/completed";
+import useContainer from "support/hooks/use-container";
 
 describe("Results.CognitiveChart", () => {
   let component;

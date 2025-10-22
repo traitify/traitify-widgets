@@ -11,10 +11,10 @@ import {
   useSettings
 } from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/completed";
 import {data as benchmark} from "support/data/benchmark";
 import _guide from "support/data/guide.json";
+import useContainer from "support/hooks/use-container";
 
 describe("Results.RecommendationChart", () => {
   let component;

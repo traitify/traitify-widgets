@@ -4,9 +4,9 @@ import Component from "components/results/recommendation/list";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockRecommendation, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/completed";
 import orderRecommendation from "support/data/recommendation/personality/completed";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/common/dropdown", () => (() => <div className="mock">Dropdown</div>));
 

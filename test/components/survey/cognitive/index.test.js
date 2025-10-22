@@ -10,10 +10,10 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockCognitiveAssessment as mockAssessment, mockCognitiveSubmit as mockSubmit} from "support/container/http";
 import {mockOption} from "support/container/options";
+import _assessment from "support/data/assessment/cognitive/incomplete";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 import useWindowMock from "support/hooks/use-window-mock";
-import _assessment from "support/data/assessment/cognitive/incomplete";
 
 jest.mock("components/survey/cognitive/instructions", () => (() => <div className="mock">Instructions</div>));
 jest.mock("components/survey/cognitive/slide", () => (() => <div className="mock">Slide</div>));

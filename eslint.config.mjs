@@ -5,54 +5,70 @@ import traitifyReact from "eslint-config-traitify/react";
 import traitifyWebpack from "eslint-config-traitify/webpack";
 import _import from "eslint-plugin-import";
 
+const configFiles = ["**/*.config.js", "**/*.config.mjs"];
+const defaultConfig = {
+  extends: [
+    traitifyReact,
+    traitifyBabel,
+    traitifyWebpack
+  ],
+  plugins: {import: _import},
+  rules: {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "internal",
+          "sibling",
+          "parent"
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          order: "asc",
+          caseInsensitive: true
+        }
+      }
+    ]
+  },
+  settings: {
+    "import/resolver": {
+      node: true,
+      webpack: {config: "webpack.config.js"}
+    }
+  }
+};
+
 export default defineConfig([
   globalIgnores(["build/*", "packages/*", "public/*"]),
   {
-    extends: [
-      traitifyReact,
-      traitifyBabel,
-      traitifyWebpack,
-    ],
-    plugins: {import: _import},
+    ...defaultConfig,
+    ignores: [...configFiles, "test/**"]
+  },
+  {
+    ...defaultConfig,
+    files: configFiles,
     rules: {
-      "import/order": [
-        "error",
-        {
-          "groups": [
-            "external",
-            "internal",
-            "sibling",
-            "parent"
-          ],
-          "newlines-between": "never",
-          "alphabetize": {
-            order: "asc",
-            caseInsensitive: true
-          }
-        }
-      ]
-    },
-    settings: {
-      "import/resolver": {
-        node: true,
-        webpack: {config: "webpack.config.js"}
-      }
+      ...defaultConfig.rules,
+      "global-require": "off",
+      "import/no-extraneous-dependencies": "off"
     }
   },
   {
-    extends: [traitifyJest],
-    files: ["test/**/*.js"],
-    languageOptions: {
-      globals: {
-        container: "writable",
-      },
-    },
+    ...defaultConfig,
+    extends: [
+      ...defaultConfig.extends,
+      traitifyJest
+    ],
+    files: ["test/**"],
+    ignores: configFiles,
     rules: {
-      "react/prop-types": "off"
+      ...defaultConfig.rules
     },
     settings: {
+      ...defaultConfig.settings,
       "import/resolver": {
-        jest: {jestConfigFile: "test/jest.config.js"},
+        jest: {jestConfigFile: "test/jest.config.js"}
       }
     }
   }

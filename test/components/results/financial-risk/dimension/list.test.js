@@ -2,8 +2,8 @@ import Component from "components/results/financial-risk/dimension/list";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {useOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/financial-risk";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/financial-risk/dimension/details", () => ((props) => (
   <div className="mock">Personality Dimension - {props.type.personality_type.name}</div>

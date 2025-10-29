@@ -2,11 +2,11 @@ import Component from "components/results";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockCognitiveAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import cognitive from "support/data/assessment/cognitive/completed";
 import dimensionBased from "support/data/assessment/personality/dimension-based";
 import financialRisk from "support/data/assessment/personality/financial-risk";
 import typeBased from "support/data/assessment/personality/type-based";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/report/attract", () => (() => <div className="mock">Attract</div>));
 jest.mock("components/report/candidate", () => (() => <div className="mock">Candidate</div>));

@@ -4,8 +4,8 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import _assessment from "support/data/assessment/personality/type-based";
+import useContainer from "support/hooks/use-container";
 
 describe("PersonalityTypeChart", () => {
   let assessment;

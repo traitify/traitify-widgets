@@ -5,7 +5,7 @@ export default class Cache {
   clear = () => {
     try {
       return sessionStorage.clear();
-    } catch(error) { return null; }
+    } catch { return null; }
   };
   getKey = (name) => [this.namespace, name].filter(Boolean).join("-");
   get = (_key) => {
@@ -22,14 +22,14 @@ export default class Cache {
       sessionStorage.removeItem(key);
 
       return null;
-    } catch(error) { return null; }
+    } catch { return null; }
   };
   remove = (_key) => {
     const key = this.getKey(_key);
 
     try {
       return sessionStorage.removeItem(key);
-    } catch(error) { return null; }
+    } catch { return null; }
   };
   set = (_key, value, options = {}) => {
     const key = this.getKey(_key);
@@ -40,6 +40,6 @@ export default class Cache {
       if(options.expiresIn) { data.expiresAt = Date.now() + options.expiresIn * 1000; }
 
       return sessionStorage.setItem(key, JSON.stringify(data));
-    } catch(error) { return null; }
+    } catch { return null; }
   };
 }

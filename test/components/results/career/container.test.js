@@ -4,9 +4,9 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockCareers, mockHighlightedCareers, useAssessment, useCareers} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/type-based";
 import careers from "support/data/careers.json";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("react-apexcharts", () => ((props) => <div className="mock" {...props}>Chart</div>));
 

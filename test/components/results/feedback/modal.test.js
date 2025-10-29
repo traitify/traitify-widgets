@@ -1,9 +1,9 @@
 import Component from "components/results/feedback/modal";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockFeedbackSurvey, mockUserCompletedFeedback} from "support/container/http";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/completed";
 import feedbackSurvey from "support/data/feedback-survey.json";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/common/icon", () => (() => <div className="mock">Close Btn</div>));
 

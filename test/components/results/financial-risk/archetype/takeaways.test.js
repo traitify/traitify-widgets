@@ -2,8 +2,8 @@ import Component from "components/results/financial-risk/archetype/takeaways";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/financial-risk";
+import useContainer from "support/hooks/use-container";
 
 describe("Results.FinancialRisk.Archetype.Takeaways", () => {
   let component;

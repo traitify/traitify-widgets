@@ -4,9 +4,9 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockGuide, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/completed";
 import _guide from "support/data/guide.json";
+import useContainer from "support/hooks/use-container";
 
 describe("Results.Guide.Client", () => {
   let component;

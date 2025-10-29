@@ -144,7 +144,7 @@ export default function PersonalitySurvey() {
 
       try {
         newError = JSON.parse(response).errors[0];
-      } catch(e) {
+      } catch {
         newError = response;
       }
 

@@ -2,9 +2,9 @@ import Component from "components/results/personality/dimension/details";
 import ComponentHandler from "support/component-handler";
 import {mockGuide, useAssessment, useGuide} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/dimension-based";
 import guide from "support/data/guide.json";
+import useContainer from "support/hooks/use-container";
 
 describe("PersonalityDimensionDetails", () => {
   let component;

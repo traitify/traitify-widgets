@@ -3,9 +3,9 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, mockDeck, useAssessment, useDeck} from "support/container/http";
 import {useOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/dimension-based";
 import deck from "support/data/survey/personality/big-five";
+import useContainer from "support/hooks/use-container";
 
 const newDetails = [
   {body: "https://cdn.traitify.com/frtq/paradox/conservative_white.png", title: "Paradox - Badge"},

@@ -16,10 +16,10 @@ import {
   useSettings
 } from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
-import useGlobalMock from "support/hooks/use-global-mock";
 import _completedAssessment from "support/data/assessment/personality/completed";
 import _assessment from "support/data/assessment/personality/incomplete";
+import useContainer from "support/hooks/use-container";
+import useGlobalMock from "support/hooks/use-global-mock";
 
 jest.mock("components/common/icon", () => (({alt, className, icon}) => <span {...{alt, className}}>{icon.iconName}</span>));
 jest.mock("lib/hooks/use-fullscreen", () => jest.fn().mockName("useFullscreen").mockReturnValue([false, () => {}]));

@@ -1,8 +1,8 @@
 import Component from "components/results/personality/type/list";
 import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/type-based";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/personality/type/chart", () => (() => <div className="mock">Chart</div>));
 

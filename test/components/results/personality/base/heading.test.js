@@ -3,8 +3,8 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import _assessment from "support/data/assessment/personality/type-based";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/common/icon", () => ((props) => (
   <div className="mock">Icon - {props.icon.iconName}</div>

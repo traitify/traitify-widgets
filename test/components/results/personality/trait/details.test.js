@@ -1,8 +1,8 @@
 import Component from "components/results/personality/trait/details";
 import ComponentHandler from "support/component-handler";
 import {useAssessment} from "support/container/http";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/completed";
+import useContainer from "support/hooks/use-container";
 
 describe("PersonalityTraitDetails", () => {
   let component;

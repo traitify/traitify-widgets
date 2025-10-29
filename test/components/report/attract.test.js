@@ -3,8 +3,8 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import _assessment from "support/data/assessment/personality/completed";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/personality/base/details", () => (() => <div className="mock">Personality Base Details</div>));
 jest.mock("components/results/personality/base/styles", () => (() => <div className="mock">Personality Base Styles</div>));

@@ -3,8 +3,8 @@ import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {useOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import _assessment from "support/data/assessment/personality/financial-risk";
+import useContainer from "support/hooks/use-container";
 
 describe("Results.FinancialRisk.Archetype.ScoreBar", () => {
   let assessment;

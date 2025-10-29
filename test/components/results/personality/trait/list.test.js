@@ -3,8 +3,8 @@ import Component from "components/results/personality/trait/list";
 import ComponentHandler from "support/component-handler";
 import {mockAssessment, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
-import useContainer from "support/hooks/use-container";
 import assessment from "support/data/assessment/personality/completed";
+import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/personality/trait/details", () => ((props) => (
   <div className="mock">Trait - {props.trait.personality_trait.name}</div>

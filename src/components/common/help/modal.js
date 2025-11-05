@@ -1,5 +1,8 @@
+/* global SOURCE, VERSION */
 import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
+import Bowser from "bowser";
 import PropTypes from "prop-types";
+import {useState} from "react";
 import DangerousHTML from "components/common/dangerous-html";
 import Input from "components/common/form/input";
 import Icon from "components/common/icon";
@@ -10,12 +13,39 @@ import style from "./style.scss";
 
 function Modal({show, setShow}) {
   const translate = useTranslate();
+  const [message, setMessage] = useState("");
 
   if(!show) { return null; }
 
+  const onChange = (event) => { setMessage(event.target.value); };
   const onClose = () => setShow(false);
   const onSubmit = () => {
-    console.log("submit");
+    if(!message) { return; }
+
+    const params = {
+      message,
+      widget: {source: SOURCE, version: VERSION}
+    };
+
+    if(window.navigator && window.navigator.userAgent) {
+      params.userAgent = window.navigator.userAgent;
+      params.userAgentInfo = Bowser.parse(window.navigator.userAgent);
+    }
+    if(window.location) {
+      const searchParams = window.location.search
+        ? new URLSearchParams(window.location.search)
+        : null;
+
+      params.rootDirectory = `${window.location.protocol}//${window.location.host}`;
+      params.url = String(window.location);
+      params.urlInfo = {
+        host: window.location.host,
+        path: window.location.pathname,
+        query: searchParams ? Object.fromEntries(searchParams.entries()) : {},
+        scheme: window.location.protocol
+      };
+    }
+    console.log("submit", params);
   };
   const heading = translate("help_modal.heading");
   const title = (
@@ -28,7 +58,13 @@ function Modal({show, setShow}) {
     <BaseModal onClose={onClose} size="md" title={title}>
       <div className={style.content}>
         <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_before_html")} />
-        <Input className={style.input} placeholder={translate("help_modal.input_placeholder")} type="textarea" />
+        <Input
+          className={style.input}
+          onChange={onChange}
+          placeholder={translate("help_modal.input_placeholder")}
+          type="textarea"
+          value={message}
+        />
         <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_after_html", {url: "https://www.traitify.com/ethical-assessments"})} />
         <Divider className={style.divider} />
         <div className={style.buttons}>

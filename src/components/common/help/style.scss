@@ -45,33 +45,6 @@
   }
 }
 
-:global(.traitify--container) .trigger {
-  button {
-    border: $border-width solid;
-    width: auto;
-
-    @include buttonLight("white");
-    @include theme("border-color", "border");
-
-    :global(.traitify--icon-fa) { @include theme("color", "secondary"); }
-  }
-
-  &.expand {
-    margin-top: $buffer-heading;
-    text-align: center;
-
-    button { width: auto; }
-  }
-
-  @include max-width("md") {
-    margin-top: $buffer-heading;
-
-    button { width: 100%; }
-  }
-  @include min-width("md") {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: $buffer;
-    right: 0;
-  }
+.trigger {
+  :global(.traitify--icon-fa) { @include theme("color", "secondary"); }
 }

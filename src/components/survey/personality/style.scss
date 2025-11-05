@@ -58,10 +58,18 @@ $outer-padding: $buffer;
 .caption {
   @extend %heading;
 
+  display: flex;
+  justify-content: space-between;
   margin-bottom: $buffer-heading;
   margin-top: $buffer;
   text-align: center;
 
+  @include min-width("sm") {
+    .spacer {
+      content: "";
+      width: $font-size-heading + $buffer-sm;
+    }
+  }
   @include theme("color", "text");
   &:focus, &:focus-visible { outline: none; }
 }

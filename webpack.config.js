@@ -5,6 +5,7 @@ const path = require("path");
 module.exports = (_env) => {
   const env = _env || {};
   const environment = process.env.NODE_ENV || "development";
+  const browser = env.platform === "browser";
   const cssMaps = environment !== "production";
   const config = {
     context: path.resolve(__dirname, "src"),
@@ -99,6 +100,7 @@ module.exports = (_env) => {
       new ESLintPlugin({emitWarning: true, failOnError: false}),
       new webpack.ProvidePlugin({React: "react"}),
       new webpack.DefinePlugin({
+        SOURCE: JSON.stringify(browser ? "cdn" : "npm"),
         VERSION: JSON.stringify(process.env.npm_package_version)
       })
     ],
@@ -113,8 +115,6 @@ module.exports = (_env) => {
       }
     }
   };
-
-  const browser = env.platform === "browser";
 
   if(browser) {
     delete config.externals;

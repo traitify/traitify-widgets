@@ -51,7 +51,11 @@ function Container({
   return (
     <div className={`${style.container} traitify--survey-${textSurvey ? "text" : "image"}`} ref={container}>
       {caption && !textSurvey && (
-        <div className={style.caption} ref={text} tabIndex="-1">{caption}</div>
+        <div className={style.caption} ref={text} tabIndex="-1">
+          <span className={style.spacer} />
+          <span>{caption}</span>
+          {showHelp && <HelpButton onClick={() => setShowHelpModal(true)} />}
+        </div>
       )}
       {textSurvey && (
         <div className={style.progressBar}>
@@ -73,12 +77,7 @@ function Container({
         )}
       </div>
       <Responses likert={likert} onResponse={onResponse} />
-      {showHelp && (
-        <>
-          <HelpButton expand={likert} onClick={() => setShowHelpModal(true)} />
-          <HelpModal show={showHelpModal} setShow={setShowHelpModal} />
-        </>
-      )}
+      {showHelpModal && <HelpModal show={showHelpModal} setShow={setShowHelpModal} />}
     </div>
   );
 }

@@ -4,22 +4,16 @@ import Icon from "components/common/icon";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
-function Button({className = null, expand = false, onClick}) {
+function Button({className = null, onClick}) {
   const translate = useTranslate();
-  const buttonClass = [style.trigger, className, expand && style.expand].filter(Boolean).join(" ");
-  const text = translate("help_modal.trigger");
+  const buttonClass = [style.trigger, className].filter(Boolean).join(" ");
 
   return (
-    <div className={buttonClass}>
-      <button type="button" onClick={onClick}>
-        {text} <Icon alt={text} icon={faQuestionCircle} />
-      </button>
-    </div>
+    <button className={buttonClass} type="button" onClick={onClick}><Icon alt={translate("help")} icon={faQuestionCircle} /></button>
   );
 }
 Button.propTypes = {
   className: PropTypes.string,
-  expand: PropTypes.bool,
   onClick: PropTypes.func.isRequired
 };
 

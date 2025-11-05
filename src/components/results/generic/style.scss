@@ -1,0 +1,191 @@
+@import "style/helpers";
+
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer-lg * 0.5;
+}
+
+.container {
+  @extend %container;
+  color: $-black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  button {
+    border-radius: $border-radius-sm * 0.5;
+    height: 48px;
+    margin: $buffer $buffer * 0.5;
+    vertical-align: middle;
+
+    &.toggleButton {
+      @include buttonLight("text-dark");
+      border-radius: $border-radius-sm * 0.5;
+      cursor: pointer;
+      height: $buffer * 2;
+      margin: $buffer-sm * 0.5;
+      padding: $buffer-sm * 0.5 $buffer-sm * 1.25;
+      border: 1px solid #DADCE0;
+    }
+  }
+}
+
+.contentBody {
+  display: flex;
+  flex-direction: column;
+  @extend %container;
+  
+  .score, .breakdown {
+    @extend %box;
+    @extend %container;
+    margin-bottom: $buffer-section;
+  }
+}
+
+.correct {
+  background-color: $-aquamarine;
+}
+
+.correct, .incorrect, .overall {
+  border-radius: $border-radius-sm;
+  color: $-white;
+  display: flex;
+  height: $buffer * 2.75;
+  justify-content: space-between;
+  padding: $buffer * 0.5 $buffer;
+  width: 100%;
+}
+
+.description {
+  align-items: center;
+  display: flex;
+  gap: $buffer * 0.5;
+  justify-content: space-between;
+  @include max-width("xs") { flex-direction: column; }
+}
+
+.flexDirectionColumn { flex-direction: column; }
+
+.iconCorrect {
+  color: $-aquamarine;
+  font-size: $font-size-heading * 1.25;
+}
+
+.iconIncorrect {
+  color: $-red;
+  font-size: $font-size-heading * 1.25;
+}
+
+.incorrect {
+  background-color: $-red;
+}
+
+.overall {
+  background-color: $-blue;
+}
+
+.question {
+  @extend %box;
+}
+
+.questionContent {
+  align-items: center;
+  display: flex;
+  gap: $buffer * 0.5;
+  @include max-width("xs") { flex-direction: column; }
+}
+
+.questionImage {
+  flex: 1;
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+}
+
+.questionText {
+  font-weight: 600;
+  padding: $buffer 0;
+}
+
+.questionTitle {
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  gap: $buffer * 0.75;
+  justify-content: space-between;
+  
+  div:last-of-type {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.responseOption {
+  @extend %box;
+  font-weight: 500;
+  padding: $buffer-lg * 0.25 $buffer-lg * 0.5;
+  text-align: center;
+
+  &.correctOption {
+    border: 2px solid $-aquamarine;
+  }
+  &.incorrectResponse {
+    background-color: $-red;
+    color: $-white;
+  }
+  &.correctResponse {
+    background-color: $-aquamarine;
+    color: $-white;
+  }
+}
+
+.responseOptions {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.responsesWithImage {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.responsesWithoutImage {
+  display: flex;
+  flex-direction: row;
+  gap: $buffer;
+  justify-content: space-around;
+
+  @include max-width("xs") { flex-direction: column; }
+  
+  .responseOption {
+    width: 100%;
+  }
+}
+
+.score {
+  .scoreRow {
+    display: flex;
+    font-size: $font-size-lg;
+    gap: $buffer * 0.5;
+    justify-content: space-between;
+    margin-top: $buffer;
+    @include max-width("xs") { flex-direction: column; }
+  }
+}
+
+.title {
+  @extend %heading;
+  font-size: $font-size;
+}

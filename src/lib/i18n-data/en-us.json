@@ -162,6 +162,14 @@
         "heading": "Cognitive Breakdown"
       }
     },
+    "generic": {
+      "breakdown": "Breakdown",
+      "breakdown_description": "Here is the breakdown of the questions you answered in the assessment",
+      "correct": "Correct",
+      "incorrect": "Incorrect",
+      "overall_score": "Overall Score",
+      "score": "Score"
+    },
     "reports": {
       "candidate": "Candidate Report",
       "employee": "Engage Employee Report",
@@ -172,6 +180,7 @@
   "salary_mean": "Salary Mean",
   "salary_mean_html": "The wage at which half of the workers in the occupation earned more than that amount and half earned less. Median wage data is from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Search",
+  "show_hide_all": "Show/Hide All",
   "show_less": "Show Less",
   "show_more": "Show More",
   "skill_heading_for_communication": "Speaking, writing, and sharing ideas are important. Try these tips to communicate well.",

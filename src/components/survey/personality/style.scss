@@ -65,6 +65,7 @@ $outer-padding: $buffer;
   @include theme("color", "text");
   &:focus, &:focus-visible { outline: none; }
 }
+.center { text-align: center; }
 .container {
   @extend %container;
 

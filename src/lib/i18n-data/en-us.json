@@ -97,6 +97,14 @@
     }
   },
   "help": "Help",
+  "help_modal": {
+    "content_after_html": "Check out other information about our <a href=\"%{url}\" target=\"_blank\">Assessments</a>.",
+    "content_before_html": "What can we help you with?",
+    "heading": "Help",
+    "input_placeholder": "Write a reply...",
+    "submit": "Send",
+    "trigger": "Need Help"
+  },
   "instructions": "Instructions",
   "interview_guide_description": "These questions are customized for this candidate based on their levels of each personality dimension. You may wish to review the candidate's personality profile to learn whether they are high, medium, or low in each dimension, and then structure their interview around the components of personality that are of greatest concern for the position they seek.",
   "interview_guide_heading": "Interview Tips/Questions",

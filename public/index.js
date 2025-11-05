@@ -113,7 +113,7 @@ function createWidget() {
   Traitify.options.showRecommendationList = true;
   Traitify.options.showTraitList = true;
   Traitify.options.survey = {};
-  ["allowBack", "allowFullscreen", "showInstructions"].forEach((key) => {
+  ["allowBack", "allowFullscreen", "showHelp", "showInstructions"].forEach((key) => {
     const value = booleanFrom(cache.get(`survey.${key}`), "default");
 
     if(value !== "default") { Traitify.options.survey[key] = value; }
@@ -336,6 +336,15 @@ function setupDom() {
       {text: "No", value: "false"}
     ],
     text: "Allow Fullscreen:"
+  }));
+  column.appendChild(createOption({
+    name: "survey.showHelp",
+    options: [
+      {text: "Default", value: ""},
+      {text: "Yes", value: "true"},
+      {text: "No", value: "false"}
+    ],
+    text: "Show Instructions:"
   }));
   column.appendChild(createOption({
     name: "survey.showInstructions",

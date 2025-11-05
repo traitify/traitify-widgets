@@ -4,7 +4,9 @@ import {
   faMinimize
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import {useEffect, useLayoutEffect, useRef} from "react";
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
+import HelpButton from "components/common/help/button";
+import HelpModal from "components/common/help/modal";
 import Icon from "components/common/icon";
 import dig from "lib/common/object/dig";
 import useAssessment from "lib/hooks/use-assessment";
@@ -29,6 +31,7 @@ function Container({
   const container = useRef(null);
   const content = useRef(null);
   const [fullscreen, toggleFullscreen] = useFullscreen(container.current);
+  const [showHelpModal, setShowHelpModal] = useState(false);
   const size = useElementSize(content.current);
   const text = useRef(null);
   const translate = useTranslate();
@@ -41,6 +44,7 @@ function Container({
   }, [caption]);
 
   const back = () => dispatch({type: "back"});
+  const showHelp = Object.hasOwn(options, "showHelp") ? options.showHelp : false;
   const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
   const allowBack = Object.hasOwn(options, "allowBack") ? options.allowBack : textSurvey;
 
@@ -69,6 +73,12 @@ function Container({
         )}
       </div>
       <Responses likert={likert} onResponse={onResponse} />
+      {showHelp && (
+        <>
+          <HelpButton expand={likert} onClick={() => setShowHelpModal(true)} />
+          <HelpModal show={showHelpModal} setShow={setShowHelpModal} />
+        </>
+      )}
     </div>
   );
 }

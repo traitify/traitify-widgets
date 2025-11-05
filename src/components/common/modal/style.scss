@@ -33,9 +33,9 @@
     border-radius: $border-radius-sm * 2.5;
     padding: $buffer * 1.25 $buffer * 1.25 $buffer-sm * 1.25;
     text-align: left;
+    width: 100%;
 
     @include min-width(md) {
-      width: 100%;
       max-width: 650px;
     }
 
@@ -47,18 +47,23 @@
       max-width: 1000px;
     }
   }
+  &.md .modalContainer { @include min-width(md) { max-width: 500px; } }
+  &.lg .modalContainer { @include min-width(xl) { max-width: 800px; } }
+  // NOTE: sm and xl modal sizes are currently unused
+  // &.sm .modalContainer { @include min-width(md) { max-width: 300px; } }
+  // &.xl .modalContainer { @include min-width(xl) { max-width: 1200px; } }
+}
 
-  .grayDivider {
-    color: #555555;
-    width: 100%;
-    margin: $buffer-sm * 1.25 auto $buffer * 1.25;
-    line-height: inherit;
-    clear: both;
-    user-select: none;
-    break-after: page;
-    border: $border-width solid #e8e8ec;
-    border-radius: $border-radius-sm;
-  }
+.divider {
+  color: #555555;
+  width: 100%;
+  margin: $buffer-sm * 1.25 auto $buffer * 1.25;
+  line-height: inherit;
+  clear: both;
+  user-select: none;
+  break-after: page;
+  border: $border-width solid #e8e8ec;
+  border-radius: $border-radius-sm;
 }
 
 .header {

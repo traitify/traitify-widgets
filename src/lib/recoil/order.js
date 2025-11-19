@@ -1,6 +1,8 @@
 import {DefaultValue, atom, selector} from "recoil";
+import {responseToErrors} from "lib/common/errors";
 import orderFromQuery, {orderFromRecommendation} from "lib/common/order-from-query";
 import {
+  appendErrorState,
   baseState,
   cacheState,
   graphqlState,
@@ -45,7 +47,7 @@ const baseAssessmentState = selector({
 });
 
 export const baseOrderQuery = selector({
-  get: async({get}) => {
+  get: async({get, set}) => {
     const orderID = get(orderIDState);
     if(!orderID) { return null; }
 
@@ -60,8 +62,13 @@ export const baseOrderQuery = selector({
       query: GraphQL.order.get,
       variables: {id: orderID}
     };
+    const {path} = GraphQL.order;
+    const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
+    if(response.errors) {
+      console.warn("order", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+    }
 
-    const response = await http.post(GraphQL.order.path, params);
     const order = orderFromQuery(response);
     order.cacheKey = cacheKey;
     order.origin = {orderID};
@@ -73,7 +80,7 @@ export const baseOrderQuery = selector({
 });
 
 const baseRecommendationQuery = selector({
-  get: async({get}) => {
+  get: async({get, set}) => {
     const {benchmarkID, packageID, profileID} = get(baseState);
 
     const cache = get(cacheState);
@@ -88,7 +95,12 @@ const baseRecommendationQuery = selector({
       variables: {benchmarkID, localeKey: get(localeState), packageID, profileID}
     };
 
-    const response = await http.post(GraphQL.xavier.path, params);
+    const {path} = GraphQL.xavier;
+    const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
+    if(response.errors) {
+      console.warn("order-recommendation", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+    }
     const order = orderFromRecommendation(response);
     order.cacheKey = cacheKey;
     order.origin = {benchmarkID, packageID, profileID};

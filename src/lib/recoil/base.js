@@ -5,7 +5,7 @@ export const activeState = atom({default: null, key: "active"});
 export const baseState = atom({default: {}, key: "base"});
 export const benchmarkIDState = atom({default: null, key: "benchmark-id"});
 export const cacheState = atom({dangerouslyAllowMutability: true, default: null, key: "cache"});
-export const errorState = atom({default: null, key: "error"});
+export const errorsState = atom({default: [], key: "errors"});
 export const graphqlState = atom({dangerouslyAllowMutability: true, default: null, key: "graphql"});
 export const httpState = atom({dangerouslyAllowMutability: true, default: null, key: "http"});
 export const i18nState = atom({dangerouslyAllowMutability: true, default: null, key: "i18n"});
@@ -25,6 +25,15 @@ export const orderIDState = atom({default: null, key: "order-id"});
 export const packageIDState = atom({default: null, key: "package-id"});
 export const profileIDState = atom({default: null, key: "profile-id"});
 export const skipDismissedState = atom({default: false, key: "skip-dismissed"});
+
+export const appendErrorState = selector({
+  get: ({get}) => get(errorsState),
+  set: ({get, set}, newValue) => set(
+    errorsState,
+    [...get(errorsState), ...(Array.isArray(newValue) ? newValue : [newValue])]
+  ),
+  key: "append-error-state"
+});
 
 // NOTE: Breaking up state prevents over-triggering selectors
 export const activeIDState = selector({

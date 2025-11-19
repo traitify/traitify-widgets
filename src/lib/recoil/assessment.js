@@ -1,9 +1,11 @@
 import {selector, selectorFamily} from "recoil";
+import {responseToErrors} from "lib/common/errors";
 import {assessmentsState} from "./assessments";
 import {
   activeState,
   activeIDState,
   activeTypeState,
+  appendErrorState,
   cacheState,
   graphqlState,
   httpState,
@@ -14,7 +16,7 @@ import {
 // TODO: Return error instead of null for cognitive and external
 // return {errors: response.errors, id};
 export const cognitiveAssessmentQuery = selectorFamily({
-  get: (id) => async({get}) => {
+  get: (id) => async({get, set}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -28,9 +30,11 @@ export const cognitiveAssessmentQuery = selectorFamily({
       query: GraphQL.cognitive.get,
       variables: {localeKey: get(localeState), testID: id}
     };
-    const response = await http.post({path: GraphQL.cognitive.path, params});
+    const {path} = GraphQL.cognitive;
+    const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("cognitive-assessment", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "POST", path, response}));
       return null;
     }
 
@@ -45,7 +49,7 @@ export const cognitiveAssessmentQuery = selectorFamily({
 });
 
 export const externalAssessmentQuery = selectorFamily({
-  get: (id) => async({get}) => {
+  get: (id) => async({get, set}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -55,18 +59,20 @@ export const externalAssessmentQuery = selectorFamily({
 
     const GraphQL = get(graphqlState);
     const http = get(httpState);
+    const {path} = GraphQL.external;
     const query = {
       params: {
         query: GraphQL.external.get,
         variables: {id}
       },
-      path: GraphQL.external.path
+      path
     };
     if(http.version === "v1") { query.version = GraphQL.external.version; }
 
-    const response = await http.post(query);
+    const response = await http.post(query).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("external-assessment", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "POST", path, response}));
       return null;
     }
 
@@ -81,7 +87,7 @@ export const externalAssessmentQuery = selectorFamily({
 });
 
 export const personalityAssessmentQuery = selectorFamily({
-  get: (id) => async({get}) => {
+  get: (id) => async({get, set}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -94,7 +100,13 @@ export const personalityAssessmentQuery = selectorFamily({
       locale_key: get(localeState)
     };
     const http = get(httpState);
-    const response = await http.get({path: `/assessments/${id}`, params});
+    const path = `/assessments/${id}`;
+    const response = await http.get({path, params}).catch((e) => ({errors: [e.message]}));
+    if(response.error || response.errors) {
+      console.warn("personality-assessment", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "GET", path, response}));
+      return null;
+    }
     if(!response?.completed_at) { return response; }
 
     cache.set(cacheKey, response);

@@ -1,23 +1,27 @@
 import {selector} from "recoil";
+import {responseToErrors} from "lib/common/errors";
 import camelCase from "lib/common/string/camel-case";
 import {
+  appendErrorState,
   cacheState,
   httpState,
   safeCacheKeyState
 } from "./base";
 
 export const settingsQuery = selector({
-  get: async({get}) => {
+  get: async({get, set}) => {
     const http = get(httpState);
     const cache = get(cacheState);
     const cacheKey = get(safeCacheKeyState({id: http.authKey || "none", type: "settings"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
-    const response = await http.get("/organizations/settings");
+    const path = "/organizations/settings";
+    const response = await http.get(path).catch((e) => ({errors: [e.message]}));
     if(!response) { return; }
     if(response.errors) {
       console.warn("test", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "GET", path, response}));
       return;
     }
 
@@ -33,17 +37,19 @@ export const settingsQuery = selector({
 });
 
 export const translationsQuery = selector({
-  get: async({get}) => {
+  get: async({get, set}) => {
     const http = get(httpState);
     const cache = get(cacheState);
     const cacheKey = get(safeCacheKeyState({id: http.authKey || "none", type: "translations"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
-    const response = await http.get("/xavier/translations", {project: "widgets"});
+    const path = "/xavier/translations";
+    const response = await http.get(path, {project: "widgets"}).catch((e) => ({errors: [e.message]}));
     if(!response) { return; }
     if(response.errors) {
       console.warn("test", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "GET", path, response}));
       return;
     }
 

@@ -1,7 +1,9 @@
 import {noWait, selector} from "recoil";
+import {responseToErrors} from "lib/common/errors";
 import dig from "lib/common/object/dig";
 import {activeAssessmentQuery} from "./assessment";
 import {
+  appendErrorState,
   benchmarkIDState,
   cacheState,
   graphqlState,
@@ -11,7 +13,7 @@ import {
 } from "./base";
 
 export const benchmarkQuery = selector({
-  get: async({get}) => {
+  get: async({get, set}) => {
     const benchmarkID = get(benchmarkIDState);
     if(!benchmarkID) { return null; }
 
@@ -26,8 +28,13 @@ export const benchmarkQuery = selector({
       query: GraphQL.benchmark.get,
       variables: {benchmarkID, localeKey: get(localeState)}
     };
-    const response = await http.post(GraphQL.benchmark.path, params);
-    if(response.errors) { console.warn("benchmark", response.errors); } /* eslint-disable-line no-console */
+    const {path} = GraphQL.benchmark;
+    const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
+    if(response.errors) {
+      console.warn("benchmark", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+    }
+    if(!response.data) { return null; }
 
     const benchmark = response.data.getDimensionRangeBenchmark;
     if(benchmark) { cache.set(cacheKey, benchmark); }

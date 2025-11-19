@@ -3,17 +3,24 @@ import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
 import Bowser from "bowser";
 import PropTypes from "prop-types";
 import {useState} from "react";
+import {useRecoilValue} from "recoil";
 import DangerousHTML from "components/common/dangerous-html";
 import Input from "components/common/form/input";
 import Icon from "components/common/icon";
 import BaseModal from "components/common/modal";
 import Divider from "components/common/modal/divider";
+import except from "lib/common/object/except";
 import useTranslate from "lib/hooks/use-translate";
+import {activeState, baseState, errorsState, orderState} from "lib/recoil";
 import style from "./style.scss";
 
 function Modal({show, setShow}) {
   const translate = useTranslate();
   const [message, setMessage] = useState("");
+  const active = useRecoilValue(activeState);
+  const base = useRecoilValue(baseState);
+  const errors = useRecoilValue(errorsState);
+  const order = useRecoilValue(orderState);
 
   if(!show) { return null; }
 
@@ -23,9 +30,13 @@ function Modal({show, setShow}) {
     if(!message) { return; }
 
     const params = {
+      errors,
       message,
+      state: {active, base, order: {}},
       widget: {source: SOURCE, version: VERSION}
     };
+
+    if(!order) { params.state.order = except(order, ["assessments"]); }
 
     if(window.navigator && window.navigator.userAgent) {
       params.userAgent = window.navigator.userAgent;

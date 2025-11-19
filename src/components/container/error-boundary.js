@@ -2,15 +2,15 @@ import PropTypes from "prop-types";
 import {useState} from "react";
 import {useSetRecoilState} from "recoil";
 import Boundary from "components/common/error-boundary";
-import {errorState} from "lib/recoil";
+import {appendErrorState} from "lib/recoil";
 
 function ErrorBoundary({children}) {
   const [count, setCount] = useState(0);
-  const setError = useSetRecoilState(errorState);
-  const onError = (error) => {
-    console.error(error); // eslint-disable-line no-console
+  const appendError = useSetRecoilState(appendErrorState);
+  const onError = (error, errorInfo) => {
+    console.error(error, errorInfo); // eslint-disable-line no-console
     setCount((total) => total + 1);
-    setError(error);
+    appendError(`${error}: ${errorInfo}`);
   };
 
   if(count > 2) { return null; }

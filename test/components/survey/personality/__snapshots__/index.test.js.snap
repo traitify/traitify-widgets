@@ -11,7 +11,12 @@ exports[`Survey.Personality actions back requires answered slides 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -74,7 +79,12 @@ exports[`Survey.Personality actions back shows button 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -156,7 +166,12 @@ exports[`Survey.Personality actions back triggers action 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -219,7 +234,12 @@ exports[`Survey.Personality actions fullscreen shows button 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -293,7 +313,12 @@ exports[`Survey.Personality actions fullscreen triggers action 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -367,7 +392,12 @@ exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -441,7 +471,12 @@ exports[`Survey.Personality actions response saves me 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -512,7 +547,12 @@ exports[`Survey.Personality actions response saves not me 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -583,7 +623,12 @@ exports[`Survey.Personality image error renders error 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Unable to load more slides at this time
+      <span
+        className="spacer"
+      />
+      <span>
+        Unable to load more slides at this time
+      </span>
     </div>
     <div
       className="content"
@@ -641,7 +686,12 @@ exports[`Survey.Personality image error retry renders loading 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -702,7 +752,12 @@ exports[`Survey.Personality image error retry renders slide 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -765,7 +820,12 @@ exports[`Survey.Personality image loading renders loading 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -826,7 +886,12 @@ exports[`Survey.Personality image loading requires multiple loaded slides 1`] = 
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -887,7 +952,12 @@ exports[`Survey.Personality image loads renders slide 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Innovative
+      <span
+        className="spacer"
+      />
+      <span>
+        Innovative
+      </span>
     </div>
     <div
       className="content"
@@ -950,7 +1020,12 @@ exports[`Survey.Personality instructions renders html instructions 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Instructions
+      <span
+        className="spacer"
+      />
+      <span>
+        Instructions
+      </span>
     </div>
     <div
       className="content"
@@ -1028,7 +1103,12 @@ exports[`Survey.Personality instructions renders markdown instructions 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Instructions
+      <span
+        className="spacer"
+      />
+      <span>
+        Instructions
+      </span>
     </div>
     <div
       className="content"
@@ -1110,7 +1190,12 @@ exports[`Survey.Personality instructions requires instructions 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -1171,7 +1256,12 @@ exports[`Survey.Personality instructions requires option 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -1232,7 +1322,12 @@ exports[`Survey.Personality instructions skip assessment accommodation renders b
       className="caption"
       tabIndex="-1"
     >
-      Instructions
+      <span
+        className="spacer"
+      />
+      <span>
+        Instructions
+      </span>
     </div>
     <div
       className="content"
@@ -1321,7 +1416,12 @@ exports[`Survey.Personality instructions skip assessment accommodation renders i
       className="caption"
       tabIndex="-1"
     >
-      Instructions
+      <span
+        className="spacer"
+      />
+      <span>
+        Instructions
+      </span>
     </div>
     <div
       className="content"
@@ -1410,7 +1510,12 @@ exports[`Survey.Personality instructions skip assessment accommodation renders r
       className="caption"
       tabIndex="-1"
     >
-      Instructions
+      <span
+        className="spacer"
+      />
+      <span>
+        Instructions
+      </span>
     </div>
     <div
       className="content"
@@ -1497,7 +1602,12 @@ exports[`Survey.Personality instructions skip assessment accommodation triggers 
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -1558,7 +1668,12 @@ exports[`Survey.Personality instructions starts assessment 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Loading
+      <span
+        className="spacer"
+      />
+      <span>
+        Loading
+      </span>
     </div>
     <div
       className="content"
@@ -1619,7 +1734,12 @@ exports[`Survey.Personality likert response saves me 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -1704,7 +1824,12 @@ exports[`Survey.Personality likert response saves not me 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -1789,7 +1914,12 @@ exports[`Survey.Personality likert response saves really me 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -1874,7 +2004,12 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
       className="caption"
       tabIndex="-1"
     >
-      Short Cuts
+      <span
+        className="spacer"
+      />
+      <span>
+        Short Cuts
+      </span>
     </div>
     <div
       className="content"
@@ -1970,7 +2105,12 @@ ComponentHandler {
         className="caption"
         tabIndex="-1"
       >
-        Error Submitting
+        <span
+          className="spacer"
+        />
+        <span>
+          Error Submitting
+        </span>
       </div>
       <div
         className="content"
@@ -2034,7 +2174,12 @@ ComponentHandler {
         className="caption"
         tabIndex="-1"
       >
-        Oh no
+        <span
+          className="spacer"
+        />
+        <span>
+          Error Submitting
+        </span>
       </div>
       <div
         className="content"
@@ -2098,7 +2243,12 @@ ComponentHandler {
         className="caption"
         tabIndex="-1"
       >
-        Oh no
+        <span
+          className="spacer"
+        />
+        <span>
+          Error Submitting
+        </span>
       </div>
       <div
         className="content"

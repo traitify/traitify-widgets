@@ -20,6 +20,26 @@ import style from "./style.scss";
 import useSlideLoader from "./use-slide-loader";
 
 const maxRetries = 2;
+const roundTo = 50;
+const round = (larger, smaller) => {
+  const ratio = (1.0 * larger) / smaller;
+  const newLarger = Math.ceil(larger / roundTo) * roundTo;
+  const newSmaller = Math.round(newLarger / ratio);
+
+  return [newLarger, newSmaller];
+};
+const roundDimensions = ({height: originalHeight, width: originalWidth}) => {
+  let height;
+  let width;
+
+  if(originalWidth >= originalHeight) {
+    [width, height] = round(originalWidth, originalHeight);
+  } else {
+    [height, width] = round(originalHeight, originalWidth);
+  }
+
+  return {height, width};
+};
 
 export default function PersonalitySurvey() {
   const assessment = useAssessment({surveyType: "personality"});
@@ -79,10 +99,11 @@ export default function PersonalitySurvey() {
         .reduce((max, current) => (max.height > current.height ? max : current));
       if(width <= 0 || height <= 0) { return slideImage.url; }
 
-      const params = {
-        h: (likert && window.innerWidth <= 768) ? height - 74 : height,
-        w: width
-      };
+      const {height: h, width: w} = roundDimensions({
+        height: (likert && window.innerWidth <= 768) ? height - 74 : height,
+        width
+      });
+      const params = {h, w};
 
       return `${slideImage.url}&${toQueryString(params)}`;
     };

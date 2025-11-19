@@ -16,7 +16,7 @@ function Slide({orientation, slide}) {
   }, [orientation]);
 
   return (
-    <div className={[style.slide, style[orientation], style[textSurvey ? "text" : "image"]].join(" ")}>
+    <div aria-hidden={orientation !== "middle"} className={[style.slide, style[orientation], style[textSurvey ? "text" : "image"]].join(" ")}>
       {textSurvey ? (
         <span ref={caption}>{slide.caption}</span>
       ) : (

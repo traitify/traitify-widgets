@@ -26,8 +26,8 @@ function Modal({show, setShow}) {
 
   const onChange = (event) => { setMessage(event.target.value); };
   const onClose = () => setShow(false);
-  const onSubmit = () => {
-    if(!message) { return; }
+  const onSubmit = (e) => {
+    e.preventDefault();
 
     const params = {
       errors,
@@ -67,12 +67,13 @@ function Modal({show, setShow}) {
 
   return (
     <BaseModal onClose={onClose} size="md" title={title}>
-      <div className={style.content}>
+      <form className={style.content} onSubmit={onSubmit}>
         <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_before_html")} />
         <Input
           className={style.input}
           onChange={onChange}
           placeholder={translate("help_modal.input_placeholder")}
+          required={true}
           type="textarea"
           value={message}
         />
@@ -80,9 +81,9 @@ function Modal({show, setShow}) {
         <Divider className={style.divider} />
         <div className={style.buttons}>
           <button className={style.cancel} onClick={onClose} type="button">{translate("cancel")}</button>
-          <button className={style.submit} onClick={onSubmit} type="button">{translate("help_modal.submit")}</button>
+          <button className={style.submit} onClick={onSubmit} type="submit">{translate("help_modal.submit")}</button>
         </div>
-      </div>
+      </form>
     </BaseModal>
   );
 }

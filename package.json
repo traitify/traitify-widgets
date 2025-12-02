@@ -87,7 +87,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "apexcharts": "^3.49.2",
-    "bowser": "^2.12.1",
+    "bowser": "^2.13.1",
     "color": "^4.2.3",
     "core-js": "^3.37.1",
     "markdown-to-jsx": "^7.4.7",

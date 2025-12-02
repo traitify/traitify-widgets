@@ -1,6 +1,6 @@
 /* global SOURCE, VERSION */
 import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
-import Bowser from "bowser";
+import Bowser from "bowser/es5";
 import PropTypes from "prop-types";
 import {useState} from "react";
 import {useRecoilValue} from "recoil";

@@ -45,7 +45,18 @@
 .header {
   @extend %heading;
 
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+
+  @include min-width("sm") {
+    .helpSpacer {
+      content: "";
+      width: $font-size-heading + $buffer-sm;
+    }
+  }
+
+  > div { flex: 1; }
 }
 .icon {
   margin-right: $buffer-sm;

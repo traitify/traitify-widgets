@@ -31,6 +31,7 @@ function Container({
   const container = useRef(null);
   const content = useRef(null);
   const [fullscreen, toggleFullscreen] = useFullscreen(container.current);
+  const showHelp = useOption("showHelp");
   const [showHelpModal, setShowHelpModal] = useState(false);
   const size = useElementSize(content.current);
   const text = useRef(null);
@@ -44,7 +45,6 @@ function Container({
   }, [caption]);
 
   const back = () => dispatch({type: "back"});
-  const showHelp = Object.hasOwn(options, "showHelp") ? options.showHelp : false;
   const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
   const allowBack = Object.hasOwn(options, "allowBack") ? options.allowBack : textSurvey;
 
@@ -52,8 +52,8 @@ function Container({
     <div className={`${style.container} traitify--survey-${textSurvey ? "text" : "image"}`} ref={container}>
       {caption && !textSurvey && (
         <div className={style.caption} ref={text} tabIndex="-1">
-          <span className={style.spacer} />
-          <span>{caption}</span>
+          {showHelp && <span className={style.spacer} />}
+          <div>{caption}</div>
           {showHelp && <HelpButton onClick={() => setShowHelpModal(true)} />}
         </div>
       )}

@@ -105,7 +105,7 @@ function createWidget() {
   Traitify.options.locale = cache.get("locale");
   Traitify.options.perspective = cache.get("perspective");
   Traitify.options.report = cache.get("report");
-  ["showHeaders"].forEach((key) => {
+  ["showHeaders", "showHelp"].forEach((key) => {
     const value = booleanFrom(cache.get(key), "default");
 
     if(value !== "default") { Traitify.options[key] = value; }
@@ -113,7 +113,7 @@ function createWidget() {
   Traitify.options.showRecommendationList = true;
   Traitify.options.showTraitList = true;
   Traitify.options.survey = {};
-  ["allowBack", "allowFullscreen", "showHelp", "showInstructions"].forEach((key) => {
+  ["allowBack", "allowFullscreen", "showInstructions"].forEach((key) => {
     const value = booleanFrom(cache.get(`survey.${key}`), "default");
 
     if(value !== "default") { Traitify.options.survey[key] = value; }
@@ -307,15 +307,17 @@ function setupDom() {
   row.appendChild(column);
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "Additional Options"}));
-  column.appendChild(createOption({
-    name: "showHeaders",
-    options: [
-      {text: "Default", value: ""},
-      {text: "Yes", value: "true"},
-      {text: "No", value: "false"}
-    ],
-    text: "Show Headers:"
-  }));
+  [{name: "showHeaders", text: "Show Headers:"}, {name: "showHelp", text: "Show Help:"}].forEach(({name, text}) => {
+    column.appendChild(createOption({
+      name,
+      options: [
+        {text: "Default", value: ""},
+        {text: "Yes", value: "true"},
+        {text: "No", value: "false"}
+      ],
+      text
+    }));
+  });
   row.appendChild(column);
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "Survey Options"}));
@@ -336,15 +338,6 @@ function setupDom() {
       {text: "No", value: "false"}
     ],
     text: "Allow Fullscreen:"
-  }));
-  column.appendChild(createOption({
-    name: "survey.showHelp",
-    options: [
-      {text: "Default", value: ""},
-      {text: "Yes", value: "true"},
-      {text: "No", value: "false"}
-    ],
-    text: "Show Instructions:"
   }));
   column.appendChild(createOption({
     name: "survey.showInstructions",

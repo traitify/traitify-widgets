@@ -51,8 +51,10 @@ function Practice({onFinish, practiceExplanations, practiceQuestions, translate}
   return (
     <div key="practice" className={style.container}>
       <div className={style.statusContainer}>
-        <div className={style.timer}>{translate("cognitive_practice_heading")}</div>
-        <div className={style.status}>{questionIndex + 1} / {questions.length}</div>
+        <div className={style.status}>
+          <div>{translate("cognitive_practice_heading")}</div>
+          <div>{questionIndex + 1} / {questions.length}</div>
+        </div>
         <div className={style.progressBar}>
           <div className={style.progress} style={{width: `${progress}%`}} />
         </div>

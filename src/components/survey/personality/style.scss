@@ -72,6 +72,8 @@ $outer-padding: $buffer;
   }
   @include theme("color", "text");
   &:focus, &:focus-visible { outline: none; }
+
+  > div { flex: 1; }
 }
 .center { text-align: center; }
 .container {

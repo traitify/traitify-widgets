@@ -14,9 +14,20 @@ exports[`Survey.Personality actions back requires answered slides 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -82,9 +93,20 @@ exports[`Survey.Personality actions back shows button 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -169,9 +191,20 @@ exports[`Survey.Personality actions back triggers action 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -237,9 +270,20 @@ exports[`Survey.Personality actions fullscreen shows button 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -316,9 +360,20 @@ exports[`Survey.Personality actions fullscreen triggers action 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -395,9 +450,20 @@ exports[`Survey.Personality actions fullscreen untriggers action 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -474,9 +540,20 @@ exports[`Survey.Personality actions response saves me 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -550,9 +627,20 @@ exports[`Survey.Personality actions response saves not me 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -626,9 +714,20 @@ exports[`Survey.Personality image error renders error 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Unable to load more slides at this time
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -689,9 +788,20 @@ exports[`Survey.Personality image error retry renders loading 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -755,9 +865,20 @@ exports[`Survey.Personality image error retry renders slide 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -823,9 +944,20 @@ exports[`Survey.Personality image loading renders loading 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -889,9 +1021,20 @@ exports[`Survey.Personality image loading requires multiple loaded slides 1`] = 
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -955,9 +1098,20 @@ exports[`Survey.Personality image loads renders slide 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Innovative
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1023,9 +1177,20 @@ exports[`Survey.Personality instructions renders html instructions 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Instructions
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1106,9 +1271,20 @@ exports[`Survey.Personality instructions renders markdown instructions 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Instructions
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1193,9 +1369,20 @@ exports[`Survey.Personality instructions requires instructions 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1259,9 +1446,20 @@ exports[`Survey.Personality instructions requires option 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1325,9 +1523,20 @@ exports[`Survey.Personality instructions skip assessment accommodation renders b
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Instructions
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1419,9 +1628,20 @@ exports[`Survey.Personality instructions skip assessment accommodation renders i
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Instructions
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1513,9 +1733,20 @@ exports[`Survey.Personality instructions skip assessment accommodation renders r
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Instructions
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1605,9 +1836,20 @@ exports[`Survey.Personality instructions skip assessment accommodation triggers 
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1671,9 +1913,20 @@ exports[`Survey.Personality instructions starts assessment 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Loading
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1737,9 +1990,20 @@ exports[`Survey.Personality likert response saves me 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1827,9 +2091,20 @@ exports[`Survey.Personality likert response saves not me 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -1917,9 +2192,20 @@ exports[`Survey.Personality likert response saves really me 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -2007,9 +2293,20 @@ exports[`Survey.Personality likert response saves really not me 1`] = `
       <span
         className="spacer"
       />
-      <span>
+      <div>
         Short Cuts
-      </span>
+      </div>
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+        >
+          circle-question
+        </span>
+      </button>
     </div>
     <div
       className="content"
@@ -2108,9 +2405,20 @@ ComponentHandler {
         <span
           className="spacer"
         />
-        <span>
+        <div>
           Error Submitting
-        </span>
+        </div>
+        <button
+          className="trigger"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            alt="Help"
+          >
+            circle-question
+          </span>
+        </button>
       </div>
       <div
         className="content"
@@ -2177,9 +2485,20 @@ ComponentHandler {
         <span
           className="spacer"
         />
-        <span>
+        <div>
           Error Submitting
-        </span>
+        </div>
+        <button
+          className="trigger"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            alt="Help"
+          >
+            circle-question
+          </span>
+        </button>
       </div>
       <div
         className="content"
@@ -2246,9 +2565,20 @@ ComponentHandler {
         <span
           className="spacer"
         />
-        <span>
+        <div>
           Error Submitting
-        </span>
+        </div>
+        <button
+          className="trigger"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            alt="Help"
+          >
+            circle-question
+          </span>
+        </button>
       </div>
       <div
         className="content"

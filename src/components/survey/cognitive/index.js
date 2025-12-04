@@ -1,5 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {useRecoilRefresher_UNSTABLE as useRecoilRefresher, useSetRecoilState} from "recoil";
+import HelpButton from "components/common/help/button";
+import HelpModal from "components/common/help/modal";
 import Loading from "components/common/loading";
 import {errorsToText, responseToErrors} from "lib/common/errors";
 import useAssessment from "lib/hooks/use-assessment";
@@ -35,6 +37,8 @@ export default function Cognitive() {
   const [disability, setDisability] = useState(false);
   const [onlySkipped, setOnlySkipped] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(null);
+  const showHelp = useOption("showHelp");
+  const [showHelpModal, setShowHelpModal] = useState(false);
   const [skipped, setSkipped] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [submitAttempts, setSubmitAttempts] = useState(0);
@@ -155,18 +159,21 @@ export default function Cognitive() {
     if(questions.length > questionIndex) { return; }
     if(onlySkipped) { return onSubmit(); }
 
-    setOnlySkipped(true);
-
     const skippedIndexes = questions
       .map(({answer}, index) => ({answer, index}))
       .filter(({answer}) => !answer.answerId)
       .map(({index}) => index);
 
-    if(skippedIndexes.length === 0) { return onSubmit(); }
+    if(skippedIndexes.length === 0) {
+      setOnlySkipped(true);
+      return onSubmit();
+    }
     if(window.confirm(translate("cognitive_confirm_retry"))) { /* eslint-disable-line no-alert */
+      setOnlySkipped(true);
       setSkipped(skippedIndexes);
       setQuestionIndex(skippedIndexes[0]);
     } else {
+      setOnlySkipped(true);
       return onSubmit();
     }
   }, [questions, questionIndex]);
@@ -196,20 +203,23 @@ export default function Cognitive() {
   return (
     <div className={style.container}>
       <div className={style.statusContainer}>
-        {!options.disableTimeLimit && (
-          <Timer
-            onFinish={onSubmit}
-            startTime={startTime}
-            timeAllowed={
-              disability
-                ? options.specialTimeLimit || assessment.specialAllottedTime
-                : options.timeLimit || assessment.allottedTime
-            }
-          />
-        )}
         <div className={style.status}>
-          {skipped && <span>{translate("cognitive_skipped_questions")} </span>}
-          <span>{index + 1} / {total}</span>
+          {showHelp && <HelpButton onClick={() => setShowHelpModal(true)} />}
+          {!options.disableTimeLimit ? (
+            <Timer
+              onFinish={onSubmit}
+              startTime={startTime}
+              timeAllowed={
+                disability
+                  ? options.specialTimeLimit || assessment.specialAllottedTime
+                  : options.timeLimit || assessment.allottedTime
+              }
+            />
+          ) : <div />}
+          <div>
+            {skipped && <span>{translate("cognitive_skipped_questions")} </span>}
+            <span>{index + 1} / {total}</span>
+          </div>
         </div>
         <div className={style.progressBar}>
           <div className={style.progress} style={{width: `${progress}%`}} />
@@ -228,6 +238,7 @@ export default function Cognitive() {
           translate={translate}
         />
       )}
+      {showHelpModal && <HelpModal show={showHelpModal} setShow={setShowHelpModal} />}
     </div>
   );
 }

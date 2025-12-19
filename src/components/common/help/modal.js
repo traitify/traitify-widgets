@@ -2,7 +2,7 @@
 import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons";
 import Bowser from "bowser/es5";
 import PropTypes from "prop-types";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import {useRecoilValue} from "recoil";
 import DangerousHTML from "components/common/dangerous-html";
 import Input from "components/common/form/input";
@@ -10,24 +10,38 @@ import Icon from "components/common/icon";
 import BaseModal from "components/common/modal";
 import Divider from "components/common/modal/divider";
 import except from "lib/common/object/except";
+import useHttp from "lib/hooks/use-http";
 import useTranslate from "lib/hooks/use-translate";
 import {activeState, baseState, errorsState, orderState} from "lib/recoil";
 import style from "./style.scss";
 
 function Modal({show, setShow}) {
+  const http = useHttp();
   const translate = useTranslate();
+  const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
   const active = useRecoilValue(activeState);
   const base = useRecoilValue(baseState);
   const errors = useRecoilValue(errorsState);
   const order = useRecoilValue(orderState);
+  const submitting = useRef(false);
 
   if(!show) { return null; }
 
   const onChange = (event) => { setMessage(event.target.value); };
   const onClose = () => setShow(false);
-  const onSubmit = (e) => {
+  const onSubmit = async(e) => {
     e.preventDefault();
+
+    if(submitting.current) { return; }
+    if(submitted) { return; }
+    if(!message) {
+      setError(translate("help_modal.message_required"));
+      return;
+    }
+
+    submitting.current = true;
 
     const params = {
       errors,
@@ -56,7 +70,18 @@ function Modal({show, setShow}) {
         scheme: window.location.protocol
       };
     }
-    console.log("submit", params);
+
+    const path = "/feedback/widget-help-request";
+    const response = await http.post(path, params).catch((r) => ({errors: [r.message]}));
+    if(response.success) {
+      setError("");
+      setSubmitted(true);
+      submitting.current = false;
+    } else {
+      console.warn("help-feedback", response); // eslint-disable-line no-console
+      setError(translate("help_modal.error_submitting"));
+      submitting.current = false;
+    }
   };
   const heading = translate("help_modal.heading");
   const title = (
@@ -68,15 +93,21 @@ function Modal({show, setShow}) {
   return (
     <BaseModal onClose={onClose} size="md" title={title}>
       <form className={style.content} onSubmit={onSubmit}>
-        <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_before_html")} />
-        <Input
-          className={style.input}
-          onChange={onChange}
-          placeholder={translate("help_modal.input_placeholder")}
-          required={true}
-          type="textarea"
-          value={message}
-        />
+        {error && <div className={style.error}>{error}</div>}
+        {submitted && <div className={style.submitted}>{translate("help_modal.submitted")}</div>}
+        {(error || submitted) && <Divider className={style.divider} />}
+        <label htmlFor="traitify-help-message">
+          {translate("help_modal.input_label")}
+          <Input
+            className={style.input}
+            id="traitify-help-message"
+            onChange={onChange}
+            placeholder={translate("help_modal.input_placeholder")}
+            required={true}
+            type="textarea"
+            value={message}
+          />
+        </label>
         <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_after_html", {url: "https://www.traitify.com/ethical-assessments"})} />
         <Divider className={style.divider} />
         <div className={style.buttons}>

@@ -100,8 +100,12 @@
   "help_modal": {
     "content_after_html": "Check out other information about our <a href=\"%{url}\" target=\"_blank\">Assessments</a>.",
     "content_before_html": "What can we help you with?",
+    "error_submitting": "Error Submitting Message",
     "heading": "Help",
+    "input_label": "What can we help you with?",
     "input_placeholder": "Write a reply...",
+    "message_required": "Please enter a message",
+    "submitted": "Message Submitted",
     "submit": "Send",
     "trigger": "Need Help"
   },

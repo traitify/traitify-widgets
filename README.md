@@ -41,8 +41,17 @@ npm i --save traitify-widgets
 
 #### Usage
 
+##### React based version
 ```
 import traitify from "traitify-widgets";
+
+traitify.options.assessmentID = "an assessment id you have generated via a server side client";
+traitify.render("#the-id-of-the-target-you-wish-to-render-to");
+```
+
+##### Standalone version
+```
+import traitify from "traitify-widgets/all";
 
 traitify.options.assessmentID = "an assessment id you have generated via a server side client";
 traitify.render("#the-id-of-the-target-you-wish-to-render-to");

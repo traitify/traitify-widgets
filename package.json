@@ -6,12 +6,17 @@
     "type": "git",
     "url": "https://github.com/traitify/traitify-widgets.git"
   },
+  "exports": {
+    ".": "./build/traifity.js",
+    "./all": "./build/traifity-standalone.js"
+  },
   "main": "./build/traitify.js",
   "files": [
     "build/*"
   ],
   "scripts": {
-    "build": "webpack --define-process-env-node-env production --progress",
+    "build": "npm run build:lib && npm run build:compatibility -- --env output=traitify-standalone",
+    "build:lib": "webpack --define-process-env-node-env production --progress",
     "build:compatibility": "webpack --define-process-env-node-env production --env platform=browser --progress",
     "dev": "webpack serve --env platform=browser",
     "dev:secure": "webpack serve --env platform=browser --server-type https",

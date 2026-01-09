@@ -7,6 +7,7 @@ module.exports = (_env) => {
   const environment = process.env.NODE_ENV || "development";
   const browser = env.platform === "browser";
   const cssMaps = environment !== "production";
+  const outputName = env.output || "traitify";
   const config = {
     context: path.resolve(__dirname, "src"),
     mode: environment,
@@ -86,7 +87,7 @@ module.exports = (_env) => {
       ]
     },
     output: {
-      filename: "traitify.js",
+      filename: `${outputName}.js`,
       globalObject: "this",
       library: {
         name: "Traitify",

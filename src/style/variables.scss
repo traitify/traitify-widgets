@@ -62,6 +62,7 @@ $-theme-color: $-blue;
 
 // Add variables that may change with the color scheme
 $color-scheme-dark: (
+  "auxiliary": $-green,
   "background": $-black,
   "background-light": $-gray-dark,
   "border": $-border-color,
@@ -90,6 +91,7 @@ $color-scheme-dark: (
 );
 
 $color-scheme-light: (
+  "auxiliary": $-green,
   "background": $-white,
   "background-light": $-white-gray,
   "border": $-border-color,

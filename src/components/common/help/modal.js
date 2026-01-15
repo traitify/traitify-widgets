@@ -29,6 +29,7 @@ function Modal({show, setShow}) {
 
   if(!show) { return null; }
 
+  const disabled = submitted || submitting.current;
   const onChange = (event) => { setMessage(event.target.value); };
   const onClose = () => setShow(false);
   const onSubmit = async(e) => {
@@ -108,11 +109,11 @@ function Modal({show, setShow}) {
             value={message}
           />
         </label>
-        <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_after_html", {url: "https://www.traitify.com/ethical-assessments"})} />
+        <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_html", {url: "https://www.traitify.com/ethical-assessments"})} />
         <Divider className={style.divider} />
         <div className={style.buttons}>
           <button className={style.cancel} onClick={onClose} type="button">{translate("cancel")}</button>
-          <button className={style.submit} onClick={onSubmit} type="submit">{translate("help_modal.submit")}</button>
+          <button className={[style.submit, disabled ? style.disabled : ""].join(" ")} disabled={disabled} onClick={onSubmit} type="submit">{translate("help_modal.submit")}</button>
         </div>
       </form>
     </BaseModal>

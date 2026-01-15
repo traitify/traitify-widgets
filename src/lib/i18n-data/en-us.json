@@ -98,8 +98,7 @@
   },
   "help": "Help",
   "help_modal": {
-    "content_after_html": "Check out other information about our <a href=\"%{url}\" target=\"_blank\">Assessments</a>.",
-    "content_before_html": "What can we help you with?",
+    "content_html": "Check out other information about our <a href=\"%{url}\" target=\"_blank\">Assessments</a>.",
     "error_submitting": "Error Submitting Message",
     "heading": "Help",
     "input_label": "What can we help you with?",

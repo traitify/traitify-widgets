@@ -44,6 +44,7 @@ export function reduceImageActions(state, action) {
       return {...state, image: action.image, imageLoading: true};
     case "reset": {
       const {cachedSlides, getImageURL, slides: _slides} = action;
+      const {likert} = state;
       const size = state.size || [0, 0];
       const slides = mutable(_slides).map(({likert_response: likertResponse, ...slide}) => {
         const cachedSlide = cachedSlides.find(({id}) => id === slide.id);
@@ -51,14 +52,18 @@ export function reduceImageActions(state, action) {
         return cachedSlide
           ? {...slide, response: cachedSlide.response, time_taken: cachedSlide.time_taken}
           : {...slide, response: likertResponse || slide.response};
-      }).map((slide) => ({...slide, image: getImageURL({size, slide}), loaded: false}));
+      }).map((slide) => ({...slide, image: getImageURL({likert, size, slide}), loaded: false}));
 
       return {...state, ...defaultState, getImageURL, slides, startTime: Date.now()};
     }
     case "resize": {
       const {size} = action;
-      const slides = state.slides
-        .map((slide) => ({...slide, image: state.getImageURL({size, slide}), loaded: false}));
+      const {likert} = state;
+      const slides = state.slides.map((slide) => ({
+        ...slide,
+        image: state.getImageURL({likert, size, slide}),
+        loaded: false
+      }));
 
       return {...state, ...defaultState, image: null, size, slides};
     }
@@ -142,7 +147,7 @@ export function reducer(_state, action) {
   return {...state, ready, slideIndex};
 }
 
-export default function useSlideLoader({textSurvey: _textSurvey, translate}) {
+export default function useSlideLoader({likert, textSurvey: _textSurvey, translate}) {
   const [
     {
       error,
@@ -156,6 +161,7 @@ export default function useSlideLoader({textSurvey: _textSurvey, translate}) {
     unsafeDispatch
   ] = useReducer(reducer, {
     ...defaultState,
+    likert,
     ready: false,
     slideIndex: -1,
     slides: [],

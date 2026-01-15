@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "3.9.0-alpha.0",
+  "version": "3.9.0-alpha.1",
   "description": "Traitiy Widgets",
   "repository": {
     "type": "git",
@@ -8,16 +8,16 @@
   },
   "exports": {
     ".": "./build/traifity.js",
-    "./all": "./build/traifity-standalone.js"
+    "./standalone": "./build/standalone.js"
   },
   "main": "./build/traitify.js",
   "files": [
     "build/*"
   ],
   "scripts": {
-    "build": "npm run build:lib && npm run build:compatibility -- --env output=traitify-standalone",
-    "build:lib": "webpack --define-process-env-node-env production --progress",
+    "build": "npm run build:lib && npm run build:compatibility -- --env output=standalone",
     "build:compatibility": "webpack --define-process-env-node-env production --env platform=browser --progress",
+    "build:lib": "webpack --define-process-env-node-env production --progress",
     "dev": "webpack serve --env platform=browser",
     "dev:secure": "webpack serve --env platform=browser --server-type https",
     "i18n:sync": "cd packages/i18n-sync && npm run i18n:sync --",

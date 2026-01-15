@@ -158,6 +158,7 @@ $v-pill-active-buffer-y: ($v-pill-active-height - $v-pill-height) * -0.5;
     &.high, &.low, &.medium, &.other {
       border-radius: $border-radius;
       height: $v-pill-active-height;
+      margin: $v-pill-active-buffer-y auto;
       width: $v-pill-active-width;
     }
   }

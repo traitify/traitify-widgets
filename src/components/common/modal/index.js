@@ -2,12 +2,14 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import Icon from "components/common/icon";
 import useTranslate from "lib/hooks/use-translate";
+import Divider from "./divider";
 import style from "./style.scss";
 
-export default function Modal({children, onClose, title}) {
+export default function Modal({children, onClose, size = "xl", title}) {
   const translate = useTranslate();
+
   return (
-    <div className={`${style.modal} ${style.container}`}>
+    <div className={`${style.modal} ${style.container} ${style[size]}`}>
       <section className={style.modalContainer}>
         <div className={style.modalContent}>
           <div className={style.header}>
@@ -22,7 +24,7 @@ export default function Modal({children, onClose, title}) {
               />
             </div>
           </div>
-          <hr className={style.grayDivider} />
+          <Divider />
           <div className={style.content}>
             {children}
           </div>
@@ -35,5 +37,6 @@ export default function Modal({children, onClose, title}) {
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
+  size: PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+  title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired
 };

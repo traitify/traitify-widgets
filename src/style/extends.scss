@@ -16,6 +16,12 @@
   %container { @include -set-variables($color-scheme-dark); }
 }
 
+:global(.traitify--markdown) {
+  a {
+    @include theme("color", "theme");
+  }
+}
+
 %container {
   font: 400 #{$font-size}/#{$line-height} "Open Sans", "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
 

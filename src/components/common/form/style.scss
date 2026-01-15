@@ -1,0 +1,14 @@
+@import "style/helpers";
+
+.input {
+  appearance: none;
+  border: $border-width solid;
+  border-radius: $border-radius-sm;
+  display: inline-block;
+  padding: $buffer-sm $buffer;
+  width: 100%;
+
+  @include theme("background-color", "input");
+  @include theme("border-color", "border");
+  @include theme("color", "text");
+}

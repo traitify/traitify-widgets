@@ -5,7 +5,7 @@ exports[`Results.Feedback.Modal renders component 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="modal container"
+    className="modal container xl"
   >
     <section
       className="modalContainer"
@@ -27,8 +27,8 @@ exports[`Results.Feedback.Modal renders component 1`] = `
             </div>
           </div>
         </div>
-        <hr
-          className="grayDivider"
+        <div
+          className="divider"
         />
         <div
           className="content"

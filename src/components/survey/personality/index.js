@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from "react";
-import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
+import {useRecoilRefresher_UNSTABLE as useRecoilRefresher, useSetRecoilState} from "recoil";
 import Loading from "components/common/loading";
+import {errorsToText, responseToErrors} from "lib/common/errors";
 import dig from "lib/common/object/dig";
 import slice from "lib/common/object/slice";
 import useAssessment from "lib/hooks/use-assessment";
@@ -11,7 +12,7 @@ import useHttp from "lib/hooks/use-http";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {activeAssessmentQuery} from "lib/recoil";
+import {activeAssessmentQuery, appendErrorState} from "lib/recoil";
 import Container from "./container";
 import getImageURL from "./get-image-url";
 import Instructions from "./instructions";
@@ -22,6 +23,7 @@ import useSlideLoader from "./use-slide-loader";
 const maxRetries = 2;
 
 export default function PersonalitySurvey() {
+  const appendError = useSetRecoilState(appendErrorState);
   const assessment = useAssessment({surveyType: "personality"});
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
@@ -114,8 +116,10 @@ export default function PersonalitySurvey() {
 
     submitting.current = true;
 
+    const path = `/assessments/${assessment.id}/slides`;
+
     http.put(
-      `/assessments/${assessment.id}/slides`,
+      path,
       completedSlides.map(({id, response, time_taken: timeTaken}) => ({
         id,
         [likert ? "likert_response" : "response"]: response,
@@ -127,20 +131,20 @@ export default function PersonalitySurvey() {
 
       submitting.current = false;
     }).catch((response) => {
-      let newError;
-
-      try {
-        newError = JSON.parse(response).errors[0];
-      } catch {
-        newError = response;
-      }
+      appendError(responseToErrors({method: "PUT", path, response}));
 
       setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
-      if(submitAttempts >= maxRetries) { setSubmitError(newError || "Error Submitting"); }
+      if(submitAttempts >= maxRetries) { setSubmitError("Error Submitting"); }
 
       submitting.current = false;
     });
   }, [finished, submitAttempts]);
+
+  useEffect(() => {
+    if(!loaderError) { return; }
+
+    appendError(errorsToText("Personality Survey", loaderError));
+  }, [loaderError]);
 
   if(!assessment) { return null; }
   if(assessment.completed_at) { return null; }

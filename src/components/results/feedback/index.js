@@ -19,9 +19,10 @@ export default function Feedback() {
   if(perspective !== "firstPerson") { return null; }
 
   const openModal = () => { setShowModal(true); };
-  const closeModal = ({isSubmitting}) => {
+  const closeModal = ({submitted: _submitted}) => {
     setShowModal(false);
-    if(isSubmitting) { setSubmitted(true); }
+
+    if(_submitted) { setSubmitted(true); }
   };
 
   if(submitted) {
@@ -37,7 +38,7 @@ export default function Feedback() {
   }
 
   return (
-    <div>
+    <>
       <div className={style.container}>
         <div className={style.details}>
           <span>{translate("feedback.prompt")}</span>
@@ -48,6 +49,6 @@ export default function Feedback() {
         </div>
       </div>
       {showModal && <Modal onClose={closeModal} />}
-    </div>
+    </>
   );
 }

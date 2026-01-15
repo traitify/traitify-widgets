@@ -37,6 +37,9 @@ function Responses({likert = false, onResponse = null}) {
   );
 }
 
-Responses.propTypes = {likert: PropTypes.bool, onResponse: PropTypes.func};
+Responses.propTypes = {
+  likert: PropTypes.bool,
+  onResponse: PropTypes.func
+};
 
 export default Responses;

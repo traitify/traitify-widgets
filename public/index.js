@@ -105,7 +105,7 @@ function createWidget() {
   Traitify.options.locale = cache.get("locale");
   Traitify.options.perspective = cache.get("perspective");
   Traitify.options.report = cache.get("report");
-  ["imagekit", "showHeaders"].forEach((key) => {
+  ["imagekit", "showHeaders", "showHelp"].forEach((key) => {
     const value = booleanFrom(cache.get(key), "default");
 
     if(value !== "default") { Traitify.options[key] = value; }
@@ -307,24 +307,21 @@ function setupDom() {
   row.appendChild(column);
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "Additional Options"}));
-  column.appendChild(createOption({
-    name: "imagekit",
-    options: [
-      {text: "Default", value: ""},
-      {text: "Yes", value: "true"},
-      {text: "No", value: "false"}
-    ],
-    text: "Imagekit:"
-  }));
-  column.appendChild(createOption({
-    name: "showHeaders",
-    options: [
-      {text: "Default", value: ""},
-      {text: "Yes", value: "true"},
-      {text: "No", value: "false"}
-    ],
-    text: "Show Headers:"
-  }));
+  [
+    {name: "imagekit", text: "Imagekit:"},
+    {name: "showHeaders", text: "Show Headers:"},
+    {name: "showHelp", text: "Show Help:"}
+  ].forEach(({name, text}) => {
+    column.appendChild(createOption({
+      name,
+      options: [
+        {text: "Default", value: ""},
+        {text: "Yes", value: "true"},
+        {text: "No", value: "false"}
+      ],
+      text
+    }));
+  });
   row.appendChild(column);
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "Survey Options"}));

@@ -4,34 +4,32 @@ exports[`Results.Feedback renders component 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
-  <div>
+  <div
+    className="container"
+  >
     <div
-      className="container"
+      className="details"
     >
+      <span>
+        Do you feel like your results match you?
+      </span>
       <div
-        className="details"
+        className="buttons"
       >
-        <span>
-          Do you feel like your results match you?
-        </span>
-        <div
-          className="buttons"
+        <button
+          className="me"
+          onClick={[Function]}
+          type="button"
         >
-          <button
-            className="me"
-            onClick={[Function]}
-            type="button"
-          >
-            Yes
-          </button>
-          <button
-            className="notMe"
-            onClick={[Function]}
-            type="button"
-          >
-            No
-          </button>
-        </div>
+          Yes
+        </button>
+        <button
+          className="notMe"
+          onClick={[Function]}
+          type="button"
+        >
+          No
+        </button>
       </div>
     </div>
   </div>

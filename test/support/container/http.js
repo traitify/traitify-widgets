@@ -434,11 +434,11 @@ export const mockTranslations = (translations) => (
   })
 );
 
-export const mockUserCompletedFeedback = (assessmentId, completed = false) => (
+export const mockUserCompletedFeedback = (assessmentID, completed = false) => (
   mockFetch({
     key: "user-completed-feedback",
     request: (url, options) => {
-      if(!url.includes(`/feedback/assessments/${assessmentId}/status`)) { return false; }
+      if(!url.includes(`/feedback/assessments/${assessmentID}/status`)) { return false; }
       if(options.method !== "GET") { return false; }
       return true;
     },
@@ -446,7 +446,7 @@ export const mockUserCompletedFeedback = (assessmentId, completed = false) => (
   })
 );
 
-export const mockFeedbackSurvey = (feedbackSurvey, surveyId) => (
+export const mockFeedbackSurvey = (feedbackSurvey, surveyID) => (
   mockFetch({
     key: "feedback-survey",
     request: (url, options) => {
@@ -456,7 +456,7 @@ export const mockFeedbackSurvey = (feedbackSurvey, surveyId) => (
 
       const variables = dig(JSON.parse(options.body), "variables") || {};
 
-      return variables.surveyId === surveyId;
+      return variables.surveyId === surveyID;
     },
     response: () => ({data: {feedbackSurvey}})
   })

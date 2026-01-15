@@ -1,0 +1,50 @@
+@import "style/helpers";
+
+.buttons {
+  display: flex;
+  gap: $buffer-sm;
+  text-align: center;
+
+  button { flex: 1; }
+
+  @include min-width("md") {
+    justify-content: flex-end;
+
+    button { flex: none; }
+  }
+
+  .cancel {
+    border: $border-width solid;
+
+    @include buttonLight("input");
+    @include theme("border-color", "border");
+  }
+  .submit { @include buttonDark("theme"); }
+}
+
+.divider {
+  margin-bottom: $buffer-sm;
+  margin-top: $buffer-lg;
+}
+
+.input {
+  margin-top: $buffer-sm;
+  margin-bottom: $buffer-lg;
+}
+
+.title {
+  align-items: center;
+  display: flex;
+  font-size: $font-size-lg;
+  gap: $buffer;
+
+  :global(.traitify--icon-fa) {
+    font-size: $font-size-heading;
+
+    @include theme("color", "secondary");
+  }
+}
+
+.trigger {
+  :global(.traitify--icon-fa) { @include theme("color", "secondary"); }
+}

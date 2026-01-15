@@ -1,7 +1,9 @@
-/* eslint-disable no-alert */
 import {useEffect, useRef, useState} from "react";
-import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
+import {useRecoilRefresher_UNSTABLE as useRecoilRefresher, useSetRecoilState} from "recoil";
+import HelpButton from "components/common/help/button";
+import HelpModal from "components/common/help/modal";
 import Loading from "components/common/loading";
+import {errorsToText, responseToErrors} from "lib/common/errors";
 import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
@@ -11,7 +13,7 @@ import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {activeAssessmentQuery} from "lib/recoil";
+import {activeAssessmentQuery, appendErrorState} from "lib/recoil";
 import {useQuestionsLoader} from "./helpers";
 import Instructions from "./instructions";
 import Slide from "./slide";
@@ -19,6 +21,7 @@ import style from "./style.scss";
 import Timer from "./timer";
 
 export default function Cognitive() {
+  const appendError = useSetRecoilState(appendErrorState);
   const assessment = useAssessment({surveyType: "cognitive"});
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
@@ -30,10 +33,12 @@ export default function Cognitive() {
   const translate = useTranslate();
 
   const [initialQuestions, setInitialQuestions] = useState([]);
-  const {dispatch, questions} = useQuestionsLoader(initialQuestions);
+  const {dispatch, error: loaderError, questions} = useQuestionsLoader(initialQuestions);
   const [disability, setDisability] = useState(false);
   const [onlySkipped, setOnlySkipped] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(null);
+  const showHelp = useOption("showHelp");
+  const [showHelpModal, setShowHelpModal] = useState(false);
   const [skipped, setSkipped] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [submitAttempts, setSubmitAttempts] = useState(0);
@@ -88,7 +93,9 @@ export default function Cognitive() {
       testID: assessment.id
     };
 
-    http.post(graphQL.cognitive.path, {query, variables}).then(({data, errors}) => {
+    http.post(graphQL.cognitive.path, {query, variables}).then((response) => {
+      const {data, errors} = response;
+
       if(!errors && data.completeCognitiveTest.success) {
         cache.remove(assessmentCacheKey);
         refreshAssessment();
@@ -96,6 +103,7 @@ export default function Cognitive() {
         submitting.current = false;
       } else {
         console.warn(errors || data); // eslint-disable-line no-console
+        appendError(responseToErrors({method: "POST", path: graphQL.cognitive.path, response}));
 
         submitting.current = false;
 
@@ -141,22 +149,31 @@ export default function Cognitive() {
   }, [disability, onlySkipped, questions, questionIndex, skipped, startTime]);
 
   useEffect(() => {
+    if(!loaderError) { return; }
+
+    appendError(errorsToText("Cognitive Survey", loaderError));
+  }, [loaderError]);
+
+  useEffect(() => {
     if(questions.length === 0) { return; }
     if(questions.length > questionIndex) { return; }
     if(onlySkipped) { return onSubmit(); }
-
-    setOnlySkipped(true);
 
     const skippedIndexes = questions
       .map(({answer}, index) => ({answer, index}))
       .filter(({answer}) => !answer.answerId)
       .map(({index}) => index);
 
-    if(skippedIndexes.length === 0) { return onSubmit(); }
-    if(window.confirm(translate("cognitive_confirm_retry"))) {
+    if(skippedIndexes.length === 0) {
+      setOnlySkipped(true);
+      return onSubmit();
+    }
+    if(window.confirm(translate("cognitive_confirm_retry"))) { /* eslint-disable-line no-alert */
+      setOnlySkipped(true);
       setSkipped(skippedIndexes);
       setQuestionIndex(skippedIndexes[0]);
     } else {
+      setOnlySkipped(true);
       return onSubmit();
     }
   }, [questions, questionIndex]);
@@ -186,20 +203,23 @@ export default function Cognitive() {
   return (
     <div className={style.container}>
       <div className={style.statusContainer}>
-        {!options.disableTimeLimit && (
-          <Timer
-            onFinish={onSubmit}
-            startTime={startTime}
-            timeAllowed={
-              disability
-                ? options.specialTimeLimit || assessment.specialAllottedTime
-                : options.timeLimit || assessment.allottedTime
-            }
-          />
-        )}
         <div className={style.status}>
-          {skipped && <span>{translate("cognitive_skipped_questions")} </span>}
-          <span>{index + 1} / {total}</span>
+          {showHelp && <HelpButton onClick={() => setShowHelpModal(true)} />}
+          {!options.disableTimeLimit ? (
+            <Timer
+              onFinish={onSubmit}
+              startTime={startTime}
+              timeAllowed={
+                disability
+                  ? options.specialTimeLimit || assessment.specialAllottedTime
+                  : options.timeLimit || assessment.allottedTime
+              }
+            />
+          ) : <div />}
+          <div>
+            {skipped && <span>{translate("cognitive_skipped_questions")} </span>}
+            <span>{index + 1} / {total}</span>
+          </div>
         </div>
         <div className={style.progressBar}>
           <div className={style.progress} style={{width: `${progress}%`}} />
@@ -218,6 +238,7 @@ export default function Cognitive() {
           translate={translate}
         />
       )}
+      {showHelpModal && <HelpModal show={showHelpModal} setShow={setShowHelpModal} />}
     </div>
   );
 }

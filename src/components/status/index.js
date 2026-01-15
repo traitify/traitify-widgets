@@ -1,6 +1,9 @@
 import {useEffect, useState} from "react";
+import HelpButton from "components/common/help/button";
+import HelpModal from "components/common/help/modal";
 import useActive from "lib/hooks/use-active";
 import useComponentEvents from "lib/hooks/use-component-events";
+import useOption from "lib/hooks/use-option";
 import useOrder from "lib/hooks/use-order";
 import useTranslate from "lib/hooks/use-translate";
 import Assessment from "./assessment";
@@ -14,6 +17,8 @@ export default function Status() {
   const active = useActive();
   const [activeLoading, setActiveLoading] = useState(false);
   const order = useOrder();
+  const showHelp = useOption("showHelp");
+  const [showHelpModal, setShowHelpModal] = useState(false);
   const translate = useTranslate();
   const assessments = order?.assessments || [];
 
@@ -37,9 +42,14 @@ export default function Status() {
 
   return (
     <div className={style.container}>
-      <div className={style.header}>{translate("status.heading")}</div>
+      <div className={style.header}>
+        {showHelp && <span className={style.helpSpacer} />}
+        <div>{translate("status.heading")}</div>
+        {showHelp && <HelpButton onClick={() => setShowHelpModal(true)} />}
+      </div>
       <div className={style.p}>{translate("status.text")}</div>
       {assessments.map((assessment) => <Assessment key={assessment.id} assessment={assessment} />)}
+      {showHelpModal && <HelpModal show={showHelpModal} setShow={setShowHelpModal} />}
     </div>
   );
 }

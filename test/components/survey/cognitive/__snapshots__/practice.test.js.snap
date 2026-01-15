@@ -28,16 +28,16 @@ exports[`Practice renders custom questions 1`] = `
       className="statusContainer"
     >
       <div
-        className="timer"
-      >
-        cognitive_practice_heading
-      </div>
-      <div
         className="status"
       >
-        1
-         / 
-        2
+        <div>
+          cognitive_practice_heading
+        </div>
+        <div>
+          1
+           / 
+          2
+        </div>
       </div>
       <div
         className="progressBar"
@@ -103,16 +103,16 @@ exports[`Practice renders custom questions 3`] = `
       className="statusContainer"
     >
       <div
-        className="timer"
-      >
-        cognitive_practice_heading
-      </div>
-      <div
         className="status"
       >
-        2
-         / 
-        2
+        <div>
+          cognitive_practice_heading
+        </div>
+        <div>
+          2
+           / 
+          2
+        </div>
       </div>
       <div
         className="progressBar"
@@ -208,16 +208,16 @@ exports[`Practice renders question 1 1`] = `
       className="statusContainer"
     >
       <div
-        className="timer"
-      >
-        cognitive_practice_heading
-      </div>
-      <div
         className="status"
       >
-        1
-         / 
-        3
+        <div>
+          cognitive_practice_heading
+        </div>
+        <div>
+          1
+           / 
+          3
+        </div>
       </div>
       <div
         className="progressBar"
@@ -296,16 +296,16 @@ exports[`Practice renders question 2 1`] = `
       className="statusContainer"
     >
       <div
-        className="timer"
-      >
-        cognitive_practice_heading
-      </div>
-      <div
         className="status"
       >
-        2
-         / 
-        3
+        <div>
+          cognitive_practice_heading
+        </div>
+        <div>
+          2
+           / 
+          3
+        </div>
       </div>
       <div
         className="progressBar"
@@ -384,16 +384,16 @@ exports[`Practice renders question 3 1`] = `
       className="statusContainer"
     >
       <div
-        className="timer"
-      >
-        cognitive_practice_heading
-      </div>
-      <div
         className="status"
       >
-        3
-         / 
-        3
+        <div>
+          cognitive_practice_heading
+        </div>
+        <div>
+          3
+           / 
+          3
+        </div>
       </div>
       <div
         className="progressBar"

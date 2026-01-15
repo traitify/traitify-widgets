@@ -152,13 +152,19 @@
 }
 
 .hide { display: none; }
+.status {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  button { margin-top: 0; }
+}
 .statusContainer {
   padding: $buffer-sm $buffer;
   margin: 0 auto;
   max-width: 800px;
 }
-.timer { float: left; }
-.status { float: right; }
+.timer { display: block; } // NOTE: Style to allow customizing
 .progressBar {
   clear: both;
   height: $buffer-sm;

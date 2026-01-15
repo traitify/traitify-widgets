@@ -105,7 +105,7 @@ function createWidget() {
   Traitify.options.locale = cache.get("locale");
   Traitify.options.perspective = cache.get("perspective");
   Traitify.options.report = cache.get("report");
-  ["showHeaders", "showHelp"].forEach((key) => {
+  ["imagekit", "showHeaders", "showHelp"].forEach((key) => {
     const value = booleanFrom(cache.get(key), "default");
 
     if(value !== "default") { Traitify.options[key] = value; }
@@ -307,7 +307,11 @@ function setupDom() {
   row.appendChild(column);
   column = createElement();
   column.appendChild(createElement({className: "column-header", text: "Additional Options"}));
-  [{name: "showHeaders", text: "Show Headers:"}, {name: "showHelp", text: "Show Help:"}].forEach(({name, text}) => {
+  [
+    {name: "imagekit", text: "Imagekit:"},
+    {name: "showHeaders", text: "Show Headers:"},
+    {name: "showHelp", text: "Show Help:"}
+  ].forEach(({name, text}) => {
     column.appendChild(createOption({
       name,
       options: [

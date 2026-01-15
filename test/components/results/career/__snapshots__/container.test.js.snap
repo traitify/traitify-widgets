@@ -2874,58 +2874,75 @@ exports[`Results.CareerContainer modal opens 1`] = `
                   >
                     <div
                       className="mock"
-                      height={300}
+                      height="300"
                       options={
                         {
-                          "fill": {
-                            "opacity": 0.7,
-                          },
-                          "xaxis": {
-                            "categories": [
-                              "Confident",
-                              "Direct",
-                              "Leader",
-                              "Outgoing",
-                              "Prefers Working with Others",
-                              "Realistic",
-                              "Stable",
-                            ],
-                          },
-                          "yaxis": {
+                          "data": [
+                            {
+                              "color": "--private-traitify-auxiliary",
+                              "fill": true,
+                              "fillOpacity": 0.75,
+                              "name": "Methane/Landfill Gas Collection System Operators Traits",
+                              "values": [
+                                90,
+                                50,
+                                100,
+                                75,
+                                40,
+                                65,
+                                60,
+                              ],
+                            },
+                            {
+                              "color": "--private-traitify-theme",
+                              "fill": true,
+                              "fillOpacity": 0.75,
+                              "name": "Your Traits",
+                              "values": [
+                                55,
+                                46,
+                                66,
+                                43,
+                                43,
+                                46,
+                                43,
+                              ],
+                            },
+                          ],
+                          "grid": {
+                            "innerLines": 9,
+                            "labels": {
+                              "show": false,
+                            },
                             "max": 100,
-                            "show": false,
                           },
+                          "labels": [
+                            {
+                              "text": "Confident",
+                            },
+                            {
+                              "text": "Direct",
+                            },
+                            {
+                              "text": "Leader",
+                            },
+                            {
+                              "text": "Outgoing",
+                            },
+                            {
+                              "text": "Prefers Working with Others",
+                            },
+                            {
+                              "text": "Realistic",
+                            },
+                            {
+                              "text": "Stable",
+                            },
+                          ],
                         }
                       }
-                      series={
-                        [
-                          {
-                            "data": [
-                              90,
-                              50,
-                              100,
-                              75,
-                              40,
-                              65,
-                              60,
-                            ],
-                            "name": "Methane/Landfill Gas Collection System Operators Traits",
-                          },
-                          {
-                            "data": [
-                              55,
-                              46,
-                              66,
-                              43,
-                              43,
-                              46,
-                              43,
-                            ],
-                            "name": "Your Traits",
-                          },
-                        ]
-                      }
-                      type="radar"
+                      setup={[Function]}
+                      width="300"
                     >
                       Chart
                     </div>

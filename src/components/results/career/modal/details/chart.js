@@ -1,5 +1,6 @@
-import {useMemo} from "react";
-import Chart from "react-apexcharts";
+import {useCallback, useMemo} from "react";
+import Canvas from "components/common/canvas";
+import CanvasRadarChart from "lib/common/canvas/radar-chart";
 import useCareer from "lib/hooks/use-career";
 import useResults from "lib/hooks/use-results";
 import style from "./style.scss";
@@ -7,6 +8,7 @@ import style from "./style.scss";
 export default function CareerModalChart() {
   const career = useCareer();
   const results = useResults({surveyType: "personality"});
+  const setup = useCallback((element, options) => new CanvasRadarChart(element.getContext("2d"), options), []);
   const options = useMemo(() => {
     if(!career) { return; }
     if(!results) { return; }
@@ -25,17 +27,24 @@ export default function CareerModalChart() {
       }).filter(Boolean).sort((a, b) => ((a.name > b.name) ? 1 : -1));
 
     return {
-      height: 300,
-      options: {
-        fill: {opacity: 0.7},
-        xaxis: {categories: traits.map(({name}) => name)},
-        yaxis: {max: 100, show: false}
-      },
-      series: [
-        {data: traits.map((trait) => trait.career), name: `${career.title} Traits`},
-        {data: traits.map((trait) => trait.assessment), name: "Your Traits"}
+      data: [
+        {
+          color: "--private-traitify-auxiliary",
+          fill: true,
+          fillOpacity: 0.75,
+          name: `${career.title} Traits`,
+          values: traits.map((trait) => trait.career)
+        },
+        {
+          color: "--private-traitify-theme",
+          fill: true,
+          fillOpacity: 0.75,
+          name: "Your Traits",
+          values: traits.map((trait) => trait.assessment)
+        }
       ],
-      type: "radar"
+      grid: {innerLines: 9, labels: {show: false}, max: 100},
+      labels: traits.map(({name}) => ({text: name}))
     };
   }, [career, results]);
 
@@ -43,7 +52,7 @@ export default function CareerModalChart() {
 
   return (
     <div className={style.chartContainer}>
-      <Chart {...options} />
+      <Canvas height="300" width="300" options={options} setup={setup} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "3.8.2",
+  "version": "3.9.0-alpha.0",
   "description": "Traitiy Widgets",
   "repository": {
     "type": "git",
@@ -86,13 +86,11 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "apexcharts": "^3.49.2",
     "bowser": "^2.13.1",
     "color": "^4.2.3",
     "core-js": "^3.37.1",
     "markdown-to-jsx": "^7.4.7",
     "prop-types": "^15.8.1",
-    "react-apexcharts": "^1.4.1",
     "recoil": "^0.7.7",
     "regenerator-runtime": "^0.14.1",
     "uuid": "^10.0.0"

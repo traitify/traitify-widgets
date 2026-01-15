@@ -37,20 +37,21 @@ $line-height: 1.5;
 $min-height: 750px;
 
 // Private - To be used through color scheme
-$-aquamarine: #3BCEAC;
-$-aquamarine-light: #89E2CD;
-$-black: #555555;
-$-blue: #25C9D0;
-$-gray: #D6D6D6;
-$-gray-dark: #A0A0A0;
-$-gray-hover: #EAEAEA;
-$-green: #2FB656;
-$-red: #FE6D73;
-$-red-light: #FEA7AB;
 $-traitify-blue: #058FC4;
 $-traitify-blue-dark: #0376A2;
 $-traitify-red: #CB4E4E;
 $-traitify-red-dark: #9A3B3B;
+
+$-aquamarine: #3BCEAC;
+$-aquamarine-light: #89E2CD;
+$-black: #555555;
+$-blue: $-traitify-blue;
+$-gray: #D6D6D6;
+$-gray-dark: #A0A0A0;
+$-gray-hover: #EAEAEA;
+$-green: #2FB656;
+$-red: $-traitify-red;
+$-red-light: #FEA7AB;
 $-white: #FFFFFF;
 $-white-gray: #F5F5F5;
 $-yellow: #F9BC4F;
@@ -62,6 +63,7 @@ $-theme-color: $-blue;
 
 // Add variables that may change with the color scheme
 $color-scheme-dark: (
+  "auxiliary": $-green,
   "background": $-black,
   "background-light": $-gray-dark,
   "border": $-border-color,
@@ -90,6 +92,7 @@ $color-scheme-dark: (
 );
 
 $color-scheme-light: (
+  "auxiliary": $-green,
   "background": $-white,
   "background-light": $-white-gray,
   "border": $-border-color,

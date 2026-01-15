@@ -8,7 +8,7 @@ import assessment from "support/data/assessment/personality/type-based";
 import careers from "support/data/careers.json";
 import useContainer from "support/hooks/use-container";
 
-jest.mock("react-apexcharts", () => ((props) => <div className="mock" {...props}>Chart</div>));
+jest.mock("components/common/canvas", () => ((props) => <div className="mock" {...props}>Chart</div>));
 
 describe("Results.CareerContainer", () => {
   let component;

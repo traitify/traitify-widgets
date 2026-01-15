@@ -10,6 +10,7 @@ import {
   graphqlState,
   httpState,
   localeState,
+  optionsState,
   safeCacheKeyState
 } from "./base";
 
@@ -95,10 +96,14 @@ export const personalityAssessmentQuery = selectorFamily({
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
+    // TODO: Update options - imagekit_aware=true
     const params = {
       data: "archetype,blend,instructions,recommendation,slides,types,traits",
       locale_key: get(localeState)
     };
+
+    if(get(optionsState).imagekit) { params.imagekit_aware = true; }
+
     const http = get(httpState);
     const path = `/assessments/${id}`;
     const response = await http.get({path, params}).catch((e) => ({errors: [e.message]}));

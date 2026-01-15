@@ -4,7 +4,6 @@ import Loading from "components/common/loading";
 import {errorsToText, responseToErrors} from "lib/common/errors";
 import dig from "lib/common/object/dig";
 import slice from "lib/common/object/slice";
-import toQueryString from "lib/common/object/to-query-string";
 import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
@@ -15,6 +14,7 @@ import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {activeAssessmentQuery, appendErrorState} from "lib/recoil";
 import Container from "./container";
+import getImageURL from "./get-image-url";
 import Instructions from "./instructions";
 import Slide from "./slide";
 import style from "./style.scss";
@@ -31,6 +31,7 @@ export default function PersonalitySurvey() {
   const http = useHttp();
   const listener = useListener();
   const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
+  const likert = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
   const translate = useTranslate();
   const {
@@ -39,7 +40,7 @@ export default function PersonalitySurvey() {
     ready,
     slideIndex,
     slides
-  } = useSlideLoader({textSurvey, translate});
+  } = useSlideLoader({likert, textSurvey, translate});
   const options = useOption("survey") || {};
   const [showInstructions, setShowInstructions] = useState(false);
   const [started, setStarted] = useState(null);
@@ -53,7 +54,6 @@ export default function PersonalitySurvey() {
   const finished = slides.length > 0 && slides.length === completedSlides.length;
   const instructionsHTML = dig(assessment, "instructions", "instructional_html");
   const instructionsText = dig(assessment, "instructions", "instructional_text");
-  const likert = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const progress = slideIndex >= 0 ? (slideIndex / slides.length) * 100 : 0;
   const state = {
     assessment,
@@ -75,23 +75,10 @@ export default function PersonalitySurvey() {
     if(assessment.slides.length === 0) { return; }
 
     const cachedData = cache.get(cacheKey) || {};
-    const getImageURL = ({size, slide}) => {
-      const [width, height] = size;
-      const slideImage = slide.images
-        .reduce((max, current) => (max.height > current.height ? max : current));
-      if(width <= 0 || height <= 0) { return slideImage.url; }
-
-      const params = {
-        h: (likert && window.innerWidth <= 768) ? height - 74 : height,
-        w: width
-      };
-
-      return `${slideImage.url}&${toQueryString(params)}`;
-    };
 
     dispatch({
       cachedSlides: cachedData.slides || [],
-      getImageURL,
+      getImageURL: options.getImageURL || getImageURL,
       slides: assessment.slides,
       textSurvey,
       type: "reset"

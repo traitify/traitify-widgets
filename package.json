@@ -7,7 +7,7 @@
     "url": "https://github.com/traitify/traitify-widgets.git"
   },
   "exports": {
-    ".": "./build/traifity.js",
+    ".": "./build/traitify.js",
     "./standalone": "./build/standalone.js"
   },
   "main": "./build/traitify.js",

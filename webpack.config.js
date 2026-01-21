@@ -7,6 +7,8 @@ module.exports = (_env) => {
   const environment = process.env.NODE_ENV || "development";
   const browser = env.platform === "browser";
   const cssMaps = environment !== "production";
+  const outputName = env.output || "traitify";
+  const source = {"traitify": browser ? "cdn" : "npm"}[outputName] || outputName;
   const config = {
     context: path.resolve(__dirname, "src"),
     mode: environment,
@@ -86,7 +88,7 @@ module.exports = (_env) => {
       ]
     },
     output: {
-      filename: "traitify.js",
+      filename: `${outputName}.js`,
       globalObject: "this",
       library: {
         name: "Traitify",
@@ -100,7 +102,7 @@ module.exports = (_env) => {
       new ESLintPlugin({emitWarning: true, failOnError: false}),
       new webpack.ProvidePlugin({React: "react"}),
       new webpack.DefinePlugin({
-        SOURCE: JSON.stringify(browser ? "cdn" : "npm"),
+        SOURCE: JSON.stringify(source),
         VERSION: JSON.stringify(process.env.npm_package_version)
       })
     ],

@@ -35,16 +35,20 @@ export default function getImageURL({likert, size, slide}) {
 
   if(slideImage.url.includes("imagekit")) {
     params.tr = [
-      "w-{{width}}_mul_2",
+      "w-{{width}}_mul_1",
       "ar-{{width}}-{{height}}",
       "c-at_least:w-{{width}}_mul_2",
       "ar-{{width}}-{{height}}",
       "cm-extract",
-      "xc-cw_mul_0.42",
-      "yc-ch_mul_0.51:w-{{width}}",
+      "xc-cw_mul_0.{{focusX}}",
+      "yc-ch_mul_0.{{focusY}}:w-{{width}}",
       "h-{{height}}",
       "f-auto"
-    ].join(",").replace(/{{height}}/g, h).replace(/{{width}}/g, w);
+    ].join(",")
+      .replace(/{{height}}/g, h)
+      .replace(/{{width}}/g, w)
+      .replace(/{{focusX}}/g, slideImage.focusX)
+      .replace(/{{focusY}}/g, slideImage.focusY);
 
     delete params.h;
     delete params.w;

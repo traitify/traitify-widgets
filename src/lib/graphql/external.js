@@ -12,6 +12,7 @@ export const get = `
       passFailResult
       profileId
       resultUrl
+      signInUrl
       surveyKey
       surveyType
       surveyName
@@ -35,6 +36,7 @@ export const skip = `
       passFailResult
       profileId
       resultUrl
+      signInUrl
       surveyKey
       surveyType
       surveyName

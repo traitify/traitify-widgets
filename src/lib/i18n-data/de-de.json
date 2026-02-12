@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Empfehlungen für effektives Arbeiten im Homeoffice",
   "slide_error": "Im Moment können keine weiteren Folien geladen werden",
   "sort": "Sortieren",
+  "status": {
+    "text": "Im Rahmen Ihrer Bewerbung möchten wir Sie bitten, die folgenden Bewertungen durchzuführen. Bitte klicken Sie auf die Schaltfläche neben dem Namen der Bewertung. Dadurch gelangen Sie zu dem Ort, an dem Sie die Bewertung(en) durchführen können. Bitte kehren Sie hierher zurück, sobald Sie alle Bewertungen abgeschlossen haben."
+  },
   "submit": "Senden",
   "success_skills": "Kompetenzen für Erfolg",
   "tip_type_for_caution_zone": "Warnzone",

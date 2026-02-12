@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Tips voor werken vanuit huis",
   "slide_error": "Kan op dit moment geen dia's meer laden",
   "sort": "Sorteren",
+  "status": {
+    "text": "Als onderdeel van uw sollicitatie vragen we u de volgende beoordelingen te voltooien. Klik op de knop naast de naam van de beoordeling. Dit brengt u naar de plek waar u de beoordeling(en) zult voltooien. Keer hier terug zodra u alle beoordelingen heeft voltooid."
+  },
   "submit": "voorleggen",
   "success_skills": "Succesvolle eigenschappen",
   "tip_type_for_caution_zone": "Voorzichtigheidszone",

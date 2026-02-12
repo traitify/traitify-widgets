@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "재택근무 팁",
   "slide_error": "지금은 더 이상 슬라이드를 로딩할 수 없습니다.",
   "sort": "분류하기",
+  "status": {
+    "text": "지원 과정의 일환으로, 다음 평가를 완료해 주시길 부탁드립니다. 평가 이름 옆에 있는 버튼을 클릭해 주세요. 그러면 평가를 완료할 수 있는 페이지로 이동합니다. 모든 평가를 완료하신 후에는 다시 이곳으로 돌아와 주세요."
+  },
   "submit": "제출하기",
   "success_skills": "성공 기술",
   "tip_type_for_caution_zone": "주의 구역",

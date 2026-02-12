@@ -5,12 +5,13 @@ import useTranslate from "lib/hooks/use-translate";
 import Divider from "./divider";
 import style from "./style.scss";
 
-export default function Modal({children, onClose, size = "xl", title}) {
+function Modal({children, className = null, onClose, size = "xl", title}) {
+  const sectionClass = [style.modalContainer, className].filter(Boolean).join(" ");
   const translate = useTranslate();
 
   return (
     <div className={`${style.modal} ${style.container} ${style[size]}`}>
-      <section className={style.modalContainer}>
+      <section className={sectionClass}>
         <div className={style.modalContent}>
           <div className={style.header}>
             <div>{title}</div>
@@ -36,7 +37,10 @@ export default function Modal({children, onClose, size = "xl", title}) {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   size: PropTypes.oneOf(["sm", "md", "lg", "xl"]),
   title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired
 };
+
+export default Modal;

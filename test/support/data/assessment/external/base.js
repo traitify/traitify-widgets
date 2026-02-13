@@ -8,6 +8,7 @@ export default {
   externalSurveyKey: survey.key,
   id: "external-xyz",
   profileId: profile.id,
+  signInUrl: "https://api.traitify.com/beta/assessments/external_assessments/sign_in/external-xyz?token=test-token",
   surveyKey: survey.key,
   surveyType: "EXTERNAL",
   surveyName: survey.name,

@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Working From Home Tips",
   "slide_error": "Unable to load more slides at this time",
   "sort": "Sort",
+  "status": {
+    "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment(s). Please return here once you've completed all assessments."
+  },
   "submit": "Submit",
   "success_skills": "Success Skills",
   "tip_type_for_caution_zone": "Caution Zone",

@@ -8,7 +8,7 @@ module.exports = (_env) => {
   const browser = env.platform === "browser";
   const cssMaps = environment !== "production";
   const outputName = env.output || "traitify";
-  const source = {"traitify": browser ? "cdn" : "npm"}[outputName] || outputName;
+  const source = {traitify: browser ? "cdn" : "npm"}[outputName] || outputName;
   const config = {
     context: path.resolve(__dirname, "src"),
     mode: environment,

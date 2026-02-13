@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "在家工作的技巧",
   "slide_error": "目前無法載入更多幻燈片",
   "sort": "種類",
+  "status": {
+    "text": "作為你申請的一部分，我們希望你完成以下評估。請點擊評估名稱旁邊的按鈕。這將帶你前往完成評估的頁面。請在完成所有評估後返回此處。"
+  },
   "submit": "提交",
   "success_skills": "成功技巧",
   "tip_type_for_caution_zone": "警戒區",

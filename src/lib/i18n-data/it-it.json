@@ -152,6 +152,9 @@
   "skill_name_for_working_from_home": "Lavorare dai consigli di casa",
   "slide_error": "Incapace di caricare più diapositive in questo momento",
   "sort": "Ordinare",
+  "status": {
+    "text": "Nell'ambito della tua candidatura, vorremmo chiederti di completare le seguenti valutazioni. Clicca sul pulsante accanto al nome della valutazione. Questo ti porterà al luogo dove potrai completare la/e valutazione/i. Ti preghiamo di tornare qui una volta completate tutte le valutazioni."
+  },
   "success_skills": "Abilità di successo",
   "tip_type_for_caution_zone": "Zona di cautela",
   "tip_type_for_room": "Spazio per la crescita e il cambiamento",

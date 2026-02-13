@@ -14,7 +14,6 @@
   "careers_link_heading": "View your personalized career recommendations",
   "careers_link_heading_third_person": "View their personalized career recommendations",
   "close": "Close",
-  "complete": "Complete",
   "cognitive_alert_skip": "You are unable to skip the practice questions",
   "cognitive_confirm_button": "Confirm",
   "cognitive_confirm_retry": "Would you like to attempt the questions you skipped?",
@@ -56,6 +55,7 @@
   "cognitive_skip_button": "Skip",
   "cognitive_skipped_questions": "Skipped Questions",
   "complements": "Complements",
+  "complete": "Complete",
   "conflicts": "Conflicts",
   "dimension_description": "The dimension score is calculated from your responses to items that together measure the underlying components of each dimension. Overall, an individual has either a High, Medium, or Low level of each.",
   "dimension_heading": "What does my %{level} %{name} mean for me?",
@@ -104,8 +104,8 @@
     "input_label": "What can we help you with?",
     "input_placeholder": "Write a reply...",
     "message_required": "Please enter a message",
-    "submitted": "Message Submitted",
     "submit": "Send",
+    "submitted": "Message Submitted",
     "trigger": "Need Help"
   },
   "instructions": "Instructions",
@@ -173,6 +173,13 @@
         "heading": "Cognitive Breakdown"
       }
     },
+    "generic": {
+      "breakdown": "Breakdown",
+      "breakdown_description": "Here is the breakdown of the questions you answered in the assessment",
+      "correct": "Correct",
+      "incorrect": "Incorrect",
+      "overall_score": "Overall Score"
+    },
     "reports": {
       "candidate": "Candidate Report",
       "employee": "Engage Employee Report",
@@ -183,6 +190,7 @@
   "salary_mean": "Salary Mean",
   "salary_mean_html": "The wage at which half of the workers in the occupation earned more than that amount and half earned less. Median wage data is from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Search",
+  "show_hide_all": "Show/Hide All",
   "show_less": "Show Less",
   "show_more": "Show More",
   "skill_heading_for_communication": "Speaking, writing, and sharing ideas are important. Try these tips to communicate well.",
@@ -207,7 +215,7 @@
     "heading": "Your Application Assessments",
     "loading": "Loading your assessment",
     "start": "Start Assessment",
-    "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment and either be returned to this page if you have multiple assessments to complete or taken to the next stage of the process.",
+    "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment(s). Please return here once you've completed all assessments.",
     "timeout": "Loading timed out",
     "try_again": "Let's Try Again"
   },

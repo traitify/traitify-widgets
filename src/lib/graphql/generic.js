@@ -1,21 +1,14 @@
-export const surveys = `
-  query($localeKey: String!) {
-    genericSurveys(localeKey: $localeKey) {
-      id
-      name
-    }
-  }
-`;
-
 export const create = `
   mutation($profileID: ID!, $surveyID: ID!) {
     getOrCreateGenericAssessment(profileId: $profileID, surveyId: $surveyID) {
+      completedAt
       id
-      surveyId
+      isSkipped
+      localeKey
       profileId
       startedAt
-      completedAt
-      localeKey
+      surveyId
+      surveyName
     }
   }
 `;
@@ -23,24 +16,26 @@ export const create = `
 export const questions = `
   query($assessmentID: ID!) {
     genericSurveyQuestions(assessmentId: $assessmentID) {
+      completedAt
       id
-      surveyId
+      isSkipped
+      localeKey
+      overallScore
       profileId
       startedAt
-      completedAt
+      surveyId
+      surveyName
       totalCorrectResponses
       totalIncorrectResponses
-      overallScore
-      localeKey
       survey {
-        id
-        name
         conclusions
-        instructions
+        id
         instructionButton
+        instructions
+        name
         questionSets {
-          text
           setImage
+          text
           questions {
             id
             text
@@ -52,17 +47,75 @@ export const questions = `
         }
       }
       responses {
+        isCorrect
         questionId
         questionText
         selectedResponseOptionId
         setImage
-        isCorrect
         responseOptions {
+          isCorrect
           responseOptionId
           responseOptionText
-          isCorrect
         }
       }
+    }
+  }
+`;
+
+export const skip = `
+  mutation($assessmentID: ID!) {
+    skipGenericAssessment(assessmentId: $assessmentID) {
+      completedAt
+      id
+      isSkipped
+      localeKey
+      overallScore
+      profileId
+      startedAt
+      surveyId
+      surveyName
+      totalCorrectResponses
+      totalIncorrectResponses
+      survey {
+        conclusions
+        id
+        instructionButton
+        instructions
+        name
+        questionSets {
+          setImage
+          text
+          questions {
+            id
+            text
+            responseOptions {
+              id
+              text
+            }
+          }
+        }
+      }
+      responses {
+        isCorrect
+        questionId
+        questionText
+        selectedResponseOptionId
+        setImage
+        responseOptions {
+          isCorrect
+          responseOptionId
+          responseOptionText
+        }
+      }
+    }
+  }
+`;
+
+export const surveys = `
+  query($localeKey: String!) {
+    genericSurveys(localeKey: $localeKey) {
+      id
+      name
     }
   }
 `;
@@ -70,24 +123,46 @@ export const questions = `
 export const update = `
   mutation($assessmentID: ID!, $answers: [Answers]!) {
     submitGenericAssessmentAnswers(assessmentId: $assessmentID, answers: $answers) {
+      completedAt
       id
-      surveyId
+      isSkipped
+      localeKey
+      overallScore
       profileId
       startedAt
-      completedAt
+      surveyId
+      surveyName
       totalCorrectResponses
       totalIncorrectResponses
-      overallScore
+      survey {
+        conclusions
+        id
+        instructionButton
+        instructions
+        name
+        questionSets {
+          setImage
+          text
+          questions {
+            id
+            text
+            responseOptions {
+              id
+              text
+            }
+          }
+        }
+      }
       responses {
+        isCorrect
         questionId
         questionText
         selectedResponseOptionId
         setImage
-        isCorrect
         responseOptions {
+          isCorrect
           responseOptionId
           responseOptionText
-          isCorrect
         }
       }
     }

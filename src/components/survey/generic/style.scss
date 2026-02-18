@@ -20,21 +20,6 @@
     margin: $buffer-sm auto;
   }
   .btnTheme { @include buttonDark("theme"); }
-  .progress {
-    border-radius: $border-radius-sm;
-    height: 100%;
-    transition: width 0.3s;
-    width: 0%;
-
-    @include theme("background-color", "progress-bar");
-  }
-  .progressBar {
-    border-radius: $border-radius-sm;
-    height: $border-width-xl;
-    margin-bottom: $buffer-lg;
-
-    @include theme("background-color", "border");
-  }
 }
 
 .choices {
@@ -77,5 +62,27 @@
     display: block;
     margin: auto;
     max-width: 100%;
+  }
+}
+
+.status {
+  align-items: center;
+  display: flex;
+  gap: $buffer-sm;
+  margin-bottom: $buffer-lg;
+
+  .progress {
+    border-radius: $border-radius-sm;
+    height: 100%;
+    transition: width 0.3s;
+
+    @include theme("background-color", "progress-bar");
+  }
+  .progressBar {
+    border-radius: $border-radius-sm;
+    flex: 1;
+    height: $border-width-xl;
+
+    @include theme("background-color", "border");
   }
 }

@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
+import HelpButton from "components/common/help/button";
+import HelpModal from "components/common/help/modal";
 import Loading from "components/common/loading";
 import Markdown from "components/common/markdown";
 import mutable from "lib/common/object/mutable";
@@ -10,9 +12,9 @@ import useComponentEvents from "lib/hooks/use-component-events";
 import useDidUpdate from "lib/hooks/use-did-update";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
+import useOption from "lib/hooks/use-option";
 import {activeAssessmentQuery} from "lib/recoil";
 import Instructions from "./instructions";
-import ProgressBar from "./progress-bar";
 import QuestionSet from "./question-set";
 import style from "./style.scss";
 
@@ -23,11 +25,13 @@ export default function GenericSurvey() {
   const graphQL = useGraphql();
   const http = useHttp();
   const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
+  const showHelp = useOption("showHelp");
 
   const [questionSetIndex, setQuestionSetIndex] = useState(0);
   const [questionSets, setQuestionSets] = useState([]);
-  const [showInstructions, setShowInstructions] = useState(false);
   const [showConclusions, setShowConclusions] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(false);
   const [submitAttempts, setSubmitAttempts] = useState(0);
 
   useEffect(() => {
@@ -104,7 +108,14 @@ export default function GenericSurvey() {
 
   return (
     <div className={style.container}>
-      <ProgressBar progress={progress} />
+      <div className={style.status}>
+        {questionSets.length > 1 && (
+          <div className={style.progressBar}>
+            <div className={style.progress} style={{width: `${progress}%`}} />
+          </div>
+        )}
+        {showHelp && <HelpButton onClick={() => setShowHelpModal(true)} />}
+      </div>
       {currentQuestionSet && (
         <QuestionSet
           key={questionSetIndex}
@@ -119,6 +130,7 @@ export default function GenericSurvey() {
       {showInstructions && (
         <Instructions assessment={assessment} onClose={() => setShowInstructions(false)} />
       )}
+      {showHelpModal && <HelpModal setShow={setShowHelpModal} show={showHelpModal} />}
     </div>
   );
 }

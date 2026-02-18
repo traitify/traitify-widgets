@@ -1,48 +1,60 @@
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import {useEffect, useState} from "react";
-import Responses from "./responses";
+import Icon from "components/common/icon";
+import useTranslate from "lib/hooks/use-translate";
+import Question from "./question";
 import style from "./style.scss";
 
-export default function QuestionSet({onNext, questionSet, updateAnswer}) {
-  const questionSetClass = [style.questionSet].join(" ");
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  const setFinished = questionSet.questions.length === selectedOptions.length;
-  const selectOption = (questionId, optionId) => {
-    if(!selectedOptions.includes(questionId)) setSelectedOptions([...selectedOptions, questionId]);
-    updateAnswer(questionId, optionId);
-  };
-
-  useEffect(() => {
-    if(!setFinished) return;
-    onNext();
-  }, [setFinished]);
+function QuestionSet({first, last, onBack, onNext, set, updateAnswer}) {
+  const completed = set.questions.every(({answer}) => answer);
+  const translate = useTranslate();
 
   return (
-    <div className={questionSetClass}>
-      <img src={questionSet.setImage} alt={questionSet.text} />
-      {questionSet.questions.map((question, index) => (
-        <div key={question.id}>
-          <div className={style.grayDivider} />
-          <div className={style.question}>{index + 1}. {question.text}</div>
-          <Responses
-            responseOptions={question.responseOptions}
-            updateAnswer={(optionId) => selectOption(question.id, optionId)}
-          />
-        </div>
+    <div className={style.questionSet}>
+      <img alt={set.text} src={set.setImage} />
+      {set.questions.map((question, index) => (
+        <Question
+          key={question.id}
+          index={index}
+          question={question}
+          updateAnswer={(answer) => updateAnswer({answer, question})}
+        />
       ))}
+      <div className={style.divider} />
+      <div className={style.btnGroup}>
+        {!first ? (
+          <button className={style.btnBack} onClick={onBack} type="button">
+            <Icon alt={translate("back")} className={style.icon} icon={faArrowLeft} />
+            {translate("back")}
+          </button>
+        ) : <div />}
+        <button
+          className={["traitify--confirm-button", style[completed ? "btnTheme" : "btnDisabled"]].join(" ")}
+          disabled={!completed}
+          onClick={completed ? onNext : undefined}
+          type="button"
+        >
+          {translate(last ? "submit" : "next")}
+        </button>
+      </div>
     </div>
   );
 }
 
 QuestionSet.propTypes = {
+  first: PropTypes.bool.isRequired,
+  last: PropTypes.bool.isRequired,
+  onBack: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired,
-  questionSet: PropTypes.shape({
-    text: PropTypes.string.isRequired,
+  set: PropTypes.shape({
     questions: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })).isRequired,
-    setImage: PropTypes.string.isRequired
+    setImage: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
   }).isRequired,
   updateAnswer: PropTypes.func.isRequired
 };
+
+export default QuestionSet;

@@ -44,6 +44,14 @@
   }
 }
 
+%divider {
+  border: $border-width solid;
+  border-radius: $border-radius-sm;
+  margin: $buffer-lg auto;
+
+  @include theme("border-color", "border");
+}
+
 %dropdown {
   border: $border-width solid;
   display: block;

@@ -1,70 +1,25 @@
 @import "style/helpers";
 
-button.btnPrimary {
-  background-color: $-blue;
-  color: $-white;
-  display: inline-block;
-  padding: $buffer-lg * .5 $buffer;
-  text-align: center;
-  border: transparent;
-  max-width: 110px;
-  margin: $buffer-lg auto;
-}
-
 .container {
   @extend %container;
-  display: flex;
-  flex-direction: column;
+  @extend %box;
+
   margin: 0 auto;
-  max-width: 100%;
-  position: relative;
-  z-index: 1;
-  padding: $buffer-lg;
-  text-align: center;
+  max-width: 800px;
+  width: 100%;
 
-  @include min-width("xs") {
-    aspect-ratio: 2/1;
-    max-width: $breakpoint-md * 0.85;
+  .btnBack {
+    @include buttonOutline();
+
+    .icon { margin-right: $buffer-sm; }
   }
-
-  @include max-width("xs") {
-    padding: $buffer-sm;
+  .btnDisabled { @include buttonDark("inactive"); }
+  .btnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin: $buffer-sm auto;
   }
-
-  .modalContainer {
-    overflow: auto;
-    max-width: 600px;
-  }
-
-  button {
-    border: 1px solid #DADCE0;
-    border-radius: $border-radius-sm * 0.5;
-    margin: $buffer * 1.25 0 0;
-    height: 48px;
-    vertical-align: middle;
-    font-weight: 500;
-
-    @include max-width("xs") {
-      height: auto;
-      padding: $buffer * 0.25 $buffer * 0.5;
-    }
-
-    &.back {
-      padding: $buffer * 0.5 $buffer-lg * 0.5;
-      width: 150px;
-      @include max-width("xs") { width: 100px; }
-
-      .icon {
-        margin-right: $buffer-sm;
-        font-size: $font-size-lg;
-      }
-    }
-  }
-
-  .markdown {
-    text-align: center;
-  }
-
+  .btnTheme { @include buttonDark("theme"); }
   .progress {
     border-radius: $border-radius-sm;
     height: 100%;
@@ -76,102 +31,51 @@ button.btnPrimary {
   .progressBar {
     border-radius: $border-radius-sm;
     height: $border-width-xl;
-    margin-bottom: $buffer * 2;
+    margin-bottom: $buffer-lg;
 
     @include theme("background-color", "border");
   }
-  &:after {
-    top: 0;
-    bottom: 0;
+}
+
+.choices {
+  display: flex;
+  gap: $buffer;
+  margin: $buffer 0;
+
+  @include max-width("xs") { flex-direction: column; }
+
+  &.wide { flex-direction: column; }
+  .choice {
     border: $border-width solid;
-    border-radius: $border-radius;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
+    border-radius: $border-radius-sm;
+    flex: 1;
+    padding: $buffer;
+    text-align: center;
 
     @include theme("border-color", "border");
+    @include theme("color", "text");
+
+    &.active, &:active, &:hover {
+      @include theme("background-color", "theme");
+      @include theme("color", "text-light");
+    }
+    &:focus {
+      outline-offset: -1px;
+      outline-style: solid;
+      outline-width: 1px;
+    }
   }
 }
+.divider { @extend %divider; }
 
-.flexDirectionColumn { flex-direction: column; }
-
-.footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: $buffer * 0.25;
-
-  .cancelBtn {
-    @include buttonLight("text-dark");
-    @include theme("border-color", "border-light");
-    border: $border-width solid;
-    border-radius: $border-radius-sm * 0.5;
-    margin: $buffer * 0.5;
-  }
-
-  .btnPrimary {
-    margin: $buffer * 0.5;
-    @include max-width("xs") { padding: $buffer * 0.25 $buffer; }
-  }
-}
-
-.grayDivider {
-  color: #555555;
-  width: 100%;
-  margin: $buffer-lg auto $buffer-lg;
-  line-height: inherit;
-  clear: both;
-  user-select: none;
-  break-after: page;
-  border: $border-width solid #e8e8ec;
-  border-radius: $border-radius-sm;
+.question {
+  .text { font-weight: 600;}
 }
 
 .questionSet {
-  width: 100%;
-  align-items: center;
-  text-align: center;
-  padding: $buffer;
-
-  @include max-width("xs") { padding: $buffer-sm; }
-
   img {
-    margin-bottom: $buffer;
-    @include max-width("xs") { max-width: 100%; }
+    display: block;
+    margin: auto;
+    max-width: 100%;
   }
-
-  .question {
-    text-align: left;
-    font-weight: 600;
-  }
-}
-
-.response {
-  padding: $buffer * 0.25 $buffer * 0.75;
-  text-align: center;
-
-  @include min-width("xs") { padding: $buffer * 0.25 $buffer * 0.75; }
-  @include min-width("sm") {
-    font-size: $font-size * 1.25;
-    line-height: $line-height;
-    padding: $buffer * 0.5 $buffer * 1.5;
-  }
-  @include theme("color", "text-light");
-  &:focus {
-    outline-offset: -1px;
-    outline-style: solid;
-    outline-width: 1px;
-  }
-  &.btnActive {
-    background-color: $-blue;
-    color: $-white;
-    border-color: transparent;
-  }
-}
-
-.responseOptions{
-  display: flex;
-  justify-content: space-between;
-  @include max-width("xs") { flex-direction: column; }
 }

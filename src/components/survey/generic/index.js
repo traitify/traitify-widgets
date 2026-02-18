@@ -1,63 +1,63 @@
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {useEffect, useState} from "react";
 import {useRecoilRefresher_UNSTABLE as useRecoilRefresher} from "recoil";
-import Icon from "components/common/icon";
 import Loading from "components/common/loading";
 import Markdown from "components/common/markdown";
-import Modal from "components/common/modal";
+import mutable from "lib/common/object/mutable";
 import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
+import useComponentEvents from "lib/hooks/use-component-events";
 import useDidUpdate from "lib/hooks/use-did-update";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
-import useTranslate from "lib/hooks/use-translate";
 import {activeAssessmentQuery} from "lib/recoil";
+import Instructions from "./instructions";
 import ProgressBar from "./progress-bar";
 import QuestionSet from "./question-set";
 import style from "./style.scss";
 
 export default function GenericSurvey() {
+  const assessment = useAssessment({surveyType: "generic"});
+  const assessmentCacheKey = useCacheKey("assessment");
+  const cache = useCache();
+  const graphQL = useGraphql();
+  const http = useHttp();
+  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
+
   const [questionSetIndex, setQuestionSetIndex] = useState(0);
-  const [answers, setAnswers] = useState([]);
+  const [questionSets, setQuestionSets] = useState([]);
   const [showInstructions, setShowInstructions] = useState(false);
   const [showConclusions, setShowConclusions] = useState(false);
   const [submitAttempts, setSubmitAttempts] = useState(0);
 
-  const assessment = useAssessment({surveyType: "generic"});
-  if(assessment?.completedAt) { return; }
-  const assessmentCacheKey = useCacheKey("assessment");
-  const cache = useCache();
-  const questionSets = assessment ? assessment.survey.questionSets : [];
-  const questionCount = questionSets.reduce((count, set) => count + set.questions.length, 0);
-  const currentQuestionSet = questionSets ? questionSets[questionSetIndex] : {};
+  useEffect(() => {
+    setQuestionSets(assessment?.survey?.questionSets || []);
+  }, [assessment]);
+
+  const currentQuestionSet = questionSets[questionSetIndex];
   const progress = questionSetIndex >= 0 ? (questionSetIndex / questionSets.length) * 100 : 0;
-  const finished = questionSets.length > 0 && questionCount === answers.length;
-
-  const graphQL = useGraphql();
-  const http = useHttp();
-  const translate = useTranslate();
-  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
-
-  const updateAnswer = (questionId, selectedOptionId) => {
-    const currentAnswers = answers.filter((answer) => answer.questionId !== questionId);
-    setAnswers([...currentAnswers,
-      {questionId, selectedResponseOptionId: selectedOptionId}]);
+  const state = {
+    progress,
+    questionSets
   };
-
-  const onNext = () => { setQuestionSetIndex(questionSetIndex + 1); };
-  const onBack = () => { setQuestionSetIndex(questionSetIndex - 1); };
 
   const onSubmit = () => {
     if(submitAttempts > 3) { return; }
+
+    const answers = [];
+    questionSets.forEach(({questions}) => {
+      questions.filter(({answer}) => answer)
+        .forEach(({answer, id}) => answers.push({
+          questionId: id,
+          selectedResponseOptionId: answer.id
+        }));
+    });
     const query = graphQL.generic.update;
-    const variables = {
-      assessmentID: assessment.id,
-      answers
-    };
+    const variables = {answers, assessmentID: assessment.id};
 
     http.post(graphQL.generic.path, {query, variables}).then(({data, errors}) => {
       if(!errors && data.submitGenericAssessmentAnswers) {
+        // TODO: Remove
         setShowConclusions(true);
         setTimeout(() => {
           const response = data.submitGenericAssessmentAnswers;
@@ -72,75 +72,52 @@ export default function GenericSurvey() {
     });
   };
 
+  useComponentEvents("Survey", {...state});
   useDidUpdate(() => { onSubmit(); }, [submitAttempts]);
-
-  useEffect(() => {
-    setShowInstructions(true);
-  }, [assessment]);
-
-  useEffect(() => {
-    if(!finished) { return; }
-    onSubmit();
-  }, [finished]);
+  useEffect(() => { setShowInstructions(true); }, [assessment]);
 
   if(!assessment) { return <Loading />; }
+  if(assessment.completedAt) { return; }
 
+  // NOTE: Probably extract this into the results for candidates
   if(showConclusions) {
     return (
       <div className={`${style.container}`}>
         <Markdown className={style.markdown}>
           {assessment.survey.conclusions}
         </Markdown>
-        <button type="button" className={style.btnPrimary}>Finished!</button>
       </div>
     );
   }
 
+  const lastSet = questionSetIndex === questionSets.length - 1;
+  const updateAnswer = ({answer, question}) => {
+    setQuestionSets((_sets) => {
+      const sets = mutable(_sets);
+      const setIndex = questionSetIndex;
+      const questionIndex = sets[setIndex].questions.findIndex(({id}) => id === question.id);
+      sets[setIndex].questions[questionIndex].answer = answer;
+
+      return sets;
+    });
+  };
+
   return (
-    <div className={`${style.container}`}>
+    <div className={style.container}>
       <ProgressBar progress={progress} />
       {currentQuestionSet && (
         <QuestionSet
           key={questionSetIndex}
-          questionSet={currentQuestionSet}
+          first={questionSetIndex === 0}
+          last={lastSet}
+          onBack={() => setQuestionSetIndex(questionSetIndex - 1)}
+          onNext={lastSet ? onSubmit : () => setQuestionSetIndex(questionSetIndex + 1)}
+          set={currentQuestionSet}
           updateAnswer={updateAnswer}
-          onNext={onNext}
         />
       )}
-
-      {questionSetIndex > 0 && (
-        <button onClick={onBack} type="button" className={style.back}>
-          <Icon className={style.icon} alt={translate("back")} icon={faArrowLeft} />
-          {translate("back")}
-        </button>
-      )}
       {showInstructions && (
-        <Modal
-          className={style.modalContainer}
-          onClose={() => setShowInstructions(false)}
-          title={translate("instructions")}
-        >
-          <Markdown>
-            {assessment.survey.instructions}
-          </Markdown>
-          <div className={style.grayDivider} />
-          <div className={style.footer}>
-            <button
-              type="button"
-              className={style.cancelBtn}
-              onClick={() => setShowInstructions(false)}
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              className={style.btnPrimary}
-              onClick={() => setShowInstructions(false)}
-            >
-              {assessment.survey.instructionButton}
-            </button>
-          </div>
-        </Modal>
+        <Instructions assessment={assessment} onClose={() => setShowInstructions(false)} />
       )}
     </div>
   );

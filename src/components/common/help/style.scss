@@ -13,12 +13,7 @@
     button { flex: none; }
   }
 
-  .cancel {
-    border: $border-width solid;
-
-    @include buttonLight("input");
-    @include theme("border-color", "border");
-  }
+  .cancel { @include buttonOutline(); }
   .submit { @include buttonDark("theme"); }
 }
 

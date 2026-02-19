@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question renders active answer 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="divider"
+    />
+    <div
+      className="text"
+    >
+      1
+      . 
+      Question 1
+    </div>
+    <div
+      className="choices"
+    >
+      <button
+        className="traitify--response-button choice active"
+        onClick={[Function]}
+        type="button"
+      >
+        Response A
+      </button>
+      <button
+        className="traitify--response-button choice"
+        onClick={[Function]}
+        type="button"
+      >
+        Response B
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Question renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="divider"
+    />
+    <div
+      className="text"
+    >
+      1
+      . 
+      Question 1
+    </div>
+    <div
+      className="choices"
+    >
+      <button
+        className="traitify--response-button choice"
+        onClick={[Function]}
+        type="button"
+      >
+        Response A
+      </button>
+      <button
+        className="traitify--response-button choice"
+        onClick={[Function]}
+        type="button"
+      >
+        Response B
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Question renders wide options 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="divider"
+    />
+    <div
+      className="text"
+    >
+      1
+      . 
+      Question 1
+    </div>
+    <div
+      className="choices wide"
+    >
+      <button
+        className="traitify--response-button choice"
+        onClick={[Function]}
+        type="button"
+      >
+        This is a long response option text
+      </button>
+      <button
+        className="traitify--response-button choice"
+        onClick={[Function]}
+        type="button"
+      >
+        Response B
+      </button>
+    </div>
+  </div>
+</div>
+`;

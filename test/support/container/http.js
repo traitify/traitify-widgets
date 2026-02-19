@@ -343,6 +343,101 @@ export const mockExternalAssessment = (...params) => {
   return mockFetch(mock);
 };
 
+export const mockFeedbackSurvey = (feedbackSurvey, surveyID) => (
+  mockFetch({
+    key: "feedback-survey",
+    request: (url, options) => {
+      if(!url.includes("/xavier/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.surveyId === surveyID;
+    },
+    response: () => ({data: {feedbackSurvey}})
+  })
+);
+
+export const mockGenericAssessment = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "generic-assessment",
+    request: (url, options) => {
+      if(!url.includes("/generic-assessments/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.assessmentID === id && !Object.hasOwn(variables, "answers");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {genericSurveyQuestions: response}});
+
+  return mockFetch(mock);
+};
+
+export const mockGenericSkip = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "generic-assessment-skip",
+    request: (url, options) => {
+      if(!url.includes("/generic-assessments/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const query = dig(JSON.parse(options.body), "query") || {};
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.assessmentID === id && query.includes("skipGenericAssessment");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {skipGenericAssessment: response}});
+
+  return mockFetch(mock);
+};
+
+export const mockGenericSubmit = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "generic-assessment-submit",
+    request: (url, options) => {
+      if(!url.includes("/generic-assessments/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.assessmentID === id && Object.hasOwn(variables, "answers");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {submitGenericAssessmentAnswers: response}});
+
+  return mockFetch(mock);
+};
+
 export const mockGuide = (guide, {assessmentID} = {}) => (
   mockFetch({
     key: "guide",
@@ -446,22 +541,6 @@ export const mockUserCompletedFeedback = (assessmentID, completed = false) => (
   })
 );
 
-export const mockFeedbackSurvey = (feedbackSurvey, surveyID) => (
-  mockFetch({
-    key: "feedback-survey",
-    request: (url, options) => {
-      if(!url.includes("/xavier/graphql")) { return false; }
-      if(options.method !== "POST") { return false; }
-      if(!options.body) { return false; }
-
-      const variables = dig(JSON.parse(options.body), "variables") || {};
-
-      return variables.surveyId === surveyID;
-    },
-    response: () => ({data: {feedbackSurvey}})
-  })
-);
-
 export const useAssessment = (...options) => { beforeEach(() => { mockAssessment(...options); }); };
 export const useBenchmark = (...options) => { beforeEach(() => { mockBenchmark(...options); }); };
 export const useCareers = (...options) => { beforeEach(() => { mockCareers(...options); }); };
@@ -469,6 +548,9 @@ export const useCognitiveAssessment = (...options) => {
   beforeEach(() => { mockCognitiveAssessment(...options); });
 };
 export const useDeck = (...options) => { beforeEach(() => { mockDeck(...options); }); };
+export const useGenericAssessment = (...options) => {
+  beforeEach(() => { mockGenericAssessment(...options); });
+};
 export const useGuide = (...options) => { beforeEach(() => { mockGuide(...options); }); };
 export const useHighlightedCareers = (...options) => {
   beforeEach(() => { mockHighlightedCareers(...options); });

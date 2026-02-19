@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructions renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="modal container md"
+  >
+    <section
+      className="modalContainer"
+    >
+      <div
+        className="modalContent"
+      >
+        <div
+          className="header"
+        >
+          <div>
+            Instructions
+          </div>
+          <div>
+            <span
+              aria-label="Close"
+              className="close traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg>",
+                }
+              }
+              onClick={[MockFunction onClose]}
+              tabIndex="-1"
+            />
+          </div>
+        </div>
+        <div
+          className="divider"
+        />
+        <div
+          className="content"
+        >
+          <h2
+            className="traitify--markdown"
+            id="instructions"
+          >
+            Instructions
+          </h2>
+          <div
+            className="divider"
+          />
+          <div
+            className="btnGroup"
+          >
+            <div />
+            <button
+              className="btnTheme"
+              onClick={[Function]}
+              type="button"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation renders accommodation text 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="modal container md"
+  >
+    <section
+      className="modalContainer"
+    >
+      <div
+        className="modalContent"
+      >
+        <div
+          className="header"
+        >
+          <div>
+            Request Accommodation
+          </div>
+          <div>
+            <span
+              aria-label="Close"
+              className="close traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg>",
+                }
+              }
+              onClick={[MockFunction onClose]}
+              tabIndex="-1"
+            />
+          </div>
+        </div>
+        <div
+          className="divider"
+        />
+        <div
+          className="content"
+        >
+          <div
+            className="markdown"
+          >
+            <p>
+              Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
+            </p>
+          </div>
+          <div
+            className="divider"
+          />
+          <div
+            className="btnGroup"
+          >
+            <button
+              className="btnBack"
+              onClick={[Function]}
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              className="btnTheme"
+              onClick={[Function]}
+              type="button"
+            >
+              Yes, Request Accommodation
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation renders back action 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="modal container md"
+  >
+    <section
+      className="modalContainer"
+    >
+      <div
+        className="modalContent"
+      >
+        <div
+          className="header"
+        >
+          <div>
+            Instructions
+          </div>
+          <div>
+            <span
+              aria-label="Close"
+              className="close traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg>",
+                }
+              }
+              onClick={[MockFunction onClose]}
+              tabIndex="-1"
+            />
+          </div>
+        </div>
+        <div
+          className="divider"
+        />
+        <div
+          className="content"
+        >
+          <h2
+            className="traitify--markdown"
+            id="instructions"
+          >
+            Instructions
+          </h2>
+          <div
+            className="divider"
+          />
+          <div
+            className="btnGroup"
+          >
+            <button
+              className="btnBack"
+              onClick={[Function]}
+              type="button"
+            >
+              Request Accommodation
+            </button>
+            <button
+              className="btnTheme"
+              onClick={[Function]}
+              type="button"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`Instructions skip assessment accommodation renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="modal container md"
+  >
+    <section
+      className="modalContainer"
+    >
+      <div
+        className="modalContent"
+      >
+        <div
+          className="header"
+        >
+          <div>
+            Instructions
+          </div>
+          <div>
+            <span
+              aria-label="Close"
+              className="close traitify--icon-fa"
+              dangerouslySetInnerHTML={
+                {
+                  "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg>",
+                }
+              }
+              onClick={[MockFunction onClose]}
+              tabIndex="-1"
+            />
+          </div>
+        </div>
+        <div
+          className="divider"
+        />
+        <div
+          className="content"
+        >
+          <h2
+            className="traitify--markdown"
+            id="instructions"
+          >
+            Instructions
+          </h2>
+          <div
+            className="divider"
+          />
+          <div
+            className="btnGroup"
+          >
+            <button
+              className="btnBack"
+              onClick={[Function]}
+              type="button"
+            >
+              Request Accommodation
+            </button>
+            <button
+              className="btnTheme"
+              onClick={[Function]}
+              type="button"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

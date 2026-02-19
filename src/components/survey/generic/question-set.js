@@ -31,7 +31,7 @@ function QuestionSet({first, last, onBack, onNext, set, updateAnswer}) {
         <button
           className={["traitify--confirm-button", style[completed ? "btnTheme" : "btnDisabled"]].join(" ")}
           disabled={!completed}
-          onClick={completed ? onNext : undefined}
+          onClick={onNext}
           type="button"
         >
           {translate(last ? "submit" : "next")}

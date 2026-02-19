@@ -21,12 +21,9 @@ export default function ManagerReport() {
     setOptions({...options, perspective: "thirdPerson"});
   }, []);
 
-  // NOTE: Temporary option until 2024-09-01
-  const {showRecommendationList} = options;
-
   return (
     <section>
-      {showRecommendationList && <RecommendationList />}
+      <RecommendationList />
       <ClientGuide />
       <div className={[style.container, style.box].join(" ")}>
         {showHeaders && (

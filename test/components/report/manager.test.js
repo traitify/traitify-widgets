@@ -23,16 +23,6 @@ describe("Report.Manager", () => {
     });
   });
 
-  describe("showRecommendationList", () => {
-    useOption("showRecommendationList", true);
-
-    it("renders component", async() => {
-      component = await ComponentHandler.setup(Component);
-
-      expect(component.tree).toMatchSnapshot();
-    });
-  });
-
   it("renders component", async() => {
     component = await ComponentHandler.setup(Component);
 

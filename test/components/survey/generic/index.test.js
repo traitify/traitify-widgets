@@ -59,7 +59,10 @@ describe("Survey.Generic", () => {
   const answerSet = () => {
     act(() => {
       const {set, updateAnswer} = component.instance.findByType(QuestionSet).props;
-      set.questions.forEach((question) => { updateAnswer({answer: question.responseOptions[0], question}); });
+
+      set.questions.forEach((question) => {
+        updateAnswer({answer: question.responseOptions[0], question});
+      });
     });
   };
 

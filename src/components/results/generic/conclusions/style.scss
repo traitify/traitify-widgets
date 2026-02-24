@@ -1,0 +1,11 @@
+@import "style/helpers";
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  margin: auto;
+  margin-bottom: $buffer-section;
+  max-width: 800px;
+  text-align: center;
+}

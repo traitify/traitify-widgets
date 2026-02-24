@@ -1,0 +1,130 @@
+@import "style/helpers";
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+  margin-bottom: $buffer-section;
+
+  .toggle {
+    @include buttonOutline();
+
+    display: block;
+    font-size: $font-size;
+    line-height: 1;
+    padding: $buffer-sm * 1.25;
+  }
+  .toggleAll { @include buttonOutline(); }
+}
+
+.description {
+  align-items: center;
+  display: flex;
+  gap: $buffer;
+  justify-content: space-between;
+
+  @include max-width("md") { flex-direction: column; }
+
+  > div {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.option {
+  border: $border-width solid;
+  border-radius: $border-radius-sm;
+  padding: $buffer-sm;
+  text-align: center;
+
+  @include theme("border-color", "border");
+
+  &.correctOption {
+    border-width: $border-width-lg;
+
+    @include theme("border-color", "rank-high");
+  }
+  &.correctResponse {
+    @include theme("background", "rank-high");
+    @include theme("color", "text-light");
+  }
+  &.incorrectResponse {
+    @include theme("background", "rank-low");
+    @include theme("color", "text-light");
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.question { @extend %box; }
+
+.questionContent {
+  align-items: center;
+  display: flex;
+  gap: $buffer;
+
+  @include max-width("md") { flex-direction: column; }
+}
+
+.questionDetails {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: $buffer-lg;
+  width: 100%;
+}
+
+.questionImage {
+  flex: 1;
+  text-align: center;
+
+  img { max-width: 100%; }
+}
+
+.questionText {
+  font-weight: 600;
+  margin-top: $buffer;
+}
+
+.questionTitle {
+  align-items: center;
+  display: flex;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  gap: $buffer-sm;
+  justify-content: space-between;
+
+  .correct, .incorrect {
+    font-size: $font-size-heading + $buffer-sm;
+  }
+  .correct { @include theme("color", "rank-high"); }
+  .incorrect { @include theme("color", "rank-low"); }
+
+  .wrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    gap: $buffer;
+    justify-content: space-between;
+
+    > :first-child {
+      flex: 1;
+      width: 100%;
+    }
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: $buffer;
+}
+
+.title { @extend %heading; }

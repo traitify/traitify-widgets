@@ -34,7 +34,8 @@ describe("QuestionSet", () => {
   });
 
   it("triggers onNext", async() => {
-    props.set.questions = props.set.questions.map((question) => ({...question, answer: question.responseOptions[0]}));
+    props.set.questions = props.set.questions
+      .map((question) => ({...question, answer: question.responseOptions[0]}));
     component = await ComponentHandler.setup(Component, {props});
     act(() => component.findByText("Next").props.onClick());
 

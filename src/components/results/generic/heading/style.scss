@@ -1,0 +1,34 @@
+@import "style/helpers";
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  margin-bottom: $buffer-section;
+}
+
+.correct { @include theme("background-color", "rank-high"); }
+.incorrect { @include theme("background-color", "rank-low"); }
+.overall { @include theme("background-color", "theme"); }
+
+.correct, .incorrect, .overall {
+  border-radius: $border-radius-sm;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: $buffer-sm $buffer;
+
+  @include theme("color", "text-light");
+}
+
+.scores {
+  display: flex;
+  font-size: $font-size-lg;
+  gap: $buffer-sm;
+  justify-content: space-between;
+  margin-top: $buffer;
+
+  @include max-width("md") { flex-direction: column; }
+}
+
+.title { @extend %heading; }

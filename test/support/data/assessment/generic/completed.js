@@ -41,6 +41,29 @@ export default {
       }
     ]
   },
+  responses: [
+    {
+      isCorrect: true,
+      questionId: "question-1",
+      questionText: "Question 1",
+      responseOptions: [
+        {isCorrect: true, responseOptionId: "response-1a", responseOptionText: "Response A"},
+        {isCorrect: false, responseOptionId: "response-1b", responseOptionText: "Response B"}
+      ],
+      selectedResponseOptionId: "response-1a",
+      setImage: "https://cdn.traitify.com/generic/set1.png"
+    },
+    {
+      isCorrect: false,
+      questionId: "question-2",
+      questionText: "Question 2",
+      responseOptions: [
+        {isCorrect: true, responseOptionId: "response-2a", responseOptionText: "Response A"},
+        {isCorrect: false, responseOptionId: "response-2b", responseOptionText: "Response B"}
+      ],
+      selectedResponseOptionId: "response-2b"
+    }
+  ],
   totalCorrectResponses: 1,
-  totalIncorrectResponses: 0
+  totalIncorrectResponses: 1
 };

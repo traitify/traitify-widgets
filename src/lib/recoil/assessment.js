@@ -14,8 +14,6 @@ import {
   safeCacheKeyState
 } from "./base";
 
-// TODO: Return error instead of null for cognitive and external
-// return {errors: response.errors, id};
 export const cognitiveAssessmentQuery = selectorFamily({
   get: (id) => async({get, set}) => {
     if(!id) { return null; }
@@ -122,7 +120,7 @@ export const personalityAssessmentQuery = selectorFamily({
 });
 
 export const genericAssessmentQuery = selectorFamily({
-  get: (id) => async({get}) => {
+  get: (id) => async({get, set}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -136,10 +134,11 @@ export const genericAssessmentQuery = selectorFamily({
       query: GraphQL.generic.questions,
       variables: {assessmentID: id}
     };
-
-    const response = await http.post({path: GraphQL.generic.path, params});
+    const {path} = GraphQL.generic;
+    const response = await http.post({path, params});
     if(response.errors) {
       console.warn("generic-assessment", response.errors); /* eslint-disable-line no-console */
+      set(appendErrorState, responseToErrors({method: "POST", path, response}));
       return null;
     }
 

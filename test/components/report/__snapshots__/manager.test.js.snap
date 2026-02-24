@@ -6,6 +6,16 @@ exports[`Report.Manager renders component 1`] = `
 >
   <section>
     <div
+      className="mock"
+    >
+      Recommendation List
+    </div>
+    <div
+      className="mock"
+    >
+      Client Guide
+    </div>
+    <div
       className="container box"
     >
       <div
@@ -28,11 +38,42 @@ exports[`Report.Manager renders component 1`] = `
 </div>
 `;
 
+exports[`Report.Manager renders generic component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container box"
+  >
+    <div
+      className="mock"
+    >
+      Generic Heading
+    </div>
+    <div
+      className="mock"
+    >
+      Generic Breakdown
+    </div>
+  </section>
+</div>
+`;
+
 exports[`Report.Manager showHeaders renders component 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >
   <section>
+    <div
+      className="mock"
+    >
+      Recommendation List
+    </div>
+    <div
+      className="mock"
+    >
+      Client Guide
+    </div>
     <div
       className="container box"
     >

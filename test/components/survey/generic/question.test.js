@@ -13,7 +13,6 @@ describe("Question", () => {
   useContainer();
 
   beforeEach(() => {
-
     props = {
       index: 0,
       question: mutable(assessment.survey.questionSets[0].questions[0]),

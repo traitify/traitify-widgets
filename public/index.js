@@ -465,7 +465,7 @@ function setupGeneric() {
       const options = response.data.genericSurveys
         .map(({id, name}) => ({text: name, value: id}))
         .sort((a, b) => a.text.localeCompare(b.text));
-  
+
       document.querySelector("#generic-options").appendChild(createOption({
         name: "surveyID",
         onChange: onInputChange,

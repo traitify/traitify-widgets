@@ -12,7 +12,9 @@ import CareerList from "./results/career/list";
 import CareerModal from "./results/career/modal";
 import CognitiveResults from "./results/cognitive";
 import CognitiveChart from "./results/cognitive/chart";
-import GenericResults from "./results/generic";
+import GenericBreakdown from "./results/generic/breakdown";
+import GenericConclusions from "./results/generic/conclusions";
+import GenericHeading from "./results/generic/heading";
 import ClientGuide from "./results/guide/client";
 import PersonalityGuide from "./results/guide/personality";
 import ArchetypeHeading from "./results/personality/archetype/heading";
@@ -56,7 +58,11 @@ export default {
       Container: CognitiveResults
     },
     Container: Results,
-    Generic: GenericResults,
+    Generic: {
+      Breakdown: GenericBreakdown,
+      Conclusions: GenericConclusions,
+      Heading: GenericHeading
+    },
     Guide: {
       Client: ClientGuide,
       Personality: PersonalityGuide

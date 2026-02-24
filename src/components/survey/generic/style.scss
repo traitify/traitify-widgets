@@ -1,8 +1,8 @@
 @import "style/helpers";
 
 .container {
-  @extend %container;
   @extend %box;
+  @extend %container;
 
   margin: 0 auto;
   max-width: 800px;
@@ -27,7 +27,7 @@
   gap: $buffer;
   margin: $buffer 0;
 
-  @include max-width("xs") { flex-direction: column; }
+  @include max-width("md") { flex-direction: column; }
 
   &.wide { flex-direction: column; }
   .choice {

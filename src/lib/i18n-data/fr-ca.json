@@ -111,7 +111,7 @@
   "personality_blend": "Mélange de personnalité",
   "personality_blend_heading": "Votre mélange de personnalité est %{personality}",
   "personality_blend_heading_third_person": "Leur mélange de personnalité est %{personality}",
-  "personality_breakdown": "Personnalité Breakdown",
+  "personality_breakdown": "Répartition de la personnalité",
   "personality_details": "Détails de la personnalité",
   "personality_heading": "Votre personnalité de %{deck_name} est %{personality}",
   "personality_heading_third_person": "%{deck_name} Personnalité: %{personality}",
@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Conseils pour le travail à domicile",
   "slide_error": "Impossible de charger plus de diapositives pour le moment",
   "sort": "Trier",
+  "status": {
+    "text": "Dans le cadre de votre candidature, nous souhaitons vous demander de compléter les évaluations suivantes. Veuillez cliquer sur le bouton à côté du nom de l’évaluation. Cela vous mènera à l’endroit où vous pourrez compléter la/les évaluation(s). Veuillez revenir ici une fois que vous aurez terminé toutes les évaluations."
+  },
   "submit": "Soumettre",
   "success_skills": "Compétences de réussite",
   "tip_type_for_caution_zone": "Zone de prudence",

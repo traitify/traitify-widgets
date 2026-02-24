@@ -48,6 +48,7 @@ export const recommendation = `
           assessmentId
           assessmentTakerUrl
           isSkipped
+          signInUrl
           status
           surveyId
           surveyName
@@ -89,6 +90,7 @@ export const skipRecommendation = `
           assessmentId
           assessmentTakerUrl
           isSkipped
+          signInUrl
           status
           surveyId
           surveyName

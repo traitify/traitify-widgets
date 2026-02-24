@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Dicas para trabalhar em casa",
   "slide_error": "Não foi possível carregar mais slides no momento",
   "sort": "ordenar",
+  "status": {
+    "text": "Como parte da sua inscrição, gostaríamos de pedir que você complete as seguintes avaliações. Por favor, clique no botão ao lado do nome da avaliação. Isso o levará ao local onde você completará a(s) avaliação(ões). Retorne aqui assim que tiver concluído todas as avaliações."
+  },
   "submit": "Enviar",
   "success_skills": "Habilidades de sucesso",
   "tip_type_for_caution_zone": "Zona de precaução",

@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Consejos para trabajar desde casa",
   "slide_error": "No se pueden cargar más diapositivas en este momento",
   "sort": "Ordenar",
+  "status": {
+    "text": "Como parte de su solicitud, nos gustaría pedirle que complete las siguientes evaluaciones. Por favor, haga clic en el botón junto al nombre de la evaluación. Esto lo llevará al lugar donde completará la(s) evaluación(es). Por favor, regrese aquí una vez que haya completado todas las evaluaciones."
+  },
   "submit": "Enviar",
   "success_skills": "Habilidades para alcanzar el éxito",
   "tip_type_for_caution_zone": "Zona de precaución",

@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Tips när du arbetar Hemifrån",
   "slide_error": "Det går inte att ladda fler bilder vid den här tiden",
   "sort": "Slag",
+  "status": {
+    "text": "Som en del av din ansökan vill vi att du genomför följande bedömningar. Klicka på knappen bredvid bedömningens namn. Detta tar dig till där du kommer att genomföra bedömningen/-arna. Vänligen återvänd hit när du har slutfört alla bedömningar."
+  },
   "submit": "Lämna",
   "success_skills": "Färdigheter för framgång",
   "tip_type_for_caution_zone": "Varningszon",

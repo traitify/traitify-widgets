@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Tips Bekerja dari Rumah",
   "slide_error": "Tidak dapat memuat lebih banyak slide untuk saat ini",
   "sort": "Menggolongkan",
+  "status": {
+    "text": "Sebagai bagian dari lamaran Anda, kami ingin meminta Anda untuk menyelesaikan penilaian berikut. Silakan klik tombol di sebelah nama penilaian. Ini akan membawa Anda ke tempat Anda akan menyelesaikan penilaian tersebut. Silakan kembali ke sini setelah Anda menyelesaikan semua penilaian."
+  },
   "submit": "Kirim",
   "success_skills": "Kemampuan untuk Sukses",
   "tip_type_for_caution_zone": "Zona yang Perlu Diwaspadai",

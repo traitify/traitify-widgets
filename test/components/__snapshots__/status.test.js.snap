@@ -326,7 +326,7 @@ exports[`Status recommendation renders component 1`] = `
         </span>
       </div>
       <a
-        href="https://external.traitify.com/external-assessment-id"
+        href="https://api.traitify.com/beta/assessments/external_assessments/sign_in/external-xyz?token=test-token"
       >
         Start Assessment
       </a>

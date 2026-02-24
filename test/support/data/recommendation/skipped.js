@@ -17,6 +17,7 @@ export default {
       assessmentId: external.id,
       assessmentTakerUrl: external.assessmentTakerUrl,
       isSkipped: true,
+      signInUrl: external.signInUrl,
       status: "COMPLETE",
       surveyId: external.surveyKey,
       surveyName: external.surveyName,

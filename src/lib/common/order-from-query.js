@@ -4,7 +4,7 @@ import dig from "lib/common/object/dig";
 export function assessmentFromQuery(response) {
   const record = {
     completed: !!(response.completed || response.completed_at || response.completedAt),
-    link: response.assessmentTakerUrl,
+    link: response.signInUrl || response.assessmentTakerUrl,
     loaded: true,
     loading: false,
     profileID: response.profile_id || response.profileId || dig(response, "profile_ids", 0),
@@ -106,7 +106,7 @@ export function orderFromRecommendation(response) {
       assessments.push({
         completed: assessment.status === "COMPLETE",
         id: assessment.assessmentId,
-        link: assessment.assessmentTakerUrl,
+        link: assessment.signInUrl || assessment.assessmentTakerUrl,
         skipped: assessment.isSkipped,
         surveyID: assessment.surveyId,
         surveyName: assessment.surveyName,

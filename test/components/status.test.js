@@ -128,7 +128,7 @@ describe("Status", () => {
       component = await ComponentHandler.setup(Component);
       const button = component.findByText("Start Assessment");
 
-      expect(button.props.href).toBe(external.assessmentTakerUrl);
+      expect(button.props.href).toBe(external.signInUrl);
     });
 
     it("renders component", async() => {
@@ -240,7 +240,7 @@ describe("Status", () => {
       component = await ComponentHandler.setup(Component);
       const button = component.findByText("Start Assessment");
 
-      expect(button.props.href).toBe(external.assessmentTakerUrl);
+      expect(button.props.href).toBe(external.signInUrl);
     });
 
     it("renders component", async() => {

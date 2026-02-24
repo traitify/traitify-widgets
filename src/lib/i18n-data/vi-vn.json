@@ -153,6 +153,9 @@
   "skill_name_for_working_from_home": "Mẹo Làm Việc Từ Nhà",
   "slide_error": "Không thể tải thêm slide vào lúc này",
   "sort": "Sắp xếp",
+  "status": {
+    "text": "Trong khuôn khổ đơn ứng tuyển của bạn, chúng tôi muốn đề nghị bạn hoàn thành các bài đánh giá sau. Vui lòng nhấp vào nút bên cạnh tên bài đánh giá. Thao tác này sẽ đưa bạn đến nơi bạn sẽ hoàn thành (các) bài đánh giá. Vui lòng quay lại đây sau khi bạn đã hoàn thành tất cả các bài đánh giá."
+  },
   "submit": "Gửi",
   "success_skills": "Kỹ Năng Thành Công",
   "tip_type_for_caution_zone": "Khu Vực Cảnh Báo",

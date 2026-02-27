@@ -1,5 +1,17 @@
 import {isArray, isNumber, isObject, isString} from "lib/common/object/type";
 
+export function anyResponseErrors(response) {
+  if(!isObject(response)) { return false; }
+  if(isArray(response.errors) && response.errors.length > 0) {
+    return true;
+  }
+  if(isString(response.error)) { return true; }
+  if(isString(response.errors)) { return true; }
+  if(isString(response.errorMessage)) { return true; }
+
+  return false;
+}
+
 export function errorsToText(prepend, _errors) {
   const errors = Array.isArray(_errors) ? _errors : [_errors];
   const text = errors.join("; ");

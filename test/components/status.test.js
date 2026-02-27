@@ -31,7 +31,6 @@ describe("Status", () => {
   let order;
 
   useContainer();
-  useGlobalMock(console, "warn");
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {
@@ -145,7 +144,6 @@ describe("Status", () => {
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
-      expect(console.warn).toHaveBeenCalledWith("order", "Uh oh"); // eslint-disable-line no-console
     });
 
     it("renders loading", async() => {

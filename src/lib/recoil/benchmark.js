@@ -3,17 +3,17 @@ import {responseToErrors} from "lib/common/errors";
 import dig from "lib/common/object/dig";
 import {activeAssessmentQuery} from "./assessment";
 import {
-  appendErrorState,
   benchmarkIDState,
   cacheState,
   graphqlState,
   httpState,
+  listenerState,
   localeState,
   safeCacheKeyState
 } from "./base";
 
 export const benchmarkQuery = selector({
-  get: async({get, set}) => {
+  get: async({get}) => {
     const benchmarkID = get(benchmarkIDState);
     if(!benchmarkID) { return null; }
 
@@ -32,7 +32,7 @@ export const benchmarkQuery = selector({
     const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("benchmark", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
     }
     if(!response.data) { return null; }
 

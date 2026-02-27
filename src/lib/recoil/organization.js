@@ -2,14 +2,14 @@ import {selector} from "recoil";
 import {responseToErrors} from "lib/common/errors";
 import camelCase from "lib/common/string/camel-case";
 import {
-  appendErrorState,
   cacheState,
   httpState,
+  listenerState,
   safeCacheKeyState
 } from "./base";
 
 export const settingsQuery = selector({
-  get: async({get, set}) => {
+  get: async({get}) => {
     const http = get(httpState);
     const cache = get(cacheState);
     const cacheKey = get(safeCacheKeyState({id: http.authKey || "none", type: "settings"}));
@@ -21,7 +21,7 @@ export const settingsQuery = selector({
     if(!response) { return; }
     if(response.errors) {
       console.warn("test", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "GET", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "GET", path, response}));
       return;
     }
 
@@ -37,7 +37,7 @@ export const settingsQuery = selector({
 });
 
 export const translationsQuery = selector({
-  get: async({get, set}) => {
+  get: async({get}) => {
     const http = get(httpState);
     const cache = get(cacheState);
     const cacheKey = get(safeCacheKeyState({id: http.authKey || "none", type: "translations"}));
@@ -49,7 +49,7 @@ export const translationsQuery = selector({
     if(!response) { return; }
     if(response.errors) {
       console.warn("test", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "GET", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "GET", path, response}));
       return;
     }
 

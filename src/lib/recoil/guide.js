@@ -2,18 +2,18 @@
 import {selector} from "recoil";
 import {responseToErrors} from "lib/common/errors";
 import {
-  appendErrorState,
   benchmarkIDState,
   cacheState,
   graphqlState,
   httpState,
+  listenerState,
   localeState,
   personalityAssessmentIDState,
   safeCacheKeyState
 } from "./base";
 
 export const guideQuery = selector({
-  get: async({get, set}) => {
+  get: async({get}) => {
     const assessmentID = get(personalityAssessmentIDState);
     if(!assessmentID) { return null; }
 
@@ -33,7 +33,7 @@ export const guideQuery = selector({
     const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("guide", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
     }
     if(!response.data) { return null; }
 

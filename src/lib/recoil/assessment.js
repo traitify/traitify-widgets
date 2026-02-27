@@ -5,17 +5,17 @@ import {
   activeState,
   activeIDState,
   activeTypeState,
-  appendErrorState,
   cacheState,
   graphqlState,
   httpState,
+  listenerState,
   localeState,
   optionsState,
   safeCacheKeyState
 } from "./base";
 
 export const cognitiveAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -33,7 +33,7 @@ export const cognitiveAssessmentQuery = selectorFamily({
     const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("cognitive-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
       return null;
     }
 
@@ -48,7 +48,7 @@ export const cognitiveAssessmentQuery = selectorFamily({
 });
 
 export const externalAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -71,7 +71,7 @@ export const externalAssessmentQuery = selectorFamily({
     const response = await http.post(query).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("external-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
       return null;
     }
 
@@ -86,7 +86,7 @@ export const externalAssessmentQuery = selectorFamily({
 });
 
 export const personalityAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -107,7 +107,7 @@ export const personalityAssessmentQuery = selectorFamily({
     const response = await http.get({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.error || response.errors) {
       console.warn("personality-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "GET", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "GET", path, response}));
       return null;
     }
     if(!response?.completed_at) { return response; }
@@ -120,7 +120,7 @@ export const personalityAssessmentQuery = selectorFamily({
 });
 
 export const genericAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -138,7 +138,7 @@ export const genericAssessmentQuery = selectorFamily({
     const response = await http.post({path, params});
     if(response.errors) {
       console.warn("generic-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
       return null;
     }
 

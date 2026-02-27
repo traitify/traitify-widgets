@@ -1,3 +1,4 @@
+import {anyResponseErrors, getResponseErrors} from "lib/common/errors";
 import dig from "lib/common/object/dig";
 
 // NOTE: Fields with underscores are from personality API (plus skipped field)
@@ -23,10 +24,16 @@ export function assessmentFromQuery(response) {
 
 // NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 export default function orderFromQuery(response) {
-  if(response.errorMessage) { console.warn("order", response.errorMessage); } /* eslint-disable-line no-console */
-
-  const {order} = response.data;
-  if(!order) { return null; }
+  const {order} = response.data || {};
+  if(!order) {
+    return anyResponseErrors(response) ? {
+      assessments: [],
+      completed: false,
+      errors: getResponseErrors(response),
+      status: "error",
+      surveys: []
+    } : null;
+  }
 
   const record = {
     assessments: order.assessments.map((assessment) => ({
@@ -52,21 +59,22 @@ export default function orderFromQuery(response) {
   };
 
   if(record.assessments.some(({skipped}) => skipped)) { record.status = "skipped"; }
-  if(response.errorMessage) { record.errors = [response.errorMessage]; }
+  if(anyResponseErrors(response)) { record.errors = getResponseErrors(response); }
+  if(order.errorMessage) { record.errors = [...(record.errors || []), order.errorMessage]; }
   return record;
 }
 
 // NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 export function orderFromRecommendation(response) {
-  if(response.errors) {
-    console.warn("xavier", response.errors); /* eslint-disable-line no-console */
-    return {
+  const {recommendation} = response.data || {};
+  if(!recommendation) {
+    return anyResponseErrors(response) ? {
       assessments: [],
       completed: false,
-      errors: response.errors,
+      errors: getResponseErrors(response),
       status: "error",
       surveys: []
-    };
+    } : null;
   }
 
   const assessments = [];
@@ -75,7 +83,7 @@ export function orderFromRecommendation(response) {
     cognitive,
     external,
     personality
-  } = response.data.recommendation.prerequisites || {};
+  } = recommendation.prerequisites || {};
 
   if(personality && personality.assessmentId) {
     assessments.push({
@@ -119,15 +127,15 @@ export function orderFromRecommendation(response) {
   const order = {
     assessments,
     completed: assessments.every(({completed}) => completed),
-    errors: response.errors,
     surveys
   };
 
+  if(anyResponseErrors(response)) { order.errors = getResponseErrors(response); }
   if(assessments.some(({skipped}) => skipped)) {
     order.status = "skipped";
   } else if(order.completed) {
     order.status = "completed";
-  } else if(response.errors) {
+  } else if(order.errors) {
     order.status = "error";
   } else {
     order.status = "incomplete";

@@ -1,6 +1,6 @@
 export const create = `
   mutation($profileID: ID!, $surveyID: ID!) {
-    getOrCreateGenericAssessment(profileId: $profileID, surveyId: $surveyID) {
+    getOrCreateAssessment(profileId: $profileID, surveyId: $surveyID) {
       completedAt
       id
       isSkipped
@@ -13,9 +13,9 @@ export const create = `
   }
 `;
 
-export const questions = `
-  query($assessmentID: ID!) {
-    genericSurveyQuestions(assessmentId: $assessmentID) {
+export const get = `
+  query($id: ID!) {
+    getAssessment(id: $id) {
       completedAt
       id
       isSkipped
@@ -63,8 +63,8 @@ export const questions = `
 `;
 
 export const skip = `
-  mutation($assessmentID: ID!) {
-    skipGenericAssessment(assessmentId: $assessmentID) {
+  mutation($id: ID!) {
+    skipAssessment(id: $id) {
       completedAt
       id
       isSkipped
@@ -113,7 +113,7 @@ export const skip = `
 
 export const surveys = `
   query($localeKey: String!) {
-    genericSurveys(localeKey: $localeKey) {
+    listSurveys(localeKey: $localeKey) {
       id
       name
     }
@@ -121,8 +121,8 @@ export const surveys = `
 `;
 
 export const update = `
-  mutation($assessmentID: ID!, $answers: [Answers]!) {
-    submitGenericAssessmentAnswers(assessmentId: $assessmentID, answers: $answers) {
+  mutation($answers: [Answers]!, $id: ID!) {
+    updateAssessment(answers: $answers, id: $id) {
       completedAt
       id
       isSkipped

@@ -13,7 +13,7 @@ export function anyResponseErrors(response) {
 }
 
 export function errorsToText(prepend, _errors) {
-  const errors = Array.isArray(_errors) ? _errors : [_errors];
+  const errors = isArray(_errors) ? _errors : [_errors];
   const text = errors.join("; ");
 
   return `${prepend}: ${text}`;

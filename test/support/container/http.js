@@ -374,13 +374,13 @@ export const mockGenericAssessment = (...params) => {
 
       const variables = dig(JSON.parse(options.body), "variables") || {};
 
-      return variables.assessmentID === id && !Object.hasOwn(variables, "answers");
+      return variables.id === id && !Object.hasOwn(variables, "answers");
     }
   };
 
   implementation
     ? mock.implementation = implementation
-    : mock.response = () => ({data: {genericSurveyQuestions: response}});
+    : mock.response = () => ({data: {getAssessment: response}});
 
   return mockFetch(mock);
 };
@@ -401,13 +401,13 @@ export const mockGenericSkip = (...params) => {
       const query = dig(JSON.parse(options.body), "query") || {};
       const variables = dig(JSON.parse(options.body), "variables") || {};
 
-      return variables.assessmentID === id && query.includes("skipGenericAssessment");
+      return variables.id === id && query.includes("skipAssessment");
     }
   };
 
   implementation
     ? mock.implementation = implementation
-    : mock.response = () => ({data: {skipGenericAssessment: response}});
+    : mock.response = () => ({data: {skipAssessment: response}});
 
   return mockFetch(mock);
 };
@@ -427,13 +427,13 @@ export const mockGenericSubmit = (...params) => {
 
       const variables = dig(JSON.parse(options.body), "variables") || {};
 
-      return variables.assessmentID === id && Object.hasOwn(variables, "answers");
+      return variables.id === id && Object.hasOwn(variables, "answers");
     }
   };
 
   implementation
     ? mock.implementation = implementation
-    : mock.response = () => ({data: {submitGenericAssessmentAnswers: response}});
+    : mock.response = () => ({data: {updateAssessment: response}});
 
   return mockFetch(mock);
 };

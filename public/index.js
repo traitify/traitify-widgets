@@ -250,7 +250,7 @@ function createGenericAssessment() {
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
     try {
-      const id = response.data.getOrCreateGenericAssessment.id;
+      const id = response.data.getOrCreateAssessment.id;
       cache.set("assessmentID", id);
     } catch(error) {
       console.log(error);
@@ -462,7 +462,7 @@ function setupGeneric() {
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
     try {
-      const options = response.data.genericSurveys
+      const options = response.data.listSurveys
         .map(({id, name}) => ({text: name, value: id}))
         .sort((a, b) => a.text.localeCompare(b.text));
 

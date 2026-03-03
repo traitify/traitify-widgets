@@ -58,12 +58,12 @@ export default function useSkipAssessment() {
           const query = {
             params: {
               query: graphQL.generic.skip,
-              variables: {assessmentID: active.id}
+              variables: {id: active.id}
             },
             path: graphQL.generic.path
           };
           const response = await http.post(query);
-          success = response.data.skipGenericAssessment.isSkipped;
+          success = response.data.skipAssessment.isSkipped;
           break;
         }
         default: {

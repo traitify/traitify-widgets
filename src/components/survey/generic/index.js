@@ -58,12 +58,12 @@ export default function GenericSurvey() {
         }));
     });
     const query = graphQL.generic.update;
-    const variables = {answers, assessmentID: assessment.id};
+    const variables = {answers, id: assessment.id};
 
     http.post(graphQL.generic.path, {query, variables}).then((response) => {
       const {data, errors} = response;
 
-      if(!errors && data.submitGenericAssessmentAnswers) {
+      if(!errors && data.updateAssessment) {
         cache.remove(assessmentCacheKey);
         refreshAssessment();
 

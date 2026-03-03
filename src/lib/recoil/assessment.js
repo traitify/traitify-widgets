@@ -131,8 +131,8 @@ export const genericAssessmentQuery = selectorFamily({
     const GraphQL = get(graphqlState);
     const http = get(httpState);
     const params = {
-      query: GraphQL.generic.questions,
-      variables: {assessmentID: id}
+      query: GraphQL.generic.get,
+      variables: {id}
     };
     const {path} = GraphQL.generic;
     const response = await http.post({path, params});
@@ -142,7 +142,7 @@ export const genericAssessmentQuery = selectorFamily({
       return null;
     }
 
-    const assessment = response.data.genericSurveyQuestions;
+    const assessment = response.data.getAssessment;
     if(!assessment?.completedAt) { return assessment; }
 
     cache.set(cacheKey, assessment);

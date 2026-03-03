@@ -173,7 +173,7 @@ function createCognitiveAssessment() {
   const query = Traitify.GraphQL.cognitive.create;
   const variables = {
     localeKey: cache.get("locale"),
-    surveyID: cache.get("surveyID")
+    surveyID: cache.get("cognitiveSurveyID")
   };
 
   Traitify.http.post(Traitify.GraphQL.cognitive.path, {query, variables}).then((response) => {
@@ -189,17 +189,23 @@ function createCognitiveAssessment() {
   });
 }
 
-function createOption({fallback, name, onChange, options, text, type}) {
+function createOption({fallback, name, onChange: _onChange, options, text, type}) {
   const element = createElement({className: "row", htmlFor: name, tag: "label", text});
+  const onChange = _onChange || onInputChange;
 
   if(options) {
     const select = createElement({
       id: name,
       name,
-      onChange: onChange || onInputChange,
+      onChange,
       tag: "select"
     });
-    const selected = cache.get(name, {fallback});
+    let selected = cache.get(name, {fallback});
+    if(!selected && options[0]) {
+      onChange({target: {name: "", type: "select", value: options[0].value}});
+
+      selected = cache.get(name, {fallback});
+    }
 
     options.forEach(({text, value}) => {
       select.appendChild(createElement({selected: selected === value, tag: "option", text, value}));
@@ -210,7 +216,7 @@ function createOption({fallback, name, onChange, options, text, type}) {
     const input = createElement({
       id: name,
       name,
-      onChange: onChange || onInputChange,
+      onChange,
       tag: "input",
       type: type || "text",
       value: cache.get(name, {fallback})
@@ -244,13 +250,15 @@ function createElement(options = {}) {
 function createGenericAssessment() {
   const query = Traitify.GraphQL.generic.create;
   const variables = {
-    surveyID: cache.get("surveyID"),
-    profileID: cache.get("profileID")
+    profileID: cache.get("profileID"),
+    surveyID: cache.get("genericSurveyID")
   };
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
     try {
       const id = response.data.getOrCreateAssessment.id;
+
+      cache.set("genericAssessmentID", id);
       cache.set("assessmentID", id);
     } catch(error) {
       console.log(error);
@@ -448,8 +456,7 @@ function setupCognitive() {
       .sort((a, b) => a.text.localeCompare(b.text));
 
     document.querySelector("#cognitive-options").appendChild(createOption({
-      name: "surveyID",
-      onChange: onInputChange,
+      name: "cognitiveSurveyID",
       options,
       text: "Survey:"
     }));
@@ -461,20 +468,15 @@ function setupGeneric() {
   const variables = {localeKey: cache.get("locale")};
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
-    try {
-      const options = response.data.listSurveys
-        .map(({id, name}) => ({text: name, value: id}))
-        .sort((a, b) => a.text.localeCompare(b.text));
+    const options = response.data.listSurveys
+      .map(({id, name}) => ({text: name, value: id}))
+      .sort((a, b) => a.text.localeCompare(b.text));
 
-      document.querySelector("#generic-options").appendChild(createOption({
-        name: "surveyID",
-        onChange: onInputChange,
-        options,
-        text: "Survey:"
-      }));
-    } catch(error) {
-      console.log(error);
-    }
+    document.querySelector("#generic-options").appendChild(createOption({
+      name: "genericSurveyID",
+      options,
+      text: "Survey:"
+    }));
   });
 
 }

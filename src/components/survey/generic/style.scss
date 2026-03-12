@@ -40,7 +40,12 @@
     @include theme("border-color", "border");
     @include theme("color", "text");
 
-    &.active, &:active, &:hover {
+    &:active, &:hover {
+      @include theme("background-color", "background-light");
+      @include theme("color", "text");
+    }
+    // NOTE: After :active and :hover to override
+    &.active {
       @include theme("background-color", "theme");
       @include theme("color", "text-light");
     }

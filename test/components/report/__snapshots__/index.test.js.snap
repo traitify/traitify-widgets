@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Report renders candidate component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Candidate Report
+  </div>
+</div>
+`;
+
+exports[`Report renders candidate component by default 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Candidate Report
+  </div>
+</div>
+`;
+
+exports[`Report renders employee component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Employee Report
+  </div>
+</div>
+`;
+
+exports[`Report renders manager component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Manager Report
+  </div>
+</div>
+`;

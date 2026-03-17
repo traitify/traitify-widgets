@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.GenericConclusions renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <h2
+      className="traitify--markdown"
+      id="conclusions"
+    >
+      Conclusions
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`Results.GenericConclusions renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

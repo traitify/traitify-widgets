@@ -5,19 +5,17 @@ import {
   activeState,
   activeIDState,
   activeTypeState,
-  appendErrorState,
   cacheState,
   graphqlState,
   httpState,
+  listenerState,
   localeState,
   optionsState,
   safeCacheKeyState
 } from "./base";
 
-// TODO: Return error instead of null for cognitive and external
-// return {errors: response.errors, id};
 export const cognitiveAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -35,7 +33,7 @@ export const cognitiveAssessmentQuery = selectorFamily({
     const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("cognitive-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
       return null;
     }
 
@@ -50,7 +48,7 @@ export const cognitiveAssessmentQuery = selectorFamily({
 });
 
 export const externalAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -73,7 +71,7 @@ export const externalAssessmentQuery = selectorFamily({
     const response = await http.post(query).catch((e) => ({errors: [e.message]}));
     if(response.errors) {
       console.warn("external-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
       return null;
     }
 
@@ -88,7 +86,7 @@ export const externalAssessmentQuery = selectorFamily({
 });
 
 export const personalityAssessmentQuery = selectorFamily({
-  get: (id) => async({get, set}) => {
+  get: (id) => async({get}) => {
     if(!id) { return null; }
 
     const cache = get(cacheState);
@@ -109,7 +107,7 @@ export const personalityAssessmentQuery = selectorFamily({
     const response = await http.get({path, params}).catch((e) => ({errors: [e.message]}));
     if(response.error || response.errors) {
       console.warn("personality-assessment", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "GET", path, response}));
+      get(listenerState).trigger("Error.append", responseToErrors({method: "GET", path, response}));
       return null;
     }
     if(!response?.completed_at) { return response; }
@@ -121,10 +119,44 @@ export const personalityAssessmentQuery = selectorFamily({
   key: "assessment/personality"
 });
 
+export const genericAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
+
+    const cache = get(cacheState);
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
+    const cached = cache.get(cacheKey);
+    if(cached) { return cached; }
+
+    const GraphQL = get(graphqlState);
+    const http = get(httpState);
+    const params = {
+      query: GraphQL.generic.get,
+      variables: {id}
+    };
+    const {path} = GraphQL.generic;
+    const response = await http.post({path, params});
+    if(response.errors) {
+      console.warn("generic-assessment", response.errors); /* eslint-disable-line no-console */
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
+      return null;
+    }
+
+    const assessment = response.data.getAssessment;
+    if(!assessment?.completedAt) { return assessment; }
+
+    cache.set(cacheKey, assessment);
+
+    return assessment;
+  },
+  key: "assessment/generic"
+});
+
 export const assessmentQuery = selectorFamily({
   get: ({id, surveyType}) => async({get}) => {
     if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
     if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
+    if(surveyType === "generic") { return get(genericAssessmentQuery(id)); }
     if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
 
     return null;

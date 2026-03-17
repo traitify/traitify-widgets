@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.GenericHeading renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="title"
+    >
+      Score
+    </div>
+    <div
+      className="scores"
+    >
+      <div
+        className="correct"
+      >
+        <div>
+          Correct
+          :
+        </div>
+        <div>
+          1
+           / 
+          2
+        </div>
+      </div>
+      <div
+        className="incorrect"
+      >
+        <div>
+          Incorrect
+          :
+        </div>
+        <div>
+          1
+           / 
+          2
+        </div>
+      </div>
+      <div
+        className="overall"
+      >
+        <div>
+          Overall Score
+          :
+        </div>
+        <div>
+          1
+          %
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.GenericHeading renders nothing if results not ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;

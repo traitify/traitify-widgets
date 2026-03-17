@@ -2,11 +2,11 @@ import {DefaultValue, atom, selector} from "recoil";
 import {responseToErrors} from "lib/common/errors";
 import orderFromQuery, {orderFromRecommendation} from "lib/common/order-from-query";
 import {
-  appendErrorState,
   baseState,
   cacheState,
   graphqlState,
   httpState,
+  listenerState,
   localeState,
   optionsState,
   orderIDState,
@@ -47,7 +47,7 @@ const baseAssessmentState = selector({
 });
 
 export const baseOrderQuery = selector({
-  get: async({get, set}) => {
+  get: async({get}) => {
     const orderID = get(orderIDState);
     if(!orderID) { return null; }
 
@@ -64,14 +64,16 @@ export const baseOrderQuery = selector({
     };
     const {path} = GraphQL.order;
     const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
-    if(response.errors) {
-      console.warn("order", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
-    }
-
     const order = orderFromQuery(response);
     order.cacheKey = cacheKey;
     order.origin = {orderID};
+
+    if(order.errors) {
+      console.warn("order", order.errors); /* eslint-disable-line no-console */
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
+      return order;
+    }
+
     if(order.completed) { cache.set(cacheKey, order); }
 
     return order;
@@ -80,7 +82,7 @@ export const baseOrderQuery = selector({
 });
 
 const baseRecommendationQuery = selector({
-  get: async({get, set}) => {
+  get: async({get}) => {
     const {benchmarkID, packageID, profileID} = get(baseState);
 
     const cache = get(cacheState);
@@ -97,13 +99,15 @@ const baseRecommendationQuery = selector({
 
     const {path} = GraphQL.xavier;
     const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
-    if(response.errors) {
-      console.warn("order-recommendation", response.errors); /* eslint-disable-line no-console */
-      set(appendErrorState, responseToErrors({method: "POST", path, response}));
-    }
     const order = orderFromRecommendation(response);
     order.cacheKey = cacheKey;
     order.origin = {benchmarkID, packageID, profileID};
+
+    if(order.errors) {
+      console.warn("order-recommendation", order.errors); /* eslint-disable-line no-console */
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
+    }
+
     if(order.completed) { cache.set(cacheKey, order); }
 
     return order;

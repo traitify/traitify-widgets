@@ -1,16 +1,20 @@
 import {useEffect} from "react";
 import {useRecoilState} from "recoil";
 import CognitiveChart from "components/results/cognitive/chart";
+import GenericBreakdown from "components/results/generic/breakdown";
+import GenericHeading from "components/results/generic/heading";
 import ClientGuide from "components/results/guide/client";
 import PersonalityGuide from "components/results/guide/personality";
 import RecommendationChart from "components/results/recommendation/chart";
 import RecommendationList from "components/results/recommendation/list";
+import useActive from "lib/hooks/use-active";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function ManagerReport() {
+  const active = useActive();
   const [options, setOptions] = useRecoilState(optionsState);
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
@@ -21,12 +25,19 @@ export default function ManagerReport() {
     setOptions({...options, perspective: "thirdPerson"});
   }, []);
 
-  // NOTE: Temporary option until 2024-09-01
-  const {showRecommendationList} = options;
+  if(!active) { return null; }
+  if(active.surveyType === "generic") {
+    return (
+      <section className={[style.container, style.box].join(" ")}>
+        <GenericHeading />
+        <GenericBreakdown />
+      </section>
+    );
+  }
 
   return (
     <section>
-      {showRecommendationList && <RecommendationList />}
+      <RecommendationList />
       <ClientGuide />
       <div className={[style.container, style.box].join(" ")}>
         {showHeaders && (

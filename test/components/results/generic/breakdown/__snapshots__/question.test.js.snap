@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.GenericBreakdown.Question renders closed question 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="questionTitle"
+    >
+      <span
+        alt="Checked"
+        className="correct traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+          }
+        }
+      />
+      <div
+        className="wrapper"
+      >
+        <div>
+          Question
+           
+          1
+        </div>
+        <button
+          className="toggle"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <span
+            alt="Expand"
+            className="traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              {
+                "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>",
+              }
+            }
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.GenericBreakdown.Question renders open correct question 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="questionTitle"
+    >
+      <span
+        alt="Checked"
+        className="correct traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+          }
+        }
+      />
+      <div
+        className="wrapper"
+      >
+        <div>
+          Question
+           
+          1
+        </div>
+        <button
+          className="toggle"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <span
+            alt="Expand"
+            className="traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              {
+                "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+              }
+            }
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      className="questionContent"
+    >
+      <div
+        className="questionDetails"
+      >
+        <div
+          className="questionText"
+        >
+          Question 1
+        </div>
+        <div
+          className="options"
+        >
+          <div
+            className="correctResponse option"
+          >
+            Response A
+          </div>
+          <div
+            className="option"
+          >
+            Response B
+          </div>
+        </div>
+      </div>
+      <div
+        className="questionImage"
+      >
+        <img
+          alt="Question 1"
+          src="https://cdn.traitify.com/generic/set1.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.GenericBreakdown.Question renders open incorrect question 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="questionTitle"
+    >
+      <span
+        alt="X Mark"
+        className="incorrect traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg>",
+          }
+        }
+      />
+      <div
+        className="wrapper"
+      >
+        <div>
+          Question
+           
+          1
+        </div>
+        <button
+          className="toggle"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <span
+            alt="Expand"
+            className="traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              {
+                "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+              }
+            }
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      className="questionContent"
+    >
+      <div
+        className="questionDetails"
+      >
+        <div
+          className="questionText"
+        >
+          Question 2
+        </div>
+        <div
+          className="options"
+        >
+          <div
+            className="correctOption option"
+          >
+            Response A
+          </div>
+          <div
+            className="incorrectResponse option"
+          >
+            Response B
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.GenericBreakdown.Question renders open question without image 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="question"
+  >
+    <div
+      className="questionTitle"
+    >
+      <span
+        alt="Checked"
+        className="correct traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+          }
+        }
+      />
+      <div
+        className="wrapper"
+      >
+        <div>
+          Question
+           
+          1
+        </div>
+        <button
+          className="toggle"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <span
+            alt="Expand"
+            className="traitify--icon-fa"
+            dangerouslySetInnerHTML={
+              {
+                "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>",
+              }
+            }
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      className="questionContent"
+    >
+      <div
+        className="questionDetails"
+      >
+        <div
+          className="questionText"
+        >
+          Question 1
+        </div>
+        <div
+          className="options"
+        >
+          <div
+            className="correctResponse option"
+          >
+            Response A
+          </div>
+          <div
+            className="option"
+          >
+            Response B
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

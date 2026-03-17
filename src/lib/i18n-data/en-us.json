@@ -178,7 +178,8 @@
       "breakdown_description": "Here is the breakdown of the questions you answered in the assessment",
       "correct": "Correct",
       "incorrect": "Incorrect",
-      "overall_score": "Overall Score"
+      "overall_score": "Overall Score",
+      "score": "Score"
     },
     "reports": {
       "candidate": "Candidate Report",

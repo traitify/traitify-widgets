@@ -1,0 +1,93 @@
+@import "style/helpers";
+
+.container {
+  @extend %box;
+  @extend %container;
+
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+
+  .btnBack {
+    @include buttonOutline();
+
+    .icon { margin-right: $buffer-sm; }
+  }
+  .btnDisabled { @include buttonDark("inactive"); }
+  .btnGroup {
+    display: flex;
+    justify-content: space-between;
+    margin: $buffer-sm auto;
+  }
+  .btnTheme { @include buttonDark("theme"); }
+}
+
+.choices {
+  display: flex;
+  gap: $buffer;
+  margin: $buffer 0;
+
+  @include max-width("md") { flex-direction: column; }
+
+  &.wide { flex-direction: column; }
+  .choice {
+    border: $border-width solid;
+    border-radius: $border-radius-sm;
+    flex: 1;
+    padding: $buffer;
+    text-align: center;
+
+    @include theme("border-color", "border");
+    @include theme("color", "text");
+
+    &:active, &:hover {
+      @include theme("background-color", "background-light");
+      @include theme("color", "text");
+    }
+    // NOTE: After :active and :hover to override
+    &.active {
+      @include theme("background-color", "theme");
+      @include theme("color", "text-light");
+    }
+    &:focus {
+      outline-offset: -1px;
+      outline-style: solid;
+      outline-width: 1px;
+    }
+  }
+}
+.divider { @extend %divider; }
+
+.question {
+  .text { font-weight: 600;}
+}
+
+.questionSet {
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+}
+
+.status {
+  align-items: center;
+  display: flex;
+  gap: $buffer-sm;
+  margin-bottom: $buffer-lg;
+
+  .progress {
+    border-radius: $border-radius-sm;
+    height: 100%;
+    transition: width 0.3s;
+
+    @include theme("background-color", "progress-bar");
+  }
+  .progressBar {
+    border-radius: $border-radius-sm;
+    flex: 1;
+    height: $border-width-xl;
+
+    @include theme("background-color", "border");
+  }
+}

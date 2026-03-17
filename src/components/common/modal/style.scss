@@ -23,29 +23,22 @@
 
 .container {
   @extend %container;
+
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 
   .modalContainer {
-    @include theme("background", "background");
-    @include theme("color", "text");
     border-radius: $border-radius-sm * 2.5;
     padding: $buffer * 1.25 $buffer * 1.25 $buffer-sm * 1.25;
     text-align: left;
     width: 100%;
 
-    @include min-width(md) {
-      max-width: 650px;
-    }
-
-    @include min-width(lg) {
-      max-width: 800px;
-    }
-
-    @include min-width(xl) {
-      max-width: 1000px;
-    }
+    @include min-width(md) { max-width: 650px; }
+    @include min-width(lg) { max-width: 800px; }
+    @include min-width(xl) { max-width: 1000px; }
+    @include theme("background", "background");
+    @include theme("color", "text");
   }
   &.md .modalContainer { @include min-width(md) { max-width: 500px; } }
   &.lg .modalContainer { @include min-width(xl) { max-width: 800px; } }
@@ -54,17 +47,7 @@
   // &.xl .modalContainer { @include min-width(xl) { max-width: 1200px; } }
 }
 
-.divider {
-  color: #555555;
-  width: 100%;
-  margin: $buffer-sm * 1.25 auto $buffer * 1.25;
-  line-height: inherit;
-  clear: both;
-  user-select: none;
-  break-after: page;
-  border: $border-width solid #e8e8ec;
-  border-radius: $border-radius-sm;
-}
+.divider { @extend %divider; }
 
 .header {
   display: flex;

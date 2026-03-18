@@ -24,7 +24,6 @@ import profile from "support/data/profile";
 import recommendationCompleted from "support/data/recommendation/completed";
 import recommendationIncomplete from "support/data/recommendation/incomplete";
 import useContainer from "support/hooks/use-container";
-import useGlobalMock from "support/hooks/use-global-mock";
 
 describe("Status", () => {
   let component;

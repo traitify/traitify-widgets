@@ -29,6 +29,7 @@
     "prei18n-sync:test": "cd packages/i18n-sync && npm install",
     "prerjp:test": "cd packages/realistic-job-preview && npm install",
     "pretest": "npm run lint",
+    "pretraitify:test": "npm run traitify:lint",
     "rjp:dev": "cd packages/realistic-job-preview && npm run dev --",
     "rjp:test": "cd packages/realistic-job-preview && npm run test --",
     "test": "npm-run-all *:test",

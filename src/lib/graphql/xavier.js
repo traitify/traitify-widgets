@@ -24,12 +24,14 @@ export const feedbackSurvey = `
 
 export const recommendation = `
   query(
+    $applyAssessmentExpiration: Boolean,
     $benchmarkID: String,
     $localeKey: String!,
     $packageID: String,
     $profileID: String!
   ) {
     recommendation(
+      applyAssessmentExpiration: $applyAssessmentExpiration,
       benchmarkId: $benchmarkID,
       localeKey: $localeKey,
       packageId: $packageID,

@@ -17,6 +17,8 @@ import {
   optionsState
 } from "lib/recoil";
 
+const EMPTY_OPTIONS = {};
+
 export default function useProps(props) {
   const setBase = useSetRecoilState(baseState);
   const setCache = useSetRecoilState(cacheState);
@@ -30,7 +32,7 @@ export default function useProps(props) {
     assessmentID,
     benchmarkID,
     locale,
-    options = {},
+    options = EMPTY_OPTIONS,
     orderID,
     packageID,
     profileID

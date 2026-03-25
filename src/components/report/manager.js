@@ -17,6 +17,8 @@ export default function ManagerReport() {
   const active = useActive();
   const [options, setOptions] = useRecoilState(optionsState);
   const showHeaders = useOption("showHeaders");
+  // NOTE: Temporary option until Paradox is ready
+  const showRecommendationList = useOption("showRecommendationList");
   const translate = useTranslate();
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function ManagerReport() {
 
   return (
     <section>
-      <RecommendationList />
+      {showRecommendationList && <RecommendationList />}
       <ClientGuide />
       <div className={[style.container, style.box].join(" ")}>
         {showHeaders && (

@@ -19,6 +19,18 @@ describe("Report.Manager", () => {
 
   useContainer();
 
+  describe("showRecommendationList", () => {
+    useOption("showRecommendationList", true);
+
+    it("renders component", async() => {
+      container.assessmentID = assessment.id;
+      mockAssessment(assessment);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree).toMatchSnapshot();
+    });
+  });
+
   describe("showHeaders", () => {
     useOption("showHeaders", true);
 

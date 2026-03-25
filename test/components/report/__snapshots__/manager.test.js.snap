@@ -8,11 +8,6 @@ exports[`Report.Manager renders component 1`] = `
     <div
       className="mock"
     >
-      Recommendation List
-    </div>
-    <div
-      className="mock"
-    >
       Client Guide
     </div>
     <div
@@ -67,11 +62,6 @@ exports[`Report.Manager showHeaders renders component 1`] = `
     <div
       className="mock"
     >
-      Recommendation List
-    </div>
-    <div
-      className="mock"
-    >
       Client Guide
     </div>
     <div
@@ -87,6 +77,44 @@ exports[`Report.Manager showHeaders renders component 1`] = `
       >
         Below, you can see the candidate's personality results broken down by each of the Big Five dimensions. Scores are color-coded to indicate the best-fit ranges (green), followed by yellow and red. These ranges vary for each job. They are based on several pieces of information that may include published research, job descriptions, and interviews with people who are familiar with the job.
       </div>
+      <div
+        className="mock"
+      >
+        Recommendation Chart
+      </div>
+      <div
+        className="mock"
+      >
+        Personality Guide
+      </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Cognitive Chart
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Report.Manager showRecommendationList renders component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section>
+    <div
+      className="mock"
+    >
+      Recommendation List
+    </div>
+    <div
+      className="mock"
+    >
+      Client Guide
+    </div>
+    <div
+      className="container box"
+    >
       <div
         className="mock"
       >

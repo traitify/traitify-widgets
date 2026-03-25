@@ -92,11 +92,13 @@ const baseRecommendationQuery = selector({
 
     const GraphQL = get(graphqlState);
     const http = get(httpState);
-    const options = get(optionsState);
-    const variables = {benchmarkID, localeKey: get(localeState), packageID, profileID};
-    if(options?.applyAssessmentExpiration === false) {
-      variables.applyAssessmentExpiration = false;
-    }
+    const variables = {
+      applyAssessmentExpiration: false,
+      benchmarkID,
+      localeKey: get(localeState),
+      packageID,
+      profileID
+    };
     const params = {
       query: GraphQL.xavier.recommendation,
       variables

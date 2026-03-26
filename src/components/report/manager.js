@@ -24,7 +24,7 @@ export default function ManagerReport() {
   useEffect(() => {
     if(options.perspective) { return; }
 
-    setOptions({...options, perspective: "thirdPerson"});
+    setOptions({...options, perspective: "thirdPerson", applyAssessmentExpiration: false});
   }, []);
 
   if(!active) { return null; }

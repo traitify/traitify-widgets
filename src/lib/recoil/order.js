@@ -92,8 +92,9 @@ const baseRecommendationQuery = selector({
 
     const GraphQL = get(graphqlState);
     const http = get(httpState);
+    const {applyAssessmentExpiration} = get(optionsState);
     const variables = {
-      applyAssessmentExpiration: false,
+      ...(applyAssessmentExpiration != null && {applyAssessmentExpiration}),
       benchmarkID,
       localeKey: get(localeState),
       packageID,

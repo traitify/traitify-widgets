@@ -22,10 +22,14 @@ export default function ManagerReport() {
   const translate = useTranslate();
 
   useEffect(() => {
-    if(options.perspective) { return; }
+    const newOptions = {};
 
-    setOptions({...options, perspective: "thirdPerson", applyAssessmentExpiration: false});
-  }, []);
+    if(!Object.hasOwn(options, "applyAssessmentExpiration")) { newOptions.applyAssessmentExpiration = false; }
+    if(!Object.hasOwn(options, "perspective")) { newOptions.perspective = "thirdPerson"; }
+    if(Object.keys(newOptions).length === 0) { return; }
+
+    setOptions((oldOptions) => ({...oldOptions, ...newOptions}));
+  }, [options]);
 
   if(!active) { return null; }
   if(active.surveyType === "generic") {

@@ -84,24 +84,15 @@ export const baseOrderQuery = selector({
 const baseRecommendationQuery = selector({
   get: async({get}) => {
     const {benchmarkID, packageID, profileID} = get(baseState);
-    const options = get(optionsState);
-    const cacheOptions = {
-      benchmarkID,
-      packageID,
-      profileID,
-      type: "order-recommendation"
-    };
-    if(Object.hasOwn(options, "applyAssessmentExpiration")) {
-      cacheOptions.applyAssessmentExpiration = options.applyAssessmentExpiration;
-    }
 
     const cache = get(cacheState);
-    const cacheKey = get(safeCacheKeyState(cacheOptions));
+    const cacheKey = get(safeCacheKeyState({benchmarkID, packageID, profileID, type: "order-recommendation"}));
     const cached = cache.get(cacheKey);
     if(cached) { return cached; }
 
     const GraphQL = get(graphqlState);
     const http = get(httpState);
+    const options = get(optionsState);
     const variables = {
       benchmarkID,
       localeKey: get(localeState),

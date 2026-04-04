@@ -30,6 +30,7 @@ export default function useRecommendationEffect() {
 
   // NOTE: Syncs benchmarkID back to base for results
   useEffect(() => {
+    if(dig(options, "survey", "render")) { return; } // NOTE: Don't sync if rendering surveys
     if(!benchmarkID) { return; }
     if(benchmarkID === base.benchmarkID) { return; }
 

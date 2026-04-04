@@ -8,6 +8,7 @@ import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
 import useComponentEvents from "lib/hooks/use-component-events";
+import useDefaultOptions from "lib/hooks/use-default-options";
 import useHttp from "lib/hooks/use-http";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
@@ -69,6 +70,7 @@ export default function PersonalitySurvey() {
   };
 
   useComponentEvents("Survey", {...state});
+  useDefaultOptions({"survey.render": true});
   useEffect(() => {
     if(!assessment) { return; }
     if(assessment.completed_at) { return; }

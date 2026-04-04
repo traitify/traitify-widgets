@@ -1,11 +1,14 @@
 import Status from "components/status";
 import useActive from "lib/hooks/use-active";
+import useDefaultOptions from "lib/hooks/use-default-options";
 import Cognitive from "./cognitive";
 import Generic from "./generic";
 import Personality from "./personality";
 
 export default function Survey() {
   const active = useActive();
+
+  useDefaultOptions({"survey.render": true});
 
   if(!active) { return <Status />; }
   if(active.surveyType === "cognitive") { return <Cognitive />; }

@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "건너뛴 질문을 해보고 싶습니까?",
   "cognitive_confirm_skip": "정말로 건너뛰고 싶습니까?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>이제 연습을 할 시간입니다. 시작하기 전에 기억하세요:</p><ul><li>연습에는 28개의 질문이 있습니다.</li><li>원하는 만큼 시간을 들여 질문을 완료할 수 있습니다.</li><li>주의가 산만해지지 않고 연습에 집중할 수 있는 조용한 장소를 찾아야 합니다.</li><li>질문은 건너뛸 수 있지만, 각 질문에 답하도록 노력하시기 바랍니다.</li><li>앉은 자리에서 연습을 완료하시기 바랍니다.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>이제 연습을 할 시간입니다. 시작하기 전에 기억하세요:</p><ul><li>연습에는 31개의 질문이 있습니다.</li><li>원하는 만큼 시간을 들여 질문을 완료할 수 있습니다. 그러나 대부분의 사람들은 약 15분 안에 연습을 완료합니다.</li><li>주의가 산만해지지 않고 연습에 집중할 수 있는 조용한 장소를 찾아야 합니다.</li><li>질문은 건너뛸 수 있지만, 각 질문에 답하도록 노력하시기 바랍니다.</li><li>앉은 자리에서 연습을 완료하시기 바랍니다.</li></ul>"
   },
   "cognitive_instructions_disability_text": "학습 장애가 있는지 선택하십시오",
@@ -78,6 +79,17 @@
   "green_career_html": "녹색 경제는 직업의 고용 수요나 작업, 업무, 기술, 지식, 자격증 등 근로자 요구 사항에 변화를 가져올 것입니다. <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a> 온라인의 데이터",
   "guide_intro": "이러한 성격 특성은 각 성격 '유형'에 대한 특정 순서의 질문을 하는 근거를 제공합니다. 첫 번째 질문은 그들이 어떤 모습이어야 하는지 확인하는 것입니다. 두 번째 두 개의 질문은 가능한 우려 영역을 탐색합니다.",
   "help": "돕기",
+  "help_modal": {
+    "content_html": "저희의 <a href=\"%{url}\" target=\"_blank\">평가</a>에 관해서 다른 정보를 확인해 보세요.",
+    "error_submitting": "메시지 제출 오류",
+    "heading": "도움",
+    "input_label": "뭘 도와드릴까요?",
+    "input_placeholder": "답장을 쓰세요…",
+    "message_required": "메시지를 입력하시기 바랍니다",
+    "submit": "보내기",
+    "submitted": "메시지 제출됨",
+    "trigger": "도움이 필요하신가요?"
+  },
   "instructions": "지침",
   "interview_guide_description": "각 성격 차원의 수준에 근거하여 지원자에 맞게 이러한 질문들이 만들어집니다. 지원자의 성격 프로필을 검토하여 각 차원에서 높음, 중간, 낮음 여부를 확인한 다음, 그들이 지원하는 직책에 가장 크게 염려가 되는 성격 구성 요소를 중심으로 인터뷰를 구조화 할 수 있습니다.",
   "interview_guide_heading": "인터뷰 요령/질문",
@@ -131,6 +143,11 @@
   "really_not_me": "정말 내가 아님",
   "recommendation_chart_description": "아래에서는 Big Five 차원별로 분석된 지원자의 성격 결과를 볼 수 있습니다. 점수는 색상으로 표시되어 있는데, 가장 적합한 범위인 녹색, 그 뒤를 이어 노란색과 빨간색이 있습니다. 이 범위는 직업에 따라 다릅니다. 이는 출판된 연구, 직무 설명, 해당 직무를 잘 아는 사람과의 인터뷰 등 여러 정보를 기반으로 합니다.",
   "recommendation_chart_heading": "적합성 분석",
+  "results": {
+    "generic": {
+      "score": "점수"
+    }
+  },
   "room_for_growth_and_change": "성장과 변화의 여지",
   "salary_mean": "급여 평균",
   "salary_mean_html": "해당 직업의 근로자의 절반이 해당 금액보다 더 많이 받고 나머지 절반은 더 적게 받는 임금. 중간 수치의 임금 데이터는 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a> 에서 가져온 것입니다.",
@@ -158,6 +175,16 @@
   },
   "submit": "제출하기",
   "success_skills": "성공 기술",
+  "survey": {
+    "accommodation": {
+      "confirm": "네,  편의 제공 요청입니다",
+      "request": "편의 제공 요청하기",
+      "request_text": "정말 평가에 대한 편의 제공을 요청하시겠습니까? 그러면 평가를 건너뛰게 됩니다. 아니라면, 돌아가기를 클릭하여 평가를 계속하시기 바랍니다.",
+      "submitted": "편의 제공 요청 제출됨",
+      "submitted_text": "팀 멤버 중 한 사람이 가능한 한 빨리 귀하의 정보를 살펴볼 것입니다"
+    },
+    "generic_assessment": "일반 평가"
+  },
   "tip_type_for_caution_zone": "주의 구역",
   "tip_type_for_room": "성장과 변화의 여지",
   "tip_type_for_settings": "귀하를 위한 설정",

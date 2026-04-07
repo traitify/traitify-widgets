@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Möchten Sie die Fragen, die Sie übersprungen haben, beantworten?",
   "cognitive_confirm_skip": "Sind Sie sich sicher, dass Sie überspringen möchten?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 28 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 31 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten. Die meisten Menschen schließen die Übung jedoch in etwa 15 Minuten ab.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Bitte geben Sie an, ob bei Ihnen eine Lernschwäche vorliegt.",
@@ -55,6 +56,7 @@
   "cognitive_skip_button": "Überspringen",
   "cognitive_skipped_questions": "Übersprungene Fragen",
   "complements": "Ergänzungen",
+  "complete": "Abgeschlossen",
   "conflicts": "Konflikte",
   "dimension_description": "Der Dimensionspunktwert wird aus Ihren Antworten auf Items berechnet, die zusammen die zugrundeliegenden Komponenten der einzelnen Dimensionen messen. Insgesamt weist eine Person jeweils eine hohe, mittlere oder niedrige Ausprägung auf.",
   "dimension_heading": "Was bedeutet das Ergebnis %{level} %{name} für mich?",
@@ -72,12 +74,41 @@
   "experience_level_5": "Hochschulabschluss",
   "extended_description": "Erweiterte Beschreibung",
   "featured_skill": "Ausgewählte Fähigkeit",
+  "feedback": {
+    "modal_prompt": "Wir würden gerne mehr über Ihre Erfahrung erfahren",
+    "prompt": "Haben Sie das Gefühl, dass Ihre Ergebnisse zu Ihnen passen?",
+    "thanks": "Vielen Dank für Ihr Feedback!"
+  },
   "filter": "Filter",
   "get_started": "Erste Schritte",
   "green_career": "Umweltberufe",
   "green_career_html": "Die grüne Wirtschaft wird eine Veränderung in der Arbeitskräftenachfrage oder den Anforderungen an die Arbeit und die Beschäftigten bewirken, z. B. im Hinblick auf Aufgaben, Fähigkeiten, Kenntnisse und Referenzen. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "Diese Persönlichkeitseigenschaften bilden die Grundlage für eine bestimmte Abfolge von Fragen, die sich auf die einzelnen Persönlichkeitstypen beziehen. Mit der ersten Frage soll bestätigt werden, wie sie sein sollten. Die zweite Frage soll mögliche Problembereiche ergründen.",
+  "headings": {
+    "personality": {
+      "achieve_html": "<b>ERREICHEN</b> - Fähigkeiten, die Sie gerne weiterentwickeln",
+      "act_html": "<b>HANDELN</b> - Wie sie ihr Zeit  verbringen",
+      "appreciate_html": "<b>WERTSCHÄTZEN</b> - Werte, die mit Ihrer Weltanschauung übereinstimmen",
+      "explore_html": "<b>ERKUNDEN</b> - Themen, die sie interessant finden",
+      "styles": {
+        "negative": "Weniger ausgeprägt:",
+        "overall": "Ihr allgemeiner Karrierestil ist ...",
+        "positive": "Weitere Elemente von:"
+      }
+    }
+  },
   "help": "Hilfe",
+  "help_modal": {
+    "content_html": "Weitere Informationen über unsere <a href=\"%{url}\" target=\"_blank\">Testverfahren</a> anschauen.",
+    "error_submitting": "Fehler beim Senden der Nachricht",
+    "heading": "Hilfe",
+    "input_label": "Wie können wir Ihnen behilflich sein? ",
+    "input_placeholder": "Schreiben Sie eine Antwort…",
+    "message_required": "Bitte geben Sie eine Nachricht ein",
+    "submit": "Absenden",
+    "submitted": "Nachricht wurde gesendet",
+    "trigger": "Hilfe benötigt"
+  },
   "instructions": "Anleitung",
   "interview_guide_description": "Diese Fragen werden, je nach Ergebnis des Kandidaten in den einzelnen Persönlichkeitsdimensionen, individuell auf diesen zugeschnitten. Bei Bedarf können Sie sich das Persönlichkeitsprofil des Kandidaten durchlesen, um herauszufinden, ob dieser in den einzelnen Dimensionen eine hohe, mittlere oder niedrige Wertung erzielt hat, und anschließend sein Bewerbungsgespräch rund um die Persönlichkeitsmerkmale aufbauen, die für die angestrebte Position am wichtigsten sind.",
   "interview_guide_heading": "Interview-Tipps / Fragen",
@@ -101,6 +132,7 @@
   "most_represented_traits": "Am stärksten ausgeprägte Eigenschaften",
   "most_represented_traits_definition": "Von den dreißig in diesem Test gemessenen Eigenschaften haben diese Eigenschaften Punktwerte im oberen Drittel der Gesamtantworten des Kandidaten erzielt. Durch die Aufführung in dieser Liste soll für die entsprechende Person nur die relative Ausprägung der Eigenschaften gegenüber den übrigen Eigenschaften dargestellt werden. Dadurch werden keine Informationen bereitgestellt, die zum Vergleich der Ausprägung einer vom Kandidaten gezeigten Eigenschaft im Vergleich zu einem anderen herangezogen werden können.",
   "next": "Weiter",
+  "no": "Nein",
   "no_careers": "Keine Berufe",
   "no_jobs": "Für diese Karriere wurden keine lokalen Jobs gefunden. Bitte besuchen Sie %{Job_Source}, um mehr Möglichkeiten zu finden.",
   "no_more_careers": "Keine Berufe mehr",
@@ -131,10 +163,36 @@
   "really_not_me": "Wirklich nicht ich",
   "recommendation_chart_description": "Nachstehend sehen Sie die Persönlichkeitsergebnisse des Kandidaten, aufgeschlüsselt nach jeder der Big Five-Dimensionen. Die Punktwerte sind farbig markiert, um die Best-Fit-Bereiche (grün), gefolgt von gelb und rot, anzuzeigen. Die Bereiche variieren je nach Stelle. Sie basieren auf verschiedenen Informationen, darunter veröffentlichte Forschungsergebnisse, Stellenbeschreibungen und Bewerbungsgespräche mit Personen, die mit der Stelle vertraut sind.",
   "recommendation_chart_heading": "Aufschlüsselung der Eignung",
+  "results": {
+    "benchmarks": {
+      "current": "Aktueller Benchmark",
+      "search": "Benchmark suchen"
+    },
+    "cognitive": {
+      "breakdown": {
+        "description": "Diese Darstellung zeigt die Ergebnisse des {survey name} auf Grundlage Ihrer Antworten auf abstrakte Fragen zur allgemeinen kognitiven Leistungsfähigkeit.",
+        "heading": "Kognitive Auswertung"
+      }
+    },
+    "generic": {
+      "breakdown": "Aufgliederung",
+      "breakdown_description": "Hier sehen Sie die Aufgliederung der Fragen, die Sie im Assessment beantwortet haben",
+      "correct": "Richtig",
+      "incorrect": "Falsch",
+      "overall_score": "Gesamtpunktzahl",
+      "score": "Punktzahl"
+    },
+    "reports": {
+      "candidate": "Kandidatenbericht",
+      "employee": "Beteiligen sie sich an den Mitarbeiterbericht",
+      "manager": "Bericht für Hiring Manager"
+    }
+  },
   "room_for_growth_and_change": "Raum für Wachstum und Veränderung",
   "salary_mean": "Gehaltsdurchschnitt",
   "salary_mean_html": "Arbeitsentgelt, bei dem eine Hälfte der Beschäftigten in diesem Beruf mehr und die andere Hälfte weniger als diesen Betrag verdient. Daten zum Durchschnittsgehalt von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Suche",
+  "show_hide_all": "Alle anzeigen/ausblenden",
   "show_less": "Weniger anzeigen",
   "show_more": "Mehr anzeigen",
   "skill_heading_for_communication": "Sprechen, Schreiben und Ideen teilen sind wichtig. Probieren Sie diese Tipps aus, um gut zu kommunizieren.",
@@ -151,13 +209,33 @@
   "skill_name_for_leading_others": "Andere führen",
   "skill_name_for_teamwork": "Teamarbeit",
   "skill_name_for_working_from_home": "Empfehlungen für effektives Arbeiten im Homeoffice",
+  "skipped": "Übersprungen",
   "slide_error": "Im Moment können keine weiteren Folien geladen werden",
   "sort": "Sortieren",
   "status": {
-    "text": "Im Rahmen Ihrer Bewerbung möchten wir Sie bitten, die folgenden Bewertungen durchzuführen. Bitte klicken Sie auf die Schaltfläche neben dem Namen der Bewertung. Dadurch gelangen Sie zu dem Ort, an dem Sie die Bewertung(en) durchführen können. Bitte kehren Sie hierher zurück, sobald Sie alle Bewertungen abgeschlossen haben."
+    "error": "Bei Ihren Assessments ist ein Fehler aufgetreten",
+    "heading": "Deine Auswertung",
+    "loading": "Ihr Assessment wird geladen",
+    "start": "Assessment starten",
+    "text": "Im Rahmen Ihrer Bewerbung möchten wir Sie bitten, die folgenden Bewertungen durchzuführen. Bitte klicken Sie auf die Schaltfläche neben dem Namen der Bewertung. Dadurch gelangen Sie zu dem Ort, an dem Sie die Bewertung(en) durchführen können. Bitte kehren Sie hierher zurück, sobald Sie alle Bewertungen abgeschlossen haben.",
+    "timeout": "Ladezeit überschritten",
+    "try_again": "Noch einmal versuchen"
   },
   "submit": "Senden",
   "success_skills": "Kompetenzen für Erfolg",
+  "survey": {
+    "accommodation": {
+      "confirm": "Ja, Sonderregelung anfragen",
+      "request": "Sonderregelung beantragen",
+      "request_text": "Möchten Sie wirklich eine Sonderregelung beantragen? Dadurch wird der aktuelle Vorgang übersprungen. Wenn nicht, klicken Sie auf „Zurück“, um fortzufahren.",
+      "submitted": "Ihre Antrag auf Sonderregelung wurde versendet. ",
+      "submitted_text": "Ihre Angaben werden zeitnah von unserem Team geprüft."
+    },
+    "cognitive_assessment": "Kognitives Assessment",
+    "external_assessment": "Externes Assessment",
+    "generic_assessment": "Allgemeine Bewertung",
+    "personality_assessment": "Persönlichkeitstest"
+  },
   "tip_type_for_caution_zone": "Warnzone",
   "tip_type_for_room": "Raum für Wachstum und Veränderung",
   "tip_type_for_settings": "Einstellungen für Dich",
@@ -165,5 +243,6 @@
   "tip_type_for_tools": "Anzuwendende Tools",
   "title": "Titel",
   "try_again": "Klicken Sie hier, um es erneut zu versuchen",
-  "view_on_onet": "Sehen Sie sich Karrieredetails in O*Net an"
+  "view_on_onet": "Sehen Sie sich Karrieredetails in O*Net an",
+  "yes": "Ja"
 }

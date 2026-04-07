@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Gostarias de tentar responder às questões que pulou?",
   "cognitive_confirm_skip": "Tem certeza que deseja pular?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Agora é o momento do exercício. Antes de começar, lembre-se:</p><ul><li>Há 28 questões no exercício</li><li>Podes levar o tempo que precisar para concluí-las.</li><li>Precisas encontrar um lugar tranquilo para poder dedicar-se totalmente ao exercício sem distração.</li><li>Podes pular as questões se sentir necessidade, mas tente responder a todas.</li><li>Complete o exercício de uma só vez.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Agora é o momento do exercício. Antes de começar, lembre-se:</p><ul><li>Há 31 questões no exercício</li><li>Podes levar o tempo que precisar para concluí-las. No entanto, a maioria das pessoas conseguirá concluir em cerca de 15 minutos.</li><li>Precisas encontrar um lugar tranquilo para poder dedicar-se totalmente ao exercício sem distração.</li><li>Podes pular as questões se sentir necessidade, mas tente responder a todas.</li><li>Complete o exercício de uma só vez.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Selecione se tiver alguma dificuldade de aprendizagem",
@@ -78,6 +79,17 @@
   "green_career_html": "A economia verde causará uma mudança na demanda de emprego das ocupações ou nos requisitos de trabalho e de trabalhador, como tarefas, habilidades, conhecimentos e credenciais. Dados de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "Essas características de personalidade fornecem a base para fazer uma sequência particular de perguntas de cada um dos tipos de personalidade. A primeira questão é procurar confirmar como devem ser; os dois segundos exploram áreas de possível preocupação.",
   "help": "Socorro",
+  "help_modal": {
+    "content_html": "Consulte outras informações sobre nossas <a href=\"%{url}\" target=\"_blank\">Avaliações</a>",
+    "error_submitting": "Erro ao Enviar Mensagem",
+    "heading": "Ajuda",
+    "input_label": "Em que podemos ajudar?",
+    "input_placeholder": "Escreva uma resposta...",
+    "message_required": "Escreva uma mensagem",
+    "submit": "Enviar",
+    "submitted": "Mensagem Enviada",
+    "trigger": "Precisa de ajuda?"
+  },
   "instructions": "instruções",
   "interview_guide_description": "Estas perguntas foram adaptadas a este candidato com base nos seus níveis de cada dimensão de personalidade. Para saber se os níveis de personalidade são altos, médios ou baixos em cada dimensão, poderá rever o perfil do candidato. Depois, é possível estruturar as entrevistas com base nos componentes de personalidade mais importantes para o cargo que procurado.",
   "interview_guide_heading": "Entrevista Dicas / Perguntas",
@@ -131,6 +143,11 @@
   "really_not_me": "realmente eu não",
   "recommendation_chart_description": "Encontra abaixo os resultados de personalidade do candidato distribuídos por cada uma das dimensões do Big Five. As pontuações estão codificadas por cores para indicar os intervalos de maior adequação (verde), seguidos por amarelo e vermelho. Estes intervalos variam consoante a função e baseiam-se em várias informações, como artigos de investigação publicados, descrições de funções e entrevistas a pessoas familiarizadas com a função.",
   "recommendation_chart_heading": "Detalhes da Adequação",
+  "results": {
+    "generic": {
+      "score": " Pontuação"
+    }
+  },
   "room_for_growth_and_change": "Espaço para Crescimento e Mudança",
   "salary_mean": "média salarial",
   "salary_mean_html": "O salário pelo qual metade dos trabalhadores na ocupação ganhava mais do que esse valor e metade ganhava menos. Os dados medianos dos salários são de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -158,6 +175,16 @@
   },
   "submit": "Enviar",
   "success_skills": "Habilidades de Sucesso",
+  "survey": {
+    "accommodation": {
+      "confirm": "Sim, Solicitar Adaptação",
+      "request": "Solicitar Adaptação",
+      "request_text": "Tem certeza que quer solicitar adaptações para a avaliação? Isso fará com que ignore a adaptação. Se não, clique em Voltar para continuar com a avaliação.",
+      "submitted": "Solicitação de Adaptação Enviada",
+      "submitted_text": "Um membro da nossa equipa analisará suas informações o mais breve possível"
+    },
+    "generic_assessment": "Avaliação Genérica"
+  },
   "tip_type_for_caution_zone": "Zona de precaução",
   "tip_type_for_room": "Espaço para Crescimento e Mudança",
   "tip_type_for_settings": "As suas configurações",

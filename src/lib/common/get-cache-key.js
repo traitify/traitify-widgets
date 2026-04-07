@@ -33,10 +33,6 @@ export default function getCacheKey(type, options = {}) {
         console.warn("Missing benchmarkID or packageID");
       }
 
-      if(Object.hasOwn(options, "applyAssessmentExpiration")) {
-        keys.push(`applyAssessmentExpiration-${options.applyAssessmentExpiration}`);
-      }
-
       keys.push(`profile-${profileID}`);
       break;
     }

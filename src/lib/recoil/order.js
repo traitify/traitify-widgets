@@ -131,7 +131,11 @@ const orderDefaultQuery = selector({
     const {assessmentID, benchmarkID, orderID, packageID, profileID} = get(baseState);
 
     if(orderID) { return get(baseOrderQuery); }
-    if(profileID && (benchmarkID || packageID)) { return get(baseRecommendationQuery); }
+    if(profileID && (benchmarkID || packageID)) {
+      const order = get(baseRecommendationQuery);
+      // NOTE: Prevent incomplete recommendation from overriding completed assessment
+      if(order.completed || !assessmentID) { return order; }
+    }
     if(assessmentID) { return get(baseAssessmentState); }
 
     return null;

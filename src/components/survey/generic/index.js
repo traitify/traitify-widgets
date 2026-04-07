@@ -9,7 +9,6 @@ import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
 import useComponentEvents from "lib/hooks/use-component-events";
-import useDefaultOptions from "lib/hooks/use-default-options";
 import useDidUpdate from "lib/hooks/use-did-update";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
@@ -81,7 +80,6 @@ export default function GenericSurvey() {
   };
 
   useComponentEvents("Survey", {...state});
-  useDefaultOptions({"survey.render": true});
   useDidUpdate(() => { onSubmit(); }, [submitAttempts]);
   useEffect(() => { setShowInstructions(true); }, [assessment]);
   useEffect(() => {

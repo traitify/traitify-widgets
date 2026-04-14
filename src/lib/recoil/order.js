@@ -7,6 +7,7 @@ import {
   graphqlState,
   httpState,
   listenerState,
+  loadingState,
   localeState,
   optionsState,
   orderIDState,
@@ -48,6 +49,8 @@ const baseAssessmentState = selector({
 
 export const baseOrderQuery = selector({
   get: async({get}) => {
+    if(get(loadingState)) { return null; }
+
     const orderID = get(orderIDState);
     if(!orderID) { return null; }
 
@@ -83,6 +86,8 @@ export const baseOrderQuery = selector({
 
 const baseRecommendationQuery = selector({
   get: async({get}) => {
+    if(get(loadingState)) { return null; }
+
     const {benchmarkID, packageID, profileID} = get(baseState);
 
     const cache = get(cacheState);

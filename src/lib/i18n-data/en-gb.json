@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Would you like to attempt the questions you skipped?",
   "cognitive_confirm_skip": "Are you sure you want to skip?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 28 questions in the exercise</li><li>You may have as long as you want to complete them.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Now it’s time for the exercise. Before you begin remember:</p><ul><li>There are 31 questions in the exercise</li><li>You may have as long as you want to complete them. However, most people will complete the exercise in about 15 minutes.</li><li>You should find a quiet place where you can give the exercise your full attention without being distracted.</li><li>You can skip questions if you need to but try to give an answer to each question.</li><li>Please complete the exercise in a single sitting.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Please select if you have a learning disability.",

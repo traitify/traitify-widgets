@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Na hrial khawh ti hna biahalnak hna cu na duh khawh rawh maw?",
   "cognitive_confirm_skip": "Na hrial khawh ti hi na tha hna maw?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Tu hi cawlcanghnak tuahnak caan a si. Tuah hlan ahcun, dah hi nganpi ah um khawh:</p> <ul> <li>Cawlcanghnak cu biahalnak 28 an i a si.</li> <li>Na duh zat in caan na lak khawh a si.</li> <li>Lungretheihnak um loin cawlcanghnak hna kha na lungthin dihlak in na pek khawhnak ding hmun dai tein na kawl awk a si.</li> <li>Na herh ahcun biahalnak kha na hrial khawh, asinain biahalnak pakhat cio kha a phi pek khawh i zuam.</li> <li>Cawlcanghnak cu voikhat tthutnak ah lim in tuah khawh.</li> </ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Tu hi cawlcanghnak tuahnak caan a si. Tuah hlan ahcun, dah hi nganpi ah um khawh:</p> <ul> <li>Cawlcanghnak cu biahalnak 31 an i a si.</li> <li>Na duh zat in caan na lak khawh a si. Asinain, tampi cu 15 minute chung i an ti hna.</li> <li>Lungretheihnak um loin cawlcanghnak hna kha na lungthin dihlak in na pek khawhnak ding hmun dai tein na kawl awk a si.</li> <li>Na herh ahcun biahalnak kha na hrial khawh, asinain biahalnak pakhat cio kha a phi pek khawh i zuam.</li> <li>Cawlcanghnak cu voikhat tthutnak ah lim in tuah khawh.</li> </ul>"
   },
   "cognitive_instructions_disability_text": "Na hmanhnak ah hriamhmi loh thil pawl kha na hmanhrawh?",
@@ -92,6 +93,17 @@
     }
   },
   "help": "Bawmh",
+  "help_modal": {
+    "content_html": "Kan Hlathlainak kong he pehtlai in a dang <a href=\"%{url}\" target=\"_blank\">theihternak</a> zoh",
+    "error_submitting": "Cakuat kuat nak a palh",
+    "heading": "Bawmh ",
+    "input_label": "Zei tin dah kan i bawmh khawh lai?",
+    "input_placeholder": "Leh nak vun tial...",
+    "message_required": "Zangfahtein, cakuat vun tial",
+    "submit": "Kuat",
+    "submitted": "Cakuat kuat cang mi",
+    "trigger": "Bawmh ka herh"
+  },
   "instructions": "Hmuhsaknak",
   "interview_guide_description": "Hi biahalnak hna cu na duhmi pawl cu na zumhawi hmanhnak pawl chungin an duhmi tuah khawh. Na zumhawi hmanhnak profile kha na hrial khawh maw, asinain na caan pawl hlei thil pawl kha a theih. A cunglei interview pawl kha na tthut thil pawl le zuam tawn khawh in an herh.",
   "interview_guide_heading": "Interview Thuzinghnak / Biahalnak Hmanhnak",
@@ -151,6 +163,9 @@
       "current": "Atu lio tahfung",
       "search": "Benchmark kawl"
     },
+    "generic": {
+      "score": "Hmuh mi mark"
+    },
     "reports": {
       "candidate": "Candidate Report",
       "employee": "Riantuantu Report kha I telter",
@@ -180,6 +195,16 @@
   "sort": "Sort",
   "submit": "Submit tuah",
   "success_skills": "Ngahchiahmi Zumhawi",
+  "survey": {
+    "accommodation": {
+      "confirm": "A si, umthut nak hal",
+      "request": "umthut nak hal",
+      "request_text": "Hlathlainak caah umnak hal na duh taktak maw? Mah nih cun thlennak kha na hlonhter lai. A si lo ahcun, zohfelnak pehzulh awkah Hnulei kha hmet.",
+      "submitted": "Umnak halnak pek a si cang",
+      "submitted_text": "Kan phu chungtel pakhat nih a rannak in na konglam kha a zohfel lai"
+    },
+    "generic_assessment": "Tlangpi Zohfel Nak"
+  },
   "tip_type_for_caution_zone": "Thinhunnak Hmun",
   "tip_type_for_room": "Tlanghmi le phihnung hna chungin hmanrawh",
   "tip_type_for_settings": "Na chungin hmanhnak pawl",

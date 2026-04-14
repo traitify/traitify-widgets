@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Bạn có muốn thử trả lời lại những câu hỏi đã bỏ qua không",
   "cognitive_confirm_skip": "Bạn có chắc chắn muốn bỏ qua?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Bây giờ là lúc cho bài tập. Trước khi bắt đầu, hãy nhớ:</p><ul><li>Có 28 câu hỏi trong bài tập</li><li>Bạn có thể mất bao lâu tùy ý để hoàn thành chúng.</li><li>Bạn nên tìm một nơi yên tĩnh nơi bạn có thể tập trung hoàn toàn vào bài tập mà không bị phân tâm.</li><li>Bạn có thể bỏ qua các câu hỏi nếu cần, nhưng hãy cố gắng trả lời mỗi câu hỏi.</li><li>ui lòng hoàn thành bài tập trong một lần làm.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Bây giờ là lúc cho bài tập. Trước khi bắt đầu, hãy nhớ:</p><ul><li>Có 31 câu hỏi trong bài tập</li><li>Bạn có thể mất bao lâu tùy ý để hoàn thành chúng. Tuy nhiên, hầu hết mọi người sẽ hoàn thành bài tập trong khoảng 15 phút.</li><li>Bạn nên tìm một nơi yên tĩnh nơi bạn có thể tập trung hoàn toàn vào bài tập mà không bị phân tâm.</li><li>Bạn có thể bỏ qua các câu hỏi nếu cần, nhưng hãy cố gắng trả lời mỗi câu hỏi.</li><li>ui lòng hoàn thành bài tập trong một lần làm.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Vui lòng chọn nếu bạn có hạn chế về mặt học tập",
@@ -78,6 +79,17 @@
   "green_career_html": "Nền kinh tế xanh sẽ làm thay đổi nhu cầu tuyển dụng của các nghề hoặc yêu cầu công việc và người lao động như nhiệm vụ, kỹ năng, kiến thức và chứng chỉ. Dữ liệu từ <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
   "guide_intro": "Những đặc điểm tính cách này tạo cơ sở để đặt một chuỗi câu hỏi cụ thể cho mỗi \"kiểu\" tính cách. Câu hỏi đầu tiên nhằm xác nhận họ nên như thế nào; hai câu tiếp theo khám phá những lo ngại tiềm ẩn. ",
   "help": "Trợ giúp",
+  "help_modal": {
+    "content_html": "Xem thêm thông tin chi tiết về quy trình <a href=\"%{url}\" target=\"_blank\">đánh giá</a> của chúng tôi.",
+    "error_submitting": "Tin nhắn gửi lỗi",
+    "heading": "Trợ giúp",
+    "input_label": "Bạn cần giúp đỡ gì ?",
+    "input_placeholder": "Viết câu trả lời…",
+    "message_required": "Vui lòng nhập tin nhắn",
+    "submit": "Gửi",
+    "submitted": "Đã gửi tin nhắn",
+    "trigger": "Cần giúp đỡ"
+  },
   "instructions": "Hướng dẫn",
   "interview_guide_description": "Các câu hỏi này được cá nhân hóa cho ứng viên dựa trên mức độ của họ ở mỗi chiều tính cách. Bạn có thể xem lại hồ sơ tính cách của ứng viên để biết họ ở mức Cao, Trung bình hay Thấp cho mỗi chiều, sau đó cấu trúc cuộc phỏng vấn của họ xoay quanh các thành phần tính cách quan trọng nhất đối với vị trí họ ứng tuyển. ",
   "interview_guide_heading": "Mẹo/Câu hỏi phỏng vấn ",
@@ -131,6 +143,11 @@
   "really_not_me": "Chắn chắn Không phải Tôi",
   "recommendation_chart_description": "Bên dưới, bạn có thể xem kết quả đánh giá tính cách của ứng viên được chia theo từng chiều Năm yếu tố lớn. Các điểm số được mã hóa màu để chỉ ra các phạm vi phù hợp nhất (màu xanh lá), tiếp theo là màu vàng và đỏ. Các phạm vi này khác nhau đối với từng công việc. Chúng dựa trên một số thông tin bao gồm nghiên cứu công bố, mô tả công việc và phỏng vấn những người quen thuộc với công việc đó.",
   "recommendation_chart_heading": "Phân tích Sự phù hợp",
+  "results": {
+    "generic": {
+      "score": "Điểm số"
+    }
+  },
   "room_for_growth_and_change": "Phạm vi Để Phát triển và Thay đổi",
   "salary_mean": "Mức lương Trung vị",
   "salary_mean_html": "Mức lương mà một nửa số công nhân trong nghề đó có mức lương cao hơn và một nửa có mức thấp hơn. Dữ liệu mức lương trung vị từ <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -158,6 +175,16 @@
   },
   "submit": "Gửi",
   "success_skills": "Kỹ Năng Thành Công",
+  "survey": {
+    "accommodation": {
+      "confirm": "Có, Yêu cầu Hỗ trợ",
+      "request": "Yêu cầu Hỗ trợ",
+      "request_text": "Bạn có chắc chắn muốn yêu cầu hỗ trợ  không? Việc này sẽ dẫn đến việc bạn bỏ qua bài đánh giá. Nếu không, hãy bấm vào \"Quay lại\" để tiếp tục làm bài.",
+      "submitted": "Đã gửi Yêu cầu hỗ trợ",
+      "submitted_text": "Chúng tôi sẽ xem xét thông tin của bạn sớm nhất có thể"
+    },
+    "generic_assessment": "Đánh giá tổng quát"
+  },
   "tip_type_for_caution_zone": "Khu Vực Cảnh Báo",
   "tip_type_for_room": "Khả Năng Phát Triển và Thay Đổi",
   "tip_type_for_settings": "Cài Đặt Cho Bạn",

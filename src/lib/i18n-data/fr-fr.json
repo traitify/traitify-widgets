@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Voulez-vous essayer les questions que vous avez sautées?",
   "cognitive_confirm_skip": "Etes-vous sur de sauter?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 28 questions dans cet exercice. Prenez tout votre temps de les compléter. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 31 questions dans cet exercice. Prenez tout votre temps de les compléter. La plupart de participants va terminer dans environ 15 minutes. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Selectionnez s'il vous plait si vous avez des difficultés d'apprentissage.",
@@ -78,6 +79,17 @@
   "green_career_html": "L'économie verte entraînera une modification de la demande d'emploi ou des exigences professionnelles et professionnelles des professions, telles que les tâches, les compétences, les connaissances et les qualifications. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "Ces caractéristiques de personnalité permettent de poser une série de questions à chacun des «types» de personnalité. La première question cherche à confirmer à quoi ils devraient ressembler; les deux autres explorent les domaines de préoccupation possibles.",
   "help": "Aidez-moi",
+  "help_modal": {
+    "content_html": "Regarder les autres informations sur nos <a href=\"%{url}\" target=\"_blank\">Evaluations</a>.",
+    "error_submitting": "Erreur avec la soumission du message",
+    "heading": "Aider",
+    "input_label": "Comment est-ce que nous pouvons vous aider?",
+    "input_placeholder": "Ecrire une réponse...",
+    "message_required": "Ecrire un message s'il vous-plaît",
+    "submit": "Envoyer",
+    "submitted": "Message soumis",
+    "trigger": "Avoir besoin de l'aide"
+  },
   "instructions": "Instructions",
   "interview_guide_description": "Ces questions sont personnalisées pour ce candidat sur la base de ses niveaux pour chaque dimension de personnalité. Il peut s’avérer utile d’examiner le profil de personnalité du candidat pour savoir s’il est élevé, moyen ou faible pour chaque dimension, puis de structurer son entretien en fonction des composants de personnalité les plus préoccupants pour le poste qu’il recherche.",
   "interview_guide_heading": "Conseils / Questions d'entrevue",
@@ -131,6 +143,11 @@
   "really_not_me": "Vraiment pas moi",
   "recommendation_chart_description": "Vous pouvez voir ci-dessous les résultats concernant la personnalité du candidat, décomposés selon chacune des dimensions du modèle de personnalité à cinq facteurs. Les notes sont identifiées par un code couleur pour indiquer les plages dans lesquelles le candidat convient le mieux (vert), puis jaune et rouge. Ces plages varient pour chaque poste. Elles sont basées sur plusieurs informations qui peuvent inclure des recherches publiées, des descriptions de poste et des entretiens avec des personnes qui connaissent bien le travail.",
   "recommendation_chart_heading": "Répartition de l’adéquation",
+  "results": {
+    "generic": {
+      "score": "Résultat"
+    }
+  },
   "room_for_growth_and_change": "Place à la croissance et au changement",
   "salary_mean": "Salaire moyen",
   "salary_mean_html": "Le salaire auquel la moitié des travailleurs de la profession gagnait plus que ce montant et la moitié gagnait moins. Les données salariales médianes proviennent de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -158,6 +175,16 @@
   },
   "submit": "Soumettre",
   "success_skills": "Compétences de succès",
+  "survey": {
+    "accommodation": {
+      "confirm": "Oui, demander des aménagements",
+      "request": "Demander des aménagements",
+      "request_text": "Etes-vous certain que vous voulez demander des aménagements pour l'évaluation? Si oui, vous sautez l'évaluation. Si non, appuyez Rentrer pour continuer avec l'évauluation.",
+      "submitted": "Demande pour l'Aménagement est Soumise",
+      "submitted_text": "Un membre de notre équipe va examiner vos informations dès que possible."
+    },
+    "generic_assessment": "Une évaluation Générique"
+  },
   "tip_type_for_caution_zone": "Zone de prudence",
   "tip_type_for_room": "Place à la croissance et au changement",
   "tip_type_for_settings": "Des paramètres pour vous",

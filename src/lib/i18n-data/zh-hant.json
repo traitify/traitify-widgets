@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "您想嘗試一下您跳過的問題嗎？",
   "cognitive_confirm_skip": "您確定要跳過嗎？",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>現在是練習時間了。 在開始之前請記住：</p><ul><li>練習中有 28 個問題</li><li>只要您願意，您可以完成這些問題。</li><li>您應該找到一個安靜的地方，可以全神貫注地進行練習，而不會分心。</li><li>您可以跳過問題如果需要，請嘗試回答每個問題。</li><li>請一次完成練習。</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>現在是練習時間了。 在開始之前請記住：</p><ul><li>練習中有 31 個問題</li><li>只要您願意，您可以完成這些問題。 不過，大多數人會在大約15 分鐘內完成練習。</li><li>您應該找到一個安靜的地方，可以全神貫注地進行練習，而不會分心。</li><li>您可以跳過問題如果需要，請嘗試回答每個問題。</li><li>請一次完成練習。</li></ul>"
   },
   "cognitive_instructions_disability_text": "請選擇您是否有學習障礙",
@@ -78,6 +79,17 @@
   "green_career_html": "綠色經濟將導致職業的就業需求或工作和工人要求（例如任務、技能、知識和證書）發生變化。 數據來自 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
   "guide_intro": "這些人格特質為針對每種人格「類型」提出一系列特定問題提供了基礎。 第一個問題是要確認它們應該是什麼樣子； 後兩個探討可能值得關注的領域。",
   "help": "幫助",
+  "help_modal": {
+    "content_html": "查詢我們的其它<a href=\"%{url}\" target=\"_blank\">測試</a>。",
+    "error_submitting": "發送信息出錯",
+    "heading": "幫助",
+    "input_label": "我們可以為您提供什麼幫助？",
+    "input_placeholder": "撰寫回覆…",
+    "message_required": "請輸入信息",
+    "submit": "發送",
+    "submitted": "信息已發送",
+    "trigger": "需要幫助"
+  },
   "instructions": "說明",
   "interview_guide_description": "這些問題是根據候選人每個人格維度的水平量身定制的。 您可能希望查看候選人的性格概況，了解他們在各個方面的水平是高、中還是低，然後圍繞他們所尋求的職位最關心的性格組成部分來安排面試。",
   "interview_guide_heading": "面試技巧/問題",
@@ -131,6 +143,11 @@
   "really_not_me": "真的不是我",
   "recommendation_chart_description": "下面，您可以看到按大五維度每個維度細分的候選人性格結果。 分數以顏色編碼來指示最佳擬合範圍（綠色），然後是黃色和紅色。 這些範圍因每個工作而異。 它們基於幾條信息，其中可能包括已發表的研究、職位描述以及對熟悉該職位的人的採訪。",
   "recommendation_chart_heading": "適合細分",
+  "results": {
+    "generic": {
+      "score": "分數"
+    }
+  },
   "room_for_growth_and_change": "成長與改變的空間",
   "salary_mean": "平均薪資",
   "salary_mean_html": "該職業中一半工人的工資高於該數額，一半工人的工資低於該數額。 工資中位數數據來自 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
@@ -158,6 +175,16 @@
   },
   "submit": "提交",
   "success_skills": "成功技巧",
+  "survey": {
+    "accommodation": {
+      "confirm": "是的，申請協助",
+      "request": "申請協助",
+      "request_text": "您確定要為此測評申請調整嗎？這將會使您跳過本次測評。若不申請，請點選「返回」以繼續進行測評。",
+      "submitted": "協助申請已遞交",
+      "submitted_text": "我們的團隊成員將會盡快審核您的資訊"
+    },
+    "generic_assessment": "通用評估"
+  },
   "tip_type_for_caution_zone": "警戒區",
   "tip_type_for_room": "成長與改變的空間",
   "tip_type_for_settings": "適合您的設定",

@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "您想嘗試一下您跳過的問題嗎？",
   "cognitive_confirm_skip": "您確定要跳過嗎？",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>現在是練習時間了。 在開始之前請記住：</p><ul><li>練習中有 28 個問題</li><li>只要您願意，您可以完成這些問題。</li><li>您應該找到一個安靜的地方，可以全神貫注地進行練習，而不會分心。</li><li>您可以跳過問題如果需要，請嘗試回答每個問題。</li><li>請一次完成練習。</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>現在是練習時間了。 在開始之前請記住：</p><ul><li>練習中有 31 個問題</li><li>只要您願意，您可以完成這些問題。 不過，大多數人會在大約15 分鐘內完成練習。</li><li>您應該找到一個安靜的地方，可以全神貫注地進行練習，而不會分心。</li><li>您可以跳過問題如果需要，請嘗試回答每個問題。</li><li>請一次完成練習。</li></ul>"
   },
   "cognitive_instructions_disability_text": "請選擇您是否有學習障礙。",
@@ -78,6 +79,17 @@
   "green_career_html": "绿色经济将改变职业的就业需求或工作和工人的要求，例如任务，技能，知识和资历。来自的数据 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "这些人格特征为询问每个人格“类型”的特定问题序列提供了基础。第一个问题是要确认它们应该是什么样的;第二个探索可能引起关注的领域。",
   "help": "救命",
+  "help_modal": {
+    "content_html": " 查询我们的其它<a href=\"%{url}\" target=\"_blank\">测试</a>。",
+    "error_submitting": "发送信息出错",
+    "heading": "帮助",
+    "input_label": "我们可以帮你做什么？",
+    "input_placeholder": "请写下回复...",
+    "message_required": "请输入消息",
+    "submit": "发送",
+    "submitted": "消息已发送",
+    "trigger": "需要帮助"
+  },
   "instructions": "说明",
   "interview_guide_description": "这些问题是基于求职者在各人格维度所处级别为其专门设计的。首先可通过查看求职者人格分析结果，了解其在各维度处于高、中还是低级别，然后再围绕所申请岗位最关切的人格要素组织面试。",
   "interview_guide_heading": "面试技巧/问题",
@@ -131,6 +143,11 @@
   "really_not_me": "真的不是我",
   "recommendation_chart_description": "以下你可以看到候选人的性格结果按五大维度逐一细分。分数以颜色编码来表示最适合的范围（绿色），然后是黄色和红色。这些范围因每个职位而异。且其基于若干信息，这些信息可能包括已发表的研究、工作描述以及与熟悉该工作的人的访谈。",
   "recommendation_chart_heading": "匹配度细分",
+  "results": {
+    "generic": {
+      "score": "分数"
+    }
+  },
   "room_for_growth_and_change": "真的不是我",
   "salary_mean": "工资意味着",
   "salary_mean_html": "该职业中一半工人的收入高于该水平，另一半工人的收入低于该水平。中位数工资数据来自 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -158,6 +175,16 @@
   },
   "submit": "提交",
   "success_skills": "成功技巧",
+  "survey": {
+    "accommodation": {
+      "confirm": "是的，申请协助",
+      "request": "申请协助",
+      "request_text": "您确定要为此测评申请调整吗？这将会使您跳过本次测评。 若不申请， 请点击“返回”，继续进行测评。 ",
+      "submitted": "协助申请已递交",
+      "submitted_text": "我们的团队成员将会尽快审核您的信息"
+    },
+    "generic_assessment": "通用评估"
+  },
   "tip_type_for_caution_zone": "注意区",
   "tip_type_for_room": "真的不是我",
   "tip_type_for_settings": "适合你的环境",

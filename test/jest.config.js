@@ -5,6 +5,7 @@ module.exports = {
   ],
   fakeTimers: {enableGlobally: true},
   globals: {
+    SOURCE: "test",
     VERSION: "0.0.0-test"
   },
   moduleFileExtensions: [

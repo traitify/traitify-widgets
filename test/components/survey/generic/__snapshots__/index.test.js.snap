@@ -178,6 +178,8 @@ exports[`Survey.Generic submit submits query 1`] = `
       "Accept": "application/json",
       "Authorization": "Basic dW5kZWZpbmVkOng=",
       "Content-Type": "application/json",
+      "X-Traitify-Widgets-Source": "test",
+      "X-Traitify-Widgets-Version": "0.0.0-test",
     },
     "method": "POST",
   },

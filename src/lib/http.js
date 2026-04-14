@@ -1,3 +1,4 @@
+/* global SOURCE, VERSION */
 import toQueryString from "./common/object/to-query-string";
 
 const formatArgs = ({method, options, params}) => {
@@ -32,7 +33,9 @@ export default class Http {
     const headers = {
       "Accept": "application/json",
       "Authorization": `Basic ${btoa(`${this.authKey}:x`)}`,
-      "Content-Type": graphql ? "application/graphql" : "application/json"
+      "Content-Type": graphql ? "application/graphql" : "application/json",
+      "X-Traitify-Widgets-Source": SOURCE,
+      "X-Traitify-Widgets-Version": VERSION
     };
     const options = {headers, method};
     let url = [this.host, version === undefined ? this.version : version].filter(Boolean).join("/");

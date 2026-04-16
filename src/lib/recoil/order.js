@@ -134,7 +134,9 @@ const orderDefaultQuery = selector({
     if(profileID && (benchmarkID || packageID)) {
       const order = get(baseRecommendationQuery);
       // NOTE: Prevent incomplete recommendation from overriding completed assessment
-      if(order.completed || !assessmentID) { return order; }
+      // if(order.completed || !assessmentID) { return order; }
+      // TODO: Switch back when Paradox stops passing assessmentID with benchmarkID
+      return order;
     }
     if(assessmentID) { return get(baseAssessmentState); }
 

@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Vil du forsøke på spørsmålene du hoppet over?",
   "cognitive_confirm_skip": "Er du sikker på at du vil hoppe over?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p> Nå er det på tide med en øvelse. Husk dette før du begynner: </p><ul><li>Du kan bruke så lang tid du vil.</li><li>Du bør finne et rolig sted hvor du kan gi øvelsen din fulle oppmerksom uten noen forstyrrelser.</li><li>Du kan hoppe over spørsmål om du vil, men forsøk å svare på hvert enkelt.</li><li>Vennligst fullfør øvelsen i en sammenhengende økt.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p> Nå er det på tide med en øvelse. Husk dette før du begynner: </p><ul><li>Du kan bruke så lang tid du vil, men de fleste vil behøve rundt femten minutter til å fullføre.</li><li>Du bør finne et rolig sted hvor du kan gi øvelsen din fulle oppmerksom uten noen forstyrrelser.</li><li>Du kan hoppe over spørsmål om du vil, men forsøk å svare på hvert enkelt.</li><li>Vennligst fullfør øvelsen i en sammenhengende økt.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Vennligst velg hvis du har en kognitiv funksjonsnedsettelse.",
@@ -78,6 +79,17 @@
   "green_career_html": "Den grønne økonomien vil føre til en endring i yrkets arbeidsbehov eller krav til arbeid og arbeidstakere som oppgaver, ferdigheter, kunnskaper og legitimasjon. Data fra <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "Disse personlighetskarakteristikkene danner grunnlaget for å stille en bestemt rekkefølge av spørsmålene til hver av personlighetens typer. Det første spørsmålet ser ut til å bekrefte hva de skal være; den andre to utforske områder av mulig bekymring.",
   "help": "Hjelp",
+  "help_modal": {
+    "content_html": "Sjekk ut annen informasjon om våre <a href=\"%{url}\" target=\"_blank\">Undersøkelser</a> ",
+    "error_submitting": "Feil Ved Innsending Av Melding",
+    "heading": "Hjelp",
+    "input_label": "Hva kan vi hjelpe deg med?",
+    "input_placeholder": "Skriv et svar…",
+    "message_required": "Vennligst skriv inn en melding",
+    "submit": "Sende",
+    "submitted": "Melding Sendt",
+    "trigger": "Trenger Hjelp"
+  },
   "instructions": "Bruksanvisning",
   "interview_guide_description": "Disse spørsmålene er tilpasset denne kandidaten basert på nivåene i hver personlighetsdimensjon. Det kan være lurt å gjennomgå kandidatens personlighetsprofil for å lære om de er høye, middels eller lave i hver dimensjon, og deretter strukturere intervjuet rundt de komponentene i personligheten som er mest bekymret for stillingen de søker.",
   "interview_guide_heading": "Intervju Tips / Spørsmål",
@@ -131,6 +143,11 @@
   "really_not_me": "Egentlig ikke meg",
   "recommendation_chart_description": "Nedenfor kan du se kandidatens personlighetsresultater fordelt på hver av de fem store dimensjonene. Poengene er fargekodet for å indikere de best egnede områdene (grønt), etterfulgt av gult og rødt. Disse områdene varierer for hver jobb. De er basert på flere opplysninger som kan omfatte publisert forskning, stillingsbeskrivelser og intervjuer med folk som er kjent med jobben.",
   "recommendation_chart_heading": "Passer sammenbrudd",
+  "results": {
+    "generic": {
+      "score": "Poengsum"
+    }
+  },
   "room_for_growth_and_change": "Rom for vekst og endring",
   "salary_mean": "Lønnsmiddel",
   "salary_mean_html": "Lønnen hvor halvparten av arbeidstakere i yrket tjente mer enn dette beløpet og halvt tjente mindre. Median lønnsdata er fra <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -155,6 +172,16 @@
   "sort": "Sortere",
   "submit": "Sende inn",
   "success_skills": "Suksessevner",
+  "survey": {
+    "accommodation": {
+      "confirm": "Ja, Forespør Tilrettelegging",
+      "request": "Forespør Tilrettelegging",
+      "request_text": "Er du sikker på at du vil førespørre tilrettelegging for undersøkelsen? Dette vil føre til at du hopper over undersøkelsen. Hvis ikke, trykk Tilbake for å fortsette med undersøkelsen.",
+      "submitted": "Forespørsel Om Tilrettelegging Sendt Inn",
+      "submitted_text": "En av våre team-medlemmer vil vurdere din informasjon så snart det er mulig"
+    },
+    "generic_assessment": "Generisk Vurdering"
+  },
   "tip_type_for_caution_zone": "Forsiktig sone",
   "tip_type_for_room": "Rom for vekst og endring",
   "tip_type_for_settings": "Innstillinger for deg",

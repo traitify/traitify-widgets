@@ -18,6 +18,7 @@
   "cognitive_confirm_retry": "Vorresti tentare le domande che hai saltato?",
   "cognitive_confirm_skip": "Sei sicuro di voler saltare?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "The exercise consists of 28 questions.",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": ""
   },
   "cognitive_instructions_disability_text": "Seleziona se hai una disabilità di apprendimento.",
@@ -77,6 +78,17 @@
   "green_career_html": "L'economia verde causerà un cambiamento nella domanda di lavoro o nei requisiti del lavoro e dei lavoratori come compiti, competenze, conoscenze e credenziali. Dati da <a href=\"http://www.onetonline.org\" target=\"_blank\">Onet online</a>.",
   "guide_intro": "Queste caratteristiche della personalità forniscono la base per porre una particolare sequenza di domande su ciascuno dei \"tipi\" della personalità. La prima domanda è cercare di confermare come dovrebbero essere; Le seconde due aree esplorano la possibile preoccupazione.",
   "help": "Aiuto",
+  "help_modal": {
+    "content_html": "Dai un'occhiata più approfondita alle nostre <a href=\"%{url}\" target=\"_blank\">valutazioni</a> ",
+    "error_submitting": "Errore nel inviare il messaggio",
+    "heading": "Aiuto",
+    "input_label": "Come possiamo aiutarti?",
+    "input_placeholder": "Scrivi una risposta... ",
+    "message_required": "Inserisci un messaggio per favore",
+    "submit": "Invia",
+    "submitted": "Messaggio inviato",
+    "trigger": "Serve aiuto"
+  },
   "instructions": "Istruzioni",
   "interview_guide_description": "Queste domande sono personalizzate per questo candidato in base ai loro livelli di ogni dimensione della personalità. Potresti voler rivedere il profilo della personalità del candidato per imparare se sono alti, medi o bassi in ogni dimensione, e quindi strutturare la propria intervista attorno ai componenti della personalità che sono di maggiore preoccupazione per la posizione che cercano.",
   "interview_guide_heading": "Suggerimenti/domande di intervista",
@@ -130,6 +142,11 @@
   "really_not_me": "Davvero non io",
   "recommendation_chart_description": "Di seguito, puoi vedere i risultati della personalità del candidato suddivisi da ciascuna delle grandi cinque dimensioni. I punteggi sono codificati a colori per indicare le gamme più adatte (verde), seguite da giallo e rosso. Questi intervalli variano per ogni lavoro. Si basano su diverse informazioni che possono includere ricerche pubblicate, descrizioni di lavoro e interviste con persone che hanno familiarità con il lavoro.",
   "recommendation_chart_heading": "Breakdown in forma",
+  "results": {
+    "generic": {
+      "score": "Punteggio"
+    }
+  },
   "room_for_growth_and_change": "Spazio per la crescita e il cambiamento",
   "salary_mean": "Stipendio significa",
   "salary_mean_html": "Il salario a cui la metà degli operai nell'occupazione ha guadagnato più di tale importo e metà ha guadagnato meno. I dati salariali mediani provengono da <a href=\"http://www.onetonline.org\" target=\"_blank\">Onet online</a>.",
@@ -156,6 +173,16 @@
     "text": "Nell'ambito della tua candidatura, vorremmo chiederti di completare le seguenti valutazioni. Clicca sul pulsante accanto al nome della valutazione. Questo ti porterà al luogo dove potrai completare la/e valutazione/i. Ti preghiamo di tornare qui una volta completate tutte le valutazioni."
   },
   "success_skills": "Abilità di successo",
+  "survey": {
+    "accommodation": {
+      "confirm": "Sí, richiedi misure dispensative",
+      "request": "Richiedi misure dispensative.",
+      "request_text": "Sei sicuro di voler richiedere misure dispensative per la valutazione? Questo ti farà saltare la valutazione. Se non vuoi saltarla clicca \"Indietro\" per continuare la valutazione. ",
+      "submitted": "Richiesta misure dispensative inviata.",
+      "submitted_text": "Un membro del nostro team esamineà la tua richiesta il prima possibile. "
+    },
+    "generic_assessment": "Valutazione Generica"
+  },
   "tip_type_for_caution_zone": "Zona di cautela",
   "tip_type_for_room": "Spazio per la crescita e il cambiamento",
   "tip_type_for_settings": "Impostazioni per te",

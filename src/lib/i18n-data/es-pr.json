@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "¿Le gustaría intentar una vez más contestar las preguntas que se saltó?",
   "cognitive_confirm_skip": "¿Está seguro(a) de que quiere saltarse la pregunta?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>El ejercicio empieza en este momento. Antes de comenzar, recuerda:</p><ul><li>El ejercicio está compuesto de 28 preguntas</li><li>: Puedes tener todo el tiempo que desees para completarlas.</li><li>Encuentra un lugar tranquilo y libre de distracciones donde puedas prestar toda tu atención al ejercicio.</li><li>Puedes omitir preguntas si es necesario, pero intenta contestar todas las preguntas.</li><li>Por favor, completa el ejercicio en una sola sesión. </li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>El ejercicio empieza en este momento. Antes de comenzar, recuerda:</p><ul><li>El ejercicio está compuesto de 31 preguntas</li><li>: Puedes tener todo el tiempo que desees para completarlas. Sin embargo, la mayoría de las personas completan el ejercicio en unos 15 minutos.</li><li>Encuentra un lugar tranquilo y libre de distracciones donde puedas prestar toda tu atención al ejercicio.</li><li>Puedes omitir preguntas si es necesario, pero intenta contestar todas las preguntas.</li><li>Por favor, completa el ejercicio en una sola sesión. </li></ul>"
   },
   "cognitive_instructions_disability_text": "Please select if you have a learning disability.",

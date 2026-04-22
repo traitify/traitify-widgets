@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Vill du försöka besvara de frågor du hoppade över?",
   "cognitive_confirm_skip": "Är du säker på att du vill hoppa över frågan?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Nu är det dags för övningen. Innan du börjar, kom ihåg följande:</p><ul><li>Det finns 28 frågor i övningen</li><li>Du har obegränsat med tid.</li><li>Hitta gärna en lugn plats där du kan ägna övningen din fulla uppmärksamhet utan att bli distraherad.</li><li>Du har möjlighet att hoppa över frågor, men försök besvara alla.</li><li>Försök att slutföra övningen under en sittning.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Nu är det dags för övningen. Innan du börjar, kom ihåg följande:</p><ul><li>Det finns 31 frågor i övningen</li><li>Du har obegränsat med tid. Dock tar det cirka 15 minuter för de flesta.</li><li>Hitta gärna en lugn plats där du kan ägna övningen din fulla uppmärksamhet utan att bli distraherad.</li><li>Du har möjlighet att hoppa över frågor, men försök besvara alla.</li><li>Försök att slutföra övningen under en sittning.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Vänligen markera om du har inlärningssvårigheter",
@@ -78,6 +79,17 @@
   "green_career_html": "Den gröna ekonomin ska orsaka en ändring i ockupationers krav för för för anställningbegäran eller arbete och arbetare liksom uppgifter, expertis, kunskap och vitsord. Data från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
   "guide_intro": "Dessa personlighetskännetecken utgör grunden för att fråga en viss sekvens av frågor av var och en av personlighetens typer. Den första frågan ser ut att bekräfta vad de borde vara; den andra två utforska områden med möjlig oro.",
   "help": "Hjälp",
+  "help_modal": {
+    "content_html": "Få mer information om våra <a href=\"%{url}\" target=\"_blank\">tester",
+    "error_submitting": "Det gick inte att skicka meddelandet",
+    "heading": "Hjälp",
+    "input_label": "Hur kan vi hjälpa dig?",
+    "input_placeholder": "Skriv ett svar...",
+    "message_required": "Skriv ett meddelande",
+    "submit": "Skicka",
+    "submitted": "Meddelande skickat",
+    "trigger": "Behöver du hjälp?"
+  },
   "instructions": "Anvisningar",
   "interview_guide_description": "Dessa frågor är anpassade efter den här kandidatens nivåer för varje personlighetsdimension. Du kan gå igenom kandidatens personlighetsprofil för att se om nivån är hög, medel eller låg för vardera dimension, och sedan strukturera intervjun utifrån de personlighetsaspekter som är viktigast för befattningen som kandidaten söker.",
   "interview_guide_heading": "Intervju Tips / Frågor",
@@ -131,6 +143,11 @@
   "really_not_me": "Verkligen inte jag",
   "recommendation_chart_description": "Nedan kan du se resultatet av kandidaternas personlighetstest uppdelat utifrån de fem huvudsakliga personlighetsdimensionerna (the Big Five). Poängen är färgkodad för att indikera bäst lämpad (grön), vilket följs av gul och röd. Dessa intervall ändras i förhållande till det erbjudna jobbet. De baseras på åtskilliga olika informationskällor och kan inkludera publicerade studier, befattningsbeskrivningar och intervjuer med personer som är väl insatta i arbetet.",
   "recommendation_chart_heading": "Lämplighetsanalys",
+  "results": {
+    "generic": {
+      "score": "Resultat"
+    }
+  },
   "room_for_growth_and_change": "Rum för tillväxt och förändring",
   "salary_mean": "Lönmedel",
   "salary_mean_html": "Timpenningen som halvan av arbetarna i ockupationen tjänade på mer än den belopp och halva som tjänades mindre. Median- timpenningdata är från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
@@ -158,6 +175,16 @@
   },
   "submit": "Lämna",
   "success_skills": "Färdigheter för framgång",
+  "survey": {
+    "accommodation": {
+      "confirm": "Ja, begär anpassning",
+      "request": "Begär särskild anpassning",
+      "request_text": "Är du säker på att du vill begära anpassning för testet? Det innebär att du inte kan slutföra testet nu. Om inte, välj Tillbaka för att fortsätta med testet.  ",
+      "submitted": "Begäran om anpassning har skickats",
+      "submitted_text": "Vårt team kommer att granska din begäran så snart som möjligt"
+    },
+    "generic_assessment": "Standardtest "
+  },
   "tip_type_for_caution_zone": "Varningszon",
   "tip_type_for_room": "Rum för tillväxt och förändring",
   "tip_type_for_settings": "Inställningar för dig",

@@ -99,7 +99,7 @@
     "prop-types": "^15.8.1",
     "recoil": "^0.7.7",
     "regenerator-runtime": "^0.14.1",
-    "uuid": "^10.0.0"
+    "uuid": "^14.0.0"
   },
   "dependenciesNotes": {},
   "peerDependencies": {

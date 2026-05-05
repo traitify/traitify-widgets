@@ -35,15 +35,83 @@ exports[`Status order recovers from not found error via polling 1`] = `
     <div
       className="p"
     >
-      There was an error with your assessments
+      As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment(s). Please return here once you've completed all assessments.
     </div>
-    <button
-      className="retry"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="assessment inactive"
     >
-      Let's Try Again
-    </button>
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          cognitive-survey-name
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
+    <div
+      className="assessment inactive"
+    >
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          external-survey-name
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
+    <div
+      className="assessment inactive"
+    >
+      <div>
+        <span
+          className="icon traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" class="svg-inline--fa fa-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg>",
+            }
+          }
+        />
+        <span
+          className="text"
+        >
+          Personality Assessment
+        </span>
+      </div>
+      <button
+        disabled={true}
+        type="button"
+      >
+        Complete
+      </button>
+    </div>
   </div>
 </div>
 `;

@@ -91,10 +91,7 @@ export default function useOrderPolling() {
       const currentOrder = mutable(order);
       const latestOrder = orderFromQuery(response);
 
-      if(!latestOrder || latestOrder.errors) {
-        request.current = false;
-        return;
-      }
+      if(!latestOrder || latestOrder.errors) { return; }
 
       latestOrder.assessments.forEach((latestAssessment) => {
         const currentAssessment = currentOrder.assessments
@@ -119,8 +116,6 @@ export default function useOrderPolling() {
         currentOrder.status = latestOrder.status;
       }
       if(changes) { setOrder(currentOrder); }
-
-      request.current = false;
-    });
+    }).finally(() => { request.current = false; });
   }, halted ? null : pollingTime.interval);
 }

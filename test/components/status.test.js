@@ -145,6 +145,32 @@ describe("Status", () => {
       expect(component.tree).toMatchSnapshot();
     });
 
+    it("recovers from not found error via polling", async() => {
+      // Initial fetch returns not-found; subsequent polls return the real order.
+      // This simulates the order service being eventually consistent.
+      mockOrder({
+        implementation: (mock) => {
+          if(mock.called === 1) {
+            return Promise.resolve({
+              json: () => ({
+                data: {order: null},
+                errors: [{locations: [], message: "Order not found", path: ["order"]}]
+              })
+            });
+          }
+          return Promise.resolve({json: () => ({data: {order: orderResponse}})});
+        },
+        orderID: orderResponse.id
+      });
+
+      // setup calls flushAsync which runs all timers, firing the first 5s poll
+      component = await ComponentHandler.setup(Component);
+
+      // After the poll resolves with a valid order, the error screen should be gone
+      expect(() => component.findByText("Let's try again")).toThrow();
+      expect(component.tree).toMatchSnapshot();
+    });
+
     it("renders loading", async() => {
       orderResponse.assessments = [];
       orderResponse.status = "DRAFT";

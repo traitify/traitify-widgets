@@ -115,6 +115,7 @@ export default function useOrderPolling() {
         currentOrder.status = currentOrder.completed ? "completed" : latestOrder.status;
       } else if(currentOrder.status !== latestOrder.status) {
         changes = true;
+        currentOrder.errors = undefined;
         currentOrder.status = latestOrder.status;
       }
       if(changes) { setOrder(currentOrder); }

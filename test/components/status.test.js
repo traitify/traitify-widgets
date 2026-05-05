@@ -163,11 +163,16 @@ describe("Status", () => {
         orderID: orderResponse.id
       });
 
-      // setup calls flushAsync which runs all timers, firing the first 5s poll
       component = await ComponentHandler.setup(Component);
 
+      await act(async() => {
+        jest.advanceTimersByTime(5000);
+        await Promise.resolve();
+        await Promise.resolve();
+      });
+
       // After the poll resolves with a valid order, the error screen should be gone
-      expect(() => component.findByText("Let's try again")).toThrow();
+      expect(() => component.findByText("Let's Try Again")).toThrow();
       expect(component.tree).toMatchSnapshot();
     });
 

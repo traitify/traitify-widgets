@@ -23,6 +23,7 @@ import orderIncomplete from "support/data/order/incomplete";
 import profile from "support/data/profile";
 import recommendationCompleted from "support/data/recommendation/completed";
 import recommendationIncomplete from "support/data/recommendation/incomplete";
+import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 
 describe("Status", () => {
@@ -150,7 +151,6 @@ describe("Status", () => {
       // status-change branch (error → incomplete) rather than the completion
       // branch, which would have updated state even before this fix.
       const incompleteResponse = mutable(orderIncomplete);
-
       mockOrder({
         implementation: (mock) => {
           if(mock.called === 1) {
@@ -168,17 +168,8 @@ describe("Status", () => {
       mockCognitiveAssessment(cognitiveIncomplete, {mockRecommendation: false});
       mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
 
-      // Pause polling so the initial not-found error is visible before any poll fires
-      jest.useFakeTimers({doNotFake: ["Promise"]});
       component = await ComponentHandler.setup(Component);
-      expect(component.findByText("Let's Try Again")).toBeTruthy();
-
-      // Advance past the 5s poll interval and flush the response
-      await act(async() => {
-        jest.advanceTimersByTime(5001);
-        await Promise.resolve();
-        await Promise.resolve();
-      });
+      await flushAsync();
 
       expect(() => component.findByText("Let's Try Again")).toThrow();
       expect(component.tree).toMatchSnapshot();

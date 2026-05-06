@@ -106,7 +106,10 @@ export default function useOrderPolling() {
         }
       });
 
-      currentOrder.errors = undefined;
+      if(currentOrder.errors) {
+        changes = true;
+        currentOrder.errors = undefined;
+      }
 
       if(currentOrder.completed !== latestOrder.completed) {
         changes = true;

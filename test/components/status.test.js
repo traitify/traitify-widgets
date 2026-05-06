@@ -146,8 +146,11 @@ describe("Status", () => {
     });
 
     it("recovers from not found error via polling", async() => {
-      // Initial fetch returns not-found; subsequent polls return the real order.
-      // This simulates the order service being eventually consistent.
+      // Use an incomplete order so completed stays false — this exercises the
+      // status-change branch (error → incomplete) rather than the completion
+      // branch, which would have updated state even before this fix.
+      const incompleteResponse = mutable(orderIncomplete);
+
       mockOrder({
         implementation: (mock) => {
           if(mock.called === 1) {
@@ -158,20 +161,25 @@ describe("Status", () => {
               })
             });
           }
-          return Promise.resolve({json: () => ({data: {order: orderResponse}})});
+          return Promise.resolve({json: () => ({data: {order: incompleteResponse}})});
         },
         orderID: orderResponse.id
       });
+      mockCognitiveAssessment(cognitiveIncomplete, {mockRecommendation: false});
+      mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
 
+      // Pause polling so the initial not-found error is visible before any poll fires
+      jest.useFakeTimers({doNotFake: ["Promise"]});
       component = await ComponentHandler.setup(Component);
+      expect(component.findByText("Let's Try Again")).toBeTruthy();
 
+      // Advance past the 5s poll interval and flush the response
       await act(async() => {
-        jest.advanceTimersByTime(5000);
+        jest.advanceTimersByTime(5001);
         await Promise.resolve();
         await Promise.resolve();
       });
 
-      // After the poll resolves with a valid order, the error screen should be gone
       expect(() => component.findByText("Let's Try Again")).toThrow();
       expect(component.tree).toMatchSnapshot();
     });

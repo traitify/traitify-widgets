@@ -106,13 +106,14 @@ export default function useOrderPolling() {
         }
       });
 
+      currentOrder.errors = undefined;
+
       if(currentOrder.completed !== latestOrder.completed) {
         changes = true;
         currentOrder.completed = currentOrder.assessments.every(({completed}) => completed);
         currentOrder.status = currentOrder.completed ? "completed" : latestOrder.status;
       } else if(currentOrder.status !== latestOrder.status) {
         changes = true;
-        currentOrder.errors = undefined;
         currentOrder.status = latestOrder.status;
       }
       if(changes) { setOrder(currentOrder); }

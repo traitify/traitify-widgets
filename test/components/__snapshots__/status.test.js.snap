@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Status order recovers from not found error via polling 1`] = `
+exports[`Status order recovers from not found error via polling when incomplete 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"
 >

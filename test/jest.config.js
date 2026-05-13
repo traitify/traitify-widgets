@@ -3,15 +3,7 @@ module.exports = {
     "<rootDir>/scripts/**/*.js",
     "<rootDir>/src/**/*.js"
   ],
-  fakeTimers: {
-    enableGlobally: true,
-    toFake: [
-      "Date", "hrtime", "nextTick", "performance", "queueMicrotask",
-      "requestAnimationFrame", "cancelAnimationFrame", "requestIdleCallback", "cancelIdleCallback",
-      "setImmediate", "clearImmediate", "setInterval", "clearInterval", "setTimeout", "clearTimeout",
-      "MessageChannel"
-    ]
-  },
+  fakeTimers: {enableGlobally: true},
   globals: {
     VERSION: "0.0.0-test"
   },

@@ -146,10 +146,7 @@ describe("Status", () => {
       expect(component.tree).toMatchSnapshot();
     });
 
-    it("recovers from not found error via polling", async() => {
-      // Use an incomplete order so completed stays false — this exercises the
-      // status-change branch (error → incomplete) rather than the completion
-      // branch, which would have updated state even before this fix.
+    it("recovers from not found error via polling when incomplete", async() => {
       const incompleteResponse = mutable(orderIncomplete);
       mockOrder({
         implementation: (mock) => {

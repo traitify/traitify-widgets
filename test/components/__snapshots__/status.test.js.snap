@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Status order recovers from not found error via polling when incomplete 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <img
+      alt=""
+      src="https://cdn.traitify.com/widgets/status/loading-sonar.gif"
+    />
+    <div
+      className="bold p"
+    >
+      Loading your assessment
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Status order renders component 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

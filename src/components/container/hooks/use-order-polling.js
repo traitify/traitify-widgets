@@ -91,6 +91,8 @@ export default function useOrderPolling() {
       const currentOrder = mutable(order);
       const latestOrder = orderFromQuery(response);
 
+      if(!latestOrder || latestOrder.errors) { return; }
+
       latestOrder.assessments.forEach((latestAssessment) => {
         const currentAssessment = currentOrder.assessments
           .find(({id}) => id === latestAssessment.id);
@@ -104,14 +106,20 @@ export default function useOrderPolling() {
         }
       });
 
+      if(currentOrder.errors) {
+        changes = true;
+        currentOrder.errors = undefined;
+      }
+
       if(currentOrder.completed !== latestOrder.completed) {
         changes = true;
         currentOrder.completed = currentOrder.assessments.every(({completed}) => completed);
         currentOrder.status = currentOrder.completed ? "completed" : latestOrder.status;
+      } else if(currentOrder.status !== latestOrder.status) {
+        changes = true;
+        currentOrder.status = latestOrder.status;
       }
       if(changes) { setOrder(currentOrder); }
-
-      request.current = false;
-    });
+    }).finally(() => { request.current = false; });
   }, halted ? null : pollingTime.interval);
 }

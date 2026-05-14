@@ -23,6 +23,7 @@ import orderIncomplete from "support/data/order/incomplete";
 import profile from "support/data/profile";
 import recommendationCompleted from "support/data/recommendation/completed";
 import recommendationIncomplete from "support/data/recommendation/incomplete";
+import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 
 describe("Status", () => {
@@ -142,6 +143,32 @@ describe("Status", () => {
       mockOrder(orderResponse);
       component = await ComponentHandler.setup(Component);
 
+      expect(component.tree).toMatchSnapshot();
+    });
+
+    it("recovers from not found error via polling when incomplete", async() => {
+      const incompleteResponse = mutable(orderIncomplete);
+      mockOrder({
+        implementation: (mock) => {
+          if(mock.called === 1) {
+            return Promise.resolve({
+              json: () => ({
+                data: {order: null},
+                errors: [{locations: [], message: "Order not found", path: ["order"]}]
+              })
+            });
+          }
+          return Promise.resolve({json: () => ({data: {order: incompleteResponse}})});
+        },
+        orderID: orderResponse.id
+      });
+      mockCognitiveAssessment(cognitiveIncomplete, {mockRecommendation: false});
+      mockExternalAssessment(externalIncomplete, {mockRecommendation: false});
+
+      component = await ComponentHandler.setup(Component);
+      await flushAsync();
+
+      expect(() => component.findByText("Let's Try Again")).toThrow();
       expect(component.tree).toMatchSnapshot();
     });
 

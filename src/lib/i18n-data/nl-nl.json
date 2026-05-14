@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Wil je de vraag proberen te beantwoorden die je hebt overgeslagen?",
   "cognitive_confirm_skip": "Weet je zeker dat je wilt overslaan?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Nu is het tijd voor de oefening. Voordat je begint, onthou: </p><ul><li>Er zijn 28 vragen in de oefening</li><li>Je kan zo lang je wilt de tijd nemen om de oefening te vervaardigen.</li><li>Zoek een plek op waar je de oefening je volle aandacht kan geven zonder te worden afgeleid. </li><li>Je kan vragen overslaan als dat nodig is, maar probeer elke vraag te beantwoorden..</li><li>Probeer alsjeblieft de oefening in een enkele sitting af te ronden.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Nu is het tijd voor de oefening. Voordat je begint, onthou: </p><ul><li>Er zijn 31 vragen in de oefening</li><li>Je kan zo lang je wilt de tijd nemen om de oefening te vervaardigen. Echter, de meeste mensen vervaardigen de oefening in ongeveer 15 minuten.<li><li> Zoek een plek op waar je de oefening je volle aandacht kan geven zonder te worden afgeleid. </li><li>Je kan vragen overslaan als dat nodig is, maar probeer elke vraag te beantwoorden..</li><li>Probeer alsjeblieft de oefening in een enkele sitting af te ronden.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Selecteer indien je een leerstoornis hebt. ",
@@ -78,6 +79,17 @@
   "green_career_html": "De groene economie veroorzaakt verandering in de eisen voor beroepen of werk en de vereisten van werkvaardigheid op het gebied van taken, vaardigheden, kennis en credentials. Gegevens van <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "Deze persoonlijkheidskenmerken vormen de basis voor het stellen van een bepaalde reeks vragen van elk van de persoonlijkheidstypes. De eerste vraag is om te kijken hoe ze zouden moeten zijn; de tweede twee onderzoeken gebieden van mogelijke zorg.",
   "help": "Hulp",
+  "help_modal": {
+    "content_html": "Controleer onze informatie over onze <a href=\"%{url}\" target=\"_blank\"> beoordelingen</a>.",
+    "error_submitting": "Fout bij het verzenden van bericht. ",
+    "heading": "Hulp",
+    "input_label": "Waar kan ik u mee helpen? ",
+    "input_placeholder": "Schrijf een antwoord...",
+    "message_required": "Voer een bericht in",
+    "submit": "Verstuur",
+    "submitted": "Bericht verzonden",
+    "trigger": "Hulp nodig"
+  },
   "instructions": "Instructies",
   "interview_guide_description": "Deze vragen zijn speciaal voor deze kandidaat gemaakt op basis van zijn of haar niveau van elke persoonlijkheidsdimensie. U kunt het persoonlijkheidsprofiel van de kandidaat bekijken om te zien of hij of zij hoog, gemiddeld of laag zit in elke dimensie en dan zijn of haar interview structureren rond de persoonlijkheidscomponenten die het meest van belang zijn voor de functie die hij of zij zoekt.",
   "interview_guide_heading": "Interview Tips / vragen",
@@ -131,6 +143,11 @@
   "really_not_me": "Echt niet",
   "recommendation_chart_description": "Hieronder staan de resultaten voor de persoonlijkheid van de kandidaat, uitgesplitst naar de Big Five-dimensies. De scores krijgen een kleurencode waarbij groen de best passende bereiken aanduidt, gevolgd door oranje en rood. De bereiken variëren van functie tot functie en zijn vastgesteld aan de hand van meerdere informatiebronnen, waaronder gepubliceerde studies, functiebeschrijvingen en/of gesprekken met mensen die vertrouwd zijn met de betreffende functie.",
   "recommendation_chart_heading": "Geschiktheidsanalyse",
+  "results": {
+    "generic": {
+      "score": "Resultaat"
+    }
+  },
   "room_for_growth_and_change": "Ruimte voor groei en verandering",
   "salary_mean": "Salarisgemiddelde",
   "salary_mean_html": "Het salaris waarbij de helft van de werknemers in het beroep meer verdiende dan dat bedrag en de helft minder verdiende. Gemiddelde salarisgegevens zijn afkomstig van <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -158,6 +175,16 @@
   },
   "submit": "voorleggen",
   "success_skills": "Succesvolle eigenschappen",
+  "survey": {
+    "accommodation": {
+      "confirm": "Ja, accommodatie aanvragen",
+      "request": "Accommodatie aanvragen",
+      "request_text": "Weet u zeker dat u accommodaties wilt aanvragen voor de beoordeling? Zo niet, click Terug om verder te gaan met de beoordeling. ",
+      "submitted": "Accommodatie aanvraag ingediend",
+      "submitted_text": "Een lid van ons team zal uw informatie zo spoedig mogelijk beoordelen"
+    },
+    "generic_assessment": "Genetische Beoordeling"
+  },
   "tip_type_for_caution_zone": "Voorzichtigheidszone",
   "tip_type_for_room": "Ruimte voor groei en verandering",
   "tip_type_for_settings": "Instellingen voor u",

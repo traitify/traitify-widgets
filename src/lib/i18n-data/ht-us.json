@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Èske w vle eseye reponn kesyon ou te sote yo?",
   "cognitive_confirm_skip": "Èske w sèten ou vle sote kesyon?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Kounye a li lè pou fè egzèsis la. Anvan w kòmanse, sonje:</p><ul><li>Gen 28 kesyon nan ekzèsis la</li><li>Ou ka gen tout tan ou vle pou reponn kesyon yo.</li><li>Ou dwe chache yon espas ki trankil kote ou ka pote tout atansyon ou nan egzèsis la san distraksyon.</li><li>Ou ka sote kesyon si w vle men eseye bay yon repons pou chak kesyon.</li><li>Tanpri fè egzèsis la nan yon sèl pase.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Kounye a li lè pou fè egzèsis la. Anvan w kòmanse, sonje:</p><ul><li>Gen 31 kesyon nan ekzèsis la</li><li>Ou ka gen tout tan ou vle pou reponn kesyon yo. Sepandan, pifò moun pral fè egzèsis la nan apeprè 15 minit.</li><li>Ou dwe chache yon espas ki trankil kote ou ka pote tout atansyon ou nan egzèsis la san distraksyon.</li><li>Ou ka sote kesyon si w vle men eseye bay yon repons pou chak kesyon.</li><li>Tanpri fè egzèsis la nan yon sèl pase.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Tanpri chwazi si w gen pwoblèm aprantisaj.",

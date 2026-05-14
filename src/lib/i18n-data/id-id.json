@@ -19,6 +19,7 @@
   "cognitive_confirm_retry": "Apakah kamu ingin mencoba pertanyaan yang kamu lewati?",
   "cognitive_confirm_skip": "Apakah kamu yakin ingin melewatinya?",
   "cognitive_id_specific_instructions": {
+    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Sekarang waktunya untuk berlatih. Sebelum kamu memulai ingat:</p><ul><li>Terdapat 28 pertanyaan dalam latihan ini</li><li>Kamu memiliki waktu sebanyak yang kamu butuhkan untuk menyelesaikannya.</li><li>Kamu harus mencari tempat tenang dimana kamu dapat memberikan perhatianmu secara penuh ke dalam latihan ini tanpa terganggu.</li><li>Kamu dapat melewati pertanyaan jika perlu tetapi cobalah untuk memberikan jawaban pada setiap pertanyaan.</li><li>Silahkan selesaikan latihan ini dalam sekali duduk.</li></ul>",
     "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Sekarang waktunya untuk berlatih. Sebelum kamu memulai ingat:</p><ul><li>Terdapat 31 pertanyaan dalam latihan ini</li><li>Kamu memiliki waktu sebanyak yang kamu butuhkan untuk menyelesaikannya. Namun, kebanyakan orang akan menyelesaikan latihan ini dalam waktu 15 menit.</li><li>Kamu harus mencari tempat tenang dimana kamu dapat memberikan perhatianmu secara penuh ke dalam latihan ini tanpa terganggu.</li><li>Kamu dapat melewati pertanyaan jika perlu tetapi cobalah untuk memberikan jawaban pada setiap pertanyaan.</li><li>Silahkan selesaikan latihan ini dalam sekali duduk.</li></ul>"
   },
   "cognitive_instructions_disability_text": "Silahkan pilih jika kamu mengalami ketidakmampuan belajar",
@@ -78,6 +79,17 @@
   "green_career_html": "Ekonomi hijau akan menyebabkan perubahan pada tingkat permintaan lapangan kerja atau persyaratan pekerjaan atau pekerja seperti tugas-tugas, kemampuan, pengetahuan, dan kepercayaan. Data dari <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
   "guide_intro": "Karakteristik kepribadian ini menyediakan dasar untuk mengajukan serangkaian pertanyaan tertentu untuk setiap 'tipe-tipe' kepribadian. Pertanyaan pertama diberikan untuk mengkonfirmasi seperti apa mereka seharusnya; pertanyaan kedua untuk mengeksplorasi area-area yang mungkin perlu menjadi perhatian. ",
   "help": "Bantuan",
+  "help_modal": {
+    "content_html": "Lihat informasi lainnya tentang <a href=\"%{url}\" target=\"_blank\">Asesmen</a> kami",
+    "error_submitting": "Gagal Mengirim Pesan",
+    "heading": "Bantuan",
+    "input_label": "Ada yang bisa kami bantu? ",
+    "input_placeholder": "Tulis pesan balasan…",
+    "message_required": "Silakan masukkan pesan",
+    "submit": "Kirim",
+    "submitted": "Pesan Berhasil Dikirim",
+    "trigger": "Butuh Bantuan"
+  },
   "instructions": "Instruksi",
   "interview_guide_description": "Pertanyaan-pertanyaan ini disesuaikan untuk kandidat ini berdasarkan pada tingkat setiap dimensi kepribadian. Kamu mungkin ingin meninjau profil kepribadian kandidat untuk mempelajari apakah mereka memiliki tingkat yang tinggi, sedang, atau rendah untuk setiap dimensi, dan kemudian menyusun wawancara mereka berdasarkan pada komponen kepribadian yang menjadi perhatian utama untuk posisi yang mereka cari. ",
   "interview_guide_heading": "Tips Wawancara/ Pertanyaan",
@@ -131,6 +143,11 @@
   "really_not_me": "Benar-benar Bukan Saya",
   "recommendation_chart_description": "Di bawah ini, kamu dapat melihat hasil kepribadian kandidat yang dirinci berdasarkan masing-masing dimensi Lima Besar. Skor diberi kode warna untuk mengindikasikan rentang yang paling sesuai (hijau), disusul warna kuning dan merah. Rentang ini bervariasi untuk setiap pekerjaan. Hal ini didasarkan pada beberapa informasi yang mungkin di dalamnya meliputi penelitian yang dipublikasikan, deskripsi pekerjaan, dan wawancara dengan orang-orang yang memahami pekerjaan tersebut. ",
   "recommendation_chart_heading": "Rincian yang Sesuai",
+  "results": {
+    "generic": {
+      "score": "Skor"
+    }
+  },
   "room_for_growth_and_change": "Ruang untuk Pertumbuhan dan Perubahan",
   "salary_mean": "Rata-rata Gaji",
   "salary_mean_html": "Upah dimana separuh pekerja dalam suatu pekerjaan mendapatkan penghasilan lebih dari jumlah tersebut dan separuhnya lagi mendapatkan penghasilan lebih sedikit. Data median upah didapatkan dari <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
@@ -158,6 +175,16 @@
   },
   "submit": "Kirim",
   "success_skills": "Kemampuan untuk Sukses",
+  "survey": {
+    "accommodation": {
+      "confirm": "Ya, Ajukan Akomodasi",
+      "request": "Pengajuan Akomodasi",
+      "request_text": "Apakah kamu yakin ingin mengajukan akomodasi untuk asesmen ini? Tindakan ini akan membuatmu melewati asesmen. Jika tidak, klik Kembali untuk melanjutkan asesmen. ",
+      "submitted": "Pengajuan Akomodasi Berhasil Dikirim",
+      "submitted_text": "Anggota tim kami akan segera meninjau informasimu."
+    },
+    "generic_assessment": "Asesmen Umum"
+  },
   "tip_type_for_caution_zone": "Zona yang Perlu Diwaspadai",
   "tip_type_for_room": "Ruang untuk Pertumbuhan dan Perubahan",
   "tip_type_for_settings": "Pengaturan untuk Anda",

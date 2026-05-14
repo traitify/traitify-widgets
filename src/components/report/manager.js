@@ -1,5 +1,3 @@
-import {useEffect} from "react";
-import {useRecoilState} from "recoil";
 import CognitiveChart from "components/results/cognitive/chart";
 import GenericBreakdown from "components/results/generic/breakdown";
 import GenericHeading from "components/results/generic/heading";
@@ -8,24 +6,19 @@ import PersonalityGuide from "components/results/guide/personality";
 import RecommendationChart from "components/results/recommendation/chart";
 import RecommendationList from "components/results/recommendation/list";
 import useActive from "lib/hooks/use-active";
+import useDefaultOptions from "lib/hooks/use-default-options";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function ManagerReport() {
   const active = useActive();
-  const [options, setOptions] = useRecoilState(optionsState);
   const showHeaders = useOption("showHeaders");
   // NOTE: Temporary option until Paradox is ready
   const showRecommendationList = useOption("showRecommendationList");
   const translate = useTranslate();
 
-  useEffect(() => {
-    if(options.perspective) { return; }
-
-    setOptions({...options, perspective: "thirdPerson"});
-  }, []);
+  useDefaultOptions({applyAssessmentExpiration: true, perspective: "thirdPerson"});
 
   if(!active) { return null; }
   if(active.surveyType === "generic") {

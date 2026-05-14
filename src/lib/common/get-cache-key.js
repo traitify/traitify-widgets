@@ -1,6 +1,6 @@
 // NOTE: Mirror updates in lib/recoil/cache
+/* eslint-disable no-console */
 export default function getCacheKey(type, options = {}) {
-  /* eslint-disable no-console */
   let {id} = options;
   const keys = options.scope ? [...options.scope] : [];
   const locale = options.locale || console.warn("Missing locale");

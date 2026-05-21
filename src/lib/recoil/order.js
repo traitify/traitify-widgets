@@ -93,24 +93,34 @@ const baseRecommendationQuery = selector({
     const GraphQL = get(graphqlState);
     const http = get(httpState);
     const options = get(optionsState);
-    const variables = {
-      benchmarkID,
-      localeKey: get(localeState),
-      packageID,
-      profileID
+    const localeKey = get(localeState);
+    const {path} = GraphQL.xavier;
+    const hasExpirationFlag = Object.hasOwn(options, "applyAssessmentExpiration");
+    const initialExpirationFlag = hasExpirationFlag ? options.applyAssessmentExpiration : null;
+
+    const fetchRecommendation = async(applyAssessmentExpiration) => {
+      const variables = {benchmarkID, localeKey, packageID, profileID};
+      if(applyAssessmentExpiration !== null) {
+        variables.applyAssessmentExpiration = applyAssessmentExpiration;
+      }
+      const params = {query: GraphQL.xavier.recommendation, variables};
+      const recResponse = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
+      return {order: orderFromRecommendation(recResponse), response: recResponse};
     };
-    if(Object.hasOwn(options, "applyAssessmentExpiration")) {
-      variables.applyAssessmentExpiration = options.applyAssessmentExpiration;
+
+    let {order, response} = await fetchRecommendation(initialExpirationFlag);
+
+    if(options.retryRecommendationOnIncompletePersonality && hasExpirationFlag && !order.errors) {
+      const personality = response.data?.recommendation?.prerequisites?.personality;
+      if(personality?.surveyId && !personality.assessmentId) {
+        const retry = await fetchRecommendation(!initialExpirationFlag);
+        const retryPersonality = retry.response.data?.recommendation?.prerequisites?.personality;
+        if(retryPersonality?.assessmentId) {
+          ({order, response} = retry);
+        }
+      }
     }
 
-    const params = {
-      query: GraphQL.xavier.recommendation,
-      variables
-    };
-
-    const {path} = GraphQL.xavier;
-    const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
-    const order = orderFromRecommendation(response);
     order.cacheKey = cacheKey;
     order.origin = {benchmarkID, packageID, profileID};
 

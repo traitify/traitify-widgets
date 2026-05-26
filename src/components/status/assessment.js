@@ -8,12 +8,14 @@ import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
 import {activeState} from "lib/recoil";
 import style from "./style.scss";
+import useStatusTranslate from "./use-status-translate";
 
 function Button({assessment}) {
   const listener = useListener();
   const options = useOption("status") || {};
   const redirect = get(options, "allowRedirect", true);
   const setActive = useSetRecoilState(activeState);
+  const statusTranslate = useStatusTranslate({assessment});
   const translate = useTranslate();
 
   if(assessment.completed) {
@@ -25,7 +27,7 @@ function Button({assessment}) {
   }
 
   if(assessment.link && redirect) {
-    return <a href={assessment.link}>{translate("status.start")}</a>;
+    return <a href={assessment.link}>{statusTranslate("start")}</a>;
   }
 
   if(assessment.loading) {
@@ -37,7 +39,7 @@ function Button({assessment}) {
     setActive({...assessment});
   };
 
-  return <button onClick={start} type="button">{translate("status.start")}</button>;
+  return <button onClick={start} type="button">{statusTranslate("start")}</button>;
 }
 
 Button.propTypes = {
@@ -50,8 +52,11 @@ Button.propTypes = {
 };
 
 function Assessment({assessment}) {
+  const statusTranslate = useStatusTranslate({assessment});
   const translate = useTranslate();
-  const surveyName = assessment.surveyName || translate(`survey.${assessment.surveyType}_assessment`);
+  const surveyName = statusTranslate("survey")
+    || assessment.surveyName
+    || translate(`survey.${assessment.surveyType}_assessment`);
 
   return (
     <div className={[style.assessment, assessment.completed && style.inactive].filter(Boolean).join(" ")}>

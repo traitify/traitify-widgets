@@ -28,6 +28,10 @@
   max-width: $breakpoint-sm;
   padding: $buffer-lg;
 
+  :global(.traitify--markdown) {
+    margin-bottom: $buffer-section;
+    text-align: center;
+  }
   .retry {
     display: block;
     margin: 0 auto;

@@ -109,7 +109,24 @@ describe("I18n", () => {
     it("allows misses", () => {
       const translation = translate("tacos");
 
-      expect(translation).toBeNull();
+      expect(translation).toBeUndefined();
+    });
+
+    describe("with array of keys", () => {
+      it("returns first match", () => {
+        i18n.addTranslations("en-US", {data: {tacos: "I like tacos", pizza: "I like pizza"}});
+        const translation = translate(["burgers", "tacos", "pizza"]);
+
+        expect(translation).toBe("I like tacos");
+      });
+
+      it("prefers current locale", () => {
+        i18n.addTranslations("en-US", {data: {tacos: "I like tacos"}});
+        i18n.addTranslations("es-US", {data: {pizza: "Me gusta pizza"}});
+        const translation = translateES(["tacos", "pizza"]);
+
+        expect(translation).toBe("Me gusta pizza");
+      });
     });
   });
 });

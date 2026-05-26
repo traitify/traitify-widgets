@@ -11,7 +11,8 @@ export function assessmentFromQuery(response) {
     profileID: response.profile_id || response.profileId || dig(response, "profile_ids", 0),
     skipped: response.isSkipped || response.skipped || false,
     surveyID: response.deck_id || response.surveyId || response.surveyKey,
-    surveyName: response.surveyName || response.name
+    surveyName: response.surveyName || response.name,
+    vendor: response.vendor
   };
 
   // NOTE: Prevent overriding with blanks

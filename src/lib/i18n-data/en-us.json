@@ -213,8 +213,20 @@
   "slide_error": "Unable to load more slides at this time",
   "sort": "Sort",
   "status": {
+    "cognitive_interview": {
+      "heading": "Cognitive Assessment & Interview"
+    },
     "error": "There was an error with your assessments",
     "heading": "Your Application Assessments",
+    "interview": {
+      "heading": "Interview",
+      "start": "Start Interview",
+      "survey": "Crosschq AI Interviewer",
+      "text": "Dive into an AI video chat to ask questions, practice your interview, and learn more about the details of this job.\n\nThis is a chat with an Artificial Employee that has been trained on our company culture and the details around this job."
+    },
+    "interview_personality": {
+      "heading": "Personality Assessment & Interview"
+    },
     "loading": "Loading your assessment",
     "start": "Start Assessment",
     "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment(s). Please return here once you've completed all assessments.",

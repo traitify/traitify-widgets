@@ -1,4 +1,5 @@
 import Http from "lib/http";
+import flushAsync from "support/flush-async";
 import useGlobalMock from "support/hooks/use-global-mock";
 
 describe("Http", () => {
@@ -31,7 +32,13 @@ describe("Http", () => {
       let options;
 
       beforeEach(() => {
-        options = {authKey: "abc", host: "http://api.example.com", version: "v2"};
+        options = {
+          authKey: "abc",
+          autoRetry: true,
+          host: "http://api.example.com",
+          retryOptions: {statuses: [503]},
+          version: "v2"
+        };
         http = new Http(options);
       });
 
@@ -39,8 +46,16 @@ describe("Http", () => {
         expect(http.authKey).toBe(options.authKey);
       });
 
+      it("has autoRetry", () => {
+        expect(http.autoRetry).toBe(options.autoRetry);
+      });
+
       it("has host", () => {
         expect(http.host).toBe(options.host);
+      });
+
+      it("has retryOptions", () => {
+        expect(http.retryOptions).toEqual(options.retryOptions);
       });
 
       it("has version", () => {
@@ -130,6 +145,49 @@ describe("Http", () => {
       const response = http.request({method: "GET", path: "/profiles"});
 
       return expect(response).resolves.toEqual([{name: "Neo"}]);
+    });
+
+    describe("retry", () => {
+      const jsonResponse = (status, json = {}) => ({json: () => json, ok: status < 400, status});
+
+      it("retries when autoRetry is enabled", async() => {
+        http = new Http({authKey: "xyz", autoRetry: true, retryOptions: {statuses: [503]}});
+        fetch
+          .mockResolvedValueOnce(jsonResponse(503))
+          .mockResolvedValueOnce(jsonResponse(200, {name: "Neo"}));
+        const result = http.request({method: "GET", path: "/profiles"});
+
+        await flushAsync(Infinity);
+
+        await expect(result).resolves.toEqual({name: "Neo"});
+        expect(fetch).toHaveBeenCalledTimes(2);
+      });
+
+      it("does not retry when autoRetry is disabled", async() => {
+        fetch.mockResolvedValue(jsonResponse(503));
+        const result = http.request({method: "GET", path: "/profiles"});
+
+        await flushAsync(Infinity);
+
+        await result;
+        expect(fetch).toHaveBeenCalledTimes(1);
+      });
+
+      it("enables retry via per-request retryOptions", async() => {
+        fetch
+          .mockResolvedValueOnce(jsonResponse(503))
+          .mockResolvedValueOnce(jsonResponse(200, {name: "Neo"}));
+        const result = http.request({
+          method: "GET",
+          path: "/profiles",
+          retryOptions: {statuses: [503]}
+        });
+
+        await flushAsync(Infinity);
+
+        await expect(result).resolves.toEqual({name: "Neo"});
+        expect(fetch).toHaveBeenCalledTimes(2);
+      });
     });
   });
 

@@ -110,7 +110,8 @@ const baseRecommendationQuery = selector({
 
     let {order, response} = await fetchRecommendation(initialExpirationFlag);
 
-    // TODO(remove ~2026-12-01): workaround for server-side inconsistency in applyAssessmentExpiration handling.
+    // TODO: remove ~2026-12-01
+    // workaround for server-side inconsistency in applyAssessmentExpiration handling.
     if(options.retryRecommendationOnIncompletePersonality && hasExpirationFlag && !order.errors) {
       const personality = response.data?.recommendation?.prerequisites?.personality;
       if(personality?.surveyId && !personality.assessmentId) {

@@ -15,7 +15,7 @@ import Timeout from "./timeout";
 
 export default function Status() {
   const active = useActive();
-  const [activeLoading, setActiveLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const order = useOrder();
   const showHelp = useOption("showHelp");
   const [showHelpModal, setShowHelpModal] = useState(false);
@@ -24,19 +24,20 @@ export default function Status() {
 
   useComponentEvents("Status", {order});
   useEffect(() => {
-    if(active?.surveyType !== "external") { return; }
-    if(active.completed) { return; }
+    const load = (active?.surveyType === "external" && !active.completed)
+      || order?.status === "error";
+    setLoading(load);
+    if(!load) { return; }
 
-    setActiveLoading(true);
-
-    const timeout = setTimeout(() => { setActiveLoading(false); }, 5000);
+    const timeout = setTimeout(() => { setLoading(false); }, 5000);
     return () => { clearTimeout(timeout); };
-  }, [active?.id, active?.completed]);
+  }, [active?.id, active?.completed, order?.status]);
 
   if(!order) { return null; }
-  if(order.status === "error") { return <Error />; }
   if(order.status === "skipped") { return <Skipped />; }
-  if(activeLoading || active?.loading || order.status === "loading") { return <Loading />; }
+  if(loading) { return <Loading />; }
+  if(order.status === "error") { return <Error />; }
+  if(active?.loading || order.status === "loading") { return <Loading />; }
   if(order.status === "timeout") { return <Timeout />; }
   if(assessments.length === 0) { return null; }
 

@@ -1,4 +1,5 @@
-import toQueryString from "./common/object/to-query-string";
+import withRetry from "./retry";
+import toQueryString from "../common/object/to-query-string";
 
 const formatArgs = ({method, options, params}) => {
   if(typeof options === "object") { return {method, ...options}; }
@@ -16,9 +17,11 @@ const formatRequestArgs = (options, path, params) => {
 };
 
 export default class Http {
-  constructor({authKey, host, version} = {}) {
+  constructor({authKey, autoRetry, host, retryOptions, version} = {}) {
     this.authKey = authKey;
+    this.autoRetry = autoRetry || false;
     this.host = host || "https://api.traitify.com";
+    this.retryOptions = retryOptions || {};
     this.version = version || "v1";
   }
   delete = (options, params) => this.request(formatArgs({method: "DELETE", options, params}));
@@ -27,7 +30,13 @@ export default class Http {
   post = (options, params) => this.request(formatArgs({method: "POST", options, params}));
   put = (options, params) => this.request(formatArgs({method: "PUT", options, params}));
   request = (_options, ...deprecatedArgs) => {
-    const {method, path, params, version} = formatRequestArgs(_options, ...deprecatedArgs);
+    const {
+      method,
+      path,
+      params,
+      retryOptions,
+      version
+    } = formatRequestArgs(_options, ...deprecatedArgs);
     const graphql = typeof params === "string";
     const headers = {
       "Accept": "application/json",
@@ -45,6 +54,12 @@ export default class Http {
       options.body = JSON.stringify(params);
     }
 
-    return this.fetch(url, options).then((response) => response.json());
+    const retryEnabled = this.autoRetry || retryOptions != null;
+    const fetchFn = () => this.fetch(url, options);
+    const responsePromise = retryEnabled
+      ? withRetry({fetch: fetchFn, method, options: {...this.retryOptions, ...retryOptions}})
+      : fetchFn();
+
+    return responsePromise.then((response) => response.json());
   };
 }

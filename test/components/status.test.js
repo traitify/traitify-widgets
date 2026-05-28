@@ -25,6 +25,7 @@ import recommendationCompleted from "support/data/recommendation/completed";
 import recommendationIncomplete from "support/data/recommendation/incomplete";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
+import useGlobalMock from "support/hooks/use-global-mock";
 
 describe("Status", () => {
   let component;
@@ -55,6 +56,8 @@ describe("Status", () => {
 
   describe("order", () => {
     let orderResponse;
+
+    useGlobalMock(console, "warn");
 
     beforeEach(() => {
       orderResponse = mutable(orderCompleted);

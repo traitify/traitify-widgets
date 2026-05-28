@@ -1,5 +1,7 @@
+import findMap from "./common/array/find-map";
 import dig from "./common/object/dig";
 import merge from "./common/object/merge";
+import {isArray} from "./common/object/type";
 import i18nData from "./i18n-data";
 
 export default class I18n {
@@ -31,10 +33,14 @@ export default class I18n {
       ...originData
     };
   };
+  // NOTE: Returns first translation if key is an array
   translate = (locale, _key, options) => {
-    const keys = _key.split(".");
-    let result = dig(this.data, locale.toLowerCase(), ...keys);
-    if(!result && locale.toLowerCase() !== "en-us") { result = dig(this.data, "en-us", ...keys); }
+    const keys = isArray(_key) ? _key : [_key];
+    let result = findMap(keys, (key) => dig(this.data, locale.toLowerCase(), ...key.split(".")));
+
+    if(!result && locale.toLowerCase() !== "en-us") {
+      result = findMap(keys, (key) => dig(this.data, "en-us", ...key.split(".")));
+    }
     if(!result || !options) { return result; }
 
     return result.replace(/%\{[a-z_]*\}/g, (r) => options[r.slice(2, -1)]);

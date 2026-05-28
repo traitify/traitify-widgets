@@ -73,7 +73,9 @@ describe("Http", () => {
           expect.objectContaining({
             "Accept": "application/json",
             "Authorization": `Basic ${btoa("xyz:x")}`,
-            "Content-Type": "application/graphql"
+            "Content-Type": "application/graphql",
+            "X-Traitify-Widgets-Source": "test",
+            "X-Traitify-Widgets-Version": "0.0.0-test"
           })
         );
       });
@@ -93,7 +95,9 @@ describe("Http", () => {
         expect.objectContaining({
           "Accept": "application/json",
           "Authorization": `Basic ${btoa("xyz:x")}`,
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "X-Traitify-Widgets-Source": "test",
+          "X-Traitify-Widgets-Version": "0.0.0-test"
         })
       );
     });

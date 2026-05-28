@@ -20,7 +20,14 @@ export function errorsToText(prepend, _errors) {
 }
 
 export function getResponseErrors(response) {
-  if(isObject(response) && isArray(response.errors)) { return response.errors; }
+  if(isObject(response) && isArray(response.errors)) {
+    return response.errors.map((error) => {
+      if(isObject(error) && isString(error.message)) { return error.message; }
+      if(isString(error)) { return error; }
+
+      return JSON.stringify(error);
+    });
+  }
   if(isObject(response) && isString(response.errors)) { return [response.errors]; }
   if(isObject(response) && isString(response.error)) { return [response.error]; }
   if(isObject(response) && isString(response.errorMessage)) { return [response.errorMessage]; }

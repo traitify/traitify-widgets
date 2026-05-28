@@ -97,7 +97,6 @@ export default function useOrderPolling() {
         const currentAssessment = currentOrder.assessments
           .find(({id}) => id === latestAssessment.id);
         if(currentAssessment && currentAssessment.completed !== latestAssessment.completed) {
-          // NOTE: May need to reset assessmentQuery for personality results
           changes = true;
           currentAssessment.completed = currentAssessment.completed || latestAssessment.completed;
         } else if(!currentAssessment) {

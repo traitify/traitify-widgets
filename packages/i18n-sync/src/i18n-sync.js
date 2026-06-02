@@ -1,10 +1,21 @@
 import fs from "node:fs";
 import i18nData from "traitify/lib/i18n-data";
+import {isArray, isObject, isString} from "traitify/lib/common/object/type";
 import getPath from "./get-path";
 
 const locales = Object.keys(i18nData).reduce((map, key) => ({
   ...map, [key]: {name: i18nData[key].name}
 }), {});
+
+const normalize = (value) => {
+  if(isString(value)) { return value.replace(/\\n/g, "\n"); }
+  if(isArray(value)) { return value.map(normalize); }
+  if(isObject(value)) {
+    return Object.keys(value).reduce((acc, key) => ({...acc, [key]: normalize(value[key])}), {});
+  }
+
+  return value;
+};
 
 const sortKeys = (_key, value) => {
   if(!value) { return value; }
@@ -30,7 +41,8 @@ export default class I18nSync {
     Object.keys(this.translations).forEach((key) => this.#buildFile(this.translations[key]));
   }
   async importData() {
-    const data = await this.#fetchData();
+    const rawData = await this.#fetchData();
+    const data = normalize(rawData);
 
     Object.keys(data).forEach((key) => this.#addLocale({code: key, tree: data[key]}));
   }
@@ -154,6 +166,6 @@ export default class I18nSync {
   #writeFile(file, data) {
     if(this.options.dryRun) { return; }
 
-    fs.writeFileSync(file, stringify(data));
+    fs.writeFileSync(file, `${stringify(data)}\n`);
   }
 }

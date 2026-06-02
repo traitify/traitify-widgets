@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Bên dưới, bạn có thể xem kết quả đánh giá tính cách của ứng viên được chia theo từng chiều Năm yếu tố lớn. Các điểm số được mã hóa màu để chỉ ra các phạm vi phù hợp nhất (màu xanh lá), tiếp theo là màu vàng và đỏ. Các phạm vi này khác nhau đối với từng công việc. Chúng dựa trên một số thông tin bao gồm nghiên cứu công bố, mô tả công việc và phỏng vấn những người quen thuộc với công việc đó.",
   "recommendation_chart_heading": "Phân tích Sự phù hợp",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Bạn có thể xem mức độ phù hợp của ứng viên này với các tiêu chí tuyển dụng khác. Chỉ cần nhìn thoáng qua, bạn có thể kiểm tra xem ứng viên này có phù hợp với tiêu chí tuyển dụng nào khác hay không.",
+        "heading": "So sánh các tiêu chuẩn việc làm"
+      },
+      "current": "Tiêu chuẩn hiện tại",
+      "search": "Tìm kiếm tiêu chuẩn"
+    },
     "generic": {
       "score": "Điểm số"
     }
@@ -171,6 +179,18 @@
   "slide_error": "Không thể tải thêm slide vào lúc này",
   "sort": "Sắp xếp",
   "status": {
+    "cognitive_interview": {
+      "heading": "Đánh giá nhận thức & Phỏng vấn"
+    },
+    "interview": {
+      "heading": "Phỏng vấn",
+      "start": "Bắt đầu phỏng vấn",
+      "survey": "Crosschq AI Interviewer",
+      "text": "Tham gia cuộc trò chuyện video với AI để đặt câu hỏi, luyện tập phỏng vấn và tìm hiểu thêm chi tiết về công việc này.\n\nĐây là cuộc trò chuyện với một Nhân viên Trí tuệ Nhân tạo đã được đào tạo về văn hóa công ty và các chi tiết liên quan đến công việc này."
+    },
+    "interview_personality": {
+      "heading": "Đánh giá và phỏng vấn tính cách"
+    },
     "text": "Trong khuôn khổ đơn ứng tuyển của bạn, chúng tôi muốn đề nghị bạn hoàn thành các bài đánh giá sau. Vui lòng nhấp vào nút bên cạnh tên bài đánh giá. Thao tác này sẽ đưa bạn đến nơi bạn sẽ hoàn thành (các) bài đánh giá. Vui lòng quay lại đây sau khi bạn đã hoàn thành tất cả các bài đánh giá."
   },
   "submit": "Gửi",

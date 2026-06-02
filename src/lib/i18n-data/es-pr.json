@@ -132,6 +132,16 @@
   "really_not_me": "A mi no realmente",
   "recommendation_chart_description": "A continuación puede ver los resultados de la personalidad del candidato desglosados según cada una de las Cinco grandes dimensiones. Los puntajes están codificados por color para indicar los rangos de mejor adecuación (verde), seguido por amarillo y rojo. Estos rangos varían para cada puesto. Se basan en distintos tipos de información que pueden incluir investigación publicada, descripciones del puesto y entrevistas con personas que están familiarizadas con el puesto.",
   "recommendation_chart_heading": "Desglose del ajuste",
+  "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Tienes la opción de ver si este candidato se ajusta a otros perfiles laborales. De un vistazo, puedes comprobar si encaja bien con otro perfil.",
+        "heading": "Comparar los estándares laborales"
+      },
+      "current": "Punto de referencia actual",
+      "search": "Buscar punto de referencia"
+    }
+  },
   "room_for_growth_and_change": "Espacio para el crecimiento y el cambio",
   "salary_mean": "Salario medio",
   "salary_mean_html": "El salario al que la mitad de los trabajadores en la ocupación ganaba más de esa cantidad y la otra mitad ganaba menos. Los datos de salario mediano son de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -155,6 +165,18 @@
   "slide_error": "No se pueden cargar más diapositivas en este momento",
   "sort": "Ordenar",
   "status": {
+    "cognitive_interview": {
+      "heading": "Evaluación cognitiva y entrevista"
+    },
+    "interview": {
+      "heading": "Entrevista",
+      "start": "Iniciar entrevista",
+      "survey": "Entrevistador de IA de CrossChQ",
+      "text": "Sumérgete en un chat de video con IA para hacer preguntas, practicar tu entrevista y obtener más información sobre los detalles de este trabajo.\n\nEste es un chat con un Empleado Artificial que ha sido entrenado sobre la cultura de nuestra empresa y los detalles relacionados con este trabajo."
+    },
+    "interview_personality": {
+      "heading": "Evaluación de la personalidad y entrevista"
+    },
     "text": "Como parte de su solicitud, nos gustaría pedirle que complete las siguientes evaluaciones. Por favor, haga clic en el botón junto al nombre de la evaluación. Esto lo llevará al lugar donde completará la(s) evaluación(es). Por favor, regrese aquí una vez que haya completado todas las evaluaciones."
   },
   "submit": "Enviar",

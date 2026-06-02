@@ -144,6 +144,14 @@
   "recommendation_chart_description": "下面，您可以看到按大五維度每個維度細分的候選人性格結果。 分數以顏色編碼來指示最佳擬合範圍（綠色），然後是黃色和紅色。 這些範圍因每個工作而異。 它們基於幾條信息，其中可能包括已發表的研究、職位描述以及對熟悉該職位的人的採訪。",
   "recommendation_chart_heading": "適合細分",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "您可以選擇查看該候選人與其他職位基準的匹配情況。只需一眼，您就能了解該候選人是否非常適合其他職位基準。",
+        "heading": "比較工作基準"
+      },
+      "current": "目前基準",
+      "search": "搜尋基準"
+    },
     "generic": {
       "score": "分數"
     }
@@ -171,6 +179,18 @@
   "slide_error": "目前無法載入更多幻燈片",
   "sort": "種類",
   "status": {
+    "cognitive_interview": {
+      "heading": "認知評估與訪談"
+    },
+    "interview": {
+      "heading": "面試",
+      "start": "開始面試",
+      "survey": "Crosschq AI 面試官",
+      "text": "透過 AI 視訊聊天提問、練習面試，並了解更多有關此職位的詳細資訊。 \n\n這是與一位經過培訓、了解我們公司文化和此職位詳細資訊的人工智慧員工進行的聊天。"
+    },
+    "interview_personality": {
+      "heading": "性格評估與面試"
+    },
     "text": "作為你申請的一部分，我們希望你完成以下評估。請點擊評估名稱旁邊的按鈕。這將帶你前往完成評估的頁面。請在完成所有評估後返回此處。"
   },
   "submit": "提交",

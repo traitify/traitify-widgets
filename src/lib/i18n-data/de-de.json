@@ -165,6 +165,10 @@
   "recommendation_chart_heading": "Aufschlüsselung der Eignung",
   "results": {
     "benchmarks": {
+      "compare": {
+        "description": "Sie haben die Möglichkeit, die Übereinstimmung dieses Kandidaten mit anderen Stellenprofilen zu überprüfen. Auf einen Blick können Sie feststellen, ob dieser Kandidat auch für ein anderes Stellenprofil gut geeignet ist.",
+        "heading": "Vergleich von Stellenleistungsbenchmarks"
+      },
       "current": "Aktueller Benchmark",
       "search": "Benchmark suchen"
     },
@@ -213,8 +217,20 @@
   "slide_error": "Im Moment können keine weiteren Folien geladen werden",
   "sort": "Sortieren",
   "status": {
+    "cognitive_interview": {
+      "heading": "Kognitive Beurteilung & Interview"
+    },
     "error": "Bei Ihren Assessments ist ein Fehler aufgetreten",
     "heading": "Deine Auswertung",
+    "interview": {
+      "heading": "Interview",
+      "start": "Interview starten",
+      "survey": "Crosschq KI-Interviewer",
+      "text": "Nutzen Sie einen KI-Videochat, um Fragen zu stellen, Ihr Vorstellungsgespräch zu üben und mehr über die Details dieser Stelle zu erfahren.\n\nDies ist ein Chat mit einem künstlichen Mitarbeiter, der auf unsere Unternehmenskultur und die Details dieser Stelle trainiert wurde."
+    },
+    "interview_personality": {
+      "heading": "Persönlichkeitsbeurteilung & Interview"
+    },
     "loading": "Ihr Assessment wird geladen",
     "start": "Assessment starten",
     "text": "Im Rahmen Ihrer Bewerbung möchten wir Sie bitten, die folgenden Bewertungen durchzuführen. Bitte klicken Sie auf die Schaltfläche neben dem Namen der Bewertung. Dadurch gelangen Sie zu dem Ort, an dem Sie die Bewertung(en) durchführen können. Bitte kehren Sie hierher zurück, sobald Sie alle Bewertungen abgeschlossen haben.",

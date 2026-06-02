@@ -165,6 +165,10 @@
   "recommendation_chart_heading": "Fit Breakdown",
   "results": {
     "benchmarks": {
+      "compare": {
+        "description": "You have the option to view this candidate's match with other job benchmarks. At a glance, you can check if this candidate is a great fit for another job benchmark.",
+        "heading": "Compare Job Benchmarks"
+      },
       "current": "Current Benchmark",
       "search": "Search for Benchmark"
     },

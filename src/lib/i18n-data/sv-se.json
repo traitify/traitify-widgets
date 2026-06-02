@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Nedan kan du se resultatet av kandidaternas personlighetstest uppdelat utifrån de fem huvudsakliga personlighetsdimensionerna (the Big Five). Poängen är färgkodad för att indikera bäst lämpad (grön), vilket följs av gul och röd. Dessa intervall ändras i förhållande till det erbjudna jobbet. De baseras på åtskilliga olika informationskällor och kan inkludera publicerade studier, befattningsbeskrivningar och intervjuer med personer som är väl insatta i arbetet.",
   "recommendation_chart_heading": "Lämplighetsanalys",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Du har möjlighet att se den här kandidatens matchning med andra jobbreferenser. Du kan snabbt se om den här kandidaten passar bra för ett annat jobbreferens.",
+        "heading": "Jämför jobbreferenser"
+      },
+      "current": "Nuvarande riktmärke",
+      "search": "Sök efter riktmärke"
+    },
     "generic": {
       "score": "Resultat"
     }
@@ -171,6 +179,18 @@
   "slide_error": "Det går inte att ladda fler bilder vid den här tiden",
   "sort": "Slag",
   "status": {
+    "cognitive_interview": {
+      "heading": "Kognitiv bedömning och intervju"
+    },
+    "interview": {
+      "heading": "Intervju",
+      "start": "Starta intervju",
+      "survey": "Crosschq AI-intervjuare",
+      "text": "Dyk in i en AI-videochatt för att ställa frågor, öva på din intervju och lär dig mer om detaljerna kring det här jobbet.\n\nDetta är en chatt med en AI-anställd som har utbildats i vår företagskultur och detaljerna kring jobbet."
+    },
+    "interview_personality": {
+      "heading": "Personlighetsbedömning och intervju"
+    },
     "text": "Som en del av din ansökan vill vi att du genomför följande bedömningar. Klicka på knappen bredvid bedömningens namn. Detta tar dig till där du kommer att genomföra bedömningen/-arna. Vänligen återvänd hit när du har slutfört alla bedömningar."
   },
   "submit": "Lämna",

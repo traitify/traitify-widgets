@@ -132,6 +132,16 @@
   "really_not_me": "Vrèman pa mwen",
   "recommendation_chart_description": "Anba a, ou ka wè rezilta pèsonalite kandida a dekonpoze pa chak nan senk dimansyon yo Big. Nòt yo koulè-kode yo endike chenn yo pi byen anfòm (vèt), ki te swiv pa jòn ak wouj. Sa yo chenn varye pou chak travay. Yo baze sou plizyè moso enfòmasyon ki ka gen ladan rechèch pibliye, deskripsyon travay, ak entèvyou ak moun ki abitye avèk travay la.",
   "recommendation_chart_heading": "Anfòm pann",
+  "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Ou gen opsyon pou wè kijan kandida sa a koresponn ak lòt kritè travay. Ou ka tcheke an yon ti koutje sou si kandida sa a bon pou yon lòt kritè travay.",
+        "heading": "Konpare Referans Travay yo"
+      },
+      "current": "Referans aktyèl la",
+      "search": "Chèche pou Benchmark"
+    }
+  },
   "room_for_growth_and_change": "Rom for vekst og endring",
   "salary_mean": "Salè vle di",
   "salary_mean_html": "Salè a nan ki mwatye nan travayè yo nan okipasyon an te touche plis pase sa kantite lajan ak mwatye touche mwens. Medyòm salè done yo soti nan <a href=\"http://www.onetonline.org \"target=\"_blank\">ONet Online</a>.",
@@ -154,6 +164,20 @@
   "skill_name_for_working_from_home": "Konsèy pou Travay lakay",
   "slide_error": "Kapab chaje plis glisad nan moman sa a",
   "sort": "Sòt",
+  "status": {
+    "cognitive_interview": {
+      "heading": "Evalyasyon Kognitif ak Entèvyou"
+    },
+    "interview": {
+      "heading": "Entèvyou",
+      "start": "Kòmanse Entèvyou a",
+      "survey": "Entèvyouvè Crosschq IA",
+      "text": "Plonje nan yon chat videyo ak entèlijans atifisyèl pou poze kesyon, pratike entèvyou ou a, epi aprann plis sou detay travay sa a.\n\nSa a se yon chat ak yon Anplwaye Atifisyèl ki te resevwa fòmasyon sou kilti konpayi nou an ak detay ki antoure travay sa a."
+    },
+    "interview_personality": {
+      "heading": "Evalyasyon Pèsonalite ak Entèvyou"
+    }
+  },
   "submit": "Soumèt",
   "success_skills": "Konpetans pou Reyisit",
   "tip_type_for_caution_zone": "Zòn Atansyon",

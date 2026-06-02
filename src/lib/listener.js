@@ -14,6 +14,11 @@ export default class Listener {
       this.current = {};
     }
   };
+  has = (_key) => {
+    const key = _key.toLowerCase();
+
+    return !!this.callbacks[key] && this.callbacks[key].length > 0;
+  };
   off = (_key, callback) => {
     const key = _key.toLowerCase();
 

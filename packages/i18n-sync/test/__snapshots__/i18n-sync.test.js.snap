@@ -10,6 +10,11 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
       "this": "I'm missing\\n\\n from es-US"
     }
   },
+  "status": {
+    "interview": {
+      "text": "First line.\\n\\nSecond line."
+    }
+  },
   "sub": {
     "with_1": "%{name} is really exciting",
     "with_2": "%{name} is really %{something}"
@@ -18,7 +23,8 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
     "me": "Me",
     "not_me": "Not Me"
   }
-}",
+}
+",
   ],
   [
     "src/lib/i18n-data/es-pr.json",
@@ -26,7 +32,8 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
   "sub": {
     "with_1": "Yo estoy divertida"
   }
-}",
+}
+",
   ],
   [
     "src/lib/i18n-data/es-us.json",
@@ -39,7 +46,8 @@ exports[`I18nSync .buildFiles wrties translations 1`] = `
     "me": "Yo Soy",
     "not_me": "No Soy"
   }
-}",
+}
+",
   ],
 ]
 `;
@@ -72,6 +80,13 @@ exports[`I18nSync .importData catches errors 1`] = `
  from es-US",
       },
       {
+        "key": "status.interview.text",
+        "locale": "en-us",
+        "value": "First line.
+
+Second line.",
+      },
+      {
         "key": "sub.with_1",
         "locale": "en-us",
         "value": "%{name} is really exciting",
@@ -99,6 +114,13 @@ exports[`I18nSync .importData catches errors 1`] = `
           "this": "I'm missing
 
  from es-US",
+        },
+      },
+      "status": {
+        "interview": {
+          "text": "First line.
+
+Second line.",
         },
       },
       "sub": {
@@ -294,6 +316,13 @@ exports[`I18nSync .importData saves translations 1`] = `
  from es-US",
       },
       {
+        "key": "status.interview.text",
+        "locale": "en-us",
+        "value": "First line.
+
+Second line.",
+      },
+      {
         "key": "sub.with_1",
         "locale": "en-us",
         "value": "%{name} is really exciting",
@@ -321,6 +350,13 @@ exports[`I18nSync .importData saves translations 1`] = `
           "this": "I'm missing
 
  from es-US",
+        },
+      },
+      "status": {
+        "interview": {
+          "text": "First line.
+
+Second line.",
         },
       },
       "sub": {

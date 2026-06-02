@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Vous pouvez voir ci-dessous les résultats concernant la personnalité du candidat, décomposés selon chacune des dimensions du modèle de personnalité à cinq facteurs. Les notes sont identifiées par un code couleur pour indiquer les plages dans lesquelles le candidat convient le mieux (vert), puis jaune et rouge. Ces plages varient pour chaque poste. Elles sont basées sur plusieurs informations qui peuvent inclure des recherches publiées, des descriptions de poste et des entretiens avec des personnes qui connaissent bien le travail.",
   "recommendation_chart_heading": "Répartition de l’adéquation",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Vous pouvez consulter la correspondance de ce candidat avec d'autres profils de poste. En un coup d'œil, vous pouvez vérifier si ce candidat correspond parfaitement à un autre profil de poste.",
+        "heading": "Comparer les référentiels de compétences professionnelles"
+      },
+      "current": "Référence actuelle",
+      "search": "Recherche de référence"
+    },
     "generic": {
       "score": "Résultat"
     }
@@ -171,6 +179,18 @@
   "slide_error": "Impossible de charger plus de diapositives pour le moment",
   "sort": "Trier",
   "status": {
+    "cognitive_interview": {
+      "heading": "Évaluation cognitive et entretien"
+    },
+    "interview": {
+      "heading": "Entretien",
+      "start": "Début de l'entretien",
+      "survey": "Intervieweur IA Crosschq",
+      "text": "Plongez dans une conversation vidéo avec une IA pour poser des questions, vous entraîner à l'entretien et en apprendre davantage sur les détails de ce poste.\n\nIl s'agit d'une conversation avec un employé artificiel qui a été formé sur la culture de notre entreprise et sur les détails de ce poste."
+    },
+    "interview_personality": {
+      "heading": "Évaluation de la personnalité et entretien"
+    },
     "text": "Dans le cadre de votre candidature, nous souhaitons vous demander de compléter les évaluations suivantes. Veuillez cliquer sur le bouton à côté du nom de l’évaluation. Cela vous mènera à l’endroit où vous pourrez compléter la/les évaluation(s). Veuillez revenir ici une fois que vous aurez terminé toutes les évaluations."
   },
   "submit": "Soumettre",

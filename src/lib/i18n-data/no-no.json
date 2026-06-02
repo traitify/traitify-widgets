@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Nedenfor kan du se kandidatens personlighetsresultater fordelt på hver av de fem store dimensjonene. Poengene er fargekodet for å indikere de best egnede områdene (grønt), etterfulgt av gult og rødt. Disse områdene varierer for hver jobb. De er basert på flere opplysninger som kan omfatte publisert forskning, stillingsbeskrivelser og intervjuer med folk som er kjent med jobben.",
   "recommendation_chart_heading": "Passer sammenbrudd",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Du har muligheten til å se denne kandidatens samsvar med andre jobbreferanser. Med et raskt blikk kan du sjekke om denne kandidaten passer godt til en annen jobbreferanse.",
+        "heading": "Sammenlign jobbbenchmarks"
+      },
+      "current": "Nåværende referansepunkt",
+      "search": "Søk etter referansepunkt"
+    },
     "generic": {
       "score": "Poengsum"
     }
@@ -170,6 +178,20 @@
   "skill_name_for_working_from_home": "Tips Til å Jobbe Hjemmefra",
   "slide_error": "Kan ikke laste flere lysbilder nå",
   "sort": "Sortere",
+  "status": {
+    "cognitive_interview": {
+      "heading": "Kognitiv vurdering og intervju"
+    },
+    "interview": {
+      "heading": "Intervju",
+      "start": "Start intervju",
+      "survey": "Crosschq AI-intervjuer",
+      "text": "Dykk ned i en AI-videochat for å stille spørsmål, øve på intervjuet og lære mer om detaljene i denne jobben.\n\nDette er en chat med en kunstig ansatt som har fått opplæring i bedriftskulturen vår og detaljene rundt denne jobben."
+    },
+    "interview_personality": {
+      "heading": "Personlighetsvurdering og intervju"
+    }
+  },
   "submit": "Sende inn",
   "success_skills": "Suksessevner",
   "survey": {

@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Hieronder staan de resultaten voor de persoonlijkheid van de kandidaat, uitgesplitst naar de Big Five-dimensies. De scores krijgen een kleurencode waarbij groen de best passende bereiken aanduidt, gevolgd door oranje en rood. De bereiken variëren van functie tot functie en zijn vastgesteld aan de hand van meerdere informatiebronnen, waaronder gepubliceerde studies, functiebeschrijvingen en/of gesprekken met mensen die vertrouwd zijn met de betreffende functie.",
   "recommendation_chart_heading": "Geschiktheidsanalyse",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Je hebt de mogelijkheid om te bekijken in hoeverre deze kandidaat aansluit bij andere functieprofielen. Zo zie je in één oogopslag of deze kandidaat goed past bij een ander functieprofiel.",
+        "heading": "Vergelijk functiebenchmarks"
+      },
+      "current": "Huidige referentiewaarde",
+      "search": "Zoek naar benchmark"
+    },
     "generic": {
       "score": "Resultaat"
     }
@@ -171,6 +179,18 @@
   "slide_error": "Kan op dit moment geen dia's meer laden",
   "sort": "Sorteren",
   "status": {
+    "cognitive_interview": {
+      "heading": "Cognitieve beoordeling en interview"
+    },
+    "interview": {
+      "heading": "Interview",
+      "start": "Start het interview",
+      "survey": "Crosschq AI-interviewer",
+      "text": "Neem deel aan een AI-videochat om vragen te stellen, je sollicitatiegesprek te oefenen en meer te weten te komen over de details van deze functie.\n\nDit is een chat met een kunstmatige medewerker die is getraind in onze bedrijfscultuur en de details van deze functie."
+    },
+    "interview_personality": {
+      "heading": "Persoonlijkheidsbeoordeling en -interview"
+    },
     "text": "Als onderdeel van uw sollicitatie vragen we u de volgende beoordelingen te voltooien. Klik op de knop naast de naam van de beoordeling. Dit brengt u naar de plek waar u de beoordeling(en) zult voltooien. Keer hier terug zodra u alle beoordelingen heeft voltooid."
   },
   "submit": "voorleggen",

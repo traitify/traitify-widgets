@@ -143,6 +143,14 @@
   "recommendation_chart_description": "Di seguito, puoi vedere i risultati della personalità del candidato suddivisi da ciascuna delle grandi cinque dimensioni. I punteggi sono codificati a colori per indicare le gamme più adatte (verde), seguite da giallo e rosso. Questi intervalli variano per ogni lavoro. Si basano su diverse informazioni che possono includere ricerche pubblicate, descrizioni di lavoro e interviste con persone che hanno familiarità con il lavoro.",
   "recommendation_chart_heading": "Breakdown in forma",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Hai la possibilità di visualizzare la corrispondenza di questo candidato con altri parametri di riferimento per la posizione. In questo modo, puoi verificare a colpo d'occhio se questo candidato è adatto anche ad altri profili professionali.",
+        "heading": "Confronta i parametri di riferimento per le posizioni lavorative"
+      },
+      "current": "Benchmark attuale",
+      "search": "Cerca benchmark"
+    },
     "generic": {
       "score": "Punteggio"
     }
@@ -170,6 +178,18 @@
   "slide_error": "Incapace di caricare più diapositive in questo momento",
   "sort": "Ordinare",
   "status": {
+    "cognitive_interview": {
+      "heading": "Valutazione cognitiva e colloquio"
+    },
+    "interview": {
+      "heading": "Colloquio",
+      "start": "Avviare l'intervista",
+      "survey": "Intervistatore basato sull'IA Crosschq",
+      "text": "Partecipa a una video chat con un'IA per porre domande, esercitarti per il colloquio e scoprire maggiori dettagli su questa offerta di lavoro.\n\nSi tratta di una chat con un Dipendente Artificiale addestrato sulla cultura aziendale e sui dettagli relativi a questa posizione."
+    },
+    "interview_personality": {
+      "heading": "Valutazione della personalità e colloquio"
+    },
     "text": "Nell'ambito della tua candidatura, vorremmo chiederti di completare le seguenti valutazioni. Clicca sul pulsante accanto al nome della valutazione. Questo ti porterà al luogo dove potrai completare la/e valutazione/i. Ti preghiamo di tornare qui una volta completate tutte le valutazioni."
   },
   "success_skills": "Abilità di successo",

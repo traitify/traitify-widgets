@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Di bawah ini, kamu dapat melihat hasil kepribadian kandidat yang dirinci berdasarkan masing-masing dimensi Lima Besar. Skor diberi kode warna untuk mengindikasikan rentang yang paling sesuai (hijau), disusul warna kuning dan merah. Rentang ini bervariasi untuk setiap pekerjaan. Hal ini didasarkan pada beberapa informasi yang mungkin di dalamnya meliputi penelitian yang dipublikasikan, deskripsi pekerjaan, dan wawancara dengan orang-orang yang memahami pekerjaan tersebut. ",
   "recommendation_chart_heading": "Rincian yang Sesuai",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Anda memiliki opsi untuk melihat kesesuaian kandidat ini dengan tolok ukur pekerjaan lainnya. Sekilas, Anda dapat memeriksa apakah kandidat ini sangat cocok untuk tolok ukur pekerjaan lain.",
+        "heading": "Bandingkan Tolok Ukur Pekerjaan"
+      },
+      "current": "Tolok Ukur Saat Ini",
+      "search": "Cari Tolok Ukur"
+    },
     "generic": {
       "score": "Skor"
     }
@@ -171,6 +179,18 @@
   "slide_error": "Tidak dapat memuat lebih banyak slide untuk saat ini",
   "sort": "Menggolongkan",
   "status": {
+    "cognitive_interview": {
+      "heading": "Penilaian Kognitif & Wawancara"
+    },
+    "interview": {
+      "heading": "Wawancara",
+      "start": "Mulai Wawancara",
+      "survey": "Pewawancara AI Crosschq",
+      "text": "Ikuti obrolan video AI untuk mengajukan pertanyaan, berlatih wawancara, dan mempelajari lebih lanjut tentang detail pekerjaan ini.\n\nIni adalah obrolan dengan Karyawan Buatan yang telah dilatih tentang budaya perusahaan kami dan detail seputar pekerjaan ini."
+    },
+    "interview_personality": {
+      "heading": "Penilaian Kepribadian & Wawancara"
+    },
     "text": "Sebagai bagian dari lamaran Anda, kami ingin meminta Anda untuk menyelesaikan penilaian berikut. Silakan klik tombol di sebelah nama penilaian. Ini akan membawa Anda ke tempat Anda akan menyelesaikan penilaian tersebut. Silakan kembali ke sini setelah Anda menyelesaikan semua penilaian."
   },
   "submit": "Kirim",

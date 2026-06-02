@@ -132,6 +132,16 @@
   "really_not_me": "Really Not Me",
   "recommendation_chart_description": "Below, you can see the candidate's personality results broken down by each of the Big Five dimensions. Scores are color-coded to indicate the best-fit ranges (green), followed by yellow and red. These ranges vary for each job. They are based on several pieces of information that may include published research, job descriptions, and interviews with people who are familiar with the job.",
   "recommendation_chart_heading": "Fit Breakdown",
+  "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "You have the option to view this candidate's match with other job benchmarks. At a glance, you can check if this candidate is a great fit for another job benchmark.",
+        "heading": "Compare Job Benchmarks"
+      },
+      "current": "Current Benchmark",
+      "search": "Search for Benchmark"
+    }
+  },
   "room_for_growth_and_change": "Room for Growth and Change",
   "salary_mean": "Salary Mean",
   "salary_mean_html": "The wage at which half of the workers in the occupation earned more than that amount and half earned less. Median wage data is from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
@@ -155,6 +165,18 @@
   "slide_error": "Unable to load more slides at this time",
   "sort": "Sort",
   "status": {
+    "cognitive_interview": {
+      "heading": "Cognitive Assessment & Interview"
+    },
+    "interview": {
+      "heading": "Interview",
+      "start": "Start Interview",
+      "survey": "Crosschq AI Interviewer",
+      "text": "Dive into an AI video chat to ask questions, practice your interview, and learn more about the details of this job.\n\nThis is a chat with an Artificial Employee that has been trained on our company culture and the details around this job."
+    },
+    "interview_personality": {
+      "heading": "Personality Assessment & Interview"
+    },
     "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment(s). Please return here once you've completed all assessments."
   },
   "submit": "Submit",

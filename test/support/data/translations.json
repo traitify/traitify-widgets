@@ -20,6 +20,11 @@
         "this": "I'm missing\n\n from es-US"
       }
     },
+    "status": {
+      "interview": {
+        "text": "First line.\\n\\nSecond line."
+      }
+    },
     "sub": {
       "with_1": "%{name} is really exciting",
       "with_2": "%{name} is really %{something}"

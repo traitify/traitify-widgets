@@ -144,6 +144,14 @@
   "recommendation_chart_description": "以下你可以看到候选人的性格结果按五大维度逐一细分。分数以颜色编码来表示最适合的范围（绿色），然后是黄色和红色。这些范围因每个职位而异。且其基于若干信息，这些信息可能包括已发表的研究、工作描述以及与熟悉该工作的人的访谈。",
   "recommendation_chart_heading": "匹配度细分",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "您可以选择查看该候选人与其他职位基准的匹配情况。只需一眼，您就能了解该候选人是否非常适合其他职位基准。",
+        "heading": "比较工作基准"
+      },
+      "current": "当前基准",
+      "search": "搜索基准"
+    },
     "generic": {
       "score": "分数"
     }
@@ -171,6 +179,18 @@
   "slide_error": "目前无法加载更多幻灯片",
   "sort": "分类",
   "status": {
+    "cognitive_interview": {
+      "heading": "认知评估与访谈"
+    },
+    "interview": {
+      "heading": "面试",
+      "start": "开始面试",
+      "survey": "Crosschq AI 面试官",
+      "text": "通过 AI 视频聊天提问、练习面试，并了解更多有关此职位的详细信息。\n\n这是与一位经过培训、了解我们公司文化和此职位详细信息的人工智能员工进行的聊天。"
+    },
+    "interview_personality": {
+      "heading": "性格评估与面试"
+    },
     "text": "作为您申请的一部分，我们希望您完成以下评估。请点击评估名称旁的按钮，这将带您到完成评估的页面。完成所有评估后，请返回此处。"
   },
   "submit": "提交",

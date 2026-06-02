@@ -144,6 +144,14 @@
   "recommendation_chart_description": "Encontra abaixo os resultados de personalidade do candidato distribuídos por cada uma das dimensões do Big Five. As pontuações estão codificadas por cores para indicar os intervalos de maior adequação (verde), seguidos por amarelo e vermelho. Estes intervalos variam consoante a função e baseiam-se em várias informações, como artigos de investigação publicados, descrições de funções e entrevistas a pessoas familiarizadas com a função.",
   "recommendation_chart_heading": "Detalhes da Adequação",
   "results": {
+    "benchmarks": {
+      "compare": {
+        "description": "Você tem a opção de visualizar a compatibilidade deste candidato com outros perfis de vagas. Assim, você pode verificar rapidamente se este candidato se encaixa perfeitamente em outro perfil de vaga.",
+        "heading": "Comparar os padrões de desempenho do trabalho"
+      },
+      "current": "Referência atual",
+      "search": "Pesquisar por Benchmark"
+    },
     "generic": {
       "score": " Pontuação"
     }
@@ -171,6 +179,18 @@
   "slide_error": "Não foi possível carregar mais slides no momento",
   "sort": "ordenar",
   "status": {
+    "cognitive_interview": {
+      "heading": "Avaliação Cognitiva e Entrevista"
+    },
+    "interview": {
+      "heading": "Entrevista",
+      "start": "Iniciar Entrevista",
+      "survey": "Entrevistador de IA Crosschq",
+      "text": "Participe de um bate-papo por vídeo com IA para fazer perguntas, praticar sua entrevista e saber mais sobre os detalhes desta vaga.\n\nEste é um bate-papo com um Funcionário Artificial treinado com base na cultura da nossa empresa e nos detalhes desta vaga."
+    },
+    "interview_personality": {
+      "heading": "Avaliação de personalidade e entrevista"
+    },
     "text": "Como parte da sua candidatura, gostaríamos de lhe pedir que complete as seguintes avaliações. Por favor, clique no botão ao lado do nome da avaliação. Isto irá levá-lo ao local onde irá completar a(s) avaliação(ões). Por favor, volte aqui assim que tiver concluído todas as avaliações."
   },
   "submit": "Enviar",

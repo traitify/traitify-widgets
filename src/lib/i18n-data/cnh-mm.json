@@ -160,6 +160,10 @@
   "recommendation_chart_heading": "Caan pawl chungin hmanhnak thil pawl",
   "results": {
     "benchmarks": {
+      "compare": {
+        "description": "Hi candidate hi rian dang tahfung he aa tlak ning zoh khawhnak nawl na ngei. A zoh tik ah, hi candidate hi rian dang tahfung caah aa tlak maw tlak lo ti kha na zoh khawh.",
+        "heading": "Rian tahfung pawl tahchunh"
+      },
       "current": "Atu lio tahfung",
       "search": "Benchmark kawl"
     },
@@ -193,6 +197,20 @@
   "skill_name_for_working_from_home": "Inn i caan tuahnak hmanhnak",
   "slide_error": "He caanah slides hna kha na phan khawh lo",
   "sort": "Sort",
+  "status": {
+    "cognitive_interview": {
+      "heading": "Lungthin lei thlennak le biahalnak"
+    },
+    "interview": {
+      "heading": "Biahalnak",
+      "start": "Biahalnak thawk",
+      "survey": "Crosschq AI Biahaltu",
+      "text": "Biahalnak tuah awkah AI video chat ah lut, na biahalnak tuah, cun hi rian konglam tam deuh in hngalh.\n\nHi cu kan company nunphung le hi rian konglam kong cawnpiakmi Artificial Employee he biaruahnak a si."
+    },
+    "interview_personality": {
+      "heading": "Minung sining thlennak le biahalnak"
+    }
+  },
   "submit": "Submit tuah",
   "success_skills": "Ngahchiahmi Zumhawi",
   "survey": {

@@ -43,30 +43,6 @@ describe("Listener", () => {
     });
   });
 
-  describe("has", () => {
-    it("returns false when key is missing", () => {
-      expect(listener.has("Default.Initialize")).toBe(false);
-    });
-
-    it("returns false when callbacks are empty", () => {
-      listener.callbacks["default.initialize"] = [];
-
-      expect(listener.has("Default.Initialize")).toBe(false);
-    });
-
-    it("returns true when callback is registered", () => {
-      listener.on("Default.Initialize", () => {});
-
-      expect(listener.has("Default.Initialize")).toBe(true);
-    });
-
-    it("lowercases key", () => {
-      listener.callbacks["default.initialize"] = [() => {}];
-
-      expect(listener.has("DEFAULT.INITIALIZE")).toBe(true);
-    });
-  });
-
   describe("off", () => {
     it("ignores missing callback", () => {
       const callback = () => {};

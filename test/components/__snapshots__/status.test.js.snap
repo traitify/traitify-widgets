@@ -347,6 +347,7 @@ exports[`Status recommendation renders component 1`] = `
       </div>
       <a
         href="https://api.traitify.com/beta/assessments/external_assessments/sign_in/external-xyz?token=test-token"
+        onClick={[Function]}
       >
         Start Assessment
       </a>

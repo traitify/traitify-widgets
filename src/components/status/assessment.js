@@ -11,9 +11,10 @@ import style from "./style.scss";
 import useStatusTranslate from "./use-status-translate";
 
 function Button({assessment}) {
+  const interview = assessment.vendor === "crosschq";
   const listener = useListener();
   const options = useOption("status") || {};
-  const redirect = get(options, "allowRedirect", true);
+  const redirect = get(options, "allowRedirect", !interview);
   const setActive = useSetRecoilState(activeState);
   const statusTranslate = useStatusTranslate({assessment});
   const translate = useTranslate();
@@ -26,18 +27,20 @@ function Button({assessment}) {
     return <button disabled={true} type="button">{translate("skipped")}</button>;
   }
 
-  if(assessment.link && redirect) {
-    return <a href={assessment.link}>{statusTranslate("start")}</a>;
+  const start = () => {
+    listener.trigger("Survey.start", {assessment});
+    setActive({...assessment});
+  };
+
+  if(assessment.link) {
+    const props = redirect ? {} : {target: "_blank"};
+
+    return <a href={assessment.link} onClick={start} {...props}>{statusTranslate("start")}</a>;
   }
 
   if(assessment.loading) {
     return <button disabled={true} type="button">{translate("loading")}</button>;
   }
-
-  const start = () => {
-    listener.trigger("Survey.start", {assessment});
-    setActive({...assessment});
-  };
 
   return <button onClick={start} type="button">{statusTranslate("start")}</button>;
 }
@@ -47,7 +50,8 @@ Button.propTypes = {
     completed: PropTypes.bool,
     link: PropTypes.string,
     loading: PropTypes.bool,
-    skipped: PropTypes.bool
+    skipped: PropTypes.bool,
+    vendor: PropTypes.string
   }).isRequired
 };
 

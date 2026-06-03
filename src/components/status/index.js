@@ -30,7 +30,7 @@ export default function Status() {
     setLoading(load);
     if(!load) { return; }
 
-    const timeout = setTimeout(() => { setLoading(false); }, 5000);
+    const timeout = setTimeout(() => { setLoading(false); }, 5500);
     return () => { clearTimeout(timeout); };
   }, [active?.id, active?.completed, order?.status]);
 

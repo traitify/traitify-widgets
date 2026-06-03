@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import HelpButton from "components/common/help/button";
 import HelpModal from "components/common/help/modal";
 import Markdown from "components/common/markdown";
@@ -20,6 +20,7 @@ export default function Status() {
   const order = useOrder();
   const showHelp = useOption("showHelp");
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const timer = useRef(null);
   const translate = useStatusTranslate();
   const assessments = order?.assessments || [];
 
@@ -27,12 +28,21 @@ export default function Status() {
   useEffect(() => {
     const load = (active?.surveyType === "external" && !active.completed)
       || order?.status === "error";
-    setLoading(load);
-    if(!load) { return; }
+    if(!load) {
+      clearTimeout(timer.current);
+      timer.current = null;
+      setLoading(false);
+      return;
+    }
+    if(timer.current) { return; }
 
-    const timeout = setTimeout(() => { setLoading(false); }, 5500);
-    return () => { clearTimeout(timeout); };
+    setLoading(true);
+    timer.current = setTimeout(() => {
+      setLoading(false);
+      timer.current = null;
+    }, 5500);
   }, [active?.id, active?.completed, order?.status]);
+  useEffect(() => () => clearTimeout(timer.current), []);
 
   if(!order) { return null; }
   if(order.status === "skipped") { return <Skipped />; }

@@ -20,23 +20,28 @@ export default function Status() {
   const order = useOrder();
   const showHelp = useOption("showHelp");
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const loadedAssessments = useRef({});
   const timer = useRef(null);
   const translate = useStatusTranslate();
   const assessments = order?.assessments || [];
 
   useComponentEvents("Status", {order});
   useEffect(() => {
-    const load = (active?.surveyType === "external" && !active.completed)
-      || order?.status === "error";
-    if(!load) {
+    const external = active?.surveyType === "external";
+    if(external && active.completed) {
       clearTimeout(timer.current);
       timer.current = null;
       setLoading(false);
       return;
     }
-    if(timer.current) { return; }
+    const load = (external && !active.completed)
+      || order?.status === "error";
+    const loadID = active?.id || order?.cacheKey || "setup";
+    if(!load || loadedAssessments.current[loadID]) { return; }
 
+    loadedAssessments.current[loadID] = true;
     setLoading(true);
+    clearTimeout(timer.current);
     timer.current = setTimeout(() => {
       setLoading(false);
       timer.current = null;

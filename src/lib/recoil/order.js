@@ -189,7 +189,12 @@ const updateStatus = ({getLoadable, onSet, setSelf}) => {
       setSelf(newOrder);
       return;
     }
-    if(order.assessments.some(({completed}) => !completed)) { return; }
+    if(order.assessments.some(({completed}) => !completed)) {
+      if(order.status === "loading" && order.assessments.every(({loaded}) => loaded)) {
+        setSelf({...order, status: "incomplete"});
+      }
+      return;
+    }
 
     const newOrder = {...order, completed: true, status: "completed"};
     cacheOrder(newOrder);

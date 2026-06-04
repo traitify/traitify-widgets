@@ -104,7 +104,7 @@ const baseRecommendationQuery = selector({
         variables.applyAssessmentExpiration = applyAssessmentExpiration;
       }
       const params = {query: GraphQL.xavier.recommendation, variables};
-      const retryOptions = {statuses: [429, 503]};
+      const retryOptions = {statuses: [409, 429, 503]};
       const recResponse = await http.post({params, path, retryOptions})
         .catch((e) => ({errors: [e.message]}));
       return {order: orderFromRecommendation(recResponse), response: recResponse};

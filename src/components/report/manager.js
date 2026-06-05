@@ -33,9 +33,8 @@ export default function ManagerReport() {
   return (
     <section>
       {showRecommendationList && <RecommendationList />}
-      <ClientGuide />
       <div className={[style.container, style.box].join(" ")}>
-        {showHeaders && (
+        {!showRecommendationList && showHeaders && (
           <>
             <div className={style.sectionHeading}>{translate("recommendation_chart_heading")}</div>
             <div className={style.p}>{translate("recommendation_chart_description")}</div>
@@ -44,6 +43,7 @@ export default function ManagerReport() {
         <RecommendationChart combined={true} />
         <PersonalityGuide combined={true} />
       </div>
+      <ClientGuide />
       <CognitiveChart />
     </section>
   );

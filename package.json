@@ -1,10 +1,10 @@
 {
   "name": "traitify-widgets",
-  "version": "3.9.10",
+  "version": "3.9.11",
   "description": "Traitiy Widgets",
   "repository": {
     "type": "git",
-    "url": "https://github.com/traitify/traitify-widgets.git"
+    "url": "git+https://github.com/traitify/traitify-widgets.git"
   },
   "exports": {
     ".": "./build/traitify.js",

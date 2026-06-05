@@ -7,7 +7,8 @@ import useLoadedValue from "lib/hooks/use-loaded-value";
 import {assessmentQuery, orderState} from "lib/recoil";
 
 // NOTE: Syncs changes between assessments and order
-function Assessment({id, surveyType}) {
+// - Also rehydrates assessment if base order changes
+function Assessment({id, loaded = false, surveyType}) {
   const latestAssessment = useLoadedValue(assessmentQuery({id, surveyType}));
   const setOrder = useSetRecoilState(orderState);
 
@@ -15,36 +16,42 @@ function Assessment({id, surveyType}) {
     if(!latestAssessment) { return; }
 
     setOrder((_order) => {
+      if(!_order) { return _order; }
       const order = mutable(_order);
       const orderAssessment = order.assessments.find((a) => a.id === id);
-      const {loaded} = orderAssessment;
-      const assessment = assessmentFromQuery(latestAssessment);
-      Object.keys(assessment).filter((key) => assessment[key] !== orderAssessment[key])
-        .forEach((key) => { orderAssessment[key] = assessment[key]; });
+      if(!orderAssessment) { return _order; }
 
-      if(!loaded) {
-        // NOTE: Claim the first survey missing an ID that matches the type
-        const survey = order.surveys.filter((s) => !s.id)
-          .find((s) => orderAssessment.surveyType === s.type);
-        if(survey) { survey.id = orderAssessment.surveyID; }
+      const assessment = assessmentFromQuery(latestAssessment);
+      const diffs = Object.keys(assessment)
+        .filter((key) => assessment[key] !== orderAssessment[key]);
+      const claimSurveyIndex = orderAssessment.loaded
+        ? -1
+        : order.surveys.findIndex((s) => !s.id && s.type === orderAssessment.surveyType);
+      if(diffs.length === 0 && claimSurveyIndex === -1) { return _order; }
+
+      diffs.forEach((key) => { orderAssessment[key] = assessment[key]; });
+
+      if(claimSurveyIndex !== -1) {
+        order.surveys[claimSurveyIndex].id = orderAssessment.surveyID;
       }
 
       return order;
     });
-  }, [latestAssessment]);
+  }, [latestAssessment, loaded]);
 
   return null;
 }
 
 Assessment.propTypes = {
   id: PropTypes.string.isRequired,
+  loaded: PropTypes.bool,
   surveyType: PropTypes.string.isRequired
 };
 
 export default function DynamicState() {
   const order = useLoadedValue(orderState);
 
-  return (order?.assessments || []).map(({id, surveyType}) => (
-    <Assessment key={id} id={id} surveyType={surveyType} />
+  return (order?.assessments || []).map(({id, loaded, surveyType}) => (
+    <Assessment key={id} id={id} loaded={loaded} surveyType={surveyType} />
   ));
 }

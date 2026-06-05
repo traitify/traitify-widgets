@@ -77,7 +77,7 @@ describe("Status", () => {
 
     it("does not poll non-external assessment", async() => {
       container.assessmentID = personality.id;
-      const mock = mockAssessment(personality, {mockRecommendation: false});
+      const mock = mockAssessment(personality);
 
       component = await ComponentHandler.setup(Component);
       await flushAsync();

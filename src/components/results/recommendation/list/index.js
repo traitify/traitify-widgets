@@ -23,6 +23,13 @@ export default function RecommendationList() {
   if(disabled) { return null; }
   if(!recommendation) { return null; }
 
+  const description = [
+    !disabledScore && recommendation.match_score,
+    recommendation.description
+  ].filter(Boolean).join(" - ");
+  const descriptionStyle = recommendation.visual_hex_value && {
+    background: recommendation.visual_hex_value
+  };
   const filteredRecommendations = benchmarkTag
     ? recommendations.filter(({benchmark_tag: tag}) => tag === benchmarkTag)
     : recommendations;
@@ -43,13 +50,11 @@ export default function RecommendationList() {
           searchText={translate("results.benchmarks.search")}
           value={benchmarkID}
         />
-        <div className={style.recommendation} style={{background: recommendation.visual_hex_value}}>
-          {disabledScore ? (
-            recommendation.description
-          ) : (
-            `${recommendation.match_score} - ${recommendation.description}`
-          )}
-        </div>
+        {description && (
+          <div className={style.recommendation} style={descriptionStyle}>
+            {description}
+          </div>
+        )}
       </div>
     </section>
   );

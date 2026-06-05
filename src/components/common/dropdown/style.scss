@@ -59,18 +59,10 @@
     justify-content: space-between;
     padding: $buffer;
 
-    :global(.traitify--icon-fa) {
-      @include theme("color", "theme");
-    }
+    :global(.traitify--icon-fa) { @include theme("color", "theme"); }
 
-    &:focus, &:hover {
-      @include theme("background", "theme");
-      @include theme("color", "text-light");
-
-      :global(.traitify--icon-fa) {
-        @include theme("color", "text-light");
-      }
-    }
+    &:focus, &:hover { @include theme("background", "dropdown-active"); }
+    &:focus-visible { outline: none; }
   }
 }
 .search {
@@ -94,6 +86,8 @@
     width: 100%;
 
     @include theme("border-bottom-color", "border");
+
+    &:focus-visible { outline: none; }
   }
 }
 .stiff { flex-shrink: 0; }

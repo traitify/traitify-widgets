@@ -72,6 +72,11 @@ const mergeOrder = (currentOrder, latestOrder) => {
     }
   });
 
+  if(merged.surveys.length === 0 && latestOrder.surveys?.length) {
+    changes = true;
+    merged.surveys = latestOrder.surveys;
+  }
+
   if(merged.errors) {
     changes = true;
     merged.errors = undefined;

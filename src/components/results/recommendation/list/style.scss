@@ -12,6 +12,8 @@
   min-width: 0;
 }
 
+.p { @extend %paragraph; }
+
 .recommendation {
   @extend %heading;
 

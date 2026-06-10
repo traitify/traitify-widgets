@@ -6,11 +6,6 @@ exports[`Report.Manager renders component 1`] = `
 >
   <section>
     <div
-      className="mock"
-    >
-      Client Guide
-    </div>
-    <div
       className="container box"
     >
       <div
@@ -23,6 +18,11 @@ exports[`Report.Manager renders component 1`] = `
       >
         Personality Guide
       </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Client Guide
     </div>
     <div
       className="mock"
@@ -60,11 +60,6 @@ exports[`Report.Manager showHeaders renders component 1`] = `
 >
   <section>
     <div
-      className="mock"
-    >
-      Client Guide
-    </div>
-    <div
       className="container box"
     >
       <div
@@ -91,6 +86,11 @@ exports[`Report.Manager showHeaders renders component 1`] = `
     <div
       className="mock"
     >
+      Client Guide
+    </div>
+    <div
+      className="mock"
+    >
       Cognitive Chart
     </div>
   </section>
@@ -108,11 +108,6 @@ exports[`Report.Manager showRecommendationList renders component 1`] = `
       Recommendation List
     </div>
     <div
-      className="mock"
-    >
-      Client Guide
-    </div>
-    <div
       className="container box"
     >
       <div
@@ -125,6 +120,11 @@ exports[`Report.Manager showRecommendationList renders component 1`] = `
       >
         Personality Guide
       </div>
+    </div>
+    <div
+      className="mock"
+    >
+      Client Guide
     </div>
     <div
       className="mock"

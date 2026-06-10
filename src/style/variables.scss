@@ -48,7 +48,7 @@ $-black: #555555;
 $-blue: $-traitify-blue;
 $-gray: #D6D6D6;
 $-gray-dark: #A0A0A0;
-$-gray-hover: #EAEAEA;
+$-gray-hover: #F8F8F8;
 $-green: #2FB656;
 $-red: $-traitify-red;
 $-red-light: #FEA7AB;
@@ -70,6 +70,7 @@ $color-scheme-dark: (
   "border-dark": $-black,
   "border-light": $-white,
   "cognitive-progress-bar": $-green,
+  "dropdown-active": $-gray-hover,
   "fullscreen": $-black,
   "inactive": $-gray,
   "me-active": $-traitify-blue-dark,
@@ -99,6 +100,7 @@ $color-scheme-light: (
   "border-dark": $-black,
   "border-light": $-gray,
   "cognitive-progress-bar": $-green,
+  "dropdown-active": $-gray-hover,
   "fullscreen": $-black,
   "inactive": $-gray,
   "me-active": $-traitify-blue-dark,

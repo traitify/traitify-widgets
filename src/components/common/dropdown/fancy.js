@@ -87,7 +87,7 @@ function FancyDropdown({
             <span className={style.stiff}> ({currentText})</span>
           </div>
         ) : searchText}
-        <Icon icon={show ? faAngleDown : faAngleUp} />
+        <Icon icon={show ? faAngleUp : faAngleDown} />
       </button>
       {show && (
         <div className={style.dropdown}>

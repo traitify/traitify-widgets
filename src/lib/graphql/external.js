@@ -14,7 +14,6 @@ export const get = `
       resultUrl
       signInUrl
       surveyKey
-      surveyType
       surveyName
       textResult
       vendor
@@ -38,7 +37,6 @@ export const skip = `
       resultUrl
       signInUrl
       surveyKey
-      surveyType
       surveyName
       textResult
       vendor

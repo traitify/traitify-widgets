@@ -104,7 +104,7 @@ const baseRecommendationQuery = selector({
         variables.applyAssessmentExpiration = applyAssessmentExpiration;
       }
       const params = {query: GraphQL.xavier.recommendation, variables};
-      const retryOptions = {statuses: [429, 503]};
+      const retryOptions = {statuses: [409, 429, 503]};
       const recResponse = await http.post({params, path, retryOptions})
         .catch((e) => ({errors: [e.message]}));
       return {order: orderFromRecommendation(recResponse), response: recResponse};
@@ -189,7 +189,12 @@ const updateStatus = ({getLoadable, onSet, setSelf}) => {
       setSelf(newOrder);
       return;
     }
-    if(order.assessments.some(({completed}) => !completed)) { return; }
+    if(order.assessments.some(({completed}) => !completed)) {
+      if(order.status === "loading" && order.assessments.every(({loaded}) => loaded)) {
+        setSelf({...order, status: "incomplete"});
+      }
+      return;
+    }
 
     const newOrder = {...order, completed: true, status: "completed"};
     cacheOrder(newOrder);

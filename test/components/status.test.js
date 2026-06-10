@@ -54,6 +54,56 @@ describe("Status", () => {
     });
   });
 
+  describe("assessment", () => {
+    afterEach(() => {
+      delete container.assessmentID;
+    });
+
+    it("polls external assessment when incomplete", async() => {
+      container.assessmentID = externalIncomplete.id;
+      mockOption("surveyType", "external");
+      const mock = mockExternalAssessment({
+        id: externalIncomplete.id,
+        implementation: (m) => Promise.resolve({
+          json: () => ({data: {getAssessment: m.called === 1 ? externalIncomplete : external}})
+        })
+      });
+
+      component = await ComponentHandler.setup(Component);
+      await flushAsync();
+
+      expect(mock.called).toBeGreaterThan(1);
+    });
+
+    it("does not poll non-external assessment", async() => {
+      container.assessmentID = personality.id;
+      const mock = mockAssessment(personality);
+
+      component = await ComponentHandler.setup(Component);
+      await flushAsync();
+
+      expect(mock.called).toEqual(1);
+    });
+
+    it("stops polling once external completes", async() => {
+      container.assessmentID = externalIncomplete.id;
+      mockOption("surveyType", "external");
+      const mock = mockExternalAssessment({
+        id: externalIncomplete.id,
+        implementation: (m) => Promise.resolve({
+          json: () => ({data: {getAssessment: m.called === 1 ? externalIncomplete : external}})
+        })
+      });
+
+      component = await ComponentHandler.setup(Component);
+      await flushAsync();
+      const calledAfterCompletion = mock.called;
+      await flushAsync();
+
+      expect(mock.called).toEqual(calledAfterCompletion);
+    });
+  });
+
   describe("order", () => {
     let orderResponse;
 
@@ -289,6 +339,34 @@ describe("Status", () => {
       component = await ComponentHandler.setup(Component);
 
       expect(component.tree).toMatchSnapshot();
+    });
+
+    it("polls recommendation when external incomplete", async() => {
+      const completedRec = {
+        benchmarkID: recommendation.benchmarkID,
+        profileID: recommendation.profileID,
+        ...mutable(recommendationCompleted)
+      };
+      const mock = mockRecommendation({
+        implementation: (m) => Promise.resolve({
+          json: () => ({data: {recommendation: m.called === 1 ? recommendation : completedRec}})
+        })
+      });
+
+      component = await ComponentHandler.setup(Component);
+      await flushAsync();
+
+      expect(mock.called).toBeGreaterThan(1);
+    });
+
+    it("does not poll recommendation when no external present", async() => {
+      delete recommendation.prerequisites.external;
+      const mock = mockRecommendation(recommendation);
+
+      component = await ComponentHandler.setup(Component);
+      await flushAsync();
+
+      expect(mock.called).toEqual(1);
     });
   });
 });

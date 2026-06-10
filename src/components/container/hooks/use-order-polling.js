@@ -2,14 +2,14 @@ import {useEffect, useMemo, useRef, useState} from "react";
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import dig from "lib/common/object/dig";
 import mutable from "lib/common/object/mutable";
-import orderFromQuery from "lib/common/order-from-query";
+import orderFromQuery, {orderFromRecommendation} from "lib/common/order-from-query";
 import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useInterval from "lib/hooks/use-interval";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import useOrder from "lib/hooks/use-order";
-import {orderIDState, orderState} from "lib/recoil";
+import {localeState, orderState} from "lib/recoil";
 
 const defaultPollingTimes = {
   long: {interval: 10 * 1000, stop: 10 * 24 * 60 * 60 * 1000},
@@ -17,8 +17,85 @@ const defaultPollingTimes = {
   short: {interval: 5 * 1000, stop: 1 * 60 * 1000}
 };
 
+const fetchLatestOrder = ({graphQL, http, localeKey, mode, origin}) => {
+  switch(mode) {
+    case "assessment":
+      return http.post({
+        params: {query: graphQL.external.get, variables: {id: origin.assessmentID}},
+        path: graphQL.external.path,
+        version: http.version === "v1" ? graphQL.external.version : undefined
+      }).then((response) => {
+        const assessment = dig(response, "data", "getAssessment");
+        if(!assessment) { return null; }
+
+        const completed = !!assessment.completedAt;
+        return {
+          assessments: [{completed, id: origin.assessmentID, surveyType: "external"}],
+          completed,
+          status: completed ? "completed" : "incomplete"
+        };
+      });
+    case "order":
+      return http.post(graphQL.order.path, {
+        query: graphQL.order.get,
+        variables: {id: origin.orderID}
+      }).then(orderFromQuery);
+    case "recommendation":
+      return http.post(graphQL.xavier.path, {
+        query: graphQL.xavier.recommendation,
+        variables: {
+          benchmarkID: origin.benchmarkID,
+          localeKey,
+          packageID: origin.packageID,
+          profileID: origin.profileID
+        }
+      }).then(orderFromRecommendation);
+    default:
+      return Promise.resolve(null);
+  }
+};
+
+const mergeOrder = (currentOrder, latestOrder) => {
+  if(!latestOrder || latestOrder.errors) { return null; }
+
+  let changes = false;
+  const merged = mutable(currentOrder);
+
+  latestOrder.assessments.forEach((latestAssessment) => {
+    const currentAssessment = merged.assessments.find(({id}) => id === latestAssessment.id);
+    if(currentAssessment && currentAssessment.completed !== latestAssessment.completed) {
+      changes = true;
+      currentAssessment.completed = currentAssessment.completed || latestAssessment.completed;
+    } else if(!currentAssessment) {
+      changes = true;
+      merged.assessments.push(latestAssessment);
+    }
+  });
+
+  if(merged.surveys.length === 0 && latestOrder.surveys?.length) {
+    changes = true;
+    merged.surveys = latestOrder.surveys;
+  }
+
+  if(merged.errors) {
+    changes = true;
+    merged.errors = undefined;
+  }
+
+  if(merged.completed !== latestOrder.completed) {
+    changes = true;
+    merged.completed = merged.assessments.every(({completed}) => completed);
+    merged.status = merged.completed ? "completed" : latestOrder.status;
+  } else if(merged.status !== latestOrder.status) {
+    changes = true;
+    merged.status = latestOrder.status;
+  }
+
+  return changes ? merged : null;
+};
+
 export default function useOrderPolling() {
-  const orderID = useRecoilValue(orderIDState);
+  const localeKey = useRecoilValue(localeState);
   const graphQL = useGraphql();
   const [halted, setHalted] = useState(false);
   const http = useHttp();
@@ -28,6 +105,19 @@ export default function useOrderPolling() {
   const request = useRef(false);
   const setOrder = useSetRecoilState(orderState);
   const pollingTimes = useOption("order", "pollingTimes");
+  const origin = order?.origin;
+  const hasExternal = useMemo(() => (
+    !!order?.assessments.some(({surveyType}) => surveyType === "external")
+  ), [order]);
+  const mode = useMemo(() => {
+    if(!origin) { return null; }
+    if(origin.orderID) { return "order"; }
+    if(origin.profileID && (origin.benchmarkID || origin.packageID) && hasExternal) {
+      return "recommendation";
+    }
+    if(origin.assessmentID && hasExternal) { return "assessment"; }
+    return null;
+  }, [origin, hasExternal]);
   const pollingTime = useMemo(() => {
     const times = mutable(defaultPollingTimes);
 
@@ -39,13 +129,13 @@ export default function useOrderPolling() {
     });
 
     if(!order) { return times.none; }
-    if(!orderID) { return times.none; }
+    if(!mode) { return times.none; }
     if(order.completed) { return times.none; }
     if(order.status === "incomplete") { return times.long; }
 
     // NOTE: For status of error or loading
     return times.short;
-  }, [orderID, order?.status, pollingTimes]);
+  }, [mode, order?.status, pollingTimes]);
 
   useEffect(() => {
     if(!listener) { return; }
@@ -68,7 +158,7 @@ export default function useOrderPolling() {
 
   useInterval(() => {
     if(!order) { return; }
-    if(!orderID) { return; }
+    if(!mode) { return; }
     if(halted) { return; }
     if(request.current) { return; }
 
@@ -81,44 +171,9 @@ export default function useOrderPolling() {
 
     request.current = true;
 
-    const params = {
-      query: graphQL.order.get,
-      variables: {id: orderID}
-    };
-
-    http.post(graphQL.order.path, params).then((response) => {
-      let changes = false;
-      const currentOrder = mutable(order);
-      const latestOrder = orderFromQuery(response);
-
-      if(!latestOrder || latestOrder.errors) { return; }
-
-      latestOrder.assessments.forEach((latestAssessment) => {
-        const currentAssessment = currentOrder.assessments
-          .find(({id}) => id === latestAssessment.id);
-        if(currentAssessment && currentAssessment.completed !== latestAssessment.completed) {
-          changes = true;
-          currentAssessment.completed = currentAssessment.completed || latestAssessment.completed;
-        } else if(!currentAssessment) {
-          changes = true;
-          currentOrder.assessments.push(latestAssessment);
-        }
-      });
-
-      if(currentOrder.errors) {
-        changes = true;
-        currentOrder.errors = undefined;
-      }
-
-      if(currentOrder.completed !== latestOrder.completed) {
-        changes = true;
-        currentOrder.completed = currentOrder.assessments.every(({completed}) => completed);
-        currentOrder.status = currentOrder.completed ? "completed" : latestOrder.status;
-      } else if(currentOrder.status !== latestOrder.status) {
-        changes = true;
-        currentOrder.status = latestOrder.status;
-      }
-      if(changes) { setOrder(currentOrder); }
+    fetchLatestOrder({graphQL, http, localeKey, mode, origin}).then((latestOrder) => {
+      const merged = mergeOrder(order, latestOrder);
+      if(merged) { setOrder(merged); }
     }).finally(() => { request.current = false; });
   }, halted ? null : pollingTime.interval);
 }

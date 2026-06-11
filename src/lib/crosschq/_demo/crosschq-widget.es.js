@@ -13060,7 +13060,7 @@ const NT = {
   positionStrategy: "fixed",
   updatePositionStrategy: "optimized",
   prioritizePosition: !1
-}, [Pq, BP] = /* @__PURE__ */ ji("PopperContent");
+}, [Lq, BP] = /* @__PURE__ */ ji("PopperContent");
 var FP = /* @__PURE__ */ qe({
   inheritAttrs: !1,
   __name: "PopperContent",
@@ -58137,7 +58137,33 @@ const uq = { class: "space-y-4" }, cq = {
       oe(Sq, { id: t.interviewId }, null, 8, ["id"])
     ]));
   }
-}, Eq = "0.1.0";
+}, Eq = /crosschq-widget[^/?#]*\.css(?:[?#]|$)/i;
+function kq(t, e) {
+  if (e) return e;
+  if (!t || typeof t.querySelectorAll != "function") return null;
+  const i = t.querySelectorAll('link[rel="stylesheet"][href]');
+  for (const r of i) {
+    const s = r.getAttribute("href") || "";
+    if (Eq.test(s))
+      return r.href || s;
+  }
+  return null;
+}
+function Aq(t, { cssHref: e, doc: i } = {}) {
+  const r = i || t.ownerDocument || (typeof document < "u" ? document : null), s = t.shadowRoot || t.attachShadow({ mode: "open" });
+  s.replaceChildren();
+  const n = kq(r, e);
+  if (n) {
+    const o = r.createElement("link");
+    o.rel = "stylesheet", o.href = n, s.appendChild(o);
+  } else
+    console.warn(
+      'CrosschqWidget: shadow mode could not locate crosschq-widget.css in the document. The widget will render unstyled — pass render({ shadow: true, cssHref: "<url to crosschq-widget.css>" }) to fix.'
+    );
+  const a = r.createElement("div");
+  return s.appendChild(a), { mountEl: a, shadowRoot: s };
+}
+const Dq = "0.2.0";
 function iS(t = {}) {
   const {
     interviewID: e,
@@ -58145,16 +58171,18 @@ function iS(t = {}) {
     reportData: r,
     transcriptionData: s,
     apiHost: n,
-    bearerToken: a
+    bearerToken: a,
+    shadow: o,
+    cssHref: l
   } = t;
   if (!e) throw new Error("CrosschqWidget.render: interviewID is required");
   if (!i) throw new Error("CrosschqWidget.render: target is required");
-  const o = r != null, l = s != null, u = !!(n && a);
-  if (!o && !u)
+  const u = r != null, c = s != null, h = !!(n && a);
+  if (!u && !h)
     throw new Error(
       "CrosschqWidget.render: provide either reportData (push mode) or apiHost + bearerToken (pull mode)"
     );
-  const c = new Nb({
+  const p = new Nb({
     defaultOptions: {
       queries: {
         staleTime: 6e4,
@@ -58162,24 +58190,26 @@ function iS(t = {}) {
         refetchOnWindowFocus: !1
       }
     }
-  }), h = tk(Cq, {
+  }), m = tk(Cq, {
     interviewId: e,
-    apiHost: u ? n : null,
-    bearerToken: u ? a : null,
-    reportData: o ? r : null,
-    transcriptionData: l ? s : null
+    apiHost: h ? n : null,
+    bearerToken: h ? a : null,
+    reportData: u ? r : null,
+    transcriptionData: c ? s : null
   });
-  return h.use(Lk, { queryClient: c }), h.mount(i), {
+  m.use(Lk, { queryClient: p });
+  const { mountEl: b } = o ? Aq(i, { cssHref: l }) : { mountEl: i };
+  return m.mount(b), {
     destroy() {
-      h.unmount(), c.clear();
+      m.unmount(), p.clear();
     },
-    update(p = {}) {
-      return h.unmount(), c.clear(), iS({ ...t, ...p });
+    update(_ = {}) {
+      return m.unmount(), p.clear(), iS({ ...t, ..._ });
     }
   };
 }
-typeof window < "u" && (window.CrosschqWidget = { render: iS, version: Eq });
+typeof window < "u" && (window.CrosschqWidget = { render: iS, version: Dq });
 export {
   iS as render,
-  Eq as version
+  Dq as version
 };

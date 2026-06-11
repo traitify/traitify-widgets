@@ -1,22 +1,11 @@
-# Runnable demos
+# Dev demos (not for partners)
 
-Two host pages that render the widget so you can try it with zero setup.
+These HTML files exist to validate the widget locally and are NOT part of
+the artifact shipped to Traitify.
 
-- `index.html` — plain HTML host (uses the UMD build).
-- `react.html` — React 18 host (React from CDN), simulating how the
-  widget mounts inside a React app like Traitify's.
+- `index.html` — plain HTML host. Open via `npx serve` in this directory.
+- `react.html` — React 18 host (loaded from CDN) that simulates how
+  Traitify will mount the widget inside its bundle.
 
-## Run
-
-```bash
-npx serve .
-# open the printed URL, then index.html or react.html
-```
-
-Click **"Load sample data"** to render a bundled sample report with no
-credentials. Or pick a Mode and provide your own pushed JSON / pull creds.
-
-The `crosschq-widget.*` and `sample-*.json` files here are copies of the
-deliverable one level up, kept so this folder serves standalone.
-
-See `../INTEGRATION.md` for the full integration contract.
+The bundle files (`crosschq-widget.*`) are copies of the deliverable
+one level up, kept here so the demos can be served independently.

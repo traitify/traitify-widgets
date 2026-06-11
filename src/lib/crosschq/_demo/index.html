@@ -188,7 +188,6 @@
     <button type="button" id="mode-push" class="demo-mode-btn active">Push (data)</button>
     <button type="button" id="mode-pull" class="demo-mode-btn">Pull (fetch)</button>
     <span class="demo-mode-help" id="mode-help">Paste a pre-fetched report JSON below.</span>
-    <button type="button" id="load-sample" class="demo-mode-btn" style="margin-left: auto;">Load sample data</button>
   </div>
 
   <form id="demo-form" class="demo-form" data-mode="push" onsubmit="return false;">
@@ -283,36 +282,6 @@
       }
       modePushBtn.addEventListener('click', function () { applyMode('push'); });
       modePullBtn.addEventListener('click', function () { applyMode('pull'); });
-
-      var loadSampleBtn = document.getElementById('load-sample');
-      loadSampleBtn.addEventListener('click', function () {
-        hideError();
-        loadSampleBtn.disabled = true;
-        loadSampleBtn.textContent = 'Loading…';
-        Promise.all([
-          fetch('./sample-report.json').then(function (r) {
-            if (!r.ok) throw new Error('sample-report.json not found (HTTP ' + r.status + ')');
-            return r.json();
-          }),
-          fetch('./sample-transcription.json')
-            .then(function (r) { return r.ok ? r.json() : null; })
-            .catch(function () { return null; }),
-        ]).then(function (results) {
-          var report = results[0];
-          var transcription = results[1];
-          applyMode('push');
-          document.getElementById('f-interview-id').value =
-            report.interview_id || report.id || 'sample-interview';
-          reportDataEl.value = JSON.stringify(report, null, 2);
-          transcriptionDataEl.value = transcription ? JSON.stringify(transcription, null, 2) : '';
-          renderWidget();
-        }).catch(function (e) {
-          showError('Could not load sample data: ' + e.message);
-        }).finally(function () {
-          loadSampleBtn.disabled = false;
-          loadSampleBtn.textContent = 'Load sample data';
-        });
-      });
 
       function applyViewport(width, reRender) {
         frameEl.setAttribute('data-width', width);

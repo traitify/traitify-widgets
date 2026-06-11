@@ -327,32 +327,6 @@
           setMounted(false);
         }
 
-        function loadSample() {
-          Promise.all([
-            fetch('./sample-report.json').then(function (r) {
-              if (!r.ok) throw new Error('sample-report.json not found (HTTP ' + r.status + ')');
-              return r.json();
-            }),
-            fetch('./sample-transcription.json')
-              .then(function (r) { return r.ok ? r.json() : null; })
-              .catch(function () { return null; }),
-          ]).then(function (results) {
-            var report = results[0];
-            var transcription = results[1];
-            var next = Object.assign({}, values, {
-              interviewID: report.interview_id || report.id || 'sample-interview',
-              reportData: JSON.stringify(report, null, 2),
-              transcriptionData: transcription ? JSON.stringify(transcription, null, 2) : '',
-            });
-            setValues(next);
-            changeMode('push');
-            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } catch (e) {}
-            setMounted(true);
-          }).catch(function (e) {
-            console.error('[crosschq-demo] Could not load sample data:', e);
-          });
-        }
-
         function onRemount() {
           setMounted(false);
           setCycleCount(cycleCount + 1);
@@ -387,13 +361,13 @@
               ),
             ),
           ),
-          renderModeToolbar(mode, changeMode, loadSample),
+          renderModeToolbar(mode, changeMode),
           renderFormPortal(values, update, mode),
           renderViewportToolbar(viewport, changeViewport)
         );
       }
 
-      function renderModeToolbar(mode, onChange, onLoadSample) {
+      function renderModeToolbar(mode, onChange) {
         return ReactDOM.createPortal(
           h(React.Fragment, null,
             h('span', { className: 'demo-mode-label' }, 'Mode:'),
@@ -410,13 +384,7 @@
             h('span', { className: 'demo-mode-help' },
               mode === 'push'
                 ? 'Paste a pre-fetched report JSON below.'
-                : 'Widget fetches the report at runtime using the credentials below.'),
-            h('button', {
-              type: 'button',
-              className: 'demo-mode-btn',
-              style: { marginLeft: 'auto' },
-              onClick: onLoadSample,
-            }, 'Load sample data')
+                : 'Widget fetches the report at runtime using the credentials below.')
           ),
           document.getElementById('demo-mode-toolbar')
         );

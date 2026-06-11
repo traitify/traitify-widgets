@@ -11,7 +11,7 @@ architecture proposed in Tom Prats' gist (`tomprats/f984fa50f1e80b3b0861d88a29c8
 |------|--------|-------------|
 | `crosschq-widget.es.js`  | ESM   | Bundler-based integration (Webpack, Vite, Rollup). Recommended. |
 | `crosschq-widget.umd.js` | UMD   | Plain `<script src>` integration without a bundler. |
-| `crosschq-widget.css`    | CSS   | Tailwind v4 + theme + defensive reset scoped to `.crosschq-widget`. |
+| `crosschq-widget.css`    | CSS   | Tailwind v4 + theme + reset, every selector scoped under `.crosschq-widget`. |
 
 All three are **self-contained**: Vue 3 runtime, TanStack Query, and all
 report components are bundled inside `*.js`. No additional runtime
@@ -48,8 +48,22 @@ type RenderOptionsCommon = {
    *  in pull mode as the path segment of the report URL. */
   interviewID: string;
 
-  /** DOM element to render into. Will become the root of the Vue app. */
+  /** DOM element to render into. Will become the root of the Vue app (or, in
+   *  shadow mode, the shadow host). */
   target: HTMLElement;
+
+  /** Mount inside a shadow root for full bidirectional style isolation: the
+   *  host page's CSS cannot reach in and the widget's cannot leak out. The
+   *  widget stylesheet is auto-attached inside the shadow root. Off by default
+   *  — the build-time `.crosschq-widget` scoping already prevents most
+   *  collisions without it. Default: false. */
+  shadow?: boolean;
+
+  /** Only used with `shadow: true`. Explicit URL of `crosschq-widget.css` to
+   *  attach inside the shadow root. Omit to auto-detect the stylesheet the host
+   *  already loaded in the document. Provide it when the host injects the CSS
+   *  in a way the widget can't discover (e.g. a bundler-inlined stylesheet). */
+  cssHref?: string;
 };
 
 type RenderOptionsPush = RenderOptionsCommon & {
@@ -289,43 +303,62 @@ to `https://interview.crosschq.dev/api/` with a user JWT in `bearerToken`.
 
 ## CSS scoping
 
-`crosschq-widget.css` has **two layers** with different scoping behavior — be
-aware of both before integrating:
+Every selector in `crosschq-widget.css` is namespaced under `.crosschq-widget`
+at build time. The widget mounts its content inside a `.crosschq-widget`
+container, so the stylesheet only matches the widget's own subtree:
 
-**Global (affects the host page):**
-- **Tailwind v4 preflight** — base reset on `*`, `::before`, `::after`,
-  `html`, `body`, and heading selectors. Standard cross-browser
-  normalization (box-sizing, margin reset, list-style, etc.). This is
-  unavoidable with Tailwind v4 today (the framework does not yet support
-  scoped builds). For most hosts the preflight is a no-op or matches their
-  own reset; for hosts that depend on browser-default `body` margins or
-  unstyled headings it may visibly change rendering.
-- **Tailwind utility classes** (`.text-foreground`, `.bg-card`, etc.) —
-  tree-shaken to only what the widget uses, but the class names live in the
-  global namespace. Hosts using their own CSS-utility framework with the
-  same class names would collide.
-- **Theme CSS variables** — defined on `:root` via `@theme`. If your host
-  defines colliding `:root` vars (e.g. `--color-foreground`), they will be
-  inherited. Open an issue and we can move them inside `.crosschq-widget`
-  in v1.1.
+- **Tailwind v4 preflight** — the base reset on `*`, `html`, `body`,
+  `::before`, `::after` is rewritten to `.crosschq-widget *`, etc. It no
+  longer touches the host page's elements.
+- **Tailwind utility classes** (`.flex`, `.text-foreground`, `.bg-card`, …)
+  become `.crosschq-widget .flex`, etc. A host that uses Bootstrap, a
+  different Tailwind, or its own utilities with the same class names will not
+  collide, and the added `.crosschq-widget` specificity means host styles
+  rarely override the widget's.
+- **Theme CSS variables** — `@theme` tokens (`--color-foreground`, `--radius`,
+  …) are defined on `.crosschq-widget` (and `:host`) instead of `:root`, so
+  they no longer leak to or inherit from the host's `:root`.
+- **`<style scoped>` blocks** from the widget's Vue components stay isolated
+  via Vue's `data-v-*` attributes, as before.
 
-**Scoped to `.crosschq-widget`:**
-- All custom rules in `widget.css` itself (font-smoothing, defensive
-  `box-sizing`, etc.).
-- `<style scoped>` blocks from Vue components used by the widget — Vue's
-  `data-v-*` attributes keep these isolated.
+This makes the default integration (load the `<link>`, mount the widget) safe
+for both directions of leakage with no extra work on your side.
 
-If host CSS conflicts cause real problems for your integration, file an
-issue with a minimal repro and we'll consider one of: emitting a no-preflight
-build, prefixing all utilities, or moving to Shadow DOM.
+### Full isolation with `shadow: true`
+
+For hosts with aggressive global CSS (e.g. `!important` resets) — or if you
+simply want a hard boundary — pass `shadow: true` to mount the widget inside a
+shadow root. Host CSS then cannot reach in at all, and the widget's cannot leak
+out under any specificity:
+
+```js
+const handle = render({
+  interviewID: "...",
+  target: document.getElementById("report"),
+  reportData,
+  shadow: true,
+  // cssHref: "https://cdn.example.com/crosschq-widget.css", // optional override
+});
+```
+
+The widget auto-attaches its stylesheet inside the shadow root by finding the
+`crosschq-widget.css` you already loaded in the document. If it can't find it
+(e.g. your bundler inlined the CSS), pass the URL explicitly via `cssHref`.
+
+One caveat: hover **tooltips** in the report teleport to `document.body`, which
+is outside the shadow root, so under `shadow: true` they render unstyled. The
+report content itself — the part that matters — is fully isolated and styled.
+If unstyled tooltips are a problem for your integration, prefer the default
+(non-shadow) scoped mode, or let us know and we'll add an in-shadow portal
+target.
 
 ## Known limitations (v1)
 
-- **Tooltip / Popover portals.** Reka-UI components inside the report
-  (`Tooltip`, `Sheet`, `Dialog`) currently portal to `document.body`. They
-  inherit theme vars from `:root` so they render correctly when no host
-  conflict exists, but they escape the `.crosschq-widget` scope. We'll add
-  a `portalContainer` option in v1.1 if needed.
+- **Tooltip portals under `shadow: true`.** Hover tooltips in the report
+  teleport to `document.body`, outside the shadow root, so they render
+  unstyled in shadow mode. The report content itself is fully isolated. In the
+  default (non-shadow) scoped mode tooltips are styled normally. We'll add an
+  in-shadow portal target in a later version if needed.
 - **Bearer-token auth only.** The widget does not yet support cookie auth
   or signed URLs — sufficient for the proxied flow, but worth noting.
 - **`update()` does a full remount.** Acceptable for v1 since hosts rarely

@@ -1,4 +1,5 @@
 import CognitiveChart from "components/results/cognitive/chart";
+import ExternalResults from "components/results/external";
 import GenericBreakdown from "components/results/generic/breakdown";
 import GenericHeading from "components/results/generic/heading";
 import ClientGuide from "components/results/guide/client";
@@ -26,6 +27,7 @@ export default function ManagerReport() {
 
   if(!active) { return null; }
   if(redacted) { return <Redacted />; }
+  if(active.surveyType === "external") { return <ExternalResults />; }
   if(active.surveyType === "generic") {
     return (
       <section className={[style.container, style.box].join(" ")}>
@@ -57,6 +59,7 @@ export default function ManagerReport() {
       </div>
       <ClientGuide />
       <CognitiveChart />
+      <ExternalResults />
     </section>
   );
 }

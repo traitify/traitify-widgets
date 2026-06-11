@@ -12,6 +12,8 @@ import CareerList from "./results/career/list";
 import CareerModal from "./results/career/modal";
 import CognitiveResults from "./results/cognitive";
 import CognitiveChart from "./results/cognitive/chart";
+import ExternalResults from "./results/external";
+import ExternalCrosschq from "./results/external/crosschq";
 import GenericBreakdown from "./results/generic/breakdown";
 import GenericConclusions from "./results/generic/conclusions";
 import GenericHeading from "./results/generic/heading";
@@ -60,6 +62,10 @@ export default {
       Container: CognitiveResults
     },
     Container: Results,
+    External: {
+      Container: ExternalResults,
+      Crosschq: ExternalCrosschq
+    },
     Generic: {
       Breakdown: GenericBreakdown,
       Conclusions: GenericConclusions,

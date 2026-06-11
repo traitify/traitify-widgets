@@ -1,5 +1,6 @@
 const ESLintPlugin = require("eslint-webpack-plugin");
 const webpack = require("webpack");
+const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 const path = require("path");
 
 module.exports = (_env) => {
@@ -58,6 +59,7 @@ module.exports = (_env) => {
               options: {
                 sourceMap: cssMaps,
                 modules: {
+                  auto: (resourcePath) => !resourcePath.includes("crosschq-widget"),
                   localIdentName: "traitify--[path]--[local]",
                   namedExport: false
                 },
@@ -99,6 +101,7 @@ module.exports = (_env) => {
       publicPath: "/"
     },
     plugins: [
+      new BundleAnalyzerPlugin(),
       new ESLintPlugin({emitWarning: true, failOnError: false}),
       new webpack.ProvidePlugin({React: "react"}),
       new webpack.DefinePlugin({

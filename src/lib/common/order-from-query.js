@@ -5,6 +5,7 @@ import dig from "lib/common/object/dig";
 export function assessmentFromQuery(response) {
   const record = {
     completed: !!(response.completed || response.completed_at || response.completedAt),
+    externalID: response.externalId,
     link: response.signInUrl || response.assessmentTakerUrl,
     loaded: true,
     loading: false,
@@ -16,7 +17,13 @@ export function assessmentFromQuery(response) {
   };
 
   // NOTE: Prevent overriding with blanks
-  ["link", "profileID", "surveyID", "surveyName"].filter((key) => !record[key]).forEach((key) => {
+  [
+    "externalID",
+    "link",
+    "profileID",
+    "surveyID",
+    "surveyName"
+  ].filter((key) => !record[key]).forEach((key) => {
     delete record[key];
   });
 
@@ -122,6 +129,7 @@ export function orderFromRecommendation(response) {
     external.forEach((assessment) => {
       assessments.push({
         completed: assessment.status === "COMPLETE",
+        externalID: assessment.externalId,
         id: assessment.assessmentId,
         link: assessment.signInUrl || assessment.assessmentTakerUrl,
         skipped: assessment.isSkipped,

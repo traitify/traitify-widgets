@@ -33,6 +33,7 @@ export default function CandidateReport() {
 
   if(!active) { return null; }
   if(redacted) { return <Redacted />; }
+  if(active.surveyType === "external") { return null; }
   if(active.surveyType === "generic") {
     return (
       <section className={style.container}>

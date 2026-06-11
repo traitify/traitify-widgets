@@ -11,7 +11,8 @@ export default function Default() {
   if(order?.status === "skipped") { return <Status />; }
   if(!active) { return <Status />; }
   if(active.loading) { return <Status />; }
+  if(active.completed) { return <Results />; }
   if(active.surveyType === "external") { return <Status />; }
 
-  return active.completed ? <Results /> : <Survey />;
+  return <Survey />;
 }

@@ -1,0 +1,717 @@
+{
+  "report_data": {
+    "id": "00000000-0000-4000-8000-000000000001",
+    "name": "Interview Report v2.1",
+    "codename": "interview-report-v21",
+    "description": "Interview Report v2.1",
+    "version": 2,
+    "sections": [
+      {
+        "name": "Interview Score V2.1",
+        "codename": "interview-score-v21",
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "tooltip": "",
+        "icon": "",
+        "show_border": false,
+        "show_divider": false,
+        "params": {
+          "compact": true
+        },
+        "pdf_params": {},
+        "orientation": "horizontal",
+        "components": [
+          {
+            "scores": [
+              {
+                "icon": "users",
+                "name": "Interview Score v2",
+                "codename": "interview-score-v2",
+                "component_type": "score",
+                "title": "Interview Score",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "The Interview Score reflects the candidate’s overall evaluation based on their responses, competencies, and fit for the role. This score is derived from a combination of structured evaluation criteria and interviewer assessments. A higher score indicates stronger alignment with the role’s requirements.",
+                "order": 1,
+                "params": {
+                  "size": "md_lg"
+                },
+                "score": "9.6",
+                "unit": "out of 10",
+                "sub_headings": "\r\nAgent avg: 4.7\r\n"
+              },
+              {
+                "icon": "",
+                "name": "Recommendation Score",
+                "codename": "recommendation-score",
+                "component_type": "score",
+                "title": "Recommendation",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "**Recommendation** is assessed based on the candidate’s overall performance, alignment with the role requirements, and demonstrated potential during the interview process.\r\nThe scale includes:\r\n- **Strong fit**: The candidate’s responses indicate a strong match with the role’s expectations.\r\n- **Potential fit**: The candidate may be suitable for the role but would benefit from further assessment.\r\n- **Not a fit**: The candidate’s responses do not align with the role’s key requirements.",
+                "order": 2,
+                "params": {
+                  "size": "lg"
+                },
+                "score": "{\"icon\": \"thumbs-up\"}",
+                "unit": "",
+                "sub_headings": "Strong fit"
+              },
+              {
+                "icon": "users",
+                "name": "Duration V2",
+                "codename": "duration-v2",
+                "component_type": "score",
+                "title": "Duration",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "Duration indicates the total length of the interview session. This helps provide context around the depth of the interview. Longer durations may suggest more detailed conversations or complex evaluations.",
+                "order": 1,
+                "params": {
+                  "size": "sm_md"
+                },
+                "score": "9",
+                "unit": "minutes",
+                "sub_headings": "Agent avg: 3 min."
+              },
+              {
+                "icon": "users",
+                "name": "Time to Completion V2",
+                "codename": "time-to-completion-v2",
+                "component_type": "score",
+                "title": "Time to Completion",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "Time to Completion measures the number of days between the interview invitation and the completion of the interview. A shorter completion time may indicate greater candidate responsiveness or scheduling efficiency.",
+                "order": 1,
+                "params": {
+                  "size": "sm_md"
+                },
+                "score": "\r\n    <1\r\n",
+                "unit": "\r\n  day\r\n",
+                "sub_headings": "Agent avg: 0 days"
+              },
+              {
+                "icon": "world",
+                "name": "Language Proficiency V2",
+                "codename": "language-proficiency-v2",
+                "component_type": "score",
+                "title": "Language Proficiency",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "Language Proficiency is assessed based on the candidate's communication during the interview and/or resume. The scale includes:\n- **Poor**: Limited ability to communicate in the evaluated language.\n- **Proficient**: Highly fluent, with excellent command of language across technical and interpersonal contexts.",
+                "order": 1,
+                "params": {
+                  "size": "sm_md"
+                },
+                "score": "Proficient",
+                "unit": "",
+                "sub_headings": "English"
+              },
+              {
+                "icon": "shield-alert",
+                "name": "Fraud Risk",
+                "codename": "fraud-risk",
+                "component_type": "score",
+                "title": "Fraud Risk",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "The Fraud Risk score represents the likelihood of fraudulent behavior detected on the candidate, based on multiple fraud detection signals including device usage, email verification, identity consistency, and phone validation.\n\nEach signal contributes to an overall risk score, which is then mapped to a Low, Medium, or High risk level.",
+                "order": 5,
+                "params": {
+                  "size": "sm_md"
+                },
+                "score": "{\"type\": \"fraud_gauge\", \"risk_level\": \"Low\", \"score\": 14.86}",
+                "unit": "",
+                "sub_headings": ""
+              }
+            ],
+            "component_type": "score"
+          }
+        ]
+      },
+      {
+        "name": "Summary Strenghts-considerations v2",
+        "codename": "summary-strenghts-considerations-v2",
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "tooltip": "",
+        "icon": "",
+        "show_border": true,
+        "show_divider": true,
+        "params": {},
+        "pdf_params": {},
+        "orientation": "horizontal",
+        "sub_sections": [
+          {
+            "name": "Alerts & Warnings",
+            "codename": "alerts",
+            "title": "Alerts & Warnings",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "icon": "",
+            "show_border": false,
+            "show_divider": false,
+            "params": {
+              "background-color": "negative-150"
+            },
+            "pdf_params": {},
+            "orientation": "horizontal",
+            "components": [
+              {
+                "icon": "",
+                "name": "Alert",
+                "codename": "alert",
+                "component_type": "alerts",
+                "title": "",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "",
+                "order": 0,
+                "alerts": []
+              }
+            ]
+          },
+          {
+            "name": "Summary",
+            "codename": "summary",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "icon": "",
+            "show_border": false,
+            "show_divider": false,
+            "params": {
+              "background-color": "neutral-100"
+            },
+            "pdf_params": {},
+            "orientation": "horizontal",
+            "components": [
+              {
+                "icon": "ai_icon",
+                "name": "Interview Summary",
+                "codename": "interview_summary",
+                "component_type": "text",
+                "title": "Interview Summary",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "",
+                "order": 1,
+                "text": "<p>The candidate communicated clearly and confidently, demonstrating strong organizational and customer service skills relevant to the barista role, including effective handling of peak hours and customer complaints. They expressed enthusiasm for the company&#x27;s values and a readiness to start immediately, highlighting transferable skills from their engineering background. However, the candidate lacks direct barista experience and formal certifications, which may require additional training to fully meet the role&#x27;s qualifications.</p>"
+              }
+            ]
+          },
+          {
+            "name": "Strengths and Considerations V2",
+            "codename": "strengths-and-considerations-v2",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "icon": "",
+            "show_border": false,
+            "show_divider": true,
+            "params": {},
+            "pdf_params": {},
+            "orientation": "horizontal",
+            "components": [
+              {
+                "icon": "",
+                "name": "Strengths V2",
+                "codename": "strengths-v2",
+                "component_type": "bullet",
+                "title": "Strengths",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "",
+                "order": 1,
+                "params": {
+                  "title": {
+                    "size": "h3"
+                  }
+                },
+                "bullets": [
+                  "Clear motivation for joining Acme and barista role",
+                  "Demonstrated organizational skills in managing peak hours",
+                  "Effective conflict resolution with customer complaints",
+                  "Strong customer service acumen and proactive approach"
+                ],
+                "bullet_style": "round"
+              },
+              {
+                "icon": "",
+                "name": "Considerations V2",
+                "codename": "considerations-v2",
+                "component_type": "bullet",
+                "title": "Considerations",
+                "subtitle": "",
+                "description": "",
+                "tooltip": "",
+                "order": 1,
+                "params": {
+                  "title": {
+                    "size": "h3"
+                  }
+                },
+                "bullets": [
+                  "Lack of direct barista experience",
+                  "No formal barista certifications"
+                ],
+                "bullet_style": "round"
+              }
+            ]
+          }
+        ],
+        "components": []
+      },
+      {
+        "name": "Screening & Qualifications V2",
+        "codename": "screening-qualifications-v2",
+        "title": "Screening & Qualifications",
+        "subtitle": "",
+        "description": "",
+        "tooltip": "",
+        "icon": "",
+        "show_border": false,
+        "show_divider": true,
+        "params": {},
+        "pdf_params": {},
+        "orientation": "horizontal",
+        "components": [
+          {
+            "icon": "",
+            "name": "Screening & Qualifications",
+            "codename": "screening-qualifications",
+            "component_type": "screening_question",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "order": 1,
+            "questions": [
+              {
+                "flag": {
+                  "icon": "check circle",
+                  "color": "green",
+                  "tooltip": "Candidate provided specific salary ranges for both roles discussed."
+                },
+                "title": "Salary Expectations",
+                "value": "USD 18 - 20",
+                "tooltip": "",
+                "description": "Candidate expects a salary around $18 to $20 per hour.",
+                "component_type": "card"
+              },
+              {
+                "flag": {
+                  "icon": "check circle",
+                  "color": "green",
+                  "tooltip": "Candidate confirms immediate availability and eagerness to start."
+                },
+                "title": "Start Date",
+                "value": "Immediately",
+                "tooltip": "",
+                "description": "Candidate stated they can start immediately.",
+                "component_type": "card"
+              },
+              {
+                "flag": {
+                  "icon": "check circle",
+                  "color": "green",
+                  "tooltip": "Enthusiastically embraces on-site work with positive past experiences and measurable impact."
+                },
+                "title": "On-Site Experience",
+                "value": "On-site",
+                "tooltip": "",
+                "description": "Candidate has thrived in on-site environments throughout their career.",
+                "component_type": "card"
+              },
+              {
+                "flag": {
+                  "icon": "exclamation triangle",
+                  "color": "red",
+                  "tooltip": "Candidate lacks direct barista experience, despite transferable skills."
+                },
+                "title": "Barista Experience",
+                "value": "No direct barista experience",
+                "tooltip": "",
+                "description": "Candidate does not have direct experience as a barista.",
+                "component_type": "card"
+              },
+              {
+                "flag": {
+                  "icon": "exclamation triangle",
+                  "color": "red",
+                  "tooltip": "Candidate does not hold specific barista certifications as required."
+                },
+                "title": "Barista Certifications",
+                "value": "No barista certifications",
+                "tooltip": "",
+                "description": "Candidate does not hold specific barista certifications.",
+                "component_type": "card"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Skills and Competencies V2",
+        "codename": "skills-and-competencies-v2",
+        "title": "Skills & Competencies",
+        "subtitle": "",
+        "description": "",
+        "tooltip": "",
+        "icon": "💡",
+        "show_border": true,
+        "show_divider": false,
+        "params": {},
+        "pdf_params": {},
+        "orientation": "horizontal",
+        "components": [
+          {
+            "icon": "",
+            "name": "Skills and Competencies V2",
+            "codename": "skills-and-competencies-v2",
+            "component_type": "rating",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "order": 1,
+            "params": {
+              "colors": [
+                {
+                  "color": "#ff6651",
+                  "max_rating": 2,
+                  "min_rating": 0
+                },
+                {
+                  "color": "#ffbd57",
+                  "max_rating": 4,
+                  "min_rating": 2
+                },
+                {
+                  "color": "#12b76a",
+                  "max_rating": 5,
+                  "min_rating": 4
+                }
+              ],
+              "max_rating": 5,
+              "min_rating": 0
+            },
+            "ratings": [
+              {
+                "name": "Time Management",
+                "raw_value": 5,
+                "value": "5.0"
+              },
+              {
+                "name": "Communication Skills",
+                "raw_value": 5,
+                "value": "5.0"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "codename": "screening",
+        "title": "Screening",
+        "icon": "📋",
+        "show_border": true,
+        "components": [
+          {
+            "component_type": "question_section",
+            "summary": "The candidate demonstrated a clear understanding of the expectations for the barista role, providing realistic salary expectations aligned with the position. They emphasized their readiness to start immediately and highlighted extensive experience working in on-site, collaborative environments. Their responses reflected adaptability, strong work ethic, and an appreciation for teamwork in physical workspaces.",
+            "questions": [
+              {
+                "analysis": "The candidate initially referenced a high salary based on their engineering background but then clarified their expectations specifically for the barista role, citing $18 to $20 per hour. They supported this with examples of strong work ethic and customer service achievements, showing awareness of the role's requirements and their value.",
+                "question": "What are your salary expectations for this role?"
+              },
+              {
+                "analysis": "The candidate expressed immediate availability and emphasized their ability to quickly onboard and contribute, referencing past experiences where they successfully adapted to new roles rapidly. This shows eagerness and readiness to begin work without delay.",
+                "question": "What is your earliest available start date?"
+              },
+              {
+                "analysis": "The candidate provided a detailed example of leading a team in a fast-paced, on-site environment, highlighting collaboration and direct communication. They demonstrated an understanding of the benefits of physical presence, such as energy and camaraderie, indicating a positive attitude toward on-site work.",
+                "question": "First, could you share your thoughts on working in an on-site environment and any experience you’ve had in roles that required you to be physically present?"
+              }
+            ],
+            "candidate_highlight": "I can start immediately. I believe in hitting the ground running. In my previous positions, I've often taken on projects that required quick onboarding, and I excelled at getting up to speed. I'm ready to bring that same energy and commitment to the barista role right away."
+          }
+        ]
+      },
+      {
+        "codename": "motivation_goals",
+        "title": "Motivation & Goals",
+        "icon": "🥇",
+        "show_border": true,
+        "components": [
+          {
+            "component_type": "question_section",
+            "summary": "The candidate showed strong motivation for the role by aligning their personal values with the company's commitment to innovation and quality. They expressed enthusiasm for the barista position, connecting it to their passion for exceptional customer service and leveraging their unique background to enhance the customer experience. Their response reflected genuine interest and respect for the brand.",
+            "questions": [
+              {
+                "analysis": "The candidate articulated admiration for Acme's innovation and quality, and connected the barista role to their passion for service and creating memorable customer experiences. They also highlighted how their engineering background offers a unique perspective on efficiency and attention to detail, demonstrating thoughtful alignment with the role.",
+                "question": "What about this company or role stood out to you when you applied?"
+              }
+            ],
+            "candidate_highlight": "What stood out to me about Acme is its commitment to innovation and quality. I admire how the company consistently pushes boundaries, whether in technology or customer experience. The barista role, in particular, aligns with my passion for providing exceptional service and creating memorable experiences for customers. I believe my background in engineering gives me a unique perspective on efficiency and attention to detail, which can enhance the overall experience in the cafe environment. I'm excited about the opportunity to contribute to a brand that I truly respect."
+          }
+        ]
+      },
+      {
+        "codename": "skills_competencies",
+        "title": "Skills & Competencies",
+        "icon": "⭐",
+        "show_border": true,
+        "components": [
+          {
+            "component_type": "question_section",
+            "summary": "The candidate demonstrated strong organizational and communication skills in managing multiple coffee orders during peak hours, supported by concrete examples of process improvements and team training. Their approach to customer complaints emphasized empathy and resolution, with a proven track record of turning negative experiences into positive outcomes. Overall, their responses showed capability in handling fast-paced environments while maintaining quality and customer satisfaction.",
+            "questions": [
+              {
+                "analysis": "The candidate described a systematic approach involving prioritization, team training, and a color-coded order system that significantly reduced wait times. Their response showed practical experience in optimizing workflow and maintaining quality under pressure, highlighting strong leadership and communication skills.",
+                "question": "How do you approach the task of preparing multiple coffee orders during peak hours?"
+              },
+              {
+                "analysis": "The candidate emphasized active listening, empathy, and prompt resolution, illustrated by a specific example where they turned a complaint into increased customer loyalty. This demonstrated their customer service acumen and ability to maintain brand reputation through thoughtful problem-solving.",
+                "question": "Describe how you would handle a customer complaint about their coffee order."
+              }
+            ],
+            "candidate_highlight": "I approach it with a blend of organization and efficiency. In my previous role at BrewMasters, I implemented a system where we organized orders by priority and complexity. During peak hours, I trained my team to streamline the process, which led to a 50% reduction in wait times. I also believe in clear communication. We used a color-coded system for orders to quickly identify them. This method not only optimized our workflow but also ensured that we maintained high-quality standards, even under pressure. I thrive in fast-paced environments and enjoy the challenge of juggling multiple tasks seamlessly."
+          }
+        ]
+      },
+      {
+        "codename": "qualification",
+        "title": "Qualifications",
+        "icon": "🎓",
+        "show_border": true,
+        "components": [
+          {
+            "component_type": "question_section",
+            "summary": "While the candidate lacks direct barista experience and formal certifications, they bring over a decade of relevant customer service experience and transferable skills from engineering. They demonstrated confidence in their ability to quickly adapt and excel in the barista role, supported by self-directed learning and a passion for coffee. Their responses suggest a strong foundation to build upon with structured training.",
+            "questions": [
+              {
+                "analysis": "The candidate candidly acknowledged no direct barista experience but emphasized extensive experience in high-pressure customer service roles. They highlighted transferable skills such as problem-solving and attention to detail, indicating readiness to adapt to the barista position.",
+                "question": "How many years of experience do you have as a barista?"
+              },
+              {
+                "analysis": "The candidate stated they do not hold formal barista certifications but have completed training in customer service and leadership. They also mentioned self-study of coffee techniques and a strong eagerness to learn, reflecting motivation to develop professionally in this area.",
+                "question": "Do you hold any barista certifications?"
+              }
+            ],
+            "candidate_highlight": "I don't have direct experience as a barista, but I bring over a decade of experience in high-pressure customer service environments. My background in engineering has honed my problem-solving skills and attention to detail, which are crucial in a barista role. I've worked in various capacities that required me to interact with customers, manage fast-paced situations, and maintain high standards. I'm confident that my transferable skills will allow me to excel and quickly adapt to the barista role."
+          }
+        ]
+      },
+      {
+        "codename": "non_evaluated",
+        "title": "General",
+        "icon": "💬",
+        "show_border": true,
+        "components": [
+          {
+            "component_type": "question_section",
+            "summary": "The candidate summarized their fit by highlighting a unique combination of technical expertise and customer service skills. They emphasized leadership experience, multitasking ability, proactive customer engagement, and a passion for coffee. Their closing remarks conveyed enthusiasm and a commitment to contributing positively to the company's culture and standards.",
+            "questions": [
+              {
+                "analysis": "The candidate provided a comprehensive statement that encapsulated their strengths, including technical and customer service skills, leadership, and proactive approach. They expressed passion for coffee and continuous improvement, reinforcing their motivation and alignment with the role's demands.",
+                "question": "Before we wrap up, is there anything you'd like to share that could help us better understand your fit for this role?"
+              }
+            ],
+            "candidate_highlight": "Absolutely. I bring a unique blend of technical expertise and customer service acumen. My experience leading teams in high-pressure environments has equipped me with the skills to manage multiple tasks efficiently while maintaining high standards. I thrive on creating positive customer interactions, and my proactive approach ensures that I anticipate needs before they arise. Additionally, my passion for coffee and commitment to continuous improvement will drive me to not only meet but exceed expectations in the barista role. I'm excited about the opportunity to contribute to Acme's culture of excellence and innovation."
+          }
+        ]
+      },
+      {
+        "name": "Additional Interview Question",
+        "codename": "additional-interview-question",
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "tooltip": "",
+        "icon": "",
+        "show_border": false,
+        "show_divider": true,
+        "params": {
+          "compact": true
+        },
+        "pdf_params": {},
+        "orientation": "horizontal",
+        "components": [
+          {
+            "icon": "",
+            "name": "Additional Question",
+            "codename": "additional-question",
+            "component_type": "table",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "order": 1,
+            "headers": [
+              {
+                "title": "Additional Interview Question",
+                "icon": "💬"
+              },
+              {
+                "title": "Summary",
+                "icon": "ai_icon"
+              }
+            ],
+            "rows": [
+              [
+                {
+                  "icon": "💬",
+                  "name": "Question",
+                  "codename": "question",
+                  "component_type": "column",
+                  "title": "Additional Interview Question",
+                  "subtitle": "",
+                  "description": "",
+                  "tooltip": "",
+                  "order": 1,
+                  "header": {
+                    "icon": "",
+                    "title": ""
+                  },
+                  "content": "What about this company or role stood out to you when you applied?",
+                  "badge": {
+                    "text": "Motivation & Goals",
+                    "color": "neutral-lavender"
+                  }
+                },
+                {
+                  "icon": "ai_icon",
+                  "name": "Summary",
+                  "codename": "summary",
+                  "component_type": "column",
+                  "title": "Summary",
+                  "subtitle": "",
+                  "description": "",
+                  "tooltip": "",
+                  "order": 2,
+                  "header": {
+                    "icon": "",
+                    "title": ""
+                  },
+                  "content": "The candidate is drawn to the company's commitment to innovation and quality, appreciating its boundary-pushing in technology and customer experience. They feel the barista role matches their passion for exceptional service and believe their engineering background offers a unique perspective on efficiency and detail to enhance the cafe environment. They express enthusiasm about contributing to a respected brand."
+                }
+              ],
+              [
+                {
+                  "icon": "💬",
+                  "name": "Question",
+                  "codename": "question",
+                  "component_type": "column",
+                  "title": "Additional Interview Question",
+                  "subtitle": "",
+                  "description": "",
+                  "tooltip": "",
+                  "order": 1,
+                  "header": {
+                    "icon": "",
+                    "title": ""
+                  },
+                  "content": "Before we wrap up, is there anything you'd like to share that could help us better understand your fit for this role?",
+                  "badge": {
+                    "text": "General",
+                    "color": "violet-250"
+                  }
+                },
+                {
+                  "icon": "ai_icon",
+                  "name": "Summary",
+                  "codename": "summary",
+                  "component_type": "column",
+                  "title": "Summary",
+                  "subtitle": "",
+                  "description": "",
+                  "tooltip": "",
+                  "order": 2,
+                  "header": {
+                    "icon": "",
+                    "title": ""
+                  },
+                  "content": "The candidate highlights a combination of technical expertise and customer service skills, experience leading teams in high-pressure settings, and the ability to manage multiple tasks while maintaining quality. They emphasize their proactive approach to customer needs, passion for coffee, and commitment to continuous improvement, expressing eagerness to contribute to the company's culture of excellence and innovation."
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Questions Asked by the Candidate",
+        "codename": "candidate_questions",
+        "title": "Questions Asked by the Candidate",
+        "subtitle": "",
+        "description": "",
+        "tooltip": "",
+        "icon": "💬",
+        "show_border": true,
+        "show_divider": true,
+        "params": {},
+        "pdf_params": {},
+        "orientation": "horizontal",
+        "components": [
+          {
+            "icon": "",
+            "name": "Candidate Questions",
+            "codename": "candidate_questions",
+            "component_type": "candidate_questions",
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "tooltip": "",
+            "order": 1,
+            "summary": "The candidate did not ask any questions during the interview. All of their responses were focused on answering the interviewer's prompts and providing information about their own experience and qualifications. There were no spontaneous or prompted questions seeking information about the role, company, or hiring process.",
+            "questions": []
+          }
+        ]
+      }
+    ]
+  },
+  "report_url": null,
+  "candidate_name": "Rivera, Jordan",
+  "candidate_email": "jordan.rivera@example.com",
+  "unconfirmed_transcription": false,
+  "alerts": [],
+  "has_downloadable_resume": false,
+  "completed_at_tooltip": "May 19, 2026 - 9:28:21 AM.\nReport version: 2.3",
+  "completed_at": "May 19, 2026 - 9:28 AM",
+  "status": "Completed",
+  "status_codename": "completed",
+  "job_title": "Barista",
+  "org_name": "Acme Coffee Co. (Demo)",
+  "device_configuration": {
+    "browser_summary": " on  (Desktop)",
+    "network_quality": "",
+    "ip_address": null,
+    "audio_input_device": "",
+    "audio_output_device": "",
+    "video_device": "",
+    "browser_name": "",
+    "browser_version": "",
+    "os_name": "",
+    "is_mobile": false,
+    "avg_rtt_ms": null
+  },
+  "interview_details": {
+    "job_title": "Barista",
+    "interview_agent": "Barista March 2026",
+    "status": "Completed",
+    "created": "May 19, 2026",
+    "completed_at": "May 19, 2026 - 9:28 AM",
+    "requestor": "Taylor Morgan",
+    "hiring_manager": []
+  },
+  "job_requisition": {
+    "position": "Barista",
+    "description": "<p>Looking for a barista to work at one of the best cafes in Buenos Aires, Palermo, Argentina.</p><p>5 years of experience and barista certifications required.</p>"
+  }
+}

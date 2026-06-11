@@ -438,6 +438,89 @@ export const mockGenericSubmit = (...params) => {
   return mockFetch(mock);
 };
 
+export const mockRjpAssessment = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "rjp-assessment",
+    request: (url, options) => {
+      if(!url.includes("/realistic-job-previews/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const query = dig(JSON.parse(options.body), "query") || "";
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === id
+        && query.includes("assessment(id:")
+        && !Object.hasOwn(variables, "answers");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {assessment: response}});
+
+  return mockFetch(mock);
+};
+
+export const mockRjpStart = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "rjp-assessment-start",
+    request: (url, options) => {
+      if(!url.includes("/realistic-job-previews/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const query = dig(JSON.parse(options.body), "query") || "";
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === id && query.includes("startAssessment");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {startAssessment: response}});
+
+  return mockFetch(mock);
+};
+
+export const mockRjpSubmit = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "rjp-assessment-submit",
+    request: (url, options) => {
+      if(!url.includes("/realistic-job-previews/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const query = dig(JSON.parse(options.body), "query") || "";
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === id && query.includes("updateAssessmentAnswer");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {updateAssessmentAnswer: response}});
+
+  return mockFetch(mock);
+};
+
 export const mockGuide = (guide, {assessmentID} = {}) => (
   mockFetch({
     key: "guide",
@@ -557,6 +640,9 @@ export const useHighlightedCareers = (...options) => {
 };
 export const useRecommendation = (...options) => {
   beforeEach(() => { mockRecommendation(...options); });
+};
+export const useRjpAssessment = (...options) => {
+  beforeEach(() => { mockRjpAssessment(...options); });
 };
 export const useSettings = (...options) => { beforeEach(() => { mockSettings(...options); }); };
 export const useTranslations = (...options) => {

@@ -86,6 +86,7 @@ export function orderFromRecommendation(response) {
     personality
   } = recommendation.prerequisites || {};
 
+  // TODO: Potentially add RJP here so it comes first
   if(personality && personality.assessmentId) {
     assessments.push({
       completed: personality.status === "COMPLETE",

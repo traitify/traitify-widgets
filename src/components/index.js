@@ -30,11 +30,13 @@ import TraitList from "./results/personality/trait/list";
 import TypeChart from "./results/personality/type/chart";
 import TypeList from "./results/personality/type/list";
 import RecommendationChart from "./results/recommendation/chart";
+import RJPResults from "./results/rjp";
 import Status from "./status";
 import Survey from "./survey";
 import CognitiveSurvey from "./survey/cognitive";
 import GenericSurvey from "./survey/generic";
 import PersonalitySurvey from "./survey/personality";
+import RJPSurvey from "./survey/rjp";
 
 export default {
   Container,
@@ -93,13 +95,15 @@ export default {
     },
     Recommendation: {
       Chart: RecommendationChart
-    }
+    },
+    RJP: RJPResults
   },
   Status,
   Survey: {
     Cognitive: CognitiveSurvey,
     Container: Survey,
     Generic: GenericSurvey,
-    Personality: PersonalitySurvey
+    Personality: PersonalitySurvey,
+    RJP: RJPSurvey
   }
 };

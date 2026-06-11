@@ -1,9 +1,10 @@
 import Component from "components/report/manager";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockGenericAssessment} from "support/container/http";
+import {mockAssessment, mockGenericAssessment, mockRjpAssessment} from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import genericAssessment from "support/data/assessment/generic/completed";
 import assessment from "support/data/assessment/personality/completed";
+import rjpAssessment from "support/data/assessment/rjp/completed";
 import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/cognitive/chart", () => (() => <div className="mock">Cognitive Chart</div>));
@@ -13,6 +14,7 @@ jest.mock("components/results/guide/client", () => (() => <div className="mock">
 jest.mock("components/results/guide/personality", () => (() => <div className="mock">Personality Guide</div>));
 jest.mock("components/results/recommendation/chart", () => (() => <div className="mock">Recommendation Chart</div>));
 jest.mock("components/results/recommendation/list", () => (() => <div className="mock">Recommendation List</div>));
+jest.mock("components/results/rjp", () => (() => <div className="mock">RJP</div>));
 
 describe("Report.Manager", () => {
   let component;
@@ -55,6 +57,15 @@ describe("Report.Manager", () => {
     container.assessmentID = genericAssessment.id;
     mockGenericAssessment(genericAssessment);
     mockOption("surveyType", "generic");
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders rjp component", async() => {
+    container.assessmentID = rjpAssessment.id;
+    mockRjpAssessment(rjpAssessment);
+    mockOption("surveyType", "rjp");
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

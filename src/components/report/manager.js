@@ -5,6 +5,7 @@ import ClientGuide from "components/results/guide/client";
 import PersonalityGuide from "components/results/guide/personality";
 import RecommendationChart from "components/results/recommendation/chart";
 import RecommendationList from "components/results/recommendation/list";
+import RJPResults from "components/results/rjp";
 import useActive from "lib/hooks/use-active";
 import useDefaultOptions from "lib/hooks/use-default-options";
 import useOption from "lib/hooks/use-option";
@@ -26,6 +27,13 @@ export default function ManagerReport() {
       <section className={[style.container, style.box].join(" ")}>
         <GenericHeading />
         <GenericBreakdown />
+      </section>
+    );
+  }
+  if(active.surveyType === "rjp") {
+    return (
+      <section className={[style.container, style.box].join(" ")}>
+        <RJPResults />
       </section>
     );
   }

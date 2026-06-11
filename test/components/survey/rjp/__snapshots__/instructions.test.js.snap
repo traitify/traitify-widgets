@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey.RJP.Instructions renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="h1"
+    >
+      Realistic Job Preview Instructions
+    </div>
+    <h2
+      className="text traitify--markdown"
+      id="instructions"
+    >
+      Instructions
+    </h2>
+    <video
+      disablePictureInPicture={true}
+      disableRemotePlayback={true}
+      onError={[Function]}
+      onPlay={[Function]}
+      playsInline={true}
+      poster="https://cdn.traitify.com/rjp/thumbnail.jpg"
+    >
+      <source
+        src="https://cdn.traitify.com/rjp/video.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP.Instructions renders nothing without assessment 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Survey.RJP.Instructions reveals start button after video plays 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="h1"
+    >
+      Realistic Job Preview Instructions
+    </div>
+    <h2
+      className="text traitify--markdown"
+      id="instructions"
+    >
+      Instructions
+    </h2>
+    <video
+      disablePictureInPicture={true}
+      disableRemotePlayback={true}
+      onError={[Function]}
+      onPlay={[Function]}
+      playsInline={true}
+      poster="https://cdn.traitify.com/rjp/thumbnail.jpg"
+    >
+      <source
+        src="https://cdn.traitify.com/rjp/video.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div
+      className="secondaryInstructions"
+    >
+      <div
+        className="h2"
+      >
+        Ready to start the preview?
+      </div>
+      <div
+        className="p"
+      >
+        You will be given questions based on the video you just watched. Read each question and select which answer that best suits you.
+      </div>
+      <button
+        className="traitify--response-button btn"
+        onClick={[MockFunction onStart]}
+        type="button"
+      >
+        Let's Go!
+      </button>
+    </div>
+  </div>
+</div>
+`;

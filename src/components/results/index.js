@@ -2,6 +2,7 @@ import Report from "components/report";
 import AttractReport from "components/report/attract";
 import Cognitive from "components/results/cognitive";
 import FinancialRiskResults from "components/results/financial-risk";
+import RJP from "components/results/rjp";
 import Skipped from "components/status/skipped";
 import useActive from "lib/hooks/use-active";
 import useComponentEvents from "lib/hooks/use-component-events";
@@ -18,6 +19,7 @@ export default function Results() {
   if(!active.completed) { return null; }
   if(active.surveyType === "cognitive") { return <Cognitive />; }
   if(active.surveyType === "generic") { return <Report />; }
+  if(active.surveyType === "rjp") { return <RJP />; }
   if(active.surveyType !== "personality") { return null; }
   if(!results) { return null; }
   if(results.scoring_scale === "LIKERT_CUMULATIVE_POMP") {

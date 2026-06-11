@@ -21,6 +21,29 @@ export const get = `
   }
 `;
 
+export const getOrCreate = `
+  query($profileID: String!, $surveyKey: String!) {
+    getOrCreateAssessment(profileId: $profileID, surveyKey: $surveyKey) {
+      assessmentTakerUrl
+      band
+      completedAt
+      externalId
+      externalSurveyKey
+      id
+      isSkipped
+      numericResult
+      passFailResult
+      profileId
+      resultUrl
+      signInUrl
+      surveyKey
+      surveyName
+      textResult
+      vendor
+    }
+  }
+`;
+
 export const skip = `
   mutation($id: String!) {
     skipAssessment(id: $id) {
@@ -40,6 +63,24 @@ export const skip = `
       surveyName
       textResult
       vendor
+    }
+  }
+`;
+
+export const surveys = `
+  query($vendor: String!) {
+    listSurveys(vendor: $vendor) {
+      externalSurveyKey
+      surveyKey
+      surveyName
+    }
+  }
+`;
+
+export const vendors = `
+  query {
+    listVendors {
+      vendors
     }
   }
 `;

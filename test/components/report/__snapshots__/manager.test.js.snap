@@ -54,6 +54,22 @@ exports[`Report.Manager renders generic component 1`] = `
 </div>
 `;
 
+exports[`Report.Manager renders rjp component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container box"
+  >
+    <div
+      className="mock"
+    >
+      RJP
+    </div>
+  </section>
+</div>
+`;
+
 exports[`Report.Manager showHeaders renders component 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

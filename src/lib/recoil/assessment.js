@@ -152,12 +152,46 @@ export const genericAssessmentQuery = selectorFamily({
   key: "assessment/generic"
 });
 
+export const rjpAssessmentQuery = selectorFamily({
+  get: (id) => async({get}) => {
+    if(!id) { return null; }
+
+    const cache = get(cacheState);
+    const cacheKey = get(safeCacheKeyState({id, type: "assessment"}));
+    const cached = cache.get(cacheKey);
+    if(cached) { return cached; }
+
+    const GraphQL = get(graphqlState);
+    const http = get(httpState);
+    const params = {
+      query: GraphQL.rjp.get,
+      variables: {id}
+    };
+    const {path} = GraphQL.rjp;
+    const response = await http.post({path, params}).catch((e) => ({errors: [e.message]}));
+    if(response.errors) {
+      console.warn("rjp-assessment", response.errors); /* eslint-disable-line no-console */
+      get(listenerState).trigger("Error.append", responseToErrors({method: "POST", path, response}));
+      return null;
+    }
+
+    const {assessment} = response.data;
+    if(!assessment?.completedAt) { return assessment; }
+
+    cache.set(cacheKey, assessment);
+
+    return assessment;
+  },
+  key: "assessment/rjp"
+});
+
 export const assessmentQuery = selectorFamily({
   get: ({id, surveyType}) => async({get}) => {
     if(surveyType === "cognitive") { return get(cognitiveAssessmentQuery(id)); }
     if(surveyType === "external") { return get(externalAssessmentQuery(id)); }
     if(surveyType === "generic") { return get(genericAssessmentQuery(id)); }
     if(surveyType === "personality") { return get(personalityAssessmentQuery(id)); }
+    if(surveyType === "rjp") { return get(rjpAssessmentQuery(id)); }
 
     return null;
   },

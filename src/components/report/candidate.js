@@ -6,6 +6,7 @@ import ArchetypeHeading from "components/results/personality/archetype/heading";
 import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
 import Traits from "components/results/personality/trait/list";
+import RJPResults from "components/results/rjp";
 import useActive from "lib/hooks/use-active";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
@@ -32,6 +33,13 @@ export default function CandidateReport() {
     return (
       <section className={style.container}>
         <GenericConclusions />
+      </section>
+    );
+  }
+  if(active.surveyType === "rjp") {
+    return (
+      <section className={style.container}>
+        <RJPResults />
       </section>
     );
   }

@@ -3,6 +3,7 @@ import ArchetypeHeading from "components/results/personality/archetype/heading";
 import ArchetypeSkills from "components/results/personality/archetype/skills";
 import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
+import RJPResults from "components/results/rjp";
 import useActive from "lib/hooks/use-active";
 import useDefaultOptions from "lib/hooks/use-default-options";
 import style from "./style.scss";
@@ -17,6 +18,13 @@ export default function EmployeeReport() {
     return (
       <section className={style.container}>
         <GenericConclusions />
+      </section>
+    );
+  }
+  if(active.surveyType === "rjp") {
+    return (
+      <section className={style.container}>
+        <RJPResults />
       </section>
     );
   }

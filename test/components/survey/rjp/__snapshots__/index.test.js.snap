@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey.RJP back renders previous question 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="text"
+    >
+      Question 1
+    </div>
+    <div
+      className="divider"
+    />
+    <div
+      className="options"
+    >
+      <button
+        className="traitify--response-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Response A
+      </button>
+      <button
+        className="traitify--response-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Response B
+      </button>
+    </div>
+    <div>
+      <button
+        className="back"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Back"
+          className="traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>",
+            }
+          }
+        />
+         
+        Back
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    Instructions
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP renders next question 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "50%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="text"
+    >
+      Question 2
+    </div>
+    <div
+      className="divider"
+    />
+    <div
+      className="options"
+    >
+      <button
+        className="traitify--response-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Response A
+      </button>
+      <button
+        className="traitify--response-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Response B
+      </button>
+    </div>
+    <div>
+      <button
+        className="back"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Back"
+          className="traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>",
+            }
+          }
+        />
+         
+        Back
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP renders nothing if results ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Survey.RJP renders nothing without assessment 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Survey.RJP renders question 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="progressBar"
+    >
+      <div
+        className="progress"
+        style={
+          {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+    <div
+      className="text"
+    >
+      Question 1
+    </div>
+    <div
+      className="divider"
+    />
+    <div
+      className="options"
+    >
+      <button
+        className="traitify--response-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Response A
+      </button>
+      <button
+        className="traitify--response-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Response B
+      </button>
+    </div>
+    <div>
+      <button
+        className="back"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Back"
+          className="traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>",
+            }
+          }
+        />
+         
+        Back
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP submit submits query 1`] = `
+[
+  "https://api.traitify.com/v1/realistic-job-previews/graphql",
+  {
+    "body": "{"query":"\\n  mutation(\\n    $answers: [AssessmentAnswer],\\n    $id: String!\\n  ) {\\n    updateAssessmentAnswer(\\n      answers: $answers,\\n      assessmentId: $id\\n    ) {\\n      completedAt\\n      failedReason\\n      id\\n      insertedAt\\n      instructions\\n      isFit\\n      jobId\\n      localeKey\\n      profileId\\n      responses {\\n        id\\n        questionId\\n        questionText\\n        responseOptions {\\n          responseOptionId\\n          responseOptionText\\n        }\\n        selectedResponseOptionId\\n        selectedResponseOptionText\\n      }\\n      startedAt\\n      status\\n      surveyId\\n      totalCorrectResponses\\n      updatedAt\\n      videos {\\n        thumbnailUrl\\n        videoUrl\\n      }\\n    }\\n  }\\n","variables":{"answers":[{"questionId":"rjp-question-1","selectedResponseOptionId":"rjp-option-1a"},{"questionId":"rjp-question-2","selectedResponseOptionId":"rjp-option-2b"}],"id":"rjp-xyz"}}",
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "Basic dW5kZWZpbmVkOng=",
+      "Content-Type": "application/json",
+    },
+    "method": "POST",
+  },
+]
+`;

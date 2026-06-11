@@ -1,7 +1,8 @@
-# Crosschq Interview Report Widget — update (v0.2.0)
+# Crosschq Interview Report Widget — update (v0.2.1)
 
 This build addresses the two issues you raised: CSS collisions with the host
-page, and a path toward smaller integration footprint.
+page, and a path toward smaller integration footprint. v0.2.1 also fixes the
+tooltip styling you spotted with the scoped build.
 
 ## What changed
 
@@ -24,10 +25,11 @@ page, and a path toward smaller integration footprint.
    CrosschqWidget.render({ interviewID, target, reportData, shadow: true });
    ```
 
-   One caveat: hover tooltips teleport to `document.body` (outside the shadow
-   root) and render unstyled under `shadow: true`. The report content itself is
-   fully isolated. Prefer the default (scoped) mode if unstyled tooltips matter,
-   or ping us and we'll add an in-shadow portal target.
+3. **Tooltips stay styled in both modes.** The widget gives reka-ui a
+   `.crosschq-widget` teleport container (in the shadow root under `shadow:true`,
+   otherwise in `document.body`), so tooltip content keeps its styles even though
+   it portals out of the component tree — fixing the unstyled-tooltip issue from
+   the first scoped build.
 
 See **`INTEGRATION.md` → "CSS scoping"** for the full details.
 

@@ -345,20 +345,13 @@ The widget auto-attaches its stylesheet inside the shadow root by finding the
 `crosschq-widget.css` you already loaded in the document. If it can't find it
 (e.g. your bundler inlined the CSS), pass the URL explicitly via `cssHref`.
 
-One caveat: hover **tooltips** in the report teleport to `document.body`, which
-is outside the shadow root, so under `shadow: true` they render unstyled. The
-report content itself — the part that matters — is fully isolated and styled.
-If unstyled tooltips are a problem for your integration, prefer the default
-(non-shadow) scoped mode, or let us know and we'll add an in-shadow portal
-target.
+Tooltips work in both modes: the widget gives reka-ui a `.crosschq-widget`
+teleport container (placed in the shadow root under `shadow: true`, otherwise in
+`document.body`), so tooltip content stays styled even though it portals out of
+the component tree.
 
 ## Known limitations (v1)
 
-- **Tooltip portals under `shadow: true`.** Hover tooltips in the report
-  teleport to `document.body`, outside the shadow root, so they render
-  unstyled in shadow mode. The report content itself is fully isolated. In the
-  default (non-shadow) scoped mode tooltips are styled normally. We'll add an
-  in-shadow portal target in a later version if needed.
 - **Bearer-token auth only.** The widget does not yet support cookie auth
   or signed URLs — sufficient for the proxied flow, but worth noting.
 - **`update()` does a full remount.** Acceptable for v1 since hosts rarely

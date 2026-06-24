@@ -12,6 +12,7 @@ import {
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import _assessment from "support/data/assessment/cognitive/incomplete";
+import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 import useResizeMock from "support/hooks/use-resize-mock";
 
@@ -51,15 +52,21 @@ describe("Instructions", () => {
 
     it("renders accommodation text", async() => {
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("survey.accommodation.request").props.onClick());
+      await act(async() => {
+        component.findByText("survey.accommodation.request").props.onClick();
+        await flushAsync();
+      });
 
       expect(component.tree).toMatchSnapshot();
     });
 
     it("renders back action", async() => {
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("survey.accommodation.request").props.onClick());
-      act(() => component.findByText("back").props.onClick());
+      await act(async() => {
+        component.findByText("survey.accommodation.request").props.onClick();
+        await flushAsync();
+      });
+      act(() => component.findByText("Back").props.onClick());
 
       expect(component.tree).toMatchSnapshot();
     });
@@ -67,8 +74,11 @@ describe("Instructions", () => {
     it("triggers accommodation request", async() => {
       const mock = mockCognitiveSkip({success: true});
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("survey.accommodation.request").props.onClick());
-      await act(async() => component.findByText("survey.accommodation.confirm").props.onClick());
+      await act(async() => {
+        component.findByText("survey.accommodation.request").props.onClick();
+        await flushAsync();
+      });
+      await act(async() => component.findByText("Yes, Request Accommodation").props.onClick());
 
       expect(mock.called).toBe(1);
     });

@@ -1,6 +1,4 @@
-export const get = `
-  query($id: String!) {
-    getAssessment(id: $id) {
+const assessment = `
       assessmentTakerUrl
       band
       completedAt
@@ -17,6 +15,12 @@ export const get = `
       surveyName
       textResult
       vendor
+`.trim();
+
+export const get = `
+  query($id: String!) {
+    getAssessment(id: $id) {
+      ${assessment}
     }
   }
 `;
@@ -24,22 +28,7 @@ export const get = `
 export const getOrCreate = `
   query($profileID: String!, $surveyKey: String!) {
     getOrCreateAssessment(profileId: $profileID, surveyKey: $surveyKey) {
-      assessmentTakerUrl
-      band
-      completedAt
-      externalId
-      externalSurveyKey
-      id
-      isSkipped
-      numericResult
-      passFailResult
-      profileId
-      resultUrl
-      signInUrl
-      surveyKey
-      surveyName
-      textResult
-      vendor
+      ${assessment}
     }
   }
 `;
@@ -47,22 +36,7 @@ export const getOrCreate = `
 export const skip = `
   mutation($id: String!) {
     skipAssessment(id: $id) {
-      assessmentTakerUrl
-      band
-      completedAt
-      externalId
-      externalSurveyKey
-      id
-      isSkipped
-      numericResult
-      passFailResult
-      profileId
-      resultUrl
-      signInUrl
-      surveyKey
-      surveyName
-      textResult
-      vendor
+      ${assessment}
     }
   }
 `;

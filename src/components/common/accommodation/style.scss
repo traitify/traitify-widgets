@@ -1,0 +1,15 @@
+@import "style/helpers";
+
+// NOTE: Nested to override base styles
+:global(.traitify--container) {
+  .btnBack { @include buttonOutline(); }
+  .btnTheme { @include buttonDark("theme"); }
+  .trigger { @include buttonOutline(); }
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+  margin: $buffer-sm auto;
+}
+.text { @extend %paragraph; }

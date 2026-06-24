@@ -1,3 +1,36 @@
+const assessment = `
+      completedAt
+      failedReason
+      id
+      insertedAt
+      instructions
+      isFit
+      jobId
+      localeKey
+      optedOut
+      profileId
+      responses {
+        id
+        questionId
+        questionText
+        responseOptions {
+          responseOptionId
+          responseOptionText
+        }
+        selectedResponseOptionId
+        selectedResponseOptionText
+      }
+      startedAt
+      status
+      surveyId
+      totalCorrectResponses
+      updatedAt
+      videos {
+        thumbnailUrl
+        videoUrl
+      }
+`.trim();
+
 export const create = `
   mutation(
     $localeKey: String,
@@ -9,71 +42,29 @@ export const create = `
       profileId: $profileID,
       surveyId: $surveyID
     ) {
-      completedAt
-      failedReason
-      id
-      insertedAt
-      instructions
-      isFit
-      jobId
-      localeKey
-      profileId
-      responses {
-        id
-        questionId
-        questionText
-        responseOptions {
-          responseOptionId
-          responseOptionText
-        }
-        selectedResponseOptionId
-        selectedResponseOptionText
-      }
-      startedAt
-      status
-      surveyId
-      totalCorrectResponses
-      updatedAt
-      videos {
-        thumbnailUrl
-        videoUrl
-      }
+      ${assessment}
     }
   }
 `;
 
 export const get = `
   query($id: ID!) {
-    assessment(id: $id) {
-      completedAt
-      failedReason
-      id
-      insertedAt
-      instructions
-      isFit
-      jobId
-      localeKey
-      profileId
-      responses {
-        id
-        questionId
-        questionText
-        responseOptions {
-          responseOptionId
-          responseOptionText
-        }
-        selectedResponseOptionId
-        selectedResponseOptionText
-      }
-      startedAt
-      status
-      surveyId
-      totalCorrectResponses
-      updatedAt
-      videos {
-        thumbnailUrl
-        videoUrl
-      }
+    getAssessment(id: $id) {
+      ${assessment}
+    }
+  }
+`;
+
+export const optOutAssessment = `
+  mutation(
+    $id: ID!,
+    $optedOut: Boolean
+  ) {
+    optOutAssessment(
+      id: $id,
+      optedOut: $optedOut
+    ) {
+      ${assessment}
     }
   }
 `;
@@ -81,35 +72,16 @@ export const get = `
 export const start = `
   mutation($id: ID!) {
     startAssessment(id: $id) {
-      completedAt
-      failedReason
+      ${assessment}
+    }
+  }
+`;
+
+export const skip = `
+  mutation($id: ID!) {
+    skipAssessment(id: $id) {
       id
-      insertedAt
-      instructions
-      isFit
-      jobId
-      localeKey
-      profileId
-      responses {
-        id
-        questionId
-        questionText
-        responseOptions {
-          responseOptionId
-          responseOptionText
-        }
-        selectedResponseOptionId
-        selectedResponseOptionText
-      }
-      startedAt
-      status
-      surveyId
-      totalCorrectResponses
-      updatedAt
-      videos {
-        thumbnailUrl
-        videoUrl
-      }
+      isSkipped
     }
   }
 `;
@@ -117,48 +89,38 @@ export const start = `
 export const update = `
   mutation(
     $answers: [AssessmentAnswer],
+    $deferredComplete: Boolean,
     $id: String!
   ) {
-    updateAssessmentAnswer(
+    updateAssessment(
       answers: $answers,
-      assessmentId: $id
+      deferredComplete: $deferredComplete,
+      id: $id
     ) {
-      completedAt
-      failedReason
+      ${assessment}
+    }
+  }
+`;
+
+export const getSurvey = `
+  query($id: String!, $localeKey: String) {
+    getSurvey(id: $id, localeKey: $localeKey) {
+      description
+      fitResultBody
+      fitResultHeader
       id
-      insertedAt
-      instructions
-      isFit
-      jobId
-      localeKey
-      profileId
-      responses {
-        id
-        questionId
-        questionText
-        responseOptions {
-          responseOptionId
-          responseOptionText
-        }
-        selectedResponseOptionId
-        selectedResponseOptionText
-      }
-      startedAt
-      status
-      surveyId
-      totalCorrectResponses
-      updatedAt
-      videos {
-        thumbnailUrl
-        videoUrl
-      }
+      name
+      noFitResultBody
+      noFitResultHeader
+      optOutButtonText
+      proceedButtonText
     }
   }
 `;
 
 export const list = `
   query($localeKey: String) {
-    realisticJobPreviews(localeKey: $localeKey) {
+    listSurveys(localeKey: $localeKey) {
       description
       id
       name

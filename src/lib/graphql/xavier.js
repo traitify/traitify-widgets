@@ -1,3 +1,34 @@
+const recommendationFields = `
+      id
+      prerequisites {
+        cognitive {
+          isSkipped
+          status
+          surveyId
+          surveyName
+          testId
+        }
+        external {
+          assessmentId
+          assessmentTakerUrl
+          isSkipped
+          signInUrl
+          status
+          surveyId
+          surveyName
+          vendor
+        }
+        personality {
+          assessmentId
+          isSkipped
+          status
+          surveyId
+          surveyName
+        }
+      }
+      profileId
+`.trim();
+
 export const feedbackSurvey = `
   query(
     $surveyId: String!,
@@ -37,33 +68,7 @@ export const recommendation = `
       packageId: $packageID,
       profileId: $profileID
     ) {
-      id
-      prerequisites {
-        cognitive {
-          isSkipped
-          status
-          surveyId
-          surveyName
-          testId
-        }
-        external {
-          assessmentId
-          assessmentTakerUrl
-          isSkipped
-          signInUrl
-          status
-          surveyId
-          surveyName
-          vendor
-        }
-        personality {
-          assessmentId
-          isSkipped
-          status
-          surveyId
-          surveyName
-        }
-      }
+      ${recommendationFields}
     }
   }
 `;
@@ -79,34 +84,7 @@ export const skipRecommendation = `
       packageId: $packageID,
       profileId: $profileID
     ) {
-      id
-      prerequisites {
-        cognitive {
-          isSkipped
-          status
-          surveyId
-          surveyName
-          testId
-        }
-        external {
-          assessmentId
-          assessmentTakerUrl
-          isSkipped
-          signInUrl
-          status
-          surveyId
-          surveyName
-          vendor
-        }
-        personality {
-          assessmentId
-          isSkipped
-          status
-          surveyId
-          surveyName
-        }
-      }
-      profileId
+      ${recommendationFields}
     }
   }
 `;

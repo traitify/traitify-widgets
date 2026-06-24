@@ -1,24 +1,32 @@
 /** @jest-environment jsdom */
-/* eslint-disable no-console */
 import {act} from "react-test-renderer";
 import Component from "components/survey/rjp";
-import Instructions from "components/survey/rjp/instructions";
 import getCacheKey from "lib/common/get-cache-key";
 import mutable from "lib/common/object/mutable";
 import ComponentHandler from "support/component-handler";
 import {
   mockRjpAssessment as mockAssessment,
-  mockRjpStart,
-  mockRjpSubmit
+  mockRjpOptOut as mockOptOut,
+  mockRjpStart as mockStart,
+  mockRjpSubmit as mockSubmit,
+  mockRjpSurvey as mockSurvey,
+  useSettings
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import _assessment from "support/data/assessment/rjp/incomplete";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 
-jest.mock("components/survey/rjp/instructions", () => (() => <div className="mock">Instructions</div>));
-
 const completedAt = "2024-02-01T00:00:00Z";
+const survey = {
+  fitResultBody: "You are a great fit",
+  fitResultHeader: "Great fit",
+  id: "rjp-survey-xyz",
+  noFitResultBody: "This may not be the role for you",
+  noFitResultHeader: "Not a fit",
+  optOutButtonText: "",
+  proceedButtonText: ""
+};
 
 describe("Survey.RJP", () => {
   let assessment;
@@ -26,6 +34,16 @@ describe("Survey.RJP", () => {
   let component;
 
   useContainer();
+  useSettings({});
+
+  const withQuestions = (overrides) => mutable({..._assessment, videos: [], ...overrides});
+  const answered = (overrides) => withQuestions({
+    responses: _assessment.responses.map((response) => ({
+      ...response,
+      selectedResponseOptionId: response.responseOptions[0].responseOptionId
+    })),
+    ...overrides
+  });
 
   beforeEach(() => {
     container.assessmentID = _assessment.id;
@@ -34,6 +52,7 @@ describe("Survey.RJP", () => {
     assessmentCacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us"});
 
     mockAssessment(assessment);
+    mockSurvey(survey);
     mockOption("surveyType", "rjp");
   });
 
@@ -60,71 +79,70 @@ describe("Survey.RJP", () => {
 
   describe("start", () => {
     it("calls start mutation when not yet started", async() => {
-      assessment.startedAt = null;
-      mockAssessment(assessment);
-      const mock = mockRjpStart(assessment);
+      mockAssessment(withQuestions({startedAt: null}));
+      const mock = mockStart(assessment);
       component = await ComponentHandler.setup(Component);
-      await act(async() => { component.instance.findByType(Instructions).props.onStart(); });
 
       expect(mock.called).toBe(1);
     });
 
     it("does not call start when already started", async() => {
-      const mock = mockRjpStart(assessment);
+      mockAssessment(withQuestions());
+      const mock = mockStart(assessment);
       component = await ComponentHandler.setup(Component);
-      await act(async() => { component.instance.findByType(Instructions).props.onStart(); });
 
       expect(mock.called).toBe(0);
     });
   });
 
-  describe("back", () => {
-    it("renders previous question", async() => {
-      component = await ComponentHandler.setup(Component);
-      act(() => { component.instance.findByType(Instructions).props.onStart(); });
-      act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[0].props.onClick(); });
-      act(() => { component.instance.findByProps({className: "back"}).props.onClick(); });
-
-      expect(component.tree).toMatchSnapshot();
-    });
-  });
-
   describe("submit", () => {
-    let originalWarn;
-
-    beforeAll(() => { originalWarn = console.warn; });
-    afterAll(() => { console.warn = originalWarn; });
-
-    beforeEach(async() => {
-      console.warn = jest.fn().mockName("warn");
+    it("submits answers", async() => {
+      mockAssessment(answered());
+      const mock = mockSubmit({implementation: () => new Promise(() => {})});
       component = await ComponentHandler.setup(Component);
-      act(() => { component.instance.findByType(Instructions).props.onStart(); });
-      act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[0].props.onClick(); });
-    });
-
-    it("submits query", async() => {
-      const mock = mockRjpSubmit({implementation: () => new Promise(() => {})});
-      act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[1].props.onClick(); });
+      act(() => { component.findByText("Complete Questions").props.onClick(); });
       await flushAsync();
 
-      expect(mock.calls).toMatchSnapshot();
+      expect(mock.called).toBe(1);
     });
 
     it("updates cached state", async() => {
-      mockAssessment({...assessment, completedAt});
-      const mock = mockRjpSubmit({...assessment, completedAt});
-      act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[1].props.onClick(); });
+      mockAssessment(answered());
+      const mock = mockSubmit({...assessment, totalCorrectResponses: 2});
+      component = await ComponentHandler.setup(Component);
+      act(() => { component.findByText("Complete Questions").props.onClick(); });
       await flushAsync();
 
-      expect(container.cache.set).toHaveBeenCalledWith(assessmentCacheKey, expect.any(Object));
+      expect(container.cache.set).toHaveBeenCalledWith(
+        assessmentCacheKey,
+        expect.objectContaining({totalCorrectResponses: 2})
+      );
       expect(mock.called).toBe(1);
     });
   });
 
-  it("renders instructions", async() => {
-    component = await ComponentHandler.setup(Component);
+  describe("match", () => {
+    beforeEach(() => {
+      mockAssessment(answered({totalCorrectResponses: 2}));
+    });
 
-    expect(component.tree).toMatchSnapshot();
+    it("continues", async() => {
+      const mock = mockOptOut({implementation: () => new Promise(() => {})});
+      component = await ComponentHandler.setup(Component);
+      act(() => { component.findByText("Continue").props.onClick(); });
+      await flushAsync();
+
+      expect(mock.called).toBe(1);
+    });
+
+    it("opts out", async() => {
+      const mock = mockOptOut({implementation: () => new Promise(() => {})});
+      component = await ComponentHandler.setup(Component);
+      act(() => { component.findByText("Not Interested").props.onClick(); });
+      await flushAsync();
+
+      expect(mock.called).toBe(1);
+    });
   });
 
   it("renders nothing without assessment", async() => {
@@ -141,17 +159,22 @@ describe("Survey.RJP", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders question", async() => {
+  it("renders instructions", async() => {
     component = await ComponentHandler.setup(Component);
-    act(() => { component.instance.findByType(Instructions).props.onStart(); });
 
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders next question", async() => {
+  it("renders questions", async() => {
+    mockAssessment(withQuestions());
     component = await ComponentHandler.setup(Component);
-    act(() => { component.instance.findByType(Instructions).props.onStart(); });
-    act(() => { component.instance.findAllByProps({className: "traitify--response-button"})[0].props.onClick(); });
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders match results", async() => {
+    mockAssessment(answered({isFit: true, totalCorrectResponses: 2}));
+    component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
   });

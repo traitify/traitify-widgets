@@ -12,9 +12,6 @@ export default function getCacheKey(type, options = {}) {
     case "benchmark":
       id = id || console.warn("Missing benchmarkID");
       break;
-    case "deck":
-      id = id || console.warn("Missing deckID");
-      break;
     case "guide":
       id = id || console.warn("Missing ID");
       if(options.benchmarkID) { keys.push(`benchmark-${options.benchmarkID}`); }
@@ -36,6 +33,9 @@ export default function getCacheKey(type, options = {}) {
       keys.push(`profile-${profileID}`);
       break;
     }
+    case "survey":
+      id = id || console.warn("Missing surveyID");
+      break;
     default:
       id = id || console.warn("Missing ID");
   }

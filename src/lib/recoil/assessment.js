@@ -175,7 +175,7 @@ export const rjpAssessmentQuery = selectorFamily({
       return null;
     }
 
-    const {assessment} = response.data;
+    const assessment = response.data.getAssessment;
     if(!assessment?.completedAt) { return assessment; }
 
     cache.set(cacheKey, assessment);

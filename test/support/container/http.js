@@ -455,14 +455,14 @@ export const mockRjpAssessment = (...params) => {
       const variables = dig(JSON.parse(options.body), "variables") || {};
 
       return variables.id === id
-        && query.includes("assessment(id:")
+        && query.includes("getAssessment")
         && !Object.hasOwn(variables, "answers");
     }
   };
 
   implementation
     ? mock.implementation = implementation
-    : mock.response = () => ({data: {assessment: response}});
+    : mock.response = () => ({data: {getAssessment: response}});
 
   return mockFetch(mock);
 };
@@ -510,16 +510,61 @@ export const mockRjpSubmit = (...params) => {
       const query = dig(JSON.parse(options.body), "query") || "";
       const variables = dig(JSON.parse(options.body), "variables") || {};
 
-      return variables.id === id && query.includes("updateAssessmentAnswer");
+      return variables.id === id
+        && query.includes("updateAssessment")
+        && Object.hasOwn(variables, "answers");
     }
   };
 
   implementation
     ? mock.implementation = implementation
-    : mock.response = () => ({data: {updateAssessmentAnswer: response}});
+    : mock.response = () => ({data: {updateAssessment: response}});
 
   return mockFetch(mock);
 };
+
+export const mockRjpOptOut = (...params) => {
+  const [response, mockOptions] = params.length === 1 && params[0]?.implementation
+    ? [null, ...params]
+    : params;
+  const {id: _id, implementation} = mockOptions || {};
+  const id = _id || response?.id || container.assessmentID;
+  const mock = {
+    key: "rjp-assessment-opt-out",
+    request: (url, options) => {
+      if(!url.includes("/realistic-job-previews/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === id && Object.hasOwn(variables, "optedOut");
+    }
+  };
+
+  implementation
+    ? mock.implementation = implementation
+    : mock.response = () => ({data: {optOutAssessment: response}});
+
+  return mockFetch(mock);
+};
+
+export const mockRjpSurvey = (survey, {id} = {}) => (
+  mockFetch({
+    key: "rjp-survey",
+    request: (url, options) => {
+      if(!url.includes("/realistic-job-previews/graphql")) { return false; }
+      if(options.method !== "POST") { return false; }
+      if(!options.body) { return false; }
+
+      const query = dig(JSON.parse(options.body), "query") || "";
+      const variables = dig(JSON.parse(options.body), "variables") || {};
+
+      return variables.id === (id || survey?.id) && query.includes("getSurvey");
+    },
+    response: () => ({data: {getSurvey: survey}})
+  })
+);
 
 export const mockGuide = (guide, {assessmentID} = {}) => (
   mockFetch({

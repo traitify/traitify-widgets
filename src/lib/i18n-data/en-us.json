@@ -151,6 +151,7 @@
   "personality_traits": "Personality Traits",
   "personality_traits_description": "Here are your top 5 traits measured on a scale of 0% to 100%",
   "personality_type": "Personality Type",
+  "play": "Play",
   "potential_benefits": "Potential Benefits",
   "potential_pitfalls": "Potential Pitfalls",
   "potential_risk": "Potential Risk",
@@ -250,7 +251,25 @@
     "cognitive_assessment": "Cognitive Assessment",
     "external_assessment": "External Assessment",
     "generic_assessment": "Generic Assessment",
-    "personality_assessment": "Personality Assessment"
+    "personality_assessment": "Personality Assessment",
+    "rjp": {
+      "instructions": {
+        "heading": "Job Preview Instructions",
+        "replay": "Rewatch Video",
+        "play": "Start Video"
+      },
+      "match": {
+        "continue": "Continue",
+        "opt_out": "Not Interested"
+      },
+      "modal": {
+        "heading": "Job Preview"
+      },
+      "questions": {
+        "heading": "Job Preview Questions",
+        "submit": "Complete Questions"
+      }
+    }
   },
   "tip_type_for_caution_zone": "Caution Zone",
   "tip_type_for_room": "Room for Growth and Change",

@@ -353,7 +353,7 @@ exports[`Instructions skip assessment accommodation renders accommodation text 1
     <div
       className="text"
     >
-      survey.accommodation.request_text
+      Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
     </div>
     <div
       className="btnGroup"
@@ -363,14 +363,14 @@ exports[`Instructions skip assessment accommodation renders accommodation text 1
         onClick={[Function]}
         type="button"
       >
-        back
+        Back
       </button>
       <button
-        className="btnBlue"
+        className="btnTheme"
         onClick={[Function]}
         type="button"
       >
-        survey.accommodation.confirm
+        Yes, Request Accommodation
       </button>
     </div>
   </div>

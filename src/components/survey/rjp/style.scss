@@ -10,58 +10,53 @@
   min-height: 100svh;
   padding: $buffer $buffer-lg;
 
-  @include min-width("sm") {
-    min-height: initial;
+  @include min-width("sm") { min-height: initial; }
 
-    .h1, .h2 { margin-bottom: $buffer-sm; }
-  }
   & {
     @include theme("background-color", "background");
     @include theme("border-color", "border");
   }
-  .back {
-    align-items: center;
-    border: $border-width solid;
-    display: inline-flex;
-    font-size: $font-size-sm;
+  .btnGroup {
+    display: flex;
+    flex-direction: column;
     gap: $buffer-sm;
-    margin-top: $buffer;
-
-    @include theme("border-color", "border");
-    @include buttonLight("white");
-
-    &:active, &:hover {
-      @include theme("background", "theme");
-      @include theme("border-color", "theme");
-      @include theme("color", "text-light");
-    }
-    & { padding: $buffer-sm * 0.5 $buffer; }
-    :global(.traitify--icon-fa) { font-size: $font-size; }
-  }
-  .btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
-    width: 100%;
-
-    @include buttonDark("theme");
   }
-  .h1 { font-size: $font-size-heading; }
-  .h2 { font-size: $font-size-lg; }
-  .h1, .h2 {
-    font-weight: normal;
-    margin-top: 0;
-    text-align: center;
-
-    @include theme("color", "theme");
-  }
+  .btnOutline { @include buttonOutline(); }
+  .btnTheme { @include buttonDark("theme"); }
   .p { @extend %paragraph; }
+  .play {
+    border-radius: $border-radius;
+    margin: $buffer-lg auto;
+    padding: 0;
+    position: relative;
+
+    img {
+      display: block;
+      opacity: 0.6;
+      max-width: 100%;
+    }
+
+    @include theme("background-color", "background-dark");
+
+    :global(.traitify--icon-fa) {
+      align-items: center;
+      display: flex;
+      inset: 0;
+      justify-content: center;
+      position: absolute;
+      width: auto;
+
+      @include theme("color", "text-light");
+
+      svg { height: 50%; }
+    }
+  }
   video {
     border-radius: $border-radius;
     display: block;
     height: auto;
-    margin: $buffer-sm auto $buffer-lg auto;
+    margin: $buffer-lg auto $buffer-sm auto;
     width: 100%;
   }
 }
@@ -70,6 +65,28 @@
   margin: $buffer 0;
 
   @include theme("border-top-color", "border");
+}
+.fit {
+  align-items: center;
+  display: flex;
+  gap: $buffer-lg;
+
+  .danger { @include theme("color", "danger"); }
+  .success { @include theme("color", "success"); }
+  div {
+    flex: 1;
+    font-weight: 600;
+  }
+  svg {
+    display: block;
+    font-size: $font-size-lg * 2;
+  }
+}
+.heading {
+  display: flex;
+  font-size: $font-size-heading;
+  justify-content: space-between;
+  margin-bottom: $buffer;
 }
 .loading {
   border: none;
@@ -85,38 +102,10 @@
   grid-template-columns: repeat(2, 1fr);
 
   button {
-    border: $border-width solid;
     text-align: center;
 
-    @include theme("border-color", "border");
-    @include buttonLight("white");
+    @include buttonOutline();
 
-    &:active, &:hover {
-      @include theme("background", "theme");
-      @include theme("border-color", "theme");
-      @include theme("color", "text-light");
-    }
+    &.active { @include buttonDark("theme"); }
   }
-}
-.progress {
-  border-radius: $border-radius-sm;
-  height: 100%;
-  transition: width 0.3s;
-  width: 0%;
-
-  @include theme("background-color", "progress-bar");
-}
-.progressBar {
-  border-radius: $border-radius-sm;
-  height: $border-width-xl;
-  margin-bottom: $buffer;
-
-  @include theme("background-color", "border");
-}
-.secondaryInstructions {
-  border: $border-width solid;
-  border-radius: $border-radius;
-  padding: $buffer;
-
-  @include theme("border-color", "border");
 }

@@ -66,6 +66,18 @@ export default function useSkipAssessment() {
           success = response.data.skipAssessment.isSkipped;
           break;
         }
+        case "rjp": {
+          const query = {
+            params: {
+              query: graphQL.rjp.skip,
+              variables: {id: active.id}
+            },
+            path: graphQL.rjp.path
+          };
+          const response = await http.post(query);
+          success = response.data.skipAssessment.isSkipped;
+          break;
+        }
         default: {
           const query = {path: `/assessments/${active.id}/skip`};
           const response = await http.put(query);

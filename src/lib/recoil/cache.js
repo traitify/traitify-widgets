@@ -8,7 +8,7 @@ import {
   packageIDState,
   profileIDState
 } from "./base";
-import {deckIDState} from "./deck";
+import {surveyIDState} from "./survey";
 
 // NOTE: Mirror updates in lib/common/get-cache-key
 export const cacheKeyState = selectorFamily({
@@ -26,9 +26,6 @@ export const cacheKeyState = selectorFamily({
         break;
       case "benchmark":
         id = id || get(benchmarkIDState);
-        break;
-      case "deck":
-        id = id || get(deckIDState);
         break;
       case "guide": {
         const benchmarkID = options.benchmarkID || get(benchmarkIDState);
@@ -53,6 +50,9 @@ export const cacheKeyState = selectorFamily({
         keys.push(`profile-${profileID}`);
         break;
       }
+      case "survey":
+        id = id || get(surveyIDState("personality"));
+        break;
       default:
         id = id || get(activeIDState);
     }

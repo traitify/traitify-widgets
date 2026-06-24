@@ -1,9 +1,10 @@
-import {useEffect, useRef, useState} from "react";
-import {useRecoilRefresher_UNSTABLE as useRecoilRefresher, useSetRecoilState} from "recoil";
+import {useEffect, useState} from "react";
+import {useSetRecoilState} from "recoil";
 import Loading from "components/common/loading";
-import {errorsToText, responseToErrors} from "lib/common/errors";
+import {errorsToText} from "lib/common/errors";
 import dig from "lib/common/object/dig";
 import slice from "lib/common/object/slice";
+import useUpdateAssessment from "lib/hooks/requests/use-update-assessment";
 import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
@@ -12,7 +13,7 @@ import useHttp from "lib/hooks/use-http";
 import useListener from "lib/hooks/use-listener";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {activeAssessmentQuery, appendErrorState} from "lib/recoil";
+import {appendErrorState} from "lib/recoil";
 import Container from "./container";
 import getImageURL from "./get-image-url";
 import Instructions from "./instructions";
@@ -20,17 +21,13 @@ import Slide from "./slide";
 import style from "./style.scss";
 import useSlideLoader from "./use-slide-loader";
 
-const maxRetries = 2;
-
 export default function PersonalitySurvey() {
   const appendError = useSetRecoilState(appendErrorState);
   const assessment = useAssessment({surveyType: "personality"});
-  const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});
   const http = useHttp();
   const listener = useListener();
-  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
   const likert = dig(assessment, "scoring_scale") === "LIKERT_CUMULATIVE_POMP";
   const textSurvey = dig(assessment, "slide_type")?.toLowerCase() === "text";
   const translate = useTranslate();
@@ -44,9 +41,18 @@ export default function PersonalitySurvey() {
   const options = useOption("survey") || {};
   const [showInstructions, setShowInstructions] = useState(false);
   const [started, setStarted] = useState(null);
-  const [submitAttempts, setSubmitAttempts] = useState(0);
   const [submitError, setSubmitError] = useState(null);
-  const submitting = useRef(false);
+  const {
+    attempts: submitAttempts,
+    reset: resetSubmit,
+    trigger: submitRequest
+  } = useUpdateAssessment({
+    key: "personality-submit",
+    onFailure: () => setSubmitError("Error Submitting"),
+    parse: (response) => response,
+    save: false,
+    success: () => true
+  });
 
   const completedSlides = slides.filter(({response}) => response != null)
     .map((slide) => slice(slide, ["id", "response", "time_taken"]));
@@ -109,34 +115,17 @@ export default function PersonalitySurvey() {
 
   useEffect(() => {
     if(!finished) { return; }
-    if(!assessment) { return; }
-    if(assessment.completed_at) { return; }
-    if(submitAttempts > maxRetries) { return; }
-    if(submitting.current) { return; }
 
-    submitting.current = true;
-
-    const path = `/assessments/${assessment.id}/slides`;
-
-    http.put(
-      path,
-      completedSlides.map(({id, response, time_taken: timeTaken}) => ({
-        id,
-        [likert ? "likert_response" : "response"]: response,
-        time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
-      }))
-    ).then(() => {
-      cache.remove(assessmentCacheKey);
-      refreshAssessment();
-
-      submitting.current = false;
-    }).catch((response) => {
-      appendError(responseToErrors({method: "PUT", path, response}));
-
-      setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
-      if(submitAttempts >= maxRetries) { setSubmitError("Error Submitting"); }
-
-      submitting.current = false;
+    submitRequest({
+      assessment,
+      request: () => http.put(
+        `/assessments/${assessment.id}/slides`,
+        completedSlides.map(({id, response, time_taken: timeTaken}) => ({
+          id,
+          [likert ? "likert_response" : "response"]: response,
+          time_taken: timeTaken && timeTaken >= 0 ? timeTaken : 2
+        }))
+      )
     });
   }, [finished, submitAttempts]);
 
@@ -156,7 +145,7 @@ export default function PersonalitySurvey() {
     const retry = () => {
       if(!submitError) { return dispatch({type: "retry"}); }
 
-      setSubmitAttempts(0);
+      resetSubmit();
       setSubmitError(null);
     };
 

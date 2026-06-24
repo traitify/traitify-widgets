@@ -602,7 +602,7 @@ function setupRJP() {
   const variables = {localeKey: cache.get("locale")};
 
   Traitify.http.post(Traitify.GraphQL.rjp.path, {query, variables}).then((response) => {
-    const options = response.data.realisticJobPreviews
+    const options = response.data.listSurveys
       .map(({id, name}) => ({text: name, value: id}))
       .sort((a, b) => a.text.localeCompare(b.text));
 

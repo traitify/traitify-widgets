@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import PropTypes from "prop-types";
 import {useEffect, useState} from "react";
+import AccommodationPrompt from "components/common/accommodation/prompt";
 import Markdown from "components/common/markdown";
 import dig from "lib/common/object/dig";
 import useSkipAssessment from "lib/hooks/use-skip-assessment";
@@ -23,7 +24,7 @@ function Instructions({
   surveyID,
   translate
 }) {
-  const {allow: allowSkip, dismiss: dismissSkip, trigger: onSkip} = useSkipAssessment();
+  const {allow: allowSkip, dismiss: dismissSkip} = useSkipAssessment();
   const [width] = useWindowSize();
   const [disability, setDisability] = useState(initialLearningDisability || false);
   const [step, setStep] = useState(1);
@@ -49,15 +50,7 @@ function Instructions({
     return (
       <div key="request-accommodation" className={style.container}>
         <h1>{translate("survey.accommodation.request")}</h1>
-        <div className={style.text}>{translate("survey.accommodation.request_text")}</div>
-        <div className={style.btnGroup}>
-          <button className={style.btnBack} onClick={() => setShowAccommodation(false)} type="button">
-            {translate("back")}
-          </button>
-          <button className={style.btnBlue} onClick={onSkip} type="button">
-            {translate("survey.accommodation.confirm")}
-          </button>
-        </div>
+        <AccommodationPrompt onBack={() => setShowAccommodation(false)} />
       </div>
     );
   }

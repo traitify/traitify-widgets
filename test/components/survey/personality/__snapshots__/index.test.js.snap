@@ -1795,9 +1795,11 @@ exports[`Survey.Personality instructions skip assessment accommodation renders r
           <h1>
             Request Accommodation
           </h1>
-          <p>
-            Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
-          </p>
+        </div>
+        <div
+          className="text"
+        >
+          Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
         </div>
         <div
           className="btnGroup"
@@ -1810,7 +1812,7 @@ exports[`Survey.Personality instructions skip assessment accommodation renders r
             Back
           </button>
           <button
-            className="btnNext"
+            className="btnTheme"
             onClick={[Function]}
             type="button"
           >

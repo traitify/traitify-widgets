@@ -53,7 +53,6 @@ export default function useSkipAssessment() {
             },
             path: graphQL.external.path
           };
-          if(http.version === "v1") { query.version = graphQL.external.version; }
           request = () => http.post(query);
           break;
         }

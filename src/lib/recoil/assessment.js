@@ -66,7 +66,6 @@ export const externalAssessmentQuery = selectorFamily({
       },
       path
     };
-    if(http.version === "v1") { query.version = GraphQL.external.version; }
 
     const response = await http.post(query).catch((e) => ({errors: [e.message]}));
     if(response.errors) {

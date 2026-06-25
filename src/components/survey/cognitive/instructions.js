@@ -49,8 +49,10 @@ function Instructions({
   if(showAccommodation) {
     return (
       <div key="request-accommodation" className={style.container}>
-        <h1>{translate("survey.accommodation.request")}</h1>
-        <AccommodationPrompt onBack={() => setShowAccommodation(false)} />
+        <div className={style.content}>
+          <h1>{translate("survey.accommodation.request")}</h1>
+          <AccommodationPrompt onBack={() => setShowAccommodation(false)} />
+        </div>
       </div>
     );
   }
@@ -60,14 +62,16 @@ function Instructions({
 
     return (
       <div key={`step-${step}-${type}`} className={style.container}>
-        {step === 1 ? <h1>{heading}</h1> : <h2>{heading}</h2>}
-        {text && <Markdown className={style.text}>{text}</Markdown>}
-        {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
-        <div className={style.btnGroup}>
-          {step === 1 && allowSkip && (
-            <button className={style.btnBack} onClick={() => setShowAccommodation(true)} type="button">{translate("survey.accommodation.request")}</button>
-          )}
-          <button className={`traitify--response-button ${style.btnBlue}`} onClick={onContinue} type="button">{button}</button>
+        <div className={style.content}>
+          {step === 1 ? <h1>{heading}</h1> : <h2>{heading}</h2>}
+          {text && <Markdown className={style.text}>{text}</Markdown>}
+          {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
+          <div className={style.btnGroup}>
+            {step === 1 && allowSkip && (
+              <button className={style.btnBack} onClick={() => setShowAccommodation(true)} type="button">{translate("survey.accommodation.request")}</button>
+            )}
+            <button className={`traitify--response-button ${style.btnBlue}`} onClick={onContinue} type="button">{button}</button>
+          </div>
         </div>
       </div>
     );
@@ -88,16 +92,18 @@ function Instructions({
 
   return (
     <div key={`step-${step}`} className={style.container}>
-      <h2>{heading}</h2>
-      {text && <Markdown className={style.text}>{text}</Markdown>}
-      {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
-      {captureLearningDisability && (
-        <label htmlFor="traitify-disability">
-          {translate("cognitive_instructions_disability_text")}
-          <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
-        </label>
-      )}
-      <button className={`traitify--response-button ${style.btnBlue}`} onClick={() => onStart({disability})} type="button">{button}</button>
+      <div className={style.content}>
+        <h2>{heading}</h2>
+        {text && <Markdown className={style.text}>{text}</Markdown>}
+        {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
+        {captureLearningDisability && (
+          <label htmlFor="traitify-disability">
+            {translate("cognitive_instructions_disability_text")}
+            <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
+          </label>
+        )}
+        <button className={`traitify--response-button ${style.btnBlue}`} onClick={() => onStart({disability})} type="button">{button}</button>
+      </div>
     </div>
   );
 }

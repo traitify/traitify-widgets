@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "3.9.11",
+  "version": "3.9.12",
   "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "description": "Traitiy Widgets",
   "exports": {
@@ -19,7 +19,7 @@
   "main": "./build/traitify.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/traitify/traitify-widgets.git"
+    "url": "git+https://github.com/traitify/traitify-widgets.git"
   },
   "scripts": {
     "build": "npm run build:lib && npm run build:compatibility -- --env output=standalone",

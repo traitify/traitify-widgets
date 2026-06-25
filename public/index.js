@@ -138,49 +138,33 @@ function booleanFrom(value, fallback) {
   return fallback;
 }
 
-function createAssessment() {
+function createAssessment({mode = "create"} = {}) {
   destroyWidget();
 
   if(cache.get("surveyType") === "benchmark") { return createWidget(); }
-  if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
-  if(cache.get("surveyType") === "external") { return createExternalAssessment(); }
+  if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment({mode}); }
+  if(cache.get("surveyType") === "external") { return createExternalAssessment({mode}); }
   if(cache.get("surveyType") === "generic") { return createGenericAssessment(); }
   if(cache.get("surveyType") === "order") { return createWidget(); }
-  if(cache.get("surveyType") === "rjp") { return createRJPAssessment(); }
+  if(cache.get("surveyType") === "rjp") { return createRJPAssessment({mode}); }
 
-  const params = {
-    deck_id: cache.get("deckID"),
-    locale_key: cache.get("locale")
-  };
-  const customParams = JSON.parse(cache.get("params", {fallback: "{}"}));
-
-  Object.keys(customParams).filter((key) => customParams[key])
-    .forEach((key) => params[key] = customParams[key]);
-
-  Traitify.http.post("/assessments", params).then((assessment) => {
-    try {
-      const id = assessment.id;
-      console.log("createAssessment", id);
-
-      cache.set("personalityAssessmentID", id);
-      cache.set("assessmentID", id);
-    } catch(error) {
-      console.log(error);
-    }
-    setTimeout(createWidget, 500);
-  });
+  return createPersonalityAssessment({mode});
 }
 
-function createCognitiveAssessment() {
-  const query = Traitify.GraphQL.cognitive.create;
-  const variables = {
+function createCognitiveAssessment({mode}) {
+  const load = mode === "load" && !!cache.get("cognitiveAssessmentID");
+  const query = Traitify.GraphQL.cognitive[load ? "get" : "create"];
+  const variables = load ? {
+    localeKey: cache.get("locale"),
+    testID: cache.get("cognitiveAssessmentID")
+  } : {
     localeKey: cache.get("locale"),
     surveyID: cache.get("cognitiveSurveyID")
   };
 
   Traitify.http.post(Traitify.GraphQL.cognitive.path, {query, variables}).then((response) => {
     try {
-      const id = response.data.createCognitiveTest.id;
+      const id = response.data[load ? "cognitiveTest" : "createCognitiveTest"].id;
 
       cache.set("cognitiveAssessmentID", id);
       cache.set("assessmentID", id);
@@ -249,9 +233,14 @@ function createElement(options = {}) {
   return element;
 }
 
-function createExternalAssessment() {
-  const query = Traitify.GraphQL.external.getOrCreate;
-  const variables = {
+function createExternalAssessment({mode}) {
+  const create = mode === "create";
+  const query = Traitify.GraphQL.external[create ? "create" : "getOrCreate"];
+  const variables = create ? {
+    externalSurveyKey: cache.get("externalSurveyKey"),
+    profileID: cache.get("profileID"),
+    vendor: cache.get("externalVendor")
+  } : {
     profileID: cache.get("profileID"),
     surveyKey: cache.get("externalSurveyKey")
   };
@@ -262,7 +251,7 @@ function createExternalAssessment() {
     version: Traitify.GraphQL.external.version
   }).then((response) => {
     try {
-      const id = response.data.getOrCreateAssessment.id;
+      const id = response.data[create ? "createAssessment" : "getOrCreateAssessment"].id;
 
       cache.set("externalAssessmentID", id);
       cache.set("assessmentID", id);
@@ -293,9 +282,41 @@ function createGenericAssessment() {
   });
 }
 
-function createRJPAssessment() {
-  const query = Traitify.GraphQL.rjp.create;
-  const variables = {
+function createPersonalityAssessment({mode}) {
+  if(mode === "load" && cache.get("personalityAssessmentID")) {
+    cache.set("assessmentID", cache.get("personalityAssessmentID"));
+    return setTimeout(createWidget, 500);
+  }
+
+  const params = {
+    deck_id: cache.get("deckID"),
+    locale_key: cache.get("locale")
+  };
+  const customParams = JSON.parse(cache.get("params", {fallback: "{}"}));
+
+  Object.keys(customParams).filter((key) => customParams[key])
+    .forEach((key) => params[key] = customParams[key]);
+
+  Traitify.http.post("/assessments", params).then((assessment) => {
+    try {
+      const id = assessment.id;
+      console.log("createAssessment", id);
+
+      cache.set("personalityAssessmentID", id);
+      cache.set("assessmentID", id);
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
+}
+
+function createRJPAssessment({mode}) {
+  const load = mode === "load" && !!cache.get("rjpAssessmentID");
+  const query = Traitify.GraphQL.rjp[load ? "get" : "create"];
+  const variables = load ? {
+    id: cache.get("rjpAssessmentID")
+  } : {
     localeKey: cache.get("locale"),
     profileID: cache.get("profileID"),
     surveyID: cache.get("rjpSurveyID")
@@ -303,7 +324,7 @@ function createRJPAssessment() {
 
   Traitify.http.post(Traitify.GraphQL.rjp.path, {query, variables}).then((response) => {
     try {
-      const id = response.data.createAssessment.id;
+      const id = response.data[load ? "getAssessment" : "createAssessment"].id;
 
       cache.set("rjpAssessmentID", id);
       cache.set("assessmentID", id);
@@ -505,9 +526,12 @@ function setupDom() {
   group.appendChild(row);
 
   row = createElement({className: "row"});
-  row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create / Load"}));
+  row.appendChild(createElement({id: "create-button", onClick: () => createAssessment({mode: "create"}), tag: "button", text: "Create"}));
+  row.appendChild(createElement({id: "load-button", onClick: () => createAssessment({mode: "load"}), tag: "button", text: "Load"}));
   group.appendChild(row);
   document.body.appendChild(group);
+
+  updateButtons();
 }
 
 function setupCognitive() {
@@ -656,6 +680,20 @@ function onSurveyTypeChange(e) {
   otherValues.forEach((otherValue) => {
     document.querySelector(`#${otherValue}-options`).classList.add("hide");
   });
+
+  updateButtons();
+}
+
+function updateButtons() {
+  const createButton = document.querySelector("#create-button");
+  const loadButton = document.querySelector("#load-button");
+  if(!createButton || !loadButton) { return; }
+
+  const supported = ["cognitive", "external", "personality", "rjp"]
+    .includes(cache.get("surveyType", {fallback: "personality"}));
+
+  createButton.classList.toggle("hide", !supported);
+  loadButton.textContent = supported ? "Load" : "Create / Load";
 }
 
 setupTraitify();

@@ -17,6 +17,14 @@ const assessment = `
       vendor
 `.trim();
 
+export const create = `
+  mutation($externalSurveyKey: String!, $profileID: String!, $vendor: String!) {
+    createAssessment(externalSurveyKey: $externalSurveyKey, profileId: $profileID, vendor: $vendor) {
+      ${assessment}
+    }
+  }
+`;
+
 export const get = `
   query($id: String!) {
     getAssessment(id: $id) {

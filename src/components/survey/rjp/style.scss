@@ -27,6 +27,7 @@
   .p { @extend %paragraph; }
   .play {
     border-radius: $border-radius;
+    display: block;
     margin: $buffer-lg auto;
     padding: 0;
     position: relative;

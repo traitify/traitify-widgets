@@ -44,5 +44,4 @@ export const skip = `
   }
 `;
 
-export const path = "/assessments/external/external_assessments/graphql";
-export const version = "beta";
+export const path = "/external-assessments/graphql";

@@ -49,7 +49,6 @@ export default function useSkipAssessment() {
             },
             path: graphQL.external.path
           };
-          if(http.version === "v1") { query.version = graphQL.external.version; }
           const response = await http.post(query);
           success = response.data.skipAssessment.isSkipped;
           break;

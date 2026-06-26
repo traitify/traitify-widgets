@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @__NO_SIDE_EFFECTS__
 function mp(t) {
   const e = /* @__PURE__ */ Object.create(null);
@@ -43390,7 +43391,7 @@ function wi(...t) {
 function C5(t) {
   if (t.length === 0)
     return "Buffered Ranges are empty";
-  let e = `Buffered Ranges: 
+  let e = `Buffered Ranges:
 `;
   for (let i = 0; i < t.length; i++) {
     const r = t.start(i), s = t.end(i);
@@ -48279,7 +48280,7 @@ browserWorkerPolyFill(self);
     var Me = {
       scheme_id_uri: g,
       value: v,
-      // if timescale is undefined or 0 set to 1 
+      // if timescale is undefined or 0 set to 1
       timescale: S || 1,
       presentation_time: L,
       presentation_time_delta: M,

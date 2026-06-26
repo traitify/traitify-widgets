@@ -77,7 +77,7 @@ export const externalAssessmentQuery = selectorFamily({
     const assessment = response.data.getAssessment;
     if(!assessment?.completedAt) { return assessment; }
 
-    cache.set(cacheKey, assessment);
+    cache.set(cacheKey, assessment, {expiresIn: 60 * 60});
 
     return assessment;
   },
@@ -208,8 +208,8 @@ export const activeAssessmentQuery = selector({
 });
 
 export const completedAssessmentQuery = selectorFamily({
-  get: ({surveyType}) => async({get}) => {
-    if(!surveyType) {
+  get: ({id, surveyType} = {}) => async({get}) => {
+    if(!id && !surveyType) {
       const active = get(activeState);
       if(!active?.completed) { return null; }
 
@@ -219,11 +219,15 @@ export const completedAssessmentQuery = selectorFamily({
     const assessments = get(assessmentsState);
     if(!assessments) { return null; }
 
-    const assessment = assessments
-      .find(({completed, surveyType: type}) => type === surveyType && completed);
+    let filtered = assessments.filter(({completed}) => completed);
+    if(surveyType) { filtered = filtered.filter(({surveyType: type}) => type === surveyType); }
+
+    const assessment = id
+      ? filtered.find(({id: aID}) => aID === id)
+      : filtered[0];
     if(!assessment) { return null; }
 
-    return get(assessmentQuery({id: assessment.id, surveyType}));
+    return get(assessmentQuery({id: assessment.id, surveyType: assessment.surveyType}));
   },
   key: "assessment/completed"
 });

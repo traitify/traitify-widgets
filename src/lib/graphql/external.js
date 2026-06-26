@@ -9,6 +9,7 @@ const assessment = `
       numericResult
       passFailResult
       profileId
+      results
       resultUrl
       signInUrl
       surveyKey

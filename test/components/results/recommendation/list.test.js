@@ -2,7 +2,7 @@ import {act} from "react-test-renderer";
 import Dropdown from "components/common/dropdown";
 import Component from "components/results/recommendation/list";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockRecommendation, useAssessment} from "support/container/http";
+import {mockAssessment, mockRecommendation, mockSettings, useAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import assessment from "support/data/assessment/personality/completed";
 import orderRecommendation from "support/data/recommendation/personality/completed";
@@ -104,5 +104,29 @@ describe("Results.RecommendationList", () => {
     await act(async() => component.instance.findByType(Dropdown).props.onChange({target: {name: "Other", value: "other-xyz"}}));
 
     expect(component.tree).toMatchSnapshot();
+  });
+
+  describe("redaction", () => {
+    const withCreatedAt = (createdAt) => ({
+      ...assessment,
+      recommendation: {...assessment.recommendation, created_at: createdAt},
+      recommendations: [{...assessment.recommendation, created_at: createdAt}]
+    });
+
+    it("hides description once redactRecommendationAfter has elapsed", async() => {
+      mockSettings({redact_recommendation_after: 1000});
+      mockAssessment(withCreatedAt(Date.now() - 1000000));
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.findAllByText("Preferred", {exact: false})).toHaveLength(0);
+    });
+
+    it("renders description before redactRecommendationAfter has elapsed", async() => {
+      mockSettings({redact_recommendation_after: 1000000});
+      mockAssessment(withCreatedAt(Date.now()));
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.findAllByText("Preferred", {exact: false})).toHaveLength(1);
+    });
   });
 });

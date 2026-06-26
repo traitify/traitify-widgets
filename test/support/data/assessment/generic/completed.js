@@ -2,7 +2,7 @@ import base from "./base";
 
 export default {
   ...base,
-  completedAt: "2024-01-01T00:00:00Z",
+  completedAt: 1704067200000,
   overallScore: 1,
   survey: {
     conclusions: "## Conclusions",

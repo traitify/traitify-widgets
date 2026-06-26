@@ -6,6 +6,7 @@ import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useOption from "lib/hooks/use-option";
 import useRecommendation from "lib/hooks/use-recommendation";
 import useRecommendations from "lib/hooks/use-recommendations";
+import useSetting from "lib/hooks/use-setting";
 import useTranslate from "lib/hooks/use-translate";
 import {benchmarkIDState} from "lib/recoil";
 import style from "./style.scss";
@@ -17,6 +18,7 @@ export default function RecommendationList() {
   const disabledScore = useDisabledComponent("RecommendationScore");
   const recommendation = useRecommendation();
   const recommendations = useRecommendations();
+  const redactAfter = useSetting("redactRecommendationAfter");
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
 
@@ -25,7 +27,9 @@ export default function RecommendationList() {
   if(disabled) { return null; }
   if(!recommendation) { return null; }
 
-  const description = [
+  const redacted = redactAfter && recommendation.created_at
+    && Date.now() - recommendation.created_at > redactAfter;
+  const description = !redacted && [
     !disabledScore && recommendation.match_score,
     recommendation.description
   ].filter(Boolean).join(" - ");

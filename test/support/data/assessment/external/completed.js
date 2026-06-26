@@ -2,7 +2,7 @@ import base from "./base";
 
 export default {
   ...base,
-  completedAt: "2021-01-01T00:00:00Z",
+  completedAt: 1609459200000,
   isSkipped: false,
   numericResult: 100,
   passFailResult: "PASS",

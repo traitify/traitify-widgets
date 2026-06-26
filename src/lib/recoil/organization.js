@@ -20,7 +20,7 @@ export const settingsQuery = selector({
     const response = await http.get(path).catch((e) => ({errors: [e.message]}));
     if(!response) { return; }
     if(response.errors) {
-      console.warn("test", response.errors); /* eslint-disable-line no-console */
+      console.warn("organization-settings", response.errors); /* eslint-disable-line no-console */
       get(listenerState).trigger("Error.append", responseToErrors({method: "GET", path, response}));
       return;
     }
@@ -48,7 +48,7 @@ export const translationsQuery = selector({
     const response = await http.get(path, {project: "widgets"}).catch((e) => ({errors: [e.message]}));
     if(!response) { return; }
     if(response.errors) {
-      console.warn("test", response.errors); /* eslint-disable-line no-console */
+      console.warn("organization-translations", response.errors); /* eslint-disable-line no-console */
       get(listenerState).trigger("Error.append", responseToErrors({method: "GET", path, response}));
       return;
     }

@@ -8,11 +8,13 @@ import Dimensions from "components/results/personality/dimension/list";
 import Traits from "components/results/personality/trait/list";
 import RJPResults from "components/results/rjp";
 import useActive from "lib/hooks/use-active";
+import useRecommendationRedacted from "lib/hooks/use-recommendation-redacted";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function CandidateReport() {
   const active = useActive();
+  const redacted = useRecommendationRedacted();
   const [options, setOptions] = useRecoilState(optionsState);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ export default function CandidateReport() {
   }, []);
 
   if(!active) { return null; }
+  if(redacted) { return null; }
   if(active.surveyType === "generic") {
     return (
       <section className={style.container}>

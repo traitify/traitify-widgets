@@ -1,6 +1,11 @@
 import Component from "components/report/candidate";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockGenericAssessment, mockRjpAssessment} from "support/container/http";
+import {
+  mockAssessment,
+  mockGenericAssessment,
+  mockRjpAssessment,
+  mockSettings
+} from "support/container/http";
 import {mockOption} from "support/container/options";
 import genericAssessment from "support/data/assessment/generic/completed";
 import assessment from "support/data/assessment/personality/completed";
@@ -44,5 +49,18 @@ describe("Report.Candidate", () => {
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders nothing when the recommendation is redacted", async() => {
+    container.assessmentID = assessment.id;
+    mockSettings({redact_recommendation_after: 1000});
+    mockAssessment({
+      ...assessment,
+      recommendation: {...assessment.recommendation, created_at: Date.now() - 1000000},
+      recommendations: [{...assessment.recommendation, created_at: Date.now() - 1000000}]
+    });
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree.children).toBeNull();
   });
 });

@@ -6,12 +6,14 @@ import BaseStyles from "components/results/personality/base/styles";
 import Traits from "components/results/personality/trait/list";
 import Types from "components/results/personality/type/list";
 import dig from "lib/common/object/dig";
+import useRecommendationRedacted from "lib/hooks/use-recommendation-redacted";
 import useResults from "lib/hooks/use-results";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function AttractReport() {
   const results = useResults();
+  const redacted = useRecommendationRedacted();
   const [options, setOptions] = useRecoilState(optionsState);
 
   useEffect(() => {
@@ -36,6 +38,8 @@ export default function AttractReport() {
 
     setOptions({...options, ...newOptions});
   }, [results]);
+
+  if(redacted) { return null; }
 
   return (
     <section className={style.container}>

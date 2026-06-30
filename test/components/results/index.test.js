@@ -1,8 +1,14 @@
 import Component from "components/results";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockCognitiveAssessment, mockRjpAssessment} from "support/container/http";
+import {
+  mockAssessment,
+  mockCognitiveAssessment,
+  mockRjpAssessment,
+  mockSettings
+} from "support/container/http";
 import {mockOption} from "support/container/options";
 import cognitive from "support/data/assessment/cognitive/completed";
+import completed from "support/data/assessment/personality/completed";
 import dimensionBased from "support/data/assessment/personality/dimension-based";
 import financialRisk from "support/data/assessment/personality/financial-risk";
 import typeBased from "support/data/assessment/personality/type-based";
@@ -128,5 +134,31 @@ describe("Results", () => {
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
+  });
+
+  describe("redaction", () => {
+    const withCreatedAt = (createdAt) => ({
+      ...completed,
+      recommendation: {...completed.recommendation, created_at: createdAt},
+      recommendations: [{...completed.recommendation, created_at: createdAt}]
+    });
+
+    it("renders nothing once redactRecommendationAfter has elapsed", async() => {
+      container.assessmentID = completed.id;
+      mockSettings({redact_recommendation_after: 1000});
+      mockAssessment(withCreatedAt(Date.now() - 1000000));
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree.children).toBeNull();
+    });
+
+    it("renders results before redactRecommendationAfter has elapsed", async() => {
+      container.assessmentID = completed.id;
+      mockSettings({redact_recommendation_after: 1000000});
+      mockAssessment(withCreatedAt(Date.now()));
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.tree.children).not.toBeNull();
+    });
   });
 });

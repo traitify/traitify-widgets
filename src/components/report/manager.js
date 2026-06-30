@@ -9,11 +9,13 @@ import RJPResults from "components/results/rjp";
 import useActive from "lib/hooks/use-active";
 import useDefaultOptions from "lib/hooks/use-default-options";
 import useOption from "lib/hooks/use-option";
+import useRecommendationRedacted from "lib/hooks/use-recommendation-redacted";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function ManagerReport() {
   const active = useActive();
+  const redacted = useRecommendationRedacted();
   const showHeaders = useOption("showHeaders");
   // NOTE: Temporary option until Paradox is ready
   const showRecommendationList = useOption("showRecommendationList");
@@ -22,6 +24,7 @@ export default function ManagerReport() {
   useDefaultOptions({applyAssessmentExpiration: true, perspective: "thirdPerson"});
 
   if(!active) { return null; }
+  if(redacted) { return null; }
   if(active.surveyType === "generic") {
     return (
       <section className={[style.container, style.box].join(" ")}>

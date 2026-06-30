@@ -36,6 +36,10 @@
     button { margin: 0; }
   }
   .btnSkip { @include buttonDark("secondary"); }
+  .content {
+    margin: 0 auto;
+    max-width: 800px;
+  }
   .buttons {
     text-align: center;
     margin: 0 auto;
@@ -57,9 +61,7 @@
     }
   }
   .text {
-    margin: 0 auto;
     margin-bottom: $buffer;
-    max-width: 800px;
     white-space: pre-wrap;
   }
 

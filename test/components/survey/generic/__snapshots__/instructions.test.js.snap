@@ -6,6 +6,10 @@ exports[`Instructions renders instructions 1`] = `
 >
   <div
     className="modal container md"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    tabIndex={-1}
   >
     <section
       className="modalContainer"
@@ -73,6 +77,10 @@ exports[`Instructions skip assessment accommodation renders accommodation text 1
 >
   <div
     className="modal container md"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    tabIndex={-1}
   >
     <section
       className="modalContainer"
@@ -95,7 +103,7 @@ exports[`Instructions skip assessment accommodation renders accommodation text 1
                   "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg>",
                 }
               }
-              onClick={[MockFunction onClose]}
+              onClick={[Function]}
               tabIndex="-1"
             />
           </div>
@@ -107,15 +115,10 @@ exports[`Instructions skip assessment accommodation renders accommodation text 1
           className="content"
         >
           <div
-            className="markdown"
+            className="text"
           >
-            <p>
-              Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
-            </p>
+            Are you sure you want to request accommodations for the assessment? This will result in you skipping the assessment. If not, click Back to continue with the assessment
           </div>
-          <div
-            className="divider"
-          />
           <div
             className="btnGroup"
           >
@@ -147,6 +150,10 @@ exports[`Instructions skip assessment accommodation renders back action 1`] = `
 >
   <div
     className="modal container md"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    tabIndex={-1}
   >
     <section
       className="modalContainer"
@@ -220,6 +227,10 @@ exports[`Instructions skip assessment accommodation renders instructions 1`] = `
 >
   <div
     className="modal container md"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    tabIndex={-1}
   >
     <section
       className="modalContainer"

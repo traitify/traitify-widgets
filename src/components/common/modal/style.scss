@@ -15,9 +15,8 @@
   transition: top 300ms ease-in-out;
 
   .close {
-    float: right;
     cursor: pointer;
-    font-size: $font-size * 1.25;
+    font-size: $font-size-lg;
   }
 }
 
@@ -51,5 +50,6 @@
 
 .header {
   display: flex;
+  font-size: $font-size-lg;
   justify-content: space-between;
 }

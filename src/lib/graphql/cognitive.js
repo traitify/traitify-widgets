@@ -1,6 +1,4 @@
-export const create = `
-  mutation($localeKey: String, $surveyID: String!) {
-    createCognitiveTest(localeKey: $localeKey, surveyId: $surveyID) {
+const assessment = `
       allottedTime
       completed
       id
@@ -10,11 +8,6 @@ export const create = `
       name
       percentileScore
       profileId
-      rawScore
-      specialAllottedTime
-      stenScore
-      surveyId
-      surveyKey
       questions {
         id
         answer {
@@ -34,6 +27,17 @@ export const create = `
           }
         }
       }
+      rawScore
+      specialAllottedTime
+      stenScore
+      surveyId
+      surveyKey
+`.trim();
+
+export const create = `
+  mutation($localeKey: String, $surveyID: String!) {
+    createCognitiveTest(localeKey: $localeKey, surveyId: $surveyID) {
+      ${assessment}
     }
   }
 `;
@@ -41,39 +45,7 @@ export const create = `
 export const get = `
   query cognitiveTest($localeKey: String, $testID: String!) {
     cognitiveTest(localeKey: $localeKey, testId: $testID) {
-      allottedTime
-      completed
-      id
-      isSkipped
-      learningDisability
-      localeKey
-      name
-      percentileScore
-      profileId
-      rawScore
-      specialAllottedTime
-      stenScore
-      surveyId
-      surveyKey
-      questions {
-        id
-        answer {
-          answerId
-          skipped
-          timeTaken
-        }
-        questionImage {
-          id
-          url
-        }
-        responses {
-          id
-          image {
-            id
-            url
-          }
-        }
-      }
+      ${assessment}
     }
   }
 `;

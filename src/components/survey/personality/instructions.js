@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {useState} from "react";
+import AccommodationPrompt from "components/common/accommodation/prompt";
 import DangerousHTML from "components/common/dangerous-html";
 import Markdown from "components/common/markdown";
 import useSkipAssessment from "lib/hooks/use-skip-assessment";
@@ -11,7 +12,7 @@ function Instructions({
   instructionsHTML = null,
   onNext
 }) {
-  const {allow: allowSkip, dismiss: dismissSkip, trigger: onSkip} = useSkipAssessment();
+  const {allow: allowSkip, dismiss: dismissSkip} = useSkipAssessment();
   const [showAccommodation, setShowAccommodation] = useState(false);
   const translate = useTranslate();
 
@@ -20,16 +21,8 @@ function Instructions({
       <>
         <div className={style.markdown}>
           <h1>{translate("survey.accommodation.request")}</h1>
-          <p>{translate("survey.accommodation.request_text")}</p>
         </div>
-        <div className={style.btnGroup}>
-          <button className={style.btnBack} onClick={() => setShowAccommodation(false)} type="button">
-            {translate("back")}
-          </button>
-          <button className={style.btnNext} onClick={onSkip} type="button">
-            {translate("survey.accommodation.confirm")}
-          </button>
-        </div>
+        <AccommodationPrompt onBack={() => setShowAccommodation(false)} />
       </>
     );
   }

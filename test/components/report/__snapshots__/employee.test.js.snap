@@ -46,3 +46,19 @@ exports[`Report.Employee renders generic component 1`] = `
   </section>
 </div>
 `;
+
+exports[`Report.Employee renders rjp component 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <section
+    className="container"
+  >
+    <div
+      className="mock"
+    >
+      RJP
+    </div>
+  </section>
+</div>
+`;

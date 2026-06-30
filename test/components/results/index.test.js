@@ -1,11 +1,12 @@
 import Component from "components/results";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockCognitiveAssessment} from "support/container/http";
+import {mockAssessment, mockCognitiveAssessment, mockRjpAssessment} from "support/container/http";
 import {mockOption} from "support/container/options";
 import cognitive from "support/data/assessment/cognitive/completed";
 import dimensionBased from "support/data/assessment/personality/dimension-based";
 import financialRisk from "support/data/assessment/personality/financial-risk";
 import typeBased from "support/data/assessment/personality/type-based";
+import rjp from "support/data/assessment/rjp/completed";
 import useContainer from "support/hooks/use-container";
 
 jest.mock("components/report/attract", () => (() => <div className="mock">Attract</div>));
@@ -14,6 +15,7 @@ jest.mock("components/report/employee", () => (() => <div className="mock">Emplo
 jest.mock("components/report/manager", () => (() => <div className="mock">Manager</div>));
 jest.mock("components/results/cognitive", () => (() => <div className="mock">Cognitive</div>));
 jest.mock("components/results/financial-risk", () => (() => <div className="mock">Financial Risk</div>));
+jest.mock("components/results/rjp", () => (() => <div className="mock">RJP</div>));
 
 describe("Results", () => {
   let component;
@@ -107,6 +109,16 @@ describe("Results", () => {
     container.assessmentID = typeBased.id;
 
     mockAssessment(typeBased);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders rjp results", async() => {
+    container.assessmentID = rjp.id;
+
+    mockRjpAssessment(rjp);
+    mockOption("surveyType", "rjp");
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

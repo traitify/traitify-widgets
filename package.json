@@ -1,19 +1,26 @@
 {
   "name": "traitify-widgets",
-  "version": "3.9.11",
+  "version": "3.9.12",
+  "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "description": "Traitiy Widgets",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/traitify/traitify-widgets.git"
-  },
   "exports": {
     ".": "./build/traitify.js",
     "./standalone": "./build/standalone.js"
   },
-  "main": "./build/traitify.js",
   "files": [
     "build/*"
   ],
+  "keywords": [
+    "traitify",
+    "personality",
+    "widgets"
+  ],
+  "license": "MIT",
+  "main": "./build/traitify.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/traitify/traitify-widgets.git"
+  },
   "scripts": {
     "build": "npm run build:lib && npm run build:compatibility -- --env output=standalone",
     "build:compatibility": "webpack --define-process-env-node-env production --env platform=browser --progress",
@@ -26,24 +33,14 @@
     "lint:fix": "eslint . --fix",
     "prebuild": "mkdirp build",
     "prebuild:compatibility": "mkdirp build",
-    "prei18n-sync:test": "cd packages/i18n-sync && npm install",
-    "prerjp:test": "cd packages/realistic-job-preview && npm install",
+    "prei18n-sync:test": "cd packages/i18n-sync && npm install --silent",
     "pretest": "npm run lint",
     "pretraitify:test": "npm run traitify:lint",
-    "rjp:dev": "cd packages/realistic-job-preview && npm run dev --",
-    "rjp:test": "cd packages/realistic-job-preview && npm run test --",
     "test": "npm-run-all *:test",
     "traitify:lint": "eslint {src,test}",
     "traitify:test": "jest --config test/jest.config.js --coverage",
     "traitify:test:watch": "jest --config test/jest.config.js --watch"
   },
-  "keywords": [
-    "traitify",
-    "personality",
-    "widgets"
-  ],
-  "license": "MIT",
-  "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "devDependencies": {
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
@@ -91,6 +88,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "bowser": "^2.13.1",
     "color": "^4.2.3",

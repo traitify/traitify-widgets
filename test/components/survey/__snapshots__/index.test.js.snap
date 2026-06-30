@@ -81,3 +81,15 @@ exports[`Survey renders personality 1`] = `
   </div>
 </div>
 `;
+
+exports[`Survey renders rjp 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    RJP
+  </div>
+</div>
+`;

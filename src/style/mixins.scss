@@ -38,6 +38,11 @@
 
   @include buttonLight("input");
   @include theme("border-color", "border");
+
+  &:hover {
+    @include theme("border-color", "theme");
+    @include theme("color", "theme");
+  }
 }
 
 @mixin clamp($lines) {

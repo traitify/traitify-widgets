@@ -138,47 +138,33 @@ function booleanFrom(value, fallback) {
   return fallback;
 }
 
-function createAssessment() {
+function createAssessment({mode = "create"} = {}) {
   destroyWidget();
 
   if(cache.get("surveyType") === "benchmark") { return createWidget(); }
-  if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment(); }
-  if(cache.get("surveyType") === "order") { return createWidget(); }
+  if(cache.get("surveyType") === "cognitive") { return createCognitiveAssessment({mode}); }
+  if(cache.get("surveyType") === "external") { return createExternalAssessment({mode}); }
   if(cache.get("surveyType") === "generic") { return createGenericAssessment(); }
+  if(cache.get("surveyType") === "order") { return createWidget(); }
+  if(cache.get("surveyType") === "rjp") { return createRJPAssessment({mode}); }
 
-  const params = {
-    deck_id: cache.get("deckID"),
-    locale_key: cache.get("locale")
-  };
-  const customParams = JSON.parse(cache.get("params", {fallback: "{}"}));
-
-  Object.keys(customParams).filter((key) => customParams[key])
-    .forEach((key) => params[key] = customParams[key]);
-
-  Traitify.http.post("/assessments", params).then((assessment) => {
-    try {
-      const id = assessment.id;
-      console.log("createAssessment", id);
-
-      cache.set("personalityAssessmentID", id);
-      cache.set("assessmentID", id);
-    } catch(error) {
-      console.log(error);
-    }
-    setTimeout(createWidget, 500);
-  });
+  return createPersonalityAssessment({mode});
 }
 
-function createCognitiveAssessment() {
-  const query = Traitify.GraphQL.cognitive.create;
-  const variables = {
+function createCognitiveAssessment({mode}) {
+  const load = mode === "load" && !!cache.get("cognitiveAssessmentID");
+  const query = Traitify.GraphQL.cognitive[load ? "get" : "create"];
+  const variables = load ? {
+    localeKey: cache.get("locale"),
+    testID: cache.get("cognitiveAssessmentID")
+  } : {
     localeKey: cache.get("locale"),
     surveyID: cache.get("cognitiveSurveyID")
   };
 
   Traitify.http.post(Traitify.GraphQL.cognitive.path, {query, variables}).then((response) => {
     try {
-      const id = response.data.createCognitiveTest.id;
+      const id = response.data[load ? "cognitiveTest" : "createCognitiveTest"].id;
 
       cache.set("cognitiveAssessmentID", id);
       cache.set("assessmentID", id);
@@ -202,7 +188,7 @@ function createOption({fallback, name, onChange: _onChange, options, text, type}
     });
     let selected = cache.get(name, {fallback});
     if(!selected && options[0]) {
-      onChange({target: {name: "", type: "select", value: options[0].value}});
+      onChange({target: {name, type: "select", value: options[0].value}});
 
       selected = cache.get(name, {fallback});
     }
@@ -247,6 +233,35 @@ function createElement(options = {}) {
   return element;
 }
 
+function createExternalAssessment({mode}) {
+  const create = mode === "create";
+  const query = Traitify.GraphQL.external[create ? "create" : "getOrCreate"];
+  const variables = create ? {
+    externalSurveyKey: cache.get("externalSurveyKey"),
+    profileID: cache.get("profileID"),
+    vendor: cache.get("externalVendor")
+  } : {
+    profileID: cache.get("profileID"),
+    surveyKey: cache.get("externalSurveyKey")
+  };
+
+  Traitify.http.post({
+    params: {query, variables},
+    path: Traitify.GraphQL.external.path,
+    version: Traitify.GraphQL.external.version
+  }).then((response) => {
+    try {
+      const id = response.data[create ? "createAssessment" : "getOrCreateAssessment"].id;
+
+      cache.set("externalAssessmentID", id);
+      cache.set("assessmentID", id);
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
+}
+
 function createGenericAssessment() {
   const query = Traitify.GraphQL.generic.create;
   const variables = {
@@ -267,7 +282,65 @@ function createGenericAssessment() {
   });
 }
 
-function destroyWidget() { Traitify.destroy(); }
+function createPersonalityAssessment({mode}) {
+  if(mode === "load" && cache.get("personalityAssessmentID")) {
+    cache.set("assessmentID", cache.get("personalityAssessmentID"));
+    return setTimeout(createWidget, 500);
+  }
+
+  const params = {
+    deck_id: cache.get("deckID"),
+    locale_key: cache.get("locale")
+  };
+  const customParams = JSON.parse(cache.get("params", {fallback: "{}"}));
+
+  Object.keys(customParams).filter((key) => customParams[key])
+    .forEach((key) => params[key] = customParams[key]);
+
+  Traitify.http.post("/assessments", params).then((assessment) => {
+    try {
+      const id = assessment.id;
+      console.log("createAssessment", id);
+
+      cache.set("personalityAssessmentID", id);
+      cache.set("assessmentID", id);
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
+}
+
+function createRJPAssessment({mode}) {
+  const load = mode === "load" && !!cache.get("rjpAssessmentID");
+  const query = Traitify.GraphQL.rjp[load ? "get" : "create"];
+  const variables = load ? {
+    id: cache.get("rjpAssessmentID")
+  } : {
+    localeKey: cache.get("locale"),
+    profileID: cache.get("profileID"),
+    surveyID: cache.get("rjpSurveyID")
+  };
+
+  Traitify.http.post(Traitify.GraphQL.rjp.path, {query, variables}).then((response) => {
+    try {
+      const id = response.data[load ? "getAssessment" : "createAssessment"].id;
+
+      cache.set("rjpAssessmentID", id);
+      cache.set("assessmentID", id);
+    } catch(error) {
+      console.log(error);
+    }
+    setTimeout(createWidget, 500);
+  });
+}
+
+function destroyWidget() {
+  Traitify.destroy();
+  ["assessmentID", "benchmarkID", "orderID", "packageID", "profileID", "surveyType"].forEach((key) => {
+    delete Traitify.options[key];
+  });
+}
 
 function setupTargets() {
   const group = createElement({className: "group"});
@@ -402,9 +475,11 @@ function setupDom() {
     options: [
       {text: "Benchmark", value: "benchmark"},
       {text: "Cognitive", value: "cognitive"},
+      {text: "External", value: "external"},
       {text: "Generic", value: "generic"},
       {text: "Order", value: "order"},
-      {text: "Personality", value: "personality"}
+      {text: "Personality", value: "personality"},
+      {text: "RJP", value: "rjp"}
     ],
     text: "Survey Type:"
   }));
@@ -438,13 +513,25 @@ function setupDom() {
   row.appendChild(createOption({name: "orderID", text: "Order ID:"}));
   group.appendChild(row)
 
+  row = createElement({className: surveyType !== "external" ? "hide" : "", id: "external-options"});
+  row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
+  group.appendChild(row);
+
   row = createElement({className: surveyType !== "generic" ? "hide" : "", id: "generic-options"});
   row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
   group.appendChild(row);
+
+  row = createElement({className: surveyType !== "rjp" ? "hide" : "", id: "rjp-options"});
+  row.appendChild(createOption({name: "profileID", text: "Profile ID:"}));
+  group.appendChild(row);
+
   row = createElement({className: "row"});
-  row.appendChild(createElement({onClick: createAssessment, tag: "button", text: "Create / Load"}));
+  row.appendChild(createElement({id: "create-button", onClick: () => createAssessment({mode: "create"}), tag: "button", text: "Create"}));
+  row.appendChild(createElement({id: "load-button", onClick: () => createAssessment({mode: "load"}), tag: "button", text: "Load"}));
   group.appendChild(row);
   document.body.appendChild(group);
+
+  updateButtons();
 }
 
 function setupCognitive() {
@@ -460,6 +547,59 @@ function setupCognitive() {
       options,
       text: "Survey:"
     }));
+  });
+}
+
+function setupExternal() {
+  const query = Traitify.GraphQL.external.vendors;
+  const post = (params) => Traitify.http.post({
+    params,
+    path: Traitify.GraphQL.external.path,
+    version: Traitify.GraphQL.external.version
+  });
+
+  post({query}).then((response) => {
+    const vendors = response.data.listVendors[0]?.vendors || [];
+    const options = vendors.map((vendor) => ({text: vendor, value: vendor}));
+
+    document.querySelector("#external-options").appendChild(createOption({
+      name: "externalVendor",
+      onChange: onExternalVendorChange,
+      options,
+      text: "Vendor:"
+    }));
+
+    loadExternalSurveys(cache.get("externalVendor") || vendors[0]);
+  });
+}
+
+function loadExternalSurveys(vendor) {
+  if(!vendor) { return; }
+
+  const query = Traitify.GraphQL.external.surveys;
+  Traitify.http.post({
+    params: {query, variables: {vendor}},
+    path: Traitify.GraphQL.external.path,
+    version: Traitify.GraphQL.external.version
+  }).then((response) => {
+    const options = (response.data.listSurveys || [])
+      .map(({surveyKey, surveyName}) => ({text: surveyName, value: surveyKey}))
+      .sort((a, b) => a.text.localeCompare(b.text));
+
+    const existing = document.querySelector("#external-survey-row");
+    if(existing) { existing.remove(); }
+
+    if(!options.find(({value}) => value === cache.get("externalSurveyKey"))) {
+      cache.set("externalSurveyKey", null);
+    }
+
+    const row = createElement({id: "external-survey-row"});
+    row.appendChild(createOption({
+      name: "externalSurveyKey",
+      options,
+      text: "Survey:"
+    }));
+    document.querySelector("#external-options").appendChild(row);
   });
 }
 
@@ -481,6 +621,23 @@ function setupGeneric() {
 
 }
 
+function setupRJP() {
+  const query = Traitify.GraphQL.rjp.list;
+  const variables = {localeKey: cache.get("locale")};
+
+  Traitify.http.post(Traitify.GraphQL.rjp.path, {query, variables}).then((response) => {
+    const options = response.data.listSurveys
+      .map(({id, name}) => ({text: name, value: id}))
+      .sort((a, b) => a.text.localeCompare(b.text));
+
+    document.querySelector("#rjp-options").appendChild(createOption({
+      name: "rjpSurveyID",
+      options,
+      text: "Survey:"
+    }));
+  });
+}
+
 function setupTraitify() {
   const environment = cache.get("environment");
 
@@ -495,6 +652,12 @@ function onEnvironmentChange(e) {
   onInputChange(e);
   setupTraitify();
 }
+
+function onExternalVendorChange(e) {
+  onInputChange(e);
+  loadExternalSurveys(e.target.value);
+}
+
 function onInputChange(e) {
   const name = e.target.name;
   const value = e.target.type === "checkbox" ? booleanFrom(e.target.checked) : e.target.value;
@@ -509,7 +672,7 @@ function onSurveyTypeChange(e) {
   const name = e.target.name;
   const value = e.target.value;
   const assessmentID = cache.get(`${value}AssessmentID`);
-  const otherValues = ["benchmark", "cognitive", "generic", "order", "personality"].filter((type) => type !== value);
+  const otherValues = ["benchmark", "cognitive", "external", "generic", "order", "personality", "rjp"].filter((type) => type !== value);
 
   cache.set("assessmentID", assessmentID);
 
@@ -517,10 +680,26 @@ function onSurveyTypeChange(e) {
   otherValues.forEach((otherValue) => {
     document.querySelector(`#${otherValue}-options`).classList.add("hide");
   });
+
+  updateButtons();
+}
+
+function updateButtons() {
+  const createButton = document.querySelector("#create-button");
+  const loadButton = document.querySelector("#load-button");
+  if(!createButton || !loadButton) { return; }
+
+  const supported = ["cognitive", "external", "personality", "rjp"]
+    .includes(cache.get("surveyType", {fallback: "personality"}));
+
+  createButton.classList.toggle("hide", !supported);
+  loadButton.textContent = supported ? "Load" : "Create / Load";
 }
 
 setupTraitify();
 setupDom();
 setupCognitive();
+setupExternal();
 setupGeneric();
+setupRJP();
 createWidget();

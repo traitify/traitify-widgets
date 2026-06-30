@@ -1,19 +1,19 @@
-import {useEffect, useRef, useState} from "react";
-import {useRecoilRefresher_UNSTABLE as useRecoilRefresher, useSetRecoilState} from "recoil";
+import {useEffect, useState} from "react";
+import {useSetRecoilState} from "recoil";
 import HelpButton from "components/common/help/button";
 import HelpModal from "components/common/help/modal";
 import Loading from "components/common/loading";
-import {errorsToText, responseToErrors} from "lib/common/errors";
+import {errorsToText} from "lib/common/errors";
+import useUpdateAssessment from "lib/hooks/requests/graphql/use-update-assessment";
 import useAssessment from "lib/hooks/use-assessment";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDidUpdate from "lib/hooks/use-did-update";
 import useGraphql from "lib/hooks/use-graphql";
-import useHttp from "lib/hooks/use-http";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
-import {activeAssessmentQuery, appendErrorState} from "lib/recoil";
+import {appendErrorState} from "lib/recoil";
 import {useQuestionsLoader} from "./helpers";
 import Instructions from "./instructions";
 import Slide from "./slide";
@@ -23,14 +23,22 @@ import Timer from "./timer";
 export default function Cognitive() {
   const appendError = useSetRecoilState(appendErrorState);
   const assessment = useAssessment({surveyType: "cognitive"});
-  const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const cacheKey = useCacheKey({scope: ["slides"], type: "assessment"});
   const graphQL = useGraphql();
-  const http = useHttp();
   const options = useOption("survey") || {};
-  const refreshAssessment = useRecoilRefresher(activeAssessmentQuery);
   const translate = useTranslate();
+  const {
+    attempts: submitAttempts,
+    requesting: submitting,
+    trigger: submitRequest
+  } = useUpdateAssessment({
+    key: "cognitive-submit",
+    parse: (response) => response.data,
+    path: graphQL.cognitive.path,
+    save: false,
+    success: (data) => data.completeCognitiveTest?.success
+  });
 
   const [initialQuestions, setInitialQuestions] = useState([]);
   const {dispatch, error: loaderError, questions} = useQuestionsLoader(initialQuestions);
@@ -41,8 +49,6 @@ export default function Cognitive() {
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [skipped, setSkipped] = useState(null);
   const [startTime, setStartTime] = useState(null);
-  const [submitAttempts, setSubmitAttempts] = useState(0);
-  const submitting = useRef(false);
   const state = {
     disability,
     dispatch,
@@ -67,15 +73,10 @@ export default function Cognitive() {
     setQuestionIndex(0);
     setStartTime(Date.now());
   };
-  const onSubmit = () => {
-    if(assessment.completed) { return; }
-    if(submitAttempts > 3) { return; }
-    if(submitting.current) { return; }
-
-    submitting.current = true;
-
-    const query = graphQL.cognitive.update;
-    const variables = {
+  const onSubmit = () => submitRequest({
+    assessment,
+    query: graphQL.cognitive.update,
+    variables: {
       answers: questions.map((question) => (
         question.answer ? ({
           answerId: question.answer.answerId,
@@ -91,26 +92,8 @@ export default function Cognitive() {
       learningDisability: disability,
       overallTimeTaken: startTime ? parseInt((Date.now() - startTime) / 1000, 10) : 1000,
       testID: assessment.id
-    };
-
-    http.post(graphQL.cognitive.path, {query, variables}).then((response) => {
-      const {data, errors} = response;
-
-      if(!errors && data.completeCognitiveTest.success) {
-        cache.remove(assessmentCacheKey);
-        refreshAssessment();
-
-        submitting.current = false;
-      } else {
-        console.warn(errors || data); // eslint-disable-line no-console
-        appendError(responseToErrors({method: "POST", path: graphQL.cognitive.path, response}));
-
-        submitting.current = false;
-
-        setTimeout(() => setSubmitAttempts((x) => x + 1), 2000);
-      }
-    });
-  };
+    }
+  });
 
   useComponentEvents("Survey", {...state});
   useDidUpdate(() => { onSubmit(); }, [submitAttempts]);
@@ -157,7 +140,7 @@ export default function Cognitive() {
   useEffect(() => {
     if(questions.length === 0) { return; }
     if(questions.length > questionIndex) { return; }
-    if(onlySkipped) { return onSubmit(); }
+    if(onlySkipped) { onSubmit(); return; }
 
     const skippedIndexes = questions
       .map(({answer}, index) => ({answer, index}))
@@ -166,7 +149,8 @@ export default function Cognitive() {
 
     if(skippedIndexes.length === 0) {
       setOnlySkipped(true);
-      return onSubmit();
+      onSubmit();
+      return;
     }
     if(window.confirm(translate("cognitive_confirm_retry"))) { /* eslint-disable-line no-alert */
       setOnlySkipped(true);
@@ -174,7 +158,7 @@ export default function Cognitive() {
       setQuestionIndex(skippedIndexes[0]);
     } else {
       setOnlySkipped(true);
-      return onSubmit();
+      onSubmit();
     }
   }, [questions, questionIndex]);
   const question = questions[questionIndex];

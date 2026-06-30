@@ -5,7 +5,11 @@ exports[`Results.Feedback.Modal renders component 1`] = `
   className="traitify--container traitify--color-scheme-light"
 >
   <div
-    className="modal container xl"
+    className="modal container lg"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="dialog"
+    tabIndex={-1}
   >
     <section
       className="modalContainer"

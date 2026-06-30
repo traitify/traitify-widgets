@@ -1,6 +1,5 @@
-import useLoadedValue from "lib/hooks/use-loaded-value";
-import {deckQuery} from "lib/recoil";
+import useSurvey from "lib/hooks/use-survey";
 
 export default function useDeck() {
-  return useLoadedValue(deckQuery);
+  return useSurvey({surveyType: "personality"});
 }

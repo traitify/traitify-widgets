@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey.RJP renders instructions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    >
+      Job Preview Instructions
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+          className="traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-question" class="svg-inline--fa fa-circle-question" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg>",
+            }
+          }
+        />
+      </button>
+    </div>
+    <h2
+      className="text traitify--markdown"
+      id="instructions"
+    >
+      Instructions
+    </h2>
+    <button
+      className="play"
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="Play"
+        src="https://cdn.traitify.com/rjp/thumbnail.jpg"
+      />
+      <span
+        alt="Play"
+        className="traitify--icon-fa"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="circle-play" class="svg-inline--fa fa-circle-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"></path></svg>",
+          }
+        }
+      />
+    </button>
+    <div
+      className="btnGroup"
+    >
+      <button
+        className="traitify--response-button btnTheme"
+        onClick={[Function]}
+        type="button"
+      >
+        Start Video
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP renders match results 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    >
+      Job Preview Instructions
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+          className="traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-question" class="svg-inline--fa fa-circle-question" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg>",
+            }
+          }
+        />
+      </button>
+    </div>
+    <h2
+      className="text traitify--markdown"
+      id="instructions"
+    >
+      Instructions
+    </h2>
+    <div>
+      <div
+        className="divider"
+      />
+      <div
+        className="heading"
+      >
+        Job Preview Questions
+      </div>
+      <div>
+        <div
+          className="p"
+        >
+          Question 1
+        </div>
+        <div
+          className="options"
+        >
+          <button
+            className="traitify--response-button active"
+            onClick={[Function]}
+            type="button"
+          >
+            Response A
+          </button>
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Response B
+          </button>
+        </div>
+        <div
+          className="divider"
+        />
+      </div>
+      <div>
+        <div
+          className="p"
+        >
+          Question 2
+        </div>
+        <div
+          className="options"
+        >
+          <button
+            className="traitify--response-button active"
+            onClick={[Function]}
+            type="button"
+          >
+            Response A
+          </button>
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Response B
+          </button>
+        </div>
+        <div
+          className="divider"
+        />
+      </div>
+      <div>
+        <div>
+          <div>
+            <div
+              className="fit"
+            >
+              <span
+                className="success traitify--icon-fa"
+                dangerouslySetInnerHTML={
+                  {
+                    "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" class="svg-inline--fa fa-circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg>",
+                  }
+                }
+              />
+              <div>
+                Great fit
+              </div>
+            </div>
+            <div
+              className="p"
+            >
+              You are a great fit
+            </div>
+          </div>
+        </div>
+        <div
+          className="btnGroup"
+        >
+          <button
+            className="traitify--response-button btnOutline"
+            onClick={[Function]}
+            type="button"
+          >
+            Continue
+          </button>
+          <button
+            className="traitify--response-button btnOutline"
+            onClick={[Function]}
+            type="button"
+          >
+            Not Interested
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Survey.RJP renders nothing if results ready 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Survey.RJP renders nothing without assessment 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+/>
+`;
+
+exports[`Survey.RJP renders questions 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="heading"
+    >
+      Job Preview Instructions
+      <button
+        className="trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          alt="Help"
+          className="traitify--icon-fa"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-question" class="svg-inline--fa fa-circle-question" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg>",
+            }
+          }
+        />
+      </button>
+    </div>
+    <h2
+      className="text traitify--markdown"
+      id="instructions"
+    >
+      Instructions
+    </h2>
+    <div>
+      <div
+        className="divider"
+      />
+      <div
+        className="heading"
+      >
+        Job Preview Questions
+      </div>
+      <div>
+        <div
+          className="p"
+        >
+          Question 1
+        </div>
+        <div
+          className="options"
+        >
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Response A
+          </button>
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Response B
+          </button>
+        </div>
+        <div
+          className="divider"
+        />
+      </div>
+      <div>
+        <div
+          className="p"
+        >
+          Question 2
+        </div>
+        <div
+          className="options"
+        >
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Response A
+          </button>
+          <button
+            className="traitify--response-button"
+            onClick={[Function]}
+            type="button"
+          >
+            Response B
+          </button>
+        </div>
+        <div
+          className="divider"
+        />
+      </div>
+      <div
+        className="btnGroup"
+      >
+        <button
+          className="traitify--response-button btnOutline"
+          onClick={null}
+          type="button"
+        >
+          Complete Questions
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

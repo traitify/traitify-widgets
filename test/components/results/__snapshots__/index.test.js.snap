@@ -89,3 +89,15 @@ exports[`Results renders nothing if not ready 1`] = `
   className="traitify--container traitify--color-scheme-light"
 />
 `;
+
+exports[`Results renders rjp results 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="mock"
+  >
+    RJP
+  </div>
+</div>
+`;

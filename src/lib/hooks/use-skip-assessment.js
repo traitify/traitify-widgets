@@ -1,5 +1,6 @@
 import {useCallback} from "react";
 import {useRecoilState, useSetRecoilState} from "recoil";
+import {errorsToText, getResponseErrors} from "lib/common/errors";
 import useActive from "lib/hooks/use-active";
 import useCache from "lib/hooks/use-cache";
 import useCacheKey from "lib/hooks/use-cache-key";
@@ -7,10 +8,13 @@ import useGraphql from "lib/hooks/use-graphql";
 import useHttp from "lib/hooks/use-http";
 import useOrder from "lib/hooks/use-order";
 import useSetting from "lib/hooks/use-setting";
-import {orderState, skipDismissedState} from "lib/recoil";
+import {appendErrorState, orderState, skipDismissedState} from "lib/recoil";
+
+const key = "skip-assessment";
 
 export default function useSkipAssessment() {
   const active = useActive();
+  const appendError = useSetRecoilState(appendErrorState);
   const assessmentCacheKey = useCacheKey("assessment");
   const cache = useCache();
   const [dismissed, setDismissed] = useRecoilState(skipDismissedState);
@@ -25,9 +29,10 @@ export default function useSkipAssessment() {
     if(!active) { return; }
     if(!order) { return; }
 
-    let success;
+    let request;
     const {assessmentID, benchmarkID, orderID, packageID, profileID} = order.origin;
-    if(assessmentID || orderID) {
+    const hasAssessment = !!(assessmentID || orderID);
+    if(hasAssessment) {
       switch(active.surveyType) {
         case "cognitive": {
           const query = {
@@ -37,8 +42,7 @@ export default function useSkipAssessment() {
             },
             path: graphQL.cognitive.path
           };
-          const response = await http.post(query);
-          success = response.data.skipCognitiveTest.success;
+          request = () => http.post(query);
           break;
         }
         case "external": {
@@ -50,8 +54,7 @@ export default function useSkipAssessment() {
             path: graphQL.external.path
           };
           if(http.version === "v1") { query.version = graphQL.external.version; }
-          const response = await http.post(query);
-          success = response.data.skipAssessment.isSkipped;
+          request = () => http.post(query);
           break;
         }
         case "generic": {
@@ -62,18 +65,25 @@ export default function useSkipAssessment() {
             },
             path: graphQL.generic.path
           };
-          const response = await http.post(query);
-          success = response.data.skipAssessment.isSkipped;
+          request = () => http.post(query);
+          break;
+        }
+        case "rjp": {
+          const query = {
+            params: {
+              query: graphQL.rjp.skip,
+              variables: {id: active.id}
+            },
+            path: graphQL.rjp.path
+          };
+          request = () => http.post(query);
           break;
         }
         default: {
           const query = {path: `/assessments/${active.id}/skip`};
-          const response = await http.put(query);
-          success = response.skipped;
+          request = () => http.put(query);
         }
       }
-
-      if(success) { cache.remove(assessmentCacheKey); }
     } else {
       const query = {
         params: {
@@ -82,14 +92,17 @@ export default function useSkipAssessment() {
         },
         path: graphQL.xavier.path
       };
-      const response = await http.post(query);
-      success = !!response.data.skipRecommendation.profileId;
+      request = () => http.post(query);
     }
-    if(!success) {
-      console.warn("Error skipping assessment"); // eslint-disable-line no-console
+
+    const response = await request().catch((e) => ({errors: getResponseErrors(e)}));
+    if(response.errors) {
+      console.warn(key, response.errors); // eslint-disable-line no-console
+      appendError(errorsToText(key, getResponseErrors(response)));
       return;
     }
 
+    if(hasAssessment) { cache.remove(assessmentCacheKey); }
     setOrder((_order) => ({..._order, completed: true, status: "skipped"}));
   }, [active, order]);
 

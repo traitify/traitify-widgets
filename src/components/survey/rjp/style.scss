@@ -1,0 +1,112 @@
+@import "style/helpers";
+
+.container {
+  @extend %container;
+
+  border: $border-width solid;
+  border-radius: $border-radius;
+  margin: 0 auto;
+  max-width: $breakpoint-sm;
+  min-height: 100svh;
+  padding: $buffer $buffer-lg;
+
+  @include min-width("sm") { min-height: initial; }
+
+  & {
+    @include theme("background-color", "background");
+    @include theme("border-color", "border");
+  }
+  .btnGroup {
+    display: flex;
+    flex-direction: column;
+    gap: $buffer-sm;
+    text-align: center;
+  }
+  .btnOutline { @include buttonOutline(); }
+  .btnTheme { @include buttonDark("theme"); }
+  .p { @extend %paragraph; }
+  .play {
+    border-radius: $border-radius;
+    display: block;
+    margin: $buffer-lg auto;
+    padding: 0;
+    position: relative;
+
+    img {
+      display: block;
+      opacity: 0.6;
+      max-width: 100%;
+    }
+
+    @include theme("background-color", "background-dark");
+
+    :global(.traitify--icon-fa) {
+      align-items: center;
+      display: flex;
+      inset: 0;
+      justify-content: center;
+      position: absolute;
+      width: auto;
+
+      @include theme("color", "text-light");
+
+      svg { height: 50%; }
+    }
+  }
+  video {
+    border-radius: $border-radius;
+    display: block;
+    height: auto;
+    margin: $buffer-lg auto $buffer-sm auto;
+    width: 100%;
+  }
+}
+.divider {
+  border-top: $border-width solid;
+  margin: $buffer 0;
+
+  @include theme("border-top-color", "border");
+}
+.fit {
+  align-items: center;
+  display: flex;
+  gap: $buffer-lg;
+
+  .danger { @include theme("color", "danger"); }
+  .success { @include theme("color", "success"); }
+  div {
+    flex: 1;
+    font-weight: 600;
+  }
+  svg {
+    display: block;
+    font-size: $font-size-lg * 2;
+  }
+}
+.heading {
+  display: flex;
+  font-size: $font-size-heading;
+  justify-content: space-between;
+  margin-bottom: $buffer;
+}
+.loading {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include min-width("sm") { min-height: $breakpoint-sm; }
+}
+.options {
+  display: grid;
+  gap: $buffer-lg;
+  grid-template-columns: repeat(2, 1fr);
+
+  button {
+    text-align: center;
+
+    @include buttonOutline();
+
+    &.active { @include buttonDark("theme"); }
+  }
+}

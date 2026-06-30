@@ -47,6 +47,7 @@ describe("Survey.Personality", () => {
   );
 
   useContainer();
+  useGlobalMock(console, "warn");
   useGlobalMock(document, "createElement");
   useSettings({});
 
@@ -610,8 +611,9 @@ describe("Survey.Personality", () => {
         await completeSlides();
         await retry();
         await retry();
+        await retry();
 
-        expect(mock.called).toBe(3);
+        expect(mock.called).toBe(4);
         expect(component).toMatchSnapshot();
       });
 
@@ -622,8 +624,9 @@ describe("Survey.Personality", () => {
         await completeSlides();
         await retry();
         await retry();
+        await retry();
 
-        expect(mock.called).toEqual(3);
+        expect(mock.called).toEqual(4);
         expect(component).toMatchSnapshot();
       });
 
@@ -634,8 +637,9 @@ describe("Survey.Personality", () => {
         await completeSlides();
         await retry();
         await retry();
+        await retry();
 
-        expect(mock.called).toEqual(3);
+        expect(mock.called).toEqual(4);
         expect(component).toMatchSnapshot();
       });
 
@@ -646,13 +650,14 @@ describe("Survey.Personality", () => {
         await completeSlides();
         await retry();
         await retry();
+        await retry();
 
         const mock = mockAssessmentSubmit({status: "success"});
         act(() => { component.findByText("Click Here to Try Again").props.onClick(); });
 
         await act(async() => { await jest.runOnlyPendingTimers(); });
 
-        expect(mockError.called).toEqual(3);
+        expect(mockError.called).toEqual(4);
         expect(mock.called).toEqual(1);
       });
     });
@@ -733,8 +738,9 @@ describe("Survey.Personality", () => {
           await completeSlides();
           await retry();
           await retry();
+          await retry();
 
-          expect(mock.called).toBe(3);
+          expect(mock.called).toBe(4);
           expect(component).toMatchSnapshot();
         });
 
@@ -745,13 +751,14 @@ describe("Survey.Personality", () => {
           await completeSlides();
           await retry();
           await retry();
+          await retry();
 
           const mock = mockAssessmentSubmit({status: "success"});
           act(() => { component.findByText("Click Here to Try Again").props.onClick(); });
 
           await act(async() => { await jest.runOnlyPendingTimers(); });
 
-          expect(mockError.called).toEqual(3);
+          expect(mockError.called).toEqual(4);
           expect(mock.called).toEqual(1);
         });
       });

@@ -19,6 +19,7 @@ jest.mock("components/results/personality/dimension/list", () => (() => <div cla
 jest.mock("components/results/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
 jest.mock("components/results/feedback", () => (() => <div className="mock">Feedback</div>));
 jest.mock("components/results/rjp", () => (() => <div className="mock">RJP</div>));
+jest.mock("components/status/redacted", () => (() => <div className="mock">Redacted</div>));
 
 describe("Report.Candidate", () => {
   let component;
@@ -51,7 +52,7 @@ describe("Report.Candidate", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
-  it("renders nothing when the recommendation is redacted", async() => {
+  it("renders redacted message when the recommendation is redacted", async() => {
     container.assessmentID = assessment.id;
     mockSettings({redact_recommendation_after: 1000});
     mockAssessment({
@@ -61,6 +62,6 @@ describe("Report.Candidate", () => {
     });
     component = await ComponentHandler.setup(Component);
 
-    expect(component.tree.children).toBeNull();
+    expect(component.findByText("Redacted")).toBeTruthy();
   });
 });

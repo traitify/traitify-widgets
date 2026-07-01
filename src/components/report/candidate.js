@@ -7,14 +7,15 @@ import ArchetypeTips from "components/results/personality/archetype/tips";
 import Dimensions from "components/results/personality/dimension/list";
 import Traits from "components/results/personality/trait/list";
 import RJPResults from "components/results/rjp";
+import Redacted from "components/status/redacted";
 import useActive from "lib/hooks/use-active";
-import useRecommendationRedacted from "lib/hooks/use-recommendation-redacted";
+import useRedacted from "lib/hooks/use-redacted";
 import {optionsState} from "lib/recoil";
 import style from "./style.scss";
 
 export default function CandidateReport() {
   const active = useActive();
-  const redacted = useRecommendationRedacted();
+  const redacted = useRedacted();
   const [options, setOptions] = useRecoilState(optionsState);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function CandidateReport() {
   }, []);
 
   if(!active) { return null; }
-  if(redacted) { return null; }
+  if(redacted) { return <Redacted />; }
   if(active.surveyType === "generic") {
     return (
       <section className={style.container}>

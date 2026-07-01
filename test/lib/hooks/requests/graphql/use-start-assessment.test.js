@@ -2,7 +2,7 @@ import {createRef} from "react";
 import {act} from "react-test-renderer";
 import useStartAssessment from "lib/hooks/requests/graphql/use-start-assessment";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockFetch, mockSettings} from "support/container/http";
+import {mockAssessment, mockFetch} from "support/container/http";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
@@ -27,7 +27,6 @@ describe("graphql/useStartAssessment", () => {
   beforeEach(() => {
     container.assessmentID = "assessment-xyz";
     mockAssessment(null);
-    mockSettings({});
     assessment = {id: "assessment-xyz", startedAt: null};
     hook = createRef();
   });

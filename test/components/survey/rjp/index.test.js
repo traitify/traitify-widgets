@@ -9,8 +9,7 @@ import {
   mockRjpOptOut as mockOptOut,
   mockRjpStart as mockStart,
   mockRjpSubmit as mockSubmit,
-  mockRjpSurvey as mockSurvey,
-  useSettings
+  mockRjpSurvey as mockSurvey
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import _assessment from "support/data/assessment/rjp/incomplete";
@@ -34,7 +33,6 @@ describe("Survey.RJP", () => {
   let component;
 
   useContainer();
-  useSettings({});
 
   const withQuestions = (overrides) => mutable({..._assessment, videos: [], ...overrides});
   const answered = (overrides) => withQuestions({

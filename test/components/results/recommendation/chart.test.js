@@ -7,8 +7,7 @@ import {
   mockGuide,
   mockSettings,
   useAssessment,
-  useBenchmark,
-  useSettings
+  useBenchmark
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import assessment from "support/data/assessment/personality/completed";
@@ -23,7 +22,6 @@ describe("Results.RecommendationChart", () => {
   useContainer({assessmentID: assessment.id});
   useAssessment(assessment);
   useBenchmark(benchmark);
-  useSettings({});
 
   beforeEach(() => {
     guide = mutable({..._guide, assessmentId: assessment.id});

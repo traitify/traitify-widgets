@@ -1,7 +1,7 @@
 import Cache from "lib/cache";
 import Http from "lib/http";
 import Listener from "lib/listener";
-import {useTranslations} from "../container/http";
+import {useSettings, useTranslations} from "../container/http";
 
 const cacheMethods = ["get", "remove", "set"];
 const httpMethods = ["delete", "fetch", "get", "post", "put", "request"];
@@ -42,6 +42,7 @@ export default function useContainer(props) {
     });
   });
 
+  useSettings({});
   useTranslations();
 
   afterEach(() => {

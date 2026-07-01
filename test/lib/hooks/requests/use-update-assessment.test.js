@@ -4,7 +4,7 @@ import {act} from "react-test-renderer";
 import getCacheKey from "lib/common/get-cache-key";
 import useUpdateAssessment from "lib/hooks/requests/use-update-assessment";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockFetch, mockSettings} from "support/container/http";
+import {mockAssessment, mockFetch} from "support/container/http";
 import flushAsync from "support/flush-async";
 import useContainer from "support/hooks/use-container";
 import useGlobalMock from "support/hooks/use-global-mock";
@@ -33,7 +33,6 @@ describe("useUpdateAssessment", () => {
   beforeEach(() => {
     container.assessmentID = "assessment-xyz";
     mockAssessment(null);
-    mockSettings({});
     assessment = {id: "assessment-xyz"};
     assessmentCacheKey = getCacheKey("assessment", {id: assessment.id, locale: "en-us"});
     hook = createRef();

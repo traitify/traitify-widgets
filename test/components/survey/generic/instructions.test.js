@@ -6,8 +6,7 @@ import ComponentHandler from "support/component-handler";
 import {
   mockGenericAssessment as mockAssessment,
   mockGenericSkip,
-  mockSettings,
-  useSettings
+  mockSettings
 } from "support/container/http";
 import {mockOption} from "support/container/options";
 import _assessment from "support/data/assessment/generic/incomplete";
@@ -19,7 +18,6 @@ describe("Instructions", () => {
   let props;
 
   useContainer();
-  useSettings({});
 
   beforeEach(() => {
     container.assessmentID = _assessment.id;

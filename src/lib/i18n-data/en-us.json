@@ -233,6 +233,10 @@
       "heading": "Personality Assessment & Interview"
     },
     "loading": "Loading your assessment",
+    "redacted": {
+      "heading": "Unavailable",
+      "text": "These Traitify assessments are no longer available"
+    },
     "start": "Start Assessment",
     "text": "As part of your application, we'd like to ask you to complete the following assessments. Please click on the button next to the assessment name. This will take you to where you'll complete the assessment(s). Please return here once you've completed all assessments.",
     "timeout": "Loading timed out",

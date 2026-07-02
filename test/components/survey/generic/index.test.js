@@ -16,7 +16,7 @@ import useContainer from "support/hooks/use-container";
 jest.mock("components/survey/generic/instructions", () => (() => <div className="mock">Instructions</div>));
 jest.mock("components/survey/generic/question-set", () => (() => <div className="mock">QuestionSet</div>));
 
-const completedAt = "2024-01-01T00:00:00Z";
+const completedAt = 1704067200000;
 
 describe("Survey.Generic", () => {
   let assessment;

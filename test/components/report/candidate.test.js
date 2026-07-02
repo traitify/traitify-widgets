@@ -1,6 +1,11 @@
 import Component from "components/report/candidate";
 import ComponentHandler from "support/component-handler";
-import {mockAssessment, mockGenericAssessment, mockRjpAssessment} from "support/container/http";
+import {
+  mockAssessment,
+  mockGenericAssessment,
+  mockRjpAssessment,
+  mockSettings
+} from "support/container/http";
 import {mockOption} from "support/container/options";
 import genericAssessment from "support/data/assessment/generic/completed";
 import assessment from "support/data/assessment/personality/completed";
@@ -14,6 +19,7 @@ jest.mock("components/results/personality/dimension/list", () => (() => <div cla
 jest.mock("components/results/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
 jest.mock("components/results/feedback", () => (() => <div className="mock">Feedback</div>));
 jest.mock("components/results/rjp", () => (() => <div className="mock">RJP</div>));
+jest.mock("components/status/redacted", () => (() => <div className="mock">Redacted</div>));
 
 describe("Report.Candidate", () => {
   let component;
@@ -44,5 +50,18 @@ describe("Report.Candidate", () => {
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders redacted message when the recommendation is redacted", async() => {
+    container.assessmentID = assessment.id;
+    mockSettings({redact_recommendation_after: 1000});
+    mockAssessment({
+      ...assessment,
+      recommendation: {...assessment.recommendation, created_at: Date.now() - 1000000},
+      recommendations: [{...assessment.recommendation, created_at: Date.now() - 1000000}]
+    });
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.findByText("Redacted")).toBeTruthy();
   });
 });

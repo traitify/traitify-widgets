@@ -12,8 +12,7 @@ import {
   mockAssessmentSkip,
   mockAssessmentStarted,
   mockAssessmentSubmit,
-  mockSettings,
-  useSettings
+  mockSettings
 } from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import _completedAssessment from "support/data/assessment/personality/completed";
@@ -49,7 +48,6 @@ describe("Survey.Personality", () => {
   useContainer();
   useGlobalMock(console, "warn");
   useGlobalMock(document, "createElement");
-  useSettings({});
 
   beforeEach(() => {
     container.assessmentID = _assessment.id;

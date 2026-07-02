@@ -232,6 +232,10 @@
       "heading": "Persönlichkeitsbeurteilung & Interview"
     },
     "loading": "Ihr Assessment wird geladen",
+    "redacted": {
+      "heading": "Nicht verfügbar",
+      "text": "Das Traitify Matching ist nicht mehr verfügbar"
+    },
     "start": "Assessment starten",
     "text": "Im Rahmen Ihrer Bewerbung möchten wir Sie bitten, die folgenden Bewertungen durchzuführen. Bitte klicken Sie auf die Schaltfläche neben dem Namen der Bewertung. Dadurch gelangen Sie zu dem Ort, an dem Sie die Bewertung(en) durchführen können. Bitte kehren Sie hierher zurück, sobald Sie alle Bewertungen abgeschlossen haben.",
     "timeout": "Ladezeit überschritten",

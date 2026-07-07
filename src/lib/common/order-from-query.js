@@ -23,6 +23,13 @@ export function assessmentFromQuery(response) {
   return record;
 }
 
+// NOTE: Order Service uses REALISTIC, widgets use rjp
+function surveyTypeFromQuery(type) {
+  const surveyType = type.toLowerCase();
+
+  return surveyType === "realistic" ? "rjp" : surveyType;
+}
+
 // NOTE: Order Service uses COMPLETED, Recommendation/Xavier uses COMPLETE
 export default function orderFromQuery(response) {
   const {order} = response.data || {};
@@ -44,7 +51,7 @@ export default function orderFromQuery(response) {
       loading: true,
       skipped: assessment.isSkipped,
       surveyID: assessment.surveyId,
-      surveyType: assessment.type.toLowerCase()
+      surveyType: surveyTypeFromQuery(assessment.type)
     })),
     completed: order.status === "COMPLETED",
     status: {
@@ -55,7 +62,7 @@ export default function orderFromQuery(response) {
     }[order.status],
     surveys: order.requirements.surveys.map(({id, type}) => ({
       id,
-      type: type.toLowerCase()
+      type: surveyTypeFromQuery(type)
     }))
   };
 

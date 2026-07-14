@@ -608,7 +608,7 @@ function setupGeneric() {
   const variables = {localeKey: cache.get("locale")};
 
   Traitify.http.post(Traitify.GraphQL.generic.path, {query, variables}).then((response) => {
-    const options = response.data.listSurveys
+    const options = (response.data?.listSurveys || [])
       .map(({id, name}) => ({text: name, value: id}))
       .sort((a, b) => a.text.localeCompare(b.text));
 
@@ -626,7 +626,8 @@ function setupRJP() {
   const variables = {localeKey: cache.get("locale")};
 
   Traitify.http.post(Traitify.GraphQL.rjp.path, {query, variables}).then((response) => {
-    const options = response.data.listSurveys
+    if(response.errors) { console.warn("rjp-surveys", response.errors); }
+    const options = (response.data?.listSurveys || [])
       .map(({id, name}) => ({text: name, value: id}))
       .sort((a, b) => a.text.localeCompare(b.text));
 

@@ -326,7 +326,7 @@ export const mockExternalAssessment = (...params) => {
   const mock = {
     key: "external-assessment",
     request: (url, options) => {
-      if(!url.includes("/external_assessments/graphql")) { return false; }
+      if(!url.includes("/external-assessments/graphql")) { return false; }
       if(options.method !== "POST") { return false; }
       if(!options.body) { return false; }
 

@@ -22,8 +22,7 @@ const fetchLatestOrder = ({graphQL, http, localeKey, mode, origin}) => {
     case "assessment":
       return http.post({
         params: {query: graphQL.external.get, variables: {id: origin.assessmentID}},
-        path: graphQL.external.path,
-        version: http.version === "v1" ? graphQL.external.version : undefined
+        path: graphQL.external.path
       }).then((response) => {
         const assessment = dig(response, "data", "getAssessment");
         if(!assessment) { return null; }

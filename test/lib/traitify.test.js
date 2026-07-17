@@ -3,6 +3,7 @@ import {createRoot} from "react-dom/client";
 import Traitify from "lib/traitify";
 
 jest.mock("react-dom/client");
+jest.mock("@crosschq/interview-report-widget", () => ({render: () => ({destroy: () => {}})}));
 jest.mock("components/results/personality/trait/list", () => (() => <div className="mock">Personality Traits</div>));
 jest.mock("components/results/personality/type/list", () => (() => <div className="mock">Personality Types</div>));
 

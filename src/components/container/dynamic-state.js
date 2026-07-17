@@ -21,8 +21,7 @@ function Assessment({id, loaded = false, surveyType}) {
       const orderAssessment = order.assessments.find((a) => a.id === id);
       if(!orderAssessment) { return _order; }
 
-      // TODO: Remove after testing
-      const assessment = assessmentFromQuery({...latestAssessment, completedAt: +new Date()});
+      const assessment = assessmentFromQuery(latestAssessment);
       const diffs = Object.keys(assessment)
         .filter((key) => assessment[key] !== orderAssessment[key]);
       const claimSurveyIndex = orderAssessment.loaded

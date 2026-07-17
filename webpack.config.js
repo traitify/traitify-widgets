@@ -1,6 +1,5 @@
 const ESLintPlugin = require("eslint-webpack-plugin");
 const webpack = require("webpack");
-const {BundleAnalyzerPlugin} = require("webpack-bundle-analyzer");
 const path = require("path");
 
 module.exports = (_env) => {
@@ -59,7 +58,6 @@ module.exports = (_env) => {
               options: {
                 sourceMap: cssMaps,
                 modules: {
-                  auto: (resourcePath) => !resourcePath.includes("crosschq-widget"),
                   localIdentName: "traitify--[path]--[local]",
                   namedExport: false
                 },
@@ -83,6 +81,26 @@ module.exports = (_env) => {
             }
           ]
         },
+        // NOTE: External css that has to be global
+        {
+          test: /\.css$/,
+          include: /node_modules\/@crosschq\/interview-report-widget/,
+          use: [
+            {
+              loader: "style-loader",
+              options: {
+                injectType: "singletonStyleTag"
+              }
+            },
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: cssMaps,
+                modules: false
+              }
+            }
+          ]
+        },
         {
           test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
           type: "asset/resource"
@@ -101,7 +119,6 @@ module.exports = (_env) => {
       publicPath: "/"
     },
     plugins: [
-      new BundleAnalyzerPlugin(),
       new ESLintPlugin({emitWarning: true, failOnError: false}),
       new webpack.ProvidePlugin({React: "react"}),
       new webpack.DefinePlugin({

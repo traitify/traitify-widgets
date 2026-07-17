@@ -17,32 +17,6 @@ const defaultPollingTimes = {
   short: {interval: 5 * 1000, stop: 1 * 60 * 1000}
 };
 
-const staticOrder = {
-  data: {
-    order: {
-      assessments: [{
-        id: "dae5c5cd-541b-4ca9-a7f1-e58e7636c7f0",
-        status: "CREATED",
-        surveyId: "crosschq:0a3999ea-da6f-4db8-a9ca-91f937fe2dfd",
-        type: "EXTERNAL"
-      }],
-      defaultLocaleKey: "en-US",
-      errorMessage: "",
-      id: "144cd690-eb5a-4150-8974-1391d3c686e3",
-      orgPath: "9011ec189e8542828b521cb850719e15",
-      packageId: "6f9796c5-ed5f-4390-8a49-30a3611f3521",
-      profileId: "c48b49f8-74e7-4cb2-90eb-3a97a4f014f4",
-      requirements: {
-        surveys: [{
-          id: "crosschq:0a3999ea-da6f-4db8-a9ca-91f937fe2dfd",
-          type: "EXTERNAL"
-        }]
-      },
-      status: "ALL_ASSESSMENT_AVAILABLE"
-    }
-  }
-};
-
 const fetchLatestOrder = ({graphQL, http, localeKey, mode, origin}) => {
   switch(mode) {
     case "assessment":
@@ -61,14 +35,6 @@ const fetchLatestOrder = ({graphQL, http, localeKey, mode, origin}) => {
         };
       });
     case "order":
-      if(staticOrder) {
-        staticOrder.data.order.assessments[0].status = "COMPLETED";
-        staticOrder.data.order.status = "COMPLETED";
-
-        return Promise.resolve(staticOrder)
-          .then(orderFromQuery);
-      }
-
       return http.post(graphQL.order.path, {
         query: graphQL.order.get,
         variables: {id: origin.orderID}

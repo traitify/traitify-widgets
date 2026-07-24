@@ -17,7 +17,6 @@ import {
   baseState,
   errorsState,
   orderState,
-  requestIDState,
   requestIDsState
 } from "lib/recoil";
 import style from "./style.scss";
@@ -32,7 +31,6 @@ function Modal({show, setShow}) {
   const base = useRecoilValue(baseState);
   const errors = useRecoilValue(errorsState);
   const order = useRecoilValue(orderState);
-  const requestID = useRecoilValue(requestIDState);
   const requestIDs = useRecoilValue(requestIDsState);
   const submitting = useRef(false);
 
@@ -56,7 +54,6 @@ function Modal({show, setShow}) {
     const params = {
       errors,
       message,
-      requestID,
       requestIDs,
       state: {
         active,

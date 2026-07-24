@@ -22,6 +22,8 @@ export const localeState = atom({
 });
 export const optionsState = atom({default: null, key: "options"});
 export const orderIDState = atom({default: null, key: "order-id"});
+export const requestIDState = atom({default: null, key: "request-id"});
+export const requestIDsState = atom({default: [], key: "request-ids"});
 export const packageIDState = atom({default: null, key: "package-id"});
 export const profileIDState = atom({default: null, key: "profile-id"});
 export const skipDismissedState = atom({default: false, key: "skip-dismissed"});
@@ -33,6 +35,12 @@ export const appendErrorState = selector({
     [...get(errorsState), ...(Array.isArray(newValue) ? newValue : [newValue])]
   ),
   key: "append-error-state"
+});
+
+export const appendRequestIDState = selector({
+  get: ({get}) => get(requestIDsState),
+  set: ({get, set}, newValue) => set(requestIDsState, [...get(requestIDsState), newValue]),
+  key: "append-request-id-state"
 });
 
 // NOTE: Breaking up state prevents over-triggering selectors

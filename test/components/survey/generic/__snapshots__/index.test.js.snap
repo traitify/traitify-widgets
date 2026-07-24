@@ -178,6 +178,7 @@ exports[`Survey.Generic submit submits query 1`] = `
       "Accept": "application/json",
       "Authorization": "Basic dW5kZWZpbmVkOng=",
       "Content-Type": "application/json",
+      "X-Request-Id": "widget-test.aaaaaa",
     },
     "method": "POST",
   },

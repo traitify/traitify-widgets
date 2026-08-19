@@ -22,6 +22,7 @@ export default function Results() {
   if(!active.completed) { return null; }
   if(redacted) { return <Redacted />; }
   if(active.surveyType === "cognitive") { return <Cognitive />; }
+  if(active.surveyType === "external") { return <Report />; }
   if(active.surveyType === "generic") { return <Report />; }
   if(active.surveyType === "rjp") { return <RJP />; }
   if(active.surveyType !== "personality") { return null; }

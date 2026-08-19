@@ -59,6 +59,27 @@ describe("Cache", () => {
       expect(sessionStorage.getItem("superman")).toBeNull();
       expect(value).toBeNull();
     });
+
+    it("returns fallback without data", () => {
+      const value = cache.get("blank", {fallback: "batman"});
+
+      expect(value).toBe("batman");
+    });
+
+    it("persists fallback without data", () => {
+      cache.get("blank", {fallback: "batman"});
+
+      expect(setItem).toHaveBeenCalled();
+      expect(JSON.parse(sessionStorage.getItem("blank"))).toEqual(
+        expect.objectContaining({value: "batman"})
+      );
+    });
+
+    it("returns value over fallback", () => {
+      const value = cache.get("superman", {fallback: "batman"});
+
+      expect(value).toBe("clark");
+    });
   });
 
   describe("remove", () => {

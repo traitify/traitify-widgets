@@ -29,6 +29,11 @@ exports[`Report.Manager renders component 1`] = `
     >
       Cognitive Chart
     </div>
+    <div
+      className="mock"
+    >
+      External Results
+    </div>
   </section>
 </div>
 `;
@@ -109,6 +114,11 @@ exports[`Report.Manager showHeaders renders component 1`] = `
     >
       Cognitive Chart
     </div>
+    <div
+      className="mock"
+    >
+      External Results
+    </div>
   </section>
 </div>
 `;
@@ -146,6 +156,11 @@ exports[`Report.Manager showRecommendationList renders component 1`] = `
       className="mock"
     >
       Cognitive Chart
+    </div>
+    <div
+      className="mock"
+    >
+      External Results
     </div>
   </section>
 </div>

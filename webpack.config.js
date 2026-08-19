@@ -81,6 +81,26 @@ module.exports = (_env) => {
             }
           ]
         },
+        // NOTE: External css that has to be global
+        {
+          test: /\.css$/,
+          include: /node_modules\/@crosschq\/interview-report-widget/,
+          use: [
+            {
+              loader: "style-loader",
+              options: {
+                injectType: "singletonStyleTag"
+              }
+            },
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: cssMaps,
+                modules: false
+              }
+            }
+          ]
+        },
         {
           test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
           type: "asset/resource"

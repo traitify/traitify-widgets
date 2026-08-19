@@ -22,7 +22,8 @@ module.exports = {
   rootDir: require("path").resolve(__dirname, ".."),
   setupFiles: [
     "<rootDir>/test/support/setup/babel.js",
-    "<rootDir>/test/support/setup/react.js"
+    "<rootDir>/test/support/setup/react.js",
+    "<rootDir>/test/support/setup/storage.js"
   ],
   setupFilesAfterEnv: [
     "<rootDir>/test/support/setup/container.js",

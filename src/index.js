@@ -11,6 +11,7 @@ export {Cache, Components, Http, I18n, GraphQL, Listener, Traitify};
 
 const traitify = new Traitify();
 
+traitify.Cache = Cache;
 traitify.Components = Components;
 traitify.GraphQL = GraphQL;
 

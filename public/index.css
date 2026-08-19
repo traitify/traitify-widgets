@@ -1,3 +1,15 @@
+button.loading::after {
+  animation: spin 0.6s linear infinite;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 10px;
+}
 .column-header {
   font-weight: bold;
   margin: 12px auto;
@@ -20,6 +32,9 @@
 .row.gap-lg { gap: 24px; }
 .row select { overflow: auto; }
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 @media(max-width: 567px) {
   .max-sm-flex-col { flex-direction: column; }
 }

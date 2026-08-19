@@ -8,6 +8,7 @@ import rjpAssessment from "support/data/assessment/rjp/completed";
 import useContainer from "support/hooks/use-container";
 
 jest.mock("components/results/cognitive/chart", () => (() => <div className="mock">Cognitive Chart</div>));
+jest.mock("components/results/external", () => (() => <div className="mock">External Results</div>));
 jest.mock("components/results/generic/breakdown", () => (() => <div className="mock">Generic Breakdown</div>));
 jest.mock("components/results/generic/heading", () => (() => <div className="mock">Generic Heading</div>));
 jest.mock("components/results/guide/client", () => (() => <div className="mock">Client Guide</div>));

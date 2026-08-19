@@ -1,34 +1,36 @@
 export default class Cache {
-  constructor({namespace} = {}) {
+  constructor({namespace, storage} = {}) {
     this.namespace = namespace;
+    this.storage = storage || sessionStorage;
   }
   clear = () => {
     try {
-      return sessionStorage.clear();
+      return this.storage.clear();
     } catch { return null; }
   };
   getKey = (name) => [this.namespace, name].filter(Boolean).join("-");
-  get = (_key) => {
+  get = (_key, {fallback = null} = {}) => {
     const key = this.getKey(_key);
 
     try {
-      const data = sessionStorage.getItem(key);
-      if(!data) { return data; }
+      const data = this.storage.getItem(key);
+      if(data) {
+        const {expiresAt, value} = JSON.parse(data);
+        if(!expiresAt || expiresAt >= Date.now()) { return value; }
 
-      const {expiresAt, value} = JSON.parse(data);
-      if(!expiresAt) { return value; }
-      if(expiresAt >= Date.now()) { return value; }
+        this.storage.removeItem(key);
+      }
+    } catch { return fallback; }
 
-      sessionStorage.removeItem(key);
+    if(fallback != null) { this.set(_key, fallback); }
 
-      return null;
-    } catch { return null; }
+    return fallback;
   };
   remove = (_key) => {
     const key = this.getKey(_key);
 
     try {
-      return sessionStorage.removeItem(key);
+      return this.storage.removeItem(key);
     } catch { return null; }
   };
   set = (_key, value, options = {}) => {
@@ -39,7 +41,7 @@ export default class Cache {
       if(options.expiresAt) { data.expiresAt = options.expiresAt; }
       if(options.expiresIn) { data.expiresAt = Date.now() + options.expiresIn * 1000; }
 
-      return sessionStorage.setItem(key, JSON.stringify(data));
+      return this.storage.setItem(key, JSON.stringify(data));
     } catch { return null; }
   };
 }

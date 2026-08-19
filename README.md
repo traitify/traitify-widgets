@@ -150,16 +150,16 @@ export default function Personality({id}) {
 The widgets are capable of showing multiple kinds of surveys to users in order to satisfy benchmark requirements. To handle the event when all surveys have been finished you should use this event:
 
 ```
-Traitify.listener.on("Surveys.finished", (surveys) => {
-  console.log("Surveys.finished", surveys);
+Traitify.listener.on("Surveys.finished", (context) => {
+  console.log("Surveys.finished", context);
 });
 ```
 
 To handle the event when each survey has been finished, maybe to record total progress in a backend system:
 
 ```
-Traitify.listener.on("Survey.finished", ({response}) => {
-  console.log("Survey.finished", response);
+Traitify.listener.on("Survey.finished", (context) => {
+  console.log("Survey.finished", context);
 });
 ```
 

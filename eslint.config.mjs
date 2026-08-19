@@ -40,7 +40,7 @@ const defaultConfig = {
 };
 
 export default defineConfig([
-  globalIgnores(["build/*", "packages/*", "public/*"]),
+  globalIgnores(["build/*", "packages/*"]),
   {
     ...defaultConfig,
     ignores: [...configFiles, "test/**"]

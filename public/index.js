@@ -142,15 +142,17 @@ function createElement(options = {}) {
 
 function createExternalAssessment({mode}) {
   const create = mode === "create";
-  const cacheKey = `assessmentID.${cache.get("externalSurveyID")}`;
+  const surveyKey = cache.get("externalSurveyID");
+  const vendor = cache.get("externalVendor");
+  const cacheKey = `assessmentID.${surveyKey}`;
   const query = Traitify.GraphQL.external[create ? "create" : "getOrCreate"];
   const variables = create ? {
-    externalSurveyKey: cache.get("externalSurveyID"),
+    externalSurveyKey: surveyKey.replace(`${vendor}:`, ""),
     profileID: cache.get("profileID"),
-    vendor: cache.get("externalVendor")
+    vendor
   } : {
     profileID: cache.get("profileID"),
-    surveyKey: cache.get("externalSurveyID")
+    surveyKey
   };
 
   return saveAssessmentID({

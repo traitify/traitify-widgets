@@ -18,9 +18,11 @@ function Crosschq({id = null}) {
     if(!element.current) { return; }
 
     const widget = render({
+      fraudData: results.fraud_data,
       interviewID: assessment.externalId,
+      reportData: results.report_data,
       target: element.current,
-      reportData: results
+      transcriptionData: results.transcript_data
     });
 
     return () => widget.destroy();

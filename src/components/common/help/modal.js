@@ -12,7 +12,13 @@ import Divider from "components/common/modal/divider";
 import except from "lib/common/object/except";
 import useHttp from "lib/hooks/use-http";
 import useTranslate from "lib/hooks/use-translate";
-import {activeState, baseState, errorsState, orderState} from "lib/recoil";
+import {
+  activeState,
+  baseState,
+  errorsState,
+  orderState,
+  requestIDsState
+} from "lib/recoil";
 import style from "./style.scss";
 
 function Modal({show, setShow}) {
@@ -25,6 +31,7 @@ function Modal({show, setShow}) {
   const base = useRecoilValue(baseState);
   const errors = useRecoilValue(errorsState);
   const order = useRecoilValue(orderState);
+  const requestIDs = useRecoilValue(requestIDsState);
   const submitting = useRef(false);
 
   if(!show) { return null; }
@@ -47,7 +54,12 @@ function Modal({show, setShow}) {
     const params = {
       errors,
       message,
-      state: {active, base, order: {}},
+      requestIDs,
+      state: {
+        active,
+        base,
+        order: {}
+      },
       widget: {source: SOURCE, version: VERSION}
     };
 

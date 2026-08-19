@@ -113,6 +113,47 @@ describe("Http", () => {
       );
     });
 
+    it("triggers request listeners with the built request", () => {
+      const onRequest = jest.fn().mockName("onRequest");
+      http.listener.on("Http.request", onRequest);
+      http.request({method: "GET", path: "/profiles"});
+
+      expect(onRequest).toHaveBeenCalledWith({
+        options: expect.objectContaining({method: "GET"}),
+        url: "https://api.traitify.com/v1/profiles"
+      });
+    });
+
+    it("fetches with mutations made by request listeners", () => {
+      http.listener.on("Http.request", (request) => { request.options.headers["X-Request-Id"] = "widget-abc.aaaaaa"; });
+      http.request({method: "GET", path: "/profiles"});
+
+      expect(lastHeaders()["X-Request-Id"]).toBe("widget-abc.aaaaaa");
+    });
+
+    it("applies multiple request listeners", () => {
+      http.listener.on("Http.request", (request) => { request.options.headers["X-A"] = "a"; });
+      http.listener.on("Http.request", (request) => { request.options.headers["X-B"] = "b"; });
+      http.request({method: "GET", path: "/profiles"});
+
+      expect(lastHeaders()).toEqual(expect.objectContaining({"X-A": "a", "X-B": "b"}));
+    });
+
+    it("stops invoking a listener after it is unregistered", () => {
+      const onRequest = jest.fn().mockName("onRequest");
+      const off = http.listener.on("Http.request", onRequest);
+      off();
+      http.request({method: "GET", path: "/profiles"});
+
+      expect(onRequest).not.toHaveBeenCalled();
+    });
+
+    it("fetches unchanged when no request listeners are registered", () => {
+      http.request({method: "GET", path: "/profiles"});
+
+      expect(lastHeaders()).not.toHaveProperty("X-Request-Id");
+    });
+
     it("passes query params", () => {
       http.request({method: "GET", path: "/profiles", params: {locale_key: "en-us"}});
 

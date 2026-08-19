@@ -1,5 +1,6 @@
 import withRetry from "./retry";
 import toQueryString from "../common/object/to-query-string";
+import Listener from "../listener";
 
 const formatArgs = ({method, options, params}) => {
   if(typeof options === "object") { return {method, ...options}; }
@@ -21,6 +22,7 @@ export default class Http {
     this.authKey = authKey;
     this.autoRetry = autoRetry || false;
     this.host = host || "https://api.traitify.com";
+    this.listener = new Listener();
     this.retryOptions = retryOptions || {};
     this.version = version || "v1";
   }
@@ -54,8 +56,12 @@ export default class Http {
       options.body = JSON.stringify(params);
     }
 
+    // NOTE: Allows listeners to mutate the request object
+    const request = {options, url};
+    this.listener.trigger("Http.request", request);
+
     const retryEnabled = this.autoRetry || retryOptions != null;
-    const fetchFn = () => this.fetch(url, options);
+    const fetchFn = () => this.fetch(request.url, request.options);
     const responsePromise = retryEnabled
       ? withRetry({fetch: fetchFn, method, options: {...this.retryOptions, ...retryOptions}})
       : fetchFn();

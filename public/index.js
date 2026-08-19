@@ -53,6 +53,18 @@ const envScopedKeys = [
 ];
 const globalCache = new Traitify.Cache({storage: localStorage});
 const listCacheKeys = {};
+const personalitySurveys = (window.TraitifyDemo || {}).personalitySurveys || [
+  {text: "Big Five", value: "big-five"},
+  {text: "Big Five Animated", value: "big-five-animated"},
+  {text: "Big Five Animated Paradox", value: "big-five-animated-paradox"},
+  {text: "Big Five Text", value: "big-five-text"},
+  {text: "Career Deck", value: "career-deck"},
+  {text: "Career Interest Animated", value: "career-interest-animated"},
+  {text: "Core", value: "core"},
+  {text: "Financial Risk Tolerance", value: "financial-risk-tolerance-2.0"},
+  {text: "Perseverance", value: "perseverance"},
+  {text: "Persuasion", value: "persuasion"}
+];
 const surveyTypes = ["benchmark", "cognitive", "external", "generic", "order", "personality", "rjp"];
 let envCache = newEnvCache();
 
@@ -597,18 +609,7 @@ function setupDom() {
     fallback: "big-five",
     name: "personalitySurveyID",
     onChange: onSurveyIDChange,
-    options: [
-      {text: "Big Five", value: "big-five"},
-      {text: "Big Five Animated", value: "big-five-animated"},
-      {text: "Big Five Animated Paradox", value: "big-five-animated-paradox"},
-      {text: "Big Five Text", value: "big-five-text"},
-      {text: "Career Deck", value: "career-deck"},
-      {text: "Career Interest Animated", value: "career-interest-animated"},
-      {text: "Core", value: "core"},
-      {text: "Financial Risk Tolerance", value: "financial-risk-tolerance-2.0"},
-      {text: "Perseverance", value: "perseverance"},
-      {text: "Persuasion", value: "persuasion"}
-    ],
+    options: personalitySurveys,
     text: "Deck:"
   }));
   group.appendChild(row);

@@ -146,11 +146,11 @@
   "results": {
     "benchmarks": {
       "compare": {
-        "description": "Você tem a opção de visualizar a compatibilidade deste candidato com outros perfis de vagas. Assim, você pode verificar rapidamente se este candidato se encaixa perfeitamente em outro perfil de vaga.",
-        "heading": "Comparar os padrões de desempenho do trabalho"
+        "description": "Você tem a opção de visualizar a compatibilidade deste candidato com parâmetros de outra vaga. Assim, você pode verificar rapidamente se este candidato se encaixa perfeitamente em outro perfil de vaga.",
+        "heading": "Comparar parâmetros da vaga"
       },
-      "current": "Referência atual",
-      "search": "Pesquisar por Benchmark"
+      "current": "Parâmetro atual",
+      "search": "Pesquisar por parâmetro"
     },
     "generic": {
       "score": " Pontuação"
@@ -185,7 +185,7 @@
     "interview": {
       "heading": "Entrevista",
       "start": "Iniciar Entrevista",
-      "survey": "Entrevistador de IA Crosschq",
+      "survey": "Entrevistador do Crosschq AI",
       "text": "Participe de um bate-papo por vídeo com IA para fazer perguntas, praticar sua entrevista e saber mais sobre os detalhes desta vaga.\n\nEste é um bate-papo com um Funcionário Artificial treinado com base na cultura da nossa empresa e nos detalhes desta vaga."
     },
     "interview_personality": {

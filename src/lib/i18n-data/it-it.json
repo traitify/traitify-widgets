@@ -146,7 +146,7 @@
     "benchmarks": {
       "compare": {
         "description": "Hai la possibilità di visualizzare la corrispondenza di questo candidato con altri parametri di riferimento per la posizione. In questo modo, puoi verificare a colpo d'occhio se questo candidato è adatto anche ad altri profili professionali.",
-        "heading": "Confronta i parametri di riferimento per le posizioni lavorative"
+        "heading": "Confronta i benchmark di posizione "
       },
       "current": "Benchmark attuale",
       "search": "Cerca benchmark"
@@ -183,9 +183,9 @@
     },
     "interview": {
       "heading": "Colloquio",
-      "start": "Avviare l'intervista",
+      "start": "Avviare il colloquio",
       "survey": "Intervistatore basato sull'IA Crosschq",
-      "text": "Partecipa a una video chat con un'IA per porre domande, esercitarti per il colloquio e scoprire maggiori dettagli su questa offerta di lavoro.\n\nSi tratta di una chat con un Dipendente Artificiale addestrato sulla cultura aziendale e sui dettagli relativi a questa posizione."
+      "text": "Partecipa a una video chat con un'IA per fare  domande, esercitarti per il colloquio e scoprire maggiori dettagli su questa offerta di lavoro.\n\nSi tratta di una chat con un Dipendente Artificiale addestrato sulla cultura aziendale e sui dettagli relativi a questa posizione."
     },
     "interview_personality": {
       "heading": "Valutazione della personalità e colloquio"

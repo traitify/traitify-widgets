@@ -146,8 +146,8 @@
   "results": {
     "benchmarks": {
       "compare": {
-        "description": "Bạn có thể xem mức độ phù hợp của ứng viên này với các tiêu chí tuyển dụng khác. Chỉ cần nhìn thoáng qua, bạn có thể kiểm tra xem ứng viên này có phù hợp với tiêu chí tuyển dụng nào khác hay không.",
-        "heading": "So sánh các tiêu chuẩn việc làm"
+        "description": "Bạn có thể xem mức độ phù hợp của ứng viên này với các tiêu chuẩn đối chiếu cho những vị trí khác. Bạn có thể đánh giá ngay việc ứng viên này có phù hợp với một vị trí khác hay không.",
+        "heading": "So sánh các tiêu chuẩn vị trí tuyển dụng"
       },
       "current": "Tiêu chuẩn hiện tại",
       "search": "Tìm kiếm tiêu chuẩn"
@@ -185,11 +185,11 @@
     "interview": {
       "heading": "Phỏng vấn",
       "start": "Bắt đầu phỏng vấn",
-      "survey": "Crosschq AI Interviewer",
-      "text": "Tham gia cuộc trò chuyện video với AI để đặt câu hỏi, luyện tập phỏng vấn và tìm hiểu thêm chi tiết về công việc này.\n\nĐây là cuộc trò chuyện với một Nhân viên Trí tuệ Nhân tạo đã được đào tạo về văn hóa công ty và các chi tiết liên quan đến công việc này."
+      "survey": "Trợ lý phỏng vấn AI Crosschq",
+      "text": "Tham gia cuộc trò chuyện video với AI để đặt câu hỏi, luyện tập phỏng vấn và tìm hiểu thêm về vị trí này. Đây là cuộc trò chuyện với một Nhân viên AI được huấn luyện dựa trên văn hóa doanh nghiệp và các thông tin liên quan đến vị trí tuyển dụng."
     },
     "interview_personality": {
-      "heading": "Đánh giá và phỏng vấn tính cách"
+      "heading": "Đánh giá tính cách & Phỏng vấn"
     },
     "text": "Trong khuôn khổ đơn ứng tuyển của bạn, chúng tôi muốn đề nghị bạn hoàn thành các bài đánh giá sau. Vui lòng nhấp vào nút bên cạnh tên bài đánh giá. Thao tác này sẽ đưa bạn đến nơi bạn sẽ hoàn thành (các) bài đánh giá. Vui lòng quay lại đây sau khi bạn đã hoàn thành tất cả các bài đánh giá."
   },

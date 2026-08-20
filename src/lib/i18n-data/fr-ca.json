@@ -146,11 +146,11 @@
   "results": {
     "benchmarks": {
       "compare": {
-        "description": "Vous pouvez consulter la correspondance de ce candidat avec d'autres profils de poste. En un coup d'œil, vous pouvez vérifier si ce candidat correspond parfaitement à un autre profil de poste.",
-        "heading": "Comparer les référentiels de compétences professionnelles"
+        "description": "Vous pouvez consulter la correspondance de ce candidat avec d'autres profils de référence pour des postes. En un coup d'œil, vous pouvez vérifier si ce candidat convient également à un autre profil de référence.",
+        "heading": "Comparer les profils de référence des postes"
       },
-      "current": "Référence actuelle",
-      "search": "Recherche de référence"
+      "current": "Profil de référence actuel",
+      "search": "Rechercher un profil de référence"
     },
     "generic": {
       "score": "Résultat"
@@ -184,9 +184,9 @@
     },
     "interview": {
       "heading": "Entretien",
-      "start": "Début de l'entretien",
-      "survey": "Intervieweur IA Crosschq",
-      "text": "Plongez dans une conversation vidéo avec une IA pour poser des questions, vous entraîner à l'entretien et en apprendre davantage sur les détails de ce poste.\n\nIl s'agit d'une conversation avec un employé artificiel qui a été formé sur la culture de notre entreprise et sur les détails de ce poste."
+      "start": "Commencer l'entretien",
+      "survey": "Intervieweur IA de Crosschq",
+      "text": "Participez à une conversation vidéo avec une IA pour poser des questions, vous exercer à l'entretien et en apprendre davantage sur ce poste.\n\nIl s'agit d'une conversation avec un employé virtuel formé à partir de la culture de notre entreprise et des renseignements relatifs à ce poste."
     },
     "interview_personality": {
       "heading": "Évaluation de la personnalité et entretien"

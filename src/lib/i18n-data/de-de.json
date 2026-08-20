@@ -167,7 +167,7 @@
     "benchmarks": {
       "compare": {
         "description": "Sie haben die Möglichkeit, die Übereinstimmung dieses Kandidaten mit anderen Stellenprofilen zu überprüfen. Auf einen Blick können Sie feststellen, ob dieser Kandidat auch für ein anderes Stellenprofil gut geeignet ist.",
-        "heading": "Vergleich von Stellenleistungsbenchmarks"
+        "heading": "Job-Benchmarks vergleichen"
       },
       "current": "Aktueller Benchmark",
       "search": "Benchmark suchen"
@@ -226,10 +226,10 @@
       "heading": "Interview",
       "start": "Interview starten",
       "survey": "Crosschq KI-Interviewer",
-      "text": "Nutzen Sie einen KI-Videochat, um Fragen zu stellen, Ihr Vorstellungsgespräch zu üben und mehr über die Details dieser Stelle zu erfahren.\n\nDies ist ein Chat mit einem künstlichen Mitarbeiter, der auf unsere Unternehmenskultur und die Details dieser Stelle trainiert wurde."
+      "text": "Nutzen Sie einen KI-gestützten Videochat, um Fragen zu stellen, Ihr Vorstellungsgespräch zu üben und mehr über diese Position zu erfahren.\n\nSie chatten dabei mit einem virtuellen Mitarbeiter, der auf unsere Unternehmenskultur und die Details dieser Position trainiert wurde.\n"
     },
     "interview_personality": {
-      "heading": "Persönlichkeitsbeurteilung & Interview"
+      "heading": "Persönlichkeitstest & Interview"
     },
     "loading": "Ihr Assessment wird geladen",
     "redacted": {

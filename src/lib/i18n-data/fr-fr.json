@@ -56,6 +56,7 @@
   "cognitive_skip_button": "Sauter",
   "cognitive_skipped_questions": "Questions sautées",
   "complements": "Forces",
+  "complete": "Terminé",
   "conflicts": "Opportunités",
   "dimension_description": "Le score des dimensions est calculé à partir de vos réponses aux questions qui permettent de mesurer les composants sous-jacents de chaque dimension. De manière générale, chaque individu a un niveau Élevé, Moyen ou Faible pour chaque dimension.",
   "dimension_heading": "Pour moi, que signifie mon niveau de %{name} %{level}?",
@@ -73,11 +74,29 @@
   "experience_level_5": "Diplôme d'études supérieures",
   "extended_description": "Description étendue",
   "featured_skill": "Compétences vedettes",
+  "feedback": {
+    "modal_prompt": "Nous aimerions en savoir plus sur votre expérience.",
+    "prompt": "Avez-vous le sentiment que ces résultats vous correspondent ?",
+    "thanks": "Merci pour vos commentaires !"
+  },
   "filter": "Filtrer",
   "get_started": "Commencer dès maintenant",
   "green_career": "Vert Carrière",
   "green_career_html": "L'économie verte entraînera une modification de la demande d'emploi ou des exigences professionnelles et professionnelles des professions, telles que les tâches, les compétences, les connaissances et les qualifications. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "guide_intro": "Ces caractéristiques de personnalité permettent de poser une série de questions à chacun des «types» de personnalité. La première question cherche à confirmer à quoi ils devraient ressembler; les deux autres explorent les domaines de préoccupation possibles.",
+  "headings": {
+    "personality": {
+      "achieve_html": "<b>PROGRESSER</b> – Les compétences que vous aimez développer",
+      "act_html": "<b>AGIR</b> – Les façons dont vous aimez occuper votre temps",
+      "appreciate_html": "<b>APPRÉCIER</b> – Des valeurs qui correspondent à votre vision du monde",
+      "explore_html": "<b>EXPLORER</b> – Les contenus qui vous intéressent",
+      "styles": {
+        "negative": "Moins d'éléments sur :",
+        "overall": "Votre style de carrière global est…",
+        "positive": "Plus d'éléments sur :"
+      }
+    }
+  },
   "help": "Aidez-moi",
   "help_modal": {
     "content_html": "Regarder les autres informations sur nos <a href=\"%{url}\" target=\"_blank\">Evaluations</a>.",
@@ -113,6 +132,7 @@
   "most_represented_traits": "Traits les plus représentés",
   "most_represented_traits_definition": "Sur les trente traits mesurés par cette évaluation, ceux-ci ont obtenu une note dans le tiers supérieur des réponses totales de ce candidat. L'apparition sur cette liste ne reflète que la position relative de ces traits pour cet individu par rapport aux traits restants. Cela ne fournit pas d'informations qui peuvent être utilisées pour comparer l'étendue d'un trait affiché par un candidat par rapport à un autre.",
   "next": "Suivant",
+  "no": "Non",
   "no_careers": "Aucune carrière",
   "no_jobs": "Aucun emploi local n'a été trouvé pour cette carrière. Veuillez visiter %{job_source} pour trouver plus d'opportunités.",
   "no_more_careers": "Plus de carrières",
@@ -152,14 +172,31 @@
       "current": "Référence actuelle",
       "search": "Recherche de référence"
     },
+    "cognitive": {
+      "breakdown": {
+        "description": "Cette illustration présente les mesures de %{survey_name}, établies à partir de vos réponses à une série de questions abstraites évaluant les aptitudes mentales générales.",
+        "heading": "Défaillance cognitive"
+      }
+    },
     "generic": {
+      "breakdown": "Détail",
+      "breakdown_description": "Voici le détail des questions auxquelles vous avez répondu lors de l’évaluation.",
+      "correct": "Correct",
+      "incorrect": "Incorrect",
+      "overall_score": "Score global",
       "score": "Résultat"
+    },
+    "reports": {
+      "candidate": "Rapport du candidat",
+      "employee": "Rapport sur l'engagement des employés",
+      "manager": "Rapport destiné au responsable du recrutement"
     }
   },
   "room_for_growth_and_change": "Place à la croissance et au changement",
   "salary_mean": "Salaire moyen",
   "salary_mean_html": "Le salaire auquel la moitié des travailleurs de la profession gagnait plus que ce montant et la moitié gagnait moins. Les données salariales médianes proviennent de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
   "search": "Chercher",
+  "show_hide_all": "Tout afficher / Tout masquer",
   "show_less": "En Savoir Moins",
   "show_more": "En Savoir Plus",
   "skill_heading_for_communication": "Il est important de parler, écrire et partager les idées. Essayez ces conseils pour bien communiquer.",
@@ -176,22 +213,33 @@
   "skill_name_for_leading_others": "Diriger les autres",
   "skill_name_for_teamwork": "Travail en équipe",
   "skill_name_for_working_from_home": "Conseils pour travailler à domicile",
+  "skipped": "Ignorée",
   "slide_error": "Impossible de charger plus de diapositives pour le moment",
   "sort": "Trier",
   "status": {
     "cognitive_interview": {
       "heading": "Évaluation cognitive et entretien"
     },
+    "error": "Une erreur s'est produite lors de vos évaluations.",
+    "heading": "Vos évaluations de candidature",
     "interview": {
       "heading": "Entretien",
-      "start": "Début de l'entretien",
+      "start": "Début l'entretien",
       "survey": "Intervieweur IA Crosschq",
       "text": "Plongez dans une conversation vidéo avec une IA pour poser des questions, vous entraîner à l'entretien et en apprendre davantage sur les détails de ce poste.\n\nIl s'agit d'une conversation avec un employé artificiel qui a été formé sur la culture de notre entreprise et sur les détails de ce poste."
     },
     "interview_personality": {
       "heading": "Évaluation de la personnalité et entretien"
     },
-    "text": "Dans le cadre de votre candidature, nous souhaitons vous demander de compléter les évaluations suivantes. Veuillez cliquer sur le bouton à côté du nom de l’évaluation. Cela vous mènera à l’endroit où vous pourrez compléter la/les évaluation(s). Veuillez revenir ici une fois que vous aurez terminé toutes les évaluations."
+    "loading": "Chargement de votre évaluation…",
+    "redacted": {
+      "heading": "Indisponible",
+      "text": "Ces évaluations Traitify ne sont plus disponibles."
+    },
+    "start": "Commencer l'évaluation",
+    "text": "Dans le cadre de votre candidature, nous souhaitons vous demander de compléter les évaluations suivantes. Veuillez cliquer sur le bouton à côté du nom de l’évaluation. Cela vous mènera à l’endroit où vous pourrez compléter la/les évaluation(s). Veuillez revenir ici une fois que vous aurez terminé toutes les évaluations.",
+    "timeout": "Le chargement a expiré.",
+    "try_again": "Réessayons"
   },
   "submit": "Soumettre",
   "success_skills": "Compétences de succès",
@@ -203,7 +251,10 @@
       "submitted": "Demande pour l'Aménagement est Soumise",
       "submitted_text": "Un membre de notre équipe va examiner vos informations dès que possible."
     },
-    "generic_assessment": "Une évaluation Générique"
+    "cognitive_assessment": "Évaluation cognitive",
+    "external_assessment": "Évaluation externe",
+    "generic_assessment": "Une évaluation Générique",
+    "personality_assessment": "Évaluation de la personnalité"
   },
   "tip_type_for_caution_zone": "Zone de prudence",
   "tip_type_for_room": "Place à la croissance et au changement",
@@ -212,5 +263,6 @@
   "tip_type_for_tools": "Outils à utiliser",
   "title": "Titre",
   "try_again": "Cliquez ici pour essayer à nouveau",
-  "view_on_onet": "Voir les détails de carrière sur O*Net"
+  "view_on_onet": "Voir les détails de carrière sur O*Net",
+  "yes": "Oui"
 }

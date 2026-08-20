@@ -150,7 +150,7 @@
         "heading": "Vergelijk functiebenchmarks"
       },
       "current": "Huidige referentiewaarde",
-      "search": "Zoek naar benchmark"
+      "search": "Zoek naar referentiewaarde"
     },
     "generic": {
       "score": "Resultaat"
@@ -180,7 +180,7 @@
   "sort": "Sorteren",
   "status": {
     "cognitive_interview": {
-      "heading": "Cognitieve beoordeling en interview"
+      "heading": "Cognitieve beoordeling en interview "
     },
     "interview": {
       "heading": "Interview",

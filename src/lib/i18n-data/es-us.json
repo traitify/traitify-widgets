@@ -146,11 +146,11 @@
   "results": {
     "benchmarks": {
       "compare": {
-        "description": "Tienes la opción de ver si este candidato se ajusta a otros perfiles laborales. De un vistazo, puedes comprobar si encaja bien con otro perfil.",
-        "heading": "Comparar los estándares laborales"
+        "description": "Puede ver si este candidato se ajusta a otros perfiles de referencia del puesto. De un vistazo, podrá consultar el nivel de encaje del candidato con otros perfiles.",
+        "heading": "Comparar con Perfiles de Referencia del Puesto"
       },
-      "current": "Punto de referencia actual",
-      "search": "Buscar punto de referencia"
+      "current": "Perfil de Referencia Actual",
+      "search": "Buscar Perfil de Referencia"
     },
     "generic": {
       "score": "Puntuación"
@@ -180,16 +180,16 @@
   "sort": "Ordenar",
   "status": {
     "cognitive_interview": {
-      "heading": "Evaluación cognitiva y entrevista"
+      "heading": "Evaluación de las Capacidades Cognitivas y Entrevista"
     },
     "interview": {
       "heading": "Entrevista",
       "start": "Iniciar entrevista",
-      "survey": "Entrevistador de IA de CrossChQ",
-      "text": "Sumérgete en un chat de video con IA para hacer preguntas, practicar tu entrevista y obtener más información sobre los detalles de este trabajo.\n\nEste es un chat con un Empleado Artificial que ha sido entrenado sobre la cultura de nuestra empresa y los detalles relacionados con este trabajo."
+      "survey": "Entrevistador Virtual Impulsado por IA de Crosschq",
+      "text": "Participa en una entrevista virtual por videollamada impulsada por IA para hacer preguntas, practicar tu entrevista y conocer más detalles sobre este puesto. Esta conversación se realiza con un entrevistador virtual, diseñado para compartir información sobre nuestra empresa, nuestra cultura y esta oportunidad laboral."
     },
     "interview_personality": {
-      "heading": "Evaluación de la personalidad y entrevista"
+      "heading": "Evaluación de Personalidad y Entrevista"
     },
     "text": "Como parte de su solicitud, nos gustaría pedirle que complete las siguientes evaluaciones. Por favor, haga clic en el botón junto al nombre de la evaluación. Esto lo llevará al lugar donde completará la(s) evaluación(es). Por favor, regrese aquí una vez que haya completado todas las evaluaciones."
   },

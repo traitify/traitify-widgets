@@ -259,8 +259,8 @@
     "rjp": {
       "instructions": {
         "heading": "Job Preview Instructions",
-        "replay": "Rewatch Video",
-        "play": "Start Video"
+        "play": "Start Video",
+        "replay": "Rewatch Video"
       },
       "match": {
         "continue": "Continue",

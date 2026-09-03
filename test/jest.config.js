@@ -1,3 +1,6 @@
+// NOTE: Transform untranspiled *.es.js ESM builds (e.g. crosschq) so jest can load them.
+const esmBuild = /\.es\.js$/;
+
 module.exports = {
   collectCoverageFrom: [
     "<rootDir>/scripts/**/*.js",
@@ -34,5 +37,6 @@ module.exports = {
   testMatch: ["<rootDir>/test/**/*.test.js"],
   transform: {
     "^.+\\.jsx?$": "babel-jest"
-  }
+  },
+  transformIgnorePatterns: [`/node_modules/(?!.*${esmBuild.source})`]
 };

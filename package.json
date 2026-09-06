@@ -1,6 +1,6 @@
 {
   "name": "traitify-widgets",
-  "version": "3.11.0",
+  "version": "3.11.1",
   "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "description": "Traitiy Widgets",
   "exports": {
@@ -87,7 +87,7 @@
     "postcss": "peer-dependency of postcss-loader"
   },
   "dependencies": {
-    "@crosschq/interview-report-widget": "^0.4.0",
+    "@crosschq/interview-report-widget": "^0.5.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",

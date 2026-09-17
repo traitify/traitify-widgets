@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results.RecommendationExplanation falls back to the general explanation without a matching combo 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="explanation"
+  >
+    <div
+      className="explanationHeading"
+    >
+      How This Match Is Calculated
+    </div>
+    <div
+      className="p"
+    >
+      <ul
+        className="traitify--markdown"
+      >
+        <li>
+          Preferred Fit = Preferred on 
+          <u>
+            all
+          </u>
+           of the required assessments
+        </li>
+        <li>
+          Acceptable = Preferred on 
+          <u>
+            some
+          </u>
+           of the required assessments
+        </li>
+        <li>
+          Requires Review = Preferred on 
+          <u>
+            none
+          </u>
+           of the required assessments
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.RecommendationExplanation falls through the external default for non-emmersion vendors 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="explanation"
+  >
+    <div
+      className="explanationHeading"
+    >
+      How This Match Is Calculated
+    </div>
+    <div
+      className="p"
+    >
+      <ul
+        className="traitify--markdown"
+      >
+        <li>
+          Preferred Fit = A 
+          <u>
+            strong
+          </u>
+           match on the personality assessment
+        </li>
+        <li>
+          Acceptable = A 
+          <u>
+            moderate
+          </u>
+           match on the personality assessment
+        </li>
+        <li>
+          Requires Review = A 
+          <u>
+            weak
+          </u>
+           match on the personality assessment
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.RecommendationExplanation renders the cognitive and personality explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="explanation"
+  >
+    <div
+      className="explanationHeading"
+    >
+      How This Match Is Calculated
+    </div>
+    <div
+      className="p"
+    >
+      <ul
+        className="traitify--markdown"
+      >
+        <li>
+          Preferred Fit = Preferred on 
+          <u>
+            both
+          </u>
+           the personality and cognitive assessments
+        </li>
+        <li>
+          Acceptable = Preferred on 
+          <u>
+            either
+          </u>
+           the personality or cognitive assessment
+        </li>
+        <li>
+          Requires Review = Preferred on 
+          <u>
+            neither
+          </u>
+           the personality or cognitive assessment
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.RecommendationExplanation renders the cognitive, emmersion, and personality explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="explanation"
+  >
+    <div
+      className="explanationHeading"
+    >
+      How This Match Is Calculated
+    </div>
+    <div
+      className="p"
+    >
+      <ul
+        className="traitify--markdown"
+      >
+        <li>
+          Preferred Fit = Preferred on 
+          <u>
+            all
+          </u>
+           of the personality, cognitive, and external assessments
+        </li>
+        <li>
+          Acceptable = Preferred on 
+          <u>
+            some
+          </u>
+           of the personality, cognitive, or external assessments
+        </li>
+        <li>
+          Requires Review = Preferred on 
+          <u>
+            none
+          </u>
+           of the personality, cognitive, or external assessments
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.RecommendationExplanation renders the emmersion and personality explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="explanation"
+  >
+    <div
+      className="explanationHeading"
+    >
+      How This Match Is Calculated
+    </div>
+    <div
+      className="p"
+    >
+      <ul
+        className="traitify--markdown"
+      >
+        <li>
+          Preferred Fit = Preferred on 
+          <u>
+            both
+          </u>
+           the personality and external assessments
+        </li>
+        <li>
+          Acceptable = Preferred on 
+          <u>
+            either
+          </u>
+           the personality or external assessment
+        </li>
+        <li>
+          Requires Review = Preferred on 
+          <u>
+            neither
+          </u>
+           the personality or external assessment
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Results.RecommendationExplanation renders the personality explanation 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="explanation"
+  >
+    <div
+      className="explanationHeading"
+    >
+      How This Match Is Calculated
+    </div>
+    <div
+      className="p"
+    >
+      <ul
+        className="traitify--markdown"
+      >
+        <li>
+          Preferred Fit = A 
+          <u>
+            strong
+          </u>
+           match on the personality assessment
+        </li>
+        <li>
+          Acceptable = A 
+          <u>
+            moderate
+          </u>
+           match on the personality assessment
+        </li>
+        <li>
+          Requires Review = A 
+          <u>
+            weak
+          </u>
+           match on the personality assessment
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

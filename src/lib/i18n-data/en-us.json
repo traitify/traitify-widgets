@@ -171,6 +171,22 @@
         "heading": "Compare Job Benchmarks"
       },
       "current": "Current Benchmark",
+      "explanation": {
+        "cognitive_emmersion_personality": {
+          "text": "- Preferred Fit = Preferred on <u>all</u> of the personality, cognitive, and external assessments\n- Acceptable = Preferred on <u>some</u> of the personality, cognitive, or external assessments\n- Requires Review = Preferred on <u>none</u> of the personality, cognitive, or external assessments"
+        },
+        "cognitive_personality": {
+          "text": "- Preferred Fit = Preferred on <u>both</u> the personality and cognitive assessments\n- Acceptable = Preferred on <u>either</u> the personality or cognitive assessment\n- Requires Review = Preferred on <u>neither</u> the personality or cognitive assessment"
+        },
+        "emmersion_personality": {
+          "text": "- Preferred Fit = Preferred on <u>both</u> the personality and external assessments\n- Acceptable = Preferred on <u>either</u> the personality or external assessment\n- Requires Review = Preferred on <u>neither</u> the personality or external assessment"
+        },
+        "heading": "How This Match Is Calculated",
+        "personality": {
+          "text": "- Preferred Fit = A <u>strong</u> match on the personality assessment\n- Acceptable = A <u>moderate</u> match on the personality assessment\n- Requires Review = A <u>weak</u> match on the personality assessment"
+        },
+        "text": "- Preferred Fit = Preferred on <u>all</u> of the required assessments\n- Acceptable = Preferred on <u>some</u> of the required assessments\n- Requires Review = Preferred on <u>none</u> of the required assessments"
+      },
       "search": "Search for Benchmark"
     },
     "cognitive": {

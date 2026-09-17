@@ -12,6 +12,14 @@
   min-width: 0;
 }
 
+.explanation { margin-top: $buffer-section; }
+
+.explanationHeading {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  margin-bottom: $buffer-heading;
+}
+
 .p { @extend %paragraph; }
 
 .recommendation {

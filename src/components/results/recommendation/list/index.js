@@ -8,6 +8,7 @@ import useRecommendation from "lib/hooks/use-recommendation";
 import useRecommendations from "lib/hooks/use-recommendations";
 import useTranslate from "lib/hooks/use-translate";
 import {benchmarkIDState} from "lib/recoil";
+import Explanation from "./explanation";
 import style from "./style.scss";
 
 export default function RecommendationList() {
@@ -64,6 +65,7 @@ export default function RecommendationList() {
           </div>
         )}
       </div>
+      {showHeaders && <Explanation />}
     </section>
   );
 }

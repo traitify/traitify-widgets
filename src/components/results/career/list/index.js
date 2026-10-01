@@ -22,14 +22,14 @@ export default function CareerList() {
         <Career key={career.id} career={{score, ...career}} />
       ))}
       <div className={style.center}>
-        {fetching && <span>{translate("loading")}</span>}
+        {fetching && <span>{translate("common.loading")}</span>}
         {!fetching && (
           <>
             {moreRecords && (
-              <button key="more" className={style.more} onClick={getNextPage} type="button">{translate("show_more")}</button>
+              <button key="more" className={style.more} onClick={getNextPage} type="button">{translate("common.actions.show_more")}</button>
             )}
-            {records.length === 0 && <span key="none">{translate("no_careers")}</span>}
-            {records.length > 0 && !moreRecords && <span key="done">{translate("no_more_careers")}</span>}
+            {records.length === 0 && <span key="none">{translate("results.careers.no_careers")}</span>}
+            {records.length > 0 && !moreRecords && <span key="done">{translate("results.careers.no_more_careers")}</span>}
           </>
         )}
       </div>

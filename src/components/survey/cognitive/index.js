@@ -152,7 +152,7 @@ export default function Cognitive() {
       onSubmit();
       return;
     }
-    if(window.confirm(translate("cognitive_confirm_retry"))) { /* eslint-disable-line no-alert */
+    if(window.confirm(translate("survey.cognitive.confirm_retry"))) { /* eslint-disable-line no-alert */
       setOnlySkipped(true);
       setSkipped(skippedIndexes);
       setQuestionIndex(skippedIndexes[0]);
@@ -201,7 +201,7 @@ export default function Cognitive() {
             />
           ) : <div />}
           <div>
-            {skipped && <span>{translate("cognitive_skipped_questions")} </span>}
+            {skipped && <span>{translate("survey.cognitive.skipped_questions")} </span>}
             <span>{index + 1} / {total}</span>
           </div>
         </div>

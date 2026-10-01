@@ -1,176 +1,94 @@
 {
-  "acceptable": "Akzeptabel",
-  "apply_now": "Jetzt bewerben",
-  "archetype_description_html": "Dieser Test hilft Ihnen dabei, die Komponenten Ihrer Persönlichkeit zu verstehen. Genau wie unser Körper aus verschiedenen Organsystemen besteht, können wir auch unsere Persönlichkeit als ein Gefüge betrachten, das sich aus einzelnen, gleich wichtigen Teilen zusammensetzt. Auch wenn wir uns von Tag zu Tag oder sogar von Situation zu Situation unterschiedlich fühlen und verhalten, zeichnen wir alle uns in der Regel durch eine höhere oder niedrigere Ausprägung von fünf Hauptdimensionen aus. Alle fünf Dimensionen prägen unsere Persönlichkeit – genau wie alle Teile unseres Körpers zusammenarbeiten, um uns gesund zu halten.",
-  "back": "Zurück",
-  "badge": "Abzeichen",
-  "best_match": "Beste Übereinstimmung",
-  "best_work_environments": "Beste Arbeitsumgebungen",
-  "bright_future": "Aussichtsreiche Zukunft",
-  "bright_future_html": "Diese Berufsfelder sollen in den kommenden Jahren ein schnelles Wachstum verzeichnen, versprechen ein großes Stellenangebot oder sind neue und im Entstehen begriffene Berufe. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "cancel": "Abbrechen",
-  "career_information": "Berufsinformationen",
-  "career_matches": "Karriere-Matchs",
-  "careers_link_heading": "Sehen Sie sich Ihre individuellen Karriereempfehlungen an",
-  "careers_link_heading_third_person": "Sehen Sie sich ihre individuellen Karriereempfehlungen an",
-  "close": "Schließen",
-  "cognitive_alert_skip": "Sie können die Übungsaufgaben nicht überspringen.",
-  "cognitive_confirm_button": "Bestätigen",
-  "cognitive_confirm_retry": "Möchten Sie die Fragen, die Sie übersprungen haben, beantworten?",
-  "cognitive_confirm_skip": "Sind Sie sich sicher, dass Sie überspringen möchten?",
-  "cognitive_id_specific_instructions": {
-    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 28 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>",
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 31 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten. Die meisten Menschen schließen die Übung jedoch in etwa 15 Minuten ab.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>"
+  "common": {
+    "actions": {
+      "show_hide_all": "Alle anzeigen/ausblenden",
+      "show_less": "Weniger anzeigen",
+      "show_more": "Mehr anzeigen"
+    },
+    "back": "Zurück",
+    "badge": "Abzeichen",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "complete": "Abgeschlossen",
+    "confirm": "Bestätigen",
+    "correct": "Richtig",
+    "filter": "Filter",
+    "help": "Hilfe",
+    "help_modal": {
+      "content_html": "Weitere Informationen über unsere <a href=\"%{url}\" target=\"_blank\">Testverfahren</a> anschauen.",
+      "error_submitting": "Fehler beim Senden der Nachricht",
+      "heading": "Hilfe",
+      "input_label": "Wie können wir Ihnen behilflich sein? ",
+      "input_placeholder": "Schreiben Sie eine Antwort…",
+      "message_required": "Bitte geben Sie eine Nachricht ein",
+      "submit": "Absenden",
+      "submitted": "Nachricht wurde gesendet"
+    },
+    "incorrect": "Falsch",
+    "loading": "Lädt",
+    "location": "Lage",
+    "next": "Weiter",
+    "no": "Nein",
+    "question": "Frage",
+    "response": "Antwort",
+    "score": "Punktzahl",
+    "search": "Suche",
+    "skip": "Überspringen",
+    "skipped": "Übersprungen",
+    "sort": "Sortieren",
+    "submit": "Senden",
+    "title": "Titel",
+    "yes": "Ja"
   },
-  "cognitive_instructions_disability_text": "Bitte geben Sie an, ob bei Ihnen eine Lernschwäche vorliegt.",
-  "cognitive_instructions_step_1_button": "Beispiel anzeigen",
-  "cognitive_instructions_step_1_heading": "Anweisungen",
-  "cognitive_instructions_step_1_text": "Wir möchten, dass Sie herausfinden, wie verschiedene Formen miteinander in Beziehung stehen.\n\nAuf jedem Bildschirm sehen Sie ein Raster mit einer fehlenden Form, die durch ein '?' dargestellt wird. Unterhalb des Rasters befinden sich vier Formen, von denen eine das '?' ersetzt, um das Raster zu vervollständigen.\n\nWenn die Übung beginnt, wählen Sie die Form unter jedem Raster aus, die es vervollständigt, und klicken Sie dann auf 'Bestätigen', um zur nächsten Frage zu gelangen. Sie können die Frage auch überspringen, indem Sie auf 'Überspringen' klicken. Wenn Sie bereit sind, klicken Sie auf 'Beispiel anzeigen', um ein Beispiel zu sehen.",
-  "cognitive_instructions_step_2_button": "Übung starten",
-  "cognitive_instructions_step_2_heading": "Hier ist ein Beispiel",
-  "cognitive_instructions_step_2_text": "In diesem Raster gibt es in jeder Zeile und Spalte ein Dreieck, einen Pentagon und einen Pfeil. Es gibt eine schwarze, eine blaue und eine weiße Form, und die Formen haben alle die gleiche Ausrichtung. Die Form, die das Raster vervollständigt, ist daher die Form unten links.",
-  "cognitive_instructions_step_4_button": "Start",
-  "cognitive_instructions_step_4_heading": "Bevor Sie beginnen…",
-  "cognitive_instructions_step_4_html": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 20 Fragen in der Übung, und Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten.</li><li>Sie sollten einen ruhigen Ort finden, an dem Sie sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>SIe können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>",
-  "cognitive_instructions_trial_step_1_text": "Auf jedem Bildschirm sehen Sie ein Raster mit einer fehlenden Form, die durch ein '?' dargestellt wird. Unterhalb des Rasters befinden sich vier weitere Formen, von denen eine das '?' ersetzt, um das Raster zu vervollständigen.\n\nSobald die Übung beginnt, wählen Sie die Form unter jedem Raster aus, die es vervollständigt, und klicken Sie dann auf 'Bestätigen', um zur nächsten Frage zu gelangen.\n\nSie können die Frage auch überspringen, indem Sie auf 'Überspringen' klicken. Wenn Sie bereit sind, klicken Sie auf 'Beispiel anzeigen', um ein Beispiel zu sehen.",
-  "cognitive_instructions_trial_step_4_timed_html": "<ul><li><i><b>Sie werden zwei Übungssätze mit jeweils 20 Fragen sehen.</b> Für die erste Runde haben Sie 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten. Für die zweite Runde gibt es keine Zeitbegrenzung. Sie können sich so viel Zeit nehmen, wie Sie möchten.</i></li><li>Sie sollten einen ruhigen Ort finden, an dem Sie den Übungen Ihre volle Aufmerksamkeit schenken können, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen Sie, auf jede Frage eine Antwort zu geben.</li><li>Bitte vervollständigen Sie beide Übungen in einer einzigen Sitzung.</li></ul><p>Jetzt ist es Zeit für die erste Übung...</p><p>Denken Sie daran, Sie haben 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten.</p>",
-  "cognitive_instructions_trial_step_4_timed_minimal_html": "<p>Jetzt ist es Zeit für die nächste Übung...</p><p>Denken Sie daran, Sie haben 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten.</p>",
-  "cognitive_instructions_trial_step_4_untimed_html": "<ul><li><i><b>Sie werden zwei Übungssätze mit jeweils 20 Fragen sehen.</b> Für die erste Runde können Sie sich so viel Zeit nehmen, wie Sie möchten, und es gibt keine Zeitbegrenzung. Für die zweite Runde haben Sie 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten.</i></li><li>Sie sollten einen ruhigen Ort finden, an dem Sie den Übungen Ihre volle Aufmerksamkeit schenken können, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen Sie, auf jede Frage eine Antwort zu geben.</li><li>Bitte vervollständigen Sie beide Übungen in einer einzigen Sitzung.</li></ul><p>Jetzt ist es Zeit für die erste Übung...</p><p>Denken Sie daran, Sie haben so viel Zeit, wie Sie benötigen, um so viele Fragen wie möglich zu beantworten.</p>",
-  "cognitive_instructions_trial_step_4_untimed_minimal_html": "<p>Jetzt ist es Zeit für die nächste Übung...</p><p>Denken Sie daran, Sie haben so viel Zeit, wie Sie benötigen, um so viele Fragen wie möglich zu beantworten.</p>",
-  "cognitive_practice_answer_correct": "Sie haben die Frage richtig beantwortet.",
-  "cognitive_practice_answer_incorrect": "Sie haben die Frage falsch beantwortet.",
-  "cognitive_practice_heading": "Übungsfragen",
-  "cognitive_practice_step_1_button": "Nächste Frage",
-  "cognitive_practice_step_1_heading": "Erklärung zur Antwort",
-  "cognitive_practice_step_1_text": "In diesem Raster ist die obere Form in der ersten Reihe um 180 Grad gedreht und in der entsprechenden Zelle darunter dargestellt. Die Form, die dieses Raster vervollständigt, ist daher die Form unten rechts.",
-  "cognitive_practice_step_2_button": "Nächste Frage",
-  "cognitive_practice_step_2_heading": "Erklärung zur Antwort",
-  "cognitive_practice_step_2_text": "In diesem Raster erhöht sich die Anzahl der Linien für jede Form um eins entlang jeder Reihe und jeder Spalte. Linien werden im Uhrzeigersinn hinzugefügt. Die Form, die dieses Raster vervollständigt, ist daher die Form oben links.",
-  "cognitive_practice_step_3_button": "Weiter",
-  "cognitive_practice_step_3_heading": "Erklärung zur Antwort",
-  "cognitive_practice_step_3_text": "In der obersten Reihe besteht die mittlere Form aus einer größeren Version der Form links, wobei die Form rechts innerhalb davon liegt. Die Schattierung der Formen links und rechts ist in der mittleren Form umgekehrt. Die Form, die das Raster vervollständigt, ist daher die Form oben rechts.",
-  "cognitive_question_alt_text": "Frage",
-  "cognitive_response_alt_text": "Antwort",
-  "cognitive_results_heading": "Vielen Dank, dass Sie unsere Bewertung abgeschlossen haben.",
-  "cognitive_results_html": "Um mehr über die gerade durchgeführte Bewertung zu erfahren, besuchen Sie bitte <a href='https://www.traitify.com'>Traitify.com</a>.",
-  "cognitive_skip_button": "Überspringen",
-  "cognitive_skipped_questions": "Übersprungene Fragen",
-  "complements": "Ergänzungen",
-  "complete": "Abgeschlossen",
-  "conflicts": "Konflikte",
-  "dimension_description": "Der Dimensionspunktwert wird aus Ihren Antworten auf Items berechnet, die zusammen die zugrundeliegenden Komponenten der einzelnen Dimensionen messen. Insgesamt weist eine Person jeweils eine hohe, mittlere oder niedrige Ausprägung auf.",
-  "dimension_heading": "Was bedeutet das Ergebnis %{level} %{name} für mich?",
-  "dimension_heading_for_benefits": "%{level} %{name} Mögliche Vorteile",
-  "discover_jobs": "Jobs entdecken",
-  "education": "Ausbildung",
-  "education_html": "Typisches Ausbildungsniveau, das die meisten Beschäftigten für den Einstieg in dieses Berufsfeld benötigen. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "education_level": "Bildungsniveau",
-  "employment_growth": "Beschäftigungswachstum",
-  "employment_growth_html": "Prozentuale Veränderung der Beschäftigung zwischen 2012 und 2022 Daten von <a href=\"http://www.bls.gov/ooh/fastest-growing.htm\" target=\"_blank\">U.S. Bureau of Labor Statistics</a>.",
-  "experience_level_1": "Keine Erfahrungen",
-  "experience_level_2": "Schulabschluss",
-  "experience_level_3": "Associate Degree (akademischer Grad, der von Bildungseinrichtungen i. d. R. nach 2 Jahren Studium vergeben wird)",
-  "experience_level_4": "Bachelor-Abschluss",
-  "experience_level_5": "Hochschulabschluss",
-  "extended_description": "Erweiterte Beschreibung",
-  "featured_skill": "Ausgewählte Fähigkeit",
-  "feedback": {
-    "modal_prompt": "Wir würden gerne mehr über Ihre Erfahrung erfahren",
-    "prompt": "Haben Sie das Gefühl, dass Ihre Ergebnisse zu Ihnen passen?",
-    "thanks": "Vielen Dank für Ihr Feedback!"
-  },
-  "filter": "Filter",
-  "get_started": "Erste Schritte",
-  "green_career": "Umweltberufe",
-  "green_career_html": "Die grüne Wirtschaft wird eine Veränderung in der Arbeitskräftenachfrage oder den Anforderungen an die Arbeit und die Beschäftigten bewirken, z. B. im Hinblick auf Aufgaben, Fähigkeiten, Kenntnisse und Referenzen. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "guide_intro": "Diese Persönlichkeitseigenschaften bilden die Grundlage für eine bestimmte Abfolge von Fragen, die sich auf die einzelnen Persönlichkeitstypen beziehen. Mit der ersten Frage soll bestätigt werden, wie sie sein sollten. Die zweite Frage soll mögliche Problembereiche ergründen.",
-  "headings": {
-    "personality": {
-      "achieve_html": "<b>ERREICHEN</b> - Fähigkeiten, die Sie gerne weiterentwickeln",
-      "act_html": "<b>HANDELN</b> - Wie sie ihr Zeit  verbringen",
-      "appreciate_html": "<b>WERTSCHÄTZEN</b> - Werte, die mit Ihrer Weltanschauung übereinstimmen",
-      "explore_html": "<b>ERKUNDEN</b> - Themen, die sie interessant finden",
-      "styles": {
-        "negative": "Weniger ausgeprägt:",
-        "overall": "Ihr allgemeiner Karrierestil ist ...",
-        "positive": "Weitere Elemente von:"
-      }
-    }
-  },
-  "help": "Hilfe",
-  "help_modal": {
-    "content_html": "Weitere Informationen über unsere <a href=\"%{url}\" target=\"_blank\">Testverfahren</a> anschauen.",
-    "error_submitting": "Fehler beim Senden der Nachricht",
-    "heading": "Hilfe",
-    "input_label": "Wie können wir Ihnen behilflich sein? ",
-    "input_placeholder": "Schreiben Sie eine Antwort…",
-    "message_required": "Bitte geben Sie eine Nachricht ein",
-    "submit": "Absenden",
-    "submitted": "Nachricht wurde gesendet",
-    "trigger": "Hilfe benötigt"
-  },
-  "instructions": "Anleitung",
-  "interview_guide_description": "Diese Fragen werden, je nach Ergebnis des Kandidaten in den einzelnen Persönlichkeitsdimensionen, individuell auf diesen zugeschnitten. Bei Bedarf können Sie sich das Persönlichkeitsprofil des Kandidaten durchlesen, um herauszufinden, ob dieser in den einzelnen Dimensionen eine hohe, mittlere oder niedrige Wertung erzielt hat, und anschließend sein Bewerbungsgespräch rund um die Persönlichkeitsmerkmale aufbauen, die für die angestrebte Position am wichtigsten sind.",
-  "interview_guide_heading": "Interview-Tipps / Fragen",
-  "job_links": "Links zu Stellenangeboten",
-  "learn_more": "Mehr erfahren",
-  "least_represented_traits": "Am wenigsten ausgeprägte Eigenschaften",
-  "least_represented_traits_definition": "Diese Eigenschaften haben Punktwerte im unteren Drittel der Gesamtantworten des Kandidaten erhalten. Durch die Aufführung in dieser Liste soll für die entsprechende Person nur die relative Ausprägung der Eigenschaften gegenüber den übrigen Eigenschaften dargestellt werden.<br /><br />Dadurch werden keine Informationen bereitgestellt, die zum Vergleich der Ausprägung einer vom Kandidaten gezeigten Eigenschaft im Vergleich zu einem anderen herangezogen werden können.",
-  "level": {
-    "high": "Hoch",
-    "low": "Niedrig",
-    "medium": "Mittel"
-  },
-  "loading": "Lädt",
-  "local_salary": "Lokales Gehalt",
-  "location": "Lage",
-  "location_placeholder": " Bsp. Baltimore, MD",
-  "match_rate": "Übereinstimmungsrate",
-  "match_rate_html": "Dieser Beruf passt zu Ihrer Persönlichkeit durch <span>%{match_rate}<span>%.",
-  "me": "Ich",
-  "more_information": "Weitere Informationen zu diesen Werten",
-  "most_represented_traits": "Am stärksten ausgeprägte Eigenschaften",
-  "most_represented_traits_definition": "Von den dreißig in diesem Test gemessenen Eigenschaften haben diese Eigenschaften Punktwerte im oberen Drittel der Gesamtantworten des Kandidaten erzielt. Durch die Aufführung in dieser Liste soll für die entsprechende Person nur die relative Ausprägung der Eigenschaften gegenüber den übrigen Eigenschaften dargestellt werden. Dadurch werden keine Informationen bereitgestellt, die zum Vergleich der Ausprägung einer vom Kandidaten gezeigten Eigenschaft im Vergleich zu einem anderen herangezogen werden können.",
-  "next": "Weiter",
-  "no": "Nein",
-  "no_careers": "Keine Berufe",
-  "no_jobs": "Für diese Karriere wurden keine lokalen Jobs gefunden. Bitte besuchen Sie %{Job_Source}, um mehr Möglichkeiten zu finden.",
-  "no_more_careers": "Keine Berufe mehr",
-  "not_me": "Nicht ich",
-  "personality_advice": "Ratschläge zur Persönlichkeit",
-  "personality_base_heading": "Ihr Persönlichkeitstyp ist %{personality}",
-  "personality_base_heading_third_person": "Deren Persönlichkeitstyp ist %{personality}",
-  "personality_blend": "Eine Kombination von Persönlichkeiten",
-  "personality_blend_heading": "Ihre Persönlichkeitsmischung ist %{personality}",
-  "personality_blend_heading_third_person": "Deren Persönlichkeitsmischung ist %{personality}",
-  "personality_breakdown": "Analyse der Persönlichkeit",
-  "personality_details": "Persönlichkeitsdetails",
-  "personality_heading": "Ihre %{deck_name} Persönlichkeit ist %{personality}",
-  "personality_heading_third_person": "%{deck_name} Persönlichkeit: %{personality}",
-  "personality_tips": "Tipps für die Persönlichkeit",
-  "personality_traits": "Persönlichkeitsmerkmale",
-  "personality_traits_description": "Hier sind Ihre Top 5 Merkmale, gemessen auf einer Skala von 0% bis 100%",
-  "personality_type": "Persönlichkeitstyp",
-  "potential_benefits": "Mögliche Vorteile",
-  "potential_pitfalls": "Mögliche Tücken",
-  "potential_risk": "Potentialle Risiken",
-  "preferred": "Bevorzugt",
-  "question_adaptability": "Haben sie einen Bewältigungsstil entwickelt?",
-  "question_purpose": "Was versuchen Sie herauszufinden?",
-  "radar_chart_label": "Ein Diagramm, das Ihre Ergebnisse zeigt. Siehe nachstehende Textversion",
-  "read_more": "Mehr erfahren",
-  "really_me": "Wirklich ich",
-  "really_not_me": "Wirklich nicht ich",
-  "recommendation_chart_description": "Nachstehend sehen Sie die Persönlichkeitsergebnisse des Kandidaten, aufgeschlüsselt nach jeder der Big Five-Dimensionen. Die Punktwerte sind farbig markiert, um die Best-Fit-Bereiche (grün), gefolgt von gelb und rot, anzuzeigen. Die Bereiche variieren je nach Stelle. Sie basieren auf verschiedenen Informationen, darunter veröffentlichte Forschungsergebnisse, Stellenbeschreibungen und Bewerbungsgespräche mit Personen, die mit der Stelle vertraut sind.",
-  "recommendation_chart_heading": "Aufschlüsselung der Eignung",
   "results": {
     "benchmarks": {
+      "chart": {
+        "description": "Nachstehend sehen Sie die Persönlichkeitsergebnisse des Kandidaten, aufgeschlüsselt nach jeder der Big Five-Dimensionen. Die Punktwerte sind farbig markiert, um die Best-Fit-Bereiche (grün), gefolgt von gelb und rot, anzuzeigen. Die Bereiche variieren je nach Stelle. Sie basieren auf verschiedenen Informationen, darunter veröffentlichte Forschungsergebnisse, Stellenbeschreibungen und Bewerbungsgespräche mit Personen, die mit der Stelle vertraut sind.",
+        "heading": "Aufschlüsselung der Eignung"
+      },
       "compare": {
         "description": "Sie haben die Möglichkeit, die Übereinstimmung dieses Kandidaten mit anderen Stellenprofilen zu überprüfen. Auf einen Blick können Sie feststellen, ob dieser Kandidat auch für ein anderes Stellenprofil gut geeignet ist.",
         "heading": "Job-Benchmarks vergleichen"
       },
       "current": "Aktueller Benchmark",
+      "level": {
+        "high": "Hoch",
+        "low": "Niedrig",
+        "medium": "Mittel"
+      },
       "search": "Benchmark suchen"
+    },
+    "careers": {
+      "apply_now": "Jetzt bewerben",
+      "best_match": "Beste Übereinstimmung",
+      "bright_future": "Aussichtsreiche Zukunft",
+      "bright_future_html": "Diese Berufsfelder sollen in den kommenden Jahren ein schnelles Wachstum verzeichnen, versprechen ein großes Stellenangebot oder sind neue und im Entstehen begriffene Berufe. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "discover_jobs": "Jobs entdecken",
+      "education": "Ausbildung",
+      "education_html": "Typisches Ausbildungsniveau, das die meisten Beschäftigten für den Einstieg in dieses Berufsfeld benötigen. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "education_level": "Bildungsniveau",
+      "employment_growth": "Beschäftigungswachstum",
+      "employment_growth_html": "Prozentuale Veränderung der Beschäftigung zwischen 2012 und 2022 Daten von <a href=\"http://www.bls.gov/ooh/fastest-growing.htm\" target=\"_blank\">U.S. Bureau of Labor Statistics</a>.",
+      "experience_level_1": "Keine Erfahrungen",
+      "experience_level_2": "Schulabschluss",
+      "experience_level_3": "Associate Degree (akademischer Grad, der von Bildungseinrichtungen i. d. R. nach 2 Jahren Studium vergeben wird)",
+      "experience_level_4": "Bachelor-Abschluss",
+      "experience_level_5": "Hochschulabschluss",
+      "green_career": "Umweltberufe",
+      "green_career_html": "Die grüne Wirtschaft wird eine Veränderung in der Arbeitskräftenachfrage oder den Anforderungen an die Arbeit und die Beschäftigten bewirken, z. B. im Hinblick auf Aufgaben, Fähigkeiten, Kenntnisse und Referenzen. Daten von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "learn_more": "Mehr erfahren",
+      "link_heading": "Sehen Sie sich Ihre individuellen Karriereempfehlungen an",
+      "link_heading_third_person": "Sehen Sie sich ihre individuellen Karriereempfehlungen an",
+      "local_salary": "Lokales Gehalt",
+      "match_rate": "Übereinstimmungsrate",
+      "matches": "Karriere-Matchs",
+      "more_information": "Weitere Informationen zu diesen Werten",
+      "no_careers": "Keine Berufe",
+      "no_jobs": "Für diese Karriere wurden keine lokalen Jobs gefunden. Bitte besuchen Sie %{Job_Source}, um mehr Möglichkeiten zu finden.",
+      "no_more_careers": "Keine Berufe mehr",
+      "salary_mean": "Gehaltsdurchschnitt",
+      "salary_mean_html": "Arbeitsentgelt, bei dem eine Hälfte der Beschäftigten in diesem Beruf mehr und die andere Hälfte weniger als diesen Betrag verdient. Daten zum Durchschnittsgehalt von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "view_on_onet": "Sehen Sie sich Karrieredetails in O*Net an"
     },
     "cognitive": {
       "breakdown": {
@@ -178,44 +96,101 @@
         "heading": "Kognitive Auswertung"
       }
     },
+    "feedback": {
+      "modal_prompt": "Wir würden gerne mehr über Ihre Erfahrung erfahren",
+      "prompt": "Haben Sie das Gefühl, dass Ihre Ergebnisse zu Ihnen passen?",
+      "thanks": "Vielen Dank für Ihr Feedback!"
+    },
     "generic": {
       "breakdown": "Aufgliederung",
       "breakdown_description": "Hier sehen Sie die Aufgliederung der Fragen, die Sie im Assessment beantwortet haben",
-      "correct": "Richtig",
-      "incorrect": "Falsch",
-      "overall_score": "Gesamtpunktzahl",
-      "score": "Punktzahl"
+      "overall_score": "Gesamtpunktzahl"
+    },
+    "personality": {
+      "archetype": {
+        "description_html": "Dieser Test hilft Ihnen dabei, die Komponenten Ihrer Persönlichkeit zu verstehen. Genau wie unser Körper aus verschiedenen Organsystemen besteht, können wir auch unsere Persönlichkeit als ein Gefüge betrachten, das sich aus einzelnen, gleich wichtigen Teilen zusammensetzt. Auch wenn wir uns von Tag zu Tag oder sogar von Situation zu Situation unterschiedlich fühlen und verhalten, zeichnen wir alle uns in der Regel durch eine höhere oder niedrigere Ausprägung von fünf Hauptdimensionen aus. Alle fünf Dimensionen prägen unsere Persönlichkeit – genau wie alle Teile unseres Körpers zusammenarbeiten, um uns gesund zu halten.",
+        "heading": "Ihre %{deck_name} Persönlichkeit ist %{personality}",
+        "heading_third_person": "%{deck_name} Persönlichkeit: %{personality}"
+      },
+      "base": {
+        "heading": "Ihr Persönlichkeitstyp ist %{personality}",
+        "heading_third_person": "Deren Persönlichkeitstyp ist %{personality}"
+      },
+      "blend": {
+        "heading": "Ihre Persönlichkeitsmischung ist %{personality}",
+        "heading_third_person": "Deren Persönlichkeitsmischung ist %{personality}"
+      },
+      "breakdown": {
+        "heading": "Analyse der Persönlichkeit"
+      },
+      "details": {
+        "best_work_environments": "Beste Arbeitsumgebungen",
+        "complements": "Ergänzungen",
+        "conflicts": "Konflikte",
+        "heading": "Persönlichkeitsdetails"
+      },
+      "dimensions": {
+        "description": "Der Dimensionspunktwert wird aus Ihren Antworten auf Items berechnet, die zusammen die zugrundeliegenden Komponenten der einzelnen Dimensionen messen. Insgesamt weist eine Person jeweils eine hohe, mittlere oder niedrige Ausprägung auf.",
+        "heading": "Was bedeutet das Ergebnis %{level} %{name} für mich?",
+        "heading_for_benefits": "%{level} %{name} Mögliche Vorteile",
+        "potential_benefits": "Mögliche Vorteile",
+        "room_for_growth_and_change": "Raum für Wachstum und Veränderung"
+      },
+      "headings": {
+        "achieve_html": "<b>ERREICHEN</b> - Fähigkeiten, die Sie gerne weiterentwickeln",
+        "act_html": "<b>HANDELN</b> - Wie sie ihr Zeit  verbringen",
+        "appreciate_html": "<b>WERTSCHÄTZEN</b> - Werte, die mit Ihrer Weltanschauung übereinstimmen",
+        "explore_html": "<b>ERKUNDEN</b> - Themen, die sie interessant finden",
+        "styles": {
+          "negative": "Weniger ausgeprägt:",
+          "overall": "Ihr allgemeiner Karrierestil ist ...",
+          "positive": "Weitere Elemente von:"
+        }
+      },
+      "skills": {
+        "heading": "Kompetenzen für Erfolg",
+        "headings": {
+          "communication": "Sprechen, Schreiben und Ideen teilen sind wichtig. Probieren Sie diese Tipps aus, um gut zu kommunizieren.",
+          "dealing_with_stress": "Beruf und Privatleben haben ihre Höhen und Tiefen. Hier sind einige Tipps, um Ihnen zu helfen, damit umzugehen.",
+          "everyday_adjustments": "Machen Sie das Beste aus ihren Tagen, während Sie auf die Rückkehr zur Arbeit warten.",
+          "habits": "Machen Sie Ihre alltäglichen Verhaltensweisen zu persönlichen Stärken. Hier sind einige Ideen, um Ihnen den Einstieg zu erleichtern.",
+          "leading_others": "Führungsfähigkeiten unterstützen Ihr persönliches Wachstum, sowohl jetzt als auch in der Zukunft.",
+          "teamwork": "In der Regel arbeiten wir mit anderen zusammen. Holen Sie das Beste aus Ihrer Rolle in einem Team heraus.",
+          "working_from_home": "Verwenden Sie diese Tipps, um konzentriert und produktiv zu bleiben, während Sie von zu Hause aus arbeiten."
+        },
+        "names": {
+          "communication": "Kommunikationstipps",
+          "dealing_with_stress": "Umgang mit Stress",
+          "everyday_adjustments": "Alltägliche Anpassungen",
+          "habits": "Gewohnheiten aufbauen",
+          "leading_others": "Andere führen",
+          "teamwork": "Teamarbeit",
+          "working_from_home": "Empfehlungen für effektives Arbeiten im Homeoffice"
+        }
+      },
+      "tips": {
+        "caution_zone": "Warnzone",
+        "heading": "Tipps für die Persönlichkeit",
+        "room": "Raum für Wachstum und Veränderung",
+        "settings": "Einstellungen für Dich",
+        "settings_third_person": "Einstellungen, die für sie in Ordnung sind",
+        "tools": "Anzuwendende Tools"
+      },
+      "traits": {
+        "description": "Hier sind Ihre Top 5 Merkmale, gemessen auf einer Skala von 0% bis 100%",
+        "heading": "Persönlichkeitsmerkmale"
+      }
     },
     "reports": {
       "candidate": "Kandidatenbericht",
       "employee": "Beteiligen sie sich an den Mitarbeiterbericht",
       "manager": "Bericht für Hiring Manager"
+    },
+    "thanks": {
+      "heading": "Vielen Dank, dass Sie unsere Bewertung abgeschlossen haben.",
+      "learn_more": "Um mehr über den Test zu erfahren den Sie gerade abgelegt haben gehen Sie bitte auf <a href=\"https://www.traitify.com\" target=\"_blank title=\"Traitify\">Traitify.com</a>."
     }
   },
-  "room_for_growth_and_change": "Raum für Wachstum und Veränderung",
-  "salary_mean": "Gehaltsdurchschnitt",
-  "salary_mean_html": "Arbeitsentgelt, bei dem eine Hälfte der Beschäftigten in diesem Beruf mehr und die andere Hälfte weniger als diesen Betrag verdient. Daten zum Durchschnittsgehalt von <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "search": "Suche",
-  "show_hide_all": "Alle anzeigen/ausblenden",
-  "show_less": "Weniger anzeigen",
-  "show_more": "Mehr anzeigen",
-  "skill_heading_for_communication": "Sprechen, Schreiben und Ideen teilen sind wichtig. Probieren Sie diese Tipps aus, um gut zu kommunizieren.",
-  "skill_heading_for_dealing_with_stress": "Beruf und Privatleben haben ihre Höhen und Tiefen. Hier sind einige Tipps, um Ihnen zu helfen, damit umzugehen.",
-  "skill_heading_for_everyday_adjustments": "Machen Sie das Beste aus ihren Tagen, während Sie auf die Rückkehr zur Arbeit warten.",
-  "skill_heading_for_habits": "Machen Sie Ihre alltäglichen Verhaltensweisen zu persönlichen Stärken. Hier sind einige Ideen, um Ihnen den Einstieg zu erleichtern.",
-  "skill_heading_for_leading_others": "Führungsfähigkeiten unterstützen Ihr persönliches Wachstum, sowohl jetzt als auch in der Zukunft.",
-  "skill_heading_for_teamwork": "In der Regel arbeiten wir mit anderen zusammen. Holen Sie das Beste aus Ihrer Rolle in einem Team heraus.",
-  "skill_heading_for_working_from_home": "Verwenden Sie diese Tipps, um konzentriert und produktiv zu bleiben, während Sie von zu Hause aus arbeiten.",
-  "skill_name_for_communication": "Kommunikationstipps",
-  "skill_name_for_dealing_with_stress": "Umgang mit Stress",
-  "skill_name_for_everyday_adjustments": "Alltägliche Anpassungen",
-  "skill_name_for_habits": "Gewohnheiten aufbauen",
-  "skill_name_for_leading_others": "Andere führen",
-  "skill_name_for_teamwork": "Teamarbeit",
-  "skill_name_for_working_from_home": "Empfehlungen für effektives Arbeiten im Homeoffice",
-  "skipped": "Übersprungen",
-  "slide_error": "Im Moment können keine weiteren Folien geladen werden",
-  "sort": "Sortieren",
   "status": {
     "cognitive_interview": {
       "heading": "Kognitive Beurteilung & Interview"
@@ -226,7 +201,7 @@
       "heading": "Interview",
       "start": "Interview starten",
       "survey": "Crosschq KI-Interviewer",
-      "text": "Nutzen Sie einen KI-gestützten Videochat, um Fragen zu stellen, Ihr Vorstellungsgespräch zu üben und mehr über diese Position zu erfahren.\n\nSie chatten dabei mit einem virtuellen Mitarbeiter, der auf unsere Unternehmenskultur und die Details dieser Position trainiert wurde.\n"
+      "text": "Nutzen Sie einen KI-gestützten Videochat, um Fragen zu stellen, Ihr Vorstellungsgespräch zu üben und mehr über diese Position zu erfahren.\n\nSie chatten dabei mit einem virtuellen Mitarbeiter, der auf unsere Unternehmenskultur und die Details dieser Position trainiert wurde."
     },
     "interview_personality": {
       "heading": "Persönlichkeitstest & Interview"
@@ -241,8 +216,6 @@
     "timeout": "Ladezeit überschritten",
     "try_again": "Noch einmal versuchen"
   },
-  "submit": "Senden",
-  "success_skills": "Kompetenzen für Erfolg",
   "survey": {
     "accommodation": {
       "confirm": "Ja, Sonderregelung anfragen",
@@ -251,18 +224,60 @@
       "submitted": "Ihre Antrag auf Sonderregelung wurde versendet. ",
       "submitted_text": "Ihre Angaben werden zeitnah von unserem Team geprüft."
     },
+    "cognitive": {
+      "alert_skip": "Sie können die Übungsaufgaben nicht überspringen.",
+      "confirm_retry": "Möchten Sie die Fragen, die Sie übersprungen haben, beantworten?",
+      "confirm_skip": "Sind Sie sich sicher, dass Sie überspringen möchten?",
+      "instructions": {
+        "by_id": {
+          "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 28 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>",
+          "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 31 Fragen in der Übung.</li><li>Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten. Die meisten Menschen schließen die Übung jedoch in etwa 15 Minuten ab.</li><li>Sie sollten einen ruhigen Ort finden, an dem SIe sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>"
+        },
+        "disability_text": "Bitte geben Sie an, ob bei Ihnen eine Lernschwäche vorliegt.",
+        "step_1_button": "Beispiel anzeigen",
+        "step_1_heading": "Anweisungen",
+        "step_1_text": "Wir möchten, dass Sie herausfinden, wie verschiedene Formen miteinander in Beziehung stehen.\n\nAuf jedem Bildschirm sehen Sie ein Raster mit einer fehlenden Form, die durch ein '?' dargestellt wird. Unterhalb des Rasters befinden sich vier Formen, von denen eine das '?' ersetzt, um das Raster zu vervollständigen.\n\nWenn die Übung beginnt, wählen Sie die Form unter jedem Raster aus, die es vervollständigt, und klicken Sie dann auf 'Bestätigen', um zur nächsten Frage zu gelangen. Sie können die Frage auch überspringen, indem Sie auf 'Überspringen' klicken. Wenn Sie bereit sind, klicken Sie auf 'Beispiel anzeigen', um ein Beispiel zu sehen.",
+        "step_2_button": "Übung starten",
+        "step_2_heading": "Hier ist ein Beispiel",
+        "step_2_text": "In diesem Raster gibt es in jeder Zeile und Spalte ein Dreieck, einen Pentagon und einen Pfeil. Es gibt eine schwarze, eine blaue und eine weiße Form, und die Formen haben alle die gleiche Ausrichtung. Die Form, die das Raster vervollständigt, ist daher die Form unten links.",
+        "step_4_button": "Start",
+        "step_4_heading": "Bevor Sie beginnen…",
+        "step_4_html": "<p>Jetzt ist es Zeit für die Übung. Bevor Sie beginnen, denken Sie daran:</p><ul><li>Es gibt 20 Fragen in der Übung, und Sie können sich so viel Zeit nehmen, wie Sie möchten, um sie zu beantworten.</li><li>Sie sollten einen ruhigen Ort finden, an dem Sie sich voll und ganz auf die Übung konzentrieren kannst, ohne abgelenkt zu werden.</li><li>SIe können Fragen überspringen, wenn nötig, aber versuchen SIe, auf jede Frage eine Antwort zu geben.</li><li>Bitte beenden Sie die Übung in einer einzigen Sitzung.</li></ul>",
+        "trial_step_1_text": "Auf jedem Bildschirm sehen Sie ein Raster mit einer fehlenden Form, die durch ein '?' dargestellt wird. Unterhalb des Rasters befinden sich vier weitere Formen, von denen eine das '?' ersetzt, um das Raster zu vervollständigen.\n\nSobald die Übung beginnt, wählen Sie die Form unter jedem Raster aus, die es vervollständigt, und klicken Sie dann auf 'Bestätigen', um zur nächsten Frage zu gelangen.\n\nSie können die Frage auch überspringen, indem Sie auf 'Überspringen' klicken. Wenn Sie bereit sind, klicken Sie auf 'Beispiel anzeigen', um ein Beispiel zu sehen.",
+        "trial_step_4_timed_html": "<ul><li><i><b>Sie werden zwei Übungssätze mit jeweils 20 Fragen sehen.</b> Für die erste Runde haben Sie 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten. Für die zweite Runde gibt es keine Zeitbegrenzung. Sie können sich so viel Zeit nehmen, wie Sie möchten.</i></li><li>Sie sollten einen ruhigen Ort finden, an dem Sie den Übungen Ihre volle Aufmerksamkeit schenken können, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen Sie, auf jede Frage eine Antwort zu geben.</li><li>Bitte vervollständigen Sie beide Übungen in einer einzigen Sitzung.</li></ul><p>Jetzt ist es Zeit für die erste Übung...</p><p>Denken Sie daran, Sie haben 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten.</p>",
+        "trial_step_4_timed_minimal_html": "<p>Jetzt ist es Zeit für die nächste Übung...</p><p>Denken Sie daran, Sie haben 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten.</p>",
+        "trial_step_4_untimed_html": "<ul><li><i><b>Sie werden zwei Übungssätze mit jeweils 20 Fragen sehen.</b> Für die erste Runde können Sie sich so viel Zeit nehmen, wie Sie möchten, und es gibt keine Zeitbegrenzung. Für die zweite Runde haben Sie 5 Minuten Zeit, so viele Fragen wie möglich zu beantworten.</i></li><li>Sie sollten einen ruhigen Ort finden, an dem Sie den Übungen Ihre volle Aufmerksamkeit schenken können, ohne abgelenkt zu werden.</li><li>Sie können Fragen überspringen, wenn nötig, aber versuchen Sie, auf jede Frage eine Antwort zu geben.</li><li>Bitte vervollständigen Sie beide Übungen in einer einzigen Sitzung.</li></ul><p>Jetzt ist es Zeit für die erste Übung...</p><p>Denken Sie daran, Sie haben so viel Zeit, wie Sie benötigen, um so viele Fragen wie möglich zu beantworten.</p>",
+        "trial_step_4_untimed_minimal_html": "<p>Jetzt ist es Zeit für die nächste Übung...</p><p>Denken Sie daran, Sie haben so viel Zeit, wie Sie benötigen, um so viele Fragen wie möglich zu beantworten.</p>"
+      },
+      "practice": {
+        "answer_correct": "Sie haben die Frage richtig beantwortet.",
+        "answer_incorrect": "Sie haben die Frage falsch beantwortet.",
+        "heading": "Übungsfragen",
+        "step_1_button": "Nächste Frage",
+        "step_1_heading": "Erklärung zur Antwort",
+        "step_1_text": "In diesem Raster ist die obere Form in der ersten Reihe um 180 Grad gedreht und in der entsprechenden Zelle darunter dargestellt. Die Form, die dieses Raster vervollständigt, ist daher die Form unten rechts.",
+        "step_2_button": "Nächste Frage",
+        "step_2_heading": "Erklärung zur Antwort",
+        "step_2_text": "In diesem Raster erhöht sich die Anzahl der Linien für jede Form um eins entlang jeder Reihe und jeder Spalte. Linien werden im Uhrzeigersinn hinzugefügt. Die Form, die dieses Raster vervollständigt, ist daher die Form oben links.",
+        "step_3_button": "Weiter",
+        "step_3_heading": "Erklärung zur Antwort",
+        "step_3_text": "In der obersten Reihe besteht die mittlere Form aus einer größeren Version der Form links, wobei die Form rechts innerhalb davon liegt. Die Schattierung der Formen links und rechts ist in der mittleren Form umgekehrt. Die Form, die das Raster vervollständigt, ist daher die Form oben rechts."
+      },
+      "skipped_questions": "Übersprungene Fragen"
+    },
     "cognitive_assessment": "Kognitives Assessment",
     "external_assessment": "Externes Assessment",
     "generic_assessment": "Allgemeine Bewertung",
-    "personality_assessment": "Persönlichkeitstest"
-  },
-  "tip_type_for_caution_zone": "Warnzone",
-  "tip_type_for_room": "Raum für Wachstum und Veränderung",
-  "tip_type_for_settings": "Einstellungen für Dich",
-  "tip_type_for_settings_third_person": "Einstellungen, die für sie in Ordnung sind",
-  "tip_type_for_tools": "Anzuwendende Tools",
-  "title": "Titel",
-  "try_again": "Klicken Sie hier, um es erneut zu versuchen",
-  "view_on_onet": "Sehen Sie sich Karrieredetails in O*Net an",
-  "yes": "Ja"
+    "instructions": "Anleitung",
+    "me": "Ich",
+    "not_me": "Nicht ich",
+    "personality": {
+      "get_started": "Erste Schritte",
+      "slide_error": "Im Moment können keine weiteren Folien geladen werden",
+      "try_again": "Klicken Sie hier, um es erneut zu versuchen"
+    },
+    "personality_assessment": "Persönlichkeitstest",
+    "really_me": "Wirklich ich",
+    "really_not_me": "Wirklich nicht ich"
+  }
 }

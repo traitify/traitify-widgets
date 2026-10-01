@@ -41,10 +41,10 @@ export default function PersonalityBaseStyles() {
 
   return (
     <div className={style.container}>
-      {showHeaders && <div className={style.sectionHeading}>{translate("headings.personality.styles.overall")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("results.personality.headings.styles.overall")}</div>}
       <div className={style.columns}>
         <div>
-          <div className={style.heading}>{translate("headings.personality.styles.positive")}</div>
+          <div className={style.heading}>{translate("results.personality.headings.styles.positive")}</div>
           <div className={style.styles}>
             {styles.positive.map(({alt, badge, text}) => (
               <div key={text} className={style.style}>
@@ -55,7 +55,7 @@ export default function PersonalityBaseStyles() {
           </div>
         </div>
         <div className={style.negative}>
-          <div className={style.heading}>{translate("headings.personality.styles.negative")}</div>
+          <div className={style.heading}>{translate("results.personality.headings.styles.negative")}</div>
           <div className={style.styles}>
             {styles.negative.map(({alt, badge, text}) => (
               <div key={text} className={style.style}>

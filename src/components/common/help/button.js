@@ -9,7 +9,7 @@ function Button({className = null, onClick}) {
   const buttonClass = [style.trigger, className].filter(Boolean).join(" ");
 
   return (
-    <button className={buttonClass} type="button" onClick={onClick}><Icon alt={translate("help")} icon={faQuestionCircle} /></button>
+    <button className={buttonClass} type="button" onClick={onClick}><Icon alt={translate("common.help")} icon={faQuestionCircle} /></button>
   );
 }
 Button.propTypes = {

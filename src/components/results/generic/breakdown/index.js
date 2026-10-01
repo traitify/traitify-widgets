@@ -40,7 +40,7 @@ export default function GenericBreakdown() {
           <div>{translate("results.generic.breakdown_description")}</div>
         </div>
         <button className={style.toggleAll} onClick={toggleAll} type="button">
-          {translate("show_hide_all")}
+          {translate("common.actions.show_hide_all")}
         </button>
       </div>
       <div className={style.questions}>

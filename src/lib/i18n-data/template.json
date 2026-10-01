@@ -1,0 +1,302 @@
+{
+  "common": {
+    "back": "",
+    "badge": "",
+    "cancel": "",
+    "close": "",
+    "complete": "",
+    "confirm": "",
+    "correct": "",
+    "filter": "",
+    "help": "",
+    "help_modal": {
+      "content_html": "",
+      "error_submitting": "",
+      "heading": "",
+      "input_label": "",
+      "input_placeholder": "",
+      "message_required": "",
+      "submit": "",
+      "submitted": ""
+    },
+    "incorrect": "",
+    "loading": "",
+    "location": "",
+    "next": "",
+    "no": "",
+    "play": "",
+    "question": "",
+    "response": "",
+    "score": "",
+    "search": "",
+    "skip": "",
+    "skipped": "",
+    "sort": "",
+    "submit": "",
+    "title": "",
+    "yes": "",
+    "actions": {
+      "show_more": "",
+      "show_less": "",
+      "show_hide_all": ""
+    }
+  },
+  "results": {
+    "benchmarks": {
+      "chart": {
+        "description": "",
+        "heading": ""
+      },
+      "compare": {
+        "description": "",
+        "heading": ""
+      },
+      "current": "",
+      "level": {
+        "high": "",
+        "low": "",
+        "medium": ""
+      },
+      "search": ""
+    },
+    "careers": {
+      "apply_now": "",
+      "best_match": "",
+      "bright_future": "",
+      "bright_future_html": "",
+      "discover_jobs": "",
+      "education": "",
+      "education_html": "",
+      "education_level": "",
+      "employment_growth": "",
+      "employment_growth_html": "",
+      "experience_level_1": "",
+      "experience_level_2": "",
+      "experience_level_3": "",
+      "experience_level_4": "",
+      "experience_level_5": "",
+      "green_career": "",
+      "green_career_html": "",
+      "learn_more": "",
+      "link_heading": "",
+      "link_heading_third_person": "",
+      "local_salary": "",
+      "match_rate": "",
+      "matches": "",
+      "more_information": "",
+      "no_careers": "",
+      "no_jobs": "",
+      "no_more_careers": "",
+      "salary_mean": "",
+      "salary_mean_html": "",
+      "view_on_onet": ""
+    },
+    "cognitive": {
+      "breakdown": {
+        "description": "",
+        "heading": ""
+      }
+    },
+    "feedback": {
+      "modal_prompt": "",
+      "prompt": "",
+      "thanks": ""
+    },
+    "generic": {
+      "breakdown": "",
+      "breakdown_description": "",
+      "overall_score": ""
+    },
+    "personality": {
+      "archetype": {
+        "description_html": "",
+        "heading": "",
+        "heading_third_person": ""
+      },
+      "base": {
+        "heading": "",
+        "heading_third_person": ""
+      },
+      "blend": {
+        "heading": "",
+        "heading_third_person": ""
+      },
+      "breakdown": {
+        "heading": ""
+      },
+      "details": {
+        "best_work_environments": "",
+        "complements": "",
+        "conflicts": "",
+        "heading": ""
+      },
+      "dimensions": {
+        "description": "",
+        "heading": "",
+        "heading_for_benefits": "",
+        "potential_benefits": "",
+        "room_for_growth_and_change": ""
+      },
+      "headings": {
+        "achieve_html": "",
+        "act_html": "",
+        "appreciate_html": "",
+        "explore_html": "",
+        "styles": {
+          "negative": "",
+          "overall": "",
+          "positive": ""
+        }
+      },
+      "skills": {
+        "heading": "",
+        "headings": {
+          "communication": "",
+          "dealing_with_stress": "",
+          "everyday_adjustments": "",
+          "habits": "",
+          "leading_others": "",
+          "teamwork": "",
+          "working_from_home": ""
+        },
+        "names": {
+          "communication": "",
+          "dealing_with_stress": "",
+          "everyday_adjustments": "",
+          "habits": "",
+          "leading_others": "",
+          "teamwork": "",
+          "working_from_home": ""
+        }
+      },
+      "tips": {
+        "caution_zone": "",
+        "heading": "",
+        "room": "",
+        "settings": "",
+        "settings_third_person": "",
+        "tools": ""
+      },
+      "traits": {
+        "description": "",
+        "heading": ""
+      }
+    },
+    "reports": {
+      "candidate": "",
+      "employee": "",
+      "manager": ""
+    },
+    "thanks": {
+      "heading": "",
+      "learn_more": ""
+    }
+  },
+  "status": {
+    "cognitive_interview": {
+      "heading": ""
+    },
+    "error": "",
+    "heading": "",
+    "interview": {
+      "heading": "",
+      "start": "",
+      "survey": "",
+      "text": ""
+    },
+    "interview_personality": {
+      "heading": ""
+    },
+    "loading": "",
+    "redacted": {
+      "heading": "",
+      "text": ""
+    },
+    "start": "",
+    "text": "",
+    "timeout": "",
+    "try_again": ""
+  },
+  "survey": {
+    "cognitive": {
+      "alert_skip": "",
+      "confirm_retry": "",
+      "confirm_skip": "",
+      "instructions": {
+        "by_id": {
+          "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "",
+          "6f42a946-a936-45f9-9b2b-dbc1ad80b936": ""
+        },
+        "disability_text": "",
+        "step_1_button": "",
+        "step_1_heading": "",
+        "step_1_text": "",
+        "step_2_button": "",
+        "step_2_heading": "",
+        "step_2_text": "",
+        "step_4_button": "",
+        "step_4_heading": "",
+        "step_4_html": "",
+        "trial_step_1_text": "",
+        "trial_step_4_timed_html": "",
+        "trial_step_4_timed_minimal_html": "",
+        "trial_step_4_untimed_html": "",
+        "trial_step_4_untimed_minimal_html": ""
+      },
+      "practice": {
+        "answer_correct": "",
+        "answer_incorrect": "",
+        "heading": "",
+        "step_1_button": "",
+        "step_1_heading": "",
+        "step_1_text": "",
+        "step_2_button": "",
+        "step_2_heading": "",
+        "step_2_text": "",
+        "step_3_button": "",
+        "step_3_heading": "",
+        "step_3_text": ""
+      },
+      "skipped_questions": ""
+    },
+    "cognitive_assessment": "",
+    "external_assessment": "",
+    "generic_assessment": "",
+    "instructions": "",
+    "personality": {
+      "get_started": "",
+      "me": "",
+      "not_me": "",
+      "really_me": "",
+      "really_not_me": "",
+      "slide_error": "",
+      "try_again": ""
+    },
+    "personality_assessment": "",
+    "rjp": {
+      "instructions": {
+        "heading": "",
+        "play": "",
+        "replay": ""
+      },
+      "match": {
+        "continue": "",
+        "opt_out": ""
+      },
+      "modal": {
+        "heading": ""
+      },
+      "questions": {
+        "heading": "",
+        "submit": ""
+      }
+    },
+    "accommodation": {
+      "confirm": "",
+      "request": "",
+      "request_text": "",
+      "submitted": "",
+      "submitted_text": ""
+    }
+  }
+}

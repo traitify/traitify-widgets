@@ -11,7 +11,7 @@ exports[`Slide renders component 1`] = `
       className="question"
     >
       <img
-        alt="cognitive_question_alt_text"
+        alt="common.question"
         src="https://cdn.traitify.com/images/cognitive_tests/10017/q.png"
       />
     </div>
@@ -30,7 +30,7 @@ exports[`Slide renders component 1`] = `
             type="button"
           >
             <img
-              alt="cognitive_response_alt_text"
+              alt="common.response"
               className={null}
               src="https://cdn.traitify.com/images/cognitive_tests/10017/a.png"
             />
@@ -45,7 +45,7 @@ exports[`Slide renders component 1`] = `
             type="button"
           >
             <img
-              alt="cognitive_response_alt_text"
+              alt="common.response"
               className={null}
               src="https://cdn.traitify.com/images/cognitive_tests/10017/o1.png"
             />
@@ -60,7 +60,7 @@ exports[`Slide renders component 1`] = `
             type="button"
           >
             <img
-              alt="cognitive_response_alt_text"
+              alt="common.response"
               className={null}
               src="https://cdn.traitify.com/images/cognitive_tests/10017/o3.png"
             />
@@ -75,7 +75,7 @@ exports[`Slide renders component 1`] = `
             type="button"
           >
             <img
-              alt="cognitive_response_alt_text"
+              alt="common.response"
               className={null}
               src="https://cdn.traitify.com/images/cognitive_tests/10017/o2.png"
             />
@@ -91,7 +91,7 @@ exports[`Slide renders component 1`] = `
         onClick={[Function]}
         type="button"
       >
-        cognitive_skip_button
+        common.skip
       </button>
       <button
         className="traitify--confirm-button btnDisabled"
@@ -99,7 +99,7 @@ exports[`Slide renders component 1`] = `
         onClick={null}
         type="button"
       >
-        cognitive_confirm_button
+        common.confirm
       </button>
     </div>
   </div>

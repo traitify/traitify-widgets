@@ -60,7 +60,7 @@ function FeedbackModal({onClose}) {
       title={feedbackSurvey.title}
     >
       <form className={style.form} id={feedbackSurvey.id} onSubmit={onSubmit}>
-        <span>{translate("feedback.modal_prompt")}</span>
+        <span>{translate("results.feedback.modal_prompt")}</span>
         {feedbackSurvey.questions.map((q) => (
           <Question
             key={q.id}
@@ -72,9 +72,9 @@ function FeedbackModal({onClose}) {
       <hr className={style.grayDivider} />
       <div className={style.footer}>
         <button className={style.cancelBtn} onClick={onClose} type="button">
-          {translate("cancel")}
+          {translate("common.cancel")}
         </button>
-        <button type="submit" className={style.submitBtn} disabled={!valid} form={feedbackSurvey.id}>{translate("submit")}</button>
+        <button type="submit" className={style.submitBtn} disabled={!valid} form={feedbackSurvey.id}>{translate("common.submit")}</button>
       </div>
     </Modal>
   );

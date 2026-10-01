@@ -31,7 +31,7 @@ function CareerDetails({career}) {
       <div className={style.grid}>
         <div className={`${style.detail} ${style.match}`}>
           <div className={style.matchText}>
-            <span className={style.subtitle}>{translate("match_rate")}:</span>
+            <span className={style.subtitle}>{translate("results.careers.match_rate")}:</span>
             {Math.round(career.score)}%
           </div>
           <div className={style.matchRate}>
@@ -39,7 +39,7 @@ function CareerDetails({career}) {
           </div>
         </div>
         <div className={`${style.detail} ${style.experience}`}>
-          <div className={style.subtitle}>{translate("education_level")}:</div>
+          <div className={style.subtitle}>{translate("results.careers.education_level")}:</div>
           <div>
             {[1, 2, 3, 4, 5].map((level) => (
               <div key={level} className={`${style.level} ${career.experience_level.id >= level ? style.active : ""}`} />
@@ -47,9 +47,9 @@ function CareerDetails({career}) {
           </div>
         </div>
         <div className={style.detail}>
-          <div className={style.subtitle}>{translate("education")}:</div>
+          <div className={style.subtitle}>{translate("results.careers.education")}:</div>
           <div className={style.subtitle}>
-            {translate(`experience_level_${career.experience_level.id}`)}
+            {translate(`results.careers.experience_level_${career.experience_level.id}`)}
           </div>
         </div>
         <div className={style.learnMore}>

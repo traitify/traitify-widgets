@@ -51,7 +51,7 @@ export default function PersonalityBaseDetails() {
 
   return (
     <div className={style.container}>
-      {showHeaders && <div className={style.sectionHeading}>{translate("personality_details")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("results.personality.details.heading")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button
@@ -60,13 +60,13 @@ export default function PersonalityBaseDetails() {
             onClick={() => setActiveType(type)}
             type="button"
           >
-            {translate(type.translationKey)}
+            {translate(`results.personality.details.${type.translationKey}`)}
           </button>
         ))}
       </div>
       <select className={style.dropdown} onChange={onChange} value={activeType.translationKey}>
         {types.map(({translationKey: key}) => (
-          <option key={key} value={key}>{translate(key)}</option>
+          <option key={key} value={key}>{translate(`results.personality.details.${key}`)}</option>
         ))}
       </select>
       <div>

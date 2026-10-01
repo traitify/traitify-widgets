@@ -92,7 +92,7 @@ export default function PersonalityArchetypeSkills() {
 
   return (
     <div className={style.container}>
-      {showHeaders && <div className={style.sectionHeading}>{translate("success_skills")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("results.personality.skills.heading")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button
@@ -102,21 +102,21 @@ export default function PersonalityArchetypeSkills() {
             type="button"
           >
             <img
-              alt={translate(`skill_name_for_${type.key}`)}
+              alt={translate(`results.personality.skills.names.${type.key}`)}
               className={style.image}
               src={type.image[activeType.key === type.key ? "active" : "default"]}
             />
-            <div>{translate(`skill_name_for_${type.key}`)}</div>
+            <div>{translate(`results.personality.skills.names.${type.key}`)}</div>
           </button>
         ))}
       </div>
       <select className={style.dropdown} onChange={onChange} value={activeType.key}>
         {types.map(({key}) => (
-          <option key={key} value={key}>{translate(`skill_name_for_${key}`)}</option>
+          <option key={key} value={key}>{translate(`results.personality.skills.names.${key}`)}</option>
         ))}
       </select>
       <div className={style.content}>
-        <div className={style.heading}>{translate(`skill_heading_for_${activeType.key}`)}</div>
+        <div className={style.heading}>{translate(`results.personality.skills.headings.${activeType.key}`)}</div>
         {tips.map((tip) => <div key={tip} className={style.tip}>{tip}</div>)}
       </div>
     </div>

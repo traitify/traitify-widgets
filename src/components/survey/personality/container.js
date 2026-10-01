@@ -67,7 +67,7 @@ function Container({
         {children}
         {allowBack && slideIndex > 0 && (
           <button className={style.back} onClick={back} type="button">
-            <Icon alt={translate("back")} icon={faChevronLeft} />
+            <Icon alt={translate("common.back")} icon={faChevronLeft} />
           </button>
         )}
         {allowFullscreen && (

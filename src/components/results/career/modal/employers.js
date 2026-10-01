@@ -23,7 +23,7 @@ export default function CareerModalEmployers() {
             </div>
             <div>
               <a className={style.applyNowButton} href={employer.url}>
-                {translate("learn_more")}
+                {translate("results.careers.learn_more")}
               </a>
             </div>
           </div>

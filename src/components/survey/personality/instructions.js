@@ -46,7 +46,7 @@ function Instructions({
           </button>
         )}
         <button className={style.btnNext} onClick={onContinue} type="button">
-          {translate("get_started")}
+          {translate("survey.personality.get_started")}
         </button>
       </div>
     </>

@@ -37,11 +37,11 @@ describe("Practice", () => {
     it("finishes", async() => {
       component = await ComponentHandler.setup(Component, {props});
       act(() => selectAnswer({component, index: 3}));
-      act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.practice.step_1_button").props.onClick());
       act(() => selectAnswer({component, index: 3}));
-      act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.practice.step_2_button").props.onClick());
       act(() => selectAnswer({component, index: 3}));
-      act(() => component.findByText("cognitive_practice_step_3_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.practice.step_3_button").props.onClick());
 
       expect(component.tree).toMatchSnapshot();
       expect(props.onFinish).toHaveBeenCalled();
@@ -152,7 +152,7 @@ describe("Practice", () => {
   it("renders question 2", async() => {
     component = await ComponentHandler.setup(Component, {props});
     act(() => selectAnswer({component, index: 2}));
-    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.practice.step_1_button").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
@@ -161,7 +161,7 @@ describe("Practice", () => {
   it("renders question 2 explanation", async() => {
     component = await ComponentHandler.setup(Component, {props});
     act(() => selectAnswer({component, index: 2}));
-    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.practice.step_1_button").props.onClick());
     act(() => selectAnswer({component, index: 2}));
 
     expect(component.tree).toMatchSnapshot();
@@ -171,9 +171,9 @@ describe("Practice", () => {
   it("renders question 3", async() => {
     component = await ComponentHandler.setup(Component, {props});
     act(() => selectAnswer({component, index: 3}));
-    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.practice.step_1_button").props.onClick());
     act(() => selectAnswer({component, index: 3}));
-    act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.practice.step_2_button").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
     expect(props.onFinish).not.toHaveBeenCalled();
@@ -182,9 +182,9 @@ describe("Practice", () => {
   it("renders question 3 explanation", async() => {
     component = await ComponentHandler.setup(Component, {props});
     act(() => selectAnswer({component, index: 3}));
-    act(() => component.findByText("cognitive_practice_step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.practice.step_1_button").props.onClick());
     act(() => selectAnswer({component, index: 3}));
-    act(() => component.findByText("cognitive_practice_step_2_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.practice.step_2_button").props.onClick());
     act(() => selectAnswer({component, index: 3}));
 
     expect(component.tree).toMatchSnapshot();

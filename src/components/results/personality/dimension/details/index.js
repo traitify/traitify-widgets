@@ -21,13 +21,13 @@ function PersonalityDimensionDetails({type}) {
   const personality = {details};
   const benefits = getDetails({name: "Benefits", personality});
   const pitfalls = getDetails({name: "Pitfalls", personality});
-  const benefitsHeader = perspective === "firstPerson" ? translate("dimension_heading_for_benefits", {level, name}) : translate("potential_benefits");
+  const benefitsHeader = perspective === "firstPerson" ? translate("results.personality.dimensions.heading_for_benefits", {level, name}) : translate("results.personality.dimensions.potential_benefits");
   const competency = findCompetency({guide, typeID: id});
 
   return (
     <div className={style.container}>
       <div className={style.header}>
-        <img alt={`${name} ${translate("badge")}`} src={badge.image_medium} />
+        <img alt={`${name} ${translate("common.badge")}`} src={badge.image_medium} />
         {competency && (
           <div className={style.name}>
             {competency.name}<span className={style.divider}> | </span>
@@ -35,7 +35,7 @@ function PersonalityDimensionDetails({type}) {
         )}
         <div className={style.name}>{name}</div>
       </div>
-      {perspective === "firstPerson" && <div className={style.heading}>{translate("dimension_heading", {level, name})}</div>}
+      {perspective === "firstPerson" && <div className={style.heading}>{translate("results.personality.dimensions.heading", {level, name})}</div>}
       <div className={style.p}>{getDetails({name: "short_description", personality, perspective})}</div>
       <div className={style.heading}>{benefitsHeader}</div>
       <div className={style.details}>
@@ -43,7 +43,7 @@ function PersonalityDimensionDetails({type}) {
       </div>
       {!disablePitfalls && (
         <>
-          <div className={style.heading}>{translate("room_for_growth_and_change")}</div>
+          <div className={style.heading}>{translate("results.personality.dimensions.room_for_growth_and_change")}</div>
           <div className={style.details}>
             {pitfalls.map((detail) => <div key={detail}>{detail}</div>)}
           </div>

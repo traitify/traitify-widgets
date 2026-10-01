@@ -43,7 +43,7 @@ function RecommendationChart({combined = false}) {
         {ranks.map(({color, label, rank}) => (
           <div key={rank} className={style.chartLegendContainer}>
             <div className={style.chartLegendColor} style={{background: color}} />
-            <div>{label || translate(`level.${rank}`)}</div>
+            <div>{label || translate(`results.benchmarks.level.${rank}`)}</div>
           </div>
         ))}
       </div>

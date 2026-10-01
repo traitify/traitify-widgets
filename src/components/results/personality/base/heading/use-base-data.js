@@ -19,7 +19,7 @@ export default function useBaseData() {
     };
 
     if(personality.personality_type_1) {
-      data.headingKey = "personality_blend_heading";
+      data.headingKey = "results.personality.blend.heading";
 
       [1, 2].forEach((index) => {
         const type = personality[`personality_type_${index}`];
@@ -28,7 +28,7 @@ export default function useBaseData() {
         if(url) { data.badge[`image_${index}`] = {alt: type.name, url}; }
       });
     } else {
-      data.headingKey = "personality_base_heading";
+      data.headingKey = "results.personality.base.heading";
 
       const url = getDetail({name: "Paradox - Badge", personality});
       if(url) { data.badge = {alt: personality.name, url}; }

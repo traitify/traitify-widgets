@@ -67,7 +67,7 @@ function PersonalityGuide({combined = false}) {
         {hasMore && (
           <div className={style.p}>
             <button className={style.readMore} onClick={() => setShowExpandedIntro(!showExpandedIntro)} type="button">
-              {translate(showExpandedIntro ? "show_less" : "show_more")}
+              {translate(showExpandedIntro ? "common.actions.show_less" : "common.actions.show_more")}
             </button>
           </div>
         )}

@@ -20,7 +20,7 @@ function Job({record}) {
       {record.url && (
         <div>
           <a className={style.applyNowButton} href={record.url} rel="noreferrer" target="_blank">
-            {translate("apply_now")}
+            {translate("results.careers.apply_now")}
           </a>
         </div>
       )}

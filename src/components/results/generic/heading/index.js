@@ -15,14 +15,14 @@ export default function GenericHeading() {
 
   return (
     <div className={style.container}>
-      <div className={style.title}>{translate("results.generic.score")}</div>
+      <div className={style.title}>{translate("common.score")}</div>
       <div className={style.scores}>
         <div className={style.correct}>
-          <div>{translate("results.generic.correct")}:</div>
+          <div>{translate("common.correct")}:</div>
           <div>{results.totalCorrectResponses} / {totalQuestions}</div>
         </div>
         <div className={style.incorrect}>
-          <div>{translate("results.generic.incorrect")}:</div>
+          <div>{translate("common.incorrect")}:</div>
           <div>{results.totalIncorrectResponses} / {totalQuestions}</div>
         </div>
         <div className={style.overall}>

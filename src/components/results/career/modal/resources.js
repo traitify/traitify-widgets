@@ -23,7 +23,7 @@ export default function CareerModalResources() {
             </div>
             <div>
               <a className={style.applyNowButton} href={resource.url}>
-                {translate("learn_more")}
+                {translate("results.careers.learn_more")}
               </a>
             </div>
           </div>

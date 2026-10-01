@@ -49,7 +49,7 @@ export default function PersonalityArchetypeHeading() {
             {video.track && <track kind="captions" src={video.track} />}
           </video>
         ) : (
-          <DangerousHTML html={translate("archetype_description_html")} tag="p" />
+          <DangerousHTML html={translate("results.personality.archetype.description_html")} tag="p" />
         )}
       </div>
     </div>

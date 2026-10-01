@@ -16,10 +16,10 @@ export default function useArchetypeDetails() {
 
     if(perspective === "thirdPerson") {
       details.description = getDetail({name: "Hiring Manager Description", personality});
-      details.headingKey = "personality_heading_third_person";
+      details.headingKey = "results.personality.archetype.heading_third_person";
     } else {
       details.description = getDetail({name: "Candidate Description", personality});
-      details.headingKey = "personality_heading";
+      details.headingKey = "results.personality.archetype.heading";
     }
 
     details.badge.url = getDetail({name: "Paradox - Badge", personality});

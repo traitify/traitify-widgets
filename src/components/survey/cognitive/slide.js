@@ -10,7 +10,7 @@ function Slide({className = "", onSelect, onSkip: _onSkip = null, question, tran
   const onConfirm = () => onSelect({answerId: answerID, timeTaken: Date.now() - startTime});
   const onSkip = () => {
     if(_onSkip) { return _onSkip({timeTaken: Date.now() - startTime}); }
-    if(!window.confirm(translate("cognitive_confirm_skip"))) { return; }
+    if(!window.confirm(translate("survey.cognitive.confirm_skip"))) { return; }
 
     onSelect({skipped: true, timeTaken: Date.now() - startTime});
   };
@@ -25,22 +25,22 @@ function Slide({className = "", onSelect, onSkip: _onSkip = null, question, tran
   return (
     <div className={className}>
       <div className={style.question}>
-        <img key={question.id} alt={translate("cognitive_question_alt_text")} src={question.questionImage.url} />
+        <img key={question.id} alt={translate("common.question")} src={question.questionImage.url} />
       </div>
       <div className={style.choices}>
         <div className={style.choicesContainer}>
           {question.responses.map(({id, image}) => (
             <div key={id} className={style.choice}>
               <button className="traitify--response-button" onClick={() => setAnswerID(id)} type="button">
-                <img alt={translate("cognitive_response_alt_text")} className={answerID === id ? style.selected : null} src={image.url} />
+                <img alt={translate("common.response")} className={answerID === id ? style.selected : null} src={image.url} />
               </button>
             </div>
           ))}
         </div>
       </div>
       <div className={style.buttons}>
-        <button className={style.btnSkip} onClick={onSkip} type="button">{translate("cognitive_skip_button")}</button>
-        <button className={`traitify--confirm-button ${style[answerID ? "btnContinue" : "btnDisabled"]}`} disabled={!answerID} onClick={answerID && onConfirm} type="button">{translate("cognitive_confirm_button")}</button>
+        <button className={style.btnSkip} onClick={onSkip} type="button">{translate("common.skip")}</button>
+        <button className={`traitify--confirm-button ${style[answerID ? "btnContinue" : "btnDisabled"]}`} disabled={!answerID} onClick={answerID && onConfirm} type="button">{translate("common.confirm")}</button>
       </div>
     </div>
   );

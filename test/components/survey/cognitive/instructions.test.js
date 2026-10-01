@@ -83,7 +83,7 @@ describe("Instructions", () => {
 
     it("triggers next", async() => {
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
 
       expect(component.tree).toMatchSnapshot();
     });
@@ -92,10 +92,10 @@ describe("Instructions", () => {
   describe("start", () => {
     it("calls onStart", async() => {
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-      act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
       act(() => component.instance.findByType(Practice).props.onFinish());
-      act(() => component.findByText("cognitive_instructions_step_4_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_4_button").props.onClick());
 
       expect(props.onStart).toHaveBeenCalledWith({disability: false});
     });
@@ -103,11 +103,11 @@ describe("Instructions", () => {
     it("passes disability", async() => {
       props.captureLearningDisability = true;
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-      act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
       act(() => component.instance.findByType(Practice).props.onFinish());
       act(() => component.instance.findByType("input").props.onChange());
-      act(() => component.findByText("cognitive_instructions_step_4_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_4_button").props.onClick());
 
       expect(props.onStart).toHaveBeenCalledWith({disability: true});
     });
@@ -115,10 +115,10 @@ describe("Instructions", () => {
     it("passes initial disability", async() => {
       props.initialLearningDisability = true;
       component = await ComponentHandler.setup(Component, {props});
-      act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-      act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
       act(() => component.instance.findByType(Practice).props.onFinish());
-      act(() => component.findByText("cognitive_instructions_step_4_button").props.onClick());
+      act(() => component.findByText("survey.cognitive.instructions.step_4_button").props.onClick());
 
       expect(props.onStart).toHaveBeenCalledWith({disability: true});
     });
@@ -186,8 +186,8 @@ describe("Instructions", () => {
 
         it("renders step 4", async() => {
           component = await ComponentHandler.setup(Component, {props});
-          act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-          act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+          act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+          act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
           act(() => component.instance.findByType(Practice).props.onFinish());
 
           expect(component.tree).toMatchSnapshot();
@@ -207,8 +207,8 @@ describe("Instructions", () => {
 
         it("renders step 4", async() => {
           component = await ComponentHandler.setup(Component, {props});
-          act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-          act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+          act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+          act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
           act(() => component.instance.findByType(Practice).props.onFinish());
 
           expect(component.tree).toMatchSnapshot();
@@ -288,8 +288,8 @@ describe("Instructions", () => {
     };
 
     component = await ComponentHandler.setup(Component, {props});
-    act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-    act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
     act(() => component.instance.findByType(Practice).props.onFinish());
 
     expect(component.tree).toMatchSnapshot();
@@ -306,8 +306,8 @@ describe("Instructions", () => {
     };
 
     component = await ComponentHandler.setup(Component, {props});
-    act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-    act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
     act(() => component.instance.findByType(Practice).props.onFinish());
 
     expect(component.tree).toMatchSnapshot();
@@ -321,23 +321,23 @@ describe("Instructions", () => {
 
   it("renders step 2", async() => {
     component = await ComponentHandler.setup(Component, {props});
-    act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders step 3", async() => {
     component = await ComponentHandler.setup(Component, {props});
-    act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-    act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
 
     expect(component.tree).toMatchSnapshot();
   });
 
   it("renders step 4", async() => {
     component = await ComponentHandler.setup(Component, {props});
-    act(() => component.findByText("cognitive_instructions_step_1_button").props.onClick());
-    act(() => component.findByText("cognitive_instructions_step_2_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_1_button").props.onClick());
+    act(() => component.findByText("survey.cognitive.instructions.step_2_button").props.onClick());
     act(() => component.instance.findByType(Practice).props.onFinish());
 
     expect(component.tree).toMatchSnapshot();

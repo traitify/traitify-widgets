@@ -23,7 +23,7 @@ describe("useI18n", () => {
   it("translates", async() => {
     await ComponentHandler.setup(Component);
 
-    expect(value.current.translate("en-us", "tip_type_for_tools")).toEqual("Tools To Use");
+    expect(value.current.translate("en-us", "results.personality.tips.tools")).toEqual("Tools To Use");
     expect(value.current.translate("en-us", "results.reports.candidate")).toEqual("Candidate Report");
     expect(value.current.translate("en-us", "results.reports.manager")).toEqual("Hiring Manager Report");
   });
@@ -32,17 +32,17 @@ describe("useI18n", () => {
     mockTranslations({
       "en-us": {
         results: {
+          personality: {tips: {tools: "Tools for Tots"}},
           reports: {
             candidate: "Candidate",
             employee: "Unemployed Report"
           }
-        },
-        tip_type_for_tools: "Tools for Tots"
+        }
       }
     });
     await ComponentHandler.setup(Component);
 
-    expect(value.current.translate("en-us", "tip_type_for_tools")).toEqual("Tools for Tots");
+    expect(value.current.translate("en-us", "results.personality.tips.tools")).toEqual("Tools for Tots");
     expect(value.current.translate("en-us", "results.reports.manager")).toEqual("Hiring Manager Report");
   });
 });

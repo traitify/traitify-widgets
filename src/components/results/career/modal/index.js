@@ -58,7 +58,7 @@ export default function CareerModal() {
           <div className={style.header}>
             <div>Career Details</div>
             <div>
-              <Icon aria-label={translate("close")} className={style.close} icon={faTimes} onClick={() => setShow(false)} tabIndex="-1" />
+              <Icon aria-label={translate("common.close")} className={style.close} icon={faTimes} onClick={() => setShow(false)} tabIndex="-1" />
             </div>
           </div>
           <hr className={style.grayDivider} />

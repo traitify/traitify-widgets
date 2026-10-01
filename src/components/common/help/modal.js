@@ -45,7 +45,7 @@ function Modal({show, setShow}) {
     if(submitting.current) { return; }
     if(submitted) { return; }
     if(!message) {
-      setError(translate("help_modal.message_required"));
+      setError(translate("common.help_modal.message_required"));
       return;
     }
 
@@ -92,11 +92,11 @@ function Modal({show, setShow}) {
       submitting.current = false;
     } else {
       console.warn("help-feedback", response); // eslint-disable-line no-console
-      setError(translate("help_modal.error_submitting"));
+      setError(translate("common.help_modal.error_submitting"));
       submitting.current = false;
     }
   };
-  const heading = translate("help_modal.heading");
+  const heading = translate("common.help_modal.heading");
   const title = (
     <div className={style.title}>
       <Icon alt={heading} icon={faQuestionCircle} /> {heading}
@@ -107,25 +107,25 @@ function Modal({show, setShow}) {
     <BaseModal onClose={onClose} size="md" title={title}>
       <form className={style.content} onSubmit={onSubmit}>
         {error && <div className={style.error}>{error}</div>}
-        {submitted && <div className={style.submitted}>{translate("help_modal.submitted")}</div>}
+        {submitted && <div className={style.submitted}>{translate("common.help_modal.submitted")}</div>}
         {(error || submitted) && <Divider className={style.divider} />}
         <label htmlFor="traitify-help-message">
-          {translate("help_modal.input_label")}
+          {translate("common.help_modal.input_label")}
           <Input
             className={style.input}
             id="traitify-help-message"
             onChange={onChange}
-            placeholder={translate("help_modal.input_placeholder")}
+            placeholder={translate("common.help_modal.input_placeholder")}
             required={true}
             type="textarea"
             value={message}
           />
         </label>
-        <DangerousHTML className="traitify--markdown" html={translate("help_modal.content_html", {url: "https://www.traitify.com/ethical-assessments"})} />
+        <DangerousHTML className="traitify--markdown" html={translate("common.help_modal.content_html", {url: "https://www.traitify.com/ethical-assessments"})} />
         <Divider className={style.divider} />
         <div className={style.buttons}>
-          <button className={style.cancel} onClick={onClose} type="button">{translate("cancel")}</button>
-          <button className={[style.submit, disabled ? style.disabled : ""].join(" ")} disabled={disabled} onClick={onSubmit} type="submit">{translate("help_modal.submit")}</button>
+          <button className={style.cancel} onClick={onClose} type="button">{translate("common.cancel")}</button>
+          <button className={[style.submit, disabled ? style.disabled : ""].join(" ")} disabled={disabled} onClick={onSubmit} type="submit">{translate("common.help_modal.submit")}</button>
         </div>
       </form>
     </BaseModal>

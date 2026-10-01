@@ -25,7 +25,7 @@ function Question({index, open, question, toggleOpen}) {
           ? <Icon alt="Checked" className={style.correct} icon={faCheck} />
           : <Icon alt="X Mark" className={style.incorrect} icon={faXmark} />}
         <div className={style.wrapper}>
-          <div>{translate("cognitive_question_alt_text")} {index + 1}</div>
+          <div>{translate("common.question")} {index + 1}</div>
           <button onClick={toggleOpen} className={style.toggle} type="button">
             <Icon alt="Expand" icon={open ? faChevronUp : faChevronDown} />
           </button>

@@ -153,7 +153,7 @@ export default function PersonalitySurvey() {
       <Container {...props} caption={error}>
         <div className={style.error}>
           <button className={style.link} onClick={retry} type="button">
-            {translate("try_again")}
+            {translate("survey.personality.try_again")}
           </button>
         </div>
       </Container>
@@ -162,7 +162,7 @@ export default function PersonalitySurvey() {
 
   if(showInstructions) {
     return (
-      <Container {...props} caption={translate("instructions")}>
+      <Container {...props} caption={translate("survey.instructions")}>
         <div className={[style.instructions, style.slide, style.middle].join(" ")}>
           <Instructions
             instructionsText={instructionsText}
@@ -177,7 +177,7 @@ export default function PersonalitySurvey() {
 
   if(!ready || finished) {
     return (
-      <Container {...props} caption={translate("loading")}>
+      <Container {...props} caption={translate("common.loading")}>
         <div className={style.loading}><Loading /></div>
       </Container>
     );

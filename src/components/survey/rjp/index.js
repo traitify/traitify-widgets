@@ -153,8 +153,8 @@ export default function RJP() {
       <Markdown className={style.text}>{assessment.instructions}</Markdown>
       {video && (
         <button className={style.play} onClick={onPlay} ref={playTile} type="button">
-          <img alt={translate("play")} src={urlFrom(video.thumbnailUrl)} />
-          <Icon alt={translate("play")} icon={showQuestions ? faReplay : faPlay} />
+          <img alt={translate("common.play")} src={urlFrom(video.thumbnailUrl)} />
+          <Icon alt={translate("common.play")} icon={showQuestions ? faReplay : faPlay} />
         </button>
       )}
       {(allowSkip || video) && (
@@ -241,7 +241,7 @@ export default function RJP() {
                 onClick={answered ? onSubmit : null}
                 type="button"
               >
-                {submitting.current ? translate("loading") : translate("survey.rjp.questions.submit")}
+                {submitting.current ? translate("common.loading") : translate("survey.rjp.questions.submit")}
               </button>
             </div>
           )}

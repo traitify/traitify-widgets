@@ -19,7 +19,7 @@ exports[`Results.Cognitive renders component 1`] = `
     <div
       dangerouslySetInnerHTML={
         {
-          "__html": "To learn more about the assessment you just took, please visit <a href="https://www.traitify.com">Traitify.com</a>.",
+          "__html": "To learn more about the assessment you just took, please visit <a href="https://www.traitify.com" target="_blank" title="Traitify">Traitify.com</a>.",
         }
       }
     />

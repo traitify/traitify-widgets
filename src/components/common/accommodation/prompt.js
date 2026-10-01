@@ -12,7 +12,7 @@ function Prompt({onBack}) {
       <div className={style.text}>{translate("survey.accommodation.request_text")}</div>
       <div className={style.btnGroup}>
         <button className={style.btnBack} onClick={onBack} type="button">
-          {translate("back")}
+          {translate("common.back")}
         </button>
         <button className={style.btnTheme} onClick={onSkip} type="button">
           {translate("survey.accommodation.confirm")}

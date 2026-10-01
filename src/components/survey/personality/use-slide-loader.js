@@ -180,7 +180,7 @@ export default function useSlideLoader({likert, textSurvey: _textSurvey, transla
   useEffect(() => {
     if(imageLoadingAttempts <= maxRetries) { return; }
 
-    dispatch({error: translate("slide_error"), type: "error"});
+    dispatch({error: translate("survey.personality.slide_error"), type: "error"});
   }, [imageLoadingAttempts]);
 
   return {error, dispatch, ready, slideIndex, slides};

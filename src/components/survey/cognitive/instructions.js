@@ -98,7 +98,7 @@ function Instructions({
         {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
         {captureLearningDisability && (
           <label htmlFor="traitify-disability">
-            {translate("cognitive_instructions_disability_text")}
+            {translate("survey.cognitive.instructions.disability_text")}
             <input checked={disability} id="traitify-disability" name="disability" onChange={() => setDisability(!disability)} type="checkbox" />
           </label>
         )}

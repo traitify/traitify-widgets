@@ -12,7 +12,7 @@ import style from "./style.scss";
 
 export default function PersonalityTypeChart() {
   const [activeType, setActiveType] = useState(null);
-  const disabled = useDisabledComponent("PersonalityTypes");
+  const disabled = useDisabledComponent("Results.Personality.Type.Chart", "PersonalityTypes");
   const perspective = useOption("perspective");
   const results = useResults({surveyType: "personality"});
   const showHeaders = useOption("showHeaders");
@@ -20,6 +20,7 @@ export default function PersonalityTypeChart() {
   const translate = useTranslate();
 
   useComponentEvents("PersonalityTypeChart");
+  useComponentEvents({component: "Results.Personality.Type.Chart"});
   useEffect(() => {
     const data = (dig(results, "personality_types") || [])
       .map(({personality_type: type, score}) => ({...type, score}));

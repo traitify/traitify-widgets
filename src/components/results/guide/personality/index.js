@@ -16,13 +16,15 @@ function PersonalityGuide({combined = false}) {
   const [activeCompetency, setActiveCompetency] = useState(null);
   const benchmark = useBenchmark();
   const [data, setData] = useState([]);
-  const disabled = useDisabledComponent("Guide", "PersonalityGuide");
+  const disabled = useDisabledComponent("Results.Guide.Personality", "Guide", "PersonalityGuide");
   const guide = useGuide();
   const results = useResults({surveyType: "personality"});
   const [showExpandedIntro, setShowExpandedIntro] = useState(false);
   const translate = useTranslate();
 
-  useComponentEvents("PersonalityGuide", {activeCompetency});
+  const context = {activeCompetency};
+  useComponentEvents("PersonalityGuide", context);
+  useComponentEvents({component: "Results.Guide.Personality", context});
   useEffect(() => {
     const competencies = dig(guide, "personality", "competencies") || [];
     const types = dig(results, "personality_types") || [];

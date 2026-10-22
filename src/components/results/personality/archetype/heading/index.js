@@ -10,10 +10,12 @@ import useArchetypeDetails from "./use-archetype-details";
 export default function PersonalityArchetypeHeading() {
   const deck = useDeck();
   const details = useArchetypeDetails();
-  const disabled = useDisabledComponent("PersonalityArchetype");
+  const disabled = useDisabledComponent("Results.Personality.Archetype.Heading", "PersonalityArchetype");
+  const disableVideo = useDisabledComponent("Results.Personality.Archetype.Heading.Video");
   const translate = useTranslate();
 
   useComponentEvents("PersonalityArchetype");
+  useComponentEvents({component: "Results.Personality.Archetype.Heading"});
 
   if(disabled) { return null; }
   if(!deck) { return null; }
@@ -43,7 +45,7 @@ export default function PersonalityArchetypeHeading() {
         {description && <div className={style.p}>{description}</div>}
       </div>
       <div className={style.meaning}>
-        {video.url ? (
+        {!disableVideo && video.url ? (
           <video controls={true} crossOrigin="anonymous" disablePictureInPicture={true} playsInline={true} poster={video.thumbnail}>
             <source src={video.url} type="video/mp4" />
             {video.track && <track kind="captions" src={video.track} />}

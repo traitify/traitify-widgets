@@ -4,7 +4,7 @@ import useDisabledComponent from "lib/hooks/use-disabled-component";
 import Crosschq from "./crosschq";
 
 export default function External() {
-  const disabled = useDisabledComponent("ExternalResults");
+  const disabled = useDisabledComponent("Results.External", "ExternalResults");
   const allAssessments = useAssessments() || [];
   const assessments = allAssessments
     .filter(({completed}) => completed)
@@ -12,6 +12,7 @@ export default function External() {
     .filter(({vendor}) => vendor === "crosschq");
 
   useComponentEvents("ExternalResults");
+  useComponentEvents({component: "Results.External"});
 
   if(disabled) { return null; }
   if(assessments.length === 0) { return null; }

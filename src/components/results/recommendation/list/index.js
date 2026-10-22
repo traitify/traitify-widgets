@@ -13,14 +13,16 @@ import style from "./style.scss";
 export default function RecommendationList() {
   const [benchmarkID, setBenchmarkID] = useRecoilState(benchmarkIDState);
   const benchmarkTag = useBenchmarkTag();
-  const disabled = useDisabledComponent("RecommendationList");
-  const disabledScore = useDisabledComponent("RecommendationScore");
+  const disabled = useDisabledComponent("Results.Recommendation.List", "RecommendationList");
+  const disabledScore = useDisabledComponent("Results.Recommendation.List.Score", "RecommendationScore");
   const recommendation = useRecommendation();
   const recommendations = useRecommendations();
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
 
-  useComponentEvents("RecommendationList", {benchmarkID, benchmarkTag, recommendation, recommendations});
+  const context = {benchmarkID, benchmarkTag, recommendation, recommendations};
+  useComponentEvents("RecommendationList", context);
+  useComponentEvents({component: "Results.Recommendation.List", context});
 
   if(disabled) { return null; }
   if(!recommendation) { return null; }

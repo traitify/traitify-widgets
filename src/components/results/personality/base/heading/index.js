@@ -19,11 +19,13 @@ export default function PersonalityBaseHeading() {
     deckID?.includes("career") && link
   ), [dig(assessment, "deck_id"), useOption("careersLink")]);
   const data = useBaseData();
-  const disabled = useDisabledComponent("PersonalityHeading");
+  const disabled = useDisabledComponent("Results.Personality.Base.Heading", "PersonalityHeading");
   const personality = usePersonality();
   const translate = useTranslate();
 
-  useComponentEvents("PersonalityBaseHeading", {personality});
+  const context = {personality};
+  useComponentEvents("PersonalityBaseHeading", context);
+  useComponentEvents({component: "Results.Personality.Base.Heading", context});
 
   if(disabled) { return null; }
   if(!data) { return null; }

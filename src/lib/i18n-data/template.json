@@ -1,5 +1,10 @@
 {
   "common": {
+    "actions": {
+      "show_hide_all": "",
+      "show_less": "",
+      "show_more": ""
+    },
     "back": "",
     "badge": "",
     "cancel": "",
@@ -34,12 +39,7 @@
     "sort": "",
     "submit": "",
     "title": "",
-    "yes": "",
-    "actions": {
-      "show_more": "",
-      "show_less": "",
-      "show_hide_all": ""
-    }
+    "yes": ""
   },
   "results": {
     "benchmarks": {
@@ -187,6 +187,10 @@
       "employee": "",
       "manager": ""
     },
+    "rjp": {
+      "content": "",
+      "heading": ""
+    },
     "thanks": {
       "heading": "",
       "learn_more": ""
@@ -218,6 +222,13 @@
     "try_again": ""
   },
   "survey": {
+    "accommodation": {
+      "confirm": "",
+      "request": "",
+      "request_text": "",
+      "submitted": "",
+      "submitted_text": ""
+    },
     "cognitive": {
       "alert_skip": "",
       "confirm_retry": "",
@@ -263,16 +274,16 @@
     "external_assessment": "",
     "generic_assessment": "",
     "instructions": "",
+    "me": "",
+    "not_me": "",
     "personality": {
       "get_started": "",
-      "me": "",
-      "not_me": "",
-      "really_me": "",
-      "really_not_me": "",
       "slide_error": "",
       "try_again": ""
     },
     "personality_assessment": "",
+    "really_me": "",
+    "really_not_me": "",
     "rjp": {
       "instructions": {
         "heading": "",
@@ -290,13 +301,6 @@
         "heading": "",
         "submit": ""
       }
-    },
-    "accommodation": {
-      "confirm": "",
-      "request": "",
-      "request_text": "",
-      "submitted": "",
-      "submitted_text": ""
     }
   }
 }

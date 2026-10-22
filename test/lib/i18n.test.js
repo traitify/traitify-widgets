@@ -42,8 +42,15 @@ describe("I18n", () => {
         name: "Spanish"
       });
 
-      expect(i18n.data["es-us"].me).toBe("Yo quiero");
+      expect(i18n.data["es-us"].survey.me).toBe("Yo quiero");
       expect(i18n.data["es-us"].tacos).toBe("Yo quiero tacos");
+    });
+
+    it("remaps legacy keys to their current paths", () => {
+      i18n.addTranslations("es-US", {data: {back: "Atrás", personality_heading: "Tipo"}});
+
+      expect(i18n.data["es-us"].common.back).toBe("Atrás");
+      expect(i18n.data["es-us"].results.personality.archetype.heading).toBe("Tipo");
     });
   });
 

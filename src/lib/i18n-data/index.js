@@ -3,6 +3,7 @@ import deDE from "./de-de.json";
 import enGB from "./en-gb.json";
 import enUS from "./en-us.json";
 import esEC from "./es-ec.json";
+import esES from "./es-es.json";
 import esPR from "./es-pr.json";
 import esUS from "./es-us.json";
 import frCA from "./fr-ca.json";
@@ -31,6 +32,7 @@ export default {
   "en-gb": {data: enGB, name: "English (GB)"},
   "en-us": {data: enUS, name: "English (US)"},
   "es-ec": {data: esEC, name: "Spanish (Ecuador)"},
+  "es-es": {data: esES, name: "Spanish (Spain)"},
   "es-pr": {data: esPR, name: "Spanish (Puerto Rico)"},
   "es-us": {data: esUS, name: "Spanish"},
   "fr-ca": {data: frCA, name: "French (Canadian)"},

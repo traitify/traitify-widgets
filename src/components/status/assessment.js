@@ -20,11 +20,11 @@ function Button({assessment}) {
   const translate = useTranslate();
 
   if(assessment.completed) {
-    return <button disabled={true} type="button">{translate("complete")}</button>;
+    return <button disabled={true} type="button">{translate("common.complete")}</button>;
   }
 
   if(assessment.skipped) {
-    return <button disabled={true} type="button">{translate("skipped")}</button>;
+    return <button disabled={true} type="button">{translate("common.skipped")}</button>;
   }
 
   const start = () => {
@@ -39,7 +39,7 @@ function Button({assessment}) {
   }
 
   if(assessment.loading) {
-    return <button disabled={true} type="button">{translate("loading")}</button>;
+    return <button disabled={true} type="button">{translate("common.loading")}</button>;
   }
 
   return <button onClick={start} type="button">{statusTranslate("start")}</button>;

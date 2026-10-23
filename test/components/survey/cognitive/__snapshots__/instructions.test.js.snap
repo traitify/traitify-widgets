@@ -138,19 +138,19 @@ exports[`Instructions renders custom examples 5`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_4_heading
+        survey.cognitive.instructions.step_4_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_id_specific_instructions.xyz
+        survey.cognitive.instructions.by_id.xyz
       </p>
       <button
         className="traitify--response-button btnBlue"
         onClick={[Function]}
         type="button"
       >
-        cognitive_instructions_step_4_button
+        survey.cognitive.instructions.step_4_button
       </button>
     </div>
   </div>
@@ -264,12 +264,12 @@ exports[`Instructions renders step 1 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -279,7 +279,7 @@ exports[`Instructions renders step 1 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -298,12 +298,12 @@ exports[`Instructions renders step 2 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_2_heading
+        survey.cognitive.instructions.step_2_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_2_text
+        survey.cognitive.instructions.step_2_text
       </p>
       <video
         autoPlay={true}
@@ -326,7 +326,7 @@ exports[`Instructions renders step 2 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_2_button
+          survey.cognitive.instructions.step_2_button
         </button>
       </div>
     </div>
@@ -357,19 +357,19 @@ exports[`Instructions renders step 4 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_4_heading
+        survey.cognitive.instructions.step_4_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_id_specific_instructions.xyz
+        survey.cognitive.instructions.by_id.xyz
       </p>
       <button
         className="traitify--response-button btnBlue"
         onClick={[Function]}
         type="button"
       >
-        cognitive_instructions_step_4_button
+        survey.cognitive.instructions.step_4_button
       </button>
     </div>
   </div>
@@ -428,12 +428,12 @@ exports[`Instructions skip assessment accommodation renders back action 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -450,7 +450,7 @@ exports[`Instructions skip assessment accommodation renders back action 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -469,12 +469,12 @@ exports[`Instructions skip assessment accommodation renders instructions 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -491,7 +491,7 @@ exports[`Instructions skip assessment accommodation renders instructions 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -510,12 +510,12 @@ exports[`Instructions skip assessment accommodation triggers next 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_2_heading
+        survey.cognitive.instructions.step_2_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_2_text
+        survey.cognitive.instructions.step_2_text
       </p>
       <video
         autoPlay={true}
@@ -538,7 +538,7 @@ exports[`Instructions skip assessment accommodation triggers next 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_2_button
+          survey.cognitive.instructions.step_2_button
         </button>
       </div>
     </div>
@@ -557,12 +557,12 @@ exports[`Instructions time trial default timed renders step 1 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_trial_step_1_text
+        survey.cognitive.instructions.trial_step_1_text
       </p>
       <div
         className="btnGroup"
@@ -572,7 +572,7 @@ exports[`Instructions time trial default timed renders step 1 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -591,19 +591,19 @@ exports[`Instructions time trial default timed renders step 4 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_4_heading
+        survey.cognitive.instructions.step_4_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_trial_step_4_timed_html
+        survey.cognitive.instructions.trial_step_4_timed_html
       </p>
       <button
         className="traitify--response-button btnBlue"
         onClick={[Function]}
         type="button"
       >
-        cognitive_instructions_step_4_button
+        survey.cognitive.instructions.step_4_button
       </button>
     </div>
   </div>
@@ -621,12 +621,12 @@ exports[`Instructions time trial default untimed renders step 1 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_trial_step_1_text
+        survey.cognitive.instructions.trial_step_1_text
       </p>
       <div
         className="btnGroup"
@@ -636,7 +636,7 @@ exports[`Instructions time trial default untimed renders step 1 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -655,19 +655,19 @@ exports[`Instructions time trial default untimed renders step 4 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_4_heading
+        survey.cognitive.instructions.step_4_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_trial_step_4_untimed_html
+        survey.cognitive.instructions.trial_step_4_untimed_html
       </p>
       <button
         className="traitify--response-button btnBlue"
         onClick={[Function]}
         type="button"
       >
-        cognitive_instructions_step_4_button
+        survey.cognitive.instructions.step_4_button
       </button>
     </div>
   </div>
@@ -685,19 +685,19 @@ exports[`Instructions time trial minimal timed renders step 4 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_4_heading
+        survey.cognitive.instructions.step_4_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_trial_step_4_timed_minimal_html
+        survey.cognitive.instructions.trial_step_4_timed_minimal_html
       </p>
       <button
         className="traitify--response-button btnBlue"
         onClick={[Function]}
         type="button"
       >
-        cognitive_instructions_step_4_button
+        survey.cognitive.instructions.step_4_button
       </button>
     </div>
   </div>
@@ -715,19 +715,19 @@ exports[`Instructions time trial minimal untimed renders step 4 1`] = `
       className="content"
     >
       <h2>
-        cognitive_instructions_step_4_heading
+        survey.cognitive.instructions.step_4_heading
       </h2>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_trial_step_4_untimed_minimal_html
+        survey.cognitive.instructions.trial_step_4_untimed_minimal_html
       </p>
       <button
         className="traitify--response-button btnBlue"
         onClick={[Function]}
         type="button"
       >
-        cognitive_instructions_step_4_button
+        survey.cognitive.instructions.step_4_button
       </button>
     </div>
   </div>
@@ -745,12 +745,12 @@ exports[`Instructions videos horizontal renders component 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -760,7 +760,7 @@ exports[`Instructions videos horizontal renders component 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -779,12 +779,12 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -794,7 +794,7 @@ exports[`Instructions videos horizontal updates to vertical 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -813,12 +813,12 @@ exports[`Instructions videos vertical renders component 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -828,7 +828,7 @@ exports[`Instructions videos vertical renders component 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>
@@ -847,12 +847,12 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
       className="content"
     >
       <h1>
-        cognitive_instructions_step_1_heading
+        survey.cognitive.instructions.step_1_heading
       </h1>
       <p
         className="text traitify--markdown"
       >
-        cognitive_instructions_step_1_text
+        survey.cognitive.instructions.step_1_text
       </p>
       <div
         className="btnGroup"
@@ -862,7 +862,7 @@ exports[`Instructions videos vertical updates to horizontal 1`] = `
           onClick={[Function]}
           type="button"
         >
-          cognitive_instructions_step_1_button
+          survey.cognitive.instructions.step_1_button
         </button>
       </div>
     </div>

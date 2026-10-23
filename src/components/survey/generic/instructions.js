@@ -23,7 +23,7 @@ function Instructions({assessment, onClose}) {
   }
 
   return (
-    <Modal onClose={onClose} size="md" title={translate("instructions")}>
+    <Modal onClose={onClose} size="md" title={translate("survey.instructions")}>
       <Markdown>{assessment.survey.instructions}</Markdown>
       <Divider />
       <div className={style.btnGroup}>

@@ -13,8 +13,8 @@ export default function RJP() {
 
   return (
     <div className={style.container}>
-      <div className={style.h1}>{translate("rjp.results.heading") || "You've successfully completed the preview!"}</div>
-      <div className={style.p}>{translate("rjp.results.content") || "Thank you for completing the realistic job preview. I hope this gave you insight on what this job may be like."}</div>
+      <div className={style.h1}>{translate("results.rjp.heading")}</div>
+      <div className={style.p}>{translate("results.rjp.content")}</div>
     </div>
   );
 }

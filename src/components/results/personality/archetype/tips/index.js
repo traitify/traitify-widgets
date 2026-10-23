@@ -61,7 +61,7 @@ export default function PersonalityArchetypeTips() {
 
   return (
     <div className={style.container}>
-      {showHeaders && <div className={style.sectionHeading}>{translate("personality_tips")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("results.personality.tips.heading")}</div>}
       <div className={style.tabs}>
         {types.map((type) => (
           <button
@@ -70,13 +70,13 @@ export default function PersonalityArchetypeTips() {
             onClick={() => setActiveType(type)}
             type="button"
           >
-            {translate(`tip_type_for_${type.translationKey}`)}
+            {translate(`results.personality.tips.${type.translationKey}`)}
           </button>
         ))}
       </div>
       <select className={style.dropdown} onChange={onChange} value={activeType.translationKey}>
         {types.map(({translationKey: key}) => (
-          <option key={key} value={key}>{translate(`tip_type_for_${key}`)}</option>
+          <option key={key} value={key}>{translate(`results.personality.tips.${key}`)}</option>
         ))}
       </select>
       <div className={style.content}>

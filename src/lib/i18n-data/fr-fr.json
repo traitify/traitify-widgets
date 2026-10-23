@@ -1,176 +1,94 @@
 {
-  "acceptable": "Acceptable",
-  "apply_now": "Appliquer maintenant",
-  "archetype_description_html": "Cette évaluation vous aide à comprendre les composantes de votre personnalité. De la même façon que le corps humain est composé de différents systèmes, notre personnalité se compose de différents aspects d’importance égale, ou du moins pouvons-nous l’envisager ainsi.<br /><br />Bien que nous puissions agir et réagir légèrement différemment selon les jours ou les situations, nos cinq dimensions fondamentales sont généralement plus ou moins développées. Ces cinq dimensions définissent qui nous sommes, de la même façon que les parties de notre corps travaillent de concert pour notre équilibre.",
-  "back": "Retour",
-  "badge": "Badge",
-  "best_match": "Meilleure correspondance",
-  "best_work_environments": "Environnement de travail favorable",
-  "bright_future": "Brillant avenir",
-  "bright_future_html": "Ces professions devraient connaître une croissance rapide au cours des prochaines années, présenteront un grand nombre de débouchés ou occuperont des postes nouveaux et émergents. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "cancel": "Annuler",
-  "career_information": "Information sur les carrières",
-  "career_matches": "Correspondances de carrière",
-  "careers_link_heading": "Consultez vos recommandations de carrière personnalisées",
-  "careers_link_heading_third_person": "Afficher leurs recommandations de carrière personnalisées",
-  "close": "Fermer",
-  "cognitive_alert_skip": "Vous ne pouvez pas sauter ces questions",
-  "cognitive_confirm_button": "Confirmer",
-  "cognitive_confirm_retry": "Voulez-vous essayer les questions que vous avez sautées?",
-  "cognitive_confirm_skip": "Etes-vous sur de sauter?",
-  "cognitive_id_specific_instructions": {
-    "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 28 questions dans cet exercice. Prenez tout votre temps de les compléter. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>",
-    "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 31 questions dans cet exercice. Prenez tout votre temps de les compléter. La plupart de participants va terminer dans environ 15 minutes. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>"
+  "common": {
+    "actions": {
+      "show_hide_all": "Tout afficher / Tout masquer",
+      "show_less": "En Savoir Moins",
+      "show_more": "En Savoir Plus"
+    },
+    "back": "Retour",
+    "badge": "Badge",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "complete": "Terminé",
+    "confirm": "Confirmer",
+    "correct": "Correct",
+    "filter": "Filtrer",
+    "help": "Aidez-moi",
+    "help_modal": {
+      "content_html": "Regarder les autres informations sur nos <a href=\"%{url}\" target=\"_blank\">Evaluations</a>.",
+      "error_submitting": "Erreur avec la soumission du message",
+      "heading": "Aider",
+      "input_label": "Comment est-ce que nous pouvons vous aider?",
+      "input_placeholder": "Ecrire une réponse...",
+      "message_required": "Ecrire un message s'il vous-plaît",
+      "submit": "Envoyer",
+      "submitted": "Message soumis"
+    },
+    "incorrect": "Incorrect",
+    "loading": "Chargement",
+    "location": "Lieu",
+    "next": "Suivant",
+    "no": "Non",
+    "question": "Question",
+    "response": "Réponse",
+    "score": "Résultat",
+    "search": "Chercher",
+    "skip": "Sauter",
+    "skipped": "Ignorée",
+    "sort": "Trier",
+    "submit": "Soumettre",
+    "title": "Titre",
+    "yes": "Oui"
   },
-  "cognitive_instructions_disability_text": "Selectionnez s'il vous plait si vous avez des difficultés d'apprentissage.",
-  "cognitive_instructions_step_1_button": "Voir un exemple",
-  "cognitive_instructions_step_1_heading": "Instructions",
-  "cognitive_instructions_step_1_text": "Nous voudrions que vous déterminiez les liens entre des formes différentes.\n\nVous verrez une grille qui manque une forme sur chaque écran. Le symbole '?' représente la forme manquante. Il y a quatre formes en dessous de la grille. Une de ces formes remplace le '?' pour remplir la grille.\n\nChoisissez la forme en dessous de chaque grille qui la remplir dès que l'exercice commence. Ensuite, cliquez 'Confirmer' pour continuer à la prochaine question. Vous pouvez également sauter la question en cliquant 'Sauter.' Quand vous êtes prêt, cliquez 'Voir un exemple' pour voir un exemple.",
-  "cognitive_instructions_step_2_button": "Commencer la pratique",
-  "cognitive_instructions_step_2_heading": "Voici un exemple",
-  "cognitive_instructions_step_2_text": "Dans cette grille il y a un triangle, un pentagone et une flèche dans chaque rangée et colonne. Il y a une forme noire, une forme bleue, et une forme blanche. Les formes sont dans la même position. La forme qui remplit la grille est alors en bas et à gauche.",
-  "cognitive_instructions_step_4_button": "Commencer",
-  "cognitive_instructions_step_4_heading": "Avant de commencer...",
-  "cognitive_instructions_step_4_html": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 20 questions dans cet exercice. Prenez tout votre temps de les compléter.</li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>",
-  "cognitive_instructions_trial_step_1_text": "Vous verrez une grille qui manque une forme sur chaque écran. Le symbole '?' représente la forme manquante. Il y a quatre formes en dessous de la grille. Une de ces formes remplace le '?' pour remplir la grille.\n\nChoisissez la forme en dessous de chaque grille qui la remplir dès que l'exercice commence. Ensuite, cliquez \"Confirmer\" pour continuer à la prochaine question. Vous pouvez également sauter la question en cliquant 'Sauter.' Quand vous êtes prêt, cliquez 'Voir un exemple' pour voir un exemple.",
-  "cognitive_instructions_trial_step_4_timed_html": "<ul><li><i><b>Vous verrez deux séries de questions, chacune avec 20 questions.</b> Vous aurez 5 minutes de compléter le plus de questions possible dans la première série. Il n'y a pas de limite de temps pour la deuxième série. Vous pourrez prendre tout votre temps.</i></li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait les deux exercices en une seule séance.</li></ul><p>Maintenant il est temps pour la première exercice...</p><p>N'oubliez pas que vous n'avez que 5 minutes de compléter autant de questions que vous pouvez.</p>",
-  "cognitive_instructions_trial_step_4_timed_minimal_html": "<p>Maintenant il est temps pour la prochaine exercice...</p><p> N'oubliez pas que vous n'avez que 5 minutes de compléter autant de questions que vous pouvez.</p>",
-  "cognitive_instructions_trial_step_4_untimed_html": "<ul><li><i><b>Vous verrez deux séries de questions, chacune avec 20 questions.</b> Il n'y a pas de limite de temps pour la première série. Vous pourrez prendre tout votre temps. Vous aurez 5 minutes de compléter le plus de questions possible dans la deuxième série. </i></li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait les deux exercices en une seule séance.</li></ul><p>Maintenant il est temps pour la prochaine exercice...<p></p> N'oubliez pas que vous pouvez prendre tout votre temps pour compléter autant de questions que vous pouvez.</p>",
-  "cognitive_instructions_trial_step_4_untimed_minimal_html": "<p>Maintenant il est temps pour la prochaine exercice...<p></p>N'oubliez pas que vous pouvez prendre tout votre temps pour compléter autant de questions que vous pouvez.</p>",
-  "cognitive_practice_answer_correct": "Vous avez répondu correctement.",
-  "cognitive_practice_answer_incorrect": "Vous avez répondu incorrectement.",
-  "cognitive_practice_heading": "Questions pour pratiquer",
-  "cognitive_practice_step_1_button": "Prochaine question",
-  "cognitive_practice_step_1_heading": "Explication de la réponse",
-  "cognitive_practice_step_1_text": "Dans cette grille, la forme en haut dans la première rangée se tourne 180 degrés. Elle est montré dans la cellule correspondante dessous. La forme qui remplit cette grille est alors la forme en bas et à droite.",
-  "cognitive_practice_step_2_button": "Prochaine question",
-  "cognitive_practice_step_2_heading": "Explication de la réponse",
-  "cognitive_practice_step_2_text": "Dans cette grille, le nombre de lignes montrées pour chaque forme augmente par un le long de chaque rangée et vers le bas de chaque colonne. Les lignes s'ajoutent dans le sens des aiguilles d'une montre. La forme qui remplit cette grille est alors la forme en haut et à gauche.",
-  "cognitive_practice_step_3_button": "Prochaine",
-  "cognitive_practice_step_3_heading": "Explication de la réponse",
-  "cognitive_practice_step_3_text": "Dans la rangée du haut, la forme au centre est composée de la forme à droite dans une version plus grande de la forme à gauche. Les ombres des formes à gauche et à droite sont inversées dans la forme au centre. La forme qui remplit la grille est alors la forme en haut et à droite.",
-  "cognitive_question_alt_text": "Question",
-  "cognitive_response_alt_text": "Réponse",
-  "cognitive_results_heading": "Merci de compléter notre évaluation",
-  "cognitive_results_html": "Pour savoir plus sur l'évaluation que vous venez de passer, visitez s'il vous plait <a href=\"https://www.traitify.com\">Traitify.com</a>.",
-  "cognitive_skip_button": "Sauter",
-  "cognitive_skipped_questions": "Questions sautées",
-  "complements": "Forces",
-  "complete": "Terminé",
-  "conflicts": "Opportunités",
-  "dimension_description": "Le score des dimensions est calculé à partir de vos réponses aux questions qui permettent de mesurer les composants sous-jacents de chaque dimension. De manière générale, chaque individu a un niveau Élevé, Moyen ou Faible pour chaque dimension.",
-  "dimension_heading": "Pour moi, que signifie mon niveau de %{name} %{level}?",
-  "dimension_heading_for_benefits": "Avantages potentiels d’un niveau de %{name} %{level}",
-  "discover_jobs": "Découvrir des emplois",
-  "education": "Éducation",
-  "education_html": "Niveau de scolarité typique dont la plupart des travailleurs ont besoin pour accéder à cette profession. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "education_level": "Niveau d'éducation",
-  "employment_growth": "Croissance de l'emploi",
-  "employment_growth_html": "Le pourcentage de changement de l’emploi entre 2012 et 2022 Données de <a href=\"http://www.bls.gov/ooh/fastest-growing.htm\" target=\"_blank\">U.S. Bureau of Labor Statistics</a>.",
-  "experience_level_1": "Aucun",
-  "experience_level_2": "Baccalauréat",
-  "experience_level_3": "Degré d'associé",
-  "experience_level_4": "Licence",
-  "experience_level_5": "Diplôme d'études supérieures",
-  "extended_description": "Description étendue",
-  "featured_skill": "Compétences vedettes",
-  "feedback": {
-    "modal_prompt": "Nous aimerions en savoir plus sur votre expérience.",
-    "prompt": "Avez-vous le sentiment que ces résultats vous correspondent ?",
-    "thanks": "Merci pour vos commentaires !"
-  },
-  "filter": "Filtrer",
-  "get_started": "Commencer dès maintenant",
-  "green_career": "Vert Carrière",
-  "green_career_html": "L'économie verte entraînera une modification de la demande d'emploi ou des exigences professionnelles et professionnelles des professions, telles que les tâches, les compétences, les connaissances et les qualifications. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "guide_intro": "Ces caractéristiques de personnalité permettent de poser une série de questions à chacun des «types» de personnalité. La première question cherche à confirmer à quoi ils devraient ressembler; les deux autres explorent les domaines de préoccupation possibles.",
-  "headings": {
-    "personality": {
-      "achieve_html": "<b>PROGRESSER</b> – Les compétences que vous aimez développer",
-      "act_html": "<b>AGIR</b> – Les façons dont vous aimez occuper votre temps",
-      "appreciate_html": "<b>APPRÉCIER</b> – Des valeurs qui correspondent à votre vision du monde",
-      "explore_html": "<b>EXPLORER</b> – Les contenus qui vous intéressent",
-      "styles": {
-        "negative": "Moins d'éléments sur :",
-        "overall": "Votre style de carrière global est…",
-        "positive": "Plus d'éléments sur :"
-      }
-    }
-  },
-  "help": "Aidez-moi",
-  "help_modal": {
-    "content_html": "Regarder les autres informations sur nos <a href=\"%{url}\" target=\"_blank\">Evaluations</a>.",
-    "error_submitting": "Erreur avec la soumission du message",
-    "heading": "Aider",
-    "input_label": "Comment est-ce que nous pouvons vous aider?",
-    "input_placeholder": "Ecrire une réponse...",
-    "message_required": "Ecrire un message s'il vous-plaît",
-    "submit": "Envoyer",
-    "submitted": "Message soumis",
-    "trigger": "Avoir besoin de l'aide"
-  },
-  "instructions": "Instructions",
-  "interview_guide_description": "Ces questions sont personnalisées pour ce candidat sur la base de ses niveaux pour chaque dimension de personnalité. Il peut s’avérer utile d’examiner le profil de personnalité du candidat pour savoir s’il est élevé, moyen ou faible pour chaque dimension, puis de structurer son entretien en fonction des composants de personnalité les plus préoccupants pour le poste qu’il recherche.",
-  "interview_guide_heading": "Conseils / Questions d'entrevue",
-  "job_links": "Liens d'emploi",
-  "learn_more": "Apprendre encore plus",
-  "least_represented_traits": "Traits les moins représentés",
-  "least_represented_traits_definition": "Ces traits ont reçu des scores dans le tiers inférieur des réponses totales de ce candidat. L'apparition sur cette liste reflète uniquement la position relative de ces traits pour cet individu par rapport aux traits restants. Cela ne fournit pas d'informations qui peuvent être utilisées pour comparer l'étendue d'un trait affiché par un candidat par rapport à un autre.",
-  "level": {
-    "high": "Haut",
-    "low": "Bas",
-    "medium": "Moyen"
-  },
-  "loading": "Chargement",
-  "local_salary": "Salaire Local",
-  "location": "Lieu",
-  "location_placeholder": " ex. Baltimore, MD",
-  "match_rate": "Taux de correspondance",
-  "match_rate_html": "Cette carrière correspond à votre personnalité de <span>%{match_rate}<span>%.",
-  "me": "Moi",
-  "more_information": "Plus d'informations sur ces valeurs",
-  "most_represented_traits": "Traits les plus représentés",
-  "most_represented_traits_definition": "Sur les trente traits mesurés par cette évaluation, ceux-ci ont obtenu une note dans le tiers supérieur des réponses totales de ce candidat. L'apparition sur cette liste ne reflète que la position relative de ces traits pour cet individu par rapport aux traits restants. Cela ne fournit pas d'informations qui peuvent être utilisées pour comparer l'étendue d'un trait affiché par un candidat par rapport à un autre.",
-  "next": "Suivant",
-  "no": "Non",
-  "no_careers": "Aucune carrière",
-  "no_jobs": "Aucun emploi local n'a été trouvé pour cette carrière. Veuillez visiter %{job_source} pour trouver plus d'opportunités.",
-  "no_more_careers": "Plus de carrières",
-  "not_me": "Pas Moi",
-  "personality_advice": "Conseils de Personnalité",
-  "personality_base_heading": "Votre type de votre personnalité est %{personality}",
-  "personality_base_heading_third_person": "Leur type de personnalité est %{personality}",
-  "personality_blend": "Mélange de personnalité",
-  "personality_blend_heading": "La tendance de votre personnalité est %{personality}",
-  "personality_blend_heading_third_person": "La tendance de leur personnalité est %{personality}",
-  "personality_breakdown": "Répartition de la personnalité",
-  "personality_details": "Détails de la personnalité",
-  "personality_heading": "Votre personnalité de %{deck_name} est %{personality}",
-  "personality_heading_third_person": "%{deck_name} Personnalité: %{personality}",
-  "personality_tips": "Conseils de personnalité",
-  "personality_traits": "Traits de personnalité",
-  "personality_traits_description": "Voici les 5 traits de personnalité principaux vous caractérisant sur une échelle de 0% à 100%",
-  "personality_type": "Type de Personnalité",
-  "potential_benefits": "Des bénéfices potentiels",
-  "potential_pitfalls": "Les pièges potentiels",
-  "potential_risk": "Risque potentiel",
-  "preferred": "Préféré",
-  "question_adaptability": "Ont-ils développé un style d'adaptation?",
-  "question_purpose": "Qu'essayez-vous de savoir?",
-  "radar_chart_label": "Un graphique affichant vos résultats. Voir la version texte ci-dessous",
-  "read_more": "Lire la suite",
-  "really_me": "Vraiment moi",
-  "really_not_me": "Vraiment pas moi",
-  "recommendation_chart_description": "Vous pouvez voir ci-dessous les résultats concernant la personnalité du candidat, décomposés selon chacune des dimensions du modèle de personnalité à cinq facteurs. Les notes sont identifiées par un code couleur pour indiquer les plages dans lesquelles le candidat convient le mieux (vert), puis jaune et rouge. Ces plages varient pour chaque poste. Elles sont basées sur plusieurs informations qui peuvent inclure des recherches publiées, des descriptions de poste et des entretiens avec des personnes qui connaissent bien le travail.",
-  "recommendation_chart_heading": "Répartition de l’adéquation",
   "results": {
     "benchmarks": {
+      "chart": {
+        "description": "Vous pouvez voir ci-dessous les résultats concernant la personnalité du candidat, décomposés selon chacune des dimensions du modèle de personnalité à cinq facteurs. Les notes sont identifiées par un code couleur pour indiquer les plages dans lesquelles le candidat convient le mieux (vert), puis jaune et rouge. Ces plages varient pour chaque poste. Elles sont basées sur plusieurs informations qui peuvent inclure des recherches publiées, des descriptions de poste et des entretiens avec des personnes qui connaissent bien le travail.",
+        "heading": "Répartition de l’adéquation"
+      },
       "compare": {
         "description": "Vous pouvez consulter la correspondance de ce candidat avec d'autres profils de poste. En un coup d'œil, vous pouvez vérifier si ce candidat correspond parfaitement à un autre profil de poste.",
         "heading": "Comparer les référentiels de compétences professionnelles"
       },
       "current": "Référence actuelle",
+      "level": {
+        "high": "Haut",
+        "low": "Bas",
+        "medium": "Moyen"
+      },
       "search": "Recherche de référence"
+    },
+    "careers": {
+      "apply_now": "Appliquer maintenant",
+      "best_match": "Meilleure correspondance",
+      "bright_future": "Brillant avenir",
+      "bright_future_html": "Ces professions devraient connaître une croissance rapide au cours des prochaines années, présenteront un grand nombre de débouchés ou occuperont des postes nouveaux et émergents. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "discover_jobs": "Découvrir des emplois",
+      "education": "Éducation",
+      "education_html": "Niveau de scolarité typique dont la plupart des travailleurs ont besoin pour accéder à cette profession. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "education_level": "Niveau d'éducation",
+      "employment_growth": "Croissance de l'emploi",
+      "employment_growth_html": "Le pourcentage de changement de l’emploi entre 2012 et 2022 Données de <a href=\"http://www.bls.gov/ooh/fastest-growing.htm\" target=\"_blank\">U.S. Bureau of Labor Statistics</a>.",
+      "experience_level_1": "Aucun",
+      "experience_level_2": "Baccalauréat",
+      "experience_level_3": "Degré d'associé",
+      "experience_level_4": "Licence",
+      "experience_level_5": "Diplôme d'études supérieures",
+      "green_career": "Vert Carrière",
+      "green_career_html": "L'économie verte entraînera une modification de la demande d'emploi ou des exigences professionnelles et professionnelles des professions, telles que les tâches, les compétences, les connaissances et les qualifications. Données de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "learn_more": "Apprendre encore plus",
+      "link_heading": "Consultez vos recommandations de carrière personnalisées",
+      "link_heading_third_person": "Afficher leurs recommandations de carrière personnalisées",
+      "local_salary": "Salaire Local",
+      "match_rate": "Taux de correspondance",
+      "matches": "Correspondances de carrière",
+      "more_information": "Plus d'informations sur ces valeurs",
+      "no_careers": "Aucune carrière",
+      "no_jobs": "Aucun emploi local n'a été trouvé pour cette carrière. Veuillez visiter %{job_source} pour trouver plus d'opportunités.",
+      "no_more_careers": "Plus de carrières",
+      "salary_mean": "Salaire moyen",
+      "salary_mean_html": "Le salaire auquel la moitié des travailleurs de la profession gagnait plus que ce montant et la moitié gagnait moins. Les données salariales médianes proviennent de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "view_on_onet": "Voir les détails de carrière sur O*Net"
     },
     "cognitive": {
       "breakdown": {
@@ -178,44 +96,101 @@
         "heading": "Défaillance cognitive"
       }
     },
+    "feedback": {
+      "modal_prompt": "Nous aimerions en savoir plus sur votre expérience.",
+      "prompt": "Avez-vous le sentiment que ces résultats vous correspondent ?",
+      "thanks": "Merci pour vos commentaires !"
+    },
     "generic": {
       "breakdown": "Détail",
       "breakdown_description": "Voici le détail des questions auxquelles vous avez répondu lors de l’évaluation.",
-      "correct": "Correct",
-      "incorrect": "Incorrect",
-      "overall_score": "Score global",
-      "score": "Résultat"
+      "overall_score": "Score global"
+    },
+    "personality": {
+      "archetype": {
+        "description_html": "Cette évaluation vous aide à comprendre les composantes de votre personnalité. De la même façon que le corps humain est composé de différents systèmes, notre personnalité se compose de différents aspects d’importance égale, ou du moins pouvons-nous l’envisager ainsi.<br /><br />Bien que nous puissions agir et réagir légèrement différemment selon les jours ou les situations, nos cinq dimensions fondamentales sont généralement plus ou moins développées. Ces cinq dimensions définissent qui nous sommes, de la même façon que les parties de notre corps travaillent de concert pour notre équilibre.",
+        "heading": "Votre personnalité de %{deck_name} est %{personality}",
+        "heading_third_person": "%{deck_name} Personnalité: %{personality}"
+      },
+      "base": {
+        "heading": "Votre type de votre personnalité est %{personality}",
+        "heading_third_person": "Leur type de personnalité est %{personality}"
+      },
+      "blend": {
+        "heading": "La tendance de votre personnalité est %{personality}",
+        "heading_third_person": "La tendance de leur personnalité est %{personality}"
+      },
+      "breakdown": {
+        "heading": "Répartition de la personnalité"
+      },
+      "details": {
+        "best_work_environments": "Environnement de travail favorable",
+        "complements": "Forces",
+        "conflicts": "Opportunités",
+        "heading": "Détails de la personnalité"
+      },
+      "dimensions": {
+        "description": "Le score des dimensions est calculé à partir de vos réponses aux questions qui permettent de mesurer les composants sous-jacents de chaque dimension. De manière générale, chaque individu a un niveau Élevé, Moyen ou Faible pour chaque dimension.",
+        "heading": "Pour moi, que signifie mon niveau de %{name} %{level}?",
+        "heading_for_benefits": "Avantages potentiels d’un niveau de %{name} %{level}",
+        "potential_benefits": "Des bénéfices potentiels",
+        "room_for_growth_and_change": "Place à la croissance et au changement"
+      },
+      "headings": {
+        "achieve_html": "<b>PROGRESSER</b> – Les compétences que vous aimez développer",
+        "act_html": "<b>AGIR</b> – Les façons dont vous aimez occuper votre temps",
+        "appreciate_html": "<b>APPRÉCIER</b> – Des valeurs qui correspondent à votre vision du monde",
+        "explore_html": "<b>EXPLORER</b> – Les contenus qui vous intéressent",
+        "styles": {
+          "negative": "Moins d'éléments sur :",
+          "overall": "Votre style de carrière global est…",
+          "positive": "Plus d'éléments sur :"
+        }
+      },
+      "skills": {
+        "heading": "Compétences de succès",
+        "headings": {
+          "communication": "Il est important de parler, écrire et partager les idées. Essayez ces conseils pour bien communiquer.",
+          "dealing_with_stress": "Le travail et la vie ont beaucoup de hauts et bas. Voici des conseils pour vous aider à surmonter.",
+          "everyday_adjustments": "Profitez de vos jours en attendant la rentrée au travail.",
+          "habits": "Vos habitudes quotidiennes peuvent être des atouts personnels. Voici quelques idées pour commencer.",
+          "leading_others": "Les qualités de dirigeant vous aident à prospérer, aujourd'hui et dans l'avenir.",
+          "teamwork": "Nous travaillons souvent avec les autres. Profitez de votre rôle sur une équipe.",
+          "working_from_home": "Utilisez ces conseils pour rester concentré et productif en travaillant à domicile."
+        },
+        "names": {
+          "communication": "Conseils de communication",
+          "dealing_with_stress": "Gérer le stress",
+          "everyday_adjustments": "Ajustements quotidiens",
+          "habits": "Habitudes à construire",
+          "leading_others": "Diriger les autres",
+          "teamwork": "Travail en équipe",
+          "working_from_home": "Conseils pour travailler à domicile"
+        }
+      },
+      "tips": {
+        "caution_zone": "Zone de prudence",
+        "heading": "Conseils de personnalité",
+        "room": "Place à la croissance et au changement",
+        "settings": "Des paramètres pour vous",
+        "settings_third_person": "Paramètres qui fonctionnent pour eux",
+        "tools": "Outils à utiliser"
+      },
+      "traits": {
+        "description": "Voici les 5 traits de personnalité principaux vous caractérisant sur une échelle de 0% à 100%",
+        "heading": "Traits de personnalité"
+      }
     },
     "reports": {
       "candidate": "Rapport du candidat",
       "employee": "Rapport sur l'engagement des employés",
       "manager": "Rapport destiné au responsable du recrutement"
+    },
+    "thanks": {
+      "heading": "Merci de compléter notre évaluation",
+      "learn_more": "Pour en savoir plus sur l'évaluation que vous venez de prendre, rendez-vous sur <a href=\"https://www.traitify.com\" target=\"_blank\" title=\"Traitify\">Traitify.com</a>."
     }
   },
-  "room_for_growth_and_change": "Place à la croissance et au changement",
-  "salary_mean": "Salaire moyen",
-  "salary_mean_html": "Le salaire auquel la moitié des travailleurs de la profession gagnait plus que ce montant et la moitié gagnait moins. Les données salariales médianes proviennent de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
-  "search": "Chercher",
-  "show_hide_all": "Tout afficher / Tout masquer",
-  "show_less": "En Savoir Moins",
-  "show_more": "En Savoir Plus",
-  "skill_heading_for_communication": "Il est important de parler, écrire et partager les idées. Essayez ces conseils pour bien communiquer.",
-  "skill_heading_for_dealing_with_stress": "Le travail et la vie ont beaucoup de hauts et bas. Voici des conseils pour vous aider à surmonter.",
-  "skill_heading_for_everyday_adjustments": "Profitez de vos jours en attendant la rentrée au travail.",
-  "skill_heading_for_habits": "Vos habitudes quotidiennes peuvent être des atouts personnels. Voici quelques idées pour commencer.",
-  "skill_heading_for_leading_others": "Les qualités de dirigeant vous aident à prospérer, aujourd'hui et dans l'avenir.",
-  "skill_heading_for_teamwork": "Nous travaillons souvent avec les autres. Profitez de votre rôle sur une équipe.",
-  "skill_heading_for_working_from_home": "Utilisez ces conseils pour rester concentré et productif en travaillant à domicile.",
-  "skill_name_for_communication": "Conseils de communication",
-  "skill_name_for_dealing_with_stress": "Gérer le stress",
-  "skill_name_for_everyday_adjustments": "Ajustements quotidiens",
-  "skill_name_for_habits": "Habitudes à construire",
-  "skill_name_for_leading_others": "Diriger les autres",
-  "skill_name_for_teamwork": "Travail en équipe",
-  "skill_name_for_working_from_home": "Conseils pour travailler à domicile",
-  "skipped": "Ignorée",
-  "slide_error": "Impossible de charger plus de diapositives pour le moment",
-  "sort": "Trier",
   "status": {
     "cognitive_interview": {
       "heading": "Évaluation cognitive et entretien"
@@ -241,8 +216,6 @@
     "timeout": "Le chargement a expiré.",
     "try_again": "Réessayons"
   },
-  "submit": "Soumettre",
-  "success_skills": "Compétences de succès",
   "survey": {
     "accommodation": {
       "confirm": "Oui, demander des aménagements",
@@ -251,18 +224,60 @@
       "submitted": "Demande pour l'Aménagement est Soumise",
       "submitted_text": "Un membre de notre équipe va examiner vos informations dès que possible."
     },
+    "cognitive": {
+      "alert_skip": "Vous ne pouvez pas sauter ces questions",
+      "confirm_retry": "Voulez-vous essayer les questions que vous avez sautées?",
+      "confirm_skip": "Etes-vous sur de sauter?",
+      "instructions": {
+        "by_id": {
+          "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 28 questions dans cet exercice. Prenez tout votre temps de les compléter. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>",
+          "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 31 questions dans cet exercice. Prenez tout votre temps de les compléter. La plupart de participants va terminer dans environ 15 minutes. </li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>"
+        },
+        "disability_text": "Selectionnez s'il vous plait si vous avez des difficultés d'apprentissage.",
+        "step_1_button": "Voir un exemple",
+        "step_1_heading": "Instructions",
+        "step_1_text": "Nous voudrions que vous déterminiez les liens entre des formes différentes.\n\nVous verrez une grille qui manque une forme sur chaque écran. Le symbole '?' représente la forme manquante. Il y a quatre formes en dessous de la grille. Une de ces formes remplace le '?' pour remplir la grille.\n\nChoisissez la forme en dessous de chaque grille qui la remplir dès que l'exercice commence. Ensuite, cliquez 'Confirmer' pour continuer à la prochaine question. Vous pouvez également sauter la question en cliquant 'Sauter.' Quand vous êtes prêt, cliquez 'Voir un exemple' pour voir un exemple.",
+        "step_2_button": "Commencer la pratique",
+        "step_2_heading": "Voici un exemple",
+        "step_2_text": "Dans cette grille il y a un triangle, un pentagone et une flèche dans chaque rangée et colonne. Il y a une forme noire, une forme bleue, et une forme blanche. Les formes sont dans la même position. La forme qui remplit la grille est alors en bas et à gauche.",
+        "step_4_button": "Commencer",
+        "step_4_heading": "Avant de commencer...",
+        "step_4_html": "<p>Maintenant il est temps de compléter l'exercice. Avant de commencer il est important de garder en tête les suivants: </p><ul><li> Il y a 20 questions dans cet exercice. Prenez tout votre temps de les compléter.</li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait l'exercice en une seule séance.</li></ul>",
+        "trial_step_1_text": "Vous verrez une grille qui manque une forme sur chaque écran. Le symbole '?' représente la forme manquante. Il y a quatre formes en dessous de la grille. Une de ces formes remplace le '?' pour remplir la grille.\n\nChoisissez la forme en dessous de chaque grille qui la remplir dès que l'exercice commence. Ensuite, cliquez \"Confirmer\" pour continuer à la prochaine question. Vous pouvez également sauter la question en cliquant 'Sauter.' Quand vous êtes prêt, cliquez 'Voir un exemple' pour voir un exemple.",
+        "trial_step_4_timed_html": "<ul><li><i><b>Vous verrez deux séries de questions, chacune avec 20 questions.</b> Vous aurez 5 minutes de compléter le plus de questions possible dans la première série. Il n'y a pas de limite de temps pour la deuxième série. Vous pourrez prendre tout votre temps.</i></li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait les deux exercices en une seule séance.</li></ul><p>Maintenant il est temps pour la première exercice...</p><p>N'oubliez pas que vous n'avez que 5 minutes de compléter autant de questions que vous pouvez.</p>",
+        "trial_step_4_timed_minimal_html": "<p>Maintenant il est temps pour la prochaine exercice...</p><p> N'oubliez pas que vous n'avez que 5 minutes de compléter autant de questions que vous pouvez.</p>",
+        "trial_step_4_untimed_html": "<ul><li><i><b>Vous verrez deux séries de questions, chacune avec 20 questions.</b> Il n'y a pas de limite de temps pour la première série. Vous pourrez prendre tout votre temps. Vous aurez 5 minutes de compléter le plus de questions possible dans la deuxième série. </i></li><li> Vous devriez trouver un endroit calme et sans distraction afin de vous concentrer complètement sur l'exercice. </li><li> Vous pouvez sauter des questions si vous en avez besoin mais essayez de répondre à chaque question. </li><li>Complétez s'il vous plait les deux exercices en une seule séance.</li></ul><p>Maintenant il est temps pour la prochaine exercice...<p></p> N'oubliez pas que vous pouvez prendre tout votre temps pour compléter autant de questions que vous pouvez.</p>",
+        "trial_step_4_untimed_minimal_html": "<p>Maintenant il est temps pour la prochaine exercice...<p></p>N'oubliez pas que vous pouvez prendre tout votre temps pour compléter autant de questions que vous pouvez.</p>"
+      },
+      "practice": {
+        "answer_correct": "Vous avez répondu correctement.",
+        "answer_incorrect": "Vous avez répondu incorrectement.",
+        "heading": "Questions pour pratiquer",
+        "step_1_button": "Prochaine question",
+        "step_1_heading": "Explication de la réponse",
+        "step_1_text": "Dans cette grille, la forme en haut dans la première rangée se tourne 180 degrés. Elle est montré dans la cellule correspondante dessous. La forme qui remplit cette grille est alors la forme en bas et à droite.",
+        "step_2_button": "Prochaine question",
+        "step_2_heading": "Explication de la réponse",
+        "step_2_text": "Dans cette grille, le nombre de lignes montrées pour chaque forme augmente par un le long de chaque rangée et vers le bas de chaque colonne. Les lignes s'ajoutent dans le sens des aiguilles d'une montre. La forme qui remplit cette grille est alors la forme en haut et à gauche.",
+        "step_3_button": "Prochaine",
+        "step_3_heading": "Explication de la réponse",
+        "step_3_text": "Dans la rangée du haut, la forme au centre est composée de la forme à droite dans une version plus grande de la forme à gauche. Les ombres des formes à gauche et à droite sont inversées dans la forme au centre. La forme qui remplit la grille est alors la forme en haut et à droite."
+      },
+      "skipped_questions": "Questions sautées"
+    },
     "cognitive_assessment": "Évaluation cognitive",
     "external_assessment": "Évaluation externe",
     "generic_assessment": "Une évaluation Générique",
-    "personality_assessment": "Évaluation de la personnalité"
-  },
-  "tip_type_for_caution_zone": "Zone de prudence",
-  "tip_type_for_room": "Place à la croissance et au changement",
-  "tip_type_for_settings": "Des paramètres pour vous",
-  "tip_type_for_settings_third_person": "Paramètres qui fonctionnent pour eux",
-  "tip_type_for_tools": "Outils à utiliser",
-  "title": "Titre",
-  "try_again": "Cliquez ici pour essayer à nouveau",
-  "view_on_onet": "Voir les détails de carrière sur O*Net",
-  "yes": "Oui"
+    "instructions": "Instructions",
+    "me": "Moi",
+    "not_me": "Pas Moi",
+    "personality": {
+      "get_started": "Commencer dès maintenant",
+      "slide_error": "Impossible de charger plus de diapositives pour le moment",
+      "try_again": "Cliquez ici pour essayer à nouveau"
+    },
+    "personality_assessment": "Évaluation de la personnalité",
+    "really_me": "Vraiment moi",
+    "really_not_me": "Vraiment pas moi"
+  }
 }

@@ -19,7 +19,7 @@ export default function PersonalityTraitList() {
   if(disabled) { return null; }
   if(!results) { return null; }
 
-  const text = translate(showMore ? "show_less" : "show_more");
+  const text = translate(showMore ? "common.actions.show_less" : "common.actions.show_more");
   let traits = results.personality_traits;
 
   if(!showMore) { traits = traits.slice(0, 5); }
@@ -28,8 +28,8 @@ export default function PersonalityTraitList() {
     <div className={style.container}>
       {showHeaders && (
         <>
-          <div className={style.sectionHeading}>{translate("personality_traits")}</div>
-          <div className={style.p}>{translate("personality_traits_description")}</div>
+          <div className={style.sectionHeading}>{translate("results.personality.traits.heading")}</div>
+          <div className={style.p}>{translate("results.personality.traits.description")}</div>
         </>
       )}
       {traits.map((trait) => (

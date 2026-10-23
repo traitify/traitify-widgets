@@ -138,6 +138,11 @@ Second line.",
     "data": [],
     "name": "Spanish (Ecuador)",
   },
+  "es-es": {
+    "code": "es-es",
+    "data": [],
+    "name": "Spanish (Spain)",
+  },
   "es-pr": {
     "code": "es-pr",
     "data": [
@@ -373,6 +378,11 @@ Second line.",
     "code": "es-ec",
     "data": [],
     "name": "Spanish (Ecuador)",
+  },
+  "es-es": {
+    "code": "es-es",
+    "data": [],
+    "name": "Spanish (Spain)",
   },
   "es-pr": {
     "code": "es-pr",

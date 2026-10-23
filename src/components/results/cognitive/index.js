@@ -8,8 +8,8 @@ export default function Cognitive() {
   return (
     <section className={style.container}>
       <img alt="Brain" src="https://cdn.traitify.com/images/cognitive/brain.png" />
-      <div className={style.heading}>{translate("cognitive_results_heading")}</div>
-      <DangerousHTML html={translate("cognitive_results_html")} />
+      <div className={style.heading}>{translate("results.thanks.heading")}</div>
+      <DangerousHTML html={translate("results.thanks.learn_more")} />
     </section>
   );
 }

@@ -77,7 +77,7 @@ describe("useSlideLoader", () => {
         ]);
         ComponentHandler.render(Component, {props});
 
-        expect(dispatch).toHaveBeenCalledWith({error: "slide_error", type: "error"});
+        expect(dispatch).toHaveBeenCalledWith({error: "survey.personality.slide_error", type: "error"});
       });
 
       it("skips if not enought attempts", () => {
@@ -87,7 +87,7 @@ describe("useSlideLoader", () => {
         ]);
         ComponentHandler.render(Component, {props});
 
-        expect(dispatch).not.toHaveBeenCalledWith({error: "slide_error", type: "error"});
+        expect(dispatch).not.toHaveBeenCalledWith({error: "survey.personality.slide_error", type: "error"});
       });
     });
 

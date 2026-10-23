@@ -72,8 +72,8 @@ export default function PersonalityBaseHeading() {
       </div>
       {careersLink && (
         <div className={style.careersLink}>
-          <div>{translate(`careers_link_heading${perspective === "thirdPerson" ? "_third_person" : ""}`)}</div>
-          <a href={careersLink}><Icon icon={faBriefcase} /> {translate("career_matches")}</a>
+          <div>{translate(`results.careers.link_heading${perspective === "thirdPerson" ? "_third_person" : ""}`)}</div>
+          <a href={careersLink}><Icon icon={faBriefcase} /> {translate("results.careers.matches")}</a>
         </div>
       )}
     </div>

@@ -1,0 +1,250 @@
+{
+  "common": {
+    "actions": {
+      "show_hide_all": "Mostrar/Ocultar todo",
+      "show_less": "Mostrar Menos",
+      "show_more": "Mostrar Más"
+    },
+    "back": "Atrás ",
+    "close": "Cerrar",
+    "complete": "Completar",
+    "correct": "Correcto",
+    "help_modal": {
+      "content_html": "Accede a más información sobre nuestras <a href=\"%{url}\" target=\"_blank\">evaluaciones</a>",
+      "error_submitting": "Error al enviar el mensaje",
+      "input_label": "¿Cómo podemos ayudarle? ",
+      "input_placeholder": "Escribe una respuesta... ",
+      "message_required": "Por favor, introduzca un mensaje",
+      "submitted": "Mensaje entregado"
+    },
+    "incorrect": "Incorrecto",
+    "no": "No",
+    "play": "Reproducir",
+    "response": "Respuesta",
+    "score": "Puntuación",
+    "skip": "Saltar",
+    "skipped": "Omitida",
+    "sort": "Ordenar",
+    "submit": "Entregar",
+    "title": "Título",
+    "yes": "Sí"
+  },
+  "results": {
+    "benchmarks": {
+      "chart": {
+        "description": "A continuación, puede ver los resultados de personalidad del candidato desglosados por cada una de las dimensiones de los Cinco Grandes. Las puntuaciones están codificadas por colores para indicar los rangos de mayor idoneidad (verde), seguidos del amarillo y el rojo. Estos rangos varían según el puesto de trabajo. Se basan en diversas fuentes de información que pueden incluir investigaciones publicadas, descripciones de puestos de trabajo y entrevistas con personas familiarizadas con el puesto.",
+        "heading": "Desglose de ajuste"
+      },
+      "compare": {
+        "description": "Puede ver si este candidato se ajusta a otros perfiles de referencia del puesto. De un vistazo, podrá consultar el nivel de encaje del candidato con otros perfiles.",
+        "heading": "Comparar puntos de referencia del puesto"
+      },
+      "current": "Punto de referencia actual",
+      "search": "Buscar punto de Referencia"
+    },
+    "careers": {
+      "apply_now": "Inscribirse Ahora",
+      "discover_jobs": "Descubre empleos",
+      "experience_level_1": "Ninguno"
+    },
+    "cognitive": {
+      "breakdown": {
+        "description": "Esto muestra las mediciones de %{survey_name} basadas en las respuestas a una serie de preguntas abstractas de capacidad mental general.",
+        "heading": "Colapso cognitivo"
+      }
+    },
+    "feedback": {
+      "modal_prompt": "Nos gustaría conocer su experiencia",
+      "prompt": "¿Cree que sus resultados se ajustan a su perfil?",
+      "thanks": "¡Gracias por sus comentarios!"
+    },
+    "generic": {
+      "breakdown": "Desglose",
+      "breakdown_description": "A continuación se muestra el desglose de las preguntas respondidas en la evaluación",
+      "overall_score": "Puntuación global"
+    },
+    "personality": {
+      "archetype": {
+        "description_html": "Esta evaluación le ayuda a comprender los componentes de su personalidad. Al igual que nuestro cuerpo está compuesto por diferentes sistemas de órganos, podemos pensar que nuestra personalidad tiene partes separadas pero igualmente importantes.<br /><br />Aunque nos sintamos y nos comportemos de forma un poco diferente de un día para otro, o incluso de una situación a otra, por lo general todos mostramos niveles más altos o más bajos en las cinco dimensiones fundamentales. Estas cinco dimensiones definen quiénes somos, del mismo modo que todas las partes de nuestro cuerpo trabajan juntas para mantenernos sanos.",
+        "heading": "Su %{deck_name} de Personalidad es %{personality}",
+        "heading_third_person": "%{deck_name} Personalidad: %{personality}"
+      },
+      "base": {
+        "heading": "El tipo de personalidad de usted es %{personality}",
+        "heading_third_person": "El tipo de personalidad de ellos es %{personality}"
+      },
+      "blend": {
+        "heading": "La combinación de personalidades de usted es %{personality}",
+        "heading_third_person": "La combinación de personalidades de ellos es %{personality}"
+      },
+      "breakdown": {
+        "heading": "Desglose de Personalidad"
+      },
+      "details": {
+        "best_work_environments": "Mejores entornos de trabajo",
+        "complements": "Complementos",
+        "heading": "Detalles de personalidad"
+      },
+      "dimensions": {
+        "description": "La puntuación dimensional se calcula con sus respuestas a los ítems que juntos miden los componentes subyacentes de cada dimensión. En general, un individuo presenta un nivel alto, medio o bajo.",
+        "heading": "¿Qué significa mi %{level} %{name} para mí?",
+        "heading_for_benefits": "Beneficios potenciales de %{level} %{name}",
+        "room_for_growth_and_change": "Espacio para el crecimiento y el cambio"
+      },
+      "headings": {
+        "achieve_html": "<b>LOGRAR</b> - Habilidades que disfruta desarrollando",
+        "act_html": "<b>ACTUAR</b> - Formas en las que le gusta pasar el tiempo",
+        "appreciate_html": "<b>VALORAR</b> - Valores que se alinean con su visión del mundo",
+        "explore_html": "<b>EXPLORAR</b> - Contenido que encuentra interesante",
+        "styles": {
+          "negative": "No tanto de:",
+          "overall": "Su estilo profesional global es...",
+          "positive": "Más elementos de:"
+        }
+      },
+      "skills": {
+        "heading": "Habilidades exitosas",
+        "headings": {
+          "communication": "Hablar, escribir y compartir ideas es importante. Prueba estos consejos para comunicarte efectivamente.",
+          "dealing_with_stress": "El trabajo y la vida tienen muchos altibajos. Estos son algunos consejos que te ayudarán a sobrellevarlos. ",
+          "everyday_adjustments": "Aprovecha al máximo tus días mientras esperas el regreso al trabajo.",
+          "habits": "Convierte tus hábitos en fortalezas personales. Aquí tienes algunas ideas para empezar.",
+          "leading_others": "Las habilidades de liderazgo le ayudarán a crecer, ahora y en el futuro.",
+          "teamwork": "A menudo trabajamos en colaboración con otras personas. Aquí hay algunas claves sobre trabajar en equipo.",
+          "working_from_home": "Utiliza estos consejos para mantenerte concentrado y productivo mientras trabajas desde casa."
+        },
+        "names": {
+          "communication": "Consejos para mejorar la comunicación",
+          "dealing_with_stress": "Lidiando con el ",
+          "everyday_adjustments": "Ajustes Cotidianos",
+          "habits": "Hábitos Por Adquirir",
+          "leading_others": "Liderar a Otros",
+          "working_from_home": "Consejos para trabajar desde casa"
+        }
+      },
+      "tips": {
+        "heading": "Consejos para la personalidad",
+        "room": "Espacio para el crecimiento y el cambio",
+        "settings": "Configuraciones para ti",
+        "settings_third_person": "Configuraciones para ellos",
+        "tools": "Herramientas a utilizar "
+      },
+      "traits": {
+        "description": "Aquí están sus 5 rasgos principales medidos en una escala del 0 % al 100 %"
+      }
+    },
+    "reports": {
+      "candidate": "Informe del candidato",
+      "employee": "Informe de compromiso del empleado",
+      "manager": "Informe de selección"
+    },
+    "rjp": {
+      "heading": "¡Ha completado la vista previa con éxito!"
+    },
+    "thanks": {
+      "heading": "Gracias por completar nuestra evaluación",
+      "learn_more": "Para obtener más información sobre la evaluación que acaba de realizar, por favor visite <a href=\"https://www.traitify.com\" target=\"_blank\" title=\"Traitify\">Traitify.com</a>."
+    }
+  },
+  "status": {
+    "cognitive_interview": {
+      "heading": "Evaluación Cognitiva y Entrevista"
+    },
+    "error": "Se ha producido un error con sus evaluaciones",
+    "heading": "Las evaluaciones de su candidatura",
+    "interview": {
+      "start": "Empieza entrevista",
+      "survey": "Entrevistador de IA de Crosschq",
+      "text": "Participe en una entrevista virtual por videollamada asistida por IA para hacer preguntas, practicar su entrevista y conocer más detalles sobre este puesto.\n\nEsta conversación se realiza con un entrevistador virtual, diseñado para compartir información sobre nuestra empresa, nuestra cultura y esta oportunidad laboral."
+    },
+    "interview_personality": {
+      "heading": "Evaluación de Personalidad y Entrevista"
+    },
+    "loading": "Cargando su evaluación",
+    "redacted": {
+      "heading": "No disponible",
+      "text": "Estas evaluaciones de Traitify ya no están disponibles"
+    },
+    "start": "Comenzar evaluación",
+    "text": "Como parte de su solicitud, nos gustaría pedirle que realice las siguientes evaluaciones. Por favor, haga clic en el botón situado junto al nombre de la evaluación. Esto le llevará a la página donde podrá completarla(s) evaluación(es). Por favor, regrese aquí una vez que haya completado todas las evaluaciones.",
+    "timeout": "Se ha agotado el tiempo de carga",
+    "try_again": "Intentémoslo de nuevo"
+  },
+  "survey": {
+    "accommodation": {
+      "confirm": "Sí, solicitar adaptación",
+      "request": "Solicitar adaptación",
+      "request_text": "¿Está seguro que desea solicitar una adaptación para la evaluación? Esto hará que se salte la evaluación. Para continuar sin solicitar ajustes, pulse ‘Volver’.",
+      "submitted": "Solicitud de adaptación enviada",
+      "submitted_text": "Un miembro de nuestro equipo revisará su información lo antes posible"
+    },
+    "cognitive": {
+      "alert_skip": "No puede saltarse las preguntas de práctica",
+      "confirm_retry": "¿Desea responder a las preguntas que se saltó?",
+      "confirm_skip": "¿Está seguro(a) de que quiere saltarse la pregunta?",
+      "instructions": {
+        "by_id": {
+          "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Ha llegado el momento de hacer el ejercicio. Antes de empezar, recuerda:</p><ul><li>El ejercicio consta de 28 preguntas</li><li>Puedes tomarte todo el tiempo que quieras para completarlas.</li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><li>Puedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, completa el ejercicio en una sola sesión.</li></ul>",
+          "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Ha llegado el momento de hacer el ejercicio. Antes de empezar, recuerda:</p><ul><li>El ejercicio consta de 31 preguntas</li><li>: Puedes tomarte todo el tiempo que quieras para completarlo. No obstante, la mayoría de las personas lo terminan en unos 15 minutos.</li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><li>Puedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, completa el ejercicio en una sola sesión. </li></ul>"
+        },
+        "step_1_heading": "Instrucciones",
+        "step_1_text": "Nos gustaria que descubras cómo se relacionan entre sí las diferentes figuras.\n\nEn cada pantalla verás una cuadrícula con una figura que falta, idicada con un signo de interrogación (?). Debajo de la cuadrícula hay cuatro figuras; uno de ellas reemplaza el signo de interrogación (?) para completar la cuadrícula.\n\nUna vez que comience el ejercicio, elije la figura de abajo que lo completa y haz clic en “Confirmar” para pasar a la siguiente pregunta. También puedes saltarte la pregunta haciendo clic en “Omitir”.  Cuando esté listo, haz clic en “Ver Ejemplo” para ver un ejemplo.",
+        "step_2_button": "Empezar la Práctica",
+        "step_2_heading": "Aquí tiene un ejemplo",
+        "step_2_text": "En cada fila y columna de la cuadrícula hay un triángulo, un pentágono y una flecha. Hay una figura negra, una azul y una blanca. Todas las figuras están orientadas hacia la misma dirección. Por lo tanto, la figura que completa la cuadrícula es la imagen que se encuentra en la parte inferior izquierda.",
+        "step_4_button": "Empezar",
+        "step_4_heading": "Antes de Empezar...",
+        "step_4_html": "<p>Ha llegado el momento de hacer el ejercicio. Antes de empezar, recuerda:</p><ul><li>El ejercicio consta de 20 preguntas y puedes tomarte todo el tiempo que quieras para completarlas.</li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><li>Puedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, completa el ejercicio en una sola sesión.</li></ul>",
+        "trial_step_1_text": "En cada pantalla verás una cuadrícula con una figura que falta, idicada con un signo de interrogación (?). Debajo de la cuadrícula hay cuatro figuras; uno de ellas reemplaza el signo de interrogación (?) para completar la cuadrícula.\n\nUna vez que comience el ejercicio, elije la figura de abajo que lo completa y haz clic en “Confirmar” para pasar a la siguiente pregunta. \n\nTambién puedes saltarte la pregunta haciendo clic en “Omitir”.  Cuando esté listo, haz clic en “Ver Ejemplo” para ver un ejemplo.",
+        "trial_step_4_timed_html": "<ul><li><i><b>Verá dos bloques de ejercicios de 20 preguntas cada uno.</b> Para el primer bloque, tendrá 5 minutos para completar tantas preguntas como pueda. Para el segundo, no tendrá tiempo limitado. Podrá tomarse el tiempo que necesite</i></li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><liPuedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, complete ambos ejercicios en una sola sesión.</li></ul><p>Ha llegado el momento de hacer el ejercicio....</p><p>Recuerde que tendrá 5 minutos para completar tantas preguntas como pueda.</p>",
+        "trial_step_4_timed_minimal_html": "<p>Ahora es el momento para el siguiente ejercicio....</p><p>Recuerde que tendrá 5 minutos para completar tantas preguntas como pueda.</p>",
+        "trial_step_4_untimed_html": "<ul><li><i><b>Verá dos bloques de ejercicios de 20 preguntas cada uno.</b> Para el primer bloque, podrá tomarse todo el tiempo que desee y no habrá límite de tiempo. Para el segundo, tendrá 5 minutos para completar tantas preguntas como pueda.</i></li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><liPuedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, complete ambos ejercicios en una sola sesión.</li></ul><p>Ha llegado el momento de hacer el ejercicio....</p><p>Recuerde que tendrá todo el tiempo que necesite para completar tantas preguntas como pueda.</p>",
+        "trial_step_4_untimed_minimal_html": "<p>Ahora es el momento para el siguiente ejercicio....</p><p>Recuerde que tendrá todo el tiempo que necesite para completar tantas preguntas como pueda.</p>"
+      },
+      "practice": {
+        "answer_correct": "Ha respondio correctamente.",
+        "answer_incorrect": "Ha respondido incorrectamente.",
+        "heading": "Preguntas de práctica",
+        "step_1_heading": "Explicación de la Respuesta",
+        "step_1_text": "En esta cuadrícula, la figura que se encuentra en la parte superior de la primera fila ha sido rotada 180 grados y ubicada en la celda inferior. Por lo tanto, la figura que completa la cuadrícula se encuentra ubicada abajo a la derecha.",
+        "step_2_button": "Siguiente pregunta",
+        "step_2_heading": "Explicación de la Respuesta",
+        "step_2_text": "En esta cuadrícula, el número de líneas de cada figura aumenta de una en una a lo largo de cada fila y hacia abajo en cada columna. Las líneas se añaden en el sentido de las agujas del reloj. Por lo tanto, la figura que completa la cuadrícula es la de la esquina superior izquierda.",
+        "step_3_button": "Siguiente",
+        "step_3_heading": "Explicación de la Respuesta",
+        "step_3_text": "En la fila superior, la figura que se encuentra en el centro es la composición de una versión más grande de la de izquierda con la de la derecha en su interior. El sombreado de las figuras en la izquierda y derecha se invierten en la figura central. Por lo tanto, la figura que completa la cuadrícula se encuentra en la parte superior a la derecha."
+      },
+      "skipped_questions": "Preguntas Saltadas"
+    },
+    "cognitive_assessment": "Evaluación cognitiva",
+    "external_assessment": "Evaluación externa",
+    "generic_assessment": "Evaluación genérica ",
+    "instructions": "Instrucciones",
+    "not_me": "No soy yo",
+    "personality": {
+      "slide_error": "No ha sido posible cargar más diapositivas en este momento",
+      "try_again": "Haga clic aquí para volver a intentarlo"
+    },
+    "personality_assessment": "Evaluación de personalidad",
+    "really_me": "Realmente yo",
+    "really_not_me": "Realmente no soy yo",
+    "rjp": {
+      "instructions": {
+        "heading": "Instrucciones de la visión previa del puesto",
+        "play": "Reproducir vídeo",
+        "replay": "Ver el vídeo de nuevo"
+      },
+      "match": {
+        "continue": "Continuar",
+        "opt_out": "No interesado/a"
+      },
+      "modal": {
+        "heading": "Visión previa del puesto"
+      },
+      "questions": {
+        "heading": "Preguntas sobre la visión previa del puesto",
+        "submit": "Completar preguntas"
+      }
+    }
+  }
+}

@@ -30,7 +30,7 @@ export default function Feedback() {
       <div>
         <div className={style.container}>
           <div className={style.details}>
-            <span>{translate("feedback.thanks")}</span>
+            <span>{translate("results.feedback.thanks")}</span>
           </div>
         </div>
       </div>
@@ -41,10 +41,10 @@ export default function Feedback() {
     <>
       <div className={style.container}>
         <div className={style.details}>
-          <span>{translate("feedback.prompt")}</span>
+          <span>{translate("results.feedback.prompt")}</span>
           <div className={style.buttons}>
-            <button type="button" className={style.me} onClick={openModal}>{translate("yes")}</button>
-            <button type="button" className={style.notMe} onClick={openModal}>{translate("no")}</button>
+            <button type="button" className={style.me} onClick={openModal}>{translate("common.yes")}</button>
+            <button type="button" className={style.notMe} onClick={openModal}>{translate("common.no")}</button>
           </div>
         </div>
       </div>

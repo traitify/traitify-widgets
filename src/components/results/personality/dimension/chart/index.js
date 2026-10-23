@@ -14,7 +14,7 @@ export default function PersonalityDimensionChart() {
 
   return (
     <div className={style.container}>
-      <div className={style.p}>{translate("dimension_description")}</div>
+      <div className={style.p}>{translate("results.personality.dimensions.description")}</div>
       <div className={style.horizontal}>
         {data.columns.map(({competency, rank, type: {badge, name, id}}) => (
           <div key={id} className={[style.row, style[rank.value]].join(" ")} data-content={rank.name}>
@@ -22,7 +22,7 @@ export default function PersonalityDimensionChart() {
               {competency && <div>{competency.name}</div>}
               <div>{name}</div>
             </div>
-            <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
+            <img src={badge.image_medium} alt={`${name} ${translate("common.badge")}`} />
           </div>
         ))}
         <div className={style.scale}>
@@ -35,7 +35,7 @@ export default function PersonalityDimensionChart() {
         </div>
         {data.columns.map(({competency, rank, type: {badge, name, id}}) => (
           <div key={id} className={[style.column, style[rank.value]].join(" ")} data-content={rank.name}>
-            <img src={badge.image_medium} alt={`${name} ${translate("badge")}`} />
+            <img src={badge.image_medium} alt={`${name} ${translate("common.badge")}`} />
             {competency && <div className={style.heading}>{competency.name}</div>}
             <div className={style.heading}>{name}</div>
           </div>

@@ -42,7 +42,7 @@ describe("Slide", () => {
 
     it("disables confirm button", () => {
       const button = component.instance.findAllByType("button")
-        .find((element) => element.children[0] === "cognitive_confirm_button");
+        .find((element) => element.children[0] === "common.confirm");
 
       expect(button.props.disabled).toBe(true);
       expect(button.props.onClick).toBeNull();
@@ -61,7 +61,7 @@ describe("Slide", () => {
       component = await ComponentHandler.setup(Component, {props});
       act(() => component.instance.findAllByProps({className: "choice"})[1].children[0].props.onClick());
       Date.now.mockReturnValue(Date.now() + 2000);
-      act(() => component.findByText("cognitive_skip_button").props.onClick());
+      act(() => component.findByText("common.skip").props.onClick());
 
       expect(window.confirm).toHaveBeenCalledTimes(1);
       expect(props.onSelect).toHaveBeenCalledWith({skipped: true, timeTaken: 2000});
@@ -72,7 +72,7 @@ describe("Slide", () => {
       component = await ComponentHandler.setup(Component, {props});
       act(() => component.instance.findAllByProps({className: "choice"})[1].children[0].props.onClick());
       Date.now.mockReturnValue(Date.now() + 2000);
-      act(() => component.findByText("cognitive_skip_button").props.onClick());
+      act(() => component.findByText("common.skip").props.onClick());
 
       expect(window.confirm).not.toHaveBeenCalled();
       expect(props.onSelect).not.toHaveBeenCalled();
@@ -84,7 +84,7 @@ describe("Slide", () => {
       component = await ComponentHandler.setup(Component, {props});
       act(() => component.instance.findAllByProps({className: "choice"})[1].children[0].props.onClick());
       Date.now.mockReturnValue(Date.now() + 2000);
-      act(() => component.findByText("cognitive_skip_button").props.onClick());
+      act(() => component.findByText("common.skip").props.onClick());
 
       expect(window.confirm).toHaveBeenCalledTimes(1);
       expect(props.onSelect).not.toHaveBeenCalled();
@@ -102,8 +102,8 @@ describe("Slide", () => {
       act(() => component.instance.findAllByProps({className: "choice"})[0].children[0].props.onClick());
       Date.now.mockReturnValue(Date.now() + 2000);
       Date.now.mockClear();
-      act(() => component.findByText("cognitive_confirm_button").props.onClick());
-      button = component.findByText("cognitive_confirm_button");
+      act(() => component.findByText("common.confirm").props.onClick());
+      button = component.findByText("common.confirm");
     });
 
     it("disables confirm button", () => {
@@ -135,7 +135,7 @@ describe("Slide", () => {
       component.instance.findAllByProps({className: "choice"})[1].children[0].props.onClick()
     ));
     Date.now.mockReturnValue(Date.now() + 2000);
-    act(() => component.findByText("cognitive_confirm_button").props.onClick());
+    act(() => component.findByText("common.confirm").props.onClick());
 
     expect(props.onSelect).toHaveBeenCalledWith({
       answerId: props.question.responses[1].id,

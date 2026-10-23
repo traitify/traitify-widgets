@@ -37,7 +37,7 @@ function Practice({onFinish, practiceExplanations, practiceQuestions, translate}
     return (
       <div key={`question-${questionIndex + 1}-${type}`} className={style.container}>
         <h1>{heading}</h1>
-        <p className={style.center}>{translate(`cognitive_practice_answer_${answer}`)}</p>
+        <p className={style.center}>{translate(`survey.cognitive.practice.answer_${answer}`)}</p>
         {text && <Markdown className={style.text}>{text}</Markdown>}
         {video && <video {...videoProps}><source src={video} type="video/mp4" /></video>}
         <button className={`traitify--response-button ${style.btnBlue}`} onClick={onNext} type="button">{button}</button>
@@ -46,13 +46,13 @@ function Practice({onFinish, practiceExplanations, practiceQuestions, translate}
   }
 
   const progress = (100.0 * (questionIndex + 1)) / questions.length;
-  const onSkip = () => window.alert(translate("cognitive_alert_skip"));
+  const onSkip = () => window.alert(translate("survey.cognitive.alert_skip"));
 
   return (
     <div key="practice" className={style.container}>
       <div className={style.statusContainer}>
         <div className={style.status}>
-          <div>{translate("cognitive_practice_heading")}</div>
+          <div>{translate("survey.cognitive.practice.heading")}</div>
           <div>{questionIndex + 1} / {questions.length}</div>
         </div>
         <div className={style.progressBar}>

@@ -65,20 +65,20 @@ export default function CareerFilter() {
       <form onSubmit={onSubmit}>
         <div className={style.row}>
           <div className={style.search}>
-            <label className={style.label} htmlFor="traitify-career-search">{translate("search")}</label>
-            <input className={style.searchFieldLG} value={filters.search || ""} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={onChange} />
-            <input className={style.searchField} value={filters.search || ""} id="traitify-career-search" name="search" placeholder={translate("search")} type="text" onChange={liveSearch} />
+            <label className={style.label} htmlFor="traitify-career-search">{translate("common.search")}</label>
+            <input className={style.searchFieldLG} value={filters.search || ""} id="traitify-career-search" name="search" placeholder={translate("common.search")} type="text" onChange={onChange} />
+            <input className={style.searchField} value={filters.search || ""} id="traitify-career-search" name="search" placeholder={translate("common.search")} type="text" onChange={liveSearch} />
           </div>
           <div className={style.location}>
-            <label className={style.label} htmlFor="traitify-career-location">{translate("location")}</label>
-            <input className={style.field} value={filters.location || ""} id="traitify-career-location" name="location" placeholder={translate("location")} type="text" onChange={onChange} />
+            <label className={style.label} htmlFor="traitify-career-location">{translate("common.location")}</label>
+            <input className={style.field} value={filters.location || ""} id="traitify-career-location" name="location" placeholder={translate("common.location")} type="text" onChange={onChange} />
           </div>
           <div className={style.filter}>
-            <label className={style.label} htmlFor="traitify-career-filter">{translate("filter")}</label>
-            <button className={style.filterButton} onClick={() => setShowFilters(!showFilters)} type="button">{translate("filter")}</button>
+            <label className={style.label} htmlFor="traitify-career-filter">{translate("common.filter")}</label>
+            <button className={style.filterButton} onClick={() => setShowFilters(!showFilters)} type="button">{translate("common.filter")}</button>
             <div className={`${style.filterContent} ${showFilters ? style.block : ""}`}>
               <div className={style.group}>
-                <div>{translate("sort")}</div>
+                <div>{translate("common.sort")}</div>
                 <label className={style.check} htmlFor="traitify-career-sort-match">
                   <input
                     aria-labelledby="traitify-career-sort-match-label"
@@ -90,7 +90,7 @@ export default function CareerFilter() {
                     value="match"
                   />
                   <Icon icon={filters.sort === "match" ? faCheckSquare : faSquare} />
-                  <span id="traitify-career-sort-match-label">{translate("best_match")}</span>
+                  <span id="traitify-career-sort-match-label">{translate("results.careers.best_match")}</span>
                 </label>
                 <label className={style.check} htmlFor="traitify-career-sort-title">
                   <input
@@ -103,11 +103,11 @@ export default function CareerFilter() {
                     value="title"
                   />
                   <Icon icon={filters.sort === "title" ? faCheckSquare : faSquare} />
-                  <span id="traitify-career-sort-title-label">{translate("title")}</span>
+                  <span id="traitify-career-sort-title-label">{translate("common.title")}</span>
                 </label>
               </div>
               <div className={style.group}>
-                <div>{translate("education_level")}</div>
+                <div>{translate("results.careers.education_level")}</div>
                 {experienceLevels.map((level) => {
                   const checked = currentExperienceLevels.includes(level);
                   const id = `traitify-career-level-${level}`;
@@ -124,13 +124,13 @@ export default function CareerFilter() {
                         value={level}
                       />
                       <Icon icon={checked ? faCheckSquare : faSquare} />
-                      <span id={`${id}-label`}>{translate(`experience_level_${level}`)}</span>
+                      <span id={`${id}-label`}>{translate(`results.careers.experience_level_${level}`)}</span>
                     </label>
                   );
                 })}
               </div>
               <div className={style.center}>
-                <button type="submit">{translate("search")}</button>
+                <button type="submit">{translate("common.search")}</button>
               </div>
             </div>
           </div>

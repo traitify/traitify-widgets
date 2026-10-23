@@ -50,8 +50,8 @@ export default function ManagerReport() {
       <div className={[style.container, style.box].join(" ")}>
         {!showRecommendationList && showHeaders && (
           <>
-            <div className={style.sectionHeading}>{translate("recommendation_chart_heading")}</div>
-            <div className={style.p}>{translate("recommendation_chart_description")}</div>
+            <div className={style.sectionHeading}>{translate("results.benchmarks.chart.heading")}</div>
+            <div className={style.p}>{translate("results.benchmarks.chart.description")}</div>
           </>
         )}
         <RecommendationChart combined={true} />

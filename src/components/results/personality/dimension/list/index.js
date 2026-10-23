@@ -24,7 +24,7 @@ export default function PersonalityDimensionList() {
 
   return (
     <div className={style.container}>
-      {showHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("results.personality.breakdown.heading")}</div>}
       {!disableChart && <PersonalityDimensionChart />}
       {!disableDetails && (
         <div>

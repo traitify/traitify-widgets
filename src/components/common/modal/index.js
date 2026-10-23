@@ -38,7 +38,7 @@ function Modal({
             <div>{title}</div>
             <div>
               <Icon
-                aria-label={translate("close")}
+                aria-label={translate("common.close")}
                 className={style.close}
                 icon={faTimes}
                 onClick={onClose}

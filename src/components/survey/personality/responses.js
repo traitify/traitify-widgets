@@ -30,7 +30,7 @@ function Responses({likert = false, onResponse = null}) {
           onClick={onResponse && (() => onResponse(response))}
           type="button"
         >
-          {translate(key)}
+          {translate(`survey.${key}`)}
         </button>
       ))}
     </div>

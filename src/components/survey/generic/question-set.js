@@ -24,8 +24,8 @@ function QuestionSet({first, last, onBack, onNext, set, updateAnswer}) {
       <div className={style.btnGroup}>
         {!first ? (
           <button className={style.btnBack} onClick={onBack} type="button">
-            <Icon alt={translate("back")} className={style.icon} icon={faArrowLeft} />
-            {translate("back")}
+            <Icon alt={translate("common.back")} className={style.icon} icon={faArrowLeft} />
+            {translate("common.back")}
           </button>
         ) : <div />}
         <button
@@ -34,7 +34,7 @@ function QuestionSet({first, last, onBack, onNext, set, updateAnswer}) {
           onClick={onNext}
           type="button"
         >
-          {translate(last ? "submit" : "next")}
+          {translate(last ? "common.submit" : "common.next")}
         </button>
       </div>
     </div>

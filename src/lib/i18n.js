@@ -1,8 +1,18 @@
 import findMap from "./common/array/find-map";
 import dig from "./common/object/dig";
 import merge from "./common/object/merge";
+import setPath from "./common/object/set-path";
 import {isArray} from "./common/object/type";
 import i18nData from "./i18n-data";
+import aliases from "./i18n-data/aliases";
+
+const applyAliases = (data) => (
+  Object.keys(data).reduce((result, key) => {
+    setPath(result, aliases[key] || key, data[key]);
+
+    return result;
+  }, {})
+);
 
 export default class I18n {
   constructor() {
@@ -19,7 +29,7 @@ export default class I18n {
     const locale = _locale.toLowerCase();
     const currentData = this.data[locale] || {};
 
-    this.data[locale] = merge(currentData, data);
+    this.data[locale] = merge(currentData, applyAliases(data));
     if(name) { this.supportedLocales[locale] = name; }
   };
   copyTranslations = (_originLocale, _targetLocale) => {
@@ -28,10 +38,7 @@ export default class I18n {
     const targetData = this.data[targetLocale] || {};
     const originData = this.data[originLocale] || {};
 
-    this.data[targetLocale] = {
-      ...targetData,
-      ...originData
-    };
+    this.data[targetLocale] = merge(targetData, originData);
   };
   // NOTE: Returns first translation if key is an array
   translate = (locale, _key, options) => {

@@ -34,73 +34,73 @@ export default function CareerModalDetails() {
       <div className={style.contentTop}>
         <ul className={style.info}>
           <li>
-            <h4>{translate("salary_mean")}:</h4>
+            <h4>{translate("results.careers.salary_mean")}:</h4>
             <div className={`${style.infoText} ${style.salary}`}>{salary}</div>
           </li>
           <li>
-            <h4>{translate("local_salary")}:</h4>
+            <h4>{translate("results.careers.local_salary")}:</h4>
           </li>
           <li>
-            <h4>{translate("employment_growth")}:</h4>
+            <h4>{translate("results.careers.employment_growth")}:</h4>
             <div className={`${style.infoText} ${style.growth}`}>{growth}</div>
           </li>
         </ul>
         <ul className={style.info}>
           <li>
-            <h4>{translate("education")}:</h4>
+            <h4>{translate("results.careers.education")}:</h4>
             <div className={`${style.infoText} ${style.education}`}>
-              {translate(`experience_level_${career.experience_level.id}`)}
+              {translate(`results.careers.experience_level_${career.experience_level.id}`)}
             </div>
           </li>
           <li>
-            <h4>{translate("bright_future")}:</h4>
+            <h4>{translate("results.careers.bright_future")}:</h4>
             <div className={style.infoText}>
-              <input aria-label={translate("bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
+              <input aria-label={translate("results.careers.bright_future")} checked={career.bright_outlooks.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
               <Icon icon={career.bright_outlooks.length > 0 ? faCheckSquare : faSquare} />
             </div>
           </li>
           <li>
-            <h4>{translate("green_career")}:</h4>
+            <h4>{translate("results.careers.green_career")}:</h4>
             <div className={style.infoText}>
-              <input aria-label={translate("green_career")} checked={career.green_categories.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
+              <input aria-label={translate("results.careers.green_career")} checked={career.green_categories.length > 0} className={style.check} disabled={true} type="checkbox" readOnly={true} />
               <Icon icon={career.green_categories.length > 0 ? faCheckSquare : faSquare} />
             </div>
           </li>
         </ul>
         <div className={style.careerHelp}>
-          <a className={style.btnPrimary} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title={translate("view_on_onet")}>{translate("view_on_onet")}</a>
-          <button className={style.legendToggle} onClick={toggleLegend} title={translate("more_information")} type="button">
-            <Icon alt={translate("more_information")} className={style.questionBtn} icon={faCircleQuestion} />
+          <a className={style.btnPrimary} href={`http://www.onetonline.org/link/summary/${career.id}`} target="_blank" rel="noopener noreferrer" title={translate("results.careers.view_on_onet")}>{translate("results.careers.view_on_onet")}</a>
+          <button className={style.legendToggle} onClick={toggleLegend} title={translate("results.careers.more_information")} type="button">
+            <Icon alt={translate("results.careers.more_information")} className={style.questionBtn} icon={faCircleQuestion} />
           </button>
         </div>
         {showLegend && (
           <div className={style.legend}>
             <ul className={style.info}>
               <li>
-                <h4><Icon icon={faDollarSign} /> {translate("salary_mean")}:</h4>
-                <DangerousHTML html={translate("salary_mean_html")} tag="p" />
+                <h4><Icon icon={faDollarSign} /> {translate("results.careers.salary_mean")}:</h4>
+                <DangerousHTML html={translate("results.careers.salary_mean_html")} tag="p" />
               </li>
               <li>
-                <h4><Icon icon={faChartBar} /> {translate("employment_growth")}:</h4>
-                <DangerousHTML html={translate("employment_growth_html")} tag="p" />
+                <h4><Icon icon={faChartBar} /> {translate("results.careers.employment_growth")}:</h4>
+                <DangerousHTML html={translate("results.careers.employment_growth_html")} tag="p" />
               </li>
               <li>
-                <h4><Icon icon={faGraduationCap} /> {translate("education")}:</h4>
-                <DangerousHTML html={translate("education_html")} tag="p" />
+                <h4><Icon icon={faGraduationCap} /> {translate("results.careers.education")}:</h4>
+                <DangerousHTML html={translate("results.careers.education_html")} tag="p" />
               </li>
             </ul>
             <ul className={style.info}>
               <li>
-                <h4><Icon icon={faLightbulb} /> {translate("bright_future")}:</h4>
-                <DangerousHTML html={translate("bright_future_html")} tag="p" />
+                <h4><Icon icon={faLightbulb} /> {translate("results.careers.bright_future")}:</h4>
+                <DangerousHTML html={translate("results.careers.bright_future_html")} tag="p" />
               </li>
               <li>
-                <h4><Icon icon={faLeaf} /> {translate("green_career")}:</h4>
-                <DangerousHTML html={translate("green_career_html")} tag="p" />
+                <h4><Icon icon={faLeaf} /> {translate("results.careers.green_career")}:</h4>
+                <DangerousHTML html={translate("results.careers.green_career_html")} tag="p" />
               </li>
             </ul>
             <p className={style.center}>
-              <button className={style.legendToggle} onClick={toggleLegend} title={translate("close")} type="button">{translate("close")}</button>
+              <button className={style.legendToggle} onClick={toggleLegend} title={translate("common.close")} type="button">{translate("common.close")}</button>
             </p>
           </div>
         )}
@@ -109,7 +109,7 @@ export default function CareerModalDetails() {
       <div className={style.contentBottom}>
         <div className={style.leftContainer}>
           <div className={style.experienceContainer}>
-            <h3 className={style.subtitleFull}>{`${translate("education_level")}:`}</h3>
+            <h3 className={style.subtitleFull}>{`${translate("results.careers.education_level")}:`}</h3>
             <ol className={style.experience}>
               {[1, 2, 3, 4, 5].map((level) => (
                 <li key={level} className={career.experience_level.id >= level ? style.active : ""} />
@@ -121,7 +121,7 @@ export default function CareerModalDetails() {
         <div className={style.rightContainer}>
           <div>
             <h3 className={style.subtitleFull}>
-              {`${translate("match_rate")}:`}
+              {`${translate("results.careers.match_rate")}:`}
               <i className={style.matchRatePercent}>{Math.round(career.score)}%</i>
             </h3>
             <div className={style.matchRate}>

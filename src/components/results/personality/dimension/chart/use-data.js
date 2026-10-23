@@ -21,8 +21,8 @@ export default function PersonalityDimensionChart() {
     const data = combine({guide, order: "types", types: results.personality_types});
     if(!data) { return; }
 
-    const levels = i18n.data[locale].level;
-    const fallbackLevels = i18n.data["en-us"].level;
+    const levels = i18n.data[locale]?.results?.benchmarks?.level || {};
+    const fallbackLevels = i18n.data["en-us"]?.results?.benchmarks?.level || {};
     const columns = data.map((column) => {
       const level = column.type.level.trim();
       const value = findByValue(levels, level) || findByValue(fallbackLevels, level);

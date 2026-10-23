@@ -53,7 +53,7 @@ export default function PersonalityTypeChart() {
 
   return (
     <div className={style.container}>
-      {showHeaders && <div className={style.sectionHeading}>{translate("personality_breakdown")}</div>}
+      {showHeaders && <div className={style.sectionHeading}>{translate("results.personality.breakdown.heading")}</div>}
       <div className={style.horizontal}>
         {types.map(({badge, id, name, score: _score}, index) => {
           const score = index === 0 ? 95 : _score;
@@ -65,7 +65,7 @@ export default function PersonalityTypeChart() {
             <div key={id} className={style.row}>
               <div className={style.label}>
                 <div>{name}</div>
-                <img alt={`${name} ${translate("badge")}`} src={badge.image_medium} />
+                <img alt={`${name} ${translate("common.badge")}`} src={badge.image_medium} />
               </div>
               <div className={style.grid}>
                 <div className={style.bar} style={inlineStyle} />
@@ -104,7 +104,7 @@ export default function PersonalityTypeChart() {
             type="button"
           >
             <span>
-              <img alt={`${name} ${translate("badge")}`} src={badge.image_medium} />
+              <img alt={`${name} ${translate("common.badge")}`} src={badge.image_medium} />
               {name}
             </span>
           </button>
@@ -118,7 +118,7 @@ export default function PersonalityTypeChart() {
         <div className={style.p}>{description}</div>
         {fields.map((field) => (
           <div key={field} className={style.field}>
-            <DangerousHTML className={style.subheading} html={translate(`headings.personality.${field}_html`)} />
+            <DangerousHTML className={style.subheading} html={translate(`results.personality.headings.${field}_html`)} />
             <div className={style.values}>
               {activeType[field].map((value) => (
                 <div key={value} style={{borderColor: `#${activeType.badge.color_1}`}}>{value}</div>

@@ -29,7 +29,7 @@ describe("I18n", () => {
     it("adds data to existing locale", () => {
       i18n.addTranslations("es-US", {data: {tacos: "Yo quiero tacos"}, name: "Spanish"});
 
-      expect(i18n.data["es-us"].me).toBe("Soy yo");
+      expect(i18n.data["es-us"].survey.me).toBe("Soy yo");
       expect(i18n.data["es-us"].tacos).toBe("Yo quiero tacos");
     });
 
@@ -42,8 +42,15 @@ describe("I18n", () => {
         name: "Spanish"
       });
 
-      expect(i18n.data["es-us"].me).toBe("Yo quiero");
+      expect(i18n.data["es-us"].survey.me).toBe("Yo quiero");
       expect(i18n.data["es-us"].tacos).toBe("Yo quiero tacos");
+    });
+
+    it("remaps legacy keys to their current paths", () => {
+      i18n.addTranslations("es-US", {data: {back: "Atrás", personality_heading: "Tipo"}});
+
+      expect(i18n.data["es-us"].common.back).toBe("Atrás");
+      expect(i18n.data["es-us"].results.personality.archetype.heading).toBe("Tipo");
     });
   });
 
@@ -51,13 +58,13 @@ describe("I18n", () => {
     it("copies data to new locale", () => {
       i18n.copyTranslations("es-US", "es-CU");
 
-      expect(i18n.data["es-cu"].me).toBe("Soy yo");
+      expect(i18n.data["es-cu"].survey.me).toBe("Soy yo");
     });
 
     it("copies data to existing locale", () => {
       i18n.copyTranslations("en-US", "es-US");
 
-      expect(i18n.data["es-us"].me).toBe("Me");
+      expect(i18n.data["es-us"].survey.me).toBe("Me");
     });
 
     it("copies data from new locale", () => {
@@ -70,7 +77,7 @@ describe("I18n", () => {
       i18n.data["es-us"].tacos = "Yo quiero tacos";
       i18n.copyTranslations("en-US", "es-US");
 
-      expect(i18n.data["es-us"].me).toBe("Me");
+      expect(i18n.data["es-us"].survey.me).toBe("Me");
       expect(i18n.data["es-us"].tacos).toBe("Yo quiero tacos");
     });
   });
@@ -85,7 +92,7 @@ describe("I18n", () => {
     });
 
     it("returns translation", () => {
-      const translation = translate("me");
+      const translation = translate("survey.me");
 
       expect(translation).toBe("Me");
     });

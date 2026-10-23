@@ -83,6 +83,9 @@
       "salary_mean_html": "해당 직업의 근로자의 절반이 해당 금액보다 더 많이 받고 나머지 절반은 더 적게 받는 임금. 중간 수치의 임금 데이터는 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a> 에서 가져온 것입니다.",
       "view_on_onet": "O*Net에서 채용 세부정보 보기"
     },
+    "feedback": {
+      "thanks": "의견을 보내 주셔서 감사합니다!"
+    },
     "personality": {
       "archetype": {
         "description_html": "이 평가는 귀하가 귀하의 성격 구성 요소를 이해하는 데 도움이 됩니다. 우리 몸이 다양한 기관 시스템으로 구성되어 있는 것처럼, 우리의 성격도 별개의, 똑같이 중요한 부분으로 구성되어 있다고 생각할 수 있습니다. 우리는 날마다, 상황마다 조금씩 다르게 느끼고 행동할지 모르지만 일반적으로 우리 모두는 더 높거나 더 낮은 5가지 핵심 차원을 보여줍니다. 우리 신체의 모든 부분이 함께 작용하여 건강을 유지하는 것처럼 이 5가지 차원 모두가 우리가 누구인지를 형성합니다.",
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "건너 뛴 질문"
     },
+    "cognitive_assessment": "인지 평가",
     "generic_assessment": "일반 평가",
     "instructions": "지침",
     "me": "나",
@@ -225,6 +229,7 @@
       "slide_error": "지금은 더 이상 슬라이드를 로딩할 수 없습니다.",
       "try_again": "다시 시도하려면 여기를 클릭하세요"
     },
+    "personality_assessment": "성격 평가",
     "really_me": "정말 나임",
     "really_not_me": "정말 내가 아님"
   }

@@ -83,6 +83,9 @@
       "salary_mean_html": "Upah dimana separuh pekerja dalam suatu pekerjaan mendapatkan penghasilan lebih dari jumlah tersebut dan separuhnya lagi mendapatkan penghasilan lebih sedikit. Data median upah didapatkan dari <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
       "view_on_onet": "Lihat Detail Karir di O*Net"
     },
+    "feedback": {
+      "thanks": "Terima kasih atas umpan balikmu!"
+    },
     "personality": {
       "archetype": {
         "description_html": "Asesmen ini membantumu untuk memahami komponen-komponen yang ada dalam kepribadianmu. Sama seperti tubuh kita yang tersusun dari sistem organ yang berbeda-beda, kita dapat berpikir bahwa kepribadian kita memiliki bagian-bagian yang terpisah, dan sama pentingnya. Meskipun mungkin kita merasa atau bersikap sedikit berbeda hari ke hari, atau bahkan dari suatu situasi ke situasi berikutnya, kita biasanya menunjukkan tingkat lima dimensi dasar yang lebih tinggi atau lebih rendah. Kelima dimensi membentuk siapa kita, sama seperti semua bagian di tubuh kita bekerja bersama untuk menjaga kita tetap sehat. ",
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "Pertanyaan yang Dilewati"
     },
+    "cognitive_assessment": "Asesmen Kognitif",
     "generic_assessment": "Asesmen Umum",
     "instructions": "Instruksi",
     "me": "Saya",
@@ -225,6 +229,7 @@
       "slide_error": "Tidak dapat memuat lebih banyak slide untuk saat ini",
       "try_again": "Klik Disini untuk Mencoba Kembali"
     },
+    "personality_assessment": "Asesmen Kepribadian",
     "really_me": "Benar-benar Saya",
     "really_not_me": "Benar-benar Bukan Saya"
   }

@@ -83,6 +83,9 @@
       "salary_mean_html": "該職業中一半工人的工資高於該數額，一半工人的工資低於該數額。 工資中位數數據來自 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>",
       "view_on_onet": "在 O*Net 上查看職業詳細信息"
     },
+    "feedback": {
+      "thanks": "感謝您的回饋意見！"
+    },
     "personality": {
       "archetype": {
         "description_html": "此評估可以幫助您了解您的個性的組成部分。 就像我們的身體由不同的器官系統組成一樣，我們可以認為我們的個性具有獨立的、同等重要的部分。 儘管我們每一天的感覺和行為可能會略有不同，甚至從一種情況到下一種情況都會有所不同，但我們通常都會表現出更高或更低的五個核心維度水平。 所有五個維度都塑造了我們是誰，就像我們身體的所有部分共同努力保持我們的健康一樣。",
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "跳過問題"
     },
+    "cognitive_assessment": "認知評估",
     "generic_assessment": "通用評估",
     "instructions": "說明",
     "me": "我",
@@ -225,6 +229,7 @@
       "slide_error": "目前無法載入更多幻燈片",
       "try_again": "點擊此處重試"
     },
+    "personality_assessment": "性格評估",
     "really_me": "真的是我",
     "really_not_me": "真的不是我"
   }

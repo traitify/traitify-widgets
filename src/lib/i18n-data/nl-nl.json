@@ -83,6 +83,9 @@
       "salary_mean_html": "Het salaris waarbij de helft van de werknemers in het beroep meer verdiende dan dat bedrag en de helft minder verdiende. Gemiddelde salarisgegevens zijn afkomstig van <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Bekijk Carrièredetails op O*Net"
     },
+    "feedback": {
+      "thanks": "Bedankt voor je feedback"
+    },
     "personality": {
       "archetype": {
         "description_html": "Deze beoordeling helpt je om de componenten van jouw persoonlijkheid te begrijpen. Net zoals ons lichaam uit verschillende orgaansystemen bestaat, heeft onze persoonlijkheid afzonderlijke onderdelen die allemaal even belangrijk zijn.<br /><br />Hoewel we ons van de ene dag tot de andere, of zelfs van de ene situatie tot de andere, een beetje anders voelen en gedragen, vertonen we over het algemeen de vijf kerndimensies in een hogere of lagere mate. Alle vijf dimensies geven vorm aan wie we zijn, net zoals alle delen van ons lichaam samenwerken om ons gezond te houden.",
@@ -102,7 +105,7 @@
       },
       "details": {
         "best_work_environments": "Beste werkomgeving",
-        "complements": "Complements",
+        "complements": "Aanvullingen",
         "conflicts": "Conflicten",
         "heading": "Persoonlijkheidsdetails"
       },
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "Overgeslagen vragen"
     },
+    "cognitive_assessment": "Cognitief onderzoek",
     "generic_assessment": "Genetische Beoordeling",
     "instructions": "Instructies",
     "me": "Ik",
@@ -225,6 +229,7 @@
       "slide_error": "Kan op dit moment geen dia's meer laden",
       "try_again": "Klik hier om het opnieuw te proberen"
     },
+    "personality_assessment": "Beoordeling van persoonlijkheid",
     "really_me": "Echt Ik",
     "really_not_me": "Echt niet"
   }

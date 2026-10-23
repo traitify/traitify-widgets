@@ -83,6 +83,9 @@
       "salary_mean_html": "Lønnen hvor halvparten av arbeidstakere i yrket tjente mer enn dette beløpet og halvt tjente mindre. Median lønnsdata er fra <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Vis karriereinformasjon om O*Net"
     },
+    "feedback": {
+      "thanks": "Takk for din tilbakemelding!"
+    },
     "personality": {
       "archetype": {
         "description_html": "Denne vurderingen hjelper deg å forstå komponentene i personligheten din. Akkurat som kroppene våre er sammensatt av forskjellige organsystemer, kan vi tenke på at personlighetene våre har separate, like viktige deler.<br /><br />Selv om vi kanskje føler og oppfører oss litt annerledes fra en dag til en annen, eller til og med fra en situasjon til den neste, viser vi alle typisk høyere eller lavere nivåer med fem kjernedimensjoner. Alle de fem dimensjonene former hvem vi er, akkurat som alle delene av kroppen vår jobber sammen for å holde oss sunne.",
@@ -215,6 +218,7 @@
       },
       "skipped_questions": "Ubesvarte Spørsmål"
     },
+    "cognitive_assessment": "Kognitiv Vurdering",
     "generic_assessment": "Generisk Vurdering",
     "instructions": "Bruksanvisning",
     "me": "Meg",
@@ -224,6 +228,7 @@
       "slide_error": "Kan ikke laste flere lysbilder nå",
       "try_again": "Klikk her for å prøve igjen"
     },
+    "personality_assessment": "Personlighetsvurdering",
     "really_me": "Egentlig meg",
     "really_not_me": "Egentlig ikke meg"
   }

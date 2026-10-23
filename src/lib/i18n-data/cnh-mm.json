@@ -69,7 +69,7 @@
       "experience_level_3": "Associate's Degree",
       "experience_level_4": "Bachelor's Degree",
       "experience_level_5": "Graduate Degree",
-      "green_career": "Green Career",
+      "green_career": "Hlawhtlingmi hmunpawl",
       "green_career_html": "A cangmi hmunpawl a hmanhmi hna a sawnkhawm a si. Zong a hman mi hmunh thil pawl kha phihnung pawl le a thlunghnak pawl. Data chungin <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a> chungin an i khawh.",
       "learn_more": "Zaangfah khawh",
       "link_heading": "Na zumhawi hmanhnak pawl chungin hmuahkhawh",
@@ -234,6 +234,7 @@
       },
       "skipped_questions": "Biahalnak hna a philhrawh"
     },
+    "cognitive_assessment": "Hmuhnak zumh",
     "generic_assessment": "Tlangpi Zohfel Nak",
     "instructions": "Hmuhsaknak",
     "me": "Ka",
@@ -243,6 +244,7 @@
       "slide_error": "He caanah slides hna kha na phan khawh lo",
       "try_again": "A philhkhawh rawh, he hmun ah i phan khawh."
     },
+    "personality_assessment": "Zumhawi Hmanhnak Biahalnak",
     "really_me": "Kei ziaza ahcun",
     "really_not_me": "Kei ziaza ahcun lo"
   }

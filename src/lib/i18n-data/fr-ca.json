@@ -1,6 +1,7 @@
 {
   "common": {
     "actions": {
+      "show_hide_all": "Tout afficher / Tout masquer",
       "show_less": "Montre Moins",
       "show_more": "Montre Plus"
     },
@@ -8,7 +9,9 @@
     "badge": "Badge",
     "cancel": "Annuler",
     "close": "Fermer",
+    "complete": "Terminé",
     "confirm": "Confirmer",
+    "correct": "Correct",
     "filter": "Filtrer",
     "help": "Aidez-moi",
     "help_modal": {
@@ -21,17 +24,21 @@
       "submit": "Envoyer",
       "submitted": "Message envoyé"
     },
+    "incorrect": "Incorrect",
     "loading": "Chargement",
     "location": "Lieu",
     "next": "Suivant",
+    "no": "Non",
     "question": "Question",
     "response": "Réponse",
     "score": "Résultat",
     "search": "Chercher",
     "skip": "Sauter",
+    "skipped": "Ignorés",
     "sort": "Trier",
     "submit": "Soumettre",
-    "title": "Titre"
+    "title": "Titre",
+    "yes": "Oui"
   },
   "results": {
     "benchmarks": {
@@ -83,6 +90,22 @@
       "salary_mean_html": "Le salaire auquel la moitié des travailleurs de la profession gagnait plus que ce montant et la moitié gagnait moins. Les données salariales médianes proviennent de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Voir les détails de carrière sur O*Net"
     },
+    "cognitive": {
+      "breakdown": {
+        "description": "Cette illustration présente les résultats de l’évaluation %, établis à partir des réponses à une série de questions abstraites visant à mesurer les capacités mentales générales.",
+        "heading": "Analyse détaillée des capacités cognitives"
+      }
+    },
+    "feedback": {
+      "modal_prompt": "Nous aimerions en savoir plus sur votre expérience.",
+      "prompt": "Trouvez-vous que vos résultats vous correspondent?",
+      "thanks": "Merci pour votre avis!"
+    },
+    "generic": {
+      "breakdown": "Répartition",
+      "breakdown_description": "Voici la répartition des questions auxquelles vous avez répondu lors de l’évaluation.",
+      "overall_score": "Score global"
+    },
     "personality": {
       "archetype": {
         "description_html": "Cette évaluation vous aide à comprendre les composantes de votre personnalité. De la même façon que le corps humain est composé de différents systèmes, notre personnalité se compose de différents aspects d’importance égale, ou du moins pouvons-nous l’envisager ainsi.<br /><br />Bien que nous puissions agir et réagir légèrement différemment selon les jours ou les situations, nos cinq dimensions fondamentales sont généralement plus ou moins développées. Ces cinq dimensions définissent qui nous sommes, de la même façon que les parties de notre corps travaillent de concert pour notre équilibre.",
@@ -112,6 +135,16 @@
         "heading_for_benefits": "Avantages potentiels d’un niveau de %{name} %{level}",
         "potential_benefits": "Des bénéfices potentiels",
         "room_for_growth_and_change": "Place à la croissance et au changement"
+      },
+      "headings": {
+        "achieve_html": "<b>ACCOMPLIR</b> – Les compétences que vous aimez développer",
+        "appreciate_html": "<b>VALORISER</b>  – Des valeurs qui correspondent à votre vision du monde",
+        "explore_html": "EXPLORER – Le contenu qui vous intéresse",
+        "styles": {
+          "negative": "Moins d’éléments de :",
+          "overall": "Votre style professionnel général est…",
+          "positive": "Davantage d’éléments de :"
+        }
       },
       "skills": {
         "heading": "Compétences de réussite",
@@ -147,6 +180,11 @@
         "heading": "Traits de personnalité"
       }
     },
+    "reports": {
+      "candidate": "Rapport d’évaluation de la candidate ou du candidat",
+      "employee": "Rapport sur l’engagement des employés",
+      "manager": "Rapport destiné au responsable du recrutement"
+    },
     "thanks": {
       "heading": "Merci d’avoir complété notre évaluation",
       "learn_more": "Pour en savoir plus sur l'évaluation que vous venez de prendre, visitez <a href=\"https://www.traitify.com\" target=\"_blank\" title=\"Traitify\">Traitify.com</a>."
@@ -156,6 +194,8 @@
     "cognitive_interview": {
       "heading": "Évaluation cognitive et entretien"
     },
+    "error": "Une erreur s’est produite lors de vos évaluations.",
+    "heading": "Vos évaluations de candidature",
     "interview": {
       "heading": "Entretien",
       "start": "Commencer l'entretien",
@@ -165,7 +205,15 @@
     "interview_personality": {
       "heading": "Évaluation de la personnalité et entretien"
     },
-    "text": "Dans le cadre de votre candidature, nous souhaitons vous demander de compléter les évaluations suivantes. Veuillez cliquer sur le bouton à côté du nom de l’évaluation. Cela vous mènera à l’endroit où vous pourrez compléter la/les évaluation(s). Veuillez revenir ici une fois que vous aurez terminé toutes les évaluations."
+    "loading": "Chargement de votre évaluation en cours…",
+    "redacted": {
+      "heading": "Non disponible",
+      "text": "Ces évaluations Traitify ne sont plus disponibles."
+    },
+    "start": "Commencer l’évaluation",
+    "text": "Dans le cadre de votre candidature, nous souhaitons vous demander de compléter les évaluations suivantes. Veuillez cliquer sur le bouton à côté du nom de l’évaluation. Cela vous mènera à l’endroit où vous pourrez compléter la/les évaluation(s). Veuillez revenir ici une fois que vous aurez terminé toutes les évaluations.",
+    "timeout": "Le délai de chargement a expiré.",
+    "try_again": "Réessayons"
   },
   "survey": {
     "accommodation": {
@@ -216,6 +264,8 @@
       },
       "skipped_questions": "Questions sautées"
     },
+    "cognitive_assessment": "Évaluation cognitive",
+    "external_assessment": "Évaluation externe",
     "generic_assessment": "Valuation Générale",
     "instructions": "Instructions",
     "me": "Moi",
@@ -225,6 +275,7 @@
       "slide_error": "Impossible de charger plus de diapositives pour le moment",
       "try_again": "Cliquez ici pour essayer à nouveau"
     },
+    "personality_assessment": "Évaluation de la personnalité",
     "really_me": "Vraiment moi",
     "really_not_me": "Vraiment pas moi"
   }

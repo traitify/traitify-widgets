@@ -83,6 +83,9 @@
       "salary_mean_html": "O salário pelo qual metade dos trabalhadores na ocupação ganhava mais do que esse valor e metade ganhava menos. Os dados medianos dos salários são de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Visualizar detalhes da carreira no O*Net"
     },
+    "feedback": {
+      "thanks": "Obrigado pelo seu feedback!"
+    },
     "personality": {
       "archetype": {
         "description_html": "Essa avaliação ajuda você a entender os componentes da sua personalidade. Assim como nossos corpos são compostos por diferentes sistemas de órgãos, podemos imaginar nossas personalidades como partes distintas mas de igual importância.<br /><br />Embora possamos nos sentir e comportar de forma um pouco diferente ao longo dos dias, ou mesmo entre diferentes situações, todos demonstramos tipicamente níveis maiores ou menores das cinco dimensões básicas. Todas as cinco dimensões formam a nossa identidade, assim como todas as partes de nossos corpos funcionam em harmonia para nos manter saudáveis.",
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "Questões puladas"
     },
+    "cognitive_assessment": "Avaliação cognitiva",
     "generic_assessment": "Avaliação Genérica",
     "instructions": "instruções",
     "me": "Eu sou assim",
@@ -225,6 +229,7 @@
       "slide_error": "Não foi possível carregar mais slides no momento",
       "try_again": "Clique Aqui Para Tentar Novamente"
     },
+    "personality_assessment": "Avaliação de Personalidade",
     "really_me": "realmente eu",
     "really_not_me": "realmente eu não"
   }

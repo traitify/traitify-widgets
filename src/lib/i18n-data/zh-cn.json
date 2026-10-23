@@ -83,6 +83,9 @@
       "salary_mean_html": "该职业中一半工人的收入高于该水平，另一半工人的收入低于该水平。中位数工资数据来自 <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "查看以下职业信息 O*Net"
     },
+    "feedback": {
+      "thanks": "谢谢您的反馈"
+    },
     "personality": {
       "archetype": {
         "description_html": "此项评估有助于你了解自身人格中的各个组成部分。正如我们的身体由不同的器官系统组成一样，我们也可以将我们的人格想象成包含具有同等重要性的不同组成部分。尽管我们每天的情绪和行为可能稍有相同，甚至在不同情况下也会产生不同的情绪和行为，但我们所有人通常都会围绕五个核心人格维度展现出或高或低的性格倾向。全部五个维度塑造了我们完整的人格，正如我们的身体各个部位协同工作一样，这样才能使我们保持健康。",
@@ -111,7 +114,7 @@
         "heading": "我的%{level}%{name}性人格对我而言意味着什么？",
         "heading_for_benefits": "%{level}%{name}性人格的潜在优势",
         "potential_benefits": "潜在的好处",
-        "room_for_growth_and_change": "真的不是我"
+        "room_for_growth_and_change": "成长和改进空间"
       },
       "skills": {
         "heading": "成功技巧",
@@ -137,7 +140,7 @@
       "tips": {
         "caution_zone": "注意区",
         "heading": "個性秘訣",
-        "room": "真的不是我",
+        "room": "增长和变革的空间",
         "settings": "适合你的环境",
         "settings_third_person": "适用于它们的设置",
         "tools": "使用的工具"
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "跳過的問題"
     },
+    "cognitive_assessment": "認知評估",
     "generic_assessment": "通用评估",
     "instructions": "说明",
     "me": "符合",
@@ -225,6 +229,7 @@
       "slide_error": "目前无法加载更多幻灯片",
       "try_again": "单击此处重试"
     },
+    "personality_assessment": "人格评估",
     "really_me": "真的是我",
     "really_not_me": "真的不是我"
   }

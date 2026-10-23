@@ -83,6 +83,9 @@
       "salary_mean_html": "Timpenningen som halvan av arbetarna i ockupationen tjänade på mer än den belopp och halva som tjänades mindre. Median- timpenningdata är från <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet direktanslutet</a>.",
       "view_on_onet": "Visa karriärinformation om O*Net"
     },
+    "feedback": {
+      "thanks": "Tack för din feedback!"
+    },
     "personality": {
       "archetype": {
         "description_html": "Den här utvärderingen bidrar till bättre förståelse för de olika delarna av din personlighet. Precis som att våra kroppar består av olika organsystem så kan vi tänka oss att våra personligheter består av separata delar som alla är lika viktiga.<br /><br />Trots att vi kanske känner och uppträder på lite olika sätt olika dagar, eller till och med i olika situationer, så uppvisar vi vanligtvis högre eller lägre nivåer av fem olika huvuddimensioner. Alla de fem dimensionerna formar vilka vi är, precis som att alla delar av vår kropp samarbetar för att upprätthålla vår hälsa.",
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "Frågor du hoppat över"
     },
+    "cognitive_assessment": "Test av kognitiv förmåga",
     "generic_assessment": "Standardtest ",
     "instructions": "Anvisningar",
     "me": "Mig",
@@ -225,6 +229,7 @@
       "slide_error": "Det går inte att ladda fler bilder vid den här tiden",
       "try_again": "Klicka här för att försöka igen"
     },
+    "personality_assessment": "Personlighetsbedömning",
     "really_me": "Verkligen mig",
     "really_not_me": "Verkligen inte jag"
   }

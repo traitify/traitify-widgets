@@ -7,7 +7,7 @@
     "back": "Espalda",
     "badge": "Placa",
     "cancel": "Cancelar",
-    "close": "Cerca",
+    "close": "Cerrar",
     "complete": "Completar",
     "confirm": "Confirmar",
     "filter": "Filtrar",
@@ -18,7 +18,7 @@
       "heading": "Ayuda",
       "input_label": "¿En qué podemos ayudarte? ",
       "input_placeholder": "Escribe aquí tu respuesta... ",
-      "message_required": "Por favor, ingresa un mensaje",
+      "message_required": "Por favor, ingrese un mensaje",
       "submit": "Enviar",
       "submitted": "Mensaje enviado"
     },
@@ -29,7 +29,7 @@
     "no": "No",
     "question": "Pregunta",
     "response": "Respuesta",
-    "score": "Puntuación",
+    "score": "Puntuje",
     "search": "Buscar",
     "skip": "Saltar",
     "sort": "Ordenar",
@@ -41,7 +41,7 @@
     "benchmarks": {
       "chart": {
         "description": "A continuación puede ver los resultados de la personalidad del candidato desglosados según cada una de las Cinco grandes dimensiones. Los puntajes están codificados por color para indicar los rangos de mejor adecuación (verde), seguido por amarillo y rojo. Estos rangos varían para cada puesto. Se basan en distintos tipos de información que pueden incluir investigación publicada, descripciones del puesto y entrevistas con personas que están familiarizadas con el puesto.",
-        "heading": "Desglose del ajuste"
+        "heading": "Desglose de ajuste"
       },
       "compare": {
         "description": "Puede ver si este candidato se ajusta a otros perfiles de referencia del puesto. De un vistazo, podrá consultar el nivel de encaje del candidato con otros perfiles.",
@@ -148,7 +148,7 @@
         "headings": {
           "communication": "Hablar, escribir y compartir ideas es importante. Prueba estos consejos para comunicarte efectivamente.",
           "dealing_with_stress": "El trabajo y la vida tienen muchos altibajos. Estos son algunos consejos que te ayudarán a sobrellevarlos. ",
-          "everyday_adjustments": "Aprovecha al máximo tus días mientras esperas regresar  al trabajo.",
+          "everyday_adjustments": "Aprovecha al máximo tus días mientras esperas regresar al trabajo.",
           "habits": "Convierte tus hábitos en fuerzas personales. Aquí tienes algunas ideas para empezar.",
           "leading_others": "La habilidad de liderar te ayuda a crecer, ahora y en el futuro.",
           "teamwork": "A menudo trabajamos en colaboración con otros. A continuación, se ofrecen algunas ideas sobre cómo trabajar en equipo.",
@@ -170,7 +170,7 @@
         "room": "Espacio para el crecimiento y el cambio",
         "settings": "Configuración personal",
         "settings_third_person": "Configuraciones que funcionan para ellos",
-        "tools": "Herramientas para usar"
+        "tools": "Herramientas para utilizar "
       },
       "traits": {
         "description": "Estos son sus 5 rasgos principales medidos en una escala entre 0 % y 100 %",
@@ -181,6 +181,9 @@
       "candidate": "Reporte del candidato",
       "employee": "Reporte de compromiso del empleado",
       "manager": "Reporte del gerente de contratación"
+    },
+    "rjp": {
+      "heading": "¡Completó  la vista previa correctamente"
     },
     "thanks": {
       "heading": "Gracias por completar nuestra evaluación",
@@ -196,7 +199,7 @@
     "interview": {
       "heading": "Entrevista",
       "start": "Iniciar entrevista",
-      "survey": "Entrevistador Virtual Impulsado por IA de Crosschq",
+      "survey": "Entrevistador de IA de Crosschq",
       "text": "Participa en una entrevista virtual por videollamada impulsada por IA para hacer preguntas, practicar tu entrevista y conocer más detalles sobre este puesto. Esta conversación se realiza con un entrevistador virtual, diseñado para compartir información sobre nuestra empresa, nuestra cultura y esta oportunidad laboral."
     },
     "interview_personality": {
@@ -233,7 +236,7 @@
         "step_2_button": "A Continuación Encontrará Ejercicios de Práctica",
         "step_2_heading": "Aquí tiene un ejemplo",
         "step_2_text": "En cada fila y columna de la cuadrícula hay un triángulo, un pentágono y una flecha. Hay una figura negra, una azul y una blanca. Todas las imágenes están orientadas hacia la misma dirección. Por lo tanto, la imagen que completa la cuadrícula es la imagen que se encuentra en la parte inferior izquierda.",
-        "step_4_button": "Empezar",
+        "step_4_button": "Comenzar",
         "step_4_heading": "Antes de Empezar...",
         "step_4_html": "<p>A partir de este momento empezará la prueba. Antes de empezar recuerde:</p><ul><li>La prueba consiste de 20 preguntas y podrá tomarse todo el tiempo que necesita para contestarlas.</li><li>Debe encontrar un lugar tranquilo donde pueda prestarle a la prueba todo su atención sin distracciones.</li><li>Puede saltarse preguntas si lo necesita pero trate de contestar todas las preguntas.</li><li>Por favor complete la prueba sin hacer ninguna pausa. </li></ul>",
         "trial_step_1_text": "En uno de los espacios en la cuadrícula falta una imagen. El espacio está identificado con un signo de interrogación (?). Debajo de la cuadrícula encontrará cuatro imágenes. Uno de estas imágenes completa la cuadrícula y por lo tanto reemplaza el signo de interrogación (?). \n\nUna vez que comience el ejercicio, elija la imagen ubicada debajo de la cuadrícula que completa la misma. Luego oprima “Confirmar” para pasar a la siguiente pregunta. Si desea saltarse la pregunta oprima “Omitir”.  Cuando esté listo, oprima “Ver Ejemplo” para ver un ejemplo.",
@@ -247,13 +250,13 @@
         "answer_incorrect": "Su respuesta es incorrecta.",
         "heading": "Ejercicios de Práctica",
         "step_1_button": "Siguiente pregunta",
-        "step_1_heading": "Explicación a su Respuesta",
+        "step_1_heading": "Explicación de la Respuesta",
         "step_1_text": "En esta cuadrícula, la imagen que se encuentra en la parte superior de la primera fila ha sido rotada 180 grados y ubicada en la celda inferior. Por lo tanto, la imagen que completa la cuadrícula se encuentra ubicada abajo a la derecha.",
         "step_2_button": "Siguiente pregunta",
         "step_2_heading": "Explicación a su Respuesta",
         "step_2_text": "En esta cuadrícula el número de líneas en cada imagen aumentan de una en una a lo largo de cada fila y hacia abajo en cada columna. Las líneas se agregan en el sentido de las agujas del reloj. Por lo tanto, la imagen que completa la cuadrícula es la imagen que se encuentra en la parte superior a la izquierda.",
         "step_3_button": "Próxima Pregunta",
-        "step_3_heading": "Explicación a su Respuesta",
+        "step_3_heading": "Explicación de la Respuesta",
         "step_3_text": "En la fila superior, la imagen que se encuentra en el centro es la composición de una versión más grande de la imagen que se encuentra a la izquierda y la imagen a la derecha adentro. El sombreado de las imágenes a la derecha e izquierda está invertido en la imagen del centro. Por lo tanto, la imagen que completa la cuadrícula es la imagen que se encuentra en la parte superior a la derecha."
       },
       "skipped_questions": "Preguntas Saltadas"
@@ -268,6 +271,7 @@
       "slide_error": "No se pueden cargar más diapositivas en este momento",
       "try_again": "Haga clic aquí para intentarlo de nuevo"
     },
+    "personality_assessment": "Evaluación de la personalidad",
     "really_me": "A mi realmente",
     "really_not_me": "A mi no realmente",
     "rjp": {

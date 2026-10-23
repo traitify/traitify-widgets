@@ -11,6 +11,9 @@
     "confirm": "Konfime",
     "filter": "Filtè",
     "help": "Èd",
+    "help_modal": {
+      "heading": "Èd"
+    },
     "loading": "Loading",
     "location": "Kote,",
     "next": "Apre sa",
@@ -72,6 +75,9 @@
       "salary_mean_html": "Salè a nan ki mwatye nan travayè yo nan okipasyon an te touche plis pase sa kantite lajan ak mwatye touche mwens. Medyòm salè done yo soti nan <a href=\"http://www.onetonline.org \"target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Gade Detay Karyè sou O*Net"
     },
+    "feedback": {
+      "thanks": "Mèsi pou fidbak ou!"
+    },
     "personality": {
       "archetype": {
         "description_html": "Evalyasyon sa a ede ou konprann eleman pèsonalite ou yo. Menm jan kò nou yo konpoze de sistèm ògàn diferan, nou ka panse a pèsonalite nou an kòm gen separe, pati egalman enpòtan.<br /><br />Malgre ke nou ta ka santi ak konpòte yon ti jan diferan de yon jou nan pwochen an, oswa menm soti nan yon sitiyasyon nan pwochen an, nou tout tipikman montre pi wo oswa pi ba nivo nan senk dimansyon debaz yo. Tout senk dimansyon fòme ki nou yo, jis tankou tout pati yo nan kò nou travay ansanm kenbe nou an sante.",
@@ -100,7 +106,7 @@
         "heading": "Ki sa ki %{level} %{name} mwen vle di pou mwen?",
         "heading_for_benefits": "%{level} %{name} Benefis potansyèl yo",
         "potential_benefits": "Benefis Potansyèl",
-        "room_for_growth_and_change": "Rom for vekst og endring"
+        "room_for_growth_and_change": "Sal pou Kwasans ak Chanjman"
       },
       "skills": {
         "heading": "Konpetans pou Reyisit",
@@ -126,7 +132,7 @@
       "tips": {
         "caution_zone": "Zòn Atansyon",
         "heading": "Konsèy sou pèsonalite",
-        "room": "Rom for vekst og endring",
+        "room": "Sal pou Kwasans ak Chanjman",
         "settings": "Anviwònman pou ou",
         "settings_third_person": "Anviwònman ki travay pou yo",
         "tools": "Zouti Pou Sèvi ak"
@@ -197,6 +203,7 @@
       },
       "skipped_questions": "Sote Kesyon yo"
     },
+    "cognitive_assessment": "Evalyasyon koyitif",
     "instructions": "Enstriksyon",
     "me": "Se Mwen",
     "not_me": "Se Pa Mwen",
@@ -205,6 +212,7 @@
       "slide_error": "Kapab chaje plis glisad nan moman sa a",
       "try_again": "Klike la a eseye ankò"
     },
+    "personality_assessment": "Evalyasyon Pèsonalite",
     "really_me": "Vrèman mwen",
     "really_not_me": "Vrèman pa mwen"
   }

@@ -83,6 +83,9 @@
       "salary_mean_html": "Mức lương mà một nửa số công nhân trong nghề đó có mức lương cao hơn và một nửa có mức thấp hơn. Dữ liệu mức lương trung vị từ <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Xem Chi Tiết Nghề Nghiệp trên O*Net"
     },
+    "feedback": {
+      "thanks": "Cảm ơn bạn đã phản hồi!"
+    },
     "personality": {
       "archetype": {
         "description_html": "Bài đánh giá này giúp bạn hiểu rõ các thành phần của tính cách. Cũng giống như cơ thể chúng ta được cấu tạo từ các hệ thống cơ quan khác nhau, chúng ta có thể coi tính cách của mình là có các phần riêng biệt và có tầm quan trọng tương đương. Mặc dù có những lúc chúng ta cảm thấy và cư xử khác biệt một chút từ ngày này sang ngày khác, thậm chí từ tình huống này sang tình huống khác, nhưng hầu hết chúng ta thường thể hiện mức độ cao hơn hoặc thấp hơn ở 5 chiều cơ bản. Năm chiều này cùng định hình con người chúng ta, giống như tất cả các bộ phận trong cơ thể làm việc cùng nhau để duy trì sức khỏe.",
@@ -216,6 +219,7 @@
       },
       "skipped_questions": "Các câu hỏi đã bỏ qua "
     },
+    "cognitive_assessment": "Đánh giá nhận thức",
     "generic_assessment": "Đánh giá tổng quát",
     "instructions": "Hướng dẫn",
     "me": "Tôi",
@@ -225,6 +229,7 @@
       "slide_error": "Không thể tải thêm slide vào lúc này",
       "try_again": "Nhấn Vào Đây Để Thử Lại"
     },
+    "personality_assessment": "Đánh giá tính cách",
     "really_me": "Chắc chắn là Tôi",
     "really_not_me": "Chắn chắn Không phải Tôi"
   }

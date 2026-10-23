@@ -11,6 +11,9 @@
     "confirm": "Confirmar",
     "filter": "Filtrar",
     "help": "Ayuda",
+    "help_modal": {
+      "heading": "Ayuda"
+    },
     "loading": "Cargando",
     "location": "Ubicación",
     "next": "Siguiente",
@@ -71,6 +74,9 @@
       "salary_mean": "Salario medio",
       "salary_mean_html": "El salario al que la mitad de los trabajadores en la ocupación ganaba más de esa cantidad y la otra mitad ganaba menos. Los datos de salario mediano son de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "Ver detalles de carrera en O*Net"
+    },
+    "feedback": {
+      "thanks": "Gracias por tus comentarios"
     },
     "personality": {
       "archetype": {
@@ -198,6 +204,7 @@
       },
       "skipped_questions": "Preguntas Saltadas"
     },
+    "cognitive_assessment": "Evaluación intelectual",
     "instructions": "Instrucciones",
     "me": "Soy yo",
     "not_me": "No soy yo",
@@ -206,6 +213,7 @@
       "slide_error": "No se pueden cargar más diapositivas en este momento",
       "try_again": "Haga clic aquí para intentarlo de nuevo"
     },
+    "personality_assessment": "Evaluación de la personalidad",
     "really_me": "A mi realmente",
     "really_not_me": "A mi no realmente"
   }

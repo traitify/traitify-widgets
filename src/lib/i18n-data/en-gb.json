@@ -11,6 +11,9 @@
     "confirm": "Confirm",
     "filter": "Filter",
     "help": "Help",
+    "help_modal": {
+      "heading": "Help"
+    },
     "loading": "Loading",
     "location": "Location",
     "next": "Next",
@@ -71,6 +74,9 @@
       "salary_mean": "Salary Mean",
       "salary_mean_html": "The wage at which half of the workers in the occupation earned more than that amount and half earned less. Median wage data is from <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "view_on_onet": "View Career Details on O*Net"
+    },
+    "feedback": {
+      "thanks": "Thank you for your feedback!"
     },
     "personality": {
       "archetype": {
@@ -198,6 +204,7 @@
       },
       "skipped_questions": "Skipped Questions"
     },
+    "cognitive_assessment": "Cognitive Assessment",
     "instructions": "Instructions",
     "me": "Me",
     "not_me": "Not Me",
@@ -206,6 +213,7 @@
       "slide_error": "Unable to load more slides at this time",
       "try_again": "Click Here to Try Again"
     },
+    "personality_assessment": "Personality Assessment",
     "really_me": "Really Me",
     "really_not_me": "Really Not Me"
   }

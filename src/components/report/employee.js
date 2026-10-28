@@ -8,13 +8,17 @@ import Redacted from "components/status/redacted";
 import useActive from "lib/hooks/use-active";
 import useDefaultOptions from "lib/hooks/use-default-options";
 import useRedacted from "lib/hooks/use-redacted";
+import useReportDisabledComponents from "lib/hooks/use-report-disabled-components";
 import style from "./style.scss";
+
+const DISABLED_COMPONENTS = [];
 
 export default function EmployeeReport() {
   const active = useActive();
   const redacted = useRedacted();
 
   useDefaultOptions({applyAssessmentExpiration: true, perspective: "thirdPerson"});
+  useReportDisabledComponents(DISABLED_COMPONENTS);
 
   if(!active) { return null; }
   if(redacted) { return <Redacted />; }

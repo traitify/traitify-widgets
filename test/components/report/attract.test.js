@@ -29,10 +29,12 @@ describe("Report.Attract", () => {
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();
-    expect(container.listener.trigger).toHaveBeenCalledWith(
+    expect(container.listener.trigger).not.toHaveBeenCalledWith(
       "Options.updated",
       expect.objectContaining({
-        options: expect.not.objectContaining({disabledComponents: ["PersonalityBaseDetails", "PersonalityTraits"]})
+        options: expect.objectContaining({
+          disabledComponents: expect.arrayContaining(["Results.Personality.Trait.List"])
+        })
       })
     );
   });
@@ -40,7 +42,7 @@ describe("Report.Attract", () => {
   it("renders component with disabled details", async() => {
     assessment.personality_types[0].personality_type.career_style = ["Creating", "Building from scratch", "Diving in deep"];
     mockAssessment(assessment);
-    mockOption("disabledComponents", ["PersonalityBaseDetails"]);
+    mockOption("disabledComponents", ["Results.Personality.Base.Details"]);
 
     component = await ComponentHandler.setup(Component);
 
@@ -48,7 +50,9 @@ describe("Report.Attract", () => {
     expect(container.listener.trigger).toHaveBeenCalledWith(
       "Options.updated",
       expect.objectContaining({
-        options: expect.objectContaining({disabledComponents: ["PersonalityBaseDetails", "PersonalityTraits"]})
+        options: expect.objectContaining({
+          disabledComponents: ["Results.Personality.Base.Details", "Results.Personality.Trait.List"]
+        })
       })
     );
   });
@@ -56,7 +60,7 @@ describe("Report.Attract", () => {
   it("renders component with disabled details and traits", async() => {
     assessment.personality_types[0].personality_type.career_style = ["Creating", "Building from scratch", "Diving in deep"];
     mockAssessment(assessment);
-    mockOption("disabledComponents", ["PersonalityBaseDetails", "PersonalityTraits"]);
+    mockOption("disabledComponents", ["Results.Personality.Base.Details", "Results.Personality.Trait.List"]);
 
     component = await ComponentHandler.setup(Component);
 
@@ -64,7 +68,9 @@ describe("Report.Attract", () => {
     expect(container.listener.trigger).toHaveBeenCalledWith(
       "Options.updated",
       expect.objectContaining({
-        options: expect.objectContaining({disabledComponents: ["PersonalityBaseDetails", "PersonalityTraits"]})
+        options: expect.objectContaining({
+          disabledComponents: ["Results.Personality.Base.Details", "Results.Personality.Trait.List"]
+        })
       })
     );
   });
@@ -79,7 +85,9 @@ describe("Report.Attract", () => {
     expect(container.listener.trigger).toHaveBeenCalledWith(
       "Options.updated",
       expect.objectContaining({
-        options: expect.objectContaining({disabledComponents: ["PersonalityBaseDetails", "PersonalityTraits"]})
+        options: expect.objectContaining({
+          disabledComponents: ["Results.Personality.Trait.List"]
+        })
       })
     );
   });

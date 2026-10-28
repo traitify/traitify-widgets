@@ -12,8 +12,11 @@ import useActive from "lib/hooks/use-active";
 import useDefaultOptions from "lib/hooks/use-default-options";
 import useOption from "lib/hooks/use-option";
 import useRedacted from "lib/hooks/use-redacted";
+import useReportDisabledComponents from "lib/hooks/use-report-disabled-components";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
+
+const DISABLED_COMPONENTS = [];
 
 export default function ManagerReport() {
   const active = useActive();
@@ -24,6 +27,7 @@ export default function ManagerReport() {
   const translate = useTranslate();
 
   useDefaultOptions({applyAssessmentExpiration: true, perspective: "thirdPerson"});
+  useReportDisabledComponents(DISABLED_COMPONENTS);
 
   if(!active) { return null; }
   if(redacted) { return <Redacted />; }

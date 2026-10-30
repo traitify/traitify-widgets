@@ -1,6 +1,7 @@
 {
   "common": {
     "actions": {
+      "show_hide_all": "Mostrar/Ocultar todo",
       "show_less": "Mostrar Menos",
       "show_more": "Mostrar Más"
     },
@@ -10,6 +11,7 @@
     "close": "Cerrar",
     "complete": "Completar",
     "confirm": "Confirmar",
+    "correct": "Correcto",
     "filter": "Filtrar",
     "help": "Ayuda",
     "help_modal": {
@@ -27,11 +29,13 @@
     "location": "Ubicación",
     "next": "Siguiente",
     "no": "No",
+    "play": "Reproducir",
     "question": "Pregunta",
     "response": "Respuesta",
     "score": "Puntuje",
     "search": "Buscar",
     "skip": "Saltar",
+    "skipped": "Omitida",
     "sort": "Ordenar",
     "submit": "Enviar",
     "title": "Título",
@@ -140,6 +144,7 @@
         "explore_html": "<b>EXPLORAR</b> - Contenido que le resulta interesante",
         "styles": {
           "negative": "No tanto de:",
+          "overall": "Su estilo profesional global es...",
           "positive": "Más elementos de:"
         }
       },
@@ -183,6 +188,7 @@
       "manager": "Reporte del gerente de contratación"
     },
     "rjp": {
+      "content": "Gracias por completar la vista previa realista del empleo. Espero que esto le haya dado una idea de cómo podría ser este trabajo.",
       "heading": "¡Completó  la vista previa correctamente"
     },
     "thanks": {
@@ -205,9 +211,12 @@
     "interview_personality": {
       "heading": "Evaluación de Personalidad y Entrevista"
     },
+    "loading": "Cargando su evaluación",
     "redacted": {
+      "heading": "No disponible",
       "text": "Estas evaluaciones de Traitify ya no están disponibles"
     },
+    "start": "Comenzar evaluación",
     "text": "Como parte de su solicitud, nos gustaría pedirle que complete las siguientes evaluaciones. Por favor, haga clic en el botón junto al nombre de la evaluación. Esto lo llevará al lugar donde completará la(s) evaluación(es). Por favor, regrese aquí una vez que haya completado todas las evaluaciones.",
     "timeout": "Se agotó el tiempo de carga",
     "try_again": "Intentémoslo de nuevo"
@@ -229,7 +238,7 @@
           "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>El ejercicio empieza en este momento. Antes de comenzar, recuerda:</p><ul><li>El ejercicio está compuesto de 28 preguntas</li><li>: Puedes tener todo el tiempo que desees para completarlas.</li><li>Encuentra un lugar tranquilo y libre de distracciones donde puedas prestar toda tu atención al ejercicio.</li><li>Puedes omitir preguntas si es necesario, pero intenta contestar todas las preguntas.</li><li>Por favor, completa el ejercicio en una sola sesión. </li></ul>",
           "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>El ejercicio empieza en este momento. Antes de comenzar, recuerda:</p><ul><li>El ejercicio está compuesto de 31 preguntas</li><li>: Puedes tener todo el tiempo que desees para completarlas. Sin embargo, la mayoría de las personas completan el ejercicio en unos 15 minutos.</li><li>Encuentra un lugar tranquilo y libre de distracciones donde puedas prestar toda tu atención al ejercicio.</li><li>Puedes omitir preguntas si es necesario, pero intenta contestar todas las preguntas.</li><li>Por favor, completa el ejercicio en una sola sesión. </li></ul>"
         },
-        "disability_text": "Please select if you have a learning disability.",
+        "disability_text": "Por favor, seleccione si tiene una discapacidad de apredizaje.",
         "step_1_button": "Ver Ejemplo",
         "step_1_heading": "Instrucciones",
         "step_1_text": "Quisiéramos que determine de qué manera las diferentes imágenes que les vamos a presentar se relacionan entre sí.\n\nEn uno de los espacios en la cuadrícula falta una imagen. El espacio está identificado con un signo de interrogación (?). Debajo de la cuadrícula encontrará cuatro imágenes. Uno de estas imágenes completa la cuadrícula y por lo tanto reemplaza el signo de interrogación (?).\n\nUna vez que comience el ejercicio, elija la imagen ubicada debajo de la cuadrícula que completa la misma. Luego oprima “Confirmar” para pasar a la siguiente pregunta. Si desea saltarse la pregunta oprima “Omitir”.  Cuando esté listo, oprima “Ver Ejemplo” para ver un ejemplo.",
@@ -262,6 +271,7 @@
       "skipped_questions": "Preguntas Saltadas"
     },
     "cognitive_assessment": "Evaluación cognitiva",
+    "external_assessment": "Evaluación externa",
     "generic_assessment": "Evaluación general",
     "instructions": "Instrucciones",
     "me": "Soy yo",
@@ -281,10 +291,15 @@
         "replay": "Ver el video otra vez"
       },
       "match": {
+        "continue": "Continuar",
         "opt_out": "No interesado/a"
       },
+      "modal": {
+        "heading": "Visión previa del puesto"
+      },
       "questions": {
-        "heading": "Preguntas de vista previa del empleo"
+        "heading": "Preguntas de vista previa del empleo",
+        "submit": "Completar preguntas"
       }
     }
   }

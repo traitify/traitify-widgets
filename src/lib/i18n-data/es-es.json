@@ -6,22 +6,34 @@
       "show_more": "Mostrar Más"
     },
     "back": "Atrás ",
+    "badge": "Acreditación",
+    "cancel": "Cancelar",
     "close": "Cerrar",
     "complete": "Completar",
+    "confirm": "Confirmar",
     "correct": "Correcto",
+    "filter": "Filtrar",
+    "help": "Ayuda",
     "help_modal": {
       "content_html": "Accede a más información sobre nuestras <a href=\"%{url}\" target=\"_blank\">evaluaciones</a>",
       "error_submitting": "Error al enviar el mensaje",
+      "heading": "Ayuda",
       "input_label": "¿Cómo podemos ayudarle? ",
       "input_placeholder": "Escribe una respuesta... ",
       "message_required": "Por favor, introduzca un mensaje",
+      "submit": "Enviar",
       "submitted": "Mensaje entregado"
     },
     "incorrect": "Incorrecto",
+    "loading": "Cargando",
+    "location": "Ubicación",
+    "next": "Siguiente",
     "no": "No",
     "play": "Reproducir",
+    "question": "Pregunta",
     "response": "Respuesta",
     "score": "Puntuación",
+    "search": "Buscar",
     "skip": "Saltar",
     "skipped": "Omitida",
     "sort": "Ordenar",
@@ -40,12 +52,44 @@
         "heading": "Comparar puntos de referencia del puesto"
       },
       "current": "Punto de referencia actual",
+      "level": {
+        "high": "Alto",
+        "low": "Bajo",
+        "medium": "Mediano"
+      },
       "search": "Buscar punto de Referencia"
     },
     "careers": {
       "apply_now": "Inscribirse Ahora",
+      "best_match": "Mejor Encaje",
+      "bright_future": "Un Futuro Brillante",
+      "bright_future_html": "Se espera que estas ocupaciones crezcan rápidamente en los próximos años, que tendrán un gran número de vacantes, o que sean ocupaciones nuevas y emergentes. Datos de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
       "discover_jobs": "Descubre empleos",
-      "experience_level_1": "Ninguno"
+      "education": "Educación",
+      "education_html": "Nivel típico de educación que la mayoría de los trabajadores necesitan para acceder a esta ocupación. Datos de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "education_level": "Nivel Educativo",
+      "employment_growth": "Crecimiento del empleo",
+      "employment_growth_html": "El cambio porcentual del empleo entre 2012 y 2022 Datos de <a href=\"http://www.bls.gov/ooh/fastest-growing.htm\" target=\"_blank\">U.S. Bureau of Labor Statistics</a>.",
+      "experience_level_1": "Ninguno",
+      "experience_level_2": "El Título de Bachillerato",
+      "experience_level_3": "Técnico Superior",
+      "experience_level_4": "Grado Universitario ",
+      "experience_level_5": "Título de Posgrado",
+      "green_career": "Carrera Verde",
+      "green_career_html": "La economía verde provocará un cambio en la demanda de empleo de las ocupaciones o en los requisitos de empleo y de los trabajadores, como las tareas, las habilidades, los conocimientos y las credenciales. Datos de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "learn_more": "Más Información",
+      "link_heading": "Ver sus recomendaciones profesionales personalizadas",
+      "link_heading_third_person": "Ver sus recomendaciones profesionales personalizadas",
+      "local_salary": "Salario Local",
+      "match_rate": "Encajan",
+      "matches": "Encaje de carreras",
+      "more_information": "Más información sobre estos valores",
+      "no_careers": "No hay Carreras Profesionales Disponibles",
+      "no_jobs": "No se han encontrado empleos locales para esta profesión. Por favor, visite %{Job_source} para encontrar más oportunidades.",
+      "no_more_careers": "No hay más carreras profesionales",
+      "salary_mean": "Salario Medio",
+      "salary_mean_html": "El salario a partir del cual la mitad de los trabajadores de esta ocupación ganaba más de esa cantidad y la otra mitad ganaba menos. Los datos del salario medio proceden de <a href=\"http://www.onetonline.org\" target=\"_blank\">ONet Online</a>.",
+      "view_on_onet": "Ver los detalles de la profesión en O*Net"
     },
     "cognitive": {
       "breakdown": {
@@ -83,12 +127,14 @@
       "details": {
         "best_work_environments": "Mejores entornos de trabajo",
         "complements": "Complementos",
+        "conflicts": "Conflictos",
         "heading": "Detalles de personalidad"
       },
       "dimensions": {
         "description": "La puntuación dimensional se calcula con sus respuestas a los ítems que juntos miden los componentes subyacentes de cada dimensión. En general, un individuo presenta un nivel alto, medio o bajo.",
         "heading": "¿Qué significa mi %{level} %{name} para mí?",
         "heading_for_benefits": "Beneficios potenciales de %{level} %{name}",
+        "potential_benefits": "Beneficios Potenciales",
         "room_for_growth_and_change": "Espacio para el crecimiento y el cambio"
       },
       "headings": {
@@ -119,10 +165,12 @@
           "everyday_adjustments": "Ajustes Cotidianos",
           "habits": "Hábitos Por Adquirir",
           "leading_others": "Liderar a Otros",
+          "teamwork": "Trabajo en Equipo",
           "working_from_home": "Consejos para trabajar desde casa"
         }
       },
       "tips": {
+        "caution_zone": "Zona de Precaución",
         "heading": "Consejos para la personalidad",
         "room": "Espacio para el crecimiento y el cambio",
         "settings": "Configuraciones para ti",
@@ -130,7 +178,8 @@
         "tools": "Herramientas a utilizar "
       },
       "traits": {
-        "description": "Aquí están sus 5 rasgos principales medidos en una escala del 0 % al 100 %"
+        "description": "Aquí están sus 5 rasgos principales medidos en una escala del 0 % al 100 %",
+        "heading": "Rasgos de Personalidad"
       }
     },
     "reports": {
@@ -139,6 +188,7 @@
       "manager": "Informe de selección"
     },
     "rjp": {
+      "content": "Gracias por completar la vista previa realista del puesto. Espero que esto le haya servido para hacerce una idea de cómo es este trabajo.",
       "heading": "¡Ha completado la vista previa con éxito!"
     },
     "thanks": {
@@ -153,6 +203,7 @@
     "error": "Se ha producido un error con sus evaluaciones",
     "heading": "Las evaluaciones de su candidatura",
     "interview": {
+      "heading": "Entrevista",
       "start": "Empieza entrevista",
       "survey": "Entrevistador de IA de Crosschq",
       "text": "Participe en una entrevista virtual por videollamada asistida por IA para hacer preguntas, practicar su entrevista y conocer más detalles sobre este puesto.\n\nEsta conversación se realiza con un entrevistador virtual, diseñado para compartir información sobre nuestra empresa, nuestra cultura y esta oportunidad laboral."
@@ -187,6 +238,8 @@
           "2e8280c1-2c31-4f2e-8303-6d0d2b22244e": "<p>Ha llegado el momento de hacer el ejercicio. Antes de empezar, recuerda:</p><ul><li>El ejercicio consta de 28 preguntas</li><li>Puedes tomarte todo el tiempo que quieras para completarlas.</li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><li>Puedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, completa el ejercicio en una sola sesión.</li></ul>",
           "6f42a946-a936-45f9-9b2b-dbc1ad80b936": "<p>Ha llegado el momento de hacer el ejercicio. Antes de empezar, recuerda:</p><ul><li>El ejercicio consta de 31 preguntas</li><li>: Puedes tomarte todo el tiempo que quieras para completarlo. No obstante, la mayoría de las personas lo terminan en unos 15 minutos.</li><li>Debes buscar un lugar tranquilo donde puedas prestar toda tu atención al ejercicio sin distracciones.</li><li>Puedes saltarte preguntas si lo necesitas, pero intenta responder a cada una de ellas.</li><li>Por favor, completa el ejercicio en una sola sesión. </li></ul>"
         },
+        "disability_text": "Por favor, seleccione si tiene alguna dificultad de apredizaje.",
+        "step_1_button": "Ver Ejemplo",
         "step_1_heading": "Instrucciones",
         "step_1_text": "Nos gustaria que descubras cómo se relacionan entre sí las diferentes figuras.\n\nEn cada pantalla verás una cuadrícula con una figura que falta, idicada con un signo de interrogación (?). Debajo de la cuadrícula hay cuatro figuras; uno de ellas reemplaza el signo de interrogación (?) para completar la cuadrícula.\n\nUna vez que comience el ejercicio, elije la figura de abajo que lo completa y haz clic en “Confirmar” para pasar a la siguiente pregunta. También puedes saltarte la pregunta haciendo clic en “Omitir”.  Cuando esté listo, haz clic en “Ver Ejemplo” para ver un ejemplo.",
         "step_2_button": "Empezar la Práctica",
@@ -205,6 +258,7 @@
         "answer_correct": "Ha respondio correctamente.",
         "answer_incorrect": "Ha respondido incorrectamente.",
         "heading": "Preguntas de práctica",
+        "step_1_button": "Siguiente Pregunta",
         "step_1_heading": "Explicación de la Respuesta",
         "step_1_text": "En esta cuadrícula, la figura que se encuentra en la parte superior de la primera fila ha sido rotada 180 grados y ubicada en la celda inferior. Por lo tanto, la figura que completa la cuadrícula se encuentra ubicada abajo a la derecha.",
         "step_2_button": "Siguiente pregunta",
@@ -220,8 +274,10 @@
     "external_assessment": "Evaluación externa",
     "generic_assessment": "Evaluación genérica ",
     "instructions": "Instrucciones",
+    "me": "Yo",
     "not_me": "No soy yo",
     "personality": {
+      "get_started": "Comenzar",
       "slide_error": "No ha sido posible cargar más diapositivas en este momento",
       "try_again": "Haga clic aquí para volver a intentarlo"
     },

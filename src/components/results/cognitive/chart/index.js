@@ -8,13 +8,14 @@ import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function CognitiveChart() {
-  const disabled = useDisabledComponent("CognitiveChart");
+  const disabled = useDisabledComponent("Results.Cognitive.Chart", "CognitiveChart");
   const results = useResults({surveyType: "cognitive"});
   const allowed = useSetting("showCognitiveResults", {fallback: false});
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
 
   useComponentEvents("CognitiveChart");
+  useComponentEvents({component: "Results.Cognitive.Chart"});
 
   if(!allowed) { return null; }
   if(disabled) { return null; }

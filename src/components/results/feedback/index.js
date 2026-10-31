@@ -1,4 +1,5 @@
 import {useState} from "react";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useLoadedValue from "lib/hooks/use-loaded-value";
 import useOption from "lib/hooks/use-option";
 import useTranslate from "lib/hooks/use-translate";
@@ -7,6 +8,7 @@ import Modal from "./modal";
 import style from "./style.scss";
 
 export default function Feedback() {
+  const disabled = useDisabledComponent("Results.Feedback");
   const userCompletedFeedback = useLoadedValue(userCompletedFeedbackQuery);
   const feedbackSurvey = useLoadedValue(feedbackSurveyQuery);
   const translate = useTranslate();
@@ -14,6 +16,7 @@ export default function Feedback() {
   const [showModal, setShowModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  if(disabled) { return null; }
   if(!feedbackSurvey) { return null; }
   if(userCompletedFeedback) { return null; }
   if(perspective !== "firstPerson") { return null; }

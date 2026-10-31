@@ -7,6 +7,7 @@ export * from "./career";
 export * from "./feedback";
 export * from "./guide";
 export * from "./jobs";
+export * from "./options";
 export * from "./order";
 export * from "./organization";
 export * from "./recommendation";

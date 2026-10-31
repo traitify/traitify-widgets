@@ -9,15 +9,18 @@ import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function PersonalityDimensionList() {
-  const disableChart = useDisabledComponent("PersonalityDimensionChart");
-  const disableDetails = useDisabledComponent("PersonalityDimensionDetails");
+  const disabled = useDisabledComponent("Results.Personality.Dimension.List");
+  const disableChart = useDisabledComponent("Results.Personality.Dimension.Chart", "PersonalityDimensionChart");
+  const disableDetails = useDisabledComponent("Results.Personality.Dimension.Details", "PersonalityDimensionDetails");
   const showHeaders = useOption("showHeaders");
   const results = useResults({surveyType: "personality"});
   const translate = useTranslate();
 
   useComponentEvents("PersonalityDimensions");
+  useComponentEvents({component: "Results.Personality.Dimension.List"});
 
   if(!results) { return null; }
+  if(disabled) { return null; }
   if(disableChart && disableDetails) { return null; }
 
   const types = sortByTypePosition(results.personality_types);

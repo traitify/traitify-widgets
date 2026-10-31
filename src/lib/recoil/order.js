@@ -8,10 +8,10 @@ import {
   httpState,
   listenerState,
   localeState,
-  optionsState,
   orderIDState,
   safeCacheKeyState
 } from "./base";
+import {applyAssessmentExpirationState, retryRecommendationState, surveyTypeState} from "./options";
 
 // NOTE: Order
 // - assessments
@@ -33,7 +33,7 @@ import {
 const baseAssessmentState = selector({
   get: ({get}) => {
     const {assessmentID} = get(baseState);
-    const type = get(optionsState).surveyType || "personality";
+    const type = get(surveyTypeState) || "personality";
 
     return {
       assessments: [{id: assessmentID, surveyType: type}],
@@ -92,11 +92,12 @@ const baseRecommendationQuery = selector({
 
     const GraphQL = get(graphqlState);
     const http = get(httpState);
-    const options = get(optionsState);
+    const expirationOption = get(applyAssessmentExpirationState);
+    const retryOnIncomplete = get(retryRecommendationState);
     const localeKey = get(localeState);
     const {path} = GraphQL.xavier;
-    const hasExpirationFlag = Object.hasOwn(options, "applyAssessmentExpiration");
-    const initialExpirationFlag = hasExpirationFlag ? options.applyAssessmentExpiration : null;
+    const hasExpirationFlag = expirationOption !== undefined;
+    const initialExpirationFlag = hasExpirationFlag ? expirationOption : null;
 
     const fetchRecommendation = async(applyAssessmentExpiration) => {
       const variables = {benchmarkID, localeKey, packageID, profileID};
@@ -114,7 +115,7 @@ const baseRecommendationQuery = selector({
 
     // TODO: remove ~2026-12-01
     // workaround for server-side inconsistency in applyAssessmentExpiration handling.
-    if(options.retryRecommendationOnIncompletePersonality && hasExpirationFlag && !order.errors) {
+    if(retryOnIncomplete && hasExpirationFlag && !order.errors) {
       const personality = response.data?.recommendation?.prerequisites?.personality;
       if(personality?.surveyId && !personality.assessmentId) {
         const retry = await fetchRecommendation(!initialExpirationFlag);

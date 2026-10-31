@@ -11,6 +11,7 @@ import style from "./style.scss";
 
 const skillTypes = [
   {
+    disableKeys: ["Results.Personality.Archetype.Skills.DealingWithStress", "Dealing With Stress"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/stress-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/stress-default.png"
@@ -19,6 +20,7 @@ const skillTypes = [
     name: "Dealing With Stress"
   },
   {
+    disableKeys: ["Results.Personality.Archetype.Skills.LeadingOthers", "Leading Others"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/leading-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/leading-default.png"
@@ -27,6 +29,7 @@ const skillTypes = [
     name: "Leading Others"
   },
   {
+    disableKeys: ["Results.Personality.Archetype.Skills.Communication", "Communication"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/chat-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/chat-default.png"
@@ -35,6 +38,7 @@ const skillTypes = [
     name: "Communication"
   },
   {
+    disableKeys: ["Results.Personality.Archetype.Skills.Teamwork", "Teamwork"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/teamwork-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/teamwork-default.png"
@@ -43,6 +47,7 @@ const skillTypes = [
     name: "Teamwork"
   },
   {
+    disableKeys: ["Results.Personality.Archetype.Skills.HabitsToBuild", "Habits To Build"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/build-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/build-default.png"
@@ -53,7 +58,7 @@ const skillTypes = [
 ];
 
 export default function PersonalityArchetypeSkills() {
-  const disabled = useDisabledComponent("PersonalitySkills");
+  const disabled = useDisabledComponent("Results.Personality.Archetype.Skills", "PersonalitySkills");
   const results = useResults({surveyType: "personality"});
   const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
@@ -62,12 +67,14 @@ export default function PersonalityArchetypeSkills() {
   const details = useInlineMemo((value) => value || [], [dig(results, "archetype", "details")]);
   const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
-  useComponentEvents("PersonalitySkills", {activeType, types});
+  const context = {activeType, types};
+  useComponentEvents("PersonalitySkills", context);
+  useComponentEvents({component: "Results.Personality.Archetype.Skills", context});
   useEffect(() => {
     if(details.length === 0) { return; }
 
     const activeTypes = skillTypes.filter((type) => {
-      if(disabledComponents.includes(type.name)) { return false; }
+      if(type.disableKeys.some((key) => disabledComponents.includes(key))) { return false; }
 
       return details.find(({title}) => title.startsWith(`${type.name} - Success Skills`));
     });

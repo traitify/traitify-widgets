@@ -9,6 +9,7 @@ export default function PersonalityDimensionChart() {
   const translate = useTranslate();
 
   useComponentEvents("PersonalityDimensionChart");
+  useComponentEvents({component: "Results.Personality.Dimension.Chart"});
 
   if(!data) { return null; }
 

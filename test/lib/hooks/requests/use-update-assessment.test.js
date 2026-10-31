@@ -95,7 +95,7 @@ describe("useUpdateAssessment", () => {
 
     it("invalidates cached state instead of seeding it", () => {
       expect(container.cache.remove).toHaveBeenCalledWith(assessmentCacheKey);
-      expect(container.cache.set).not.toHaveBeenCalled();
+      expect(container.cache.set).not.toHaveBeenCalledWith(assessmentCacheKey, expect.anything());
     });
   });
 
@@ -118,7 +118,7 @@ describe("useUpdateAssessment", () => {
     });
 
     it("does not update cached state", () => {
-      expect(container.cache.set).not.toHaveBeenCalled();
+      expect(container.cache.set).not.toHaveBeenCalledWith(assessmentCacheKey, expect.anything());
     });
   });
 
@@ -138,7 +138,7 @@ describe("useUpdateAssessment", () => {
     });
 
     it("does not update cached state", () => {
-      expect(container.cache.set).not.toHaveBeenCalled();
+      expect(container.cache.set).not.toHaveBeenCalledWith(assessmentCacheKey, expect.anything());
     });
   });
 

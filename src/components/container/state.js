@@ -4,6 +4,7 @@ import {useRecoilState} from "recoil";
 import loadFont from "lib/common/load-font";
 import {loadingState} from "lib/recoil";
 import useBaseEffect from "./hooks/use-base-effect";
+import useDisabledComponentsEffect from "./hooks/use-disabled-components-effect";
 import useListenerEffect from "./hooks/use-listener-effect";
 import useOrderEffect from "./hooks/use-order-effect";
 import useOrderPolling from "./hooks/use-order-polling";
@@ -15,6 +16,7 @@ function State({children, ...props}) {
 
   useProps(props);
   useBaseEffect();
+  useDisabledComponentsEffect();
   useListenerEffect();
   useOrderEffect();
   useOrderPolling();

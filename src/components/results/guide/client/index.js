@@ -9,11 +9,13 @@ import style from "./style.scss";
 
 export default function ClientGuide() {
   const [activeSection, setActiveSection] = useState(null);
-  const disabled = useDisabledComponent("Guide", "ClientGuide");
+  const disabled = useDisabledComponent("Results.Guide.Client", "Guide", "ClientGuide");
   const guide = useGuide();
   const sections = useMemo(() => dig(guide, "client", "sections") || [], [guide]);
 
-  useComponentEvents("ClientGuide", {activeSection});
+  const context = {activeSection};
+  useComponentEvents("ClientGuide", context);
+  useComponentEvents({component: "Results.Guide.Client", context});
   useEffect(() => { setActiveSection(sections[0]); }, [sections]);
 
   if(disabled) { return null; }

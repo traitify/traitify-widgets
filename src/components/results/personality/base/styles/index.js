@@ -18,7 +18,7 @@ const typesToStyles = (types) => (
 );
 
 export default function PersonalityBaseStyles() {
-  const disabled = useDisabledComponent("PersonalityStyles");
+  const disabled = useDisabledComponent("Results.Personality.Base.Styles", "PersonalityStyles");
   const results = useResults();
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
@@ -34,7 +34,9 @@ export default function PersonalityBaseStyles() {
     };
   }, [results]);
 
-  useComponentEvents("PersonalityStyles", {styles});
+  const context = {styles};
+  useComponentEvents("PersonalityStyles", context);
+  useComponentEvents({component: "Results.Personality.Base.Styles", context});
 
   if(disabled) { return null; }
   if(!styles) { return null; }

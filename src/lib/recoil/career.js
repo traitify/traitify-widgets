@@ -3,16 +3,16 @@ import except from "lib/common/object/except";
 import {
   personalityAssessmentIDState,
   httpState,
-  localeState,
-  optionsState
+  localeState
 } from "./base";
+import {careerOptionsState} from "./options";
 
 export const currentCareerIDState = atom({key: "current-career-id", default: null});
 export const careerModalShowState = atom({key: "career-modal-show", default: false});
 export const careersParamsState = atom({
   default: selector({
     get: ({get}) => {
-      const options = get(optionsState).career || {};
+      const options = get(careerOptionsState) || {};
       const params = {
         careers_per_page: options.perPage || 20,
         locale_key: get(localeState),
@@ -32,7 +32,7 @@ export const careersParamsState = atom({
 
 const careersPathState = selector({
   get: ({get}) => {
-    const options = get(optionsState).career || {};
+    const options = get(careerOptionsState) || {};
     if(options.path) { return options.path; }
 
     const assessmentID = get(personalityAssessmentIDState);
@@ -79,7 +79,7 @@ export const highlightedCareersParamsState = selector({
 
 export const highlightedCareersQuery = selector({
   get: async({get}) => {
-    const options = get(optionsState).career || {};
+    const options = get(careerOptionsState) || {};
     const path = options.highlightedPath;
     if(!path) { return {}; }
 

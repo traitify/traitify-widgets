@@ -8,13 +8,14 @@ import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function PersonalityTraitList() {
-  const disabled = useDisabledComponent("PersonalityTraits");
+  const disabled = useDisabledComponent("Results.Personality.Trait.List", "PersonalityTraits");
   const showHeaders = useOption("showHeaders");
   const results = useResults({surveyType: "personality"});
   const translate = useTranslate();
   const [showMore, setShowMore] = useState(false);
 
   useComponentEvents("PersonalityTraits");
+  useComponentEvents({component: "Results.Personality.Trait.List"});
 
   if(disabled) { return null; }
   if(!results) { return null; }

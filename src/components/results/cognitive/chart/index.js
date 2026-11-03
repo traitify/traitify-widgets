@@ -3,21 +3,18 @@ import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useOption from "lib/hooks/use-option";
 import useResults from "lib/hooks/use-results";
-import useSetting from "lib/hooks/use-setting";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function CognitiveChart() {
   const disabled = useDisabledComponent("Results.Cognitive.Chart", "CognitiveChart");
   const results = useResults({surveyType: "cognitive"});
-  const allowed = useSetting("showCognitiveResults", {fallback: false});
   const showHeaders = useOption("showHeaders");
   const translate = useTranslate();
 
   useComponentEvents("CognitiveChart");
   useComponentEvents({component: "Results.Cognitive.Chart"});
 
-  if(!allowed) { return null; }
   if(disabled) { return null; }
   if(!results) { return null; }
   if(!results.stenScore) { return null; }

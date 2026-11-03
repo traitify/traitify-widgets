@@ -9,7 +9,6 @@ import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useGuide from "lib/hooks/use-guide";
 import useResults from "lib/hooks/use-results";
-import useSetting from "lib/hooks/use-setting";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
@@ -18,7 +17,6 @@ function RecommendationChart({combined = false}) {
   const disabled = useDisabledComponent("Results.Recommendation.Chart", "RecommendationChart");
   const guide = useGuide();
   const results = useResults({surveyType: "personality"});
-  const allowed = useSetting("showFitBreakdownGraph", {fallback: true});
   const data = useMemo(() => {
     const competencies = dig(guide, "personality", "competencies") || [];
     const types = dig(results, "personality_types") || [];
@@ -32,7 +30,6 @@ function RecommendationChart({combined = false}) {
   useComponentEvents("RecommendationChart");
   useComponentEvents({component: "Results.Recommendation.Chart"});
 
-  if(!allowed) { return null; }
   if(disabled) { return null; }
   if(data.length === 0) { return null; }
 

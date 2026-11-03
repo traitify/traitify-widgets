@@ -98,12 +98,6 @@ exports[`Results.CognitiveChart renders nothing if disabled 1`] = `
 />
 `;
 
-exports[`Results.CognitiveChart renders nothing if not allowed 1`] = `
-<div
-  className="traitify--container traitify--color-scheme-light"
-/>
-`;
-
 exports[`Results.CognitiveChart renders nothing if results not ready 1`] = `
 <div
   className="traitify--container traitify--color-scheme-light"

@@ -50,6 +50,10 @@ export const cacheKeyState = selectorFamily({
         keys.push(`profile-${profileID}`);
         break;
       }
+      // TODO: Remove > 3 hours later
+      case "settings":
+        keys.push("v2");
+        break;
       case "survey":
         id = id || get(surveyIDState("personality"));
         break;

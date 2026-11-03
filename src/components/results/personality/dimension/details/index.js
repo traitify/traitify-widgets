@@ -10,13 +10,14 @@ import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 function PersonalityDimensionDetails({type}) {
-  const disablePitfalls = useDisabledComponent("PersonalityPitfalls");
+  const disablePitfalls = useDisabledComponent("Results.Personality.Dimension.Details.Pitfalls", "PersonalityPitfalls");
   const guide = useGuide();
   const translate = useTranslate();
   const perspective = useInlineMemo((value) => value || "firstPerson", [useOption("perspective")]);
   const {personality_type: {badge, details, id, level, name}} = type;
 
   useComponentEvents("PersonalityDimensionDetails");
+  useComponentEvents({component: "Results.Personality.Dimension.Details"});
 
   const personality = {details};
   const benefits = getDetails({name: "Benefits", personality});

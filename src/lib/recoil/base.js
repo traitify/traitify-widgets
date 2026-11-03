@@ -9,6 +9,7 @@ export const errorsState = atom({default: [], key: "errors"});
 export const graphqlState = atom({dangerouslyAllowMutability: true, default: null, key: "graphql"});
 export const httpState = atom({dangerouslyAllowMutability: true, default: null, key: "http"});
 export const i18nState = atom({dangerouslyAllowMutability: true, default: null, key: "i18n"});
+export const initialOptionsState = atom({default: null, key: "initial-options"});
 export const listenerState = atom({dangerouslyAllowMutability: true, default: null, key: "listener"});
 export const loadingState = atom({default: true, key: "loading"});
 export const localeState = atom({
@@ -20,12 +21,13 @@ export const localeState = atom({
   ],
   key: "locale"
 });
-export const optionsState = atom({default: null, key: "options"});
+export const optionsState = atom({default: {}, key: "options"});
 export const orderIDState = atom({default: null, key: "order-id"});
 export const requestIDState = atom({default: null, key: "request-id"});
 export const requestIDsState = atom({default: [], key: "request-ids"});
 export const packageIDState = atom({default: null, key: "package-id"});
 export const profileIDState = atom({default: null, key: "profile-id"});
+export const reportDisabledComponentsState = atom({default: [], key: "report-disabled-components"});
 export const skipDismissedState = atom({default: false, key: "skip-dismissed"});
 
 export const appendErrorState = selector({

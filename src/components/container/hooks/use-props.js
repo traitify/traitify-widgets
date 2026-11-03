@@ -13,6 +13,7 @@ import {
   graphqlState,
   httpState,
   i18nState,
+  initialOptionsState,
   listenerState,
   localeState,
   optionsState,
@@ -28,6 +29,7 @@ export default function useProps(props) {
   const setGraphql = useSetRecoilState(graphqlState);
   const appendRequestID = useSetRecoilState(appendRequestIDState);
   const setHttp = useSetRecoilState(httpState);
+  const setInitialOptions = useSetRecoilState(initialOptionsState);
   const setRequestID = useSetRecoilState(requestIDState);
   const setI18n = useSetRecoilState(i18nState);
   const setListener = useSetRecoilState(listenerState);
@@ -49,6 +51,7 @@ export default function useProps(props) {
     // NOTE: showInstructions should be true but we don't want a breaking change
     const surveyOptions = {showInstructions: false, ...(options.survey || {})};
 
+    setInitialOptions(options);
     setOptions({showHeaders: false, showHelp: true, ...options, survey: surveyOptions});
   }, [options]);
 

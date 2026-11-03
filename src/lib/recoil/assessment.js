@@ -10,9 +10,9 @@ import {
   httpState,
   listenerState,
   localeState,
-  optionsState,
   safeCacheKeyState
 } from "./base";
+import {imagekitState} from "./options";
 
 export const cognitiveAssessmentQuery = selectorFamily({
   get: (id) => async({get}) => {
@@ -99,7 +99,7 @@ export const personalityAssessmentQuery = selectorFamily({
       locale_key: get(localeState)
     };
 
-    if(get(optionsState).imagekit) { params.imagekit_aware = true; }
+    if(get(imagekitState)) { params.imagekit_aware = true; }
 
     const http = get(httpState);
     const path = `/assessments/${id}`;

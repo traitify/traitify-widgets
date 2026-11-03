@@ -1,10 +1,11 @@
 import {noWait, selector, selectorFamily} from "recoil";
-import {httpState, optionsState} from "./base";
+import {httpState} from "./base";
 import {careerState, careersParamsState, currentCareerIDState} from "./career";
+import {careerOptionsState} from "./options";
 
 const jobsPathState = selectorFamily({
   get: (id) => ({get}) => {
-    const {path} = get(optionsState).career?.jobs || {};
+    const {path} = get(careerOptionsState)?.jobs || {};
     if(!path) { return null; }
     if(typeof path === "string") { return path; }
 
@@ -54,7 +55,7 @@ export const jobsState = selectorFamily({
 
 export const inlineJobsState = selectorFamily({
   get: (id) => ({get}) => {
-    const {inline} = get(optionsState).career?.jobs || {};
+    const {inline} = get(careerOptionsState)?.jobs || {};
     if(!inline) { return createHideState(); }
 
     return get(noWait(jobsState(id)));
@@ -65,7 +66,7 @@ export const inlineJobsState = selectorFamily({
 export const modalJobsState = selector({
   get: ({get}) => {
     const id = get(currentCareerIDState);
-    const {inline} = get(optionsState).career?.jobs || {};
+    const {inline} = get(careerOptionsState)?.jobs || {};
     if(!id || inline) { return createHideState(); }
 
     return get(noWait(jobsState(id)));

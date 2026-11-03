@@ -8,12 +8,13 @@ import useResults from "lib/hooks/use-results";
 import style from "./style.scss";
 
 function Crosschq({id = null}) {
-  const disabled = useDisabledComponent("CrosschqResults");
+  const disabled = useDisabledComponent("Results.External.Crosschq", "CrosschqResults");
   const element = useRef(null);
   const assessment = useResults({id, surveyType: "external"});
   const results = assessment?.results;
 
   useComponentEvents("CrosschqResults");
+  useComponentEvents({component: "Results.External.Crosschq"});
   useLayoutEffect(() => {
     if(!element.current) { return; }
 

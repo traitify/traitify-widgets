@@ -1,6 +1,7 @@
 import {useState} from "react";
 import times from "lib/common/array/times";
 import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
 import Question from "./question";
@@ -8,11 +9,14 @@ import style from "./style.scss";
 
 export default function GenericBreakdown() {
   const [openQuestions, setOpenQuestions] = useState([]);
+  const disabled = useDisabledComponent("Results.Generic.Breakdown");
   const results = useResults({surveyType: "generic"});
   const translate = useTranslate();
 
   useComponentEvents("GenericBreakdown");
+  useComponentEvents({component: "Results.Generic.Breakdown"});
 
+  if(disabled) { return null; }
   if(!results) { return null; }
 
   const toggleAll = () => {

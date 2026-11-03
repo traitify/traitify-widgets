@@ -10,13 +10,25 @@ import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 const detailTypes = [
-  {apiKey: "Complement", disableKey: "PersonalityComplements", translationKey: "complements"},
-  {apiKey: "Conflict", disableKey: "PersonalityConflicts", translationKey: "conflicts"},
-  {apiKey: "Environments", disableKey: "PersonalityEnvironments", translationKey: "best_work_environments"}
+  {
+    apiKey: "Complement",
+    disableKeys: ["Results.Personality.Base.Details.Complements", "PersonalityComplements"],
+    translationKey: "complements"
+  },
+  {
+    apiKey: "Conflict",
+    disableKeys: ["Results.Personality.Base.Details.Conflicts", "PersonalityConflicts"],
+    translationKey: "conflicts"
+  },
+  {
+    apiKey: "Environments",
+    disableKeys: ["Results.Personality.Base.Details.Environments", "PersonalityEnvironments"],
+    translationKey: "best_work_environments"
+  }
 ];
 
 export default function PersonalityBaseDetails() {
-  const disabled = useDisabledComponent("PersonalityDetails");
+  const disabled = useDisabledComponent("Results.Personality.Base.Details", "PersonalityDetails");
   const personality = usePersonality();
   const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
@@ -24,13 +36,15 @@ export default function PersonalityBaseDetails() {
   const translate = useTranslate();
   const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
-  useComponentEvents("PersonalityBaseDetails", {activeType, personality, types});
+  const context = {activeType, personality, types};
+  useComponentEvents("PersonalityBaseDetails", context);
+  useComponentEvents({component: "Results.Personality.Base.Details", context});
   useEffect(() => {
     const details = dig(personality, "details") || [];
     if(details.length === 0) { return; }
 
     const activeTypes = detailTypes
-      .filter(({disableKey}) => !disabledComponents.includes(disableKey))
+      .filter(({disableKeys}) => !disableKeys.some((key) => disabledComponents.includes(key)))
       .map((type) => {
         const data = getDetails({name: type.apiKey, personality});
 

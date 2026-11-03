@@ -15,7 +15,7 @@ import style from "./style.scss";
 
 function RecommendationChart({combined = false}) {
   const benchmark = useBenchmark();
-  const disabled = useDisabledComponent("RecommendationChart");
+  const disabled = useDisabledComponent("Results.Recommendation.Chart", "RecommendationChart");
   const guide = useGuide();
   const results = useResults({surveyType: "personality"});
   const allowed = useSetting("showFitBreakdownGraph", {fallback: true});
@@ -30,6 +30,7 @@ function RecommendationChart({combined = false}) {
   const translate = useTranslate();
 
   useComponentEvents("RecommendationChart");
+  useComponentEvents({component: "Results.Recommendation.Chart"});
 
   if(!allowed) { return null; }
   if(disabled) { return null; }

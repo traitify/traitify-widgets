@@ -1,14 +1,18 @@
 import useComponentEvents from "lib/hooks/use-component-events";
+import useDisabledComponent from "lib/hooks/use-disabled-component";
 import useResults from "lib/hooks/use-results";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 export default function GenericHeading() {
+  const disabled = useDisabledComponent("Results.Generic.Heading");
   const results = useResults({surveyType: "generic"});
   const translate = useTranslate();
 
   useComponentEvents("GenericHeading");
+  useComponentEvents({component: "Results.Generic.Heading"});
 
+  if(disabled) { return null; }
   if(!results) { return null; }
 
   const totalQuestions = results.responses.length;

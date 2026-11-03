@@ -1,5 +1,3 @@
-import {useEffect} from "react";
-import {useRecoilState} from "recoil";
 import Feedback from "components/results/feedback";
 import GenericConclusions from "components/results/generic/conclusions";
 import ArchetypeHeading from "components/results/personality/archetype/heading";
@@ -9,27 +7,19 @@ import Traits from "components/results/personality/trait/list";
 import RJPResults from "components/results/rjp";
 import Redacted from "components/status/redacted";
 import useActive from "lib/hooks/use-active";
+import useDefaultOptions from "lib/hooks/use-default-options";
 import useRedacted from "lib/hooks/use-redacted";
-import {optionsState} from "lib/recoil";
+import useReportDisabledComponents from "lib/hooks/use-report-disabled-components";
 import style from "./style.scss";
+
+const DISABLED_COMPONENTS = ["Results.Personality.Dimension.Details.Pitfalls"];
 
 export default function CandidateReport() {
   const active = useActive();
   const redacted = useRedacted();
-  const [options, setOptions] = useRecoilState(optionsState);
 
-  useEffect(() => {
-    const disabledComponents = options.disabledComponents || [];
-    const newOptions = {};
-
-    if(!disabledComponents.includes("PersonalityPitfalls")) {
-      newOptions.disabledComponents = [...disabledComponents, "PersonalityPitfalls"];
-    }
-    if(!options.perspective) { newOptions.perspective = "firstPerson"; }
-    if(Object.keys(newOptions).length === 0) { return; }
-
-    setOptions({...options, ...newOptions});
-  }, []);
+  useDefaultOptions({perspective: "firstPerson"});
+  useReportDisabledComponents(DISABLED_COMPONENTS);
 
   if(!active) { return null; }
   if(redacted) { return <Redacted />; }

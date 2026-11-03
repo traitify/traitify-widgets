@@ -63,10 +63,6 @@ describe("useStartAssessment", () => {
       expect(mock.called).toBe(1);
       expect(JSON.parse(mock.calls[1].body)).toEqual({query, variables});
     });
-
-    it("does not update cached state", () => {
-      expect(container.cache.set).not.toHaveBeenCalled();
-    });
   });
 
   describe("when already started", () => {

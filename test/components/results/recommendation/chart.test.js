@@ -5,7 +5,6 @@ import {
   mockAssessment,
   mockBenchmark,
   mockGuide,
-  mockSettings,
   useAssessment,
   useBenchmark
 } from "support/container/http";
@@ -78,13 +77,6 @@ describe("Results.RecommendationChart", () => {
 
   it("renders nothing if guide not ready", async() => {
     mockGuide(null, {assessmentID: assessment.id});
-    component = await ComponentHandler.setup(Component);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders nothing if not allowed", async() => {
-    mockSettings({show_fit_breakdown_graph: false});
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

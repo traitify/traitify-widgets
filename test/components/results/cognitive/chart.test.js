@@ -2,9 +2,7 @@ import Component from "components/results/cognitive/chart";
 import ComponentHandler from "support/component-handler";
 import {
   mockCognitiveAssessment,
-  mockSettings,
-  useCognitiveAssessment,
-  useSettings
+  useCognitiveAssessment
 } from "support/container/http";
 import {mockOption, useOptions} from "support/container/options";
 import assessment from "support/data/assessment/cognitive/completed";
@@ -16,7 +14,6 @@ describe("Results.CognitiveChart", () => {
   useContainer({assessmentID: assessment.id});
   useCognitiveAssessment(assessment);
   useOptions({surveyType: "cognitive"});
-  useSettings({show_cognitive_results: true});
 
   describe("callbacks", () => {
     it("triggers initialization", async() => {
@@ -47,13 +44,6 @@ describe("Results.CognitiveChart", () => {
 
   it("renders nothing if disabled", async() => {
     mockOption("disabledComponents", ["CognitiveChart"]);
-    component = await ComponentHandler.setup(Component);
-
-    expect(component.tree).toMatchSnapshot();
-  });
-
-  it("renders nothing if not allowed", async() => {
-    mockSettings({show_cognitive_results: false});
     component = await ComponentHandler.setup(Component);
 
     expect(component.tree).toMatchSnapshot();

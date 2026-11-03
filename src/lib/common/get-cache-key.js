@@ -33,6 +33,10 @@ export default function getCacheKey(type, options = {}) {
       keys.push(`profile-${profileID}`);
       break;
     }
+    // TODO: Remove > 3 hours later
+    case "settings":
+      keys.push("v2");
+      break;
     case "survey":
       id = id || console.warn("Missing surveyID");
       break;

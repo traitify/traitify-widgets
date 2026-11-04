@@ -94,6 +94,33 @@ describe("PersonalityArchetypeHeading", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  it("renders explanation when video disabled", async() => {
+    container.options.disabledComponents = ["Results.Personality.Archetype.Heading.Video"];
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders no meaning when explanation disabled and no video", async() => {
+    container.options.disabledComponents = ["Results.Personality.Archetype.Heading.Explanation"];
+    const updatedAssessment = mutable(assessment);
+    updatedAssessment.archetype.details = details.filter(({title}) => !title.includes("Video"));
+    mockAssessment(updatedAssessment);
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
+  it("renders no meaning when video and explanation disabled", async() => {
+    container.options.disabledComponents = [
+      "Results.Personality.Archetype.Heading.Explanation",
+      "Results.Personality.Archetype.Heading.Video"
+    ];
+    component = await ComponentHandler.setup(Component);
+
+    expect(component.tree).toMatchSnapshot();
+  });
+
   it("renders nothing if deck not ready", async() => {
     mockDeck(null, {id: deck.id});
     component = await ComponentHandler.setup(Component);

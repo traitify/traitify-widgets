@@ -95,6 +95,22 @@ describe("PersonalityArchetypeSkills", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  describe("disabled skill", () => {
+    it("is removed by its component key", async() => {
+      mockOption("disabledComponents", ["Results.Personality.Archetype.Skills.DealingWithStress"]);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.instance.findAllByType("button")).toHaveLength(4);
+    });
+
+    it("is removed by its legacy key", async() => {
+      mockOption("disabledComponents", ["Dealing With Stress"]);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.instance.findAllByType("button")).toHaveLength(4);
+    });
+  });
+
   it("renders component with headers", async() => {
     mockOption("showHeaders", true);
     component = await ComponentHandler.setup(Component);

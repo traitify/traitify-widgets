@@ -11,7 +11,6 @@ import style from "./style.scss";
 
 const skillTypes = [
   {
-    disableKeys: ["Results.Personality.Archetype.Skills.DealingWithStress", "Dealing With Stress"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/stress-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/stress-default.png"
@@ -20,7 +19,6 @@ const skillTypes = [
     name: "Dealing With Stress"
   },
   {
-    disableKeys: ["Results.Personality.Archetype.Skills.LeadingOthers", "Leading Others"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/leading-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/leading-default.png"
@@ -29,7 +27,6 @@ const skillTypes = [
     name: "Leading Others"
   },
   {
-    disableKeys: ["Results.Personality.Archetype.Skills.Communication", "Communication"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/chat-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/chat-default.png"
@@ -38,7 +35,6 @@ const skillTypes = [
     name: "Communication"
   },
   {
-    disableKeys: ["Results.Personality.Archetype.Skills.Teamwork", "Teamwork"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/teamwork-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/teamwork-default.png"
@@ -47,7 +43,6 @@ const skillTypes = [
     name: "Teamwork"
   },
   {
-    disableKeys: ["Results.Personality.Archetype.Skills.HabitsToBuild", "Habits To Build"],
     image: {
       active: "https://cdn.traitify.com/widgets/skills/build-blue.png",
       default: "https://cdn.traitify.com/widgets/skills/build-default.png"
@@ -59,13 +54,32 @@ const skillTypes = [
 
 export default function PersonalityArchetypeSkills() {
   const disabled = useDisabledComponent("Results.Personality.Archetype.Skills", "PersonalitySkills");
+  const communicationDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Skills.Communication",
+    "Communication"
+  );
+  const habitsDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Skills.HabitsToBuild",
+    "Habits To Build"
+  );
+  const leadingDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Skills.LeadingOthers",
+    "Leading Others"
+  );
+  const stressDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Skills.DealingWithStress",
+    "Dealing With Stress"
+  );
+  const teamworkDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Skills.Teamwork",
+    "Teamwork"
+  );
   const results = useResults({surveyType: "personality"});
   const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
   const translate = useTranslate();
   const details = useInlineMemo((value) => value || [], [dig(results, "archetype", "details")]);
-  const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
   const context = {activeType, types};
   useComponentEvents("PersonalitySkills", context);
@@ -73,15 +87,29 @@ export default function PersonalityArchetypeSkills() {
   useEffect(() => {
     if(details.length === 0) { return; }
 
+    const disabledSkills = {
+      communication: communicationDisabled,
+      dealing_with_stress: stressDisabled,
+      habits: habitsDisabled,
+      leading_others: leadingDisabled,
+      teamwork: teamworkDisabled
+    };
     const activeTypes = skillTypes.filter((type) => {
-      if(type.disableKeys.some((key) => disabledComponents.includes(key))) { return false; }
+      if(disabledSkills[type.key]) { return false; }
 
       return details.find(({title}) => title.startsWith(`${type.name} - Success Skills`));
     });
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);
-  }, [details, disabledComponents]);
+  }, [
+    communicationDisabled,
+    details,
+    habitsDisabled,
+    leadingDisabled,
+    stressDisabled,
+    teamworkDisabled
+  ]);
 
   if(disabled) { return null; }
   if(!results) { return null; }

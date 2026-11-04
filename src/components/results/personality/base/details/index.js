@@ -3,38 +3,36 @@ import getDetails from "lib/common/get-details";
 import dig from "lib/common/object/dig";
 import useComponentEvents from "lib/hooks/use-component-events";
 import useDisabledComponent from "lib/hooks/use-disabled-component";
-import useInlineMemo from "lib/hooks/use-inline-memo";
 import useOption from "lib/hooks/use-option";
 import usePersonality from "lib/hooks/use-personality";
 import useTranslate from "lib/hooks/use-translate";
 import style from "./style.scss";
 
 const detailTypes = [
-  {
-    apiKey: "Complement",
-    disableKeys: ["Results.Personality.Base.Details.Complements", "PersonalityComplements"],
-    translationKey: "complements"
-  },
-  {
-    apiKey: "Conflict",
-    disableKeys: ["Results.Personality.Base.Details.Conflicts", "PersonalityConflicts"],
-    translationKey: "conflicts"
-  },
-  {
-    apiKey: "Environments",
-    disableKeys: ["Results.Personality.Base.Details.Environments", "PersonalityEnvironments"],
-    translationKey: "best_work_environments"
-  }
+  {apiKey: "Complement", translationKey: "complements"},
+  {apiKey: "Conflict", translationKey: "conflicts"},
+  {apiKey: "Environments", translationKey: "best_work_environments"}
 ];
 
 export default function PersonalityBaseDetails() {
   const disabled = useDisabledComponent("Results.Personality.Base.Details", "PersonalityDetails");
+  const complementsDisabled = useDisabledComponent(
+    "Results.Personality.Base.Details.Complements",
+    "PersonalityComplements"
+  );
+  const conflictsDisabled = useDisabledComponent(
+    "Results.Personality.Base.Details.Conflicts",
+    "PersonalityConflicts"
+  );
+  const environmentsDisabled = useDisabledComponent(
+    "Results.Personality.Base.Details.Environments",
+    "PersonalityEnvironments"
+  );
   const personality = usePersonality();
   const showHeaders = useOption("showHeaders");
   const [activeType, setActiveType] = useState(null);
   const [types, setTypes] = useState([]);
   const translate = useTranslate();
-  const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
   const context = {activeType, personality, types};
   useComponentEvents("PersonalityBaseDetails", context);
@@ -43,8 +41,13 @@ export default function PersonalityBaseDetails() {
     const details = dig(personality, "details") || [];
     if(details.length === 0) { return; }
 
+    const disabledDetails = {
+      best_work_environments: environmentsDisabled,
+      complements: complementsDisabled,
+      conflicts: conflictsDisabled
+    };
     const activeTypes = detailTypes
-      .filter(({disableKeys}) => !disableKeys.some((key) => disabledComponents.includes(key)))
+      .filter(({translationKey}) => !disabledDetails[translationKey])
       .map((type) => {
         const data = getDetails({name: type.apiKey, personality});
 
@@ -53,7 +56,7 @@ export default function PersonalityBaseDetails() {
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);
-  }, [personality]);
+  }, [complementsDisabled, conflictsDisabled, environmentsDisabled, personality]);
 
   if(disabled) { return null; }
   if(!personality) { return null; }

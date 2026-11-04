@@ -11,6 +11,7 @@ export default function PersonalityArchetypeHeading() {
   const deck = useDeck();
   const details = useArchetypeDetails();
   const disabled = useDisabledComponent("Results.Personality.Archetype.Heading", "PersonalityArchetype");
+  const disableExplanation = useDisabledComponent("Results.Personality.Archetype.Heading.Explanation");
   const disableVideo = useDisabledComponent("Results.Personality.Archetype.Heading.Video");
   const translate = useTranslate();
 
@@ -29,6 +30,9 @@ export default function PersonalityArchetypeHeading() {
     video
   } = details;
 
+  const showVideo = !disableVideo && video.url;
+  const showExplanation = !disableExplanation && !showVideo;
+
   return (
     <div className={style.container}>
       <div className={style.details}>
@@ -44,16 +48,19 @@ export default function PersonalityArchetypeHeading() {
         </div>
         {description && <div className={style.p}>{description}</div>}
       </div>
-      <div className={style.meaning}>
-        {!disableVideo && video.url ? (
-          <video controls={true} crossOrigin="anonymous" disablePictureInPicture={true} playsInline={true} poster={video.thumbnail}>
-            <source src={video.url} type="video/mp4" />
-            {video.track && <track kind="captions" src={video.track} />}
-          </video>
-        ) : (
-          <DangerousHTML html={translate("results.personality.archetype.description_html")} tag="p" />
-        )}
-      </div>
+      {(showExplanation || showVideo) && (
+        <div className={style.meaning}>
+          {showVideo && (
+            <video controls={true} crossOrigin="anonymous" disablePictureInPicture={true} playsInline={true} poster={video.thumbnail}>
+              <source src={video.url} type="video/mp4" />
+              {video.track && <track kind="captions" src={video.track} />}
+            </video>
+          )}
+          {showExplanation && (
+            <DangerousHTML className={style.p} html={translate("results.personality.archetype.description_html")} />
+          )}
+        </div>
+      )}
     </div>
   );
 }

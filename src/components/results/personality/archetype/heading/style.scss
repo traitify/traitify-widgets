@@ -6,7 +6,13 @@
   background: none;
   margin-bottom: $buffer-section;
 
-  @include min-width("md") { display: flex; }
+  @include min-width("md") {
+    display: flex;
+    gap: $buffer;
+  }
+  @include min-width("lg") {
+    gap: $buffer-lg;
+  }
   > div {
     @extend %shadow-box;
 
@@ -15,11 +21,6 @@
     @include min-width("md") {
       flex: 1;
       margin-bottom: 0;
-
-      &:first-of-type { margin-right: $buffer; }
-    }
-    @include min-width("lg") {
-      &:first-of-type { margin-right: $buffer-lg; }
     }
     @include theme("background", "background");
   }
@@ -65,10 +66,6 @@
   align-items: center;
   display: flex;
 
-  p {
-    margin: 0;
-    padding: 20px;
-  }
   video {
     border-radius: $border-radius;
     display: block;

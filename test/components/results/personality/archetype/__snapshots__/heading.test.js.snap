@@ -137,7 +137,8 @@ exports[`PersonalityArchetypeHeading fallbacks renders component without video 1
     <div
       className="meaning"
     >
-      <p
+      <div
+        className="p"
         dangerouslySetInnerHTML={
           {
             "__html": "This assessment helps you understand the components of your personality. Just as our bodies are composed of different organ systems, we can think of our personalities as having separate, equally important parts.<br /><br />Although we might feel and behave a little differently from one day to the next, or even from one situation to the next, we all typically display higher or lower levels of five core dimensions. All five dimensions shape who we are, just like all the parts of our bodies work together to keep us healthy.",
@@ -198,6 +199,120 @@ exports[`PersonalityArchetypeHeading renders component 1`] = `
           src="https://cdn.traitify.com/content/paradox-archetype-videos/Cohort.vtt"
         />
       </video>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeHeading renders explanation when video disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="details"
+    >
+      <div>
+        <img
+          alt="Cohort"
+          src="https://cdn.traitify.com/icons/big-five/paradox-blue/cohort.png"
+        />
+        <div
+          className="heading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "Your Big Five Personality is <span>Cohort</span>",
+            }
+          }
+        />
+      </div>
+      <div
+        className="p"
+      >
+        You are up for trying novel tasks and considering new ideas. Steady and content with focusing attention on multiple projects at once, you may worry about how you are being perceived by others and want to manage your reputation.
+      </div>
+    </div>
+    <div
+      className="meaning"
+    >
+      <div
+        className="p"
+        dangerouslySetInnerHTML={
+          {
+            "__html": "This assessment helps you understand the components of your personality. Just as our bodies are composed of different organ systems, we can think of our personalities as having separate, equally important parts.<br /><br />Although we might feel and behave a little differently from one day to the next, or even from one situation to the next, we all typically display higher or lower levels of five core dimensions. All five dimensions shape who we are, just like all the parts of our bodies work together to keep us healthy.",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeHeading renders no meaning when explanation disabled and no video 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="details"
+    >
+      <div>
+        <img
+          alt="Cohort"
+          src="https://cdn.traitify.com/icons/big-five/paradox-blue/cohort.png"
+        />
+        <div
+          className="heading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "Your Big Five Personality is <span>Cohort</span>",
+            }
+          }
+        />
+      </div>
+      <div
+        className="p"
+      >
+        You are up for trying novel tasks and considering new ideas. Steady and content with focusing attention on multiple projects at once, you may worry about how you are being perceived by others and want to manage your reputation.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PersonalityArchetypeHeading renders no meaning when video and explanation disabled 1`] = `
+<div
+  className="traitify--container traitify--color-scheme-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="details"
+    >
+      <div>
+        <img
+          alt="Cohort"
+          src="https://cdn.traitify.com/icons/big-five/paradox-blue/cohort.png"
+        />
+        <div
+          className="heading"
+          dangerouslySetInnerHTML={
+            {
+              "__html": "Your Big Five Personality is <span>Cohort</span>",
+            }
+          }
+        />
+      </div>
+      <div
+        className="p"
+      >
+        You are up for trying novel tasks and considering new ideas. Steady and content with focusing attention on multiple projects at once, you may worry about how you are being perceived by others and want to manage your reputation.
+      </div>
     </div>
   </div>
 </div>

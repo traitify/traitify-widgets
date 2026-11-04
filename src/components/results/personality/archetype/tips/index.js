@@ -10,36 +10,16 @@ import style from "./style.scss";
 
 const tipTypes = {
   firstPerson: [
-    {
-      apiKey: "Tools to Use",
-      disableKeys: ["Results.Personality.Archetype.Tips.Tools", "PersonalityTools"],
-      translationKey: "tools"
-    },
-    {
-      apiKey: "Caution Zone",
-      disableKeys: ["Results.Personality.Archetype.Tips.Caution", "PersonalityCaution"],
-      translationKey: "room"
-    },
-    {
-      apiKey: "Settings that Work for You",
-      disableKeys: ["Results.Personality.Archetype.Tips.Settings", "PersonalitySettings"],
-      translationKey: "settings"
-    }
+    {apiKey: "Tools to Use", name: "tools", translationKey: "tools"},
+    {apiKey: "Caution Zone", name: "caution", translationKey: "room"},
+    {apiKey: "Settings that Work for You", name: "settings", translationKey: "settings"}
   ],
   thirdPerson: [
-    {
-      apiKey: "Third Person Tools to Use",
-      disableKeys: ["Results.Personality.Archetype.Tips.Tools", "PersonalityTools"],
-      translationKey: "tools"
-    },
-    {
-      apiKey: "Third Person Caution Zone",
-      disableKeys: ["Results.Personality.Archetype.Tips.Caution", "PersonalityCaution"],
-      translationKey: "caution_zone"
-    },
+    {apiKey: "Third Person Tools to Use", name: "tools", translationKey: "tools"},
+    {apiKey: "Third Person Caution Zone", name: "caution", translationKey: "caution_zone"},
     {
       apiKey: "Third Person Settings that Work for Them",
-      disableKeys: ["Results.Personality.Archetype.Tips.Settings", "PersonalitySettings"],
+      name: "settings",
       translationKey: "settings_third_person"
     }
   ]
@@ -47,6 +27,18 @@ const tipTypes = {
 
 export default function PersonalityArchetypeTips() {
   const disabled = useDisabledComponent("Results.Personality.Archetype.Tips", "PersonalityTips");
+  const cautionDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Tips.Caution",
+    "PersonalityCaution"
+  );
+  const settingsDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Tips.Settings",
+    "PersonalitySettings"
+  );
+  const toolsDisabled = useDisabledComponent(
+    "Results.Personality.Archetype.Tips.Tools",
+    "PersonalityTools"
+  );
   const perspective = useInlineMemo((value) => value || "firstPerson", [useOption("perspective")]);
   const results = useResults({surveyType: "personality"});
   const showHeaders = useOption("showHeaders");
@@ -54,7 +46,6 @@ export default function PersonalityArchetypeTips() {
   const [types, setTypes] = useState([]);
   const translate = useTranslate();
   const details = useInlineMemo((value) => value || [], [dig(results, "archetype", "details")]);
-  const disabledComponents = useInlineMemo((value) => value || [], [useOption("disabledComponents")]);
 
   const context = {activeType, types};
   useComponentEvents("PersonalityTips", context);
@@ -62,8 +53,13 @@ export default function PersonalityArchetypeTips() {
   useEffect(() => {
     if(details.length === 0) { return; }
 
+    const disabledTips = {
+      caution: cautionDisabled,
+      settings: settingsDisabled,
+      tools: toolsDisabled
+    };
     const filter = (type) => {
-      if(type.disableKeys.some((key) => disabledComponents.includes(key))) { return false; }
+      if(disabledTips[type.name]) { return false; }
 
       return details.find(({title}) => (title === type.apiKey));
     };
@@ -74,7 +70,7 @@ export default function PersonalityArchetypeTips() {
 
     setTypes(activeTypes);
     setActiveType(activeTypes[0]);
-  }, [details, perspective]);
+  }, [cautionDisabled, details, perspective, settingsDisabled, toolsDisabled]);
 
   if(disabled) { return null; }
   if(!results) { return null; }

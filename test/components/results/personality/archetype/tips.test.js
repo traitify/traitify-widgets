@@ -105,6 +105,22 @@ describe("PersonalityArchetypeTips", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  describe("disabled tip", () => {
+    it("is removed by its component key", async() => {
+      mockOption("disabledComponents", ["Results.Personality.Archetype.Tips.Tools"]);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.instance.findAllByType("button")).toHaveLength(2);
+    });
+
+    it("is removed by its legacy key", async() => {
+      mockOption("disabledComponents", ["PersonalityTools"]);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.instance.findAllByType("button")).toHaveLength(2);
+    });
+  });
+
   it("renders component with headers", async() => {
     mockOption("showHeaders", true);
     component = await ComponentHandler.setup(Component);

@@ -89,6 +89,22 @@ describe("PersonalityBaseDetails", () => {
     expect(component.tree).toMatchSnapshot();
   });
 
+  describe("disabled detail", () => {
+    it("is removed by its component key", async() => {
+      mockOption("disabledComponents", ["Results.Personality.Base.Details.Complements"]);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.instance.findAllByType("button")).toHaveLength(2);
+    });
+
+    it("is removed by its legacy key", async() => {
+      mockOption("disabledComponents", ["PersonalityComplements"]);
+      component = await ComponentHandler.setup(Component);
+
+      expect(component.instance.findAllByType("button")).toHaveLength(2);
+    });
+  });
+
   it("renders new type from clicking button", async() => {
     component = await ComponentHandler.setup(Component);
     act(() => component.instance.findAllByType("button")[1].props.onClick());

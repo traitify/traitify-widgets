@@ -27,12 +27,15 @@ exports[`Survey.RJP renders instructions 1`] = `
         />
       </button>
     </div>
-    <h2
+    <div
       className="text traitify--markdown"
-      id="instructions"
     >
-      Instructions
-    </h2>
+      <h2
+        id="instructions"
+      >
+        Instructions
+      </h2>
+    </div>
     <button
       className="play"
       onClick={[Function]}
@@ -94,12 +97,15 @@ exports[`Survey.RJP renders match results 1`] = `
         />
       </button>
     </div>
-    <h2
+    <div
       className="text traitify--markdown"
-      id="instructions"
     >
-      Instructions
-    </h2>
+      <h2
+        id="instructions"
+      >
+        Instructions
+      </h2>
+    </div>
     <div>
       <div
         className="divider"
@@ -253,12 +259,15 @@ exports[`Survey.RJP renders questions 1`] = `
         />
       </button>
     </div>
-    <h2
+    <div
       className="text traitify--markdown"
-      id="instructions"
     >
-      Instructions
-    </h2>
+      <h2
+        id="instructions"
+      >
+        Instructions
+      </h2>
+    </div>
     <div>
       <div
         className="divider"

@@ -43,12 +43,15 @@ exports[`Instructions renders instructions 1`] = `
         <div
           className="content"
         >
-          <h2
+          <div
             className="traitify--markdown"
-            id="instructions"
           >
-            Instructions
-          </h2>
+            <h2
+              id="instructions"
+            >
+              Instructions
+            </h2>
+          </div>
           <div
             className="divider"
           />
@@ -187,12 +190,15 @@ exports[`Instructions skip assessment accommodation renders back action 1`] = `
         <div
           className="content"
         >
-          <h2
+          <div
             className="traitify--markdown"
-            id="instructions"
           >
-            Instructions
-          </h2>
+            <h2
+              id="instructions"
+            >
+              Instructions
+            </h2>
+          </div>
           <div
             className="divider"
           />
@@ -264,12 +270,15 @@ exports[`Instructions skip assessment accommodation renders instructions 1`] = `
         <div
           className="content"
         >
-          <h2
+          <div
             className="traitify--markdown"
-            id="instructions"
           >
-            Instructions
-          </h2>
+            <h2
+              id="instructions"
+            >
+              Instructions
+            </h2>
+          </div>
           <div
             className="divider"
           />

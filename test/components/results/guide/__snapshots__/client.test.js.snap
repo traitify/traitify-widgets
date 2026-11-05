@@ -10,11 +10,13 @@ exports[`Results.Guide.Client renders component 1`] = `
     <div
       className="heading"
     />
-    <p
+    <div
       className="traitify--markdown"
     >
-      My Intro
-    </p>
+      <p>
+        My Intro
+      </p>
+    </div>
     <div
       className="tabs"
     >
@@ -61,11 +63,13 @@ exports[`Results.Guide.Client renders component 1`] = `
       >
         First Interview
       </div>
-      <p
+      <div
         className="traitify--markdown"
       >
-        Easy peasy
-      </p>
+        <p>
+          Easy peasy
+        </p>
+      </div>
       <div
         className="sequence open"
       >
@@ -94,11 +98,13 @@ exports[`Results.Guide.Client renders component 1`] = `
         <div
           className="sequenceContent"
         >
-          <p
+          <div
             className="traitify--markdown"
           >
-            Intro
-          </p>
+            <p>
+              Intro
+            </p>
+          </div>
           <ul>
             <li>
               How do you like your eggs?
@@ -165,11 +171,13 @@ exports[`Results.Guide.Client toggles sequence content 1`] = `
     <div
       className="heading"
     />
-    <p
+    <div
       className="traitify--markdown"
     >
-      My Intro
-    </p>
+      <p>
+        My Intro
+      </p>
+    </div>
     <div
       className="tabs"
     >
@@ -216,11 +224,13 @@ exports[`Results.Guide.Client toggles sequence content 1`] = `
       >
         First Interview
       </div>
-      <p
+      <div
         className="traitify--markdown"
       >
-        Easy peasy
-      </p>
+        <p>
+          Easy peasy
+        </p>
+      </div>
       <div
         className="sequence open"
       >
@@ -249,11 +259,13 @@ exports[`Results.Guide.Client toggles sequence content 1`] = `
         <div
           className="sequenceContent"
         >
-          <p
+          <div
             className="traitify--markdown"
           >
-            Intro
-          </p>
+            <p>
+              Intro
+            </p>
+          </div>
           <ul>
             <li>
               How do you like your eggs?
@@ -289,11 +301,13 @@ exports[`Results.Guide.Client toggles sequence content 1`] = `
         <div
           className="sequenceContent"
         >
-          <p
+          <div
             className="traitify--markdown"
           >
-            Washy washy
-          </p>
+            <p>
+              Washy washy
+            </p>
+          </div>
           <ul>
             <li>
               What kind of soap do you prefer?
@@ -316,11 +330,13 @@ exports[`Results.Guide.Client updates activeSection 1`] = `
     <div
       className="heading"
     />
-    <p
+    <div
       className="traitify--markdown"
     >
-      My Intro
-    </p>
+      <p>
+        My Intro
+      </p>
+    </div>
     <div
       className="tabs"
     >
@@ -367,11 +383,13 @@ exports[`Results.Guide.Client updates activeSection 1`] = `
       >
         Second Interview
       </div>
-      <p
+      <div
         className="traitify--markdown"
       >
-        Time to get serious!
-      </p>
+        <p>
+          Time to get serious!
+        </p>
+      </div>
       <div
         className="sequence open"
       >
@@ -400,11 +418,13 @@ exports[`Results.Guide.Client updates activeSection 1`] = `
         <div
           className="sequenceContent"
         >
-          <p
+          <div
             className="traitify--markdown"
           >
-            Fry fry
-          </p>
+            <p>
+              Fry fry
+            </p>
+          </div>
           <ul>
             <li>
               Fork, spoon, OR spork?
@@ -453,11 +473,13 @@ exports[`Results.Guide.Client updates activeSection through select 1`] = `
     <div
       className="heading"
     />
-    <p
+    <div
       className="traitify--markdown"
     >
-      My Intro
-    </p>
+      <p>
+        My Intro
+      </p>
+    </div>
     <div
       className="tabs"
     >
@@ -504,11 +526,13 @@ exports[`Results.Guide.Client updates activeSection through select 1`] = `
       >
         Second Interview
       </div>
-      <p
+      <div
         className="traitify--markdown"
       >
-        Time to get serious!
-      </p>
+        <p>
+          Time to get serious!
+        </p>
+      </div>
       <div
         className="sequence open"
       >
@@ -537,11 +561,13 @@ exports[`Results.Guide.Client updates activeSection through select 1`] = `
         <div
           className="sequenceContent"
         >
-          <p
+          <div
             className="traitify--markdown"
           >
-            Fry fry
-          </p>
+            <p>
+              Fry fry
+            </p>
+          </div>
           <ul>
             <li>
               Fork, spoon, OR spork?

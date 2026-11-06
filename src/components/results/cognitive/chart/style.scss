@@ -1,4 +1,4 @@
-@import "style/helpers";
+@use "style/helpers" as *;
 
 $grid-buffer-x: $buffer;
 $grid-buffer-x-sm: $grid-buffer-x * 0.5;

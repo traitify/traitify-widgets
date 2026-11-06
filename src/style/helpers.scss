@@ -1,6 +1,8 @@
-@import "./variables.scss";
-@import "./mixins.scss";
-@import "./extends.scss";
+@forward "variables";
+@forward "mixins";
+@forward "extends";
+@use "variables" as *;
+@use "extends" as *;
 
 // When choosing between extend vs mixin:
 // - Mixins generate fresh CSS within that selector

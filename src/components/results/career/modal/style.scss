@@ -1,4 +1,4 @@
-@import "style/helpers";
+@use "style/helpers" as *;
 
 .modal {
   background: rgba(0,0,0,0.85);
@@ -86,8 +86,10 @@
   }
   .blueDivider {
     @extend .grayDivider;
-    border: $border-width * 2 solid $-blue;
+    border: $border-width * 2 solid;
     margin-top: $buffer-sm * 1.13;
+
+    @include theme("border-color", "theme");
   }
 }
 
@@ -155,7 +157,8 @@
     }
     .navButtonActive {
       @extend .navButton;
-      color: $-blue;
+
+      @include theme("color", "theme");
     }
     .dropdownContainer {
       display: flex;
@@ -172,10 +175,12 @@
         position: absolute;
         padding: $buffer-sm * .5;
         width: 100%;
-        border: $border-width solid $-gray;
+        border: $border-width solid;
         border-top: none;
         border-radius: $border-radius-sm;
         top: 47px;
+
+        @include theme("border-color", "border");
         .dropdownItem {
           width: 100%;
           padding: $buffer-sm * .5 $buffer-sm * 1.25;
@@ -189,8 +194,10 @@
         height: 42px;
         background: url("https://cdn.traitify.com/assets/images/js/filter-select.png") no-repeat 96% 50%;
         background-size: 17px;
-        border: $border-width solid $-gray;
+        border: $border-width solid;
         border-radius: $border-radius-sm;
+
+        @include theme("border-color", "border");
         padding-left: $buffer;
         margin-top: $buffer-sm * .5;
         margin-bottom: $buffer * 1.25;

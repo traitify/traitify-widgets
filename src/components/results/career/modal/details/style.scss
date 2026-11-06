@@ -1,4 +1,4 @@
-@import "style/helpers";
+@use "style/helpers" as *;
 
 .info {
   list-style: none;
@@ -53,33 +53,22 @@
 }
 
 .btnPrimary {
-  background: $-blue;
-  color: $-white;
+  @include buttonDark("theme");
+
+  cursor: pointer;
   display: inline-block;
-  min-width: 155px;
-  padding: $buffer-sm * .75 $buffer;
-  margin-right: $buffer-sm * .5;
-  text-align: center;
-  border: 0;
-  border-radius: $border-radius-sm;
   font-size: $font-size-sm * 1.25;
-  text-decoration: none;
+  margin-right: $buffer-sm * .5;
+  min-width: 155px;
+  text-align: center;
 
   @include min-width(xs) {
     font-size: $font-size;
   }
-  cursor: pointer;
-  &:visited {
-    color: $-white;
-  }
-  &:hover {
-    background: darken($-blue, 8%);
-    color: $-white;
-  }
 }
 
 .legendToggle {
-  background: $-white;
+  @include theme("background", "background");
   color: #8e8e8e;
 }
 .contentBottom {
@@ -91,9 +80,10 @@
 .leftContainer {
   padding: $buffer-sm * 1.25;
   width: 100%;
-  border-bottom: $border-width solid $-white;
+  border-bottom: $border-width solid;
   margin-bottom: $buffer-sm * 1.25;
 
+  @include theme("border-bottom-color", "background");
   @include min-width(md){
     width: 50%;
     border-bottom: none;
@@ -139,16 +129,20 @@
 
   li {
     display: inline-block;
-    background: $-gray-hover;
-    border: $border-width * 2 solid $-gray-hover;
+    border: $border-width * 2 solid;
     padding: $buffer-sm * .75;
     margin-right: $buffer-sm * .25;
     border-radius: $border-radius-sm;
+
+    @include theme("background", "muted");
+    @include theme("border-color", "muted");
   }
   li.active {
-    background: $-blue;
-    border: $border-width * 2 solid $-blue;
+    border: $border-width * 2 solid;
     border-radius: $border-radius-sm;
+
+    @include theme("background", "theme");
+    @include theme("border-color", "theme");
   }
 }
 .matchRate {
@@ -200,16 +194,16 @@
   display: block;
   opacity: 0;
   + span svg {
-    color: $-white;
+    @include theme("color", "background");
   }
   &:checked + span svg {
-    color: $-blue;
+    @include theme("color", "theme");
   }
   &:focus + span svg {
-    color: $-blue;
+    @include theme("color", "theme");
   }
   &:checked:focus + span svg {
-    color: $-blue !important;
+    color: var(--private-traitify-theme) !important;
   }
 }
 
@@ -228,7 +222,9 @@
 .legend {
   margin: $buffer * 1.25 0px $buffer * 1.04 0px;
   padding-top: $buffer * 1.25;
-  border: $border-width solid $-blue;
+  border: $border-width solid;
+
+  @include theme("border-color", "theme");
   p {
     margin-top: 0;
   }

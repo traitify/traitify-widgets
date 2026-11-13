@@ -21,6 +21,7 @@
   &:hover, &:visited {
     @include theme("color", "text-light");
   }
+  &:hover { opacity: 0.7; }
 }
 
 @mixin buttonLight($color) {

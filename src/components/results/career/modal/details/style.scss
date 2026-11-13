@@ -203,7 +203,7 @@
     @include theme("color", "theme");
   }
   &:checked:focus + span svg {
-    color: var(--private-traitify-theme) !important;
+    @include theme("color", "theme");
   }
 }
 

@@ -1,5 +1,4 @@
 @use "style/helpers" as *;
-@use "../../variables" as *;
 
 .container {
   @extend %container;
@@ -23,14 +22,14 @@
   }
 }
 .life {
-  background: $blue-light;
+  background: $risk-blue-light;
 
-  .heading { color: $blue; }
+  .heading { @include theme("color", "theme"); }
 }
 .financial {
-  background: $green-light;
+  background: $risk-green-light;
 
-  .heading { color: $green; }
+  .heading { color: $risk-green; }
 }
 .heading {
   font-size: $font-size-heading;

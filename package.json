@@ -3,6 +3,9 @@
   "version": "3.13.2",
   "author": "Traitify <support@traitify.com> (www.traitify.com)",
   "description": "Traitiy Widgets",
+  "engines": {
+    "node": ">=24.9.0"
+  },
   "exports": {
     ".": "./build/traitify.js",
     "./standalone": "./build/standalone.js"
@@ -74,6 +77,7 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.5.32",
     "postcss-loader": "^8.2.1",
+    "puppeteer": "^25.17.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-test-renderer": "^18.3.1",
@@ -92,7 +96,7 @@
   "dependencies": {
     "@crosschq/interview-report-widget": "^0.5.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "bowser": "^2.15.0",
     "color": "^5.0.3",

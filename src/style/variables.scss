@@ -49,6 +49,8 @@ $-blue: $-traitify-blue;
 $-gray: #D6D6D6;
 $-gray-dark: #A0A0A0;
 $-gray-hover: #F8F8F8;
+$-gray-muted: #ECECEC;
+$-gray-muted-dark: #444444;
 $-green: #2FB656;
 $-red: $-traitify-red;
 $-red-light: #FEA7AB;
@@ -77,7 +79,7 @@ $color-scheme-dark: (
   "inactive": $-gray,
   "me-active": $-traitify-blue-dark,
   "me": $-traitify-blue,
-  "muted": $-gray-hover,
+  "muted": $-gray-muted-dark,
   "not-me-active": $-traitify-red-dark,
   "not-me": $-traitify-red,
   "progress-bar": $-theme-color,
@@ -111,7 +113,7 @@ $color-scheme-light: (
   "inactive": $-gray,
   "me-active": $-traitify-blue-dark,
   "me": $-traitify-blue,
-  "muted": $-gray-hover,
+  "muted": $-gray-muted,
   "not-me-active": $-traitify-red-dark,
   "not-me": $-traitify-red,
   "progress-bar": $-theme-color,
@@ -130,3 +132,13 @@ $color-scheme-light: (
   "theme": $-theme-color
 );
 $color-scheme-default: $color-scheme-light;
+
+// Financial Risk colors
+$risk-blue-light: #E6F3F8;
+$risk-green: #47BB55;
+$risk-green-light: #DCF3DF;
+$risk-low: #4FE0C4;
+$risk-low-medium: #25C4EF;
+$risk-medium: #4D85D6;
+$risk-medium-high: #8B44E2;
+$risk-high: #B65DDB;

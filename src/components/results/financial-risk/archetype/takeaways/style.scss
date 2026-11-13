@@ -1,5 +1,4 @@
 @use "style/helpers" as *;
-@use "../../variables" as *;
 
 .container {
   @extend %container;
@@ -7,10 +6,11 @@
   margin-bottom: $buffer-lg;
 }
 .heading {
-  color: $blue;
   font-size: $font-size-heading;
   margin-bottom: $buffer;
   text-align: center;
+
+  @include theme("color", "theme");
 }
 .takeaways {
   display: grid;

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Practice actions finishes 1`] = `
 <div
@@ -76,11 +76,13 @@ exports[`Practice renders custom questions 2`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      First Text
-    </p>
+      <p>
+        First Text
+      </p>
+    </div>
     <button
       className="traitify--response-button btnBlue"
       onClick={[Function]}
@@ -151,11 +153,13 @@ exports[`Practice renders custom questions 4`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      Second Text
-    </p>
+      <p>
+        Second Text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -256,11 +260,13 @@ exports[`Practice renders question 1 explanation 1`] = `
     >
       survey.cognitive.practice.answer_correct
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_1_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_1_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -344,11 +350,13 @@ exports[`Practice renders question 2 explanation 1`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_2_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_2_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -432,11 +440,13 @@ exports[`Practice renders question 3 explanation 1`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_3_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_3_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -476,11 +486,13 @@ exports[`Practice videos horizontal renders component 1`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_1_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_1_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -520,11 +532,13 @@ exports[`Practice videos horizontal updates to vertical 1`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_1_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_1_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -564,11 +578,13 @@ exports[`Practice videos vertical renders component 1`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_1_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_1_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}
@@ -608,11 +624,13 @@ exports[`Practice videos vertical updates to horizontal 1`] = `
     >
       survey.cognitive.practice.answer_incorrect
     </p>
-    <p
+    <div
       className="text traitify--markdown"
     >
-      survey.cognitive.practice.step_1_text
-    </p>
+      <p>
+        survey.cognitive.practice.step_1_text
+      </p>
+    </div>
     <video
       autoPlay={true}
       disablePictureInPicture={true}

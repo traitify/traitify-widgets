@@ -1,4 +1,4 @@
-@import "style/helpers";
+@use "style/helpers" as *;
 
 // NOTE: Nested to override base styles
 :global(.traitify--container) {

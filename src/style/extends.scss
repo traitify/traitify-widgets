@@ -1,3 +1,13 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Private - only used by the placeholders in this file
+@mixin -set-variables($variables) {
+  @each $name, $value in $variables {
+    --private-traitify-#{$name}: var(--traitify-#{$name}, #{$value});
+  }
+}
+
 %box {
   border: $border-width solid;
   border-radius: $border-radius-sm;

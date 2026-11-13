@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "./base" as *;
+
 @mixin activeTabSide($side, $circle: "span", $square: "&") {
   $direction: "after";
   $otherSide: "left";

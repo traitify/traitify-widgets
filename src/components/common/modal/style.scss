@@ -1,4 +1,4 @@
-@import "style/helpers";
+@use "style/helpers" as *;
 
 .modal {
   background: rgba(0, 0, 0, 0.85);

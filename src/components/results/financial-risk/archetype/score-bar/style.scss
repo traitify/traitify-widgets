@@ -1,5 +1,4 @@
-@import "style/helpers";
-@import "../../variables.scss";
+@use "style/helpers" as *;
 
 .container {
   @extend %container;
@@ -20,11 +19,11 @@
     @include theme("background", "background");
   }
   .low {
-    border: 3px solid $low;
+    border: 3px solid $risk-low;
     margin-top: $buffer-sm;
   }
   .high {
-    border: 3px solid $high;
+    border: 3px solid $risk-high;
     margin-top: $buffer-sm;
   }
   .risk {
@@ -41,9 +40,9 @@
   height: 28px;
 
   * { width: 20%; }
-  .low { background: $low; }
-  .lowMedium { background: $low-medium; }
-  .medium { background: $medium; }
-  .mediumHigh { background: $medium-high; }
-  .high { background: $high; }
+  .low { background: $risk-low; }
+  .lowMedium { background: $risk-low-medium; }
+  .medium { background: $risk-medium; }
+  .mediumHigh { background: $risk-medium-high; }
+  .high { background: $risk-high; }
 }

@@ -1,4 +1,4 @@
-@import "style/helpers";
+@use "style/helpers" as *;
 
 $inner-padding: $buffer-lg;
 $outer-padding: $buffer;

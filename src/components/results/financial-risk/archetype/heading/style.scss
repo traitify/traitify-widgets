@@ -1,5 +1,4 @@
-@import "style/helpers";
-@import "../../variables.scss";
+@use "style/helpers" as *;
 
 .container {
   @extend %container;

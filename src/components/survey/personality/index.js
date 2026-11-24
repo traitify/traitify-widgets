@@ -190,9 +190,11 @@ export default function PersonalitySurvey() {
 
     listener.trigger("Survey.updateSlide", {...state, response});
   };
+  const captionKey = `survey.personality.${assessment.deck_id}.slides.${currentSlide.id}.caption`;
+  const caption = translate(captionKey, null, {fallback: false}) || currentSlide.caption;
 
   return (
-    <Container {...props} caption={currentSlide.caption} onResponse={updateSlide}>
+    <Container {...props} caption={caption} onResponse={updateSlide}>
       {dig(lastSlide, "loaded") && <Slide key={lastSlide.id} orientation="left" slide={lastSlide} />}
       <Slide key={currentSlide.id} orientation="middle" slide={currentSlide} />
       {nextSlide && <Slide key={nextSlide.id} orientation="right" slide={nextSlide} />}

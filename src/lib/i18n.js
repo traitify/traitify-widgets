@@ -41,11 +41,11 @@ export default class I18n {
     this.data[targetLocale] = merge(targetData, originData);
   };
   // NOTE: Returns first translation if key is an array
-  translate = (locale, _key, options) => {
+  translate = (locale, _key, options, {fallback = true} = {}) => {
     const keys = isArray(_key) ? _key : [_key];
     let result = findMap(keys, (key) => dig(this.data, locale.toLowerCase(), ...key.split(".")));
 
-    if(!result && locale.toLowerCase() !== "en-us") {
+    if(!result && fallback && locale.toLowerCase() !== "en-us") {
       result = findMap(keys, (key) => dig(this.data, "en-us", ...key.split(".")));
     }
     if(!result || !options) { return result; }

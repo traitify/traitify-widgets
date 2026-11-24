@@ -55,6 +55,7 @@ const globalCache = new Traitify.Cache({storage: localStorage});
 const listCacheKeys = {};
 const personalitySurveys = (window.TraitifyDemo || {}).personalitySurveys || [
   {text: "Big Five", value: "big-five"},
+  {text: "Big Five 3.0", value: "big-five-3.0"},
   {text: "Big Five Animated", value: "big-five-animated"},
   {text: "Big Five Animated Paradox", value: "big-five-animated-paradox"},
   {text: "Big Five Text", value: "big-five-text"},

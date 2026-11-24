@@ -7,7 +7,7 @@ export default function useTranslate() {
   const i18n = useI18n();
   const locale = useLoadedValue(localeState);
 
-  return useCallback((key, options) => (
-    i18n.translate(locale, key, options)
+  return useCallback((key, options, config) => (
+    i18n.translate(locale, key, options, config)
   ), [i18n, locale]);
 }

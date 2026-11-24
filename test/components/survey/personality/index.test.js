@@ -12,7 +12,8 @@ import {
   mockAssessmentSkip,
   mockAssessmentStarted,
   mockAssessmentSubmit,
-  mockSettings
+  mockSettings,
+  mockTranslations
 } from "support/container/http";
 import {mockOption, useOption} from "support/container/options";
 import _completedAssessment from "support/data/assessment/personality/completed";
@@ -167,6 +168,43 @@ describe("Survey.Personality", () => {
         expect(state.slides[0].response).toBe(false);
         expect(component.tree).toMatchSnapshot();
       });
+    });
+  });
+
+  describe("caption translations", () => {
+    beforeEach(async() => {
+      const [first, second] = assessment.slides;
+      mockTranslations({
+        "en-us": {
+          survey: {
+            personality: {
+              [assessment.deck_id]: {
+                slides: {[first.id]: {caption: "Inventive"}}
+              },
+              "other-deck": {
+                slides: {[second.id]: {caption: "Wrong Deck"}}
+              }
+            }
+          }
+        }
+      });
+      component = await ComponentHandler.setup(Component, {createNodeMock});
+
+      times(5).forEach(() => {
+        act(() => { getCurrentImage().onload(); });
+      });
+    });
+
+    it("overrides caption", () => {
+      expect(component.findAllByText("Inventive")).toHaveLength(1);
+      expect(component.findAllByText(assessment.slides[0].caption)).toHaveLength(0);
+    });
+
+    it("falls back to slide caption", () => {
+      act(() => { component.findByText("Me").props.onClick(); });
+
+      expect(component.findAllByText(assessment.slides[1].caption)).toHaveLength(1);
+      expect(component.findAllByText("Wrong Deck")).toHaveLength(0);
     });
   });
 
@@ -667,6 +705,24 @@ describe("Survey.Personality", () => {
       assessment.slide_type = "TEXT";
 
       mockAssessment(assessment);
+    });
+
+    it("overrides caption with translation", async() => {
+      mockTranslations({
+        "en-us": {
+          survey: {
+            personality: {
+              [assessment.deck_id]: {
+                slides: {[assessment.slides[0].id]: {caption: "Inventive"}}
+              }
+            }
+          }
+        }
+      });
+      component = await ComponentHandler.setup(Component, {createNodeMock});
+
+      expect(component.findAllByText("Inventive")).toHaveLength(1);
+      expect(component.findAllByText(assessment.slides[0].caption)).toHaveLength(0);
     });
 
     describe("actions", () => {

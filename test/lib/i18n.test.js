@@ -106,6 +106,13 @@ describe("I18n", () => {
       expect(translation).toBe(translationES);
     });
 
+    it("skips fallback when disabled", () => {
+      i18n.addTranslations("en-US", {data: {tacos: "I like tacos"}});
+      const translation = translateES("tacos", null, {fallback: false});
+
+      expect(translation).toBeUndefined();
+    });
+
     it("substitutes options", () => {
       i18n.data["en-us"].love = "I love %{noun}";
       const translation = translate("love", {noun: "tacos"});
